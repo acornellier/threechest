@@ -45,3 +45,7 @@ img.leaflet-tile {
   height: auto !important;
   width: auto !important;
 }
+
+.mob {
+  border-radius: 100%;
+}
