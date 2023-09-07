@@ -4,7 +4,8 @@ import { CRS, LatLngBoundsExpression, LatLngExpression, Point } from 'leaflet'
 import { MousePosition } from './tools/MousePosition/MousePosition'
 import './tools/SmoothWheelZoom/SmoothWheelZoom.js'
 import { Mobs } from './Mobs.tsx'
-import {dungeonsByKey} from "../data/vp.ts";
+import { dungeonsByKey } from '../data/vp.ts'
+import { RouteProvider } from './RouteContext/RouteProvider.tsx'
 
 const height = 256
 const width = 384
@@ -33,15 +34,17 @@ export function Map() {
       smoothWheelZoom={true}
       smoothSensitivity={2}
     >
-      <MousePosition />
-      <TileLayer
-        attribution="Map data © Blizzard Entertainment"
-        bounds={bounds}
-        noWrap
-        tileSize={new Point(width, height)}
-        url={`/${dungeon.key}/map/{z}/{x}_{y}.png`}
-      />
-      <Mobs dungeon={dungeon} />
+      <RouteProvider>
+        <MousePosition />
+        <TileLayer
+          attribution="Map data © Blizzard Entertainment"
+          bounds={bounds}
+          noWrap
+          tileSize={new Point(width, height)}
+          url={`/${dungeon.key}/map/{z}/{x}_{y}.png`}
+        />
+        <Mobs dungeon={dungeon} />
+      </RouteProvider>
     </MapContainer>
   )
 }

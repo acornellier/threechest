@@ -1,7 +1,7 @@
 export type Dungeon = {
   zoneId: number
   key: DungeonKey
-  mdtMobs: MdtMob[]
+  mdtMobs: Mob[]
 }
 
 export type DungeonKey = 'vp'
@@ -12,7 +12,7 @@ export type Spawn = {
   pos: [number, number]
 }
 
-export type MdtMob = {
+export type Mob = {
   id: number
   enemyIndex: number
   name: string
@@ -21,33 +21,4 @@ export type MdtMob = {
   creatureType: string
   scale: number
   spawns: Spawn[]
-}
-
-// type MdtPull = Record<string, number[]> & {
-//   color: string
-// }
-
-type MdtPullEnemy = {
-  enemyIndex: number
-  spawnIndexes: number[]
-}
-
-type MdtPull = {
-  color: string
-  enemies: MdtPullEnemy[]
-}
-
-export type MdtRoute = {
-  text: string
-  week: number
-  difficulty: number
-  uid: string
-  addonVersion: number
-  value: {
-    currentPull: number
-    currentSublevel: number
-    currentDungeonIdx: number
-    selection: number[]
-    pulls: MdtPull[]
-  }
 }

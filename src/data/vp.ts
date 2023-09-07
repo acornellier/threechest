@@ -1,8 +1,8 @@
-import type { Dungeon, DungeonKey, MdtMob, MdtRoute } from './types.ts'
+import type { Dungeon, DungeonKey, Mob, MdtRoute } from './types.ts'
 import mdtData from './vp_mdt.json'
 import route from './vp_route.json'
 
-const mdtMobs: MdtMob[] = mdtData.enemies as MdtMob[]
+const mdtMobs: Mob[] = mdtData.enemies as Mob[]
 
 export const vp: Dungeon = {
   zoneId: 5035,

@@ -47,5 +47,11 @@ img.leaflet-tile {
 }
 
 .mob {
+}
+
+.mob > img {
+  width: 100% !important;
   border-radius: 100%;
+  border-style: solid;
+  border-color: silver;
 }
