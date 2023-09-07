@@ -4,6 +4,7 @@ import { CRS, LatLngBoundsExpression, LatLngExpression, Point } from 'leaflet'
 import { MousePosition } from './tools/MousePosition/MousePosition'
 import './tools/SmoothWheelZoom/SmoothWheelZoom.js'
 import { Mobs } from './Mobs.tsx'
+import {dungeonsByKey} from "../data/vp.ts";
 
 const height = 256
 const width = 384
@@ -16,12 +17,12 @@ const bounds: LatLngBoundsExpression = [
 
 export function Map() {
   const center: LatLngExpression = [maxCoords[0] / 2, maxCoords[1] / 2]
+  const dungeon = dungeonsByKey['vp']
 
   return (
     <MapContainer
       crs={CRS.Simple}
       center={center}
-      maxBounds={bounds}
       minZoom={1}
       maxZoom={5}
       zoom={1}
@@ -38,9 +39,9 @@ export function Map() {
         bounds={bounds}
         noWrap
         tileSize={new Point(width, height)}
-        url="/vp/map/{z}/{x}_{y}.png"
+        url={`/${dungeon.key}/map/{z}/{x}_{y}.png`}
       />
-      <Mobs />
+      <Mobs dungeon={dungeon} />
     </MapContainer>
   )
 }

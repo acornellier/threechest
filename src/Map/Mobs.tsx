@@ -1,9 +1,13 @@
-import { vp } from '../data/vp.ts'
 import { Marker, Popup, useMap, useMapEvent } from 'react-leaflet'
 import { icon } from 'leaflet'
 import { useState } from 'react'
+import { Dungeon } from '../data/types.ts'
 
-export function Mobs() {
+type Props = {
+  dungeon: Dungeon
+}
+
+export function Mobs({ dungeon }: Props) {
   const map = useMap()
 
   const toIconSize = () => 6 * 2 ** map.getZoom()
@@ -16,7 +20,7 @@ export function Mobs() {
 
   return (
     <>
-      {vp.mdtMobs.map((mob) =>
+      {dungeon.mdtMobs.map((mob) =>
         mob.spawns.map((spawn, idx) => (
           <Marker
             key={`${mob.id}${idx}`}

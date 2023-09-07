@@ -6,7 +6,9 @@ import { fileURLToPath } from 'url'
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
-const data = fs.readFileSync(`${__dirname}/TheVortexPinnacle.lua`)
+const data = fs.readFileSync(
+  `${__dirname}/../../MythicDungeonTools/Dragonflight/TheVortexPinnacle.lua`,
+)
 const ast = parser.parse(data.toString())
 
 const dungeonEnemiesItem = ast.body.find(
@@ -38,9 +40,11 @@ const getFieldValue = (fields, key) => {
 const convertCoords = (x, y) => [y / 2.185, x / 2.185]
 
 const enemies = []
-for (const { fields } of luaEnemies) {
+for (let enemyIndex = 0; enemyIndex < luaEnemies.length; ++enemyIndex) {
+  const fields = luaEnemies[enemyIndex].fields
   const enemy = {
     id: getFieldValue(fields, 'id'),
+    enemyIndex,
     name: getFieldValue(fields, 'name'),
     count: getFieldValue(fields, 'count'),
     health: getFieldValue(fields, 'health'),
@@ -55,6 +59,7 @@ for (const { fields } of luaEnemies) {
     const x = getFieldValue(cloneFields, 'x')
     const y = getFieldValue(cloneFields, 'y')
     const spawn = {
+      spawnIndex: clone.key.value,
       group: getFieldValue(cloneFields, 'g'),
       pos: convertCoords(x, y),
     }
