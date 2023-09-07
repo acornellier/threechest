@@ -22,7 +22,7 @@ export function Mobs() {
             key={`${mob.id}${idx}`}
             position={spawn.pos}
             icon={icon({
-              iconUrl: 'https://keystone.guru/images/enemyportraits/45915.png',
+              iconUrl: `/vp/npc/${mob.id}.png`,
               iconSize: [iconSize * mob.scale, iconSize * mob.scale],
               className: 'mob',
             })}

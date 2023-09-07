@@ -38,7 +38,7 @@ export function Map() {
         bounds={bounds}
         noWrap
         tileSize={new Point(width, height)}
-        url="/vp/{z}/{x}_{y}.png"
+        url="/vp/map/{z}/{x}_{y}.png"
       />
       <Mobs />
     </MapContainer>
