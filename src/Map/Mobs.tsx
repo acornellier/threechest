@@ -11,6 +11,7 @@ export function Mobs() {
   const [iconSize, setIconSize] = useState(toIconSize())
 
   useMapEvent('zoom', () => {
+    console.log('hi')
     setIconSize(toIconSize())
   })
 

@@ -2,6 +2,7 @@ import 'leaflet/dist/leaflet.css'
 import { MapContainer, TileLayer } from 'react-leaflet'
 import { CRS, LatLngBoundsExpression, LatLngExpression, Point } from 'leaflet'
 import { MousePosition } from './tools/MousePosition/MousePosition'
+import './tools/SmoothWheelZoom/SmoothWheelZoom.js'
 import { Mobs } from './Mobs.tsx'
 
 const height = 256
@@ -25,7 +26,11 @@ export function Map() {
       maxZoom={5}
       zoom={1}
       zoomControl={false}
-      zoomSnap={0.25}
+      scrollWheelZoom={false}
+      /* eslint-disable-next-line @typescript-eslint/ban-ts-comment */
+      /* @ts-ignore */
+      smoothWheelZoom={true}
+      smoothSensitivity={2}
     >
       <MousePosition />
       <TileLayer

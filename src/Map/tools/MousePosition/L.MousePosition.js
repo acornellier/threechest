@@ -1,5 +1,5 @@
 import L from 'leaflet'
-import './L.Control.MousePosition.css'
+import './MousePosition.css'
 
 L.Control.MousePosition = L.Control.extend({
   options: {
