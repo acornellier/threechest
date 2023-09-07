@@ -1,8 +1,8 @@
-import { Mob } from './types.ts'
+import type { Dungeon, MdtMob } from './types.ts'
+import mdtData from './vp_mdt.json'
 
-export const mobs: Mob[] = [
-  {
-    name: 'Armored Mistral',
-    pos: [-59, 224],
-  },
-]
+const mdtMobs: MdtMob[] = mdtData.enemies as MdtMob[]
+
+export const vp: Dungeon = {
+  mdtMobs,
+}

@@ -25,8 +25,7 @@ export function Map() {
       maxZoom={5}
       zoom={1}
       zoomControl={false}
-      zoomDelta={0.1}
-      zoomSnap={0.1}
+      zoomSnap={0.25}
     >
       <MousePosition />
       <TileLayer

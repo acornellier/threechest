@@ -1,13 +1,7 @@
-import { mobs } from '../data/vp.ts'
+import { vp } from '../data/vp.ts'
 import { Marker, Popup, useMap, useMapEvent } from 'react-leaflet'
 import { icon } from 'leaflet'
 import { useState } from 'react'
-
-// 1 => 1
-// 2 => 4
-// 3 => 8
-// 4 => 16
-// 5 => 32
 
 export function Mobs() {
   const map = useMap()
@@ -22,19 +16,21 @@ export function Mobs() {
 
   return (
     <>
-      {mobs.map((mob) => (
-        <Marker
-          key={mob.name}
-          position={mob.pos}
-          icon={icon({
-            iconUrl: 'https://keystone.guru/images/enemyportraits/45915.png',
-            iconSize: [iconSize, iconSize],
-            className: 'mob',
-          })}
-        >
-          <Popup>{mob.name}</Popup>
-        </Marker>
-      ))}
+      {vp.mdtMobs.map((mob) =>
+        mob.spawns.map((spawn, idx) => (
+          <Marker
+            key={`${mob.id}${idx}`}
+            position={spawn.pos}
+            icon={icon({
+              iconUrl: 'https://keystone.guru/images/enemyportraits/45915.png',
+              iconSize: [iconSize, iconSize],
+              className: 'mob',
+            })}
+          >
+            <Popup>{mob.name}</Popup>
+          </Marker>
+        )),
+      )}
     </>
   )
 }
