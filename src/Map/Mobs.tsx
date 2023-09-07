@@ -11,7 +11,6 @@ export function Mobs() {
   const [iconSize, setIconSize] = useState(toIconSize())
 
   useMapEvent('zoom', () => {
-    console.log('hi')
     setIconSize(toIconSize())
   })
 
@@ -24,11 +23,11 @@ export function Mobs() {
             position={spawn.pos}
             icon={icon({
               iconUrl: 'https://keystone.guru/images/enemyportraits/45915.png',
-              iconSize: [iconSize, iconSize],
+              iconSize: [iconSize * mob.scale, iconSize * mob.scale],
               className: 'mob',
             })}
           >
-            <Popup>{mob.name}</Popup>
+            <Popup>{`${mob.name} g: ${spawn.group}`}</Popup>
           </Marker>
         )),
       )}

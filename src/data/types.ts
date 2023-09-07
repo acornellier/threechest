@@ -3,6 +3,7 @@ export type Dungeon = {
 }
 
 export type Spawn = {
+  group: number | null
   pos: [number, number]
 }
 
@@ -12,5 +13,6 @@ export type MdtMob = {
   count: number
   health: number
   creatureType: string
+  scale: number
   spawns: Spawn[]
 }

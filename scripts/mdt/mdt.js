@@ -20,6 +20,8 @@ const luaEnemies = dungeonEnemiesItem.init[0].fields.map(({ value }) => value)
 const getFieldValue = (fields, key) => {
   const field = fields.find((field) => field.key.raw === `"${key}"`)
 
+  if (!field) return null
+
   if (field.value.type === 'NumericLiteral') {
     return field.value.value
   } else if (field.value.type === 'StringLiteral') {
@@ -43,6 +45,7 @@ for (const { fields } of luaEnemies) {
     count: getFieldValue(fields, 'count'),
     health: getFieldValue(fields, 'health'),
     creatureType: getFieldValue(fields, 'creatureType'),
+    scale: getFieldValue(fields, 'scale'),
   }
 
   const spawns = []
@@ -52,6 +55,7 @@ for (const { fields } of luaEnemies) {
     const x = getFieldValue(cloneFields, 'x')
     const y = getFieldValue(cloneFields, 'y')
     const spawn = {
+      group: getFieldValue(cloneFields, 'g'),
       pos: convertCoords(x, y),
     }
     spawns.push(spawn)
