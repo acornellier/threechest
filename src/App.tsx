@@ -1,6 +1,6 @@
 import 'leaflet/dist/leaflet.css'
-import { Map } from './Map/Map.tsx'
+import { Page } from './components/Page.tsx'
 
 export default function App() {
-  return <Map />
+  return <Page />
 }

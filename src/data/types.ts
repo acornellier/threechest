@@ -22,3 +22,8 @@ export type Mob = {
   scale: number
   spawns: Spawn[]
 }
+
+export type MobSpawn = {
+  mob: Mob
+  spawn: Spawn
+}

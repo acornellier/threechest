@@ -638,6 +638,14 @@ cross-spawn@^7.0.2:
     shebang-command "^2.0.0"
     which "^2.0.1"
 
+css-filter-converter@^1.0.109:
+  version "1.0.109"
+  resolved "https://registry.yarnpkg.com/css-filter-converter/-/css-filter-converter-1.0.109.tgz#051d30921b463c68c0b55ec3e95577c4bb4141b4"
+  integrity sha512-EuexRsNM9YFGi/Q1OZBZEKEIaLAqj2lqOBXBN0ITXGBwpNIwNeLoqRRsa9taij1xG2qJFe+XieOK58lg9ZxkuQ==
+  dependencies:
+    color-convert "^2.0.1"
+    dom-to-image "^2.6.0"
+
 csstype@^3.0.2:
   version "3.1.2"
   resolved "https://registry.yarnpkg.com/csstype/-/csstype-3.1.2.tgz#1d4bf9d572f11c14031f0436e1c10bc1f571f50b"
@@ -683,6 +691,11 @@ doctrine@^3.0.0:
   integrity sha512-yS+Q5i3hBf7GBkd4KG8a7eBNNWNGLTaEwwYWUijIYM7zrlYDM0BFXHjjPWlWZ1Rg7UaddZeIDmi9jF3HmqiQ2w==
   dependencies:
     esutils "^2.0.2"
+
+dom-to-image@^2.6.0:
+  version "2.6.0"
+  resolved "https://registry.yarnpkg.com/dom-to-image/-/dom-to-image-2.6.0.tgz#8a503608088c87b1c22f9034ae032e1898955867"
+  integrity sha512-Dt0QdaHmLpjURjU7Tnu3AgYSF2LuOmksSGsUcE6ItvJoCWTBEmiMXcqBdNSAm9+QbbwD7JMoVsuuKX6ZVQv1qA==
 
 emoji-regex@^8.0.0:
   version "8.0.0"

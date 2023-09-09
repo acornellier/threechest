@@ -46,12 +46,33 @@ img.leaflet-tile {
   width: auto !important;
 }
 
-.mob {
+.page {
+  display: flex;
+  flex-direction: row;
 }
 
-.mob > img {
+.pulls {
+  width: 200px;
+  margin: 20% 0;
+  padding: 10px;
+}
+
+.mob-icon {
+  height: 100% !important;
   width: 100% !important;
   border-radius: 100%;
   border-style: solid;
   border-color: silver;
+  overflow: hidden;
+  position: absolute;
+}
+
+.mob-icon > * {
+  position: absolute;
+  height: 100% !important;
+  width: 100% !important;
+}
+
+.mob-icon-background{
+  opacity: 0.5;
 }

@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "css-filter-converter": "^1.0.109",
     "leaflet": "^1.9.4",
     "node-weakauras-parser": "^3.2.2",
     "prettier": "^3.0.3",

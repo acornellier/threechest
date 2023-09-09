@@ -12,7 +12,23 @@ type MobProps = {
 }
 
 export function Mob({ iconScaling, mob, spawn }: MobProps) {
-  const { addToRoute } = useRouteContext()
+  const { route, toggleSpawn } = useRouteContext()
+
+  const matchingPull = route.pulls.find((pull) =>
+    pull.enemies.some(
+      (enemy) =>
+        enemy.enemyIndex == mob.enemyIndex &&
+        enemy.spawnIndexes.some((spawnIndex) => spawnIndex == spawn.spawnIndex),
+    ),
+  )
+
+  const divStyle = {
+    borderWidth: iconScaling * 0.05,
+  }
+
+  const colorStyle = {
+    backgroundColor: matchingPull?.color,
+  }
 
   return (
     <Marker
@@ -22,12 +38,15 @@ export function Mob({ iconScaling, mob, spawn }: MobProps) {
         iconSize: [iconScaling * mob.scale, iconScaling * mob.scale],
         className: 'mob',
         html: renderToString(
-          <img src={`/vp/npc/${mob.id}.png`} style={{ borderWidth: iconScaling * 0.05 }} alt="" />,
+          <div className="mob-icon" style={divStyle}>
+            <img src={`/vp/npc/${mob.id}.png`} alt="" />
+            <div className="mob-icon-background" style={colorStyle} />
+          </div>,
         ),
       })}
       eventHandlers={{
         click: () => {
-          addToRoute(mob, spawn)
+          toggleSpawn({ mob, spawn })
         },
       }}
     >
