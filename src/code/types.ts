@@ -1,4 +1,16 @@
-﻿import { DungeonKey } from '../data/types.ts'
+﻿import { DungeonKey, MobSpawnKey } from '../data/types.ts'
+
+export type Pull = {
+  color: string
+  mobSpawns: MobSpawnKey[]
+}
+
+export type Route = {
+  name: string
+  dungeonKey: DungeonKey
+  selectedPull: number
+  pulls: Pull[]
+}
 
 export type MdtPullEnemy = {
   enemyIndex: number
@@ -23,11 +35,4 @@ export type MdtRoute = {
     selection: number[]
     pulls: MdtPull[]
   }
-}
-
-export type Route = {
-  name: string
-  dungeonKey: DungeonKey
-  selectedPull: number
-  pulls: MdtPull[]
 }

@@ -11,10 +11,13 @@ const data = fs.readFileSync(
 )
 const ast = parser.parse(data.toString())
 
-const dungeonEnemiesItem = ast.body.find(
-  (item) =>
-    item.variables &&
-    item.variables.some((variable) => variable?.base?.identifier?.name === 'dungeonEnemies'),
+const dungeonIndexItem = ast.body.find((item) =>
+  item.variables?.some((variable) => variable.name === 'dungeonIndex'),
+)
+const dungeonIndex = dungeonIndexItem.init[0].value
+
+const dungeonEnemiesItem = ast.body.find((item) =>
+  item.variables?.some((variable) => variable?.base?.identifier?.name === 'dungeonEnemies'),
 )
 
 const luaEnemies = dungeonEnemiesItem.init[0].fields.map(({ value }) => value)
@@ -71,6 +74,7 @@ for (let enemyIndex = 0; enemyIndex < luaEnemies.length; ++enemyIndex) {
 }
 
 const mdtData = {
+  dungeonIndex,
   enemies,
 }
 

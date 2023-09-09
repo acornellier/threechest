@@ -2,6 +2,7 @@ import { useMap, useMapEvent } from 'react-leaflet'
 import { useState } from 'react'
 import { Dungeon } from '../data/types.ts'
 import { Mob } from './Mob.tsx'
+import { mobSpawnToKey } from '../code/stuff.ts'
 
 type Props = {
   dungeon: Dungeon
@@ -20,9 +21,9 @@ export function Mobs({ dungeon }: Props) {
 
   return (
     <>
-      {dungeon.mdtMobs.map((mob) =>
-        mob.spawns.map((spawn, idx) => (
-          <Mob key={`${mob.id}${idx}`} iconScaling={iconSize} mob={mob} spawn={spawn} />
+      {dungeon.mdt.enemies.map((mob) =>
+        mob.spawns.map((spawn) => (
+          <Mob key={mobSpawnToKey({ mob, spawn })} iconScaling={iconSize} mob={mob} spawn={spawn} />
         )),
       )}
     </>

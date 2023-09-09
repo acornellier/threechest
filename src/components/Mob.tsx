@@ -4,6 +4,7 @@ import { Marker, Popup } from 'react-leaflet'
 import { divIcon } from 'leaflet'
 import { Mob } from '../data/types.ts'
 import { renderToString } from 'react-dom/server'
+import { mobSpawnToKey } from '../code/stuff.ts'
 
 type MobProps = {
   iconScaling: number
@@ -12,14 +13,11 @@ type MobProps = {
 }
 
 export function Mob({ iconScaling, mob, spawn }: MobProps) {
-  const { route, toggleSpawn } = useRouteContext()
+  const { route, dispatch } = useRouteContext()
 
+  const mobSpawnKey = mobSpawnToKey({ mob, spawn })
   const matchingPull = route.pulls.find((pull) =>
-    pull.enemies.some(
-      (enemy) =>
-        enemy.enemyIndex == mob.enemyIndex &&
-        enemy.spawnIndexes.some((spawnIndex) => spawnIndex == spawn.spawnIndex),
-    ),
+    pull.mobSpawns.some((_mobSpawnKey) => _mobSpawnKey === mobSpawnKey),
   )
 
   const divStyle = {
@@ -32,8 +30,9 @@ export function Mob({ iconScaling, mob, spawn }: MobProps) {
 
   return (
     <Marker
-      position={spawn.pos}
+      position={spawn.pos as [number, number]}
       icon={divIcon({
+        popupAnchor: [100, 0],
         iconUrl: `/vp/npc/${mob.id}.png`,
         iconSize: [iconScaling * mob.scale, iconScaling * mob.scale],
         className: 'mob',
@@ -45,9 +44,7 @@ export function Mob({ iconScaling, mob, spawn }: MobProps) {
         ),
       })}
       eventHandlers={{
-        click: () => {
-          toggleSpawn({ mob, spawn })
-        },
+        click: () => dispatch({ type: 'toggle_spawn', mob, spawn }),
       }}
     >
       <Popup>{`${mob.name} g: ${spawn.group}`}</Popup>

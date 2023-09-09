@@ -42,9 +42,8 @@ body {
   height: 100vh;
 }
 
-img.leaflet-tile {
-  height: auto !important;
-  width: auto !important;
+.leaflet-popup-tip {
+  display: none;
 }
 
 .page {

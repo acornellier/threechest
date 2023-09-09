@@ -1,7 +1,12 @@
+export type MdtDungeon = {
+  dungeonIndex: number
+  enemies: Mob[]
+}
+
 export type Dungeon = {
   zoneId: number
   key: DungeonKey
-  mdtMobs: Mob[]
+  mdt: MdtDungeon
 }
 
 export type DungeonKey = 'vp'
@@ -9,7 +14,7 @@ export type DungeonKey = 'vp'
 export type Spawn = {
   group: number | null
   spawnIndex: number
-  pos: [number, number]
+  pos: number[]
 }
 
 export type Mob = {
@@ -27,3 +32,5 @@ export type MobSpawn = {
   mob: Mob
   spawn: Spawn
 }
+
+export type MobSpawnKey = string

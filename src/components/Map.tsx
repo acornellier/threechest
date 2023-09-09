@@ -4,7 +4,8 @@ import { CRS, LatLngBoundsExpression, LatLngExpression, Point } from 'leaflet'
 import { MousePosition } from './Leaflet/MousePosition/MousePosition'
 import './Leaflet/SmoothWheelZoom/SmoothWheelZoom'
 import { Mobs } from './Mobs.tsx'
-import { dungeonsByKey } from '../data/vp.ts'
+
+import { dungeonsByKey } from '../data/dungeons.ts'
 
 const height = 256
 const width = 384
