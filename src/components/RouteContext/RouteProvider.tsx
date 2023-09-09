@@ -47,7 +47,7 @@ export function RouteProvider({ children }: Props) {
         ),
       )
     },
-    [route, setRoute],
+    [route],
   )
 
   const toggleSpawn = useCallback(
@@ -74,7 +74,7 @@ export function RouteProvider({ children }: Props) {
 
       setRoute({ ...route })
     },
-    [route, setRoute, findMatchingPull],
+    [findMatchingPull, route, data.mdtMobs],
   )
 
   const value = useMemo<RouteContextValue>(
@@ -83,7 +83,7 @@ export function RouteProvider({ children }: Props) {
       addPull,
       toggleSpawn,
     }),
-    [toggleSpawn, route],
+    [route, addPull, toggleSpawn],
   )
 
   return <RouteContext.Provider value={value}>{children}</RouteContext.Provider>
