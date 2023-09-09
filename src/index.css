@@ -37,6 +37,7 @@ body {
 }
 
 .leaflet-container {
+  background-color: inherit;
   width: 100%;
   height: 100vh;
 }
@@ -55,6 +56,8 @@ img.leaflet-tile {
   width: 200px;
   margin: 20% 0;
   padding: 10px;
+  border: 5px solid darkgrey;
+  border-right: none;
 }
 
 .mob-icon {
