@@ -30,7 +30,7 @@ const getFieldValue = (fields, key) => {
   if (field.value.type === 'NumericLiteral') {
     return field.value.value
   } else if (field.value.type === 'StringLiteral') {
-    return field.value.raw
+    return field.value.raw.replaceAll('"', '')
   } else if (field.value.type === 'UnaryExpression') {
     return -1 * field.value.argument.value
   } else if (field.value.type === 'TableConstructorExpression') {
