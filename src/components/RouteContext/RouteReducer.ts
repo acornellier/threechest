@@ -3,6 +3,7 @@ import { Route } from '../../code/types.ts'
 import { Reducer } from 'react'
 import { dungeonsByKey } from '../../data/dungeons.ts'
 import { mobSpawnToKey } from '../../code/stuff.ts'
+import { hsvToRgb, rgbToHex } from '../../code/util.ts'
 
 type AddPullAction = {
   type: 'add_pull'
@@ -10,7 +11,7 @@ type AddPullAction = {
 
 type SelectPullAction = {
   type: 'select_pull'
-  pullIdx: number
+  pullIndex: number
 }
 
 type ToggleSpawnAction = {
@@ -21,21 +22,26 @@ type ToggleSpawnAction = {
 
 export type RouterAction = AddPullAction | SelectPullAction | ToggleSpawnAction
 
-const colors = ['green', 'red', 'blue', 'yellow', 'purple', 'orange']
+// matches MDT colors
+function GetPullColor(pullIndex: number) {
+  const h = ((pullIndex - 1) * 360) / 12 + 120
+  const [r, g, b] = hsvToRgb(h, 0.7554, 1)
+  return rgbToHex(Math.round(r * 255), Math.round(g * 255), Math.round(b * 255))
+}
 
 export const emptyRoute: Route = {
   dungeonKey: 'vp',
   name: 'TEST ROUTE',
-  pulls: [{ color: colors[0], mobSpawns: [] }],
+  pulls: [{ color: GetPullColor(0), mobSpawns: [] }],
   selectedPull: 0,
 }
 
 const addPull = (route: Route): Route => {
-  const newPullCount = route.pulls.length + 1
+  const newPullIndex = route.pulls.length
   return {
     ...route,
-    pulls: [...route.pulls, { color: colors[newPullCount % colors.length], mobSpawns: [] }],
-    selectedPull: newPullCount - 1,
+    pulls: [...route.pulls, { color: GetPullColor(newPullIndex), mobSpawns: [] }],
+    selectedPull: newPullIndex,
   }
 }
 
@@ -65,11 +71,11 @@ const toggleSpawn = (route: Route, action: ToggleSpawnAction): Route => {
     })
 
   if (origSelectedPull !== -1) {
-    // if already selected, deselected
+    // if already selected, deselecte
     return {
       ...route,
       pulls: route.pulls.map((pull, pullIdx) =>
-        pullIdx !== route.selectedPull
+        pullIdx !== origSelectedPull
           ? pull
           : {
               ...pull,
@@ -106,7 +112,7 @@ export const routeReducer: Reducer<Route, RouterAction> = (route, action) => {
     case 'add_pull':
       return addPull(route)
     case 'select_pull':
-      return { ...route, selectedPull: action.pullIdx }
+      return { ...route, selectedPull: action.pullIndex }
     case 'toggle_spawn':
       return toggleSpawn(route, action)
   }

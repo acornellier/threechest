@@ -59,6 +59,11 @@ body {
   border-right: none;
 }
 
+.pull { 
+  cursor: pointer;
+  color:black;
+}
+
 .mob-icon {
   height: 100% !important;
   width: 100% !important;

@@ -1,4 +1,5 @@
 import { useRouteContext } from './RouteContext/UseRouteContext.ts'
+import { Pull } from './Pull.tsx'
 
 export function Pulls() {
   const { route, dispatch } = useRouteContext()
@@ -6,14 +7,7 @@ export function Pulls() {
   return (
     <div className="pulls">
       {route.pulls.map((pull, idx) => (
-        <div
-          key={idx}
-          className="pull"
-          style={{ backgroundColor: pull.color }}
-          onClick={() => dispatch({ type: 'select_pull', pullIdx: idx })}
-        >
-          {idx + 1}) {pull.mobSpawns.length} mobs
-        </div>
+        <Pull key={idx} pullIndex={idx} pull={pull} />
       ))}
       <button onClick={() => dispatch({ type: 'add_pull' })}> ADD PULL </button>
     </div>
