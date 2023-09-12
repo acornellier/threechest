@@ -2,20 +2,24 @@ import { useState } from 'react'
 import { useRouteContext } from './RouteContext/UseRouteContext.ts'
 import { MdtRoute } from '../code/types.ts'
 
+const importUrl =
+  process.env.NODE_ENV === 'development'
+    ? 'http://localhost:3000/api/importRoute'
+    : '/api/importRoute'
+
 export function ImportRoute() {
   const { dispatch } = useRouteContext()
 
   const [input, setInput] = useState('')
 
   const handleClick = () => {
-    fetch('http://localhost:3456/api/v1', {
+    fetch(importUrl, {
       method: 'post',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ str: input }),
     })
       .then((res) => res.json())
       .then((mdtRoute: MdtRoute) => {
-        console.log(mdtRoute)
         dispatch({ type: 'import', mdtRoute })
       })
   }

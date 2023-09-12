@@ -1,6 +1,6 @@
 ﻿import parser from 'node-weakauras-parser'
 
-export async function importRoute(str: string) {
+export async function importRoute(str) {
   const decoded = await parser.decode(str)
 
   for (const pull of decoded.value.pulls) {

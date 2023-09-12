@@ -8,9 +8,10 @@
     "build": "tsc && vite build",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "server": "ts-node --esm ./src/server/server.ts"
+    "server": "ts-node --esm src/server/server.js"
   },
   "dependencies": {
+    "@vercel/node": "^3.0.5",
     "cors": "^2.8.5",
     "css-filter-converter": "^1.0.109",
     "express": "^4.18.2",

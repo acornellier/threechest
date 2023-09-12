@@ -1,7 +1,7 @@
 import express from 'express'
 import cors from 'cors'
 
-import { importRoute } from './importRouteApi.ts'
+import { importRoute } from './importRoute.js'
 
 const app = express()
 
@@ -9,7 +9,7 @@ app.use(express.json())
 
 app.use(cors())
 
-app.post('/api/v1', async (req, res) => {
+app.post('/api/importRoute', async (req, res) => {
   try {
     const route = await importRoute(req.body.str)
     res.json(route)
@@ -18,7 +18,7 @@ app.post('/api/v1', async (req, res) => {
   }
 })
 
-const { PORT = 3456 } = process.env
+const { PORT = 3000 } = process.env
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`)
 })
