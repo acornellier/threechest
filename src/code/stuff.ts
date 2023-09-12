@@ -13,7 +13,7 @@ export const mdtRouteToRoute = (mdtRoute: MdtRoute): Route => {
     selectedPull: mdtRoute.value.currentPull,
     name: mdtRoute.text,
     pulls: mdtRoute.value.pulls.map((mdtPull) => ({
-      color: mdtPull.color,
+      color: mdtPull.color.startsWith('#') ? mdtPull.color : `#${mdtPull.color}`,
       mobSpawns: mdtPull.enemies.flatMap((mdtEnemy) =>
         mdtEnemy.spawnIndexes.map((spawnIndex) =>
           mobSpawnIndexToKey(mdtEnemy.enemyIndex, spawnIndex),

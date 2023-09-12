@@ -47,7 +47,7 @@ export function Mob({ iconScaling, mob, spawn }: MobProps) {
         click: () => dispatch({ type: 'toggle_spawn', mob, spawn }),
       }}
     >
-      <Popup>{`${mob.name} g: ${spawn.group}`}</Popup>
+      <Popup>{`${mob.name} ${mob.enemyIndex}-${spawn.spawnIndex} g${spawn.group}`}</Popup>
     </Marker>
   )
 }

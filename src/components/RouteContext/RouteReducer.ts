@@ -1,9 +1,14 @@
 import { Mob, MobSpawnKey, Spawn } from '../../data/types.ts'
-import { Route } from '../../code/types.ts'
+import { MdtRoute, Route } from '../../code/types.ts'
 import { Reducer } from 'react'
 import { dungeonsByKey } from '../../data/dungeons.ts'
-import { mobSpawnToKey } from '../../code/stuff.ts'
+import { mdtRouteToRoute, mobSpawnToKey } from '../../code/stuff.ts'
 import { hsvToRgb, rgbToHex } from '../../code/util.ts'
+
+type ImportAction = {
+  type: 'import'
+  mdtRoute: MdtRoute
+}
 
 type AddPullAction = {
   type: 'add_pull'
@@ -20,7 +25,7 @@ type ToggleSpawnAction = {
   spawn: Spawn
 }
 
-export type RouterAction = AddPullAction | SelectPullAction | ToggleSpawnAction
+export type RouterAction = ImportAction | AddPullAction | SelectPullAction | ToggleSpawnAction
 
 // matches MDT colors
 function GetPullColor(pullIndex: number) {
@@ -109,6 +114,8 @@ const toggleSpawn = (route: Route, action: ToggleSpawnAction): Route => {
 
 export const routeReducer: Reducer<Route, RouterAction> = (route, action) => {
   switch (action.type) {
+    case 'import':
+      return mdtRouteToRoute(action.mdtRoute)
     case 'add_pull':
       return addPull(route)
     case 'select_pull':

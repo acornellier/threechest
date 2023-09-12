@@ -47,7 +47,7 @@ for (let enemyIndex = 0; enemyIndex < luaEnemies.length; ++enemyIndex) {
   const fields = luaEnemies[enemyIndex].fields
   const enemy = {
     id: getFieldValue(fields, 'id'),
-    enemyIndex,
+    enemyIndex: enemyIndex + 1,
     name: getFieldValue(fields, 'name'),
     count: getFieldValue(fields, 'count'),
     health: getFieldValue(fields, 'health'),

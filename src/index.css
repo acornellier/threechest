@@ -51,9 +51,20 @@ body {
   flex-direction: row;
 }
 
-.pulls {
+.sidebar {
   width: 200px;
   margin: 20% 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.import-route {
+  padding: 10px;
+  border: 5px solid darkgrey;
+}
+
+.pulls {
   padding: 10px;
   border: 5px solid darkgrey;
   border-right: none;
