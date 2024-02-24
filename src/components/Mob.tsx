@@ -1,6 +1,6 @@
 ﻿import { Spawn } from '../data/types.ts'
 import { useRouteContext } from './RouteContext/UseRouteContext.ts'
-import { Marker, Popup } from 'react-leaflet'
+import { Marker, Tooltip } from 'react-leaflet'
 import { divIcon } from 'leaflet'
 import { Mob } from '../data/types.ts'
 import { renderToString } from 'react-dom/server'
@@ -47,7 +47,9 @@ export function Mob({ iconScaling, mob, spawn }: MobProps) {
         click: () => dispatch({ type: 'toggle_spawn', mob, spawn }),
       }}
     >
-      <Popup>{`${mob.name} ${mob.enemyIndex}-${spawn.spawnIndex} g${spawn.group}`}</Popup>
+      <Tooltip direction="right" offset={[20, 0]}>
+        {`${mob.name} ${mob.enemyIndex}-${spawn.spawnIndex} g${spawn.group}`}
+      </Tooltip>
     </Marker>
   )
 }
