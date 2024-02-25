@@ -1,9 +1,9 @@
 import { Mob, MobSpawn, Spawn } from '../../data/types.ts'
-import { MdtRoute, Route } from '../../code/types.ts'
+import { MdtRoute, Pull, Route } from '../../code/types.ts'
 import { Reducer } from 'react'
 import { dungeonsByKey } from '../../data/dungeons.ts'
-import { mdtRouteToRoute, mobSpawnsEqual } from '../../code/stuff.ts'
-import { hsvToRgb, rgbToHex } from '../../code/util.ts'
+import { mdtRouteToRoute, mobSpawnsEqual } from '../../code/util.ts'
+import { getPullColor, hsvToRgb, rgbToHex } from '../../code/colors.ts'
 
 type ImportAction = {
   type: 'import'
@@ -25,19 +25,22 @@ type ToggleSpawnAction = {
   spawn: Spawn
 }
 
-export type RouterAction = ImportAction | AddPullAction | SelectPullAction | ToggleSpawnAction
-
-// matches MDT colors
-function GetPullColor(pullIndex: number) {
-  const h = ((pullIndex - 1) * 360) / 12 + 120
-  const [r, g, b] = hsvToRgb(h, 0.7554, 1)
-  return rgbToHex(Math.round(r * 255), Math.round(g * 255), Math.round(b * 255))
+type SetPullsAction = {
+  type: 'set_pulls'
+  pulls: Pull[]
 }
+
+export type RouterAction =
+  | ImportAction
+  | AddPullAction
+  | SelectPullAction
+  | ToggleSpawnAction
+  | SetPullsAction
 
 export const emptyRoute: Route = {
   dungeonKey: 'vp',
   name: 'TEST ROUTE',
-  pulls: [{ color: GetPullColor(0), mobSpawns: [] }],
+  pulls: [{ color: getPullColor(0), mobSpawns: [] }],
   selectedPull: 0,
 }
 
@@ -45,7 +48,7 @@ const addPull = (route: Route): Route => {
   const newPullIndex = route.pulls.length
   return {
     ...route,
-    pulls: [...route.pulls, { color: GetPullColor(newPullIndex), mobSpawns: [] }],
+    pulls: [...route.pulls, { color: getPullColor(newPullIndex), mobSpawns: [] }],
     selectedPull: newPullIndex,
   }
 }
@@ -109,6 +112,16 @@ const toggleSpawn = (route: Route, action: ToggleSpawnAction): Route => {
   }
 }
 
+function setPulls(route: Route, action: SetPullsAction) {
+  return {
+    ...route,
+    pulls: action.pulls.map((pull, newPullIndex) => ({
+      ...pull,
+      color: getPullColor(newPullIndex),
+    })),
+  }
+}
+
 export const routeReducer: Reducer<Route, RouterAction> = (route, action) => {
   switch (action.type) {
     case 'import':
@@ -119,5 +132,7 @@ export const routeReducer: Reducer<Route, RouterAction> = (route, action) => {
       return { ...route, selectedPull: action.pullIndex }
     case 'toggle_spawn':
       return toggleSpawn(route, action)
+    case 'set_pulls':
+      return setPulls(route, action)
   }
 }

@@ -2,7 +2,7 @@ import { useMap, useMapEvent } from 'react-leaflet'
 import { useState } from 'react'
 import { Dungeon } from '../data/types.ts'
 import { Mob } from './Mob.tsx'
-import { mobSpawnToKey } from '../code/stuff.ts'
+import { mobSpawnToKey } from '../code/util.ts'
 
 type Props = {
   dungeon: Dungeon

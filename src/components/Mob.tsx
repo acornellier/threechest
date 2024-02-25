@@ -5,7 +5,7 @@ import { divIcon } from 'leaflet'
 import { Mob } from '../data/types.ts'
 import { renderToString } from 'react-dom/server'
 import { useState } from 'react'
-import { mobSpawnsEqual } from '../code/stuff.ts'
+import { mobSpawnsEqual } from '../code/util.ts'
 
 type MobProps = {
   iconScaling: number

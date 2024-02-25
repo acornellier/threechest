@@ -1,6 +1,6 @@
 import { useRouteContext } from './RouteContext/UseRouteContext.ts'
 import { PullDetailed } from '../code/types.ts'
-import { roundTo } from '../code/stuff.ts'
+import { roundTo } from '../code/util.ts'
 import { Mob } from '../data/types.ts'
 
 type MobCount = Record<number, { mob: Mob; count: number }>
@@ -31,7 +31,7 @@ export function Pull({ pullIndex, pull }: { pullIndex: number; pull: PullDetaile
             {Object.entries(mobCounts).map(([, { mob, count }]) => (
               <div
                 key={mob.id}
-                className="relative h-6 w-full mr-[-3px] rounded-full border border-slate-300"
+                className="relative h-6 w-6 mr-[-3px] rounded-full border border-slate-300"
                 style={{ borderWidth: 0.05 }}
               >
                 <img className="h-full rounded-full" src={`/vp/npc/${mob.id}.png`} alt="" />

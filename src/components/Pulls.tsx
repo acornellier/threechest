@@ -1,9 +1,22 @@
 import { useRouteContext } from './RouteContext/UseRouteContext.ts'
-import { Pull } from './Pull.tsx'
-import { roundTo } from '../code/stuff.ts'
+import { Pull as PullComponent } from './Pull.tsx'
+import { roundTo } from '../code/util.ts'
+import { ReactSortable } from 'react-sortablejs'
+import type { Pull } from '../code/types.ts'
+import { useCallback, useMemo } from 'react'
 
 export function Pulls() {
-  const { dungeon, routeDetailed, dispatch } = useRouteContext()
+  const { dungeon, route, routeDetailed, dispatch } = useRouteContext()
+
+  const pullsWithIds = useMemo(
+    () => route.pulls.map((pull, idx) => ({ ...pull, id: idx })),
+    [route],
+  )
+
+  const setPulls = useCallback(
+    (pulls: Pull[]) => dispatch({ type: 'set_pulls', pulls }),
+    [dispatch],
+  )
 
   const percent = (routeDetailed.count / dungeon.mdt.totalCount) * 100
 
@@ -17,11 +30,11 @@ export function Pulls() {
       >
         {routeDetailed.count}/{dungeon.mdt.totalCount} - {roundTo(percent, 2).toLocaleString()}%
       </div>
-      <div className="flex flex-col gap-0.5">
+      <ReactSortable list={pullsWithIds} setList={setPulls} className="flex flex-col gap-0.5">
         {routeDetailed.pulls.map((pull, idx) => (
-          <Pull key={idx} pullIndex={idx} pull={pull} />
+          <PullComponent key={idx} pullIndex={idx} pull={pull} />
         ))}
-      </div>
+      </ReactSortable>
       <button className="mx-2 bg-gray-200" onClick={() => dispatch({ type: 'add_pull' })}>
         Add pull
       </button>
