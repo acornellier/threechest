@@ -7,7 +7,9 @@ export function Page() {
   return (
     <RouteProvider>
       <div className="page">
-        <Map />
+        <div className="map">
+          <Map />
+        </div>
         <div className="sidebar">
           <ImportRoute />
           <Pulls />

@@ -1,5 +1,6 @@
 export type MdtDungeon = {
   dungeonIndex: number
+  totalCount: number
   enemies: Mob[]
 }
 

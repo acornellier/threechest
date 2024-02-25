@@ -1,8 +1,8 @@
-import { Mob, MobSpawnKey, Spawn } from '../../data/types.ts'
+import { Mob, MobSpawn, Spawn } from '../../data/types.ts'
 import { MdtRoute, Route } from '../../code/types.ts'
 import { Reducer } from 'react'
 import { dungeonsByKey } from '../../data/dungeons.ts'
-import { mdtRouteToRoute, mobSpawnToKey } from '../../code/stuff.ts'
+import { mdtRouteToRoute, mobSpawnsEqual } from '../../code/stuff.ts'
 import { hsvToRgb, rgbToHex } from '../../code/util.ts'
 
 type ImportAction = {
@@ -50,33 +50,30 @@ const addPull = (route: Route): Route => {
   }
 }
 
-const findSelectedPull = (route: Route, mobSpawnKey: MobSpawnKey) =>
+const findSelectedPull = (route: Route, mobSpawn: MobSpawn) =>
   route.pulls.findIndex((pull) =>
-    pull.mobSpawns.some((_mobSpawnKey) => _mobSpawnKey === mobSpawnKey),
+    pull.mobSpawns.some((mobSpawn2) => mobSpawnsEqual(mobSpawn, mobSpawn2)),
   )
 
 const toggleSpawn = (route: Route, action: ToggleSpawnAction): Route => {
   const data = dungeonsByKey[route.dungeonKey]
 
-  const origMobSpawnKey = mobSpawnToKey(action)
-  const origSelectedPull = findSelectedPull(route, origMobSpawnKey)
+  const origSelectedPull = findSelectedPull(route, action)
 
   const groupSpawns = data.mdt.enemies
-    .flatMap((mob) =>
-      mob.spawns.map((spawn) => ({ mob, spawn, mobSpawnKey: mobSpawnToKey({ mob, spawn }) })),
-    )
+    .flatMap((mob) => mob.spawns.map((spawn) => ({ mob, spawn })))
     .filter(
-      ({ mobSpawnKey, spawn }) =>
-        mobSpawnKey === origMobSpawnKey ||
-        (action.spawn.group !== null && spawn.group === action.spawn.group),
+      (mobSpawn) =>
+        mobSpawnsEqual(mobSpawn, action) ||
+        (action.spawn.group !== null && mobSpawn.spawn.group === action.spawn.group),
     )
     .map((mobSpawn) => {
-      const selectedPull = findSelectedPull(route, mobSpawnToKey(mobSpawn))
-      return { mobSpawnKey: mobSpawn.mobSpawnKey, selectedPull }
+      const selectedPull = findSelectedPull(route, mobSpawn)
+      return { mobSpawn, selectedPull }
     })
 
   if (origSelectedPull !== -1) {
-    // if already selected, deselecte
+    // if already selected, deselect
     return {
       ...route,
       pulls: route.pulls.map((pull, pullIdx) =>
@@ -85,8 +82,8 @@ const toggleSpawn = (route: Route, action: ToggleSpawnAction): Route => {
           : {
               ...pull,
               mobSpawns: pull.mobSpawns.filter(
-                (mobSpawnKey) =>
-                  !groupSpawns.some((groupSpawn) => groupSpawn.mobSpawnKey === mobSpawnKey),
+                (mobSpawn2) =>
+                  !groupSpawns.some(({ mobSpawn }) => mobSpawnsEqual(mobSpawn, mobSpawn2)),
               ),
             },
       ),
@@ -104,7 +101,7 @@ const toggleSpawn = (route: Route, action: ToggleSpawnAction): Route => {
                 ...pull.mobSpawns,
                 ...groupSpawns
                   .filter(({ selectedPull }) => selectedPull === -1)
-                  .map(({ mobSpawnKey }) => mobSpawnKey),
+                  .map(({ mobSpawn }) => mobSpawn),
               ],
             },
       ),

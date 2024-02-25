@@ -27,11 +27,11 @@ export function ImportRoute() {
   return (
     <div className="import-route">
       <input
-        placeholder="paste mdt string"
+        placeholder="Paste mdt string"
         onChange={(e) => setInput(e.target.value)}
         value={input}
       />
-      <button onClick={handleClick}>IMPORT</button>
+      <button onClick={handleClick}>Import</button>
     </div>
   )
 }

@@ -4,7 +4,8 @@ import { Marker, Tooltip } from 'react-leaflet'
 import { divIcon } from 'leaflet'
 import { Mob } from '../data/types.ts'
 import { renderToString } from 'react-dom/server'
-import { mobSpawnToKey } from '../code/stuff.ts'
+import { useState } from 'react'
+import { mobSpawnsEqual } from '../code/stuff.ts'
 
 type MobProps = {
   iconScaling: number
@@ -14,19 +15,13 @@ type MobProps = {
 
 export function Mob({ iconScaling, mob, spawn }: MobProps) {
   const { route, dispatch } = useRouteContext()
+  const [tooltipOpen, setTooltipOpen] = useState(false)
 
-  const mobSpawnKey = mobSpawnToKey({ mob, spawn })
   const matchingPull = route.pulls.find((pull) =>
-    pull.mobSpawns.some((_mobSpawnKey) => _mobSpawnKey === mobSpawnKey),
+    pull.mobSpawns.some((mobSpawn) => mobSpawnsEqual(mobSpawn, { mob, spawn })),
   )
 
-  const divStyle = {
-    borderWidth: iconScaling * 0.05,
-  }
-
-  const colorStyle = {
-    backgroundColor: matchingPull?.color,
-  }
+  const iconSize = iconScaling * mob.scale
 
   return (
     <Marker
@@ -34,22 +29,36 @@ export function Mob({ iconScaling, mob, spawn }: MobProps) {
       icon={divIcon({
         popupAnchor: [100, 0],
         iconUrl: `/vp/npc/${mob.id}.png`,
-        iconSize: [iconScaling * mob.scale, iconScaling * mob.scale],
+        iconSize: [iconSize, iconSize],
         className: 'mob',
         html: renderToString(
-          <div className="mob-icon" style={divStyle}>
+          <div
+            className="mob-icon"
+            style={{
+              borderWidth: iconScaling * 0.05,
+            }}
+          >
             <img src={`/vp/npc/${mob.id}.png`} alt="" />
-            <div className="mob-icon-background" style={colorStyle} />
+            <div
+              className="mob-icon-background"
+              style={{
+                backgroundColor: matchingPull?.color,
+              }}
+            />
           </div>,
         ),
       })}
       eventHandlers={{
         click: () => dispatch({ type: 'toggle_spawn', mob, spawn }),
+        mouseover: () => setTooltipOpen(true),
+        mouseout: () => setTooltipOpen(false),
       }}
     >
-      <Tooltip direction="right" offset={[20, 0]}>
-        {`${mob.name} ${mob.enemyIndex}-${spawn.spawnIndex} g${spawn.group}`}
-      </Tooltip>
+      {tooltipOpen && (
+        <Tooltip direction="top" offset={[0, -5]}>
+          {`${mob.name} ${mob.enemyIndex}-${spawn.spawnIndex} g${spawn.group}`}
+        </Tooltip>
+      )}
     </Marker>
   )
 }

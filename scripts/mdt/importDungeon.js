@@ -16,6 +16,12 @@ const dungeonIndexItem = ast.body.find((item) =>
 )
 const dungeonIndex = dungeonIndexItem.init[0].value
 
+const dungeonCountItem = ast.body.find((item) =>
+  item.variables?.some((variable) => variable?.base?.identifier?.name === 'dungeonTotalCount'),
+)
+
+const totalCount = dungeonCountItem.init[0].fields[0].value.value
+
 const dungeonEnemiesItem = ast.body.find((item) =>
   item.variables?.some((variable) => variable?.base?.identifier?.name === 'dungeonEnemies'),
 )
@@ -75,6 +81,7 @@ for (let enemyIndex = 0; enemyIndex < luaEnemies.length; ++enemyIndex) {
 
 const mdtData = {
   dungeonIndex,
+  totalCount,
   enemies,
 }
 
