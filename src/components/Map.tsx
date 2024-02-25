@@ -22,6 +22,7 @@ export function Map() {
 
   return (
     <MapContainer
+      className="bg-inherit w-screen h-screen"
       crs={CRS.Simple}
       center={center}
       minZoom={1}

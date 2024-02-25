@@ -33,17 +33,15 @@ export function Mob({ iconScaling, mob, spawn }: MobProps) {
         className: 'mob',
         html: renderToString(
           <div
-            className="mob-icon"
+            className="absolute h-full w-full rounded-full border border-slate-300 overflow-hidden"
             style={{
-              borderWidth: iconScaling * 0.05,
+              borderWidth: iconScaling * 0.04,
             }}
           >
-            <img src={`/vp/npc/${mob.id}.png`} alt="" />
+            <img className="absolute h-full w-full" src={`/vp/npc/${mob.id}.png`} alt="" />
             <div
-              className="mob-icon-background"
-              style={{
-                backgroundColor: matchingPull?.color,
-              }}
+              className="absolute h-full w-full opacity-35"
+              style={{ backgroundColor: matchingPull?.color }}
             />
           </div>,
         ),

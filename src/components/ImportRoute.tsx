@@ -25,7 +25,7 @@ export function ImportRoute() {
   }
 
   return (
-    <div className="import-route">
+    <div className="p-2 bg-gray-500 border-2 border-gray-400 rounded-md">
       <input
         placeholder="Paste mdt string"
         onChange={(e) => setInput(e.target.value)}

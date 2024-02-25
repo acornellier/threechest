@@ -6,11 +6,11 @@ import { ImportRoute } from './ImportRoute.tsx'
 export function Page() {
   return (
     <RouteProvider>
-      <div className="page">
-        <div className="map">
+      <div className="flex flex-row">
+        <div className="w-full z-10">
           <Map />
         </div>
-        <div className="sidebar">
+        <div className="fixed right-0 z-20 mt-24 flex flex-col gap-3">
           <ImportRoute />
           <Pulls />
         </div>

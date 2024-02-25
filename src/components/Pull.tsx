@@ -19,19 +19,25 @@ export function Pull({ pullIndex, pull }: { pullIndex: number; pull: PullDetaile
 
   return (
     <div
-      className={`pull ${isSelectedPull ? 'selected' : ''}`}
+      className="pull relative h-8 cursor-pointer"
       style={{ backgroundColor: pull.color }}
       onClick={() => dispatch({ type: 'select_pull', pullIndex })}
     >
-      {isSelectedPull && <div className="pull-selected-highlight" />}
-      <div className="pull-inner">
+      {isSelectedPull && <div className="absolute w-full h-full pull-selected-highlight" />}
+      <div className="flex justify-between py-0.5 px-1 h-full">
         <div className="flex">
-          <div className="pull-idx">{pullIndex + 1}</div>
-          <div className="pull-mobs">
+          <div className="min-w-4 mr-1">{pullIndex + 1}</div>
+          <div className="flex h-full items-center">
             {Object.entries(mobCounts).map(([, { mob, count }]) => (
-              <div key={mob.id} className="pull-mob-icon" style={{ borderWidth: 0.05 }}>
-                <img src={`/vp/npc/${mob.id}.png`} alt="" />
-                <div className="pull-mob-icon-count">x{count}</div>
+              <div
+                key={mob.id}
+                className="relative h-6 w-full mr-[-3px] rounded-full border border-slate-300"
+                style={{ borderWidth: 0.05 }}
+              >
+                <img className="h-full rounded-full" src={`/vp/npc/${mob.id}.png`} alt="" />
+                <div className="absolute bottom-[-3px] w-full text-white text-xs text-center">
+                  x{count}
+                </div>
               </div>
             ))}
           </div>
