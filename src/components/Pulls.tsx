@@ -17,7 +17,7 @@ export function Pulls() {
       >
         {routeDetailed.count}/{dungeon.mdt.totalCount} - {roundTo(percent, 2).toLocaleString()}%
       </div>
-      <div className="flex flex-col">
+      <div className="flex flex-col gap-0.5">
         {routeDetailed.pulls.map((pull, idx) => (
           <Pull key={idx} pullIndex={idx} pull={pull} />
         ))}
