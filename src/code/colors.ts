@@ -32,8 +32,6 @@ const highContrastColors = [
   [0.63489, 1.0, 0.2446],
 ].map(([r, g, b]) => rgbToHex(Math.round(r * 255), Math.round(g * 255), Math.round(b * 255)))
 
-console.log(highContrastColors)
-
 export function getPullColor(pullIndex: number) {
   return highContrastColors[pullIndex % highContrastColors.length]
 }

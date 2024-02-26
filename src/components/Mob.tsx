@@ -15,17 +15,18 @@ type MobProps = {
 
 export function Mob({ iconScaling, mob, spawn }: MobProps) {
   const { route, dispatch } = useRouteContext()
-  const [tooltipOpen, setTooltipOpen] = useState(false)
+  const [mobHovered, setMobHovered] = useState(false)
 
   const matchingPull = route.pulls.find((pull) =>
     pull.mobSpawns.some((mobSpawn) => mobSpawnsEqual(mobSpawn, { mob, spawn })),
   )
 
-  const iconSize = iconScaling * mob.scale
+  const iconSize = iconScaling * mob.scale * (mobHovered ? 1.2 : 1)
 
   return (
     <Marker
       position={spawn.pos as [number, number]}
+      zIndexOffset={mobHovered ? 100_000 : 0}
       icon={divIcon({
         popupAnchor: [100, 0],
         iconUrl: `/vp/npc/${mob.id}.png`,
@@ -48,11 +49,11 @@ export function Mob({ iconScaling, mob, spawn }: MobProps) {
       })}
       eventHandlers={{
         click: () => dispatch({ type: 'toggle_spawn', mob, spawn }),
-        mouseover: () => setTooltipOpen(true),
-        mouseout: () => setTooltipOpen(false),
+        mouseover: () => setMobHovered(true),
+        mouseout: () => setMobHovered(false),
       }}
     >
-      {tooltipOpen && (
+      {mobHovered && (
         <Tooltip direction="top" offset={[0, -5]}>
           {`${mob.name} ${mob.enemyIndex}-${spawn.spawnIndex} g${spawn.group}`}
         </Tooltip>
