@@ -27,7 +27,7 @@ export function Map() {
       center={center}
       minZoom={1}
       maxZoom={5}
-      zoom={1}
+      zoom={2}
       zoomControl={false}
       scrollWheelZoom={false}
       /* eslint-disable-next-line @typescript-eslint/ban-ts-comment */

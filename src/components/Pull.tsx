@@ -42,7 +42,7 @@ export function Pull({ pullIndex, pull }: { pullIndex: number; pull: PullDetaile
             ))}
           </div>
         </div>
-        <div>{roundTo(percent, 2).toLocaleString()}%</div>
+        <div>{roundTo(percent, 2).toFixed(2).toLocaleString()}%</div>
       </div>
     </div>
   )
