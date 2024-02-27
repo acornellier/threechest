@@ -6,7 +6,13 @@ import { adjustColor } from '../code/colors.ts'
 
 type MobCount = Record<number, { mob: Mob; count: number }>
 
-export function Pull({ pullIndex, pull }: { pullIndex: number; pull: PullDetailed }) {
+interface Props {
+  pullIndex: number
+  pull: PullDetailed
+  ghost?: boolean
+}
+
+export function Pull({ pullIndex, pull, ghost }: Props) {
   const { route, dungeon, dispatch } = useRouteContext()
 
   const isSelectedPull = pullIndex === route.selectedPull
@@ -22,7 +28,7 @@ export function Pull({ pullIndex, pull }: { pullIndex: number; pull: PullDetaile
     <div
       className="pull relative h-8 cursor-pointer bg-contain bg-blend-overlay bg-no-repeat"
       style={{
-        backgroundColor: adjustColor(pull.color, -25),
+        backgroundColor: ghost ? 'grey' : adjustColor(pull.color, -25),
         backgroundImage: 'url(/wow/UI-Listbox-Highlight2.png)',
       }}
       onClick={() => dispatch({ type: 'select_pull', pullIndex })}
@@ -38,12 +44,12 @@ export function Pull({ pullIndex, pull }: { pullIndex: number; pull: PullDetaile
       )}
       <div className="flex justify-between py-0.5 px-2 h-full">
         <div className="flex">
-          <div className="min-w-4 mr-1">{pullIndex + 1}</div>
+          <div className="min-w-4 mr-1">{ghost ? pullIndex : pullIndex + 1}</div>
           <div className="flex h-full items-center">
             {Object.entries(mobCounts).map(([, { mob, count }]) => (
               <div
                 key={mob.id}
-                className="relative h-6 w-6 mr-[-3px] rounded-full border border-slate-300"
+                className="relative h-7 w-7 mr-[-3px] rounded-full border border-slate-300"
                 style={{ borderWidth: 0.05 }}
               >
                 <img className="h-full rounded-full" src={`/vp/npc/${mob.id}.png`} alt="" />

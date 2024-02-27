@@ -1,20 +1,38 @@
 import { useRouteContext } from './RouteContext/UseRouteContext.ts'
 import { Pull as PullComponent } from './Pull.tsx'
 import { roundTo } from '../code/util.ts'
-import { ReactSortable } from 'react-sortablejs'
-import type { Pull } from '../code/types.ts'
-import { useCallback, useMemo } from 'react'
+import { ItemInterface, ReactSortable } from 'react-sortablejs'
+import type { Pull, PullDetailed } from '../code/types.ts'
+import { useCallback, useMemo, useState } from 'react'
+
+type SortablePull = PullDetailed & ItemInterface
 
 export function Pulls() {
-  const { dungeon, route, routeDetailed, dispatch } = useRouteContext()
+  const { dungeon, routeDetailed, dispatch } = useRouteContext()
 
-  const pullsWithIds = useMemo(
-    () => route.pulls.map((pull, idx) => ({ ...pull, id: idx })),
-    [route],
+  const pullsWithIds = useMemo<SortablePull[]>(
+    () => routeDetailed.pulls.map((pull, idx) => ({ ...pull, id: idx.toString() })),
+    [routeDetailed.pulls],
   )
 
+  const [ghostPullIndex, setGhostPullIndex] = useState<number | null>(null)
+
+  const pullsWithGhost = useMemo(() => {
+    const pulls = [...pullsWithIds]
+    if (ghostPullIndex !== null) {
+      pulls.splice(ghostPullIndex + 1, 0, {
+        ...pullsWithIds[ghostPullIndex],
+        id: `${ghostPullIndex}-ghost`,
+        filtered: true,
+      })
+    }
+    return pulls
+  }, [pullsWithIds, ghostPullIndex])
+
   const setPulls = useCallback(
-    (pulls: Pull[]) => dispatch({ type: 'set_pulls', pulls }),
+    (pulls: SortablePull[]) => {
+      dispatch({ type: 'set_pulls', pulls: pulls.filter(({ filtered }) => !filtered) })
+    },
     [dispatch],
   )
 
@@ -28,13 +46,14 @@ export function Pulls() {
         {roundTo(percent, 2).toFixed(2).toLocaleString()}%
       </div>
       <ReactSortable
-        group={{ name: 'pulls', pull: 'clone', put: false }}
-        list={pullsWithIds}
+        onStart={(e) => e.oldIndex !== undefined && setGhostPullIndex(e.oldIndex)}
+        onEnd={() => setGhostPullIndex(null)}
+        list={pullsWithGhost}
         setList={setPulls}
-        className="flex flex-col gap-0.5"
+        className="flex flex-col gap-0.5 relative"
       >
-        {routeDetailed.pulls.map((pull, idx) => (
-          <PullComponent key={idx} pullIndex={idx} pull={pull} />
+        {pullsWithGhost.map((pull, idx) => (
+          <PullComponent key={idx} pullIndex={idx} pull={pull} ghost={pull.filtered} />
         ))}
       </ReactSortable>
       <button className="mx-2 bg-gray-200" onClick={() => dispatch({ type: 'add_pull' })}>
