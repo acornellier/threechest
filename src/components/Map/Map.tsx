@@ -1,11 +1,12 @@
 import 'leaflet/dist/leaflet.css'
 import { MapContainer, TileLayer } from 'react-leaflet'
 import { CRS, LatLngBoundsExpression, LatLngExpression, Point } from 'leaflet'
-import { MousePosition } from './Leaflet/MousePosition/MousePosition'
-import './Leaflet/SmoothWheelZoom/SmoothWheelZoom'
+import { MousePosition } from '../Leaflet/MousePosition/MousePosition'
+import '../Leaflet/SmoothWheelZoom/SmoothWheelZoom'
 import { Mobs } from './Mobs.tsx'
 
-import { dungeonsByKey } from '../data/dungeons.ts'
+import { dungeonsByKey } from '../../data/dungeons.ts'
+import { PullOutlines } from './PullOutlines.tsx'
 
 const height = 256
 const width = 384
@@ -44,6 +45,7 @@ export function Map() {
         url={`/${dungeon.key}/map/{z}/{x}_{y}.png`}
       />
       <Mobs dungeon={dungeon} />
+      <PullOutlines />
     </MapContainer>
   )
 }

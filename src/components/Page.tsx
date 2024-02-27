@@ -1,7 +1,7 @@
-import { Map } from './Map.tsx'
+import { Map } from './Map/Map.tsx'
 import { RouteProvider } from './RouteContext/RouteProvider.tsx'
-import { Pulls } from './Pulls.tsx'
-import { ImportRoute } from './ImportRoute.tsx'
+import { Pulls } from './Sidebar/Pulls.tsx'
+import { ImportRoute } from './Sidebar/ImportRoute.tsx'
 
 export function Page() {
   return (

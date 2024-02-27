@@ -1,11 +1,11 @@
-﻿import { Spawn } from '../data/types.ts'
-import { useRouteContext } from './RouteContext/UseRouteContext.ts'
+﻿import { Spawn } from '../../data/types.ts'
+import { useRoute } from '../RouteContext/UseRoute.ts'
 import { Marker, Tooltip } from 'react-leaflet'
 import { divIcon } from 'leaflet'
-import { Mob } from '../data/types.ts'
+import { Mob } from '../../data/types.ts'
 import { renderToString } from 'react-dom/server'
 import { useState } from 'react'
-import { mobSpawnsEqual } from '../code/util.ts'
+import { mobSpawnsEqual } from '../../code/util.ts'
 
 type MobProps = {
   iconScaling: number
@@ -13,8 +13,8 @@ type MobProps = {
   spawn: Spawn
 }
 
-export function Mob({ iconScaling, mob, spawn }: MobProps) {
-  const { route, dispatch } = useRouteContext()
+export function MobSpawn({ iconScaling, mob, spawn }: MobProps) {
+  const { route, dispatch } = useRoute()
   const [mobHovered, setMobHovered] = useState(false)
 
   const matchingPull = route.pulls.find((pull) =>

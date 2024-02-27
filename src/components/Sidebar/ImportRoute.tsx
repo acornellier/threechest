@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import { useRouteContext } from './RouteContext/UseRouteContext.ts'
-import { MdtRoute } from '../code/types.ts'
+import { useRoute } from '../RouteContext/UseRoute.ts'
+import { MdtRoute } from '../../code/types.ts'
 
 const importUrl =
   process.env.NODE_ENV === 'development'
@@ -8,7 +8,7 @@ const importUrl =
     : '/api/importRoute'
 
 export function ImportRoute() {
-  const { dispatch } = useRouteContext()
+  const { dispatch } = useRoute()
 
   const [input, setInput] = useState('')
 
