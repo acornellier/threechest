@@ -2,6 +2,7 @@ import { useRouteContext } from './RouteContext/UseRouteContext.ts'
 import { PullDetailed } from '../code/types.ts'
 import { roundTo } from '../code/util.ts'
 import { Mob } from '../data/types.ts'
+import { adjustColor } from '../code/colors.ts'
 
 type MobCount = Record<number, { mob: Mob; count: number }>
 
@@ -19,12 +20,23 @@ export function Pull({ pullIndex, pull }: { pullIndex: number; pull: PullDetaile
 
   return (
     <div
-      className="pull relative h-8 cursor-pointer"
-      style={{ backgroundColor: pull.color }}
+      className="pull relative h-8 cursor-pointer bg-contain bg-blend-overlay bg-no-repeat"
+      style={{
+        backgroundColor: adjustColor(pull.color, -25),
+        backgroundImage: 'url(/wow/UI-Listbox-Highlight2.png)',
+      }}
       onClick={() => dispatch({ type: 'select_pull', pullIndex })}
     >
-      {isSelectedPull && <div className="absolute w-full h-full pull-selected-highlight" />}
-      <div className="flex justify-between py-0.5 px-1 h-full">
+      {isSelectedPull && (
+        <div
+          className="absolute w-full h-full border-[1.5px] rounded-md"
+          style={{
+            borderColor: adjustColor(pull.color, -75),
+            boxShadow: `inset 0 0 4px 4px ${adjustColor(pull.color, +100)}`,
+          }}
+        />
+      )}
+      <div className="flex justify-between py-0.5 px-2 h-full">
         <div className="flex">
           <div className="min-w-4 mr-1">{pullIndex + 1}</div>
           <div className="flex h-full items-center">
