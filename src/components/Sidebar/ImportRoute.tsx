@@ -25,13 +25,14 @@ export function ImportRoute() {
   }
 
   return (
-    <div className="p-2 bg-gray-500 border-2 border-gray-400 rounded-md flex gap-2">
+    <div className="p-2 bg-gray-900 border-2 border-gray-700 rounded-md flex gap-2">
       <input
+        className="p-1"
         placeholder="Paste mdt string"
         onChange={(e) => setInput(e.target.value)}
         value={input}
       />
-      <button className="bg-gray-200 px-1" onClick={handleClick}>
+      <button className="bg-gray-200 px-2" onClick={handleClick}>
         Import
       </button>
     </div>

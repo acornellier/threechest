@@ -3,7 +3,7 @@ import { MdtRoute, Pull, Route } from '../../code/types.ts'
 import { Reducer } from 'react'
 import { dungeonsByKey } from '../../data/dungeons.ts'
 import { mdtRouteToRoute, mobSpawnsEqual } from '../../code/util.ts'
-import { getPullColor, hsvToRgb, rgbToHex } from '../../code/colors.ts'
+import { getPullColor } from '../../code/colors.ts'
 
 type ImportAction = {
   type: 'import'
@@ -17,6 +17,11 @@ type AddPullAction = {
 type SelectPullAction = {
   type: 'select_pull'
   pullIndex: number
+}
+
+type HoverPullAction = {
+  type: 'hover_pull'
+  pullIndex: number | null
 }
 
 type ToggleSpawnAction = {
@@ -34,6 +39,7 @@ export type RouterAction =
   | ImportAction
   | AddPullAction
   | SelectPullAction
+  | HoverPullAction
   | ToggleSpawnAction
   | SetPullsAction
 
@@ -130,6 +136,8 @@ export const routeReducer: Reducer<Route, RouterAction> = (route, action) => {
       return addPull(route)
     case 'select_pull':
       return { ...route, selectedPull: action.pullIndex }
+    case 'hover_pull':
+      return { ...route, hoveredPull: action.pullIndex }
     case 'toggle_spawn':
       return toggleSpawn(route, action)
     case 'set_pulls':

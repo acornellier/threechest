@@ -4,5 +4,5 @@
 
   const DivIcon: React.FC<DivIconOptions & MarkerProps>
 
-  export default DivIcon
+  export = DivIcon
 }

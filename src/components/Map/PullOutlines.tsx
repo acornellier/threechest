@@ -1,6 +1,6 @@
 import { useRoute } from '../RouteContext/UseRoute.ts'
-import { useMemo, useState } from 'react'
-import { Polygon, useMap, useMapEvent } from 'react-leaflet'
+import { useEffect, useMemo, useState } from 'react'
+import { Polygon, useMap } from 'react-leaflet'
 import makeHull from 'hull.js'
 import Offset from 'polygon-offset'
 
@@ -8,7 +8,12 @@ export function PullOutlines() {
   const map = useMap()
   const { route } = useRoute()
 
-  console.time()
+  const [foo, setFoo] = useState(0)
+
+  useEffect(() => {
+    setFoo((foo) => foo + 1000)
+  }, [route.selectedPull, route.hoveredPull])
+
   const convexHulls = useMemo(() => {
     return route.pulls.map((pull) => {
       if (pull.mobSpawns.length <= 1) return { pull, hull: [] }
@@ -25,9 +30,19 @@ export function PullOutlines() {
       return { pull, hull }
     })
   }, [map, route.pulls])
-  console.timeEnd()
 
-  return convexHulls.map(({ pull, hull }, idx) => (
-    <Polygon key={idx} positions={hull} color={pull.color} />
-  ))
+  return convexHulls.map(({ pull, hull }, idx) => {
+    const isHovered = route.hoveredPull === idx
+    const isSelected = route.selectedPull === idx
+    return (
+      <Polygon
+        key={idx + foo}
+        positions={hull}
+        color={pull.color}
+        fillOpacity={0}
+        opacity={isSelected || isHovered ? 1 : 0.6}
+        weight={isSelected ? 5 : isHovered ? 4 : 3}
+      />
+    )
+  })
 }

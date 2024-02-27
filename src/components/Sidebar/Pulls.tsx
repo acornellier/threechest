@@ -37,11 +37,12 @@ export function Pulls() {
   )
 
   const percent = (routeDetailed.count / dungeon.mdt.totalCount) * 100
-  const percentColor = percent >= 102 ? 'bg-[red]' : percent >= 100 ? 'bg-[lime]' : 'bg-[#426bff]'
+  const percentColor =
+    percent >= 102 ? 'bg-[#e21e1e]' : percent >= 100 ? 'bg-[#0f950f]' : 'bg-[#426bff]'
 
   return (
-    <div className="flex flex-col p-2 gap-2 bg-gray-500 border-2 border-gray-400 rounded-md">
-      <div className={`flex justify-center mx-2 ${percentColor}`}>
+    <div className="flex flex-col p-2 gap-2 bg-gray-900 border-2 border-gray-700 rounded-md">
+      <div className={`flex justify-center mx-2 ${percentColor} rounded-sm text-white font-bold`}>
         {routeDetailed.count}/{dungeon.mdt.totalCount} -{' '}
         {roundTo(percent, 2).toFixed(2).toLocaleString()}%
       </div>
@@ -50,7 +51,7 @@ export function Pulls() {
         onEnd={() => setGhostPullIndex(null)}
         list={pullsWithGhost}
         setList={setPulls}
-        className="flex flex-col gap-0.5 relative"
+        className="flex flex-col gap-[3px] relative"
       >
         {pullsWithGhost.map((pull, idx) => (
           <PullComponent key={idx} pullIndex={idx} pull={pull} ghost={pull.filtered} />

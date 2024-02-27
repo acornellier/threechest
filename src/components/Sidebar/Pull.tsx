@@ -28,23 +28,26 @@ export function Pull({ pullIndex, pull, ghost }: Props) {
     <div
       className="pull relative h-8 cursor-pointer bg-contain bg-blend-overlay bg-no-repeat"
       style={{
-        backgroundColor: ghost ? 'grey' : adjustColor(pull.color, -25),
+        backgroundColor: ghost ? 'grey' : adjustColor(pull.color, -100),
         backgroundImage: 'url(/wow/UI-Listbox-Highlight2.png)',
       }}
       onClick={() => dispatch({ type: 'select_pull', pullIndex })}
+      onMouseEnter={() => dispatch({ type: 'hover_pull', pullIndex })}
     >
       {isSelectedPull && (
         <div
           className="absolute w-full h-full border-[1.5px] rounded-md"
           style={{
             borderColor: adjustColor(pull.color, -75),
-            boxShadow: `inset 0 0 4px 4px ${adjustColor(pull.color, +100)}`,
+            boxShadow: `inset 0 0 4px 3px ${adjustColor(pull.color, +100)}`,
           }}
         />
       )}
       <div className="flex justify-between py-0.5 px-2 h-full">
-        <div className="flex">
-          <div className="min-w-4 mr-1">{ghost ? pullIndex : pullIndex + 1}</div>
+        <div className="flex items-center">
+          <div className="min-w-4 mr-1 text-yellow-400 text-xs">
+            {ghost ? pullIndex : pullIndex + 1}
+          </div>
           <div className="flex h-full items-center">
             {Object.entries(mobCounts).map(([, { mob, count }]) => (
               <div
@@ -60,7 +63,9 @@ export function Pull({ pullIndex, pull, ghost }: Props) {
             ))}
           </div>
         </div>
-        <div>{roundTo(percent, 2).toFixed(2).toLocaleString()}%</div>
+        <div className="flex items-center text-white text-xs">
+          {roundTo(percent, 2).toFixed(2).toLocaleString()}%
+        </div>
       </div>
     </div>
   )
