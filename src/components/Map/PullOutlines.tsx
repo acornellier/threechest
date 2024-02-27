@@ -41,7 +41,7 @@ export function PullOutlines() {
         color={pull.color}
         fillOpacity={0}
         opacity={isSelected || isHovered ? 1 : 0.6}
-        weight={isSelected ? 5 : isHovered ? 4 : 3}
+        weight={isSelected ? 6 : isHovered ? 5 : 3.5}
       />
     )
   })

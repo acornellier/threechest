@@ -2,7 +2,7 @@ import { useMap, useMapEvent } from 'react-leaflet'
 import { useState } from 'react'
 import { Dungeon } from '../../data/types.ts'
 import { Mob } from './Mob.tsx'
-import { mapIconSize } from '../../code/map.ts'
+import { mapIconScaling } from '../../code/map.ts'
 
 type Props = {
   dungeon: Dungeon
@@ -11,16 +11,16 @@ type Props = {
 export function Mobs({ dungeon }: Props) {
   const map = useMap()
 
-  const [iconSize, setIconSize] = useState(mapIconSize(map))
+  const [iconScaling, setIconScaling] = useState(mapIconScaling(map))
 
   useMapEvent('zoom', () => {
-    setIconSize(mapIconSize(map))
+    setIconScaling(mapIconScaling(map))
   })
 
   return (
     <>
       {dungeon.mdt.enemies.map((mob) => (
-        <Mob key={mob.id} mob={mob} iconSize={iconSize} />
+        <Mob key={mob.id} mob={mob} iconScaling={iconScaling} />
       ))}
     </>
   )

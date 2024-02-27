@@ -6,6 +6,7 @@ import { Mob } from '../../data/types.ts'
 import { renderToString } from 'react-dom/server'
 import { useState } from 'react'
 import { mobSpawnsEqual } from '../../code/util.ts'
+import { darkenColor } from '../../code/colors.ts'
 
 type MobProps = {
   iconScaling: number
@@ -37,14 +38,12 @@ export function MobSpawn({ iconScaling, mob, spawn }: MobProps) {
             className="absolute h-full w-full rounded-full border border-slate-300 overflow-hidden"
             style={{
               borderWidth: iconScaling * 0.04,
+              backgroundColor: matchingPull ? darkenColor(matchingPull.color, 100) : undefined,
+              backgroundImage: `url('/vp/npc/${mob.id}.png')`,
+              backgroundSize: 'contain',
+              backgroundBlendMode: 'overlay',
             }}
-          >
-            <img className="absolute h-full w-full" src={`/vp/npc/${mob.id}.png`} alt="" />
-            <div
-              className="absolute h-full w-full opacity-35"
-              style={{ backgroundColor: matchingPull?.color }}
-            />
-          </div>,
+          />
         ),
       })}
       eventHandlers={{

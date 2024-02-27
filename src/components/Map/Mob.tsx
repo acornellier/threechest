@@ -4,11 +4,11 @@ import { Mob } from '../../data/types.ts'
 
 interface Props {
   mob: Mob
-  iconSize: number
+  iconScaling: number
 }
 
-export function Mob({ mob, iconSize }: Props) {
+export function Mob({ mob, iconScaling }: Props) {
   return mob.spawns.map((spawn) => (
-    <MobSpawn key={mobSpawnToKey({ mob, spawn })} iconScaling={iconSize} mob={mob} spawn={spawn} />
+    <MobSpawn key={mobSpawnToKey({ mob, spawn })} iconScaling={iconScaling} mob={mob} spawn={spawn} />
   ))
 }

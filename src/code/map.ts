@@ -1,3 +1,3 @@
 import type { Map } from 'leaflet'
 
-export const mapIconSize = (map: Map) => 5 * 2 ** map.getZoom()
+export const mapIconScaling = (map: Map) => 5 * 2 ** map.getZoom()

@@ -2,7 +2,7 @@ import { useRoute } from '../RouteContext/UseRoute.ts'
 import { PullDetailed } from '../../code/types.ts'
 import { roundTo } from '../../code/util.ts'
 import { Mob } from '../../data/types.ts'
-import { adjustColor } from '../../code/colors.ts'
+import { darkenColor, lightenColor } from '../../code/colors.ts'
 
 type MobCount = Record<number, { mob: Mob; count: number }>
 
@@ -28,7 +28,7 @@ export function Pull({ pullIndex, pull, ghost }: Props) {
     <div
       className="pull relative h-8 cursor-pointer bg-contain bg-blend-overlay bg-no-repeat"
       style={{
-        backgroundColor: ghost ? 'grey' : adjustColor(pull.color, -100),
+        backgroundColor: ghost ? 'grey' : darkenColor(pull.color, 100),
         backgroundImage: 'url(/wow/UI-Listbox-Highlight2.png)',
       }}
       onClick={() => dispatch({ type: 'select_pull', pullIndex })}
@@ -38,8 +38,8 @@ export function Pull({ pullIndex, pull, ghost }: Props) {
         <div
           className="absolute w-full h-full border-[1.5px] rounded-md"
           style={{
-            borderColor: adjustColor(pull.color, -75),
-            boxShadow: `inset 0 0 4px 3px ${adjustColor(pull.color, +100)}`,
+            borderColor: darkenColor(pull.color, 75),
+            boxShadow: `inset 0 0 4px 3px ${lightenColor(pull.color, 100)}`,
           }}
         />
       )}

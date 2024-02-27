@@ -1,4 +1,4 @@
-export function adjustColor(color: string, amount: number) {
+export function lightenColor(color: string, amount: number) {
   return (
     '#' +
     color
@@ -8,6 +8,8 @@ export function adjustColor(color: string, amount: number) {
       )
   )
 }
+
+export const darkenColor = (color: string,  amount: number) => lightenColor(color, -amount)
 
 export function hsvToRgb(h: number, s: number, v: number) {
   h %= 361
@@ -33,7 +35,7 @@ const highContrastColors = [
   [1, 0.2446, 1],
   [0.2446, 1.0, 0.6223],
   [1.0, 0.2446, 0.2446],
-  [0.2446, 0.6223, 1],
+  [0.2446, 0.7223, 1],
   [1.0, 0.98741, 0.2446],
   [0.2446, 1.0, 0.2446],
   [1.0, 0.2446, 0.6223],
