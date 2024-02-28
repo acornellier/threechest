@@ -1,8 +1,8 @@
 import { useRoute } from '../RouteContext/UseRoute.ts'
 import { Pull as PullComponent } from './Pull.tsx'
-import { roundTo } from '../../code/util.ts'
+import { mobSpawnsEqual, roundTo } from '../../code/util.ts'
 import { ItemInterface, ReactSortable } from 'react-sortablejs'
-import type { Pull, PullDetailed } from '../../code/types.ts'
+import type { PullDetailed } from '../../code/types.ts'
 import { useCallback, useMemo, useState } from 'react'
 
 type SortablePull = PullDetailed & ItemInterface
@@ -31,9 +31,22 @@ export function Pulls() {
 
   const setPulls = useCallback(
     (pulls: SortablePull[]) => {
+      const allSame = pulls.every((pull, idx) => {
+        const prevPull = pullsWithGhost[idx]
+        return (
+          pull.mobSpawns.length === prevPull.mobSpawns.length &&
+          pull.mobSpawns.every((mobSpawn, spawnIdx) => {
+            const prevPullMobSpawn = prevPull.mobSpawns[spawnIdx]
+            return mobSpawnsEqual(mobSpawn, prevPullMobSpawn)
+          })
+        )
+      })
+
+      if (allSame) return
+
       dispatch({ type: 'set_pulls', pulls: pulls.filter(({ filtered }) => !filtered) })
     },
-    [dispatch],
+    [dispatch, pullsWithGhost.length],
   )
 
   const percent = (routeDetailed.count / dungeon.mdt.totalCount) * 100
