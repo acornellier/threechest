@@ -1,6 +1,6 @@
 import { useRoute } from '../RouteContext/UseRoute.ts'
 import { Pull as PullComponent } from './Pull.tsx'
-import { mobSpawnsEqual, roundTo } from '../../code/util.ts'
+import { roundTo } from '../../code/util.ts'
 import { ItemInterface, ReactSortable } from 'react-sortablejs'
 import type { PullDetailed } from '../../code/types.ts'
 import { useCallback, useMemo, useState } from 'react'
@@ -10,43 +10,27 @@ type SortablePull = PullDetailed & ItemInterface
 export function Pulls() {
   const { dungeon, routeDetailed, dispatch } = useRoute()
 
-  const pullsWithIds = useMemo<SortablePull[]>(
-    () => routeDetailed.pulls.map((pull, idx) => ({ ...pull, id: idx.toString() })),
-    [routeDetailed.pulls],
-  )
-
   const [ghostPullIndex, setGhostPullIndex] = useState<number | null>(null)
 
   const pullsWithGhost = useMemo(() => {
-    const pulls = [...pullsWithIds]
+    const pulls: SortablePull[] = [...routeDetailed.pulls]
     if (ghostPullIndex !== null) {
       pulls.splice(ghostPullIndex + 1, 0, {
-        ...pullsWithIds[ghostPullIndex],
-        id: `${ghostPullIndex}-ghost`,
+        ...routeDetailed.pulls[ghostPullIndex],
+        id: -1,
         filtered: true,
       })
     }
     return pulls
-  }, [pullsWithIds, ghostPullIndex])
+  }, [routeDetailed.pulls, ghostPullIndex])
 
   const setPulls = useCallback(
     (pulls: SortablePull[]) => {
-      const allSame = pulls.every((pull, idx) => {
-        const prevPull = pullsWithGhost[idx]
-        return (
-          pull.mobSpawns.length === prevPull.mobSpawns.length &&
-          pull.mobSpawns.every((mobSpawn, spawnIdx) => {
-            const prevPullMobSpawn = prevPull.mobSpawns[spawnIdx]
-            return mobSpawnsEqual(mobSpawn, prevPullMobSpawn)
-          })
-        )
-      })
-
-      if (allSame) return
+      if (pulls.every((pull, idx) => pull.id === pullsWithGhost[idx].id)) return
 
       dispatch({ type: 'set_pulls', pulls: pulls.filter(({ filtered }) => !filtered) })
     },
-    [dispatch, pullsWithGhost.length],
+    [dispatch, pullsWithGhost],
   )
 
   const percent = (routeDetailed.count / dungeon.mdt.totalCount) * 100

@@ -29,7 +29,8 @@ export const mdtRouteToRoute = (mdtRoute: MdtRoute): Route => {
     dungeonKey,
     selectedPull: mdtRoute.value.currentPull,
     name: mdtRoute.text,
-    pulls: mdtRoute.value.pulls.map((mdtPull) => ({
+    pulls: mdtRoute.value.pulls.map((mdtPull, index) => ({
+      id: index.toString(),
       color: mdtPull.color.startsWith('#') ? mdtPull.color : `#${mdtPull.color}`,
       mobSpawns: mdtPull.enemies.flatMap((mdtEnemy) =>
         mdtEnemy.spawnIndexes.map((spawnIndex) => {

@@ -46,15 +46,24 @@ export type RouterAction =
 export const emptyRoute: Route = {
   dungeonKey: 'vp',
   name: 'TEST ROUTE',
-  pulls: [{ color: getPullColor(0), mobSpawns: [] }],
+  pulls: [{ id: 0, color: getPullColor(0), mobSpawns: [] }],
   selectedPull: 0,
 }
 
 const addPull = (route: Route): Route => {
   const newPullIndex = route.pulls.length
+  const maxIdx = route.pulls.reduce<number>((acc, pull) => (pull.id > acc ? pull.id : acc), 0)
+  const id = maxIdx + 1
   return {
     ...route,
-    pulls: [...route.pulls, { color: getPullColor(newPullIndex), mobSpawns: [] }],
+    pulls: [
+      ...route.pulls,
+      {
+        id,
+        color: getPullColor(newPullIndex),
+        mobSpawns: [],
+      },
+    ],
     selectedPull: newPullIndex,
   }
 }

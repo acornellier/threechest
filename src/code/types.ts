@@ -1,6 +1,7 @@
 ﻿import { DungeonKey, MobSpawn } from '../data/types.ts'
 
 export type Pull = {
+  id: number
   color: string
   mobSpawns: MobSpawn[]
 }
