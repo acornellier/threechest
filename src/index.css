@@ -24,3 +24,17 @@
   height: 2px;
   border: 2px solid orange;
 }
+
+.pull-number-tooltip {
+  font-size: 24px;
+  background-color: unset;
+  border: unset;
+  box-shadow: unset;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: #000 2px 2px;
+}
+
+.pull-number-tooltip:before {
+  display: none;
+}
