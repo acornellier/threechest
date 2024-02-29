@@ -1,9 +1,10 @@
 import { Mob, MobSpawn, Spawn } from '../../data/types.ts'
 import { MdtRoute, Pull, Route } from '../../code/types.ts'
 import { Reducer } from 'react'
-import { dungeonsByKey } from '../../data/dungeons.ts'
-import { mdtRouteToRoute, mobSpawnsEqual } from '../../code/util.ts'
+import { dungeonsByKey } from '../../data/dungeonsByKey.ts'
+import { mobSpawnsEqual } from '../../code/util.ts'
 import { getPullColor } from '../../code/colors.ts'
+import { mdtRouteToRoute } from '../../code/mdtUtil.ts'
 
 type ImportAction = {
   type: 'import'
@@ -42,13 +43,6 @@ export type RouterAction =
   | HoverPullAction
   | ToggleSpawnAction
   | SetPullsAction
-
-export const emptyRoute: Route = {
-  dungeonKey: 'vp',
-  name: 'TEST ROUTE',
-  pulls: [{ id: 0, color: getPullColor(0), mobSpawns: [] }],
-  selectedPull: 0,
-}
 
 const addPull = (route: Route): Route => {
   const newPullIndex = route.pulls.length
@@ -89,6 +83,8 @@ const toggleSpawn = (route: Route, action: ToggleSpawnAction): Route => {
       const selectedPull = findSelectedPull(route, mobSpawn)
       return { mobSpawn, selectedPull }
     })
+
+  console.log(route, action, groupSpawns)
 
   if (origSelectedPull !== -1) {
     // if already selected, deselect

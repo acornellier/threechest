@@ -30,7 +30,7 @@ export function MobSpawn({ iconScaling, mob, spawn }: MobProps) {
       zIndexOffset={mobHovered ? 100_000 : 0}
       icon={divIcon({
         popupAnchor: [100, 0],
-        iconUrl: `/vp/npc/${mob.id}.png`,
+        iconUrl: `/npc_portaits/${mob.id}.png`,
         iconSize: [iconSize, iconSize],
         className: 'mob',
         html: renderToString(
@@ -39,11 +39,11 @@ export function MobSpawn({ iconScaling, mob, spawn }: MobProps) {
             style={{
               borderWidth: iconScaling * 0.04,
               backgroundColor: matchingPull ? darkenColor(matchingPull.color, 100) : undefined,
-              backgroundImage: `url('/vp/npc/${mob.id}.png')`,
+              backgroundImage: `url('/npc_portraits/${mob.id}.png')`,
               backgroundSize: 'contain',
               backgroundBlendMode: 'overlay',
             }}
-          />
+          />,
         ),
       })}
       eventHandlers={{

@@ -55,7 +55,7 @@ export function Pull({ pullIndex, pull, ghost }: Props) {
                 className="relative h-7 w-7 mr-[-3px] rounded-full border border-slate-300"
                 style={{ borderWidth: 0.05 }}
               >
-                <img className="h-full rounded-full" src={`/vp/npc/${mob.id}.png`} alt="" />
+                <img className="h-full rounded-full" src={`/npc_portraits/${mob.id}.png`} alt="" />
                 <div className="absolute bottom-[-3px] w-full text-white text-xs text-center">
                   x{count}
                 </div>

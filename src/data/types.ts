@@ -5,12 +5,11 @@ export type MdtDungeon = {
 }
 
 export type Dungeon = {
-  zoneId: number
   key: DungeonKey
   mdt: MdtDungeon
 }
 
-export type DungeonKey = 'vp'
+export type DungeonKey = 'dotiu' | 'eb'
 
 export type Spawn = {
   group: number | null

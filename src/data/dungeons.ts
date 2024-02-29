@@ -1,10 +1,13 @@
-import { Dungeon, DungeonKey } from './types.ts'
-import { vp } from './vp.ts'
-import { mdtRouteToRoute } from '../code/util.ts'
-import vpMdtRoute from './vp_mdt_route.json'
+import type { Dungeon, MdtDungeon } from './types.ts'
+import dotiuMdtData from './mdtDungeons/dotiu_mdt.json'
+import ebMdtData from './mdtDungeons/eb_mdt.json'
 
-export const dungeonsByKey: Record<DungeonKey, Dungeon> = {
-  vp,
+export const eb: Dungeon = {
+  key: 'eb',
+  mdt: ebMdtData as MdtDungeon,
 }
 
-export const sampleVpRoute = mdtRouteToRoute(vpMdtRoute)
+export const dotiu: Dungeon = {
+  key: 'dotiu',
+  mdt: dotiuMdtData as MdtDungeon,
+}

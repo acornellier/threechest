@@ -5,12 +5,15 @@ import { MousePosition } from '../Leaflet/MousePosition/MousePosition'
 import '../Leaflet/SmoothWheelZoom/SmoothWheelZoom'
 import { Mobs } from './Mobs.tsx'
 
-import { dungeonsByKey } from '../../data/dungeons.ts'
+import { dungeonsByKey } from '../../data/dungeonsByKey.ts'
 import { PullOutlines } from './PullOutlines.tsx'
+import { useRoute } from '../RouteContext/UseRoute.ts'
 
 const height = 256
 const width = 384
 const maxCoords = [-height, width]
+
+const center: LatLngExpression = [maxCoords[0] / 2, maxCoords[1] / 2]
 
 const bounds: LatLngBoundsExpression = [
   [0, 0],
@@ -18,8 +21,7 @@ const bounds: LatLngBoundsExpression = [
 ]
 
 export function Map() {
-  const center: LatLngExpression = [maxCoords[0] / 2, maxCoords[1] / 2]
-  const dungeon = dungeonsByKey['vp']
+  const { dungeon } = useRoute()
 
   return (
     <MapContainer
@@ -27,7 +29,7 @@ export function Map() {
       crs={CRS.Simple}
       center={center}
       minZoom={1}
-      maxZoom={5}
+      maxZoom={4}
       zoom={2}
       zoomControl={false}
       scrollWheelZoom={false}
@@ -41,8 +43,7 @@ export function Map() {
         attribution="Map data © Blizzard Entertainment"
         bounds={bounds}
         noWrap
-        tileSize={new Point(width, height)}
-        url={`/${dungeon.key}/map/{z}/{x}_{y}.png`}
+        url={`/maps/${dungeon.key}/{z}/{x}_{y}.png`}
       />
       <Mobs dungeon={dungeon} />
       <PullOutlines />

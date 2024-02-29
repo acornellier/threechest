@@ -3,12 +3,13 @@ import * as fs from 'fs'
 import * as path from 'path'
 import { fileURLToPath } from 'url'
 
+const fullName = 'DawnOfTheInfiniteUpper'
+const key = 'dotiu'
+
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
-const data = fs.readFileSync(
-  `${__dirname}/../../MythicDungeonTools/Dragonflight/TheVortexPinnacle.lua`,
-)
+const data = fs.readFileSync(`${__dirname}/../../MythicDungeonTools/Dragonflight/${fullName}.lua`)
 const ast = parser.parse(data.toString())
 
 const dungeonIndexItem = ast.body.find((item) =>
@@ -85,4 +86,4 @@ const mdtData = {
   enemies,
 }
 
-fs.writeFileSync(`${__dirname}/../../src/data/vp_mdt.json`, JSON.stringify(mdtData))
+fs.writeFileSync(`${__dirname}/../../src/data/mdtDungeons/${key}_mdt.json`, JSON.stringify(mdtData))
