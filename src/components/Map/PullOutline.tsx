@@ -1,32 +1,68 @@
 ﻿import { Pull } from '../../code/types.ts'
-import { Polygon, Tooltip } from 'react-leaflet'
-import { useRoute } from '../RouteContext/UseRoute.ts'
-import { useEffect, useState } from 'react'
+import { Circle, Polygon, Tooltip, useMap } from 'react-leaflet'
+import { memo, useEffect, useMemo, useState } from 'react'
+import { Map } from 'leaflet'
+import makeHull from 'hull.js'
+import Offset from 'polygon-offset'
+import { useAppSelector } from '../../store/hooks.ts'
 
 interface Props {
-  pull: Pull
-  hull: Array<[number, number]>
-  idx: number
+  pullId: number
+  index: number
+  isHovered: boolean
+  isSelected: boolean
 }
 
-export function PullOutline({ pull, hull, idx }: Props) {
-  const {
-    route: { selectedPull },
-    hoveredPull,
-  } = useRoute()
+interface Outline {
+  hull?: Array<[number, number]>
+  circle?: { center: [number, number]; radius: number }
+}
 
-  const isHovered = hoveredPull === idx
-  const isSelected = selectedPull === idx
+function createOutline(pull: Pull, map: Map): Outline {
+  if (pull.mobSpawns.length <= 0) return {}
+
+  if (pull.mobSpawns.length === 1) {
+    return {
+      circle: { center: pull.mobSpawns[0].spawn.pos, radius: 3 },
+    }
+  }
+
+  let hull = makeHull(
+    pull.mobSpawns.map((mobSpawn) => mobSpawn.spawn.pos),
+    Infinity,
+  )
+
+  const arcSegments = Math.max(5, 9 - hull.length + 2 * map.getZoom())
+  const margin = 2.8
+  hull = new Offset().data(hull).arcSegments(arcSegments).margin(margin)[0]
+
+  return { hull }
+}
+
+function PullOutlineComponent({ pullId, index, isSelected, isHovered }: Props) {
+  const map = useMap()
+  const pull = useAppSelector((state) => state.route.pulls.find((pull) => pull.id === pullId))!
+  const { hull, circle } = useMemo(() => createOutline(pull, map), [pull, map])
 
   // Change key to force re-render
-  const [foo, setFoo] = useState(0)
+  const [key, setKey] = useState(0)
   useEffect(() => {
-    setFoo((foo) => foo + 1000)
-  }, [isHovered, isSelected, pull])
+    setKey((prevKey) => prevKey + 1000)
+  }, [isHovered, isSelected, pullId])
 
-  return (
+  return circle ? (
+    <Circle
+      key={key}
+      center={circle.center}
+      radius={circle.radius}
+      color={pull.color}
+      fillOpacity={0}
+      opacity={isSelected || isHovered ? 1 : 0.6}
+      weight={isSelected ? 6 : isHovered ? 5 : 3.5}
+    />
+  ) : hull ? (
     <Polygon
-      key={foo}
+      key={key}
       positions={hull}
       color={pull.color}
       fillOpacity={0}
@@ -34,8 +70,10 @@ export function PullOutline({ pull, hull, idx }: Props) {
       weight={isSelected ? 6 : isHovered ? 5 : 3.5}
     >
       <Tooltip className="pull-number-tooltip" direction="center" permanent>
-        {idx + 1}
+        {index + 1}
       </Tooltip>
     </Polygon>
-  )
+  ) : null
 }
+
+export const PullOutline = memo(PullOutlineComponent)

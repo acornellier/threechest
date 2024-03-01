@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react'
-import { useRoute } from '../RouteContext/UseRoute.ts'
+import { useAppDispatch, useRoute } from '../../store/hooks.ts'
+import { setName } from '../../store/reducer.ts'
 
 export function RouteName() {
-  const { route, dispatch } = useRoute()
+  const route = useRoute()
+  const dispatch = useAppDispatch()
 
   const [input, setInput] = useState(route.name)
 
@@ -17,7 +19,7 @@ export function RouteName() {
         placeholder="Route name"
         onChange={(e) => {
           setInput(e.target.value)
-          dispatch({ type: 'set_route', route: { ...route, name: e.target.value } })
+          dispatch(setName(e.target.value))
         }}
         value={input}
       />

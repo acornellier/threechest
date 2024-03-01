@@ -5,7 +5,7 @@ import { MousePosition } from '../Leaflet/MousePosition/MousePosition'
 import '../Leaflet/SmoothWheelZoom/SmoothWheelZoom'
 import { Mobs } from './Mobs.tsx'
 import { PullOutlines } from './PullOutlines.tsx'
-import { useRoute } from '../RouteContext/UseRoute.ts'
+import { useDungeon } from '../../store/hooks.ts'
 
 const height = 256
 const width = 384
@@ -19,7 +19,7 @@ const bounds: LatLngBoundsExpression = [
 ]
 
 export function Map() {
-  const { dungeon } = useRoute()
+  const dungeon = useDungeon()
 
   return (
     <MapContainer
@@ -43,7 +43,7 @@ export function Map() {
         noWrap
         url={`/maps/${dungeon.key}/{z}/{x}_{y}.png`}
       />
-      <Mobs dungeon={dungeon} />
+      <Mobs />
       <PullOutlines />
     </MapContainer>
   )

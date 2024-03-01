@@ -1,8 +1,9 @@
-import { useRoute } from '../RouteContext/UseRoute.ts'
 import { PullDetailed } from '../../code/types.ts'
 import { roundTo } from '../../code/util.ts'
 import { Mob } from '../../data/types.ts'
 import { darkenColor, lightenColor } from '../../code/colors.ts'
+import { useAppDispatch, useDungeon, useRoute } from '../../store/hooks.ts'
+import { hoverPull, selectPull } from '../../store/reducer.ts'
 
 type MobCount = Record<number, { mob: Mob; count: number }>
 
@@ -13,7 +14,9 @@ interface Props {
 }
 
 export function Pull({ pullIndex, pull, ghost }: Props) {
-  const { route, dungeon, dispatch, setHoveredPull } = useRoute()
+  const dispatch = useAppDispatch()
+  const route = useRoute()
+  const dungeon = useDungeon()
 
   const isSelectedPull = pullIndex === route.selectedPull
   const percent = (pull.count / dungeon.mdt.totalCount) * 100
@@ -31,8 +34,9 @@ export function Pull({ pullIndex, pull, ghost }: Props) {
         backgroundColor: ghost ? 'grey' : darkenColor(pull.color, 100),
         backgroundImage: 'url(/wow/UI-Listbox-Highlight2.png)',
       }}
-      onClick={() => dispatch({ type: 'select_pull', pullIndex })}
-      onMouseEnter={() => setHoveredPull(pullIndex)}
+      onClick={() => dispatch(selectPull(pullIndex))}
+      onMouseEnter={() => dispatch(hoverPull(pullIndex))}
+      onMouseLeave={() => dispatch(hoverPull(null))}
     >
       {isSelectedPull && (
         <div

@@ -2,13 +2,10 @@ import { useMap, useMapEvent } from 'react-leaflet'
 import { useState } from 'react'
 import { MobComponent } from './Mob.tsx'
 import { mapIconScaling } from '../../code/map.ts'
-import { Dungeon } from '../../data/types.ts'
+import { useDungeon } from '../../store/hooks.ts'
 
-type Props = {
-  dungeon: Dungeon
-}
-
-export function Mobs({ dungeon }: Props) {
+export function Mobs() {
+  const dungeon = useDungeon()
   const map = useMap()
 
   const [iconScaling, setIconScaling] = useState(mapIconScaling(map))

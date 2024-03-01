@@ -1,16 +1,18 @@
 ﻿import { useState } from 'react'
-import { useRoute } from '../RouteContext/UseRoute.ts'
 import { Dungeon } from '../../data/types.ts'
 import { DungeonButton } from './DungeonButton.tsx'
 import { dungeons } from '../../data/dungeons.ts'
+import { useAppDispatch, useDungeon } from '../../store/hooks.ts'
+import { setDungeon } from '../../store/reducer.ts'
 
 export function DungeonDropdown() {
-  const { dungeon, setDungeon } = useRoute()
+  const dispatch = useAppDispatch()
+  const dungeon = useDungeon()
 
   const [open, setOpen] = useState(false)
 
   const handleChange = (dungeon: Dungeon) => {
-    setDungeon(dungeon.key)
+    dispatch(setDungeon(dungeon.key))
     setOpen(false)
   }
 

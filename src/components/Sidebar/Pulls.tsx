@@ -1,15 +1,18 @@
-import { useRoute } from '../RouteContext/UseRoute.ts'
 import { Pull as PullComponent } from './Pull.tsx'
 import { roundTo } from '../../code/util.ts'
 import { ItemInterface, ReactSortable } from 'react-sortablejs'
 import type { PullDetailed } from '../../code/types.ts'
 import { useCallback, useMemo, useState } from 'react'
 import { Button } from '../Common/Button.tsx'
+import { useAppDispatch, useDungeon, useRouteDetailed } from '../../store/hooks.ts'
+import { addPull, setPulls } from '../../store/reducer.ts'
 
 type SortablePull = PullDetailed & ItemInterface
 
 export function Pulls() {
-  const { dungeon, routeDetailed, dispatch } = useRoute()
+  const dispatch = useAppDispatch()
+  const dungeon = useDungeon()
+  const routeDetailed = useRouteDetailed()
 
   const [ghostPullIndex, setGhostPullIndex] = useState<number | null>(null)
 
@@ -25,11 +28,11 @@ export function Pulls() {
     return pulls
   }, [routeDetailed.pulls, ghostPullIndex])
 
-  const setPulls = useCallback(
+  const setPullsWrapper = useCallback(
     (pulls: SortablePull[]) => {
       if (pulls.every((pull, idx) => pull.id === pullsWithGhost[idx].id)) return
 
-      dispatch({ type: 'set_pulls', pulls: pulls.filter(({ filtered }) => !filtered) })
+      dispatch(setPulls(pulls.filter(({ filtered }) => !filtered)))
     },
     [dispatch, pullsWithGhost],
   )
@@ -48,14 +51,14 @@ export function Pulls() {
         onStart={(e) => e.oldIndex !== undefined && setGhostPullIndex(e.oldIndex)}
         onEnd={() => setGhostPullIndex(null)}
         list={pullsWithGhost}
-        setList={setPulls}
+        setList={setPullsWrapper}
         className="flex flex-col gap-[3px] relative"
       >
         {pullsWithGhost.map((pull, idx) => (
           <PullComponent key={idx} pullIndex={idx} pull={pull} ghost={pull.filtered} />
         ))}
       </ReactSortable>
-      <Button className="justify-center" onClick={() => dispatch({ type: 'add_pull' })}>
+      <Button className="justify-center" onClick={() => dispatch(addPull())}>
         Add pull
       </Button>
     </div>

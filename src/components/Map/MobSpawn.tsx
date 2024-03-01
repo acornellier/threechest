@@ -1,5 +1,4 @@
 ﻿import { Spawn } from '../../data/types.ts'
-import { useRoute } from '../RouteContext/UseRoute.ts'
 import { Marker, Tooltip } from 'react-leaflet'
 import { divIcon } from 'leaflet'
 import { Mob } from '../../data/types.ts'
@@ -8,7 +7,8 @@ import { memo, useMemo, useState } from 'react'
 import { mobSpawnsEqual } from '../../code/util.ts'
 import { darkenColor } from '../../code/colors.ts'
 import { Pull } from '../../code/types.ts'
-import { RouteDispatch } from '../RouteContext/RouteReducer.ts'
+import { useAppDispatch, useRoute } from '../../store/hooks.ts'
+import { toggleSpawn } from '../../store/reducer.ts'
 
 interface MobSpawnProps {
   iconScaling: number
@@ -18,10 +18,11 @@ interface MobSpawnProps {
 
 interface MobSpawnMemoProps extends MobSpawnProps {
   matchingPull: Pull | undefined
-  dispatch: RouteDispatch
 }
 
-function MobSpawnComponent({ iconScaling, mob, spawn, matchingPull, dispatch }: MobSpawnMemoProps) {
+// TODO: merge using selector
+function MobSpawnComponent({ iconScaling, mob, spawn, matchingPull }: MobSpawnMemoProps) {
+  const dispatch = useAppDispatch()
   const [mobHovered, setMobHovered] = useState(false)
   const iconSize = iconScaling * mob.scale * (mobHovered ? 1.2 : 1)
 
@@ -48,7 +49,7 @@ function MobSpawnComponent({ iconScaling, mob, spawn, matchingPull, dispatch }: 
         ),
       })}
       eventHandlers={{
-        click: () => dispatch({ type: 'toggle_spawn', mob, spawn }),
+        click: () => dispatch(toggleSpawn({ mob, spawn })),
         mouseover: () => setMobHovered(true),
         mouseout: () => setMobHovered(false),
       }}
@@ -65,7 +66,7 @@ function MobSpawnComponent({ iconScaling, mob, spawn, matchingPull, dispatch }: 
 const MobSpawnMemo = memo(MobSpawnComponent)
 
 export function MobSpawn({ iconScaling, mob, spawn }: MobSpawnProps) {
-  const { route, dispatch } = useRoute()
+  const route = useRoute()
 
   const matchingPull = useMemo(
     () =>
@@ -76,12 +77,6 @@ export function MobSpawn({ iconScaling, mob, spawn }: MobSpawnProps) {
   )
 
   return (
-    <MobSpawnMemo
-      iconScaling={iconScaling}
-      mob={mob}
-      spawn={spawn}
-      matchingPull={matchingPull}
-      dispatch={dispatch}
-    />
+    <MobSpawnMemo iconScaling={iconScaling} mob={mob} spawn={spawn} matchingPull={matchingPull} />
   )
 }

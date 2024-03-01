@@ -1,6 +1,6 @@
-import { useRoute } from '../RouteContext/UseRoute.ts'
 import { routeToMdtRoute } from '../../code/mdtUtil.ts'
 import { Button } from '../Common/Button.tsx'
+import { useRoute } from '../../store/hooks.ts'
 
 const exportUrl =
   process.env.NODE_ENV === 'development'
@@ -8,7 +8,7 @@ const exportUrl =
     : '/api/importRoute'
 
 export function ExportRoute() {
-  const { route } = useRoute()
+  const route = useRoute()
 
   const handleClick = () => {
     fetch(exportUrl, {
