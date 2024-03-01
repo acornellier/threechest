@@ -8,6 +8,7 @@ export type Pull = {
 
 export type Route = {
   name: string
+  uid: string
   dungeonKey: DungeonKey
   selectedPull: number
   hoveredPull?: number | null
@@ -28,6 +29,7 @@ export type MdtPullEnemy = {
   spawnIndexes: number[]
 }
 
+// In the original, keys are enemyIndex and value is spawnIndex[]
 export type MdtPull = {
   color: string
   enemies: MdtPullEnemy[]
@@ -38,7 +40,6 @@ export type MdtRoute = {
   week: number
   difficulty: number
   uid: string
-  addonVersion: number
   value: {
     currentPull: number
     currentSublevel: number

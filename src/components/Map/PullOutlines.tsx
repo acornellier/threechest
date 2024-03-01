@@ -47,9 +47,9 @@ export function PullOutlines() {
 
   return pullOutlines.map(({ pull, hull, circle }, idx) => {
     return circle ? (
-      <Circle center={circle.center} radius={circle.radius} color={pull.color} />
+      <Circle key={pull.id} center={circle.center} radius={circle.radius} color={pull.color} />
     ) : hull ? (
-      <PullOutline key={idx} pull={pull} hull={hull} idx={idx} />
+      <PullOutline key={pull.id} pull={pull} hull={hull} idx={idx} />
     ) : null
   })
 }

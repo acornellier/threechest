@@ -25,6 +25,7 @@ const defaultDungeonKey: DungeonKey = 'eb'
 export const emptyRoute: Route = {
   dungeonKey: defaultDungeonKey,
   name: 'TEST ROUTE',
+  uid: '0',
   pulls: [{ id: 0, color: getPullColor(0), mobSpawns: [] }],
   selectedPull: 0,
 }

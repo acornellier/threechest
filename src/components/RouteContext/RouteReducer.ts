@@ -84,8 +84,6 @@ const toggleSpawn = (route: Route, action: ToggleSpawnAction): Route => {
       return { mobSpawn, selectedPull }
     })
 
-  console.log(route, action, groupSpawns)
-
   if (origSelectedPull !== -1) {
     // if already selected, deselect
     return {

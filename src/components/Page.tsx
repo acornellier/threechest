@@ -2,6 +2,7 @@ import { Map } from './Map/Map.tsx'
 import { RouteProvider } from './RouteContext/RouteProvider.tsx'
 import { Pulls } from './Sidebar/Pulls.tsx'
 import { ImportRoute } from './Sidebar/ImportRoute.tsx'
+import { ExportRoute } from './Sidebar/ExportRoute.tsx'
 
 export function Page() {
   return (
@@ -12,6 +13,7 @@ export function Page() {
         </div>
         <div className="fixed right-0 z-20 mt-24 flex flex-col gap-3">
           <ImportRoute />
+          <ExportRoute />
           <Pulls />
         </div>
       </div>

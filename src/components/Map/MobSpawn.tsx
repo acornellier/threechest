@@ -4,7 +4,7 @@ import { Marker, Tooltip } from 'react-leaflet'
 import { divIcon } from 'leaflet'
 import { Mob } from '../../data/types.ts'
 import { renderToString } from 'react-dom/server'
-import { useState } from 'react'
+import { useMemo, useState } from 'react'
 import { mobSpawnsEqual } from '../../code/util.ts'
 import { darkenColor } from '../../code/colors.ts'
 
@@ -18,8 +18,12 @@ export function MobSpawn({ iconScaling, mob, spawn }: MobProps) {
   const { route, dispatch } = useRoute()
   const [mobHovered, setMobHovered] = useState(false)
 
-  const matchingPull = route.pulls.find((pull) =>
-    pull.mobSpawns.some((mobSpawn) => mobSpawnsEqual(mobSpawn, { mob, spawn })),
+  const matchingPull = useMemo(
+    () =>
+      route.pulls.find((pull) =>
+        pull.mobSpawns.some((mobSpawn) => mobSpawnsEqual(mobSpawn, { mob, spawn })),
+      ),
+    [route, mob, spawn],
   )
 
   const iconSize = iconScaling * mob.scale * (mobHovered ? 1.2 : 1)
