@@ -1,6 +1,6 @@
 import { Mob, MobSpawn, Spawn } from '../../data/types.ts'
 import { MdtRoute, Pull, Route } from '../../code/types.ts'
-import { Reducer } from 'react'
+import { Dispatch, Reducer } from 'react'
 import { mobSpawnsEqual } from '../../code/util.ts'
 import { getPullColor } from '../../code/colors.ts'
 import { mdtRouteToRoute } from '../../code/mdtUtil.ts'
@@ -43,6 +43,8 @@ export type RouterAction =
   | SelectPullAction
   | ToggleSpawnAction
   | SetPullsAction
+
+export type RouteDispatch = Dispatch<RouterAction>
 
 const addPull = (route: Route): Route => {
   const newPullIndex = route.pulls.length

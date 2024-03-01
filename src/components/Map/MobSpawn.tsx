@@ -4,28 +4,25 @@ import { Marker, Tooltip } from 'react-leaflet'
 import { divIcon } from 'leaflet'
 import { Mob } from '../../data/types.ts'
 import { renderToString } from 'react-dom/server'
-import { useMemo, useState } from 'react'
+import { memo, useMemo, useState } from 'react'
 import { mobSpawnsEqual } from '../../code/util.ts'
 import { darkenColor } from '../../code/colors.ts'
+import { Pull } from '../../code/types.ts'
+import { RouteDispatch } from '../RouteContext/RouteReducer.ts'
 
-type MobProps = {
+interface MobSpawnProps {
   iconScaling: number
   mob: Mob
   spawn: Spawn
 }
 
-export function MobSpawn({ iconScaling, mob, spawn }: MobProps) {
-  const { route, dispatch } = useRoute()
+interface MobSpawnMemoProps extends MobSpawnProps {
+  matchingPull: Pull | undefined
+  dispatch: RouteDispatch
+}
+
+function MobSpawnComponent({ iconScaling, mob, spawn, matchingPull, dispatch }: MobSpawnMemoProps) {
   const [mobHovered, setMobHovered] = useState(false)
-
-  const matchingPull = useMemo(
-    () =>
-      route.pulls.find((pull) =>
-        pull.mobSpawns.some((mobSpawn) => mobSpawnsEqual(mobSpawn, { mob, spawn })),
-      ),
-    [route, mob, spawn],
-  )
-
   const iconSize = iconScaling * mob.scale * (mobHovered ? 1.2 : 1)
 
   return (
@@ -62,5 +59,29 @@ export function MobSpawn({ iconScaling, mob, spawn }: MobProps) {
         </Tooltip>
       )}
     </Marker>
+  )
+}
+
+const MobSpawnMemo = memo(MobSpawnComponent)
+
+export function MobSpawn({ iconScaling, mob, spawn }: MobSpawnProps) {
+  const { route, dispatch } = useRoute()
+
+  const matchingPull = useMemo(
+    () =>
+      route.pulls.find((pull) =>
+        pull.mobSpawns.some((mobSpawn) => mobSpawnsEqual(mobSpawn, { mob, spawn })),
+      ),
+    [route.pulls, mob, spawn],
+  )
+
+  return (
+    <MobSpawnMemo
+      iconScaling={iconScaling}
+      mob={mob}
+      spawn={spawn}
+      matchingPull={matchingPull}
+      dispatch={dispatch}
+    />
   )
 }

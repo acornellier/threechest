@@ -1,4 +1,6 @@
-﻿- Initial zoom too zoomed in
+﻿- Memoize PullOutline (just use redux)
+- Sidebar component
+- Initial zoom too zoomed in
 - Delete pull
 - Small icons pull outline kinda weird (everbloom flowers)
 - Scrollable pulls list
@@ -6,4 +8,5 @@
 - Fix mob icon hovering (dissapears when switching)
 - Mob hover tooltip
 - Mob spells
+- Save/load routes
 - Sample routes

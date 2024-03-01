@@ -1,6 +1,6 @@
 import { useMap, useMapEvent } from 'react-leaflet'
 import { useState } from 'react'
-import { Mob } from './Mob.tsx'
+import { MobComponent } from './Mob.tsx'
 import { mapIconScaling } from '../../code/map.ts'
 import { Dungeon } from '../../data/types.ts'
 
@@ -20,7 +20,7 @@ export function Mobs({ dungeon }: Props) {
   return (
     <>
       {dungeon.mdt.enemies.map((mob) => (
-        <Mob key={mob.id} mob={mob} iconScaling={iconScaling} />
+        <MobComponent key={mob.id} mob={mob} iconScaling={iconScaling} />
       ))}
     </>
   )

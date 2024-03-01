@@ -4,6 +4,7 @@ import { Pulls } from './Sidebar/Pulls.tsx'
 import { ImportRoute } from './Sidebar/ImportRoute.tsx'
 import { ExportRoute } from './Sidebar/ExportRoute.tsx'
 import { DungeonDropdown } from './DungeonSelect/DungeonDropdown.tsx'
+import { RouteName } from './Sidebar/RouteName.tsx'
 
 export function Page() {
   return (
@@ -16,6 +17,7 @@ export function Page() {
           <DungeonDropdown />
         </div>
         <div className="fixed right-0 z-20 mt-24 flex flex-col gap-3 w-[276px]">
+          <RouteName />
           <ImportRoute />
           <ExportRoute />
           <Pulls />
