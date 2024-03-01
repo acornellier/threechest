@@ -1,8 +1,8 @@
 import { useMap, useMapEvent } from 'react-leaflet'
 import { useState } from 'react'
-import { Dungeon } from '../../data/types.ts'
 import { Mob } from './Mob.tsx'
 import { mapIconScaling } from '../../code/map.ts'
+import { Dungeon } from '../../data/types.ts'
 
 type Props = {
   dungeon: Dungeon
@@ -13,7 +13,7 @@ export function Mobs({ dungeon }: Props) {
 
   const [iconScaling, setIconScaling] = useState(mapIconScaling(map))
 
-  useMapEvent('zoom', () => {
+  useMapEvent('zoomend', () => {
     setIconScaling(mapIconScaling(map))
   })
 

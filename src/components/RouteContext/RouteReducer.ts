@@ -1,10 +1,15 @@
 import { Mob, MobSpawn, Spawn } from '../../data/types.ts'
 import { MdtRoute, Pull, Route } from '../../code/types.ts'
 import { Reducer } from 'react'
-import { dungeonsByKey } from '../../data/dungeonsByKey.ts'
 import { mobSpawnsEqual } from '../../code/util.ts'
 import { getPullColor } from '../../code/colors.ts'
 import { mdtRouteToRoute } from '../../code/mdtUtil.ts'
+import { dungeonsByKey } from '../../data/dungeons.ts'
+
+type SetRoute = {
+  type: 'set_route'
+  route: Route
+}
 
 type ImportAction = {
   type: 'import'
@@ -20,11 +25,6 @@ type SelectPullAction = {
   pullIndex: number
 }
 
-type HoverPullAction = {
-  type: 'hover_pull'
-  pullIndex: number | null
-}
-
 type ToggleSpawnAction = {
   type: 'toggle_spawn'
   mob: Mob
@@ -37,10 +37,10 @@ type SetPullsAction = {
 }
 
 export type RouterAction =
+  | SetRoute
   | ImportAction
   | AddPullAction
   | SelectPullAction
-  | HoverPullAction
   | ToggleSpawnAction
   | SetPullsAction
 
@@ -133,14 +133,14 @@ function setPulls(route: Route, action: SetPullsAction) {
 
 export const routeReducer: Reducer<Route, RouterAction> = (route, action) => {
   switch (action.type) {
+    case 'set_route':
+      return action.route
     case 'import':
       return mdtRouteToRoute(action.mdtRoute)
     case 'add_pull':
       return addPull(route)
     case 'select_pull':
       return { ...route, selectedPull: action.pullIndex }
-    case 'hover_pull':
-      return { ...route, hoveredPull: action.pullIndex }
     case 'toggle_spawn':
       return toggleSpawn(route, action)
     case 'set_pulls':

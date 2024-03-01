@@ -13,7 +13,7 @@ interface Props {
 }
 
 export function Pull({ pullIndex, pull, ghost }: Props) {
-  const { route, dungeon, dispatch } = useRoute()
+  const { route, dungeon, dispatch, setHoveredPull } = useRoute()
 
   const isSelectedPull = pullIndex === route.selectedPull
   const percent = (pull.count / dungeon.mdt.totalCount) * 100
@@ -32,7 +32,7 @@ export function Pull({ pullIndex, pull, ghost }: Props) {
         backgroundImage: 'url(/wow/UI-Listbox-Highlight2.png)',
       }}
       onClick={() => dispatch({ type: 'select_pull', pullIndex })}
-      onMouseEnter={() => dispatch({ type: 'hover_pull', pullIndex })}
+      onMouseEnter={() => setHoveredPull(pullIndex)}
     >
       {isSelectedPull && (
         <div

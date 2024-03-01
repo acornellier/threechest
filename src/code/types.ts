@@ -11,7 +11,6 @@ export type Route = {
   uid: string
   dungeonKey: DungeonKey
   selectedPull: number
-  hoveredPull?: number | null
   pulls: Pull[]
 }
 

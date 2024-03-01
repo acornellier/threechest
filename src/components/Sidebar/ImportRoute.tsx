@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useRoute } from '../RouteContext/UseRoute.ts'
 import { MdtRoute } from '../../code/types.ts'
+import { Button } from '../Common/Button.tsx'
 
 const importUrl =
   process.env.NODE_ENV === 'development'
@@ -35,9 +36,9 @@ export function ImportRoute() {
         onChange={(e) => setInput(e.target.value)}
         value={input}
       />
-      <button className="bg-gray-200 px-2" onClick={handleClick}>
+      <Button className="bg-gray-200 px-2" onClick={handleClick}>
         Import
-      </button>
+      </Button>
     </div>
   )
 }

@@ -10,10 +10,13 @@ interface Props {
 }
 
 export function PullOutline({ pull, hull, idx }: Props) {
-  const { route } = useRoute()
+  const {
+    route: { selectedPull },
+    hoveredPull,
+  } = useRoute()
 
-  const isHovered = route.hoveredPull === idx
-  const isSelected = route.selectedPull === idx
+  const isHovered = hoveredPull === idx
+  const isSelected = selectedPull === idx
 
   // Change key to force re-render
   const [foo, setFoo] = useState(0)

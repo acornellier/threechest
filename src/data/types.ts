@@ -5,8 +5,10 @@ export type MdtDungeon = {
 }
 
 export type Dungeon = {
+  name: string
   key: DungeonKey
   mdt: MdtDungeon
+  icon: string
 }
 
 export type DungeonKey = 'dotiu' | 'eb'
@@ -32,5 +34,4 @@ export type MobSpawn = {
   mob: Mob
   spawn: Spawn
 }
-
 export type MobSpawnKey = string

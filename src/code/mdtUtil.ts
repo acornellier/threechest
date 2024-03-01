@@ -1,6 +1,6 @@
 ﻿import { MdtPullEnemy, MdtRoute, Route } from './types.ts'
-import { dungeonsByKey } from '../data/dungeonsByKey.ts'
 import { DungeonKey, MobSpawn, Spawn } from '../data/types.ts'
+import { dungeonsByKey } from '../data/dungeons.ts'
 
 export const mdtDungeonIndexToDungeonKey: Record<number, DungeonKey> = {
   101: 'dotiu',

@@ -4,6 +4,7 @@ import { roundTo } from '../../code/util.ts'
 import { ItemInterface, ReactSortable } from 'react-sortablejs'
 import type { PullDetailed } from '../../code/types.ts'
 import { useCallback, useMemo, useState } from 'react'
+import { Button } from '../Common/Button.tsx'
 
 type SortablePull = PullDetailed & ItemInterface
 
@@ -54,9 +55,9 @@ export function Pulls() {
           <PullComponent key={idx} pullIndex={idx} pull={pull} ghost={pull.filtered} />
         ))}
       </ReactSortable>
-      <button className="mx-2 bg-gray-200" onClick={() => dispatch({ type: 'add_pull' })}>
+      <Button className="justify-center" onClick={() => dispatch({ type: 'add_pull' })}>
         Add pull
-      </button>
+      </Button>
     </div>
   )
 }

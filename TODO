@@ -1,5 +1,8 @@
-﻿- Delete pull
-- Fix mob icon hovering
+﻿- Initial zoom too zoomed in
+- Delete pull
 - Small icons pull outline kinda weird (everbloom flowers)
 - Scrollable pulls list
 - Toast on import/export
+- Fix mob icon hovering (dissapears when switching)
+- Mob hover tooltip
+- Mob spells
