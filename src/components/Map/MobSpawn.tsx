@@ -26,7 +26,7 @@ export function MobSpawn({ iconScaling, mob, spawn }: MobProps) {
 
   return (
     <Marker
-      position={spawn.pos as [number, number]}
+      position={spawn.pos}
       zIndexOffset={mobHovered ? 100_000 : 0}
       icon={divIcon({
         popupAnchor: [100, 0],

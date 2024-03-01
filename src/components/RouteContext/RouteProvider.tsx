@@ -20,7 +20,7 @@ export type RouteContextValue = {
 
 export const RouteContext = createContext<RouteContextValue | null>(null)
 
-const defaultDungeonKey: DungeonKey = 'dotiu'
+const defaultDungeonKey: DungeonKey = 'eb'
 
 export const emptyRoute: Route = {
   dungeonKey: defaultDungeonKey,
