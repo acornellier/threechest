@@ -1,8 +1,9 @@
 import { useMap, useMapEvent } from 'react-leaflet'
 import { useState } from 'react'
-import { MobComponent } from './Mob.tsx'
 import { mapIconScaling } from '../../code/map.ts'
 import { useDungeon } from '../../store/hooks.ts'
+import { MobSpawn } from './MobSpawn.tsx'
+import { mobSpawnToKey } from '../../code/mobSpawns.ts'
 
 export function Mobs() {
   const dungeon = useDungeon()
@@ -16,9 +17,16 @@ export function Mobs() {
 
   return (
     <>
-      {dungeon.mdt.enemies.map((mob) => (
-        <MobComponent key={mob.id} mob={mob} iconScaling={iconScaling} />
-      ))}
+      {dungeon.mdt.enemies.map((mob) =>
+        mob.spawns.map((spawn) => (
+          <MobSpawn
+            key={mobSpawnToKey({ mob, spawn })}
+            iconScaling={iconScaling}
+            mob={mob}
+            spawn={spawn}
+          />
+        )),
+      )}
     </>
   )
 }
