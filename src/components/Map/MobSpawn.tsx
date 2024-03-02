@@ -76,7 +76,7 @@ function MobSpawnComponent({
               >
                 {showCount && mob.count > 0 && (
                   <div
-                    className="fixed flex items-center justify-center w-full h-full text-white font-bold"
+                    className="absolute flex items-center justify-center w-full h-full text-white font-bold"
                     style={{
                       fontSize: iconScaling * 0.7 * mobScale(mob),
                       WebkitTextStroke: `${iconScaling * 0.02}px black`,
