@@ -2,6 +2,7 @@ import { routeToMdtRoute } from '../../code/mdtUtil.ts'
 import { Button } from '../Common/Button.tsx'
 import { useAppDispatch, useRoute } from '../../store/hooks.ts'
 import { clearRoute } from '../../store/reducer.ts'
+import { useToasts } from '../Toast/useToasts.ts'
 
 const exportUrl =
   process.env.NODE_ENV === 'development'
@@ -12,6 +13,8 @@ export function ExportRoute() {
   const dispatch = useAppDispatch()
   const route = useRoute()
 
+  const { addToast } = useToasts()
+
   const handleClick = () => {
     fetch(exportUrl, {
       method: 'post',
@@ -19,7 +22,10 @@ export function ExportRoute() {
       body: JSON.stringify({ mdtRoute: routeToMdtRoute(route) }),
     })
       .then((res) => res.json())
-      .then((str) => navigator.clipboard.writeText(str))
+      .then((str) => {
+        addToast('MDT copied to clipboard!')
+        return navigator.clipboard.writeText(str)
+      })
   }
 
   return (

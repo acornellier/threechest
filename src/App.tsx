@@ -5,6 +5,7 @@ import { store } from './store/store.ts'
 import { useRoute } from './store/hooks.ts'
 import { useEffect } from 'react'
 import { lastDungeonKey, routeLocalStorageKey } from './store/reducer.ts'
+import { ToastProvider } from './components/Toast/ToastProvider.tsx'
 
 function RouteSaver() {
   const route = useRoute()
@@ -19,8 +20,10 @@ function RouteSaver() {
 export default function App() {
   return (
     <Provider store={store}>
-      <RouteSaver />
-      <Page />
+      <ToastProvider>
+        <RouteSaver />
+        <Page />
+      </ToastProvider>
     </Provider>
   )
 }

@@ -17,7 +17,7 @@ export function DungeonDropdown() {
   }
 
   return (
-    <div>
+    <div className="fixed left-2 top-2 z-20">
       <DungeonButton
         dungeon={dungeon}
         onClick={() => setOpen(!open)}

@@ -22,31 +22,33 @@ export function Map() {
   const dungeon = useDungeon()
 
   return (
-    <MapContainer
-      key={dungeon.key}
-      className="bg-inherit w-screen h-screen"
-      crs={CRS.Simple}
-      center={[center[0] + dungeon.defaultOffset[0], center[1] + dungeon.defaultOffset[1]]}
-      keyboard={false}
-      minZoom={1}
-      maxZoom={4}
-      zoom={dungeon.defaultZoom}
-      zoomSnap={0}
-      zoomControl={false}
-      scrollWheelZoom={false}
-      /* @ts-ignore */
-      smoothWheelZoom={true}
-      smoothSensitivity={2}
-    >
-      <MousePosition />
-      <TileLayer
-        attribution="Map data © Blizzard Entertainment"
-        bounds={bounds}
-        noWrap
-        url={`/maps/${dungeon.key}/{z}/{x}_{y}.png`}
-      />
-      <Mobs />
-      <PullOutlines />
-    </MapContainer>
+    <div className="w-full z-10">
+      <MapContainer
+        key={dungeon.key}
+        className="bg-inherit w-screen h-screen"
+        crs={CRS.Simple}
+        center={[center[0] + dungeon.defaultOffset[0], center[1] + dungeon.defaultOffset[1]]}
+        keyboard={false}
+        minZoom={1}
+        maxZoom={4}
+        zoom={dungeon.defaultZoom}
+        zoomSnap={0}
+        zoomControl={false}
+        scrollWheelZoom={false}
+        /* @ts-ignore */
+        smoothWheelZoom={true}
+        smoothSensitivity={2}
+      >
+        <MousePosition />
+        <TileLayer
+          attribution="Map data © Blizzard Entertainment"
+          bounds={bounds}
+          noWrap
+          url={`/maps/${dungeon.key}/{z}/{x}_{y}.png`}
+        />
+        <Mobs />
+        <PullOutlines />
+      </MapContainer>
+    </div>
   )
 }

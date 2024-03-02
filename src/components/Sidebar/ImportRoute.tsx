@@ -3,6 +3,7 @@ import { MdtRoute } from '../../code/types.ts'
 import { Button } from '../Common/Button.tsx'
 import { importRoute } from '../../store/reducer.ts'
 import { useAppDispatch } from '../../store/hooks.ts'
+import { useToasts } from '../Toast/useToasts.ts'
 
 const importUrl =
   process.env.NODE_ENV === 'development'
@@ -16,6 +17,8 @@ export function ImportRoute() {
   const dispatch = useAppDispatch()
   const [input, setInput] = useState(eb)
 
+  const { addToast } = useToasts()
+
   const handleClick = () => {
     fetch(importUrl, {
       method: 'post',
@@ -25,6 +28,7 @@ export function ImportRoute() {
       .then((res) => res.json())
       .then((mdtRoute: MdtRoute) => {
         dispatch(importRoute(mdtRoute))
+        addToast('Route Imported!')
       })
   }
 
