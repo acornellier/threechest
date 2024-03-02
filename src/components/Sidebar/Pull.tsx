@@ -3,7 +3,7 @@ import { Mob } from '../../data/types.ts'
 import { darkenColor, getPullColor, lightenColor } from '../../code/colors.ts'
 import { useAppDispatch, useDungeon, useRoute } from '../../store/hooks.ts'
 import { hoverPull, selectPull } from '../../store/reducer.ts'
-import { MouseEvent, useMemo } from 'react'
+import { MouseEvent, useEffect, useMemo, useRef } from 'react'
 import { roundTo } from '../../code/util.ts'
 
 type MobCount = Record<number, { mob: Mob; count: number }>
@@ -16,6 +16,8 @@ interface Props {
 }
 
 export function Pull({ pullIndex, pull, ghost, onRightClick }: Props) {
+  const ref = useRef<HTMLDivElement>(null)
+
   const dispatch = useAppDispatch()
   const route = useRoute()
   const dungeon = useDungeon()
@@ -34,9 +36,16 @@ export function Pull({ pullIndex, pull, ghost, onRightClick }: Props) {
     return Object.values(mobCounts).sort((a, b) => b.mob.count - a.mob.count)
   }, [pull.mobSpawns])
 
+  useEffect(() => {
+    if (isSelectedPull) {
+      ref.current?.scrollIntoView({ block: 'nearest' })
+    }
+  }, [isSelectedPull])
+
   return (
     <div
-      className="pull relative h-8 cursor-pointer bg-contain bg-blend-overlay bg-no-repeat"
+      ref={ref}
+      className="pull relative h-8 min-h-8 cursor-pointer bg-contain bg-blend-overlay bg-no-repeat"
       style={{
         backgroundColor: ghost ? 'grey' : darkenColor(pullColor, 100),
         backgroundImage: 'url(/wow/UI-Listbox-Highlight2.png)',
