@@ -14,7 +14,7 @@ export function Page() {
       <div className="fixed left-2 top-2 z-20">
         <DungeonDropdown />
       </div>
-      <div className="fixed right-0 z-20 mt-24 flex flex-col gap-3 w-[276px]">
+      <div className="fixed right-0 z-20 mt-4 flex flex-col gap-3 w-[276px]">
         <RouteName />
         <ImportRoute />
         <ExportRoute />

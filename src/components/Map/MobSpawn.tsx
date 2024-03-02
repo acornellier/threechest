@@ -32,7 +32,7 @@ function MobSpawnComponent({
 }: MobSpawnMemoProps) {
   const dispatch = useAppDispatch()
   const isCtrlKeyDown = useKeyDown('Control')
-  const isAltKeyDown = useKeyDown('Alt')
+  // const isAltKeyDown = useKeyDown('Alt')
   const iconSize = iconScaling * mobScale(mob) * (isHovered ? 1.2 : 1)
   const showCount = isGroupHovered || isCtrlKeyDown
 
@@ -54,40 +54,49 @@ function MobSpawnComponent({
           className: 'mob',
           html: renderToString(
             <div
-              className="absolute h-full w-full rounded-full border border-slate-300 overflow-hidden"
+              className="absolute h-full w-full rounded-full border border-slate-300 overflow-hidden border-transparent"
               style={{
-                borderWidth: iconScaling * 0.04,
-                backgroundColor:
-                  matchingPullIndex !== null
-                    ? darkenColor(getPullColor(matchingPullIndex), 100)
-                    : undefined,
-                backgroundImage: `url('/npc_portraits/${mob.id}.png')`,
-                backgroundSize: 'contain',
-                backgroundBlendMode: 'overlay',
+                background:
+                  'linear-gradient(white, white) padding-box, linear-gradient(to bottom, #dfdfe3, #373738) border-box',
+                borderWidth: iconScaling * mobScale(mob) * 0.04,
+                boxShadow: 'black 0px 0px 10px 0px',
               }}
             >
-              {showCount && mob.count > 0 && (
-                <div
-                  className="fixed flex items-center justify-center w-full h-full text-white font-bold"
-                  style={{
-                    fontSize: iconScaling * 0.7 * mobScale(mob),
-                    WebkitTextStroke: `${iconScaling * 0.02}px black`,
-                  }}
-                >
-                  {mob.count}
-                </div>
-              )}
-              {isAltKeyDown && !showCount && spawn.group !== null && (
-                <div
-                  className="fixed flex items-center justify-center w-full h-full text-white font-bold"
-                  style={{
-                    fontSize: iconScaling * 0.6 * mobScale(mob),
-                    WebkitTextStroke: `${iconScaling * 0.02}px black`,
-                  }}
-                >
-                  G{spawn.group}
-                </div>
-              )}
+              <div
+                className="absolute h-full w-full"
+                style={{
+                  backgroundImage: `url('/npc_portraits/${mob.id}.png')`,
+                  backgroundSize: 'contain',
+                  backgroundBlendMode: 'overlay',
+                  backgroundColor:
+                    matchingPullIndex !== null
+                      ? darkenColor(getPullColor(matchingPullIndex), 100)
+                      : undefined,
+                }}
+              >
+                {showCount && mob.count > 0 && (
+                  <div
+                    className="fixed flex items-center justify-center w-full h-full text-white font-bold"
+                    style={{
+                      fontSize: iconScaling * 0.7 * mobScale(mob),
+                      WebkitTextStroke: `${iconScaling * 0.02}px black`,
+                    }}
+                  >
+                    {mob.count}
+                  </div>
+                )}
+                {/*{isAltKeyDown && !showCount && spawn.group !== null && (*/}
+                {/*  <div*/}
+                {/*    className="fixed flex items-center justify-center w-full h-full text-white font-bold"*/}
+                {/*    style={{*/}
+                {/*      fontSize: iconScaling * 0.6 * mobScale(mob),*/}
+                {/*      WebkitTextStroke: `${iconScaling * 0.02}px black`,*/}
+                {/*    }}*/}
+                {/*  >*/}
+                {/*    G{spawn.group}*/}
+                {/*  </div>*/}
+                {/*)}*/}
+              </div>
             </div>,
           ),
         })}
@@ -103,6 +112,30 @@ function MobSpawnComponent({
           </Tooltip>
         )}
       </Marker>
+      {mob.isBoss && (
+        <Marker
+          position={spawn.pos}
+          zIndexOffset={isHovered ? 0 : -10_000}
+          icon={divIcon({
+            iconSize: [iconSize, iconSize],
+            className: 'elite-portait',
+            html: renderToString(
+              <div
+                className="absolute"
+                style={{
+                  backgroundImage: `url('/wow/elite.png')`,
+                  backgroundSize: 'contain',
+                  zIndex: -1,
+                  width: '165%',
+                  height: '165%',
+                  top: '-30%',
+                  left: '-45%',
+                }}
+              />,
+            ),
+          })}
+        />
+      )}
       {spawn.patrol.length && (
         <Polygon
           key={patrolKey}
