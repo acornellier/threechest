@@ -18,6 +18,8 @@ export function RouteName() {
         className="p-1 w-full"
         placeholder="Route name"
         onChange={(e) => {
+          e.stopPropagation()
+          e.preventDefault()
           setInput(e.target.value)
           dispatch(setName(e.target.value))
         }}
