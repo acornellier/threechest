@@ -5,6 +5,7 @@ import { Map } from 'leaflet'
 import makeHull from 'hull.js'
 import Offset from 'polygon-offset'
 import { useAppSelector } from '../../store/hooks.ts'
+import { getPullColor } from '../../code/colors.ts'
 
 interface Props {
   pullId: number
@@ -43,6 +44,7 @@ function PullOutlineComponent({ pullId, index, isSelected, isHovered }: Props) {
   const map = useMap()
   const pull = useAppSelector((state) => state.route.pulls.find((pull) => pull.id === pullId))!
   const { hull, circle } = useMemo(() => createOutline(pull, map), [pull, map])
+  const pullColor = getPullColor(index)
 
   // Change key to force re-render
   const [key, setKey] = useState(0)
@@ -55,16 +57,20 @@ function PullOutlineComponent({ pullId, index, isSelected, isHovered }: Props) {
       key={key}
       center={circle.center}
       radius={circle.radius}
-      color={pull.color}
+      color={pullColor}
       fillOpacity={0}
       opacity={isSelected || isHovered ? 1 : 0.6}
       weight={isSelected ? 6 : isHovered ? 5 : 3.5}
-    />
+    >
+      <Tooltip className="pull-number-tooltip" direction="center" permanent offset={[0, -15]}>
+        {index + 1}
+      </Tooltip>
+    </Circle>
   ) : hull ? (
     <Polygon
       key={key}
       positions={hull}
-      color={pull.color}
+      color={pullColor}
       fillOpacity={0}
       opacity={isSelected || isHovered ? 1 : 0.6}
       weight={isSelected ? 6 : isHovered ? 5 : 3.5}

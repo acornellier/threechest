@@ -1,23 +1,26 @@
 import { PullDetailed } from '../../code/types.ts'
 import { roundTo } from '../../code/util.ts'
 import { Mob } from '../../data/types.ts'
-import { darkenColor, lightenColor } from '../../code/colors.ts'
+import { darkenColor, getPullColor, lightenColor } from '../../code/colors.ts'
 import { useAppDispatch, useDungeon, useRoute } from '../../store/hooks.ts'
 import { hoverPull, selectPull } from '../../store/reducer.ts'
+import { MouseEvent } from 'react'
 
 type MobCount = Record<number, { mob: Mob; count: number }>
 
 interface Props {
   pullIndex: number
   pull: PullDetailed
-  ghost?: boolean
+  ghost: boolean | undefined
+  onRightClick: (e: MouseEvent, pullIndex: number) => void
 }
 
-export function Pull({ pullIndex, pull, ghost }: Props) {
+export function Pull({ pullIndex, pull, ghost, onRightClick }: Props) {
   const dispatch = useAppDispatch()
   const route = useRoute()
   const dungeon = useDungeon()
 
+  const pullColor = getPullColor(pullIndex)
   const isSelectedPull = pullIndex === route.selectedPull
   const percent = (pull.count / dungeon.mdt.totalCount) * 100
 
@@ -31,21 +34,23 @@ export function Pull({ pullIndex, pull, ghost }: Props) {
     <div
       className="pull relative h-8 cursor-pointer bg-contain bg-blend-overlay bg-no-repeat"
       style={{
-        backgroundColor: ghost ? 'grey' : darkenColor(pull.color, 100),
+        backgroundColor: ghost ? 'grey' : darkenColor(pullColor, 100),
         backgroundImage: 'url(/wow/UI-Listbox-Highlight2.png)',
       }}
       onClick={() => dispatch(selectPull(pullIndex))}
       onMouseEnter={() => dispatch(hoverPull(pullIndex))}
       onMouseLeave={() => dispatch(hoverPull(null))}
-      // TODO
-      onContextMenu={() => {}}
+      onContextMenu={(e) => {
+        e.preventDefault()
+        onRightClick(e, pullIndex)
+      }}
     >
       {isSelectedPull && (
         <div
           className="absolute w-full h-full border-[1.5px] rounded-md"
           style={{
-            borderColor: darkenColor(pull.color, 75),
-            boxShadow: `inset 0 0 4px 3px ${lightenColor(pull.color, 100)}`,
+            borderColor: darkenColor(pullColor, 75),
+            boxShadow: `inset 0 0 4px 3px ${lightenColor(pullColor, 100)}`,
           }}
         />
       )}

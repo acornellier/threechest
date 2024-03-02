@@ -5,8 +5,7 @@ import { Mob } from '../../data/types.ts'
 import { renderToString } from 'react-dom/server'
 import { memo, useMemo } from 'react'
 import { mobSpawnsEqual } from '../../code/util.ts'
-import { darkenColor } from '../../code/colors.ts'
-import { Pull } from '../../code/types.ts'
+import { darkenColor, getPullColor } from '../../code/colors.ts'
 import { useAppDispatch, useIsMobSpawnHovered, useRoute } from '../../store/hooks.ts'
 import { hoverMobSpawn, toggleSpawn } from '../../store/reducer.ts'
 
@@ -18,7 +17,7 @@ interface MobSpawnProps {
 
 interface MobSpawnMemoProps extends MobSpawnProps {
   isHovered: boolean
-  matchingPull: Pull | undefined
+  matchingPullIndex: number | null
 }
 
 function MobSpawnComponent({
@@ -26,7 +25,7 @@ function MobSpawnComponent({
   mob,
   spawn,
   isHovered,
-  matchingPull,
+  matchingPullIndex,
 }: MobSpawnMemoProps) {
   const dispatch = useAppDispatch()
   const iconSize = iconScaling * mob.scale * (isHovered ? 1.2 : 1)
@@ -45,7 +44,10 @@ function MobSpawnComponent({
             className="absolute h-full w-full rounded-full border border-slate-300 overflow-hidden"
             style={{
               borderWidth: iconScaling * 0.04,
-              backgroundColor: matchingPull ? darkenColor(matchingPull.color, 100) : undefined,
+              backgroundColor:
+                matchingPullIndex !== null
+                  ? darkenColor(getPullColor(matchingPullIndex), 100)
+                  : undefined,
               backgroundImage: `url('/npc_portraits/${mob.id}.png')`,
               backgroundSize: 'contain',
               backgroundBlendMode: 'overlay',
@@ -61,7 +63,7 @@ function MobSpawnComponent({
     >
       {isHovered && (
         <Tooltip direction="top" offset={[0, -5]} permanent interactive>
-          {`${mob.name} ${mob.enemyIndex}-${spawn.spawnIndex} g${spawn.group}`}
+          {`${mob.name} ${spawn.spawnIndex} g${spawn.group}`}
         </Tooltip>
       )}
     </Marker>
@@ -75,10 +77,11 @@ export function MobSpawn({ iconScaling, mob, spawn }: MobSpawnProps) {
 
   const isHovered = useIsMobSpawnHovered({ mob, spawn })
 
-  const matchingPull = useMemo(() => {
-    return route.pulls.find((pull) =>
+  const matchingPullIndex = useMemo(() => {
+    const index = route.pulls.findIndex((pull) =>
       pull.mobSpawns.some((mobSpawn) => mobSpawnsEqual(mobSpawn, { mob, spawn })),
     )
+    return index !== -1 ? index : null
   }, [route.pulls, mob, spawn])
 
   return (
@@ -87,7 +90,7 @@ export function MobSpawn({ iconScaling, mob, spawn }: MobSpawnProps) {
       mob={mob}
       spawn={spawn}
       isHovered={isHovered}
-      matchingPull={matchingPull}
+      matchingPullIndex={matchingPullIndex}
     />
   )
 }

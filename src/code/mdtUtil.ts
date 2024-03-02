@@ -1,6 +1,7 @@
 ﻿import { MdtPullEnemy, MdtRoute, Route } from './types.ts'
 import { DungeonKey, MobSpawn, Spawn } from '../data/types.ts'
 import { dungeonsByKey } from '../data/dungeons.ts'
+import { getPullColor } from './colors.ts'
 
 export const mdtDungeonIndexToDungeonKey: Record<number, DungeonKey> = {
   101: 'dotiu',
@@ -67,8 +68,8 @@ export function routeToMdtRoute(route: Route): MdtRoute {
         ),
       ),
       selection: [],
-      pulls: route.pulls.map((pull) => ({
-        color: pull.color,
+      pulls: route.pulls.map((pull, index) => ({
+        color: getPullColor(index),
         enemies: mobSpawnsToMdtEnemies(pull.mobSpawns),
       })),
     },

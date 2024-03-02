@@ -5,7 +5,6 @@ import { DungeonKey, MobSpawn } from '../data/types.ts'
 import { sampleRoutes } from '../data/sampleRoutes.ts'
 import { dungeonsByKey } from '../data/dungeons.ts'
 import { mdtRouteToRoute } from '../code/mdtUtil.ts'
-import { getPullColor } from '../code/colors.ts'
 import { mobSpawnsEqual } from '../code/util.ts'
 
 export interface CounterState {
@@ -85,9 +84,6 @@ export const reducer = createSlice({
   name: 'main',
   initialState,
   reducers: {
-    setRoute(state, { payload }: PayloadAction<Route>) {
-      state.route = payload
-    },
     setDungeon(state, { payload }: PayloadAction<DungeonKey>) {
       state.route = sampleRoutes[payload]
     },
@@ -97,15 +93,17 @@ export const reducer = createSlice({
     setName(state, { payload }: PayloadAction<string>) {
       state.route.name = payload
     },
-    addPull(state) {
-      const newPullIndex = state.route.pulls.length
-      const maxIdx = state.route.pulls.reduce<number>(
+    addPull(state, { payload }: PayloadAction<number | undefined>) {
+      const newPullIndex = payload ?? state.route.pulls.length
+      const maxId = state.route.pulls.reduce<number>(
         (acc, pull) => (pull.id > acc ? pull.id : acc),
         0,
       )
-      const id = maxIdx + 1
-      const newPull = { id, color: getPullColor(newPullIndex), mobSpawns: [] }
-      state.route.pulls = [...state.route.pulls, newPull]
+      const newPull = { id: maxId + 1, mobSpawns: [] }
+      state.route.pulls.splice(newPullIndex, 0, newPull)
+    },
+    deletePull(state, { payload }: PayloadAction<number>) {
+      state.route.pulls = state.route.pulls.filter((_, index) => index !== payload)
     },
     selectPull(state, { payload }: PayloadAction<number>) {
       state.route.selectedPull = payload
@@ -120,21 +118,18 @@ export const reducer = createSlice({
       state.route.pulls = toggleSpawnAction(state.route, payload)
     },
     setPulls(state, { payload }: PayloadAction<Pull[]>) {
-      state.route.pulls = payload.map((pull, newPullIndex) => ({
-        ...pull,
-        color: getPullColor(newPullIndex),
-      }))
+      state.route.pulls = payload
     },
   },
 })
 
 // Action creators are generated for each case reducer function
 export const {
-  setRoute,
   setDungeon,
   importRoute,
   setName,
   addPull,
+  deletePull,
   selectPull,
   hoverPull,
   hoverMobSpawn,

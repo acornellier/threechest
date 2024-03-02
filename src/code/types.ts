@@ -2,7 +2,6 @@
 
 export type Pull = {
   id: number
-  color: string
   mobSpawns: MobSpawn[]
 }
 
