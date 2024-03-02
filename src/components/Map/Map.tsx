@@ -29,7 +29,8 @@ export function Map() {
       center={center}
       minZoom={1}
       maxZoom={4}
-      zoom={2}
+      zoom={1.8}
+      zoomSnap={0}
       zoomControl={false}
       scrollWheelZoom={false}
       /* @ts-ignore */
