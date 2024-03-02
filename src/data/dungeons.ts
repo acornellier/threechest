@@ -5,6 +5,8 @@ import ebMdtData from './mdtDungeons/eb_mdt.json'
 export const dotiu: Dungeon = {
   name: "DOTI: Murozond's Rise",
   key: 'dotiu',
+  defaultZoom: 1.9,
+  defaultOffset: [10, -15],
   mdt: dotiuMdtData as MdtDungeon,
   icon: 'achievement_dungeon_dawnoftheinfinite',
 }
@@ -12,6 +14,8 @@ export const dotiu: Dungeon = {
 export const eb: Dungeon = {
   name: 'Everbloom',
   key: 'eb',
+  defaultZoom: 2.7,
+  defaultOffset: [25, 10],
   mdt: ebMdtData as MdtDungeon,
   icon: 'achievement_dungeon_everbloom',
 }

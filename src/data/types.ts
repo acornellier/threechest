@@ -6,6 +6,8 @@ export type MdtDungeon = {
 
 export type Dungeon = {
   name: string
+  defaultZoom: number
+  defaultOffset: [number, number]
   key: DungeonKey
   mdt: MdtDungeon
   icon: string
