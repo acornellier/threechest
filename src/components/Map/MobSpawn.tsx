@@ -6,8 +6,9 @@ import { renderToString } from 'react-dom/server'
 import { memo, useMemo } from 'react'
 import { mobScale, mobSpawnsEqual } from '../../code/mobSpawns.ts'
 import { darkenColor, getPullColor } from '../../code/colors.ts'
-import { useAppDispatch, useIsMobSpawnHovered, useRoute } from '../../store/hooks.ts'
+import { useAppDispatch, useAppSelector, useRoute } from '../../store/hooks.ts'
 import { hoverMobSpawn, toggleSpawn } from '../../store/reducer.ts'
+import { useKeyDown } from '../../hooks/useKeyHeld.ts'
 
 interface MobSpawnProps {
   iconScaling: number
@@ -17,6 +18,7 @@ interface MobSpawnProps {
 
 interface MobSpawnMemoProps extends MobSpawnProps {
   isHovered: boolean
+  isGroupHovered: boolean
   matchingPullIndex: number | null
 }
 
@@ -25,9 +27,12 @@ function MobSpawnComponent({
   mob,
   spawn,
   isHovered,
+  isGroupHovered,
   matchingPullIndex,
 }: MobSpawnMemoProps) {
   const dispatch = useAppDispatch()
+  const isCtrlKeyDown = useKeyDown('Control')
+  const isAltKeyDown = useKeyDown('Alt')
   const iconSize = iconScaling * mobScale(mob) * (isHovered ? 1.2 : 1)
 
   return (
@@ -52,7 +57,30 @@ function MobSpawnComponent({
               backgroundSize: 'contain',
               backgroundBlendMode: 'overlay',
             }}
-          />,
+          >
+            {(isHovered || isGroupHovered || isCtrlKeyDown) && mob.count > 0 && (
+              <div
+                className="fixed flex items-center justify-center w-full h-full text-white font-bold"
+                style={{
+                  fontSize: iconScaling * 0.7 * mobScale(mob),
+                  WebkitTextStroke: `${iconScaling * 0.02}px black`,
+                }}
+              >
+                {mob.count}
+              </div>
+            )}
+            {isAltKeyDown && spawn.group !== null && (
+              <div
+                className="fixed flex items-center justify-center w-full h-full text-white font-bold"
+                style={{
+                  fontSize: iconScaling * 0.6 * mobScale(mob),
+                  WebkitTextStroke: `${iconScaling * 0.02}px black`,
+                }}
+              >
+                G{spawn.group}
+              </div>
+            )}
+          </div>,
         ),
       })}
       eventHandlers={{
@@ -62,7 +90,7 @@ function MobSpawnComponent({
       }}
     >
       {isHovered && (
-        <Tooltip direction="top" offset={[0, -5]} permanent>
+        <Tooltip className="no-arrow" direction="right" offset={[10, 0]} permanent>
           {`${mob.name} ${spawn.spawnIndex} g${spawn.group}`}
         </Tooltip>
       )}
@@ -75,7 +103,12 @@ const MobSpawnMemo = memo(MobSpawnComponent)
 export function MobSpawn({ iconScaling, mob, spawn }: MobSpawnProps) {
   const route = useRoute()
 
-  const isHovered = useIsMobSpawnHovered({ mob, spawn })
+  const hoveredMobSpawn = useAppSelector((state) => state.hoveredMobSpawn)
+  const isHovered = !!hoveredMobSpawn && mobSpawnsEqual(hoveredMobSpawn, { mob, spawn })
+  const isGroupHovered =
+    !!hoveredMobSpawn &&
+    hoveredMobSpawn.spawn.group !== null &&
+    hoveredMobSpawn.spawn.group === spawn.group
 
   const matchingPullIndex = useMemo(() => {
     const index = route.pulls.findIndex((pull) =>
@@ -90,6 +123,7 @@ export function MobSpawn({ iconScaling, mob, spawn }: MobSpawnProps) {
       mob={mob}
       spawn={spawn}
       isHovered={isHovered}
+      isGroupHovered={isGroupHovered}
       matchingPullIndex={matchingPullIndex}
     />
   )

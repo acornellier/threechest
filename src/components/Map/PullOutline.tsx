@@ -39,8 +39,9 @@ function createOutline(pull: Pull): Outline {
     pos: mobSpawn.spawn.pos,
     scale: mobScale(mobSpawn.mob),
   }))
+
   let hull = makeConvexHull(vertices)
-  hull = expandPolygon(hull, 5)
+  hull = expandPolygon(hull, 10)
   hull = makeConvexHull(hull)
 
   return { hull: hull.map((m) => m.pos) }
@@ -55,7 +56,7 @@ function PullOutlineComponent({ pullId, index, isSelected, isHovered }: Props) {
   const [key, setKey] = useState(0)
   useEffect(() => {
     setKey((prevKey) => prevKey + 1000)
-  }, [isHovered, isSelected, pullId])
+  }, [isHovered, isSelected, pull])
 
   return circle ? (
     <Circle
