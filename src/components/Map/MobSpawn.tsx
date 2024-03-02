@@ -3,12 +3,12 @@ import { Marker, Tooltip } from 'react-leaflet'
 import { divIcon } from 'leaflet'
 import { Mob } from '../../data/types.ts'
 import { renderToString } from 'react-dom/server'
-import { memo, useMemo, useState } from 'react'
+import { memo, useMemo } from 'react'
 import { mobSpawnsEqual } from '../../code/util.ts'
 import { darkenColor } from '../../code/colors.ts'
 import { Pull } from '../../code/types.ts'
-import { useAppDispatch, useRoute } from '../../store/hooks.ts'
-import { toggleSpawn } from '../../store/reducer.ts'
+import { useAppDispatch, useIsMobSpawnHovered, useRoute } from '../../store/hooks.ts'
+import { hoverMobSpawn, toggleSpawn } from '../../store/reducer.ts'
 
 interface MobSpawnProps {
   iconScaling: number
@@ -17,19 +17,24 @@ interface MobSpawnProps {
 }
 
 interface MobSpawnMemoProps extends MobSpawnProps {
+  isHovered: boolean
   matchingPull: Pull | undefined
 }
 
-// TODO: merge using selector
-function MobSpawnComponent({ iconScaling, mob, spawn, matchingPull }: MobSpawnMemoProps) {
+function MobSpawnComponent({
+  iconScaling,
+  mob,
+  spawn,
+  isHovered,
+  matchingPull,
+}: MobSpawnMemoProps) {
   const dispatch = useAppDispatch()
-  const [mobHovered, setMobHovered] = useState(false)
-  const iconSize = iconScaling * mob.scale * (mobHovered ? 1.2 : 1)
+  const iconSize = iconScaling * mob.scale * (isHovered ? 1.2 : 1)
 
   return (
     <Marker
       position={spawn.pos}
-      zIndexOffset={mobHovered ? 100_000 : 0}
+      zIndexOffset={isHovered ? 100_000 : 0}
       icon={divIcon({
         popupAnchor: [100, 0],
         iconUrl: `/npc_portaits/${mob.id}.png`,
@@ -50,12 +55,12 @@ function MobSpawnComponent({ iconScaling, mob, spawn, matchingPull }: MobSpawnMe
       })}
       eventHandlers={{
         click: () => dispatch(toggleSpawn({ mob, spawn })),
-        mouseover: () => setMobHovered(true),
-        mouseout: () => setMobHovered(false),
+        mouseover: () => dispatch(hoverMobSpawn({ mob, spawn })),
+        mouseout: () => dispatch(hoverMobSpawn(null)),
       }}
     >
-      {mobHovered && (
-        <Tooltip direction="top" offset={[0, -5]}>
+      {isHovered && (
+        <Tooltip direction="top" offset={[0, -5]} permanent interactive>
           {`${mob.name} ${mob.enemyIndex}-${spawn.spawnIndex} g${spawn.group}`}
         </Tooltip>
       )}
@@ -68,15 +73,21 @@ const MobSpawnMemo = memo(MobSpawnComponent)
 export function MobSpawn({ iconScaling, mob, spawn }: MobSpawnProps) {
   const route = useRoute()
 
-  const matchingPull = useMemo(
-    () =>
-      route.pulls.find((pull) =>
-        pull.mobSpawns.some((mobSpawn) => mobSpawnsEqual(mobSpawn, { mob, spawn })),
-      ),
-    [route.pulls, mob, spawn],
-  )
+  const isHovered = useIsMobSpawnHovered({ mob, spawn })
+
+  const matchingPull = useMemo(() => {
+    return route.pulls.find((pull) =>
+      pull.mobSpawns.some((mobSpawn) => mobSpawnsEqual(mobSpawn, { mob, spawn })),
+    )
+  }, [route.pulls, mob, spawn])
 
   return (
-    <MobSpawnMemo iconScaling={iconScaling} mob={mob} spawn={spawn} matchingPull={matchingPull} />
+    <MobSpawnMemo
+      iconScaling={iconScaling}
+      mob={mob}
+      spawn={spawn}
+      isHovered={isHovered}
+      matchingPull={matchingPull}
+    />
   )
 }

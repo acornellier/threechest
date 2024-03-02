@@ -37,6 +37,8 @@ export function Pull({ pullIndex, pull, ghost }: Props) {
       onClick={() => dispatch(selectPull(pullIndex))}
       onMouseEnter={() => dispatch(hoverPull(pullIndex))}
       onMouseLeave={() => dispatch(hoverPull(null))}
+      // TODO
+      onContextMenu={() => {}}
     >
       {isSelectedPull && (
         <div

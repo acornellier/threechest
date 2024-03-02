@@ -11,6 +11,7 @@ import { mobSpawnsEqual } from '../code/util.ts'
 export interface CounterState {
   route: Route
   hoveredPull: number | null
+  hoveredMobSpawn: MobSpawn | null
 }
 
 const defaultDungeonKey: DungeonKey = 'eb'
@@ -24,6 +25,7 @@ function getRouteByLocalStorage(): Route {
 const initialState: CounterState = {
   route: getRouteByLocalStorage(),
   hoveredPull: null,
+  hoveredMobSpawn: null,
 }
 
 const findSelectedPull = (route: Route, mobSpawn: MobSpawn) =>
@@ -111,6 +113,9 @@ export const reducer = createSlice({
     hoverPull(state, { payload }: PayloadAction<number | null>) {
       state.hoveredPull = payload
     },
+    hoverMobSpawn(state, { payload }: PayloadAction<MobSpawn | null>) {
+      state.hoveredMobSpawn = payload
+    },
     toggleSpawn(state, { payload }: PayloadAction<MobSpawn>) {
       state.route.pulls = toggleSpawnAction(state.route, payload)
     },
@@ -132,6 +137,7 @@ export const {
   addPull,
   selectPull,
   hoverPull,
+  hoverMobSpawn,
   toggleSpawn,
   setPulls,
 } = reducer.actions
