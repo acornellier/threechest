@@ -1,6 +1,7 @@
 import { routeToMdtRoute } from '../../code/mdtUtil.ts'
 import { Button } from '../Common/Button.tsx'
-import { useRoute } from '../../store/hooks.ts'
+import { useAppDispatch, useRoute } from '../../store/hooks.ts'
+import { clearRoute } from '../../store/reducer.ts'
 
 const exportUrl =
   process.env.NODE_ENV === 'development'
@@ -8,6 +9,7 @@ const exportUrl =
     : '/api/importRoute'
 
 export function ExportRoute() {
+  const dispatch = useAppDispatch()
   const route = useRoute()
 
   const handleClick = () => {
@@ -22,7 +24,8 @@ export function ExportRoute() {
 
   return (
     <div className="p-2 bg-gray-900 border-2 border-gray-700 rounded-md flex gap-2 justify-center">
-      <Button onClick={handleClick}>Export MDT to clipboard</Button>
+      <Button onClick={handleClick}>Export MDT string</Button>
+      <Button onClick={() => dispatch(clearRoute())}>Clear</Button>
     </div>
   )
 }

@@ -1,6 +1,6 @@
-import { PullDetailed, Route } from '../code/types.ts'
+import { PullDetailed, Route, RouteDetailed } from '../code/types.ts'
 
-export function augmentRoute(route: Route) {
+export function augmentRoute(route: Route): RouteDetailed {
   const pullsDetailed: PullDetailed[] = []
 
   let count = 0

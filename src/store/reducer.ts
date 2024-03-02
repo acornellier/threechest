@@ -2,18 +2,18 @@
 import type { PayloadAction } from '@reduxjs/toolkit'
 import { MdtRoute, Pull, Route } from '../code/types.ts'
 import { DungeonKey, MobSpawn } from '../data/types.ts'
-import { sampleRoutes } from '../data/sampleRoutes.ts'
 import { dungeonsByKey } from '../data/dungeons.ts'
 import { mdtRouteToRoute } from '../code/mdtUtil.ts'
 import { mobSpawnsEqual } from '../code/mobSpawns.ts'
 
-export interface CounterState {
+export interface State {
   route: Route
   hoveredPull: number | null
   hoveredMobSpawn: MobSpawn | null
 }
 
 const defaultDungeonKey: DungeonKey = 'eb'
+export const lastDungeonKey = 'lastDungeonKey'
 export const routeLocalStorageKey = 'savedRoute'
 
 const makeEmptyRoute = (dungeonKey: DungeonKey): Route => ({
@@ -24,12 +24,13 @@ const makeEmptyRoute = (dungeonKey: DungeonKey): Route => ({
   uid: '',
 })
 
-function getRouteByLocalStorage(): Route {
-  const item = window.localStorage.getItem(routeLocalStorageKey)
+function getRouteByLocalStorage(dungeonKey?: DungeonKey): Route {
+  const dungeon = dungeonKey ?? window.localStorage.getItem(lastDungeonKey)
+  const item = window.localStorage.getItem(routeLocalStorageKey + dungeon)
   return item ? JSON.parse(item) : makeEmptyRoute(defaultDungeonKey)
 }
 
-const initialState: CounterState = {
+const initialState: State = {
   route: getRouteByLocalStorage(),
   hoveredPull: null,
   hoveredMobSpawn: null,
@@ -93,10 +94,13 @@ export const reducer = createSlice({
   initialState,
   reducers: {
     setDungeon(state, { payload }: PayloadAction<DungeonKey>) {
-      state.route = makeEmptyRoute(payload)
+      state.route = getRouteByLocalStorage(payload)
     },
     importRoute(state, { payload }: PayloadAction<MdtRoute>) {
       state.route = mdtRouteToRoute(payload)
+    },
+    clearRoute(state) {
+      state.route = makeEmptyRoute(state.route.dungeonKey)
     },
     setName(state, { payload }: PayloadAction<string>) {
       state.route.name = payload
@@ -113,10 +117,14 @@ export const reducer = createSlice({
     },
     deletePull(state, { payload }: PayloadAction<number>) {
       state.route.pulls = state.route.pulls.filter((_, index) => index !== payload)
-      if (state.route.selectedPull >= state.route.pulls.length) state.route.selectedPull -= 1
+      if (state.route.selectedPull >= state.route.pulls.length) {
+        state.route.selectedPull -= 1
+      }
     },
     selectPull(state, { payload }: PayloadAction<number>) {
-      state.route.selectedPull = payload
+      if (payload >= 0 && payload < state.route.pulls.length) {
+        state.route.selectedPull = payload
+      }
     },
     hoverPull(state, { payload }: PayloadAction<number | null>) {
       state.hoveredPull = payload
@@ -137,6 +145,7 @@ export const reducer = createSlice({
 export const {
   setDungeon,
   importRoute,
+  clearRoute,
   setName,
   addPull,
   deletePull,

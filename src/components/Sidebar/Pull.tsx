@@ -3,7 +3,7 @@ import { Mob } from '../../data/types.ts'
 import { darkenColor, getPullColor, lightenColor } from '../../code/colors.ts'
 import { useAppDispatch, useDungeon, useRoute } from '../../store/hooks.ts'
 import { hoverPull, selectPull } from '../../store/reducer.ts'
-import { MouseEvent } from 'react'
+import { MouseEvent, useMemo } from 'react'
 import { roundTo } from '../../code/util.ts'
 
 type MobCount = Record<number, { mob: Mob; count: number }>
@@ -24,11 +24,15 @@ export function Pull({ pullIndex, pull, ghost, onRightClick }: Props) {
   const isSelectedPull = pullIndex === route.selectedPull
   const percent = (pull.count / dungeon.mdt.totalCount) * 100
 
-  const mobCounts = pull.mobSpawns.reduce<MobCount>((acc, { mob }) => {
-    acc[mob.id] ??= { mob, count: 0 }
-    acc[mob.id].count += 1
-    return acc
-  }, {})
+  const sortedCounts = useMemo(() => {
+    const mobCounts = pull.mobSpawns.reduce<MobCount>((acc, { mob }) => {
+      acc[mob.id] ??= { mob, count: 0 }
+      acc[mob.id].count += 1
+      return acc
+    }, {})
+
+    return Object.values(mobCounts).sort((a, b) => b.mob.count - a.mob.count)
+  }, [pull.mobSpawns])
 
   return (
     <div
@@ -60,21 +64,31 @@ export function Pull({ pullIndex, pull, ghost, onRightClick }: Props) {
             {ghost ? pullIndex : pullIndex + 1}
           </div>
           <div className="flex h-full items-center">
-            {Object.entries(mobCounts).map(([, { mob, count }]) => (
+            {sortedCounts.slice(0, 6).map(({ mob, count }) => (
               <div
                 key={mob.id}
                 className="relative h-7 w-7 mr-[-3px] rounded-full border border-slate-300"
                 style={{ borderWidth: 0.05 }}
               >
-                <img className="h-full rounded-full" src={`/npc_portraits/${mob.id}.png`} alt="" />
-                <div className="absolute bottom-[-3px] w-full text-white text-xs text-center">
+                <img
+                  className="h-full rounded-full"
+                  src={`/npc_portraits/${mob.id}.png`}
+                  alt={mob.name}
+                />
+                <div
+                  className="absolute bottom-[-3px] w-full text-white font-bold text-sm text-center"
+                  style={{ WebkitTextStroke: '0.6px black' }}
+                >
                   x{count}
                 </div>
               </div>
             ))}
           </div>
         </div>
-        <div className="flex items-center text-white text-xs">
+        <div
+          className="flex items-center text-white font-bold text-sm"
+          style={{ WebkitTextStroke: '0.6px black' }}
+        >
           {roundTo(percent, 2).toFixed(2).toLocaleString()}%
         </div>
       </div>

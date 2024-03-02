@@ -3,17 +3,13 @@ import { ItemInterface, ReactSortable } from 'react-sortablejs'
 import type { PullDetailed } from '../../code/types.ts'
 import { MouseEvent, useCallback, useMemo, useState } from 'react'
 import { Button } from '../Common/Button.tsx'
-import { useAppDispatch, useDungeon, useRouteDetailed } from '../../store/hooks.ts'
-import { addPull, deletePull, setPulls } from '../../store/reducer.ts'
+import { useAppDispatch, useDungeon, useRouteDetailed, useSelectedPull } from '../../store/hooks.ts'
+import { addPull, selectPull, setPulls } from '../../store/reducer.ts'
 import { roundTo } from '../../code/util.ts'
+import { PullContextMenu, RightClickedSettings } from './PullContextMenu.tsx'
+import { usePullShortcuts } from './usePullShortcuts.ts'
 
 type SortablePull = PullDetailed & ItemInterface
-
-interface RightClickedSettings {
-  x: number
-  y: number
-  pullIndex: number
-}
 
 export function Pulls() {
   const dispatch = useAppDispatch()
@@ -55,6 +51,8 @@ export function Pulls() {
     })
   }, [])
 
+  usePullShortcuts()
+
   const percent = (routeDetailed.count / dungeon.mdt.totalCount) * 100
   const percentColor =
     percent >= 102 ? 'bg-[#e21e1e]' : percent >= 100 ? 'bg-[#0f950f]' : 'bg-[#426bff]'
@@ -87,43 +85,10 @@ export function Pulls() {
         Add pull
       </Button>
       {rightClickedSettings && (
-        <div
-          className="fixed bg-gray-900 z-[9999] p-2 rounded-md"
-          style={{
-            top: rightClickedSettings.y,
-            left: rightClickedSettings.x,
-          }}
-        >
-          <div className="flex flex-col gap-2">
-            <Button
-              short
-              onClick={() => {
-                dispatch(addPull(rightClickedSettings.pullIndex))
-                setRightClickedSettings(null)
-              }}
-            >
-              Insert before
-            </Button>
-            <Button
-              short
-              onClick={() => {
-                dispatch(addPull(rightClickedSettings.pullIndex + 1))
-                setRightClickedSettings(null)
-              }}
-            >
-              Insert after
-            </Button>
-            <Button
-              short
-              onClick={() => {
-                dispatch(deletePull(rightClickedSettings.pullIndex))
-                setRightClickedSettings(null)
-              }}
-            >
-              Delete
-            </Button>
-          </div>
-        </div>
+        <PullContextMenu
+          rightClickedSettings={rightClickedSettings}
+          onClose={() => setRightClickedSettings(null)}
+        />
       )}
     </div>
   )

@@ -34,6 +34,7 @@ function MobSpawnComponent({
   const isCtrlKeyDown = useKeyDown('Control')
   const isAltKeyDown = useKeyDown('Alt')
   const iconSize = iconScaling * mobScale(mob) * (isHovered ? 1.2 : 1)
+  const showCount = isHovered || isGroupHovered || isCtrlKeyDown
 
   return (
     <Marker
@@ -58,7 +59,7 @@ function MobSpawnComponent({
               backgroundBlendMode: 'overlay',
             }}
           >
-            {(isHovered || isGroupHovered || isCtrlKeyDown) && mob.count > 0 && (
+            {showCount && mob.count > 0 && (
               <div
                 className="fixed flex items-center justify-center w-full h-full text-white font-bold"
                 style={{
@@ -69,7 +70,7 @@ function MobSpawnComponent({
                 {mob.count}
               </div>
             )}
-            {isAltKeyDown && spawn.group !== null && (
+            {isAltKeyDown && !showCount && spawn.group !== null && (
               <div
                 className="fixed flex items-center justify-center w-full h-full text-white font-bold"
                 style={{

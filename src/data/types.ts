@@ -20,7 +20,8 @@ export type DungeonKey = 'dotiu' | 'eb'
 export type Spawn = {
   group: number | null
   spawnIndex: number
-  pos: [number, number]
+  pos: Point
+  patrol: Array<Point>
 }
 
 export type Mob = {

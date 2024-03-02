@@ -1,14 +1,13 @@
 import { MobSpawn } from './MobSpawn.tsx'
 import { mobSpawnToKey } from '../../code/mobSpawns.ts'
 import { Mob } from '../../data/types.ts'
-import { memo } from 'react'
 
 interface Props {
   mob: Mob
   iconScaling: number
 }
 
-function Mob({ mob, iconScaling }: Props) {
+export function MobComponent({ mob, iconScaling }: Props) {
   return mob.spawns.map((spawn) => (
     <MobSpawn
       key={mobSpawnToKey({ mob, spawn })}
@@ -18,5 +17,3 @@ function Mob({ mob, iconScaling }: Props) {
     />
   ))
 }
-
-export const MobComponent = memo(Mob)

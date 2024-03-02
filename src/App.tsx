@@ -4,12 +4,13 @@ import { Provider } from 'react-redux'
 import { store } from './store/store.ts'
 import { useRoute } from './store/hooks.ts'
 import { useEffect } from 'react'
-import { routeLocalStorageKey } from './store/reducer.ts'
+import { lastDungeonKey, routeLocalStorageKey } from './store/reducer.ts'
 
 function RouteSaver() {
   const route = useRoute()
   useEffect(() => {
-    localStorage.setItem(routeLocalStorageKey, JSON.stringify(route))
+    localStorage.setItem(lastDungeonKey, route.dungeonKey)
+    localStorage.setItem(routeLocalStorageKey + route.dungeonKey, JSON.stringify(route))
   }, [route])
 
   return null

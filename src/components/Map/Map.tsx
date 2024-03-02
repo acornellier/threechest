@@ -27,6 +27,7 @@ export function Map() {
       className="bg-inherit w-screen h-screen"
       crs={CRS.Simple}
       center={[center[0] + dungeon.defaultOffset[0], center[1] + dungeon.defaultOffset[1]]}
+      keyboard={false}
       minZoom={1}
       maxZoom={4}
       zoom={dungeon.defaultZoom}

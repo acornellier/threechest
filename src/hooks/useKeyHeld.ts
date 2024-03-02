@@ -19,8 +19,8 @@ export function useKeyDown(key: Key): boolean {
 
     // Cleanup function to remove event listeners when the component unmounts
     return () => {
-      window.addEventListener('keydown', handleKeyDown)
-      window.addEventListener('keyup', handleKeyUp)
+      window.removeEventListener('keydown', handleKeyDown)
+      window.removeEventListener('keyup', handleKeyUp)
     }
   }, [key]) // Update effect when `key` changes
 

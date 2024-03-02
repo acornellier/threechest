@@ -13,7 +13,7 @@ const fullName = fullNames[key]
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
-const data = fs.readFileSync(`${__dirname}/../../MythicDungeonTools/Dragonflight/${fullName}.lua`)
+const data = fs.readFileSync(`${__dirname}/../MythicDungeonTools/Dragonflight/${fullName}.lua`)
 const ast = parser.parse(data.toString())
 
 const dungeonIndexItem = ast.body.find((item) =>
@@ -80,6 +80,15 @@ for (let enemyIndex = 0; enemyIndex < luaEnemies.length; ++enemyIndex) {
       group: getFieldValue(cloneFields, 'g'),
       pos: convertCoords(x, y),
     }
+
+    const patrol = getFieldValue(cloneFields, 'patrol')
+    spawn.patrol = (patrol ?? []).map((item) => {
+      const fields = item.value.fields
+      const x = getFieldValue(fields, 'x')
+      const y = getFieldValue(fields, 'y')
+      return convertCoords(x, y)
+    })
+
     spawns.push(spawn)
   }
 
@@ -93,4 +102,4 @@ const mdtData = {
   enemies,
 }
 
-fs.writeFileSync(`${__dirname}/../../src/data/mdtDungeons/${key}_mdt.json`, JSON.stringify(mdtData))
+fs.writeFileSync(`${__dirname}/../src/data/mdtDungeons/${key}_mdt.json`, JSON.stringify(mdtData))
