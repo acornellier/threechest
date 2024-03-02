@@ -5,7 +5,7 @@ import { DungeonKey, MobSpawn } from '../data/types.ts'
 import { sampleRoutes } from '../data/sampleRoutes.ts'
 import { dungeonsByKey } from '../data/dungeons.ts'
 import { mdtRouteToRoute } from '../code/mdtUtil.ts'
-import { mobSpawnsEqual } from '../code/util.ts'
+import { mobSpawnsEqual } from '../code/mobSpawns.ts'
 
 export interface CounterState {
   route: Route
@@ -16,9 +16,17 @@ export interface CounterState {
 const defaultDungeonKey: DungeonKey = 'eb'
 export const routeLocalStorageKey = 'savedRoute'
 
+const makeEmptyRoute = (dungeonKey: DungeonKey): Route => ({
+  name: 'New route',
+  dungeonKey,
+  selectedPull: 0,
+  pulls: [{ id: 0, mobSpawns: [] }],
+  uid: '',
+})
+
 function getRouteByLocalStorage(): Route {
   const item = window.localStorage.getItem(routeLocalStorageKey)
-  return item ? JSON.parse(item) : sampleRoutes[defaultDungeonKey]
+  return item ? JSON.parse(item) : makeEmptyRoute(defaultDungeonKey)
 }
 
 const initialState: CounterState = {
@@ -85,7 +93,7 @@ export const reducer = createSlice({
   initialState,
   reducers: {
     setDungeon(state, { payload }: PayloadAction<DungeonKey>) {
-      state.route = sampleRoutes[payload]
+      state.route = makeEmptyRoute(payload)
     },
     importRoute(state, { payload }: PayloadAction<MdtRoute>) {
       state.route = mdtRouteToRoute(payload)
@@ -101,9 +109,11 @@ export const reducer = createSlice({
       )
       const newPull = { id: maxId + 1, mobSpawns: [] }
       state.route.pulls.splice(newPullIndex, 0, newPull)
+      state.route.selectedPull = newPullIndex
     },
     deletePull(state, { payload }: PayloadAction<number>) {
       state.route.pulls = state.route.pulls.filter((_, index) => index !== payload)
+      if (state.route.selectedPull >= state.route.pulls.length) state.route.selectedPull -= 1
     },
     selectPull(state, { payload }: PayloadAction<number>) {
       state.route.selectedPull = payload

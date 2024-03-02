@@ -3,8 +3,12 @@ import * as fs from 'fs'
 import * as path from 'path'
 import { fileURLToPath } from 'url'
 
-const fullName = 'DawnOfTheInfiniteUpper'
-const key = 'dotiu'
+const key = process.argv[2]
+const fullNames = {
+  dotiu: 'DawnOfTheInfiniteUpper',
+  eb: 'Everbloom',
+}
+const fullName = fullNames[key]
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -36,6 +40,8 @@ const getFieldValue = (fields, key) => {
 
   if (field.value.type === 'NumericLiteral') {
     return field.value.value
+  } else if (field.value.type === 'BooleanLiteral') {
+    return !!field.value.value
   } else if (field.value.type === 'StringLiteral') {
     return field.value.raw.replaceAll('"', '')
   } else if (field.value.type === 'UnaryExpression') {
@@ -60,6 +66,7 @@ for (let enemyIndex = 0; enemyIndex < luaEnemies.length; ++enemyIndex) {
     health: getFieldValue(fields, 'health'),
     creatureType: getFieldValue(fields, 'creatureType'),
     scale: getFieldValue(fields, 'scale'),
+    isBoss: getFieldValue(fields, 'isBoss'),
   }
 
   const spawns = []

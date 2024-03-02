@@ -1,5 +1,5 @@
 import { MobSpawn } from './MobSpawn.tsx'
-import { mobSpawnToKey } from '../../code/util.ts'
+import { mobSpawnToKey } from '../../code/mobSpawns.ts'
 import { Mob } from '../../data/types.ts'
 import { memo } from 'react'
 

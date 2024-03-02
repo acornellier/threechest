@@ -4,7 +4,7 @@ import { divIcon } from 'leaflet'
 import { Mob } from '../../data/types.ts'
 import { renderToString } from 'react-dom/server'
 import { memo, useMemo } from 'react'
-import { mobSpawnsEqual } from '../../code/util.ts'
+import { mobScale, mobSpawnsEqual } from '../../code/mobSpawns.ts'
 import { darkenColor, getPullColor } from '../../code/colors.ts'
 import { useAppDispatch, useIsMobSpawnHovered, useRoute } from '../../store/hooks.ts'
 import { hoverMobSpawn, toggleSpawn } from '../../store/reducer.ts'
@@ -28,7 +28,7 @@ function MobSpawnComponent({
   matchingPullIndex,
 }: MobSpawnMemoProps) {
   const dispatch = useAppDispatch()
-  const iconSize = iconScaling * mob.scale * (isHovered ? 1.2 : 1)
+  const iconSize = iconScaling * mobScale(mob) * (isHovered ? 1.2 : 1)
 
   return (
     <Marker
@@ -62,7 +62,7 @@ function MobSpawnComponent({
       }}
     >
       {isHovered && (
-        <Tooltip direction="top" offset={[0, -5]} permanent interactive>
+        <Tooltip direction="top" offset={[0, -5]} permanent>
           {`${mob.name} ${spawn.spawnIndex} g${spawn.group}`}
         </Tooltip>
       )}

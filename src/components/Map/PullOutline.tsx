@@ -2,10 +2,12 @@
 import { Circle, Polygon, Tooltip, useMap } from 'react-leaflet'
 import { memo, useEffect, useMemo, useState } from 'react'
 import { Map } from 'leaflet'
-import makeHull from 'hull.js'
-import Offset from 'polygon-offset'
 import { useAppSelector } from '../../store/hooks.ts'
 import { getPullColor } from '../../code/colors.ts'
+import { MobSpawn, Point } from '../../data/types.ts'
+import { expandPolygon, iconSizeMagicScaling, makeConvexHull } from '../../code/hull.ts'
+import { mapIconScaling } from '../../code/map.ts'
+import { mobScale } from '../../code/mobSpawns.ts'
 
 interface Props {
   pullId: number
@@ -15,35 +17,38 @@ interface Props {
 }
 
 interface Outline {
-  hull?: Array<[number, number]>
-  circle?: { center: [number, number]; radius: number }
+  hull?: Array<Point>
+  circle?: { center: Point; radius: number }
 }
 
-function createOutline(pull: Pull, map: Map): Outline {
+function createOutline(pull: Pull): Outline {
   if (pull.mobSpawns.length <= 0) return {}
 
   if (pull.mobSpawns.length === 1) {
+    const mobSpawn = pull.mobSpawns[0]
+    const scale = mobScale(mobSpawn.mob)
     return {
-      circle: { center: pull.mobSpawns[0].spawn.pos, radius: 3 },
+      circle: {
+        center: mobSpawn.spawn.pos,
+        radius: scale * iconSizeMagicScaling,
+      },
     }
   }
 
-  let hull = makeHull(
-    pull.mobSpawns.map((mobSpawn) => mobSpawn.spawn.pos),
-    Infinity,
-  )
+  const vertices = pull.mobSpawns.map((mobSpawn) => ({
+    pos: mobSpawn.spawn.pos,
+    scale: mobScale(mobSpawn.mob),
+  }))
+  let hull = makeConvexHull(vertices)
+  hull = expandPolygon(hull, 5)
+  hull = makeConvexHull(hull)
 
-  const arcSegments = Math.max(5, 9 - hull.length + 2 * map.getZoom())
-  const margin = 2.8
-  hull = new Offset().data(hull).arcSegments(arcSegments).margin(margin)[0]
-
-  return { hull }
+  return { hull: hull.map((m) => m.pos) }
 }
 
 function PullOutlineComponent({ pullId, index, isSelected, isHovered }: Props) {
-  const map = useMap()
   const pull = useAppSelector((state) => state.route.pulls.find((pull) => pull.id === pullId))!
-  const { hull, circle } = useMemo(() => createOutline(pull, map), [pull, map])
+  const { hull, circle } = useMemo(() => createOutline(pull), [pull])
   const pullColor = getPullColor(index)
 
   // Change key to force re-render

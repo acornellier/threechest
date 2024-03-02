@@ -1,3 +1,5 @@
+export type Point = [number, number]
+
 export type MdtDungeon = {
   dungeonIndex: number
   totalCount: number
@@ -29,6 +31,7 @@ export type Mob = {
   health: number
   creatureType: string
   scale: number
+  isBoss: boolean
   spawns: Spawn[]
 }
 

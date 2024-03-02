@@ -3,7 +3,7 @@ import * as path from 'path'
 import { fileURLToPath } from 'url'
 // @ts-ignore
 import { importRoute } from '../../src/server/importRoute.js'
-import { mdtDungeonIndexToDungeonKey } from '../../src/code/mdtUtil'
+import { mdtDungeonIndexToDungeonKey } from '../src/code/mdtUtil'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
