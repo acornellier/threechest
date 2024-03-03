@@ -1,5 +1,5 @@
 import { useToasts } from './useToasts.ts'
-import { Label } from '../Common/Label.tsx'
+import { ToastComponent } from './ToastComponent.tsx'
 
 export function Toasts() {
   const { toasts } = useToasts()
@@ -8,7 +8,7 @@ export function Toasts() {
     <div className="fixed w-full bottom-8 z-20">
       <div className="flex flex-col gap-2 items-center">
         {toasts.map((toast) => (
-          <Label key={toast.id}>{toast.message}</Label>
+          <ToastComponent key={toast.id} toast={toast} />
         ))}
       </div>
     </div>

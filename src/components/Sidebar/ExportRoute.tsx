@@ -24,7 +24,7 @@ export function ExportRoute() {
     })
       .then((res) => res.json())
       .then((str) => {
-        addToast('MDT copied to clipboard!')
+        addToast('MDT string copied to clipboard!')
         return navigator.clipboard.writeText(str)
       })
   }

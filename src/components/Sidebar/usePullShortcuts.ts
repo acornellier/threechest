@@ -11,7 +11,7 @@ export function usePullShortcuts() {
     () => dispatch(deletePull(selectedPull)),
     [dispatch, selectedPull],
   )
-  useKeyPress('Backspace', onKeyBackspace)
+  useKeyPress(['Backspace', 'Delete'], onKeyBackspace)
 
   const onKeyA = useCallback(() => dispatch(addPull(selectedPull + 1)), [dispatch, selectedPull])
   useKeyPress('a', onKeyA)

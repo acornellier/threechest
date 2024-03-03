@@ -31,10 +31,10 @@ function MobSpawnComponent({
   matchingPullIndex,
 }: MobSpawnMemoProps) {
   const dispatch = useAppDispatch()
-  const isCtrlKeyDown = useKeyDown('Control')
+  // const isCtrlKeyDown = useKeyDown('Control')
   // const isAltKeyDown = useKeyDown('Alt')
   const iconSize = iconScaling * mobScale(mob) * (isHovered ? 1.2 : 1)
-  const showCount = isGroupHovered || isCtrlKeyDown
+  const showCount = isGroupHovered
 
   // Change key to force re-render
   const [patrolKey, setPatrolKey] = useState(0)
@@ -108,7 +108,7 @@ function MobSpawnComponent({
       >
         {isHovered && (
           <Tooltip className="no-arrow" direction="right" offset={[10, 0]} permanent>
-            {`${mob.name} ${spawn.spawnIndex} g${spawn.group}`}
+            {`${mob.name} ${spawn.spawnIndex}`}
           </Tooltip>
         )}
       </Marker>

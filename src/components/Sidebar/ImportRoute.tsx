@@ -29,7 +29,7 @@ export function ImportRoute() {
       .then((res) => res.json())
       .then((mdtRoute: MdtRoute) => {
         dispatch(importRoute(mdtRoute))
-        addToast('Route Imported!')
+        addToast('Route imported!')
       })
   }
 
