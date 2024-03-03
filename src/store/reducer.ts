@@ -89,6 +89,13 @@ function toggleSpawnAction(route: Route, payload: MobSpawn): Pull[] {
   }
 }
 
+function addPullFunc(state: State, newPullIndex: number = state.route.pulls.length) {
+  const maxId = state.route.pulls.reduce<number>((acc, pull) => (pull.id > acc ? pull.id : acc), 0)
+  const newPull = { id: maxId + 1, mobSpawns: [] }
+  state.route.pulls.splice(newPullIndex, 0, newPull)
+  state.route.selectedPull = newPullIndex
+}
+
 export const reducer = createSlice({
   name: 'main',
   initialState,
@@ -106,17 +113,16 @@ export const reducer = createSlice({
     setName(state, { payload }: PayloadAction<string>) {
       state.route.name = payload
     },
-    addPull(state, { payload }: PayloadAction<number | undefined>) {
-      const newPullIndex = payload ?? state.route.pulls.length
-      const maxId = state.route.pulls.reduce<number>(
-        (acc, pull) => (pull.id > acc ? pull.id : acc),
-        0,
-      )
-      const newPull = { id: maxId + 1, mobSpawns: [] }
-      state.route.pulls.splice(newPullIndex, 0, newPull)
-      state.route.selectedPull = newPullIndex
+    addPull(state, { payload = state.route.pulls.length }: PayloadAction<number | undefined>) {
+      addPullFunc(state, payload)
     },
-    deletePull(state, { payload }: PayloadAction<number>) {
+    prependPull(state) {
+      addPullFunc(state, state.route.selectedPull)
+    },
+    appendPull(state) {
+      addPullFunc(state, state.route.selectedPull + 1)
+    },
+    deletePull(state, { payload = state.route.selectedPull }: PayloadAction<number | undefined>) {
       state.route.pulls = state.route.pulls.filter((_, index) => index !== payload)
       if (state.route.selectedPull >= state.route.pulls.length) {
         state.route.selectedPull -= 1
@@ -125,6 +131,12 @@ export const reducer = createSlice({
     selectPull(state, { payload }: PayloadAction<number>) {
       if (payload >= 0 && payload < state.route.pulls.length) {
         state.route.selectedPull = payload
+      }
+    },
+    selectPullRelative(state, { payload }: PayloadAction<number>) {
+      const newIndex = state.route.selectedPull + payload
+      if (newIndex >= 0 && newIndex < state.route.pulls.length) {
+        state.route.selectedPull = newIndex
       }
     },
     hoverPull(state, { payload }: PayloadAction<number | null>) {
@@ -149,8 +161,11 @@ export const {
   clearRoute,
   setName,
   addPull,
+  prependPull,
+  appendPull,
   deletePull,
   selectPull,
+  selectPullRelative,
   hoverPull,
   hoverMobSpawn,
   toggleSpawn,

@@ -8,7 +8,6 @@ import { mobScale, mobSpawnsEqual } from '../../code/mobSpawns.ts'
 import { darkenColor, getPullColor } from '../../code/colors.ts'
 import { useAppDispatch, useAppSelector, useRoute } from '../../store/hooks.ts'
 import { hoverMobSpawn, toggleSpawn } from '../../store/reducer.ts'
-import { useKeyDown } from '../../hooks/useKeyHeld.ts'
 
 interface MobSpawnProps {
   iconScaling: number
@@ -47,6 +46,11 @@ function MobSpawnComponent({
       <Marker
         position={spawn.pos}
         zIndexOffset={isHovered ? 100_000 : 0}
+        eventHandlers={{
+          click: () => dispatch(toggleSpawn({ mob, spawn })),
+          mouseover: () => dispatch(hoverMobSpawn({ mob, spawn })),
+          mouseout: () => dispatch(hoverMobSpawn(null)),
+        }}
         icon={divIcon({
           popupAnchor: [100, 0],
           iconUrl: `/npc_portaits/${mob.id}.png`,
@@ -100,14 +104,9 @@ function MobSpawnComponent({
             </div>,
           ),
         })}
-        eventHandlers={{
-          click: () => dispatch(toggleSpawn({ mob, spawn })),
-          mouseover: () => dispatch(hoverMobSpawn({ mob, spawn })),
-          mouseout: () => dispatch(hoverMobSpawn(null)),
-        }}
       >
         {isHovered && (
-          <Tooltip className="no-arrow" direction="right" offset={[10, 0]} permanent>
+          <Tooltip className="no-arrow" direction="right" offset={[10, 0]}>
             {`${mob.name} ${spawn.spawnIndex}`}
           </Tooltip>
         )}

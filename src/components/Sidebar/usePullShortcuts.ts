@@ -1,30 +1,22 @@
 import { useCallback } from 'react'
-import { addPull, deletePull, selectPull } from '../../store/reducer.ts'
+import { appendPull, deletePull, selectPullRelative } from '../../store/reducer.ts'
 import { useKeyPress } from '../../hooks/useKeyPress.ts'
-import { useAppDispatch, useSelectedPull } from '../../store/hooks.ts'
+import { useAppDispatch } from '../../store/hooks.ts'
+
+const deleteKeys = ['Backspace', 'Delete']
 
 export function usePullShortcuts() {
   const dispatch = useAppDispatch()
-  const selectedPull = useSelectedPull()
 
-  const onKeyBackspace = useCallback(
-    () => dispatch(deletePull(selectedPull)),
-    [dispatch, selectedPull],
-  )
-  useKeyPress(['Backspace', 'Delete'], onKeyBackspace)
+  const onKeyBackspace = useCallback(() => dispatch(deletePull()), [dispatch])
+  useKeyPress(deleteKeys, onKeyBackspace)
 
-  const onKeyA = useCallback(() => dispatch(addPull(selectedPull + 1)), [dispatch, selectedPull])
+  const onKeyA = useCallback(() => dispatch(appendPull()), [dispatch])
   useKeyPress('a', onKeyA)
 
-  const onKeyDown = useCallback(
-    () => dispatch(selectPull(selectedPull + 1)),
-    [dispatch, selectedPull],
-  )
+  const onKeyDown = useCallback(() => dispatch(selectPullRelative(1)), [dispatch])
   useKeyPress('ArrowDown', onKeyDown)
 
-  const onKeyUp = useCallback(
-    () => dispatch(selectPull(selectedPull - 1)),
-    [dispatch, selectedPull],
-  )
+  const onKeyUp = useCallback(() => dispatch(selectPullRelative(-1)), [dispatch])
   useKeyPress('ArrowUp', onKeyUp)
 }

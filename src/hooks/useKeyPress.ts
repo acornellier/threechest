@@ -7,7 +7,7 @@ export function useKeyPress(key: Key | Key[], callback: () => void) {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.target instanceof HTMLInputElement) return
 
-      if (event.key === key || (key.length && key.includes(event.key))) {
+      if (event.key === key || (Array.isArray(key) && key.includes(event.key))) {
         callback()
       }
     }
