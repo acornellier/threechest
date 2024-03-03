@@ -4,6 +4,7 @@ import { Button } from '../Common/Button.tsx'
 import { importRoute } from '../../store/reducer.ts'
 import { useAppDispatch } from '../../store/hooks.ts'
 import { useToasts } from '../Toast/useToasts.ts'
+import { Panel } from '../Common/Panel.tsx'
 
 const importUrl =
   process.env.NODE_ENV === 'development'
@@ -33,7 +34,7 @@ export function ImportRoute() {
   }
 
   return (
-    <div className="p-2 bg-gray-900 border-2 border-gray-700 rounded-md flex gap-2">
+    <Panel>
       <input
         className="p-1"
         placeholder="Paste mdt string"
@@ -43,6 +44,6 @@ export function ImportRoute() {
       <Button className="bg-gray-200 px-2" onClick={handleClick}>
         Import
       </Button>
-    </div>
+    </Panel>
   )
 }

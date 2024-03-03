@@ -3,6 +3,7 @@ import { Button } from '../Common/Button.tsx'
 import { useAppDispatch, useRoute } from '../../store/hooks.ts'
 import { clearRoute } from '../../store/reducer.ts'
 import { useToasts } from '../Toast/useToasts.ts'
+import { Panel } from '../Common/Panel.tsx'
 
 const exportUrl =
   process.env.NODE_ENV === 'development'
@@ -29,9 +30,9 @@ export function ExportRoute() {
   }
 
   return (
-    <div className="p-2 bg-gray-900 border-2 border-gray-700 rounded-md flex gap-2 justify-center">
+    <Panel>
       <Button onClick={handleClick}>Export MDT string</Button>
       <Button onClick={() => dispatch(clearRoute())}>Clear</Button>
-    </div>
+    </Panel>
   )
 }

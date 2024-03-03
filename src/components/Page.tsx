@@ -7,8 +7,8 @@ export function Page() {
   return (
     <div className="flex flex-row">
       <Map />
-      <Sidebar />
       <DungeonDropdown />
+      <Sidebar />
       <Toasts />
     </div>
   )

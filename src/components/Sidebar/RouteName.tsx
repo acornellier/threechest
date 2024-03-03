@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useAppDispatch, useRoute } from '../../store/hooks.ts'
 import { setName } from '../../store/reducer.ts'
+import { Panel } from '../Common/Panel.tsx'
 
 export function RouteName() {
   const route = useRoute()
@@ -13,7 +14,7 @@ export function RouteName() {
   }, [input, route.name])
 
   return (
-    <div className="p-2 bg-gray-900 border-2 border-gray-700 rounded-md flex gap-2">
+    <Panel>
       <input
         className="p-1 w-full"
         placeholder="Route name"
@@ -25,6 +26,6 @@ export function RouteName() {
         }}
         value={input}
       />
-    </div>
+    </Panel>
   )
 }

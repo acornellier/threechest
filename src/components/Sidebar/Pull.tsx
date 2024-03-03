@@ -45,11 +45,7 @@ export function Pull({ pullIndex, pull, ghost, onRightClick }: Props) {
   return (
     <div
       ref={ref}
-      className="pull relative h-8 min-h-8 cursor-pointer bg-contain bg-blend-overlay bg-no-repeat"
-      style={{
-        backgroundColor: ghost ? 'grey' : darkenColor(pullColor, 100),
-        backgroundImage: 'url(/wow/UI-Listbox-Highlight2.png)',
-      }}
+      className="pull relative h-8 min-h-8 cursor-pointer"
       onClick={() => dispatch(selectPull(pullIndex))}
       onMouseEnter={() => dispatch(hoverPull(pullIndex))}
       onMouseLeave={() => dispatch(hoverPull(null))}
@@ -58,16 +54,24 @@ export function Pull({ pullIndex, pull, ghost, onRightClick }: Props) {
         onRightClick(e, pullIndex)
       }}
     >
+      <div
+        className="absolute h-full w-full cursor-pointer bg-contain bg-blend-overlay bg-no-repeat"
+        style={{
+          backgroundColor: ghost ? 'grey' : darkenColor(pullColor, 100),
+          backgroundImage: 'url(/wow/UI-Listbox-Highlight2.png)',
+          filter: 'contrast(80%)',
+        }}
+      />
       {isSelectedPull && (
         <div
           className="absolute w-full h-full border-[1.5px] rounded-md"
           style={{
             borderColor: darkenColor(pullColor, 75),
-            boxShadow: `inset 0 0 4px 3px ${lightenColor(pullColor, 100)}`,
+            boxShadow: `inset 0 0 12px 2px ${lightenColor(pullColor, 100)}`,
           }}
         />
       )}
-      <div className="flex justify-between py-0.5 px-2 h-full">
+      <div className="relative flex justify-between py-0.5 px-2 h-full z-10">
         <div className="flex items-center">
           <div className="min-w-4 mr-1 text-yellow-400 text-xs">
             {ghost ? pullIndex : pullIndex + 1}

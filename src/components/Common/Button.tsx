@@ -1,7 +1,12 @@
-import { Label, LabelProps } from './Label'
+import { DetailedHTMLProps, HTMLAttributes } from 'react'
 
-export interface ButtonProps extends Omit<LabelProps, 'Button'> {}
+export interface ButtonProps
+  extends DetailedHTMLProps<HTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {}
 
-export function Button(props: ButtonProps) {
-  return <Label button {...props} />
+export function Button({ className, children, ...props }: ButtonProps) {
+  return (
+    <button className={`fancy-button gritty ${className}`} {...props}>
+      {children}
+    </button>
+  )
 }

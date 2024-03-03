@@ -8,6 +8,7 @@ import { addPull, setPulls } from '../../store/reducer.ts'
 import { roundTo } from '../../code/util.ts'
 import { PullContextMenu, RightClickedSettings } from './PullContextMenu.tsx'
 import { usePullShortcuts } from './usePullShortcuts.ts'
+import { Panel } from '../Common/Panel.tsx'
 
 type SortablePull = PullDetailed & ItemInterface
 
@@ -59,8 +60,10 @@ export function Pulls() {
 
   let pullIndex = 0
   return (
-    <div className="flex flex-col p-2 gap-2 bg-gray-900 border-2 border-gray-700 rounded-md overflow-auto">
-      <div className={`flex justify-center mx-2 ${percentColor} rounded-sm text-white font-bold`}>
+    <Panel className="flex-col overflow-auto">
+      <div
+        className={`gritty flex justify-center mx-2 ${percentColor} rounded-sm text-white font-bold border border-yellow-600`}
+      >
         {routeDetailed.count}/{dungeon.mdt.totalCount} -{' '}
         {roundTo(percent, 2).toFixed(2).toLocaleString()}%
       </div>
@@ -90,6 +93,6 @@ export function Pulls() {
           onClose={() => setRightClickedSettings(null)}
         />
       )}
-    </div>
+    </Panel>
   )
 }
