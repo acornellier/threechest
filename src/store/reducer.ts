@@ -98,6 +98,7 @@ export const reducer = createSlice({
     },
     importRoute(state, { payload }: PayloadAction<MdtRoute>) {
       state.route = mdtRouteToRoute(payload)
+      state.hoveredPull = null
     },
     clearRoute(state) {
       state.route = makeEmptyRoute(state.route.dungeonKey)

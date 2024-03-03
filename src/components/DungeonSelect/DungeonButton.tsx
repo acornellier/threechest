@@ -10,7 +10,6 @@ export function DungeonButton({ dungeon, onClick, className, children, ...props 
   return (
     <Button
       key={dungeon.key}
-      bigText
       className={`flex gap-2 py-2 px-2 ${className}`}
       onClick={onClick}
       {...props}

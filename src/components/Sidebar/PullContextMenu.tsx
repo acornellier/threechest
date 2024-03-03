@@ -26,7 +26,6 @@ export function PullContextMenu({ rightClickedSettings, onClose }: Props) {
     >
       <div className="flex flex-col gap-2">
         <Button
-          short
           onClick={() => {
             dispatch(addPull(rightClickedSettings.pullIndex))
             onClose()
@@ -35,7 +34,6 @@ export function PullContextMenu({ rightClickedSettings, onClose }: Props) {
           Insert before
         </Button>
         <Button
-          short
           onClick={() => {
             dispatch(addPull(rightClickedSettings.pullIndex + 1))
             onClose()
@@ -44,7 +42,6 @@ export function PullContextMenu({ rightClickedSettings, onClose }: Props) {
           Insert after
         </Button>
         <Button
-          short
           onClick={() => {
             dispatch(deletePull(rightClickedSettings.pullIndex))
             onClose()
