@@ -16,6 +16,7 @@ export function DungeonButton({ dungeon, onClick, children, expanded, ...props }
       twoDimensional
       className="flex gap-2 py-2 px-2 min-w-[250px]"
       style={{
+        justifyContent: 'start',
         ...(expanded
           ? {
               borderBottomLeftRadius: 0,

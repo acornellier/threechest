@@ -1,9 +1,7 @@
 import { routeToMdtRoute } from '../../code/mdtUtil.ts'
 import { Button } from '../Common/Button.tsx'
-import { useAppDispatch, useRoute } from '../../store/hooks.ts'
-import { clearRoute } from '../../store/reducer.ts'
+import { useRoute } from '../../store/hooks.ts'
 import { useToasts } from '../Toast/useToasts.ts'
-import { Panel } from '../Common/Panel.tsx'
 
 const exportUrl =
   process.env.NODE_ENV === 'development'
@@ -11,7 +9,6 @@ const exportUrl =
     : '/api/importRoute'
 
 export function ExportRoute() {
-  const dispatch = useAppDispatch()
   const route = useRoute()
 
   const { addToast } = useToasts()
@@ -29,10 +26,5 @@ export function ExportRoute() {
       })
   }
 
-  return (
-    <Panel>
-      <Button onClick={handleClick}>Export MDT string</Button>
-      <Button onClick={() => dispatch(clearRoute())}>Clear</Button>
-    </Panel>
-  )
+  return <Button onClick={handleClick}>Export MDT string</Button>
 }

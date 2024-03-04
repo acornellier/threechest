@@ -4,7 +4,7 @@ import type { PullDetailed } from '../../code/types.ts'
 import { MouseEvent, useCallback, useMemo, useState } from 'react'
 import { Button } from '../Common/Button.tsx'
 import { useAppDispatch, useDungeon, useRouteDetailed } from '../../store/hooks.ts'
-import { addPull, setPulls } from '../../store/reducer.ts'
+import { addPull, clearRoute, setPulls } from '../../store/reducer.ts'
 import { roundTo } from '../../code/util.ts'
 import { PullContextMenu, RightClickedSettings } from './PullContextMenu.tsx'
 import { usePullShortcuts } from './usePullShortcuts.ts'
@@ -84,9 +84,12 @@ export function Pulls() {
           />
         ))}
       </ReactSortable>
-      <Button className="justify-center" onClick={() => dispatch(addPull())}>
-        Add pull
-      </Button>
+      <div className="flex gap-1">
+        <Button className="grow" onClick={() => dispatch(addPull())}>
+          Add pull
+        </Button>
+        <Button onClick={() => dispatch(clearRoute())}>Clear</Button>
+      </div>
       {rightClickedSettings && (
         <PullContextMenu
           rightClickedSettings={rightClickedSettings}

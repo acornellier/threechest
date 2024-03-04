@@ -5,6 +5,7 @@ import { importRoute } from '../../store/reducer.ts'
 import { useAppDispatch } from '../../store/hooks.ts'
 import { useToasts } from '../Toast/useToasts.ts'
 import { Panel } from '../Common/Panel.tsx'
+import { ExportRoute } from './ExportRoute.tsx'
 
 const importUrl =
   process.env.NODE_ENV === 'development'
@@ -34,16 +35,19 @@ export function ImportRoute() {
   }
 
   return (
-    <Panel>
-      <input
-        className="p-1"
-        placeholder="Paste mdt string"
-        onChange={(e) => setInput(e.target.value)}
-        value={input}
-      />
-      <Button className="bg-gray-200 px-2" onClick={handleClick}>
-        Import
-      </Button>
+    <Panel className="flex-col gap-3">
+      <div className="flex gap-2">
+        <input
+          className="p-1 w-full bg-gray-100"
+          placeholder="Paste mdt string"
+          onChange={(e) => setInput(e.target.value)}
+          value={input}
+        />
+        <Button className="bg-gray-200 px-2" onClick={handleClick}>
+          Import
+        </Button>
+      </div>
+      <ExportRoute />
     </Panel>
   )
 }

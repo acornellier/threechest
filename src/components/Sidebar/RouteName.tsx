@@ -16,7 +16,7 @@ export function RouteName() {
   return (
     <Panel>
       <input
-        className="p-1 w-full"
+        className="p-1 w-full bg-gray-100"
         placeholder="Route name"
         onChange={(e) => {
           e.stopPropagation()

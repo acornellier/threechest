@@ -2,7 +2,6 @@
 - Mob hover tooltip
 - Mob spells
 - Save/load routes
-- Sample routes
 - Keyboard shortcut hints
 - Rework sidebar
 - Donate button
@@ -11,3 +10,4 @@
 Questionable
 - Mob hover stuck
 - Drag a rectangle to select multiple groups
+- Sample routes

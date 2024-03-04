@@ -12,7 +12,11 @@ export function useKeyPress(keys: Key | Key[], callback: () => void, modifiers?:
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.target instanceof HTMLInputElement) return
 
-      if (!!modifiers?.ctrl !== event.ctrlKey || !!modifiers?.shift !== event.shiftKey) return
+      if (
+        (!!modifiers?.ctrl !== event.ctrlKey && !!modifiers?.ctrl !== event.metaKey) ||
+        !!modifiers?.shift !== event.shiftKey
+      )
+        return
 
       if (
         (typeof keys === 'string' && event.key.toLowerCase() === keys.toLowerCase()) ||

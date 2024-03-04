@@ -109,7 +109,7 @@ const baseReducer = createSlice({
       state.hoveredPull = null
     },
     clearRoute(state) {
-      state.route = makeEmptyRoute(state.route.dungeonKey)
+      state.route.pulls = []
     },
     setName(state, { payload }: PayloadAction<string>) {
       state.route.name = payload
@@ -157,6 +157,8 @@ const baseReducer = createSlice({
 
 export const reducer = undoable(baseReducer.reducer, {
   filter: includeAction([
+    baseReducer.actions.importRoute.type,
+    baseReducer.actions.clearRoute.type,
     baseReducer.actions.addPull.type,
     baseReducer.actions.prependPull.type,
     baseReducer.actions.appendPull.type,
