@@ -11,7 +11,7 @@ import wcmMdtData from './mdtDungeons/wcm_mdt.json'
 export const ad: Dungeon = {
   name: "Atal'Dazar",
   key: 'ad',
-  defaultZoom: 2,
+  defaultZoom: 2.2,
   defaultOffset: [0, 0],
   mdt: adMdtData as MdtDungeon,
   icon: 'achievement_dungeon_ataldazar',
@@ -21,7 +21,7 @@ export const brh: Dungeon = {
   name: 'Black Rook Hold',
   key: 'brh',
   defaultZoom: 2,
-  defaultOffset: [0, 0],
+  defaultOffset: [0, -30],
   mdt: brhMdtData as MdtDungeon,
   icon: 'achievement_dungeon_blackrookhold',
 }
@@ -29,8 +29,8 @@ export const brh: Dungeon = {
 export const dht: Dungeon = {
   name: 'Darkheart Thicket',
   key: 'dht',
-  defaultZoom: 2,
-  defaultOffset: [0, 0],
+  defaultZoom: 2.1,
+  defaultOffset: [0, -40],
   mdt: dhtMdtData as MdtDungeon,
   icon: 'achievement_dungeon_darkheartthicket',
 }
@@ -48,7 +48,7 @@ export const dotiu: Dungeon = {
   name: "DOTI: Murozond's Rise",
   key: 'dotiu',
   defaultZoom: 1.9,
-  defaultOffset: [10, -15],
+  defaultOffset: [0, -50],
   mdt: dotiuMdtData as MdtDungeon,
   icon: 'achievement_dungeon_dawnoftheinfinite',
 }

@@ -55,16 +55,16 @@ export function Pull({ pullIndex, pull, ghost, onRightClick }: Props) {
       }}
     >
       <div
-        className="absolute h-full w-full cursor-pointer bg-contain bg-blend-overlay bg-no-repeat"
+        className="absolute h-full w-full cursor-pointer bg-contain bg-blend-overlay bg-no-repeat rounded-sm"
         style={{
           backgroundColor: ghost ? 'grey' : darkenColor(pullColor, 100),
-          backgroundImage: 'url(/wow/UI-Listbox-Highlight2.png)',
+          backgroundImage: 'url(/button_noise.png)',
           filter: 'contrast(80%)',
         }}
       />
       {isSelectedPull && (
         <div
-          className="absolute w-full h-full border-[1.5px] rounded-md"
+          className="absolute w-full h-full border-[1.5px] rounded-sm"
           style={{
             borderColor: darkenColor(pullColor, 75),
             boxShadow: `inset 0 0 12px 2px ${lightenColor(pullColor, 100)}`,

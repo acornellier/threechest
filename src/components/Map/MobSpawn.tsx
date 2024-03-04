@@ -69,7 +69,7 @@ function MobSpawnComponent({
               <div
                 className="absolute h-full w-full"
                 style={{
-                  backgroundImage: `url('/npc_portraits/${mob.id}.png')`,
+                  backgroundImage: `url(/npc_portraits/${mob.id}.png)`,
                   backgroundSize: 'contain',
                   backgroundBlendMode: 'overlay',
                   backgroundColor:
@@ -122,7 +122,7 @@ function MobSpawnComponent({
               <div
                 className="absolute"
                 style={{
-                  backgroundImage: `url('/wow/elite.png')`,
+                  backgroundImage: `url(/wow/elite.png)`,
                   backgroundSize: 'contain',
                   zIndex: -1,
                   width: '165%',

@@ -62,7 +62,7 @@ export function Pulls() {
   return (
     <Panel className="flex-col overflow-auto">
       <div
-        className={`gritty flex justify-center mx-2 ${percentColor} rounded-sm text-white font-bold border border-yellow-600`}
+        className={`gritty flex justify-center mx-2 ${percentColor} rounded-sm text-white font-bold border border-gray-5g00`}
       >
         {routeDetailed.count}/{dungeon.mdt.totalCount} -{' '}
         {roundTo(percent, 2).toFixed(2).toLocaleString()}%
