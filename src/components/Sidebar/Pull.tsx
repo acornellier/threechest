@@ -4,7 +4,7 @@ import { darkenColor, getPullColor, lightenColor } from '../../code/colors.ts'
 import { useAppDispatch, useDungeon, useRoute } from '../../store/hooks.ts'
 import { hoverPull, selectPull } from '../../store/reducer.ts'
 import { MouseEvent, useEffect, useMemo, useRef } from 'react'
-import { roundTo } from '../../code/util.ts'
+import { mobCountPercentStr } from '../../code/util.ts'
 
 type MobCount = Record<number, { mob: Mob; count: number }>
 
@@ -24,7 +24,6 @@ export function Pull({ pullIndex, pull, ghost, onRightClick }: Props) {
 
   const pullColor = getPullColor(pullIndex)
   const isSelectedPull = pullIndex === route.selectedPull
-  const percent = (pull.count / dungeon.mdt.totalCount) * 100
 
   const sortedCounts = useMemo(() => {
     const mobCounts = pull.mobSpawns.reduce<MobCount>((acc, { mob }) => {
@@ -55,7 +54,7 @@ export function Pull({ pullIndex, pull, ghost, onRightClick }: Props) {
       }}
     >
       <div
-        className="gritty absolute h-full w-full cursor-pointer rounded-sm"
+        className="gritty absolute h-full w-full cursor-pointer rounded-sm border border-gray-500"
         style={{
           backgroundColor: ghost ? 'grey' : darkenColor(pullColor, 100),
           filter: 'contrast(80%)',
@@ -101,7 +100,7 @@ export function Pull({ pullIndex, pull, ghost, onRightClick }: Props) {
           className="flex items-center text-white font-bold text-sm"
           style={{ WebkitTextStroke: '0.6px black' }}
         >
-          {roundTo(percent, 2).toFixed(2).toLocaleString()}%
+          {mobCountPercentStr(pull.count, dungeon.mdt.totalCount)}
         </div>
       </div>
     </div>

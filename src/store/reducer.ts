@@ -17,11 +17,13 @@ const defaultDungeonKey: DungeonKey = 'eb'
 export const lastDungeonKey = 'lastDungeonKey'
 export const routeLocalStorageKey = 'savedRoute'
 
+const emptyPull = { id: 0, mobSpawns: [] }
+
 const makeEmptyRoute = (dungeonKey: DungeonKey): Route => ({
   name: 'New route',
   dungeonKey,
   selectedPull: 0,
-  pulls: [{ id: 0, mobSpawns: [] }],
+  pulls: [emptyPull],
   uid: '',
 })
 
@@ -115,7 +117,7 @@ const baseReducer = createSlice({
       state.hoveredPull = null
     },
     clearRoute(state) {
-      state.route.pulls = []
+      state.route.pulls = [emptyPull]
     },
     setName(state, { payload }: PayloadAction<string>) {
       state.route.name = payload

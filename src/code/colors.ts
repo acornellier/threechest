@@ -9,7 +9,7 @@ export function lightenColor(color: string, amount: number) {
   )
 }
 
-export const darkenColor = (color: string,  amount: number) => lightenColor(color, -amount)
+export const darkenColor = (color: string, amount: number) => lightenColor(color, -amount)
 
 export function hsvToRgb(h: number, s: number, v: number) {
   h %= 361
@@ -25,6 +25,7 @@ export function hsvToRgb(h: number, s: number, v: number) {
 export const rgbToHex = (r: number, g: number, b: number) =>
   '#' +
   [r, g, b]
+    .map((v) => Math.round(v * 255))
     .map((x) => {
       const hex = x.toString(16)
       return hex.length === 1 ? '0' + hex : hex
@@ -43,7 +44,7 @@ const highContrastColors = [
   [1.0, 0.60971, 0.2446],
   [0.2446, 0.2446, 1],
   [0.63489, 1.0, 0.2446],
-].map(([r, g, b]) => rgbToHex(Math.round(r * 255), Math.round(g * 255), Math.round(b * 255)))
+].map(([r, g, b]) => rgbToHex(r, g, b))
 
 export function getPullColor(pullIndex: number) {
   return highContrastColors[pullIndex % highContrastColors.length]
@@ -53,5 +54,5 @@ export function getPullColor(pullIndex: number) {
 export function GetPullColorOld(pullIndex: number) {
   const h = ((pullIndex - 1) * 360) / 12 + 120
   const [r, g, b] = hsvToRgb(h, 0.7554, 1)
-  return rgbToHex(Math.round(r * 255), Math.round(g * 255), Math.round(b * 255))
+  return rgbToHex(r, g, b)
 }

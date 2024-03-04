@@ -5,7 +5,7 @@ import { MouseEvent, useCallback, useMemo, useState } from 'react'
 import { Button } from '../Common/Button.tsx'
 import { useAppDispatch, useDungeon, useRouteDetailed } from '../../store/hooks.ts'
 import { addPull, clearRoute, setPulls } from '../../store/reducer.ts'
-import { roundTo } from '../../code/util.ts'
+import { mobCountPercentStr, roundTo } from '../../code/util.ts'
 import { PullContextMenu, RightClickedSettings } from './PullContextMenu.tsx'
 import { usePullShortcuts } from './usePullShortcuts.ts'
 import { Panel } from '../Common/Panel.tsx'
@@ -60,12 +60,12 @@ export function Pulls() {
 
   let pullIndex = 0
   return (
-    <Panel className="flex-col overflow-auto">
+    <Panel className="flex-col overflow-auto select-none">
       <div
         className={`gritty flex justify-center mx-2 ${percentColor} rounded-sm text-white font-bold border border-gray-5g00`}
       >
         {routeDetailed.count}/{dungeon.mdt.totalCount} -{' '}
-        {roundTo(percent, 2).toFixed(2).toLocaleString()}%
+        {mobCountPercentStr(routeDetailed.count, dungeon.mdt.totalCount)}
       </div>
       <ReactSortable
         onStart={(e) => e.oldIndex !== undefined && setGhostPullIndex(e.oldIndex)}
