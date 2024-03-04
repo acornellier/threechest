@@ -2,10 +2,11 @@ import 'leaflet/dist/leaflet.css'
 import { Page } from './components/Page.tsx'
 import { Provider } from 'react-redux'
 import { store } from './store/store.ts'
-import { useRootSelector, useRoute } from './store/hooks.ts'
+import { useRoute } from './store/hooks.ts'
 import { useEffect } from 'react'
 import { lastDungeonKey, routeLocalStorageKey } from './store/reducer.ts'
 import { ToastProvider } from './components/Toast/ToastProvider.tsx'
+import '@fontsource-variable/roboto-slab'
 
 function RouteSaver() {
   const route = useRoute()

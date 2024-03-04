@@ -325,6 +325,26 @@
   resolved "https://registry.yarnpkg.com/@floating-ui/utils/-/utils-0.2.1.tgz#16308cea045f0fc777b6ff20a9f25474dd8293d2"
   integrity sha512-9TANp6GPoMtYzQdt54kfAyMmz1+osLlXdg2ENroU7zzrtflTLrrC/lgrIfaSe+Wu0b89GKccT7vxXA0MoAIO+Q==
 
+"@fontsource-variable/lora@^5.0.15":
+  version "5.0.15"
+  resolved "https://registry.yarnpkg.com/@fontsource-variable/lora/-/lora-5.0.15.tgz#f872ffb09e12fb3e443ef27ddfe4be2c962ef5b8"
+  integrity sha512-zs/Vr5napnQu81BeBB9WwIJgJtGSpNGR91Z1t+rNYgWuu8zRnzvjBZ3U5HjJ4WGwmKih9udi8el3nOfQygXS9A==
+
+"@fontsource-variable/roboto-slab@^5.0.19":
+  version "5.0.19"
+  resolved "https://registry.yarnpkg.com/@fontsource-variable/roboto-slab/-/roboto-slab-5.0.19.tgz#2abdfcdee3682fb5bd4e120453bf0f60c18bb0c8"
+  integrity sha512-2JJ4jMWnU39Qn2h+87B7V22YSsCl18hbsDT8fmdpHJYuujLamiCqjtOP4SNC/KkA2CNvfF03XSYKYPGMo41hug==
+
+"@fontsource/libre-baskerville@^5.0.12":
+  version "5.0.12"
+  resolved "https://registry.yarnpkg.com/@fontsource/libre-baskerville/-/libre-baskerville-5.0.12.tgz#58be624a4383f2d24cf23c65e6455bbc17abfaf9"
+  integrity sha512-y+3d/p8lRlwQFKcjWxnEAsk0pYDEyy4Eda2CVq3TO0gYltcr4MpZl0X4UqrX6pjsMGhCwJPUZTbM2cm04YlNUg==
+
+"@fontsource/merriweather@^5.0.12":
+  version "5.0.12"
+  resolved "https://registry.yarnpkg.com/@fontsource/merriweather/-/merriweather-5.0.12.tgz#8221eb544d389c0d468a9ec80a2430eedef53565"
+  integrity sha512-l7brVGcFUiGhK7bucRbwWYZDInfyXuVYEthHNw26RkkfMR9TFTiOAIABnN6PFr6Vjaz+c0o7ibLmdEMeSMDfRA==
+
 "@humanwhocodes/config-array@^0.11.10":
   version "0.11.11"
   resolved "https://registry.yarnpkg.com/@humanwhocodes/config-array/-/config-array-0.11.11.tgz#88a04c570dbbc7dd943e4712429c3df09bc32844"

@@ -11,6 +11,7 @@
     "server": "tsx server/server.js"
   },
   "dependencies": {
+    "@fontsource-variable/roboto-slab": "^5.0.19",
     "@reduxjs/toolkit": "^2.2.1",
     "@vercel/node": "^3.0.5",
     "cors": "^2.8.5",
