@@ -1,7 +1,7 @@
 ﻿import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
 import { MdtRoute, Pull, Route } from '../code/types.ts'
-import { DungeonKey, MobSpawn } from '../data/types.ts'
+import { DungeonKey, Mob, MobSpawn } from '../data/types.ts'
 import { dungeonsByKey } from '../data/dungeons.ts'
 import { mdtRouteToRoute } from '../code/mdtUtil.ts'
 import { mobSpawnsEqual } from '../code/mobSpawns.ts'
@@ -42,22 +42,28 @@ const findSelectedPull = (route: Route, mobSpawn: MobSpawn) =>
     pull.mobSpawns.some((mobSpawn2) => mobSpawnsEqual(mobSpawn, mobSpawn2)),
   )
 
-function toggleSpawnAction(route: Route, payload: MobSpawn): Pull[] {
+function toggleSpawnAction(
+  route: Route,
+  payload: { mobSpawn: MobSpawn; individual: boolean },
+): Pull[] {
   const data = dungeonsByKey[route.dungeonKey]
 
-  const origSelectedPull = findSelectedPull(route, payload)
+  const origSelectedPull = findSelectedPull(route, payload.mobSpawn)
 
-  const groupSpawns = data.mdt.enemies
-    .flatMap((mob) => mob.spawns.map((spawn) => ({ mob, spawn })))
-    .filter(
-      (mobSpawn) =>
-        mobSpawnsEqual(mobSpawn, payload) ||
-        (payload.spawn.group !== null && mobSpawn.spawn.group === payload.spawn.group),
-    )
-    .map((mobSpawn) => {
-      const selectedPull = findSelectedPull(route, mobSpawn)
-      return { mobSpawn, selectedPull }
-    })
+  const groupSpawns = payload.individual
+    ? [{ mobSpawn: payload.mobSpawn, selectedPull: origSelectedPull }]
+    : data.mdt.enemies
+        .flatMap((mob) => mob.spawns.map((spawn) => ({ mob, spawn })))
+        .filter(
+          (mobSpawn) =>
+            mobSpawnsEqual(mobSpawn, payload.mobSpawn) ||
+            (payload.mobSpawn.spawn.group !== null &&
+              mobSpawn.spawn.group === payload.mobSpawn.spawn.group),
+        )
+        .map((mobSpawn) => {
+          const selectedPull = findSelectedPull(route, mobSpawn)
+          return { mobSpawn, selectedPull }
+        })
 
   if (origSelectedPull !== -1) {
     // if already selected, deselect
@@ -146,7 +152,7 @@ const baseReducer = createSlice({
     hoverMobSpawn(state, { payload }: PayloadAction<MobSpawn | null>) {
       state.hoveredMobSpawn = payload
     },
-    toggleSpawn(state, { payload }: PayloadAction<MobSpawn>) {
+    toggleSpawn(state, { payload }: PayloadAction<{ mobSpawn: MobSpawn; individual: boolean }>) {
       state.route.pulls = toggleSpawnAction(state.route, payload)
     },
     setPulls(state, { payload }: PayloadAction<Pull[]>) {

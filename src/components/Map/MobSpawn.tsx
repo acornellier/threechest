@@ -47,7 +47,14 @@ function MobSpawnComponent({
         position={spawn.pos}
         zIndexOffset={isHovered ? 100_000 : 0}
         eventHandlers={{
-          click: () => dispatch(toggleSpawn({ mob, spawn })),
+          click: (e) => {
+            dispatch(
+              toggleSpawn({
+                mobSpawn: { mob, spawn },
+                individual: e.originalEvent.ctrlKey || e.originalEvent.metaKey,
+              }),
+            )
+          },
           mouseover: () => dispatch(hoverMobSpawn({ mob, spawn })),
           mouseout: () => dispatch(hoverMobSpawn(null)),
         }}

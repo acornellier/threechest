@@ -40,7 +40,6 @@ export function Map() {
         smoothWheelZoom={true}
         smoothSensitivity={2}
       >
-        <MousePosition />
         <TileLayer
           attribution="Map data © Blizzard Entertainment"
           bounds={bounds}
