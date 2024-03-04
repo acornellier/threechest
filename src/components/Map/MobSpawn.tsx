@@ -107,7 +107,7 @@ function MobSpawnComponent({
       >
         {isHovered && (
           <Tooltip className="no-arrow" direction="right" offset={[10, 0]}>
-            {`${mob.name} ${spawn.spawnIndex}`}
+            {`${mob.name} ${spawn.spawnIndex} g${spawn.group}`}
           </Tooltip>
         )}
       </Marker>

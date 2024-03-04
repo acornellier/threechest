@@ -1,12 +1,10 @@
 ﻿import { Pull } from '../../code/types.ts'
-import { Circle, Polygon, Tooltip, useMap } from 'react-leaflet'
+import { Circle, Polygon, Tooltip } from 'react-leaflet'
 import { memo, useEffect, useMemo, useState } from 'react'
-import { Map } from 'leaflet'
 import { useAppSelector } from '../../store/hooks.ts'
 import { getPullColor } from '../../code/colors.ts'
-import { MobSpawn, Point } from '../../data/types.ts'
+import { Point } from '../../data/types.ts'
 import { expandPolygon, iconSizeMagicScaling, makeConvexHull } from '../../code/hull.ts'
-import { mapIconScaling } from '../../code/map.ts'
 import { mobScale } from '../../code/mobSpawns.ts'
 
 interface Props {
@@ -30,7 +28,7 @@ function createOutline(pull: Pull): Outline {
     return {
       circle: {
         center: mobSpawn.spawn.pos,
-        radius: scale * iconSizeMagicScaling,
+        radius: scale * iconSizeMagicScaling * (mobSpawn.mob.isBoss ? 1.1 : 1),
       },
     }
   }

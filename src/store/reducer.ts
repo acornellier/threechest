@@ -26,9 +26,9 @@ const makeEmptyRoute = (dungeonKey: DungeonKey): Route => ({
 })
 
 function getRouteByLocalStorage(dungeonKey?: DungeonKey): Route {
-  const dungeon = dungeonKey ?? window.localStorage.getItem(lastDungeonKey)
+  const dungeon = dungeonKey ?? window.localStorage.getItem(lastDungeonKey) ?? defaultDungeonKey
   const item = window.localStorage.getItem(routeLocalStorageKey + dungeon)
-  return item ? JSON.parse(item) : makeEmptyRoute(defaultDungeonKey)
+  return item ? JSON.parse(item) : makeEmptyRoute(dungeon as DungeonKey)
 }
 
 const initialState: State = {

@@ -6,9 +6,9 @@ import { fileURLToPath } from 'url'
 export const dungeonPaths = {
   ad: 'BattleForAzeroth/AtalDazar',
   brh: 'Legion/BlackRookHold',
-  dotif: 'Dragonflight/DawnOfTheInfiniteLower',
+  dotil: 'Dragonflight/DawnOfTheInfiniteLower',
   dotiu: 'Dragonflight/DawnOfTheInfiniteUpper',
-  dt: 'Legion/DarkheartThicket',
+  dht: 'Legion/DarkheartThicket',
   eb: 'Dragonflight/Everbloom',
   tott: 'Dragonflight/ThroneOfTides',
   wcm: 'Dragonflight/WaycrestManor',
@@ -78,6 +78,10 @@ export function importMdtDungeon(key) {
     const clones = getFieldValue(fields, 'clones')
     for (const clone of clones) {
       const cloneFields = clone.value.fields
+
+      const teeming = getFieldValue(cloneFields, 'teeming')
+      if (teeming) continue
+
       const x = getFieldValue(cloneFields, 'x')
       const y = getFieldValue(cloneFields, 'y')
       const spawn = {

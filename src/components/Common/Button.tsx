@@ -1,11 +1,18 @@
 import { DetailedHTMLProps, HTMLAttributes } from 'react'
 
 export interface ButtonProps
-  extends DetailedHTMLProps<HTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {}
+  extends DetailedHTMLProps<HTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
+  short?: boolean
+  twoDimensional?: boolean
+}
 
-export function Button({ className, children, ...props }: ButtonProps) {
+export function Button({ short, twoDimensional, className, children, ...props }: ButtonProps) {
   return (
-    <button className={`fancy-button gritty ${className}`} {...props}>
+    <button
+      className={`fancy-button ${short ? 'short' : ''} ${twoDimensional ? 'two-d' : ''} 
+                  ${className ?? ''}`}
+      {...props}
+    >
       {children}
     </button>
   )

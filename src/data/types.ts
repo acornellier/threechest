@@ -15,7 +15,7 @@ export type Dungeon = {
   icon: string
 }
 
-export type DungeonKey = 'dotiu' | 'eb'
+export type DungeonKey = 'ad' | 'brh' | 'dht' | 'dotil' | 'dotiu' | 'eb' | 'tott' | 'wcm'
 
 export type Spawn = {
   group: number | null

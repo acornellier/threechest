@@ -26,7 +26,7 @@ interface Props {
 export function ToastComponent({ toast }: Props) {
   return (
     <div
-      className={`fancy-toast gritty flex items-center gap-2 
+      className={`fancy-toast flex items-center gap-2 
                   transition-opacity duration-500 ${toast.removing ? 'opacity-0' : ''}`}
     >
       <Checkmark />
