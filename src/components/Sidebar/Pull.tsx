@@ -55,10 +55,9 @@ export function Pull({ pullIndex, pull, ghost, onRightClick }: Props) {
       }}
     >
       <div
-        className="absolute h-full w-full cursor-pointer bg-contain bg-blend-overlay bg-no-repeat rounded-sm"
+        className="gritty absolute h-full w-full cursor-pointer rounded-sm"
         style={{
           backgroundColor: ghost ? 'grey' : darkenColor(pullColor, 100),
-          backgroundImage: 'url(/button_noise.png)',
           filter: 'contrast(80%)',
         }}
       />
