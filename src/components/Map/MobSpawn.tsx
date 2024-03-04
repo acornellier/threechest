@@ -135,7 +135,7 @@ function MobSpawnComponent({
           })}
         />
       )}
-      {spawn.patrol.length && (
+      {spawn.patrol.length > 0 && (
         <Polygon
           key={patrolKey}
           positions={spawn.patrol}

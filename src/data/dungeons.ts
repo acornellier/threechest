@@ -68,7 +68,7 @@ export const tott: Dungeon = {
   defaultZoom: 2,
   defaultOffset: [0, 0],
   mdt: tottMdtData as MdtDungeon,
-  icon: 'achievement_dungeon_dawnoftheinfinite',
+  icon: 'achievement_dungeon_throne-of-the-tides',
 }
 
 export const wcm: Dungeon = {
@@ -77,7 +77,7 @@ export const wcm: Dungeon = {
   defaultZoom: 2,
   defaultOffset: [0, 0],
   mdt: wcmMdtData as MdtDungeon,
-  icon: 'achievement_dungeon_dawnoftheinfinite',
+  icon: 'achievement_dungeon_waycrestmannor',
 }
 
 export const dungeons = [ad, brh, dht, dotil, dotiu, eb, tott, wcm]
