@@ -1,4 +1,4 @@
-﻿import { useAppDispatch } from '../../store/hooks.ts'
+﻿import { useAppDispatch, useRootSelector } from '../../store/hooks.ts'
 import { Button } from '../Common/Button.tsx'
 import { ActionCreators } from 'redux-undo'
 import { useCallback } from 'react'
@@ -9,6 +9,9 @@ const redoModifiers = { ctrl: true, shift: true } as const
 
 export function UndoRedo() {
   const dispatch = useAppDispatch()
+
+  const hasPast = useRootSelector((state) => state.past.length > 0)
+  const hasFuture = useRootSelector((state) => state.future.length > 0)
 
   const undo = useCallback(() => {
     dispatch(ActionCreators.undo())
@@ -23,7 +26,7 @@ export function UndoRedo() {
 
   return (
     <div className="flex items-start gap-2">
-      <Button className="gap-1" onClick={undo}>
+      <Button className="gap-1" onClick={undo} disabled={!hasPast}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -40,7 +43,7 @@ export function UndoRedo() {
         </svg>
         Undo
       </Button>
-      <Button className="gap-1" onClick={redo}>
+      <Button className="gap-1" onClick={redo} disabled={!hasFuture}>
         Redo
         <svg
           xmlns="http://www.w3.org/2000/svg"

@@ -1,7 +1,7 @@
 ﻿import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
 import { MdtRoute, Pull, Route } from '../code/types.ts'
-import { DungeonKey, Mob, MobSpawn } from '../data/types.ts'
+import { DungeonKey, MobSpawn } from '../data/types.ts'
 import { dungeonsByKey } from '../data/dungeons.ts'
 import { mdtRouteToRoute } from '../code/mdtUtil.ts'
 import { mobSpawnsEqual } from '../code/mobSpawns.ts'
@@ -111,6 +111,12 @@ const baseReducer = createSlice({
   reducers: {
     setDungeon(state, { payload }: PayloadAction<DungeonKey>) {
       state.route = getRouteByLocalStorage(payload)
+      state.hoveredPull = null
+    },
+    newRoute(state) {
+      console.log('newroute')
+      state.route = makeEmptyRoute(state.route.dungeonKey)
+      state.hoveredPull = null
     },
     importRoute(state, { payload }: PayloadAction<MdtRoute>) {
       state.route = mdtRouteToRoute(payload)
@@ -118,6 +124,7 @@ const baseReducer = createSlice({
     },
     clearRoute(state) {
       state.route.pulls = [emptyPull]
+      state.hoveredPull = null
     },
     setName(state, { payload }: PayloadAction<string>) {
       state.route.name = payload
@@ -165,7 +172,7 @@ const baseReducer = createSlice({
 
 export const reducer = undoable(baseReducer.reducer, {
   filter: includeAction([
-    baseReducer.actions.importRoute.type,
+    baseReducer.actions.newRoute.type,
     baseReducer.actions.clearRoute.type,
     baseReducer.actions.addPull.type,
     baseReducer.actions.prependPull.type,
@@ -179,6 +186,7 @@ export const reducer = undoable(baseReducer.reducer, {
 // Action creators are generated for each case reducer function
 export const {
   setDungeon,
+  newRoute,
   importRoute,
   clearRoute,
   setName,

@@ -26,5 +26,9 @@ export function ExportRoute() {
       })
   }
 
-  return <Button onClick={handleClick}>Export MDT string</Button>
+  return (
+    <Button short className="flex-1" onClick={handleClick}>
+      Export MDT
+    </Button>
+  )
 }

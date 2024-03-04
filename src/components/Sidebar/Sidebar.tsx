@@ -1,6 +1,6 @@
-import { RouteName } from './RouteName.tsx'
-import { ImportRoute } from './ImportRoute.tsx'
 import { Pulls } from './Pulls.tsx'
+import { RouteDetails } from './RouteDetails.tsx'
+import { SharePanel } from './SharePanel.tsx'
 
 const margin = 8
 
@@ -13,8 +13,8 @@ export function Sidebar() {
         maxHeight: `calc(100% - 2*${margin}px)`,
       }}
     >
-      <RouteName />
-      <ImportRoute />
+      <RouteDetails />
+      <SharePanel />
       <Pulls />
     </div>
   )

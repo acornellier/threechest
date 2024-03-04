@@ -1,13 +1,20 @@
-﻿- Mob spells
-- Save/load routes
-- Instructions page, keyboard shortcut hints
+﻿- New/save/load routes
 - Rework sidebar
+-- Name dropdown
+--- Rename
+-- Delete
+
+-- Import MDT
+-- Import from URL
+
+- Mob spells
+- Instructions page, keyboard shortcut hints
 - Donate button
 - Google analytics
-- Import from URL
 - Pull hover tooltip
 
 Questionable
+- Live editing with others
 - Mob hover stuck
 - Drag a rectangle to select multiple groups
 - Sample routes

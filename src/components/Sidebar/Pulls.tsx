@@ -60,7 +60,7 @@ export function Pulls() {
 
   let pullIndex = 0
   return (
-    <Panel className="flex-col overflow-auto select-none">
+    <Panel className="overflow-auto select-none">
       <div
         className={`gritty flex justify-center mx-2 ${percentColor} rounded-sm text-white font-bold border border-gray-5g00`}
       >

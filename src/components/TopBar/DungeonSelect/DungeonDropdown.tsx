@@ -11,8 +11,8 @@ export function DungeonDropdown() {
 
   const [open, setOpen] = useState(false)
 
-  const handleChange = (dungeon: Dungeon) => {
-    dispatch(setDungeon(dungeon.key))
+  const handleChange = (newDungeon: Dungeon) => {
+    if (newDungeon.key !== dungeon.key) dispatch(setDungeon(newDungeon.key))
     setOpen(false)
   }
 
