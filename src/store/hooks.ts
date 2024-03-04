@@ -2,9 +2,14 @@
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux'
 import { dungeonsByKey } from '../data/dungeons.ts'
 import { augmentRoute } from './augmentRoute.ts'
+import { State } from './reducer.ts'
 
 export const useAppDispatch: () => AppDispatch = useDispatch
-export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector
+
+export const useRootSelector: TypedUseSelectorHook<RootState> = useSelector
+
+export const useAppSelector = <T>(selector: (state: State) => T): T =>
+  useRootSelector((state) => selector(state.present))
 
 export const useRoute = () => useAppSelector((state) => state.route)
 

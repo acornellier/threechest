@@ -29,6 +29,7 @@ export function Map() {
         crs={CRS.Simple}
         center={[center[0] + dungeon.defaultOffset[0], center[1] + dungeon.defaultOffset[1]]}
         keyboard={false}
+        doubleClickZoom={false}
         minZoom={1}
         maxZoom={4}
         zoom={dungeon.defaultZoom}

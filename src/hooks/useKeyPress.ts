@@ -2,12 +2,23 @@ import { useEffect } from 'react'
 
 type Key = 'Control' | string
 
-export function useKeyPress(key: Key | Key[], callback: () => void) {
+interface Modifiers {
+  ctrl?: boolean
+  shift?: boolean
+}
+
+export function useKeyPress(keys: Key | Key[], callback: () => void, modifiers?: Modifiers) {
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.target instanceof HTMLInputElement) return
 
-      if (event.key === key || (Array.isArray(key) && key.includes(event.key))) {
+      if (!!modifiers?.ctrl !== event.ctrlKey || !!modifiers?.shift !== event.shiftKey) return
+
+      if (
+        (typeof keys === 'string' && event.key.toLowerCase() === keys.toLowerCase()) ||
+        (Array.isArray(keys) &&
+          keys.map((key) => key.toLowerCase()).includes(event.key.toLowerCase()))
+      ) {
         callback()
       }
     }
@@ -17,5 +28,5 @@ export function useKeyPress(key: Key | Key[], callback: () => void) {
     return () => {
       window.removeEventListener('keydown', handleKeyDown)
     }
-  }, [callback, key])
+  }, [callback, keys, modifiers])
 }

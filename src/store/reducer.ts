@@ -5,6 +5,7 @@ import { DungeonKey, MobSpawn } from '../data/types.ts'
 import { dungeonsByKey } from '../data/dungeons.ts'
 import { mdtRouteToRoute } from '../code/mdtUtil.ts'
 import { mobSpawnsEqual } from '../code/mobSpawns.ts'
+import undoable, { includeAction } from 'redux-undo'
 
 export interface State {
   route: Route
@@ -96,7 +97,7 @@ function addPullFunc(state: State, newPullIndex: number = state.route.pulls.leng
   state.route.selectedPull = newPullIndex
 }
 
-export const reducer = createSlice({
+const baseReducer = createSlice({
   name: 'main',
   initialState,
   reducers: {
@@ -154,6 +155,17 @@ export const reducer = createSlice({
   },
 })
 
+export const reducer = undoable(baseReducer.reducer, {
+  filter: includeAction([
+    baseReducer.actions.addPull.type,
+    baseReducer.actions.prependPull.type,
+    baseReducer.actions.appendPull.type,
+    baseReducer.actions.deletePull.type,
+    baseReducer.actions.toggleSpawn.type,
+    baseReducer.actions.setPulls.type,
+  ]),
+})
+
 // Action creators are generated for each case reducer function
 export const {
   setDungeon,
@@ -170,4 +182,4 @@ export const {
   hoverMobSpawn,
   toggleSpawn,
   setPulls,
-} = reducer.actions
+} = baseReducer.actions
