@@ -1,11 +1,8 @@
-﻿- New/save/load routes
-- Rework sidebar
--- Name dropdown
---- Rename
--- Delete
-
--- Import MDT
--- Import from URL
+﻿- Rename
+- Duplicate
+- Import MDT
+-- Overwrite based on ID
+- Import from URL
 
 - Mob spells
 - Instructions page, keyboard shortcut hints
