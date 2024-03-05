@@ -5,8 +5,8 @@ import { ShareRoute } from './ShareRoute.tsx'
 export function SharePanel() {
   return (
     <Panel row>
-      <ShareRoute />
       <ExportRoute />
+      <ShareRoute />
     </Panel>
   )
 }

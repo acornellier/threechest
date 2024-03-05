@@ -55,17 +55,22 @@ export function Pulls() {
   usePullShortcuts()
 
   const percent = (routeDetailed.count / dungeon.mdt.totalCount) * 100
-  const percentColor =
-    percent >= 102 ? 'bg-[#e21e1e]' : percent >= 100 ? 'bg-[#0f950f]' : 'bg-[#426bff]'
 
   let pullIndex = 0
   return (
     <Panel className="overflow-auto select-none">
-      <div
-        className={`gritty flex justify-center mx-2 ${percentColor} rounded-sm text-white font-bold border border-gray-5g00`}
-      >
-        {routeDetailed.count}/{dungeon.mdt.totalCount} -{' '}
-        {mobCountPercentStr(routeDetailed.count, dungeon.mdt.totalCount)}
+      <div className="relative flex justify-center mx-2 rounded-sm text-white font-bold border border-gray-5g00">
+        <div
+          className="gritty absolute left-0 max-w-full h-full z-[-1]"
+          style={{
+            backgroundColor: percent >= 102 ? '#e21e1e' : percent >= 100 ? '#0f950f' : '#426bff',
+            width: `${percent}%`,
+          }}
+        ></div>
+        <div>
+          {routeDetailed.count}/{dungeon.mdt.totalCount} -{' '}
+          {mobCountPercentStr(routeDetailed.count, dungeon.mdt.totalCount)}
+        </div>
       </div>
       <ReactSortable
         onStart={(e) => e.oldIndex !== undefined && setGhostPullIndex(e.oldIndex)}
