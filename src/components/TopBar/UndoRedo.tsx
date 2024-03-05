@@ -3,6 +3,7 @@ import { Button } from '../Common/Button.tsx'
 import { ActionCreators } from 'redux-undo'
 import { useCallback } from 'react'
 import { useKeyPress } from '../../hooks/useKeyPress.ts'
+import { ArrowUturnLeftIcon, ArrowUturnRightIcon } from '@heroicons/react/24/solid'
 
 const undoModifiers = { ctrl: true } as const
 const redoModifiers = { ctrl: true, shift: true } as const
@@ -27,38 +28,12 @@ export function UndoRedo() {
   return (
     <div className="flex items-start gap-2">
       <Button className="gap-1" onClick={undo} disabled={!hasPast}>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          strokeWidth={1.5}
-          stroke="currentColor"
-          className="w-4 h-4"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M9 15 3 9m0 0 6-6M3 9h12a6 6 0 0 1 0 12h-3"
-          />
-        </svg>
+        <ArrowUturnLeftIcon width={16} height={16} />
         Undo
       </Button>
       <Button className="gap-1" onClick={redo} disabled={!hasFuture}>
         Redo
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          strokeWidth={1.5}
-          stroke="currentColor"
-          className="w-4 h-4"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="m15 15 6-6m0 0-6-6m6 6H9a6 6 0 0 0 0 12h3"
-          />
-        </svg>
+        <ArrowUturnRightIcon width={16} height={16} />
       </Button>
     </div>
   )

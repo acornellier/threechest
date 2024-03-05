@@ -1,5 +1,6 @@
 import { Button } from './Button.tsx'
 import { ReactNode, useRef, useState } from 'react'
+import { ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/24/solid'
 
 export interface DropdownOption {
   id: string
@@ -53,20 +54,11 @@ export function Dropdown({ selected, options, onChange }: Props) {
       >
         {selected?.icon}
         <div>{selected?.label}</div>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          strokeWidth={1.5}
-          stroke="currentColor"
-          className="w-4 h-4 ml-auto"
-        >
-          {optionsVisible ? (
-            <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5" />
-          ) : (
-            <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
-          )}
-        </svg>
+        {optionsVisible ? (
+          <ChevronDownIcon width={20} height={20} className="h-ml-auto" />
+        ) : (
+          <ChevronUpIcon width={20} height={20} className="ml-auto" />
+        )}
       </Button>
 
       <div
