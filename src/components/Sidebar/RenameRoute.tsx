@@ -1,7 +1,7 @@
 import { Dispatch, SetStateAction, useCallback, useState } from 'react'
 import { useAppDispatch, useRoute } from '../../store/hooks.ts'
 import { Button } from '../Common/Button.tsx'
-import { PencilIcon } from '@heroicons/react/24/outline'
+import { CheckIcon, PencilIcon } from '@heroicons/react/24/outline'
 import { TooltipStyled } from '../Common/TooltipStyled.tsx'
 import { setName } from '../../store/routesReducer.ts'
 
@@ -49,7 +49,7 @@ export function RenameRoute({ isRenaming, setRenaming }: Props) {
         short
         style={{ paddingLeft: 12, paddingRight: 12 }}
       >
-        <PencilIcon width={20} height={20} />
+        {isRenaming ? <CheckIcon width={20} height={20} /> : <PencilIcon width={20} height={20} />}
       </Button>
       <TooltipStyled id="rename-route-tooltip" place="bottom-start">
         Rename route

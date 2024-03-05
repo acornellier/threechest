@@ -5,9 +5,9 @@ import { mdtRouteToRoute } from '../code/mdtUtil.ts'
 import undoable, { includeAction } from 'redux-undo'
 import { addPullFunc, toggleSpawnAction } from './actions.ts'
 import { persistReducer } from 'redux-persist'
-import storage from 'redux-persist/lib/storage'
 import * as localforage from 'localforage'
 import { RootState } from './store.ts'
+import localForage from 'localforage'
 
 export interface State {
   route: Route
@@ -44,7 +44,6 @@ export const getSavedRouteKey = (routeId: string) => [savedRouteKey, routeId].jo
 async function loadRouteFromStorage(routeId: string) {
   const route = await localforage.getItem<Route>(getSavedRouteKey(routeId))
   if (route === null) {
-    console.error(`Could not load route ${routeId}`)
     throw new Error(`Could not load route ${routeId}`)
   }
 
@@ -73,7 +72,6 @@ export const setDungeon = createAsyncThunk(
 export const deleteRoute = createAsyncThunk('routes/deleteRoute', async (_, thunkAPI) => {
   const state = thunkAPI.getState() as RootState
   const routeId = state.routes.present.route.uid
-  console.log('deleteRoute', routeId)
   await localforage.removeItem(getSavedRouteKey(routeId))
 
   const savedRoutes = state.routes.present.savedRoutes.filter((route) => route.uid !== routeId)
@@ -186,7 +184,7 @@ const baseReducer = createSlice({
 })
 
 export const routesReducer = persistReducer(
-  { key: 'routesReducer', storage },
+  { key: 'routesReducer', storage: localForage },
   undoable(baseReducer.reducer, {
     filter: includeAction([
       baseReducer.actions.newRoute.type,
