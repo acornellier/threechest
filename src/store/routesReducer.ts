@@ -183,9 +183,10 @@ const baseReducer = createSlice({
   },
 })
 
-export const routesReducer = persistReducer(
-  { key: 'routesReducer', storage: localForage },
-  undoable(baseReducer.reducer, {
+export const routesReducer = undoable(
+  persistReducer({ key: 'routesReducer', storage: localForage }, baseReducer.reducer),
+  {
+    limit: 100,
     filter: includeAction([
       baseReducer.actions.newRoute.type,
       baseReducer.actions.clearRoute.type,
@@ -196,7 +197,7 @@ export const routesReducer = persistReducer(
       baseReducer.actions.toggleSpawn.type,
       baseReducer.actions.setPulls.type,
     ]),
-  }),
+  },
 )
 
 // Action creators are generated for each case mainReducer function
