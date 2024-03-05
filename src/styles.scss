@@ -73,6 +73,10 @@
   }
 }
 
+input.fancy {
+  background-color: rgb(78 78 87);
+}
+
 .fancy-toast {
   @extend .fancy;
 
@@ -177,7 +181,6 @@
 
     &.options-visible {
       border: 1px solid #c2c2c2;
-      border-bottom: none;
     }
   }
 

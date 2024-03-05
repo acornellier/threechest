@@ -35,7 +35,7 @@ export function ImportRoute() {
   }
 
   return (
-    <Button short className="flex-1" onClick={handleClick}>
+    <Button data-tooltip-id="import-route-tooltip" short className="flex-1" onClick={handleClick}>
       Import MDT
     </Button>
   )

@@ -1,10 +1,10 @@
-﻿- Rename
-- Duplicate
-- Import MDT
--- Overwrite based on ID
+﻿- Import MDT
+-- Overwrite current or existing??
+-- Popup vs clipboard
 - Import from URL
 
-- Move hovered state to another mainReducer
+- Pulls progress bar
+- Refactor ActionCreators.clearHistory() somehow
 - Mob spells
 - Instructions page, keyboard shortcut hints
 - Donate button

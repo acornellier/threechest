@@ -3,6 +3,7 @@ import { useAppDispatch, useDungeonRoutes, useRoute } from '../../store/hooks.ts
 import { loadRoute } from '../../store/routesReducer.ts'
 import { SavedRoute } from '../../code/types.ts'
 import { Dropdown, DropdownOption } from '../Common/Dropdown.tsx'
+import { ActionCreators } from 'redux-undo'
 
 const routeToOption = (route: SavedRoute): DropdownOption => ({
   id: route.uid,
@@ -24,7 +25,10 @@ export function RouteDropdown() {
     <Dropdown
       options={options}
       selected={selected}
-      onChange={(option) => dispatch(loadRoute(option.id))}
+      onChange={(option) => {
+        dispatch(loadRoute(option.id))
+        dispatch(ActionCreators.clearHistory())
+      }}
     />
   )
 }

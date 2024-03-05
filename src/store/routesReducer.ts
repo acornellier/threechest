@@ -15,18 +15,21 @@ const emptyPull = { id: 0, mobSpawns: [] }
 
 const newRouteUid = () => Math.random().toString(36).slice(2)
 
-const defaultName = 'New route '
-function nextName(dungeonKey: DungeonKey, savedRoutes: SavedRoute[]) {
+function nextName(routeName: string, dungeonKey: DungeonKey, savedRoutes: SavedRoute[]) {
+  const match = routeName.match(/(.*\s)(\d+)$/)
+  const baseName = match ? match[1] : routeName
   const defaultNamesRoutes = savedRoutes.filter(
-    (route) => route.dungeonKey === dungeonKey && route.name.startsWith(defaultName),
+    (route) => route.dungeonKey === dungeonKey && route.name.startsWith(baseName),
   )
-  const numbers = defaultNamesRoutes.map((route) => route.name.split(defaultName)[1]).map(Number)
+  if (!defaultNamesRoutes.length) return routeName
+
+  const numbers = defaultNamesRoutes.map((route) => route.name.split(baseName)[1]).map(Number)
   const maxNumber = numbers.reduce((acc, cur) => (cur > acc ? cur : acc), 0)
-  return defaultName + (maxNumber + 1).toString()
+  return baseName + ' ' + (maxNumber + 1).toString()
 }
 
 const makeEmptyRoute = (dungeonKey: DungeonKey, savedRoutes: SavedRoute[]): Route => ({
-  name: nextName(dungeonKey, savedRoutes),
+  name: nextName('Awesome route', dungeonKey, savedRoutes),
   dungeonKey,
   selectedPull: 0,
   pulls: [emptyPull],
@@ -74,6 +77,8 @@ const baseReducer = createSlice({
           name: state.route.name,
           dungeonKey: state.route.dungeonKey,
         })
+      } else if (savedRoute.name !== state.route.name) {
+        savedRoute.name = state.route.name
       }
     },
     setDungeon(state, { payload: dungeonKey }: PayloadAction<DungeonKey>) {
@@ -84,6 +89,13 @@ const baseReducer = createSlice({
     },
     newRoute(state) {
       state.route = makeEmptyRoute(state.route.dungeonKey, state.savedRoutes)
+    },
+    duplicateRoute(state) {
+      state.route = {
+        ...state.route,
+        uid: newRouteUid(),
+        name: nextName(state.route.name, state.route.dungeonKey, state.savedRoutes),
+      }
     },
     deleteRoute(state) {
       state.savedRoutes = state.savedRoutes.filter((route) => route.uid !== state.route.uid)
@@ -163,6 +175,7 @@ export const {
   updateSavedRoutes,
   setDungeon,
   newRoute,
+  duplicateRoute,
   deleteRoute,
   loadRoute,
   importRoute,

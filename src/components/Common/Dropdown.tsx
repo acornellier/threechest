@@ -36,7 +36,7 @@ export function Dropdown({ selected, options, onChange }: Props) {
   }
 
   return (
-    <div className="relative">
+    <div className="relative flex-1">
       <Button
         twoDimensional
         className={`flex gap-2 py-2 px-2 w-full dropdown-main ${
@@ -55,9 +55,9 @@ export function Dropdown({ selected, options, onChange }: Props) {
         {selected?.icon}
         <div>{selected?.label}</div>
         {optionsVisible ? (
-          <ChevronDownIcon width={20} height={20} className="h-ml-auto" />
-        ) : (
           <ChevronUpIcon width={20} height={20} className="ml-auto" />
+        ) : (
+          <ChevronDownIcon width={20} height={20} className="ml-auto" />
         )}
       </Button>
 
