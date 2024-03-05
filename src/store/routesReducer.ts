@@ -1,10 +1,13 @@
-﻿import type { PayloadAction } from '@reduxjs/toolkit'
-import { createSlice } from '@reduxjs/toolkit'
+﻿import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { MdtRoute, Pull, Route, SavedRoute } from '../code/types.ts'
 import { DungeonKey, MobSpawn } from '../data/types.ts'
 import { mdtRouteToRoute } from '../code/mdtUtil.ts'
 import undoable, { includeAction } from 'redux-undo'
 import { addPullFunc, toggleSpawnAction } from './actions.ts'
+import { persistReducer } from 'redux-persist'
+import storage from 'redux-persist/lib/storage'
+import * as localforage from 'localforage'
+import { RootState } from './store.ts'
 
 export interface State {
   route: Route
@@ -38,35 +41,53 @@ const makeEmptyRoute = (dungeonKey: DungeonKey, savedRoutes: SavedRoute[]): Rout
 
 const savedRouteKey = 'savedRoute'
 export const getSavedRouteKey = (routeId: string) => [savedRouteKey, routeId].join('-')
-function loadRouteFromStorage(routeId: string) {
-  const route = window.localStorage.getItem(getSavedRouteKey(routeId))
-  if (route === null) throw new Error(`Could not load route ${routeId}`)
+async function loadRouteFromStorage(routeId: string) {
+  const route = await localforage.getItem<Route>(getSavedRouteKey(routeId))
+  if (route === null) {
+    console.error(`Could not load route ${routeId}`)
+    throw new Error(`Could not load route ${routeId}`)
+  }
 
-  return JSON.parse(route) as Route
+  return route
 }
 
-export const lastRouteKeyKey = 'lastRouteKey'
-function getLastRoute(savedRoutes: SavedRoute[]): Route {
-  const lastRouteId = window.localStorage.getItem(lastRouteKeyKey)
-  return lastRouteId ? loadRouteFromStorage(lastRouteId) : makeEmptyRoute('eb', savedRoutes)
-}
+export const loadRoute = createAsyncThunk('routes/loadRoute', loadRouteFromStorage)
 
-export const savedRoutesKey = 'savedRoutes'
-function getSavedRoutes(): SavedRoute[] {
-  const savedRoutes = window.localStorage.getItem(savedRoutesKey)
-  return savedRoutes ? JSON.parse(savedRoutes) : []
-}
-
-function initialState(): State {
-  const savedRoutes = getSavedRoutes()
-  return {
-    route: getLastRoute(savedRoutes),
-    savedRoutes,
+export const getLastDungeonRoute = async (dungeonKey: DungeonKey, savedRoutes: SavedRoute[]) => {
+  const dungeonRoutes = savedRoutes.filter((route) => route.dungeonKey === dungeonKey)
+  if (dungeonRoutes.length) {
+    return await loadRouteFromStorage(dungeonRoutes[dungeonRoutes.length - 1].uid)
+  } else {
+    return makeEmptyRoute(dungeonKey, savedRoutes)
   }
 }
 
+export const setDungeon = createAsyncThunk(
+  'routes/setDungeon',
+  async (dungeonKey: DungeonKey, thunkAPI) => {
+    const state = thunkAPI.getState() as RootState
+    return await getLastDungeonRoute(dungeonKey, state.routes.present.savedRoutes)
+  },
+)
+
+export const deleteRoute = createAsyncThunk('routes/deleteRoute', async (_, thunkAPI) => {
+  const state = thunkAPI.getState() as RootState
+  const routeId = state.routes.present.route.uid
+  console.log('deleteRoute', routeId)
+  await localforage.removeItem(getSavedRouteKey(routeId))
+
+  const savedRoutes = state.routes.present.savedRoutes.filter((route) => route.uid !== routeId)
+  const route = await getLastDungeonRoute(state.routes.present.route.dungeonKey, savedRoutes)
+  return { deletedRouteId: routeId, route }
+})
+
+const initialState: State = {
+  route: makeEmptyRoute('eb', []),
+  savedRoutes: [],
+}
+
 const baseReducer = createSlice({
-  name: 'main',
+  name: 'routes',
   initialState,
   reducers: {
     updateSavedRoutes(state) {
@@ -81,12 +102,6 @@ const baseReducer = createSlice({
         savedRoute.name = state.route.name
       }
     },
-    setDungeon(state, { payload: dungeonKey }: PayloadAction<DungeonKey>) {
-      const matchingRoutes = state.savedRoutes.filter((route) => route.dungeonKey === dungeonKey)
-      state.route = matchingRoutes.length
-        ? loadRouteFromStorage(matchingRoutes[matchingRoutes.length - 1].uid)
-        : makeEmptyRoute(dungeonKey, state.savedRoutes)
-    },
     newRoute(state) {
       state.route = makeEmptyRoute(state.route.dungeonKey, state.savedRoutes)
     },
@@ -96,22 +111,6 @@ const baseReducer = createSlice({
         uid: newRouteUid(),
         name: nextName(state.route.name, state.route.dungeonKey, state.savedRoutes),
       }
-    },
-    deleteRoute(state) {
-      state.savedRoutes = state.savedRoutes.filter((route) => route.uid !== state.route.uid)
-      localStorage.removeItem(getSavedRouteKey(state.route.uid))
-
-      const dungeonRoutes = state.savedRoutes.filter(
-        (route) => route.dungeonKey === state.route.dungeonKey,
-      )
-
-      const lastDungeonRoute = dungeonRoutes[dungeonRoutes.length - 1]
-      state.route = lastDungeonRoute
-        ? loadRouteFromStorage(lastDungeonRoute.uid)
-        : makeEmptyRoute(state.route.dungeonKey, state.savedRoutes)
-    },
-    loadRoute(state, { payload: routeId }: PayloadAction<string>) {
-      state.route = loadRouteFromStorage(routeId)
     },
     importRoute(state, { payload }: PayloadAction<MdtRoute>) {
       state.route = mdtRouteToRoute(payload)
@@ -155,29 +154,58 @@ const baseReducer = createSlice({
       state.route.pulls = payload
     },
   },
+  extraReducers: (builder) => {
+    builder.addCase(setDungeon.fulfilled, (state, { payload: newRoute }) => {
+      state.route = newRoute
+    })
+
+    builder.addCase(setDungeon.rejected, (_state, { error }) => {
+      console.error(error)
+    })
+
+    builder.addCase(loadRoute.fulfilled, (state, { payload: newRoute }) => {
+      state.route = newRoute
+    })
+
+    builder.addCase(loadRoute.rejected, (_state, { error }) => {
+      console.error(error)
+    })
+
+    builder.addCase(
+      deleteRoute.fulfilled,
+      (state, { payload: { deletedRouteId, route: newRoute } }) => {
+        state.savedRoutes = state.savedRoutes.filter((route) => route.uid !== deletedRouteId)
+        state.route = newRoute
+      },
+    )
+
+    builder.addCase(deleteRoute.rejected, (_state, { error }) => {
+      console.error(error)
+    })
+  },
 })
 
-export const routesReducer = undoable(baseReducer.reducer, {
-  filter: includeAction([
-    baseReducer.actions.newRoute.type,
-    baseReducer.actions.clearRoute.type,
-    baseReducer.actions.addPull.type,
-    baseReducer.actions.prependPull.type,
-    baseReducer.actions.appendPull.type,
-    baseReducer.actions.deletePull.type,
-    baseReducer.actions.toggleSpawn.type,
-    baseReducer.actions.setPulls.type,
-  ]),
-})
+export const routesReducer = persistReducer(
+  { key: 'routesReducer', storage },
+  undoable(baseReducer.reducer, {
+    filter: includeAction([
+      baseReducer.actions.newRoute.type,
+      baseReducer.actions.clearRoute.type,
+      baseReducer.actions.addPull.type,
+      baseReducer.actions.prependPull.type,
+      baseReducer.actions.appendPull.type,
+      baseReducer.actions.deletePull.type,
+      baseReducer.actions.toggleSpawn.type,
+      baseReducer.actions.setPulls.type,
+    ]),
+  }),
+)
 
 // Action creators are generated for each case mainReducer function
 export const {
   updateSavedRoutes,
-  setDungeon,
   newRoute,
   duplicateRoute,
-  deleteRoute,
-  loadRoute,
   importRoute,
   clearRoute,
   setName,

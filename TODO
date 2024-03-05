@@ -1,4 +1,6 @@
-﻿- Import MDT
+﻿- Redux persist
+
+- Import MDT
 -- Overwrite current or existing??
 -- Popup vs clipboard
 - Import from URL
