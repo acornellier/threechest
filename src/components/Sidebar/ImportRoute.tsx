@@ -4,7 +4,6 @@ import { Button } from '../Common/Button.tsx'
 import { importRoute } from '../../store/routesReducer.ts'
 import { useAppDispatch } from '../../store/hooks.ts'
 import { useToasts } from '../Toast/useToasts.ts'
-import { ActionCreators } from 'redux-undo'
 
 const importUrl =
   process.env.NODE_ENV === 'development'
@@ -32,7 +31,6 @@ export function ImportRoute() {
       .then((res) => res.json())
       .then((mdtRoute: MdtRoute) => {
         dispatch(importRoute(mdtRoute))
-        dispatch(ActionCreators.clearHistory())
         addToast('Route imported!')
       })
   }

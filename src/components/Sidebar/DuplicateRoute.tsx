@@ -1,7 +1,6 @@
 import { Button } from '../Common/Button.tsx'
 import { useAppDispatch } from '../../store/hooks.ts'
 import { duplicateRoute } from '../../store/routesReducer.ts'
-import { ActionCreators } from 'redux-undo'
 import { DocumentDuplicateIcon } from '@heroicons/react/24/outline'
 import { TooltipStyled } from '../Common/TooltipStyled.tsx'
 
@@ -14,10 +13,7 @@ export function DuplicateRoute() {
         data-tooltip-id="duplicate-route-tooltip"
         short
         className="flex-1"
-        onClick={() => {
-          dispatch(duplicateRoute())
-          dispatch(ActionCreators.clearHistory())
-        }}
+        onClick={() => dispatch(duplicateRoute())}
       >
         <DocumentDuplicateIcon width={24} height={24} />
       </Button>

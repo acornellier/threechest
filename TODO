@@ -4,12 +4,12 @@
 - Import from URL
 
 - Pulls progress bar
-- Refactor ActionCreators.clearHistory() somehow
 - Mob spells
 - Instructions page, keyboard shortcut hints
 - Donate button
 - Google analytics
 - Pull hover tooltip
+- ImmutableStateInvariantMiddleware warning on initial load
 
 Questionable
 - Live editing with others

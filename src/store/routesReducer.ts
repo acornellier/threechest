@@ -1,13 +1,19 @@
-﻿import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit'
+﻿import {
+  createAsyncThunk,
+  createListenerMiddleware,
+  createSlice,
+  isAnyOf,
+  PayloadAction,
+} from '@reduxjs/toolkit'
 import { MdtRoute, Pull, Route, SavedRoute } from '../code/types.ts'
 import { DungeonKey, MobSpawn } from '../data/types.ts'
 import { mdtRouteToRoute } from '../code/mdtUtil.ts'
-import undoable, { includeAction } from 'redux-undo'
+import undoable, { ActionCreators, includeAction } from 'redux-undo'
 import { addPullFunc, toggleSpawnAction } from './actions.ts'
 import { persistReducer } from 'redux-persist'
 import * as localforage from 'localforage'
-import { RootState } from './store.ts'
 import localForage from 'localforage'
+import { RootState } from './store.ts'
 
 export interface State {
   route: Route
@@ -216,3 +222,18 @@ export const {
   toggleSpawn,
   setPulls,
 } = baseReducer.actions
+
+export const listenerMiddleware = createListenerMiddleware()
+
+listenerMiddleware.startListening({
+  matcher: isAnyOf(
+    loadRoute.fulfilled,
+    deleteRoute.fulfilled,
+    duplicateRoute,
+    importRoute,
+    newRoute,
+  ),
+  effect: async (_action, listenerApi) => {
+    listenerApi.dispatch(ActionCreators.clearHistory())
+  },
+})

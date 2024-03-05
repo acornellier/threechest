@@ -1,5 +1,5 @@
 ﻿import { configureStore } from '@reduxjs/toolkit'
-import { routesReducer } from './routesReducer.ts'
+import { listenerMiddleware, routesReducer } from './routesReducer.ts'
 import { hoverReducer } from './hoverReducer.ts'
 import { persistStore } from 'redux-persist'
 
@@ -8,7 +8,8 @@ export const store = configureStore({
     routes: routesReducer,
     hover: hoverReducer,
   },
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware({ serializableCheck: false }),
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({ serializableCheck: false }).prepend(listenerMiddleware.middleware),
 })
 
 export const persistor = persistStore(store)
