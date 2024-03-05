@@ -1,8 +1,12 @@
 ﻿import { configureStore } from '@reduxjs/toolkit'
-import { reducer } from './reducer.ts'
+import { routesReducer } from './routesReducer.ts'
+import { hoverReducer } from './hoverReducer.ts'
 
 export const store = configureStore({
-  reducer,
+  reducer: {
+    routes: routesReducer,
+    hover: hoverReducer,
+  },
 })
 
 export type RootState = ReturnType<typeof store.getState>

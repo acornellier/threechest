@@ -1,7 +1,7 @@
 ﻿import { Pull } from '../../code/types.ts'
 import { Circle, Polygon, Tooltip } from 'react-leaflet'
 import { memo, useEffect, useMemo, useState } from 'react'
-import { useAppSelector } from '../../store/hooks.ts'
+import { useRoutesSelector } from '../../store/hooks.ts'
 import { getPullColor } from '../../code/colors.ts'
 import { Point } from '../../data/types.ts'
 import { expandPolygon, iconSizeMagicScaling, makeConvexHull } from '../../code/hull.ts'
@@ -46,7 +46,7 @@ function createOutline(pull: Pull): Outline {
 }
 
 function PullOutlineComponent({ pullId, index, isSelected, isHovered }: Props) {
-  const pull = useAppSelector((state) => state.route.pulls.find((pull) => pull.id === pullId))!
+  const pull = useRoutesSelector((state) => state.route.pulls.find((pull) => pull.id === pullId))!
   const { hull, circle } = useMemo(() => createOutline(pull), [pull])
   const pullColor = getPullColor(index)
 

@@ -1,16 +1,16 @@
-﻿import { Spawn } from '../../data/types.ts'
+﻿import { Mob, Spawn } from '../../data/types.ts'
 import { Marker } from 'react-leaflet'
 import { divIcon } from 'leaflet'
-import { Mob } from '../../data/types.ts'
 import { renderToString } from 'react-dom/server'
 import { memo, useMemo } from 'react'
 import { mobScale, mobSpawnsEqual } from '../../code/mobSpawns.ts'
-import { useAppDispatch, useAppSelector, useRoute } from '../../store/hooks.ts'
-import { hoverMobSpawn, toggleSpawn } from '../../store/reducer.ts'
+import { useAppDispatch, useHoverSelector, useRoute } from '../../store/hooks.ts'
+import { toggleSpawn } from '../../store/routesReducer.ts'
 import { Patrol } from './Patrol.tsx'
 import { BossMarker } from './BossMarker.tsx'
 import { MobIcon } from './MobIcon.tsx'
 import { MobSpawnTooltip } from './MobSpawnTooltip.tsx'
+import { hoverMobSpawn } from '../../store/hoverReducer.ts'
 
 interface MobSpawnProps {
   iconScaling: number
@@ -80,7 +80,7 @@ const MobSpawnMemo = memo(MobSpawnComponent)
 export function MobSpawn({ iconScaling, mob, spawn }: MobSpawnProps) {
   const route = useRoute()
 
-  const hoveredMobSpawn = useAppSelector((state) => state.hoveredMobSpawn)
+  const hoveredMobSpawn = useHoverSelector((state) => state.hoveredMobSpawn)
   const isHovered = !!hoveredMobSpawn && mobSpawnsEqual(hoveredMobSpawn, { mob, spawn })
   const isGroupHovered =
     isHovered ||

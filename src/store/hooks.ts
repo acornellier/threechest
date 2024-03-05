@@ -2,19 +2,24 @@
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux'
 import { dungeonsByKey } from '../data/dungeons.ts'
 import { augmentRoute } from './augmentRoute.ts'
-import { State } from './reducer.ts'
+import { State } from './routesReducer.ts'
 import { DungeonKey } from '../data/types.ts'
 import { createSelector } from '@reduxjs/toolkit'
+import { HoverState } from './hoverReducer.ts'
 
 export const useAppDispatch: () => AppDispatch = useDispatch
 
 export const useRootSelector: TypedUseSelectorHook<RootState> = useSelector
 
-export const useAppSelector = <T>(selector: (state: State) => T): T =>
-  useRootSelector((state) => selector(state.present))
+export const useRoutesSelector = <T>(selector: (state: State) => T): T =>
+  useRootSelector((state) => selector(state.routes.present))
 
-export const useRoute = () => useAppSelector((state) => state.route)
-export const useSavedRoutes = () => useAppSelector((state) => state.savedRoutes)
+export const useHoverSelector = <T>(selector: (state: HoverState) => T): T =>
+  useRootSelector((state) => selector(state.hover))
+
+// Routes
+export const useRoute = () => useRoutesSelector((state) => state.route)
+export const useSavedRoutes = () => useRoutesSelector((state) => state.savedRoutes)
 
 const selectAllRoutes = (state: State) => state.savedRoutes
 const selectDungeonRoutes = createSelector(
@@ -22,7 +27,7 @@ const selectDungeonRoutes = createSelector(
   (allRoutes, dungeonKey) => allRoutes.filter((route) => route.dungeonKey === dungeonKey),
 )
 export const useDungeonRoutes = (dungeonKey: DungeonKey) =>
-  useAppSelector((state) => selectDungeonRoutes(state, dungeonKey))
+  useRoutesSelector((state) => selectDungeonRoutes(state, dungeonKey))
 
 export function useRouteDetailed() {
   const route = useRoute()
@@ -30,10 +35,11 @@ export function useRouteDetailed() {
 }
 
 export function useDungeon() {
-  const dungeonKey = useAppSelector((state) => state.route.dungeonKey)
+  const dungeonKey = useRoutesSelector((state) => state.route.dungeonKey)
   return dungeonsByKey[dungeonKey]
 }
 
-export const useSelectedPull = () => useAppSelector((state) => state.route.selectedPull)
+// Hover
+export const useSelectedPull = () => useRoutesSelector((state) => state.route.selectedPull)
 
-export const useHoveredPull = () => useAppSelector((state) => state.hoveredPull)
+export const useHoveredPull = () => useHoverSelector((state) => state.hoveredPull)

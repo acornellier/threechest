@@ -1,5 +1,5 @@
 import { useCallback } from 'react'
-import { appendPull, deletePull, selectPullRelative } from '../../store/reducer.ts'
+import { appendPull, deletePull, selectPullRelative } from '../../store/routesReducer.ts'
 import { useKeyPress } from '../../hooks/useKeyPress.ts'
 import { useAppDispatch } from '../../store/hooks.ts'
 

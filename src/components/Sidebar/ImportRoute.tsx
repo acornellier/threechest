@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { MdtRoute } from '../../code/types.ts'
 import { Button } from '../Common/Button.tsx'
-import { importRoute } from '../../store/reducer.ts'
+import { importRoute } from '../../store/routesReducer.ts'
 import { useAppDispatch } from '../../store/hooks.ts'
 import { useToasts } from '../Toast/useToasts.ts'
 import { ActionCreators } from 'redux-undo'

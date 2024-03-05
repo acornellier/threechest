@@ -8,8 +8,6 @@ import { addPullFunc, toggleSpawnAction } from './actions.ts'
 
 export interface State {
   route: Route
-  hoveredPull: number | null
-  hoveredMobSpawn: MobSpawn | null
   savedRoutes: SavedRoute[]
 }
 
@@ -60,8 +58,6 @@ function initialState(): State {
   const savedRoutes = getSavedRoutes()
   return {
     route: getLastRoute(savedRoutes),
-    hoveredPull: null,
-    hoveredMobSpawn: null,
     savedRoutes,
   }
 }
@@ -85,11 +81,9 @@ const baseReducer = createSlice({
       state.route = matchingRoutes.length
         ? loadRouteFromStorage(matchingRoutes[matchingRoutes.length - 1].uid)
         : makeEmptyRoute(dungeonKey, state.savedRoutes)
-      state.hoveredPull = null
     },
     newRoute(state) {
       state.route = makeEmptyRoute(state.route.dungeonKey, state.savedRoutes)
-      state.hoveredPull = null
     },
     deleteRoute(state) {
       state.savedRoutes = state.savedRoutes.filter((route) => route.uid !== state.route.uid)
@@ -106,15 +100,12 @@ const baseReducer = createSlice({
     },
     loadRoute(state, { payload: routeId }: PayloadAction<string>) {
       state.route = loadRouteFromStorage(routeId)
-      state.hoveredPull = null
     },
     importRoute(state, { payload }: PayloadAction<MdtRoute>) {
       state.route = mdtRouteToRoute(payload)
-      state.hoveredPull = null
     },
     clearRoute(state) {
       state.route.pulls = [emptyPull]
-      state.hoveredPull = null
     },
     setName(state, { payload }: PayloadAction<string>) {
       state.route.name = payload
@@ -145,12 +136,6 @@ const baseReducer = createSlice({
         state.route.selectedPull = newIndex
       }
     },
-    hoverPull(state, { payload }: PayloadAction<number | null>) {
-      state.hoveredPull = payload
-    },
-    hoverMobSpawn(state, { payload }: PayloadAction<MobSpawn | null>) {
-      state.hoveredMobSpawn = payload
-    },
     toggleSpawn(state, { payload }: PayloadAction<{ mobSpawn: MobSpawn; individual: boolean }>) {
       state.route.pulls = toggleSpawnAction(state.route, payload)
     },
@@ -160,7 +145,7 @@ const baseReducer = createSlice({
   },
 })
 
-export const reducer = undoable(baseReducer.reducer, {
+export const routesReducer = undoable(baseReducer.reducer, {
   filter: includeAction([
     baseReducer.actions.newRoute.type,
     baseReducer.actions.clearRoute.type,
@@ -173,7 +158,7 @@ export const reducer = undoable(baseReducer.reducer, {
   ]),
 })
 
-// Action creators are generated for each case reducer function
+// Action creators are generated for each case mainReducer function
 export const {
   updateSavedRoutes,
   setDungeon,
@@ -188,8 +173,6 @@ export const {
   deletePull,
   selectPull,
   selectPullRelative,
-  hoverPull,
-  hoverMobSpawn,
   toggleSpawn,
   setPulls,
 } = baseReducer.actions

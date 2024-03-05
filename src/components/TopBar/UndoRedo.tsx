@@ -11,8 +11,8 @@ const redoModifiers = { ctrl: true, shift: true } as const
 export function UndoRedo() {
   const dispatch = useAppDispatch()
 
-  const hasPast = useRootSelector((state) => state.past.length > 0)
-  const hasFuture = useRootSelector((state) => state.future.length > 0)
+  const hasPast = useRootSelector((state) => state.routes.past.length > 0)
+  const hasFuture = useRootSelector((state) => state.routes.future.length > 0)
 
   const undo = useCallback(() => {
     dispatch(ActionCreators.undo())

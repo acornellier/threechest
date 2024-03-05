@@ -4,6 +4,7 @@
 -- Overwrite based on ID
 - Import from URL
 
+- Move hovered state to another mainReducer
 - Mob spells
 - Instructions page, keyboard shortcut hints
 - Donate button

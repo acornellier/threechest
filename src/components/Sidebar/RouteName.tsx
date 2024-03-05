@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useAppDispatch, useRoute } from '../../store/hooks.ts'
-import { setName } from '../../store/reducer.ts'
+import { setName } from '../../store/routesReducer.ts'
 
 export function RouteName() {
   const route = useRoute()

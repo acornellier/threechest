@@ -2,9 +2,10 @@ import { PullDetailed } from '../../code/types.ts'
 import { Mob } from '../../data/types.ts'
 import { darkenColor, getPullColor, lightenColor } from '../../code/colors.ts'
 import { useAppDispatch, useDungeon, useRoute } from '../../store/hooks.ts'
-import { hoverPull, selectPull } from '../../store/reducer.ts'
+import { selectPull } from '../../store/routesReducer.ts'
 import { MouseEvent, useEffect, useMemo, useRef } from 'react'
 import { mobCountPercentStr } from '../../code/util.ts'
+import { hoverPull } from '../../store/hoverReducer.ts'
 
 type MobCount = Record<number, { mob: Mob; count: number }>
 

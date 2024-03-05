@@ -1,6 +1,6 @@
 import { Button } from '../Common/Button.tsx'
 import { useAppDispatch } from '../../store/hooks.ts'
-import { newRoute } from '../../store/reducer.ts'
+import { newRoute } from '../../store/routesReducer.ts'
 import { ActionCreators } from 'redux-undo'
 
 export function NewRoute() {

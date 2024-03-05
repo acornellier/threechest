@@ -2,7 +2,7 @@
 import { DungeonKey } from '../../data/types.ts'
 import { dungeons } from '../../data/dungeons.ts'
 import { useAppDispatch, useDungeon } from '../../store/hooks.ts'
-import { setDungeon } from '../../store/reducer.ts'
+import { setDungeon } from '../../store/routesReducer.ts'
 import { Dropdown, DropdownOption } from '../Common/Dropdown.tsx'
 
 const options: DropdownOption[] = dungeons.map((dungeon) => ({

@@ -2,7 +2,7 @@ import { Pull, Route } from '../code/types.ts'
 import { MobSpawn } from '../data/types.ts'
 import { dungeonsByKey } from '../data/dungeons.ts'
 import { mobSpawnsEqual } from '../code/mobSpawns.ts'
-import { State } from './reducer.ts'
+import { State } from './routesReducer.ts'
 
 const findSelectedPull = (route: Route, mobSpawn: MobSpawn) =>
   route.pulls.findIndex((pull) =>
