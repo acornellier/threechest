@@ -9,7 +9,9 @@ export const store = configureStore({
     hover: hoverReducer,
   },
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware({ serializableCheck: false }).prepend(listenerMiddleware.middleware),
+    getDefaultMiddleware({ serializableCheck: false, immutableCheck: { warnAfter: 100 } }).prepend(
+      listenerMiddleware.middleware,
+    ),
 })
 
 export const persistor = persistStore(store)

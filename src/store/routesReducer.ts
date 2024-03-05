@@ -163,16 +163,8 @@ const baseReducer = createSlice({
       state.route = newRoute
     })
 
-    builder.addCase(setDungeon.rejected, (_state, { error }) => {
-      console.error(error)
-    })
-
     builder.addCase(loadRoute.fulfilled, (state, { payload: newRoute }) => {
       state.route = newRoute
-    })
-
-    builder.addCase(loadRoute.rejected, (_state, { error }) => {
-      console.error(error)
     })
 
     builder.addCase(
@@ -182,10 +174,6 @@ const baseReducer = createSlice({
         state.route = newRoute
       },
     )
-
-    builder.addCase(deleteRoute.rejected, (_state, { error }) => {
-      console.error(error)
-    })
   },
 })
 
@@ -224,6 +212,13 @@ export const {
 } = baseReducer.actions
 
 export const listenerMiddleware = createListenerMiddleware()
+
+listenerMiddleware.startListening({
+  matcher: isAnyOf(setDungeon.rejected, loadRoute.rejected, deleteRoute.rejected),
+  effect: async (action) => {
+    console.error(action.error)
+  },
+})
 
 listenerMiddleware.startListening({
   matcher: isAnyOf(

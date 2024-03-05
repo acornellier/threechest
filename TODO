@@ -9,7 +9,6 @@
 - Donate button
 - Google analytics
 - Pull hover tooltip
-- ImmutableStateInvariantMiddleware warning on initial load
 
 Questionable
 - Live editing with others
