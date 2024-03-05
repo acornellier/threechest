@@ -1,18 +1,19 @@
 import { useAppDispatch, useRoute, useSavedRoutes } from './hooks.ts'
 import { useEffect } from 'react'
-import { lastRouteKeyKey, savedRouteKey, savedRoutesKey, updateSavedRoutes } from './reducer.ts'
+import { getSavedRouteKey, lastRouteKeyKey, savedRoutesKey, updateSavedRoutes } from './reducer.ts'
 
 export function RouteSaver() {
   const dispatch = useAppDispatch()
 
   const route = useRoute()
+  console.log(route)
   useEffect(() => {
     localStorage.setItem(lastRouteKeyKey, route.uid)
     dispatch(updateSavedRoutes())
   }, [dispatch, route.uid, route.name])
 
   useEffect(() => {
-    localStorage.setItem([savedRouteKey, route.uid].join('-'), JSON.stringify(route))
+    localStorage.setItem(getSavedRouteKey(route.uid), JSON.stringify(route))
   }, [route])
 
   const savedRoutes = useSavedRoutes()

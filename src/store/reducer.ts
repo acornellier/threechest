@@ -35,9 +35,10 @@ const makeEmptyRoute = (dungeonKey: DungeonKey, savedRoutes: SavedRoute[]): Rout
   uid: newRouteUid(),
 })
 
-export const savedRouteKey = 'savedRoute'
+const savedRouteKey = 'savedRoute'
+export const getSavedRouteKey = (routeId: string) => [savedRouteKey, routeId].join('-')
 function loadRouteFromStorage(routeId: string) {
-  const route = window.localStorage.getItem([savedRouteKey, routeId].join('-'))
+  const route = window.localStorage.getItem(getSavedRouteKey(routeId))
   if (route === null) throw new Error(`Could not load route ${routeId}`)
 
   return JSON.parse(route) as Route
@@ -92,12 +93,15 @@ const baseReducer = createSlice({
     },
     deleteRoute(state) {
       state.savedRoutes = state.savedRoutes.filter((route) => route.uid !== state.route.uid)
+      localStorage.removeItem(getSavedRouteKey(state.route.uid))
 
       const dungeonRoutes = state.savedRoutes.filter(
         (route) => route.dungeonKey === state.route.dungeonKey,
       )
-      state.route = dungeonRoutes[dungeonRoutes.length - 1]
-        ? loadRouteFromStorage(state.savedRoutes[dungeonRoutes.length - 1].uid)
+
+      const lastDungeonRoute = dungeonRoutes[dungeonRoutes.length - 1]
+      state.route = lastDungeonRoute
+        ? loadRouteFromStorage(lastDungeonRoute.uid)
         : makeEmptyRoute(state.route.dungeonKey, state.savedRoutes)
     },
     loadRoute(state, { payload: routeId }: PayloadAction<string>) {
