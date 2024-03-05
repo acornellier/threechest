@@ -18,6 +18,8 @@ export function RouteSaver() {
       importRoute(mdtString).then((mdtRoute: MdtRoute) => {
         dispatch(importRouteAction(mdtRoute))
       })
+
+      window.history.pushState(null, '', window.location.origin)
     }
   }, [dispatch])
 

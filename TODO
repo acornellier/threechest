@@ -1,7 +1,6 @@
 ﻿- Import MDT
--- Overwrite current or existing??
+-- Warn before overwriting current
 -- Popup vs clipboard
-- Share URL - clear url after or something?
 
 - Pulls progress bar
 - Mob spells
