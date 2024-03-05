@@ -1,5 +1,5 @@
 ﻿import { UndoRedo } from './UndoRedo.tsx'
-import { DungeonDropdown } from './DungeonSelect/DungeonDropdown.tsx'
+import { DungeonDropdown } from './DungeonDropdown.tsx'
 
 export function TopBar() {
   return (

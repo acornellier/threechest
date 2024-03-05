@@ -5,6 +5,12 @@ export type Pull = {
   mobSpawns: MobSpawn[]
 }
 
+export type SavedRoute = {
+  name: string
+  uid: string
+  dungeonKey: DungeonKey
+}
+
 export type Route = {
   name: string
   uid: string

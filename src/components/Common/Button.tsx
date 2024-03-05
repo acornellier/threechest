@@ -9,7 +9,9 @@ export interface ButtonProps
 export function Button({ short, twoDimensional, className, children, ...props }: ButtonProps) {
   return (
     <button
-      className={`fancy-button ${short ? 'short' : ''} ${twoDimensional ? 'two-d' : ''} 
+      className={`fancy-button 
+                  ${short ? 'short' : ''} 
+                  ${twoDimensional ? 'two-d' : ''} 
                   ${className ?? ''}`}
       {...props}
     >

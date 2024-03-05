@@ -1,121 +1,107 @@
-﻿import { createSlice } from '@reduxjs/toolkit'
-import type { PayloadAction } from '@reduxjs/toolkit'
-import { MdtRoute, Pull, Route } from '../code/types.ts'
+﻿import type { PayloadAction } from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit'
+import { MdtRoute, Pull, Route, SavedRoute } from '../code/types.ts'
 import { DungeonKey, MobSpawn } from '../data/types.ts'
-import { dungeonsByKey } from '../data/dungeons.ts'
 import { mdtRouteToRoute } from '../code/mdtUtil.ts'
-import { mobSpawnsEqual } from '../code/mobSpawns.ts'
 import undoable, { includeAction } from 'redux-undo'
+import { addPullFunc, toggleSpawnAction } from './actions.ts'
 
 export interface State {
   route: Route
   hoveredPull: number | null
   hoveredMobSpawn: MobSpawn | null
+  savedRoutes: SavedRoute[]
 }
-
-const defaultDungeonKey: DungeonKey = 'eb'
-export const lastDungeonKey = 'lastDungeonKey'
-export const routeLocalStorageKey = 'savedRoute'
 
 const emptyPull = { id: 0, mobSpawns: [] }
 
-const makeEmptyRoute = (dungeonKey: DungeonKey): Route => ({
-  name: 'New route',
+const newRouteUid = () => Math.random().toString(36).slice(2)
+
+const defaultName = 'New route '
+function nextName(dungeonKey: DungeonKey, savedRoutes: SavedRoute[]) {
+  const defaultNamesRoutes = savedRoutes.filter(
+    (route) => route.dungeonKey === dungeonKey && route.name.startsWith(defaultName),
+  )
+  const numbers = defaultNamesRoutes.map((route) => route.name.split(defaultName)[1]).map(Number)
+  const maxNumber = numbers.reduce((acc, cur) => (cur > acc ? cur : acc), 0)
+  return defaultName + (maxNumber + 1).toString()
+}
+
+const makeEmptyRoute = (dungeonKey: DungeonKey, savedRoutes: SavedRoute[]): Route => ({
+  name: nextName(dungeonKey, savedRoutes),
   dungeonKey,
   selectedPull: 0,
   pulls: [emptyPull],
-  uid: '',
+  uid: newRouteUid(),
 })
 
-function getRouteByLocalStorage(dungeonKey?: DungeonKey): Route {
-  const dungeon = dungeonKey ?? window.localStorage.getItem(lastDungeonKey) ?? defaultDungeonKey
-  const item = window.localStorage.getItem(routeLocalStorageKey + dungeon)
-  return item ? JSON.parse(item) : makeEmptyRoute(dungeon as DungeonKey)
+export const savedRouteKey = 'savedRoute'
+function loadRouteFromStorage(routeId: string) {
+  const route = window.localStorage.getItem([savedRouteKey, routeId].join('-'))
+  if (route === null) throw new Error(`Could not load route ${routeId}`)
+
+  return JSON.parse(route) as Route
 }
 
-const initialState: State = {
-  route: getRouteByLocalStorage(),
-  hoveredPull: null,
-  hoveredMobSpawn: null,
+export const lastRouteKeyKey = 'lastRouteKey'
+function getLastRoute(savedRoutes: SavedRoute[]): Route {
+  const lastRouteId = window.localStorage.getItem(lastRouteKeyKey)
+  return lastRouteId ? loadRouteFromStorage(lastRouteId) : makeEmptyRoute('eb', savedRoutes)
 }
 
-const findSelectedPull = (route: Route, mobSpawn: MobSpawn) =>
-  route.pulls.findIndex((pull) =>
-    pull.mobSpawns.some((mobSpawn2) => mobSpawnsEqual(mobSpawn, mobSpawn2)),
-  )
+export const savedRoutesKey = 'savedRoutes'
+function getSavedRoutes(): SavedRoute[] {
+  const savedRoutes = window.localStorage.getItem(savedRoutesKey)
+  return savedRoutes ? JSON.parse(savedRoutes) : []
+}
 
-function toggleSpawnAction(
-  route: Route,
-  payload: { mobSpawn: MobSpawn; individual: boolean },
-): Pull[] {
-  const data = dungeonsByKey[route.dungeonKey]
-
-  const origSelectedPull = findSelectedPull(route, payload.mobSpawn)
-
-  const groupSpawns = payload.individual
-    ? [{ mobSpawn: payload.mobSpawn, selectedPull: origSelectedPull }]
-    : data.mdt.enemies
-        .flatMap((mob) => mob.spawns.map((spawn) => ({ mob, spawn })))
-        .filter(
-          (mobSpawn) =>
-            mobSpawnsEqual(mobSpawn, payload.mobSpawn) ||
-            (payload.mobSpawn.spawn.group !== null &&
-              mobSpawn.spawn.group === payload.mobSpawn.spawn.group),
-        )
-        .map((mobSpawn) => {
-          const selectedPull = findSelectedPull(route, mobSpawn)
-          return { mobSpawn, selectedPull }
-        })
-
-  if (origSelectedPull !== -1) {
-    // if already selected, deselect
-    return route.pulls.map((pull, pullIdx) =>
-      pullIdx !== origSelectedPull
-        ? pull
-        : {
-            ...pull,
-            mobSpawns: pull.mobSpawns.filter(
-              (mobSpawn2) =>
-                !groupSpawns.some(({ mobSpawn }) => mobSpawnsEqual(mobSpawn, mobSpawn2)),
-            ),
-          },
-    )
-  } else {
-    // otherwise, select
-    return route.pulls.map((pull, pullIdx) =>
-      pullIdx !== route.selectedPull
-        ? pull
-        : {
-            ...pull,
-            mobSpawns: [
-              ...pull.mobSpawns,
-              ...groupSpawns
-                .filter(({ selectedPull }) => selectedPull === -1)
-                .map(({ mobSpawn }) => mobSpawn),
-            ],
-          },
-    )
+function initialState(): State {
+  const savedRoutes = getSavedRoutes()
+  return {
+    route: getLastRoute(savedRoutes),
+    hoveredPull: null,
+    hoveredMobSpawn: null,
+    savedRoutes,
   }
-}
-
-function addPullFunc(state: State, newPullIndex: number = state.route.pulls.length) {
-  const maxId = state.route.pulls.reduce<number>((acc, pull) => (pull.id > acc ? pull.id : acc), 0)
-  const newPull = { id: maxId + 1, mobSpawns: [] }
-  state.route.pulls.splice(newPullIndex, 0, newPull)
-  state.route.selectedPull = newPullIndex
 }
 
 const baseReducer = createSlice({
   name: 'main',
   initialState,
   reducers: {
-    setDungeon(state, { payload }: PayloadAction<DungeonKey>) {
-      state.route = getRouteByLocalStorage(payload)
+    updateSavedRoutes(state) {
+      const savedRoute = state.savedRoutes.find((route) => route.uid === state.route.uid)
+      if (!savedRoute) {
+        state.savedRoutes.push({
+          uid: state.route.uid,
+          name: state.route.name,
+          dungeonKey: state.route.dungeonKey,
+        })
+      }
+    },
+    setDungeon(state, { payload: dungeonKey }: PayloadAction<DungeonKey>) {
+      const matchingRoutes = state.savedRoutes.filter((route) => route.dungeonKey === dungeonKey)
+      state.route = matchingRoutes.length
+        ? loadRouteFromStorage(matchingRoutes[matchingRoutes.length - 1].uid)
+        : makeEmptyRoute(dungeonKey, state.savedRoutes)
       state.hoveredPull = null
     },
     newRoute(state) {
-      console.log('newroute')
-      state.route = makeEmptyRoute(state.route.dungeonKey)
+      state.route = makeEmptyRoute(state.route.dungeonKey, state.savedRoutes)
+      state.hoveredPull = null
+    },
+    deleteRoute(state) {
+      state.savedRoutes = state.savedRoutes.filter((route) => route.uid !== state.route.uid)
+
+      const dungeonRoutes = state.savedRoutes.filter(
+        (route) => route.dungeonKey === state.route.dungeonKey,
+      )
+      state.route = dungeonRoutes[dungeonRoutes.length - 1]
+        ? loadRouteFromStorage(state.savedRoutes[dungeonRoutes.length - 1].uid)
+        : makeEmptyRoute(state.route.dungeonKey, state.savedRoutes)
+    },
+    loadRoute(state, { payload: routeId }: PayloadAction<string>) {
+      state.route = loadRouteFromStorage(routeId)
       state.hoveredPull = null
     },
     importRoute(state, { payload }: PayloadAction<MdtRoute>) {
@@ -185,13 +171,15 @@ export const reducer = undoable(baseReducer.reducer, {
 
 // Action creators are generated for each case reducer function
 export const {
+  updateSavedRoutes,
   setDungeon,
   newRoute,
+  deleteRoute,
+  loadRoute,
   importRoute,
   clearRoute,
   setName,
   addPull,
-  prependPull,
   appendPull,
   deletePull,
   selectPull,
