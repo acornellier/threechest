@@ -54,7 +54,7 @@ function PullOutlineComponent({ pullId, index, isSelected, isHovered }: Props) {
   const [key, setKey] = useState(0)
   useEffect(() => {
     setKey((prevKey) => prevKey + 1000)
-  }, [isHovered, isSelected, pull])
+  }, [isHovered, isSelected, pull, index])
 
   return circle ? (
     <Circle
