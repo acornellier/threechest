@@ -5,15 +5,16 @@ import { setRouteFromMdt } from '../store/routesReducer.ts'
 import { mdtDungeonIndexToDungeonKey } from '../code/mdtUtil.ts'
 import { dungeonsByKey } from '../data/dungeons.ts'
 import { Modal } from './Common/Modal.tsx'
+import { useCallback } from 'react'
 
 export function ConfirmImportModal() {
   const dispatch = useAppDispatch()
 
   const importingRoute = useRootSelector((state) => state.import.importingRoute)
 
-  const cancel = () => {
+  const cancel = useCallback(() => {
     dispatch(clearImportingRoute())
-  }
+  }, [dispatch])
 
   const confirm = (copy: boolean) => {
     if (!importingRoute) return
@@ -29,6 +30,7 @@ export function ConfirmImportModal() {
   return (
     <Modal
       title="Route already exists"
+      onClose={cancel}
       contents={
         <>
           <p>Would you like to overwrite it or make a copy?</p>

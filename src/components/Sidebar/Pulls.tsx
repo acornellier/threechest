@@ -9,6 +9,7 @@ import { mobCountPercentStr } from '../../code/util.ts'
 import { PullContextMenu, RightClickedSettings } from './PullContextMenu.tsx'
 import { usePullShortcuts } from './usePullShortcuts.ts'
 import { Panel } from '../Common/Panel.tsx'
+import { Modal } from '../Common/Modal.tsx'
 
 type SortablePull = PullDetailed & ItemInterface
 
@@ -54,6 +55,11 @@ export function Pulls() {
 
   usePullShortcuts()
 
+  const [clearPullsModalOpen, setClearPullsModalOpen] = useState(false)
+  const onCloseClearPullsModal = useCallback(() => {
+    setClearPullsModalOpen(false)
+  }, [])
+
   const percent = (routeDetailed.count / dungeon.mdt.totalCount) * 100
 
   let pullIndex = 0
@@ -93,7 +99,38 @@ export function Pulls() {
         <Button className="grow" onClick={() => dispatch(addPull())}>
           Add pull
         </Button>
-        <Button onClick={() => dispatch(clearRoute())}>Clear</Button>
+        <Button onClick={() => setClearPullsModalOpen(true)}>Clear</Button>
+        {clearPullsModalOpen && (
+          <Modal
+            title="Clear all pulls?"
+            contents={
+              <>
+                <div>This will reset your route completely.</div>
+                <div>
+                  It <b>can</b> be undone.
+                </div>
+              </>
+            }
+            onClose={onCloseClearPullsModal}
+            closeOnEscape
+            closeOnClickOutside
+            buttons={
+              <>
+                <Button outline onClick={onCloseClearPullsModal}>
+                  Cancel
+                </Button>
+                <Button
+                  onClick={() => {
+                    dispatch(clearRoute())
+                    onCloseClearPullsModal()
+                  }}
+                >
+                  Confirm
+                </Button>
+              </>
+            }
+          />
+        )}
       </div>
       {rightClickedSettings && (
         <PullContextMenu
