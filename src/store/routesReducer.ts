@@ -8,12 +8,16 @@
 import { MdtRoute, Pull, Route, SavedRoute } from '../code/types.ts'
 import { DungeonKey, MobSpawn } from '../data/types.ts'
 import { mdtRouteToRoute } from '../code/mdtUtil.ts'
-import undoable, { ActionCreators, includeAction } from 'redux-undo'
+import undoable, { ActionCreators, combineFilters, excludeAction, includeAction } from 'redux-undo'
 import { addPullFunc, toggleSpawnAction } from './actions.ts'
-import { persistReducer } from 'redux-persist'
 import * as localforage from 'localforage'
-import localForage from 'localforage'
-import { RootState } from './store.ts'
+import * as localForage from 'localforage'
+import { AppDispatch, RootState } from './store.ts'
+import { importRouteApi } from '../api/importRouteApi.ts'
+import { setImportingRoute } from './importReducer.ts'
+import { persistReducer } from 'redux-persist'
+import { REHYDRATE } from 'redux-persist/es/constants'
+import { addToast } from './toastReducer.ts'
 
 export interface State {
   route: Route
@@ -85,6 +89,20 @@ export const deleteRoute = createAsyncThunk('routes/deleteRoute', async (_, thun
   return { deletedRouteId: routeId, route }
 })
 
+export const importRoute = createAsyncThunk(
+  'routes/importRoute',
+  async (mdtString: string, thunkAPI) => {
+    const mdt = await importRouteApi(mdtString)
+    const state = thunkAPI.getState() as RootState
+    const savedRoute = state.routes.present.savedRoutes.find((route) => route.uid === mdt.uid)
+    if (savedRoute) {
+      thunkAPI.dispatch(setImportingRoute(mdt))
+    } else {
+      thunkAPI.dispatch(setRouteFromMdt({ mdtRoute: mdt, copy: false }))
+    }
+  },
+)
+
 const initialState: State = {
   route: makeEmptyRoute('eb', []),
   savedRoutes: [],
@@ -110,14 +128,20 @@ const baseReducer = createSlice({
       state.route = makeEmptyRoute(state.route.dungeonKey, state.savedRoutes)
     },
     duplicateRoute(state) {
-      state.route = {
-        ...state.route,
-        uid: newRouteUid(),
-        name: nextName(state.route.name, state.route.dungeonKey, state.savedRoutes),
-      }
+      state.route.uid = newRouteUid()
+      state.route.name = nextName(state.route.name, state.route.dungeonKey, state.savedRoutes)
     },
-    importRoute(state, { payload }: PayloadAction<MdtRoute>) {
-      state.route = mdtRouteToRoute(payload)
+    setRouteFromMdt(
+      state,
+      { payload: { mdtRoute, copy } }: PayloadAction<{ mdtRoute: MdtRoute; copy: boolean }>,
+    ) {
+      const route = mdtRouteToRoute(mdtRoute)
+      if (copy) {
+        route.uid = newRouteUid()
+        route.name = nextName(route.name, route.dungeonKey, state.savedRoutes)
+      }
+
+      state.route = route
     },
     clearRoute(state) {
       state.route.pulls = [emptyPull]
@@ -177,11 +201,10 @@ const baseReducer = createSlice({
   },
 })
 
-export const routesReducer = undoable(
-  persistReducer({ key: 'routesReducer', storage: localForage }, baseReducer.reducer),
-  {
-    limit: 100,
-    filter: includeAction([
+const undoableReducer = undoable(baseReducer.reducer, {
+  limit: 100,
+  filter: combineFilters(
+    includeAction([
       baseReducer.actions.newRoute.type,
       baseReducer.actions.clearRoute.type,
       baseReducer.actions.addPull.type,
@@ -191,15 +214,22 @@ export const routesReducer = undoable(
       baseReducer.actions.toggleSpawn.type,
       baseReducer.actions.setPulls.type,
     ]),
-  },
+    excludeAction(['persist/PERSIST', 'persist/REHYDRATE']),
+  ),
+})
+
+const persistedReducer = persistReducer(
+  { key: 'routesReducer', storage: localForage },
+  undoableReducer,
 )
 
-// Action creators are generated for each case mainReducer function
+export const routesReducer = persistedReducer
+
 export const {
   updateSavedRoutes,
   newRoute,
   duplicateRoute,
-  importRoute,
+  setRouteFromMdt,
   clearRoute,
   setName,
   addPull,
@@ -214,9 +244,36 @@ export const {
 export const listenerMiddleware = createListenerMiddleware()
 
 listenerMiddleware.startListening({
-  matcher: isAnyOf(setDungeon.rejected, loadRoute.rejected, deleteRoute.rejected),
+  actionCreator: setRouteFromMdt,
+  effect: async ({ payload: { mdtRoute, copy } }, listenerApi) => {
+    if (copy) {
+      const state = listenerApi.getState() as RootState
+      addToast(
+        listenerApi.dispatch as AppDispatch,
+        `Imported route ${mdtRoute.text} as ${state.routes.present.route.name}`,
+      )
+    } else {
+      addToast(listenerApi.dispatch as AppDispatch, `Route imported: ${mdtRoute.text}`)
+    }
+  },
+})
+
+listenerMiddleware.startListening({
+  matcher: isAnyOf(
+    setDungeon.rejected,
+    loadRoute.rejected,
+    deleteRoute.rejected,
+    importRoute.rejected,
+  ),
   effect: async (action) => {
     console.error(action.error)
+  },
+})
+
+listenerMiddleware.startListening({
+  type: REHYDRATE,
+  effect: async (_action, listenerApi) => {
+    listenerApi.dispatch(ActionCreators.clearHistory())
   },
 })
 
@@ -225,7 +282,7 @@ listenerMiddleware.startListening({
     loadRoute.fulfilled,
     deleteRoute.fulfilled,
     duplicateRoute,
-    importRoute,
+    setRouteFromMdt,
     newRoute,
   ),
   effect: async (_action, listenerApi) => {

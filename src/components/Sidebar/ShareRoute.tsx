@@ -1,16 +1,15 @@
 import { Button } from '../Common/Button.tsx'
 import { exportRoute } from '../../api/exportRoute.ts'
-import { useRoute } from '../../store/hooks.ts'
-import { useToasts } from '../Toast/useToasts.ts'
+import { useAppDispatch, useRoute } from '../../store/hooks.ts'
+import { addToast } from '../../store/toastReducer.ts'
 
 export function ShareRoute() {
+  const dispatch = useAppDispatch()
   const route = useRoute()
-
-  const { addToast } = useToasts()
 
   const handleClick = () => {
     exportRoute(route).then((str) => {
-      addToast('URL copied to clipboard!')
+      addToast(dispatch, 'URL copied to clipboard!')
       const url = window.location.host + `?mdt=${str}`
       return navigator.clipboard.writeText(url)
     })

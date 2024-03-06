@@ -1,10 +1,7 @@
 import { useState } from 'react'
-import { MdtRoute } from '../../code/types.ts'
 import { Button } from '../Common/Button.tsx'
 import { useAppDispatch } from '../../store/hooks.ts'
-import { useToasts } from '../Toast/useToasts.ts'
-import { importRoute } from '../../api/importRoute.ts'
-import { importRoute as importRouteAction } from '../../store/routesReducer.ts'
+import { importRoute } from '../../store/routesReducer.ts'
 
 const eb =
   '!WA:2!fb5slnmquuyKHHqmecjHqXPiQnOIrenn9HjIkwFHkIAvRiIiTjZeIgt00eRf)x4sx6YUSRk(Rq)R4sxzgIp2CH75C(Uh4ouJAX4hJBTwGt3XlvRdgFd4vhpcXZoXpUlSyINt)T8IpPtSBjD3nR)qt)eCJ(2jrr4G4dt89v(8NLJtA5JFa7dUt8hLnscCXHb7484hp3g7JTJ9cdgU(DPuTFBaeybGIAa4BaidlhF7KoDFcbq81Td9dJIujedmHizIaslMgLzfeJgltVrYp6ytilQKtWIbY(oFKknMjzaCinowe3xRw1CPLNBEDJYtRo5mZAPikJa0C0dAGd04fq8FT5ARV9oNE25xC5b7T)rhNDNwlMwyfeOIurlrzbPYAmWmsITbovD38JOKlvM7VIPYg9U17MW7BAJDVsQ6)Lzs2QG(ciqbDD6OyMdLIqDmEHLJjNOScVqb9Y0ev(L1SLbonrjeK6aPoWmwk9uPSxpH6yPVcQyZI0Y(ga'
@@ -16,18 +13,13 @@ export function ImportRoute() {
   const dispatch = useAppDispatch()
   const [input, setInput] = useState(eb)
 
-  const { addToast } = useToasts()
-
   const handleClick = () => {
-    importRoute(input).then((mdtRoute: MdtRoute) => {
-      dispatch(importRouteAction(mdtRoute))
-      addToast('Route imported!')
-    })
+    dispatch(importRoute(input))
   }
 
   return (
     <Button data-tooltip-id="import-route-tooltip" short className="flex-1" onClick={handleClick}>
-      Import MDT
+      Import MDT from clipboard
     </Button>
   )
 }

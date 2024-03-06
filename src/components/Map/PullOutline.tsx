@@ -66,7 +66,12 @@ function PullOutlineComponent({ pullId, index, isSelected, isHovered }: Props) {
       opacity={isSelected || isHovered ? 1 : 0.6}
       weight={isSelected ? 6 : isHovered ? 5 : 3.5}
     >
-      <Tooltip className="pull-number-tooltip" direction="center" permanent offset={[0, -15]}>
+      <Tooltip
+        className={`pull-number-tooltip ${isHovered ? 'hovered' : ''}`}
+        direction="center"
+        permanent
+        offset={[0, -15]}
+      >
         {index + 1}
       </Tooltip>
     </Circle>
@@ -79,7 +84,11 @@ function PullOutlineComponent({ pullId, index, isSelected, isHovered }: Props) {
       opacity={isSelected || isHovered ? 1 : 0.6}
       weight={isSelected ? 6 : isHovered ? 5 : 3.5}
     >
-      <Tooltip className="pull-number-tooltip" direction="center" permanent>
+      <Tooltip
+        className={`pull-number-tooltip ${isHovered ? 'hovered' : ''}`}
+        direction="center"
+        permanent
+      >
         {index + 1}
       </Tooltip>
     </Polygon>

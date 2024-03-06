@@ -27,5 +27,4 @@ export const hoverSlice = createSlice({
 
 export const hoverReducer = hoverSlice.reducer
 
-// Action creators are generated for each case mainReducer function
 export const { hoverPull, hoverMobSpawn } = hoverSlice.actions

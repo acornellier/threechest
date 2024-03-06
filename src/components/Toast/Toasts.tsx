@@ -1,8 +1,8 @@
-import { useToasts } from './useToasts.ts'
 import { ToastComponent } from './ToastComponent.tsx'
+import { useRootSelector } from '../../store/hooks.ts'
 
 export function Toasts() {
-  const { toasts } = useToasts()
+  const toasts = useRootSelector((state) => state.toast.toasts)
 
   return (
     <div className="fixed w-full bottom-8 z-20">

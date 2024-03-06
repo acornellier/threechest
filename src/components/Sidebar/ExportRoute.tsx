@@ -1,16 +1,15 @@
 import { Button } from '../Common/Button.tsx'
-import { useRoute } from '../../store/hooks.ts'
-import { useToasts } from '../Toast/useToasts.ts'
+import { useAppDispatch, useRoute } from '../../store/hooks.ts'
 import { exportRoute } from '../../api/exportRoute.ts'
+import { addToast } from '../../store/toastReducer.ts'
 
 export function ExportRoute() {
+  const dispatch = useAppDispatch()
   const route = useRoute()
-
-  const { addToast } = useToasts()
 
   const handleClick = () => {
     exportRoute(route).then((str) => {
-      addToast('MDT string copied to clipboard!')
+      addToast(dispatch, 'MDT string copied to clipboard!')
       return navigator.clipboard.writeText(str)
     })
   }

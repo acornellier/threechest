@@ -1,10 +1,7 @@
 import { useAppDispatch, useRoute } from './hooks.ts'
 import { useEffect } from 'react'
-import { getSavedRouteKey, updateSavedRoutes } from './routesReducer.ts'
+import { getSavedRouteKey, importRoute, updateSavedRoutes } from './routesReducer.ts'
 import * as localforage from 'localforage'
-import { MdtRoute } from '../code/types.ts'
-import { importRoute } from '../api/importRoute.ts'
-import { importRoute as importRouteAction } from '../store/routesReducer.ts'
 
 export function RouteSaver() {
   const dispatch = useAppDispatch()
@@ -15,10 +12,7 @@ export function RouteSaver() {
     const urlParams = new URLSearchParams(window.location.search)
     const mdtString = urlParams.get('mdt')
     if (mdtString) {
-      importRoute(mdtString).then((mdtRoute: MdtRoute) => {
-        dispatch(importRouteAction(mdtRoute))
-      })
-
+      dispatch(importRoute(mdtString))
       window.history.pushState(null, '', window.location.origin)
     }
   }, [dispatch])

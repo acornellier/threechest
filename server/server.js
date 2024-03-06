@@ -28,7 +28,7 @@ app.post('/api/exportRoute', async (req, res) => {
   }
 })
 
-const { PORT = 3000 } = process.env
+const { PORT = 6173 } = process.env
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`)
 })

@@ -1,5 +1,5 @@
-import { Toast } from './ToastProvider.tsx'
 import { CheckCircleIcon } from '@heroicons/react/24/outline'
+import { Toast } from '../../store/toastReducer.ts'
 
 interface Props {
   toast: Toast

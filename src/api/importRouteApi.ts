@@ -1,9 +1,11 @@
-﻿const importUrl =
+﻿import { MdtRoute } from '../code/types.ts'
+
+const importUrl =
   process.env.NODE_ENV === 'development'
-    ? 'http://localhost:3000/api/importRoute'
+    ? 'http://localhost:6173/api/importRoute'
     : '/api/importRoute'
 
-export const importRoute = (str: string) =>
+export const importRouteApi = (str: string): Promise<MdtRoute> =>
   fetch(importUrl, {
     method: 'post',
     headers: { 'Content-Type': 'application/json' },
