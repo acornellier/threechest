@@ -1,4 +1,5 @@
 ﻿- Backspace should select previous pull after deleting
+- Import > delete > undo creates weird pull outline colors
 - Collapsible sidebar
 - Mob spells
 - Instructions page, keyboard shortcut hints
