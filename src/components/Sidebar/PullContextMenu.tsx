@@ -28,15 +28,6 @@ export function PullContextMenu({ rightClickedSettings, onClose }: Props) {
         <Button
           short
           onClick={() => {
-            dispatch(addPull(rightClickedSettings.pullIndex + 1))
-            onClose()
-          }}
-        >
-          Insert after
-        </Button>
-        <Button
-          short
-          onClick={() => {
             dispatch(addPull(rightClickedSettings.pullIndex))
             onClose()
           }}
@@ -46,7 +37,16 @@ export function PullContextMenu({ rightClickedSettings, onClose }: Props) {
         <Button
           short
           onClick={() => {
-            dispatch(deletePull(rightClickedSettings.pullIndex))
+            dispatch(addPull(rightClickedSettings.pullIndex + 1))
+            onClose()
+          }}
+        >
+          Insert after
+        </Button>
+        <Button
+          short
+          onClick={() => {
+            dispatch(deletePull({ pullIndex: rightClickedSettings.pullIndex }))
             onClose()
           }}
         >

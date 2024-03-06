@@ -44,13 +44,20 @@ export function Pulls() {
     null,
   )
 
-  const onRightClick = useCallback((e: MouseEvent, pullIndex: number) => {
-    setRightClickedSettings({
-      x: e.pageX,
-      y: e.pageY,
-      pullIndex,
-    })
-  }, [])
+  const onRightClick = useCallback(
+    (e: MouseEvent, pullIndex: number) => {
+      if (rightClickedSettings?.pullIndex === pullIndex) {
+        setRightClickedSettings(null)
+      } else {
+        setRightClickedSettings({
+          x: e.pageX,
+          y: e.pageY,
+          pullIndex,
+        })
+      }
+    },
+    [rightClickedSettings?.pullIndex],
+  )
 
   usePullShortcuts()
 

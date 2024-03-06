@@ -3,13 +3,14 @@ import { appendPull, deletePull, selectPullRelative } from '../../store/routesRe
 import { useKeyPress } from '../../hooks/useKeyPress.ts'
 import { useAppDispatch } from '../../store/hooks.ts'
 
-const deleteKeys = ['Backspace', 'Delete']
-
 export function usePullShortcuts() {
   const dispatch = useAppDispatch()
 
-  const onKeyBackspace = useCallback(() => dispatch(deletePull()), [dispatch])
-  useKeyPress(deleteKeys, onKeyBackspace)
+  const onKeyBackspace = useCallback(() => dispatch(deletePull({ moveUp: true })), [dispatch])
+  useKeyPress('Backspace', onKeyBackspace)
+
+  const onKeyDelete = useCallback(() => dispatch(deletePull({})), [dispatch])
+  useKeyPress('Delete', onKeyDelete)
 
   const onKeyA = useCallback(() => dispatch(appendPull()), [dispatch])
   useKeyPress('a', onKeyA)

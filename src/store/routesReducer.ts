@@ -143,9 +143,14 @@ const baseReducer = createSlice({
     appendPull(state) {
       addPullFunc(state, state.route.selectedPull + 1)
     },
-    deletePull(state, { payload = state.route.selectedPull }: PayloadAction<number | undefined>) {
-      state.route.pulls = state.route.pulls.filter((_, index) => index !== payload)
-      if (state.route.selectedPull >= state.route.pulls.length) {
+    deletePull(
+      state,
+      {
+        payload: { pullIndex = state.route.selectedPull, moveUp },
+      }: PayloadAction<{ pullIndex?: number | undefined; moveUp?: boolean }>,
+    ) {
+      state.route.pulls = state.route.pulls.filter((_, index) => index !== pullIndex)
+      if (moveUp || state.route.selectedPull >= state.route.pulls.length) {
         state.route.selectedPull -= 1
       }
     },
