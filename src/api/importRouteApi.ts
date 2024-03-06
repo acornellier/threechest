@@ -10,4 +10,7 @@ export const importRouteApi = (str: string): Promise<MdtRoute> =>
     method: 'post',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ str }),
-  }).then((res) => res.json())
+  }).then(async (res) => {
+    if (res.ok) return res.json()
+    else throw await res.text()
+  })

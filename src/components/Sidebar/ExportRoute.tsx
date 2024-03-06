@@ -1,17 +1,20 @@
 import { Button } from '../Common/Button.tsx'
 import { useAppDispatch, useRoute } from '../../store/hooks.ts'
-import { exportRoute } from '../../api/exportRoute.ts'
+import { exportRouteApi } from '../../api/exportRouteApi.ts'
 import { addToast } from '../../store/toastReducer.ts'
 
 export function ExportRoute() {
   const dispatch = useAppDispatch()
   const route = useRoute()
 
-  const handleClick = () => {
-    exportRoute(route).then((str) => {
+  const handleClick = async () => {
+    try {
+      const str = await exportRouteApi(route)
       addToast(dispatch, 'MDT string copied to clipboard!')
       return navigator.clipboard.writeText(str)
-    })
+    } catch (err) {
+      addToast(dispatch, `Failed to export MDT string: ${err}`, 'error')
+    }
   }
 
   return (

@@ -15,7 +15,7 @@ app.post('/api/importRoute', async (req, res) => {
     const route = await importRoute(req.body.str)
     res.json(route)
   } catch (e) {
-    console.error(e)
+    res.status(422).send(e.message)
   }
 })
 
@@ -25,6 +25,7 @@ app.post('/api/exportRoute', async (req, res) => {
     res.json(route)
   } catch (e) {
     console.error(e)
+    throw e
   }
 })
 

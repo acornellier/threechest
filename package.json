@@ -8,7 +8,8 @@
     "build": "tsc && vite build",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "server": "tsx server/server.js"
+    "server": "tsx server/server.js",
+    "vercel-dev": "env NODE_ENV=vercel_dev vercel dev --listen 1234"
   },
   "dependencies": {
     "@fontsource-variable/roboto-slab": "^5.0.19",

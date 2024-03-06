@@ -13,8 +13,7 @@ import { addPullFunc, toggleSpawnAction } from './actions.ts'
 import * as localforage from 'localforage'
 import * as localForage from 'localforage'
 import { AppDispatch, RootState } from './store.ts'
-import { importRouteApi } from '../api/importRouteApi.ts'
-import { setImportingRoute } from './importReducer.ts'
+import { importRoute } from './importReducer.ts'
 import { persistReducer } from 'redux-persist'
 import { REHYDRATE } from 'redux-persist/es/constants'
 import { addToast } from './toastReducer.ts'
@@ -88,20 +87,6 @@ export const deleteRoute = createAsyncThunk('routes/deleteRoute', async (_, thun
   const route = await getLastDungeonRoute(state.routes.present.route.dungeonKey, savedRoutes)
   return { deletedRouteId: routeId, route }
 })
-
-export const importRoute = createAsyncThunk(
-  'routes/importRoute',
-  async (mdtString: string, thunkAPI) => {
-    const mdt = await importRouteApi(mdtString)
-    const state = thunkAPI.getState() as RootState
-    const savedRoute = state.routes.present.savedRoutes.find((route) => route.uid === mdt.uid)
-    if (savedRoute) {
-      thunkAPI.dispatch(setImportingRoute(mdt))
-    } else {
-      thunkAPI.dispatch(setRouteFromMdt({ mdtRoute: mdt, copy: false }))
-    }
-  },
-)
 
 const initialState: State = {
   route: makeEmptyRoute('eb', []),
@@ -265,8 +250,8 @@ listenerMiddleware.startListening({
     deleteRoute.rejected,
     importRoute.rejected,
   ),
-  effect: async (action) => {
-    console.error(action.error)
+  effect: async ({ error }, listenerApi) => {
+    addToast(listenerApi.dispatch as AppDispatch, (error as Error).message, 'error')
   },
 })
 

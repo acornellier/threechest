@@ -1,4 +1,4 @@
-import { exportRoute } from '../src/server/exportRoute.js'
+import { exportRoute } from '../server/exportRoute.js'
 
 export default async function exportRouteApi(request, response) {
   const mdtRoute = await exportRoute(request.body.mdtRoute)

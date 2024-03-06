@@ -94,6 +94,10 @@ input.fancy {
     /*0 3px 0 $fancy-red,*/ 0 3px 2px rgba(0, 0, 0, 0.2),
     0 5px 10px rgba(0, 0, 0, 0.1),
     0 10px 20px rgba(0, 0, 0, 0.1);
+
+  &.error {
+    background-color: #b61111;
+  }
 }
 
 .fancy-button {

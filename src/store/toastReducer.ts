@@ -1,9 +1,12 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { AppDispatch } from './store.ts'
 
+type ToastType = 'success' | 'error'
+
 export interface Toast {
   id: number
   message: string
+  type: ToastType
   removing?: boolean
 }
 
@@ -31,8 +34,13 @@ export const toastSlice = createSlice({
   },
 })
 
-export function addToast(dispatch: AppDispatch, message: string) {
-  const toast = { id: new Date().getTime(), message }
+export function addToast(dispatch: AppDispatch, message: string, type?: ToastType) {
+  const toast: Toast = {
+    id: new Date().getTime(),
+    message,
+    type: type ?? 'success',
+  }
+
   dispatch(toastSlice.actions.newToast(toast))
 
   setTimeout(() => {

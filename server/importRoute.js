@@ -1,7 +1,22 @@
 ﻿import parser from 'node-weakauras-parser'
 
+export class DecodingError extends Error {
+  constructor(message) {
+    super(message)
+    this.name = 'DecodingError'
+  }
+}
+
+async function decode(str) {
+  try {
+    return await parser.decode(str)
+  } catch (err) {
+    throw new DecodingError('Invalid MDT string')
+  }
+}
+
 export async function importRoute(str) {
-  const decoded = await parser.decode(str)
+  const decoded = await decode(str)
 
   for (const pull of decoded.value.pulls) {
     const newEnemies = []

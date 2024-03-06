@@ -1,6 +1,8 @@
-import type { PayloadAction } from '@reduxjs/toolkit'
-import { createSlice } from '@reduxjs/toolkit'
+import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { MdtRoute } from '../code/types.ts'
+import { importRouteApi } from '../api/importRouteApi.ts'
+import { RootState } from './store.ts'
+import { setRouteFromMdt } from './routesReducer.ts'
 
 export interface ImportState {
   importingRoute: MdtRoute | null
@@ -9,6 +11,20 @@ export interface ImportState {
 const initialState: ImportState = {
   importingRoute: null,
 }
+
+export const importRoute = createAsyncThunk(
+  'routes/importRoute',
+  async (mdtString: string, thunkAPI) => {
+    const mdt = await importRouteApi(mdtString)
+    const state = thunkAPI.getState() as RootState
+    const savedRoute = state.routes.present.savedRoutes.find((route) => route.uid === mdt.uid)
+    if (savedRoute) {
+      thunkAPI.dispatch(setImportingRoute(mdt))
+    } else {
+      thunkAPI.dispatch(setRouteFromMdt({ mdtRoute: mdt, copy: false }))
+    }
+  },
+)
 
 export const importSlice = createSlice({
   name: 'import',
@@ -24,5 +40,4 @@ export const importSlice = createSlice({
 })
 
 export const importReducer = importSlice.reducer
-
 export const { setImportingRoute, clearImportingRoute } = importSlice.actions
