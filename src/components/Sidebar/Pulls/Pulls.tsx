@@ -20,7 +20,9 @@ export function Pulls() {
   const pullsDetailed = useMemo(() => augmentPulls(route.pulls), [route.pulls])
 
   const hoveredPull = useHoveredPull()
-  const totalCount = pullsDetailed[hoveredPull ?? pullsDetailed.length - 1].countCumulative
+  const totalCount = pullsDetailed.length
+    ? pullsDetailed[hoveredPull ?? pullsDetailed.length - 1].countCumulative
+    : 0
 
   const [ghostPullIndex, setGhostPullIndex] = useState<number | null>(null)
 

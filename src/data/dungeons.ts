@@ -89,3 +89,11 @@ export const dungeonsByKey = dungeons.reduce(
   },
   {} as Record<DungeonKey, Dungeon>,
 )
+
+export const dungeonsByMdtIdx = dungeons.reduce(
+  (acc, dungeon) => {
+    acc[dungeon.mdt.dungeonIndex] = dungeon
+    return acc
+  },
+  {} as Record<number, Dungeon>,
+)

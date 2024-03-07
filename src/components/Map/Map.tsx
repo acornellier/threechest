@@ -1,11 +1,11 @@
 import 'leaflet/dist/leaflet.css'
 import { MapContainer, TileLayer } from 'react-leaflet'
 import { CRS, LatLngBoundsExpression } from 'leaflet'
-import { MousePosition } from '../Leaflet/MousePosition/MousePosition'
 import '../Leaflet/SmoothWheelZoom/SmoothWheelZoom'
 import { Mobs } from './Mobs.tsx'
 import { PullOutlines } from './PullOutlines.tsx'
 import { useDungeon } from '../../store/hooks.ts'
+import { Drawings } from './Drawings.tsx'
 
 const height = 256
 const width = 384
@@ -48,6 +48,7 @@ export function Map() {
         />
         <Mobs />
         <PullOutlines />
+        <Drawings />
       </MapContainer>
     </div>
   )

@@ -13,7 +13,7 @@ const initialState: ImportState = {
 }
 
 export const importRoute = createAsyncThunk(
-  'routes/importRoute',
+  'routes/decodeRoute',
   async (mdtString: string, thunkAPI) => {
     const mdt = await importRouteApi(mdtString)
     const state = thunkAPI.getState() as RootState

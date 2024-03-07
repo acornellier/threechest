@@ -1,19 +1,53 @@
-﻿import { MdtRoute, Route } from './types.ts'
-import { DungeonKey, MobSpawn } from '../data/types.ts'
-import { dungeonsByKey } from '../data/dungeons.ts'
+﻿import { Drawing, MdtPolygon, MdtRoute, Route } from './types.ts'
+import { MobSpawn, Point } from '../data/types.ts'
+import { dungeonsByKey, dungeonsByMdtIdx } from '../data/dungeons.ts'
 import { getPullColor } from './colors.ts'
 
-export const mdtDungeonIndexToDungeonKey: Record<number, DungeonKey> = {
-  101: 'dotiu',
-  104: 'eb',
+const coordinateRatio = 2.185
+
+function mdtPolygonToDrawing(polygon: MdtPolygon): Drawing {
+  const points: Point[] = []
+  const chunkSize = 4
+  for (let i = 0; i < polygon.l.length; i += chunkSize) {
+    const [, , x, y] = polygon.l.slice(i, i + chunkSize)
+    points.push([y / coordinateRatio, x / coordinateRatio])
+  }
+
+  return {
+    weight: polygon.d[0],
+    color: '#' + polygon.d[4],
+    points,
+  }
+}
+
+function drawingToMdtPolygon(drawing: Drawing): MdtPolygon {
+  const l: number[] = []
+  let prevPoint: Point | null = null
+  for (const point of drawing.points) {
+    if (prevPoint) {
+      l.push(
+        prevPoint[0] * coordinateRatio,
+        prevPoint[1] * coordinateRatio,
+        point[0] * coordinateRatio,
+        point[1] * coordinateRatio,
+      )
+    }
+    prevPoint = point
+  }
+
+  return {
+    d: [drawing.weight, 1, 0, true, drawing.color, -8, true],
+    l,
+  }
 }
 
 export function mdtRouteToRoute(mdtRoute: MdtRoute): Route {
-  const dungeonKey = mdtDungeonIndexToDungeonKey[mdtRoute.value.currentDungeonIdx]
-  const dungeon = dungeonsByKey[dungeonKey]
+  const dungeon = dungeonsByMdtIdx[mdtRoute.value.currentDungeonIdx]
+  if (!dungeon)
+    throw new Error(`Could not find dungeon with MDT index ${mdtRoute.value.currentDungeonIdx}`)
 
   return {
-    dungeonKey,
+    dungeonKey: dungeon.key,
     selectedPull: mdtRoute.value.currentPull,
     name: mdtRoute.text,
     uid: mdtRoute.uid,
@@ -38,6 +72,9 @@ export function mdtRouteToRoute(mdtRoute: MdtRoute): Route {
         })
         .filter(Boolean) as MobSpawn[],
     })),
+    drawings: mdtRoute.objects
+      .filter((object): object is MdtPolygon => 'l' in object)
+      .map(mdtPolygonToDrawing),
   }
 }
 
@@ -58,17 +95,13 @@ export function routeToMdtRoute(route: Route): MdtRoute {
     value: {
       currentPull: route.selectedPull,
       currentSublevel: 1,
-      currentDungeonIdx: Number(
-        Object.keys(mdtDungeonIndexToDungeonKey).find(
-          (key: string) => mdtDungeonIndexToDungeonKey[Number(key)] === route.dungeonKey,
-        ),
-      ),
+      currentDungeonIdx: dungeonsByKey[route.dungeonKey].mdt.dungeonIndex,
       selection: [],
       pulls: route.pulls.map((pull, index) => ({
         color: getPullColor(index),
         ...mobSpawnsToMdtEnemies(pull.mobSpawns),
       })),
     },
-    objects: [],
+    objects: [...route.drawings.map(drawingToMdtPolygon)],
   }
 }

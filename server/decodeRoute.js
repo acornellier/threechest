@@ -7,14 +7,10 @@ export class DecodingError extends Error {
   }
 }
 
-async function decode(str) {
+export async function decodeRoute(str) {
   try {
     return await parser.decode(str.trim())
   } catch (err) {
     throw new DecodingError('Invalid MDT string')
   }
-}
-
-export async function importRoute(str) {
-  return await decode(str)
 }

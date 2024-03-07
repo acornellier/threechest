@@ -3,7 +3,7 @@
 const importUrl =
   process.env.NODE_ENV === 'development'
     ? 'http://localhost:6173/api/importRoute'
-    : '/api/importRoute'
+    : '/api/decodeRoute'
 
 export const importRouteApi = (str: string): Promise<MdtRoute> =>
   fetch(importUrl, {

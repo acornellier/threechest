@@ -1,8 +1,8 @@
 import express from 'express'
 import cors from 'cors'
 
-import { importRoute } from './importRoute.js'
-import { exportRoute } from './exportRoute.js'
+import { decodeRoute } from './decodeRoute.js'
+import { encodeRoute } from './encodeRoute.js'
 
 const app = express()
 
@@ -12,7 +12,7 @@ app.use(cors())
 
 app.post('/api/importRoute', async (req, res) => {
   try {
-    const route = await importRoute(req.body.str)
+    const route = await decodeRoute(req.body.str)
     res.json(route)
   } catch (e) {
     res.status(422).send(e.message)
@@ -21,7 +21,7 @@ app.post('/api/importRoute', async (req, res) => {
 
 app.post('/api/exportRoute', async (req, res) => {
   try {
-    const route = await exportRoute(req.body.mdtRoute)
+    const route = await encodeRoute(req.body.mdtRoute)
     res.json(route)
   } catch (e) {
     console.error(e)

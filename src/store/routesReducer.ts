@@ -45,6 +45,7 @@ const makeEmptyRoute = (dungeonKey: DungeonKey, savedRoutes: SavedRoute[]): Rout
   dungeonKey,
   selectedPull: 0,
   pulls: [emptyPull],
+  drawings: [],
   uid: newRouteUid(),
 })
 

@@ -2,8 +2,7 @@ import { Button } from './Common/Button.tsx'
 import { useAppDispatch, useRootSelector } from '../store/hooks.ts'
 import { clearImportingRoute } from '../store/importReducer.ts'
 import { setRouteFromMdt } from '../store/routesReducer.ts'
-import { mdtDungeonIndexToDungeonKey } from '../code/mdtUtil.ts'
-import { dungeonsByKey } from '../data/dungeons.ts'
+import { dungeonsByMdtIdx } from '../data/dungeons.ts'
 import { Modal } from './Common/Modal.tsx'
 import { useCallback } from 'react'
 
@@ -24,8 +23,7 @@ export function ConfirmImportModal() {
 
   if (!importingRoute) return null
 
-  const dungeonKey = mdtDungeonIndexToDungeonKey[importingRoute.value.currentDungeonIdx]
-  const dungeon = dungeonsByKey[dungeonKey]
+  const dungeon = dungeonsByMdtIdx[importingRoute.value.currentDungeonIdx]
 
   return (
     <Modal
@@ -35,7 +33,7 @@ export function ConfirmImportModal() {
         <>
           <p>Would you like to overwrite it or make a copy?</p>
           <p>Route name: {importingRoute.text}</p>
-          <p>Dungeon: {dungeon.name}</p>
+          <p>Dungeon: {dungeon?.name}</p>
         </>
       }
       buttons={
