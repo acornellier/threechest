@@ -2,6 +2,7 @@ import { Button } from '../../Common/Button.tsx'
 import { useAppDispatch, useRoute } from '../../../store/hooks.ts'
 import { exportRouteApi } from '../../../api/exportRouteApi.ts'
 import { addToast } from '../../../store/toastReducer.ts'
+import { ArrowDownTrayIcon } from '@heroicons/react/24/outline'
 
 export function ExportRoute() {
   const dispatch = useAppDispatch()
@@ -19,6 +20,7 @@ export function ExportRoute() {
 
   return (
     <Button short className="flex-1" onClick={handleClick}>
+      <ArrowDownTrayIcon width={18} height={18} className="mr-1" />
       Export MDT
     </Button>
   )

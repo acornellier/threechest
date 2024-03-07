@@ -11,6 +11,9 @@
     "server": "tsx server/server.js",
     "vercel-dev": "env NODE_ENV=vercel_dev vercel dev --listen 1234"
   },
+  "engines": {
+    "node": ">=20"
+  },
   "dependencies": {
     "@fontsource-variable/roboto-slab": "^5.0.19",
     "@heroicons/react": "^2.1.1",

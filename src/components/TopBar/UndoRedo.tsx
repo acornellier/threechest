@@ -3,7 +3,7 @@ import { Button } from '../Common/Button.tsx'
 import { ActionCreators } from 'redux-undo'
 import { useCallback } from 'react'
 import { useKeyPress } from '../../hooks/useKeyPress.ts'
-import { ArrowUturnLeftIcon, ArrowUturnRightIcon } from '@heroicons/react/24/solid'
+import { ArrowUturnLeftIcon, ArrowUturnRightIcon } from '@heroicons/react/24/outline'
 
 const undoModifiers = { ctrl: true } as const
 const redoModifiers = { ctrl: true, shift: true } as const

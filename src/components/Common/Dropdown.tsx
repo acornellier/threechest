@@ -1,6 +1,6 @@
 import { Button } from './Button.tsx'
 import { ReactNode, useRef, useState } from 'react'
-import { ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/24/solid'
+import { ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/24/outline'
 
 export interface DropdownOption {
   id: string

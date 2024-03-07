@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 $fancy-red: #7f1d1d;
+$fancy-blue: #24293f;
 
 :root {
   background-color: #242424;
@@ -49,8 +50,20 @@ $fancy-red: #7f1d1d;
   -webkit-text-stroke: 1px black;
 }
 
-.pull:hover {
-  filter: brightness(1.3);
+.pull {
+  cursor: pointer;
+
+  &:hover {
+    filter: brightness(1.3);
+  }
+
+  &:not(:first-child) {
+    padding-top: 2px;
+  }
+
+  &:not(:last-child) {
+    padding-bottom: 2px;
+  }
 }
 
 .sortable-ghost * {
@@ -133,7 +146,7 @@ input.fancy {
     0 10px 20px rgba(0, 0, 0, 0.1);
 
   &.outline-button {
-    background-color: #333333;
+    background-color: transparent;
     border: 1px solid #777777;
 
     box-shadow:

@@ -10,7 +10,8 @@ interface Modifiers {
 export function useKeyPress(keys: Key | Key[], callback: () => void, modifiers?: Modifiers) {
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.target instanceof HTMLInputElement) return
+      if (event.target instanceof HTMLInputElement || event.target instanceof HTMLTextAreaElement)
+        return
 
       if (
         (!!modifiers?.ctrl !== event.ctrlKey && !!modifiers?.ctrl !== event.metaKey) ||

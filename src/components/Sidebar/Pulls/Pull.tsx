@@ -44,7 +44,7 @@ export function Pull({ pullIndex, pull, ghost, onRightClick }: Props) {
 
   return (
     <div
-      className="pull py-0.5 cursor-pointer"
+      className="pull"
       ref={ref}
       onClick={() => dispatch(selectPull(pullIndex))}
       onMouseEnter={() => dispatch(hoverPull(pullIndex))}
