@@ -6,6 +6,7 @@ import { Mobs } from './Mobs.tsx'
 import { PullOutlines } from './PullOutlines.tsx'
 import { useDungeon } from '../../store/hooks.ts'
 import { Drawings } from './Drawings.tsx'
+import { Notes } from './Notes.tsx'
 
 const height = 256
 const width = 384
@@ -49,6 +50,7 @@ export function Map() {
         <Mobs />
         <PullOutlines />
         <Drawings />
+        <Notes />
       </MapContainer>
     </div>
   )

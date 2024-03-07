@@ -1,36 +1,38 @@
-﻿import { Drawing, MdtPolygon, MdtRoute, Route } from './types.ts'
+﻿import { Drawing, MdtNote, MdtPolygon, MdtRoute, Route } from './types.ts'
 import { MobSpawn, Point } from '../data/types.ts'
 import { dungeonsByKey, dungeonsByMdtIdx } from '../data/dungeons.ts'
 import { getPullColor } from './colors.ts'
 
 const coordinateRatio = 2.185
 
+const mdtPointToRoute = (x: number, y: number): Point => [y / coordinateRatio, x / coordinateRatio]
+const pointToMdt = (point: Point): [number, number] => [
+  point[1] * coordinateRatio,
+  point[0] * coordinateRatio,
+]
+
 function mdtPolygonToDrawing(polygon: MdtPolygon): Drawing {
   const points: Point[] = []
   const chunkSize = 4
   for (let i = 0; i < polygon.l.length; i += chunkSize) {
     const [, , x, y] = polygon.l.slice(i, i + chunkSize)
-    points.push([y / coordinateRatio, x / coordinateRatio])
+    points.push(mdtPointToRoute(x, y))
   }
 
   return {
     weight: polygon.d[0],
     color: '#' + polygon.d[4],
-    points,
+    positions: points,
   }
 }
 
 function drawingToMdtPolygon(drawing: Drawing): MdtPolygon {
   const l: number[] = []
-  let prevPoint: Point | null = null
-  for (const point of drawing.points) {
+  const convertedPoints = drawing.positions.map(pointToMdt)
+  let prevPoint: [number, number] | null = null
+  for (const point of convertedPoints) {
     if (prevPoint) {
-      l.push(
-        prevPoint[0] * coordinateRatio,
-        prevPoint[1] * coordinateRatio,
-        point[0] * coordinateRatio,
-        point[1] * coordinateRatio,
-      )
+      l.push(prevPoint[0], prevPoint[1], point[0], point[1])
     }
     prevPoint = point
   }
@@ -72,6 +74,9 @@ export function mdtRouteToRoute(mdtRoute: MdtRoute): Route {
         })
         .filter(Boolean) as MobSpawn[],
     })),
+    notes: mdtRoute.objects
+      .filter((object): object is MdtNote => 'n' in object)
+      .map((note) => ({ text: note.d[4], position: mdtPointToRoute(note.d[0], note.d[1]) })),
     drawings: mdtRoute.objects
       .filter((object): object is MdtPolygon => 'l' in object)
       .map(mdtPolygonToDrawing),

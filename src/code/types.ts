@@ -11,10 +11,15 @@ export type SavedRoute = {
   dungeonKey: DungeonKey
 }
 
+export type Note = {
+  text: string
+  position: Point
+}
+
 export type Drawing = {
   weight: number
   color: string
-  points: Point[]
+  positions: Point[]
 }
 
 export type Route = {
@@ -23,6 +28,7 @@ export type Route = {
   dungeonKey: DungeonKey
   selectedPull: number
   pulls: Pull[]
+  notes: Note[]
   drawings: Drawing[]
 }
 
@@ -37,7 +43,7 @@ export type MdtPull = {
 }
 
 export type MdtNote = {
-  // [x, y, floor, true, text]
+  // [0: x, 1: y, 2: floor, 3: true, 4: text]
   d: [number, number, number, true, string]
   n: true
 }

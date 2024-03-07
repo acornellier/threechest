@@ -9,8 +9,7 @@ interface Props {
 function DrawingComponent({ drawing }: Props) {
   return (
     <Polygon
-      className="drawing"
-      positions={drawing.points}
+      positions={drawing.positions}
       color={drawing.color}
       weight={drawing.weight}
       opacity={1}

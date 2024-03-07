@@ -29,13 +29,13 @@ export function MobSpawnTooltip({ mob, spawn, iconScaling }: Props) {
 
   return (
     <Tooltip
-      className="no-arrow flex flex-col color-white p-0 bg-transparent rounded-sm border-gray-400"
+      className="no-arrow flex flex-col text-white p-0 bg-transparent rounded-sm border-gray-400"
       direction="right"
-      offset={[iconScaling - 5, 0]}
+      offset={[iconScaling * 0.8, 0]}
       permanent
     >
       <div className="absolute w-full h-full bg-slate-800 opacity-85 -z-10 rounded-sm" />
-      <div className="p-2 text-white rounded-sm">
+      <div className="p-2 rounded-sm">
         <div>
           <span className="font-bold">
             {mob.name}
