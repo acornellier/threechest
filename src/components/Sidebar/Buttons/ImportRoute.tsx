@@ -45,16 +45,17 @@ export function ImportRoute() {
       <Button data-tooltip-id="import-route-tooltip" short className="flex-1" onClick={handleClick}>
         {`Import MDT${canPasteFromClipboard ? ' from clipboard' : ''}`}
       </Button>
-      {process.env.NODE_ENV === 'development' && (
-        <Button
-          data-tooltip-id="import-route-tooltip"
-          short
-          className="flex-1"
-          onClick={() => dispatch(importRoute(eb.trim()))}
-        >
-          Import Andy 4
-        </Button>
-      )}
+      {/*{process.env.NODE_ENV === 'development' && (*/}
+      <Button
+        data-tooltip-id="import-route-tooltip"
+        short
+        outline
+        className="flex-1"
+        onClick={() => dispatch(importRoute(eb.trim()))}
+      >
+        Import Andy 4
+      </Button>
+      {/*)}*/}
       {inputModalOpen && (
         <Modal
           title="Paste MDT string"
