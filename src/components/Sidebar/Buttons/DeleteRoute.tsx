@@ -1,8 +1,8 @@
-import { Button } from '../Common/Button.tsx'
-import { useAppDispatch } from '../../store/hooks.ts'
-import { deleteRoute } from '../../store/routesReducer.ts'
+import { Button } from '../../Common/Button.tsx'
+import { useAppDispatch } from '../../../store/hooks.ts'
+import { deleteRoute } from '../../../store/routesReducer.ts'
 import { TrashIcon } from '@heroicons/react/24/outline'
-import { TooltipStyled } from '../Common/TooltipStyled.tsx'
+import { TooltipStyled } from '../../Common/TooltipStyled.tsx'
 
 export function DeleteRoute() {
   const dispatch = useAppDispatch()

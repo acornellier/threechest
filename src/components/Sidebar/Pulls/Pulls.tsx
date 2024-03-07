@@ -1,35 +1,40 @@
 import { Pull as PullComponent } from './Pull.tsx'
 import { ItemInterface, ReactSortable } from 'react-sortablejs'
-import type { PullDetailed } from '../../code/types.ts'
+import type { PullDetailed } from '../../../code/types.ts'
 import { MouseEvent, useCallback, useMemo, useState } from 'react'
-import { Button } from '../Common/Button.tsx'
-import { useAppDispatch, useDungeon, useRouteDetailed } from '../../store/hooks.ts'
-import { addPull, clearRoute, setPulls } from '../../store/routesReducer.ts'
-import { mobCountPercentStr } from '../../code/util.ts'
+import { Button } from '../../Common/Button.tsx'
+import { useAppDispatch, useDungeon, useHoveredPull, useRoute } from '../../../store/hooks.ts'
+import { addPull, clearRoute, setPulls } from '../../../store/routesReducer.ts'
+import { mobCountPercentStr } from '../../../code/util.ts'
 import { PullContextMenu, RightClickedSettings } from './PullContextMenu.tsx'
 import { usePullShortcuts } from './usePullShortcuts.ts'
-import { Panel } from '../Common/Panel.tsx'
+import { Panel } from '../../Common/Panel.tsx'
+import { augmentPulls } from '../../../store/augmentPulls.ts'
 
 type SortablePull = PullDetailed & ItemInterface
 
 export function Pulls() {
   const dispatch = useAppDispatch()
   const dungeon = useDungeon()
-  const routeDetailed = useRouteDetailed()
+  const route = useRoute()
+  const pullsDetailed = useMemo(() => augmentPulls(route.pulls), [route.pulls])
+
+  const hoveredPull = useHoveredPull()
+  const totalCount = pullsDetailed[hoveredPull ?? pullsDetailed.length - 1].countCumulative
 
   const [ghostPullIndex, setGhostPullIndex] = useState<number | null>(null)
 
   const pullsWithGhost = useMemo(() => {
-    const pulls: SortablePull[] = [...routeDetailed.pulls]
+    const pulls: SortablePull[] = [...pullsDetailed]
     if (ghostPullIndex !== null) {
       pulls.splice(ghostPullIndex + 1, 0, {
-        ...routeDetailed.pulls[ghostPullIndex],
+        ...pullsDetailed[ghostPullIndex],
         id: -1,
         filtered: true,
       })
     }
     return pulls
-  }, [routeDetailed.pulls, ghostPullIndex])
+  }, [pullsDetailed, ghostPullIndex])
 
   const setPullsWrapper = useCallback(
     (pulls: SortablePull[]) => {
@@ -61,7 +66,7 @@ export function Pulls() {
 
   usePullShortcuts()
 
-  const percent = (routeDetailed.count / dungeon.mdt.totalCount) * 100
+  const percent = (totalCount / dungeon.mdt.totalCount) * 100
 
   let pullIndex = 0
   return (
@@ -73,10 +78,10 @@ export function Pulls() {
             backgroundColor: percent >= 102 ? '#e21e1e' : percent >= 100 ? '#0f950f' : '#426bff',
             width: `${percent}%`,
           }}
-        ></div>
+        />
         <div>
-          {routeDetailed.count}/{dungeon.mdt.totalCount} -{' '}
-          {mobCountPercentStr(routeDetailed.count, dungeon.mdt.totalCount)}
+          {totalCount}/{dungeon.mdt.totalCount} -{' '}
+          {mobCountPercentStr(totalCount, dungeon.mdt.totalCount)}
         </div>
       </div>
       <ReactSortable
@@ -84,7 +89,7 @@ export function Pulls() {
         onEnd={() => setGhostPullIndex(null)}
         list={pullsWithGhost}
         setList={setPullsWrapper}
-        className="flex flex-col gap-[3px] relative overflow-auto"
+        className="flex flex-col relative overflow-auto"
       >
         {pullsWithGhost.map((pull) => (
           <PullComponent

@@ -1,7 +1,6 @@
 ﻿import { AppDispatch, RootState } from './store.ts'
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux'
 import { dungeonsByKey } from '../data/dungeons.ts'
-import { augmentRoute } from './augmentRoute.ts'
 import { State } from './routesReducer.ts'
 import { DungeonKey } from '../data/types.ts'
 import { createSelector } from '@reduxjs/toolkit'
@@ -28,11 +27,6 @@ const selectDungeonRoutes = createSelector(
 )
 export const useDungeonRoutes = (dungeonKey: DungeonKey) =>
   useRoutesSelector((state) => selectDungeonRoutes(state, dungeonKey))
-
-export function useRouteDetailed() {
-  const route = useRoute()
-  return augmentRoute(route)
-}
 
 export function useDungeon() {
   const dungeonKey = useRoutesSelector((state) => state.route.dungeonKey)

@@ -1,10 +1,10 @@
 import { Panel } from '../Common/Panel.tsx'
-import { ImportRoute } from './ImportRoute.tsx'
-import { NewRoute } from './NewRoute.tsx'
+import { ImportRoute } from './Buttons/ImportRoute.tsx'
+import { NewRoute } from './Buttons/NewRoute.tsx'
 import { RouteDropdown } from './RouteDropdown.tsx'
-import { DeleteRoute } from './DeleteRoute.tsx'
-import { DuplicateRoute } from './DuplicateRoute.tsx'
-import { RenameRoute } from './RenameRoute.tsx'
+import { DeleteRoute } from './Buttons/DeleteRoute.tsx'
+import { DuplicateRoute } from './Buttons/DuplicateRoute.tsx'
+import { RenameRoute } from './Buttons/RenameRoute.tsx'
 import { useState } from 'react'
 
 export function RouteDetails() {

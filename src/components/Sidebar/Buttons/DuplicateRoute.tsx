@@ -1,8 +1,8 @@
-import { Button } from '../Common/Button.tsx'
-import { useAppDispatch } from '../../store/hooks.ts'
-import { duplicateRoute } from '../../store/routesReducer.ts'
+import { Button } from '../../Common/Button.tsx'
+import { useAppDispatch } from '../../../store/hooks.ts'
+import { duplicateRoute } from '../../../store/routesReducer.ts'
 import { DocumentDuplicateIcon } from '@heroicons/react/24/outline'
-import { TooltipStyled } from '../Common/TooltipStyled.tsx'
+import { TooltipStyled } from '../../Common/TooltipStyled.tsx'
 
 export function DuplicateRoute() {
   const dispatch = useAppDispatch()

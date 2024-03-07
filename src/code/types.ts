@@ -21,11 +21,7 @@ export type Route = {
 
 export type PullDetailed = Pull & {
   count: number
-}
-
-export type RouteDetailed = Omit<Route, 'pulls'> & {
-  pulls: PullDetailed[]
-  count: number
+  countCumulative: number
 }
 
 export type MdtPullEnemy = {

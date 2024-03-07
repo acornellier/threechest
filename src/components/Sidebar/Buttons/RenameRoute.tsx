@@ -1,9 +1,9 @@
 import { Dispatch, SetStateAction, useCallback, useState } from 'react'
-import { useAppDispatch, useRoute } from '../../store/hooks.ts'
-import { Button } from '../Common/Button.tsx'
+import { useAppDispatch, useRoute } from '../../../store/hooks.ts'
+import { Button } from '../../Common/Button.tsx'
 import { CheckIcon, PencilIcon } from '@heroicons/react/24/outline'
-import { TooltipStyled } from '../Common/TooltipStyled.tsx'
-import { setName } from '../../store/routesReducer.ts'
+import { TooltipStyled } from '../../Common/TooltipStyled.tsx'
+import { setName } from '../../../store/routesReducer.ts'
 
 interface Props {
   isRenaming: boolean

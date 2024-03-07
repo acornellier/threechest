@@ -1,6 +1,6 @@
-import { Button } from '../Common/Button.tsx'
-import { addPull, deletePull } from '../../store/routesReducer.ts'
-import { useAppDispatch } from '../../store/hooks.ts'
+import { Button } from '../../Common/Button.tsx'
+import { addPull, deletePull } from '../../../store/routesReducer.ts'
+import { useAppDispatch } from '../../../store/hooks.ts'
 
 export interface RightClickedSettings {
   x: number
