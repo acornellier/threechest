@@ -24,15 +24,14 @@ export type PullDetailed = Pull & {
   countCumulative: number
 }
 
-export type MdtPullEnemy = {
-  enemyIndex: number
-  spawnIndexes: number[]
-}
-
-// In the original, keys are enemyIndex and value is spawnIndex[]
 export type MdtPull = {
   color: string
-  enemies: MdtPullEnemy[]
+  [enemyIndex: number]: number[]
+}
+
+export type MdtObject = {
+  d: [number, number, number, boolean, string]
+  n: boolean
 }
 
 export type MdtRoute = {
@@ -47,4 +46,5 @@ export type MdtRoute = {
     selection: number[]
     pulls: MdtPull[]
   }
+  objects: MdtObject[]
 }

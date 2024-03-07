@@ -1,5 +1,5 @@
-﻿import { MdtPullEnemy, MdtRoute, Route } from './types.ts'
-import { DungeonKey, MobSpawn, Spawn } from '../data/types.ts'
+﻿import { MdtRoute, Route } from './types.ts'
+import { DungeonKey, MobSpawn } from '../data/types.ts'
 import { dungeonsByKey } from '../data/dungeons.ts'
 import { getPullColor } from './colors.ts'
 
@@ -20,37 +20,33 @@ export function mdtRouteToRoute(mdtRoute: MdtRoute): Route {
     pulls: mdtRoute.value.pulls.map((mdtPull, index) => ({
       id: index,
       color: mdtPull.color.startsWith('#') ? mdtPull.color : `#${mdtPull.color}`,
-      mobSpawns: mdtPull.enemies
-        .flatMap((mdtEnemy) =>
-          mdtEnemy.spawnIndexes.map((spawnIndex) => {
-            const mob = dungeon.mdt.enemies.find((enemy) => enemy.enemyIndex == mdtEnemy.enemyIndex)
+      mobSpawns: Object.entries(mdtPull)
+        .flatMap(([enemyIndexOrCount, spawnIndexes]) => {
+          if (!Array.isArray(spawnIndexes)) return null
+
+          const enemyIndex = Number(enemyIndexOrCount)
+          return spawnIndexes.map((spawnIndex) => {
+            const mob = dungeon.mdt.enemies.find((enemy) => enemy.enemyIndex == enemyIndex)
             if (!mob) {
-              console.error(
-                `Could not find enemy index ${mdtEnemy.enemyIndex} in pull ${index + 1}`,
-              )
+              console.error(`Could not find enemy index ${enemyIndex} in pull ${index + 1}`)
               return null
             }
 
             const spawn = mob.spawns.find((spawn) => spawn.spawnIndex === spawnIndex)!
             return { mob, spawn }
-          }),
-        )
+          })
+        })
         .filter(Boolean) as MobSpawn[],
     })),
   }
 }
 
-function mobSpawnsToMdtEnemies(mobSpawns: MobSpawn[]): MdtPullEnemy[] {
-  const groupedMobSpawns = mobSpawns.reduce<Record<number, Spawn[]>>((acc, mobSpawn) => {
+function mobSpawnsToMdtEnemies(mobSpawns: MobSpawn[]) {
+  return mobSpawns.reduce<Record<number, number[]>>((acc, mobSpawn) => {
     acc[mobSpawn.mob.enemyIndex] ??= []
-    acc[mobSpawn.mob.enemyIndex].push(mobSpawn.spawn)
+    acc[mobSpawn.mob.enemyIndex].push(mobSpawn.spawn.spawnIndex)
     return acc
   }, {})
-
-  return Object.entries(groupedMobSpawns).flatMap(([enemyIndex, spawns]) => ({
-    enemyIndex: Number(enemyIndex),
-    spawnIndexes: spawns.map((spawn) => spawn.spawnIndex),
-  }))
 }
 
 export function routeToMdtRoute(route: Route): MdtRoute {
@@ -70,8 +66,9 @@ export function routeToMdtRoute(route: Route): MdtRoute {
       selection: [],
       pulls: route.pulls.map((pull, index) => ({
         color: getPullColor(index),
-        enemies: mobSpawnsToMdtEnemies(pull.mobSpawns),
+        ...mobSpawnsToMdtEnemies(pull.mobSpawns),
       })),
     },
+    objects: [],
   }
 }
