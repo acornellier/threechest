@@ -2,7 +2,7 @@
 
 const importUrl =
   process.env.NODE_ENV === 'development'
-    ? 'http://localhost:6173/api/importRoute'
+    ? 'http://localhost:6173/api/decodeRoute'
     : '/api/decodeRoute'
 
 export const importRouteApi = (str: string): Promise<MdtRoute> =>
