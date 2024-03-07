@@ -1,9 +1,9 @@
-import { Button } from './Common/Button.tsx'
-import { useAppDispatch, useRootSelector } from '../store/hooks.ts'
-import { clearImportingRoute } from '../store/importReducer.ts'
-import { setRouteFromMdt } from '../store/routesReducer.ts'
-import { dungeonsByMdtIdx } from '../data/dungeons.ts'
-import { Modal } from './Common/Modal.tsx'
+import { Button } from '../Common/Button.tsx'
+import { useAppDispatch, useRootSelector } from '../../store/hooks.ts'
+import { clearImportingRoute } from '../../store/importReducer.ts'
+import { setRouteFromMdt } from '../../store/routesReducer.ts'
+import { dungeonsByMdtIdx } from '../../data/dungeons.ts'
+import { Modal } from '../Common/Modal.tsx'
 import { useCallback } from 'react'
 
 export function ConfirmImportModal() {

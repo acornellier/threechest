@@ -64,10 +64,14 @@ async function loadRouteFromStorage(routeId: string) {
 export const loadRoute = createAsyncThunk('routes/loadRoute', loadRouteFromStorage)
 
 export const getLastDungeonRoute = async (dungeonKey: DungeonKey, savedRoutes: SavedRoute[]) => {
-  const dungeonRoutes = savedRoutes.filter((route) => route.dungeonKey === dungeonKey)
+  // This can be called from the Error handler, so we want to handle the cases where dungeonKey is nullish
+  const dungeonRoutes = savedRoutes.filter((route) =>
+    dungeonKey ? route.dungeonKey === dungeonKey : true,
+  )
   if (dungeonRoutes.length) {
     return await loadRouteFromStorage(dungeonRoutes[dungeonRoutes.length - 1].uid)
   } else {
+    console.warn('makeEmptyRoute')
     return makeEmptyRoute(dungeonKey, savedRoutes)
   }
 }
@@ -111,8 +115,8 @@ const baseReducer = createSlice({
         savedRoute.name = state.route.name
       }
     },
-    newRoute(state) {
-      state.route = makeEmptyRoute(state.route.dungeonKey, state.savedRoutes)
+    newRoute(state, { payload: dungeonKey }: PayloadAction<DungeonKey | undefined>) {
+      state.route = makeEmptyRoute(dungeonKey ?? state.route.dungeonKey, state.savedRoutes)
     },
     duplicateRoute(state) {
       state.route.uid = newRouteUid()
@@ -188,6 +192,7 @@ const baseReducer = createSlice({
       (state, { payload: { deletedRouteId, route: newRoute } }) => {
         state.savedRoutes = state.savedRoutes.filter((route) => route.uid !== deletedRouteId)
         state.route = newRoute
+        console.warn('delete fulfilled, setting route', newRoute)
       },
     )
   },
