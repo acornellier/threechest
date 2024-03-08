@@ -48,11 +48,11 @@ export function ImportRoute() {
         )}
         {`Import MDT${canPasteFromClipboard ? ' from clipboard' : ''}`}
       </Button>
-      {process.env.NODE_ENV === 'development' && (
-        <Button outline short onClick={() => dispatch(importRoute(andy4))}>
-          Import Andy 4
-        </Button>
-      )}
+      {/*{process.env.NODE_ENV === 'development' && (*/}
+      <Button outline short onClick={() => dispatch(importRoute(andy4))}>
+        Import Andy 4
+      </Button>
+      {/*)}*/}
       {inputModalOpen && (
         <Modal
           title="Paste MDT string"
