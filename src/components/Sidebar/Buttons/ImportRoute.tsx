@@ -42,9 +42,9 @@ export function ImportRoute() {
     <>
       <Button data-tooltip-id="import-route-tooltip" short onClick={handleClick}>
         {canPasteFromClipboard ? (
-          <ClipboardIcon width={18} height={18} className="mr-1" />
+          <ClipboardIcon width={18} height={18} />
         ) : (
-          <ArrowUpTrayIcon width={18} height={18} className="mr-1" />
+          <ArrowUpTrayIcon width={18} height={18} />
         )}
         {`Import MDT${canPasteFromClipboard ? ' from clipboard' : ''}`}
       </Button>

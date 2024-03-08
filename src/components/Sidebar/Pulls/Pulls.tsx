@@ -110,14 +110,13 @@ export function Pulls() {
       </ReactSortable>
       <div className="flex gap-1">
         <Button className="grow" onClick={() => dispatch(addPull())}>
-          <PlusIcon width={18} height={18} className="mr-1" />
+          <PlusIcon width={18} height={18} />
           Add pull
         </Button>
         <Button onClick={() => dispatch(clearRoute())}>
           <svg
             width="18"
             height="18"
-            className="mr-1"
             fill="currentColor"
             viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg"

@@ -39,9 +39,8 @@ export function Dropdown({ selected, options, onChange }: Props) {
     <div className="relative flex-1">
       <Button
         twoDimensional
-        className={`flex gap-2 py-2 px-2 w-full dropdown-main ${
-          optionsVisible ? 'options-visible' : ''
-        }`}
+        className={`w-full dropdown-main ${optionsVisible ? 'options-visible' : ''}`}
+        innerClass="gap-2"
         style={{
           ...(open
             ? {

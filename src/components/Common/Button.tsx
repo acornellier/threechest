@@ -2,12 +2,14 @@ import { ButtonHTMLAttributes, DetailedHTMLProps } from 'react'
 
 export interface ButtonProps
   extends DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
+  innerClass?: string
   outline?: boolean
   short?: boolean
   twoDimensional?: boolean
 }
 
 export function Button({
+  innerClass,
   outline,
   short,
   twoDimensional,
@@ -24,7 +26,8 @@ export function Button({
                   ${className ?? ''}`}
       {...props}
     >
-      {children}
+      <div className="fancy-button-hover flex-1 z-[1]" />
+      <div className={`fancy-button-inner z-[2] ${innerClass ?? ''}`}>{children}</div>
     </button>
   )
 }

@@ -158,6 +158,20 @@ input.fancy {
     0 5px 10px rgba(0, 0, 0, 0.1),
     0 10px 20px rgba(0, 0, 0, 0.1);
 
+  &-inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  .fancy-button-hover {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
   &.outline-button {
     background-color: transparent;
     border: 1px solid #777777;
@@ -184,35 +198,16 @@ input.fancy {
   }
 
   &:hover {
-    box-shadow:
-      inset 0 30px 30px -15px rgba(255, 255, 255, 0.1),
-      inset 0 0 6px 3px rgba(255, 255, 255, 0.4),
-      inset 0 1px 20px rgba(0, 0, 0, 0),
-      0 3px 0 $fancy-red,
-      0 3px 2px rgba(0, 0, 0, 0.2),
-      0 5px 10px rgba(0, 0, 0, 0.1),
-      0 10px 20px rgba(0, 0, 0, 0.1);
+    .fancy-button-hover {
+      background: radial-gradient(#de1313, transparent);
+    }
 
-    &.outline-button:not(:active) {
-      box-shadow:
-        inset 0 30px 30px -15px rgba(127, 29, 29, 0.1),
-        inset 0 0 6px 3px rgba(127, 29, 29, 0.5),
-        inset 0 1px 20px rgba(0, 0, 0, 0),
-        0 3px 0 $fancy-red,
-        0 3px 2px rgba(0, 0, 0, 0.2),
-        0 5px 10px rgba(0, 0, 0, 0.1),
-        0 10px 20px rgba(0, 0, 0, 0.1);
+    &.outline-button:not(:active) .fancy-button-hover {
+      background: radial-gradient(rgba(222, 19, 19, 0.4), transparent);
     }
 
     &.two-d {
       transform: unset;
-      box-shadow:
-        inset 0 30px 30px -15px rgba(255, 255, 255, 0.1),
-        inset 0 0 6px 3px rgba(255, 255, 255, 0.4),
-        inset 0 1px 20px rgba(0, 0, 0, 0),
-        0 3px 2px rgba(0, 0, 0, 0.2),
-        0 5px 10px rgba(0, 0, 0, 0.1),
-        0 10px 20px rgba(0, 0, 0, 0.1);
     }
   }
 
