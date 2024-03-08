@@ -20,7 +20,8 @@ $fancy-blue: #24293f;
 }
 
 img.leaflet-tile {
-  mix-blend-mode: unset !important;
+  //noinspection CssInvalidPropertyValue
+  mix-blend-mode: plus-lighter !important;
 }
 
 .leaflet-tooltip.no-arrow:before {
