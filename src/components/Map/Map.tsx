@@ -31,6 +31,7 @@ export function Map() {
         center={[center[0] + dungeon.defaultOffset[0], center[1] + dungeon.defaultOffset[1]]}
         keyboard={false}
         doubleClickZoom={false}
+        attributionControl={false}
         minZoom={1}
         maxZoom={4}
         zoom={dungeon.defaultZoom}
@@ -41,12 +42,7 @@ export function Map() {
         smoothWheelZoom={true}
         smoothSensitivity={2}
       >
-        <TileLayer
-          attribution="Map data © Blizzard Entertainment"
-          bounds={bounds}
-          noWrap
-          url={`/maps/${dungeon.key}/{z}/{x}_{y}.png`}
-        />
+        <TileLayer bounds={bounds} noWrap url={`/maps/${dungeon.key}/{z}/{x}_{y}.png`} />
         <Mobs />
         <PullOutlines />
         <Drawings />
