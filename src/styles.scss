@@ -19,6 +19,10 @@ $fancy-blue: #24293f;
   font-family: unset;
 }
 
+img.leaflet-tile {
+  mix-blend-mode: unset !important;
+}
+
 .leaflet-tooltip.no-arrow:before {
   display: none;
 }
