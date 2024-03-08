@@ -3,7 +3,6 @@ import { useState } from 'react'
 import { mapIconScaling } from '../../code/map.ts'
 import { useDungeon } from '../../store/hooks.ts'
 import { MobSpawn } from './MobSpawn.tsx'
-import { mobSpawnToKey } from '../../code/mobSpawns.ts'
 
 export function Mobs() {
   const dungeon = useDungeon()
@@ -28,7 +27,7 @@ export function Mobs() {
       {dungeon.mdt.enemies.map((mob) =>
         mob.spawns.map((spawn) => (
           <MobSpawn
-            key={mobSpawnToKey({ mob, spawn })}
+            key={`${mob.enemyIndex}-${spawn.spawnIndex}`}
             iconScaling={iconScaling}
             mob={mob}
             spawn={spawn}

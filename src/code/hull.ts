@@ -15,8 +15,8 @@ function isStrictlyLowerLeft(point1: Point, point2: Point): boolean {
 }
 
 function isLeftOfLineSegment(origin: Point, point1: Point, point2: Point): boolean {
-  const vector1 = [point1[0] - origin[0], point1[1] - origin[1]]
-  const vector2 = [point2[0] - origin[0], point2[1] - origin[1]]
+  const vector1 = [point1[0] - origin[0], point1[1] - origin[1]] as const
+  const vector2 = [point2[0] - origin[0], point2[1] - origin[1]] as const
   const crossProduct = vector1[0] * vector2[1] - vector1[1] * vector2[0]
   return crossProduct > 0
 }
@@ -28,7 +28,7 @@ export function makeConvexHull(vertices: PolygonVertex[]): PolygonVertex[] {
   // Find the leftmost and lowermost point as the starting point
   let lowerLeftIndex = 0
   for (let i = 1; i < points.length; i++) {
-    if (isStrictlyLowerLeft(points[i], points[lowerLeftIndex])) {
+    if (isStrictlyLowerLeft(points[i]!, points[lowerLeftIndex]!)) {
       lowerLeftIndex = i
     }
   }
@@ -46,7 +46,7 @@ export function makeConvexHull(vertices: PolygonVertex[]): PolygonVertex[] {
       if (
         i !== startingPointIndex &&
         (startingPointIndex === nextPointIndex ||
-          isLeftOfLineSegment(points[startingPointIndex], points[nextPointIndex], points[i]))
+          isLeftOfLineSegment(points[startingPointIndex]!, points[nextPointIndex]!, points[i]!))
       ) {
         nextPointIndex = i
       }
@@ -56,7 +56,7 @@ export function makeConvexHull(vertices: PolygonVertex[]): PolygonVertex[] {
     loopCount++
   }
 
-  return hullIndexes.map((index) => vertices[index])
+  return hullIndexes.map((index) => vertices[index]!)
 }
 
 export function expandPolygon(vertices: PolygonVertex[], numCirclePoints: number): PolygonVertex[] {

@@ -12,6 +12,7 @@ export type Dungeon = {
   defaultOffset: [number, number]
   key: DungeonKey
   mdt: MdtDungeon
+  spells?: Record<number, Spell[]>
   icon: string
 }
 
@@ -40,4 +41,11 @@ export type MobSpawn = {
   mob: Mob
   spawn: Spawn
 }
-export type MobSpawnKey = string
+
+export type Spell = {
+  id: number
+  name: string
+  icon: string
+}
+
+export type Spells = Record<number, Spell[]>

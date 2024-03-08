@@ -48,8 +48,8 @@ export function ErrorPage({ errors }: Props) {
   return (
     <div className="w-screen h-screen flex justify-center">
       <div className="flex flex-col justify-center items-center gap-8 w-[700px]">
-        <div className="text-5xl text-white text-center">Whoops! Something broke.</div>
-        <div className="flex flex-col gap-2 text-xl text-white ">
+        <div className="text-5xl text-center">Whoops! Something broke.</div>
+        <div className="flex flex-col gap-2 text-xl">
           <p>Sorry, there was an error loading the page.</p>
           <p>
             There could be something wrong with the currently loaded route.
@@ -61,6 +61,12 @@ export function ErrorPage({ errors }: Props) {
           <p>Otherwise, please contact me on Discord with the error details.</p>
           <p>Current route name: {route?.name ?? 'Unknown'}</p>
           <p>Current route dungeon key: {route?.dungeonKey ?? 'Unknown'}</p>
+          {process.env.NODE_ENV === 'development' && errors[0] && (
+            <p>
+              {errors[0].error.name}: {errors[0].error.message}
+              {errors[0].info.componentStack}
+            </p>
+          )}
         </div>
         <div className="flex flex-col gap-4">
           <div className="flex flex-row justify-center gap-4">

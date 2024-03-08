@@ -23,7 +23,7 @@ function createOutline(pull: Pull): Outline {
   if (pull.mobSpawns.length <= 0) return {}
 
   if (pull.mobSpawns.length === 1) {
-    const mobSpawn = pull.mobSpawns[0]
+    const mobSpawn = pull.mobSpawns[0]!
     const scale = mobScale(mobSpawn.mob)
     return {
       circle: {

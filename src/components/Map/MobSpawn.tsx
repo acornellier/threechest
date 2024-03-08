@@ -1,6 +1,6 @@
 ﻿import { Mob, Spawn } from '../../data/types.ts'
 import { Marker } from 'react-leaflet'
-import { divIcon } from 'leaflet'
+import { divIcon, type LeafletEventHandlerFnMap } from 'leaflet'
 import { renderToString } from 'react-dom/server'
 import { memo, useMemo } from 'react'
 import { mobScale, mobSpawnsEqual } from '../../code/mobSpawns.ts'
@@ -10,7 +10,7 @@ import { Patrol } from './Patrol.tsx'
 import { BossMarker } from './BossMarker.tsx'
 import { MobIcon } from './MobIcon.tsx'
 import { MobSpawnTooltip } from './MobSpawnTooltip.tsx'
-import { hoverMobSpawn } from '../../store/hoverReducer.ts'
+import { hoverMobSpawn, selectMobSpawn } from '../../store/hoverReducer.ts'
 
 interface MobSpawnProps {
   iconScaling: number
@@ -35,23 +35,29 @@ function MobSpawnComponent({
   const dispatch = useAppDispatch()
   const iconSize = iconScaling * mobScale(mob) * (isHovered ? 1.2 : 1)
 
+  const eventHandlers: LeafletEventHandlerFnMap = useMemo(
+    () => ({
+      click: (e) => {
+        dispatch(
+          toggleSpawn({
+            mobSpawn: { mob, spawn },
+            individual: e.originalEvent.ctrlKey || e.originalEvent.metaKey,
+          }),
+        )
+      },
+      contextmenu: () => dispatch(selectMobSpawn({ mob, spawn })),
+      mouseover: () => dispatch(hoverMobSpawn({ mob, spawn })),
+      mouseout: () => dispatch(hoverMobSpawn(null)),
+    }),
+    [dispatch, mob, spawn],
+  )
+
   return (
     <>
       <Marker
         position={spawn.pos}
         zIndexOffset={isHovered ? 100_000 : 0}
-        eventHandlers={{
-          click: (e) => {
-            dispatch(
-              toggleSpawn({
-                mobSpawn: { mob, spawn },
-                individual: e.originalEvent.ctrlKey || e.originalEvent.metaKey,
-              }),
-            )
-          },
-          mouseover: () => dispatch(hoverMobSpawn({ mob, spawn })),
-          mouseout: () => dispatch(hoverMobSpawn(null)),
-        }}
+        eventHandlers={eventHandlers}
         icon={divIcon({
           popupAnchor: [100, 0],
           iconUrl: `/npc_portaits/${mob.id}.png`,

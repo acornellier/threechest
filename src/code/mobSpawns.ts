@@ -1,10 +1,4 @@
-import { Mob, MobSpawn, MobSpawnKey } from '../data/types.ts'
-
-export const mobSpawnIndexToKey = (enemyIndex: number, spawnIndex: number): MobSpawnKey =>
-  `${enemyIndex}-${spawnIndex}`
-
-export const mobSpawnToKey = ({ mob, spawn }: MobSpawn) =>
-  mobSpawnIndexToKey(mob.enemyIndex, spawn.spawnIndex)
+import { Mob, MobSpawn } from '../data/types.ts'
 
 export const mobsEqual = (mob1: { enemyIndex: number }, mob2: { enemyIndex: number }) =>
   mob1.enemyIndex === mob2.enemyIndex

@@ -49,6 +49,7 @@ export function MobSpawnTooltip({ mob, spawn, iconScaling }: Props) {
         <div>
           Efficiency: <span style={{ color: efficiencyColor }}>{efficiencyScore}</span>
         </div>
+        <div style={{ fontSize: 10 }}>[Right click for more]</div>
       </div>
     </Tooltip>
   )

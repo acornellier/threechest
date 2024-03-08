@@ -13,6 +13,7 @@ $fancy-blue: #24293f;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
   font-family: 'Roboto Slab Variable', serif;
+  color: white;
 }
 
 .leaflet-container {
@@ -51,7 +52,6 @@ img.leaflet-tile {
   border: unset;
   box-shadow: unset;
   font-weight: 700;
-  color: #fff;
   -webkit-text-stroke: 1px black;
 }
 
@@ -109,6 +109,14 @@ img.leaflet-tile {
     padding-top: 4px;
     padding-bottom: 4px;
   }
+}
+
+.bg-fancy-red {
+  background-color: $fancy-red;
+}
+
+.bg-fancy-blue {
+  background-color: $fancy-blue;
 }
 
 input.fancy {

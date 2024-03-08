@@ -15,7 +15,7 @@ function mdtPolygonToDrawing(polygon: MdtPolygon): Drawing {
   const points: Point[] = []
   const chunkSize = 4
   for (let i = 0; i < polygon.l.length; i += chunkSize) {
-    const [, , x, y] = polygon.l.slice(i, i + chunkSize)
+    const [, , x, y] = polygon.l.slice(i, i + chunkSize) as [number, number, number, number]
     points.push(mdtPointToRoute(x, y))
   }
 
@@ -86,7 +86,7 @@ export function mdtRouteToRoute(mdtRoute: MdtRoute): Route {
 function mobSpawnsToMdtEnemies(mobSpawns: MobSpawn[]) {
   return mobSpawns.reduce<Record<number, number[]>>((acc, mobSpawn) => {
     acc[mobSpawn.mob.enemyIndex] ??= []
-    acc[mobSpawn.mob.enemyIndex].push(mobSpawn.spawn.spawnIndex)
+    acc[mobSpawn.mob.enemyIndex]!.push(mobSpawn.spawn.spawnIndex)
     return acc
   }, {})
 }

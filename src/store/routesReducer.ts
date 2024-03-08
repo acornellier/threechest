@@ -29,7 +29,7 @@ const newRouteUid = () => Math.random().toString(36).slice(2)
 
 function nextName(routeName: string, dungeonKey: DungeonKey, savedRoutes: SavedRoute[]) {
   const match = routeName.match(/(.*\s)(\d+)$/)
-  const baseName = match ? match[1] : routeName
+  const baseName = match?.[1] ?? routeName
   const defaultNamesRoutes = savedRoutes.filter(
     (route) => route.dungeonKey === dungeonKey && route.name.startsWith(baseName),
   )
@@ -69,7 +69,7 @@ export const getLastDungeonRoute = async (dungeonKey: DungeonKey, savedRoutes: S
     dungeonKey ? route.dungeonKey === dungeonKey : true,
   )
   if (dungeonRoutes.length) {
-    return await loadRouteFromStorage(dungeonRoutes[dungeonRoutes.length - 1].uid)
+    return await loadRouteFromStorage(dungeonRoutes[dungeonRoutes.length - 1]!.uid)
   } else {
     console.warn('makeEmptyRoute')
     return makeEmptyRoute(dungeonKey, savedRoutes)

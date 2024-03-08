@@ -29,7 +29,7 @@ export function Pull({ pullIndex, pull, ghost, onRightClick }: Props) {
   const sortedCounts = useMemo(() => {
     const mobCounts = pull.mobSpawns.reduce<MobCount>((acc, { mob }) => {
       acc[mob.id] ??= { mob, count: 0 }
-      acc[mob.id].count += 1
+      acc[mob.id]!.count += 1
       return acc
     }, {})
 
@@ -92,7 +92,7 @@ export function Pull({ pullIndex, pull, ghost, onRightClick }: Props) {
                     alt={mob.name}
                   />
                   <div
-                    className="absolute bottom-[-3px] w-full text-white font-bold text-sm text-center"
+                    className="absolute bottom-[-3px] w-full font-bold text-sm text-center"
                     style={{ WebkitTextStroke: '0.6px black' }}
                   >
                     x{count}
@@ -102,7 +102,7 @@ export function Pull({ pullIndex, pull, ghost, onRightClick }: Props) {
             </div>
           </div>
           <div
-            className="flex items-center text-white font-bold text-sm"
+            className="flex items-center font-bold text-sm"
             style={{ WebkitTextStroke: '0.6px black' }}
           >
             {mobCountPercentStr(pull.countCumulative, dungeon.mdt.totalCount)}

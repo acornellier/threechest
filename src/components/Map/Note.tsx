@@ -21,7 +21,7 @@ function NoteComponent({ note, index, iconScaling }: Props) {
         className: 'mob',
         html: renderToString(
           <div
-            className="note w-full h-full flex items-center justify-center rounded-full border-black shadow-2xl"
+            className="note w-full h-full flex items-center justify-center rounded-full border-black shadow-2xl text-black"
             style={{
               fontSize: iconSize * 0.6,
               borderWidth: iconSize * 0.05,

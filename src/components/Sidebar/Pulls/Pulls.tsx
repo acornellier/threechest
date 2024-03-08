@@ -24,25 +24,28 @@ export function Pulls() {
   const clampedHoveredPull = hoveredPull
     ? Math.min(Math.max(hoveredPull, 0), pullsDetailed.length - 1)
     : pullsDetailed.length - 1
-  const totalCount = pullsDetailed.length ? pullsDetailed[clampedHoveredPull].countCumulative : 0
+  const totalCount = pullsDetailed[clampedHoveredPull]?.countCumulative ?? 0
 
   const [ghostPullIndex, setGhostPullIndex] = useState<number | null>(null)
 
   const pullsWithGhost = useMemo(() => {
     const pulls: SortablePull[] = [...pullsDetailed]
     if (ghostPullIndex !== null) {
-      pulls.splice(ghostPullIndex + 1, 0, {
-        ...pullsDetailed[ghostPullIndex],
-        id: -1,
-        filtered: true,
-      })
+      const ghostPull = pullsDetailed[ghostPullIndex]
+      if (ghostPull) {
+        pulls.splice(ghostPullIndex + 1, 0, {
+          ...ghostPull,
+          id: -1,
+          filtered: true,
+        })
+      }
     }
     return pulls
   }, [pullsDetailed, ghostPullIndex])
 
   const setPullsWrapper = useCallback(
     (pulls: SortablePull[]) => {
-      if (pulls.every((pull, idx) => pull.id === pullsWithGhost[idx].id)) return
+      if (pulls.every((pull, idx) => pull.id === pullsWithGhost[idx]!.id)) return
 
       dispatch(setPulls(pulls.filter(({ filtered }) => !filtered)))
     },
@@ -75,7 +78,7 @@ export function Pulls() {
   let pullIndex = 0
   return (
     <Panel className="overflow-auto select-none">
-      <div className="relative flex justify-center mx-2 rounded-sm text-white font-bold border border-gray-400">
+      <div className="relative flex justify-center mx-2 rounded-sm font-bold border border-gray-400">
         <div
           className="gritty absolute left-0 max-w-full h-full z-[-1]"
           style={{
@@ -115,14 +118,11 @@ export function Pulls() {
             width="18"
             height="18"
             className="mr-1"
-            fill="none"
+            fill="currentColor"
             viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <path
-              d="m15.87 2.669 4.968 4.968a2.25 2.25 0 0 1 0 3.182l-8.681 8.68 6.097.001a.75.75 0 0 1 .744.648l.006.102a.75.75 0 0 1-.648.743l-.102.007-8.41.001a2.244 2.244 0 0 1-1.714-.655l-4.968-4.969a2.25 2.25 0 0 1 0-3.182l9.526-9.526a2.25 2.25 0 0 1 3.182 0ZM5.709 11.768l-1.487 1.488a.75.75 0 0 0 0 1.06l4.969 4.969c.146.146.338.22.53.22l.029-.005.038.002a.747.747 0 0 0 .463-.217l1.487-1.487-6.03-6.03Zm8.04-8.039-6.98 6.978 6.03 6.03 6.979-6.978a.75.75 0 0 0 0-1.061l-4.969-4.969a.75.75 0 0 0-1.06 0Z"
-              fill="white"
-            />
+            <path d="m15.87 2.669 4.968 4.968a2.25 2.25 0 0 1 0 3.182l-8.681 8.68 6.097.001a.75.75 0 0 1 .744.648l.006.102a.75.75 0 0 1-.648.743l-.102.007-8.41.001a2.244 2.244 0 0 1-1.714-.655l-4.968-4.969a2.25 2.25 0 0 1 0-3.182l9.526-9.526a2.25 2.25 0 0 1 3.182 0ZM5.709 11.768l-1.487 1.488a.75.75 0 0 0 0 1.06l4.969 4.969c.146.146.338.22.53.22l.029-.005.038.002a.747.747 0 0 0 .463-.217l1.487-1.487-6.03-6.03Zm8.04-8.039-6.98 6.978 6.03 6.03 6.979-6.978a.75.75 0 0 0 0-1.061l-4.969-4.969a.75.75 0 0 0-1.06 0Z" />
           </svg>
           Clear
         </Button>

@@ -4,6 +4,7 @@ import { Toasts } from './Modals/Toasts.tsx'
 import { TopBar } from './TopBar/TopBar.tsx'
 import { ConfirmImportModal } from './Modals/ConfirmImportModal.tsx'
 import { RouteSaver } from '../store/RouteSaver.tsx'
+import { MobInfo } from './MobInfo.tsx'
 
 export function Page() {
   return (
@@ -11,6 +12,7 @@ export function Page() {
       <Map />
       <TopBar />
       <Sidebar />
+      <MobInfo />
       <Toasts />
       <ConfirmImportModal />
       <RouteSaver />

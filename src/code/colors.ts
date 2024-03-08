@@ -19,7 +19,7 @@ export function hsvToRgb(h: number, s: number, v: number) {
     return v - v * s * Math.max(Math.min(k, 4 - k, 1), 0)
   }
 
-  return [f(5), f(3), f(1)]
+  return [f(5), f(3), f(1)] as const
 }
 
 export const rgbToHex = (r: number, g: number, b: number) =>
@@ -32,22 +32,24 @@ export const rgbToHex = (r: number, g: number, b: number) =>
     })
     .join('')
 
-const highContrastColors = [
-  [1, 0.2446, 1],
-  [0.2446, 1.0, 0.6223],
-  [1.0, 0.2446, 0.2446],
-  [0.2446, 0.7223, 1],
-  [1.0, 0.98741, 0.2446],
-  [0.2446, 1.0, 0.2446],
-  [1.0, 0.2446, 0.6223],
-  [0.2446, 1.0, 1],
-  [1.0, 0.60971, 0.2446],
-  [0.2446, 0.2446, 1],
-  [0.63489, 1.0, 0.2446],
-].map(([r, g, b]) => rgbToHex(r, g, b))
+const highContrastColors = (
+  [
+    [1, 0.2446, 1],
+    [0.2446, 1.0, 0.6223],
+    [1.0, 0.2446, 0.2446],
+    [0.2446, 0.7223, 1],
+    [1.0, 0.98741, 0.2446],
+    [0.2446, 1.0, 0.2446],
+    [1.0, 0.2446, 0.6223],
+    [0.2446, 1.0, 1],
+    [1.0, 0.60971, 0.2446],
+    [0.2446, 0.2446, 1],
+    [0.63489, 1.0, 0.2446],
+  ] as const
+).map(([r, g, b]) => rgbToHex(r, g, b))
 
 export function getPullColor(pullIndex: number) {
-  return highContrastColors[pullIndex % highContrastColors.length]
+  return highContrastColors[pullIndex % highContrastColors.length]!
 }
 
 // matches MDT colors

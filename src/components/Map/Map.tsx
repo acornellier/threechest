@@ -10,7 +10,7 @@ import { Notes } from './Notes.tsx'
 
 const height = 256
 const width = 384
-const maxCoords = [-height, width]
+const maxCoords = [-height, width] as const
 
 const center = [maxCoords[0] / 2, maxCoords[1] / 2 + 50] as const
 

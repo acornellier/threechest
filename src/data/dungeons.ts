@@ -1,4 +1,4 @@
-import { Dungeon, DungeonKey, MdtDungeon } from './types.ts'
+import { Dungeon, DungeonKey, MdtDungeon, Spells } from './types.ts'
 import adMdtData from './mdtDungeons/ad_mdt.json'
 import brhMdtData from './mdtDungeons/brh_mdt.json'
 import dhtMdtData from './mdtDungeons/dht_mdt.json'
@@ -7,6 +7,8 @@ import dotiuMdtData from './mdtDungeons/dotiu_mdt.json'
 import ebMdtData from './mdtDungeons/eb_mdt.json'
 import tottMdtData from './mdtDungeons/tott_mdt.json'
 import wcmMdtData from './mdtDungeons/wcm_mdt.json'
+import adSpells from './spells/ad_spells.json'
+import ebSpells from './spells/eb_spells.json'
 
 export const ad: Dungeon = {
   name: "Atal'Dazar",
@@ -14,6 +16,7 @@ export const ad: Dungeon = {
   defaultZoom: 2.2,
   defaultOffset: [0, 0],
   mdt: adMdtData as MdtDungeon,
+  spells: adSpells,
   icon: 'achievement_dungeon_ataldazar',
 }
 
@@ -59,6 +62,7 @@ export const eb: Dungeon = {
   defaultZoom: 2.7,
   defaultOffset: [25, 10],
   mdt: ebMdtData as MdtDungeon,
+  spells: ebSpells as Spells,
   icon: 'achievement_dungeon_everbloom',
 }
 
