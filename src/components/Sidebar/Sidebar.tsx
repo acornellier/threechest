@@ -5,7 +5,7 @@ import { useState } from 'react'
 import { SidebarCollapser } from './SidebarCollapser.tsx'
 
 const margin = 8
-const width = 300
+const width =  285
 
 export function Sidebar() {
   const [collapsed, setCollapsed] = useState(false)
