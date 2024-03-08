@@ -22,7 +22,7 @@ $fancy-blue: #24293f;
 
 img.leaflet-tile {
   //noinspection CssInvalidPropertyValue
-  mix-blend-mode: plus-lighter !important;
+  mix-blend-mode: normal !important;
 }
 
 .leaflet-tooltip.no-arrow:before {
