@@ -14,10 +14,12 @@ export function MobInfo() {
   const spells = dungeon.spells[mob.id]
 
   return (
-    <div className="fixed bottom-2 left-2 z-10">
+    <div className="fixed bottom-2 left-2 z-10 min-w-[250px]">
       <Panel blue>
         <div className="flex items-center justify-between gap-2">
-          <div className="font-bold text-lg">{mob.name}</div>
+          <a href={`https://www.wowhead.com/npc=${mob.id}`} target="_blank" rel="noreferrer">
+            <div className="font-bold text-lg">{mob.name}</div>
+          </a>
           <XMarkIcon
             width={20}
             height={20}

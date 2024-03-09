@@ -3,8 +3,8 @@ import { getDungeonSpells } from './getDungeonSpells.js'
 const dungeons = [
   {
     dungeonKey: 'ad',
-    code: 'd2DNBHjphC1Wnb3t',
-    fightId: 2,
+    code: '6gAz9tCPKFRkVQJv',
+    fightId: 67,
   },
   {
     dungeonKey: 'eb',

@@ -7,8 +7,8 @@ import dotiuMdtData from './mdtDungeons/dotiu_mdt.json'
 import ebMdtData from './mdtDungeons/eb_mdt.json'
 import tottMdtData from './mdtDungeons/tott_mdt.json'
 import wcmMdtData from './mdtDungeons/wcm_mdt.json'
-import adSpells from './spells/ad_spells.json'
-import ebSpells from './spells/eb_spells.json'
+import { adSpells } from './spells/adSpells.ts'
+import { ebSpells } from './spells/ebSpells.ts'
 
 export const ad: Dungeon = {
   name: "Atal'Dazar",

@@ -157,13 +157,11 @@ const baseReducer = createSlice({
     ) {
       state.route.pulls = state.route.pulls.filter((_, index) => index !== pullIndex)
       if (moveUp || state.route.selectedPull >= state.route.pulls.length) {
-        state.route.selectedPull -= 1
+        state.route.selectedPull = Math.max(0, state.route.selectedPull - 1)
       }
     },
     selectPull(state, { payload }: PayloadAction<number>) {
-      if (payload >= 0 && payload < state.route.pulls.length) {
-        state.route.selectedPull = payload
-      }
+      state.route.selectedPull = Math.max(0, Math.min(payload, state.route.pulls.length - 1))
     },
     selectPullRelative(state, { payload }: PayloadAction<number>) {
       const newIndex = state.route.selectedPull + payload

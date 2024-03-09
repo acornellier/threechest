@@ -29,6 +29,7 @@ export function ConfirmImportModal() {
     <Modal
       title="Route already exists"
       onClose={cancel}
+      closeOnEscape
       contents={
         <>
           <p>Would you like to overwrite it or make a copy?</p>
