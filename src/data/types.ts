@@ -12,11 +12,11 @@ export type Dungeon = {
   defaultOffset: [number, number]
   key: DungeonKey
   mdt: MdtDungeon
-  spells?: Record<number, Spell[]>
+  spells: Record<number, Spell[]>
   icon: string
 }
 
-export type DungeonKey = 'ad' | 'brh' | 'dht' | 'dotil' | 'dotiu' | 'eb' | 'tott' | 'wcm'
+export type DungeonKey = 'ad' | 'brh' | 'dht' | 'fall' | 'rise' | 'eb' | 'tott' | 'wcm'
 
 export type Spawn = {
   group: number | null

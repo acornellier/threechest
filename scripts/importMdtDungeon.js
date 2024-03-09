@@ -6,8 +6,8 @@ import { fileURLToPath } from 'url'
 export const dungeonPaths = {
   ad: 'BattleForAzeroth/AtalDazar',
   brh: 'Dragonflight/BlackRookHold',
-  dotil: 'Dragonflight/DawnOfTheInfiniteLower',
-  dotiu: 'Dragonflight/DawnOfTheInfiniteUpper',
+  fall: 'Dragonflight/DawnOfTheInfiniteLower',
+  rise: 'Dragonflight/DawnOfTheInfiniteUpper',
   dht: 'Legion/DarkheartThicket',
   eb: 'Dragonflight/Everbloom',
   tott: 'Dragonflight/ThroneOfTides',

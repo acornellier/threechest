@@ -68,12 +68,13 @@ export function Dropdown({ selected, options, onChange }: Props) {
           {options.map((option) => (
             <Button
               key={option.id}
-              className={`flex gap-2 py-2 px-2 dropdown-option ${
+              className={`flex py-2 px-2 dropdown-option ${
                 optionsVisible ? 'options-visible' : ''
               }`}
+              innerClass="gap-2"
               onClick={() => handleChange(option)}
             >
-              {option.icon}
+              <div className="mr-1">{option.icon}</div>
               {option.label}
             </Button>
           ))}

@@ -159,6 +159,7 @@ input.fancy {
     0 10px 20px rgba(0, 0, 0, 0.1);
 
   &-inner {
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -257,10 +258,13 @@ input.fancy {
   &.dropdown-option {
     @extend .two-d;
 
-    justify-content: flex-start;
     transition: max-height, padding-top, padding-bottom, opacity;
     transition-duration: 0.2s;
     transition-timing-function: ease-out;
+
+    .fancy-button-inner {
+      justify-content: flex-start;
+    }
 
     &:not(.options-visible) {
       max-height: 0;

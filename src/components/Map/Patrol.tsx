@@ -22,6 +22,7 @@ export function Patrol({ spawn, isGroupHovered }: Props) {
       key={patrolKey}
       positions={spawn.patrol}
       color="#1d1db0"
+      fillOpacity={0}
       weight={isGroupHovered ? 6 : 2}
       dashArray={isGroupHovered ? undefined : [4, 10]}
       opacity={isGroupHovered ? 1 : 0.5}
