@@ -1,6 +1,6 @@
 import { ReactNode, useCallback } from 'react'
 import { useKeyPress } from '../../hooks/useKeyPress.ts'
-import { useOutsideClick } from './useOutsideClick.ts'
+import { useOutsideClick } from '../../hooks/useOutsideClick.ts'
 
 interface Props {
   title: ReactNode

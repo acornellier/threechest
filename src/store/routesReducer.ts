@@ -178,6 +178,14 @@ const baseReducer = createSlice({
     addNote(state, { payload: note }: PayloadAction<Note>) {
       state.route.notes.push(note)
     },
+    editNote(
+      state,
+      {
+        payload: { changes, noteIndex },
+      }: PayloadAction<{ changes: Partial<Note>; noteIndex: number }>,
+    ) {
+      state.route.notes[noteIndex] = { ...state.route.notes[noteIndex]!, ...changes }
+    },
     deleteNote(state, { payload: noteIndex }: PayloadAction<number>) {
       state.route.notes.splice(noteIndex, 1)
     },
@@ -214,6 +222,8 @@ const undoableReducer = undoable(baseReducer.reducer, {
       baseReducer.actions.toggleSpawn.type,
       baseReducer.actions.setPulls.type,
       baseReducer.actions.addNote.type,
+      baseReducer.actions.editNote.type,
+      baseReducer.actions.deleteNote.type,
     ]),
     excludeAction(['persist/PERSIST', 'persist/REHYDRATE']),
   ),
@@ -241,6 +251,7 @@ export const {
   toggleSpawn,
   setPulls,
   addNote,
+  editNote,
   deleteNote,
 } = baseReducer.actions
 

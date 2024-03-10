@@ -29,6 +29,23 @@ img.leaflet-tile {
   display: none;
 }
 
+.leaflet-popup.plain-popup {
+  transition: none;
+
+  .leaflet-popup-content-wrapper {
+    background: none;
+  }
+
+  .leaflet-popup-content {
+    padding: 0;
+    margin: 0;
+  }
+
+  .leaflet-popup-tip-container {
+    display: none;
+  }
+}
+
 .pull-number-tooltip {
   font-size: 32px;
   background-color: unset;

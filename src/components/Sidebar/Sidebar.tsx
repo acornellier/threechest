@@ -2,7 +2,7 @@ import { Pulls } from './Pulls/Pulls.tsx'
 import { RouteDetails } from './RouteDetails.tsx'
 import { SharePanel } from './SharePanel.tsx'
 import { SidebarCollapser } from './SidebarCollapser.tsx'
-import { useLocalStorage } from '../Common/useLocalStorage.ts'
+import { useLocalStorage } from '../../hooks/useLocalStorage.ts'
 
 const margin = 8
 const width = 285

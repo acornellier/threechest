@@ -1,12 +1,12 @@
 import { memo, useRef, useState } from 'react'
 import { Note as NoteType } from '../../code/types.ts'
-import { Marker, Tooltip } from 'react-leaflet'
-import { divIcon } from 'leaflet'
+import { Marker, Popup, Tooltip } from 'react-leaflet'
+import { divIcon, Popup as LeafletPopup } from 'leaflet'
 import { renderToString } from 'react-dom/server'
 import { useAppDispatch } from '../../store/hooks.ts'
 import { useContextMenu } from '../Common/useContextMenu.ts'
 import { Button } from '../Common/Button.tsx'
-import { deleteNote } from '../../store/routesReducer.ts'
+import { deleteNote, editNote } from '../../store/routesReducer.ts'
 import { ContextMenu } from '../Common/ContextMenu.tsx'
 
 interface Props {
@@ -20,11 +20,14 @@ function NoteComponent({ note, index, iconScaling }: Props) {
   const iconSize = iconScaling
   const { contextMenuPosition, onRightClick, onClose } = useContextMenu()
   const [input, setInput] = useState(note.text)
+  const [popupOpen, setPopupOpen] = useState(false)
+  const popupRef = useRef<LeafletPopup>(null)
   const inputRef = useRef<HTMLInputElement>(null)
 
   return (
     <>
       <Marker
+        position={note.position}
         eventHandlers={{
           click: () => inputRef.current?.focus(),
           contextmenu: (e) => {
@@ -32,8 +35,9 @@ function NoteComponent({ note, index, iconScaling }: Props) {
             e.originalEvent.stopPropagation()
           },
         }}
-        position={note.position}
         icon={divIcon({
+          tooltipAnchor: [20 + (iconScaling - 40) / 2, 0],
+          popupAnchor: [90 + (iconScaling - 40) / 2, 30],
           iconSize: [iconSize, iconSize],
           className: 'mob',
           html: renderToString(
@@ -52,26 +56,36 @@ function NoteComponent({ note, index, iconScaling }: Props) {
           ),
         })}
       >
-        <Tooltip
-          key={iconScaling}
-          className="no-arrow flex flex-col text-white text-md p-0 bg-transparent rounded-md border-gray-400 min-h-8 min-w-14"
-          direction="right"
-          offset={[iconSize * 0.5, 0]}
+        {!popupOpen && (
+          <Tooltip
+            key={iconScaling}
+            direction="right"
+            className="no-arrow flex flex-col text-white text-md p-0 bg-transparent rounded-md border-gray-400 min-h-8 min-w-14"
+          >
+            <div className="absolute w-full h-full bg-slate-800 opacity-85 -z-10 rounded-md" />
+            <div className="p-2">{note.text}</div>
+          </Tooltip>
+        )}
+        <Popup
+          ref={popupRef}
+          className="plain-popup"
+          closeButton={false}
+          eventHandlers={{ add: () => setPopupOpen(true), remove: () => setPopupOpen(false) }}
         >
-          <div className="absolute w-full h-full bg-slate-800 opacity-85 -z-10 rounded-md" />
-          <div className="p-2">{note.text || 'Shroud'}</div>
-          {/*<input*/}
-          {/*  ref={inputRef}*/}
-          {/*  className="p-2 w-full bg-gray-100 fancy"*/}
-          {/*  onKeyDown={(e) => {*/}
-          {/*    if (e.key === 'Enter') close()*/}
-          {/*  }}*/}
-          {/*  onChange={(e) => {*/}
-          {/*    setInput(e.target.value)*/}
-          {/*  }}*/}
-          {/*  value={input}*/}
-          {/*/>*/}
-        </Tooltip>
+          <input
+            ref={inputRef}
+            autoFocus
+            className="p-2 w-full bg-gray-100 fancy min-w-32"
+            onKeyDown={(e) => {
+              if (e.key === 'Enter') popupRef.current?.close()
+            }}
+            onChange={(e) => {
+              setInput(e.target.value)
+              dispatch(editNote({ changes: { text: e.target.value }, noteIndex: index }))
+            }}
+            value={input}
+          />
+        </Popup>
       </Marker>
       {contextMenuPosition && (
         <ContextMenu position={contextMenuPosition} onClose={onClose}>

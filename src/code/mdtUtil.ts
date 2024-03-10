@@ -70,7 +70,6 @@ function drawingToMdtPolygon(drawing: Drawing): MdtPolygon {
 }
 
 export function mdtRouteToRoute(mdtRoute: MdtRoute): Route {
-  console.log(mdtRoute)
   const dungeon = dungeonsByMdtIdx[mdtRoute.value.currentDungeonIdx]
   if (!dungeon)
     throw new Error(`Could not find dungeon with MDT index ${mdtRoute.value.currentDungeonIdx}`)
