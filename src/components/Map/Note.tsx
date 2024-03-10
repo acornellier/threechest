@@ -1,7 +1,7 @@
-import { memo, useRef, useState } from 'react'
+import { memo, useEffect, useRef, useState } from 'react'
 import { Note as NoteType } from '../../code/types.ts'
 import { Marker, Popup, Tooltip } from 'react-leaflet'
-import { divIcon, Popup as LeafletPopup } from 'leaflet'
+import { divIcon, Marker as LeafletMarker } from 'leaflet'
 import { renderToString } from 'react-dom/server'
 import { useAppDispatch } from '../../store/hooks.ts'
 import { useContextMenu } from '../Common/useContextMenu.ts'
@@ -21,12 +21,20 @@ function NoteComponent({ note, index, iconScaling }: Props) {
   const { contextMenuPosition, onRightClick, onClose } = useContextMenu()
   const [input, setInput] = useState(note.text)
   const [popupOpen, setPopupOpen] = useState(false)
-  const popupRef = useRef<LeafletPopup>(null)
+  const markerRef = useRef<LeafletMarker>(null)
   const inputRef = useRef<HTMLInputElement>(null)
+
+  useEffect(() => {
+    if (note.justAdded) {
+      setTimeout(() => markerRef.current?.openPopup(), 0)
+      dispatch(editNote({ changes: { justAdded: false }, noteIndex: index }))
+    }
+  }, [dispatch, index, note.justAdded])
 
   return (
     <>
       <Marker
+        ref={markerRef}
         position={note.position}
         eventHandlers={{
           click: () => inputRef.current?.focus(),
@@ -37,7 +45,7 @@ function NoteComponent({ note, index, iconScaling }: Props) {
         }}
         icon={divIcon({
           tooltipAnchor: [20 + (iconScaling - 40) / 2, 0],
-          popupAnchor: [90 + (iconScaling - 40) / 2, 30],
+          popupAnchor: [90 + (iconScaling - 40) / 2, 32],
           iconSize: [iconSize, iconSize],
           className: 'mob',
           html: renderToString(
@@ -67,7 +75,6 @@ function NoteComponent({ note, index, iconScaling }: Props) {
           </Tooltip>
         )}
         <Popup
-          ref={popupRef}
           className="plain-popup"
           closeButton={false}
           eventHandlers={{ add: () => setPopupOpen(true), remove: () => setPopupOpen(false) }}
@@ -77,7 +84,7 @@ function NoteComponent({ note, index, iconScaling }: Props) {
             autoFocus
             className="p-2 w-full bg-gray-100 fancy min-w-32"
             onKeyDown={(e) => {
-              if (e.key === 'Enter') popupRef.current?.close()
+              if (e.key === 'Enter') markerRef.current?.closePopup()
             }}
             onChange={(e) => {
               setInput(e.target.value)

@@ -14,6 +14,7 @@ export type SavedRoute = {
 export type Note = {
   text: string
   position: Point
+  justAdded?: boolean
 }
 
 export type Drawing = {

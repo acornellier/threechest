@@ -176,7 +176,7 @@ const baseReducer = createSlice({
       state.route.pulls = payload
     },
     addNote(state, { payload: note }: PayloadAction<Note>) {
-      state.route.notes.push(note)
+      state.route.notes.push({ ...note, justAdded: true })
     },
     editNote(
       state,
