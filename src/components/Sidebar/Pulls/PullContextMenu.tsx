@@ -2,8 +2,10 @@ import { Button } from '../../Common/Button.tsx'
 import { addPull, deletePull } from '../../../store/routesReducer.ts'
 import { useAppDispatch } from '../../../store/hooks.ts'
 
-export interface RightClickedSettings {
-  x: number
+export const minContextMenuWidth = 128
+
+export type RightClickedSettings = {
+  left: number
   y: number
   pullIndex: number
 }
@@ -18,10 +20,10 @@ export function PullContextMenu({ rightClickedSettings, onClose }: Props) {
 
   return (
     <div
-      className="fixed bg-gray-900 z-[9999] p-2 rounded-md"
+      className="fixed bg-gray-900 z-[9999] p-2 rounded-md min-w-[128]"
       style={{
         top: rightClickedSettings.y,
-        left: rightClickedSettings.x,
+        left: rightClickedSettings.left,
       }}
     >
       <div className="flex flex-col gap-2">

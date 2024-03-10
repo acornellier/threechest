@@ -6,11 +6,12 @@ import { Button } from '../../Common/Button.tsx'
 import { useAppDispatch, useDungeon, useHoveredPull, useRoute } from '../../../store/hooks.ts'
 import { addPull, clearRoute, setPulls } from '../../../store/routesReducer.ts'
 import { mobCountPercentStr } from '../../../code/util.ts'
-import { PullContextMenu, RightClickedSettings } from './PullContextMenu.tsx'
+import { minContextMenuWidth, PullContextMenu, RightClickedSettings } from './PullContextMenu.tsx'
 import { usePullShortcuts } from './usePullShortcuts.ts'
 import { Panel } from '../../Common/Panel.tsx'
 import { augmentPulls } from '../../../store/augmentPulls.ts'
 import { PlusIcon } from '@heroicons/react/24/outline'
+import { Browser } from 'leaflet'
 
 type SortablePull = PullDetailed & ItemInterface
 
@@ -61,10 +62,15 @@ export function Pulls() {
       if (rightClickedSettings?.pullIndex === pullIndex) {
         setRightClickedSettings(null)
       } else {
+        const windowWidth = window.innerWidth
+        console.log(windowWidth, e.pageX)
         setRightClickedSettings({
-          x: e.pageX,
           y: e.pageY,
           pullIndex,
+          left:
+            e.pageX + minContextMenuWidth < windowWidth
+              ? e.pageX
+              : windowWidth - minContextMenuWidth,
         })
       }
     },
