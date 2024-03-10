@@ -15,6 +15,6 @@ export function Notes() {
   })
 
   return route.notes.map((note, index) => (
-    <Note key={index} note={note} index={index} iconScaling={iconScaling} />
+    <Note key={index} note={note} noteIndex={index} iconScaling={iconScaling} />
   ))
 }

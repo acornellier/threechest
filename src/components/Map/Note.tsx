@@ -8,14 +8,15 @@ import { useContextMenu } from '../Common/useContextMenu.ts'
 import { Button } from '../Common/Button.tsx'
 import { deleteNote, editNote } from '../../store/routesReducer.ts'
 import { ContextMenu } from '../Common/ContextMenu.tsx'
+import { latLngToPoint } from '../../code/map.ts'
 
 interface Props {
   note: NoteType
-  index: number
+  noteIndex: number
   iconScaling: number
 }
 
-function NoteComponent({ note, index, iconScaling }: Props) {
+function NoteComponent({ note, noteIndex, iconScaling }: Props) {
   const dispatch = useAppDispatch()
   const iconSize = iconScaling
   const { contextMenuPosition, onRightClick, onClose } = useContextMenu()
@@ -27,17 +28,27 @@ function NoteComponent({ note, index, iconScaling }: Props) {
   useEffect(() => {
     if (note.justAdded) {
       setTimeout(() => markerRef.current?.openPopup(), 0)
-      dispatch(editNote({ changes: { justAdded: false }, noteIndex: index }))
+      dispatch(editNote({ changes: { justAdded: false }, noteIndex }))
     }
-  }, [dispatch, index, note.justAdded])
+  }, [dispatch, noteIndex, note.justAdded])
 
   return (
     <>
       <Marker
         ref={markerRef}
         position={note.position}
+        draggable
         eventHandlers={{
           click: () => inputRef.current?.focus(),
+          dragend: (e) =>
+            dispatch(
+              editNote({
+                noteIndex,
+                changes: {
+                  position: latLngToPoint((e.target as LeafletMarker).getLatLng()),
+                },
+              }),
+            ),
           contextmenu: (e) => {
             onRightClick(e.originalEvent)
             e.originalEvent.stopPropagation()
@@ -59,7 +70,7 @@ function NoteComponent({ note, index, iconScaling }: Props) {
                 textShadow: '-2px 2px 3px rgba(0, 0, 0, 0.3)',
               }}
             >
-              {index + 1}
+              {noteIndex + 1}
             </div>,
           ),
         })}
@@ -77,7 +88,13 @@ function NoteComponent({ note, index, iconScaling }: Props) {
         <Popup
           className="plain-popup"
           closeButton={false}
-          eventHandlers={{ add: () => setPopupOpen(true), remove: () => setPopupOpen(false) }}
+          eventHandlers={{
+            add: () => setPopupOpen(true),
+            remove: () => {
+              setPopupOpen(false)
+              dispatch(editNote({ noteIndex, changes: { text: input } }))
+            },
+          }}
         >
           <input
             ref={inputRef}
@@ -86,10 +103,7 @@ function NoteComponent({ note, index, iconScaling }: Props) {
             onKeyDown={(e) => {
               if (e.key === 'Enter') markerRef.current?.closePopup()
             }}
-            onChange={(e) => {
-              setInput(e.target.value)
-              dispatch(editNote({ changes: { text: e.target.value }, noteIndex: index }))
-            }}
+            onChange={(e) => setInput(e.target.value)}
             value={input}
           />
         </Popup>
@@ -100,7 +114,7 @@ function NoteComponent({ note, index, iconScaling }: Props) {
             short
             justifyStart
             onClick={(e) => {
-              dispatch(deleteNote(index))
+              dispatch(deleteNote(noteIndex))
               onClose()
               e.stopPropagation()
             }}

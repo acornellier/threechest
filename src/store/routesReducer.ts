@@ -221,7 +221,7 @@ const undoableReducer = undoable(baseReducer.reducer, {
       baseReducer.actions.deletePull.type,
       baseReducer.actions.toggleSpawn.type,
       baseReducer.actions.setPulls.type,
-      baseReducer.actions.addNote.type,
+      // baseReducer.actions.addNote.type, // intentionally leave out for justAdded hack
       baseReducer.actions.editNote.type,
       baseReducer.actions.deleteNote.type,
     ]),
