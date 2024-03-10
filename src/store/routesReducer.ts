@@ -5,7 +5,7 @@
   isAnyOf,
   PayloadAction,
 } from '@reduxjs/toolkit'
-import { MdtRoute, Pull, Route, SavedRoute } from '../code/types.ts'
+import { MdtRoute, Note, Pull, Route, SavedRoute } from '../code/types.ts'
 import { DungeonKey, MobSpawn } from '../data/types.ts'
 import { mdtRouteToRoute } from '../code/mdtUtil.ts'
 import undoable, { ActionCreators, combineFilters, excludeAction, includeAction } from 'redux-undo'
@@ -152,10 +152,10 @@ const baseReducer = createSlice({
     deletePull(
       state,
       {
-        payload: { pullIndex = state.route.selectedPull, moveUp },
+        payload: { pullIndex, moveUp },
       }: PayloadAction<{ pullIndex?: number | undefined; moveUp?: boolean }>,
     ) {
-      state.route.pulls = state.route.pulls.filter((_, index) => index !== pullIndex)
+      state.route.pulls.splice(pullIndex ?? state.route.selectedPull, 1)
       if (moveUp || state.route.selectedPull >= state.route.pulls.length) {
         state.route.selectedPull = Math.max(0, state.route.selectedPull - 1)
       }
@@ -174,6 +174,12 @@ const baseReducer = createSlice({
     },
     setPulls(state, { payload }: PayloadAction<Pull[]>) {
       state.route.pulls = payload
+    },
+    addNote(state, { payload: note }: PayloadAction<Note>) {
+      state.route.notes.push(note)
+    },
+    deleteNote(state, { payload: noteIndex }: PayloadAction<number>) {
+      state.route.notes.splice(noteIndex, 1)
     },
   },
   extraReducers: (builder) => {
@@ -207,6 +213,7 @@ const undoableReducer = undoable(baseReducer.reducer, {
       baseReducer.actions.deletePull.type,
       baseReducer.actions.toggleSpawn.type,
       baseReducer.actions.setPulls.type,
+      baseReducer.actions.addNote.type,
     ]),
     excludeAction(['persist/PERSIST', 'persist/REHYDRATE']),
   ),
@@ -233,6 +240,8 @@ export const {
   selectPullRelative,
   toggleSpawn,
   setPulls,
+  addNote,
+  deleteNote,
 } = baseReducer.actions
 
 export const listenerMiddleware = createListenerMiddleware()

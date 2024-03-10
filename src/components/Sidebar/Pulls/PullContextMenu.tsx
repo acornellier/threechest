@@ -17,9 +17,10 @@ export function PullContextMenu({ position, pullIndex, onClose }: Props) {
       <Button
         justifyStart
         short
-        onClick={() => {
+        onClick={(e) => {
           dispatch(addPull(pullIndex))
           onClose()
+          e.stopPropagation()
         }}
       >
         Insert before
@@ -27,9 +28,10 @@ export function PullContextMenu({ position, pullIndex, onClose }: Props) {
       <Button
         justifyStart
         short
-        onClick={() => {
+        onClick={(e) => {
           dispatch(addPull(pullIndex + 1))
           onClose()
+          e.stopPropagation()
         }}
       >
         Insert after
@@ -37,9 +39,10 @@ export function PullContextMenu({ position, pullIndex, onClose }: Props) {
       <Button
         justifyStart
         short
-        onClick={() => {
+        onClick={(e) => {
           dispatch(deletePull({ pullIndex: pullIndex }))
           onClose()
+          e.stopPropagation()
         }}
       >
         Delete

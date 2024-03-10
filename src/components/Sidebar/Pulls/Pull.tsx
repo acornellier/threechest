@@ -3,7 +3,7 @@ import { Mob } from '../../../data/types.ts'
 import { darkenColor, getPullColor, lightenColor } from '../../../code/colors.ts'
 import { useAppDispatch, useDungeon, useRoute } from '../../../store/hooks.ts'
 import { selectPull } from '../../../store/routesReducer.ts'
-import { MouseEvent, useEffect, useMemo, useRef } from 'react'
+import { useEffect, useMemo, useRef } from 'react'
 import { mobCountPercentStr } from '../../../code/util.ts'
 import { hoverPull } from '../../../store/hoverReducer.ts'
 
@@ -51,7 +51,7 @@ export function Pull({ pullIndex, pull, ghost, onRightClick }: Props) {
       onMouseLeave={() => dispatch(hoverPull(null))}
       onContextMenu={(e) => {
         e.preventDefault()
-        onRightClick(e, pullIndex)
+        onRightClick(e.nativeEvent, pullIndex)
       }}
     >
       <div className="relative h-8 min-h-8">

@@ -7,6 +7,7 @@ import { PullOutlines } from './PullOutlines.tsx'
 import { useDungeon } from '../../store/hooks.ts'
 import { Drawings } from './Drawings.tsx'
 import { Notes } from './Notes.tsx'
+import { MapContextMenu } from './MapContextMenu.tsx'
 
 const height = 256
 const width = 384
@@ -43,6 +44,7 @@ export function Map() {
         smoothSensitivity={2}
       >
         <TileLayer bounds={bounds} noWrap url={`/maps/${dungeon.key}/{z}/{x}_{y}.png`} />
+        <MapContextMenu />
         <Mobs />
         <PullOutlines />
         <Drawings />

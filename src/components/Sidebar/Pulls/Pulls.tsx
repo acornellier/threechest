@@ -1,7 +1,7 @@
 import { Pull as PullComponent } from './Pull.tsx'
 import { ItemInterface, ReactSortable } from 'react-sortablejs'
 import type { PullDetailed } from '../../../code/types.ts'
-import { MouseEvent, useCallback, useMemo, useState } from 'react'
+import { useCallback, useMemo, useState } from 'react'
 import { Button } from '../../Common/Button.tsx'
 import { useAppDispatch, useDungeon, useHoveredPull, useRoute } from '../../../store/hooks.ts'
 import { addPull, clearRoute, setPulls } from '../../../store/routesReducer.ts'

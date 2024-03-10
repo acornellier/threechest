@@ -2,11 +2,9 @@
 import { MobSpawn, Point } from '../data/types.ts'
 import { dungeonsByKey, dungeonsByMdtIdx } from '../data/dungeons.ts'
 import { getPullColor } from './colors.ts'
+import { equalPoints } from './map.ts'
 
 const coordinateRatio = 2.185
-
-const equalPoints = (point1: Point, point2: Point) =>
-  point1[0] === point2[0] && point1[1] === point2[1]
 
 const mdtPointToRoute = (x: number, y: number): Point => [y / coordinateRatio, x / coordinateRatio]
 const pointToMdt = (point: Point): [number, number] => [

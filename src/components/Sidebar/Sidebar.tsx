@@ -1,14 +1,14 @@
 import { Pulls } from './Pulls/Pulls.tsx'
 import { RouteDetails } from './RouteDetails.tsx'
 import { SharePanel } from './SharePanel.tsx'
-import { useState } from 'react'
 import { SidebarCollapser } from './SidebarCollapser.tsx'
+import { useLocalStorage } from '../Common/useLocalStorage.ts'
 
 const margin = 8
-const width =  285
+const width = 285
 
 export function Sidebar() {
-  const [collapsed, setCollapsed] = useState(false)
+  const [collapsed, setCollapsed] = useLocalStorage('sidebarCollaposed', false)
 
   return (
     <div
