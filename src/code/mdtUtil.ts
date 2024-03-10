@@ -46,6 +46,7 @@ function mdtPolygonToDrawing(polygon: MdtPolygon): Drawing {
     weight: polygon.d[0],
     color: '#' + polygon.d[4],
     positions: polylines,
+    ...(polygon.t ? { arrowRotation: polygon.t[0] } : {}),
   }
 }
 
@@ -71,9 +72,14 @@ function drawingToMdtPolygon(drawing: Drawing): MdtPolygon {
 }
 
 export function mdtRouteToRoute(mdtRoute: MdtRoute): Route {
+  console.log(mdtRoute)
   const dungeon = dungeonsByMdtIdx[mdtRoute.value.currentDungeonIdx]
   if (!dungeon)
     throw new Error(`Could not find dungeon with MDT index ${mdtRoute.value.currentDungeonIdx}`)
+
+  const mdtObjects = Array.isArray(mdtRoute.objects)
+    ? mdtRoute.objects
+    : Object.values(mdtRoute.objects)
 
   return {
     dungeonKey: dungeon.key,
@@ -101,10 +107,10 @@ export function mdtRouteToRoute(mdtRoute: MdtRoute): Route {
         })
         .filter(Boolean) as MobSpawn[],
     })),
-    notes: mdtRoute.objects
+    notes: mdtObjects
       .filter((object): object is MdtNote => 'n' in object)
       .map((note) => ({ text: note.d[4], position: mdtPointToRoute(note.d[0], note.d[1]) })),
-    drawings: mdtRoute.objects
+    drawings: mdtObjects
       .filter((object): object is MdtPolygon => 'l' in object)
       .map(mdtPolygonToDrawing),
   }

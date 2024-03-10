@@ -20,6 +20,7 @@ export type Drawing = {
   weight: number
   color: string
   positions: Point[][]
+  arrowRotation?: number
 }
 
 export type Route = {
@@ -54,6 +55,9 @@ export type MdtPolygon = {
 
   // [prevX, prevY, x, y]
   l: number[]
+
+  // rotation in radians, left is 0
+  t?: [number]
 }
 
 export type MdtObject = MdtNote | MdtPolygon
@@ -70,5 +74,5 @@ export type MdtRoute = {
     selection: number[]
     pulls: MdtPull[]
   }
-  objects: MdtObject[]
+  objects: MdtObject[] | Record<number, MdtObject>
 }

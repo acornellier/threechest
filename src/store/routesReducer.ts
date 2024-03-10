@@ -253,14 +253,26 @@ listenerMiddleware.startListening({
 })
 
 listenerMiddleware.startListening({
-  matcher: isAnyOf(
-    setDungeon.rejected,
-    loadRoute.rejected,
-    deleteRoute.rejected,
-    importRoute.rejected,
-  ),
+  matcher: isAnyOf(setDungeon.rejected, loadRoute.rejected, deleteRoute.rejected),
+  effect: async ({ error, type }, listenerApi) => {
+    console.error((error as Error).stack)
+    addToast(
+      listenerApi.dispatch as AppDispatch,
+      `Error during action ${type}: ${(error as Error).message}`,
+      'error',
+    )
+  },
+})
+
+listenerMiddleware.startListening({
+  matcher: isAnyOf(importRoute.rejected),
   effect: async ({ error }, listenerApi) => {
-    addToast(listenerApi.dispatch as AppDispatch, (error as Error).message, 'error')
+    console.error((error as Error).stack)
+    addToast(
+      listenerApi.dispatch as AppDispatch,
+      `Failed to import route: ${(error as Error).message}`,
+      'error',
+    )
   },
 })
 
