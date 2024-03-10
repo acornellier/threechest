@@ -190,7 +190,6 @@ const baseReducer = createSlice({
       (state, { payload: { deletedRouteId, route: newRoute } }) => {
         state.savedRoutes = state.savedRoutes.filter((route) => route.uid !== deletedRouteId)
         state.route = newRoute
-        console.warn('delete fulfilled, setting route', newRoute)
       },
     )
   },

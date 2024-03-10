@@ -20,17 +20,17 @@ export function ErrorPage({ errors }: Props) {
   const dispatch = useAppDispatch()
 
   const reloadPage = () => {
-    window.location.reload()
+    setTimeout(() => window.location.reload(), 500)
   }
 
   const createEmptyRoute = () => {
     dispatch(newRoute(route?.dungeonKey ?? 'eb'))
-    window.location.reload()
+    reloadPage()
   }
 
   const deleteRouteClick = () => {
     dispatch(deleteRoute())
-    window.location.reload()
+    reloadPage()
   }
 
   const copyErrors = async () => {

@@ -1,6 +1,6 @@
 import { memo } from 'react'
 import { Drawing as DrawingType } from '../../code/types.ts'
-import { Polygon } from 'react-leaflet'
+import { Polyline } from 'react-leaflet'
 
 interface Props {
   drawing: DrawingType
@@ -8,7 +8,7 @@ interface Props {
 
 function DrawingComponent({ drawing }: Props) {
   return (
-    <Polygon
+    <Polyline
       positions={drawing.positions}
       color={drawing.color}
       weight={drawing.weight}

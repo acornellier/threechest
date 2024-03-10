@@ -19,7 +19,7 @@ export type Note = {
 export type Drawing = {
   weight: number
   color: string
-  positions: Point[]
+  positions: Point[][]
 }
 
 export type Route = {

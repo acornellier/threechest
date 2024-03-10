@@ -5,6 +5,9 @@ import { getPullColor } from './colors.ts'
 
 const coordinateRatio = 2.185
 
+const equalPoints = (point1: Point, point2: Point) =>
+  point1[0] === point2[0] && point1[1] === point2[1]
+
 const mdtPointToRoute = (x: number, y: number): Point => [y / coordinateRatio, x / coordinateRatio]
 const pointToMdt = (point: Point): [number, number] => [
   point[1] * coordinateRatio,
@@ -12,29 +15,53 @@ const pointToMdt = (point: Point): [number, number] => [
 ]
 
 function mdtPolygonToDrawing(polygon: MdtPolygon): Drawing {
-  const points: Point[] = []
-  const chunkSize = 4
-  for (let i = 0; i < polygon.l.length; i += chunkSize) {
-    const [, , x, y] = polygon.l.slice(i, i + chunkSize) as [number, number, number, number]
-    points.push(mdtPointToRoute(x, y))
+  const convertedPoints: Point[] = []
+  for (let i = 0; i < polygon.l.length; i += 2) {
+    const [x, y] = polygon.l.slice(i, i + 2) as [number, number]
+    convertedPoints.push(mdtPointToRoute(x, y))
   }
+
+  const polylines: Point[][] = []
+  let prevPoint: Point | null = null
+  let curPolyline: Point[] = []
+  for (let i = 0; i < convertedPoints.length - 1; i += 2) {
+    const point1 = convertedPoints[i]!
+    const point2 = convertedPoints[i + 1]!
+
+    if (!prevPoint || !equalPoints(point1, prevPoint)) {
+      if (prevPoint) {
+        polylines.push(curPolyline)
+        curPolyline = []
+      }
+      curPolyline.push(point1)
+    }
+
+    curPolyline.push(point2)
+    prevPoint = point2
+  }
+
+  polylines.push(curPolyline)
 
   return {
     weight: polygon.d[0],
     color: '#' + polygon.d[4],
-    positions: points,
+    positions: polylines,
   }
 }
 
 function drawingToMdtPolygon(drawing: Drawing): MdtPolygon {
   const l: number[] = []
-  const convertedPoints = drawing.positions.map(pointToMdt)
+  const convertedLines = drawing.positions.map((line) => line.map(pointToMdt))
+
   let prevPoint: [number, number] | null = null
-  for (const point of convertedPoints) {
-    if (prevPoint) {
-      l.push(prevPoint[0], prevPoint[1], point[0], point[1])
+  for (const line of convertedLines) {
+    for (const point of line) {
+      if (prevPoint) {
+        l.push(prevPoint[0], prevPoint[1], point[0], point[1])
+      }
+      prevPoint = point
     }
-    prevPoint = point
+    prevPoint = null
   }
 
   return {
