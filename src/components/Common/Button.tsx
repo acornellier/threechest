@@ -6,6 +6,7 @@ export interface ButtonProps
   outline?: boolean
   short?: boolean
   twoDimensional?: boolean
+  justifyStart?: boolean
 }
 
 export function Button({
@@ -13,6 +14,7 @@ export function Button({
   outline,
   short,
   twoDimensional,
+  justifyStart,
   className,
   children,
   ...props
@@ -27,7 +29,14 @@ export function Button({
       {...props}
     >
       <div className="fancy-button-hover flex-1 z-[1]" />
-      <div className={`fancy-button-inner z-[2] ${innerClass ?? ''}`}>{children}</div>
+      <div
+        className={`fancy-button-inner z-[2] ${innerClass ?? ''}`}
+        style={{
+          ...(justifyStart ? { justifyContent: 'flex-start' } : {}),
+        }}
+      >
+        {children}
+      </div>
     </button>
   )
 }

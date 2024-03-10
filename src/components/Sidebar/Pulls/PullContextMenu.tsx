@@ -1,60 +1,49 @@
 import { Button } from '../../Common/Button.tsx'
 import { addPull, deletePull } from '../../../store/routesReducer.ts'
 import { useAppDispatch } from '../../../store/hooks.ts'
+import { ContextMenu, ContextMenuProps } from '../../Common/ContextMenu.tsx'
 
-export const minContextMenuWidth = 128
+export const minContextMenuWidth = 140
 
-export type RightClickedSettings = {
-  left: number
-  y: number
+interface Props extends Omit<ContextMenuProps, 'children'> {
   pullIndex: number
 }
 
-interface Props {
-  rightClickedSettings: RightClickedSettings
-  onClose: () => void
-}
-
-export function PullContextMenu({ rightClickedSettings, onClose }: Props) {
+export function PullContextMenu({ position, pullIndex, onClose }: Props) {
   const dispatch = useAppDispatch()
 
   return (
-    <div
-      className="fixed bg-gray-900 z-[9999] p-2 rounded-md min-w-[128]"
-      style={{
-        top: rightClickedSettings.y,
-        left: rightClickedSettings.left,
-      }}
-    >
-      <div className="flex flex-col gap-2">
-        <Button
-          short
-          onClick={() => {
-            dispatch(addPull(rightClickedSettings.pullIndex))
-            onClose()
-          }}
-        >
-          Insert before
-        </Button>
-        <Button
-          short
-          onClick={() => {
-            dispatch(addPull(rightClickedSettings.pullIndex + 1))
-            onClose()
-          }}
-        >
-          Insert after
-        </Button>
-        <Button
-          short
-          onClick={() => {
-            dispatch(deletePull({ pullIndex: rightClickedSettings.pullIndex }))
-            onClose()
-          }}
-        >
-          Delete
-        </Button>
-      </div>
-    </div>
+    <ContextMenu position={position} onClose={onClose}>
+      <Button
+        justifyStart
+        short
+        onClick={() => {
+          dispatch(addPull(pullIndex))
+          onClose()
+        }}
+      >
+        Insert before
+      </Button>
+      <Button
+        justifyStart
+        short
+        onClick={() => {
+          dispatch(addPull(pullIndex + 1))
+          onClose()
+        }}
+      >
+        Insert after
+      </Button>
+      <Button
+        justifyStart
+        short
+        onClick={() => {
+          dispatch(deletePull({ pullIndex: pullIndex }))
+          onClose()
+        }}
+      >
+        Delete
+      </Button>
+    </ContextMenu>
   )
 }
