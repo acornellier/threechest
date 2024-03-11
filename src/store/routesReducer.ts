@@ -1,4 +1,4 @@
-﻿import {
+import {
   createAsyncThunk,
   createListenerMiddleware,
   createSlice,
@@ -229,7 +229,14 @@ const undoableReducer = undoable(baseReducer.reducer, {
 })
 
 const persistedReducer = persistReducer(
-  { key: 'routesReducer', storage: localForage },
+  {
+    key: 'routesReducer',
+    storage: localForage,
+    serialize: false,
+    // @ts-ignore
+    deserialize: false,
+    debug: true,
+  },
   undoableReducer,
 )
 
