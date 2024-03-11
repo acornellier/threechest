@@ -16,11 +16,16 @@ import { riseSpells } from './spells/riseSpells.ts'
 import { tottSpells } from './spells/tottSpells.ts'
 import { wcmSpells } from './spells/wcmSpells.ts'
 
+export const mapHeight = 256
+export const mapWidth = 384
+
 export const ad: Dungeon = {
   name: "Atal'Dazar",
   key: 'ad',
-  defaultZoom: 2.2,
-  defaultOffset: [0, 0],
+  defaultBounds: [
+    [0, 110],
+    [-240, 330],
+  ],
   mdt: adMdtData as MdtDungeon,
   spells: adSpells,
   icon: 'achievement_dungeon_ataldazar',
@@ -29,8 +34,6 @@ export const ad: Dungeon = {
 export const brh: Dungeon = {
   name: 'Black Rook Hold',
   key: 'brh',
-  defaultZoom: 2,
-  defaultOffset: [0, -30],
   mdt: brhMdtData as MdtDungeon,
   spells: brhSpells,
   icon: 'achievement_dungeon_blackrookhold',
@@ -39,38 +42,46 @@ export const brh: Dungeon = {
 export const dht: Dungeon = {
   name: 'Darkheart Thicket',
   key: 'dht',
-  defaultZoom: 2.1,
-  defaultOffset: [0, -40],
+  defaultBounds: [
+    [-20, 46],
+    [-242, 346],
+  ],
   mdt: dhtMdtData as MdtDungeon,
   spells: dhtSpells,
   icon: 'achievement_dungeon_darkheartthicket',
 }
 
-export const fall: Dungeon = {
-  name: 'DOTI: Fall of Galakrond',
-  key: 'fall',
-  defaultZoom: 2,
-  defaultOffset: [0, 0],
-  mdt: fallMdtData as MdtDungeon,
-  spells: fallSpells,
-  icon: 'achievement_dungeon_dawnoftheinfinite',
-}
-
 export const eb: Dungeon = {
   name: 'Everbloom',
   key: 'eb',
-  defaultZoom: 2.7,
-  defaultOffset: [25, 10],
+  defaultBounds: [
+    [-40, 145],
+    [-180, 300],
+  ],
   mdt: ebMdtData as MdtDungeon,
   spells: ebSpells as Spells,
   icon: 'achievement_dungeon_everbloom',
 }
 
+export const fall: Dungeon = {
+  name: 'DOTI: Fall of Galakrond',
+  key: 'fall',
+  defaultBounds: [
+    [-10, 50],
+    [-mapHeight, 350],
+  ],
+  mdt: fallMdtData as MdtDungeon,
+  spells: fallSpells,
+  icon: 'achievement_dungeon_dawnoftheinfinite',
+}
+
 export const rise: Dungeon = {
   name: "DOTI: Murozond's Rise",
   key: 'rise',
-  defaultZoom: 1.9,
-  defaultOffset: [0, -50],
+  defaultBounds: [
+    [-10, 50],
+    [-mapHeight, 350],
+  ],
   mdt: riseMdtData as MdtDungeon,
   spells: riseSpells,
   icon: 'achievement_dungeon_dawnoftheinfinite',
@@ -79,8 +90,10 @@ export const rise: Dungeon = {
 export const tott: Dungeon = {
   name: 'Throne of the Tides',
   key: 'tott',
-  defaultZoom: 2,
-  defaultOffset: [0, 0],
+  defaultBounds: [
+    [-20, 50],
+    [-230, 340],
+  ],
   mdt: tottMdtData as MdtDungeon,
   spells: tottSpells,
   icon: 'achievement_dungeon_throne-of-the-tides',
@@ -89,8 +102,6 @@ export const tott: Dungeon = {
 export const wcm: Dungeon = {
   name: 'Waycrest Manor',
   key: 'wcm',
-  defaultZoom: 2,
-  defaultOffset: [0, 0],
   mdt: wcmMdtData as MdtDungeon,
   spells: wcmSpells,
   icon: 'achievement_dungeon_waycrestmannor',

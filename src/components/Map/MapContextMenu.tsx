@@ -1,15 +1,23 @@
 import { useMap } from 'react-leaflet'
 import { useContextMenu } from '../Common/useContextMenu.ts'
 import { useCallback, useEffect, useState } from 'react'
-import { LatLng, LeafletMouseEvent } from 'leaflet'
+import { LatLng, LatLngBoundsExpression, LeafletMouseEvent } from 'leaflet'
 import { ContextMenu } from '../Common/ContextMenu.tsx'
 import { Button } from '../Common/Button.tsx'
 import { useAppDispatch } from '../../store/hooks.ts'
 import { addNote } from '../../store/routesReducer.ts'
 
+const height = 256
+const width = 384
+const bounds: LatLngBoundsExpression = [
+  [0, 0],
+  [-height, width],
+]
+
 export function MapContextMenu() {
   const dispatch = useAppDispatch()
   const map = useMap()
+
   const { contextMenuPosition, onRightClick, onClose } = useContextMenu()
   const [leafletPos, setLeafletPos] = useState<LatLng | null>(null)
 

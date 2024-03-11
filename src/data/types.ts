@@ -1,3 +1,5 @@
+import { LatLngTuple } from 'leaflet'
+
 export type Point = [number, number]
 
 export type MdtDungeon = {
@@ -8,8 +10,7 @@ export type MdtDungeon = {
 
 export type Dungeon = {
   name: string
-  defaultZoom: number
-  defaultOffset: [number, number]
+  defaultBounds?: [LatLngTuple, LatLngTuple]
   key: DungeonKey
   mdt: MdtDungeon
   spells: Record<number, Spell[]>
