@@ -11,12 +11,12 @@ import { mdtRouteToRoute } from '../util/mdtUtil.ts'
 import undoable, { ActionCreators, combineFilters, excludeAction, includeAction } from 'redux-undo'
 import { addPullFunc, toggleSpawnAction } from './actions.ts'
 import * as localforage from 'localforage'
-import * as localForage from 'localforage'
 import { AppDispatch, RootState } from './store.ts'
 import { importRoute } from './importReducer.ts'
 import { persistReducer } from 'redux-persist'
 import { REHYDRATE } from 'redux-persist/es/constants'
 import { addToast } from './toastReducer.ts'
+import { indexedDbStorage } from './storage.ts'
 
 export interface State {
   route: Route
@@ -231,7 +231,7 @@ const undoableReducer = undoable(baseReducer.reducer, {
 const persistedReducer = persistReducer(
   {
     key: 'routesReducer',
-    storage: localForage,
+    storage: indexedDbStorage,
     serialize: false,
     // @ts-ignore
     deserialize: false,
