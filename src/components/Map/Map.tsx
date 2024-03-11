@@ -39,7 +39,6 @@ export function Map() {
         zoomSnap={0}
         zoomControl={false}
         scrollWheelZoom={false}
-        /* @ts-ignore */
         smoothWheelZoom={true}
         smoothSensitivity={2}
       >

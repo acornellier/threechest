@@ -2,7 +2,7 @@ import { Pull, Route } from '../util/types.ts'
 import { MobSpawn } from '../data/types.ts'
 import { dungeonsByKey } from '../data/dungeons.ts'
 import { mobSpawnsEqual } from '../util/mobSpawns.ts'
-import { State } from './routesReducer.ts'
+import { RouteState } from './routesReducer.ts'
 
 const findSelectedPull = (route: Route, mobSpawn: MobSpawn) =>
   route.pulls.findIndex((pull) =>
@@ -63,7 +63,7 @@ export function toggleSpawnAction(
   }
 }
 
-export function addPullFunc(state: State, newPullIndex: number = state.route.pulls.length) {
+export function addPullFunc(state: RouteState, newPullIndex: number = state.route.pulls.length) {
   const maxId = state.route.pulls.reduce<number>((acc, pull) => (pull.id > acc ? pull.id : acc), 0)
   const newPull = { id: maxId + 1, mobSpawns: [] }
   state.route.pulls.splice(newPullIndex, 0, newPull)

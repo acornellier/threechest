@@ -1,7 +1,7 @@
 ﻿import { AppDispatch, RootState } from './store.ts'
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux'
 import { dungeonsByKey } from '../data/dungeons.ts'
-import { State } from './routesReducer.ts'
+import { RouteState } from './routesReducer.ts'
 import { DungeonKey } from '../data/types.ts'
 import { createSelector } from '@reduxjs/toolkit'
 import { HoverState } from './hoverReducer.ts'
@@ -10,7 +10,7 @@ export const useAppDispatch: () => AppDispatch = useDispatch
 
 export const useRootSelector: TypedUseSelectorHook<RootState> = useSelector
 
-export const useRoutesSelector = <T>(selector: (state: State) => T): T =>
+export const useRoutesSelector = <T>(selector: (state: RouteState) => T): T =>
   useRootSelector((state) => selector(state.routes.present))
 
 export const useHoverSelector = <T>(selector: (state: HoverState) => T): T =>
@@ -20,7 +20,7 @@ export const useHoverSelector = <T>(selector: (state: HoverState) => T): T =>
 export const useRoute = () => useRoutesSelector((state) => state.route)
 export const useSavedRoutes = () => useRoutesSelector((state) => state.savedRoutes)
 
-const selectAllRoutes = (state: State) => state.savedRoutes
+const selectAllRoutes = (state: RouteState) => state.savedRoutes
 const selectDungeonRoutes = createSelector(
   [selectAllRoutes, (_, dungeonKey: DungeonKey) => dungeonKey],
   (allRoutes, dungeonKey) => allRoutes.filter((route) => route.dungeonKey === dungeonKey),

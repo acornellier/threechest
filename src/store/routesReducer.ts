@@ -17,8 +17,9 @@ import { persistReducer } from 'redux-persist'
 import { REHYDRATE } from 'redux-persist/es/constants'
 import { addToast } from './toastReducer.ts'
 import { indexedDbStorage } from './storage.ts'
+import { routeMigrate, routePersistVersion } from './routeMigrations.ts'
 
-export interface State {
+export interface RouteState {
   route: Route
   savedRoutes: SavedRoute[]
 }
@@ -93,7 +94,7 @@ export const deleteRoute = createAsyncThunk('routes/deleteRoute', async (_, thun
   return { deletedRouteId: routeId, route }
 })
 
-const initialState: State = {
+export const initialState: RouteState = {
   route: makeEmptyRoute('eb', []),
   savedRoutes: [],
 }
@@ -232,10 +233,10 @@ const persistedReducer = persistReducer(
   {
     key: 'routesReducer',
     storage: indexedDbStorage,
+    version: routePersistVersion,
+    migrate: routeMigrate,
     serialize: false,
-    // @ts-ignore
     deserialize: false,
-    debug: true,
   },
   undoableReducer,
 )

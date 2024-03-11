@@ -1,0 +1,38 @@
+diff --git a/node_modules/redux-persist/types/createMigrate.d.ts b/node_modules/redux-persist/types/createMigrate.d.ts
+index 2c1329d..2e4cd57 100644
+--- a/node_modules/redux-persist/types/createMigrate.d.ts
++++ b/node_modules/redux-persist/types/createMigrate.d.ts
+@@ -11,7 +11,7 @@ declare module "redux-persist/es/createMigrate" {
+    * @param config migration configuration
+    */
+   // tslint:disable-next-line: strict-export-declare-modifiers
+-  export default function createMigrate(migrations: MigrationManifest, config?: MigrationConfig): PersistMigrate;
++  export default function createMigrate<T extends {}>(migrations: MigrationManifest<T>, config?: MigrationConfig): PersistMigrate;
+ }
+ 
+ declare module "redux-persist/lib/createMigrate" {
+diff --git a/node_modules/redux-persist/types/types.d.ts b/node_modules/redux-persist/types/types.d.ts
+index b3733bc..a161031 100644
+--- a/node_modules/redux-persist/types/types.d.ts
++++ b/node_modules/redux-persist/types/types.d.ts
+@@ -43,6 +43,7 @@ declare module "redux-persist/es/types" {
+     getStoredState?: (config: PersistConfig<S, RS, HSS, ESS>) => Promise<PersistedState>;
+     debug?: boolean;
+     serialize?: boolean;
++    deserialize?: boolean;
+     timeout?: number;
+     writeFailHandler?: (err: Error) => void;
+   }
+@@ -72,9 +73,9 @@ declare module "redux-persist/es/types" {
+     removeItem(key: string): Promise<void>;
+   }
+ 
+-  interface MigrationManifest {
+-    [key: string]: (state: PersistedState) => PersistedState;
+-  }
++  type MigrationFunction<T extends {}, U extends {} = T> = T extends infer V ? U extends infer W ? (state: V) => W | Promise<W> : never : never;
++
++  type MigrationManifest<T extends {}> = Record<string, MigrationFunction<T>>;
+ 
+   /**
+    * @desc

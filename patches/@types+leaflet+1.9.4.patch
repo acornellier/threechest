@@ -1,0 +1,15 @@
+diff --git a/node_modules/@types/leaflet/index.d.ts b/node_modules/@types/leaflet/index.d.ts
+index fd6043a..d48f4f7 100644
+--- a/node_modules/@types/leaflet/index.d.ts
++++ b/node_modules/@types/leaflet/index.d.ts
+@@ -2503,6 +2503,10 @@ export interface MapOptions {
+     tapTolerance?: number | undefined;
+     touchZoom?: Zoom | undefined;
+     bounceAtZoomLimits?: boolean | undefined;
++
++    // SmoothWheelZoom
++    smoothWheelZoom?: boolean
++    smoothSensitivity?: number
+ }
+ 
+ export type ControlPosition = "topleft" | "topright" | "bottomleft" | "bottomright";
