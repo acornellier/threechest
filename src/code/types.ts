@@ -51,17 +51,25 @@ export type MdtNote = {
 }
 
 export type MdtPolygon = {
-  // [0: weight, 1: 1, 2: floor, 3: true, 4: color, 5: -8, 6: true]
+  // [0: weight, 1: 1, 2: floor, 3: true, 4: color, 5: -8]
   d: [number, 1, number, true, string, -8, true]
 
   // [prevX, prevY, x, y]
-  l: number[]
-
-  // rotation in radians, left is 0
-  t?: [number]
+  l: string[]
 }
 
-export type MdtObject = MdtNote | MdtPolygon
+export type MdtArrow = {
+  // [0: weight, 1: 1, 2: floor, 3: true, 4: color, 5: -8, 6: true]
+  d: [number, 1, number, true, string, -8]
+
+  // [prevX, prevY, x, y]
+  l: string[]
+
+  // rotation in radians, left is 0
+  t: [number]
+}
+
+export type MdtObject = MdtNote | MdtPolygon | MdtArrow
 
 export type MdtRoute = {
   text: string

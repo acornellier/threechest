@@ -1,8 +1,6 @@
-﻿- Fix export
-- Instructions page, keyboard shortcut hints
+﻿- Instructions page, keyboard shortcut hints
 - Drawing on map
 - Blurry mob icons compared to guru
-- Figure out how to get npc portaits
 - Always overwrite imported route option
 - One context menu at a time
 
@@ -16,3 +14,4 @@ Questionable, maybe post release
 - Mob hover stuck
 - Drag a rectangle to select multiple groups
 - Sample routes
+- Figure out how to get npc portaits
