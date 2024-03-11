@@ -71,7 +71,6 @@ export const getLastDungeonRoute = async (dungeonKey: DungeonKey, savedRoutes: S
   if (dungeonRoutes.length) {
     return await loadRouteFromStorage(dungeonRoutes[dungeonRoutes.length - 1]!.uid)
   } else {
-    console.warn('makeEmptyRoute')
     return makeEmptyRoute(dungeonKey, savedRoutes)
   }
 }

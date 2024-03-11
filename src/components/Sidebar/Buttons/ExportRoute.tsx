@@ -3,7 +3,6 @@ import { useAppDispatch, useRoute } from '../../../store/hooks.ts'
 import { exportRouteApi } from '../../../api/exportRouteApi.ts'
 import { addToast } from '../../../store/toastReducer.ts'
 import { ArrowDownTrayIcon } from '@heroicons/react/24/outline'
-import { routeToMdtRoute } from '../../../util/mdtUtil.ts'
 
 export function ExportRoute() {
   const dispatch = useAppDispatch()
@@ -11,7 +10,6 @@ export function ExportRoute() {
 
   const handleClick = async () => {
     try {
-      console.log(routeToMdtRoute(route))
       const str = await exportRouteApi(route)
       addToast(dispatch, 'MDT string copied to clipboard!')
       return navigator.clipboard.writeText(str)
