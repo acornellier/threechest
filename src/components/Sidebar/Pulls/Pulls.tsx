@@ -70,7 +70,7 @@ export function Pulls() {
 
   let pullIndex = 0
   return (
-    <Panel className="overflow-auto select-none">
+    <Panel noRightBorder className="overflow-auto select-none">
       <div className="relative flex justify-center mx-2 rounded-sm font-bold border border-gray-400">
         <div
           className="gritty absolute left-0 max-w-full h-full z-[-1]"

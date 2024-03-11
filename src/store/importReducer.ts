@@ -19,7 +19,7 @@ export const importRoute = createAsyncThunk(
     const state = thunkAPI.getState() as RootState
     const savedRoute = state.routes.present.savedRoutes.find((route) => route.uid === mdt.uid)
     // TODO: fix this
-    if (false && savedRoute) {
+    if (savedRoute) {
       thunkAPI.dispatch(setImportingRoute(mdt))
     } else {
       thunkAPI.dispatch(setRouteFromMdt({ mdtRoute: mdt, copy: false }))

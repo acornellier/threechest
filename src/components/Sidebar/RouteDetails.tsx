@@ -11,7 +11,7 @@ export function RouteDetails() {
   const [isRenaming, setRenaming] = useState(false)
 
   return (
-    <Panel>
+    <Panel noRightBorder>
       <div className="flex gap-2">
         {!isRenaming && <RouteDropdown />}
         <RenameRoute isRenaming={isRenaming} setRenaming={setRenaming} />

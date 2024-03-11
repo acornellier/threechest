@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 $fancy-red: #7f1d1d;
-$fancy-blue: #24293f;
+$fancy-blue: #131a34;
 
 :root {
   background-color: #242424;
@@ -220,8 +220,8 @@ input.fancy {
       background: radial-gradient(#de1313, transparent);
     }
 
-    &.outline-button:not(:active) .fancy-button-hover {
-      background: radial-gradient(rgba(222, 19, 19, 0.4), transparent);
+    &.outline-button .fancy-button-hover {
+      background: radial-gradient(rgba(217, 150, 150, 0.4), transparent);
     }
 
     &.two-d {
