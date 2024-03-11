@@ -1,8 +1,8 @@
 import { Mob, Spawn } from '../../data/types.ts'
 import { Tooltip } from 'react-leaflet'
 import { useDungeon } from '../../store/hooks.ts'
-import { mobCountPercentStr, roundTo } from '../../code/util.ts'
-import { rgbToHex } from '../../code/colors.ts'
+import { mobCountPercentStr, roundTo } from '../../util/numbers.ts'
+import { rgbToHex } from '../../util/colors.ts'
 
 interface Props {
   mob: Mob

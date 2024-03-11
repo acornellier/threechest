@@ -1,4 +1,4 @@
-﻿import { MdtRoute } from '../code/types.ts'
+﻿import { MdtRoute } from '../util/types.ts'
 
 const importUrl =
   process.env.NODE_ENV === 'development'

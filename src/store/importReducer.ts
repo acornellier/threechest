@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { MdtRoute } from '../code/types.ts'
+import { MdtRoute } from '../util/types.ts'
 import { importRouteApi } from '../api/importRouteApi.ts'
 import { RootState } from './store.ts'
 import { setRouteFromMdt } from './routesReducer.ts'

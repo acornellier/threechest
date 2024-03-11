@@ -1,5 +1,5 @@
 import { memo } from 'react'
-import { Drawing as DrawingType } from '../../code/types.ts'
+import { Drawing as DrawingType } from '../../util/types.ts'
 import { Polygon, Polyline } from 'react-leaflet'
 import { Point } from '../../data/types.ts'
 

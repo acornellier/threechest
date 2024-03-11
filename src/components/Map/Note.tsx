@@ -1,5 +1,5 @@
 import { memo, useEffect, useRef, useState } from 'react'
-import { Note as NoteType } from '../../code/types.ts'
+import { Note as NoteType } from '../../util/types.ts'
 import { Marker, Popup, Tooltip } from 'react-leaflet'
 import { divIcon, Marker as LeafletMarker } from 'leaflet'
 import { renderToString } from 'react-dom/server'
@@ -8,7 +8,7 @@ import { useContextMenu } from '../Common/useContextMenu.ts'
 import { Button } from '../Common/Button.tsx'
 import { deleteNote, editNote } from '../../store/routesReducer.ts'
 import { ContextMenu } from '../Common/ContextMenu.tsx'
-import { latLngToPoint } from '../../code/map.ts'
+import { latLngToPoint } from '../../util/map.ts'
 
 interface Props {
   note: NoteType

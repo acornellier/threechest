@@ -1,7 +1,7 @@
 import type { PayloadAction } from '@reduxjs/toolkit'
 import { createSlice } from '@reduxjs/toolkit'
 import { MobSpawn } from '../data/types.ts'
-import { mobSpawnsEqual } from '../code/mobSpawns.ts'
+import { mobSpawnsEqual } from '../util/mobSpawns.ts'
 
 export interface HoverState {
   hoveredPull: number | null

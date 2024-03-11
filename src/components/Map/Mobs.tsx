@@ -1,6 +1,6 @@
 import { useMap, useMapEvent } from 'react-leaflet'
 import { useState } from 'react'
-import { mapIconScaling } from '../../code/map.ts'
+import { mapIconScaling } from '../../util/map.ts'
 import { useDungeon } from '../../store/hooks.ts'
 import { MobSpawn } from './MobSpawn.tsx'
 

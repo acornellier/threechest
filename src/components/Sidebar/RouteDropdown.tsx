@@ -1,7 +1,7 @@
 ﻿import { useMemo } from 'react'
 import { useAppDispatch, useDungeonRoutes, useRoute } from '../../store/hooks.ts'
 import { loadRoute } from '../../store/routesReducer.ts'
-import { SavedRoute } from '../../code/types.ts'
+import { SavedRoute } from '../../util/types.ts'
 import { Dropdown, DropdownOption } from '../Common/Dropdown.tsx'
 
 const routeToOption = (route: SavedRoute): DropdownOption => ({

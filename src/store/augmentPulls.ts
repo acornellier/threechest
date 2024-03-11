@@ -1,4 +1,4 @@
-import { Pull, PullDetailed } from '../code/types.ts'
+import { Pull, PullDetailed } from '../util/types.ts'
 
 export function augmentPulls(pulls: Pull[]): PullDetailed[] {
   const pullsDetailed: PullDetailed[] = []
