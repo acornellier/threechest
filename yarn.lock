@@ -2839,10 +2839,10 @@ node-releases@^2.0.14:
   resolved "https://registry.yarnpkg.com/node-releases/-/node-releases-2.0.14.tgz#2ffb053bceb8b2be8495ece1ab6ce600c4461b0b"
   integrity sha512-y10wOWt8yZpqXmOgRo77WaHEmhYQYGNA6y421PKsKYWEK8aW+cqAphborZDhqfyKrbZEN92CN1X2KbafY2s7Yw==
 
-node-weakauras-parser@^3.2.2:
-  version "3.2.2"
-  resolved "https://registry.yarnpkg.com/node-weakauras-parser/-/node-weakauras-parser-3.2.2.tgz#404b13ac2389b029166289a209abc8b2bf0cbffa"
-  integrity sha512-sAeiUsfSTWNk4vfYctSgEY+aG1TFrn+N5LbumM6KxdJ5+uriiuCulO7b9F+1oUArVUNxUBtpoPjioWWotXvHpA==
+node-wow-lua-codec@4.0.1:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/node-wow-lua-codec/-/node-wow-lua-codec-4.0.1.tgz#deabe3255b66eca2d2be5d19d69139c9b9e4054d"
+  integrity sha512-zUGKFkivSS5pqsqD5Lc+AXIPd5Iz74JODpsDRk69zsSPhxPNgdo35LcgClaZjwxYdXnxSQ2LRbKGuSg9J07gCA==
   dependencies:
     "@mapbox/node-pre-gyp" "^1.0"
     cargo-cp-artifact "^0.1"

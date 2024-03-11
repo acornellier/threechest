@@ -1,4 +1,4 @@
-﻿import parser from 'node-weakauras-parser'
+﻿import parser from 'node-wow-lua-codec'
 
 export class DecodingError extends Error {
   constructor(message) {
