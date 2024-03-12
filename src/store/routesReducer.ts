@@ -1,4 +1,4 @@
-import {
+﻿import {
   createAsyncThunk,
   createListenerMiddleware,
   createSlice,
@@ -253,6 +253,7 @@ export const {
   setName,
   addPull,
   appendPull,
+  prependPull,
   deletePull,
   selectPull,
   selectPullRelative,

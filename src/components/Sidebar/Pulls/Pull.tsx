@@ -64,9 +64,9 @@ export function Pull({ pullIndex, pull, ghost, onRightClick }: Props) {
         />
         {isSelectedPull && (
           <div
-            className="absolute w-full h-full border-[1.5px] rounded-sm"
+            className="absolute w-full h-full border-2 rounded-sm"
             style={{
-              borderColor: darkenColor(pullColor, 75),
+              borderColor: lightenColor(pullColor, 90),
               boxShadow: `inset 0 0 12px 2px ${lightenColor(pullColor, 100)}`,
             }}
           />

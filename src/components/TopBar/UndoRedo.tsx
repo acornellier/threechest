@@ -4,9 +4,7 @@ import { ActionCreators } from 'redux-undo'
 import { useCallback } from 'react'
 import { useKeyPress } from '../../hooks/useKeyPress.ts'
 import { ArrowUturnLeftIcon, ArrowUturnRightIcon } from '@heroicons/react/24/outline'
-
-const undoModifiers = { ctrl: true } as const
-const redoModifiers = { ctrl: true, shift: true } as const
+import { shortcuts } from '../../data/shortcuts.ts'
 
 export function UndoRedo() {
   const dispatch = useAppDispatch()
@@ -22,8 +20,8 @@ export function UndoRedo() {
     dispatch(ActionCreators.redo())
   }, [dispatch])
 
-  useKeyPress('z', undo, undoModifiers)
-  useKeyPress('z', redo, redoModifiers)
+  useKeyPress(shortcuts.undo, undo)
+  useKeyPress(shortcuts.redo, redo)
 
   return (
     <div className="flex items-start gap-2">
