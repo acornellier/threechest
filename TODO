@@ -1,7 +1,5 @@
 ﻿- Instructions page, keyboard shortcut hints
-- Drawing on map
 - Blurry mob icons compared to guru
-- Always overwrite imported route option
 
 Before release
 - Donate button
@@ -13,4 +11,5 @@ Questionable, maybe post release
 - Mob hover stuck
 - Drag a rectangle to select multiple groups
 - Sample routes
+- Drawing on map
 - Figure out how to get npc portaits
