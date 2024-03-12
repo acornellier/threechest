@@ -18,13 +18,14 @@ import { REHYDRATE } from 'redux-persist/es/constants'
 import { addToast } from './toastReducer.ts'
 import { indexedDbStorage } from './storage.ts'
 import { routeMigrate, routePersistVersion } from './routeMigrations.ts'
+import { joinMobSpawns } from '../util/mobSpawns.ts'
 
 export interface RouteState {
   route: Route
   savedRoutes: SavedRoute[]
 }
 
-const emptyPull = { id: 0, mobSpawns: [] }
+const emptyPull = { id: 0, mobSpawns: [], tempMobSpawns: [] }
 
 const newRouteUid = () => Math.random().toString(36).slice(2)
 
@@ -150,6 +151,10 @@ const baseReducer = createSlice({
     appendPull(state) {
       addPullFunc(state, state.route.selectedPull + 1)
     },
+    clearPull(state, { payload: pullIndex }: PayloadAction<number | undefined>) {
+      const pull = state.route.pulls[pullIndex ?? state.route.selectedPull]
+      if (pull) pull.mobSpawns = []
+    },
     deletePull(
       state,
       {
@@ -177,7 +182,14 @@ const baseReducer = createSlice({
       state.route.pulls = toggleSpawnAction(state.route, payload)
     },
     boxSelectSpawns(state, { payload }: PayloadAction<MobSpawn[]>) {
-      state.route = boxSelectSpawnsAction(state.route, payload)
+      boxSelectSpawnsAction(state.route, payload)
+    },
+    commitBoxSelect(state) {
+      const pull = state.route.pulls[state.route.selectedPull]
+      if (!pull) return
+
+      pull.mobSpawns = joinMobSpawns(pull.mobSpawns, pull.tempMobSpawns)
+      pull.tempMobSpawns = []
     },
     setPulls(state, { payload }: PayloadAction<Pull[]>) {
       state.route.pulls = payload
@@ -225,9 +237,10 @@ const undoableReducer = undoable(baseReducer.reducer, {
       baseReducer.actions.addPull.type,
       baseReducer.actions.prependPull.type,
       baseReducer.actions.appendPull.type,
+      baseReducer.actions.clearPull.type,
       baseReducer.actions.deletePull.type,
       baseReducer.actions.toggleSpawn.type,
-      baseReducer.actions.boxSelectSpawns.type,
+      baseReducer.actions.commitBoxSelect.type,
       baseReducer.actions.setPulls.type,
       // baseReducer.actions.addNote.type, // intentionally leave out for justAdded hack
       baseReducer.actions.editNote.type,
@@ -261,11 +274,13 @@ export const {
   addPull,
   appendPull,
   prependPull,
+  clearPull,
   deletePull,
   selectPull,
   selectPullRelative,
   toggleSpawn,
   boxSelectSpawns,
+  commitBoxSelect,
   setPulls,
   addNote,
   editNote,

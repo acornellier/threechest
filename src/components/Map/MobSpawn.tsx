@@ -3,7 +3,7 @@ import { Marker } from 'react-leaflet'
 import { divIcon, type LeafletEventHandlerFnMap } from 'leaflet'
 import { renderToString } from 'react-dom/server'
 import { memo, useMemo } from 'react'
-import { mobScale, mobSpawnsEqual } from '../../util/mobSpawns.ts'
+import { mobScale, mobSpawnsEqual, pullContainsMobSpawn } from '../../util/mobSpawns.ts'
 import { useAppDispatch, useHoverSelector, useRoute } from '../../store/hooks.ts'
 import { toggleSpawn } from '../../store/routesReducer.ts'
 import { Patrol } from './Patrol.tsx'
@@ -97,9 +97,7 @@ export function MobSpawn({ iconScaling, mob, spawn }: MobSpawnProps) {
       hoveredMobSpawn.spawn.group === spawn.group)
 
   const matchingPullIndex = useMemo(() => {
-    const index = route.pulls.findIndex((pull) =>
-      pull.mobSpawns.some((mobSpawn) => mobSpawnsEqual(mobSpawn, { mob, spawn })),
-    )
+    const index = route.pulls.findIndex((pull) => pullContainsMobSpawn(pull, { mob, spawn }))
     return index !== -1 ? index : null
   }, [route.pulls, mob, spawn])
 

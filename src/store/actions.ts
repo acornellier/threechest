@@ -65,7 +65,7 @@ export function toggleSpawnAction(
 
 export function boxSelectSpawnsAction(route: Route, mobSpawnsToAdd: MobSpawn[]) {
   const pull = route.pulls[route.selectedPull]
-  if (!pull) return route
+  if (!pull) return
 
   const missingSpawns = mobSpawnsToAdd.filter(
     (mobSpawnToAdd) =>
@@ -74,21 +74,22 @@ export function boxSelectSpawnsAction(route: Route, mobSpawnsToAdd: MobSpawn[]) 
       ),
   )
 
-  if (missingSpawns.length) {
-    pull.mobSpawns.push(...missingSpawns)
-  } else {
-    pull.mobSpawns = pull.mobSpawns.filter(
-      (mobSpawn) =>
-        !mobSpawnsToAdd.some((mobSpawnToAdd) => mobSpawnsEqual(mobSpawn, mobSpawnToAdd)),
+  if (
+    pull.tempMobSpawns !== undefined &&
+    missingSpawns.length === pull.tempMobSpawns.length &&
+    missingSpawns.every((missingSpawn, idx) =>
+      mobSpawnsEqual(pull.tempMobSpawns[idx]!, missingSpawn),
     )
+  ) {
+    return
   }
 
-  return route
+  pull.tempMobSpawns = missingSpawns
 }
 
 export function addPullFunc(state: RouteState, newPullIndex: number = state.route.pulls.length) {
   const maxId = state.route.pulls.reduce<number>((acc, pull) => (pull.id > acc ? pull.id : acc), 0)
-  const newPull = { id: maxId + 1, mobSpawns: [] }
+  const newPull: Pull = { id: maxId + 1, mobSpawns: [], tempMobSpawns: [] }
   state.route.pulls.splice(newPullIndex, 0, newPull)
   state.route.selectedPull = Math.max(0, Math.min(newPullIndex, state.route.pulls.length - 1))
 }

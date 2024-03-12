@@ -27,14 +27,14 @@ export function Pull({ pullIndex, pull, ghost, onRightClick }: Props) {
   const isSelectedPull = pullIndex === route.selectedPull
 
   const sortedCounts = useMemo(() => {
-    const mobCounts = pull.mobSpawns.reduce<MobCount>((acc, { mob }) => {
+    const mobCounts = pull.mobSpawns.concat(pull.tempMobSpawns).reduce<MobCount>((acc, { mob }) => {
       acc[mob.id] ??= { mob, count: 0 }
       acc[mob.id]!.count += 1
       return acc
     }, {})
 
     return Object.values(mobCounts).sort((a, b) => b.mob.count - a.mob.count)
-  }, [pull.mobSpawns])
+  }, [pull])
 
   useEffect(() => {
     if (isSelectedPull) {

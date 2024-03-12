@@ -101,7 +101,7 @@ export function mdtRouteToRoute(mdtRoute: MdtRoute): Route {
     uid: mdtRoute.uid,
     pulls: mdtRoute.value.pulls.map((mdtPull, index) => ({
       id: index,
-      color: mdtPull.color.startsWith('#') ? mdtPull.color : `#${mdtPull.color}`,
+      tempMobSpawns: [],
       mobSpawns: Object.entries(mdtPull)
         .flatMap(([enemyIndexOrCount, spawnIndexes]) => {
           if (!Array.isArray(spawnIndexes)) return null

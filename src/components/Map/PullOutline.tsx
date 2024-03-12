@@ -1,9 +1,8 @@
-﻿import { Pull } from '../../util/types.ts'
-import { Circle, Polygon, Tooltip } from 'react-leaflet'
+﻿import { Circle, Polygon, Tooltip } from 'react-leaflet'
 import { memo, useEffect, useMemo, useState } from 'react'
 import { useAppDispatch, useRoutesSelector } from '../../store/hooks.ts'
 import { getPullColor } from '../../util/colors.ts'
-import { Point } from '../../data/types.ts'
+import { MobSpawn, Point } from '../../data/types.ts'
 import { expandPolygon, iconSizeMagicScaling, makeConvexHull } from '../../util/hull.ts'
 import { mobScale } from '../../util/mobSpawns.ts'
 import { selectPull } from '../../store/routesReducer.ts'
@@ -20,11 +19,11 @@ interface Outline {
   circle?: { center: Point; radius: number }
 }
 
-function createOutline(pull: Pull): Outline {
-  if (pull.mobSpawns.length <= 0) return {}
+function createOutline(mobSpawns: MobSpawn[]): Outline {
+  if (mobSpawns.length <= 0) return {}
 
-  if (pull.mobSpawns.length === 1) {
-    const mobSpawn = pull.mobSpawns[0]!
+  if (mobSpawns.length === 1) {
+    const mobSpawn = mobSpawns[0]!
     const scale = mobScale(mobSpawn.mob)
     return {
       circle: {
@@ -34,7 +33,7 @@ function createOutline(pull: Pull): Outline {
     }
   }
 
-  const vertices = pull.mobSpawns.map((mobSpawn) => ({
+  const vertices = mobSpawns.map((mobSpawn) => ({
     pos: mobSpawn.spawn.pos,
     scale: mobScale(mobSpawn.mob),
   }))
@@ -49,7 +48,8 @@ function createOutline(pull: Pull): Outline {
 function PullOutlineComponent({ pullId, index, isSelected, isHovered }: Props) {
   const dispatch = useAppDispatch()
   const pull = useRoutesSelector((state) => state.route.pulls.find((pull) => pull.id === pullId))!
-  const { hull, circle } = useMemo(() => createOutline(pull), [pull])
+  const mobSpawns = useMemo(() => pull.mobSpawns.concat(pull.tempMobSpawns), [pull])
+  const { hull, circle } = useMemo(() => createOutline(mobSpawns), [mobSpawns])
   const pullColor = getPullColor(index)
 
   // Change key to force re-render

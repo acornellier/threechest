@@ -1,6 +1,7 @@
 import { useCallback } from 'react'
 import {
   appendPull,
+  clearPull,
   deletePull,
   prependPull,
   selectPull,
@@ -24,6 +25,9 @@ export function usePullShortcuts() {
 
   const onPrepend = useCallback(() => dispatch(prependPull()), [dispatch])
   useKeyPress(shortcuts.prependPull, onPrepend)
+
+  const onClearPull = useCallback(() => dispatch(clearPull()), [dispatch])
+  useKeyPress(shortcuts.clearPull, onClearPull)
 
   const onPullDown = useCallback(() => dispatch(selectPullRelative(1)), [dispatch])
   useKeyPress(shortcuts.pullDown, onPullDown)

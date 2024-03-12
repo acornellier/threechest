@@ -3,6 +3,7 @@
 export type Pull = {
   id: number
   mobSpawns: MobSpawn[]
+  tempMobSpawns: MobSpawn[]
 }
 
 export type SavedRoute = {

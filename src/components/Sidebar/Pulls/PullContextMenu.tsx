@@ -1,7 +1,8 @@
 import { Button } from '../../Common/Button.tsx'
-import { addPull, deletePull } from '../../../store/routesReducer.ts'
+import { addPull, clearPull, deletePull } from '../../../store/routesReducer.ts'
 import { useAppDispatch } from '../../../store/hooks.ts'
 import { ContextMenu, ContextMenuProps } from '../../Common/ContextMenu.tsx'
+import { shortcuts } from '../../../data/shortcuts.ts'
 
 export const minContextMenuWidth = 140
 
@@ -23,7 +24,7 @@ export function PullContextMenu({ position, pullIndex, onClose }: Props) {
           e.stopPropagation()
         }}
       >
-        Insert before
+        Insert before ({shortcuts.prependPull[0]!.key.toUpperCase()})
       </Button>
       <Button
         justifyStart
@@ -34,7 +35,18 @@ export function PullContextMenu({ position, pullIndex, onClose }: Props) {
           e.stopPropagation()
         }}
       >
-        Insert after
+        Insert after ({shortcuts.appendPull[0]!.key.toUpperCase()})
+      </Button>
+      <Button
+        justifyStart
+        short
+        onClick={(e) => {
+          dispatch(clearPull(pullIndex))
+          onClose()
+          e.stopPropagation()
+        }}
+      >
+        Clear ({shortcuts.clearPull[0]!.key.toUpperCase()})
       </Button>
       <Button
         justifyStart
@@ -45,7 +57,7 @@ export function PullContextMenu({ position, pullIndex, onClose }: Props) {
           e.stopPropagation()
         }}
       >
-        Delete
+        Delete (Del)
       </Button>
     </ContextMenu>
   )
