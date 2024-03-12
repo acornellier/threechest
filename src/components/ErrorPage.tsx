@@ -9,6 +9,7 @@ import {
   PlusCircleIcon,
   TrashIcon,
 } from '@heroicons/react/24/outline'
+import { isDev } from '../util/isDev.ts'
 
 interface Props {
   errors: Array<{ error: Error; info: ErrorInfo }>
@@ -61,7 +62,7 @@ export function ErrorPage({ errors }: Props) {
           <p>Otherwise, please contact me on Discord with the error details.</p>
           <p>Current route name: {route?.name ?? 'Unknown'}</p>
           <p>Current route dungeon key: {route?.dungeonKey ?? 'Unknown'}</p>
-          {process.env.NODE_ENV === 'development' && errors[0] && (
+          {isDev && errors[0] && (
             <p className="text-sm">
               {errors[0].error.name}: {errors[0].error.message}
               {errors[0].info.componentStack.split('\n').map((text, idx) => (

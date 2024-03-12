@@ -33,7 +33,9 @@ function MobSpawnComponent({
   matchingPullIndex,
 }: MobSpawnMemoProps) {
   const dispatch = useAppDispatch()
-  const iconSize = iconScaling * mobScale(mob) * (isHovered ? 1.2 : 1)
+  const isBoxHovering = useHoverSelector((state) => state.isBoxHovering)
+  const isActuallyHovered = isHovered && !isBoxHovering
+  const iconSize = iconScaling * mobScale(mob) * (isActuallyHovered ? 1.2 : 1)
 
   const eventHandlers: LeafletEventHandlerFnMap = useMemo(
     () => ({
@@ -41,7 +43,7 @@ function MobSpawnComponent({
         dispatch(
           toggleSpawn({
             mobSpawn: { mob, spawn },
-            individual: e.originalEvent.ctrlKey || e.originalEvent.metaKey,
+            individual: e.originalEvent?.ctrlKey || e.originalEvent?.metaKey,
           }),
         )
       },
@@ -67,15 +69,15 @@ function MobSpawnComponent({
             <MobIcon
               mob={mob}
               iconScaling={iconScaling}
-              isGroupHovered={isGroupHovered}
+              isGroupHovered={isGroupHovered && !isBoxHovering}
               matchingPullIndex={matchingPullIndex}
             />,
           ),
         })}
       >
-        {isHovered && <MobSpawnTooltip mob={mob} spawn={spawn} iconScaling={iconScaling} />}
+        {isActuallyHovered && <MobSpawnTooltip mob={mob} spawn={spawn} iconScaling={iconScaling} />}
       </Marker>
-      {mob.isBoss && <BossMarker spawn={spawn} isHovered={isHovered} iconSize={iconSize} />}
+      {mob.isBoss && <BossMarker spawn={spawn} isHovered={isActuallyHovered} iconSize={iconSize} />}
       <Patrol spawn={spawn} isGroupHovered={isGroupHovered} />
     </>
   )

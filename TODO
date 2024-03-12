@@ -1,6 +1,10 @@
 ﻿- Shift drag select mobs
+-- Preview?
+
+- Do not store MobSpawn in route definition
 - Instructions page, keyboard shortcut hints
 - Blurry mob icons compared to guru
+- Mob hover stuck
 
 Before release
 - Donate button
@@ -9,7 +13,6 @@ Before release
 Questionable, maybe post release
 - Embed
 - Live editing with others
-- Mob hover stuck
 - Drag a rectangle to select multiple groups
 - Sample routes
 - Drawing on map

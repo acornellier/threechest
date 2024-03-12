@@ -9,7 +9,7 @@ import { MdtRoute, Note, Pull, Route, SavedRoute } from '../util/types.ts'
 import { DungeonKey, MobSpawn } from '../data/types.ts'
 import { mdtRouteToRoute } from '../util/mdtUtil.ts'
 import undoable, { ActionCreators, combineFilters, excludeAction, includeAction } from 'redux-undo'
-import { addPullFunc, toggleSpawnAction } from './actions.ts'
+import { addPullFunc, boxSelectSpawnsAction, toggleSpawnAction } from './actions.ts'
 import * as localforage from 'localforage'
 import { AppDispatch, RootState } from './store.ts'
 import { importRoute } from './importReducer.ts'
@@ -157,6 +157,9 @@ const baseReducer = createSlice({
       }: PayloadAction<{ pullIndex?: number | undefined; moveUp?: boolean }>,
     ) {
       state.route.pulls.splice(pullIndex ?? state.route.selectedPull, 1)
+
+      if (state.route.pulls.length === 0) state.route.pulls = [emptyPull]
+
       if (moveUp || state.route.selectedPull >= state.route.pulls.length) {
         state.route.selectedPull = Math.max(0, state.route.selectedPull - 1)
       }
@@ -172,6 +175,9 @@ const baseReducer = createSlice({
     },
     toggleSpawn(state, { payload }: PayloadAction<{ mobSpawn: MobSpawn; individual: boolean }>) {
       state.route.pulls = toggleSpawnAction(state.route, payload)
+    },
+    boxSelectSpawns(state, { payload }: PayloadAction<MobSpawn[]>) {
+      state.route = boxSelectSpawnsAction(state.route, payload)
     },
     setPulls(state, { payload }: PayloadAction<Pull[]>) {
       state.route.pulls = payload
@@ -221,6 +227,7 @@ const undoableReducer = undoable(baseReducer.reducer, {
       baseReducer.actions.appendPull.type,
       baseReducer.actions.deletePull.type,
       baseReducer.actions.toggleSpawn.type,
+      baseReducer.actions.boxSelectSpawns.type,
       baseReducer.actions.setPulls.type,
       // baseReducer.actions.addNote.type, // intentionally leave out for justAdded hack
       baseReducer.actions.editNote.type,
@@ -258,6 +265,7 @@ export const {
   selectPull,
   selectPullRelative,
   toggleSpawn,
+  boxSelectSpawns,
   setPulls,
   addNote,
   editNote,

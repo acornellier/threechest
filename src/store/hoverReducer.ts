@@ -7,12 +7,14 @@ export interface HoverState {
   hoveredPull: number | null
   hoveredMobSpawn: MobSpawn | null
   selectedMobSpawn: MobSpawn | null
+  isBoxHovering: boolean
 }
 
 const initialState: HoverState = {
   hoveredPull: null,
   hoveredMobSpawn: null,
   selectedMobSpawn: null,
+  isBoxHovering: false,
 }
 
 export const hoverSlice = createSlice({
@@ -23,6 +25,8 @@ export const hoverSlice = createSlice({
       state.hoveredPull = mobSpawn
     },
     hoverMobSpawn(state, { payload: mobSpawn }: PayloadAction<MobSpawn | null>) {
+      if (state.isBoxHovering && mobSpawn !== null) return
+
       state.hoveredMobSpawn = mobSpawn
     },
     selectMobSpawn(state, { payload: mobSpawn }: PayloadAction<MobSpawn | null>) {
@@ -36,9 +40,12 @@ export const hoverSlice = createSlice({
         state.selectedMobSpawn = null
       }
     },
+    setBoxHovering(state, { payload }: PayloadAction<boolean>) {
+      state.isBoxHovering = payload
+    },
   },
 })
 
 export const hoverReducer = hoverSlice.reducer
 
-export const { hoverPull, hoverMobSpawn, selectMobSpawn } = hoverSlice.actions
+export const { hoverPull, hoverMobSpawn, selectMobSpawn, setBoxHovering } = hoverSlice.actions

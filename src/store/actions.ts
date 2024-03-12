@@ -63,9 +63,32 @@ export function toggleSpawnAction(
   }
 }
 
+export function boxSelectSpawnsAction(route: Route, mobSpawnsToAdd: MobSpawn[]) {
+  const pull = route.pulls[route.selectedPull]
+  if (!pull) return route
+
+  const missingSpawns = mobSpawnsToAdd.filter(
+    (mobSpawnToAdd) =>
+      !route.pulls.some((pull) =>
+        pull.mobSpawns.some((mobSpawn) => mobSpawnsEqual(mobSpawnToAdd, mobSpawn)),
+      ),
+  )
+
+  if (missingSpawns.length) {
+    pull.mobSpawns.push(...missingSpawns)
+  } else {
+    pull.mobSpawns = pull.mobSpawns.filter(
+      (mobSpawn) =>
+        !mobSpawnsToAdd.some((mobSpawnToAdd) => mobSpawnsEqual(mobSpawn, mobSpawnToAdd)),
+    )
+  }
+
+  return route
+}
+
 export function addPullFunc(state: RouteState, newPullIndex: number = state.route.pulls.length) {
   const maxId = state.route.pulls.reduce<number>((acc, pull) => (pull.id > acc ? pull.id : acc), 0)
   const newPull = { id: maxId + 1, mobSpawns: [] }
   state.route.pulls.splice(newPullIndex, 0, newPull)
-  state.route.selectedPull = newPullIndex
+  state.route.selectedPull = Math.max(0, Math.min(newPullIndex, state.route.pulls.length - 1))
 }

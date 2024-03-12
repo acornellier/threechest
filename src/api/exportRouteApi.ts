@@ -1,10 +1,8 @@
 ﻿import { Route } from '../util/types.ts'
 import { routeToMdtRoute } from '../util/mdtUtil.ts'
+import { isDev } from '../util/isDev.ts'
 
-const exportUrl =
-  process.env.NODE_ENV === 'development'
-    ? 'http://localhost:6173/api/encodeRoute'
-    : '/api/encodeRoute'
+const exportUrl = isDev ? 'http://localhost:6173/api/encodeRoute' : '/api/encodeRoute'
 
 export const exportRouteApi = (route: Route) =>
   fetch(exportUrl, {

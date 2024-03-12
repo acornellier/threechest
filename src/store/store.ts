@@ -13,7 +13,7 @@ export const store = configureStore({
     toast: toastReducer,
   },
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware({ serializableCheck: false, immutableCheck: { warnAfter: 100 } }).prepend(
+    getDefaultMiddleware({ serializableCheck: false, immutableCheck: { warnAfter: 200 } }).prepend(
       listenerMiddleware.middleware,
     ),
 })

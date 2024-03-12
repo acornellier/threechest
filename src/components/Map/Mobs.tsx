@@ -1,26 +1,37 @@
-import { useMap, useMapEvent } from 'react-leaflet'
-import { useState } from 'react'
+import { useMap, useMapEvents } from 'react-leaflet'
+import { useMemo, useState } from 'react'
 import { mapIconScaling } from '../../util/map.ts'
-import { useDungeon } from '../../store/hooks.ts'
+import { useAppDispatch, useDungeon } from '../../store/hooks.ts'
 import { MobSpawn } from './MobSpawn.tsx'
+import { boxSelectSpawns } from '../../store/routesReducer.ts'
+import type { LeafletEventHandlerFnMap } from 'leaflet'
+import { setBoxHovering } from '../../store/hoverReducer.ts'
 
 export function Mobs() {
   const dungeon = useDungeon()
   const map = useMap()
+  const dispatch = useAppDispatch()
 
-  // const prevZoom = useRef(map.getZoom())
   const [iconScaling, setIconScaling] = useState(mapIconScaling(map))
 
-  useMapEvent('zoom', () => {
-    // if (Math.abs(prevZoom.current - map.getZoom()) > 0.3) {
-    //   prevZoom.current = map.getZoom()
-    //   setIconScaling(mapIconScaling(map))
-    // }
-  })
+  const mapEvents: LeafletEventHandlerFnMap = useMemo(
+    () => ({
+      zoomend: () => setIconScaling(mapIconScaling(map)),
+      boxselectstart: () => dispatch(setBoxHovering(true)),
+      boxselectend: ({ bounds }) => {
+        dispatch(setBoxHovering(false))
 
-  useMapEvent('zoomend', () => {
-    setIconScaling(mapIconScaling(map))
-  })
+        const spawnsToAdd = dungeon.mdt.enemies
+          .flatMap((mob) => mob.spawns.map((spawn) => ({ mob, spawn })))
+          .filter(({ spawn }) => bounds.contains(spawn.pos))
+
+        dispatch(boxSelectSpawns(spawnsToAdd))
+      },
+    }),
+    [dispatch, dungeon, map],
+  )
+
+  useMapEvents(mapEvents)
 
   return (
     <>

@@ -2,6 +2,7 @@ import 'leaflet/dist/leaflet.css'
 import { MapContainer, TileLayer, useMap } from 'react-leaflet'
 import { CRS, LatLngBoundsExpression, LatLngExpression } from 'leaflet'
 import '../Leaflet/SmoothWheelZoom/SmoothWheelZoom'
+import '../Leaflet/BoxSelect/BoxSelect'
 import { Mobs } from './Mobs.tsx'
 import { PullOutlines } from './PullOutlines.tsx'
 import { useDungeon } from '../../store/hooks.ts'
@@ -12,6 +13,7 @@ import { useEffect } from 'react'
 import { mapHeight, mapWidth } from '../../data/dungeons.ts'
 import { MousePosition } from '../Leaflet/MousePosition/MousePosition'
 import { Dungeon } from '../../data/types.ts'
+import { isDev } from '../../util/isDev.ts'
 
 const maxCoords: LatLngExpression = [-mapHeight, mapWidth]
 const center: LatLngExpression = [maxCoords[0] / 2, maxCoords[1] / 2]
@@ -68,6 +70,8 @@ export function Map() {
         scrollWheelZoom={false}
         smoothWheelZoom={true}
         smoothSensitivity={2}
+        boxZoom={false}
+        boxSelect={true}
       >
         <TileLayer bounds={mapBounds} noWrap url={`/maps/${dungeon.key}/{z}/{x}_{y}.png`} />
         <MapContextMenu />
@@ -75,7 +79,7 @@ export function Map() {
         <PullOutlines />
         <Drawings />
         <Notes />
-        <MousePosition />
+        {isDev && <MousePosition />}
         <MapInitialZoom />
       </MapContainer>
     </div>
