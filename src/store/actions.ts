@@ -1,34 +1,32 @@
 import { Pull, Route } from '../util/types.ts'
-import { MobSpawn } from '../data/types.ts'
+import { SpawnId } from '../data/types.ts'
 import { dungeonsByKey } from '../data/dungeons.ts'
-import { mobSpawnsEqual } from '../util/mobSpawns.ts'
 import { RouteState } from './routesReducer.ts'
+import { findMobSpawn } from '../util/mobSpawns.ts'
 
-const findSelectedPull = (route: Route, mobSpawn: MobSpawn) =>
-  route.pulls.findIndex((pull) =>
-    pull.mobSpawns.some((mobSpawn2) => mobSpawnsEqual(mobSpawn, mobSpawn2)),
-  )
+const findSelectedPull = (route: Route, spawn: SpawnId) =>
+  route.pulls.findIndex((pull) => pull.spawns.some((spawn2) => spawn === spawn2))
 
 export function toggleSpawnAction(
   route: Route,
-  payload: { mobSpawn: MobSpawn; individual: boolean },
+  payload: { spawn: SpawnId; individual: boolean },
 ): Pull[] {
-  const data = dungeonsByKey[route.dungeonKey]
+  const dungeon = dungeonsByKey[route.dungeonKey]
+  const mobSpawn = findMobSpawn(payload.spawn, dungeon)
 
-  const origSelectedPull = findSelectedPull(route, payload.mobSpawn)
+  const origSelectedPull = findSelectedPull(route, payload.spawn)
 
   const groupSpawns = payload.individual
-    ? [{ mobSpawn: payload.mobSpawn, selectedPull: origSelectedPull }]
-    : data.mdt.enemies
+    ? [{ mobSpawn, selectedPull: origSelectedPull }]
+    : dungeon.mdt.enemies
         .flatMap((mob) => mob.spawns.map((spawn) => ({ mob, spawn })))
         .filter(
-          (mobSpawn) =>
-            mobSpawnsEqual(mobSpawn, payload.mobSpawn) ||
-            (payload.mobSpawn.spawn.group !== null &&
-              mobSpawn.spawn.group === payload.mobSpawn.spawn.group),
+          (mobSpawn2) =>
+            mobSpawn2.spawn.id === payload.spawn ||
+            (mobSpawn.spawn.group !== null && mobSpawn2.spawn.group === mobSpawn.spawn.group),
         )
         .map((mobSpawn) => {
-          const selectedPull = findSelectedPull(route, mobSpawn)
+          const selectedPull = findSelectedPull(route, mobSpawn.spawn.id)
           return { mobSpawn, selectedPull }
         })
 
@@ -39,9 +37,8 @@ export function toggleSpawnAction(
         ? pull
         : {
             ...pull,
-            mobSpawns: pull.mobSpawns.filter(
-              (mobSpawn2) =>
-                !groupSpawns.some(({ mobSpawn }) => mobSpawnsEqual(mobSpawn, mobSpawn2)),
+            spawns: pull.spawns.filter(
+              (spawnId) => !groupSpawns.some(({ mobSpawn }) => mobSpawn.spawn.id === spawnId),
             ),
           },
     )
@@ -52,44 +49,40 @@ export function toggleSpawnAction(
         ? pull
         : {
             ...pull,
-            mobSpawns: [
-              ...pull.mobSpawns,
+            spawns: [
+              ...pull.spawns,
               ...groupSpawns
                 .filter(({ selectedPull }) => selectedPull === -1)
-                .map(({ mobSpawn }) => mobSpawn),
+                .map(({ mobSpawn }) => mobSpawn.spawn.id),
             ],
           },
     )
   }
 }
 
-export function boxSelectSpawnsAction(route: Route, mobSpawnsToAdd: MobSpawn[]) {
+export function boxSelectSpawnsAction(route: Route, hoveredSpawns: SpawnId[]) {
   const pull = route.pulls[route.selectedPull]
   if (!pull) return
 
-  const missingSpawns = mobSpawnsToAdd.filter(
-    (mobSpawnToAdd) =>
-      !route.pulls.some((pull) =>
-        pull.mobSpawns.some((mobSpawn) => mobSpawnsEqual(mobSpawnToAdd, mobSpawn)),
-      ),
+  const missingSpawns = hoveredSpawns.filter(
+    (hoveredSpawn) =>
+      !route.pulls.some((pull) => pull.spawns.some((spawnId) => spawnId === hoveredSpawn)),
   )
 
   if (
-    pull.tempMobSpawns !== undefined &&
-    missingSpawns.length === pull.tempMobSpawns.length &&
-    missingSpawns.every((missingSpawn, idx) =>
-      mobSpawnsEqual(pull.tempMobSpawns[idx]!, missingSpawn),
-    )
+    pull.tempSpawns !== undefined &&
+    missingSpawns.length === pull.tempSpawns.length &&
+    missingSpawns.every((missingSpawn, idx) => pull.tempSpawns[idx]! === missingSpawn)
   ) {
     return
   }
 
-  pull.tempMobSpawns = missingSpawns
+  pull.tempSpawns = missingSpawns
 }
 
 export function addPullFunc(state: RouteState, newPullIndex: number = state.route.pulls.length) {
   const maxId = state.route.pulls.reduce<number>((acc, pull) => (pull.id > acc ? pull.id : acc), 0)
-  const newPull: Pull = { id: maxId + 1, mobSpawns: [], tempMobSpawns: [] }
+  const newPull: Pull = { id: maxId + 1, spawns: [], tempSpawns: [] }
   state.route.pulls.splice(newPullIndex, 0, newPull)
   state.route.selectedPull = Math.max(0, Math.min(newPullIndex, state.route.pulls.length - 1))
 }

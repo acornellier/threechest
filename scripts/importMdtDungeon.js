@@ -62,10 +62,11 @@ export function importMdtDungeon(key) {
 
   const enemies = []
   for (let enemyIndex = 0; enemyIndex < luaEnemies.length; ++enemyIndex) {
+    const enemyIndexVal = enemyIndex + 1
     const fields = luaEnemies[enemyIndex].fields
     const enemy = {
       id: getFieldValue(fields, 'id'),
-      enemyIndex: enemyIndex + 1,
+      enemyIndex: enemyIndexVal,
       name: getFieldValue(fields, 'name'),
       count: getFieldValue(fields, 'count'),
       health: getFieldValue(fields, 'health'),
@@ -82,10 +83,12 @@ export function importMdtDungeon(key) {
       const teeming = getFieldValue(cloneFields, 'teeming')
       if (teeming) continue
 
+      const spawnIndex = clone.key.value
       const x = getFieldValue(cloneFields, 'x')
       const y = getFieldValue(cloneFields, 'y')
       const spawn = {
-        spawnIndex: clone.key.value,
+        id: `${enemyIndexVal}-${spawnIndex}`,
+        spawnIndex,
         group: getFieldValue(cloneFields, 'g'),
         pos: convertCoords(x, y),
       }

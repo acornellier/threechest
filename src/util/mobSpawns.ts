@@ -1,24 +1,20 @@
-import { Mob, MobSpawn } from '../data/types.ts'
+import { Dungeon, Mob, MobSpawn, SpawnId } from '../data/types.ts'
 import { Pull } from './types.ts'
 
-export const mobsEqual = (mob1: { enemyIndex: number }, mob2: { enemyIndex: number }) =>
-  mob1.enemyIndex === mob2.enemyIndex
+export function findMobSpawn(spawnId: SpawnId, dungeon: Dungeon): MobSpawn {
+  for (const mob of dungeon.mdt.enemies) {
+    for (const spawn of mob.spawns) {
+      if (spawn.id === spawnId) return { mob, spawn }
+    }
+  }
 
-export const spawnsEqual = (spawn1: { spawnIndex: number }, spawn2: { spawnIndex: number }) =>
-  spawn1.spawnIndex === spawn2.spawnIndex
-
-export const mobSpawnsEqual = (mobSpawn1: MobSpawn, mobSpawn2: MobSpawn) =>
-  mobsEqual(mobSpawn1.mob, mobSpawn2.mob) && spawnsEqual(mobSpawn1.spawn, mobSpawn2.spawn)
+  throw new Error(`Could not find spawn with id ${spawnId}`)
+}
 
 export const mobScale = (mob: Mob) => mob.scale * (mob.isBoss ? 1.7 : 1)
 
-export const joinMobSpawns = (mobSpawns1: MobSpawn[], mobSpawns2: MobSpawn[]) =>
-  mobSpawns1.concat(
-    mobSpawns2.filter(
-      (mobSpawn2) => !mobSpawns1.some((mobSpawn1) => mobSpawnsEqual(mobSpawn1, mobSpawn2)),
-    ),
-  )
+export const joinMobSpawns = (spawns1: SpawnId[], spawns2: SpawnId[]) =>
+  spawns1.concat(spawns2.filter((spawn2) => !spawns1.includes(spawn2)))
 
-export const pullContainsMobSpawn = (pull: Pull, mobSpawn: MobSpawn) =>
-  pull.mobSpawns.some((mobSpawn2) => mobSpawnsEqual(mobSpawn, mobSpawn2)) ||
-  pull.tempMobSpawns.some((mobSpawn2) => mobSpawnsEqual(mobSpawn, mobSpawn2))
+export const pullContainsMobSpawn = (pull: Pull, spawn: SpawnId) =>
+  pull.spawns.includes(spawn) || pull.tempSpawns.includes(spawn)

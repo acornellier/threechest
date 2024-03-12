@@ -1,22 +1,21 @@
 import type { PayloadAction } from '@reduxjs/toolkit'
 import { createSlice } from '@reduxjs/toolkit'
-import { MobSpawn } from '../data/types.ts'
-import { mobSpawnsEqual } from '../util/mobSpawns.ts'
+import { SpawnId } from '../data/types.ts'
 
 export interface HoverState {
   hoveredPull: number | null
-  hoveredMobSpawn: MobSpawn | null
-  selectedMobSpawn: MobSpawn | null
+  hoveredSpawn: SpawnId | null
+  selectedSpawn: SpawnId | null
   isBoxHovering: boolean
-  boxHoveredMobSpawns: MobSpawn[]
+  boxHoveredSpawns: SpawnId[]
 }
 
 const initialState: HoverState = {
   hoveredPull: null,
-  hoveredMobSpawn: null,
-  selectedMobSpawn: null,
+  hoveredSpawn: null,
+  selectedSpawn: null,
   isBoxHovering: false,
-  boxHoveredMobSpawns: [],
+  boxHoveredSpawns: [],
 }
 
 export const hoverSlice = createSlice({
@@ -26,32 +25,24 @@ export const hoverSlice = createSlice({
     hoverPull(state, { payload: mobSpawn }: PayloadAction<number | null>) {
       state.hoveredPull = mobSpawn
     },
-    hoverMobSpawn(state, { payload: mobSpawn }: PayloadAction<MobSpawn | null>) {
-      if (state.isBoxHovering && mobSpawn !== null) return
+    hoverMobSpawn(state, { payload: spawn }: PayloadAction<SpawnId | null>) {
+      if (state.isBoxHovering && spawn !== null) return
 
-      state.hoveredMobSpawn = mobSpawn
+      state.hoveredSpawn = spawn
     },
-    selectMobSpawn(state, { payload: mobSpawn }: PayloadAction<MobSpawn | null>) {
-      if (
-        mobSpawn === null ||
-        state.selectedMobSpawn === null ||
-        !mobSpawnsEqual(mobSpawn, state.selectedMobSpawn)
-      ) {
-        state.selectedMobSpawn = mobSpawn
+    selectMobSpawn(state, { payload: mobSpawn }: PayloadAction<SpawnId | null>) {
+      if (mobSpawn === null || state.selectedSpawn === null || mobSpawn === state.selectedSpawn) {
+        state.selectedSpawn = mobSpawn
       } else {
-        state.selectedMobSpawn = null
+        state.selectedSpawn = null
       }
     },
     setBoxHovering(state, { payload }: PayloadAction<boolean>) {
       state.isBoxHovering = payload
-    },
-    boxHoverMobSpawns(state, { payload }: PayloadAction<MobSpawn[]>) {
-      state.boxHoveredMobSpawns = payload
     },
   },
 })
 
 export const hoverReducer = hoverSlice.reducer
 
-export const { hoverPull, hoverMobSpawn, selectMobSpawn, setBoxHovering, boxHoverMobSpawns } =
-  hoverSlice.actions
+export const { hoverPull, hoverMobSpawn, selectMobSpawn, setBoxHovering } = hoverSlice.actions

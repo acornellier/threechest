@@ -5,6 +5,7 @@ import { RouteState } from './routesReducer.ts'
 import { DungeonKey } from '../data/types.ts'
 import { createSelector } from '@reduxjs/toolkit'
 import { HoverState } from './hoverReducer.ts'
+import { findMobSpawn } from '../util/mobSpawns.ts'
 
 export const useAppDispatch: () => AppDispatch = useDispatch
 
@@ -37,3 +38,9 @@ export function useDungeon() {
 export const useSelectedPull = () => useRoutesSelector((state) => state.route.selectedPull)
 
 export const useHoveredPull = () => useHoverSelector((state) => state.hoveredPull)
+
+export function useHoveredMobSpawn() {
+  const dungeon = useDungeon()
+  const hoveredMobSpawn = useHoverSelector((state) => state.hoveredSpawn)
+  return hoveredMobSpawn === null ? null : findMobSpawn(hoveredMobSpawn, dungeon)
+}

@@ -1,10 +1,10 @@
-﻿import { DungeonKey, MobSpawn, Point } from '../data/types.ts'
+﻿import { DungeonKey, Point, SpawnId } from '../data/types.ts'
 import { ForwardRefExoticComponent, PropsWithoutRef, SVGProps } from 'react'
 
 export type Pull = {
   id: number
-  mobSpawns: MobSpawn[]
-  tempMobSpawns: MobSpawn[]
+  spawns: SpawnId[]
+  tempSpawns: SpawnId[]
 }
 
 export type SavedRoute = {

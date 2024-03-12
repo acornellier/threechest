@@ -4,15 +4,15 @@ import { XMarkIcon } from '@heroicons/react/24/outline'
 import { selectMobSpawn } from '../store/hoverReducer.ts'
 import { getIconLink } from '../data/spells/mergeSpells.ts'
 import { addToast } from '../store/toastReducer.ts'
+import { findMobSpawn } from '../util/mobSpawns.ts'
 
 export function MobInfo() {
   const dispatch = useAppDispatch()
-  const selectedMobSpawn = useHoverSelector((state) => state.selectedMobSpawn)
-  const mob = selectedMobSpawn?.mob
+  const selectedSpawn = useHoverSelector((state) => state.selectedSpawn)
   const dungeon = useDungeon()
+  if (selectedSpawn === null) return
 
-  if (!mob) return null
-
+  const { mob } = findMobSpawn(selectedSpawn, dungeon)
   const spells = dungeon.spells[mob.id]
 
   const onClickSpellId = async (spellId: number) => {

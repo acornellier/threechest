@@ -1,21 +1,12 @@
-﻿import {
-  createAsyncThunk,
-  createListenerMiddleware,
-  createSlice,
-  isAnyOf,
-  PayloadAction,
-} from '@reduxjs/toolkit'
+﻿import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { MdtRoute, Note, Pull, Route, SavedRoute } from '../util/types.ts'
-import { DungeonKey, MobSpawn } from '../data/types.ts'
+import { DungeonKey, SpawnId } from '../data/types.ts'
 import { mdtRouteToRoute } from '../util/mdtUtil.ts'
-import undoable, { ActionCreators, combineFilters, excludeAction, includeAction } from 'redux-undo'
+import undoable, { combineFilters, excludeAction, includeAction } from 'redux-undo'
 import { addPullFunc, boxSelectSpawnsAction, toggleSpawnAction } from './actions.ts'
 import * as localforage from 'localforage'
-import { AppDispatch, RootState } from './store.ts'
-import { importRoute } from './importReducer.ts'
+import { RootState } from './store.ts'
 import { persistReducer } from 'redux-persist'
-import { REHYDRATE } from 'redux-persist/es/constants'
-import { addToast } from './toastReducer.ts'
 import { indexedDbStorage } from './storage.ts'
 import { routeMigrate, routePersistVersion } from './routeMigrations.ts'
 import { joinMobSpawns } from '../util/mobSpawns.ts'
@@ -25,7 +16,7 @@ export interface RouteState {
   savedRoutes: SavedRoute[]
 }
 
-const emptyPull = { id: 0, mobSpawns: [], tempMobSpawns: [] }
+const emptyPull = { id: 0, spawns: [], tempSpawns: [] }
 
 const newRouteUid = () => Math.random().toString(36).slice(2)
 
@@ -153,7 +144,7 @@ const baseReducer = createSlice({
     },
     clearPull(state, { payload: pullIndex }: PayloadAction<number | undefined>) {
       const pull = state.route.pulls[pullIndex ?? state.route.selectedPull]
-      if (pull) pull.mobSpawns = []
+      if (pull) pull.spawns = []
     },
     deletePull(
       state,
@@ -178,18 +169,18 @@ const baseReducer = createSlice({
         state.route.selectedPull = newIndex
       }
     },
-    toggleSpawn(state, { payload }: PayloadAction<{ mobSpawn: MobSpawn; individual: boolean }>) {
+    toggleSpawn(state, { payload }: PayloadAction<{ spawn: SpawnId; individual: boolean }>) {
       state.route.pulls = toggleSpawnAction(state.route, payload)
     },
-    boxSelectSpawns(state, { payload }: PayloadAction<MobSpawn[]>) {
+    boxSelectSpawns(state, { payload }: PayloadAction<SpawnId[]>) {
       boxSelectSpawnsAction(state.route, payload)
     },
     commitBoxSelect(state) {
       const pull = state.route.pulls[state.route.selectedPull]
       if (!pull) return
 
-      pull.mobSpawns = joinMobSpawns(pull.mobSpawns, pull.tempMobSpawns)
-      pull.tempMobSpawns = []
+      pull.spawns = joinMobSpawns(pull.spawns, pull.tempSpawns)
+      pull.tempSpawns = []
     },
     setPulls(state, { payload }: PayloadAction<Pull[]>) {
       state.route.pulls = payload
@@ -286,64 +277,3 @@ export const {
   editNote,
   deleteNote,
 } = baseReducer.actions
-
-export const listenerMiddleware = createListenerMiddleware()
-
-listenerMiddleware.startListening({
-  actionCreator: setRouteFromMdt,
-  effect: async ({ payload: { mdtRoute, copy } }, listenerApi) => {
-    if (copy) {
-      const state = listenerApi.getState() as RootState
-      addToast(
-        listenerApi.dispatch as AppDispatch,
-        `Imported route ${mdtRoute.text} as ${state.routes.present.route.name}`,
-      )
-    } else {
-      addToast(listenerApi.dispatch as AppDispatch, `Route imported: ${mdtRoute.text}`)
-    }
-  },
-})
-
-listenerMiddleware.startListening({
-  matcher: isAnyOf(setDungeon.rejected, loadRoute.rejected, deleteRoute.rejected),
-  effect: async ({ error, type }, listenerApi) => {
-    console.error((error as Error).stack)
-    addToast(
-      listenerApi.dispatch as AppDispatch,
-      `Error during action ${type}: ${(error as Error).message}`,
-      'error',
-    )
-  },
-})
-
-listenerMiddleware.startListening({
-  matcher: isAnyOf(importRoute.rejected),
-  effect: async ({ error }, listenerApi) => {
-    console.error((error as Error).stack)
-    addToast(
-      listenerApi.dispatch as AppDispatch,
-      `Failed to import route: ${(error as Error).message}`,
-      'error',
-    )
-  },
-})
-
-listenerMiddleware.startListening({
-  type: REHYDRATE,
-  effect: async (_action, listenerApi) => {
-    listenerApi.dispatch(ActionCreators.clearHistory())
-  },
-})
-
-listenerMiddleware.startListening({
-  matcher: isAnyOf(
-    loadRoute.fulfilled,
-    deleteRoute.fulfilled,
-    duplicateRoute,
-    setRouteFromMdt,
-    newRoute,
-  ),
-  effect: async (_action, listenerApi) => {
-    listenerApi.dispatch(ActionCreators.clearHistory())
-  },
-})

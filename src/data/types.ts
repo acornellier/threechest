@@ -19,7 +19,10 @@ export type Dungeon = {
 
 export type DungeonKey = 'ad' | 'brh' | 'dht' | 'fall' | 'rise' | 'eb' | 'tott' | 'wcm'
 
+export type SpawnId = string
+
 export type Spawn = {
+  id: SpawnId
   group: number | null
   spawnIndex: number
   pos: Point

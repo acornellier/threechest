@@ -20,8 +20,9 @@ export function Mobs() {
       boxselectstart: () => dispatch(setBoxHovering(true)),
       boxselectmove({ bounds }) {
         const spawns = dungeon.mdt.enemies
-          .flatMap((mob) => mob.spawns.map((spawn) => ({ mob, spawn })))
-          .filter(({ spawn }) => bounds.contains(spawn.pos))
+          .flatMap((mob) => mob.spawns)
+          .filter((spawn) => bounds.contains(spawn.pos))
+          .map((spawn) => spawn.id)
 
         dispatch(boxSelectSpawns(spawns))
       },

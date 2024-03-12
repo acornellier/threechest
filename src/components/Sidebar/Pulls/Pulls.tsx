@@ -20,7 +20,7 @@ export function Pulls() {
   const dispatch = useAppDispatch()
   const dungeon = useDungeon()
   const route = useRoute()
-  const pullsDetailed = useMemo(() => augmentPulls(route.pulls), [route.pulls])
+  const pullsDetailed = useMemo(() => augmentPulls(route.pulls, dungeon), [route.pulls, dungeon])
 
   const hoveredPull = useHoveredPull()
   const clampedHoveredPull = hoveredPull
@@ -63,7 +63,7 @@ export function Pulls() {
       setContextMenuPullIndex(pullIndex)
       onRightClick(e)
     },
-    [onRightClick],
+    [dispatch, onRightClick],
   )
 
   usePullShortcuts()

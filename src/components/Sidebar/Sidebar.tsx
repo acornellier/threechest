@@ -1,8 +1,8 @@
-import { Pulls } from './Pulls/Pulls.tsx'
 import { RouteDetails } from './RouteDetails.tsx'
 import { SharePanel } from './SharePanel.tsx'
 import { SidebarCollapser } from './SidebarCollapser.tsx'
 import { useLocalStorage } from '../../hooks/useLocalStorage.ts'
+import { Pulls } from './Pulls/Pulls.tsx'
 
 const margin = 8
 const width = 285

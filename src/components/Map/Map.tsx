@@ -3,8 +3,6 @@ import { MapContainer, TileLayer, useMap } from 'react-leaflet'
 import { CRS, LatLngBoundsExpression, LatLngExpression } from 'leaflet'
 import '../Leaflet/SmoothWheelZoom/SmoothWheelZoom'
 import '../Leaflet/BoxSelect/BoxSelect'
-import { Mobs } from './Mobs.tsx'
-import { PullOutlines } from './PullOutlines.tsx'
 import { useDungeon } from '../../store/hooks.ts'
 import { Drawings } from './Drawings.tsx'
 import { Notes } from './Notes.tsx'
@@ -14,6 +12,8 @@ import { mapHeight, mapWidth } from '../../data/dungeons.ts'
 import { MousePosition } from '../Leaflet/MousePosition/MousePosition'
 import { Dungeon } from '../../data/types.ts'
 import { isDev } from '../../util/isDev.ts'
+import { Mobs } from './Mobs.tsx'
+import { PullOutlines } from './PullOutlines.tsx'
 
 const maxCoords: LatLngExpression = [-mapHeight, mapWidth]
 const center: LatLngExpression = [maxCoords[0] / 2, maxCoords[1] / 2]

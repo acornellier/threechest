@@ -1,9 +1,10 @@
 ﻿import { configureStore } from '@reduxjs/toolkit'
-import { listenerMiddleware, routesReducer } from './routesReducer.ts'
+import { routesReducer } from './routesReducer.ts'
 import { hoverReducer } from './hoverReducer.ts'
 import { importReducer } from './importReducer.ts'
 import { persistStore } from 'redux-persist'
 import { toastReducer } from './toastReducer.ts'
+import { listenerMiddleware } from './listener.ts'
 
 export const store = configureStore({
   reducer: {

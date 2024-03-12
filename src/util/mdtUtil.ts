@@ -1,8 +1,9 @@
 ﻿import { Drawing, MdtArrow, MdtNote, MdtPolygon, MdtRoute, Note, Route } from './types.ts'
-import { MobSpawn, Point } from '../data/types.ts'
+import { Dungeon, Point, SpawnId } from '../data/types.ts'
 import { dungeonsByKey, dungeonsByMdtIdx } from '../data/dungeons.ts'
 import { getPullColor } from './colors.ts'
 import { equalPoints } from './map.ts'
+import { findMobSpawn } from './mobSpawns.ts'
 
 const coordinateRatio = 2.185
 
@@ -101,8 +102,8 @@ export function mdtRouteToRoute(mdtRoute: MdtRoute): Route {
     uid: mdtRoute.uid,
     pulls: mdtRoute.value.pulls.map((mdtPull, index) => ({
       id: index,
-      tempMobSpawns: [],
-      mobSpawns: Object.entries(mdtPull)
+      tempSpawns: [],
+      spawns: Object.entries(mdtPull)
         .flatMap(([enemyIndexOrCount, spawnIndexes]) => {
           if (!Array.isArray(spawnIndexes)) return null
 
@@ -115,10 +116,10 @@ export function mdtRouteToRoute(mdtRoute: MdtRoute): Route {
             }
 
             const spawn = mob.spawns.find((spawn) => spawn.spawnIndex === spawnIndex)!
-            return { mob, spawn }
+            return spawn.id
           })
         })
-        .filter(Boolean) as MobSpawn[],
+        .filter(Boolean) as SpawnId[],
     })),
     notes: mdtObjects
       .filter((object): object is MdtNote => 'n' in object)
@@ -129,8 +130,9 @@ export function mdtRouteToRoute(mdtRoute: MdtRoute): Route {
   }
 }
 
-function mobSpawnsToMdtEnemies(mobSpawns: MobSpawn[]) {
-  return mobSpawns.reduce<Record<number, number[]>>((acc, mobSpawn) => {
+function mobSpawnsToMdtEnemies(spawns: SpawnId[], dungeon: Dungeon) {
+  return spawns.reduce<Record<number, number[]>>((acc, spawn) => {
+    const mobSpawn = findMobSpawn(spawn, dungeon)
     acc[mobSpawn.mob.enemyIndex] ??= []
     acc[mobSpawn.mob.enemyIndex]!.push(mobSpawn.spawn.spawnIndex)
     return acc
@@ -138,6 +140,7 @@ function mobSpawnsToMdtEnemies(mobSpawns: MobSpawn[]) {
 }
 
 export function routeToMdtRoute(route: Route): MdtRoute {
+  const dungeon = dungeonsByKey[route.dungeonKey]
   return {
     text: route.name,
     week: 1,
@@ -146,11 +149,11 @@ export function routeToMdtRoute(route: Route): MdtRoute {
     value: {
       currentPull: route.selectedPull,
       currentSublevel: 1,
-      currentDungeonIdx: dungeonsByKey[route.dungeonKey].mdt.dungeonIndex,
+      currentDungeonIdx: dungeon.mdt.dungeonIndex,
       selection: [],
       pulls: route.pulls.map((pull, index) => ({
         color: getPullColor(index),
-        ...mobSpawnsToMdtEnemies(pull.mobSpawns),
+        ...mobSpawnsToMdtEnemies(pull.spawns, dungeon),
       })),
     },
     objects: [...route.notes.map(noteToMdt), ...route.drawings.map(drawingToMdtPolygon)],

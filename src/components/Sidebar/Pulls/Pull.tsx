@@ -6,6 +6,7 @@ import { selectPull } from '../../../store/routesReducer.ts'
 import { useEffect, useMemo, useRef } from 'react'
 import { mobCountPercentStr } from '../../../util/numbers.ts'
 import { hoverPull } from '../../../store/hoverReducer.ts'
+import { findMobSpawn } from '../../../util/mobSpawns.ts'
 
 type MobCount = Record<number, { mob: Mob; count: number }>
 
@@ -27,14 +28,15 @@ export function Pull({ pullIndex, pull, ghost, onRightClick }: Props) {
   const isSelectedPull = pullIndex === route.selectedPull
 
   const sortedCounts = useMemo(() => {
-    const mobCounts = pull.mobSpawns.concat(pull.tempMobSpawns).reduce<MobCount>((acc, { mob }) => {
+    const mobCounts = pull.spawns.concat(pull.tempSpawns).reduce<MobCount>((acc, spawnId) => {
+      const { mob } = findMobSpawn(spawnId, dungeon)
       acc[mob.id] ??= { mob, count: 0 }
       acc[mob.id]!.count += 1
       return acc
     }, {})
 
     return Object.values(mobCounts).sort((a, b) => b.mob.count - a.mob.count)
-  }, [pull])
+  }, [dungeon, pull.spawns, pull.tempSpawns])
 
   useEffect(() => {
     if (isSelectedPull) {
