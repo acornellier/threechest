@@ -109,14 +109,16 @@ export function mdtRouteToRoute(mdtRoute: MdtRoute): Route {
 
           const enemyIndex = Number(enemyIndexOrCount)
           return spawnIndexes.map((spawnIndex) => {
-            const mob = dungeon.mdt.enemies.find((enemy) => enemy.enemyIndex == enemyIndex)
-            if (!mob) {
+            const mobSpawn = Object.values(dungeon.mobSpawns).find(
+              ({ mob, spawn }) => mob.enemyIndex == enemyIndex && spawn.spawnIndex === spawnIndex,
+            )
+
+            if (!mobSpawn) {
               console.error(`Could not find enemy index ${enemyIndex} in pull ${index + 1}`)
               return null
             }
 
-            const spawn = mob.spawns.find((spawn) => spawn.spawnIndex === spawnIndex)!
-            return spawn.id
+            return mobSpawn.spawn.id
           })
         })
         .filter(Boolean) as SpawnId[],

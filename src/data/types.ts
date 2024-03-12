@@ -5,7 +5,6 @@ export type Point = [number, number]
 export type MdtDungeon = {
   dungeonIndex: number
   totalCount: number
-  enemies: Mob[]
 }
 
 export type Dungeon = {
@@ -13,6 +12,7 @@ export type Dungeon = {
   defaultBounds?: [LatLngTuple, LatLngTuple]
   key: DungeonKey
   mdt: MdtDungeon
+  mobSpawns: Record<SpawnId, MobSpawn>
   spells: Record<number, Spell[]>
   icon: string
 }

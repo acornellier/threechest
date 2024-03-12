@@ -18,8 +18,7 @@ export function toggleSpawnAction(
 
   const groupSpawns = payload.individual
     ? [{ mobSpawn, selectedPull: origSelectedPull }]
-    : dungeon.mdt.enemies
-        .flatMap((mob) => mob.spawns.map((spawn) => ({ mob, spawn })))
+    : Object.values(dungeon.mobSpawns)
         .filter(
           (mobSpawn2) =>
             mobSpawn2.spawn.id === payload.spawn ||

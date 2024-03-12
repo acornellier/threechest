@@ -1,4 +1,4 @@
-import { Dungeon, DungeonKey, MdtDungeon, Spells } from './types.ts'
+import { Dungeon, DungeonKey, MdtDungeon, Mob, Spells } from './types.ts'
 import adMdtData from './mdtDungeons/ad_mdt.json'
 import brhMdtData from './mdtDungeons/brh_mdt.json'
 import dhtMdtData from './mdtDungeons/dht_mdt.json'
@@ -15,6 +15,7 @@ import { fallSpells } from './spells/fallSpells.ts'
 import { riseSpells } from './spells/riseSpells.ts'
 import { tottSpells } from './spells/tottSpells.ts'
 import { wcmSpells } from './spells/wcmSpells.ts'
+import { mdtEnemiesToMobSpawns } from '../util/mobSpawns.ts'
 
 export const mapHeight = 256
 export const mapWidth = 384
@@ -27,6 +28,7 @@ export const ad: Dungeon = {
     [-240, 330],
   ],
   mdt: adMdtData as MdtDungeon,
+  mobSpawns: mdtEnemiesToMobSpawns(adMdtData.enemies as Mob[]),
   spells: adSpells,
   icon: 'achievement_dungeon_ataldazar',
 }
@@ -35,6 +37,7 @@ export const brh: Dungeon = {
   name: 'Black Rook Hold',
   key: 'brh',
   mdt: brhMdtData as MdtDungeon,
+  mobSpawns: mdtEnemiesToMobSpawns(brhMdtData.enemies as Mob[]),
   spells: brhSpells,
   icon: 'achievement_dungeon_blackrookhold',
 }
@@ -47,6 +50,7 @@ export const dht: Dungeon = {
     [-242, 346],
   ],
   mdt: dhtMdtData as MdtDungeon,
+  mobSpawns: mdtEnemiesToMobSpawns(dhtMdtData.enemies as Mob[]),
   spells: dhtSpells,
   icon: 'achievement_dungeon_darkheartthicket',
 }
@@ -59,6 +63,7 @@ export const eb: Dungeon = {
     [-180, 300],
   ],
   mdt: ebMdtData as MdtDungeon,
+  mobSpawns: mdtEnemiesToMobSpawns(ebMdtData.enemies as Mob[]),
   spells: ebSpells as Spells,
   icon: 'achievement_dungeon_everbloom',
 }
@@ -71,6 +76,7 @@ export const fall: Dungeon = {
     [-mapHeight, 350],
   ],
   mdt: fallMdtData as MdtDungeon,
+  mobSpawns: mdtEnemiesToMobSpawns(fallMdtData.enemies as Mob[]),
   spells: fallSpells,
   icon: 'achievement_dungeon_dawnoftheinfinite',
 }
@@ -83,6 +89,7 @@ export const rise: Dungeon = {
     [-mapHeight, 350],
   ],
   mdt: riseMdtData as MdtDungeon,
+  mobSpawns: mdtEnemiesToMobSpawns(riseMdtData.enemies as Mob[]),
   spells: riseSpells,
   icon: 'achievement_dungeon_dawnoftheinfinite',
 }
@@ -95,6 +102,7 @@ export const tott: Dungeon = {
     [-230, 340],
   ],
   mdt: tottMdtData as MdtDungeon,
+  mobSpawns: mdtEnemiesToMobSpawns(tottMdtData.enemies as Mob[]),
   spells: tottSpells,
   icon: 'achievement_dungeon_throne-of-the-tides',
 }
@@ -103,6 +111,7 @@ export const wcm: Dungeon = {
   name: 'Waycrest Manor',
   key: 'wcm',
   mdt: wcmMdtData as MdtDungeon,
+  mobSpawns: mdtEnemiesToMobSpawns(wcmMdtData.enemies as Mob[]),
   spells: wcmSpells,
   icon: 'achievement_dungeon_waycrestmannor',
 }

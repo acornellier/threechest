@@ -19,10 +19,9 @@ export function Mobs() {
       zoomend: () => setIconScaling(mapIconScaling(map)),
       boxselectstart: () => dispatch(setBoxHovering(true)),
       boxselectmove({ bounds }) {
-        const spawns = dungeon.mdt.enemies
-          .flatMap((mob) => mob.spawns)
-          .filter((spawn) => bounds.contains(spawn.pos))
-          .map((spawn) => spawn.id)
+        const spawns = Object.values(dungeon.mobSpawns)
+          .filter(({ spawn }) => bounds.contains(spawn.pos))
+          .map(({ spawn }) => spawn.id)
 
         dispatch(boxSelectSpawns(spawns))
       },
@@ -37,16 +36,14 @@ export function Mobs() {
 
   return (
     <>
-      {dungeon.mdt.enemies.map((mob) =>
-        mob.spawns.map((spawn) => (
-          <MobSpawn
-            key={`${mob.enemyIndex}-${spawn.spawnIndex}`}
-            iconScaling={iconScaling}
-            mob={mob}
-            spawn={spawn}
-          />
-        )),
-      )}
+      {Object.values(dungeon.mobSpawns).map(({ mob, spawn }) => (
+        <MobSpawn
+          key={`${mob.enemyIndex}-${spawn.spawnIndex}`}
+          iconScaling={iconScaling}
+          mob={mob}
+          spawn={spawn}
+        />
+      ))}
     </>
   )
 }
