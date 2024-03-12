@@ -20,8 +20,6 @@ export function useKeyPress(
       }
 
       for (const { key, mod } of shortcuts) {
-        if (key === 'Tab') {
-        }
         if (
           (!!mod?.ctrl !== event.ctrlKey && !!mod?.ctrl !== event.metaKey) ||
           !!mod?.shift !== event.shiftKey

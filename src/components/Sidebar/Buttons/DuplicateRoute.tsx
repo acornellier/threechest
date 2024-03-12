@@ -10,13 +10,12 @@ export function DuplicateRoute() {
   return (
     <>
       <Button
+        Icon={DocumentDuplicateIcon}
         data-tooltip-id="duplicate-route-tooltip"
         short
         className="flex-1"
         onClick={() => dispatch(duplicateRoute())}
-      >
-        <DocumentDuplicateIcon width={24} height={24} />
-      </Button>
+      />
       <TooltipStyled id="duplicate-route-tooltip" place="bottom-start">
         Duplicate route
       </TooltipStyled>

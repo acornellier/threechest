@@ -10,13 +10,12 @@ export function DeleteRoute() {
   return (
     <>
       <Button
+        Icon={TrashIcon}
         data-tooltip-id="delete-route-tooltip"
         short
         className="flex-1"
         onClick={() => dispatch(deleteRoute())}
-      >
-        <TrashIcon width={24} height={24} />
-      </Button>
+      />
       <TooltipStyled id="delete-route-tooltip" place="bottom-start">
         Delete route
       </TooltipStyled>

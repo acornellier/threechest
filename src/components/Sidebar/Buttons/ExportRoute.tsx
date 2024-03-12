@@ -19,8 +19,7 @@ export function ExportRoute() {
   }
 
   return (
-    <Button short className="flex-1" onClick={handleClick}>
-      <ArrowDownTrayIcon width={18} height={18} />
+    <Button Icon={ArrowDownTrayIcon} short className="flex-1" onClick={handleClick}>
       Export MDT
     </Button>
   )

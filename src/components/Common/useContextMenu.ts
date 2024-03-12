@@ -1,6 +1,5 @@
 import { useCallback, useEffect } from 'react'
-import { minContextMenuWidth } from '../Sidebar/Pulls/PullContextMenu.tsx'
-import { ContextMenuPosition } from './ContextMenu.tsx'
+import { ContextMenuPosition, minContextMenuWidth } from './ContextMenu.tsx'
 import { makeUseExclusiveState } from '../../hooks/exclusiveState.ts'
 
 const useExclusiveState = makeUseExclusiveState<ContextMenuPosition>()

@@ -19,7 +19,6 @@ export function Mobs() {
       zoomend: () => setIconScaling(mapIconScaling(map)),
       boxselectstart: () => dispatch(setBoxHovering(true)),
       boxselectmove({ bounds }) {
-        console.log('move')
         const spawns = dungeon.mdt.enemies
           .flatMap((mob) => mob.spawns.map((spawn) => ({ mob, spawn })))
           .filter(({ spawn }) => bounds.contains(spawn.pos))

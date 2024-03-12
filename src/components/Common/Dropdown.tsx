@@ -40,7 +40,6 @@ export function Dropdown({ selected, options, onChange }: Props) {
       <Button
         twoDimensional
         className={`w-full dropdown-main ${optionsVisible ? 'options-visible' : ''}`}
-        innerClass="gap-2"
         style={{
           ...(open
             ? {
@@ -51,7 +50,7 @@ export function Dropdown({ selected, options, onChange }: Props) {
         }}
         onClick={toggleOpen}
       >
-        {selected?.icon}
+        <div className="mr-1">{selected?.icon}</div>
         <div>{selected?.label}</div>
         {optionsVisible ? (
           <ChevronUpIcon width={20} height={20} className="ml-auto" />
@@ -71,7 +70,6 @@ export function Dropdown({ selected, options, onChange }: Props) {
               className={`flex py-2 px-2 dropdown-option ${
                 optionsVisible ? 'options-visible' : ''
               }`}
-              innerClass="gap-2"
               onClick={() => handleChange(option)}
             >
               <div className="mr-1">{option.icon}</div>

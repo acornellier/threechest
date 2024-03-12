@@ -25,13 +25,22 @@ export function UndoRedo() {
 
   return (
     <div className="flex items-start gap-2">
-      <Button className="gap-1" onClick={undo} disabled={!hasPast}>
-        <ArrowUturnLeftIcon width={16} height={16} />
+      <Button
+        Icon={ArrowUturnLeftIcon}
+        onClick={undo}
+        disabled={!hasPast}
+        shortcut={shortcuts.undo[0]}
+      >
         Undo
       </Button>
-      <Button className="gap-1" onClick={redo} disabled={!hasFuture}>
+      <Button
+        Icon={ArrowUturnRightIcon}
+        iconRight
+        onClick={redo}
+        disabled={!hasFuture}
+        shortcut={shortcuts.redo[0]}
+      >
         Redo
-        <ArrowUturnRightIcon width={16} height={16} />
       </Button>
     </div>
   )

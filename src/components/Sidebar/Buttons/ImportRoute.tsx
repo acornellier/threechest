@@ -41,12 +41,12 @@ export function ImportRoute() {
 
   return (
     <>
-      <Button data-tooltip-id="import-route-tooltip" short onClick={handleClick}>
-        {canPasteFromClipboard ? (
-          <ClipboardIcon width={18} height={18} />
-        ) : (
-          <ArrowUpTrayIcon width={18} height={18} />
-        )}
+      <Button
+        Icon={canPasteFromClipboard ? ClipboardIcon : ArrowUpTrayIcon}
+        data-tooltip-id="import-route-tooltip"
+        short
+        onClick={handleClick}
+      >
         {`Import MDT${canPasteFromClipboard ? ' from clipboard' : ''}`}
       </Button>
       {/*{process.env.NODE_ENV === 'development' && (*/}

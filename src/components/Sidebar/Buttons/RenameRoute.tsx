@@ -43,14 +43,14 @@ export function RenameRoute({ isRenaming, setRenaming }: Props) {
         />
       )}
       <Button
+        Icon={isRenaming ? CheckIcon : PencilIcon}
+        iconSize={20}
         onClick={isRenaming ? close : open}
         twoDimensional
         data-tooltip-id="rename-route-tooltip"
         short
         style={{ paddingLeft: 12, paddingRight: 12 }}
-      >
-        {isRenaming ? <CheckIcon width={20} height={20} /> : <PencilIcon width={20} height={20} />}
-      </Button>
+      />
       <TooltipStyled id="rename-route-tooltip" place="bottom-start">
         Rename route
       </TooltipStyled>

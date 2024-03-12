@@ -5,7 +5,6 @@ import { divIcon, type LeafletEventHandlerFnMap, Marker as LeafletMarker } from 
 import { renderToString } from 'react-dom/server'
 import { useAppDispatch } from '../../store/hooks.ts'
 import { useContextMenu } from '../Common/useContextMenu.ts'
-import { Button } from '../Common/Button.tsx'
 import { deleteNote, editNote } from '../../store/routesReducer.ts'
 import { ContextMenu } from '../Common/ContextMenu.tsx'
 import { latLngToPoint } from '../../util/map.ts'
@@ -115,19 +114,11 @@ function NoteComponent({ note, noteIndex, iconScaling }: Props) {
         </Popup>
       </Marker>
       {contextMenuPosition && (
-        <ContextMenu position={contextMenuPosition} onClose={onClose}>
-          <Button
-            short
-            justifyStart
-            onClick={(e) => {
-              dispatch(deleteNote(noteIndex))
-              onClose()
-              e.stopPropagation()
-            }}
-          >
-            Delete note
-          </Button>
-        </ContextMenu>
+        <ContextMenu
+          position={contextMenuPosition}
+          onClose={onClose}
+          buttons={[{ text: 'Delete note', onClick: () => dispatch(deleteNote(noteIndex)) }]}
+        />
       )}
     </>
   )

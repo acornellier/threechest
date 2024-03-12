@@ -1,4 +1,5 @@
 ﻿import { DungeonKey, MobSpawn, Point } from '../data/types.ts'
+import { ForwardRefExoticComponent, PropsWithoutRef, SVGProps } from 'react'
 
 export type Pull = {
   id: number
@@ -86,3 +87,5 @@ export type MdtRoute = {
   }
   objects: MdtObject[] | Record<number, MdtObject>
 }
+
+export type IconComponent = ForwardRefExoticComponent<PropsWithoutRef<SVGProps<SVGSVGElement>>>
