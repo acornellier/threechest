@@ -1,4 +1,3 @@
-import * as React from 'react'
 import { MouseEventHandler } from 'react'
 import { Panel } from './Panel.tsx'
 import { Shortcut } from '../../data/shortcuts.ts'

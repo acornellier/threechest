@@ -19,7 +19,6 @@ export const useHoverSelector = <T>(selector: (state: HoverState) => T): T =>
 
 // Routes
 export const useRoute = () => useRoutesSelector((state) => state.route)
-export const useSavedRoutes = () => useRoutesSelector((state) => state.savedRoutes)
 
 const selectAllRoutes = (state: RouteState) => state.savedRoutes
 const selectDungeonRoutes = createSelector(

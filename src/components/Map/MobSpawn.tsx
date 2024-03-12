@@ -104,7 +104,7 @@ export function MobSpawn({ iconScaling, mob, spawn }: MobSpawnProps) {
   const matchingPullIndex = useMemo(() => {
     const index = route.pulls.findIndex((pull) => pullContainsMobSpawn(pull, spawn.id))
     return index !== -1 ? index : null
-  }, [route.pulls, mob, spawn])
+  }, [route.pulls, spawn])
 
   return (
     <MobSpawnMemo

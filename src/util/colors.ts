@@ -4,7 +4,7 @@ export function lightenColor(color: string, amount: number) {
     color
       .replace(/^#/, '')
       .replace(/../g, (color) =>
-        ('0' + Math.min(255, Math.max(0, parseInt(color, 16) + amount)).toString(16)).substr(-2),
+        ('0' + Math.min(255, Math.max(0, parseInt(color, 16) + amount)).toString(16)).substring(-2),
       )
   )
 }
@@ -50,11 +50,4 @@ const highContrastColors = (
 
 export function getPullColor(pullIndex: number) {
   return highContrastColors[pullIndex % highContrastColors.length]!
-}
-
-// matches MDT colors
-export function GetPullColorOld(pullIndex: number) {
-  const h = ((pullIndex - 1) * 360) / 12 + 120
-  const [r, g, b] = hsvToRgb(h, 0.7554, 1)
-  return rgbToHex(r, g, b)
 }
