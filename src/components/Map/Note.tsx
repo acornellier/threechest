@@ -1,7 +1,7 @@
-import { memo, useEffect, useRef, useState } from 'react'
+import { memo, useEffect, useMemo, useRef, useState } from 'react'
 import { Note as NoteType } from '../../util/types.ts'
 import { Marker, Popup, Tooltip } from 'react-leaflet'
-import { divIcon, Marker as LeafletMarker } from 'leaflet'
+import { divIcon, type LeafletEventHandlerFnMap, Marker as LeafletMarker } from 'leaflet'
 import { renderToString } from 'react-dom/server'
 import { useAppDispatch } from '../../store/hooks.ts'
 import { useContextMenu } from '../Common/useContextMenu.ts'
@@ -32,28 +32,44 @@ function NoteComponent({ note, noteIndex, iconScaling }: Props) {
     }
   }, [dispatch, noteIndex, note.justAdded])
 
+  const markerEventHandlers: LeafletEventHandlerFnMap = useMemo(
+    () => ({
+      click: () => inputRef.current?.focus(),
+      dragend: (e) =>
+        dispatch(
+          editNote({
+            noteIndex,
+            changes: {
+              position: latLngToPoint((e.target as LeafletMarker).getLatLng()),
+            },
+          }),
+        ),
+      contextmenu: (e) => {
+        onRightClick(e.originalEvent)
+        e.originalEvent.stopPropagation()
+      },
+    }),
+    [dispatch, noteIndex, onRightClick],
+  )
+
+  const popupEventHandlers: LeafletEventHandlerFnMap = useMemo(
+    () => ({
+      add: () => setPopupOpen(true),
+      remove: () => {
+        setPopupOpen(false)
+        dispatch(editNote({ noteIndex, changes: { text: input } }))
+      },
+    }),
+    [dispatch, input, noteIndex],
+  )
+
   return (
     <>
       <Marker
         ref={markerRef}
         position={note.position}
         draggable
-        eventHandlers={{
-          click: () => inputRef.current?.focus(),
-          dragend: (e) =>
-            dispatch(
-              editNote({
-                noteIndex,
-                changes: {
-                  position: latLngToPoint((e.target as LeafletMarker).getLatLng()),
-                },
-              }),
-            ),
-          contextmenu: (e) => {
-            onRightClick(e.originalEvent)
-            e.originalEvent.stopPropagation()
-          },
-        }}
+        eventHandlers={markerEventHandlers}
         icon={divIcon({
           tooltipAnchor: [20 + (iconScaling - 40) / 2, 0],
           popupAnchor: [90 + (iconScaling - 40) / 2, 32],
@@ -85,17 +101,7 @@ function NoteComponent({ note, noteIndex, iconScaling }: Props) {
             <div className="p-2">{note.text}</div>
           </Tooltip>
         )}
-        <Popup
-          className="plain-popup"
-          closeButton={false}
-          eventHandlers={{
-            add: () => setPopupOpen(true),
-            remove: () => {
-              setPopupOpen(false)
-              dispatch(editNote({ noteIndex, changes: { text: input } }))
-            },
-          }}
-        >
+        <Popup className="plain-popup" closeButton={false} eventHandlers={popupEventHandlers}>
           <input
             ref={inputRef}
             autoFocus

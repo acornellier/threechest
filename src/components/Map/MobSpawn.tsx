@@ -56,7 +56,7 @@ function MobSpawnComponent({
     <>
       <Marker
         position={spawn.pos}
-        zIndexOffset={isHovered ? 100_000 : 0}
+        riseOnHover
         eventHandlers={eventHandlers}
         icon={divIcon({
           popupAnchor: [100, 0],

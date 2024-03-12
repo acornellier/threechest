@@ -1,11 +1,12 @@
 ﻿import { Pull } from '../../util/types.ts'
 import { Circle, Polygon, Tooltip } from 'react-leaflet'
 import { memo, useEffect, useMemo, useState } from 'react'
-import { useRoutesSelector } from '../../store/hooks.ts'
+import { useAppDispatch, useRoutesSelector } from '../../store/hooks.ts'
 import { getPullColor } from '../../util/colors.ts'
 import { Point } from '../../data/types.ts'
 import { expandPolygon, iconSizeMagicScaling, makeConvexHull } from '../../util/hull.ts'
 import { mobScale } from '../../util/mobSpawns.ts'
+import { selectPull } from '../../store/routesReducer.ts'
 
 interface Props {
   pullId: number
@@ -46,6 +47,7 @@ function createOutline(pull: Pull): Outline {
 }
 
 function PullOutlineComponent({ pullId, index, isSelected, isHovered }: Props) {
+  const dispatch = useAppDispatch()
   const pull = useRoutesSelector((state) => state.route.pulls.find((pull) => pull.id === pullId))!
   const { hull, circle } = useMemo(() => createOutline(pull), [pull])
   const pullColor = getPullColor(index)
@@ -56,11 +58,21 @@ function PullOutlineComponent({ pullId, index, isSelected, isHovered }: Props) {
     setKey((prevKey) => prevKey + 1000)
   }, [isHovered, isSelected, pull, index])
 
+  const eventHandlers = useMemo(
+    () => ({
+      click: () => {
+        dispatch(selectPull(index))
+      },
+    }),
+    [dispatch, index],
+  )
+
   return circle ? (
     <Circle
       key={key}
       center={circle.center}
       radius={circle.radius}
+      eventHandlers={eventHandlers}
       color={pullColor}
       fillOpacity={0}
       opacity={isSelected || isHovered ? 1 : 0.6}
@@ -79,6 +91,7 @@ function PullOutlineComponent({ pullId, index, isSelected, isHovered }: Props) {
     <Polygon
       key={key}
       positions={hull}
+      eventHandlers={eventHandlers}
       color={pullColor}
       fillOpacity={0}
       opacity={isSelected || isHovered ? 1 : 0.6}

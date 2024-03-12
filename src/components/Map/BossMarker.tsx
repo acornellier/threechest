@@ -13,7 +13,8 @@ export function BossMarker({ spawn, isHovered, iconSize }: Props) {
   return (
     <Marker
       position={spawn.pos}
-      zIndexOffset={isHovered ? 0 : -10_000}
+      interactive={false}
+      zIndexOffset={isHovered ? 1000 : -10_000}
       icon={divIcon({
         iconSize: [iconSize, iconSize],
         className: 'elite-portait',
