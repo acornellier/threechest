@@ -18,7 +18,7 @@ const copy: Shortcut[] = [{ key: 'C', ctrl: true }]
 const paste: Shortcut[] = [{ key: 'V', ctrl: true }]
 const help: Shortcut[] = [{ key: '?', allowShift: true }]
 
-export const isMac = navigator.platform.includes('Mac')
+export const isMac = /Macintosh/.test(navigator.userAgent)
 
 export function keyText({ key, ctrl, shift }: Shortcut) {
   let text = ''
