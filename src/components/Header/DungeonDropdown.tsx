@@ -28,6 +28,7 @@ export function DungeonDropdown() {
   return (
     <div className="w-[260px]">
       <Dropdown
+        className="dungeon-dropdown"
         options={options}
         selected={selected}
         onChange={(newDungeon) => dispatch(setDungeon(newDungeon.id as DungeonKey))}

@@ -13,6 +13,7 @@ import { augmentPulls } from '../../../store/augmentPulls.ts'
 import { PlusIcon } from '@heroicons/react/24/outline'
 import { useContextMenu } from '../../Common/useContextMenu.ts'
 import { ClearIcon } from '../../Common/Icons/ClearIcon.tsx'
+import { shortcuts } from '../../../data/shortcuts.ts'
 
 type SortablePull = PullDetailed & ItemInterface
 
@@ -104,8 +105,12 @@ export function Pulls() {
         ))}
       </ReactSortable>
       <div className="flex gap-1">
-        <Button className="grow" onClick={() => dispatch(addPull())}>
-          <PlusIcon width={18} height={18} />
+        <Button
+          className="grow"
+          Icon={PlusIcon}
+          onClick={() => dispatch(addPull())}
+          shortcut={shortcuts.appendPull[0]}
+        >
           Add pull
         </Button>
         <Button onClick={() => dispatch(clearRoute())}>

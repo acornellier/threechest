@@ -12,9 +12,10 @@ interface Props {
   selected: DropdownOption | undefined
   options: DropdownOption[]
   onChange: (option: DropdownOption) => void
+  className?: string
 }
 
-export function Dropdown({ selected, options, onChange }: Props) {
+export function Dropdown({ selected, options, onChange, className }: Props) {
   const [open, setOpen] = useState(false)
   const [optionsVisible, setOptionsVisible] = useState(false)
   const timeoutRef = useRef<NodeJS.Timeout>()
@@ -39,7 +40,7 @@ export function Dropdown({ selected, options, onChange }: Props) {
     <div className="relative flex-1">
       <Button
         twoDimensional
-        className={`w-full dropdown-main ${optionsVisible ? 'options-visible' : ''}`}
+        className={`w-full dropdown-main ${optionsVisible ? 'options-visible' : ''} ${className}`}
         style={{
           ...(open
             ? {
@@ -51,7 +52,7 @@ export function Dropdown({ selected, options, onChange }: Props) {
         onClick={toggleOpen}
       >
         <div className="mr-1">{selected?.icon}</div>
-        <div>{selected?.label}</div>
+        <div className="dropdown-main-text">{selected?.label}</div>
         {optionsVisible ? (
           <ChevronUpIcon width={20} height={20} className="ml-auto" />
         ) : (
