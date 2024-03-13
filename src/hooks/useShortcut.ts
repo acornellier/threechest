@@ -1,14 +1,13 @@
 import { useEffect } from 'react'
-import { Shortcut } from '../data/shortcuts.ts'
+import { isEventInInput, isMac, Shortcut } from '../data/shortcuts.ts'
 
-export function useKeyPress(
+export function useShortcut(
   shortcuts: string | Shortcut[],
   callback: (event: KeyboardEvent) => void,
 ) {
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.target instanceof HTMLInputElement || event.target instanceof HTMLTextAreaElement)
-        return
+      if (isEventInInput(event)) return
 
       if (typeof shortcuts === 'string') {
         if (event.key.toLowerCase() === shortcuts.toLowerCase()) {
@@ -20,8 +19,9 @@ export function useKeyPress(
       }
 
       for (const { key, ctrl, shift, allowShift } of shortcuts) {
+        const eventCtrlKey = isMac ? event.metaKey : event.ctrlKey
         if (
-          (!!ctrl !== event.ctrlKey && !!ctrl !== event.metaKey) ||
+          !!ctrl !== eventCtrlKey ||
           (!!shift !== event.shiftKey && !(allowShift && event.shiftKey))
         ) {
           continue

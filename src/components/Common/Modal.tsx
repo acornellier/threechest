@@ -1,5 +1,5 @@
 import { ReactNode, useCallback } from 'react'
-import { useKeyPress } from '../../hooks/useKeyPress.ts'
+import { useShortcut } from '../../hooks/useShortcut.ts'
 import { useOutsideClick } from '../../hooks/useOutsideClick.ts'
 
 interface Props {
@@ -23,7 +23,7 @@ export function Modal({
     if (closeOnEscape) onClose()
   }, [onClose, closeOnEscape])
 
-  useKeyPress('Escape', escapeCallback)
+  useShortcut('Escape', escapeCallback)
 
   const clickOutsideCallback = useCallback(() => {
     if (closeOnClickOutside) onClose()

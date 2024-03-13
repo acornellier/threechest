@@ -4,7 +4,7 @@ import { ShareRoute } from './Buttons/ShareRoute.tsx'
 
 export function SharePanel() {
   return (
-    <Panel row noRightBorder>
+    <Panel noRightBorder>
       <ExportRoute />
       <ShareRoute />
     </Panel>

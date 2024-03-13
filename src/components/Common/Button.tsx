@@ -61,7 +61,7 @@ export function Button({
 
   return (
     <button
-      className={`fancy-button 
+      className={`fancy-button
                   ${outline ? 'outline-button' : ''} 
                   ${short ? 'short' : ''} 
                   ${twoDimensional ? 'two-d' : ''} 
@@ -76,16 +76,23 @@ export function Button({
         }}
       >
         {shortcut ? (
-          <div className="w-full flex justify-between items-center gap-2">
+          <div
+            className={`w-full gap-2 ${
+              justifyStart
+                ? 'flex justify-between items-center gap-2'
+                : 'grid grid-cols-[1fr_auto_1fr]'
+            }`}
+          >
+            {!justifyStart && <div />}
             <div
-              className="flex flex-nowrap whitespace-nowrap flex-1"
+              className="flex flex-nowrap flex-1"
               style={{
                 justifyContent: justifyStart ? 'flex-start' : 'center',
               }}
             >
               {buttonIconText}
             </div>
-            <div className="text-gray-300">{keyText(shortcut)}</div>
+            <div className="text-gray-300 flex justify-end">{keyText(shortcut)}</div>
           </div>
         ) : (
           buttonIconText

@@ -15,7 +15,7 @@ const shortcutDescriptions = [
   { desc: 'Add pull to end', shortcuts: shortcuts.addPull },
   { desc: 'Add pull before selected', shortcuts: shortcuts.prependPull },
   { desc: 'Clear selected pull', shortcuts: shortcuts.clearPull },
-  { desc: 'Delete selected pull', shortcuts: shortcuts.deletePull },
+  { desc: 'Delete selected pull', shortcuts: shortcuts.deletePull.concat(shortcuts.backspacePull) },
 ]
   .map(({ desc, shortcuts }) => ({ desc, texts: shortcuts.map((shortcut) => keyText(shortcut)) }))
   .filter(({ texts }) => texts.length)
@@ -39,14 +39,14 @@ export function HelpModal({ onClose }: Props) {
             select multiple mobs at once.
           </div>
           <div>
-            Ask any questions you want in{' '}
+            Any other questions? Contact me on{' '}
             <a
               className="text-blue-500 hover:underline"
               href="https://discord.com/invite/Ykb6AbYHHZ"
               target="_blank"
               rel="noreferrer"
             >
-              the discord
+              discord
             </a>
             .
           </div>

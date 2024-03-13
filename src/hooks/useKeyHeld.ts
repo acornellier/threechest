@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 
 type Key = 'Control' | string
 
-export function useKeyDown(key: Key): boolean {
+export function useKeyHeld(key: Key): boolean {
   const [isKeyPressed, setKeyPressed] = useState(false)
 
   useEffect(() => {

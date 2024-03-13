@@ -8,7 +8,7 @@ import {
   selectPull,
   selectPullRelative,
 } from '../../../store/routesReducer.ts'
-import { useKeyPress } from '../../../hooks/useKeyPress.ts'
+import { useShortcut } from '../../../hooks/useShortcut.ts'
 import { useAppDispatch } from '../../../store/hooks.ts'
 import { shortcuts } from '../../../data/shortcuts.ts'
 
@@ -16,28 +16,28 @@ export function usePullShortcuts() {
   const dispatch = useAppDispatch()
 
   const onKeyBackspace = useCallback(() => dispatch(deletePull({ moveUp: true })), [dispatch])
-  useKeyPress(shortcuts.backspacePull, onKeyBackspace)
+  useShortcut(shortcuts.backspacePull, onKeyBackspace)
 
   const onKeyDelete = useCallback(() => dispatch(deletePull({})), [dispatch])
-  useKeyPress(shortcuts.deletePull, onKeyDelete)
+  useShortcut(shortcuts.deletePull, onKeyDelete)
 
   const onAppend = useCallback(() => dispatch(appendPull()), [dispatch])
-  useKeyPress(shortcuts.appendPull, onAppend)
+  useShortcut(shortcuts.appendPull, onAppend)
 
   const onAppendToEnd = useCallback(() => dispatch(addPull()), [dispatch])
-  useKeyPress(shortcuts.addPull, onAppendToEnd)
+  useShortcut(shortcuts.addPull, onAppendToEnd)
 
   const onPrepend = useCallback(() => dispatch(prependPull()), [dispatch])
-  useKeyPress(shortcuts.prependPull, onPrepend)
+  useShortcut(shortcuts.prependPull, onPrepend)
 
   const onClearPull = useCallback(() => dispatch(clearPull()), [dispatch])
-  useKeyPress(shortcuts.clearPull, onClearPull)
+  useShortcut(shortcuts.clearPull, onClearPull)
 
   const onPullDown = useCallback(() => dispatch(selectPullRelative(1)), [dispatch])
-  useKeyPress(shortcuts.pullDown, onPullDown)
+  useShortcut(shortcuts.pullDown, onPullDown)
 
   const onPullUp = useCallback(() => dispatch(selectPullRelative(-1)), [dispatch])
-  useKeyPress(shortcuts.pullUp, onPullUp)
+  useShortcut(shortcuts.pullUp, onPullUp)
 
   const onNumberKey = useCallback(
     (e: KeyboardEvent) => {
@@ -47,5 +47,5 @@ export function usePullShortcuts() {
     },
     [dispatch],
   )
-  useKeyPress(shortcuts.selectPullNumber, onNumberKey)
+  useShortcut(shortcuts.selectPullNumber, onNumberKey)
 }

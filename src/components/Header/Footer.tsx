@@ -4,20 +4,25 @@ import { GithubIcon } from '../Common/Icons/GithubIcon.tsx'
 import { KofiIcon } from '../Common/Icons/KofiIcon.tsx'
 import { useCallback, useState } from 'react'
 import { HelpModal } from './HelpModal.tsx'
-import { useKeyPress } from '../../hooks/useKeyPress.ts'
+import { useShortcut } from '../../hooks/useShortcut.ts'
 import { shortcuts } from '../../data/shortcuts.ts'
 
 export function Footer() {
   const [helpModalOpen, setHelpModalOpen] = useState(false)
 
   const onHelp = useCallback(() => setHelpModalOpen(true), [])
-  useKeyPress(shortcuts.help, onHelp)
+  useShortcut(shortcuts.help, onHelp)
 
   return (
     <>
       <div className="fixed bottom-0 right-0 z-20">
         <div className="my-1 mx-2 flex items-center gap-2 h-[48px]">
-          <Button iconSize={24} onClick={() => setHelpModalOpen(true)} shortcut={shortcuts.help[0]}>
+          <Button
+            justifyStart
+            iconSize={24}
+            onClick={() => setHelpModalOpen(true)}
+            shortcut={shortcuts.help[0]}
+          >
             Help
           </Button>
           <a href="https://discord.com/invite/Ykb6AbYHHZ" target="_blank" rel="noreferrer">

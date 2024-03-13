@@ -2,7 +2,7 @@
 import { Button } from '../Common/Button.tsx'
 import { ActionCreators } from 'redux-undo'
 import { useCallback } from 'react'
-import { useKeyPress } from '../../hooks/useKeyPress.ts'
+import { useShortcut } from '../../hooks/useShortcut.ts'
 import { ArrowUturnLeftIcon, ArrowUturnRightIcon } from '@heroicons/react/24/outline'
 import { shortcuts } from '../../data/shortcuts.ts'
 
@@ -20,8 +20,8 @@ export function UndoRedo() {
     dispatch(ActionCreators.redo())
   }, [dispatch])
 
-  useKeyPress(shortcuts.undo, undo)
-  useKeyPress(shortcuts.redo, redo)
+  useShortcut(shortcuts.undo, undo)
+  useShortcut(shortcuts.redo, redo)
 
   return (
     <div className="flex items-start gap-2">
@@ -30,6 +30,7 @@ export function UndoRedo() {
         onClick={undo}
         disabled={!hasPast}
         shortcut={shortcuts.undo[0]}
+        justifyStart
       >
         Undo
       </Button>
@@ -39,6 +40,7 @@ export function UndoRedo() {
         onClick={redo}
         disabled={!hasFuture}
         shortcut={shortcuts.redo[0]}
+        justifyStart
       >
         Redo
       </Button>
