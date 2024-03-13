@@ -11,6 +11,7 @@ import {
   newRoute,
   setDungeon,
   setRouteFromMdt,
+  updateSavedRoutes,
 } from './routesReducer.ts'
 
 export const listenerMiddleware = createListenerMiddleware()
@@ -62,14 +63,9 @@ listenerMiddleware.startListening({
 })
 
 listenerMiddleware.startListening({
-  matcher: isAnyOf(
-    loadRoute.fulfilled,
-    deleteRoute.fulfilled,
-    duplicateRoute,
-    setRouteFromMdt,
-    newRoute,
-  ),
+  matcher: isAnyOf(loadRoute.fulfilled, duplicateRoute, setRouteFromMdt, newRoute),
   effect: async (_action, listenerApi) => {
+    listenerApi.dispatch(updateSavedRoutes())
     listenerApi.dispatch(ActionCreators.clearHistory())
   },
 })
