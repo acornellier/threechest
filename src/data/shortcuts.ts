@@ -4,7 +4,8 @@ const undo: Shortcut[] = [{ key: 'Z', ctrl: true }]
 const redo: Shortcut[] = [{ key: 'Z', ctrl: true, shift: true }]
 const backspacePull: Shortcut[] = [{ key: 'Backspace' }]
 const deletePull: Shortcut[] = [{ key: 'D' }, { key: 'Delete' }]
-const appendPull: Shortcut[] = [{ key: 'A' }]
+const appendPull: Shortcut[] = [{ key: 'a', shift: false }]
+const addPull: Shortcut[] = [{ key: 'A', shift: true }]
 const prependPull: Shortcut[] = [{ key: 'B' }]
 const clearPull: Shortcut[] = [{ key: 'C' }]
 const pullUp: Shortcut[] = [{ key: 'ArrowUp' }, { key: 'Tab', shift: true }]
@@ -36,6 +37,7 @@ export const shortcuts = {
   backspacePull,
   deletePull,
   appendPull,
+  addPull,
   prependPull,
   clearPull,
   pullUp,

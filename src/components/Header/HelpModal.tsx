@@ -12,6 +12,7 @@ const shortcutDescriptions = [
   { desc: 'Select next pull', shortcuts: shortcuts.pullDown },
   { desc: 'Select previous pull', shortcuts: shortcuts.pullUp },
   { desc: 'Add pull after selected', shortcuts: shortcuts.appendPull },
+  { desc: 'Add pull to end', shortcuts: shortcuts.addPull },
   { desc: 'Add pull before selected', shortcuts: shortcuts.prependPull },
   { desc: 'Clear selected pull', shortcuts: shortcuts.clearPull },
   { desc: 'Delete selected pull', shortcuts: shortcuts.deletePull },

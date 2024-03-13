@@ -2,7 +2,6 @@
 import { DiscordIcon } from '../Common/Icons/DiscordIcon.tsx'
 import { GithubIcon } from '../Common/Icons/GithubIcon.tsx'
 import { KofiIcon } from '../Common/Icons/KofiIcon.tsx'
-import { QuestionMarkCircleIcon } from '@heroicons/react/24/outline'
 import { useCallback, useState } from 'react'
 import { HelpModal } from './HelpModal.tsx'
 import { useKeyPress } from '../../hooks/useKeyPress.ts'
@@ -18,12 +17,7 @@ export function Footer() {
     <>
       <div className="fixed bottom-0 right-0 z-20">
         <div className="my-1 mx-2 flex items-center gap-2 h-[48px]">
-          <Button
-            Icon={QuestionMarkCircleIcon}
-            iconSize={24}
-            onClick={() => setHelpModalOpen(true)}
-            shortcut={shortcuts.help[0]}
-          >
+          <Button iconSize={24} onClick={() => setHelpModalOpen(true)} shortcut={shortcuts.help[0]}>
             Help
           </Button>
           <a href="https://discord.com/invite/Ykb6AbYHHZ" target="_blank" rel="noreferrer">

@@ -109,7 +109,7 @@ export function Pulls() {
           className="grow"
           Icon={PlusIcon}
           onClick={() => dispatch(addPull())}
-          shortcut={shortcuts.appendPull[0]}
+          shortcut={shortcuts.addPull[0]}
         >
           Add pull
         </Button>
