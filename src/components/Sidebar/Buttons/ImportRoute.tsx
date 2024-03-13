@@ -65,7 +65,7 @@ export function ImportRoute() {
         onClick={handleClick}
         shortcut={shortcuts.paste[0]}
       >
-        {`Import MDT${canPasteFromClipboard ? ' from clipboard' : ''}`}
+        Import MDT
       </Button>
       {/*{process.env.NODE_ENV === 'development' && (*/}
       <Button outline short onClick={() => handlePaste(andy4)}>
