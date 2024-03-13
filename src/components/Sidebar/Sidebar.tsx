@@ -4,7 +4,8 @@ import { SidebarCollapser } from './SidebarCollapser.tsx'
 import { useLocalStorage } from '../../hooks/useLocalStorage.ts'
 import { Pulls } from './Pulls/Pulls.tsx'
 
-const margin = 8
+const marginTop = 8
+const marginBottom = 60
 const width = 285
 
 export function Sidebar() {
@@ -15,8 +16,9 @@ export function Sidebar() {
       className="fixed right-0 z-20 flex flex-col gap-3"
       style={{
         width,
-        margin: `${margin}px 0`,
-        maxHeight: `calc(100% - 2*${margin}px)`,
+        marginTop,
+        marginBottom,
+        maxHeight: `calc(100% - ${marginTop}px - ${marginBottom}px)`,
         right: collapsed ? -width : 0,
         transition: '150ms all',
       }}

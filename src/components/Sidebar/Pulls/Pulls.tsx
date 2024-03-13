@@ -12,7 +12,7 @@ import { Panel } from '../../Common/Panel.tsx'
 import { augmentPulls } from '../../../store/augmentPulls.ts'
 import { PlusIcon } from '@heroicons/react/24/outline'
 import { useContextMenu } from '../../Common/useContextMenu.ts'
-import { ClearIcon } from '../../Common/ClearIcon.tsx'
+import { ClearIcon } from '../../Common/Icons/ClearIcon.tsx'
 
 type SortablePull = PullDetailed & ItemInterface
 

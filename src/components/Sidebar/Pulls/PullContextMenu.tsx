@@ -3,7 +3,7 @@ import { useAppDispatch } from '../../../store/hooks.ts'
 import { ContextMenu, ContextMenuProps } from '../../Common/ContextMenu.tsx'
 import { shortcuts } from '../../../data/shortcuts.ts'
 import { PlusIcon, TrashIcon } from '@heroicons/react/24/outline'
-import { ClearIcon } from '../../Common/ClearIcon.tsx'
+import { ClearIcon } from '../../Common/Icons/ClearIcon.tsx'
 
 interface Props extends Omit<ContextMenuProps, 'buttons'> {
   pullIndex: number

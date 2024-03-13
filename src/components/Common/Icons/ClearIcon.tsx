@@ -1,5 +1,5 @@
 ﻿import { forwardRef, SVGProps } from 'react'
-import { IconComponent } from '../../util/types.ts'
+import { IconComponent } from '../../../util/types.ts'
 
 export const ClearIcon: IconComponent = forwardRef<SVGSVGElement, SVGProps<SVGSVGElement>>(
   (props, ref) => {
