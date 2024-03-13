@@ -22,7 +22,7 @@ export interface ContextMenuProps {
   onClose: () => void
 }
 
-export const minContextMenuWidth = 160
+export const minContextMenuWidth = 180
 
 export function ContextMenu({ position, buttons, onClose }: ContextMenuProps) {
   return (

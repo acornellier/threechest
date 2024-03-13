@@ -17,12 +17,7 @@ export function Footer() {
     <>
       <div className="fixed bottom-0 right-0 z-20">
         <div className="my-1 mx-2 flex items-center gap-2 h-[48px]">
-          <Button
-            justifyStart
-            iconSize={24}
-            onClick={() => setHelpModalOpen(true)}
-            shortcut={shortcuts.help[0]}
-          >
+          <Button justifyStart onClick={() => setHelpModalOpen(true)} shortcut={shortcuts.help[0]}>
             Help
           </Button>
           <a href="https://discord.com/invite/Ykb6AbYHHZ" target="_blank" rel="noreferrer">

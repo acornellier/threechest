@@ -1,6 +1,6 @@
 import { ITooltip, Tooltip, TooltipRefProps } from 'react-tooltip'
 import { forwardRef } from 'react'
-import { useIsMobile } from '../../hooks/useIsMobile.ts'
+import { isMobile } from '../../util/dev.ts'
 
 interface Props extends ITooltip {}
 
@@ -8,7 +8,7 @@ export const TooltipStyled = forwardRef<TooltipRefProps, Props>(function Tooltip
   { className, ...props },
   ref,
 ) {
-  const isMobile = useIsMobile()
+  if (isMobile) return null
 
   return (
     <Tooltip
@@ -17,7 +17,6 @@ export const TooltipStyled = forwardRef<TooltipRefProps, Props>(function Tooltip
       border="1px solid #9ca3af"
       opacity={1}
       place="top-start"
-      {...(isMobile ? { isOpen: false } : {})}
       {...props}
     />
   )

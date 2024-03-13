@@ -1,5 +1,5 @@
 ﻿import { MdtRoute } from '../util/types.ts'
-import { isDev } from '../util/isDev.ts'
+import { isDev } from '../util/dev.ts'
 
 const importUrl = isDev ? 'http://localhost:6173/api/decodeRoute' : '/api/decodeRoute'
 

@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
-import { isEventInInput, isMac, Shortcut } from '../data/shortcuts.ts'
+import { isEventInInput, Shortcut } from '../data/shortcuts.ts'
+import { isMac } from '../util/dev.ts'
 
 export function useShortcut(
   shortcuts: string | Shortcut[],

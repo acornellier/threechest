@@ -6,7 +6,6 @@ export const GithubIcon: IconComponent = forwardRef<SVGSVGElement, SVGProps<SVGS
     return (
       <svg
         ref={ref}
-        className="w-6 h-6 text-white"
         aria-hidden="true"
         xmlns="http://www.w3.org/2000/svg"
         fill="currentColor"

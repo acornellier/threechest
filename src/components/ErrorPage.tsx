@@ -9,7 +9,7 @@ import {
   PlusCircleIcon,
   TrashIcon,
 } from '@heroicons/react/24/outline'
-import { isDev } from '../util/isDev.ts'
+import { isDev } from '../util/dev.ts'
 
 interface Props {
   errors: Array<{ error: Error; info: ErrorInfo }>

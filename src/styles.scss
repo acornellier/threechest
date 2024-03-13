@@ -114,8 +114,9 @@ img.leaflet-tile {
   justify-content: center;
   background-color: $fancy-red;
   border: 1px solid black;
+  min-height: 42px;
   padding: 8px 12px;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: normal;
   border-radius: 6px;
   position: relative;
@@ -123,6 +124,7 @@ img.leaflet-tile {
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.3);
 
   &.short {
+    min-height: 32px;
     padding-top: 4px;
     padding-bottom: 4px;
   }

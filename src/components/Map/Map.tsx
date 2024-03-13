@@ -11,7 +11,7 @@ import { useEffect } from 'react'
 import { mapHeight, mapWidth } from '../../data/dungeons.ts'
 import { MousePosition } from '../Leaflet/MousePosition/MousePosition'
 import { Dungeon } from '../../data/types.ts'
-import { isDev } from '../../util/isDev.ts'
+import { isDev } from '../../util/dev.ts'
 import { Mobs } from './Mobs.tsx'
 import { PullOutlines } from './PullOutlines.tsx'
 

@@ -3,6 +3,7 @@ import { Tooltip } from 'react-leaflet'
 import { useDungeon } from '../../store/hooks.ts'
 import { mobCountPercentStr, roundTo } from '../../util/numbers.ts'
 import { rgbToHex } from '../../util/colors.ts'
+import { isMobile } from '../../util/dev.ts'
 
 interface Props {
   mob: Mob
@@ -12,6 +13,8 @@ interface Props {
 
 export function MobSpawnTooltip({ mob, spawn, iconScaling }: Props) {
   const dungeon = useDungeon()
+
+  if (isMobile) return null
 
   const efficiencyScore = roundTo(
     (2.5 * (mob.count / dungeon.mdt.totalCount) * 300) / (mob.health / 500000),

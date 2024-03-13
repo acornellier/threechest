@@ -1,6 +1,9 @@
+import { isMac } from '../util/dev.ts'
+
 export type Shortcut = { key: string; ctrl?: boolean; shift?: boolean; allowShift?: boolean }
 
 const confirm: Shortcut[] = [{ key: 'Enter' }]
+const cancel: Shortcut[] = [{ key: 'Escape' }]
 const undo: Shortcut[] = [{ key: 'Z', ctrl: true }]
 const redo: Shortcut[] = [{ key: 'Z', ctrl: true, shift: true }]
 const backspacePull: Shortcut[] = [{ key: 'Backspace' }]
@@ -18,16 +21,15 @@ const copy: Shortcut[] = [{ key: 'C', ctrl: true }]
 const paste: Shortcut[] = [{ key: 'V', ctrl: true }]
 const help: Shortcut[] = [{ key: '?', allowShift: true }]
 
-export const isMac = /Macintosh/.test(navigator.userAgent)
-
 export function keyText({ key, ctrl, shift }: Shortcut) {
   let text = ''
 
   if (ctrl) text += isMac ? '⌘' : 'Ctrl+'
-  if (shift) text += '⇧'
+  if (shift) text += 'Shift+'
 
   if (key === 'Delete') text += 'Del'
   else if (key === 'Enter') text += '↵'
+  else if (key === 'Escape') text += 'Esc'
   else if (key === 'Backspace') text += '⌫'
   else if (key === 'ArrowUp') text += '↑'
   else if (key === 'ArrowDown') text += '↓  '
@@ -41,6 +43,7 @@ export const isEventInInput = (event: Event) =>
 
 export const shortcuts = {
   confirm,
+  cancel,
   undo,
   redo,
   backspacePull,
