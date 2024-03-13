@@ -19,12 +19,13 @@ export function useKeyPress(
         return
       }
 
-      for (const { key, mod } of shortcuts) {
+      for (const { key, ctrl, shift, allowShift } of shortcuts) {
         if (
-          (!!mod?.ctrl !== event.ctrlKey && !!mod?.ctrl !== event.metaKey) ||
-          !!mod?.shift !== event.shiftKey
-        )
+          (!!ctrl !== event.ctrlKey && !!ctrl !== event.metaKey) ||
+          (!!shift !== event.shiftKey && !(allowShift && event.shiftKey))
+        ) {
           continue
+        }
 
         if (event.key.toLowerCase() === key.toLowerCase()) {
           event.preventDefault()

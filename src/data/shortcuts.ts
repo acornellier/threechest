@@ -1,31 +1,31 @@
-export interface Modifiers {
-  ctrl?: boolean
-  shift?: boolean
-}
+export type Shortcut = { key: string; ctrl?: boolean; shift?: boolean; allowShift?: boolean }
 
-export type Shortcut = { key: string; mod?: Modifiers }
-
-const undo: Shortcut[] = [{ key: 'z', mod: { ctrl: true } }]
-const redo: Shortcut[] = [{ key: 'z', mod: { ctrl: true, shift: true } }]
+const undo: Shortcut[] = [{ key: 'Z', ctrl: true }]
+const redo: Shortcut[] = [{ key: 'Z', ctrl: true, shift: true }]
 const backspacePull: Shortcut[] = [{ key: 'Backspace' }]
-const deletePull: Shortcut[] = [{ key: 'd' }, { key: 'Delete' }]
-const appendPull: Shortcut[] = [{ key: 'a' }]
-const prependPull: Shortcut[] = [{ key: 'b' }]
-const clearPull: Shortcut[] = [{ key: 'c' }]
-const pullUp: Shortcut[] = [{ key: 'ArrowUp' }, { key: 'Tab', mod: { shift: true } }]
+const deletePull: Shortcut[] = [{ key: 'D' }, { key: 'Delete' }]
+const appendPull: Shortcut[] = [{ key: 'A' }]
+const prependPull: Shortcut[] = [{ key: 'B' }]
+const clearPull: Shortcut[] = [{ key: 'C' }]
+const pullUp: Shortcut[] = [{ key: 'ArrowUp' }, { key: 'Tab', shift: true }]
 const pullDown: Shortcut[] = [{ key: 'ArrowDown' }, { key: 'Tab' }]
 const selectPullNumber: Shortcut[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0].map((n) => ({
   key: n.toString(),
 }))
+const help: Shortcut[] = [{ key: '?', allowShift: true }]
 
-export function keyText({ key, mod }: Shortcut) {
+const isMac = navigator.platform.includes('Mac')
+
+export function keyText({ key, ctrl, shift }: Shortcut) {
   let text = ''
 
-  if (mod?.ctrl) text += 'Ctrl+'
-  if (mod?.shift) text += 'Shift+'
+  if (ctrl) text += isMac ? '⌘' : 'Ctrl+'
+  if (shift) text += '⇧'
 
   if (key === 'Delete') text += 'Del'
-  else text += key.toUpperCase()
+  else if (key === 'ArrowUp') text += '↑'
+  else if (key === 'ArrowDown') text += '↓  '
+  else text += key
 
   return text
 }
@@ -41,4 +41,5 @@ export const shortcuts = {
   pullUp,
   pullDown,
   selectPullNumber,
+  help,
 } as const

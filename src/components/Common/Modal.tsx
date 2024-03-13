@@ -4,9 +4,9 @@ import { useOutsideClick } from '../../hooks/useOutsideClick.ts'
 
 interface Props {
   title: ReactNode
-  contents: ReactNode
-  buttons: ReactNode
   onClose: () => void
+  contents: ReactNode
+  buttons?: ReactNode
   closeOnEscape?: boolean
   closeOnClickOutside?: boolean
 }
@@ -41,7 +41,7 @@ export function Modal({
 
           <div className="leading-relaxed">{contents}</div>
 
-          <div className="flex justify-center items-center gap-2">{buttons}</div>
+          {buttons && <div className="flex justify-center items-center gap-2">{buttons}</div>}
         </div>
       </div>
     </div>

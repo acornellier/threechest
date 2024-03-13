@@ -76,7 +76,7 @@ export function Button({
         }}
       >
         {shortcut ? (
-          <div className="w-full flex justify-between items-end gap-2">
+          <div className="w-full flex justify-between items-center gap-2">
             <div
               className="flex flex-nowrap whitespace-nowrap flex-1"
               style={{
