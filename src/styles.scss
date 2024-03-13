@@ -183,6 +183,7 @@ input.fancy {
     0 10px 20px rgba(0, 0, 0, 0.1);
 
   &-inner {
+    position: relative;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -264,57 +265,72 @@ input.fancy {
   &:focus-visible {
     outline: 2px solid yellow;
   }
+}
 
-  &.dropdown-main {
-    @extend .two-d;
+.dropdown-main {
+  @extend .two-d;
 
-    justify-content: flex-start;
+  width: 100%;
+  justify-content: flex-start;
 
-    transition: border;
-    transition-duration: 0.2s;
-    transition-timing-function: ease-out;
+  transition: border;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-out;
 
-    &.options-visible {
-      border: 1px solid #c2c2c2;
-    }
+  &.options-visible {
+    border: 1px solid #c2c2c2;
   }
 
-  &.dropdown-option {
-    @extend .two-d;
+  .dropdown-main-text {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: auto;
+  }
+}
 
-    transition: max-height, padding-top, padding-bottom, opacity;
-    transition-duration: 0.2s;
-    transition-timing-function: ease-out;
+.dropdown-option {
+  @extend .two-d;
 
-    .fancy-button-inner {
-      justify-content: flex-start;
-    }
+  min-height: unset;
+  transition: max-height, padding-top, padding-bottom, opacity;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-out;
 
-    &:not(.options-visible) {
-      max-height: 0;
-      opacity: 0;
-      padding-top: 0;
-      padding-bottom: 0;
-    }
+  .fancy-button-inner {
+    justify-content: flex-start;
+  }
 
-    &.options-visible {
-      max-height: 50px;
-    }
+  &:not(.options-visible) {
+    max-height: 0;
+    opacity: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
 
-    border: 1px solid #c2c2c2;
+  &.options-visible {
+    max-height: 100px;
+  }
+
+  .dropdown-option-text {
+    text-overflow: ellipsis;
+    white-space: normal;
+    text-align: left;
+    overflow: auto;
+  }
+
+  border: 1px solid #c2c2c2;
+  border-top: none;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+
+  &:not(:first-child) {
     border-top: none;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
+  }
 
-    &:not(:first-child) {
-      border-top: none;
-    }
-
-    &:not(:last-child) {
-      border-bottom-left-radius: 0;
-      border-bottom-right-radius: 0;
-      border-bottom: none;
-    }
+  &:not(:last-child) {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom: none;
   }
 }
 

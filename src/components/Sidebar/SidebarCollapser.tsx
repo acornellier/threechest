@@ -9,21 +9,18 @@ interface Props {
 
 export function SidebarCollapser({ collapsed, setCollapsed }: Props) {
   return (
-    <div className="absolute -left-[28px] top-[6px]">
+    <div className="absolute -left-[30px] top-[8px]">
       <Button
+        Icon={collapsed ? ChevronLeftIcon : ChevronRightIcon}
+        iconSize={18}
         onClick={() => setCollapsed((prev) => !prev)}
         style={{
+          height: 50,
           padding: '12px 4px 12px 8px',
           borderTopRightRadius: 0,
           borderBottomRightRadius: 0,
         }}
-      >
-        {collapsed ? (
-          <ChevronLeftIcon width={16} height={16} />
-        ) : (
-          <ChevronRightIcon width={16} height={16} />
-        )}
-      </Button>
+      />
     </div>
   )
 }

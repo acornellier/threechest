@@ -31,16 +31,19 @@ export function Dropdown({ selected, options, onChange, className }: Props) {
     }
   }
 
-  const handleChange = (option: DropdownOption) => {
+  const selectOption = (option: DropdownOption) => {
     if (option.id !== selected?.id) onChange(option)
     toggleOpen()
   }
 
   return (
-    <div className="relative flex-1">
+    <div className="relative flex-1 min-w-0">
       <Button
+        justifyStart
         twoDimensional
-        className={`w-full dropdown-main ${optionsVisible ? 'options-visible' : ''} ${className}`}
+        className={`dropdown-main 
+                    ${optionsVisible ? 'options-visible' : ''} 
+                    ${className ?? ''}`}
         style={{
           ...(open
             ? {
@@ -51,7 +54,7 @@ export function Dropdown({ selected, options, onChange, className }: Props) {
         }}
         onClick={toggleOpen}
       >
-        <div className="mr-1">{selected?.icon}</div>
+        {selected?.icon && <div className="mr-1">{selected?.icon}</div>}
         <div className="dropdown-main-text">{selected?.label}</div>
         {optionsVisible ? (
           <ChevronUpIcon width={20} height={20} className="ml-auto" />
@@ -68,13 +71,12 @@ export function Dropdown({ selected, options, onChange, className }: Props) {
           {options.map((option) => (
             <Button
               key={option.id}
-              className={`flex py-2 px-2 dropdown-option ${
-                optionsVisible ? 'options-visible' : ''
-              }`}
-              onClick={() => handleChange(option)}
+              className={`dropdown-option ${optionsVisible ? 'options-visible' : ''}`}
+              onClick={() => selectOption(option)}
+              title={option.label}
             >
-              <div className="mr-1">{option.icon}</div>
-              {option.label}
+              {option.icon && <div className="mr-1">{option.icon}</div>}
+              <div className="dropdown-option-text">{option.label}</div>
             </Button>
           ))}
         </div>

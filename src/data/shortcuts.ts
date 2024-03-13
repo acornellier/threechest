@@ -25,7 +25,7 @@ export function keyText({ key, ctrl, shift }: Shortcut) {
   let text = ''
 
   if (ctrl) text += isMac ? '⌘' : 'Ctrl+'
-  if (shift) text += 'Shift+'
+  if (shift) text += isMac ? '⇧' : 'Shift+'
 
   if (key === 'Delete') text += 'Del'
   else if (key === 'Enter') text += '↵'
