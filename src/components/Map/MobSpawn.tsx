@@ -15,7 +15,7 @@ import { Patrol } from './Patrol.tsx'
 import { BossMarker } from './BossMarker.tsx'
 import { MobIcon } from './MobIcon.tsx'
 import { MobSpawnTooltip } from './MobSpawnTooltip.tsx'
-import { hoverMobSpawn, selectMobSpawn } from '../../store/hoverReducer.ts'
+import { hoverSpawn, selectSpawn } from '../../store/hoverReducer.ts'
 
 interface MobSpawnProps {
   iconScaling: number
@@ -52,9 +52,9 @@ function MobSpawnComponent({
           }),
         )
       },
-      contextmenu: () => dispatch(selectMobSpawn(spawn.id)),
-      mouseover: () => dispatch(hoverMobSpawn(spawn.id)),
-      mouseout: () => dispatch(hoverMobSpawn(null)),
+      contextmenu: () => dispatch(selectSpawn(spawn.id)),
+      mouseover: () => dispatch(hoverSpawn(spawn.id)),
+      mouseout: () => dispatch(hoverSpawn(null)),
     }),
     [dispatch, spawn],
   )

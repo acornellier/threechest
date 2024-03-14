@@ -1,7 +1,7 @@
 import { useAppDispatch, useDungeon, useHoverSelector } from '../store/hooks.ts'
 import { Panel } from './Common/Panel.tsx'
 import { XMarkIcon } from '@heroicons/react/24/outline'
-import { selectMobSpawn } from '../store/hoverReducer.ts'
+import { selectSpawn } from '../store/hoverReducer.ts'
 import { getIconLink } from '../data/spells/mergeSpells.ts'
 import { addToast } from '../store/toastReducer.ts'
 import { findMobSpawn } from '../util/mobSpawns.ts'
@@ -32,7 +32,7 @@ export function MobInfo() {
               width={20}
               height={20}
               className="cursor-pointer -mt-2"
-              onClick={() => dispatch(selectMobSpawn(null))}
+              onClick={() => dispatch(selectSpawn(null))}
             />
           </div>
           <div className="flex justify-between gap-2">
