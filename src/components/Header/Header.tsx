@@ -4,15 +4,15 @@ import { UndoRedo } from './UndoRedo.tsx'
 
 export function Header() {
   return (
-    <div className="fixed top-2 left-2 z-20 w-full grid items-center">
-      <div className="grid items-center p-2 gap-4 grid-rows-2 lg:grid-cols-[1fr_auto_1fr]">
-        <div className="flex gap-4 flex-col items-start sm:flex-row sm:items-stretch">
+    <div className="fixed top-4 left-4 z-20 w-full grid items-center pointer-events-none">
+      <div className="pointer-events-none flex flex-col items-start gap-4 lg:grid lg:items-center lg:grid-cols-[1fr_auto_1fr]">
+        <div className="w-fit flex gap-4 flex-col items-start sm:flex-row sm:items-stretch pointer-events-auto">
           <Button twoDimensional innerClass="text-2xl">
             Keymapper
           </Button>
           <DungeonDropdown />
         </div>
-        <div className="hidden sm:block">
+        <div className="hidden sm:block pointer-events-auto">
           <UndoRedo />
         </div>
       </div>
