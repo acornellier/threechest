@@ -76,6 +76,14 @@ export const fall: Dungeon = {
   ...dungeonData('fall'),
 }
 
+export const nok: Dungeon = {
+  name: 'Nokhud Offensive',
+  key: 'nok',
+  icon: 'achievement_dungeon_centaurplains',
+  iconScaling: 0.4,
+  ...dungeonData('nok'),
+}
+
 export const rise: Dungeon = {
   name: "DOTI: Murozond's Rise",
   key: 'rise',
@@ -105,7 +113,7 @@ export const wcm: Dungeon = {
   ...dungeonData('wcm'),
 }
 
-export const dungeons = [aa, ad, bh, brh, dht, eb, fall, rise, tott, wcm]
+export const dungeons = [aa, ad, bh, brh, dht, eb, fall, nok, rise, tott, wcm]
 
 export const dungeonsByKey = dungeons.reduce(
   (acc, dungeon) => {

@@ -12,11 +12,11 @@ export function Mobs() {
   const map = useMap()
   const dispatch = useAppDispatch()
 
-  const [iconScaling, setIconScaling] = useState(mapIconScaling(map))
+  const [iconScaling, setIconScaling] = useState(mapIconScaling(map, dungeon))
 
   const mapEvents: LeafletEventHandlerFnMap = useMemo(() => {
     return {
-      zoomend: () => setIconScaling(mapIconScaling(map)),
+      zoomend: () => setIconScaling(mapIconScaling(map, dungeon)),
       boxselectstart: () => dispatch(setBoxHovering(true)),
       boxselectmove({ bounds }) {
         const spawns = Object.values(dungeon.mobSpawns)

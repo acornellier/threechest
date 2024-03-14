@@ -7,6 +7,7 @@ import { fallSpells } from './spells/fallSpells.ts'
 import { riseSpells } from './spells/riseSpells.ts'
 import { tottSpells } from './spells/tottSpells.ts'
 import { wcmSpells } from './spells/wcmSpells.ts'
+import { nokSpells } from './spells/nok.ts'
 
 export const dungeonSpells: Record<DungeonKey, Spells> = {
   aa: {}, // TODO
@@ -17,6 +18,7 @@ export const dungeonSpells: Record<DungeonKey, Spells> = {
   fall: dhtSpells,
   rise: fallSpells,
   eb: riseSpells,
+  nok: nokSpells,
   tott: tottSpells,
   wcm: wcmSpells,
 }

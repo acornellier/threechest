@@ -6,6 +6,7 @@ import dhtMdtData from './mdtDungeons/dht_mdt.json'
 import fallMdtData from './mdtDungeons/fall_mdt.json'
 import riseMdtData from './mdtDungeons/rise_mdt.json'
 import ebMdtData from './mdtDungeons/eb_mdt.json'
+import nokMdtData from './mdtDungeons/nok_mdt.json'
 import tottMdtData from './mdtDungeons/tott_mdt.json'
 import wcmMdtData from './mdtDungeons/wcm_mdt.json'
 import { DungeonKey, MdtDungeon, MobSpawn, SpawnId } from './types.ts'
@@ -18,6 +19,7 @@ export const mdtDungeons: Record<DungeonKey, MdtDungeon> = {
   brh: brhMdtData as MdtDungeon,
   dht: dhtMdtData as MdtDungeon,
   fall: fallMdtData as MdtDungeon,
+  nok: nokMdtData as MdtDungeon,
   rise: riseMdtData as MdtDungeon,
   eb: ebMdtData as MdtDungeon,
   tott: tottMdtData as MdtDungeon,

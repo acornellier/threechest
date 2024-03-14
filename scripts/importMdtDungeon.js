@@ -12,6 +12,7 @@ export const dungeonPaths = {
   rise: 'Dragonflight/DawnOfTheInfiniteUpper',
   dht: 'Legion/DarkheartThicket',
   eb: 'Dragonflight/Everbloom',
+  nok: 'Dragonflight/TheNokhudOffensive',
   tott: 'Dragonflight/ThroneOfTides',
   wcm: 'Dragonflight/WaycrestManor',
 }

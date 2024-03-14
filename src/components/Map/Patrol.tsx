@@ -21,7 +21,7 @@ export function Patrol({ spawn, isGroupHovered }: Props) {
     <Polygon
       key={patrolKey}
       positions={spawn.patrol}
-      color="#1d1db0"
+      color="#1e2e8c"
       fillOpacity={0}
       weight={isGroupHovered ? 6 : 2}
       dashArray={isGroupHovered ? undefined : [4, 10]}

@@ -8,7 +8,7 @@ export function MousePosition() {
 
   useEffect(() => {
     L.control.mousePosition().addTo(map)
-  }, [])
+  }, [map])
 
   return null
 }

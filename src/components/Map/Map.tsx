@@ -1,7 +1,7 @@
 import 'leaflet/dist/leaflet.css'
 import { MapContainer, TileLayer, useMap } from 'react-leaflet'
 import { CRS, LatLngBoundsExpression, LatLngExpression } from 'leaflet'
-import '../Leaflet/SmoothWheelZoom/SmoothWheelZoom'
+import '../Leaflet/SmoothWheelZoom.ts'
 import '../Leaflet/BoxSelect/BoxSelect'
 import { useDungeon } from '../../store/hooks.ts'
 import { Drawings } from './Drawings.tsx'
@@ -63,7 +63,7 @@ export function Map() {
         doubleClickZoom={false}
         attributionControl={false}
         minZoom={1}
-        maxZoom={4}
+        maxZoom={5}
         zoom={2}
         zoomSnap={0}
         zoomControl={false}
@@ -73,7 +73,13 @@ export function Map() {
         boxZoom={false}
         boxSelect={true}
       >
-        <TileLayer bounds={mapBounds} noWrap url={`/maps/${dungeon.key}/{z}/{x}_{y}.png`} />
+        <TileLayer
+          bounds={mapBounds}
+          noWrap
+          minNativeZoom={1}
+          maxNativeZoom={4}
+          url={`/maps/${dungeon.key}/{z}/{x}_{y}.png`}
+        />
         <MapContextMenu />
         <Mobs />
         <PullOutlines />

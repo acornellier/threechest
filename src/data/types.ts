@@ -16,6 +16,7 @@ export type Dungeon = {
   mobSpawns: Record<SpawnId, MobSpawn>
   spells: Record<number, Spell[]>
   icon: string
+  iconScaling?: number
 }
 
 export type DungeonKey =
@@ -25,6 +26,7 @@ export type DungeonKey =
   | 'brh'
   | 'dht'
   | 'fall'
+  | 'nok'
   | 'rise'
   | 'eb'
   | 'tott'

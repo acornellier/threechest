@@ -2,7 +2,7 @@
 import { memo, useEffect, useMemo, useState } from 'react'
 import { useAppDispatch, useDungeon, useRoutesSelector } from '../../store/hooks.ts'
 import { getPullColor } from '../../util/colors.ts'
-import { MobSpawn, Point } from '../../data/types.ts'
+import { Dungeon, MobSpawn, Point } from '../../data/types.ts'
 import { expandPolygon, iconSizeMagicScaling, makeConvexHull } from '../../util/hull.ts'
 import { findMobSpawn, mobScale } from '../../util/mobSpawns.ts'
 import { selectPull } from '../../store/routesReducer.ts'
@@ -19,7 +19,7 @@ interface Outline {
   circle?: { center: Point; radius: number }
 }
 
-function createOutline(mobSpawns: MobSpawn[]): Outline {
+function createOutline(mobSpawns: MobSpawn[], dungeon: Dungeon): Outline {
   if (mobSpawns.length <= 0) return {}
 
   if (mobSpawns.length === 1) {
@@ -28,14 +28,18 @@ function createOutline(mobSpawns: MobSpawn[]): Outline {
     return {
       circle: {
         center: mobSpawn.spawn.pos,
-        radius: scale * iconSizeMagicScaling * (mobSpawn.mob.isBoss ? 1.1 : 1),
+        radius:
+          scale *
+          iconSizeMagicScaling *
+          (mobSpawn.mob.isBoss ? 1.1 : 1) *
+          (dungeon.iconScaling ?? 1),
       },
     }
   }
 
   const vertices = mobSpawns.map((mobSpawn) => ({
     pos: mobSpawn.spawn.pos,
-    scale: mobScale(mobSpawn.mob),
+    scale: mobScale(mobSpawn.mob) * (dungeon.iconScaling ?? 1),
   }))
 
   let hull = makeConvexHull(vertices)
@@ -53,7 +57,7 @@ function PullOutlineComponent({ pullId, index, isSelected, isHovered }: Props) {
     () => pull.spawns.concat(pull.tempSpawns).map((spawnId) => findMobSpawn(spawnId, dungeon)),
     [dungeon, pull.spawns, pull.tempSpawns],
   )
-  const { hull, circle } = useMemo(() => createOutline(mobSpawns), [mobSpawns])
+  const { hull, circle } = useMemo(() => createOutline(mobSpawns, dungeon), [mobSpawns, dungeon])
   const pullColor = getPullColor(index)
 
   // Change key to force re-render
