@@ -1,7 +1,7 @@
 import { Button } from './Common/Button.tsx'
 import { useAppDispatch, useRootSelector } from '../store/hooks.ts'
 import { ErrorInfo } from 'react'
-import { deleteRoute, newRoute } from '../store/routesReducer.ts'
+import { defaultDungeonKey, deleteRoute, newRoute } from '../store/routesReducer.ts'
 import {
   ArrowPathIcon,
   ArrowTopRightOnSquareIcon,
@@ -25,7 +25,7 @@ export function ErrorPage({ errors }: Props) {
   }
 
   const createEmptyRoute = () => {
-    dispatch(newRoute(route?.dungeonKey ?? 'eb'))
+    dispatch(newRoute(route?.dungeonKey ?? defaultDungeonKey))
     reloadPage()
   }
 

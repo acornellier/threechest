@@ -63,7 +63,13 @@ listenerMiddleware.startListening({
 })
 
 listenerMiddleware.startListening({
-  matcher: isAnyOf(loadRoute.fulfilled, duplicateRoute, setRouteFromMdt, newRoute),
+  matcher: isAnyOf(
+    setDungeon.fulfilled,
+    loadRoute.fulfilled,
+    duplicateRoute,
+    setRouteFromMdt,
+    newRoute,
+  ),
   effect: async (_action, listenerApi) => {
     listenerApi.dispatch(updateSavedRoutes())
     listenerApi.dispatch(ActionCreators.clearHistory())
