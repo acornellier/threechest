@@ -1,5 +1,6 @@
 import { Modal } from '../Common/Modal.tsx'
 import { keyText, shortcuts } from '../../data/shortcuts.ts'
+import { isMac } from '../../util/dev.ts'
 
 interface Props {
   onClose: () => void
@@ -31,8 +32,10 @@ export function HelpModal({ onClose }: Props) {
       contents={
         <div>
           <div>
-            <span className="rounded bg-fancy-red px-1 min-w-6 text-center">Ctrl + click</span> to
-            select indivudal mobs.
+            <span className="rounded bg-fancy-red px-1 min-w-6 text-center">
+              {isMac ? 'Cmd' : 'Ctrl'} + click
+            </span>{' '}
+            to select indivudal mobs.
           </div>
           <div>
             <span className="rounded bg-fancy-red px-1 min-w-6 text-center">Shift + drag</span> to

@@ -1,13 +1,15 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { AppDispatch } from './store.ts'
 
-type ToastType = 'success' | 'error'
+type ToastType = 'success' | 'error' | 'info'
 
 export interface Toast {
   id: number
   message: string
   type: ToastType
+  duration: number
   removing?: boolean
+  isTip?: boolean
 }
 
 export interface ToastState {
@@ -34,24 +36,34 @@ export const toastSlice = createSlice({
   },
 })
 
-export function addToast(dispatch: AppDispatch, message: string, type?: ToastType) {
+export const { removeToast } = toastSlice.actions
+
+export function addToast(
+  dispatch: AppDispatch,
+  message: string,
+  type?: ToastType,
+  duration?: number,
+  isTip?: boolean,
+) {
   const toast: Toast = {
     id: new Date().getTime(),
     message,
     type: type ?? 'success',
+    duration: duration ?? 5_000,
+    isTip,
   }
 
   dispatch(toastSlice.actions.newToast(toast))
 
-  setTimeout(() => {
-    dispatch(toastSlice.actions.setToastRemoving(toast.id))
-
+  if (toast.duration !== 0) {
     setTimeout(() => {
-      dispatch(toastSlice.actions.removeToast(toast.id))
-    }, 1_000)
-  }, 5_000)
+      dispatch(toastSlice.actions.setToastRemoving(toast.id))
+
+      setTimeout(() => {
+        dispatch(removeToast(toast.id))
+      }, 1_000)
+    }, toast.duration)
+  }
 }
 
 export const toastReducer = toastSlice.reducer
-
-// export const {  } = toastSlice.actions

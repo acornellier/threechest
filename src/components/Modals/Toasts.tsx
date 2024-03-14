@@ -1,12 +1,33 @@
 import { ToastComponent } from './ToastComponent.tsx'
-import { useRootSelector } from '../../store/hooks.ts'
+import { useAppDispatch, useRootSelector } from '../../store/hooks.ts'
+import { useEffect } from 'react'
+import { addTipToast, getTipsSeen, neverShowTipsKey, pageVisitsKey, tips } from '../../data/tips.ts'
 
 export function Toasts() {
+  const dispatch = useAppDispatch()
   const toasts = useRootSelector((state) => state.toast.toasts)
+
+  useEffect(() => {
+    if (localStorage.getItem(neverShowTipsKey) === 'true') return
+
+    const pageVisitsItem = localStorage.getItem(pageVisitsKey)
+    let pageVisits = pageVisitsItem ? Number(pageVisitsItem) : 0
+    pageVisits += 1
+    localStorage.setItem(pageVisitsKey, pageVisits.toString())
+
+    if (pageVisits < 3) return
+    if (Math.random() < 0.5) return
+
+    const tipsSeen = getTipsSeen()
+    const tip = tips.find(({ id }) => !tipsSeen.includes(id))
+    if (tip) {
+      setTimeout(() => addTipToast(dispatch, tip), 10_000)
+    }
+  }, [dispatch])
 
   return (
     <div
-      className="fixed left-1/2 bottom-8 z-20 select-none"
+      className="fixed left-1/2 bottom-8 z-20 select-none w-max max-w-full"
       style={{ transform: 'translateX(-50%)' }}
     >
       <div className="flex flex-col gap-2 items-center">
