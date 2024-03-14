@@ -80,7 +80,7 @@ function MobSpawnComponent({
           ),
         })}
       >
-        {isActuallyHovered && <MobSpawnTooltip mob={mob} spawn={spawn} iconScaling={iconScaling} />}
+        {!isBoxHovering && <MobSpawnTooltip mob={mob} spawn={spawn} iconScaling={iconScaling} />}
       </Marker>
       {mob.isBoss && <BossMarker spawn={spawn} isHovered={isActuallyHovered} iconSize={iconSize} />}
       <Patrol spawn={spawn} isGroupHovered={isGroupHovered} />

@@ -35,7 +35,6 @@ export function MobSpawnTooltip({ mob, spawn, iconScaling }: Props) {
       className="no-arrow flex flex-col text-white p-0 bg-transparent rounded-sm border-gray-400"
       direction="right"
       offset={[iconScaling * 0.8, 0]}
-      permanent
     >
       <div className="absolute w-full h-full bg-slate-800 opacity-85 -z-10 rounded-sm" />
       <div className="p-2 rounded-sm">
