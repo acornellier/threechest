@@ -11,6 +11,7 @@ export function SidebarCollapser({ collapsed, setCollapsed }: Props) {
   return (
     <div className="absolute -left-[30px] top-[8px]">
       <Button
+        twoDimensional
         Icon={collapsed ? ChevronLeftIcon : ChevronRightIcon}
         iconSize={18}
         onClick={() => setCollapsed((prev) => !prev)}
