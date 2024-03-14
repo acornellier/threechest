@@ -26,7 +26,7 @@ export function DungeonDropdown() {
   const selected = useMemo(() => options.find((option) => option.id === dungeon.key)!, [dungeon])
 
   return (
-    <div className="w-[260px]">
+    <div className="min-w-[260px]">
       <Dropdown
         className="dungeon-dropdown"
         options={options}
