@@ -113,7 +113,7 @@ export const wcm: Dungeon = {
   ...dungeonData('wcm'),
 }
 
-export const dungeons = [aa, ad, bh, brh, dht, eb, fall, nok, rise, tott, wcm]
+export const dungeons = [aa, ad, bh, brh, dht, fall, rise, eb, nok, tott, wcm]
 
 export const dungeonsByKey = dungeons.reduce(
   (acc, dungeon) => {

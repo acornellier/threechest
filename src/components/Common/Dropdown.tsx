@@ -1,6 +1,7 @@
 import { Button } from './Button.tsx'
-import { ReactNode, useRef, useState } from 'react'
+import { ReactNode, useCallback, useRef, useState } from 'react'
 import { ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/24/outline'
+import { useOutsideClick } from '../../hooks/useOutsideClick.ts'
 
 export interface DropdownOption {
   id: string
@@ -20,24 +21,33 @@ export function Dropdown({ selected, options, onChange, className }: Props) {
   const [optionsVisible, setOptionsVisible] = useState(false)
   const timeoutRef = useRef<NodeJS.Timeout>()
 
-  const toggleOpen = () => {
+  const onClose = useCallback(() => {
+    setOptionsVisible(false)
+    timeoutRef.current = setTimeout(() => setOpen(false), 200)
+  }, [])
+
+  const ref = useOutsideClick(onClose)
+
+  const toggleOpen = useCallback(() => {
     clearTimeout(timeoutRef.current)
     if (!optionsVisible) {
       setOpen(true)
       setTimeout(() => setOptionsVisible(true), 0)
     } else {
-      setOptionsVisible(false)
-      timeoutRef.current = setTimeout(() => setOpen(false), 200)
+      onClose()
     }
-  }
+  }, [onClose, optionsVisible])
 
-  const selectOption = (option: DropdownOption) => {
-    if (option.id !== selected?.id) onChange(option)
-    toggleOpen()
-  }
+  const selectOption = useCallback(
+    (option: DropdownOption) => {
+      if (option.id !== selected?.id) onChange(option)
+      toggleOpen()
+    },
+    [onChange, selected?.id, toggleOpen],
+  )
 
   return (
-    <div className="relative flex-1 min-w-0">
+    <div ref={ref} className="relative flex-1 min-w-0">
       <Button
         justifyStart
         twoDimensional
