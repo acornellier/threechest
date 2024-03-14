@@ -30,9 +30,9 @@ export const hoverSlice = createSlice({
 
       state.hoveredSpawn = spawn
     },
-    selectMobSpawn(state, { payload: mobSpawn }: PayloadAction<SpawnId | null>) {
-      if (mobSpawn === null || state.selectedSpawn === null || mobSpawn === state.selectedSpawn) {
-        state.selectedSpawn = mobSpawn
+    selectMobSpawn(state, { payload: spawn }: PayloadAction<SpawnId | null>) {
+      if (spawn === null || spawn !== state.selectedSpawn) {
+        state.selectedSpawn = spawn
       } else {
         state.selectedSpawn = null
       }
