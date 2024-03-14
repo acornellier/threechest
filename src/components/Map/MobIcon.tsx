@@ -12,7 +12,7 @@ interface Props {
 export function MobIcon({ mob, matchingPullIndex, iconScaling, isGroupHovered }: Props) {
   return (
     <div
-      className="absolute h-full w-full rounded-full border border-slate-300 overflow-hidden border-transparent"
+      className="absolute h-full w-full rounded-full border border-slate-300 overflow-hidden border-transparent pointer-events-none"
       style={{
         background:
           'linear-gradient(white, white) padding-box, linear-gradient(to bottom, #dfdfe3, #373738) border-box',
