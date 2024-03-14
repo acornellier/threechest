@@ -5,6 +5,7 @@ export type Point = [number, number]
 export type MdtDungeon = {
   dungeonIndex: number
   totalCount: number
+  enemies: Mob[]
 }
 
 export type Dungeon = {
@@ -17,7 +18,17 @@ export type Dungeon = {
   icon: string
 }
 
-export type DungeonKey = 'ad' | 'brh' | 'dht' | 'fall' | 'rise' | 'eb' | 'tott' | 'wcm'
+export type DungeonKey =
+  | 'aa'
+  | 'ad'
+  | 'bh'
+  | 'brh'
+  | 'dht'
+  | 'fall'
+  | 'rise'
+  | 'eb'
+  | 'tott'
+  | 'wcm'
 
 export type SpawnId = string
 

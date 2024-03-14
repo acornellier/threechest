@@ -4,7 +4,9 @@ import * as path from 'path'
 import { fileURLToPath } from 'url'
 
 export const dungeonPaths = {
+  aa: 'Dragonflight/AlgetharAcademy',
   ad: 'BattleForAzeroth/AtalDazar',
+  bh: 'Dragonflight/BrackenhideHollow',
   brh: 'Dragonflight/BlackRookHold',
   fall: 'Dragonflight/DawnOfTheInfiniteLower',
   rise: 'Dragonflight/DawnOfTheInfiniteUpper',
