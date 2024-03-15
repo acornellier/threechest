@@ -1,5 +1,4 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { AppDispatch } from './store.ts'
+import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit'
 
 type ToastType = 'success' | 'error' | 'info'
 
@@ -38,32 +37,34 @@ export const toastSlice = createSlice({
 
 export const { removeToast } = toastSlice.actions
 
-export function addToast(
-  dispatch: AppDispatch,
-  message: string,
-  type?: ToastType,
-  duration?: number,
-  isTip?: boolean,
-) {
-  const toast: Toast = {
-    id: new Date().getTime(),
-    message,
-    type: type ?? 'success',
-    duration: duration ?? 5_000,
-    isTip,
-  }
-
-  dispatch(toastSlice.actions.newToast(toast))
-
-  if (toast.duration !== 0) {
-    setTimeout(() => {
-      dispatch(toastSlice.actions.setToastRemoving(toast.id))
-
-      setTimeout(() => {
-        dispatch(removeToast(toast.id))
-      }, 1_000)
-    }, toast.duration)
-  }
+interface AddToastOptions {
+  message: string
+  type?: ToastType
+  duration?: number
+  isTip?: boolean
 }
+
+export const addToast = createAsyncThunk(
+  'toast/addToast',
+  async ({ message, type, duration, isTip }: AddToastOptions, thunkAPI) => {
+    const toast: Toast = {
+      id: new Date().getTime(),
+      message,
+      type: type ?? 'success',
+      duration: duration ?? 5_000,
+      isTip,
+    }
+
+    thunkAPI.dispatch(toastSlice.actions.newToast(toast))
+
+    if (toast.duration === 0) return
+
+    await new Promise((res) => setTimeout(res, toast.duration))
+    thunkAPI.dispatch(toastSlice.actions.setToastRemoving(toast.id))
+
+    await new Promise((res) => setTimeout(res, 1_000))
+    thunkAPI.dispatch(removeToast(toast.id))
+  },
+)
 
 export const toastReducer = toastSlice.reducer

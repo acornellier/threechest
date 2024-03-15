@@ -11,11 +11,11 @@ export function ShareRoute() {
   const handleClick = async () => {
     try {
       const str = await exportRouteApi(route)
-      addToast(dispatch, 'URL copied to clipboard!')
+      dispatch(addToast({ message: 'URL copied to clipboard!' }))
       const url = window.location.host + `?mdt=${str}`
       return navigator.clipboard.writeText(url)
     } catch (err) {
-      addToast(dispatch, `Failed to export MDT string: ${err}`, 'error')
+      dispatch(addToast({ message: `Failed to export MDT string: ${err}`, type: 'error' }))
     }
   }
 

@@ -14,14 +14,16 @@ const initialState: ImportState = {
 
 export const importRoute = createAsyncThunk(
   'routes/decodeRoute',
-  async (mdtString: string, thunkAPI) => {
-    const mdt = await importRouteApi(mdtString)
+  async ({ mdtString, mdtRoute }: { mdtString?: string; mdtRoute?: MdtRoute }, thunkAPI) => {
+    if (!mdtString && !mdtRoute) throw new Error('Must specify either string or route to import')
+
+    mdtRoute = mdtRoute ?? (await importRouteApi(mdtString!))
     const state = thunkAPI.getState() as RootState
-    const savedRoute = state.routes.present.savedRoutes.find((route) => route.uid === mdt.uid)
+    const savedRoute = state.routes.present.savedRoutes.find((route) => route.uid === mdtRoute.uid)
     if (savedRoute) {
-      thunkAPI.dispatch(setImportingRoute(mdt))
+      thunkAPI.dispatch(setImportingRoute(mdtRoute))
     } else {
-      thunkAPI.dispatch(setRouteFromMdt({ mdtRoute: mdt, copy: false }))
+      thunkAPI.dispatch(setRouteFromMdt({ mdtRoute }))
     }
   },
 )

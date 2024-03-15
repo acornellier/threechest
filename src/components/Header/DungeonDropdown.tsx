@@ -31,7 +31,7 @@ export function DungeonDropdown() {
         className="dungeon-dropdown"
         options={options}
         selected={selected}
-        onChange={(newDungeon) => dispatch(setDungeon(newDungeon.id as DungeonKey))}
+        onSelect={(newDungeon) => dispatch(setDungeon(newDungeon.id as DungeonKey))}
       />
     </div>
   )

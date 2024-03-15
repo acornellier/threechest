@@ -14,10 +14,10 @@ export function ExportRoute() {
   const handleClick = useCallback(async () => {
     try {
       const str = await exportRouteApi(route)
-      addToast(dispatch, 'MDT string copied to clipboard!')
+      dispatch(addToast({ message: 'MDT string copied to clipboard!' }))
       return navigator.clipboard.writeText(str)
     } catch (err) {
-      addToast(dispatch, `Failed to export MDT string: ${err}`, 'error')
+      dispatch(addToast({ message: `Failed to export MDT string: ${err}`, type: 'error' }))
     }
   }, [dispatch, route])
 

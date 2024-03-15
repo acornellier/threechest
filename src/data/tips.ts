@@ -1,6 +1,4 @@
 import { isMac } from '../util/dev.ts'
-import { AppDispatch } from '../store/store.ts'
-import { addToast } from '../store/toastReducer.ts'
 
 export interface Tip {
   id: number
@@ -15,13 +13,6 @@ export function getTipsSeen(): number[] {
   const tipsSeenItem = localStorage.getItem(tipsSeenKey)
   const tipsSeen = tipsSeenItem ? JSON.parse(tipsSeenItem) : []
   return Array.isArray(tipsSeen) ? tipsSeen : []
-}
-
-export function addTipToast(dispatch: AppDispatch, tip: Tip) {
-  addToast(dispatch, tip.tip, 'info', 60_000, true)
-  const tipsSeen = getTipsSeen()
-  tipsSeen.push(tip.id)
-  localStorage.setItem(tipsSeenKey, JSON.stringify(tipsSeen))
 }
 
 export function neverShowTips() {

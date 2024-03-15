@@ -1,5 +1,5 @@
 ﻿import { createListenerMiddleware, isAnyOf } from '@reduxjs/toolkit'
-import { AppDispatch, RootState } from './store.ts'
+import { RootState } from './store.ts'
 import { addToast } from './toastReducer.ts'
 import { importRoute } from './importReducer.ts'
 import { REHYDRATE } from 'redux-persist/es/constants'
@@ -21,12 +21,13 @@ listenerMiddleware.startListening({
   effect: async ({ payload: { mdtRoute, copy } }, listenerApi) => {
     if (copy) {
       const state = listenerApi.getState() as RootState
-      addToast(
-        listenerApi.dispatch as AppDispatch,
-        `Imported route ${mdtRoute.text} as ${state.routes.present.route.name}`,
+      listenerApi.dispatch(
+        addToast({
+          message: `Imported route ${mdtRoute.text} as ${state.routes.present.route.name}`,
+        }),
       )
     } else {
-      addToast(listenerApi.dispatch as AppDispatch, `Route imported: ${mdtRoute.text}`)
+      listenerApi.dispatch(addToast({ message: `Route imported: ${mdtRoute.text}` }))
     }
   },
 })
@@ -35,10 +36,11 @@ listenerMiddleware.startListening({
   matcher: isAnyOf(setDungeon.rejected, loadRoute.rejected, deleteRoute.rejected),
   effect: async ({ error, type }, listenerApi) => {
     console.error((error as Error).stack)
-    addToast(
-      listenerApi.dispatch as AppDispatch,
-      `Error during action ${type}: ${(error as Error).message}`,
-      'error',
+    listenerApi.dispatch(
+      addToast({
+        message: `Error during action ${type}: ${(error as Error).message}`,
+        type: 'error',
+      }),
     )
   },
 })
@@ -47,10 +49,8 @@ listenerMiddleware.startListening({
   matcher: isAnyOf(importRoute.rejected),
   effect: async ({ error }, listenerApi) => {
     console.error((error as Error).stack)
-    addToast(
-      listenerApi.dispatch as AppDispatch,
-      `Failed to import route: ${(error as Error).message}`,
-      'error',
+    listenerApi.dispatch(
+      addToast({ message: `Failed to import route: ${(error as Error).message}`, type: 'error' }),
     )
   },
 })

@@ -24,7 +24,7 @@ export function RouteDropdown() {
     <Dropdown
       options={options}
       selected={selected}
-      onChange={(option) => dispatch(loadRoute(option.id))}
+      onSelect={(option) => dispatch(loadRoute(option.id))}
     />
   )
 }

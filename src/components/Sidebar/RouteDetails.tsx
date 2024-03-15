@@ -6,6 +6,7 @@ import { DeleteRoute } from './Buttons/DeleteRoute.tsx'
 import { DuplicateRoute } from './Buttons/DuplicateRoute.tsx'
 import { RenameRoute } from './Buttons/RenameRoute.tsx'
 import { useState } from 'react'
+import { ImportSample } from './Buttons/ImportSample.tsx'
 
 export function RouteDetails() {
   const [isRenaming, setRenaming] = useState(false)
@@ -22,6 +23,7 @@ export function RouteDetails() {
         <DeleteRoute />
       </div>
       <ImportRoute />
+      <ImportSample />
     </Panel>
   )
 }

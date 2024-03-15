@@ -118,7 +118,7 @@ const baseReducer = createSlice({
     },
     setRouteFromMdt(
       state,
-      { payload: { mdtRoute, copy } }: PayloadAction<{ mdtRoute: MdtRoute; copy: boolean }>,
+      { payload: { mdtRoute, copy } }: PayloadAction<{ mdtRoute: MdtRoute; copy?: boolean }>,
     ) {
       const route = mdtRouteToRoute(mdtRoute)
       if (copy) {

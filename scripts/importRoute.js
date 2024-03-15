@@ -1,0 +1,17 @@
+import { decodeRoute } from '../server/decodeRoute.js'
+import fs from 'fs'
+import { fileURLToPath } from 'url'
+import path from 'path'
+
+const dungeonKey = 'eb'
+const str =
+  '!nw5YUTToqy4NNUWc82isUSPhCa6g1aOGS4SGi(cLHZrvQWMkx2KN9sodLmTJxeyAdlPH)87FMHuoU7bx7UdDDh2o1hE31iQDTth25A3)4H)B)3gU)1N34AxVB34WJ(JNomo4AusvmQTJ9JhVFDVpe8)COBmP06PW4ps3)WWE3DxfZU3CnCxW1(Y6(jFk8Tthp6hc3p137ASlx3oTP3)IVpfE7FIp8um4gEXpPHahsxJjQz8Vx(Gq6rFo24qHdah14qh)VoPtdysC0aXVCw8zXV840RtyhN1SEH0KPlQtxyU5kfsADEkuYW1k9DDsFbZuiYsxOYQu6cszozco5cozdo5dlAfdos4Bj6t)vxAazbMQRiZ6lwukCaJvvYhusMmBBnPSHW3ItuYqYecenbwTAekKnbqSfB5ioTKl5AYMCd5tbJmQ4YQadxvdUO2YsY1j7UUI5nx1Ae5KIOSqUyPCbixkPUgjLSLuYwrwsrwsrwsLTKkBjz2sYSLKzlPYwsHwQ(MGB9e4Wm4fWAq8SiD6zWZMSitix2mCwwzw26BilNMaNSnAe0hNxa4t9eZkBxawNIzotcuMeijbktcuMeYzsdLjT0wqQXfYLyLErYRYqPDr0cAkScNxeAYqpmhXztWfxedR8klgs5Aq7iODYlBg5x08HPj2LNOOXlPnd28Ez(TArtRr88GuFbrxz7Wz(MzFwcXfsy3SiX8dplKileEy)Yu6OPSyj4IApvO4QYZx4AuOWYb1)Z0WE)4aDYot5AdE)Vth9hFLXjFVFBi9(cs)0w02Jh6c)QR7KpGhPlqpHkg8Vf)97d7E)JNuF8K01oU55Oalh93UBguQJIAV5jmVlbz0rmM3JGUk9kH2EAcT1GPcZcTReM6k0GXBQRWcx8Mczfwqc0e(3vAgySCBTHbkJm202TcYjrXxbfweLyR5nqrlsRkIIGpJIwvXYOyyv6su0Caab3cQAUbIVh6mjYVcjDDCjJDlsIMwKjXcvwIKy6zMeRQsDvsrWuaRwQRLrr1juYTOQVgkEZTrXARmzu4qcGekcBfpJc)AuabulbGRSXpS47yIOyN7KE17)FQN393)'
+
+const route = await decodeRoute(str)
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
+fs.writeFileSync(
+  `${__dirname}/../src/data/sampleRoutes/${dungeonKey}/${route.text}.json`,
+  JSON.stringify(route),
+)

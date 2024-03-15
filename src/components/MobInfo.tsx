@@ -17,7 +17,7 @@ export function MobInfo() {
 
   const onClickSpellId = async (spellId: number) => {
     await navigator.clipboard.writeText(spellId.toString())
-    addToast(dispatch, `Copied Spell ID to clipboard: ${spellId}`)
+    dispatch(addToast({ message: `Copied Spell ID to clipboard: ${spellId}` }))
   }
 
   return (

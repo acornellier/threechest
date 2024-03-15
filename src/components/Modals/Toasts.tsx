@@ -1,7 +1,8 @@
 import { ToastComponent } from './ToastComponent.tsx'
 import { useAppDispatch, useRootSelector } from '../../store/hooks.ts'
 import { useEffect } from 'react'
-import { addTipToast, getTipsSeen, neverShowTipsKey, pageVisitsKey, tips } from '../../data/tips.ts'
+import { getTipsSeen, neverShowTipsKey, pageVisitsKey, tips, tipsSeenKey } from '../../data/tips.ts'
+import { addToast } from '../../store/toastReducer.ts'
 
 export function Toasts() {
   const dispatch = useAppDispatch()
@@ -20,9 +21,13 @@ export function Toasts() {
 
     const tipsSeen = getTipsSeen()
     const tip = tips.find(({ id }) => !tipsSeen.includes(id))
-    if (tip) {
-      setTimeout(() => addTipToast(dispatch, tip), 10_000)
-    }
+    if (!tip) return
+
+    setTimeout(() => {
+      dispatch(addToast({ message: tip.tip, type: 'info', duration: 60_000, isTip: true }))
+      tipsSeen.push(tip.id)
+      localStorage.setItem(tipsSeenKey, JSON.stringify(tipsSeen))
+    }, 10_000)
   }, [dispatch])
 
   return (

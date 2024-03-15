@@ -9,14 +9,25 @@ export interface DropdownOption {
   icon?: ReactNode
 }
 
-interface Props {
-  selected: DropdownOption | undefined
-  options: DropdownOption[]
-  onChange: (option: DropdownOption) => void
+interface Props<T extends DropdownOption> {
+  options: T[]
+  onSelect: (option: T) => void
+  selected?: T
+  buttonText?: string
+  short?: boolean
+  outline?: boolean
   className?: string
 }
 
-export function Dropdown({ selected, options, onChange, className }: Props) {
+export function Dropdown<T extends DropdownOption>({
+  selected,
+  options,
+  onSelect,
+  buttonText,
+  short,
+  outline,
+  className,
+}: Props<T>) {
   const [open, setOpen] = useState(false)
   const [optionsVisible, setOptionsVisible] = useState(false)
   const timeoutRef = useRef<NodeJS.Timeout>()
@@ -39,18 +50,22 @@ export function Dropdown({ selected, options, onChange, className }: Props) {
   }, [onClose, optionsVisible])
 
   const selectOption = useCallback(
-    (option: DropdownOption) => {
-      if (option.id !== selected?.id) onChange(option)
+    (option: T) => {
+      if (option.id !== selected?.id) onSelect(option)
       toggleOpen()
     },
-    [onChange, selected?.id, toggleOpen],
+    [onSelect, selected?.id, toggleOpen],
   )
+
+  const ChevronIcon = optionsVisible ? ChevronUpIcon : ChevronDownIcon
 
   return (
     <div ref={ref} className="relative flex-1 min-w-0">
       <Button
-        justifyStart
-        twoDimensional
+        twoDimensional={!buttonText}
+        short={short}
+        outline={outline}
+        onClick={toggleOpen}
         className={`dropdown-main 
                     ${optionsVisible ? 'options-visible' : ''} 
                     ${className ?? ''}`}
@@ -62,25 +77,32 @@ export function Dropdown({ selected, options, onChange, className }: Props) {
               }
             : {}),
         }}
-        onClick={toggleOpen}
       >
-        {selected?.icon && <div className="mr-1">{selected?.icon}</div>}
-        <div className="dropdown-main-text">{selected?.label}</div>
-        {optionsVisible ? (
-          <ChevronUpIcon width={20} height={20} className="ml-auto" />
+        {buttonText ? (
+          buttonText
         ) : (
-          <ChevronDownIcon width={20} height={20} className="ml-auto" />
+          <>
+            {selected?.icon && <div className="mr-1">{selected?.icon}</div>}
+            {selected?.label ? (
+              <div className="dropdown-main-text">{selected?.label}</div>
+            ) : (
+              buttonText ?? null
+            )}
+            <ChevronIcon width={20} height={20} className="ml-auto" />
+          </>
         )}
       </Button>
 
       <div
-        className={`absolute w-full z-50 divide-y divide-gray-100 rounded-b-lg rounded-tr-lg bg-[#00000085] 
-                    ${open ? '' : 'hidden'}`}
+        className={`absolute w-full z-50 ${open ? '' : 'hidden'}`}
+        style={{ marginTop: buttonText ? -3 : 0 }}
       >
-        <div className="flex flex-col text-sm text-gray-200">
+        <div className="flex flex-col">
           {options.map((option) => (
             <Button
               key={option.id}
+              twoDimensional
+              outline={outline}
               className={`dropdown-option ${optionsVisible ? 'options-visible' : ''}`}
               onClick={() => selectOption(option)}
               title={option.label}
