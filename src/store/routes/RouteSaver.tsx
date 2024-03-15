@@ -1,8 +1,8 @@
-import { useAppDispatch, useRoute } from './hooks.ts'
+import { useAppDispatch, useRoute } from '../hooks.ts'
 import { useEffect } from 'react'
 import { getSavedRouteKey, updateSavedRoutes } from './routesReducer.ts'
 import * as localforage from 'localforage'
-import { importRoute } from './importReducer.ts'
+import { importRoute } from '../reducers/importReducer.ts'
 
 export function RouteSaver() {
   const dispatch = useAppDispatch()

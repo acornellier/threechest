@@ -1,7 +1,7 @@
 import { Button } from './Common/Button.tsx'
 import { useAppDispatch, useRootSelector } from '../store/hooks.ts'
 import { ErrorInfo } from 'react'
-import { defaultDungeonKey, deleteRoute, newRoute } from '../store/routesReducer.ts'
+import { defaultDungeonKey, deleteRoute, newRoute } from '../store/routes/routesReducer.ts'
 import {
   ArrowPathIcon,
   ArrowTopRightOnSquareIcon,

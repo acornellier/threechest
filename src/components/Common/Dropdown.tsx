@@ -2,6 +2,7 @@ import { Button } from './Button.tsx'
 import { ReactNode, useCallback, useRef, useState } from 'react'
 import { ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/24/outline'
 import { useOutsideClick } from '../../hooks/useOutsideClick.ts'
+import { IconComponent } from '../../util/types.ts'
 
 export interface DropdownOption {
   id: string
@@ -12,30 +13,41 @@ export interface DropdownOption {
 interface Props<T extends DropdownOption> {
   options: T[]
   onSelect: (option: T) => void
+  onHover?: (option: T | null) => void
   selected?: T
   buttonText?: string
+  MainButtonIcon?: IconComponent
   short?: boolean
   outline?: boolean
   className?: string
 }
 
+const transitionDuration = 200
+
 export function Dropdown<T extends DropdownOption>({
   selected,
   options,
   onSelect,
+  onHover,
   buttonText,
+  MainButtonIcon,
   short,
   outline,
   className,
 }: Props<T>) {
   const [open, setOpen] = useState(false)
   const [optionsVisible, setOptionsVisible] = useState(false)
+  const [fullyOpen, setFullyOpen] = useState(false)
   const timeoutRef = useRef<NodeJS.Timeout>()
 
   const onClose = useCallback(() => {
+    onHover?.(null)
+    setFullyOpen(false)
     setOptionsVisible(false)
-    timeoutRef.current = setTimeout(() => setOpen(false), 200)
-  }, [])
+    timeoutRef.current = setTimeout(() => {
+      setOpen(false)
+    }, transitionDuration)
+  }, [onHover])
 
   const ref = useOutsideClick(onClose)
 
@@ -44,6 +56,7 @@ export function Dropdown<T extends DropdownOption>({
     if (!optionsVisible) {
       setOpen(true)
       setTimeout(() => setOptionsVisible(true), 0)
+      setTimeout(() => setFullyOpen(true), transitionDuration)
     } else {
       onClose()
     }
@@ -66,10 +79,12 @@ export function Dropdown<T extends DropdownOption>({
         short={short}
         outline={outline}
         onClick={toggleOpen}
+        Icon={MainButtonIcon}
         className={`dropdown-main 
                     ${optionsVisible ? 'options-visible' : ''} 
                     ${className ?? ''}`}
         style={{
+          transitionDuration: transitionDuration.toString(),
           ...(open
             ? {
                 borderBottomLeftRadius: 0,
@@ -105,6 +120,15 @@ export function Dropdown<T extends DropdownOption>({
               outline={outline}
               className={`dropdown-option ${optionsVisible ? 'options-visible' : ''}`}
               onClick={() => selectOption(option)}
+              onMouseEnter={() => {
+                if (!fullyOpen) return
+                onHover?.(option)
+              }}
+              onMouseLeave={(e) => {
+                if (!fullyOpen) return
+                if ((e.relatedTarget as Element)?.closest('.dropdown-option')) return
+                onHover?.(null)
+              }}
               title={option.label}
             >
               {option.icon && <div className="mr-1">{option.icon}</div>}

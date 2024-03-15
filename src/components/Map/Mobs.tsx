@@ -3,9 +3,9 @@ import { useMemo, useState } from 'react'
 import { mapIconScaling } from '../../util/map.ts'
 import { useAppDispatch, useDungeon } from '../../store/hooks.ts'
 import { MobSpawnWrapper } from './MobSpawn.tsx'
-import { boxSelectSpawns, commitBoxSelect } from '../../store/routesReducer.ts'
+import { boxSelectSpawns, commitBoxSelect } from '../../store/routes/routesReducer.ts'
 import type { LeafletEventHandlerFnMap } from 'leaflet'
-import { setBoxHovering } from '../../store/hoverReducer.ts'
+import { setBoxHovering } from '../../store/reducers/hoverReducer.ts'
 
 export function Mobs() {
   const dungeon = useDungeon()

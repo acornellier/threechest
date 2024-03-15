@@ -4,7 +4,7 @@ import { useCallback, useEffect, useState } from 'react'
 import { LatLng, LeafletMouseEvent } from 'leaflet'
 import { ContextMenu } from '../Common/ContextMenu.tsx'
 import { useAppDispatch } from '../../store/hooks.ts'
-import { addNote } from '../../store/routesReducer.ts'
+import { addNote } from '../../store/routes/routesReducer.ts'
 
 export function MapContextMenu() {
   const dispatch = useAppDispatch()

@@ -1,9 +1,9 @@
 ﻿import { configureStore } from '@reduxjs/toolkit'
-import { routesReducer } from './routesReducer.ts'
-import { hoverReducer } from './hoverReducer.ts'
-import { importReducer } from './importReducer.ts'
+import { routesReducer } from './routes/routesReducer.ts'
+import { hoverReducer } from './reducers/hoverReducer.ts'
+import { importReducer } from './reducers/importReducer.ts'
 import { persistStore } from 'redux-persist'
-import { toastReducer } from './toastReducer.ts'
+import { toastReducer } from './reducers/toastReducer.ts'
 import { listenerMiddleware } from './listener.ts'
 
 export const store = configureStore({

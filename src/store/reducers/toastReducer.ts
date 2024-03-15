@@ -1,4 +1,5 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { sleep } from '../../util/dev.ts'
 
 type ToastType = 'success' | 'error' | 'info'
 
@@ -59,10 +60,10 @@ export const addToast = createAsyncThunk(
 
     if (toast.duration === 0) return
 
-    await new Promise((res) => setTimeout(res, toast.duration))
+    await sleep(toast.duration)
     thunkAPI.dispatch(toastSlice.actions.setToastRemoving(toast.id))
 
-    await new Promise((res) => setTimeout(res, 1_000))
+    await sleep(1_000)
     thunkAPI.dispatch(removeToast(toast.id))
   },
 )

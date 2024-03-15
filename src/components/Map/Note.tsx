@@ -5,7 +5,7 @@ import { divIcon, type LeafletEventHandlerFnMap, Marker as LeafletMarker } from 
 import { renderToString } from 'react-dom/server'
 import { useAppDispatch } from '../../store/hooks.ts'
 import { useContextMenu } from '../Common/useContextMenu.ts'
-import { deleteNote, editNote } from '../../store/routesReducer.ts'
+import { deleteNote, editNote } from '../../store/routes/routesReducer.ts'
 import { ContextMenu } from '../Common/ContextMenu.tsx'
 import { latLngToPoint } from '../../util/map.ts'
 
@@ -94,10 +94,12 @@ function NoteComponent({ note, noteIndex, iconScaling }: Props) {
           <Tooltip
             key={iconScaling}
             direction="right"
-            className="no-arrow flex flex-col text-white text-md p-0 bg-transparent rounded-md border-gray-400 min-h-8 min-w-14"
+            className="no-arrow min-h-8 w-64 p-0 bg-transparent border-none shadow-none"
           >
-            <div className="absolute w-full h-full bg-slate-800 opacity-85 -z-10 rounded-md" />
-            <div className="p-2">{note.text}</div>
+            <div className="relative min-w-14 w-fit border border-gray-400 rounded-md">
+              <div className="absolute w-full h-full bg-slate-800 opacity-85 -z-10 rounded-md" />
+              <div className="p-2 whitespace-normal text-white text-md">{note.text}</div>
+            </div>
           </Tooltip>
         )}
         <Popup className="plain-popup" closeButton={false} eventHandlers={popupEventHandlers}>

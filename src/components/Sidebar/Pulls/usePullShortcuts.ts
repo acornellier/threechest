@@ -7,7 +7,7 @@ import {
   prependPull,
   selectPull,
   selectPullRelative,
-} from '../../../store/routesReducer.ts'
+} from '../../../store/routes/routesReducer.ts'
 import { useShortcut } from '../../../hooks/useShortcut.ts'
 import { useAppDispatch } from '../../../store/hooks.ts'
 import { shortcuts } from '../../../data/shortcuts.ts'

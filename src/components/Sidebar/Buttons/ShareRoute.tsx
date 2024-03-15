@@ -1,7 +1,7 @@
 import { Button } from '../../Common/Button.tsx'
 import { exportRouteApi } from '../../../api/exportRouteApi.ts'
 import { useAppDispatch, useRoute } from '../../../store/hooks.ts'
-import { addToast } from '../../../store/toastReducer.ts'
+import { addToast } from '../../../store/reducers/toastReducer.ts'
 import { ShareIcon } from '@heroicons/react/24/outline'
 
 export function ShareRoute() {

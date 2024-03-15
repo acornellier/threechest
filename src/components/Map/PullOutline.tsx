@@ -1,14 +1,15 @@
 ﻿import { Circle, Polygon, Tooltip } from 'react-leaflet'
 import { memo, useEffect, useMemo, useState } from 'react'
-import { useAppDispatch, useDungeon, useRoutesSelector } from '../../store/hooks.ts'
+import { useAppDispatch, useDungeon } from '../../store/hooks.ts'
 import { getPullColor } from '../../util/colors.ts'
 import { MobSpawn, Point } from '../../data/types.ts'
 import { expandPolygon, iconSizeMagicScaling, makeConvexHull } from '../../util/hull.ts'
 import { findMobSpawn, mobScale } from '../../util/mobSpawns.ts'
-import { selectPull } from '../../store/routesReducer.ts'
+import { selectPull } from '../../store/routes/routesReducer.ts'
+import { Pull } from '../../util/types.ts'
 
 interface Props {
-  pullId: number
+  pull: Pull
   index: number
   isHovered: boolean
   isSelected: boolean
@@ -45,10 +46,9 @@ function createOutline(mobSpawns: MobSpawn[]): Outline {
   return { hull: hull.map((m) => m.pos) }
 }
 
-function PullOutlineComponent({ pullId, index, isSelected, isHovered }: Props) {
+function PullOutlineComponent({ pull, index, isSelected, isHovered }: Props) {
   const dispatch = useAppDispatch()
   const dungeon = useDungeon()
-  const pull = useRoutesSelector((state) => state.route.pulls.find((pull) => pull.id === pullId))!
   const mobSpawns = useMemo(
     () => pull.spawns.concat(pull.tempSpawns).map((spawnId) => findMobSpawn(spawnId, dungeon)),
     [dungeon, pull.spawns, pull.tempSpawns],

@@ -1,7 +1,7 @@
 ﻿import { createListenerMiddleware, isAnyOf } from '@reduxjs/toolkit'
 import { RootState } from './store.ts'
-import { addToast } from './toastReducer.ts'
-import { importRoute } from './importReducer.ts'
+import { addToast } from './reducers/toastReducer.ts'
+import { importRoute } from './reducers/importReducer.ts'
 import { REHYDRATE } from 'redux-persist/es/constants'
 import { ActionCreators } from 'redux-undo'
 import {
@@ -12,7 +12,7 @@ import {
   setDungeon,
   setRouteFromMdt,
   updateSavedRoutes,
-} from './routesReducer.ts'
+} from './routes/routesReducer.ts'
 
 export const listenerMiddleware = createListenerMiddleware()
 

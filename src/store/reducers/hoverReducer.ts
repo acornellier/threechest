@@ -1,6 +1,6 @@
 import type { PayloadAction } from '@reduxjs/toolkit'
 import { createSlice } from '@reduxjs/toolkit'
-import { SpawnId } from '../data/types.ts'
+import { SpawnId } from '../../data/types.ts'
 
 export interface HoverState {
   hoveredPull: number | null

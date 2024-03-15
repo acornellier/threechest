@@ -1,4 +1,4 @@
-import { addPull, clearPull, deletePull } from '../../../store/routesReducer.ts'
+import { addPull, clearPull, deletePull } from '../../../store/routes/routesReducer.ts'
 import { useAppDispatch } from '../../../store/hooks.ts'
 import { ContextMenu, ContextMenuProps } from '../../Common/ContextMenu.tsx'
 import { shortcuts } from '../../../data/shortcuts.ts'

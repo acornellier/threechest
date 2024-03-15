@@ -1,15 +1,15 @@
 ﻿import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { MdtRoute, Note, Pull, Route, SavedRoute } from '../util/types.ts'
-import { DungeonKey, SpawnId } from '../data/types.ts'
-import { mdtRouteToRoute } from '../util/mdtUtil.ts'
+import { MdtRoute, Note, Pull, Route, SavedRoute } from '../../util/types.ts'
+import { DungeonKey, SpawnId } from '../../data/types.ts'
+import { mdtRouteToRoute } from '../../util/mdtUtil.ts'
 import undoable, { combineFilters, excludeAction, includeAction } from 'redux-undo'
-import { addPullFunc, boxSelectSpawnsAction, toggleSpawnAction } from './actions.ts'
+import { addPullFunc, boxSelectSpawnsAction, toggleSpawnAction } from './routeActions.ts'
 import * as localforage from 'localforage'
-import { RootState } from './store.ts'
+import { RootState } from '../store.ts'
 import { persistReducer } from 'redux-persist'
-import { indexedDbStorage } from './storage.ts'
+import { indexedDbStorage } from '../storage.ts'
 import { routeMigrate, routePersistVersion } from './routeMigrations.ts'
-import { joinMobSpawns } from '../util/mobSpawns.ts'
+import { joinMobSpawns } from '../../util/mobSpawns.ts'
 
 export interface RouteState {
   route: Route
@@ -45,7 +45,7 @@ const makeEmptyRoute = (dungeonKey: DungeonKey, savedRoutes: SavedRoute[]): Rout
 
 const savedRouteKey = 'savedRoute'
 export const getSavedRouteKey = (routeId: string) => [savedRouteKey, routeId].join('-')
-async function loadRouteFromStorage(routeId: string) {
+export async function loadRouteFromStorage(routeId: string) {
   const route = await localforage.getItem<Route>(getSavedRouteKey(routeId))
   if (route === null) {
     throw new Error(`Could not load route ${routeId}`)

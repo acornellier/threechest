@@ -1,6 +1,6 @@
-﻿import { Pull, PullDetailed } from '../util/types.ts'
-import { findMobSpawn } from '../util/mobSpawns.ts'
-import { Dungeon } from '../data/types.ts'
+﻿import { Pull, PullDetailed } from '../../../util/types.ts'
+import { findMobSpawn } from '../../../util/mobSpawns.ts'
+import { Dungeon } from '../../../data/types.ts'
 
 export function augmentPulls(pulls: Pull[], dungeon: Dungeon): PullDetailed[] {
   const pullsDetailed: PullDetailed[] = []

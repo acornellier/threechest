@@ -1,9 +1,9 @@
 import { Dispatch, SetStateAction, useCallback, useState } from 'react'
-import { useAppDispatch, useRoute } from '../../../store/hooks.ts'
+import { useActualRoute, useAppDispatch } from '../../../store/hooks.ts'
 import { Button } from '../../Common/Button.tsx'
 import { CheckIcon, PencilIcon } from '@heroicons/react/24/outline'
 import { TooltipStyled } from '../../Common/TooltipStyled.tsx'
-import { setName } from '../../../store/routesReducer.ts'
+import { setName } from '../../../store/routes/routesReducer.ts'
 
 interface Props {
   isRenaming: boolean
@@ -11,7 +11,7 @@ interface Props {
 }
 
 export function RenameRoute({ isRenaming, setRenaming }: Props) {
-  const route = useRoute()
+  const route = useActualRoute()
   const dispatch = useAppDispatch()
 
   const [input, setInput] = useState(route.name)

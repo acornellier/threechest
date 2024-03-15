@@ -1,10 +1,10 @@
 ﻿import { AppDispatch, RootState } from './store.ts'
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux'
 import { dungeonsByKey } from '../data/dungeons.ts'
-import { RouteState } from './routesReducer.ts'
+import { RouteState } from './routes/routesReducer.ts'
 import { DungeonKey } from '../data/types.ts'
 import { createSelector } from '@reduxjs/toolkit'
-import { HoverState } from './hoverReducer.ts'
+import { HoverState } from './reducers/hoverReducer.ts'
 import { findMobSpawn } from '../util/mobSpawns.ts'
 
 export const useAppDispatch: () => AppDispatch = useDispatch
@@ -18,7 +18,12 @@ export const useHoverSelector = <T>(selector: (state: HoverState) => T): T =>
   useRootSelector((state) => selector(state.hover))
 
 // Routes
-export const useRoute = () => useRoutesSelector((state) => state.route)
+export const useRoute = () =>
+  useRootSelector((state) => state.import.previewRoute ?? state.routes.present.route)
+
+export const useActualRoute = () => useRoutesSelector((state) => state.route)
+
+export const usePreviewRoute = () => useRootSelector((state) => state.import.previewRoute)
 
 const selectAllRoutes = (state: RouteState) => state.savedRoutes
 const selectDungeonRoutes = createSelector(
@@ -29,14 +34,16 @@ export const useDungeonRoutes = (dungeonKey: DungeonKey) =>
   useRoutesSelector((state) => selectDungeonRoutes(state, dungeonKey))
 
 export function useDungeon() {
-  const dungeonKey = useRoutesSelector((state) => state.route.dungeonKey)
-  return dungeonsByKey[dungeonKey]
+  const route = useRoute()
+  return dungeonsByKey[route.dungeonKey]
 }
 
 // Hover
-export const useSelectedPull = () => useRoutesSelector((state) => state.route.selectedPull)
-
-export const useHoveredPull = () => useHoverSelector((state) => state.hoveredPull)
+export const useHoveredPull = () => {
+  const previewRoute = usePreviewRoute()
+  const hoveredPull = useHoverSelector((state) => state.hoveredPull)
+  return previewRoute ? null : hoveredPull
+}
 
 export function useHoveredMobSpawn() {
   const dungeon = useDungeon()

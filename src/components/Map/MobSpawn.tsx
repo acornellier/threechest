@@ -9,12 +9,12 @@ import {
   useHoverSelector,
   useRoute,
 } from '../../store/hooks.ts'
-import { toggleSpawn } from '../../store/routesReducer.ts'
+import { toggleSpawn } from '../../store/routes/routesReducer.ts'
 import { Patrol } from './Patrol.tsx'
 import { BossMarker } from './BossMarker.tsx'
 import { MobIcon } from './MobIcon.tsx'
 import { MobSpawnTooltip } from './MobSpawnTooltip.tsx'
-import { hoverSpawn, selectSpawn } from '../../store/hoverReducer.ts'
+import { hoverSpawn, selectSpawn } from '../../store/reducers/hoverReducer.ts'
 import { MobSpawn } from '../../data/types.ts'
 
 interface MobSpawnProps {

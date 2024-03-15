@@ -1,8 +1,9 @@
-﻿import { useMemo } from 'react'
-import { useAppDispatch, useDungeonRoutes, useRoute } from '../../store/hooks.ts'
-import { loadRoute } from '../../store/routesReducer.ts'
+﻿import { useCallback, useMemo } from 'react'
+import { useActualRoute, useAppDispatch, useDungeonRoutes } from '../../store/hooks.ts'
+import { loadRoute } from '../../store/routes/routesReducer.ts'
 import { SavedRoute } from '../../util/types.ts'
 import { Dropdown, DropdownOption } from '../Common/Dropdown.tsx'
+import { setPreviewRouteAsync } from '../../store/reducers/importReducer.ts'
 
 const routeToOption = (route: SavedRoute): DropdownOption => ({
   id: route.uid,
@@ -11,7 +12,7 @@ const routeToOption = (route: SavedRoute): DropdownOption => ({
 
 export function RouteDropdown() {
   const dispatch = useAppDispatch()
-  const route = useRoute()
+  const route = useActualRoute()
   const routes = useDungeonRoutes(route.dungeonKey)
 
   const options = useMemo(() => routes.map(routeToOption), [routes])
@@ -20,11 +21,19 @@ export function RouteDropdown() {
     [options, route.uid],
   )
 
+  const onHover = useCallback(
+    async (option: DropdownOption | null) => {
+      dispatch(setPreviewRouteAsync(option ? { routeId: option.id } : null))
+    },
+    [dispatch],
+  )
+
   return (
     <Dropdown
       options={options}
       selected={selected}
       onSelect={(option) => dispatch(loadRoute(option.id))}
+      onHover={onHover}
     />
   )
 }

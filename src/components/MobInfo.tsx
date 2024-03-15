@@ -1,9 +1,9 @@
 import { useAppDispatch, useDungeon, useHoverSelector } from '../store/hooks.ts'
 import { Panel } from './Common/Panel.tsx'
 import { XMarkIcon } from '@heroicons/react/24/outline'
-import { selectSpawn } from '../store/hoverReducer.ts'
+import { selectSpawn } from '../store/reducers/hoverReducer.ts'
 import { getIconLink } from '../data/spells/mergeSpells.ts'
-import { addToast } from '../store/toastReducer.ts'
+import { addToast } from '../store/reducers/toastReducer.ts'
 import { findMobSpawn } from '../util/mobSpawns.ts'
 
 export function MobInfo() {
