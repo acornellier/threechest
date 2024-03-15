@@ -80,7 +80,10 @@ export const nok: Dungeon = {
   name: 'Nokhud Offensive',
   key: 'nok',
   icon: 'achievement_dungeon_centaurplains',
-  iconScaling: 0.4,
+  defaultBounds: [
+    [-70, 90],
+    [-215, 270],
+  ],
   ...dungeonData('nok'),
 }
 

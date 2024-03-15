@@ -9,22 +9,24 @@ import ebMdtData from './mdtDungeons/eb_mdt.json'
 import nokMdtData from './mdtDungeons/nok_mdt.json'
 import tottMdtData from './mdtDungeons/tott_mdt.json'
 import wcmMdtData from './mdtDungeons/wcm_mdt.json'
-import { DungeonKey, MdtDungeon, MobSpawn, SpawnId } from './types.ts'
+import { DungeonKey, MdtDungeon, MdtDungeonFake, MobSpawn, SpawnId } from './types.ts'
 import { mdtEnemiesToMobSpawns } from '../util/mobSpawns.ts'
 
-export const mdtDungeons: Record<DungeonKey, MdtDungeon> = {
-  aa: aaMdtData as MdtDungeon,
-  ad: adMdtData as MdtDungeon,
-  bh: bhMdtData as MdtDungeon,
-  brh: brhMdtData as MdtDungeon,
-  dht: dhtMdtData as MdtDungeon,
-  fall: fallMdtData as MdtDungeon,
-  nok: nokMdtData as MdtDungeon,
-  rise: riseMdtData as MdtDungeon,
-  eb: ebMdtData as MdtDungeon,
-  tott: tottMdtData as MdtDungeon,
-  wcm: wcmMdtData as MdtDungeon,
+const mdtDungeonsFake: Record<DungeonKey, MdtDungeonFake> = {
+  aa: aaMdtData,
+  ad: adMdtData,
+  bh: bhMdtData,
+  brh: brhMdtData,
+  dht: dhtMdtData,
+  fall: fallMdtData,
+  nok: nokMdtData,
+  rise: riseMdtData,
+  eb: ebMdtData,
+  tott: tottMdtData,
+  wcm: wcmMdtData,
 }
+
+export const mdtDungeons = mdtDungeonsFake as Record<DungeonKey, MdtDungeon>
 
 export const mdtMobSpawns: Record<DungeonKey, Record<SpawnId, MobSpawn>> = Object.entries(
   mdtDungeons,

@@ -94,6 +94,7 @@ export function importMdtDungeon(key) {
         spawnIndex,
         group: getFieldValue(cloneFields, 'g'),
         pos: convertCoords(x, y),
+        scale: getFieldValue(cloneFields, 'scale'),
       }
 
       const patrol = getFieldValue(cloneFields, 'patrol')

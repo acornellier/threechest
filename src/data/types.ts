@@ -16,7 +16,6 @@ export type Dungeon = {
   mobSpawns: Record<SpawnId, MobSpawn>
   spells: Record<number, Spell[]>
   icon: string
-  iconScaling?: number
 }
 
 export type DungeonKey =
@@ -39,6 +38,7 @@ export type Spawn = {
   group: number | null
   spawnIndex: number
   pos: Point
+  scale: number | null
   patrol: Array<Point>
 }
 
@@ -66,3 +66,17 @@ export type Spell = {
 }
 
 export type Spells = Record<number, Spell[]>
+
+// Change [number, number] to number[] to type-check JSON
+export type SpawnFake = Omit<Spawn, 'pos' | 'patrol'> & {
+  pos: number[]
+  patrol: Array<number[]>
+}
+
+export type MobFake = Omit<Mob, 'spawns'> & {
+  spawns: SpawnFake[]
+}
+
+export type MdtDungeonFake = Omit<MdtDungeon, 'enemies'> & {
+  enemies: MobFake[]
+}

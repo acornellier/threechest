@@ -1,5 +1,4 @@
-﻿import { Mob, Spawn } from '../../data/types.ts'
-import { Marker } from 'react-leaflet'
+﻿import { Marker } from 'react-leaflet'
 import { divIcon, type LeafletEventHandlerFnMap } from 'leaflet'
 import { renderToString } from 'react-dom/server'
 import { memo, useMemo } from 'react'
@@ -16,11 +15,11 @@ import { BossMarker } from './BossMarker.tsx'
 import { MobIcon } from './MobIcon.tsx'
 import { MobSpawnTooltip } from './MobSpawnTooltip.tsx'
 import { hoverSpawn, selectSpawn } from '../../store/hoverReducer.ts'
+import { MobSpawn } from '../../data/types.ts'
 
 interface MobSpawnProps {
   iconScaling: number
-  mob: Mob
-  spawn: Spawn
+  mobSpawn: MobSpawn
 }
 
 interface MobSpawnMemoProps extends MobSpawnProps {
@@ -31,16 +30,16 @@ interface MobSpawnMemoProps extends MobSpawnProps {
 
 function MobSpawnComponent({
   iconScaling,
-  mob,
-  spawn,
+  mobSpawn,
   isHovered,
   isGroupHovered,
   matchingPullIndex,
 }: MobSpawnMemoProps) {
+  const { mob, spawn } = mobSpawn
   const dispatch = useAppDispatch()
   const isBoxHovering = useHoverSelector((state) => state.isBoxHovering)
   const isActuallyHovered = isHovered && !isBoxHovering
-  const iconSize = iconScaling * mobScale(mob) * (isActuallyHovered ? 1.2 : 1)
+  const iconSize = iconScaling * mobScale(mobSpawn) * (isActuallyHovered ? 1.2 : 1)
 
   const eventHandlers: LeafletEventHandlerFnMap = useMemo(
     () => ({
@@ -72,7 +71,7 @@ function MobSpawnComponent({
           className: 'mob',
           html: renderToString(
             <MobIcon
-              mob={mob}
+              mobSpawn={mobSpawn}
               iconScaling={iconScaling}
               isGroupHovered={isGroupHovered && !isBoxHovering}
               matchingPullIndex={matchingPullIndex}
@@ -90,27 +89,26 @@ function MobSpawnComponent({
 
 const MobSpawnMemo = memo(MobSpawnComponent)
 
-export function MobSpawn({ iconScaling, mob, spawn }: MobSpawnProps) {
+export function MobSpawnWrapper({ iconScaling, mobSpawn }: MobSpawnProps) {
   const route = useRoute()
 
   const hoveredMobSpawn = useHoveredMobSpawn()
-  const isHovered = !!hoveredMobSpawn && hoveredMobSpawn.spawn.id === spawn.id
+  const isHovered = !!hoveredMobSpawn && hoveredMobSpawn.spawn.id === mobSpawn.spawn.id
   const isGroupHovered =
     isHovered ||
     (!!hoveredMobSpawn &&
       hoveredMobSpawn.spawn.group !== null &&
-      hoveredMobSpawn.spawn.group === spawn.group)
+      hoveredMobSpawn.spawn.group === mobSpawn.spawn.group)
 
   const matchingPullIndex = useMemo(() => {
-    const index = route.pulls.findIndex((pull) => pullContainsMobSpawn(pull, spawn.id))
+    const index = route.pulls.findIndex((pull) => pullContainsMobSpawn(pull, mobSpawn.spawn.id))
     return index !== -1 ? index : null
-  }, [route.pulls, spawn])
+  }, [route.pulls, mobSpawn])
 
   return (
     <MobSpawnMemo
       iconScaling={iconScaling}
-      mob={mob}
-      spawn={spawn}
+      mobSpawn={mobSpawn}
       isHovered={isHovered}
       isGroupHovered={isGroupHovered}
       matchingPullIndex={matchingPullIndex}

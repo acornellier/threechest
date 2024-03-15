@@ -9,7 +9,8 @@ export function findMobSpawn(spawnId: SpawnId, dungeon: Dungeon): MobSpawn {
   return mobSpawn
 }
 
-export const mobScale = (mob: Mob) => mob.scale * (mob.isBoss ? 1.7 : 1)
+export const mobScale = ({ mob, spawn }: MobSpawn) =>
+  (mob.scale ?? 1) * (spawn.scale ?? 1) * (mob.isBoss ? 1.7 : 1)
 
 export const joinMobSpawns = (spawns1: SpawnId[], spawns2: SpawnId[]) =>
   spawns1.concat(spawns2.filter((spawn2) => !spawns1.includes(spawn2)))
