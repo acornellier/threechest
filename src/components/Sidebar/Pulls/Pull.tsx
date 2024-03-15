@@ -15,9 +15,10 @@ interface Props {
   pull: PullDetailed
   ghost: boolean | undefined
   onRightClick: (e: MouseEvent, pullIndex: number) => void
+  isShiftHeld: boolean
 }
 
-export function Pull({ pullIndex, pull, ghost, onRightClick }: Props) {
+export function Pull({ pullIndex, pull, ghost, onRightClick, isShiftHeld }: Props) {
   const ref = useRef<HTMLDivElement>(null)
 
   const dispatch = useAppDispatch()
@@ -82,7 +83,7 @@ export function Pull({ pullIndex, pull, ghost, onRightClick }: Props) {
               {ghost ? pullIndex : pullIndex + 1}
             </div>
             <div className="flex h-full items-center">
-              {sortedCounts.slice(0, 6).map(({ mob, count }) => (
+              {sortedCounts.slice(0, 7).map(({ mob, count }) => (
                 <div
                   key={mob.id}
                   className="relative h-7 w-7 mr-[-3px] rounded-full border border-slate-300"
@@ -107,7 +108,9 @@ export function Pull({ pullIndex, pull, ghost, onRightClick }: Props) {
             className="flex items-center font-bold text-sm"
             style={{ WebkitTextStroke: '0.6px black' }}
           >
-            {mobCountPercentStr(pull.countCumulative, dungeon.mdt.totalCount)}
+            {isShiftHeld
+              ? pull.countCumulative
+              : mobCountPercentStr(pull.countCumulative, dungeon.mdt.totalCount)}
           </div>
         </div>
       </div>

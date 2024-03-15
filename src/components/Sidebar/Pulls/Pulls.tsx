@@ -14,6 +14,7 @@ import { PlusIcon } from '@heroicons/react/24/outline'
 import { useContextMenu } from '../../Common/useContextMenu.ts'
 import { ClearIcon } from '../../Common/Icons/ClearIcon.tsx'
 import { shortcuts } from '../../../data/shortcuts.ts'
+import { useKeyHeld } from '../../../hooks/useKeyHeld.ts'
 
 type SortablePull = PullDetailed & ItemInterface
 
@@ -21,15 +22,16 @@ export function Pulls() {
   const dispatch = useAppDispatch()
   const dungeon = useDungeon()
   const route = useRoute()
+  const [ghostPullIndex, setGhostPullIndex] = useState<number | null>(null)
   const pullsDetailed = useMemo(() => augmentPulls(route.pulls, dungeon), [route.pulls, dungeon])
+  const isShiftHeld = useKeyHeld('Shift')
+  usePullShortcuts()
 
   const hoveredPull = useHoveredPull()
   const clampedHoveredPull = hoveredPull
     ? Math.min(Math.max(hoveredPull, 0), pullsDetailed.length - 1)
     : pullsDetailed.length - 1
   const totalCount = pullsDetailed[clampedHoveredPull]?.countCumulative ?? 0
-
-  const [ghostPullIndex, setGhostPullIndex] = useState<number | null>(null)
 
   const pullsWithGhost = useMemo(() => {
     const pulls: SortablePull[] = [...pullsDetailed]
@@ -67,14 +69,12 @@ export function Pulls() {
     [dispatch, onRightClick],
   )
 
-  usePullShortcuts()
-
   const percent = (totalCount / dungeon.mdt.totalCount) * 100
 
   let pullIndex = 0
   return (
     <Panel noRightBorder className="overflow-auto select-none">
-      <div className="relative flex justify-center mx-2 rounded-sm font-bold border border-gray-400">
+      <div className="flex-1 relative flex justify-center mx-2 rounded-sm font-bold border border-gray-400">
         <div
           className="gritty absolute left-0 max-w-full h-full z-[-1]"
           style={{
@@ -101,6 +101,7 @@ export function Pulls() {
             pull={pull}
             ghost={pull.filtered}
             onRightClick={onRightClickPull}
+            isShiftHeld={isShiftHeld}
           />
         ))}
       </ReactSortable>

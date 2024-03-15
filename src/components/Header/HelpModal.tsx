@@ -42,7 +42,11 @@ export function HelpModal({ onClose }: Props) {
             select multiple mobs at once.
           </div>
           <div>
-            Any other questions? Contact me on{' '}
+            Hold <span className="rounded bg-fancy-red px-1 min-w-6 text-center">Shift</span> to
+            view total forces instead of %.
+          </div>
+          <div>
+            Contact me on{' '}
             <a
               className="text-blue-500 hover:underline"
               href="https://discord.com/invite/Ykb6AbYHHZ"
@@ -50,8 +54,8 @@ export function HelpModal({ onClose }: Props) {
               rel="noreferrer"
             >
               discord
-            </a>
-            .
+            </a>{' '}
+            with any questions you want!
           </div>
           <div className="text-lg font-bold mt-2">Shortcuts</div>
           <div className="flex flex-col gap-1">

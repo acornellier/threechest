@@ -33,4 +33,5 @@ export const tips: Tip[] = [
   { id: 1, tip: `Hold ${isMac ? 'cmd' : 'ctrl'} then click to select invidual mobs` },
   { id: 2, tip: `Click Help in the bottom right to view all available shortcuts` },
   { id: 3, tip: `Join the discord in the bottom right` },
+  { id: 4, tip: `Hold shift to view total forces instead of percent` },
 ]
