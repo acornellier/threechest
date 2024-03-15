@@ -13,7 +13,10 @@ export function ImportRoute() {
   const [input, setInput] = useState('')
   const [inputModalOpen, setInputModalOpen] = useState(false)
 
-  const handlePaste = useCallback((text: string) => dispatch(importRoute(text)), [dispatch])
+  const handlePaste = useCallback(
+    (mdtString: string) => dispatch(importRoute({ mdtString })),
+    [dispatch],
+  )
 
   const onGlobalPaste = useCallback(
     async (event: ClipboardEvent) => {

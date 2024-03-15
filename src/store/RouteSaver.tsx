@@ -13,7 +13,7 @@ export function RouteSaver() {
     const urlParams = new URLSearchParams(window.location.search)
     const mdtString = urlParams.get('mdt')
     if (mdtString) {
-      dispatch(importRoute(mdtString))
+      dispatch(importRoute({ mdtString }))
       window.history.pushState(null, '', window.location.origin)
     }
   }, [dispatch])
