@@ -20,11 +20,6 @@ $fancy-blue: #131a34;
   font-family: unset;
 }
 
-img.leaflet-tile {
-  //noinspection CssInvalidPropertyValue
-  mix-blend-mode: normal !important;
-}
-
 .leaflet-tooltip.no-arrow:before {
   display: none;
 }
