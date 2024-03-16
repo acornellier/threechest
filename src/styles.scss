@@ -24,6 +24,14 @@ $fancy-blue: #131a34;
   display: none;
 }
 
+.leaflet-zoom-box {
+  border: 2px solid $fancy-red;
+
+  &.inverse {
+    border-style: dashed;
+  }
+}
+
 .leaflet-popup.plain-popup {
   transition: none;
 

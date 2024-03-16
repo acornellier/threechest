@@ -3,7 +3,7 @@ import { useMemo, useState } from 'react'
 import { mapIconScaling } from '../../util/map.ts'
 import { useAppDispatch, useDungeon } from '../../store/hooks.ts'
 import { MobSpawnWrapper } from './MobSpawn.tsx'
-import { boxSelectSpawns, commitBoxSelect } from '../../store/routes/routesReducer.ts'
+import { boxSelectEnd, boxSelectSpawns, boxSelectStart } from '../../store/routes/routesReducer.ts'
 import type { LeafletEventHandlerFnMap } from 'leaflet'
 import { setBoxHovering } from '../../store/reducers/hoverReducer.ts'
 
@@ -17,17 +17,20 @@ export function Mobs() {
   const mapEvents: LeafletEventHandlerFnMap = useMemo(() => {
     return {
       zoomend: () => setIconScaling(mapIconScaling(map)),
-      boxselectstart: () => dispatch(setBoxHovering(true)),
-      boxselectmove({ bounds }) {
+      boxselectstart: () => {
+        dispatch(setBoxHovering(true))
+        dispatch(boxSelectStart())
+      },
+      boxselectmove({ bounds, inverse }) {
         const spawns = Object.values(dungeon.mobSpawns)
           .filter(({ spawn }) => bounds.contains(spawn.pos))
           .map(({ spawn }) => spawn.id)
 
-        dispatch(boxSelectSpawns(spawns))
+        dispatch(boxSelectSpawns({ spawns, inverse }))
       },
       boxselectend() {
         dispatch(setBoxHovering(false))
-        dispatch(commitBoxSelect())
+        dispatch(boxSelectEnd())
       },
     }
   }, [dispatch, dungeon, map])

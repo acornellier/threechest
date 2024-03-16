@@ -1,15 +1,15 @@
 import { useEffect, useState } from 'react'
 
 export function useKeyHeld(key: string): boolean {
-  const [isKeyPressed, setKeyPressed] = useState(false)
+  const [isKeyHeld, setKeyHeld] = useState(false)
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === key) setKeyPressed(true)
+      if (event.key === key) setKeyHeld(true)
     }
 
     const handleKeyUp = (event: KeyboardEvent) => {
-      if (event.key === key) setKeyPressed(false)
+      if (event.key === key) setKeyHeld(false)
     }
 
     window.addEventListener('keydown', handleKeyDown)
@@ -22,5 +22,5 @@ export function useKeyHeld(key: string): boolean {
     }
   }, [key]) // Update effect when `key` changes
 
-  return isKeyPressed
+  return isKeyHeld
 }

@@ -9,14 +9,13 @@ import { RootState } from '../store.ts'
 import { persistReducer } from 'redux-persist'
 import { indexedDbStorage } from '../storage.ts'
 import { routeMigrate, routePersistVersion } from './routeMigrations.ts'
-import { joinMobSpawns } from '../../util/mobSpawns.ts'
 
 export interface RouteState {
   route: Route
   savedRoutes: SavedRoute[]
 }
 
-const emptyPull = { id: 0, spawns: [], tempSpawns: [] }
+const emptyPull: Pull = { id: 0, spawns: [], spawnsBackup: [] }
 
 const newRouteUid = () => Math.random().toString(36).slice(2)
 
@@ -176,15 +175,19 @@ const baseReducer = createSlice({
     toggleSpawn(state, { payload }: PayloadAction<{ spawn: SpawnId; individual: boolean }>) {
       state.route.pulls = toggleSpawnAction(state.route, payload)
     },
-    boxSelectSpawns(state, { payload }: PayloadAction<SpawnId[]>) {
-      boxSelectSpawnsAction(state.route, payload)
-    },
-    commitBoxSelect(state) {
+    boxSelectStart(state) {
       const pull = state.route.pulls[state.route.selectedPull]
-      if (!pull) return
-
-      pull.spawns = joinMobSpawns(pull.spawns, pull.tempSpawns)
-      pull.tempSpawns = []
+      if (pull) pull.spawnsBackup = pull.spawns
+    },
+    boxSelectSpawns(
+      state,
+      { payload: { spawns, inverse } }: PayloadAction<{ spawns: SpawnId[]; inverse: boolean }>,
+    ) {
+      boxSelectSpawnsAction(state.route, spawns, inverse)
+    },
+    boxSelectEnd(state) {
+      const pull = state.route.pulls[state.route.selectedPull]
+      if (pull) pull.spawnsBackup = []
     },
     setPulls(state, { payload }: PayloadAction<Pull[]>) {
       state.route.pulls = payload
@@ -235,7 +238,7 @@ const undoableReducer = undoable(baseReducer.reducer, {
       baseReducer.actions.clearPull.type,
       baseReducer.actions.deletePull.type,
       baseReducer.actions.toggleSpawn.type,
-      baseReducer.actions.commitBoxSelect.type,
+      baseReducer.actions.boxSelectEnd.type,
       baseReducer.actions.setPulls.type,
       // baseReducer.actions.addNote.type, // intentionally leave out for justAdded hack
       baseReducer.actions.editNote.type,
@@ -274,8 +277,9 @@ export const {
   selectPull,
   selectPullRelative,
   toggleSpawn,
+  boxSelectStart,
   boxSelectSpawns,
-  commitBoxSelect,
+  boxSelectEnd,
   setPulls,
   addNote,
   editNote,

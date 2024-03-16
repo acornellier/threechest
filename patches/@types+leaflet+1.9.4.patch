@@ -1,5 +1,5 @@
 diff --git a/node_modules/@types/leaflet/index.d.ts b/node_modules/@types/leaflet/index.d.ts
-index fd6043a..9454728 100644
+index fd6043a..36d585f 100755
 --- a/node_modules/@types/leaflet/index.d.ts
 +++ b/node_modules/@types/leaflet/index.d.ts
 @@ -380,6 +380,10 @@ export interface LeafletEventHandlerFnMap {
@@ -7,8 +7,8 @@ index fd6043a..9454728 100644
      tileerror?: TileErrorEventHandlerFn | undefined;
  
 +    boxselectstart?: (() => void) | undefined;
-+    boxselectmove?: ((event: { bounds: LatLngBounds }) => void) | undefined;
-+    boxselectend?: ((event: { bounds: LatLngBounds }) => void) | undefined;
++    boxselectmove?: ((event: { bounds: LatLngBounds, inverse: boolean }) => void) | undefined;
++    boxselectend?: ((event: { bounds: LatLngBounds, inverse: boolean }) => void) | undefined;
 +
      // [name: string]: any;
      // You are able add additional properties, but it makes this interface uncheckable.

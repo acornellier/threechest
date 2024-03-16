@@ -36,6 +36,7 @@ export var BoxSelect = Handler.extend({
   _resetState: function () {
     this._resetStateTimeout = 0
     this._moved = false
+    this._inverse = false
   },
 
   _clearDeferredResetState: function () {
@@ -59,6 +60,7 @@ export var BoxSelect = Handler.extend({
     DomUtil.disableImageDrag()
 
     this._startPoint = this._map.mouseEventToContainerPoint(e)
+    this._setInverse(e.altKey)
 
     DomEvent.on(
       document,
@@ -67,6 +69,7 @@ export var BoxSelect = Handler.extend({
         mousemove: this._onMouseMove,
         mouseup: this._onMouseUp,
         keydown: this._onKeyDown,
+        keyup: this._onKeyUp,
       },
       this,
     )
@@ -79,7 +82,7 @@ export var BoxSelect = Handler.extend({
       this._box = DomUtil.create('div', 'leaflet-zoom-box', this._container)
       DomUtil.addClass(this._container, 'leaflet-crosshair')
 
-      this._map.fire('boxselectstart')
+      this._map.fire('boxselectstart', this._inverse)
     }
 
     this._point = this._map.mouseEventToContainerPoint(e)
@@ -92,12 +95,7 @@ export var BoxSelect = Handler.extend({
     this._box.style.width = size.x + 'px'
     this._box.style.height = size.y + 'px'
 
-    const latLngBounds = new LatLngBounds(
-      this._map.containerPointToLatLng(this._startPoint),
-      this._map.containerPointToLatLng(this._point),
-    )
-
-    this._map.fire('boxselectmove', { bounds: latLngBounds })
+    this._fireMove()
   },
 
   _finish: function () {
@@ -116,6 +114,7 @@ export var BoxSelect = Handler.extend({
         mousemove: this._onMouseMove,
         mouseup: this._onMouseUp,
         keydown: this._onKeyDown,
+        keyup: this._onKeyUp,
       },
       this,
     )
@@ -141,14 +140,41 @@ export var BoxSelect = Handler.extend({
       this._map.containerPointToLatLng(this._point),
     )
 
-    this._map.fire('boxselectend', { bounds })
+    this._map.fire('boxselectend', { bounds, inverse: this._inverse })
+  },
+
+  _setInverse: function (inverse) {
+    this._inverse = inverse
+    if (this._box) this._box.classList.toggle('inverse', inverse)
+  },
+
+  _fireMove: function () {
+    const latLngBounds = new LatLngBounds(
+      this._map.containerPointToLatLng(this._startPoint),
+      this._map.containerPointToLatLng(this._point),
+    )
+
+    this._map.fire('boxselectmove', {
+      bounds: latLngBounds,
+      inverse: this._inverse,
+    })
   },
 
   _onKeyDown: function (e) {
-    if (e.keyCode === 27) {
+    if (e.key === 'Escape') {
       this._finish()
       this._clearDeferredResetState()
       this._resetState()
+    } else if (e.key === 'Alt') {
+      this._setInverse(true)
+      this._fireMove()
+    }
+  },
+
+  _onKeyUp: function (e) {
+    if (e.key === 'Alt') {
+      this._setInverse(false)
+      this._fireMove()
     }
   },
 })

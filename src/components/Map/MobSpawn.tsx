@@ -2,7 +2,7 @@
 import { divIcon, type LeafletEventHandlerFnMap } from 'leaflet'
 import { renderToString } from 'react-dom/server'
 import { memo, useMemo } from 'react'
-import { mobScale, pullContainsMobSpawn } from '../../util/mobSpawns.ts'
+import { mobScale } from '../../util/mobSpawns.ts'
 import {
   useAppDispatch,
   useHoveredMobSpawn,
@@ -110,7 +110,7 @@ export function MobSpawnWrapper({ iconScaling, mobSpawn }: MobSpawnProps) {
       hoveredMobSpawn.spawn.group === mobSpawn.spawn.group)
 
   const matchingPullIndex = useMemo(() => {
-    const index = route.pulls.findIndex((pull) => pullContainsMobSpawn(pull, mobSpawn.spawn.id))
+    const index = route.pulls.findIndex((pull) => pull.spawns.includes(mobSpawn.spawn.id))
     return index !== -1 ? index : null
   }, [route.pulls, mobSpawn])
 

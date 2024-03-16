@@ -7,7 +7,6 @@ interface Props {
 }
 
 const shortcutDescriptions = [
-  { desc: 'Show help menu', shortcuts: shortcuts.help },
   { desc: 'Undo', shortcuts: shortcuts.undo },
   { desc: 'Redo', shortcuts: shortcuts.redo },
   { desc: 'Select next pull', shortcuts: shortcuts.pullDown },
@@ -17,6 +16,7 @@ const shortcutDescriptions = [
   { desc: 'Add pull before selected', shortcuts: shortcuts.prependPull },
   { desc: 'Clear selected pull', shortcuts: shortcuts.clearPull },
   { desc: 'Delete selected pull', shortcuts: shortcuts.deletePull.concat(shortcuts.backspacePull) },
+  { desc: 'Show help menu', shortcuts: shortcuts.help },
 ]
   .map(({ desc, shortcuts }) => ({ desc, texts: shortcuts.map((shortcut) => keyText(shortcut)) }))
   .filter(({ texts }) => texts.length)
@@ -32,6 +32,19 @@ export function HelpModal({ onClose }: Props) {
       contents={
         <div>
           <div>
+            Contact me on{' '}
+            <a
+              className="text-blue-500 hover:underline"
+              href="https://discord.com/invite/Ykb6AbYHHZ"
+              target="_blank"
+              rel="noreferrer"
+            >
+              discord
+            </a>{' '}
+            with any questions you want!
+          </div>
+          <div className="text-lg font-bold mt-2">Advanced tips</div>
+          <div>
             <span className="rounded bg-fancy-red px-1 min-w-6 text-center">
               {isMac ? 'Cmd' : 'Ctrl'} + click
             </span>{' '}
@@ -44,18 +57,6 @@ export function HelpModal({ onClose }: Props) {
           <div>
             Hold <span className="rounded bg-fancy-red px-1 min-w-6 text-center">Shift</span> to
             view total forces instead of %.
-          </div>
-          <div>
-            Contact me on{' '}
-            <a
-              className="text-blue-500 hover:underline"
-              href="https://discord.com/invite/Ykb6AbYHHZ"
-              target="_blank"
-              rel="noreferrer"
-            >
-              discord
-            </a>{' '}
-            with any questions you want!
           </div>
           <div className="text-lg font-bold mt-2">Shortcuts</div>
           <div className="flex flex-col gap-1">

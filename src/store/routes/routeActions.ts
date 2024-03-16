@@ -2,7 +2,7 @@ import { Pull, Route } from '../../util/types.ts'
 import { SpawnId } from '../../data/types.ts'
 import { dungeonsByKey } from '../../data/dungeons.ts'
 import { RouteState } from './routesReducer.ts'
-import { findMobSpawn } from '../../util/mobSpawns.ts'
+import { findMobSpawn, joinSpawns, subtractSpawns } from '../../util/mobSpawns.ts'
 
 const findSelectedPull = (route: Route, spawn: SpawnId) =>
   route.pulls.findIndex((pull) => pull.spawns.some((spawn2) => spawn === spawn2))
@@ -59,29 +59,32 @@ export function toggleSpawnAction(
   }
 }
 
-export function boxSelectSpawnsAction(route: Route, hoveredSpawns: SpawnId[]) {
+export function boxSelectSpawnsAction(route: Route, hoveredSpawns: SpawnId[], inverse: boolean) {
   const pull = route.pulls[route.selectedPull]
   if (!pull) return
 
-  const missingSpawns = hoveredSpawns.filter(
+  const availableHoveredSpawns = hoveredSpawns.filter(
     (hoveredSpawn) =>
-      !route.pulls.some((pull) => pull.spawns.some((spawnId) => spawnId === hoveredSpawn)),
+      !route.pulls.some((pull2) => pull2.id !== pull.id && pull2.spawns.includes(hoveredSpawn)),
   )
 
+  const spawns = !inverse
+    ? joinSpawns(pull.spawnsBackup, availableHoveredSpawns)
+    : subtractSpawns(pull.spawnsBackup, availableHoveredSpawns)
+
   if (
-    pull.tempSpawns !== undefined &&
-    missingSpawns.length === pull.tempSpawns.length &&
-    missingSpawns.every((missingSpawn, idx) => pull.tempSpawns[idx]! === missingSpawn)
+    spawns.length === pull.spawns.length &&
+    spawns.every((missingSpawn, idx) => pull.spawns[idx]! === missingSpawn)
   ) {
     return
   }
 
-  pull.tempSpawns = missingSpawns
+  pull.spawns = spawns
 }
 
 export function addPullFunc(state: RouteState, newPullIndex: number = state.route.pulls.length) {
   const maxId = state.route.pulls.reduce<number>((acc, pull) => (pull.id > acc ? pull.id : acc), 0)
-  const newPull: Pull = { id: maxId + 1, spawns: [], tempSpawns: [] }
+  const newPull: Pull = { id: maxId + 1, spawns: [], spawnsBackup: [] }
   state.route.pulls.splice(newPullIndex, 0, newPull)
   state.route.selectedPull = Math.max(0, Math.min(newPullIndex, state.route.pulls.length - 1))
 }

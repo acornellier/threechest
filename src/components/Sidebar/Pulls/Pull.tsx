@@ -29,7 +29,7 @@ export function Pull({ pullIndex, pull, ghost, onRightClick, isShiftHeld }: Prop
   const isSelectedPull = pullIndex === route.selectedPull
 
   const sortedCounts = useMemo(() => {
-    const mobCounts = pull.spawns.concat(pull.tempSpawns).reduce<MobCount>((acc, spawnId) => {
+    const mobCounts = pull.spawns.reduce<MobCount>((acc, spawnId) => {
       const { mob } = findMobSpawn(spawnId, dungeon)
       acc[mob.id] ??= { mob, count: 0 }
       acc[mob.id]!.count += 1
@@ -37,7 +37,7 @@ export function Pull({ pullIndex, pull, ghost, onRightClick, isShiftHeld }: Prop
     }, {})
 
     return Object.values(mobCounts).sort((a, b) => b.mob.count - a.mob.count)
-  }, [dungeon, pull.spawns, pull.tempSpawns])
+  }, [dungeon, pull.spawns])
 
   useEffect(() => {
     if (isSelectedPull) {

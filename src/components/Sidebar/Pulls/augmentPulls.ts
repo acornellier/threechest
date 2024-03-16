@@ -7,9 +7,10 @@ export function augmentPulls(pulls: Pull[], dungeon: Dungeon): PullDetailed[] {
 
   let countCumulative = 0
   for (const pull of pulls) {
-    const count = pull.spawns
-      .concat(pull.tempSpawns)
-      .reduce((acc, spawnId) => acc + findMobSpawn(spawnId, dungeon).mob.count, 0)
+    const count = pull.spawns.reduce(
+      (acc, spawnId) => acc + findMobSpawn(spawnId, dungeon).mob.count,
+      0,
+    )
 
     countCumulative += count
 
