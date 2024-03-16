@@ -10,6 +10,9 @@ export default defineConfig({
       output: {
         manualChunks(id: string) {
           if (id.includes('node_modules/leaflet/')) return 'leaflet'
+
+          const mdtDungeonMatch = id.match(/mdtDungeons\/(.+_mdt).json/)
+          if (mdtDungeonMatch) return mdtDungeonMatch[1]
         },
       },
     },
