@@ -58,7 +58,7 @@ export const eb: Dungeon = {
   name: 'Everbloom',
   key: 'eb',
   defaultBounds: [
-    [-40, 145],
+    [-40, 180],
     [-180, 300],
   ],
   icon: 'achievement_dungeon_everbloom',

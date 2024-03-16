@@ -1,6 +1,6 @@
 import 'leaflet/dist/leaflet.css'
 import { MapContainer, TileLayer, useMap } from 'react-leaflet'
-import { CRS, LatLngBoundsExpression, LatLngExpression } from 'leaflet'
+import { CRS, LatLngBoundsExpression } from 'leaflet'
 import '../Leaflet/SmoothWheelZoom.ts'
 import '../Leaflet/BoxSelect/BoxSelect'
 import { useDungeon } from '../../store/hooks.ts'
@@ -10,24 +10,24 @@ import { MapContextMenu } from './MapContextMenu.tsx'
 import { useEffect } from 'react'
 import { mapHeight, mapWidth } from '../../data/dungeons.ts'
 import { MousePosition } from '../Leaflet/MousePosition/MousePosition'
-import { Dungeon } from '../../data/types.ts'
+import { Dungeon, Point } from '../../data/types.ts'
 import { isDev } from '../../util/dev.ts'
 import { Mobs } from './Mobs.tsx'
 import { PullOutlines } from './PullOutlines.tsx'
 
-const maxCoords: LatLngExpression = [-mapHeight, mapWidth]
-const center: LatLngExpression = [maxCoords[0] / 2, maxCoords[1] / 2]
-const mapBounds: LatLngBoundsExpression = [[0, 0], maxCoords]
+const maxCoords: Point = [-mapHeight, mapWidth]
+const center: Point = [maxCoords[0] / 2, maxCoords[1] / 2]
+const mapBounds: [Point, Point] = [[0, 0], maxCoords]
 
 function getAdjustedBounds(dungeon: Dungeon): LatLngBoundsExpression {
-  if (!dungeon.defaultBounds) return mapBounds
+  const defaultBounds: [Point, Point] = dungeon.defaultBounds ?? mapBounds
 
   const topbarOffset = 10
-  const top = Math.min(0, dungeon.defaultBounds[0][0] + topbarOffset)
-  const left = dungeon.defaultBounds[0][1]
-  const bottom = dungeon.defaultBounds[1][0]
+  const top = Math.min(0, defaultBounds[0][0] + topbarOffset)
+  const left = defaultBounds[0][1]
+  const bottom = defaultBounds[1][0]
   const sidebarOffset = 50
-  const right = dungeon.defaultBounds[1][1] + sidebarOffset
+  const right = defaultBounds[1][1] + sidebarOffset
 
   return [
     [top, left],
