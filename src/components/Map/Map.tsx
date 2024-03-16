@@ -1,53 +1,18 @@
 import 'leaflet/dist/leaflet.css'
-import { MapContainer, TileLayer, useMap } from 'react-leaflet'
-import { CRS, LatLngBoundsExpression } from 'leaflet'
+import { MapContainer, TileLayer } from 'react-leaflet'
+import { CRS } from 'leaflet'
 import '../Leaflet/SmoothWheelZoom.ts'
 import '../Leaflet/BoxSelect/BoxSelect'
 import { useDungeon } from '../../store/hooks.ts'
 import { Drawings } from './Drawings.tsx'
 import { Notes } from './Notes.tsx'
 import { MapContextMenu } from './MapContextMenu.tsx'
-import { useEffect } from 'react'
-import { mapHeight, mapWidth } from '../../data/dungeons.ts'
 import { MousePosition } from '../Leaflet/MousePosition/MousePosition'
-import { Dungeon, Point } from '../../data/types.ts'
 import { isDev } from '../../util/dev.ts'
 import { Mobs } from './Mobs.tsx'
 import { PullOutlines } from './PullOutlines.tsx'
-
-const maxCoords: Point = [-mapHeight, mapWidth]
-const center: Point = [maxCoords[0] / 2, maxCoords[1] / 2]
-const mapBounds: [Point, Point] = [[0, 0], maxCoords]
-
-function getAdjustedBounds(dungeon: Dungeon): LatLngBoundsExpression {
-  const defaultBounds: [Point, Point] = dungeon.defaultBounds ?? mapBounds
-
-  const topbarOffset = 10
-  const top = Math.min(0, defaultBounds[0][0] + topbarOffset)
-  const left = defaultBounds[0][1]
-  const bottom = defaultBounds[1][0]
-  const sidebarOffset = 50
-  const right = defaultBounds[1][1] + sidebarOffset
-
-  return [
-    [top, left],
-    [bottom, right],
-  ]
-}
-
-function MapInitialZoom() {
-  const map = useMap()
-  const dungeon = useDungeon()
-
-  useEffect(() => {
-    const bounds = getAdjustedBounds(dungeon)
-    map.fitBounds(bounds, {
-      animate: false,
-    })
-  }, [map, dungeon])
-
-  return null
-}
+import { MapInitialZoom } from './MapInitialZoom.tsx'
+import { mapBounds, mapCenter } from '../../util/map.ts'
 
 export function Map() {
   const dungeon = useDungeon()
@@ -58,7 +23,7 @@ export function Map() {
         key={dungeon.key}
         className="bg-inherit w-screen h-screen"
         crs={CRS.Simple}
-        center={center}
+        center={mapCenter}
         keyboard={false}
         doubleClickZoom={false}
         attributionControl={false}
@@ -85,8 +50,8 @@ export function Map() {
         <PullOutlines />
         <Drawings />
         <Notes />
-        {isDev && <MousePosition />}
         <MapInitialZoom />
+        {isDev && <MousePosition />}
       </MapContainer>
     </div>
   )

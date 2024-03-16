@@ -1,9 +1,7 @@
 import { Dungeon, DungeonKey } from './types.ts'
 import { mdtDungeons, mdtMobSpawns } from './mdtDungeons.ts'
 import { dungeonSpells } from './spells.ts'
-
-export const mapHeight = 256
-export const mapWidth = 384
+import { mapHeight } from '../util/map.ts'
 
 export const dungeonData = (key: DungeonKey) => ({
   mdt: mdtDungeons[key],
