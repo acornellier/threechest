@@ -54,8 +54,6 @@ const SmoothWheelZoom = L.Handler.extend({
       this._goalZoom + L.DomEvent.getWheelDelta(e) * 0.003 * map.options.smoothSensitivity
     if (this._goalZoom < map.getMinZoom() || this._goalZoom > map.getMaxZoom()) {
       this._goalZoom = map._limitZoom(this._goalZoom)
-      console.log('onWheeling')
-      console.log(map.options.zoomSnap)
     }
     this._wheelMousePosition = this._map.mouseEventToContainerPoint(e)
 

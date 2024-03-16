@@ -21,7 +21,7 @@ export function Page() {
   if (!dungeon) return null
 
   return (
-    <div className="flex flex-row">
+    <div className="flex flex-row bg-[#241c15]">
       <Map />
       <Header />
       <Sidebar />
