@@ -7,7 +7,7 @@ const maxCoords: Point = [-mapHeight, mapWidth]
 export const mapCenter: Point = [maxCoords[0] / 2, maxCoords[1] / 2]
 export const mapBounds: [Point, Point] = [[0, 0], maxCoords]
 
-export const mapIconScaling = (map: Map) => 5 * 2 ** map.getZoom()
+export const mapIconScaling = (map: Map) => 4.4 * 2 ** map.getZoom()
 
 export const equalPoints = (point1: Point, point2: Point) =>
   point1[0] === point2[0] && point1[1] === point2[1]

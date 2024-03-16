@@ -15,7 +15,7 @@ export function BossMarker({ spawn, isHovered, iconSize, hidden }: Props) {
     <Marker
       position={spawn.pos}
       interactive={false}
-      zIndexOffset={isHovered ? 1000 : -10_000}
+      zIndexOffset={isHovered ? 0 : -10_000}
       icon={divIcon({
         iconSize: [iconSize, iconSize],
         className: `fade-in-map-object ${hidden ? 'opacity-0' : 'opacity-1'}`,

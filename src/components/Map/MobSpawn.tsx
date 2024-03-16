@@ -40,7 +40,7 @@ function MobSpawnComponent({
   const dispatch = useAppDispatch()
   const isBoxHovering = useHoverSelector((state) => state.isBoxHovering)
   const isActuallyHovered = isHovered && !isBoxHovering
-  const iconSize = iconScaling * mobScale(mobSpawn) * (isActuallyHovered ? 1.2 : 1)
+  const iconSize = iconScaling * mobScale(mobSpawn) * (isActuallyHovered ? 1.15 : 1)
   const hidden = useMapObjectsHidden()
 
   const eventHandlers: LeafletEventHandlerFnMap = useMemo(
@@ -64,7 +64,7 @@ function MobSpawnComponent({
     <div>
       <Marker
         position={spawn.pos}
-        riseOnHover
+        zIndexOffset={isActuallyHovered ? 1000 : 0}
         eventHandlers={eventHandlers}
         icon={divIcon({
           className: `fade-in-map-object ${hidden ? 'opacity-0' : 'opacity-1'}`,
