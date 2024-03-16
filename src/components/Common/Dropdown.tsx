@@ -126,7 +126,7 @@ export function Dropdown<T extends DropdownOption>({
               }}
               onMouseLeave={(e) => {
                 if (!fullyOpen) return
-                if ((e.relatedTarget as Element)?.closest('.dropdown-option')) return
+                if ((e.relatedTarget as Element)?.closest?.('.dropdown-option')) return
                 onHover?.(null)
               }}
             >

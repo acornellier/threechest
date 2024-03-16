@@ -27,7 +27,6 @@ export const importSlice = createSlice({
     },
     setPreviewRoute(state, { payload: route }: PayloadAction<Route | null>) {
       if (route?.uid !== state.previewRoute?.uid) {
-        console.log('setPreviewRoute', route?.uid ?? null)
         state.previewRoute = route
       }
     },
