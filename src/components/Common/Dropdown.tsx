@@ -129,7 +129,6 @@ export function Dropdown<T extends DropdownOption>({
                 if ((e.relatedTarget as Element)?.closest('.dropdown-option')) return
                 onHover?.(null)
               }}
-              title={option.label}
             >
               {option.icon && <div className="mr-1">{option.icon}</div>}
               <div className="dropdown-option-text">{option.label}</div>
