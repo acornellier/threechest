@@ -132,6 +132,7 @@ const baseReducer = createSlice({
       state.route.pulls = [emptyPull]
       state.route.selectedPull = 0
       state.route.drawings = []
+      state.route.notes = []
     },
     setName(state, { payload }: PayloadAction<string>) {
       state.route.name = payload

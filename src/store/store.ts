@@ -5,12 +5,14 @@ import { importReducer } from './reducers/importReducer.ts'
 import { persistStore } from 'redux-persist'
 import { toastReducer } from './reducers/toastReducer.ts'
 import { listenerMiddleware } from './listener.ts'
+import { mapReducer } from './reducers/mapReducer.ts'
 
 export const store = configureStore({
   reducer: {
     routes: routesReducer,
     hover: hoverReducer,
     import: importReducer,
+    map: mapReducer,
     toast: toastReducer,
   },
   middleware: (getDefaultMiddleware) =>

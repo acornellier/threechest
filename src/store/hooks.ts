@@ -50,3 +50,6 @@ export function useHoveredMobSpawn() {
   const hoveredMobSpawn = useHoverSelector((state) => state.hoveredSpawn)
   return hoveredMobSpawn === null ? null : findMobSpawn(hoveredMobSpawn, dungeon)
 }
+
+// Map
+export const useMapObjectsHidden = () => useRootSelector((state) => state.map.objectsHidden)

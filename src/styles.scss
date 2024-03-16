@@ -95,6 +95,10 @@ $fancy-blue: #131a34;
   padding: 0;
 }
 
+.fade-in-map-object {
+  transition: 500ms opacity;
+}
+
 .gritty {
   background-image: url(/button_noise.png);
   background-blend-mode: overlay;

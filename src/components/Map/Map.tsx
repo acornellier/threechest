@@ -3,7 +3,7 @@ import { MapContainer, TileLayer } from 'react-leaflet'
 import { CRS } from 'leaflet'
 import '../Leaflet/SmoothWheelZoom.ts'
 import '../Leaflet/BoxSelect/BoxSelect'
-import { useDungeon } from '../../store/hooks.ts'
+import { useAppDispatch, useDungeon } from '../../store/hooks.ts'
 import { Drawings } from './Drawings.tsx'
 import { Notes } from './Notes.tsx'
 import { MapContextMenu } from './MapContextMenu.tsx'
@@ -13,9 +13,17 @@ import { Mobs } from './Mobs.tsx'
 import { PullOutlines } from './PullOutlines.tsx'
 import { MapInitialZoom } from './MapInitialZoom.tsx'
 import { mapBounds, mapCenter } from '../../util/map.ts'
+import { useEffect } from 'react'
+import { setMapObjectsHidden } from '../../store/reducers/mapReducer.ts'
 
 export function Map() {
+  const dispatch = useAppDispatch()
   const dungeon = useDungeon()
+
+  useEffect(() => {
+    dispatch(setMapObjectsHidden(true))
+    setTimeout(() => dispatch(setMapObjectsHidden(false)), 200)
+  }, [dispatch, dungeon])
 
   return (
     <div className="w-full z-10">
@@ -45,11 +53,11 @@ export function Map() {
           maxNativeZoom={4}
           url={`/maps/${dungeon.key}/{z}/{x}_{y}.png`}
         />
-        <MapContextMenu />
         <Mobs />
         <PullOutlines />
         <Drawings />
         <Notes />
+        <MapContextMenu />
         <MapInitialZoom />
         {isDev && <MousePosition />}
       </MapContainer>

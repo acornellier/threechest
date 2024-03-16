@@ -7,15 +7,16 @@ import {
   useAppDispatch,
   useHoveredMobSpawn,
   useHoverSelector,
+  useMapObjectsHidden,
   useRoute,
 } from '../../store/hooks.ts'
 import { toggleSpawn } from '../../store/routes/routesReducer.ts'
-import { Patrol } from './Patrol.tsx'
-import { BossMarker } from './BossMarker.tsx'
 import { MobIcon } from './MobIcon.tsx'
 import { MobSpawnTooltip } from './MobSpawnTooltip.tsx'
 import { hoverSpawn, selectSpawn } from '../../store/reducers/hoverReducer.ts'
 import { MobSpawn } from '../../data/types.ts'
+import { BossMarker } from './BossMarker.tsx'
+import { Patrol } from './Patrol.tsx'
 
 interface MobSpawnProps {
   iconScaling: number
@@ -40,6 +41,7 @@ function MobSpawnComponent({
   const isBoxHovering = useHoverSelector((state) => state.isBoxHovering)
   const isActuallyHovered = isHovered && !isBoxHovering
   const iconSize = iconScaling * mobScale(mobSpawn) * (isActuallyHovered ? 1.2 : 1)
+  const hidden = useMapObjectsHidden()
 
   const eventHandlers: LeafletEventHandlerFnMap = useMemo(
     () => ({
@@ -59,16 +61,16 @@ function MobSpawnComponent({
   )
 
   return (
-    <>
+    <div>
       <Marker
         position={spawn.pos}
         riseOnHover
         eventHandlers={eventHandlers}
         icon={divIcon({
+          className: `fade-in-map-object ${hidden ? 'opacity-0' : 'opacity-1'}`,
           popupAnchor: [100, 0],
           iconUrl: `/npc_portaits/${mob.id}.png`,
           iconSize: [iconSize, iconSize],
-          className: 'mob',
           html: renderToString(
             <MobIcon
               mobSpawn={mobSpawn}
@@ -81,9 +83,16 @@ function MobSpawnComponent({
       >
         {!isBoxHovering && <MobSpawnTooltip mob={mob} spawn={spawn} iconScaling={iconScaling} />}
       </Marker>
-      {mob.isBoss && <BossMarker spawn={spawn} isHovered={isActuallyHovered} iconSize={iconSize} />}
+      {mob.isBoss && (
+        <BossMarker
+          spawn={spawn}
+          isHovered={isActuallyHovered}
+          iconSize={iconSize}
+          hidden={hidden}
+        />
+      )}
       <Patrol spawn={spawn} isGroupHovered={isGroupHovered} />
-    </>
+    </div>
   )
 }
 

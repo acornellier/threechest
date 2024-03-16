@@ -7,9 +7,10 @@ interface Props {
   spawn: Spawn
   isHovered: boolean
   iconSize: number
+  hidden: boolean
 }
 
-export function BossMarker({ spawn, isHovered, iconSize }: Props) {
+export function BossMarker({ spawn, isHovered, iconSize, hidden }: Props) {
   return (
     <Marker
       position={spawn.pos}
@@ -17,7 +18,7 @@ export function BossMarker({ spawn, isHovered, iconSize }: Props) {
       zIndexOffset={isHovered ? 1000 : -10_000}
       icon={divIcon({
         iconSize: [iconSize, iconSize],
-        className: 'elite-portait',
+        className: `fade-in-map-object ${hidden ? 'opacity-0' : 'opacity-1'}`,
         html: renderToString(
           <div
             className="absolute"

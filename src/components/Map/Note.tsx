@@ -3,7 +3,7 @@ import { Note as NoteType } from '../../util/types.ts'
 import { Marker, Popup, Tooltip } from 'react-leaflet'
 import { divIcon, type LeafletEventHandlerFnMap, Marker as LeafletMarker } from 'leaflet'
 import { renderToString } from 'react-dom/server'
-import { useAppDispatch } from '../../store/hooks.ts'
+import { useAppDispatch, useMapObjectsHidden } from '../../store/hooks.ts'
 import { useContextMenu } from '../Common/useContextMenu.ts'
 import { deleteNote, editNote } from '../../store/routes/routesReducer.ts'
 import { ContextMenu } from '../Common/ContextMenu.tsx'
@@ -18,6 +18,7 @@ interface Props {
 function NoteComponent({ note, noteIndex, iconScaling }: Props) {
   const dispatch = useAppDispatch()
   const iconSize = iconScaling
+  const hidden = useMapObjectsHidden()
   const { contextMenuPosition, onRightClick, onClose } = useContextMenu()
   const [input, setInput] = useState(note.text)
   const [popupOpen, setPopupOpen] = useState(false)
@@ -70,10 +71,10 @@ function NoteComponent({ note, noteIndex, iconScaling }: Props) {
         draggable
         eventHandlers={markerEventHandlers}
         icon={divIcon({
+          className: `fade-in-map-object ${hidden ? 'opacity-0' : 'opacity-1'}`,
           tooltipAnchor: [20 + (iconScaling - 40) / 2, 0],
           popupAnchor: [90 + (iconScaling - 40) / 2, 32],
           iconSize: [iconSize, iconSize],
-          className: 'mob',
           html: renderToString(
             <div
               className="note w-full h-full flex items-center justify-center rounded-full border-black shadow-2xl text-black"

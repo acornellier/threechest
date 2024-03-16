@@ -1,6 +1,6 @@
 ﻿import { Circle, Polygon, Tooltip } from 'react-leaflet'
 import { memo, useEffect, useMemo, useState } from 'react'
-import { useAppDispatch, useDungeon } from '../../store/hooks.ts'
+import { useAppDispatch, useDungeon, useMapObjectsHidden } from '../../store/hooks.ts'
 import { getPullColor } from '../../util/colors.ts'
 import { MobSpawn, Point } from '../../data/types.ts'
 import { expandPolygon, iconSizeMagicScaling, makeConvexHull } from '../../util/hull.ts'
@@ -55,12 +55,13 @@ function PullOutlineComponent({ pull, index, isSelected, isHovered }: Props) {
   )
   const { hull, circle } = useMemo(() => createOutline(mobSpawns), [mobSpawns])
   const pullColor = getPullColor(index)
+  const hidden = useMapObjectsHidden()
 
   // Change key to force re-render
   const [key, setKey] = useState(0)
   useEffect(() => {
     setKey((prevKey) => prevKey + 1000)
-  }, [isHovered, isSelected, pull, index])
+  }, [isHovered, isSelected, pull, index, hidden])
 
   const eventHandlers = useMemo(
     () => ({
@@ -79,7 +80,7 @@ function PullOutlineComponent({ pull, index, isSelected, isHovered }: Props) {
       eventHandlers={eventHandlers}
       color={pullColor}
       fillOpacity={0}
-      opacity={isSelected || isHovered ? 1 : 0.6}
+      opacity={hidden ? 0 : isSelected || isHovered ? 1 : 0.6}
       weight={isSelected ? 6 : isHovered ? 5 : 3.5}
     >
       <Tooltip
@@ -87,6 +88,7 @@ function PullOutlineComponent({ pull, index, isSelected, isHovered }: Props) {
         direction="center"
         permanent
         offset={[0, -15]}
+        opacity={hidden ? 0 : 1}
       >
         {index + 1}
       </Tooltip>
@@ -98,13 +100,14 @@ function PullOutlineComponent({ pull, index, isSelected, isHovered }: Props) {
       eventHandlers={eventHandlers}
       color={pullColor}
       fillOpacity={0}
-      opacity={isSelected || isHovered ? 1 : 0.6}
+      opacity={hidden ? 0 : isSelected || isHovered ? 1 : 0.6}
       weight={isSelected ? 6 : isHovered ? 5 : 3.5}
     >
       <Tooltip
         className={`pull-number-tooltip ${isHovered ? 'hovered' : ''}`}
         direction="center"
         permanent
+        opacity={hidden ? 0 : 1}
       >
         {index + 1}
       </Tooltip>
