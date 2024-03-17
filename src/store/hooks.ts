@@ -6,6 +6,7 @@ import { DungeonKey } from '../data/types.ts'
 import { createSelector } from '@reduxjs/toolkit'
 import { HoverState } from './reducers/hoverReducer.ts'
 import { findMobSpawn } from '../util/mobSpawns.ts'
+import { useEffect, useState } from 'react'
 
 export const useAppDispatch: () => AppDispatch = useDispatch
 
@@ -52,4 +53,14 @@ export function useHoveredMobSpawn() {
 }
 
 // Map
-export const useMapObjectsHidden = () => useRootSelector((state) => state.map.objectsHidden)
+export function useMapObjectsHidden(minDelay: number = 0, maxDelay: number = 100) {
+  const hidden = useRootSelector((state) => state.map.objectsHidden)
+  const [delayedHidden, setDelayedHidden] = useState(hidden)
+
+  useEffect(() => {
+    if (!hidden) setTimeout(() => setDelayedHidden(false), minDelay + Math.random() * maxDelay)
+    else setDelayedHidden(true)
+  }, [hidden, minDelay, maxDelay])
+
+  return delayedHidden
+}

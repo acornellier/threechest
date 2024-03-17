@@ -22,7 +22,7 @@ export function Map() {
 
   useEffect(() => {
     dispatch(setMapObjectsHidden(true))
-    setTimeout(() => dispatch(setMapObjectsHidden(false)), 200)
+    setTimeout(() => dispatch(setMapObjectsHidden(false)), 50)
   }, [dispatch, dungeon])
 
   return (

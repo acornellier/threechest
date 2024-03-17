@@ -55,7 +55,7 @@ function PullOutlineComponent({ pull, index, isSelected, isHovered }: Props) {
   )
   const { hull, circle } = useMemo(() => createOutline(mobSpawns), [mobSpawns])
   const pullColor = getPullColor(index)
-  const hidden = useMapObjectsHidden()
+  const hidden = useMapObjectsHidden(100)
 
   // Change key to force re-render
   const [key, setKey] = useState(0)
