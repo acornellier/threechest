@@ -16,7 +16,6 @@
     "node": ">=20"
   },
   "dependencies": {
-    "@fontsource-variable/roboto-slab": "^5.0.19",
     "@heroicons/react": "^2.1.1",
     "@reduxjs/toolkit": "^2.2.1",
     "@vercel/node": "^3.0.5",

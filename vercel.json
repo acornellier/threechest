@@ -1,0 +1,13 @@
+{
+  "headers": [
+    {
+      "source": "/roboto-slab/roboto-slab-latin-wght-normal.woff2",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "max-age=31536000"
+        }
+      ]
+    }
+  ]
+}
