@@ -1,11 +1,11 @@
 {
   "headers": [
     {
-      "source": "/roboto-slab/roboto-slab-latin-wght-normal.woff2",
+      "source": "/(.*)",
       "headers": [
         {
           "key": "Cache-Control",
-          "value": "max-age=31536000"
+          "value": "public, max-age=31536000, immutable"
         }
       ]
     }
