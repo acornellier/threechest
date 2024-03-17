@@ -35,7 +35,7 @@ export function HelpModal({ onClose }: Props) {
             Contact me on{' '}
             <a
               className="text-blue-500 hover:underline"
-              href="https://discord.com/invite/Ykb6AbYHHZ"
+              href="https://discord.gg/btHjKxn7YB"
               target="_blank"
               rel="noreferrer"
             >

@@ -20,7 +20,7 @@ export function Footer() {
           <Button justifyStart onClick={() => setHelpModalOpen(true)}>
             Help
           </Button>
-          <a href="https://discord.com/invite/Ykb6AbYHHZ" target="_blank" rel="noreferrer">
+          <a href="https://discord.gg/btHjKxn7YB" target="_blank" rel="noreferrer">
             <Button Icon={DiscordIcon} />
           </a>
           <a href="https://github.com/acornellier/keys" target="_blank" rel="noreferrer">
