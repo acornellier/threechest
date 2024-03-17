@@ -16,7 +16,13 @@ module.exports = {
     'react/react-in-jsx-scope': 'off',
     "react/jsx-uses-react": "off",
     '@typescript-eslint/ban-ts-comment': 'off',
+    '@typescript-eslint/no-explicit-any': 'off',
     '@typescript-eslint/no-unused-vars': 'warn',
     'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
   },
+  settings: {
+    react: {
+      version: "detect"
+    }
+  }
 }

@@ -28,13 +28,11 @@ export function assertIsJsonPrimitive(val: unknown): asserts val is JsonPrimitiv
 
 export function assertIsJsonArray(val: unknown): asserts val is JsonArray {
   assertIsPlainArray(val)
-  // eslint-disable-next-line @typescript-eslint/no-use-before-define
   val.forEach(assertIsJson)
 }
 
 export function assertIsJsonObject(val: unknown): asserts val is JsonObject {
   assertIsPlainObject(val)
-  // eslint-disable-next-line @typescript-eslint/no-use-before-define
   Object.values(val).forEach(assertIsJson)
 }
 

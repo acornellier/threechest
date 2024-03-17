@@ -27,7 +27,7 @@ function NoteComponent({ note, noteIndex, iconScaling }: Props) {
 
   useEffect(() => {
     if (input !== note.text && !popupOpen) setInput(note.text)
-  }, [input, note.text])
+  }, [input, note.text, popupOpen])
 
   useEffect(() => {
     if (note.justAdded) {

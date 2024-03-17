@@ -71,7 +71,7 @@ export function longestCommonSubsequence(
 
   const lcs: unknown[] = []
   let state = { aIdx: a.length, bIdx: b.length }
-  // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition, no-constant-condition
+  // eslint-disable-next-line no-constant-condition
   while (true) {
     const previousState = dp.get(toMapInd(state.aIdx, state.bIdx))?.predecessor
     if (previousState === undefined) {

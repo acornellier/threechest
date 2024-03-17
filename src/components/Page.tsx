@@ -19,7 +19,7 @@ export function Page() {
     if (!dungeon) dispatch(setDungeon(defaultDungeonKey))
   }, [dispatch, dungeon])
 
-  // if (!dungeon) return null
+  if (!dungeon) return null
 
   return (
     <div className="flex flex-row bg-[#241c15]">

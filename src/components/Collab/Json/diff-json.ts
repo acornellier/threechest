@@ -78,13 +78,10 @@ function compressInsertionOperations(insertionOperations: ArrayInsertion[]): Arr
   for (let i = 0; i < insertionOperations.length; i++) {
     const compressedOperation: ArrayInsertion = {
       operationType: OperationType.Insertion,
-      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
       index: insertionOperations[i]!.index,
-      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
       values: insertionOperations[i]!.values,
     }
     while (i < insertionOperations.length - 1) {
-      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
       const operation = insertionOperations[i + 1]!
       if (operation.index !== compressedOperation.index + compressedOperation.values.length) {
         break
@@ -102,13 +99,10 @@ function compressDeletionOperations(deletionOperations: ArrayDeletion[]): ArrayD
   for (let i = 0; i < deletionOperations.length; i++) {
     const compressedOperation: ArrayDeletion = {
       operationType: OperationType.Deletion,
-      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
       index: deletionOperations[i]!.index,
-      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
       count: deletionOperations[i]!.count,
     }
     while (i < deletionOperations.length - 1) {
-      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
       const operation = deletionOperations[i + 1]!
       if (operation.index !== compressedOperation.index + compressedOperation.count) {
         break

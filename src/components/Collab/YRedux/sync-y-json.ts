@@ -98,8 +98,7 @@ export function SyncYJson<T extends JsonTemplateContainer, RootState>({
 
   // Subscribe to remote changes
   useEffect(() => {
-    const observer = (events: Array<Y.YEvent<any>>, transaction: Y.Transaction): void => {
-      console.log('observed', events)
+    const observer = (_events: any, transaction: Y.Transaction): void => {
       if (transaction.origin === origin) return
       handleChange('remote', store, selectData, setData, yJson)
     }

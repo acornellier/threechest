@@ -20,7 +20,6 @@ export function objectToYMap(object: JsonObject): Y.Map<YJson> {
   Object.entries(object).forEach(([property, val]) => {
     if (Array.isArray(val)) {
       assertIsJsonArray(val)
-      // eslint-disable-next-line @typescript-eslint/no-use-before-define
       yMap.set(property, arrayToYArray(val))
     } else if (isPlainObject(val)) {
       yMap.set(property, objectToYMap(val))

@@ -1,7 +1,7 @@
 import { useCallback, useMemo, useState } from 'react'
 import { Button } from '../../Common/Button.tsx'
 import { useAppDispatch, useDungeon, useHoveredPull, useRoute } from '../../../store/hooks.ts'
-import { addPull, clearRoute, selectPull, setPulls } from '../../../store/routes/routesReducer.ts'
+import { addPull, clearRoute, selectPull } from '../../../store/routes/routesReducer.ts'
 import { mobCountPercentStr } from '../../../util/numbers.ts'
 import { PullContextMenu } from './PullContextMenu.tsx'
 import { usePullShortcuts } from './usePullShortcuts.ts'
