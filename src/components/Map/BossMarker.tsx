@@ -23,7 +23,7 @@ export function BossMarker({ spawn, isHovered, iconSize, hidden }: Props) {
           <div
             className="absolute"
             style={{
-              backgroundImage: `url(/wow/elite.png)`,
+              backgroundImage: `url(/images/elite.png)`,
               backgroundSize: 'contain',
               zIndex: -1,
               width: '165%',
