@@ -3,17 +3,17 @@ import { DungeonKey } from '../types.ts'
 import { dungeons } from '../dungeons.ts'
 
 const modules: Record<DungeonKey, Record<string, unknown>> = {
-  aa: {},
-  ad: {},
-  bh: {},
-  brh: {},
-  dht: {},
+  aa: import.meta.glob('./aa/*.json', { eager: true }),
+  ad: import.meta.glob('./ad/*.json', { eager: true }),
+  bh: import.meta.glob('./bh/*.json', { eager: true }),
+  brh: import.meta.glob('./brh/*.json', { eager: true }),
+  dht: import.meta.glob('./dht/*.json', { eager: true }),
   eb: import.meta.glob('./eb/*.json', { eager: true }),
-  fall: {},
-  nok: {},
-  rise: {},
-  tott: {},
-  wcm: {},
+  fall: import.meta.glob('./fall/*.json', { eager: true }),
+  nok: import.meta.glob('./nok/*.json', { eager: true }),
+  rise: import.meta.glob('./rise/*.json', { eager: true }),
+  tott: import.meta.glob('./tott/*.json', { eager: true }),
+  wcm: import.meta.glob('./wcm/*.json', { eager: true }),
 }
 
 const difficultyToNum = (difficulty: SampleRoute['difficulty']) =>
