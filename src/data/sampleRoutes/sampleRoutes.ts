@@ -17,10 +17,10 @@ const modules: Record<DungeonKey, Record<string, unknown>> = {
 }
 
 const difficultyToNum = (difficulty: SampleRoute['difficulty']) =>
-  difficulty === 'beginner' ? 0 : difficulty === 'advanced' ? 1 : 2
+  difficulty === 'beginner' ? 0 : difficulty === 'intermediate' ? 1 : 2
 
 const affixToNum = (affix: SampleRoute['affix']) =>
-  affix === 'both' ? 0 : affix === 'fortified' ? 1 : 2
+  affix === undefined ? 0 : affix === 'fortified' ? 1 : 2
 
 function sortSampleRoutes(route1: SampleRoute, route2: SampleRoute) {
   if (route1.difficulty !== route2.difficulty) {

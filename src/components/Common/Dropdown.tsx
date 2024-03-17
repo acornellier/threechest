@@ -6,7 +6,7 @@ import { IconComponent } from '../../util/types.ts'
 
 export interface DropdownOption {
   id: string
-  label: string
+  content: ReactNode
   icon?: ReactNode
 }
 
@@ -98,8 +98,8 @@ export function Dropdown<T extends DropdownOption>({
         ) : (
           <>
             {selected?.icon && <div className="mr-1">{selected?.icon}</div>}
-            {selected?.label ? (
-              <div className="dropdown-main-text">{selected?.label}</div>
+            {selected?.content ? (
+              <div className="dropdown-main-text">{selected?.content}</div>
             ) : (
               buttonText ?? null
             )}
@@ -131,7 +131,7 @@ export function Dropdown<T extends DropdownOption>({
               }}
             >
               {option.icon && <div className="mr-1">{option.icon}</div>}
-              <div className="dropdown-option-text">{option.label}</div>
+              <div className="dropdown-option-text">{option.content}</div>
             </Button>
           ))}
         </div>

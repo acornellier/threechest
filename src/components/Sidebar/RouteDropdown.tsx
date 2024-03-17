@@ -7,7 +7,7 @@ import { setPreviewRouteAsync } from '../../store/reducers/importReducer.ts'
 
 const routeToOption = (route: SavedRoute): DropdownOption => ({
   id: route.uid,
-  label: route.name,
+  content: route.name,
 })
 
 export function RouteDropdown() {

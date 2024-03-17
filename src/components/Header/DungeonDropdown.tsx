@@ -7,7 +7,7 @@ import { Dropdown, DropdownOption } from '../Common/Dropdown.tsx'
 
 const options: DropdownOption[] = dungeons.map((dungeon) => ({
   id: dungeon.key,
-  label: dungeon.name,
+  content: dungeon.name,
   icon: (
     <img
       className="rounded border-2 border-gray-600"

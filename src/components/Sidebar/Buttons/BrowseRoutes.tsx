@@ -1,5 +1,5 @@
 import { Dropdown, DropdownOption } from '../../Common/Dropdown.tsx'
-import { useCallback, useMemo } from 'react'
+import { ReactNode, useCallback, useMemo } from 'react'
 import { Route } from '../../../util/types.ts'
 import { sampleRoutes } from '../../../data/sampleRoutes/sampleRoutes.ts'
 import { useAppDispatch, useDungeon } from '../../../store/hooks.ts'
@@ -11,14 +11,26 @@ interface SampleRouteOption extends DropdownOption {
   route: Route
 }
 
+function SampleRouteChip({ children }: { children: ReactNode }) {
+  return <div className="rounded-sm px-1 bg-cyan-800 text-xs">{children}</div>
+}
+
 export function BrowseRoutes() {
   const dispatch = useAppDispatch()
   const dungeon = useDungeon()
 
   const options: SampleRouteOption[] = useMemo(
     () =>
-      sampleRoutes[dungeon.key].map(({ route }) => ({
-        label: route.name,
+      sampleRoutes[dungeon.key].map(({ route, affix, difficulty }) => ({
+        content: (
+          <div className="flex flex-col gap-0.5">
+            <div>{route.name}</div>
+            <div className="flex gap-1">
+              <SampleRouteChip>{difficulty}</SampleRouteChip>
+              {affix && <SampleRouteChip>{affix}</SampleRouteChip>}
+            </div>
+          </div>
+        ),
         id: route.uid,
         route: route,
       })),

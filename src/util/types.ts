@@ -90,8 +90,8 @@ export type MdtRoute = {
 
 export type SampleRoute = {
   route: Route
-  affix: 'both' | 'fortified' | 'tyrannical'
-  difficulty: 'beginner' | 'advanced' | 'expert'
+  difficulty: 'beginner' | 'intermediate' | 'expert'
+  affix?: 'fortified' | 'tyrannical'
 }
 
 export type IconComponent = ForwardRefExoticComponent<PropsWithoutRef<SVGProps<SVGSVGElement>>>
