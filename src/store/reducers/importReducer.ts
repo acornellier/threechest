@@ -3,7 +3,6 @@ import { MdtRoute, Route } from '../../util/types.ts'
 import { importRouteApi } from '../../api/importRouteApi.ts'
 import { RootState } from '../store.ts'
 import { loadRouteFromStorage, setRouteFromMdt } from '../routes/routesReducer.ts'
-import { mdtRouteToRoute } from '../../util/mdtUtil.ts'
 
 export interface ImportState {
   importingRoute: MdtRoute | null
@@ -51,7 +50,7 @@ export const importRoute = createAsyncThunk(
 
 export const setPreviewRouteAsync = createAsyncThunk(
   'import/previewRoute',
-  async (options: { routeId: string; mdtRoute?: MdtRoute } | null, thunkAPI) => {
+  async (options: { routeId: string; route?: Route } | null, thunkAPI) => {
     const state = thunkAPI.getState() as RootState
     const curRoute = state.routes.present.route
     const previewRouteId = state.import.previewRoute?.uid ?? null
@@ -60,11 +59,7 @@ export const setPreviewRouteAsync = createAsyncThunk(
       thunkAPI.dispatch(importSlice.actions.setPreviewRoute(null))
     } else if (previewRouteId !== options?.routeId) {
       const route =
-        options === null
-          ? null
-          : options.mdtRoute
-          ? mdtRouteToRoute(options.mdtRoute)
-          : await loadRouteFromStorage(options.routeId)
+        options === null ? null : options.route ?? (await loadRouteFromStorage(options.routeId))
       thunkAPI.dispatch(importSlice.actions.setPreviewRoute(route))
     }
   },

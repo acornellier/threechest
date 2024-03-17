@@ -88,4 +88,10 @@ export type MdtRoute = {
   objects: MdtObject[] | Record<number, MdtObject>
 }
 
+export type SampleRoute = {
+  route: Route
+  affix: 'both' | 'fortified' | 'tyrannical'
+  difficulty: 'beginner' | 'advanced' | 'expert'
+}
+
 export type IconComponent = ForwardRefExoticComponent<PropsWithoutRef<SVGProps<SVGSVGElement>>>

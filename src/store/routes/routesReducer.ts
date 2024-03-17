@@ -115,6 +115,9 @@ const baseReducer = createSlice({
       state.route.uid = newRouteUid()
       state.route.name = nextName(state.route.name, state.route.dungeonKey, state.savedRoutes)
     },
+    setRoute(state, { payload: route }: PayloadAction<Route>) {
+      state.route = route
+    },
     setRouteFromMdt(
       state,
       { payload: { mdtRoute, copy } }: PayloadAction<{ mdtRoute: MdtRoute; copy?: boolean }>,
@@ -206,6 +209,20 @@ const baseReducer = createSlice({
     deleteNote(state, { payload: noteIndex }: PayloadAction<number>) {
       state.route.notes.splice(noteIndex, 1)
     },
+    moveNote(
+      state,
+      {
+        payload: { noteIndex, indexChange },
+      }: PayloadAction<{ noteIndex: number; indexChange: number }>,
+    ) {
+      const newIndex = noteIndex + indexChange
+      const noteToMove = state.route.notes[noteIndex]
+      const noteToSwap = state.route.notes[newIndex]
+      if (!noteToMove || !noteToSwap) return
+
+      state.route.notes[noteIndex] = noteToSwap
+      state.route.notes[newIndex] = noteToMove
+    },
   },
   extraReducers: (builder) => {
     builder.addCase(setDungeon.fulfilled, (state, { payload: newRoute }) => {
@@ -266,6 +283,7 @@ export const {
   updateSavedRoutes,
   newRoute,
   duplicateRoute,
+  setRoute,
   setRouteFromMdt,
   clearRoute,
   setName,
@@ -284,4 +302,5 @@ export const {
   addNote,
   editNote,
   deleteNote,
+  moveNote,
 } = baseReducer.actions
