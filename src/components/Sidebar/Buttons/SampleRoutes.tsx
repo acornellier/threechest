@@ -15,7 +15,7 @@ function SampleRouteChip({ children }: { children: ReactNode }) {
   return <div className="rounded-sm px-1 bg-cyan-800 text-xs">{children}</div>
 }
 
-export function BrowseRoutes() {
+export function SampleRoutes() {
   const dispatch = useAppDispatch()
   const dungeon = useDungeon()
 
@@ -55,7 +55,7 @@ export function BrowseRoutes() {
       options={options}
       onSelect={onSelect}
       onHover={onHover}
-      buttonText="Browse routes"
+      buttonText="Sample routes"
       MainButtonIcon={MagnifyingGlassIcon}
     />
   )

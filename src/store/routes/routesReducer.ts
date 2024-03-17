@@ -33,7 +33,7 @@ function nextName(routeName: string, dungeonKey: DungeonKey, savedRoutes: SavedR
 }
 
 const makeEmptyRoute = (dungeonKey: DungeonKey, savedRoutes: SavedRoute[]): Route => ({
-  name: nextName('Awesome route', dungeonKey, savedRoutes),
+  name: nextName('Default Threechest', dungeonKey, savedRoutes),
   dungeonKey,
   selectedPull: 0,
   pulls: [emptyPull],

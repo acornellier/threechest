@@ -26,6 +26,10 @@ function NoteComponent({ note, noteIndex, iconScaling }: Props) {
   const inputRef = useRef<HTMLInputElement>(null)
 
   useEffect(() => {
+    if (input !== note.text && !popupOpen) setInput(note.text)
+  }, [input, note.text])
+
+  useEffect(() => {
     if (note.justAdded) {
       setTimeout(() => markerRef.current?.openPopup(), 0)
       dispatch(editNote({ changes: { justAdded: false }, noteIndex }))
