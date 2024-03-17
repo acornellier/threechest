@@ -1,4 +1,4 @@
-﻿import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { MdtRoute, Note, Pull, Route, SavedRoute } from '../../util/types.ts'
 import { DungeonKey, SpawnId } from '../../data/types.ts'
 import { mdtRouteToRoute } from '../../util/mdtUtil.ts'
