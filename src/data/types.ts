@@ -1,5 +1,3 @@
-import { LatLngTuple } from 'leaflet'
-
 export type Point = [number, number]
 
 export type MdtDungeon = {
@@ -10,7 +8,7 @@ export type MdtDungeon = {
 
 export type Dungeon = {
   name: string
-  defaultBounds?: [LatLngTuple, LatLngTuple]
+  defaultBounds?: [Point, Point]
   key: DungeonKey
   mdt: MdtDungeon
   mobSpawns: Record<SpawnId, MobSpawn>

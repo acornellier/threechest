@@ -65,9 +65,10 @@ export function ErrorPage({ errors }: Props) {
           {isDev && errors[0] && (
             <p className="text-sm">
               {errors[0].error.name}: {errors[0].error.message}
-              {errors[0].info.componentStack.split('\n').map((text, idx) => (
-                <p key={idx}>{text}</p>
-              ))}
+              {errors[0].info.componentStack &&
+                errors[0].info.componentStack
+                  .split('\n')
+                  .map((text, idx) => <p key={idx}>{text}</p>)}
             </p>
           )}
         </div>
