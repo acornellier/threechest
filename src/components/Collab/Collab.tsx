@@ -41,6 +41,7 @@ export function Collab() {
 
     const clientType: ClientType = startedCollab ? 'host' : 'guest'
     provider.awareness.setLocalStateField('clientType', clientType)
+    provider.awareness.setLocalStateField('joinTime', new Date().getTime())
 
     const onMouseMove = (e: LeafletMouseEvent) => {
       dispatch(setMousePosition(e.latlng))

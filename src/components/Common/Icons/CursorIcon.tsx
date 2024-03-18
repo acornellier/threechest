@@ -13,10 +13,8 @@ export const CursorIcon: IconComponent = forwardRef<SVGSVGElement, SVGProps<SVGS
       >
         <path
           d="M22 10.2069L3 3L10.2069 22L13.4828 13.4828L22 10.2069Z"
-          stroke="#000000"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
+          stroke="black"
+          strokeWidth="1"
         />
       </svg>
     )

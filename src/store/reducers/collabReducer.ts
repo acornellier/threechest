@@ -1,11 +1,14 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { BaseAwarenessState } from '../../components/Collab/YRedux'
 import { LatLng } from 'leaflet'
+import { getPullColor } from '../../util/colors.ts'
 
 export type ClientType = 'host' | 'guest'
 
 export interface AwarenessState extends BaseAwarenessState {
   clientType: ClientType
+  joinTime: number
+  color?: string
   mousePosition?: LatLng | null
 }
 
@@ -22,6 +25,9 @@ const initialState: CollabState = {
   startedCollab: false,
   awarenessStates: [],
 }
+
+const getLocalAwareness = (state: CollabState) =>
+  state.awarenessStates.find(({ isCurrentClient }) => isCurrentClient)
 
 export const collabSlice = createSlice({
   name: 'collab',
@@ -43,13 +49,30 @@ export const collabSlice = createSlice({
     },
     setAwarenessStates(state, { payload: awarenessStates }: PayloadAction<AwarenessState[]>) {
       state.awarenessStates = awarenessStates
+
+      const localAwareness = getLocalAwareness(state)
+      if (!localAwareness) return
+
+      const clashingColor = state.awarenessStates.some(
+        (other) => !other.isCurrentClient && other.color === localAwareness.color,
+      )
+
+      if (localAwareness.color && !clashingColor) return
+
+      const joinIndex = state.awarenessStates
+        .sort((a, b) => a.joinTime - b.joinTime)
+        .findIndex(({ isCurrentClient }) => isCurrentClient)
+
+      localAwareness.color = getPullColor(joinIndex)
     },
     setMousePosition(
       state,
       { payload: mousePosition }: PayloadAction<AwarenessState['mousePosition']>,
     ) {
-      const localAwareness = state.awarenessStates.find(({ isCurrentClient }) => isCurrentClient)
-      if (localAwareness) localAwareness.mousePosition = mousePosition
+      const localAwareness = getLocalAwareness(state)
+      if (!localAwareness) return
+
+      localAwareness.mousePosition = mousePosition
     },
   },
 })

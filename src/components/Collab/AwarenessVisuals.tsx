@@ -21,7 +21,9 @@ export function AwarenessVisuals() {
                 interactive={false}
                 icon={divIcon({
                   className: 'awareness-cursor',
-                  html: renderToStaticMarkup(<CursorIcon width={24} height={24} />),
+                  html: renderToStaticMarkup(
+                    <CursorIcon width={28} height={28} color={awareness.color} />,
+                  ),
                 })}
               />
             )}
