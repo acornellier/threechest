@@ -19,7 +19,7 @@ const syncLocalIntoRemote = <T extends BaseAwarenessState>(
     return
   }
 
-  console.debug('[SyncYAwareness:syncLocalIntoRemote] Syncing', data)
+  console.debug('[SyncYAwareness:syncLocalIntoRemote] Syncing')
   awareness.setLocalState(data)
 }
 
@@ -38,7 +38,7 @@ const syncRemoteIntoLocal = <T extends BaseAwarenessState>(
 
   const latestReduxAwareness = selectAwarenessStates(store.getState())
 
-  console.debug('[SyncYAwareness:syncRemoteIntoLocal] Syncing', states, latestReduxAwareness)
+  console.debug('[SyncYAwareness:syncRemoteIntoLocal] Syncing')
   if (isEqual(states, latestReduxAwareness)) {
     console.debug(
       '[SyncYAwareness:syncRemoteIntoLocal] Not syncing: Remote already equals local data',

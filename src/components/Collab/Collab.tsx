@@ -29,10 +29,7 @@ export function Collab() {
   const startedCollab = useRootSelector((state) => state.collab.startedCollab)
   const leafletMap = useMap()
 
-  const [yObjects, setYObjects] = useState<{
-    map: Y.Map<Route>
-    provider: WebrtcProvider
-  }>()
+  const [yObjects, setYObjects] = useState<{ map: Y.Map<Route>; provider: WebrtcProvider }>()
 
   useEffect(() => {
     const doc = new Y.Doc()

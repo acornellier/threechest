@@ -1,6 +1,6 @@
 import { PullDetailed } from '../../../util/types.ts'
 import { Mob } from '../../../data/types.ts'
-import { darkenColor, getPullColor, lightenColor } from '../../../util/colors.ts'
+import { getPullColor, lightenColor } from '../../../util/colors.ts'
 import { useAppDispatch, useDungeon, useSelectedPull } from '../../../store/hooks.ts'
 import { selectPull } from '../../../store/routes/routesReducer.ts'
 import { useEffect, useMemo, useRef } from 'react'
@@ -26,6 +26,7 @@ export function Pull({ pullIndex, pull, ghost, onRightClick, isShiftHeld }: Prop
   const dungeon = useDungeon()
 
   const pullColor = getPullColor(pullIndex)
+  const darkPullColor = getPullColor(pullIndex, true)
   const isSelectedPull = pullIndex === selectedPull
 
   const sortedCounts = useMemo(() => {
@@ -61,7 +62,7 @@ export function Pull({ pullIndex, pull, ghost, onRightClick, isShiftHeld }: Prop
         <div
           className="gritty absolute h-full w-full cursor-pointer rounded-sm border border-gray-500"
           style={{
-            backgroundColor: ghost ? 'grey' : darkenColor(pullColor, 100),
+            backgroundColor: ghost ? 'grey' : darkPullColor,
             filter: 'contrast(80%)',
           }}
         />
@@ -69,7 +70,7 @@ export function Pull({ pullIndex, pull, ghost, onRightClick, isShiftHeld }: Prop
           <div
             className="absolute w-full h-full border-2 rounded-sm"
             style={{
-              borderColor: lightenColor(pullColor, 90),
+              borderColor: lightenColor(pullColor, 100),
               boxShadow: `inset 0 0 12px 2px ${lightenColor(pullColor, 100)}`,
             }}
           />

@@ -1,5 +1,5 @@
 import { mobScale } from '../../util/mobSpawns.ts'
-import { darkenColor, getPullColor } from '../../util/colors.ts'
+import { getPullColor } from '../../util/colors.ts'
 import { MobSpawn } from '../../data/types.ts'
 
 interface Props {
@@ -27,9 +27,7 @@ export function MobIcon({ mobSpawn, matchingPullIndex, iconScaling, isGroupHover
           backgroundSize: 'contain',
           backgroundBlendMode: 'overlay',
           backgroundColor:
-            matchingPullIndex !== null
-              ? darkenColor(getPullColor(matchingPullIndex), 100)
-              : undefined,
+            matchingPullIndex !== null ? getPullColor(matchingPullIndex, true) : undefined,
         }}
       >
         {isGroupHovered && mobSpawn.mob.count > 0 && (

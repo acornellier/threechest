@@ -55,8 +55,11 @@ const highContrastColors = (
   ] as const
 ).map(([r, g, b]) => rgbToHex(r, g, b))
 
-export function getPullColor(pullIndex: number) {
-  return highContrastColors[pullIndex % highContrastColors.length]!
+export const darkHighContrastColors = highContrastColors.map((color) => darkenColor(color, 100))
+
+export function getPullColor(pullIndex: number, dark?: boolean): string {
+  const colors = dark ? darkHighContrastColors : highContrastColors
+  return colors[pullIndex % colors.length]!
 }
 
 export function getTextColor(hex: string) {

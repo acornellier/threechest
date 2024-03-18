@@ -75,10 +75,13 @@ export function useMapObjectsHidden(minDelay: number = 0, maxDelay: number = 100
 export const selectLocalAwareness = (state: RootState) =>
   state.collab.awarenessStates.find(({ isCurrentClient }) => isCurrentClient)
 
+export const selectLocalAwarenessIsGuest = (state: RootState) =>
+  selectLocalAwareness(state)?.clientType === 'guest'
+
 export function useIsGuestCollab() {
   const active = useCollabSelector((state) => state.active)
-  const localAwareness = useRootSelector(selectLocalAwareness)
-  return active && localAwareness?.clientType === 'guest'
+  const isGuest = useRootSelector(selectLocalAwarenessIsGuest)
+  return active && isGuest
 }
 
 export const selectAwarenessStates = (state: RootState) => state.collab.awarenessStates
