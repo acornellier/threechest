@@ -19,6 +19,7 @@ import { setRoute } from '../../store/routes/routesReducer.ts'
 import { AwarenessVisuals } from './AwarenessVisuals.tsx'
 import { useMap } from 'react-leaflet'
 import { LeafletMouseEvent } from 'leaflet'
+import { generateSlug } from 'random-word-slugs'
 
 const selectData = (state: RootState) => state.routes.present.route
 
@@ -40,6 +41,7 @@ export function Collab() {
     setYObjects({ map, provider })
 
     const clientType: ClientType = startedCollab ? 'host' : 'guest'
+    provider.awareness.setLocalStateField('name', generateSlug(2, { format: 'title' }))
     provider.awareness.setLocalStateField('clientType', clientType)
     provider.awareness.setLocalStateField('joinTime', new Date().getTime())
 

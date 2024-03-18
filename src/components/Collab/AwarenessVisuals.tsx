@@ -4,6 +4,7 @@ import { Marker } from 'react-leaflet'
 import { divIcon } from 'leaflet'
 import { renderToStaticMarkup } from 'react-dom/server'
 import { CursorIcon } from '../Common/Icons/CursorIcon.tsx'
+import { getTextColor } from '../../util/colors.ts'
 
 export function AwarenessVisuals() {
   const awarenessStates = useAwarenessStates()
@@ -14,7 +15,7 @@ export function AwarenessVisuals() {
         .filter(({ isCurrentClient }) => !isCurrentClient)
         .map((awareness) => (
           <Fragment key={awareness.clientId}>
-            {awareness.mousePosition && (
+            {awareness.mousePosition && awareness.color && (
               <Marker
                 position={awareness.mousePosition}
                 zIndexOffset={999999}
@@ -22,7 +23,18 @@ export function AwarenessVisuals() {
                 icon={divIcon({
                   className: 'awareness-cursor',
                   html: renderToStaticMarkup(
-                    <CursorIcon width={28} height={28} color={awareness.color} />,
+                    <div className="relative">
+                      <CursorIcon width={24} height={24} color={awareness.color} />
+                      <div
+                        className="absolute top-4 left-4 w-fit px-1 whitespace-nowrap rounded-md rounded-tl-sm"
+                        style={{
+                          backgroundColor: awareness.color,
+                          color: getTextColor(awareness.color),
+                        }}
+                      >
+                        {awareness.name}
+                      </div>
+                    </div>,
                   ),
                 })}
               />

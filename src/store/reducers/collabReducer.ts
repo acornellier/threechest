@@ -1,11 +1,12 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { BaseAwarenessState } from '../../components/Collab/YRedux'
 import { LatLng } from 'leaflet'
-import { getPullColor } from '../../util/colors.ts'
+import { darkenColor, getPullColor } from '../../util/colors.ts'
 
 export type ClientType = 'host' | 'guest'
 
 export interface AwarenessState extends BaseAwarenessState {
+  name: string
   clientType: ClientType
   joinTime: number
   color?: string
@@ -63,7 +64,7 @@ export const collabSlice = createSlice({
         .sort((a, b) => a.joinTime - b.joinTime)
         .findIndex(({ isCurrentClient }) => isCurrentClient)
 
-      localAwareness.color = getPullColor(joinIndex)
+      localAwareness.color = darkenColor(getPullColor(joinIndex), 100)
     },
     setMousePosition(
       state,

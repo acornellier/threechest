@@ -22,6 +22,13 @@ export function hsvToRgb(h: number, s: number, v: number) {
   return [f(5), f(3), f(1)] as const
 }
 
+function hexToRgb(hex: string): [number, number, number] | null {
+  const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex)
+  if (!result) return null
+
+  return [parseInt(result[1]!, 16), parseInt(result[2]!, 16), parseInt(result[3]!, 16)]
+}
+
 export const rgbToHex = (r: number, g: number, b: number) =>
   '#' +
   [r, g, b]
@@ -50,4 +57,13 @@ const highContrastColors = (
 
 export function getPullColor(pullIndex: number) {
   return highContrastColors[pullIndex % highContrastColors.length]!
+}
+
+export function getTextColor(hex: string) {
+  const rgb = hexToRgb(hex)
+  if (rgb && rgb[0] * 0.299 + rgb[1] * 0.587 + rgb[2] * 0.114 > 186) {
+    return 'black'
+  } else {
+    return 'white'
+  }
 }
