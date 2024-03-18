@@ -253,6 +253,7 @@ const undoableReducer = undoable(baseReducer.reducer, {
   limit: 100,
   filter: combineFilters(
     includeAction([
+      baseReducer.actions.setRoute.type,
       baseReducer.actions.newRoute.type,
       baseReducer.actions.clearRoute.type,
       baseReducer.actions.addPull.type,

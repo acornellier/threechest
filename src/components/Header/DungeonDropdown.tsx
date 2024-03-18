@@ -1,7 +1,7 @@
 ﻿import { useMemo } from 'react'
 import { DungeonKey } from '../../data/types.ts'
 import { dungeons } from '../../data/dungeons.ts'
-import { useAppDispatch, useDungeon } from '../../store/hooks.ts'
+import { useAppDispatch, useDungeon, useIsGuestCollab } from '../../store/hooks.ts'
 import { setDungeon } from '../../store/routes/routesReducer.ts'
 import { Dropdown, DropdownOption } from '../Common/Dropdown.tsx'
 
@@ -22,6 +22,7 @@ const options: DropdownOption[] = dungeons.map((dungeon) => ({
 export function DungeonDropdown() {
   const dispatch = useAppDispatch()
   const dungeon = useDungeon()
+  const isGuestCollab = useIsGuestCollab()
 
   const selected = useMemo(() => options.find((option) => option.id === dungeon.key)!, [dungeon])
 
@@ -32,6 +33,7 @@ export function DungeonDropdown() {
         options={options}
         selected={selected}
         onSelect={(newDungeon) => dispatch(setDungeon(newDungeon.id as DungeonKey))}
+        disabled={isGuestCollab}
       />
     </div>
   )

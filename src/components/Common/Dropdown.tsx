@@ -20,6 +20,7 @@ interface Props<T extends DropdownOption> {
   short?: boolean
   outline?: boolean
   className?: string
+  disabled?: boolean
 }
 
 const transitionDuration = 200
@@ -34,6 +35,7 @@ export function Dropdown<T extends DropdownOption>({
   short,
   outline,
   className,
+  disabled,
 }: Props<T>) {
   const [open, setOpen] = useState(false)
   const [optionsVisible, setOptionsVisible] = useState(false)
@@ -80,6 +82,7 @@ export function Dropdown<T extends DropdownOption>({
         outline={outline}
         onClick={toggleOpen}
         Icon={MainButtonIcon}
+        disabled={disabled}
         className={`dropdown-main 
                     ${optionsVisible ? 'options-visible' : ''} 
                     ${className ?? ''}`}

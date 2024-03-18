@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from 'react'
 import { Button } from '../../Common/Button.tsx'
-import { useAppDispatch } from '../../../store/hooks.ts'
+import { useAppDispatch, useIsGuestCollab } from '../../../store/hooks.ts'
 import { Modal } from '../../Common/Modal.tsx'
 import { importRoute } from '../../../store/reducers/importReducer.ts'
 import { ArrowUpTrayIcon, ClipboardIcon } from '@heroicons/react/24/outline'
@@ -12,6 +12,7 @@ export function ImportRoute() {
   const dispatch = useAppDispatch()
   const [input, setInput] = useState('')
   const [inputModalOpen, setInputModalOpen] = useState(false)
+  const isGuestCollab = useIsGuestCollab()
 
   const handlePaste = useCallback(
     (mdtString: string) => dispatch(importRoute({ mdtString })),
@@ -63,6 +64,7 @@ export function ImportRoute() {
         short
         onClick={handleClick}
         shortcut={shortcuts.paste[0]}
+        disabled={isGuestCollab}
       >
         Import MDT
       </Button>

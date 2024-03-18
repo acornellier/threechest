@@ -2,7 +2,7 @@ import { Dropdown, DropdownOption } from '../../Common/Dropdown.tsx'
 import { ReactNode, useCallback, useMemo } from 'react'
 import { Route } from '../../../util/types.ts'
 import { sampleRoutes } from '../../../data/sampleRoutes/sampleRoutes.ts'
-import { useAppDispatch, useDungeon } from '../../../store/hooks.ts'
+import { useAppDispatch, useDungeon, useIsGuestCollab } from '../../../store/hooks.ts'
 import { setPreviewRouteAsync } from '../../../store/reducers/importReducer.ts'
 import { MagnifyingGlassIcon } from '@heroicons/react/24/outline'
 import { setRoute } from '../../../store/routes/routesReducer.ts'
@@ -18,6 +18,7 @@ function SampleRouteChip({ children }: { children: ReactNode }) {
 export function SampleRoutes() {
   const dispatch = useAppDispatch()
   const dungeon = useDungeon()
+  const isGuestCollab = useIsGuestCollab()
 
   const options: SampleRouteOption[] = useMemo(
     () =>
@@ -57,6 +58,7 @@ export function SampleRoutes() {
       onHover={onHover}
       buttonText="Sample routes"
       MainButtonIcon={MagnifyingGlassIcon}
+      disabled={isGuestCollab}
     />
   )
 }

@@ -1,11 +1,12 @@
 import { Button } from '../../Common/Button.tsx'
-import { useAppDispatch } from '../../../store/hooks.ts'
+import { useAppDispatch, useIsGuestCollab } from '../../../store/hooks.ts'
 import { newRoute } from '../../../store/routes/routesReducer.ts'
 import { PlusCircleIcon } from '@heroicons/react/24/outline'
 import { TooltipStyled } from '../../Common/TooltipStyled.tsx'
 
 export function NewRoute() {
   const dispatch = useAppDispatch()
+  const isGuestCollab = useIsGuestCollab()
 
   return (
     <>
@@ -15,6 +16,7 @@ export function NewRoute() {
         short
         className="flex-1"
         onClick={() => dispatch(newRoute())}
+        disabled={isGuestCollab}
       />
       <TooltipStyled id="new-route-tooltip" place="bottom-start">
         New empty route

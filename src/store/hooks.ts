@@ -66,3 +66,9 @@ export function useMapObjectsHidden(minDelay: number = 0, maxDelay: number = 100
 
   return delayedHidden
 }
+
+// Collab
+export function useIsGuestCollab() {
+  const { active, clientType } = useRootSelector((state) => state.collab)
+  return active && clientType === 'guest'
+}
