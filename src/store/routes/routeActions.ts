@@ -8,7 +8,7 @@ const findSelectedPull = (route: Route, spawn: SpawnId) =>
   route.pulls.findIndex((pull) => pull.spawns.some((spawn2) => spawn === spawn2))
 
 export function toggleSpawnAction(
-  route: Route,
+  { route, selectedPull }: RouteState,
   payload: { spawn: SpawnId; individual: boolean },
 ): Pull[] {
   const dungeon = dungeonsByKey[route.dungeonKey]
@@ -44,7 +44,7 @@ export function toggleSpawnAction(
   } else {
     // otherwise, select
     return route.pulls.map((pull, pullIdx) =>
-      pullIdx !== route.selectedPull
+      pullIdx !== selectedPull
         ? pull
         : {
             ...pull,
@@ -59,13 +59,19 @@ export function toggleSpawnAction(
   }
 }
 
-export function boxSelectSpawnsAction(route: Route, hoveredSpawns: SpawnId[], inverse: boolean) {
-  const pull = route.pulls[route.selectedPull]
+export function boxSelectSpawnsAction(
+  state: RouteState,
+  hoveredSpawns: SpawnId[],
+  inverse: boolean,
+) {
+  const pull = state.route.pulls[state.selectedPull]
   if (!pull) return
 
   const availableHoveredSpawns = hoveredSpawns.filter(
     (hoveredSpawn) =>
-      !route.pulls.some((pull2) => pull2.id !== pull.id && pull2.spawns.includes(hoveredSpawn)),
+      !state.route.pulls.some(
+        (pull2) => pull2.id !== pull.id && pull2.spawns.includes(hoveredSpawn),
+      ),
   )
 
   const spawns = !inverse
@@ -86,5 +92,5 @@ export function addPullFunc(state: RouteState, newPullIndex: number = state.rout
   const maxId = state.route.pulls.reduce<number>((acc, pull) => (pull.id > acc ? pull.id : acc), 0)
   const newPull: Pull = { id: maxId + 1, spawns: [], spawnsBackup: [] }
   state.route.pulls.splice(newPullIndex, 0, newPull)
-  state.route.selectedPull = Math.max(0, Math.min(newPullIndex, state.route.pulls.length - 1))
+  state.selectedPull = Math.max(0, Math.min(newPullIndex, state.route.pulls.length - 1))
 }

@@ -22,6 +22,8 @@ export const useHoverSelector = <T>(selector: (state: HoverState) => T): T =>
 export const useRoute = () =>
   useRootSelector((state) => state.import.previewRoute ?? state.routes.present.route)
 
+export const useSelectedPull = () => useRoutesSelector((state) => state.selectedPull)
+
 export const useActualRoute = () => useRoutesSelector((state) => state.route)
 
 export const usePreviewRoute = () => useRootSelector((state) => state.import.previewRoute)

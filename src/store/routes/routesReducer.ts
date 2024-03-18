@@ -12,6 +12,7 @@ import { routeMigrate, routePersistVersion } from './routeMigrations.ts'
 
 export interface RouteState {
   route: Route
+  selectedPull: number
   savedRoutes: SavedRoute[]
 }
 
@@ -35,7 +36,6 @@ function nextName(routeName: string, dungeonKey: DungeonKey, savedRoutes: SavedR
 const makeEmptyRoute = (dungeonKey: DungeonKey, savedRoutes: SavedRoute[]): Route => ({
   name: nextName('Default Threechest', dungeonKey, savedRoutes),
   dungeonKey,
-  selectedPull: 0,
   pulls: [emptyPull],
   drawings: [],
   notes: [],
@@ -89,34 +89,29 @@ export const defaultDungeonKey = 'eb'
 
 export const initialState: RouteState = {
   route: makeEmptyRoute(defaultDungeonKey, []),
+  selectedPull: 0,
   savedRoutes: [],
+}
+
+function setRouteFresh(state: RouteState, route: Route) {
+  state.route = route
+  state.selectedPull = 0
 }
 
 const baseReducer = createSlice({
   name: 'routes',
   initialState,
   reducers: {
-    updateSavedRoutes(state) {
-      const savedRoute = state.savedRoutes.find((route) => route.uid === state.route.uid)
-      if (!savedRoute) {
-        state.savedRoutes.push({
-          uid: state.route.uid,
-          name: state.route.name,
-          dungeonKey: state.route.dungeonKey,
-        })
-      } else if (savedRoute.name !== state.route.name) {
-        savedRoute.name = state.route.name
-      }
+    setRoute(state, { payload: route }: PayloadAction<Route>) {
+      setRouteFresh(state, route)
     },
     newRoute(state, { payload: dungeonKey }: PayloadAction<DungeonKey | undefined>) {
-      state.route = makeEmptyRoute(dungeonKey ?? state.route.dungeonKey, state.savedRoutes)
+      const route = makeEmptyRoute(dungeonKey ?? state.route.dungeonKey, state.savedRoutes)
+      setRouteFresh(state, route)
     },
     duplicateRoute(state) {
       state.route.uid = newRouteUid()
       state.route.name = nextName(state.route.name, state.route.dungeonKey, state.savedRoutes)
-    },
-    setRoute(state, { payload: route }: PayloadAction<Route>) {
-      state.route = route
     },
     setRouteFromMdt(
       state,
@@ -128,13 +123,13 @@ const baseReducer = createSlice({
         route.name = nextName(route.name, route.dungeonKey, state.savedRoutes)
       }
 
-      state.route = route
+      setRouteFresh(state, route)
     },
     clearRoute(state) {
       state.route.pulls = [emptyPull]
-      state.route.selectedPull = 0
       state.route.drawings = []
       state.route.notes = []
+      state.selectedPull = 0
     },
     setName(state, { payload }: PayloadAction<string>) {
       state.route.name = payload
@@ -143,13 +138,13 @@ const baseReducer = createSlice({
       addPullFunc(state, payload)
     },
     prependPull(state) {
-      addPullFunc(state, state.route.selectedPull)
+      addPullFunc(state, state.selectedPull)
     },
     appendPull(state) {
-      addPullFunc(state, state.route.selectedPull + 1)
+      addPullFunc(state, state.selectedPull + 1)
     },
     clearPull(state, { payload: pullIndex }: PayloadAction<number | undefined>) {
-      const pull = state.route.pulls[pullIndex ?? state.route.selectedPull]
+      const pull = state.route.pulls[pullIndex ?? state.selectedPull]
       if (pull) pull.spawns = []
     },
     deletePull(
@@ -158,38 +153,38 @@ const baseReducer = createSlice({
         payload: { pullIndex, moveUp },
       }: PayloadAction<{ pullIndex?: number | undefined; moveUp?: boolean }>,
     ) {
-      state.route.pulls.splice(pullIndex ?? state.route.selectedPull, 1)
+      state.route.pulls.splice(pullIndex ?? state.selectedPull, 1)
 
       if (state.route.pulls.length === 0) state.route.pulls = [emptyPull]
 
-      if (moveUp || state.route.selectedPull >= state.route.pulls.length) {
-        state.route.selectedPull = Math.max(0, state.route.selectedPull - 1)
+      if (moveUp || state.selectedPull >= state.route.pulls.length) {
+        state.selectedPull = Math.max(0, state.selectedPull - 1)
       }
     },
     selectPull(state, { payload }: PayloadAction<number>) {
-      state.route.selectedPull = Math.max(0, Math.min(payload, state.route.pulls.length - 1))
+      state.selectedPull = Math.max(0, Math.min(payload, state.route.pulls.length - 1))
     },
     selectPullRelative(state, { payload }: PayloadAction<number>) {
-      const newIndex = state.route.selectedPull + payload
+      const newIndex = state.selectedPull + payload
       if (newIndex >= 0 && newIndex < state.route.pulls.length) {
-        state.route.selectedPull = newIndex
+        state.selectedPull = newIndex
       }
     },
     toggleSpawn(state, { payload }: PayloadAction<{ spawn: SpawnId; individual: boolean }>) {
-      state.route.pulls = toggleSpawnAction(state.route, payload)
+      state.route.pulls = toggleSpawnAction(state, payload)
     },
     boxSelectStart(state) {
-      const pull = state.route.pulls[state.route.selectedPull]
+      const pull = state.route.pulls[state.selectedPull]
       if (pull) pull.spawnsBackup = pull.spawns
     },
     boxSelectSpawns(
       state,
       { payload: { spawns, inverse } }: PayloadAction<{ spawns: SpawnId[]; inverse: boolean }>,
     ) {
-      boxSelectSpawnsAction(state.route, spawns, inverse)
+      boxSelectSpawnsAction(state, spawns, inverse)
     },
     boxSelectEnd(state) {
-      const pull = state.route.pulls[state.route.selectedPull]
+      const pull = state.route.pulls[state.selectedPull]
       if (pull) pull.spawnsBackup = []
     },
     setPulls(state, { payload }: PayloadAction<Pull[]>) {
@@ -223,23 +218,34 @@ const baseReducer = createSlice({
       state.route.notes[noteIndex] = noteToSwap
       state.route.notes[newIndex] = noteToMove
     },
+    updateSavedRoutes(state) {
+      const savedRoute = state.savedRoutes.find((route) => route.uid === state.route.uid)
+      if (!savedRoute) {
+        state.savedRoutes.push({
+          uid: state.route.uid,
+          name: state.route.name,
+          dungeonKey: state.route.dungeonKey,
+        })
+      } else if (savedRoute.name !== state.route.name) {
+        savedRoute.name = state.route.name
+      }
+    },
   },
   extraReducers: (builder) => {
-    builder.addCase(setDungeon.fulfilled, (state, { payload: newRoute }) => {
-      state.route = newRoute
+    builder.addCase(setDungeon.fulfilled, (state, { payload: route }) => {
+      setRouteFresh(state, route)
     })
 
-    builder.addCase(loadRoute.fulfilled, (state, { payload: newRoute }) => {
-      state.route = newRoute
+    builder.addCase(loadRoute.fulfilled, (state, { payload: route }) => {
+      setRouteFresh(state, route)
     })
 
-    builder.addCase(
-      deleteRoute.fulfilled,
-      (state, { payload: { deletedRouteId, route: newRoute } }) => {
-        state.savedRoutes = state.savedRoutes.filter((route) => route.uid !== deletedRouteId)
-        state.route = newRoute
-      },
-    )
+    builder.addCase(deleteRoute.fulfilled, (state, { payload: { deletedRouteId, route } }) => {
+      state.savedRoutes = state.savedRoutes.filter(
+        (savedRoute) => savedRoute.uid !== deletedRouteId,
+      )
+      setRouteFresh(state, route)
+    })
   },
 })
 

@@ -97,7 +97,6 @@ export function mdtRouteToRoute(mdtRoute: MdtRoute): Route {
 
   return {
     dungeonKey: dungeon.key,
-    selectedPull: mdtRoute.value.currentPull,
     name: mdtRoute.text,
     uid: mdtRoute.uid,
     pulls: mdtRoute.value.pulls.map((mdtPull, index) => ({
@@ -149,7 +148,7 @@ export function routeToMdtRoute(route: Route): MdtRoute {
     difficulty: 2,
     uid: route.uid,
     value: {
-      currentPull: route.selectedPull,
+      currentPull: 0,
       currentSublevel: 1,
       currentDungeonIdx: dungeon.mdt.dungeonIndex,
       selection: [],

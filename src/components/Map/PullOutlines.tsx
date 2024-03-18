@@ -1,8 +1,9 @@
 import { PullOutline } from './PullOutline.tsx'
-import { useHoveredPull, useRoute } from '../../store/hooks.ts'
+import { useHoveredPull, useRoute, useSelectedPull } from '../../store/hooks.ts'
 
 export function PullOutlines() {
   const route = useRoute()
+  const selectedPull = useSelectedPull()
   const hoveredPull = useHoveredPull()
 
   return route.pulls.map((pull, index) => (
@@ -11,7 +12,7 @@ export function PullOutlines() {
       pull={pull}
       index={index}
       isHovered={hoveredPull === index}
-      isSelected={route.selectedPull === index}
+      isSelected={selectedPull === index}
     />
   ))
 }

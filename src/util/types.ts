@@ -30,7 +30,6 @@ export type Route = {
   name: string
   uid: string
   dungeonKey: DungeonKey
-  selectedPull: number
   pulls: Pull[]
   notes: Note[]
   drawings: Drawing[]

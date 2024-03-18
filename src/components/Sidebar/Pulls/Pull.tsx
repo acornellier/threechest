@@ -1,7 +1,7 @@
 import { PullDetailed } from '../../../util/types.ts'
 import { Mob } from '../../../data/types.ts'
 import { darkenColor, getPullColor, lightenColor } from '../../../util/colors.ts'
-import { useAppDispatch, useDungeon, useRoute } from '../../../store/hooks.ts'
+import { useAppDispatch, useDungeon, useSelectedPull } from '../../../store/hooks.ts'
 import { selectPull } from '../../../store/routes/routesReducer.ts'
 import { useEffect, useMemo, useRef } from 'react'
 import { mobCountPercentStr } from '../../../util/numbers.ts'
@@ -22,11 +22,11 @@ export function Pull({ pullIndex, pull, ghost, onRightClick, isShiftHeld }: Prop
   const ref = useRef<HTMLDivElement>(null)
 
   const dispatch = useAppDispatch()
-  const route = useRoute()
+  const selectedPull = useSelectedPull()
   const dungeon = useDungeon()
 
   const pullColor = getPullColor(pullIndex)
-  const isSelectedPull = pullIndex === route.selectedPull
+  const isSelectedPull = pullIndex === selectedPull
 
   const sortedCounts = useMemo(() => {
     const mobCounts = pull.spawns.reduce<MobCount>((acc, spawnId) => {
