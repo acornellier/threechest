@@ -1,5 +1,5 @@
-﻿import parser from 'node-wow-lua-codec'
+﻿import parser from 'node-weakauras-parser'
 
 export async function encodeRoute(mdtRoute) {
-  return await parser.encode(mdtRoute)
+  return await parser.encode(mdtRoute, 1)
 }
