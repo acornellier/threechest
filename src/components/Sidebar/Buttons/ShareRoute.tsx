@@ -22,7 +22,7 @@ export function ShareRoute() {
 
   return (
     <Button Icon={ShareIcon} short className="flex-1" onClick={handleClick}>
-      Share URL
+      Share
     </Button>
   )
 }

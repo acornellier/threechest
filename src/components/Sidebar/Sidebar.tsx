@@ -3,6 +3,7 @@ import { SharePanel } from './SharePanel.tsx'
 import { SidebarCollapser } from './SidebarCollapser.tsx'
 import { useLocalStorage } from '../../hooks/useLocalStorage.ts'
 import { Pulls } from './Pulls/Pulls.tsx'
+import { CollabPanel } from '../Collab/CollabPanel.tsx'
 
 const marginTop = 8
 const marginBottom = 60
@@ -13,7 +14,7 @@ export function Sidebar() {
 
   return (
     <div
-      className="fixed right-0 z-20 flex flex-col gap-3"
+      className="fixed right-0 z-20 flex flex-col gap-1.5"
       style={{
         width,
         marginTop,
@@ -26,6 +27,7 @@ export function Sidebar() {
       <SidebarCollapser collapsed={collapsed} setCollapsed={setCollapsed} />
       <RouteDetails />
       <SharePanel />
+      <CollabPanel />
       <Pulls />
     </div>
   )

@@ -44,7 +44,7 @@ export function AwarenessVisuals() {
   return (
     <>
       {awarenessStates.map((awareness) => (
-        <AwarenessCursor key={awareness.clientType} awareness={awareness} />
+        <AwarenessCursor key={awareness.clientId} awareness={awareness} />
       ))}
     </>
   )

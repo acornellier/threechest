@@ -54,10 +54,11 @@ export const setPreviewRouteAsync = createAsyncThunk(
     const state = thunkAPI.getState() as RootState
     const curRoute = state.routes.present.route
     const previewRouteId = state.import.previewRoute?.uid ?? null
+    const newPreviewRouteId = options?.routeId ?? null
 
-    if (options?.routeId === curRoute.uid) {
+    if (newPreviewRouteId === curRoute.uid) {
       thunkAPI.dispatch(importSlice.actions.setPreviewRoute(null))
-    } else if (previewRouteId !== options?.routeId) {
+    } else if (previewRouteId !== newPreviewRouteId) {
       const route =
         options === null ? null : options.route ?? (await loadRouteFromStorage(options.routeId))
       thunkAPI.dispatch(importSlice.actions.setPreviewRoute(route))

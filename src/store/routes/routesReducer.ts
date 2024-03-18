@@ -18,7 +18,7 @@ export interface RouteState {
 
 const emptyPull: Pull = { id: 0, spawns: [], spawnsBackup: [] }
 
-const newRouteUid = () => Math.random().toString(36).slice(2)
+export const newRouteUid = () => Math.random().toString(36).slice(2)
 
 function nextName(routeName: string, dungeonKey: DungeonKey, savedRoutes: SavedRoute[]) {
   const match = routeName.match(/(.*\s)(\d+)$/)
@@ -34,7 +34,7 @@ function nextName(routeName: string, dungeonKey: DungeonKey, savedRoutes: SavedR
 }
 
 const makeEmptyRoute = (dungeonKey: DungeonKey, savedRoutes: SavedRoute[]): Route => ({
-  name: nextName('Default Threechest', dungeonKey, savedRoutes),
+  name: nextName('Default threechest.io', dungeonKey, savedRoutes),
   dungeonKey,
   pulls: [emptyPull],
   drawings: [],

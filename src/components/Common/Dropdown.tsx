@@ -43,13 +43,15 @@ export function Dropdown<T extends DropdownOption>({
   const timeoutRef = useRef<NodeJS.Timeout>()
 
   const onClose = useCallback(() => {
+    if (!open && !optionsVisible) return
+
     onHover?.(null)
     setFullyOpen(false)
     setOptionsVisible(false)
     timeoutRef.current = setTimeout(() => {
       setOpen(false)
     }, transitionDuration)
-  }, [onHover])
+  }, [onHover, open, optionsVisible])
 
   const ref = useOutsideClick(onClose)
 
