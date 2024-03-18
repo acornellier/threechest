@@ -2,21 +2,24 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { BaseAwarenessState } from '../../components/Collab/YRedux'
 import { LatLng } from 'leaflet'
 
+export type ClientType = 'host' | 'guest'
+
 export interface AwarenessState extends BaseAwarenessState {
+  clientType: ClientType
   mousePosition?: LatLng | null
 }
 
 export interface CollabState {
   active: boolean
   room: string
-  clientType: 'host' | 'guest'
+  startedCollab: boolean
   awarenessStates: AwarenessState[]
 }
 
 const initialState: CollabState = {
   active: false,
   room: '',
-  clientType: 'guest',
+  startedCollab: false,
   awarenessStates: [],
 }
 
@@ -27,15 +30,16 @@ export const collabSlice = createSlice({
     startCollab(state, { payload: room }: PayloadAction<string>) {
       state.active = true
       state.room = room
-      state.clientType = 'host'
+      state.startedCollab = true
     },
     endCollab(state) {
       state.active = false
+      state.startedCollab = false
     },
     joinCollab(state, { payload: room }: PayloadAction<string>) {
       state.active = true
       state.room = room
-      state.clientType = 'guest'
+      state.startedCollab = false
     },
     setAwarenessStates(state, { payload: awarenessStates }: PayloadAction<AwarenessState[]>) {
       state.awarenessStates = awarenessStates

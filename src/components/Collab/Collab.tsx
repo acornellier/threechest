@@ -8,7 +8,11 @@ import {
   useAppDispatch,
   useRootSelector,
 } from '../../store/hooks.ts'
-import { setAwarenessStates, setMousePosition } from '../../store/reducers/collabReducer.ts'
+import {
+  ClientType,
+  setAwarenessStates,
+  setMousePosition,
+} from '../../store/reducers/collabReducer.ts'
 import { RootState } from '../../store/store.ts'
 import { Route } from '../../util/types.ts'
 import { setRoute } from '../../store/routes/routesReducer.ts'
@@ -21,17 +25,22 @@ const selectData = (state: RootState) => state.routes.present.route
 export function Collab() {
   const dispatch = useAppDispatch()
   const room = useRootSelector((state) => state.collab.room)
+  const startedCollab = useRootSelector((state) => state.collab.startedCollab)
+  const leafletMap = useMap()
+
   const [yObjects, setYObjects] = useState<{
     map: Y.Map<Route>
     provider: WebrtcProvider
   }>()
-  const leafletMap = useMap()
 
   useEffect(() => {
     const doc = new Y.Doc()
     const provider = new WebrtcProvider(room, doc)
     const map = doc.getMap<Route>('data')
     setYObjects({ map, provider })
+
+    const clientType: ClientType = startedCollab ? 'host' : 'guest'
+    provider.awareness.setLocalStateField('clientType', clientType)
 
     const onMouseMove = (e: LeafletMouseEvent) => {
       dispatch(setMousePosition(e.latlng))
@@ -49,7 +58,7 @@ export function Collab() {
       leafletMap.removeEventListener('mousemove', onMouseMove)
       leafletMap.removeEventListener('mousemove', onMouseOut)
     }
-  }, [leafletMap, room])
+  }, [dispatch, leafletMap, room, startedCollab])
 
   if (!yObjects) return null
 

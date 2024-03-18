@@ -19,14 +19,11 @@ export function CollabButton() {
     }
   }, [dispatch])
 
-  const shareUrl = useCallback(
-    async (room: string) => {
-      const url = window.location.origin + `?collab=${room}`
-      window.history.replaceState({}, '', url)
-      await navigator.clipboard.writeText(url)
-    },
-    [dispatch],
-  )
+  const shareUrl = useCallback(async (room: string) => {
+    const url = window.location.origin + `?collab=${room}`
+    window.history.replaceState({}, '', url)
+    await navigator.clipboard.writeText(url)
+  }, [])
 
   const onClick = useCallback(async () => {
     if (active) {
