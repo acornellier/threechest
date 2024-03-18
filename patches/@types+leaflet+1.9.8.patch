@@ -1,8 +1,8 @@
 diff --git a/node_modules/@types/leaflet/index.d.ts b/node_modules/@types/leaflet/index.d.ts
-index fd6043a..36d585f 100755
+index 088a84d..0ff833d 100644
 --- a/node_modules/@types/leaflet/index.d.ts
 +++ b/node_modules/@types/leaflet/index.d.ts
-@@ -380,6 +380,10 @@ export interface LeafletEventHandlerFnMap {
+@@ -368,6 +368,10 @@ export interface LeafletEventHandlerFnMap {
  
      tileerror?: TileErrorEventHandlerFn | undefined;
  
@@ -13,7 +13,7 @@ index fd6043a..36d585f 100755
      // [name: string]: any;
      // You are able add additional properties, but it makes this interface uncheckable.
  }
-@@ -2503,6 +2507,13 @@ export interface MapOptions {
+@@ -2491,6 +2495,13 @@ export interface MapOptions {
      tapTolerance?: number | undefined;
      touchZoom?: Zoom | undefined;
      bounceAtZoomLimits?: boolean | undefined;
