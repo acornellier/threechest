@@ -29,7 +29,7 @@ export function Collab() {
 
   useEffect(() => {
     const doc = new Y.Doc()
-    const provider = new WebrtcProvider(room, doc, { signaling: ['ws://localhost:1234'] })
+    const provider = new WebrtcProvider(room, doc)
     const map = doc.getMap<Route>('data')
     setYObjects({ map, provider })
 
