@@ -4,9 +4,9 @@ import { Store } from 'redux'
 import * as Y from 'yjs'
 import { cachedSubscribe } from './redux-subscriber.ts'
 import { isEmpty, patchYJson } from '../YJson'
-import _ from 'lodash'
 import { JsonTemplateArray, JsonTemplateContainer, JsonTemplateObject } from '../Json'
 import { Action } from '@reduxjs/toolkit'
+import { isEqual } from 'moderndash'
 
 function handleChange<T extends JsonTemplateContainer, RootState>(
   source: 'local' | 'remote',
@@ -31,7 +31,7 @@ function handleChange<T extends JsonTemplateContainer, RootState>(
     const remoteData = yJson.toJSON() as T
     const localData = selectData(store.getState() as RootState)
 
-    if (_.isEqual(remoteData, localData)) {
+    if (isEqual(remoteData, localData)) {
       console.debug('[SyncYJson:syncRemoteIntoLocal] Not syncing: Remote already equals local data')
       return
     }

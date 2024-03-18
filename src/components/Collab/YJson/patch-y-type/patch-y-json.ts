@@ -1,4 +1,4 @@
-import _ from 'lodash'
+import { isEqual } from 'moderndash'
 import * as Y from 'yjs'
 import {
   assertIsYArray,
@@ -83,7 +83,7 @@ export function patchYJson(
   assertIsYJson(yTypeToMutate)
   assertIsYMapOrArray(yTypeToMutate, 'object root')
 
-  newState = _.cloneDeep(newState) // Prevent patchYJson having side effects on newState
+  newState = structuredClone(newState) // Prevent patchYJson having side effects on newState
   deepNormalizeJson(newState)
 
   const isYArrayAndArray = isYArray(yTypeToMutate) && isPlainArray(newState)
@@ -98,7 +98,7 @@ export function patchYJson(
     throw new Error('Expected old state to be either an Array or an object')
   }
   const delta = diff(oldState, newState)
-  if (delta.operations.length === 0 || _.isEqual(oldState, newState)) return
+  if (delta.operations.length === 0 || isEqual(oldState, newState)) return
 
   transact(
     yTypeToMutate,
@@ -109,7 +109,7 @@ export function patchYJson(
       // This needs to be run inside the transaction, otherwise it is possible that
       // the yDoc has a different value by the time we run the check.
       const yState: unknown = yTypeToMutate.toJSON()
-      if (!_.isEqual(yState, newState)) {
+      if (!isEqual(yState, newState)) {
         throw new Error(
           `Failed to patch yType. ${JSON.stringify(
             { yState, newState, oldState, delta },
