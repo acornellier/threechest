@@ -5,9 +5,10 @@ import { Dispatch, SetStateAction } from 'react'
 interface Props {
   collapsed: boolean
   setCollapsed: Dispatch<SetStateAction<boolean>>
+  height: number
 }
 
-export function SidebarCollapser({ collapsed, setCollapsed }: Props) {
+export function SidebarCollapser({ collapsed, setCollapsed, height }: Props) {
   return (
     <div className="absolute -left-[30px] top-[8px]">
       <Button
@@ -16,7 +17,7 @@ export function SidebarCollapser({ collapsed, setCollapsed }: Props) {
         iconSize={18}
         onClick={() => setCollapsed((prev) => !prev)}
         style={{
-          height: 50,
+          height,
           padding: '12px 4px 12px 8px',
           borderTopRightRadius: 0,
           borderBottomRightRadius: 0,

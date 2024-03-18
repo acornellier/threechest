@@ -4,6 +4,7 @@ import { SidebarCollapser } from './SidebarCollapser.tsx'
 import { useLocalStorage } from '../../hooks/useLocalStorage.ts'
 import { Pulls } from './Pulls/Pulls.tsx'
 import { CollabPanel } from '../Collab/CollabPanel.tsx'
+import { useIsGuestCollab } from '../../store/hooks.ts'
 
 const marginTop = 8
 const marginBottom = 60
@@ -11,6 +12,7 @@ const width = 285
 
 export function Sidebar() {
   const [collapsed, setCollapsed] = useLocalStorage('sidebarCollaposed', false)
+  const isGuestCollab = useIsGuestCollab()
 
   return (
     <div
@@ -24,8 +26,12 @@ export function Sidebar() {
         transition: '150ms all',
       }}
     >
-      <SidebarCollapser collapsed={collapsed} setCollapsed={setCollapsed} />
-      <RouteDetails />
+      <SidebarCollapser
+        collapsed={collapsed}
+        setCollapsed={setCollapsed}
+        height={isGuestCollab ? 30 : 50}
+      />
+      {!isGuestCollab && <RouteDetails />}
       <SharePanel />
       <CollabPanel />
       <Pulls />

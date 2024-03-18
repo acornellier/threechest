@@ -12,6 +12,8 @@ export interface DropdownOption {
 
 interface Props<T extends DropdownOption> {
   options: T[]
+  onOpen?: () => void
+  onClose?: () => void
   onSelect: (option: T) => void
   onHover?: (option: T | null) => void
   selected?: T
@@ -28,6 +30,8 @@ const transitionDuration = 200
 export function Dropdown<T extends DropdownOption>({
   selected,
   options,
+  onOpen,
+  onClose,
   onSelect,
   onHover,
   buttonText,
@@ -42,7 +46,7 @@ export function Dropdown<T extends DropdownOption>({
   const [fullyOpen, setFullyOpen] = useState(false)
   const timeoutRef = useRef<NodeJS.Timeout>()
 
-  const onClose = useCallback(() => {
+  const handleClose = useCallback(() => {
     if (!open && !optionsVisible) return
 
     onHover?.(null)
@@ -51,9 +55,10 @@ export function Dropdown<T extends DropdownOption>({
     timeoutRef.current = setTimeout(() => {
       setOpen(false)
     }, transitionDuration)
-  }, [onHover, open, optionsVisible])
+    onClose?.()
+  }, [onClose, onHover, open, optionsVisible])
 
-  const ref = useOutsideClick(onClose)
+  const ref = useOutsideClick(handleClose)
 
   const toggleOpen = useCallback(() => {
     clearTimeout(timeoutRef.current)
@@ -61,10 +66,11 @@ export function Dropdown<T extends DropdownOption>({
       setOpen(true)
       setTimeout(() => setOptionsVisible(true), 0)
       setTimeout(() => setFullyOpen(true), transitionDuration)
+      onOpen?.()
     } else {
-      onClose()
+      handleClose()
     }
-  }, [onClose, optionsVisible])
+  }, [handleClose, onOpen, optionsVisible])
 
   const selectOption = useCallback(
     (option: T) => {
