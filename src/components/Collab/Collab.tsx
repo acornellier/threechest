@@ -9,8 +9,8 @@ import {
   useRootSelector,
 } from '../../store/hooks.ts'
 import {
-  ClientType,
   setAwarenessStates,
+  setInitialAwareness,
   setMousePosition,
 } from '../../store/reducers/collabReducer.ts'
 import { RootState } from '../../store/store.ts'
@@ -37,10 +37,15 @@ export function Collab() {
     const map = doc.getMap<Route>('data')
     setYObjects({ map, provider })
 
-    const clientType: ClientType = startedCollab ? 'host' : 'guest'
-    provider.awareness.setLocalStateField('name', generateSlug(2, { format: 'title' }))
-    provider.awareness.setLocalStateField('clientType', clientType)
-    provider.awareness.setLocalStateField('joinTime', new Date().getTime())
+    dispatch(
+      setInitialAwareness({
+        clientId: doc.clientID,
+        isCurrentClient: true,
+        name: generateSlug(2, { format: 'title' }),
+        clientType: startedCollab ? 'host' : 'guest',
+        joinTime: new Date().getTime(),
+      }),
+    )
 
     const onMouseMove = (e: LeafletMouseEvent) => {
       dispatch(setMousePosition(e.latlng))

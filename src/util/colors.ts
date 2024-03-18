@@ -39,7 +39,7 @@ export const rgbToHex = (r: number, g: number, b: number) =>
     })
     .join('')
 
-const highContrastColors = (
+export const highContrastColors = (
   [
     [1, 0.2446, 1],
     [0.2446, 1.0, 0.6223],
@@ -64,7 +64,7 @@ export function getPullColor(pullIndex: number, dark?: boolean): string {
 
 export function getTextColor(hex: string) {
   const rgb = hexToRgb(hex)
-  if (rgb && rgb[0] * 0.299 + rgb[1] * 0.587 + rgb[2] * 0.114 > 186) {
+  if (rgb && rgb[0] * 0.299 + rgb[1] * 0.587 + rgb[2] * 0.114 > 150) {
     return 'black'
   } else {
     return 'white'

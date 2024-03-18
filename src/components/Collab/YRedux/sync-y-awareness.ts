@@ -15,11 +15,11 @@ const syncLocalIntoRemote = <T extends BaseAwarenessState>(
   data: T | undefined,
 ): void => {
   if (data === undefined) {
-    console.debug('[SyncYAwareness:syncLocalIntoRemote] Not syncing: Local data is undefined')
+    // console.debug('[SyncYAwareness:syncLocalIntoRemote] Not syncing: Local data is undefined')
     return
   }
 
-  console.debug('[SyncYAwareness:syncLocalIntoRemote] Syncing')
+  // console.debug('[SyncYAwareness:syncLocalIntoRemote] Syncing', data)
   awareness.setLocalState(data)
 }
 
@@ -27,8 +27,7 @@ const syncRemoteIntoLocal = <T extends BaseAwarenessState>(
   awareness: Awareness,
   store: Store<any, Action>,
   selectAwarenessStates: (state: any) => T[] | undefined,
-  setAwarenessStates: (awarenessStates: T[], isInitial: boolean) => Action,
-  isInitial: boolean = false,
+  setAwarenessStates: (awarenessStates: T[]) => Action,
 ): void => {
   const states: T[] = [...awareness.getStates().entries()].map(([clientId, state]) => ({
     ...(state as T),
@@ -38,15 +37,15 @@ const syncRemoteIntoLocal = <T extends BaseAwarenessState>(
 
   const latestReduxAwareness = selectAwarenessStates(store.getState())
 
-  console.debug('[SyncYAwareness:syncRemoteIntoLocal] Syncing')
+  // console.debug('[SyncYAwareness:syncRemoteIntoLocal] Syncing')
   if (isEqual(states, latestReduxAwareness)) {
-    console.debug(
-      '[SyncYAwareness:syncRemoteIntoLocal] Not syncing: Remote already equals local data',
-    )
+    // console.debug(
+    //   '[SyncYAwareness:syncRemoteIntoLocal] Not syncing: Remote already equals local data',
+    // )
     return
   }
 
-  store.dispatch(setAwarenessStates(states, isInitial))
+  store.dispatch(setAwarenessStates(states))
 }
 
 export const SyncYAwareness = <T extends BaseAwarenessState>({
@@ -62,10 +61,10 @@ export const SyncYAwareness = <T extends BaseAwarenessState>({
 }): null => {
   const store = useStore()
 
-  // On mount sync remote into local
+  // On mount sync local into remote
   useEffect(() => {
-    syncRemoteIntoLocal(awareness, store, selectAwarenessStates, setAwarenessStates, true)
-  }, [awareness, selectAwarenessStates, setAwarenessStates, store])
+    syncLocalIntoRemote(awareness, selectLocalAwarenessState(store.getState()))
+  }, [awareness, selectLocalAwarenessState, store])
 
   // Subscribe to local changes
   useEffect(() => {

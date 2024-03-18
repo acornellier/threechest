@@ -14,7 +14,7 @@ export const CursorIcon: IconComponent = forwardRef<SVGSVGElement, SVGProps<SVGS
         {...props}
       >
         <path
-          stroke="white"
+          stroke={props.stroke}
           strokeLinecap="round"
           strokeLinejoin="round"
           strokeWidth={35.71}
