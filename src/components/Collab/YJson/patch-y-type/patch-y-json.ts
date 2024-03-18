@@ -76,7 +76,7 @@ type PatchYJsonOptions = {
  * Proper nesting of YMap and YArray is used for nested data.
  */
 export function patchYJson(
-  yTypeToMutate: Y.Map<unknown> | Y.Array<unknown>,
+  yTypeToMutate: Y.Map<any> | Y.Array<any>,
   newState: JsonTemplateObject | JsonTemplateArray,
   options: PatchYJsonOptions = {},
 ): void {

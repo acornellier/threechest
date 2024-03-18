@@ -7,6 +7,7 @@ import { createSelector } from '@reduxjs/toolkit'
 import { HoverState } from './reducers/hoverReducer.ts'
 import { findMobSpawn } from '../util/mobSpawns.ts'
 import { useEffect, useState } from 'react'
+import { CollabState } from './reducers/collabReducer.ts'
 
 export const useAppDispatch: () => AppDispatch = useDispatch
 
@@ -17,6 +18,9 @@ export const useRoutesSelector = <T>(selector: (state: RouteState) => T): T =>
 
 export const useHoverSelector = <T>(selector: (state: HoverState) => T): T =>
   useRootSelector((state) => selector(state.hover))
+
+export const useCollabSelector = <T>(selector: (state: CollabState) => T): T =>
+  useRootSelector((state) => selector(state.collab))
 
 // Routes
 export const useRoute = () =>
@@ -69,6 +73,12 @@ export function useMapObjectsHidden(minDelay: number = 0, maxDelay: number = 100
 
 // Collab
 export function useIsGuestCollab() {
-  const { active, clientType } = useRootSelector((state) => state.collab)
+  const active = useCollabSelector((state) => state.active)
+  const clientType = useCollabSelector((state) => state.clientType)
   return active && clientType === 'guest'
 }
+
+export const selectLocalAwareness = (state: RootState) =>
+  state.collab.awarenessStates.find(({ isCurrentClient }) => isCurrentClient)
+
+export const selectAwarenessStates = (state: RootState) => state.collab.awarenessStates

@@ -4,7 +4,7 @@ export * from './transact.ts'
 import * as Y from 'yjs'
 import { isYArray } from '../assertions.ts'
 
-export function isEmpty(yType: Y.Map<unknown> | Y.Array<unknown>): boolean {
+export function isEmpty(yType: Y.Map<any> | Y.Array<any>): boolean {
   if (isYArray(yType)) {
     return yType.length === 0
   }

@@ -13,7 +13,7 @@ function handleChange<T extends JsonTemplateContainer, RootState>(
   store: Store,
   selectData: (state: RootState) => T | undefined,
   setData: (data: T) => Action,
-  yJson: Y.Map<unknown> | Y.Array<unknown>,
+  yJson: Y.Map<T> | Y.Array<T>,
 ): void {
   const syncLocalIntoRemote = (): void => {
     const localData = selectData(store.getState() as RootState)
@@ -57,12 +57,12 @@ function handleChange<T extends JsonTemplateContainer, RootState>(
 }
 
 export function SyncYJson<T extends JsonTemplateObject, RootState>(props: {
-  yJson: Y.Map<unknown>
+  yJson: Y.Map<T>
   setData: (data: T) => Action
   selectData: (state: RootState) => T | undefined
 }): null
 export function SyncYJson<T extends JsonTemplateArray, RootState>(props: {
-  yJson: Y.Array<unknown>
+  yJson: Y.Array<T>
   setData: (data: T) => Action
   selectData: (state: RootState) => T | undefined
 }): null
@@ -71,7 +71,7 @@ export function SyncYJson<T extends JsonTemplateContainer, RootState>({
   setData,
   selectData,
 }: {
-  yJson: Y.Map<unknown> | Y.Array<unknown>
+  yJson: Y.Map<T> | Y.Array<T>
   setData: (data: T) => Action
   selectData: (state: RootState) => T | undefined
 }): null {
