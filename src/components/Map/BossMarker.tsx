@@ -1,5 +1,5 @@
 import { divIcon } from 'leaflet'
-import { renderToString } from 'react-dom/server'
+import { renderToStaticMarkup } from 'react-dom/server'
 import { Spawn } from '../../data/types.ts'
 import { Marker } from 'react-leaflet'
 
@@ -19,7 +19,7 @@ export function BossMarker({ spawn, isHovered, iconSize, hidden }: Props) {
       icon={divIcon({
         iconSize: [iconSize, iconSize],
         className: `fade-in-map-object ${hidden ? 'opacity-0' : 'opacity-1'}`,
-        html: renderToString(
+        html: renderToStaticMarkup(
           <div
             className="absolute"
             style={{

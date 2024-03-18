@@ -82,3 +82,4 @@ export const selectLocalAwareness = (state: RootState) =>
   state.collab.awarenessStates.find(({ isCurrentClient }) => isCurrentClient)
 
 export const selectAwarenessStates = (state: RootState) => state.collab.awarenessStates
+export const useAwarenessStates = () => useRootSelector(selectAwarenessStates)

@@ -3,7 +3,6 @@ import { useAppDispatch, useRootSelector } from '../../store/hooks.ts'
 import { endCollab, joinCollab, startCollab } from '../../store/reducers/collabReducer.ts'
 import { useCallback, useEffect } from 'react'
 import { UserGroupIcon } from '@heroicons/react/24/outline'
-import { Collab } from './Collab.tsx'
 import { addToast } from '../../store/reducers/toastReducer.ts'
 import { generateSlug } from 'random-word-slugs'
 
@@ -57,12 +56,9 @@ export function CollabButton() {
         {!active ? 'Start Collab' : 'Collab active'}
       </Button>
       {active && (
-        <>
-          <Collab />
-          <Button outline short onClick={onShare}>
-            Share room
-          </Button>
-        </>
+        <Button outline short onClick={onShare}>
+          Share room
+        </Button>
       )}
     </div>
   )

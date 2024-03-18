@@ -1,8 +1,9 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { BaseAwarenessState } from '../../components/Collab/YRedux'
+import { LatLng } from 'leaflet'
 
 export interface AwarenessState extends BaseAwarenessState {
-  cursorPosition: { x: 100; y: 200 }
+  mousePosition?: LatLng | null
 }
 
 export interface CollabState {
@@ -39,16 +40,17 @@ export const collabSlice = createSlice({
     setAwarenessStates(state, { payload: awarenessStates }: PayloadAction<AwarenessState[]>) {
       state.awarenessStates = awarenessStates
     },
-    setCursorPosition(
+    setMousePosition(
       state,
-      { payload: cursorPosition }: PayloadAction<AwarenessState['cursorPosition']>,
+      { payload: mousePosition }: PayloadAction<AwarenessState['mousePosition']>,
     ) {
       const localAwareness = state.awarenessStates.find(({ isCurrentClient }) => isCurrentClient)
-      if (localAwareness) localAwareness.cursorPosition = cursorPosition
+      if (localAwareness) localAwareness.mousePosition = mousePosition
     },
   },
 })
 
 export const collabReducer = collabSlice.reducer
 
-export const { startCollab, endCollab, joinCollab, setAwarenessStates } = collabSlice.actions
+export const { startCollab, endCollab, joinCollab, setAwarenessStates, setMousePosition } =
+  collabSlice.actions
