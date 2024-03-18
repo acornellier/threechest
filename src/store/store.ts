@@ -6,6 +6,7 @@ import { persistStore } from 'redux-persist'
 import { toastReducer } from './reducers/toastReducer.ts'
 import { listenerMiddleware } from './listener.ts'
 import { mapReducer } from './reducers/mapReducer.ts'
+import { collabReducer } from './reducers/collabReducer.ts'
 
 export const store = configureStore({
   reducer: {
@@ -14,6 +15,7 @@ export const store = configureStore({
     import: importReducer,
     map: mapReducer,
     toast: toastReducer,
+    collab: collabReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({ serializableCheck: false, immutableCheck: { warnAfter: 200 } }).prepend(

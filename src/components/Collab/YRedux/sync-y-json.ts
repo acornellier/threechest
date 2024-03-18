@@ -15,7 +15,6 @@ function handleChange<T extends JsonTemplateContainer, RootState>(
   setData: (data: T) => Action,
   yJson: Y.Map<unknown> | Y.Array<unknown>,
 ): void {
-  console.log('handleChange', source, yJson)
   const syncLocalIntoRemote = (): void => {
     const localData = selectData(store.getState() as RootState)
 

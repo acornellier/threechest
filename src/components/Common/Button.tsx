@@ -13,6 +13,7 @@ export interface ButtonProps
   short?: boolean
   twoDimensional?: boolean
   justifyStart?: boolean
+  color?: 'red' | 'green'
 }
 
 function ButtonIconText({
@@ -51,6 +52,7 @@ export function Button({
   justifyStart,
   className,
   children,
+  color,
   ...props
 }: ButtonProps) {
   const buttonIconText = (
@@ -62,6 +64,7 @@ export function Button({
   return (
     <button
       className={`fancy-button
+                  ${color ?? ''}
                   ${outline ? 'outline-button' : ''} 
                   ${short ? 'short' : ''} 
                   ${twoDimensional ? 'two-d' : ''} 
