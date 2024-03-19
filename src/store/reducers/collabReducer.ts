@@ -4,6 +4,7 @@ import { LatLng } from 'leaflet'
 import { highContrastColors } from '../../util/colors.ts'
 import { RootState } from '../store.ts'
 import { sleep } from '../../util/dev.ts'
+import { savedCollabColorKey, savedCollabNameKey } from '../hooks.ts'
 
 export type ClientType = 'host' | 'guest'
 
@@ -69,6 +70,15 @@ function checkForNoHost(state: CollabState, localAwareness: AwarenessState) {
 export const setInitialAwareness = createAsyncThunk(
   'collab/setInitialAwareness',
   async (localAwareness: AwarenessState, thunkAPI) => {
+    let state = thunkAPI.getState() as RootState
+    if (state.collab.startedCollab) localAwareness.clientType = 'host'
+
+    const savedName = localStorage.getItem(savedCollabNameKey)
+    if (savedName) localAwareness.name = savedName
+
+    const savedColor = localStorage.getItem(savedCollabColorKey)
+    if (savedColor) localAwareness.color = savedColor
+
     thunkAPI.dispatch(setAwarenessStates([localAwareness]))
 
     if (localAwareness.clientType === 'host') return
@@ -76,7 +86,7 @@ export const setInitialAwareness = createAsyncThunk(
     // Wait 1 second. If room is still empty, promote yourself to host
     await sleep(1000)
 
-    const state = thunkAPI.getState() as RootState
+    state = thunkAPI.getState() as RootState
     if (state.collab.awarenessStates.length === 1) thunkAPI.dispatch(promoteToHost())
   },
 )
@@ -89,15 +99,18 @@ export const collabSlice = createSlice({
       state.active = true
       state.room = room
       state.startedCollab = true
+      state.awarenessStates = []
     },
     endCollab(state) {
       state.active = false
       state.startedCollab = false
+      state.awarenessStates = []
     },
     joinCollab(state, { payload: room }: PayloadAction<string>) {
       state.active = true
       state.room = room
       state.startedCollab = false
+      state.awarenessStates = []
     },
     setAwarenessStates(state, { payload: awarenessStates }: PayloadAction<AwarenessState[]>) {
       state.awarenessStates = awarenessStates

@@ -2,13 +2,7 @@ import { useEffect, useState } from 'react'
 import * as Y from 'yjs'
 import { WebrtcProvider } from 'y-webrtc'
 import { SyncYAwareness, SyncYJson } from './YRedux'
-import {
-  selectLocalAwareness,
-  useAppDispatch,
-  useRootSelector,
-  useSavedCollabColor,
-  useSavedCollabName,
-} from '../../store/hooks.ts'
+import { selectLocalAwareness, useAppDispatch, useRootSelector } from '../../store/hooks.ts'
 import {
   setAwarenessStates,
   setInitialAwareness,
@@ -27,9 +21,6 @@ const selectData = (state: RootState) => state.routes.present.route
 export function Collab() {
   const dispatch = useAppDispatch()
   const room = useRootSelector((state) => state.collab.room)
-  const startedCollab = useRootSelector((state) => state.collab.startedCollab)
-  const [savedName] = useSavedCollabName()
-  const [savedColor] = useSavedCollabColor()
   const leafletMap = useMap()
 
   const [yObjects, setYObjects] = useState<{ map: Y.Map<Route>; provider: WebrtcProvider }>()
@@ -44,10 +35,10 @@ export function Collab() {
       setInitialAwareness({
         clientId: doc.clientID,
         isCurrentClient: true,
-        name: savedName || generateSlug(2, { format: 'title' }),
-        clientType: startedCollab ? 'host' : 'guest',
+        name: generateSlug(2, { format: 'title' }),
+        clientType: 'guest',
         joinTime: new Date().getTime(),
-        color: savedColor || null,
+        color: null,
       }),
     )
 
@@ -67,7 +58,7 @@ export function Collab() {
       leafletMap.removeEventListener('mousemove', onMouseMove)
       leafletMap.removeEventListener('mousemove', onMouseOut)
     }
-  }, [dispatch, leafletMap, room, startedCollab])
+  }, [dispatch, leafletMap, room])
 
   if (!yObjects) return null
 

@@ -88,5 +88,7 @@ export function useIsGuestCollab() {
 export const selectAwarenessStates = (state: RootState) => state.collab.awarenessStates
 export const useAwarenessStates = () => useRootSelector(selectAwarenessStates)
 export const useLocalAwareness = () => useRootSelector(selectLocalAwareness)
-export const useSavedCollabName = () => useLocalStorage('collab-name', '')
-export const useSavedCollabColor = () => useLocalStorage('collab-color', '')
+export const savedCollabNameKey = 'collab-name'
+export const useSavedCollabName = () => useLocalStorage(savedCollabNameKey, '')
+export const savedCollabColorKey = 'collab-color'
+export const useSavedCollabColor = () => useLocalStorage(savedCollabColorKey, '')
