@@ -32,7 +32,7 @@ export function HelpModal({ onClose }: Props) {
       contents={
         <div>
           <div>
-            Contact me on{' '}
+            Join the{' '}
             <a
               className="text-blue-500 hover:underline"
               href="https://discord.gg/btHjKxn7YB"
@@ -43,6 +43,7 @@ export function HelpModal({ onClose }: Props) {
             </a>{' '}
             with any questions you want!
           </div>
+          <div>Or contact me directly on discord at @ortemis.</div>
           <div className="text-lg font-bold mt-2">Advanced tips</div>
           <div>
             <span className="rounded bg-fancy-red px-1 min-w-6 text-center">

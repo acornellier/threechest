@@ -4,9 +4,10 @@ import { SidebarCollapser } from './SidebarCollapser.tsx'
 import { Pulls } from './Pulls/Pulls.tsx'
 import { CollabPanel } from '../Collab/CollabPanel.tsx'
 import { useState } from 'react'
+import { Footer } from '../Header/Footer.tsx'
 
 const marginTop = 8
-const marginBottom = 60
+const marginBottom = 8
 const width = 285
 
 export function Sidebar() {
@@ -15,14 +16,13 @@ export function Sidebar() {
 
   return (
     <div
-      className="fixed right-0 z-20 flex flex-col gap-1.5"
+      className="fixed right-0 z-20 flex flex-col gap-1.5 transition-all"
       style={{
         width,
         marginTop,
         marginBottom,
         maxHeight: `calc(100% - ${marginTop}px - ${marginBottom}px)`,
         right: collapsed ? -width : 0,
-        transition: '150ms all',
       }}
     >
       <SidebarCollapser collapsed={collapsed} setCollapsed={setCollapsed} index={0} />
@@ -36,6 +36,7 @@ export function Sidebar() {
       <SharePanel hidden={topCollapsed} />
       <CollabPanel collapsed={topCollapsed} />
       <Pulls />
+      <Footer right={collapsed ? 0 : 285} />
     </div>
   )
 }

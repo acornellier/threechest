@@ -5,7 +5,6 @@ import { ConfirmImportModal } from './Modals/ConfirmImportModal.tsx'
 import { RouteSaver } from '../store/routes/RouteSaver.tsx'
 import { MobInfo } from './MobInfo.tsx'
 import { Header } from './Header/Header.tsx'
-import { Footer } from './Header/Footer.tsx'
 import { useAppDispatch, useDungeon } from '../store/hooks.ts'
 import { useEffect } from 'react'
 import { defaultDungeonKey, setDungeon } from '../store/routes/routesReducer.ts'
@@ -25,7 +24,6 @@ export function Page() {
       <Map />
       <Header />
       <Sidebar />
-      <Footer />
       <MobInfo />
       <Toasts />
       <ConfirmImportModal />

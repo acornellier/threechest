@@ -7,7 +7,11 @@ import { HelpModal } from './HelpModal.tsx'
 import { useShortcut } from '../../hooks/useShortcut.ts'
 import { shortcuts } from '../../data/shortcuts.ts'
 
-export function Footer() {
+interface Props {
+  right?: number
+}
+
+export function Footer({ right }: Props) {
   const [helpModalOpen, setHelpModalOpen] = useState(false)
 
   const onHelp = useCallback(() => setHelpModalOpen(true), [])
@@ -15,7 +19,12 @@ export function Footer() {
 
   return (
     <>
-      <div className="fixed bottom-0 right-0 z-20">
+      <div
+        className="fixed bottom-0 z-20 transition-all"
+        style={{
+          right: right ?? 0,
+        }}
+      >
         <div className="my-1 mx-2 flex items-center gap-2 h-[48px]">
           <Button justifyStart onClick={() => setHelpModalOpen(true)}>
             Help
