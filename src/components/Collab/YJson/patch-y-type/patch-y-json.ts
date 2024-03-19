@@ -98,7 +98,7 @@ export function patchYJson(
     throw new Error('Expected old state to be either an Array or an object')
   }
   const delta = diff(oldState, newState)
-  if (delta.operations.length === 0 || isEqual(oldState, newState)) return
+  if (delta.operations.length === 0) return
 
   transact(
     yTypeToMutate,
