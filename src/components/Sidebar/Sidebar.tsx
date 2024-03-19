@@ -7,7 +7,7 @@ import { useState } from 'react'
 import { Footer } from '../Header/Footer.tsx'
 
 const marginTop = 8
-const marginBottom = 8
+const marginBottom = 60
 const width = 285
 
 export function Sidebar() {
@@ -36,7 +36,7 @@ export function Sidebar() {
       <SharePanel hidden={topCollapsed} />
       <CollabPanel collapsed={topCollapsed} />
       <Pulls />
-      <Footer right={collapsed ? 0 : 285} />
+      <Footer />
     </div>
   )
 }
