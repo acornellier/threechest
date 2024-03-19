@@ -27,7 +27,9 @@ export function Collab() {
 
   useEffect(() => {
     const doc = new Y.Doc()
-    const provider = new WebrtcProvider(room, doc)
+    const provider = new WebrtcProvider(room, doc, {
+      signaling: ['wss://y-webrtc-signaler-ypze.onrender.com'],
+    })
     const map = doc.getMap<Route>('data')
     setYObjects({ map, provider })
 
