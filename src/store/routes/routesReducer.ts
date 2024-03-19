@@ -94,8 +94,8 @@ export const initialState: RouteState = {
 }
 
 function setRouteFresh(state: RouteState, route: Route) {
+  if (route.uid !== state.route.uid) state.selectedPull = 0
   state.route = route
-  state.selectedPull = 0
 }
 
 const baseReducer = createSlice({
