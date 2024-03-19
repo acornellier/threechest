@@ -8,7 +8,11 @@ import { RenameRoute } from './Buttons/RenameRoute.tsx'
 import { useCallback, useState } from 'react'
 import { SampleRoutes } from './Buttons/SampleRoutes.tsx'
 
-export function RouteDetails() {
+interface Props {
+  collapsed?: boolean
+}
+
+export function RouteDetails({ collapsed }: Props) {
   const [isDropdownOpen, setDropdownOpen] = useState(false)
   const [isRenaming, setRenaming] = useState(false)
 
@@ -19,15 +23,17 @@ export function RouteDetails() {
     <Panel noRightBorder>
       <div className="flex gap-2">
         {!isRenaming && <RouteDropdown onOpen={onDropdownOpen} onClose={onDropdownClose} />}
-        {!isDropdownOpen && <RenameRoute isRenaming={isRenaming} setRenaming={setRenaming} />}
+        {!isDropdownOpen && (
+          <RenameRoute isRenaming={isRenaming} setRenaming={setRenaming} hidden={collapsed} />
+        )}
       </div>
-      <div className="flex gap-2">
+      <div className={`flex gap-2 ${collapsed ? 'hidden' : ''}`}>
         <NewRoute />
         <DuplicateRoute />
         <DeleteRoute />
       </div>
-      <ImportRoute />
-      <SampleRoutes />
+      <ImportRoute hidden={collapsed} />
+      <SampleRoutes hidden={collapsed} />
     </Panel>
   )
 }

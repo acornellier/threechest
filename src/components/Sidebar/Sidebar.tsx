@@ -1,16 +1,17 @@
 import { RouteDetails } from './RouteDetails.tsx'
 import { SharePanel } from './SharePanel.tsx'
 import { SidebarCollapser } from './SidebarCollapser.tsx'
-import { useLocalStorage } from '../../hooks/useLocalStorage.ts'
 import { Pulls } from './Pulls/Pulls.tsx'
 import { CollabPanel } from '../Collab/CollabPanel.tsx'
+import { useState } from 'react'
 
 const marginTop = 8
 const marginBottom = 60
 const width = 285
 
 export function Sidebar() {
-  const [collapsed, setCollapsed] = useLocalStorage('sidebarCollaposed', false)
+  const [collapsed, setCollapsed] = useState(false)
+  const [topCollapsed, setTopCollapsed] = useState(false)
 
   return (
     <div
@@ -24,15 +25,16 @@ export function Sidebar() {
         transition: '150ms all',
       }}
     >
+      <SidebarCollapser collapsed={collapsed} setCollapsed={setCollapsed} index={0} />
       <SidebarCollapser
-        collapsed={collapsed}
-        setCollapsed={setCollapsed}
-        height={50}
-        // height={isGuestCollab ? 30 : 50}
+        vertical
+        collapsed={topCollapsed}
+        setCollapsed={setTopCollapsed}
+        index={1}
       />
-      <RouteDetails />
-      <SharePanel />
-      <CollabPanel />
+      <RouteDetails collapsed={topCollapsed} />
+      <SharePanel hidden={topCollapsed} />
+      <CollabPanel collapsed={topCollapsed} />
       <Pulls />
     </div>
   )

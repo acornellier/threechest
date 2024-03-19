@@ -16,7 +16,11 @@ function SampleRouteChip({ children }: { children: ReactNode }) {
   return <div className="rounded-sm px-1 bg-cyan-800 text-xs">{children}</div>
 }
 
-export function SampleRoutes() {
+interface Props {
+  hidden?: boolean
+}
+
+export function SampleRoutes({ hidden }: Props) {
   const dispatch = useAppDispatch()
   const dungeon = useDungeon()
   const isGuestCollab = useIsGuestCollab()
@@ -63,6 +67,7 @@ export function SampleRoutes() {
       buttonText="Sample routes"
       MainButtonIcon={MagnifyingGlassIcon}
       disabled={isGuestCollab}
+      className={`${hidden ? '[&]:hidden' : ''}`}
     />
   )
 }

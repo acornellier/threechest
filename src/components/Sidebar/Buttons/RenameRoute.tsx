@@ -8,9 +8,10 @@ import { setName } from '../../../store/routes/routesReducer.ts'
 interface Props {
   isRenaming: boolean
   setRenaming: Dispatch<SetStateAction<boolean>>
+  hidden?: boolean
 }
 
-export function RenameRoute({ isRenaming, setRenaming }: Props) {
+export function RenameRoute({ isRenaming, setRenaming, hidden }: Props) {
   const route = useActualRoute()
   const dispatch = useAppDispatch()
   const isGuestCollab = useIsGuestCollab()
@@ -52,6 +53,7 @@ export function RenameRoute({ isRenaming, setRenaming }: Props) {
         short
         style={{ paddingLeft: 12, paddingRight: 12 }}
         disabled={isGuestCollab}
+        className={`${hidden ? '[&]:hidden' : ''}`}
       />
       <TooltipStyled id="rename-route-tooltip">Rename route</TooltipStyled>
     </>

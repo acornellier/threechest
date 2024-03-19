@@ -8,7 +8,11 @@ import { isEventInInput, shortcuts } from '../../../data/shortcuts.ts'
 
 const canPasteFromClipboard = !!navigator.clipboard.readText
 
-export function ImportRoute() {
+interface Props {
+  hidden?: boolean
+}
+
+export function ImportRoute({ hidden }: Props) {
   const dispatch = useAppDispatch()
   const [input, setInput] = useState('')
   const [inputModalOpen, setInputModalOpen] = useState(false)
@@ -65,6 +69,7 @@ export function ImportRoute() {
         onClick={handleClick}
         shortcut={shortcuts.paste[0]}
         disabled={isGuestCollab}
+        className={`${hidden ? '[&]:hidden' : ''}`}
       >
         Import MDT
       </Button>

@@ -1,19 +1,42 @@
 import { Button } from '../Common/Button.tsx'
-import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline'
+import {
+  ChevronDownIcon,
+  ChevronLeftIcon,
+  ChevronRightIcon,
+  ChevronUpIcon,
+} from '@heroicons/react/24/outline'
 import { Dispatch, SetStateAction } from 'react'
 
 interface Props {
   collapsed: boolean
   setCollapsed: Dispatch<SetStateAction<boolean>>
-  height: number
+  index: number
+  vertical?: boolean
 }
 
-export function SidebarCollapser({ collapsed, setCollapsed, height }: Props) {
+const initialTop = 8
+const height = 48
+const gap = 16
+
+export function SidebarCollapser({ collapsed, setCollapsed, index, vertical }: Props) {
   return (
-    <div className="absolute -left-[30px] top-[8px]">
+    <div
+      className="absolute -left-[30px]"
+      style={{
+        top: initialTop + index * (height + gap),
+      }}
+    >
       <Button
         twoDimensional
-        Icon={collapsed ? ChevronLeftIcon : ChevronRightIcon}
+        Icon={
+          vertical
+            ? collapsed
+              ? ChevronDownIcon
+              : ChevronUpIcon
+            : collapsed
+              ? ChevronLeftIcon
+              : ChevronRightIcon
+        }
         iconSize={18}
         onClick={() => setCollapsed((prev) => !prev)}
         style={{

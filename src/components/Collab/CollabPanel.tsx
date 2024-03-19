@@ -10,7 +10,11 @@ import { CollabSettings } from './CollabSettings.tsx'
 import { CollabButton } from './CollabButton.tsx'
 import { TooltipStyled } from '../Common/TooltipStyled.tsx'
 
-export function CollabPanel() {
+interface Props {
+  collapsed?: boolean
+}
+
+export function CollabPanel({ collapsed }: Props) {
   const dispatch = useAppDispatch()
   const [collabSettingsOpen, setCollabSettingsOpen] = useState(false)
   const { active, room } = useRootSelector((state) => state.collab)
@@ -36,7 +40,7 @@ export function CollabPanel() {
   }, [dispatch, room, shareUrl])
 
   return (
-    <Panel noRightBorder>
+    <Panel noRightBorder className={`${collapsed && !active ? 'hidden' : ''}`}>
       <div className="flex gap-1">
         <CollabButton active={active} shareUrl={shareUrl} />
         <Button
