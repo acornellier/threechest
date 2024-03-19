@@ -156,6 +156,7 @@ $fancy-green: #1d7f1f;
 
 input.fancy {
   background-color: rgb(78 78 87);
+  padding: 8px;
 }
 
 @mixin fancy-shadow($two-d: false, $color: $fancy-red) {

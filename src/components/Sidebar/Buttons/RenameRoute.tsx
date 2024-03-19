@@ -31,7 +31,7 @@ export function RenameRoute({ isRenaming, setRenaming }: Props) {
     <>
       {isRenaming && (
         <input
-          className="p-2 w-full bg-gray-100 rounded-md fancy"
+          className="fancy w-full rounded-md"
           autoFocus
           placeholder="Route name"
           onKeyDown={(e) => {
@@ -53,9 +53,7 @@ export function RenameRoute({ isRenaming, setRenaming }: Props) {
         style={{ paddingLeft: 12, paddingRight: 12 }}
         disabled={isGuestCollab}
       />
-      <TooltipStyled id="rename-route-tooltip" place="bottom-start">
-        Rename route
-      </TooltipStyled>
+      <TooltipStyled id="rename-route-tooltip">Rename route</TooltipStyled>
     </>
   )
 }

@@ -7,6 +7,8 @@ import {
   selectLocalAwareness,
   useAppDispatch,
   useRootSelector,
+  useSavedCollabColor,
+  useSavedCollabName,
 } from '../../store/hooks.ts'
 import {
   setAwarenessStates,
@@ -27,6 +29,8 @@ export function Collab() {
   const dispatch = useAppDispatch()
   const room = useRootSelector((state) => state.collab.room)
   const startedCollab = useRootSelector((state) => state.collab.startedCollab)
+  const [savedName] = useSavedCollabName()
+  const [savedColor] = useSavedCollabColor()
   const leafletMap = useMap()
 
   const [yObjects, setYObjects] = useState<{ map: Y.Map<Route>; provider: WebrtcProvider }>()
@@ -41,10 +45,10 @@ export function Collab() {
       setInitialAwareness({
         clientId: doc.clientID,
         isCurrentClient: true,
-        name: generateSlug(2, { format: 'title' }),
+        name: savedName || generateSlug(2, { format: 'title' }),
         clientType: startedCollab ? 'host' : 'guest',
         joinTime: new Date().getTime(),
-        color: null,
+        color: savedColor || null,
       }),
     )
 

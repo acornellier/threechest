@@ -1,15 +1,18 @@
 import { Button } from '../Common/Button.tsx'
 import { useAppDispatch, useRootSelector } from '../../store/hooks.ts'
-import { endCollab, joinCollab, startCollab } from '../../store/reducers/collabReducer.ts'
-import { useCallback, useEffect } from 'react'
-import { Cog8ToothIcon, ShareIcon, UserGroupIcon } from '@heroicons/react/24/outline'
+import { joinCollab } from '../../store/reducers/collabReducer.ts'
+import { useCallback, useEffect, useState } from 'react'
+import { Cog8ToothIcon, ShareIcon } from '@heroicons/react/24/outline'
 import { addToast } from '../../store/reducers/toastReducer.ts'
-import { generateSlug } from 'random-word-slugs'
 import { Panel } from '../Common/Panel.tsx'
 import { AwarenessClients } from './AwarenessClients.tsx'
+import { CollabSettings } from './CollabSettings.tsx'
+import { CollabButton } from './CollabButton.tsx'
+import { TooltipStyled } from '../Common/TooltipStyled.tsx'
 
 export function CollabPanel() {
   const dispatch = useAppDispatch()
+  const [collabSettingsOpen, setCollabSettingsOpen] = useState(false)
   const { active, room } = useRootSelector((state) => state.collab)
 
   useEffect(() => {
@@ -27,19 +30,6 @@ export function CollabPanel() {
     await navigator.clipboard.writeText(url)
   }, [])
 
-  const onClick = useCallback(async () => {
-    if (active) {
-      dispatch(endCollab())
-      window.history.replaceState({}, '', window.location.origin)
-      dispatch(addToast({ message: 'Collab ended.', type: 'info' }))
-    } else {
-      const room = generateSlug()
-      dispatch(startCollab(room))
-      await shareUrl(room)
-      dispatch(addToast({ message: 'Collab started! URL copied to clipboard.' }))
-    }
-  }, [dispatch, active, shareUrl])
-
   const onShare = useCallback(async () => {
     await shareUrl(room)
     dispatch(addToast({ message: 'Collab URL copied to clipboard.' }))
@@ -48,18 +38,15 @@ export function CollabPanel() {
   return (
     <Panel noRightBorder>
       <div className="flex gap-1">
+        <CollabButton active={active} shareUrl={shareUrl} />
         <Button
-          color={active ? 'green' : 'red'}
-          Icon={UserGroupIcon}
-          outline={!active}
+          data-tooltip-id="collab-settings-tooltip"
+          outline
           short
-          twoDimensional={active}
-          onClick={onClick}
-          className="w-full"
-        >
-          {!active ? 'Start Collab' : 'Collab active'}
-        </Button>
-        <Button outline short Icon={Cog8ToothIcon}></Button>
+          Icon={Cog8ToothIcon}
+          onClick={() => setCollabSettingsOpen(true)}
+        />
+        <TooltipStyled id="collab-settings-tooltip">Collab settings</TooltipStyled>
       </div>
       {active && (
         <div className="flex gap-1">
@@ -69,6 +56,7 @@ export function CollabPanel() {
         </div>
       )}
       {active && <AwarenessClients />}
+      {collabSettingsOpen && <CollabSettings onClose={() => setCollabSettingsOpen(false)} />}
     </Panel>
   )
 }

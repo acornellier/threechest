@@ -32,7 +32,7 @@ function hexToRgb(hex: string): [number, number, number] | null {
 export const rgbToHex = (r: number, g: number, b: number) =>
   '#' +
   [r, g, b]
-    .map((v) => Math.round(v * 255))
+    .map((v) => (v <= 1 ? Math.round(v * 255) : v))
     .map((x) => {
       const hex = x.toString(16)
       return hex.length === 1 ? '0' + hex : hex

@@ -8,6 +8,7 @@ import { HoverState } from './reducers/hoverReducer.ts'
 import { findMobSpawn } from '../util/mobSpawns.ts'
 import { useEffect, useState } from 'react'
 import { CollabState } from './reducers/collabReducer.ts'
+import { useLocalStorage } from '../hooks/useLocalStorage.ts'
 
 export const useAppDispatch: () => AppDispatch = useDispatch
 
@@ -86,3 +87,6 @@ export function useIsGuestCollab() {
 
 export const selectAwarenessStates = (state: RootState) => state.collab.awarenessStates
 export const useAwarenessStates = () => useRootSelector(selectAwarenessStates)
+export const useLocalAwareness = () => useRootSelector(selectLocalAwareness)
+export const useSavedCollabName = () => useLocalStorage('collab-name', '')
+export const useSavedCollabColor = () => useLocalStorage('collab-color', '')

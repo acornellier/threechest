@@ -18,9 +18,7 @@ export function DuplicateRoute() {
         onClick={() => dispatch(duplicateRoute())}
         disabled={isGuestCollab}
       />
-      <TooltipStyled id="duplicate-route-tooltip" place="bottom-start">
-        Duplicate route
-      </TooltipStyled>
+      <TooltipStyled id="duplicate-route-tooltip">Duplicate route</TooltipStyled>
     </>
   )
 }

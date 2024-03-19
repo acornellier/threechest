@@ -124,6 +124,18 @@ export const collabSlice = createSlice({
 
       localAwareness.mousePosition = mousePosition
     },
+    setCollabName(state, { payload: name }: PayloadAction<string>) {
+      const localAwareness = getLocalAwareness(state)
+      if (!localAwareness) return
+
+      localAwareness.name = name
+    },
+    setCollabColor(state, { payload: color }: PayloadAction<string>) {
+      const localAwareness = getLocalAwareness(state)
+      if (!localAwareness) return
+
+      localAwareness.color = color
+    },
   },
 })
 
@@ -136,4 +148,6 @@ export const {
   setAwarenessStates,
   promoteToHost,
   setMousePosition,
+  setCollabName,
+  setCollabColor,
 } = collabSlice.actions

@@ -3,7 +3,7 @@ import { forwardRef } from 'react'
 import { isMobile } from '../../util/dev.ts'
 
 interface Props extends ITooltip {
-  padding: number
+  padding?: number
 }
 
 export const TooltipStyled = forwardRef<TooltipRefProps, Props>(function TooltipStyled(
@@ -18,10 +18,8 @@ export const TooltipStyled = forwardRef<TooltipRefProps, Props>(function Tooltip
       className={`z-40 max-w-sm ${className}`}
       border="1px solid #9ca3af"
       opacity={1}
-      place="top-start"
-      style={{
-        padding,
-      }}
+      place="bottom-start"
+      style={{ ...(padding ? { padding } : {}) }}
       {...props}
     />
   )

@@ -111,7 +111,7 @@ function NoteComponent({ note, noteIndex, iconScaling }: Props) {
           <input
             ref={inputRef}
             autoFocus
-            className="p-2 w-full bg-gray-100 fancy min-w-32"
+            className="fancy w-full min-w-32"
             onKeyDown={(e) => {
               if (e.key === 'Enter') markerRef.current?.closePopup()
             }}

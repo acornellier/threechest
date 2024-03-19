@@ -18,9 +18,7 @@ export function NewRoute() {
         onClick={() => dispatch(newRoute())}
         disabled={isGuestCollab}
       />
-      <TooltipStyled id="new-route-tooltip" place="bottom-start">
-        New empty route
-      </TooltipStyled>
+      <TooltipStyled id="new-route-tooltip">New empty route</TooltipStyled>
     </>
   )
 }

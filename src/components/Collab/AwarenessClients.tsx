@@ -1,11 +1,9 @@
 import { useAwarenessStates } from '../../store/hooks.ts'
 import { getTextColor } from '../../util/colors.ts'
-import { useState } from 'react'
 import { TooltipStyled } from '../Common/TooltipStyled.tsx'
 
 export function AwarenessClients() {
   const awarenessStates = useAwarenessStates()
-  const [showGuests, setShowGuests] = useState(false)
 
   const host = awarenessStates.find(({ clientType }) => clientType === 'host')
   const guests = awarenessStates.filter(({ clientType }) => clientType !== 'host')
@@ -37,7 +35,7 @@ export function AwarenessClients() {
             <div className="cursor-default" data-tooltip-id="collab-guests-tooltip">
               Guests: {guests.length}
             </div>
-            <TooltipStyled id="collab-guests-tooltip" place="bottom-start" padding={4}>
+            <TooltipStyled id="collab-guests-tooltip" padding={4}>
               <div className="flex flex-col gap-1">
                 {guests.map((awareness) => (
                   <div

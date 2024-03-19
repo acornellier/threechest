@@ -18,9 +18,7 @@ export function DeleteRoute() {
         onClick={() => dispatch(deleteRoute())}
         disabled={isGuestCollab}
       />
-      <TooltipStyled id="delete-route-tooltip" place="bottom-start">
-        Delete route
-      </TooltipStyled>
+      <TooltipStyled id="delete-route-tooltip">Delete route</TooltipStyled>
     </>
   )
 }

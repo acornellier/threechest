@@ -5,7 +5,8 @@ import { useOutsideClick } from '../../hooks/useOutsideClick.ts'
 interface Props {
   title: ReactNode
   onClose: () => void
-  contents: ReactNode
+  contents?: ReactNode
+  children?: ReactNode
   buttons?: ReactNode
   closeOnEscape?: boolean
   closeOnClickOutside?: boolean
@@ -14,6 +15,7 @@ interface Props {
 export function Modal({
   title,
   contents,
+  children,
   buttons,
   onClose,
   closeOnEscape,
@@ -39,7 +41,7 @@ export function Modal({
         <div className="flex flex-col w-full h-full justify-center gap-5 p-5">
           <h3 className="text-xl font-semibold text-center">{title}</h3>
 
-          <div className="leading-relaxed">{contents}</div>
+          <div className="leading-relaxed">{contents ?? children}</div>
 
           {buttons && <div className="flex justify-center items-center gap-2">{buttons}</div>}
         </div>
