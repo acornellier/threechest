@@ -3,7 +3,6 @@ import { useStore } from 'react-redux'
 import { Action, Store } from 'redux'
 import { Awareness } from 'y-protocols/awareness.js'
 import { cachedSubscribe } from './redux-subscriber.ts'
-import { isEqual } from 'moderndash'
 
 export type BaseAwarenessState = {
   clientId: number
@@ -26,7 +25,6 @@ const syncLocalIntoRemote = <T extends BaseAwarenessState>(
 const syncRemoteIntoLocal = <T extends BaseAwarenessState>(
   awareness: Awareness,
   store: Store<any, Action>,
-  selectAwarenessStates: (state: any) => T[] | undefined,
   setAwarenessStates: (awarenessStates: T[]) => Action,
 ): void => {
   const states: T[] = [...awareness.getStates().entries()].map(([clientId, state]) => ({
@@ -35,16 +33,7 @@ const syncRemoteIntoLocal = <T extends BaseAwarenessState>(
     isCurrentClient: awareness.clientID === Number(clientId),
   }))
 
-  const latestReduxAwareness = selectAwarenessStates(store.getState())
-
   // console.debug('[SyncYAwareness:syncRemoteIntoLocal] Syncing')
-  if (isEqual(states, latestReduxAwareness)) {
-    // console.debug(
-    //   '[SyncYAwareness:syncRemoteIntoLocal] Not syncing: Remote already equals local data',
-    // )
-    return
-  }
-
   store.dispatch(setAwarenessStates(states))
 }
 
@@ -52,12 +41,10 @@ export const SyncYAwareness = <T extends BaseAwarenessState>({
   awareness,
   setAwarenessStates,
   selectLocalAwarenessState,
-  selectAwarenessStates,
 }: {
   awareness: Awareness
   setAwarenessStates: (awarenessStates: T[]) => Action
   selectLocalAwarenessState: (state: any) => T | undefined
-  selectAwarenessStates: (state: any) => T[] | undefined
 }): null => {
   const store = useStore()
 
@@ -77,8 +64,9 @@ export const SyncYAwareness = <T extends BaseAwarenessState>({
 
   // Subscribe to remote changes
   useEffect(() => {
-    const observer = (): void => {
-      syncRemoteIntoLocal(awareness, store, selectAwarenessStates, setAwarenessStates)
+    const observer = (_changes: unknown, origin: 'local' | unknown): void => {
+      if (origin === 'local') return
+      syncRemoteIntoLocal(awareness, store, setAwarenessStates)
     }
 
     awareness.on('change', observer)
@@ -86,7 +74,7 @@ export const SyncYAwareness = <T extends BaseAwarenessState>({
     return () => {
       awareness.off('change', observer)
     }
-  }, [awareness, selectAwarenessStates, setAwarenessStates, store])
+  }, [awareness, setAwarenessStates, store])
 
   return null
 }

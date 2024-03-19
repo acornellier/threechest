@@ -3,7 +3,6 @@ import * as Y from 'yjs'
 import { WebrtcProvider } from 'y-webrtc'
 import { SyncYAwareness, SyncYJson } from './YRedux'
 import {
-  selectAwarenessStates,
   selectLocalAwareness,
   useAppDispatch,
   useRootSelector,
@@ -81,7 +80,6 @@ export function Collab() {
         awareness={provider.awareness}
         setAwarenessStates={setAwarenessStates}
         selectLocalAwarenessState={selectLocalAwareness}
-        selectAwarenessStates={selectAwarenessStates}
       />
       <AwarenessCursors />
     </>
