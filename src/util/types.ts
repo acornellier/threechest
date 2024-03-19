@@ -4,7 +4,7 @@ import { ForwardRefExoticComponent, PropsWithoutRef, SVGProps } from 'react'
 export type Pull = {
   id: number
   spawns: SpawnId[]
-  spawnsBackup: SpawnId[]
+  spawnsBackup?: SpawnId[]
 }
 
 export type SavedRoute = {

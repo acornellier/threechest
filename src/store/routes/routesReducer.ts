@@ -16,7 +16,7 @@ export interface RouteState {
   savedRoutes: SavedRoute[]
 }
 
-const emptyPull: Pull = { id: 0, spawns: [], spawnsBackup: [] }
+const emptyPull: Pull = { id: 0, spawns: [] }
 
 export const newRouteUid = () => Math.random().toString(36).slice(2)
 
@@ -185,7 +185,7 @@ const baseReducer = createSlice({
     },
     boxSelectEnd(state) {
       const pull = state.route.pulls[state.selectedPull]
-      if (pull) pull.spawnsBackup = []
+      if (pull) delete pull.spawnsBackup
     },
     setPulls(state, { payload }: PayloadAction<Pull[]>) {
       state.route.pulls = payload

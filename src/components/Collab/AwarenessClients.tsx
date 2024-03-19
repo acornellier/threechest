@@ -47,6 +47,7 @@ export function AwarenessClients() {
                     }}
                   >
                     {awareness.name}
+                    {awareness.isCurrentClient && <b> (You)</b>}
                   </div>
                 ))}
               </div>

@@ -75,8 +75,8 @@ export function boxSelectSpawnsAction(
   )
 
   const spawns = !inverse
-    ? joinSpawns(pull.spawnsBackup, availableHoveredSpawns)
-    : subtractSpawns(pull.spawnsBackup, availableHoveredSpawns)
+    ? joinSpawns(pull.spawnsBackup ?? [], availableHoveredSpawns)
+    : subtractSpawns(pull.spawnsBackup ?? [], availableHoveredSpawns)
 
   if (
     spawns.length === pull.spawns.length &&
@@ -90,7 +90,7 @@ export function boxSelectSpawnsAction(
 
 export function addPullFunc(state: RouteState, newPullIndex: number = state.route.pulls.length) {
   const maxId = state.route.pulls.reduce<number>((acc, pull) => (pull.id > acc ? pull.id : acc), 0)
-  const newPull: Pull = { id: maxId + 1, spawns: [], spawnsBackup: [] }
+  const newPull: Pull = { id: maxId + 1, spawns: [] }
   state.route.pulls.splice(newPullIndex, 0, newPull)
   state.selectedPull = Math.max(0, Math.min(newPullIndex, state.route.pulls.length - 1))
 }

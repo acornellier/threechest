@@ -1,5 +1,5 @@
-﻿import { AppDispatch, RootState } from './store.ts'
-import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux'
+﻿import { AppDispatch, RootState, store } from './store.ts'
+import { TypedUseSelectorHook, useDispatch, useSelector, UseStore, useStore } from 'react-redux'
 import { dungeonsByKey } from '../data/dungeons.ts'
 import { RouteState } from './routes/routesReducer.ts'
 import { DungeonKey } from '../data/types.ts'
@@ -10,8 +10,8 @@ import { useEffect, useState } from 'react'
 import { CollabState } from './reducers/collabReducer.ts'
 import { useLocalStorage } from '../hooks/useLocalStorage.ts'
 
+export const useAppStore = useStore as UseStore<typeof store>
 export const useAppDispatch: () => AppDispatch = useDispatch
-
 export const useRootSelector: TypedUseSelectorHook<RootState> = useSelector
 
 export const useRoutesSelector = <T>(selector: (state: RouteState) => T): T =>

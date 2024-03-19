@@ -1,8 +1,9 @@
 import { useEffect } from 'react'
-import { useStore } from 'react-redux'
-import { Action, Store } from 'redux'
+import { Action } from 'redux'
 import { Awareness } from 'y-protocols/awareness.js'
 import { cachedSubscribe } from './redux-subscriber.ts'
+import { useAppStore } from '../../../store/hooks.ts'
+import { AppStore, RootState } from '../../../store/store.ts'
 
 export type BaseAwarenessState = {
   clientId: number
@@ -24,7 +25,7 @@ const syncLocalIntoRemote = <T extends BaseAwarenessState>(
 
 const syncRemoteIntoLocal = <T extends BaseAwarenessState>(
   awareness: Awareness,
-  store: Store<any, Action>,
+  store: AppStore,
   setAwarenessStates: (awarenessStates: T[]) => Action,
 ): void => {
   const states: T[] = [...awareness.getStates().entries()].map(([clientId, state]) => ({
@@ -44,9 +45,9 @@ export const SyncYAwareness = <T extends BaseAwarenessState>({
 }: {
   awareness: Awareness
   setAwarenessStates: (awarenessStates: T[]) => Action
-  selectLocalAwarenessState: (state: any) => T | undefined
+  selectLocalAwarenessState: (state: RootState) => T | undefined
 }): null => {
-  const store = useStore()
+  const store = useAppStore()
 
   // On mount sync local into remote
   useEffect(() => {
