@@ -2,10 +2,12 @@ import { ITooltip, Tooltip, TooltipRefProps } from 'react-tooltip'
 import { forwardRef } from 'react'
 import { isMobile } from '../../util/dev.ts'
 
-interface Props extends ITooltip {}
+interface Props extends ITooltip {
+  padding: number
+}
 
 export const TooltipStyled = forwardRef<TooltipRefProps, Props>(function TooltipStyled(
-  { className, ...props },
+  { className, padding, ...props },
   ref,
 ) {
   if (isMobile) return null
@@ -13,10 +15,13 @@ export const TooltipStyled = forwardRef<TooltipRefProps, Props>(function Tooltip
   return (
     <Tooltip
       ref={ref}
-      className={`z-10 max-w-sm ${className}`}
+      className={`z-40 max-w-sm ${className}`}
       border="1px solid #9ca3af"
       opacity={1}
       place="top-start"
+      style={{
+        padding,
+      }}
       {...props}
     />
   )

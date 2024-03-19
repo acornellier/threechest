@@ -18,9 +18,8 @@ export function Panel({ row, children, className, innerClass, blue, noRightBorde
                   ${className ?? ''}`}
     >
       <div
-        className={`gritty absolute w-full h-full bg-gray-950 opacity-85 z-[-1] ${
-          blue ? 'bg-fancy-blue opacity-95' : ''
-        }`}
+        className={`gritty absolute w-full h-full bg-gray-950 opacity-85 z-[-1] rounded-md
+                    ${blue ? 'bg-fancy-blue opacity-95' : ''}`}
       />
       <div className={`flex ${row ? '' : 'flex-col'} gap-2 p-2 w-full ${innerClass ?? ''}`}>
         {children}
