@@ -30,6 +30,7 @@ export function ExportRoute() {
       className="flex-1"
       onClick={handleClick}
       shortcut={{ key: 'C', ctrl: true }}
+      justifyStart
     >
       Export MDT
     </Button>

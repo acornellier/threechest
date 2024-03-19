@@ -8,7 +8,7 @@ import { Footer } from '../Header/Footer.tsx'
 
 const marginTop = 8
 const marginBottom = 60
-const width = 285
+const width = 290
 
 export function Sidebar() {
   const [collapsed, setCollapsed] = useState(false)
