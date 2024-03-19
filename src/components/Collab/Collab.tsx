@@ -16,7 +16,7 @@ import {
 import { RootState } from '../../store/store.ts'
 import { Route } from '../../util/types.ts'
 import { setRoute } from '../../store/routes/routesReducer.ts'
-import { AwarenessVisuals } from './AwarenessVisuals.tsx'
+import { AwarenessCursors } from './AwarenessCursors.tsx'
 import { useMap } from 'react-leaflet'
 import { LeafletMouseEvent } from 'leaflet'
 import { generateSlug } from 'random-word-slugs'
@@ -44,6 +44,7 @@ export function Collab() {
         name: generateSlug(2, { format: 'title' }),
         clientType: startedCollab ? 'host' : 'guest',
         joinTime: new Date().getTime(),
+        color: null,
       }),
     )
 
@@ -78,7 +79,7 @@ export function Collab() {
         selectLocalAwarenessState={selectLocalAwareness}
         selectAwarenessStates={selectAwarenessStates}
       />
-      <AwarenessVisuals />
+      <AwarenessCursors />
     </>
   )
 }

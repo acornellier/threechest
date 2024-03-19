@@ -11,7 +11,7 @@ export interface AwarenessState extends BaseAwarenessState {
   name: string
   clientType: ClientType
   joinTime: number
-  color?: string
+  color: string | null
   mousePosition?: LatLng | null
 }
 
@@ -48,7 +48,7 @@ function setAwarenessColor(state: CollabState, localAwareness: AwarenessState) {
   const takenColors = state.awarenessStates.map(({ color }) => color)
   const availableColors = highContrastColors.filter((color) => !takenColors.includes(color))
   const colors = availableColors.length ? availableColors : highContrastColors
-  localAwareness.color = colors[Math.floor(Math.random() * colors.length)]
+  localAwareness.color = colors[Math.floor(Math.random() * colors.length)]!
 }
 
 function checkForNoHost(state: CollabState, localAwareness: AwarenessState) {

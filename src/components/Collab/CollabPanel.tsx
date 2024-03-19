@@ -6,6 +6,7 @@ import { Cog8ToothIcon, ShareIcon, UserGroupIcon } from '@heroicons/react/24/out
 import { addToast } from '../../store/reducers/toastReducer.ts'
 import { generateSlug } from 'random-word-slugs'
 import { Panel } from '../Common/Panel.tsx'
+import { AwarenessClients } from './AwarenessClients.tsx'
 
 export function CollabPanel() {
   const dispatch = useAppDispatch()
@@ -52,12 +53,13 @@ export function CollabPanel() {
           Icon={UserGroupIcon}
           outline={!active}
           short
+          twoDimensional={active}
           onClick={onClick}
           className="w-full"
         >
           {!active ? 'Start Collab' : 'Collab active'}
         </Button>
-        <Button outline short Icon={Cog8ToothIcon} />
+        <Button outline short Icon={Cog8ToothIcon}></Button>
       </div>
       {active && (
         <div className="flex gap-1">
@@ -66,6 +68,7 @@ export function CollabPanel() {
           </Button>
         </div>
       )}
+      {active && <AwarenessClients />}
     </Panel>
   )
 }

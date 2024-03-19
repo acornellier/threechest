@@ -38,7 +38,7 @@ function AwarenessCursor({ awareness }: { awareness: AwarenessState }) {
   )
 }
 
-export function AwarenessVisuals() {
+export function AwarenessCursors() {
   const awarenessStates = useAwarenessStates()
 
   return (
