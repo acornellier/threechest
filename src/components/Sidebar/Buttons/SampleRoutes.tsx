@@ -5,7 +5,8 @@ import { sampleRoutes } from '../../../data/sampleRoutes/sampleRoutes.ts'
 import { useAppDispatch, useDungeon, useIsGuestCollab } from '../../../store/hooks.ts'
 import { setPreviewRouteAsync } from '../../../store/reducers/importReducer.ts'
 import { MagnifyingGlassIcon } from '@heroicons/react/24/outline'
-import { newRouteUid, setRoute } from '../../../store/routes/routesReducer.ts'
+import { setRouteFromSample } from '../../../store/routes/routesReducer.ts'
+import { addToast } from '../../../store/reducers/toastReducer.ts'
 
 interface SampleRouteOption extends DropdownOption {
   route: Route
@@ -40,7 +41,8 @@ export function SampleRoutes() {
 
   const onSelect = useCallback(
     (option: SampleRouteOption) => {
-      dispatch(setRoute({ ...option.route, uid: newRouteUid() }))
+      dispatch(setRouteFromSample(option.route))
+      dispatch(addToast({ message: `Imported ${option.route.name} as a copy` }))
     },
     [dispatch],
   )

@@ -98,6 +98,11 @@ function setRouteFresh(state: RouteState, route: Route) {
   state.route = route
 }
 
+function giveRouteNewNameUid(state: RouteState, route: Route) {
+  route.uid = newRouteUid()
+  route.name = nextName(route.name, route.dungeonKey, state.savedRoutes)
+}
+
 const baseReducer = createSlice({
   name: 'routes',
   initialState,
@@ -110,20 +115,20 @@ const baseReducer = createSlice({
       setRouteFresh(state, route)
     },
     duplicateRoute(state) {
-      state.route.uid = newRouteUid()
-      state.route.name = nextName(state.route.name, state.route.dungeonKey, state.savedRoutes)
+      giveRouteNewNameUid(state, state.route)
     },
     setRouteFromMdt(
       state,
       { payload: { mdtRoute, copy } }: PayloadAction<{ mdtRoute: MdtRoute; copy?: boolean }>,
     ) {
       const route = mdtRouteToRoute(mdtRoute)
-      if (copy) {
-        route.uid = newRouteUid()
-        route.name = nextName(route.name, route.dungeonKey, state.savedRoutes)
-      }
-
+      if (copy) giveRouteNewNameUid(state, route)
       setRouteFresh(state, route)
+    },
+    setRouteFromSample(state, { payload: route }: PayloadAction<Route>) {
+      const newRoute = { ...route }
+      giveRouteNewNameUid(state, newRoute)
+      setRouteFresh(state, newRoute)
     },
     clearRoute(state) {
       state.route.pulls = [emptyPull]
@@ -292,6 +297,7 @@ export const {
   duplicateRoute,
   setRoute,
   setRouteFromMdt,
+  setRouteFromSample,
   clearRoute,
   setName,
   addPull,

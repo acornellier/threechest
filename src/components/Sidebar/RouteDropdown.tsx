@@ -32,8 +32,16 @@ export function RouteDropdown({ onOpen, onClose }: Props) {
     [options, route.uid],
   )
 
+  const onSelect = useCallback(
+    async (option: DropdownOption) => {
+      dispatch(loadRoute(option.id))
+    },
+    [dispatch],
+  )
+
   const onHover = useCallback(
     async (option: DropdownOption | null) => {
+      console.log('onHover', option)
       dispatch(setPreviewRouteAsync(option ? { routeId: option.id } : null))
     },
     [dispatch],
@@ -43,7 +51,7 @@ export function RouteDropdown({ onOpen, onClose }: Props) {
     <Dropdown
       options={options}
       selected={selected}
-      onSelect={(option) => dispatch(loadRoute(option.id))}
+      onSelect={onSelect}
       onHover={onHover}
       disabled={isGuestCollab}
       onOpen={onOpen}

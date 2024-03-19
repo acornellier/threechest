@@ -11,6 +11,7 @@ import {
   newRoute,
   setDungeon,
   setRouteFromMdt,
+  setRouteFromSample,
   updateSavedRoutes,
 } from './routes/routesReducer.ts'
 
@@ -68,6 +69,7 @@ listenerMiddleware.startListening({
     loadRoute.fulfilled,
     duplicateRoute,
     setRouteFromMdt,
+    setRouteFromSample,
     newRoute,
   ),
   effect: async (_action, listenerApi) => {
