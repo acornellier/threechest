@@ -1,26 +1,25 @@
-import { useEffect, useState } from 'react'
+import { useCallback, useState } from 'react'
+import { useWindowEvent } from './useWindowEvent.ts'
 
 export function useKeyHeld(key: string): boolean {
   const [isKeyHeld, setKeyHeld] = useState(false)
 
-  useEffect(() => {
-    const handleKeyDown = (event: KeyboardEvent) => {
+  const handleKeyDown = useCallback(
+    (event: KeyboardEvent) => {
       if (event.key === key) setKeyHeld(true)
-    }
+    },
+    [key],
+  )
 
-    const handleKeyUp = (event: KeyboardEvent) => {
+  const handleKeyUp = useCallback(
+    (event: KeyboardEvent) => {
       if (event.key === key) setKeyHeld(false)
-    }
+    },
+    [key],
+  )
 
-    window.addEventListener('keydown', handleKeyDown)
-    window.addEventListener('keyup', handleKeyUp)
-
-    // Cleanup function to remove event listeners when the component unmounts
-    return () => {
-      window.removeEventListener('keydown', handleKeyDown)
-      window.removeEventListener('keyup', handleKeyUp)
-    }
-  }, [key]) // Update effect when `key` changes
+  useWindowEvent('keydown', handleKeyDown)
+  useWindowEvent('keyup', handleKeyUp)
 
   return isKeyHeld
 }
