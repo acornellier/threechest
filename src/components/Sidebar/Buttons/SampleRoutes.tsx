@@ -45,6 +45,7 @@ export function SampleRoutes({ hidden }: Props) {
 
   const onSelect = useCallback(
     (option: SampleRouteOption) => {
+      dispatch(setPreviewRouteAsync(null))
       dispatch(setRouteFromSample(option.route))
       dispatch(addToast({ message: `Imported ${option.route.name} as a copy` }))
     },
