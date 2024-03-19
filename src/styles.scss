@@ -5,6 +5,7 @@
 $fancy-red: #7f1d1d;
 $fancy-blue: #131a34;
 $fancy-green: #1d7f1f;
+$fancy-yellow: #7f6b1d;
 
 :root {
   background-color: #242424;
@@ -140,6 +141,10 @@ $fancy-green: #1d7f1f;
   &.green {
     background-color: $fancy-green;
   }
+
+  &.yellow {
+    background-color: $fancy-yellow;
+  }
 }
 
 .bg-fancy-red {
@@ -205,6 +210,10 @@ input.fancy {
     @include fancy-shadow(false, $fancy-green);
   }
 
+  &.yellow {
+    @include fancy-shadow(false, $fancy-yellow);
+  }
+
   &-inner {
     position: relative;
     width: 100%;
@@ -256,6 +265,10 @@ input.fancy {
 
     &.green .fancy-button-hover {
       background: radial-gradient(#3bd324, transparent);
+    }
+
+    &.yellow .fancy-button-hover {
+      background: radial-gradient(#d2ae20, transparent);
     }
 
     &.outline-button .fancy-button-hover {

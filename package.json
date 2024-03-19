@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "server": "tsx server/server.js",
-    "rtc": "PORT=1234 node node_modules/y-webrtc/bin/server.js",
+    "rtc": "node node_modules/y-webrtc/bin/server.js",
     "build": "tsc && vite build",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",

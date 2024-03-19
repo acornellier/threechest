@@ -4,7 +4,7 @@ import { useCallback } from 'react'
 import { endCollab, startCollab } from '../../store/reducers/collabReducer.ts'
 import { addToast } from '../../store/reducers/toastReducer.ts'
 import { generateSlug } from 'random-word-slugs'
-import { useAppDispatch } from '../../store/hooks.ts'
+import { useAppDispatch, useRootSelector } from '../../store/hooks.ts'
 
 interface Props {
   active: boolean
@@ -13,6 +13,7 @@ interface Props {
 
 export function CollabButton({ active, shareUrl }: Props) {
   const dispatch = useAppDispatch()
+  const wsConnected = useRootSelector((state) => state.collab.wsConnected)
 
   const onClick = useCallback(async () => {
     if (active) {
@@ -29,7 +30,7 @@ export function CollabButton({ active, shareUrl }: Props) {
 
   return (
     <Button
-      color={active ? 'green' : 'red'}
+      color={!active ? 'red' : !wsConnected ? 'yellow' : 'green'}
       Icon={UserGroupIcon}
       outline={!active}
       short
@@ -37,7 +38,7 @@ export function CollabButton({ active, shareUrl }: Props) {
       onClick={onClick}
       className="w-full"
     >
-      {!active ? 'Start Collab' : 'Collab active'}
+      {!active ? 'Start Collab' : !wsConnected ? 'Connecting...' : 'Collab active'}
     </Button>
   )
 }

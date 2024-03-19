@@ -13,7 +13,7 @@ export interface ButtonProps
   short?: boolean
   twoDimensional?: boolean
   justifyStart?: boolean
-  color?: 'red' | 'green'
+  color?: 'red' | 'green' | 'yellow'
 }
 
 function ButtonIconText({

@@ -17,7 +17,8 @@ interface Props {
 export function CollabPanel({ collapsed }: Props) {
   const dispatch = useAppDispatch()
   const [collabSettingsOpen, setCollabSettingsOpen] = useState(false)
-  const { active, room } = useRootSelector((state) => state.collab)
+  const active = useRootSelector((state) => state.collab.active)
+  const room = useRootSelector((state) => state.collab.room)
 
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search)

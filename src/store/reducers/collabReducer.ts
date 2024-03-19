@@ -18,6 +18,7 @@ export interface AwarenessState extends BaseAwarenessState {
 
 export interface CollabState {
   active: boolean
+  wsConnected: boolean
   room: string
   startedCollab: boolean
   awarenessStates: AwarenessState[]
@@ -25,6 +26,7 @@ export interface CollabState {
 
 const initialState: CollabState = {
   active: false,
+  wsConnected: false,
   room: '',
   startedCollab: false,
   awarenessStates: [],
@@ -87,7 +89,8 @@ export const setInitialAwareness = createAsyncThunk(
     await sleep(1000)
 
     state = thunkAPI.getState() as RootState
-    if (state.collab.awarenessStates.length === 1) thunkAPI.dispatch(promoteToHost())
+    if (state.collab.wsConnected && state.collab.awarenessStates.length === 1)
+      thunkAPI.dispatch(promoteToHost())
   },
 )
 
@@ -111,6 +114,9 @@ export const collabSlice = createSlice({
       state.room = room
       state.startedCollab = false
       state.awarenessStates = []
+    },
+    setWsConnected(state, { payload: connected }: PayloadAction<boolean>) {
+      state.wsConnected = connected
     },
     setAwarenessStates(state, { payload: awarenessStates }: PayloadAction<AwarenessState[]>) {
       state.awarenessStates = awarenessStates
@@ -158,6 +164,7 @@ export const {
   startCollab,
   endCollab,
   joinCollab,
+  setWsConnected,
   setAwarenessStates,
   promoteToHost,
   setMousePosition,
