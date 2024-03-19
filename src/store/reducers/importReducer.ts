@@ -52,15 +52,30 @@ export const setPreviewRouteAsync = createAsyncThunk(
   'import/previewRoute',
   async (options: { routeId: string; route?: Route } | null, thunkAPI) => {
     const state = thunkAPI.getState() as RootState
-    const curRoute = state.routes.present.route
+    const curRouteId = state.routes.present.route.uid
     const previewRouteId = state.import.previewRoute?.uid ?? null
-    const newPreviewRouteId = options?.routeId ?? null
+    let newPreviewRouteId = options?.routeId ?? null
+    if (newPreviewRouteId === curRouteId) newPreviewRouteId = null
 
-    if (newPreviewRouteId === curRoute.uid) {
+    // Cur: X, Preview: null, New: null   -> nothing
+    // Cur: X, Preview: X,    New: null   -> set(null)
+    // Cur: X, Preview: Y,    New: null   -> set(null)
+    // Cur: X, Preview: null, New: X/null -> nothing
+    // Cur: X, Preview: null, New: Y      -> set(Y)
+    // Cur: X, Preview: X,    New: X/null -> nothing
+    // Cur: X, Preview: X,    New: Y      -> set(Y)
+    // Cur: X, Preview: Y,    New: X/null -> set(null)
+    // Cur: X, Preview: Y,    New: Y      -> nothing
+
+    if (newPreviewRouteId === null && previewRouteId === null) {
+      // No change
+    } else if (newPreviewRouteId === null) {
+      // New route matches current route
+      // Clear preview if new input matches cur but not the preview
       thunkAPI.dispatch(importSlice.actions.setPreviewRoute(null))
-    } else if (previewRouteId !== newPreviewRouteId) {
-      const route =
-        options === null ? null : options.route ?? (await loadRouteFromStorage(options.routeId))
+    } else if (newPreviewRouteId !== previewRouteId) {
+      // New route differs from current and preview routes and isn't null
+      const route = options?.route ?? (await loadRouteFromStorage(newPreviewRouteId))
       thunkAPI.dispatch(importSlice.actions.setPreviewRoute(route))
     }
   },
