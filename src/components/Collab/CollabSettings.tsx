@@ -24,10 +24,13 @@ export function CollabSettings({ onClose }: Props) {
     dispatch(setCollabName(newName || generateCollabName()))
   }
 
-  const onChangeColor = (newColor: string) => {
-    setSavedColor(newColor)
-    dispatch(setCollabColor(newColor))
-  }
+  const onChangeColor = useCallback(
+    (newColor: string) => {
+      setSavedColor(newColor)
+      dispatch(setCollabColor(newColor))
+    },
+    [dispatch, setSavedColor],
+  )
 
   const canvasRef = useCallback(
     (colorWheel: HTMLCanvasElement) => {
@@ -48,7 +51,7 @@ export function CollabSettings({ onClose }: Props) {
       colorWheel.onmousedown = onMouseEvent
       colorWheel.onmousemove = onMouseEvent
     },
-    [dispatch, setSavedColor],
+    [onChangeColor],
   )
 
   return (

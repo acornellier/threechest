@@ -89,6 +89,6 @@ export const selectAwarenessStates = (state: RootState) => state.collab.awarenes
 export const useAwarenessStates = () => useRootSelector(selectAwarenessStates)
 export const useLocalAwareness = () => useRootSelector(selectLocalAwareness)
 export const savedCollabNameKey = 'collab-name'
-export const useSavedCollabName = () => useLocalStorage(savedCollabNameKey, '')
+export const useSavedCollabName = () => useLocalStorage(savedCollabNameKey, '', false)
 export const savedCollabColorKey = 'collab-color'
-export const useSavedCollabColor = () => useLocalStorage(savedCollabColorKey, '')
+export const useSavedCollabColor = () => useLocalStorage(savedCollabColorKey, '', false)
