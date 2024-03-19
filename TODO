@@ -3,6 +3,9 @@
 - Promote to host
 - Backup route
 
+- Flash after selecting a route
+- Duplicate name after importing same sample route
+- Add a toast after importing a sample route
 - Handling incompatibile dungeons and routes
 - Handle 
 - Logo
