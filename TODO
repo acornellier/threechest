@@ -1,5 +1,5 @@
 ﻿Collab
-- Joining a collab doesn't retrieve remote data. It triggers a "local" change first.
+- Connecting... on code change
 - Prevent guest from modifying route id at all costs
 - Backup route
 - Promote to host

@@ -19,7 +19,7 @@ const syncLocalIntoRemote = <T extends BaseAwarenessState>(
     return
   }
 
-  console.debug('syncLocalIntoRemote Syncing', data)
+  // console.debug('syncLocalIntoRemote Syncing', data)
   awareness.setLocalState(data)
 }
 
@@ -34,7 +34,7 @@ const syncRemoteIntoLocal = <T extends BaseAwarenessState>(
     isCurrentClient: awareness.clientID === Number(clientId),
   }))
 
-  console.debug('syncRemoteIntoLocal Syncing', states)
+  // console.debug('syncRemoteIntoLocal Syncing', states)
   store.dispatch(setAwarenessStates(states))
 }
 
@@ -67,7 +67,6 @@ export const SyncYAwareness = <T extends BaseAwarenessState>({
   useEffect(() => {
     let initialAwarenessReceived = false
     const observer = (_changes: unknown, origin: 'local' | unknown): void => {
-      console.log('ob', _changes, origin, initialAwarenessReceived, awareness)
       if (origin === 'local' && !initialAwarenessReceived) return
 
       initialAwarenessReceived = true

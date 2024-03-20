@@ -9,9 +9,9 @@ export type ClientType = 'host' | 'guest'
 
 export interface AwarenessState extends BaseAwarenessState {
   name: string
-  clientType: ClientType
-  joinTime: number
-  color: string | null
+  clientType?: ClientType
+  joinTime?: number
+  color?: string | null
   mousePosition?: LatLng | null
 }
 
@@ -128,7 +128,6 @@ export const {
   setWsConnected,
   setAwarenessStates,
   setLocalAwareness,
-  promoteToHost,
   setMousePosition,
   setCollabName,
   setCollabColor,

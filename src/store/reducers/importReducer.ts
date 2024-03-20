@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { MdtRoute, Route } from '../../util/types.ts'
 import { importRouteApi } from '../../api/importRouteApi.ts'
-import { RootState } from '../store.ts'
+import { AppDispatch, RootState } from '../store.ts'
 import { loadRouteFromStorage, setRouteFromMdt } from '../routes/routesReducer.ts'
 
 export interface ImportState {
@@ -52,6 +52,8 @@ export const setPreviewRouteAsync = createAsyncThunk(
   'import/previewRoute',
   async (options: { routeId: string; route?: Route } | null, thunkAPI) => {
     const state = thunkAPI.getState() as RootState
+    const dispatch = thunkAPI.dispatch as AppDispatch
+
     const curRouteId = state.routes.present.route.uid
     const previewRouteId = state.import.previewRoute?.uid ?? null
     let newPreviewRouteId = options?.routeId ?? null
@@ -72,11 +74,11 @@ export const setPreviewRouteAsync = createAsyncThunk(
     } else if (newPreviewRouteId === null) {
       // New route matches current route
       // Clear preview if new input matches cur but not the preview
-      thunkAPI.dispatch(importSlice.actions.setPreviewRoute(null))
+      dispatch(importSlice.actions.setPreviewRoute(null))
     } else if (newPreviewRouteId !== previewRouteId) {
       // New route differs from current and preview routes and isn't null
-      const route = options?.route ?? (await loadRouteFromStorage(newPreviewRouteId))
-      thunkAPI.dispatch(importSlice.actions.setPreviewRoute(route))
+      const route = options?.route ?? (await loadRouteFromStorage(newPreviewRouteId, dispatch))
+      dispatch(importSlice.actions.setPreviewRoute(route))
     }
   },
 )
