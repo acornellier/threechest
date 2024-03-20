@@ -5,7 +5,6 @@ import { importRoute } from './reducers/importReducer.ts'
 import { REHYDRATE } from 'redux-persist/es/constants'
 import { ActionCreators } from 'redux-undo'
 import {
-  deleteRoute,
   duplicateRoute,
   loadRoute,
   newRoute,
@@ -30,19 +29,6 @@ listenerMiddleware.startListening({
     } else {
       listenerApi.dispatch(addToast({ message: `Route imported: ${mdtRoute.text}` }))
     }
-  },
-})
-
-listenerMiddleware.startListening({
-  matcher: isAnyOf(setDungeon.rejected, loadRoute.rejected, deleteRoute.rejected),
-  effect: async ({ error, type }, listenerApi) => {
-    console.error((error as Error).stack)
-    listenerApi.dispatch(
-      addToast({
-        message: `Error during action ${type}: ${(error as Error).message}`,
-        type: 'error',
-      }),
-    )
   },
 })
 

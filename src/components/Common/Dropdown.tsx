@@ -110,9 +110,7 @@ export function Dropdown<T extends DropdownOption>({
             {selected?.icon && <div className="mr-1">{selected?.icon}</div>}
             {selected?.content ? (
               <div className="dropdown-main-text">{selected?.content}</div>
-            ) : (
-              buttonText ?? null
-            )}
+            ) : null}
             <ChevronIcon width={20} height={20} className="ml-auto" />
           </>
         )}

@@ -4,7 +4,7 @@ import { useCallback } from 'react'
 import { endCollab, startCollab } from '../../store/reducers/collabReducer.ts'
 import { addToast } from '../../store/reducers/toastReducer.ts'
 import { generateSlug } from 'random-word-slugs'
-import { useAppDispatch, useRootSelector } from '../../store/hooks.ts'
+import { useAppDispatch, useIsGuestCollab, useRootSelector } from '../../store/hooks.ts'
 
 interface Props {
   active: boolean
@@ -14,6 +14,7 @@ interface Props {
 export function CollabButton({ active, shareUrl }: Props) {
   const dispatch = useAppDispatch()
   const wsConnected = useRootSelector((state) => state.collab.wsConnected)
+  const isGuestCollab = useIsGuestCollab()
 
   const onClick = useCallback(async () => {
     if (active) {
@@ -38,7 +39,13 @@ export function CollabButton({ active, shareUrl }: Props) {
       onClick={onClick}
       className="w-full"
     >
-      {!active ? 'Start Collab' : !wsConnected ? 'Connecting...' : 'Collab active'}
+      {!active
+        ? 'Start Collab'
+        : !wsConnected
+          ? 'Connecting...'
+          : isGuestCollab
+            ? 'Collab guest'
+            : 'Collab host'}
     </Button>
   )
 }

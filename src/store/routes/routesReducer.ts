@@ -5,10 +5,11 @@ import { mdtRouteToRoute } from '../../util/mdtUtil.ts'
 import undoable, { combineFilters, excludeAction, includeAction } from 'redux-undo'
 import { addPullFunc, boxSelectSpawnsAction, toggleSpawnAction } from './routeActions.ts'
 import * as localforage from 'localforage'
-import { RootState } from '../store.ts'
+import { AppDispatch, RootState } from '../store.ts'
 import { persistReducer } from 'redux-persist'
 import { indexedDbStorage } from '../storage.ts'
 import { routeMigrate, routePersistVersion } from './routeMigrations.ts'
+import { addToast } from '../reducers/toastReducer.ts'
 
 export interface RouteState {
   route: Route
@@ -44,24 +45,32 @@ const makeEmptyRoute = (dungeonKey: DungeonKey, savedRoutes: SavedRoute[]): Rout
 
 const savedRouteKey = 'savedRoute'
 export const getSavedRouteKey = (routeId: string) => [savedRouteKey, routeId].join('-')
-export async function loadRouteFromStorage(routeId: string) {
+export async function loadRouteFromStorage(routeId: string, dispatch: AppDispatch) {
   const route = await localforage.getItem<Route>(getSavedRouteKey(routeId))
-  if (route === null) {
-    throw new Error(`Could not load route ${routeId}`)
-  }
+  if (route !== null) return route
 
-  return route
+  const errorMessage = `Could not find route to load. Removing from saved routes list.`
+  console.error(errorMessage)
+  dispatch(deleteSavedRoute(routeId))
+  dispatch(addToast({ message: errorMessage, type: 'error' }))
+  throw new Error(`Failed to load route ${routeId}`)
 }
 
-export const loadRoute = createAsyncThunk('routes/loadRoute', loadRouteFromStorage)
+export const loadRoute = createAsyncThunk('routes/loadRoute', (routeId: string, thunkAPI) => {
+  return loadRouteFromStorage(routeId, thunkAPI.dispatch as AppDispatch)
+})
 
-export const getLastDungeonRoute = async (dungeonKey: DungeonKey, savedRoutes: SavedRoute[]) => {
+export const getLastDungeonRoute = async (
+  dungeonKey: DungeonKey,
+  savedRoutes: SavedRoute[],
+  dispatch: AppDispatch,
+) => {
   // This can be called from the Error handler, so we want to handle the cases where dungeonKey is nullish
   const dungeonRoutes = savedRoutes.filter((route) =>
     dungeonKey ? route.dungeonKey === dungeonKey : true,
   )
   if (dungeonRoutes.length) {
-    return await loadRouteFromStorage(dungeonRoutes[dungeonRoutes.length - 1]!.uid)
+    return await loadRouteFromStorage(dungeonRoutes[dungeonRoutes.length - 1]!.uid, dispatch)
   } else {
     return makeEmptyRoute(dungeonKey, savedRoutes)
   }
@@ -71,7 +80,11 @@ export const setDungeon = createAsyncThunk(
   'routes/setDungeon',
   async (dungeonKey: DungeonKey, thunkAPI) => {
     const state = thunkAPI.getState() as RootState
-    return await getLastDungeonRoute(dungeonKey, state.routes.present.savedRoutes)
+    return await getLastDungeonRoute(
+      dungeonKey,
+      state.routes.present.savedRoutes,
+      thunkAPI.dispatch as AppDispatch,
+    )
   },
 )
 
@@ -81,7 +94,11 @@ export const deleteRoute = createAsyncThunk('routes/deleteRoute', async (_, thun
   await localforage.removeItem(getSavedRouteKey(routeId))
 
   const savedRoutes = state.routes.present.savedRoutes.filter((route) => route.uid !== routeId)
-  const route = await getLastDungeonRoute(state.routes.present.route.dungeonKey, savedRoutes)
+  const route = await getLastDungeonRoute(
+    state.routes.present.route.dungeonKey,
+    savedRoutes,
+    thunkAPI.dispatch as AppDispatch,
+  )
   return { deletedRouteId: routeId, route }
 })
 
@@ -235,8 +252,8 @@ const baseReducer = createSlice({
         savedRoute.name = state.route.name
       }
     },
-    deleteSavedRoute(state, { payload: routeId }: PayloadAction<number>) {
-      state.savedRoutes = state.savedRoutes.filter((route) => route.id !== routeId)
+    deleteSavedRoute(state, { payload: routeId }: PayloadAction<string>) {
+      state.savedRoutes = state.savedRoutes.filter((route) => route.uid !== routeId)
     },
   },
   extraReducers: (builder) => {
@@ -296,6 +313,7 @@ export const routesReducer = persistedReducer
 
 export const {
   updateSavedRoutes,
+  deleteSavedRoute,
   newRoute,
   duplicateRoute,
   setRoute,
