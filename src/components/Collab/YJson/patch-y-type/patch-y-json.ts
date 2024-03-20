@@ -1,4 +1,3 @@
-import { isEqual } from 'moderndash'
 import * as Y from 'yjs'
 import {
   assertIsYArray,
@@ -20,6 +19,7 @@ import {
   JsonTemplateObject,
   OperationType,
 } from '../../Json'
+import { isDeepEqual } from '../../../../util/dev.ts'
 
 function patch(yType: Y.Map<unknown> | Y.Array<unknown>, delta: Delta): void {
   if (delta.type === DeltaType.Array) {
@@ -108,8 +108,8 @@ export function patchYJson(
       // Verify that the patch was successful
       // This needs to be run inside the transaction, otherwise it is possible that
       // the yDoc has a different value by the time we run the check.
-      const yState: unknown = yTypeToMutate.toJSON()
-      if (!isEqual(yState, newState)) {
+      const yState: Record<string, any> = yTypeToMutate.toJSON()
+      if (!isDeepEqual(yState, newState as Record<string, any>)) {
         throw new Error(
           `Failed to patch yType. ${JSON.stringify(
             { yState, newState, oldState, delta },

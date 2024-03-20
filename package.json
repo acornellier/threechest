@@ -23,7 +23,6 @@
     "css-filter-converter": "^1.0.109",
     "leaflet": "^1.9.4",
     "localforage": "^1.10.0",
-    "moderndash": "^3.11.1",
     "node-weakauras-parser": "^3.2.3",
     "patch-package": "^8.0.0",
     "prettier": "^3.2.5",

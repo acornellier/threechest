@@ -1,4 +1,4 @@
-import { useActualRoute, useAppDispatch } from '../hooks.ts'
+import { useActualRoute, useAppDispatch, useIsGuestCollab } from '../hooks.ts'
 import { useEffect } from 'react'
 import { getSavedRouteKey, updateSavedRoutes } from './routesReducer.ts'
 import * as localforage from 'localforage'
@@ -7,6 +7,7 @@ import { importRoute } from '../reducers/importReducer.ts'
 export function RouteSaver() {
   const dispatch = useAppDispatch()
   const route = useActualRoute()
+  const isGuestCollab = useIsGuestCollab()
 
   // initial import from URL on page load
   useEffect(() => {
@@ -19,12 +20,12 @@ export function RouteSaver() {
   }, [dispatch])
 
   useEffect(() => {
-    dispatch(updateSavedRoutes())
-  }, [dispatch, route.uid, route.name])
+    if (!isGuestCollab) dispatch(updateSavedRoutes())
+  }, [dispatch, route.uid, route.name, isGuestCollab])
 
   useEffect(() => {
-    localforage.setItem(getSavedRouteKey(route.uid), route)
-  }, [route])
+    if (!isGuestCollab) localforage.setItem(getSavedRouteKey(route.uid), route)
+  }, [isGuestCollab, route])
 
   return null
 }

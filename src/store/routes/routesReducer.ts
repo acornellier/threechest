@@ -235,6 +235,9 @@ const baseReducer = createSlice({
         savedRoute.name = state.route.name
       }
     },
+    deleteSavedRoute(state, { payload: routeId }: PayloadAction<number>) {
+      state.savedRoutes = state.savedRoutes.filter((route) => route.id !== routeId)
+    },
   },
   extraReducers: (builder) => {
     builder.addCase(setDungeon.fulfilled, (state, { payload: route }) => {

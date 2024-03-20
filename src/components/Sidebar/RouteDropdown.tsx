@@ -41,7 +41,6 @@ export function RouteDropdown({ onOpen, onClose }: Props) {
 
   const onHover = useCallback(
     async (option: DropdownOption | null) => {
-      console.log('onHover', option)
       dispatch(setPreviewRouteAsync(option ? { routeId: option.id } : null))
     },
     [dispatch],

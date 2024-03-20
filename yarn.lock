@@ -2422,11 +2422,6 @@ hasown@^2.0.0, hasown@^2.0.1, hasown@^2.0.2:
   dependencies:
     function-bind "^1.1.2"
 
-hotscript@1.0.13:
-  version "1.0.13"
-  resolved "https://registry.yarnpkg.com/hotscript/-/hotscript-1.0.13.tgz#6eb5de757e9b33444ffc22555e98dbc17fa31fb4"
-  integrity sha512-C++tTF1GqkGYecL+2S1wJTfoH6APGAsbb7PAWQ3iVIwgG/EFseAfEVOKFgAFq4yK3+6j1EjUD4UQ9dRJHX/sSQ==
-
 http-errors@2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/http-errors/-/http-errors-2.0.0.tgz#b7774a1486ef73cf7667ac9ae0858c012c57b9d3"
@@ -3030,13 +3025,6 @@ mkdirp@^1.0.3, mkdirp@^1.0.4:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/mkdirp/-/mkdirp-1.0.4.tgz#3eb5ed62622756d79a5f0e2a221dfebad75c2f7e"
   integrity sha512-vVqVZQyf3WLx2Shd0qJ9xuvqgAyKPLAiqITEtqW0oIUjzo3PePDd6fW9iFz30ef7Ysp/oiWqbhszeGWW2T6Gzw==
-
-moderndash@^3.11.1:
-  version "3.11.1"
-  resolved "https://registry.yarnpkg.com/moderndash/-/moderndash-3.11.1.tgz#0f41dd3be4513e0175a8caab8d865f44f4862f19"
-  integrity sha512-qEe3TplBigpJK/w4FMG5WShPWeB+id2R3rYRIxXZ/9W0C08PshWNSvDC7yEnw1rMDzIQIq8MlpYZ0tj/aFSmEA==
-  dependencies:
-    hotscript "1.0.13"
 
 mri@1.2.0:
   version "1.2.0"
