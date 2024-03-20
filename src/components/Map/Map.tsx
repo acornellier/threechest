@@ -3,7 +3,7 @@ import { MapContainer, TileLayer } from 'react-leaflet'
 import { CRS } from 'leaflet'
 import '../Leaflet/SmoothWheelZoom.ts'
 import '../Leaflet/BoxSelect/BoxSelect'
-import { useAppDispatch, useDungeon, useRootSelector } from '../../store/hooks.ts'
+import { useAppDispatch, useCollabSelector, useDungeon } from '../../store/hooks.ts'
 import { Drawings } from './Drawings.tsx'
 import { Notes } from './Notes.tsx'
 import { MapContextMenu } from './MapContextMenu.tsx'
@@ -20,7 +20,7 @@ import { Collab } from '../Collab/Collab.tsx'
 export function Map() {
   const dispatch = useAppDispatch()
   const dungeon = useDungeon()
-  const collabActive = useRootSelector((state) => state.collab.active)
+  const collabActive = useCollabSelector((state) => state.active)
 
   useEffect(() => {
     dispatch(setMapObjectsHidden(true))

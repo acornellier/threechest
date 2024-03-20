@@ -1,5 +1,5 @@
 import { highContrastColors } from '../../util/colors.ts'
-import { AwarenessState, CollabState } from './collabReducer.ts'
+import { AwarenessState, CollabState, getLocalAwareness } from './collabReducer.ts'
 import { savedCollabColorKey, savedCollabNameKey } from '../hooks.ts'
 import { generateSlug } from 'random-word-slugs'
 
@@ -39,28 +39,27 @@ function setAwarenessColor(state: CollabState, localAwareness: AwarenessState) {
   localAwareness.color = colors[Math.floor(Math.random() * colors.length)]!
 }
 
-function checkForNoHost(state: CollabState, localAwareness: AwarenessState) {
-  if (!localAwareness.joinTime) {
-    console.error('setAwarenessColor should not be called without localAwareness.joinTime')
-    return
-  }
+export function shouldPromoteToHost(state: CollabState): boolean {
+  if (!state.wsConnected) return false
+
+  const localAwareness = getLocalAwareness(state)
+  if (!localAwareness?.joinTime) return false
 
   // Check that at least 1 second has passed since we joined
-  if (localAwareness.joinTime && new Date().getTime() - localAwareness.joinTime < 1000) return
+  if (localAwareness.joinTime && new Date().getTime() - localAwareness.joinTime < 1000) return false
 
   // Check for any hosts
-  if (state.awarenessStates.some(({ clientType }) => clientType === 'host')) return
+  if (state.awarenessStates.some(({ clientType }) => clientType === 'host')) return false
 
-  // Check for another client who joined earlier than me
-  if (
-    state.awarenessStates.some(
-      ({ isCurrentClient, joinTime }) =>
-        !isCurrentClient && joinTime && joinTime < localAwareness.joinTime!,
-    )
+  // Check for another client who joined earlier than us
+  return !state.awarenessStates.some(
+    ({ isCurrentClient, joinTime }) =>
+      !isCurrentClient && joinTime && joinTime < localAwareness.joinTime!,
   )
-    return
+}
 
-  localAwareness.clientType = 'host'
+function checkForNoHost(state: CollabState, localAwareness: AwarenessState) {
+  if (shouldPromoteToHost(state)) localAwareness.clientType = 'host'
 }
 
 function checkForMultipleHost(state: CollabState, localAwareness: AwarenessState) {
@@ -85,9 +84,9 @@ function checkForMultipleHost(state: CollabState, localAwareness: AwarenessState
 }
 
 export function postAwarenessUpdateChecks(state: CollabState, localAwareness: AwarenessState) {
-  if (!state.wsConnected) return
-
   checkLocalAwareness(state, localAwareness)
+
+  if (!state.wsConnected) return
   setAwarenessColor(state, localAwareness)
   checkForNoHost(state, localAwareness)
   checkForMultipleHost(state, localAwareness)

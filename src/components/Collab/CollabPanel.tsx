@@ -1,5 +1,5 @@
 import { Button } from '../Common/Button.tsx'
-import { useAppDispatch, useRootSelector } from '../../store/hooks.ts'
+import { useAppDispatch, useCollabSelector } from '../../store/hooks.ts'
 import { joinCollab } from '../../store/reducers/collabReducer.ts'
 import { useCallback, useEffect, useState } from 'react'
 import { Cog8ToothIcon, ShareIcon } from '@heroicons/react/24/outline'
@@ -17,8 +17,8 @@ interface Props {
 export function CollabPanel({ collapsed }: Props) {
   const dispatch = useAppDispatch()
   const [collabSettingsOpen, setCollabSettingsOpen] = useState(false)
-  const active = useRootSelector((state) => state.collab.active)
-  const room = useRootSelector((state) => state.collab.room)
+  const active = useCollabSelector((state) => state.active)
+  const room = useCollabSelector((state) => state.room)
 
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search)

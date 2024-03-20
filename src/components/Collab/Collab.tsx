@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import * as Y from 'yjs'
 import { SignalingConn, WebrtcProvider } from 'y-webrtc'
 import { SyncYAwareness, SyncYJson } from './YRedux'
-import { selectLocalAwareness, useAppDispatch, useRootSelector } from '../../store/hooks.ts'
+import { selectLocalAwareness, useAppDispatch, useCollabSelector } from '../../store/hooks.ts'
 import {
   setAwarenessStates,
   setMousePosition,
@@ -15,6 +15,7 @@ import { AwarenessCursors } from './AwarenessCursors.tsx'
 import { useMap } from 'react-leaflet'
 import { LeafletMouseEvent } from 'leaflet'
 import { addToast } from '../../store/reducers/toastReducer.ts'
+import { NoHostChecker } from './NoHostChecker.tsx'
 
 const selectData = (state: RootState) => state.routes.present.route
 
@@ -29,7 +30,7 @@ if (signaling.length !== 1) {
 
 export function Collab() {
   const dispatch = useAppDispatch()
-  const room = useRootSelector((state) => state.collab.room)
+  const room = useCollabSelector((state) => state.room)
   const leafletMap = useMap()
 
   const [yObjects, setYObjects] = useState<{ map: Y.Map<Route>; provider: WebrtcProvider }>()
@@ -80,6 +81,7 @@ export function Collab() {
         selectLocalAwarenessState={selectLocalAwareness}
       />
       <AwarenessCursors />
+      <NoHostChecker />
     </>
   )
 }

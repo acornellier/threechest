@@ -29,7 +29,7 @@ const initialState: CollabState = {
   awarenessStates: [],
 }
 
-const getLocalAwareness = (state: CollabState) =>
+export const getLocalAwareness = (state: CollabState) =>
   state.awarenessStates.find(({ isCurrentClient }) => isCurrentClient)
 
 export const collabSlice = createSlice({
@@ -69,6 +69,12 @@ export const collabSlice = createSlice({
 
       postAwarenessUpdateChecks(state, localAwareness)
     },
+    promoteToHost(state) {
+      const localAwareness = getLocalAwareness(state)
+      if (!localAwareness) return
+
+      localAwareness.clientType = 'host'
+    },
     setMousePosition(
       state,
       { payload: mousePosition }: PayloadAction<AwarenessState['mousePosition']>,
@@ -101,6 +107,7 @@ export const {
   joinCollab,
   setWsConnected,
   setAwarenessStates,
+  promoteToHost,
   setMousePosition,
   setCollabName,
   setCollabColor,
