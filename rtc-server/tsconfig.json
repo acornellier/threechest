@@ -7,4 +7,5 @@
     "allowSyntheticDefaultImports": true,
     "outDir": "dist"
   },
-  "include": ["."]}
+  "include": ["."]
+}

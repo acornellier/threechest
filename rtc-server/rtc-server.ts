@@ -58,7 +58,6 @@ const onConnection = (socket: WebSocketEx) => {
 
           const subscribers = topics.get(topicName) || new Set()
           subscribers.add(socket)
-          console.log('subscribe', subscribers.size)
 
           if (!topics.has(topicName)) {
             topics.set(topicName, subscribers)
