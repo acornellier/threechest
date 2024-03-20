@@ -16,11 +16,11 @@ function syncLocalIntoRemote<T extends JsonTemplateContainer>(
   const localData = selectData(store.getState() as RootState)
 
   if (localData === undefined) {
-    // console.debug('[SyncYJson:syncLocalIntoRemote] Not syncing: Local data is undefined')
+    console.debug('syncLocalIntoRemote Not syncing: Local data is undefined')
     return
   }
 
-  // console.debug('[SyncYJson:syncLocalIntoRemote] Syncing')
+  // console.debug('syncLocalIntoRemote Syncing')
   patchYJson(yJson, localData)
 }
 
@@ -30,14 +30,14 @@ function syncRemoteIntoLocal<T extends JsonTemplateContainer>(
   yJson: Y.Map<T> | Y.Array<T>,
 ): void {
   if (isEmpty(yJson)) {
-    // console.debug(
-    //   "[SyncYJson] Not syncing: Remote data is empty. The YDoc hasn't loaded yet, and syncing would overwrite remote data.",
-    // )
+    console.warn(
+      "syncRemoteIntoLocal Not syncing: Remote data is empty. The YDoc hasn't loaded yet, and syncing would overwrite remote data.",
+    )
     return
   }
 
   const remoteData = yJson.toJSON() as T
-  // console.debug('[SyncYJson:syncRemoteIntoLocal] Syncing')
+  // console.debug('syncRemoteIntoLocal Syncing')
   store.dispatch(setData(remoteData))
 }
 

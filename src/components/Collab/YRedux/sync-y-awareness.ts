@@ -15,11 +15,11 @@ const syncLocalIntoRemote = <T extends BaseAwarenessState>(
   data: T | undefined,
 ): void => {
   if (data === undefined) {
-    // console.debug('[SyncYAwareness:syncLocalIntoRemote] Not syncing: Local data is undefined')
+    console.warn('syncLocalIntoRemote Not syncing: Local data is undefined')
     return
   }
 
-  // console.debug('[SyncYAwareness:syncLocalIntoRemote] Syncing', data)
+  console.debug('syncLocalIntoRemote Syncing', data)
   awareness.setLocalState(data)
 }
 
@@ -34,7 +34,7 @@ const syncRemoteIntoLocal = <T extends BaseAwarenessState>(
     isCurrentClient: awareness.clientID === Number(clientId),
   }))
 
-  // console.debug('[SyncYAwareness:syncRemoteIntoLocal] Syncing')
+  console.debug('syncRemoteIntoLocal Syncing', states)
   store.dispatch(setAwarenessStates(states))
 }
 
@@ -49,9 +49,8 @@ export const SyncYAwareness = <T extends BaseAwarenessState>({
 }): null => {
   const store = useAppStore()
 
-  // On mount sync local into remote
+  // On mount sync remote into local
   useEffect(() => {
-    // syncLocalIntoRemote(awareness, selectLocalAwarenessState(store.getState()))
     syncRemoteIntoLocal(awareness, store, setAwarenessStates)
   }, [awareness, selectLocalAwarenessState, setAwarenessStates, store])
 
@@ -66,9 +65,12 @@ export const SyncYAwareness = <T extends BaseAwarenessState>({
 
   // Subscribe to remote changes
   useEffect(() => {
+    let initialAwarenessReceived = false
     const observer = (_changes: unknown, origin: 'local' | unknown): void => {
-      console.log('ob', _changes, origin, awareness)
-      if (origin === 'local') return
+      console.log('ob', _changes, origin, initialAwarenessReceived, awareness)
+      if (origin === 'local' && !initialAwarenessReceived) return
+
+      initialAwarenessReceived = true
       syncRemoteIntoLocal(awareness, store, setAwarenessStates)
     }
 
