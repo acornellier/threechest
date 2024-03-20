@@ -20,8 +20,8 @@ import { WebrtcProvider } from './y-webrtc/y-webrtc.js'
 const selectData = (state: RootState) => state.routes.present.route
 
 const signaling = [
-  // 'wss://y-webrtc-signaler-ypze.onrender.com',
-  'ws://localhost:8787',
+  'wss://threechest-rtc-server-fccc158b4d6c.herokuapp.com',
+  // 'ws://localhost:8787',
 ]
 
 if (signaling.length !== 1) {
