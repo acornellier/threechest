@@ -1,8 +1,6 @@
-import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { BaseAwarenessState } from '../../components/Collab/YRedux'
 import { LatLng } from 'leaflet'
-import { RootState } from '../store.ts'
-import { savedCollabColorKey, savedCollabNameKey } from '../hooks.ts'
 import { postAwarenessUpdateChecks } from './collabActions.ts'
 
 export type ClientType = 'host' | 'guest'
@@ -34,22 +32,6 @@ const initialState: CollabState = {
 const getLocalAwareness = (state: CollabState) =>
   state.awarenessStates.find(({ isCurrentClient }) => isCurrentClient)
 
-export const setInitialAwareness = createAsyncThunk(
-  'collab/setInitialAwareness',
-  async (localAwareness: AwarenessState, thunkAPI) => {
-    const state = thunkAPI.getState() as RootState
-    if (state.collab.startedCollab) localAwareness.clientType = 'host'
-
-    const savedName = localStorage.getItem(savedCollabNameKey)
-    if (savedName) localAwareness.name = savedName
-
-    const savedColor = localStorage.getItem(savedCollabColorKey)
-    if (savedColor) localAwareness.color = savedColor
-
-    thunkAPI.dispatch(setLocalAwareness(localAwareness))
-  },
-)
-
 export const collabSlice = createSlice({
   name: 'collab',
   initialState,
@@ -73,6 +55,11 @@ export const collabSlice = createSlice({
     },
     setWsConnected(state, { payload: connected }: PayloadAction<boolean>) {
       state.wsConnected = connected
+
+      const localAwareness = getLocalAwareness(state)
+      if (!localAwareness) return
+
+      postAwarenessUpdateChecks(state, localAwareness)
     },
     setAwarenessStates(state, { payload: awarenessStates }: PayloadAction<AwarenessState[]>) {
       state.awarenessStates = awarenessStates
@@ -81,19 +68,6 @@ export const collabSlice = createSlice({
       if (!localAwareness) return
 
       postAwarenessUpdateChecks(state, localAwareness)
-    },
-    setLocalAwareness(state, { payload: localAwareness }: PayloadAction<AwarenessState>) {
-      state.awarenessStates = state.awarenessStates.map((awareness) =>
-        awareness.clientId === localAwareness.clientId ? localAwareness : awareness,
-      )
-
-      postAwarenessUpdateChecks(state, localAwareness)
-    },
-    promoteToHost(state) {
-      const localAwareness = getLocalAwareness(state)
-      if (!localAwareness) return
-
-      localAwareness.clientType = 'host'
     },
     setMousePosition(
       state,
@@ -127,7 +101,6 @@ export const {
   joinCollab,
   setWsConnected,
   setAwarenessStates,
-  setLocalAwareness,
   setMousePosition,
   setCollabName,
   setCollabColor,

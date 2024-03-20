@@ -1,5 +1,19 @@
 import { highContrastColors } from '../../util/colors.ts'
 import { AwarenessState, CollabState } from './collabReducer.ts'
+import { savedCollabColorKey, savedCollabNameKey } from '../hooks.ts'
+import { generateSlug } from 'random-word-slugs'
+
+function checkLocalAwareness(state: CollabState, localAwareness: AwarenessState) {
+  if (localAwareness.name && localAwareness.clientType && localAwareness.joinTime) return
+
+  const savedName = localStorage.getItem(savedCollabNameKey)
+  const savedColor = localStorage.getItem(savedCollabColorKey)
+
+  localAwareness.name ??= savedName || generateSlug(2, { format: 'title' })
+  localAwareness.clientType ??= state.startedCollab ? 'host' : 'guest'
+  localAwareness.joinTime ??= new Date().getTime()
+  localAwareness.color ??= savedColor || null
+}
 
 function setAwarenessColor(state: CollabState, localAwareness: AwarenessState) {
   if (!localAwareness.joinTime) {
@@ -73,12 +87,7 @@ function checkForMultipleHost(state: CollabState, localAwareness: AwarenessState
 export function postAwarenessUpdateChecks(state: CollabState, localAwareness: AwarenessState) {
   if (!state.wsConnected) return
 
-  // No join time means we our local awareness is out of sync and we shouldn't be guest
-  if (!localAwareness.joinTime) {
-    localAwareness.clientType = 'guest'
-    return
-  }
-
+  checkLocalAwareness(state, localAwareness)
   setAwarenessColor(state, localAwareness)
   checkForNoHost(state, localAwareness)
   checkForMultipleHost(state, localAwareness)
