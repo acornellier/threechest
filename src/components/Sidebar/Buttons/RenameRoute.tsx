@@ -1,5 +1,5 @@
 import { Dispatch, SetStateAction, useCallback, useState } from 'react'
-import { useActualRoute, useAppDispatch, useIsGuestCollab } from '../../../store/hooks.ts'
+import { useActualRoute, useAppDispatch } from '../../../store/hooks.ts'
 import { Button } from '../../Common/Button.tsx'
 import { CheckIcon, PencilIcon } from '@heroicons/react/24/outline'
 import { TooltipStyled } from '../../Common/TooltipStyled.tsx'
@@ -14,7 +14,6 @@ interface Props {
 export function RenameRoute({ isRenaming, setRenaming, hidden }: Props) {
   const route = useActualRoute()
   const dispatch = useAppDispatch()
-  const isGuestCollab = useIsGuestCollab()
 
   const [input, setInput] = useState(route.name)
 
@@ -52,7 +51,6 @@ export function RenameRoute({ isRenaming, setRenaming, hidden }: Props) {
         data-tooltip-id="rename-route-tooltip"
         short
         style={{ paddingLeft: 12, paddingRight: 12 }}
-        disabled={isGuestCollab}
         className={`${hidden ? '[&]:hidden' : ''}`}
       />
       <TooltipStyled id="rename-route-tooltip">Rename route</TooltipStyled>

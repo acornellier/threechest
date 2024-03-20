@@ -5,7 +5,11 @@ import { addToast } from '../../../store/reducers/toastReducer.ts'
 import { ShareIcon } from '@heroicons/react/24/outline'
 import { useCallback } from 'react'
 
-export function ShareRoute() {
+interface Props {
+  hidden?: boolean
+}
+
+export function ShareRoute({ hidden }: Props) {
   const dispatch = useAppDispatch()
   const route = useRoute()
 
@@ -21,7 +25,12 @@ export function ShareRoute() {
   }, [dispatch, route])
 
   return (
-    <Button Icon={ShareIcon} short className="flex-1" onClick={handleClick}>
+    <Button
+      Icon={ShareIcon}
+      short
+      className={`flex-1 ${hidden ? '[&]:hidden' : ''}`}
+      onClick={handleClick}
+    >
       Share
     </Button>
   )

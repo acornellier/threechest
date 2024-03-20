@@ -7,6 +7,8 @@ import { DuplicateRoute } from './Buttons/DuplicateRoute.tsx'
 import { RenameRoute } from './Buttons/RenameRoute.tsx'
 import { useCallback, useState } from 'react'
 import { SampleRoutes } from './Buttons/SampleRoutes.tsx'
+import { ExportRoute } from './Buttons/ExportRoute.tsx'
+import { ShareRoute } from './Buttons/ShareRoute.tsx'
 
 interface Props {
   collapsed?: boolean
@@ -32,8 +34,12 @@ export function RouteDetails({ collapsed }: Props) {
         <DuplicateRoute />
         <DeleteRoute />
       </div>
-      <ImportRoute hidden={collapsed} />
       <SampleRoutes hidden={collapsed} />
+      <ImportRoute hidden={collapsed} />
+      <div className={`flex gap-1 ${collapsed ? '[&]:hidden' : ''}`}>
+        <ExportRoute hidden={collapsed} />
+        <ShareRoute hidden={collapsed} />
+      </div>
     </Panel>
   )
 }

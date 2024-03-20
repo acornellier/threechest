@@ -7,7 +7,11 @@ import { useShortcut } from '../../../hooks/useShortcut.ts'
 import { useCallback } from 'react'
 import { shortcuts } from '../../../data/shortcuts.ts'
 
-export function ExportRoute() {
+interface Props {
+  hidden?: boolean
+}
+
+export function ExportRoute({ hidden }: Props) {
   const dispatch = useAppDispatch()
   const route = useRoute()
 
@@ -27,7 +31,7 @@ export function ExportRoute() {
     <Button
       Icon={ArrowDownTrayIcon}
       short
-      className="flex-1"
+      className={`flex-1 ${hidden ? '[&]:hidden' : ''}`}
       onClick={handleClick}
       shortcut={{ key: 'C', ctrl: true }}
       justifyStart

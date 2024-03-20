@@ -4,9 +4,9 @@ import { TooltipStyled } from '../Common/TooltipStyled.tsx'
 
 export function AwarenessClients() {
   const awarenessStates = useAwarenessStates()
+  const local = awarenessStates.find(({ isCurrentClient }) => isCurrentClient)
 
-  const host = awarenessStates.find(({ clientType }) => clientType === 'host')
-  const guests = awarenessStates.filter(({ clientType }) => clientType !== 'host')
+  if (!local) return
 
   return (
     <div>
@@ -14,30 +14,20 @@ export function AwarenessClients() {
         <div
           className="rounded-sm px-1"
           style={{
-            backgroundColor: host?.color ?? 'none',
-            color: host?.color ? getTextColor(host.color) : 'inherit',
+            backgroundColor: local?.color ?? 'none',
+            color: local?.color ? getTextColor(local.color) : 'inherit',
           }}
         >
-          Host:{' '}
-          {!host ? (
-            'None'
-          ) : host.isCurrentClient ? (
-            <>
-              <b>You</b>
-              <span> ({host.name})</span>
-            </>
-          ) : (
-            host.name
-          )}
+          You: {local.name ?? 'No name'} ({local.clientType})
         </div>
-        {guests.length > 0 && (
+        {awarenessStates.length > 0 && (
           <>
             <div className="cursor-default" data-tooltip-id="collab-guests-tooltip">
-              Guests: {guests.length}
+              Clients: {awarenessStates.length}
             </div>
             <TooltipStyled id="collab-guests-tooltip" padding={4}>
               <div className="flex flex-col gap-1">
-                {guests.map((awareness) => (
+                {awarenessStates.map((awareness) => (
                   <div
                     key={awareness.clientId}
                     className="rounded-sm px-1"
@@ -47,7 +37,7 @@ export function AwarenessClients() {
                     }}
                   >
                     {awareness.name}
-                    {awareness.isCurrentClient && <b> (You)</b>}
+                    {awareness.clientType === 'host' && ' (Host)'}
                   </div>
                 ))}
               </div>

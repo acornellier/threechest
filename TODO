@@ -1,4 +1,5 @@
 ﻿Collab
+- Prevent guest from modifying route id at all costs
 - Backup route
 - Promote to host
 - Try something else than Render
@@ -7,6 +8,7 @@
 - Handle 
 - Logo
 - Collab docs
+- Can scroll on pulls when not full
 
 Questionable, maybe post release
 - S4 dungeons

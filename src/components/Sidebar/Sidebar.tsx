@@ -1,10 +1,11 @@
 import { RouteDetails } from './RouteDetails.tsx'
-import { SharePanel } from './SharePanel.tsx'
 import { SidebarCollapser } from './SidebarCollapser.tsx'
 import { Pulls } from './Pulls/Pulls.tsx'
 import { CollabPanel } from '../Collab/CollabPanel.tsx'
 import { useState } from 'react'
 import { Footer } from '../Header/Footer.tsx'
+import { useIsGuestCollab } from '../../store/hooks.ts'
+import { HostRouteDetails } from './HostRouteDetails.tsx'
 
 const marginTop = 8
 const marginBottom = 60
@@ -13,6 +14,7 @@ const width = 290
 export function Sidebar() {
   const [collapsed, setCollapsed] = useState(false)
   const [topCollapsed, setTopCollapsed] = useState(false)
+  const isGuestCollab = useIsGuestCollab()
 
   return (
     <div
@@ -32,8 +34,7 @@ export function Sidebar() {
         setCollapsed={setTopCollapsed}
         index={1}
       />
-      <RouteDetails collapsed={topCollapsed} />
-      <SharePanel hidden={topCollapsed} />
+      {isGuestCollab ? <HostRouteDetails /> : <RouteDetails collapsed={topCollapsed} />}
       <CollabPanel collapsed={topCollapsed} />
       <Pulls />
       <Footer />

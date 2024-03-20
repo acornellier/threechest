@@ -43,26 +43,24 @@ export function PullList({ pullsDetailed, onRightClickPull }: Props) {
   )
 
   let pullIndex = 0
-  const children = pullsWithGhost.map((pull) => (
-    <PullComponent
-      key={pull.id}
-      pullIndex={pull.id === -1 ? pullIndex : pullIndex++}
-      pull={pull}
-      ghost={pull.filtered}
-      onRightClick={onRightClickPull}
-      isShiftHeld={isShiftHeld}
-    />
-  ))
-
   return (
     <ReactSortable
       onStart={(e) => e.oldIndex !== undefined && setGhostPullIndex(e.oldIndex)}
       onEnd={() => setGhostPullIndex(null)}
       list={pullsWithGhost}
       setList={setPullsWrapper}
-      className="flex flex-col relative overflow-auto"
+      className="flex flex-col relative overflow-auto h-fit"
     >
-      {children}
+      {pullsWithGhost.map((pull) => (
+        <PullComponent
+          key={pull.id}
+          pullIndex={pull.id === -1 ? pullIndex : pullIndex++}
+          pull={pull}
+          ghost={pull.filtered}
+          onRightClick={onRightClickPull}
+          isShiftHeld={isShiftHeld}
+        />
+      ))}
     </ReactSortable>
   )
 }

@@ -1,10 +1,5 @@
 ﻿import { useCallback, useMemo } from 'react'
-import {
-  useActualRoute,
-  useAppDispatch,
-  useDungeonRoutes,
-  useIsGuestCollab,
-} from '../../store/hooks.ts'
+import { useActualRoute, useAppDispatch, useDungeonRoutes } from '../../store/hooks.ts'
 import { loadRoute } from '../../store/routes/routesReducer.ts'
 import { SavedRoute } from '../../util/types.ts'
 import { Dropdown, DropdownOption } from '../Common/Dropdown.tsx'
@@ -24,7 +19,6 @@ export function RouteDropdown({ onOpen, onClose }: Props) {
   const dispatch = useAppDispatch()
   const route = useActualRoute()
   const routes = useDungeonRoutes(route.dungeonKey)
-  const isGuestCollab = useIsGuestCollab()
 
   const options = useMemo(() => routes.map(routeToOption), [routes])
   const selected = useMemo(
@@ -34,6 +28,7 @@ export function RouteDropdown({ onOpen, onClose }: Props) {
 
   const onSelect = useCallback(
     async (option: DropdownOption) => {
+      dispatch(setPreviewRouteAsync(null))
       dispatch(loadRoute(option.id))
     },
     [dispatch],
@@ -52,7 +47,6 @@ export function RouteDropdown({ onOpen, onClose }: Props) {
       selected={selected}
       onSelect={onSelect}
       onHover={onHover}
-      disabled={isGuestCollab}
       onOpen={onOpen}
       onClose={onClose}
     />
