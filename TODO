@@ -1,13 +1,15 @@
 ﻿Collab
 - Prevent guest from modifying route id at all costs
+- What if guest has route id that matches collab?
 - Backup route
-- Promote to host
+- Request promotion to host, or host promotes a guest
 - Try something else than Render
 
 - Handling incompatibile dungeons and routes
 - Handle 
 - Logo
 - Collab docs
+- PullOutline, MobSpawn re-rendering on any route change
 
 Questionable, maybe post release
 - S4 dungeons

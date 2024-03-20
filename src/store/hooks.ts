@@ -24,8 +24,8 @@ export const useCollabSelector = <T>(selector: (state: CollabState) => T): T =>
   useRootSelector((state) => selector(state.collab))
 
 // Routes
-export const useRoute = () =>
-  useRootSelector((state) => state.import.previewRoute ?? state.routes.present.route)
+const selectRoute = (state: RootState) => state.import.previewRoute ?? state.routes.present.route
+export const useRoute = () => useRootSelector(selectRoute)
 
 export const useSelectedPull = () => useRoutesSelector((state) => state.selectedPull)
 
@@ -41,9 +41,10 @@ const selectDungeonRoutes = createSelector(
 export const useDungeonRoutes = (dungeonKey: DungeonKey) =>
   useRoutesSelector((state) => selectDungeonRoutes(state, dungeonKey))
 
+const selectDungeonKey = createSelector([selectRoute], (route) => route.dungeonKey)
 export function useDungeon() {
-  const route = useRoute()
-  return dungeonsByKey[route.dungeonKey]
+  const dungeonKey = useRootSelector(selectDungeonKey)
+  return dungeonsByKey[dungeonKey]
 }
 
 // Hover

@@ -25,5 +25,5 @@ export const cachedSubscribe = <T>(
     }
   })
 
-  return unsubscribe
+  return () => unsubscribe()
 }

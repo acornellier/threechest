@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react'
 import * as Y from 'yjs'
-import { SignalingConn, WebrtcProvider } from 'y-webrtc'
 import { SyncYAwareness, SyncYJson } from './YRedux'
 import { selectLocalAwareness, useAppDispatch, useCollabSelector } from '../../store/hooks.ts'
 import {
+  promoteToHost,
   setAwarenessStates,
   setMousePosition,
   setWsConnected,
@@ -15,13 +15,13 @@ import { AwarenessCursors } from './AwarenessCursors.tsx'
 import { useMap } from 'react-leaflet'
 import { LeafletMouseEvent } from 'leaflet'
 import { addToast } from '../../store/reducers/toastReducer.ts'
-import { NoHostChecker } from './NoHostChecker.tsx'
+import { WebrtcProvider } from './y-webrtc/y-webrtc.js'
 
 const selectData = (state: RootState) => state.routes.present.route
 
 const signaling = [
-  'wss://y-webrtc-signaler-ypze.onrender.com',
-  // 'ws://localhost:4444',
+  // 'wss://y-webrtc-signaler-ypze.onrender.com',
+  'ws://localhost:8787',
 ]
 
 if (signaling.length !== 1) {
@@ -32,7 +32,7 @@ export function Collab() {
   const dispatch = useAppDispatch()
   const room = useCollabSelector((state) => state.room)
   const leafletMap = useMap()
-
+  const [aloneInRoom, setAloneInRoom] = useState(false)
   const [yObjects, setYObjects] = useState<{ map: Y.Map<Route>; provider: WebrtcProvider }>()
 
   useEffect(() => {
@@ -41,7 +41,7 @@ export function Collab() {
     const map = doc.getMap<Route>('data')
     setYObjects({ map, provider })
 
-    const ws = provider.signalingConns[0] as SignalingConn
+    const sc = provider.signalingConns[0]!
 
     const onWsConnect = () => dispatch(setWsConnected(true))
     const onWsDisconnect = () => {
@@ -51,18 +51,26 @@ export function Collab() {
 
     const onMouseMove = (e: LeafletMouseEvent) => dispatch(setMousePosition(e.latlng))
     const onMouseOut = () => dispatch(setMousePosition(null))
+    const onRoomSize = (roomSize: number) => {
+      if (roomSize === 1) {
+        setAloneInRoom(true)
+        dispatch(promoteToHost())
+      }
+    }
 
-    if (ws.connected) onWsConnect()
-    ws.on('connect', onWsConnect)
-    ws.on('disconnect', onWsDisconnect)
+    if (sc.connected) onWsConnect()
+    sc.on('connect', onWsConnect)
+    sc.on('disconnect', onWsDisconnect)
+    sc.on('roomsize', onRoomSize)
 
     leafletMap.addEventListener('mousemove', onMouseMove)
     leafletMap.addEventListener('mouseout', onMouseOut)
 
     return () => {
       provider.destroy()
-      ws.off('connect', onWsConnect)
-      ws.off('disconnect', onWsDisconnect)
+      sc.off('connect', onWsConnect)
+      sc.off('disconnect', onWsDisconnect)
+      sc.off('roomsize', onWsDisconnect)
       leafletMap.removeEventListener('mousemove', onMouseMove)
       leafletMap.removeEventListener('mousemove', onMouseOut)
     }
@@ -74,14 +82,13 @@ export function Collab() {
 
   return (
     <>
-      <SyncYJson yJson={map} setData={setRoute} selectData={selectData} />
+      <SyncYJson yJson={map} setData={setRoute} selectData={selectData} aloneInRoom={aloneInRoom} />
       <SyncYAwareness
         awareness={provider.awareness}
         setAwarenessStates={setAwarenessStates}
         selectLocalAwarenessState={selectLocalAwareness}
       />
       <AwarenessCursors />
-      <NoHostChecker />
     </>
   )
 }

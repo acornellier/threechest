@@ -1,9 +1,9 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { Store } from 'redux'
 import * as Y from 'yjs'
 import { cachedSubscribe } from './redux-subscriber.ts'
 import { isEmpty, patchYJson } from '../YJson'
-import { JsonTemplateArray, JsonTemplateContainer, JsonTemplateObject } from '../Json'
+import { JsonTemplateContainer } from '../Json'
 import { Action } from '@reduxjs/toolkit'
 import { useAppStore } from '../../../store/hooks.ts'
 import { AppStore, RootState } from '../../../store/store.ts'
@@ -20,7 +20,7 @@ function syncLocalIntoRemote<T extends JsonTemplateContainer>(
     return
   }
 
-  // console.debug('syncLocalIntoRemote Syncing')
+  // console.debug('syncLocalIntoRemote Syncing', localData)
   patchYJson(yJson, localData)
 }
 
@@ -37,30 +37,26 @@ function syncRemoteIntoLocal<T extends JsonTemplateContainer>(
   }
 
   const remoteData = yJson.toJSON() as T
-  // console.debug('syncRemoteIntoLocal Syncing')
+  // console.debug('syncRemoteIntoLocal Syncing', remoteData)
   store.dispatch(setData(remoteData))
 }
 
-export function SyncYJson<T extends JsonTemplateObject>(props: {
-  yJson: Y.Map<T>
+interface Props<T extends JsonTemplateContainer> {
+  yJson: Y.Map<T> | Y.Array<T>
   setData: (data: T) => Action
   selectData: (state: RootState) => T | undefined
-}): null
-export function SyncYJson<T extends JsonTemplateArray>(props: {
-  yJson: Y.Array<T>
-  setData: (data: T) => Action
-  selectData: (state: RootState) => T | undefined
-}): null
+  aloneInRoom: boolean
+}
+
 export function SyncYJson<T extends JsonTemplateContainer>({
   yJson,
   setData,
   selectData,
-}: {
-  yJson: Y.Map<T> | Y.Array<T>
-  setData: (data: T) => Action
-  selectData: (state: RootState) => T | undefined
-}): null {
+  aloneInRoom,
+}: Props<T>): null {
   const store = useAppStore()
+  const [remoteDataReceived, setRemoteDataReceived] = useState(false)
+  const canPublishToRemote = remoteDataReceived || aloneInRoom
 
   // On mount sync remote into local
   useEffect(() => {
@@ -69,18 +65,21 @@ export function SyncYJson<T extends JsonTemplateContainer>({
 
   // Subscribe to local changes
   useEffect(() => {
+    if (!canPublishToRemote) return
+
     const unsubscribe = cachedSubscribe(store, selectData, () => {
       syncLocalIntoRemote(store, selectData, yJson)
     })
 
     return () => unsubscribe()
-  }, [store, selectData, setData, yJson])
+  }, [store, selectData, setData, yJson, canPublishToRemote])
 
   // Subscribe to remote changes
   useEffect(() => {
     const observer = (_events: any, transaction: Y.Transaction): void => {
       if (transaction.local) return
       syncRemoteIntoLocal(store, setData, yJson)
+      setRemoteDataReceived(true)
     }
 
     yJson.observeDeep(observer)
