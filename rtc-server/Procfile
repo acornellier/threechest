@@ -1,0 +1,1 @@
+﻿web: node dist/rtc-server.js
