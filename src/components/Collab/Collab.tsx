@@ -42,23 +42,16 @@ export function Collab() {
 
     const ws = provider.signalingConns[0] as SignalingConn
 
-    const onWsConnect = () => {
-      dispatch(setWsConnected(true))
-    }
-
+    const onWsConnect = () => dispatch(setWsConnected(true))
     const onWsDisconnect = () => {
       dispatch(addToast({ message: 'Lost connection to the Collab server.', type: 'error' }))
       dispatch(setWsConnected(false))
     }
 
-    const onMouseMove = (e: LeafletMouseEvent) => {
-      dispatch(setMousePosition(e.latlng))
-    }
+    const onMouseMove = (e: LeafletMouseEvent) => dispatch(setMousePosition(e.latlng))
+    const onMouseOut = () => dispatch(setMousePosition(null))
 
-    const onMouseOut = () => {
-      dispatch(setMousePosition(null))
-    }
-
+    if (ws.connected) onWsConnect()
     ws.on('connect', onWsConnect)
     ws.on('disconnect', onWsDisconnect)
 

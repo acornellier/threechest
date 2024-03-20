@@ -1,5 +1,4 @@
 ﻿Collab
-- Connecting... on code change
 - Prevent guest from modifying route id at all costs
 - Backup route
 - Promote to host

@@ -30,7 +30,7 @@ function syncRemoteIntoLocal<T extends JsonTemplateContainer>(
   yJson: Y.Map<T> | Y.Array<T>,
 ): void {
   if (isEmpty(yJson)) {
-    console.warn(
+    console.debug(
       "syncRemoteIntoLocal Not syncing: Remote data is empty. The YDoc hasn't loaded yet, and syncing would overwrite remote data.",
     )
     return
