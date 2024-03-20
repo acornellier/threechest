@@ -3,7 +3,6 @@ import { BaseAwarenessState } from '../../components/Collab/YRedux'
 import { LatLng } from 'leaflet'
 import { highContrastColors } from '../../util/colors.ts'
 import { RootState } from '../store.ts'
-import { sleep } from '../../util/dev.ts'
 import { savedCollabColorKey, savedCollabNameKey } from '../hooks.ts'
 
 export type ClientType = 'host' | 'guest'
@@ -36,6 +35,8 @@ const getLocalAwareness = (state: CollabState) =>
   state.awarenessStates.find(({ isCurrentClient }) => isCurrentClient)
 
 function setAwarenessColor(state: CollabState, localAwareness: AwarenessState) {
+  if (!state.wsConnected) return
+
   // Check for another client with the same as color as me who joined earlier
   const clashingColor =
     state.awarenessStates.length < highContrastColors.length &&
@@ -55,6 +56,11 @@ function setAwarenessColor(state: CollabState, localAwareness: AwarenessState) {
 }
 
 function checkForNoHost(state: CollabState, localAwareness: AwarenessState) {
+  if (!state.wsConnected) return
+
+  // Check that at least 1 second has passed since we joined
+  if (new Date().getTime() - localAwareness.joinTime < 1000) return
+
   // Check for any hosts
   if (state.awarenessStates.some(({ clientType }) => clientType === 'host')) return
 
@@ -69,10 +75,27 @@ function checkForNoHost(state: CollabState, localAwareness: AwarenessState) {
   localAwareness.clientType = 'host'
 }
 
+function checkForMultipleHost(state: CollabState, localAwareness: AwarenessState) {
+  if (!state.wsConnected) return
+
+  const hosts = state.awarenessStates.filter(({ clientType }) => clientType === 'host')
+  if (hosts.length < 2) return
+
+  // Check for another host who joined later than me
+  if (
+    state.awarenessStates.some(
+      ({ isCurrentClient, joinTime }) => !isCurrentClient && joinTime > localAwareness.joinTime,
+    )
+  )
+    return
+
+  localAwareness.clientType = 'guest'
+}
+
 export const setInitialAwareness = createAsyncThunk(
   'collab/setInitialAwareness',
   async (localAwareness: AwarenessState, thunkAPI) => {
-    let state = thunkAPI.getState() as RootState
+    const state = thunkAPI.getState() as RootState
     if (state.collab.startedCollab) localAwareness.clientType = 'host'
 
     const savedName = localStorage.getItem(savedCollabNameKey)
@@ -82,15 +105,6 @@ export const setInitialAwareness = createAsyncThunk(
     if (savedColor) localAwareness.color = savedColor
 
     thunkAPI.dispatch(setAwarenessStates([localAwareness]))
-
-    if (localAwareness.clientType === 'host') return
-
-    // Wait 1 second. If room is still empty, promote yourself to host
-    await sleep(1000)
-
-    state = thunkAPI.getState() as RootState
-    if (state.collab.wsConnected && state.collab.awarenessStates.length === 1)
-      thunkAPI.dispatch(promoteToHost())
   },
 )
 
@@ -123,10 +137,10 @@ export const collabSlice = createSlice({
 
       const localAwareness = getLocalAwareness(state)
       if (!localAwareness) return
-      setAwarenessColor(state, localAwareness)
 
-      if (awarenessStates.length === 1 && localAwareness.clientType !== 'host') return
+      setAwarenessColor(state, localAwareness)
       checkForNoHost(state, localAwareness)
+      checkForMultipleHost(state, localAwareness)
     },
     promoteToHost(state) {
       const localAwareness = getLocalAwareness(state)

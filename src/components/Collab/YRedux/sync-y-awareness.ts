@@ -51,8 +51,9 @@ export const SyncYAwareness = <T extends BaseAwarenessState>({
 
   // On mount sync local into remote
   useEffect(() => {
-    syncLocalIntoRemote(awareness, selectLocalAwarenessState(store.getState()))
-  }, [awareness, selectLocalAwarenessState, store])
+    // syncLocalIntoRemote(awareness, selectLocalAwarenessState(store.getState()))
+    syncRemoteIntoLocal(awareness, store, setAwarenessStates)
+  }, [awareness, selectLocalAwarenessState, setAwarenessStates, store])
 
   // Subscribe to local changes
   useEffect(() => {
@@ -66,6 +67,7 @@ export const SyncYAwareness = <T extends BaseAwarenessState>({
   // Subscribe to remote changes
   useEffect(() => {
     const observer = (_changes: unknown, origin: 'local' | unknown): void => {
+      console.log('ob', _changes, origin, awareness)
       if (origin === 'local') return
       syncRemoteIntoLocal(awareness, store, setAwarenessStates)
     }
