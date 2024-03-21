@@ -64,7 +64,6 @@ export function ImportRoute({ hidden }: Props) {
     <>
       <Button
         Icon={canPasteFromClipboard ? ClipboardIcon : ArrowUpTrayIcon}
-        data-tooltip-id="import-route-tooltip"
         short
         onClick={handleClick}
         shortcut={shortcuts.paste[0]}

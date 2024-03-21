@@ -82,7 +82,7 @@ export function Dropdown<T extends DropdownOption>({
   const ChevronIcon = optionsVisible ? ChevronUpIcon : ChevronDownIcon
 
   return (
-    <div ref={ref} className={`relative flex-1 min-w-0 ${className ?? ''}`}>
+    <div ref={ref} className={`relative flex-1 min-w-0 h-full ${className ?? ''}`}>
       <Button
         twoDimensional={!buttonText}
         short={short}

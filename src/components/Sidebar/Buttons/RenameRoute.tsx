@@ -1,11 +1,12 @@
 import { Dispatch, SetStateAction, useCallback, useState } from 'react'
 import { Button } from '../../Common/Button.tsx'
 import { CheckIcon, PencilIcon } from '@heroicons/react/24/outline'
-import { TooltipStyled } from '../../Common/TooltipStyled.tsx'
 import { setName } from '../../../store/routes/routesReducer.ts'
 
 import { useActualRoute } from '../../../store/routes/routeHooks.ts'
 import { useAppDispatch } from '../../../store/storeUtil.ts'
+import { dropdownWidth } from '../../Header/Header.tsx'
+import { useIsGuestCollab } from '../../../store/collab/collabReducer.ts'
 
 interface Props {
   isRenaming: boolean
@@ -16,6 +17,7 @@ interface Props {
 export function RenameRoute({ isRenaming, setRenaming, hidden }: Props) {
   const route = useActualRoute()
   const dispatch = useAppDispatch()
+  const isGuestCollab = useIsGuestCollab()
 
   const [input, setInput] = useState(route.name)
 
@@ -29,11 +31,14 @@ export function RenameRoute({ isRenaming, setRenaming, hidden }: Props) {
     setRenaming(false)
   }, [dispatch, input, setRenaming])
 
+  if (isGuestCollab) return null
+
   return (
     <>
       {isRenaming && (
         <input
           className="fancy w-full rounded-md"
+          style={{ width: dropdownWidth }}
           autoFocus
           placeholder="Route name"
           onKeyDown={(e) => {
@@ -50,12 +55,12 @@ export function RenameRoute({ isRenaming, setRenaming, hidden }: Props) {
         iconSize={20}
         onClick={isRenaming ? close : open}
         twoDimensional
-        data-tooltip-id="rename-route-tooltip"
         short
         style={{ paddingLeft: 12, paddingRight: 12 }}
         className={`${hidden ? '[&]:hidden' : ''}`}
+        tooltipId="rename-route-tooltip"
+        tooltip="Rename route"
       />
-      <TooltipStyled id="rename-route-tooltip">Rename route</TooltipStyled>
     </>
   )
 }

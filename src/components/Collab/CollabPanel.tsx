@@ -7,7 +7,6 @@ import { Panel } from '../Common/Panel.tsx'
 import { AwarenessClients } from './AwarenessClients.tsx'
 import { CollabSettings } from './CollabSettings.tsx'
 import { CollabButton } from './CollabButton.tsx'
-import { TooltipStyled } from '../Common/TooltipStyled.tsx'
 
 import { useAppDispatch } from '../../store/storeUtil.ts'
 
@@ -46,13 +45,13 @@ export function CollabPanel({ collapsed }: Props) {
       <div className="flex gap-1">
         <CollabButton active={active} shareUrl={shareUrl} />
         <Button
-          data-tooltip-id="collab-settings-tooltip"
           outline
           short
           Icon={Cog8ToothIcon}
           onClick={() => setCollabSettingsOpen(true)}
+          tooltipId="collab-settings-tooltip"
+          tooltip="Collab settings"
         />
-        <TooltipStyled id="collab-settings-tooltip">Collab settings</TooltipStyled>
       </div>
       {active && (
         <div className="flex gap-1">

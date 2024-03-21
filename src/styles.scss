@@ -312,6 +312,7 @@ input.fancy {
 
 .dropdown-main {
   width: 100%;
+  height: 100%;
   justify-content: flex-start;
 
   transition: border;
@@ -373,7 +374,7 @@ input.fancy {
   }
 }
 
-.dungeon-dropdown {
+.dungeon-dropdown .route-dropdown {
   .dropdown-main-text {
     font-size: 16px;
   }

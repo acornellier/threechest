@@ -1,9 +1,22 @@
-import { ButtonHTMLAttributes, DetailedHTMLProps } from 'react'
+import { ButtonHTMLAttributes, DetailedHTMLProps, ReactNode } from 'react'
 import { keyText, Shortcut } from '../../data/shortcuts.ts'
 import { IconComponent } from '../../util/types.ts'
+import { TooltipStyled } from './TooltipStyled.tsx'
 
-export interface ButtonProps
-  extends DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
+type TooltipProps =
+  | {
+      tooltip: ReactNode
+      tooltipId: string
+    }
+  | {
+      tooltip?: never
+      tooltipId?: never
+    }
+
+export type ButtonProps = DetailedHTMLProps<
+  ButtonHTMLAttributes<HTMLButtonElement>,
+  HTMLButtonElement
+> & {
   Icon?: IconComponent
   iconSize?: number
   iconRight?: boolean
@@ -14,7 +27,7 @@ export interface ButtonProps
   twoDimensional?: boolean
   justifyStart?: boolean
   color?: 'red' | 'green' | 'yellow'
-}
+} & TooltipProps
 
 function ButtonIconText({
   Icon,
@@ -53,6 +66,8 @@ export function Button({
   className,
   children,
   color,
+  tooltip,
+  tooltipId,
   ...props
 }: ButtonProps) {
   const buttonIconText = (
@@ -62,45 +77,49 @@ export function Button({
   )
 
   return (
-    <button
-      className={`fancy-button
+    <>
+      <button
+        className={`fancy-button
                   ${color ?? ''}
                   ${outline ? 'outline-button' : ''} 
                   ${short ? 'short' : ''} 
                   ${twoDimensional ? 'two-d' : ''} 
                   ${className ?? ''}`}
-      {...props}
-    >
-      <div className="fancy-button-hover flex-1 z-[1]" />
-      <div
-        className={`fancy-button-inner z-[2] ${innerClass ?? ''}`}
-        style={{
-          ...(justifyStart ? { justifyContent: 'flex-start' } : {}),
-        }}
+        data-tooltip-id={tooltipId}
+        {...props}
       >
-        {shortcut ? (
-          <div
-            className={`w-full gap-2 ${
-              justifyStart
-                ? 'flex justify-between items-center gap-2'
-                : 'grid grid-cols-[1fr_auto_1fr]'
-            }`}
-          >
-            {!justifyStart && <div />}
+        <div className="fancy-button-hover flex-1 z-[1]" />
+        <div
+          className={`fancy-button-inner z-[2] ${innerClass ?? ''}`}
+          style={{
+            ...(justifyStart ? { justifyContent: 'flex-start' } : {}),
+          }}
+        >
+          {shortcut ? (
             <div
-              className="flex flex-nowrap flex-1"
-              style={{
-                justifyContent: justifyStart ? 'flex-start' : 'center',
-              }}
+              className={`w-full gap-2 ${
+                justifyStart
+                  ? 'flex justify-between items-center gap-2'
+                  : 'grid grid-cols-[1fr_auto_1fr]'
+              }`}
             >
-              {buttonIconText}
+              {!justifyStart && <div />}
+              <div
+                className="flex flex-nowrap flex-1"
+                style={{
+                  justifyContent: justifyStart ? 'flex-start' : 'center',
+                }}
+              >
+                {buttonIconText}
+              </div>
+              <div className="text-gray-300 flex justify-end">{keyText(shortcut)}</div>
             </div>
-            <div className="text-gray-300 flex justify-end">{keyText(shortcut)}</div>
-          </div>
-        ) : (
-          buttonIconText
-        )}
-      </div>
-    </button>
+          ) : (
+            buttonIconText
+          )}
+        </div>
+      </button>
+      {tooltip && <TooltipStyled id={tooltipId}>{tooltip}</TooltipStyled>}
+    </>
   )
 }

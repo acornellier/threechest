@@ -30,14 +30,12 @@ export function DungeonDropdown() {
   const selected = useMemo(() => options.find((option) => option.id === dungeon.key)!, [dungeon])
 
   return (
-    <div className="min-w-[260px]">
-      <Dropdown
-        className="dungeon-dropdown"
-        options={options}
-        selected={selected}
-        onSelect={(newDungeon) => dispatch(setDungeon(newDungeon.id as DungeonKey))}
-        disabled={isGuestCollab}
-      />
-    </div>
+    <Dropdown
+      className="dungeon-dropdown"
+      options={options}
+      selected={selected}
+      onSelect={(newDungeon) => dispatch(setDungeon(newDungeon.id as DungeonKey))}
+      disabled={isGuestCollab}
+    />
   )
 }

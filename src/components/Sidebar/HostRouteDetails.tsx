@@ -4,7 +4,7 @@ import { ExportRoute } from './Buttons/ExportRoute.tsx'
 import { ShareRoute } from './Buttons/ShareRoute.tsx'
 import { ArchiveBoxArrowDownIcon, CheckIcon } from '@heroicons/react/24/outline'
 
-import { useRoute } from '../../store/routes/routeHooks.ts'
+import { useRoute, useSavedRoutes } from '../../store/routes/routeHooks.ts'
 import { useCallback, useEffect, useState } from 'react'
 import { useAppDispatch } from '../../store/storeUtil.ts'
 import { saveRoute, updateSavedRoutes } from '../../store/routes/routesReducer.ts'
@@ -16,11 +16,12 @@ interface Props {
 export function HostRouteDetails({ collapsed }: Props) {
   const dispatch = useAppDispatch()
   const route = useRoute()
+  const savedRoutes = useSavedRoutes()
   const [saved, setSaved] = useState(false)
 
   useEffect(() => {
-    setSaved(false)
-  }, [route])
+    if (!savedRoutes.some(({ uid }) => route.uid === uid)) setSaved(false)
+  }, [route, savedRoutes])
 
   const onSave = useCallback(async () => {
     dispatch(updateSavedRoutes())
@@ -30,9 +31,6 @@ export function HostRouteDetails({ collapsed }: Props) {
 
   return (
     <Panel noRightBorder>
-      <Button disabled>
-        <div className="overflow-hidden text-ellipsis whitespace-nowrap">{route.name}</div>
-      </Button>
       <Button
         Icon={saved ? CheckIcon : ArchiveBoxArrowDownIcon}
         short
@@ -40,7 +38,7 @@ export function HostRouteDetails({ collapsed }: Props) {
         disabled={saved}
         className={`${collapsed ? '[&]:hidden' : ''}`}
       >
-        {saved ? 'Saved locally' : 'Save locally'}
+        {saved ? 'Route saved' : "Save host's route locally"}
       </Button>
       <div className={`flex gap-1 ${collapsed ? 'hidden' : ''}`}>
         <ExportRoute />

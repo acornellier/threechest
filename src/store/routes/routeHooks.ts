@@ -15,9 +15,11 @@ export const useSelectedPull = () => useRoutesSelector((state) => state.selected
 export const useActualRoute = () => useRoutesSelector((state) => state.route)
 export const usePreviewRoute = () => useRootSelector((state) => state.import.previewRoute)
 
-const selectAllRoutes = (state: RouteState) => state.savedRoutes
+const selectSavedRoutes = (state: RouteState) => state.savedRoutes
+export const useSavedRoutes = () => useRoutesSelector(selectSavedRoutes)
+
 const selectDungeonRoutes = createSelector(
-  [selectAllRoutes, (_, dungeonKey: DungeonKey) => dungeonKey],
+  [selectSavedRoutes, (_, dungeonKey: DungeonKey) => dungeonKey],
   (allRoutes, dungeonKey) => allRoutes.filter((route) => route.dungeonKey === dungeonKey),
 )
 

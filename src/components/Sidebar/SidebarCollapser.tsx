@@ -16,7 +16,7 @@ interface Props {
 
 const initialTop = 8
 const height = 48
-const gap = 16
+const gap = 8
 
 export function SidebarCollapser({ collapsed, setCollapsed, index, vertical }: Props) {
   return (

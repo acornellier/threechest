@@ -3,7 +3,7 @@ import { ActionCreators } from 'redux-undo'
 import { useCallback } from 'react'
 import { useShortcut } from '../../hooks/useShortcut.ts'
 import { ArrowUturnLeftIcon, ArrowUturnRightIcon } from '@heroicons/react/24/outline'
-import { shortcuts } from '../../data/shortcuts.ts'
+import { keyText, shortcuts } from '../../data/shortcuts.ts'
 import { useAppDispatch, useRootSelector } from '../../store/storeUtil.ts'
 
 export function UndoRedo() {
@@ -24,26 +24,24 @@ export function UndoRedo() {
   useShortcut(shortcuts.redo, redo)
 
   return (
-    <div className="flex items-start gap-2">
+    <div className="flex items-start gap-2 h-full">
       <Button
         Icon={ArrowUturnLeftIcon}
         onClick={undo}
         disabled={!hasPast}
-        shortcut={shortcuts.undo[0]}
         justifyStart
-      >
-        Undo
-      </Button>
+        tooltip={`Undo (${keyText(shortcuts.undo[0]!)})`}
+        tooltipId="undo-tooltip"
+      />
       <Button
         Icon={ArrowUturnRightIcon}
         iconRight
         onClick={redo}
         disabled={!hasFuture}
-        shortcut={shortcuts.redo[0]}
         justifyStart
-      >
-        Redo
-      </Button>
+        tooltip={`Redo (${keyText(shortcuts.redo[0]!)})`}
+        tooltipId="redo-tooltip"
+      />
     </div>
   )
 }
