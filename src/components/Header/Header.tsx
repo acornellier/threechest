@@ -1,7 +1,8 @@
 ﻿import { DungeonDropdown } from './DungeonDropdown.tsx'
 import { Button } from '../Common/Button.tsx'
 import { UndoRedo } from './UndoRedo.tsx'
-import { useIsGuestCollab } from '../../store/hooks.ts'
+
+import { useIsGuestCollab } from '../../store/collab/collabReducer.ts'
 
 export function Header() {
   const isGuestCollab = useIsGuestCollab()

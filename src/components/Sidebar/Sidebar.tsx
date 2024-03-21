@@ -4,8 +4,8 @@ import { Pulls } from './Pulls/Pulls.tsx'
 import { CollabPanel } from '../Collab/CollabPanel.tsx'
 import { useState } from 'react'
 import { Footer } from '../Header/Footer.tsx'
-import { useIsGuestCollab } from '../../store/hooks.ts'
 import { HostRouteDetails } from './HostRouteDetails.tsx'
+import { useIsGuestCollab } from '../../store/collab/collabReducer.ts'
 
 const marginTop = 8
 const marginBottom = 60

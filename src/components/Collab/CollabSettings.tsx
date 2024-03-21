@@ -1,12 +1,18 @@
 import { Modal } from '../Common/Modal.tsx'
-import { useAppDispatch, useSavedCollabColor, useSavedCollabName } from '../../store/hooks.ts'
-import { setCollabColor, setCollabName } from '../../store/reducers/collabReducer.ts'
+import {
+  setCollabColor,
+  setCollabName,
+  useSavedCollabColor,
+  useSavedCollabName,
+} from '../../store/collab/collabReducer.ts'
 import { generateSlug } from 'random-word-slugs'
 import { useCallback } from 'react'
 import { generateColorWheel } from './colorWheel.ts'
 import { rgbToHex } from '../../util/colors.ts'
 import { Button } from '../Common/Button.tsx'
 import { TooltipStyled } from '../Common/TooltipStyled.tsx'
+
+import { useAppDispatch } from '../../store/hooks.ts'
 
 interface Props {
   onClose: () => void

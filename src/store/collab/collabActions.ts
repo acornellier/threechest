@@ -1,6 +1,11 @@
 import { highContrastColors } from '../../util/colors.ts'
-import { AwarenessState, CollabState, getLocalAwareness } from './collabReducer.ts'
-import { savedCollabColorKey, savedCollabNameKey } from '../hooks.ts'
+import {
+  AwarenessState,
+  CollabState,
+  getLocalAwareness,
+  savedCollabColorKey,
+  savedCollabNameKey,
+} from './collabReducer.ts'
 import { generateSlug } from 'random-word-slugs'
 
 function checkLocalAwareness(state: CollabState, localAwareness: AwarenessState) {

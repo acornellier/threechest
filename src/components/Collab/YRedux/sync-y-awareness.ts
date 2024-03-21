@@ -2,8 +2,8 @@ import { useEffect } from 'react'
 import { Action } from 'redux'
 import { Awareness } from 'y-protocols/awareness.js'
 import { cachedSubscribe } from './redux-subscriber.ts'
-import { useAppStore } from '../../../store/hooks.ts'
 import { AppStore, RootState } from '../../../store/store.ts'
+import { useAppStore } from '../../../store/hooks.ts'
 
 export type BaseAwarenessState = {
   clientId: number

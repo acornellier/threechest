@@ -1,6 +1,5 @@
 import { Button } from '../Common/Button.tsx'
-import { useAppDispatch, useCollabSelector } from '../../store/hooks.ts'
-import { joinCollab } from '../../store/reducers/collabReducer.ts'
+import { joinCollab, useCollabSelector } from '../../store/collab/collabReducer.ts'
 import { useCallback, useEffect, useState } from 'react'
 import { Cog8ToothIcon, ShareIcon } from '@heroicons/react/24/outline'
 import { addToast } from '../../store/reducers/toastReducer.ts'
@@ -9,6 +8,8 @@ import { AwarenessClients } from './AwarenessClients.tsx'
 import { CollabSettings } from './CollabSettings.tsx'
 import { CollabButton } from './CollabButton.tsx'
 import { TooltipStyled } from '../Common/TooltipStyled.tsx'
+
+import { useAppDispatch } from '../../store/hooks.ts'
 
 interface Props {
   collapsed?: boolean

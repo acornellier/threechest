@@ -1,9 +1,10 @@
 import { Dungeon, Point } from '../../data/types.ts'
 import { LatLngBoundsExpression } from 'leaflet'
 import { useMap } from 'react-leaflet'
-import { useDungeon } from '../../store/hooks.ts'
 import { useEffect } from 'react'
 import { mapBounds } from '../../util/map.ts'
+
+import { useDungeon } from '../../store/routes/routeHooks.ts'
 
 function getAdjustedBounds(dungeon: Dungeon): LatLngBoundsExpression {
   const defaultBounds: [Point, Point] = dungeon.defaultBounds ?? mapBounds

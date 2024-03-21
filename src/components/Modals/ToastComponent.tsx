@@ -5,9 +5,10 @@ import {
   XMarkIcon,
 } from '@heroicons/react/24/outline'
 import { removeToast, Toast } from '../../store/reducers/toastReducer.ts'
-import { useAppDispatch } from '../../store/hooks.ts'
 import { Button } from '../Common/Button.tsx'
 import { neverShowTips } from '../../data/tips.ts'
+
+import { useAppDispatch } from '../../store/hooks.ts'
 
 interface Props {
   toast: Toast
@@ -20,8 +21,8 @@ export function ToastComponent({ toast }: Props) {
     toast.type === 'success'
       ? CheckCircleIcon
       : toast.type === 'info'
-      ? InformationCircleIcon
-      : ExclamationTriangleIcon
+        ? InformationCircleIcon
+        : ExclamationTriangleIcon
 
   const onRemove = () => {
     dispatch(removeToast(toast.id))

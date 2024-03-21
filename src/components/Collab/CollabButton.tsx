@@ -1,10 +1,10 @@
 import { UserGroupIcon } from '@heroicons/react/24/outline'
 import { Button } from '../Common/Button.tsx'
 import { useCallback } from 'react'
-import { endCollab, startCollab } from '../../store/reducers/collabReducer.ts'
+import { endCollab, startCollab, useIsGuestCollab } from '../../store/collab/collabReducer.ts'
 import { addToast } from '../../store/reducers/toastReducer.ts'
 import { generateSlug } from 'random-word-slugs'
-import { useAppDispatch, useIsGuestCollab, useRootSelector } from '../../store/hooks.ts'
+import { useAppDispatch, useRootSelector } from '../../store/hooks.ts'
 
 interface Props {
   active: boolean

@@ -1,5 +1,4 @@
 import { Button } from '../Common/Button.tsx'
-import { useAppDispatch, useRootSelector } from '../../store/hooks.ts'
 import { clearImportingRoute } from '../../store/reducers/importReducer.ts'
 import { setRouteFromMdt } from '../../store/routes/routesReducer.ts'
 import { dungeonsByMdtIdx } from '../../data/dungeons.ts'
@@ -8,6 +7,7 @@ import { useCallback } from 'react'
 import { useShortcut } from '../../hooks/useShortcut.ts'
 import { shortcuts } from '../../data/shortcuts.ts'
 import { MdtRoute } from '../../util/types.ts'
+import { useAppDispatch, useRootSelector } from '../../store/hooks.ts'
 
 interface Props {
   importingRoute: MdtRoute

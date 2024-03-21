@@ -1,13 +1,14 @@
 import { useEffect, useState } from 'react'
 import * as Y from 'yjs'
 import { SyncYAwareness, SyncYJson } from './YRedux'
-import { selectLocalAwareness, useAppDispatch, useCollabSelector } from '../../store/hooks.ts'
 import {
   promoteToHost,
+  selectLocalAwareness,
   setAwarenessStates,
   setMousePosition,
   setWsConnected,
-} from '../../store/reducers/collabReducer.ts'
+  useCollabSelector,
+} from '../../store/collab/collabReducer.ts'
 import { RootState } from '../../store/store.ts'
 import { Route } from '../../util/types.ts'
 import { setRoute } from '../../store/routes/routesReducer.ts'
@@ -17,6 +18,7 @@ import { LeafletMouseEvent } from 'leaflet'
 import { addToast } from '../../store/reducers/toastReducer.ts'
 import { WebrtcProvider } from './y-webrtc/y-webrtc.js'
 import { NoHostChecker } from './NoHostChecker.tsx'
+import { useAppDispatch } from '../../store/hooks.ts'
 
 const selectData = (state: RootState) => state.routes.present.route
 

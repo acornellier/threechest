@@ -1,5 +1,6 @@
 import { PullOutline } from './PullOutline.tsx'
-import { useHoveredPull, useRoute, useSelectedPull } from '../../store/hooks.ts'
+import { useHoveredPull } from '../../store/reducers/hoverReducer.ts'
+import { useRoute, useSelectedPull } from '../../store/routes/routeHooks.ts'
 
 export function PullOutlines() {
   const route = useRoute()

@@ -3,7 +3,6 @@ import { MapContainer, TileLayer } from 'react-leaflet'
 import { CRS } from 'leaflet'
 import '../Leaflet/SmoothWheelZoom.ts'
 import '../Leaflet/BoxSelect/BoxSelect'
-import { useAppDispatch, useCollabSelector, useDungeon } from '../../store/hooks.ts'
 import { Drawings } from './Drawings.tsx'
 import { Notes } from './Notes.tsx'
 import { MapContextMenu } from './MapContextMenu.tsx'
@@ -16,6 +15,10 @@ import { mapBounds, mapCenter } from '../../util/map.ts'
 import { useEffect } from 'react'
 import { setMapObjectsHidden } from '../../store/reducers/mapReducer.ts'
 import { Collab } from '../Collab/Collab.tsx'
+import { useCollabSelector } from '../../store/collab/collabReducer.ts'
+
+import { useDungeon } from '../../store/routes/routeHooks.ts'
+import { useAppDispatch } from '../../store/hooks.ts'
 
 export function Map() {
   const dispatch = useAppDispatch()

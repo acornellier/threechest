@@ -1,9 +1,10 @@
 import { Panel } from '../Common/Panel.tsx'
 import { Button } from '../Common/Button.tsx'
-import { useRoute } from '../../store/hooks.ts'
 import { ExportRoute } from './Buttons/ExportRoute.tsx'
 import { ShareRoute } from './Buttons/ShareRoute.tsx'
 import { ArrowPathIcon } from '@heroicons/react/24/outline'
+
+import { useRoute } from '../../store/routes/routeHooks.ts'
 
 export function HostRouteDetails() {
   const route = useRoute()

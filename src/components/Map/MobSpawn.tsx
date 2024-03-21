@@ -3,20 +3,22 @@ import { divIcon, type LeafletEventHandlerFnMap } from 'leaflet'
 import { renderToString } from 'react-dom/server'
 import { memo, useMemo } from 'react'
 import { mobScale } from '../../util/mobSpawns.ts'
-import {
-  useAppDispatch,
-  useHoveredMobSpawn,
-  useHoverSelector,
-  useMapObjectsHidden,
-  useRoute,
-} from '../../store/hooks.ts'
 import { toggleSpawn } from '../../store/routes/routesReducer.ts'
 import { MobIcon } from './MobIcon.tsx'
 import { MobSpawnTooltip } from './MobSpawnTooltip.tsx'
-import { hoverSpawn, selectSpawn } from '../../store/reducers/hoverReducer.ts'
+import {
+  hoverSpawn,
+  selectIsBoxHovering,
+  selectSpawn,
+  useHoveredMobSpawn,
+} from '../../store/reducers/hoverReducer.ts'
 import { MobSpawn } from '../../data/types.ts'
 import { BossMarker } from './BossMarker.tsx'
 import { Patrol } from './Patrol.tsx'
+import { useMapObjectsHidden } from '../../store/reducers/mapReducer.ts'
+
+import { useRoute } from '../../store/routes/routeHooks.ts'
+import { useAppDispatch, useRootSelector } from '../../store/hooks.ts'
 
 interface MobSpawnProps {
   iconScaling: number
@@ -38,7 +40,7 @@ function MobSpawnComponent({
 }: MobSpawnMemoProps) {
   const { mob, spawn } = mobSpawn
   const dispatch = useAppDispatch()
-  const isBoxHovering = useHoverSelector((state) => state.isBoxHovering)
+  const isBoxHovering = useRootSelector(selectIsBoxHovering)
   const isActuallyHovered = isHovered && !isBoxHovering
   const iconSize = iconScaling * mobScale(mobSpawn) * (isActuallyHovered ? 1.15 : 1)
   const hidden = useMapObjectsHidden()

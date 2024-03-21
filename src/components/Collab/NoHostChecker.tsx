@@ -1,7 +1,7 @@
-import { useAppDispatch, useAppStore } from '../../store/hooks.ts'
 import { useEffect } from 'react'
-import { shouldPromoteToHost } from '../../store/reducers/collabActions.ts'
-import { promoteToHost } from '../../store/reducers/collabReducer.ts'
+import { shouldPromoteToHost } from '../../store/collab/collabActions.ts'
+import { promoteToHost } from '../../store/collab/collabReducer.ts'
+import { useAppDispatch, useAppStore } from '../../store/hooks.ts'
 
 export function NoHostChecker() {
   const dispatch = useAppDispatch()

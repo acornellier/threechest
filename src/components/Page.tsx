@@ -5,9 +5,11 @@ import { ConfirmImportModal } from './Modals/ConfirmImportModal.tsx'
 import { RouteSaver } from '../store/routes/RouteSaver.tsx'
 import { MobInfo } from './MobInfo.tsx'
 import { Header } from './Header/Header.tsx'
-import { useAppDispatch, useDungeon } from '../store/hooks.ts'
 import { useEffect } from 'react'
 import { defaultDungeonKey, setDungeon } from '../store/routes/routesReducer.ts'
+
+import { useDungeon } from '../store/routes/routeHooks.ts'
+import { useAppDispatch } from '../store/hooks.ts'
 
 export function Page() {
   const dispatch = useAppDispatch()

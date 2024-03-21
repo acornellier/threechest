@@ -1,6 +1,6 @@
-import { useAwarenessStates } from '../../store/hooks.ts'
 import { getTextColor } from '../../util/colors.ts'
 import { TooltipStyled } from '../Common/TooltipStyled.tsx'
+import { useAwarenessStates } from '../../store/collab/collabReducer.ts'
 
 export function AwarenessClients() {
   const awarenessStates = useAwarenessStates()

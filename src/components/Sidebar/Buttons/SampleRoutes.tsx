@@ -2,11 +2,13 @@ import { Dropdown, DropdownOption } from '../../Common/Dropdown.tsx'
 import { ReactNode, useCallback, useMemo } from 'react'
 import { Route } from '../../../util/types.ts'
 import { sampleRoutes } from '../../../data/sampleRoutes/sampleRoutes.ts'
-import { useAppDispatch, useDungeon } from '../../../store/hooks.ts'
 import { setPreviewRouteAsync } from '../../../store/reducers/importReducer.ts'
 import { MagnifyingGlassIcon } from '@heroicons/react/24/outline'
 import { setRouteFromSample } from '../../../store/routes/routesReducer.ts'
 import { addToast } from '../../../store/reducers/toastReducer.ts'
+
+import { useDungeon } from '../../../store/routes/routeHooks.ts'
+import { useAppDispatch } from '../../../store/hooks.ts'
 
 interface SampleRouteOption extends DropdownOption {
   route: Route

@@ -1,10 +1,11 @@
 import { useCallback, useEffect, useState } from 'react'
 import { Button } from '../../Common/Button.tsx'
-import { useAppDispatch } from '../../../store/hooks.ts'
 import { Modal } from '../../Common/Modal.tsx'
 import { importRoute } from '../../../store/reducers/importReducer.ts'
 import { ArrowUpTrayIcon, ClipboardIcon } from '@heroicons/react/24/outline'
 import { isEventInInput, shortcuts } from '../../../data/shortcuts.ts'
+
+import { useAppDispatch } from '../../../store/hooks.ts'
 
 const canPasteFromClipboard = !!navigator.clipboard.readText
 

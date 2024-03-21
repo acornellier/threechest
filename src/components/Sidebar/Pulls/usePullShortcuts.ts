@@ -9,8 +9,9 @@ import {
   selectPullRelative,
 } from '../../../store/routes/routesReducer.ts'
 import { useShortcut } from '../../../hooks/useShortcut.ts'
-import { useAppDispatch } from '../../../store/hooks.ts'
 import { shortcuts } from '../../../data/shortcuts.ts'
+
+import { useAppDispatch } from '../../../store/hooks.ts'
 
 export function usePullShortcuts() {
   const dispatch = useAppDispatch()

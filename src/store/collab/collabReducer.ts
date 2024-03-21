@@ -2,6 +2,9 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { BaseAwarenessState } from '../../components/Collab/YRedux'
 import { LatLng } from 'leaflet'
 import { postAwarenessUpdateChecks } from './collabActions.ts'
+import { useLocalStorage } from '../../hooks/useLocalStorage.ts'
+
+import { useRootSelector } from '../hooks.ts'
 
 export type ClientType = 'host' | 'guest'
 
@@ -97,7 +100,28 @@ export const collabSlice = createSlice({
       localAwareness.color = color
     },
   },
+  selectors: {
+    selectAwarenessStates: (state) => state.awarenessStates,
+    selectLocalAwareness: getLocalAwareness,
+    selectLocalAwarenessIsGuest: (state): boolean =>
+      collabSlice.getSelectors().selectLocalAwareness(state)?.clientType === 'guest',
+  },
 })
+
+export const useCollabSelector = <T>(selector: (state: CollabState) => T): T =>
+  useRootSelector((state) => selector(state.collab))
+
+export function useIsGuestCollab() {
+  const active = useCollabSelector((state) => state.active)
+  const isGuest = useRootSelector(selectLocalAwarenessIsGuest)
+  return active && isGuest
+}
+
+export const useAwarenessStates = () => useRootSelector(selectAwarenessStates)
+export const savedCollabNameKey = 'collab-name'
+export const useSavedCollabName = () => useLocalStorage(savedCollabNameKey, '', false)
+export const savedCollabColorKey = 'collab-color'
+export const useSavedCollabColor = () => useLocalStorage(savedCollabColorKey, '', false)
 
 export const collabReducer = collabSlice.reducer
 
@@ -112,3 +136,6 @@ export const {
   setCollabName,
   setCollabColor,
 } = collabSlice.actions
+
+export const { selectAwarenessStates, selectLocalAwareness, selectLocalAwarenessIsGuest } =
+  collabSlice.selectors

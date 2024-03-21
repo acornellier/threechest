@@ -1,14 +1,16 @@
-import { useAppDispatch, useDungeon, useHoverSelector } from '../store/hooks.ts'
 import { Panel } from './Common/Panel.tsx'
 import { XMarkIcon } from '@heroicons/react/24/outline'
-import { selectSpawn } from '../store/reducers/hoverReducer.ts'
+import { selectSelectedSpawn, selectSpawn } from '../store/reducers/hoverReducer.ts'
 import { getIconLink } from '../data/spells/mergeSpells.ts'
 import { addToast } from '../store/reducers/toastReducer.ts'
 import { findMobSpawn } from '../util/mobSpawns.ts'
 
+import { useDungeon } from '../store/routes/routeHooks.ts'
+import { useAppDispatch, useRootSelector } from '../store/hooks.ts'
+
 export function MobInfo() {
   const dispatch = useAppDispatch()
-  const selectedSpawn = useHoverSelector((state) => state.selectedSpawn)
+  const selectedSpawn = useRootSelector(selectSelectedSpawn)
   const dungeon = useDungeon()
   if (selectedSpawn === null) return
 

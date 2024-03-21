@@ -1,8 +1,9 @@
-import { useRoute } from '../../store/hooks.ts'
 import { Note } from './Note.tsx'
 import { useMap, useMapEvent } from 'react-leaflet'
 import { useState } from 'react'
 import { mapIconScaling } from '../../util/map.ts'
+
+import { useRoute } from '../../store/routes/routeHooks.ts'
 
 export function Notes() {
   const map = useMap()

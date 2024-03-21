@@ -5,8 +5,8 @@ import { cachedSubscribe } from './redux-subscriber.ts'
 import { isEmpty, patchYJson } from '../YJson'
 import { JsonTemplateContainer } from '../Json'
 import { Action } from '@reduxjs/toolkit'
-import { useAppStore } from '../../../store/hooks.ts'
 import { AppStore, RootState } from '../../../store/store.ts'
+import { useAppStore } from '../../../store/hooks.ts'
 
 function syncLocalIntoRemote<T extends JsonTemplateContainer>(
   store: AppStore,

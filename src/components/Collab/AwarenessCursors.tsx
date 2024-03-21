@@ -1,10 +1,9 @@
-import { useAwarenessStates } from '../../store/hooks.ts'
 import { Marker } from 'react-leaflet'
 import { divIcon } from 'leaflet'
 import { renderToStaticMarkup } from 'react-dom/server'
 import { CursorIcon } from '../Common/Icons/CursorIcon.tsx'
 import { getTextColor } from '../../util/colors.ts'
-import { AwarenessState } from '../../store/reducers/collabReducer.ts'
+import { AwarenessState, useAwarenessStates } from '../../store/collab/collabReducer.ts'
 
 function AwarenessCursor({ awareness }: { awareness: AwarenessState }) {
   if (awareness.isCurrentClient) return
