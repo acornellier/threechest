@@ -6,7 +6,8 @@ import { isEmpty, patchYJson } from '../YJson'
 import { JsonTemplateContainer } from '../Json'
 import { Action } from '@reduxjs/toolkit'
 import { AppStore, RootState } from '../../../store/store.ts'
-import { useAppStore } from '../../../store/storeUtil.ts'
+import { useAppStore, useRootSelector } from '../../../store/storeUtil.ts'
+import { selectLocalAwarenessIsHost } from '../../../store/collab/collabReducer.ts'
 
 function syncLocalIntoRemote<T extends JsonTemplateContainer>(
   store: AppStore,
@@ -28,6 +29,7 @@ function syncRemoteIntoLocal<T extends JsonTemplateContainer>(
   store: Store,
   setData: (data: T) => Action,
   yJson: Y.Map<T> | Y.Array<T>,
+  setRemoteDataReceived: (val: boolean) => void,
 ): void {
   if (isEmpty(yJson)) {
     console.debug(
@@ -39,35 +41,44 @@ function syncRemoteIntoLocal<T extends JsonTemplateContainer>(
   const remoteData = yJson.toJSON() as T
   // console.debug('syncRemoteIntoLocal Syncing', remoteData)
   store.dispatch(setData(remoteData))
+  setRemoteDataReceived(true)
 }
 
 interface Props<T extends JsonTemplateContainer> {
   yJson: Y.Map<T> | Y.Array<T>
   setData: (data: T) => Action
   selectData: (state: RootState) => T | undefined
-  aloneInRoom: boolean
 }
 
 export function SyncYJson<T extends JsonTemplateContainer>({
   yJson,
   setData,
   selectData,
-  aloneInRoom,
 }: Props<T>): null {
   const store = useAppStore()
   const [remoteDataReceived, setRemoteDataReceived] = useState(false)
-  const canPublishToRemote = remoteDataReceived || aloneInRoom
+  const isHost = useRootSelector(selectLocalAwarenessIsHost)
+  const canPublishToRemote = remoteDataReceived || isHost
+  const [, setFailCounter] = useState(0) // TODO: remove debug
 
   // On mount sync remote into local
   useEffect(() => {
-    syncRemoteIntoLocal(store, setData, yJson)
+    syncRemoteIntoLocal(store, setData, yJson, setRemoteDataReceived)
   }, [store, setData, yJson])
 
   // Subscribe to local changes
   useEffect(() => {
-    if (!canPublishToRemote) return
-
     const unsubscribe = cachedSubscribe(store, selectData, () => {
+      // TODO: remove debug
+      if (!canPublishToRemote) {
+        setFailCounter((val) => {
+          if (val >= 3) {
+            console.error("CAN'T PUBLISH - NO REMOTE DATA RECEIVED YET")
+          }
+          return val + 1
+        })
+        return
+      }
       syncLocalIntoRemote(store, selectData, yJson)
     })
 
@@ -78,8 +89,7 @@ export function SyncYJson<T extends JsonTemplateContainer>({
   useEffect(() => {
     const observer = (_events: any, transaction: Y.Transaction): void => {
       if (transaction.local) return
-      syncRemoteIntoLocal(store, setData, yJson)
-      setRemoteDataReceived(true)
+      syncRemoteIntoLocal(store, setData, yJson, setRemoteDataReceived)
     }
 
     yJson.observeDeep(observer)

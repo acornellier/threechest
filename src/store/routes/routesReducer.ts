@@ -224,7 +224,9 @@ const baseReducer = createAppSlice({
         payload: { changes, noteIndex },
       }: PayloadAction<{ changes: Partial<Note>; noteIndex: number }>,
     ) {
-      state.route.notes[noteIndex] = { ...state.route.notes[noteIndex]!, ...changes }
+      const curNote = state.route.notes[noteIndex]
+      if (!curNote) return
+      state.route.notes[noteIndex] = { ...curNote, ...changes }
     },
     deleteNote(state, { payload: noteIndex }: PayloadAction<number>) {
       state.route.notes.splice(noteIndex, 1)

@@ -35,7 +35,6 @@ export function Collab() {
   const dispatch = useAppDispatch()
   const room = useCollabSelector((state) => state.room)
   const leafletMap = useMap()
-  const [aloneInRoom, setAloneInRoom] = useState(false)
   const [yObjects, setYObjects] = useState<{ map: Y.Map<Route>; provider: WebrtcProvider }>()
 
   useEffect(() => {
@@ -56,7 +55,6 @@ export function Collab() {
     const onMouseOut = () => dispatch(setMousePosition(null))
     const onRoomSize = (roomSize: number) => {
       if (roomSize === 1) {
-        setAloneInRoom(true)
         dispatch(promoteToHost())
       }
     }
@@ -85,7 +83,7 @@ export function Collab() {
 
   return (
     <>
-      <SyncYJson yJson={map} setData={setRoute} selectData={selectData} aloneInRoom={aloneInRoom} />
+      <SyncYJson yJson={map} setData={setRoute} selectData={selectData} />
       <SyncYAwareness
         awareness={provider.awareness}
         setAwarenessStates={setAwarenessStates}

@@ -105,6 +105,8 @@ export const collabSlice = createAppSlice({
     selectLocalAwareness: getLocalAwareness,
     selectLocalAwarenessIsGuest: (state): boolean =>
       collabSlice.getSelectors().selectLocalAwareness(state)?.clientType === 'guest',
+    selectLocalAwarenessIsHost: (state): boolean =>
+      collabSlice.getSelectors().selectLocalAwareness(state)?.clientType === 'host',
   },
 })
 
@@ -137,5 +139,9 @@ export const {
   setCollabColor,
 } = collabSlice.actions
 
-export const { selectAwarenessStates, selectLocalAwareness, selectLocalAwarenessIsGuest } =
-  collabSlice.selectors
+export const {
+  selectAwarenessStates,
+  selectLocalAwareness,
+  selectLocalAwarenessIsGuest,
+  selectLocalAwarenessIsHost,
+} = collabSlice.selectors
