@@ -6,6 +6,7 @@ import { RenameRoute } from '../Sidebar/Buttons/RenameRoute.tsx'
 import { useState } from 'react'
 import { sidebarWidth } from '../Sidebar/Sidebar.tsx'
 import { UndoRedo } from './UndoRedo.tsx'
+import { isMobile } from '../../util/dev.ts'
 
 export const dropdownWidth = 260
 
@@ -19,7 +20,7 @@ export function Header() {
         <div
           className="w-fit flex gap-4 flex-col flex-wrap items-start sm:flex-row sm:items-stretch pointer-events-auto"
           style={{
-            maxWidth: `calc(100% - ${sidebarWidth + 32}px)`,
+            maxWidth: isMobile ? '' : `calc(100% - ${sidebarWidth + 32}px)`,
           }}
         >
           <Button twoDimensional className="min-w-fit" innerClass="text-2xl">
