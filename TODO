@@ -3,13 +3,10 @@
 - What if guest has route id that matches collab?
 - Backup route
 - Request promotion to host, or host promotes a guest
-- Try something else than Render
 
-- Handling incompatibile dungeons and routes
-- Handle 
+- Handling incompatible dungeons and routes
 - Logo
 - Collab docs
-- PullOutline, MobSpawn re-rendering on any route change
 
 Questionable, maybe post release
 - S4 dungeons
