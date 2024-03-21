@@ -57,6 +57,8 @@ export async function loadRouteFromStorage(routeId: string, dispatch: AppDispatc
   throw new Error(`Failed to load route ${routeId}`)
 }
 
+export const saveRoute = (route: Route) => localforage.setItem(getSavedRouteKey(route.uid), route)
+
 export const loadRoute = createAsyncThunk('routes/loadRoute', (routeId: string, thunkAPI) => {
   return loadRouteFromStorage(routeId, thunkAPI.dispatch as AppDispatch)
 })
