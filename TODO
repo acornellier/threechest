@@ -1,12 +1,16 @@
-﻿Collab
+﻿- Move Route dropdown to middle?
+- Ensure selected pull is valid at all costs
+
+Collab
 - Prevent guest from modifying route id at all costs
-- What if guest has route id that matches collab?
 - Backup route
 - Request promotion to host, or host promotes a guest
 
 - Handling incompatible dungeons and routes
 - Logo
 - Collab docs
+
+- Hire QA dude
 
 Questionable, maybe post release
 - S4 dungeons

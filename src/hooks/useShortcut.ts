@@ -8,7 +8,7 @@ export function useShortcut(
 ) {
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
-      if (isEventInInput(event)) return
+      if (event.repeat || isEventInInput(event)) return
 
       if (typeof shortcuts === 'string') {
         if (event.key.toLowerCase() === shortcuts.toLowerCase()) {
