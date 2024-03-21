@@ -16,6 +16,7 @@ import { useMap } from 'react-leaflet'
 import { LeafletMouseEvent } from 'leaflet'
 import { addToast } from '../../store/reducers/toastReducer.ts'
 import { WebrtcProvider } from './y-webrtc/y-webrtc.js'
+import { NoHostChecker } from './NoHostChecker.tsx'
 
 const selectData = (state: RootState) => state.routes.present.route
 
@@ -89,6 +90,7 @@ export function Collab() {
         selectLocalAwarenessState={selectLocalAwareness}
       />
       <AwarenessCursors />
+      <NoHostChecker />
     </>
   )
 }

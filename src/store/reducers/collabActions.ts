@@ -58,6 +58,10 @@ export function shouldPromoteToHost(state: CollabState): boolean {
   )
 }
 
+function checkForNoHost(state: CollabState, localAwareness: AwarenessState) {
+  if (shouldPromoteToHost(state)) localAwareness.clientType = 'host'
+}
+
 function checkForMultipleHost(state: CollabState, localAwareness: AwarenessState) {
   if (!localAwareness.joinTime) {
     console.error('setAwarenessColor should not be called without localAwareness.joinTime')
@@ -84,5 +88,6 @@ export function postAwarenessUpdateChecks(state: CollabState, localAwareness: Aw
 
   if (!state.wsConnected) return
   setAwarenessColor(state, localAwareness)
+  checkForNoHost(state, localAwareness)
   checkForMultipleHost(state, localAwareness)
 }
