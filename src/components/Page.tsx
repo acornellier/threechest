@@ -9,7 +9,7 @@ import { useEffect } from 'react'
 import { defaultDungeonKey, setDungeon } from '../store/routes/routesReducer.ts'
 
 import { useDungeon } from '../store/routes/routeHooks.ts'
-import { useAppDispatch } from '../store/hooks.ts'
+import { useAppDispatch } from '../store/storeUtil.ts'
 
 export function Page() {
   const dispatch = useAppDispatch()

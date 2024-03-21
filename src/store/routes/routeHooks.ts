@@ -3,7 +3,7 @@ import { RootState } from '../store.ts'
 import { DungeonKey } from '../../data/types.ts'
 import { dungeonsByKey } from '../../data/dungeons.ts'
 import { createSelector } from '@reduxjs/toolkit'
-import { useRootSelector } from '../hooks.ts'
+import { useRootSelector } from '../storeUtil.ts'
 
 export const useRoutesSelector = <T>(selector: (state: RouteState) => T): T =>
   useRootSelector((state) => selector(state.routes.present))

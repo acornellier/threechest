@@ -7,7 +7,7 @@ import { useCallback } from 'react'
 import { useShortcut } from '../../hooks/useShortcut.ts'
 import { shortcuts } from '../../data/shortcuts.ts'
 import { MdtRoute } from '../../util/types.ts'
-import { useAppDispatch, useRootSelector } from '../../store/hooks.ts'
+import { useAppDispatch, useRootSelector } from '../../store/storeUtil.ts'
 
 interface Props {
   importingRoute: MdtRoute

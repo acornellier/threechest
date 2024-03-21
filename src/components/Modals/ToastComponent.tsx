@@ -8,7 +8,7 @@ import { removeToast, Toast } from '../../store/reducers/toastReducer.ts'
 import { Button } from '../Common/Button.tsx'
 import { neverShowTips } from '../../data/tips.ts'
 
-import { useAppDispatch } from '../../store/hooks.ts'
+import { useAppDispatch } from '../../store/storeUtil.ts'
 
 interface Props {
   toast: Toast

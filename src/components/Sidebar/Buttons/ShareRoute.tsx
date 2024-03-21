@@ -5,7 +5,7 @@ import { ShareIcon } from '@heroicons/react/24/outline'
 import { useCallback } from 'react'
 
 import { useRoute } from '../../../store/routes/routeHooks.ts'
-import { useAppDispatch } from '../../../store/hooks.ts'
+import { useAppDispatch } from '../../../store/storeUtil.ts'
 
 interface Props {
   hidden?: boolean

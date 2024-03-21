@@ -3,7 +3,7 @@ import { newRoute } from '../../../store/routes/routesReducer.ts'
 import { PlusCircleIcon } from '@heroicons/react/24/outline'
 import { TooltipStyled } from '../../Common/TooltipStyled.tsx'
 
-import { useAppDispatch } from '../../../store/hooks.ts'
+import { useAppDispatch } from '../../../store/storeUtil.ts'
 
 export function NewRoute() {
   const dispatch = useAppDispatch()

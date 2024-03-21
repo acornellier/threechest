@@ -1,10 +1,10 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { PayloadAction } from '@reduxjs/toolkit'
 import { BaseAwarenessState } from '../../components/Collab/YRedux'
 import { LatLng } from 'leaflet'
 import { postAwarenessUpdateChecks } from './collabActions.ts'
 import { useLocalStorage } from '../../hooks/useLocalStorage.ts'
 
-import { useRootSelector } from '../hooks.ts'
+import { createAppSlice, useRootSelector } from '../storeUtil.ts'
 
 export type ClientType = 'host' | 'guest'
 
@@ -35,7 +35,7 @@ const initialState: CollabState = {
 export const getLocalAwareness = (state: CollabState) =>
   state.awarenessStates.find(({ isCurrentClient }) => isCurrentClient)
 
-export const collabSlice = createSlice({
+export const collabSlice = createAppSlice({
   name: 'collab',
   initialState,
   reducers: {

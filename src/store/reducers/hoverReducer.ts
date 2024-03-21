@@ -1,9 +1,8 @@
 import type { PayloadAction } from '@reduxjs/toolkit'
-import { createSlice } from '@reduxjs/toolkit'
 import { SpawnId } from '../../data/types.ts'
 import { findMobSpawn } from '../../util/mobSpawns.ts'
 import { useDungeon, usePreviewRoute } from '../routes/routeHooks.ts'
-import { useRootSelector } from '../hooks.ts'
+import { createAppSlice, useRootSelector } from '../storeUtil.ts'
 
 export interface HoverState {
   hoveredPull: number | null
@@ -21,7 +20,7 @@ const initialState: HoverState = {
   boxHoveredSpawns: [],
 }
 
-export const hoverSlice = createSlice({
+export const hoverSlice = createAppSlice({
   name: 'hover',
   initialState,
   reducers: {

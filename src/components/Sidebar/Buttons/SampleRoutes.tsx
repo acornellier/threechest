@@ -8,7 +8,7 @@ import { setRouteFromSample } from '../../../store/routes/routesReducer.ts'
 import { addToast } from '../../../store/reducers/toastReducer.ts'
 
 import { useDungeon } from '../../../store/routes/routeHooks.ts'
-import { useAppDispatch } from '../../../store/hooks.ts'
+import { useAppDispatch } from '../../../store/storeUtil.ts'
 
 interface SampleRouteOption extends DropdownOption {
   route: Route

@@ -8,7 +8,7 @@ import { deleteNote, editNote, moveNote } from '../../store/routes/routesReducer
 import { ContextMenu } from '../Common/ContextMenu.tsx'
 import { latLngToPoint } from '../../util/map.ts'
 import { useMapObjectsHidden } from '../../store/reducers/mapReducer.ts'
-import { useAppDispatch } from '../../store/hooks.ts'
+import { useAppDispatch } from '../../store/storeUtil.ts'
 
 interface Props {
   note: NoteType

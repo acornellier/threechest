@@ -2,7 +2,7 @@ import { ToastComponent } from './ToastComponent.tsx'
 import { useEffect } from 'react'
 import { getTipsSeen, neverShowTipsKey, pageVisitsKey, tips, tipsSeenKey } from '../../data/tips.ts'
 import { addToast } from '../../store/reducers/toastReducer.ts'
-import { useAppDispatch, useRootSelector } from '../../store/hooks.ts'
+import { useAppDispatch, useRootSelector } from '../../store/storeUtil.ts'
 
 export function Toasts() {
   const dispatch = useAppDispatch()

@@ -18,7 +18,7 @@ import { LeafletMouseEvent } from 'leaflet'
 import { addToast } from '../../store/reducers/toastReducer.ts'
 import { WebrtcProvider } from './y-webrtc/y-webrtc.js'
 import { NoHostChecker } from './NoHostChecker.tsx'
-import { useAppDispatch } from '../../store/hooks.ts'
+import { useAppDispatch } from '../../store/storeUtil.ts'
 
 const selectData = (state: RootState) => state.routes.present.route
 

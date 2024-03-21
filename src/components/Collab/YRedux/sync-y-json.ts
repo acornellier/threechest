@@ -6,7 +6,7 @@ import { isEmpty, patchYJson } from '../YJson'
 import { JsonTemplateContainer } from '../Json'
 import { Action } from '@reduxjs/toolkit'
 import { AppStore, RootState } from '../../../store/store.ts'
-import { useAppStore } from '../../../store/hooks.ts'
+import { useAppStore } from '../../../store/storeUtil.ts'
 
 function syncLocalIntoRemote<T extends JsonTemplateContainer>(
   store: AppStore,

@@ -4,7 +4,7 @@ import { SavedRoute } from '../../util/types.ts'
 import { Dropdown, DropdownOption } from '../Common/Dropdown.tsx'
 import { setPreviewRouteAsync } from '../../store/reducers/importReducer.ts'
 import { useActualRoute, useDungeonRoutes } from '../../store/routes/routeHooks.ts'
-import { useAppDispatch } from '../../store/hooks.ts'
+import { useAppDispatch } from '../../store/storeUtil.ts'
 
 const routeToOption = (route: SavedRoute): DropdownOption => ({
   id: route.uid,

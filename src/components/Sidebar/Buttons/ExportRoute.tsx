@@ -7,7 +7,7 @@ import { useCallback } from 'react'
 import { shortcuts } from '../../../data/shortcuts.ts'
 
 import { useRoute } from '../../../store/routes/routeHooks.ts'
-import { useAppDispatch } from '../../../store/hooks.ts'
+import { useAppDispatch } from '../../../store/storeUtil.ts'
 
 interface Props {
   hidden?: boolean

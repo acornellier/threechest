@@ -13,7 +13,7 @@ import { shortcuts } from '../../../data/shortcuts.ts'
 import { PullList } from './PullList.tsx'
 import { useHoveredPull } from '../../../store/reducers/hoverReducer.ts'
 import { useDungeon, useRoute } from '../../../store/routes/routeHooks.ts'
-import { useAppDispatch } from '../../../store/hooks.ts'
+import { useAppDispatch } from '../../../store/storeUtil.ts'
 
 export function Pulls() {
   const dispatch = useAppDispatch()

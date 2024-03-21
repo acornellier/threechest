@@ -4,7 +4,7 @@ import { useCallback } from 'react'
 import { endCollab, startCollab, useIsGuestCollab } from '../../store/collab/collabReducer.ts'
 import { addToast } from '../../store/reducers/toastReducer.ts'
 import { generateSlug } from 'random-word-slugs'
-import { useAppDispatch, useRootSelector } from '../../store/hooks.ts'
+import { useAppDispatch, useRootSelector } from '../../store/storeUtil.ts'
 
 interface Props {
   active: boolean

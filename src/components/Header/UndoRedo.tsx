@@ -4,7 +4,7 @@ import { useCallback } from 'react'
 import { useShortcut } from '../../hooks/useShortcut.ts'
 import { ArrowUturnLeftIcon, ArrowUturnRightIcon } from '@heroicons/react/24/outline'
 import { shortcuts } from '../../data/shortcuts.ts'
-import { useAppDispatch, useRootSelector } from '../../store/hooks.ts'
+import { useAppDispatch, useRootSelector } from '../../store/storeUtil.ts'
 
 export function UndoRedo() {
   const dispatch = useAppDispatch()

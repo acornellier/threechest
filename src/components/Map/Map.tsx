@@ -18,7 +18,7 @@ import { Collab } from '../Collab/Collab.tsx'
 import { useCollabSelector } from '../../store/collab/collabReducer.ts'
 
 import { useDungeon } from '../../store/routes/routeHooks.ts'
-import { useAppDispatch } from '../../store/hooks.ts'
+import { useAppDispatch } from '../../store/storeUtil.ts'
 
 export function Map() {
   const dispatch = useAppDispatch()

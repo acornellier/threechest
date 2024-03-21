@@ -5,7 +5,7 @@ import { TooltipStyled } from '../../Common/TooltipStyled.tsx'
 import { setName } from '../../../store/routes/routesReducer.ts'
 
 import { useActualRoute } from '../../../store/routes/routeHooks.ts'
-import { useAppDispatch } from '../../../store/hooks.ts'
+import { useAppDispatch } from '../../../store/storeUtil.ts'
 
 interface Props {
   isRenaming: boolean

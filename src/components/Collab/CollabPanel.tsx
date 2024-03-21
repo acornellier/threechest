@@ -9,7 +9,7 @@ import { CollabSettings } from './CollabSettings.tsx'
 import { CollabButton } from './CollabButton.tsx'
 import { TooltipStyled } from '../Common/TooltipStyled.tsx'
 
-import { useAppDispatch } from '../../store/hooks.ts'
+import { useAppDispatch } from '../../store/storeUtil.ts'
 
 interface Props {
   collapsed?: boolean

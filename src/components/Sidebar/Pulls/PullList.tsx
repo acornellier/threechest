@@ -5,7 +5,7 @@ import { ItemInterface, ReactSortable } from 'react-sortablejs'
 import { useCallback, useMemo, useState } from 'react'
 import { setPulls } from '../../../store/routes/routesReducer.ts'
 
-import { useAppDispatch } from '../../../store/hooks.ts'
+import { useAppDispatch } from '../../../store/storeUtil.ts'
 
 type SortablePull = PullDetailed & ItemInterface
 

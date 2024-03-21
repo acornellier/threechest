@@ -18,7 +18,7 @@ import { Patrol } from './Patrol.tsx'
 import { useMapObjectsHidden } from '../../store/reducers/mapReducer.ts'
 
 import { useRoute } from '../../store/routes/routeHooks.ts'
-import { useAppDispatch, useRootSelector } from '../../store/hooks.ts'
+import { useAppDispatch, useRootSelector } from '../../store/storeUtil.ts'
 
 interface MobSpawnProps {
   iconScaling: number

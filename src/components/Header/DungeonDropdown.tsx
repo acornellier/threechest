@@ -6,7 +6,7 @@ import { Dropdown, DropdownOption } from '../Common/Dropdown.tsx'
 import { useIsGuestCollab } from '../../store/collab/collabReducer.ts'
 
 import { useDungeon } from '../../store/routes/routeHooks.ts'
-import { useAppDispatch } from '../../store/hooks.ts'
+import { useAppDispatch } from '../../store/storeUtil.ts'
 
 const options: DropdownOption[] = dungeons.map((dungeon) => ({
   id: dungeon.key,

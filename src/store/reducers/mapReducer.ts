@@ -1,6 +1,6 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { PayloadAction } from '@reduxjs/toolkit'
 import { useEffect, useState } from 'react'
-import { useRootSelector } from '../hooks.ts'
+import { createAppSlice, useRootSelector } from '../storeUtil.ts'
 
 export interface MapState {
   objectsHidden: boolean
@@ -10,7 +10,7 @@ const initialState: MapState = {
   objectsHidden: true,
 }
 
-export const mapSlice = createSlice({
+export const mapSlice = createAppSlice({
   name: 'map',
   initialState,
   reducers: {

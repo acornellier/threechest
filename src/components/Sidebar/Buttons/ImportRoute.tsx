@@ -5,7 +5,7 @@ import { importRoute } from '../../../store/reducers/importReducer.ts'
 import { ArrowUpTrayIcon, ClipboardIcon } from '@heroicons/react/24/outline'
 import { isEventInInput, shortcuts } from '../../../data/shortcuts.ts'
 
-import { useAppDispatch } from '../../../store/hooks.ts'
+import { useAppDispatch } from '../../../store/storeUtil.ts'
 
 const canPasteFromClipboard = !!navigator.clipboard.readText
 

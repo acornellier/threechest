@@ -7,7 +7,7 @@ import type { LeafletEventHandlerFnMap } from 'leaflet'
 import { setBoxHovering } from '../../store/reducers/hoverReducer.ts'
 
 import { useDungeon } from '../../store/routes/routeHooks.ts'
-import { useAppDispatch } from '../../store/hooks.ts'
+import { useAppDispatch } from '../../store/storeUtil.ts'
 
 export function Mobs() {
   const dungeon = useDungeon()

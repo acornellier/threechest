@@ -9,7 +9,7 @@ import { Pull } from '../../util/types.ts'
 import { useMapObjectsHidden } from '../../store/reducers/mapReducer.ts'
 
 import { useDungeon } from '../../store/routes/routeHooks.ts'
-import { useAppDispatch } from '../../store/hooks.ts'
+import { useAppDispatch } from '../../store/storeUtil.ts'
 
 interface Props {
   pull: Pull

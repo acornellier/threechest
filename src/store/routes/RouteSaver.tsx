@@ -5,7 +5,7 @@ import { importRoute } from '../reducers/importReducer.ts'
 import { useIsGuestCollab } from '../collab/collabReducer.ts'
 
 import { useActualRoute } from './routeHooks.ts'
-import { useAppDispatch } from '../hooks.ts'
+import { useAppDispatch } from '../storeUtil.ts'
 
 export function RouteSaver() {
   const dispatch = useAppDispatch()

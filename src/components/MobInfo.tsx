@@ -6,7 +6,7 @@ import { addToast } from '../store/reducers/toastReducer.ts'
 import { findMobSpawn } from '../util/mobSpawns.ts'
 
 import { useDungeon } from '../store/routes/routeHooks.ts'
-import { useAppDispatch, useRootSelector } from '../store/hooks.ts'
+import { useAppDispatch, useRootSelector } from '../store/storeUtil.ts'
 
 export function MobInfo() {
   const dispatch = useAppDispatch()

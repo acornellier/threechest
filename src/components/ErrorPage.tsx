@@ -9,7 +9,7 @@ import {
   TrashIcon,
 } from '@heroicons/react/24/outline'
 import { isDev } from '../util/dev.ts'
-import { useAppDispatch, useRootSelector } from '../store/hooks.ts'
+import { useAppDispatch, useRootSelector } from '../store/storeUtil.ts'
 
 interface Props {
   errors: Array<{ error: Error; info: ErrorInfo }>

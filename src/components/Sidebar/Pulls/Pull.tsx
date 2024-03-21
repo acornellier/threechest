@@ -7,7 +7,7 @@ import { mobCountPercentStr } from '../../../util/numbers.ts'
 import { hoverPull } from '../../../store/reducers/hoverReducer.ts'
 import { findMobSpawn } from '../../../util/mobSpawns.ts'
 import { useDungeon, useSelectedPull } from '../../../store/routes/routeHooks.ts'
-import { useAppDispatch } from '../../../store/hooks.ts'
+import { useAppDispatch } from '../../../store/storeUtil.ts'
 
 type MobCount = Record<number, { mob: Mob; count: number }>
 

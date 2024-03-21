@@ -12,7 +12,7 @@ import { rgbToHex } from '../../util/colors.ts'
 import { Button } from '../Common/Button.tsx'
 import { TooltipStyled } from '../Common/TooltipStyled.tsx'
 
-import { useAppDispatch } from '../../store/hooks.ts'
+import { useAppDispatch } from '../../store/storeUtil.ts'
 
 interface Props {
   onClose: () => void
