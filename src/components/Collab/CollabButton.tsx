@@ -19,7 +19,6 @@ export function CollabButton({ active, shareUrl }: Props) {
   const onClick = useCallback(async () => {
     if (active) {
       dispatch(endCollab())
-      window.history.replaceState({}, '', window.location.origin)
       dispatch(addToast({ message: 'Collab ended.', type: 'info' }))
     } else {
       const room = generateSlug()

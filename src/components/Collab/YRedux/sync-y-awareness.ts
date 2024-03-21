@@ -15,7 +15,7 @@ const syncLocalIntoRemote = <T extends BaseAwarenessState>(
   data: T | undefined,
 ): void => {
   if (data === undefined) {
-    console.warn('syncLocalIntoRemote Not syncing: Local data is undefined')
+    console.debug('syncLocalIntoRemote Not syncing: Local data is undefined')
     return
   }
 

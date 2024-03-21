@@ -1,5 +1,5 @@
 import { Button } from './Common/Button.tsx'
-import { ErrorInfo } from 'react'
+import { ErrorInfo, useEffect } from 'react'
 import { defaultDungeonKey, deleteRoute, newRoute } from '../store/routes/routesReducer.ts'
 import {
   ArrowPathIcon,
@@ -10,15 +10,22 @@ import {
 } from '@heroicons/react/24/outline'
 import { isDev } from '../util/dev.ts'
 import { useAppDispatch, useRootSelector } from '../store/storeUtil.ts'
+import { endCollab } from '../store/collab/collabReducer.ts'
 
 interface Props {
   errors: Array<{ error: Error; info: ErrorInfo }>
 }
 
 export function ErrorPage({ errors }: Props) {
+  const dispatch = useAppDispatch()
+
   const rootState = useRootSelector((state) => state)
   const route = rootState?.routes?.present?.route
-  const dispatch = useAppDispatch()
+  const collabActive = rootState?.collab?.active
+
+  useEffect(() => {
+    if (collabActive) dispatch(endCollab())
+  }, [dispatch, collabActive])
 
   const reloadPage = () => {
     setTimeout(() => window.location.reload(), 500)

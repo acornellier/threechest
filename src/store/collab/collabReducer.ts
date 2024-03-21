@@ -49,6 +49,7 @@ export const collabSlice = createAppSlice({
       state.active = false
       state.startedCollab = false
       state.awarenessStates = []
+      window.history.replaceState({}, '', window.location.origin)
     },
     joinCollab(state, { payload: room }: PayloadAction<string>) {
       state.active = true
