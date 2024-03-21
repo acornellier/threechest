@@ -9,7 +9,11 @@ import { useCallback, useEffect, useState } from 'react'
 import { useAppDispatch } from '../../store/storeUtil.ts'
 import { saveRoute, updateSavedRoutes } from '../../store/routes/routesReducer.ts'
 
-export function HostRouteDetails() {
+interface Props {
+  collapsed?: boolean
+}
+
+export function HostRouteDetails({ collapsed }: Props) {
   const dispatch = useAppDispatch()
   const route = useRoute()
   const [saved, setSaved] = useState(false)
@@ -18,9 +22,9 @@ export function HostRouteDetails() {
     setSaved(false)
   }, [route])
 
-  const onSave = useCallback(() => {
+  const onSave = useCallback(async () => {
     dispatch(updateSavedRoutes())
-    saveRoute(route)
+    await saveRoute(route)
     setSaved(true)
   }, [dispatch, route])
 
@@ -34,10 +38,11 @@ export function HostRouteDetails() {
         short
         onClick={onSave}
         disabled={saved}
+        className={`${collapsed ? '[&]:hidden' : ''}`}
       >
         {saved ? 'Saved locally' : 'Save locally'}
       </Button>
-      <div className="flex gap-1">
+      <div className={`flex gap-1 ${collapsed ? 'hidden' : ''}`}>
         <ExportRoute />
         <ShareRoute />
       </div>

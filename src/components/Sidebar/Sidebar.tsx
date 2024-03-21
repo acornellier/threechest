@@ -34,7 +34,11 @@ export function Sidebar() {
         setCollapsed={setTopCollapsed}
         index={1}
       />
-      {isGuestCollab ? <HostRouteDetails /> : <RouteDetails collapsed={topCollapsed} />}
+      {isGuestCollab ? (
+        <HostRouteDetails collapsed={topCollapsed} />
+      ) : (
+        <RouteDetails collapsed={topCollapsed} />
+      )}
       <CollabPanel collapsed={topCollapsed} />
       <Pulls />
       <Footer />
