@@ -7,17 +7,19 @@ import { Footer } from '../Header/Footer.tsx'
 import { HostRouteDetails } from './HostRouteDetails.tsx'
 import { useIsGuestCollab } from '../../store/collab/collabReducer.ts'
 
-const marginTop = 8
-const marginBottom = 60
 export const sidebarWidth = 290
 
 export function Sidebar() {
   const [collapsed, setCollapsed] = useState(false)
   const isGuestCollab = useIsGuestCollab()
 
+  const top = 80
+  const marginTop = 8
+  const marginBottom = 60 + top
+
   return (
     <div
-      className="fixed right-0 z-20 flex flex-col gap-1.5 transition-all"
+      className="fixed top-0 sm:top-20 lg:top-0 right-0 z-20 flex flex-col gap-1.5 transition-all"
       style={{
         width: sidebarWidth,
         marginTop,
