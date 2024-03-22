@@ -276,6 +276,15 @@ const baseReducer = createAppSlice({
       )
       setRouteFresh(state, route)
     })
+
+    builder.addMatcher(
+      (action) => action.type.startsWith('routes/'),
+      (state) => {
+        if (state.selectedPull < 0) state.selectedPull = 0
+        else if (state.selectedPull >= state.route.pulls.length)
+          state.selectedPull = state.route.pulls.length - 1
+      },
+    )
   },
 })
 

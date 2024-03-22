@@ -5,7 +5,7 @@ import { isMac } from '../util/dev.ts'
 export function useShortcut(
   shortcuts: string | Shortcut[],
   callback: (event: KeyboardEvent) => void,
-  options: { allowRepeat?: boolean } | undefined,
+  options?: { allowRepeat?: boolean },
 ) {
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {

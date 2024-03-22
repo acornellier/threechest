@@ -17,10 +17,10 @@ export function usePullShortcuts() {
   const dispatch = useAppDispatch()
 
   const onKeyBackspace = useCallback(() => dispatch(deletePull({ moveUp: true })), [dispatch])
-  useShortcut(shortcuts.backspacePull, onKeyBackspace)
+  useShortcut(shortcuts.backspacePull, onKeyBackspace, { allowRepeat: true })
 
   const onKeyDelete = useCallback(() => dispatch(deletePull({})), [dispatch])
-  useShortcut(shortcuts.deletePull, onKeyDelete)
+  useShortcut(shortcuts.deletePull, onKeyDelete, { allowRepeat: true })
 
   const onAppend = useCallback(() => dispatch(appendPull()), [dispatch])
   useShortcut(shortcuts.appendPull, onAppend)
@@ -35,10 +35,10 @@ export function usePullShortcuts() {
   useShortcut(shortcuts.clearPull, onClearPull)
 
   const onPullDown = useCallback(() => dispatch(selectPullRelative(1)), [dispatch])
-  useShortcut(shortcuts.pullDown, onPullDown)
+  useShortcut(shortcuts.pullDown, onPullDown, { allowRepeat: true })
 
   const onPullUp = useCallback(() => dispatch(selectPullRelative(-1)), [dispatch])
-  useShortcut(shortcuts.pullUp, onPullUp)
+  useShortcut(shortcuts.pullUp, onPullUp, { allowRepeat: true })
 
   const onNumberKey = useCallback(
     (e: KeyboardEvent) => {

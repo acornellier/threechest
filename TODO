@@ -1,6 +1,4 @@
-﻿- Ensure selected pull is valid at all costs
-
-Collab
+﻿Collab
 - Prevent guest from modifying route id at all costs
 - Backup route
 - Request promotion to host, or host promotes a guest
