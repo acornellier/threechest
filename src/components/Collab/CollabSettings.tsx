@@ -7,12 +7,11 @@ import {
 } from '../../store/collab/collabReducer.ts'
 import { generateSlug } from 'random-word-slugs'
 import { useCallback } from 'react'
-import { generateColorWheel } from './colorWheel.ts'
-import { rgbToHex } from '../../util/colors.ts'
 import { Button } from '../Common/Button.tsx'
 import { TooltipStyled } from '../Common/TooltipStyled.tsx'
 
 import { useAppDispatch } from '../../store/storeUtil.ts'
+import { useColorWheelCanvas } from '../Common/useColorWheelCanvas.ts'
 
 interface Props {
   onClose: () => void
@@ -38,27 +37,7 @@ export function CollabSettings({ onClose }: Props) {
     [dispatch, setSavedColor],
   )
 
-  const canvasRef = useCallback(
-    (colorWheel: HTMLCanvasElement) => {
-      if (!colorWheel) return
-
-      generateColorWheel(colorWheel, 250, 1)
-
-      const onMouseEvent = (e: MouseEvent) => {
-        if (!e.which) return
-        const ctx = colorWheel.getContext('2d')
-        if (!ctx) return
-        const data = ctx.getImageData(e.offsetX, e.offsetY, 1, 1)
-        const [r, g, b] = data.data.slice(0, 3) as unknown as [number, number, number]
-        const color = rgbToHex(r, g, b)
-        onChangeColor(color)
-      }
-
-      colorWheel.onmousedown = onMouseEvent
-      colorWheel.onmousemove = onMouseEvent
-    },
-    [onChangeColor],
-  )
+  const canvasRef = useColorWheelCanvas(onChangeColor)
 
   return (
     <Modal title="Collab settings" onClose={onClose} closeOnEscape closeOnClickOutside>

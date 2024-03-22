@@ -1,8 +1,8 @@
 import { memo, useEffect, useState } from 'react'
-import { Drawing as DrawingType } from '../../util/types.ts'
+import { Drawing as DrawingType } from '../../../util/types.ts'
 import { Polyline } from 'react-leaflet'
 import { Arrowhead } from './Arrowhead.tsx'
-import { useMapObjectsHidden } from '../../store/reducers/mapReducer.ts'
+import { useMapObjectsHidden } from '../../../store/reducers/mapReducer.ts'
 
 interface Props {
   drawing: DrawingType

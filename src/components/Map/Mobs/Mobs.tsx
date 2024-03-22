@@ -1,13 +1,17 @@
 import { useMap, useMapEvents } from 'react-leaflet'
 import { useMemo, useState } from 'react'
-import { mapIconScaling } from '../../util/map.ts'
+import { mapIconScaling } from '../../../util/map.ts'
 import { MobSpawnWrapper } from './MobSpawn.tsx'
-import { boxSelectEnd, boxSelectSpawns, boxSelectStart } from '../../store/routes/routesReducer.ts'
+import {
+  boxSelectEnd,
+  boxSelectSpawns,
+  boxSelectStart,
+} from '../../../store/routes/routesReducer.ts'
 import type { LeafletEventHandlerFnMap } from 'leaflet'
-import { setBoxHovering } from '../../store/reducers/hoverReducer.ts'
+import { setBoxHovering } from '../../../store/reducers/hoverReducer.ts'
 
-import { useDungeon } from '../../store/routes/routeHooks.ts'
-import { useAppDispatch } from '../../store/storeUtil.ts'
+import { useDungeon } from '../../../store/routes/routeHooks.ts'
+import { useAppDispatch } from '../../../store/storeUtil.ts'
 
 export function Mobs() {
   const dungeon = useDungeon()

@@ -1,5 +1,5 @@
 import { createAsyncThunk, PayloadAction } from '@reduxjs/toolkit'
-import { MdtRoute, Note, Pull, Route, SavedRoute } from '../../util/types.ts'
+import { Drawing, MdtRoute, Note, Pull, Route, SavedRoute } from '../../util/types.ts'
 import { DungeonKey, SpawnId } from '../../data/types.ts'
 import { mdtRouteToRoute } from '../../util/mdtUtil.ts'
 import undoable, { combineFilters, excludeAction, includeAction } from 'redux-undo'
@@ -152,9 +152,11 @@ const baseReducer = createAppSlice({
     },
     clearRoute(state) {
       state.route.pulls = [emptyPull]
-      state.route.drawings = []
       state.route.notes = []
       state.selectedPull = 0
+    },
+    clearDrawings(state) {
+      state.route.drawings = []
     },
     setName(state, { payload }: PayloadAction<string>) {
       state.route.name = payload
@@ -245,6 +247,9 @@ const baseReducer = createAppSlice({
       state.route.notes[noteIndex] = noteToSwap
       state.route.notes[newIndex] = noteToMove
     },
+    addDrawing(state, { payload: drawing }: PayloadAction<Drawing>) {
+      state.route.drawings.push(drawing)
+    },
     updateSavedRoutes(state) {
       const savedRoute = state.savedRoutes.find((route) => route.uid === state.route.uid)
       if (!savedRoute) {
@@ -306,6 +311,9 @@ const undoableReducer = undoable(baseReducer.reducer, {
       // baseReducer.actions.addNote.type, // intentionally leave out for justAdded hack
       baseReducer.actions.editNote.type,
       baseReducer.actions.deleteNote.type,
+      baseReducer.actions.moveNote.type,
+      baseReducer.actions.addDrawing.type,
+      baseReducer.actions.clearDrawings.type,
     ]),
     excludeAction(['persist/PERSIST', 'persist/REHYDRATE']),
   ),
@@ -334,6 +342,7 @@ export const {
   setRouteFromMdt,
   setRouteFromSample,
   clearRoute,
+  clearDrawings,
   setName,
   addPull,
   appendPull,
@@ -350,5 +359,6 @@ export const {
   addNote,
   editNote,
   deleteNote,
+  addDrawing,
   moveNote,
 } = baseReducer.actions

@@ -1,6 +1,6 @@
-import { Point } from '../../data/types.ts'
+import { Point } from '../../../data/types.ts'
 import { Polygon } from 'react-leaflet'
-import { Drawing as DrawingType } from '../../util/types.ts'
+import { Drawing as DrawingType } from '../../../util/types.ts'
 import { useEffect, useState } from 'react'
 
 const arrowheadPositions: Point[] = [

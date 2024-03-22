@@ -1,8 +1,8 @@
 import { Polygon } from 'react-leaflet'
-import { Spawn } from '../../data/types.ts'
+import { Spawn } from '../../../data/types.ts'
 import { useEffect, useState } from 'react'
 
-import { useMapObjectsHidden } from '../../store/reducers/mapReducer.ts'
+import { useMapObjectsHidden } from '../../../store/reducers/mapReducer.ts'
 
 interface Props {
   spawn: Spawn

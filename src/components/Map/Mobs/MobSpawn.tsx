@@ -2,8 +2,8 @@
 import { divIcon, type LeafletEventHandlerFnMap } from 'leaflet'
 import { renderToString } from 'react-dom/server'
 import { memo, useMemo } from 'react'
-import { mobScale } from '../../util/mobSpawns.ts'
-import { toggleSpawn } from '../../store/routes/routesReducer.ts'
+import { mobScale } from '../../../util/mobSpawns.ts'
+import { toggleSpawn } from '../../../store/routes/routesReducer.ts'
 import { MobIcon } from './MobIcon.tsx'
 import { MobSpawnTooltip } from './MobSpawnTooltip.tsx'
 import {
@@ -11,14 +11,14 @@ import {
   selectIsBoxHovering,
   selectSpawn,
   useHoveredMobSpawn,
-} from '../../store/reducers/hoverReducer.ts'
-import { MobSpawn } from '../../data/types.ts'
+} from '../../../store/reducers/hoverReducer.ts'
+import { MobSpawn } from '../../../data/types.ts'
 import { BossMarker } from './BossMarker.tsx'
 import { Patrol } from './Patrol.tsx'
-import { useMapObjectsHidden } from '../../store/reducers/mapReducer.ts'
+import { useMapObjectsHidden } from '../../../store/reducers/mapReducer.ts'
 
-import { useRoute } from '../../store/routes/routeHooks.ts'
-import { useAppDispatch, useRootSelector } from '../../store/storeUtil.ts'
+import { useRoute } from '../../../store/routes/routeHooks.ts'
+import { useAppDispatch, useRootSelector } from '../../../store/storeUtil.ts'
 
 interface MobSpawnProps {
   iconScaling: number

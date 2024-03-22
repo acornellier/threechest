@@ -6,6 +6,7 @@ import { RenameRoute } from '../Sidebar/Buttons/RenameRoute.tsx'
 import { useState } from 'react'
 import { sidebarWidth } from '../Sidebar/Sidebar.tsx'
 import { UndoRedo } from './UndoRedo.tsx'
+import { DrawToolbar } from '../Map/Draw/DrawToolbar.tsx'
 
 export const dropdownWidth = 258
 
@@ -37,11 +38,12 @@ export function Header() {
             <RenameRoute isRenaming={isRenaming} setRenaming={setRenaming} />
           </div>
         </div>
-        {!isGuestCollab && (
-          <div className="pointer-events-auto">
-            <UndoRedo />
+        <div className="pointer-events-auto">
+          <div className="flex items-start gap-6 h-full">
+            {!isGuestCollab && <UndoRedo />}
+            <DrawToolbar />
           </div>
-        )}
+        </div>
       </div>
     </div>
   )

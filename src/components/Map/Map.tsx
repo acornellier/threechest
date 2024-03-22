@@ -3,22 +3,22 @@ import { MapContainer, TileLayer } from 'react-leaflet'
 import { CRS } from 'leaflet'
 import '../Leaflet/SmoothWheelZoom.ts'
 import '../Leaflet/BoxSelect/BoxSelect'
-import { Drawings } from './Drawings.tsx'
-import { Notes } from './Notes.tsx'
+import { Drawings } from './Drawings/Drawings.tsx'
+import { Notes } from './Notes/Notes.tsx'
 import { MapContextMenu } from './MapContextMenu.tsx'
 import { MousePosition } from '../Leaflet/MousePosition/MousePosition'
 import { isDev } from '../../util/dev.ts'
-import { Mobs } from './Mobs.tsx'
-import { PullOutlines } from './PullOutlines.tsx'
+import { Mobs } from './Mobs/Mobs.tsx'
+import { PullOutlines } from './PullOutlines/PullOutlines.tsx'
 import { MapInitialZoom } from './MapInitialZoom.tsx'
 import { mapBounds, mapCenter } from '../../util/map.ts'
 import { useEffect } from 'react'
 import { setMapObjectsHidden } from '../../store/reducers/mapReducer.ts'
 import { Collab } from '../Collab/Collab.tsx'
 import { useCollabSelector } from '../../store/collab/collabReducer.ts'
-
 import { useDungeon } from '../../store/routes/routeHooks.ts'
 import { useAppDispatch } from '../../store/storeUtil.ts'
+import { PatherComponent } from './Draw/PatherComponent.tsx'
 
 export function Map() {
   const dispatch = useAppDispatch()
@@ -63,6 +63,7 @@ export function Map() {
         <Drawings />
         <Notes />
         <MapContextMenu />
+        <PatherComponent />
         <MapInitialZoom />
         {collabActive && <Collab />}
         {isDev && <MousePosition />}
