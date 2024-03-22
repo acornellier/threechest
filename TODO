@@ -2,12 +2,11 @@
 - Prevent guest from modifying route id at all costs
 - Backup route
 - Request promotion to host, or host promotes a guest
-- Docs
 
 - Handling incompatible dungeons and routes
 - Pull % hard to read
 - Drawing on map
-- Mobile add pull while sidebar collapsed
+- Mobile - add pull while sidebar collapsed, delete pull
 - Hire QA dude
 
 Questionable, maybe post release

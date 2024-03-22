@@ -27,7 +27,7 @@ export const minContextMenuWidth = 180
 export function ContextMenu({ position, buttons, onClose }: ContextMenuProps) {
   return (
     <div
-      className="fixed z-[9999]"
+      className="fixed z-[10000]"
       onContextMenu={(e) => e.preventDefault()}
       style={{
         minWidth: minContextMenuWidth,

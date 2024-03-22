@@ -16,7 +16,7 @@ export function Header() {
   const smMaxWidth = `sm:max-w-[${sidebarWidth + 32}px]`
 
   return (
-    <div className="fixed top-4 left-4 z-30 w-full grid items-center pointer-events-none">
+    <div className="fixed top-4 left-4 z-10 sm:z-30 w-full grid items-center pointer-events-none">
       <div className="pointer-events-none flex flex-col items-start gap-4 lg: flex-row]">
         <div
           className={`w-fit flex gap-4 flex-col flex-wrap sm:flex-nowrap items-start sm:flex-row sm:items-stretch pointer-events-auto ${smMaxWidth}`}

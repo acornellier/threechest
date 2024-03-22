@@ -81,10 +81,12 @@ export function CollabPanel({ collapsed }: Props) {
           </Button>
         </div>
       )}
-      <div className="flex flex-col gap-1">
-        <div className="text-xs -mt-1">Room: {room}</div>
-        {active && <AwarenessClients />}
-      </div>
+      {active && (
+        <div className="flex flex-col gap-1">
+          <div className="text-xs -mt-1">Room: {room}</div>
+          <AwarenessClients />
+        </div>
+      )}
       {collabSettingsOpen && <CollabSettings onClose={() => setCollabSettingsOpen(false)} />}
     </Panel>
   )

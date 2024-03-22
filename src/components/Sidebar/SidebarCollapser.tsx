@@ -19,13 +19,10 @@ const height = 48
 const gap = 8
 
 export function SidebarCollapser({ collapsed, setCollapsed, index, vertical }: Props) {
+  const paddingTop = initialTop + index * (height + gap)
+
   return (
-    <div
-      className="absolute -left-[30px]"
-      style={{
-        top: initialTop + index * (height + gap),
-      }}
-    >
+    <div className="absolute -left-[30px]">
       <Button
         twoDimensional
         Icon={
@@ -41,7 +38,8 @@ export function SidebarCollapser({ collapsed, setCollapsed, index, vertical }: P
         onClick={() => setCollapsed((prev) => !prev)}
         style={{
           height,
-          padding: '12px 4px 12px 8px',
+          marginTop: paddingTop,
+          padding: `12px 4px 12px 8px`,
           borderTopRightRadius: 0,
           borderBottomRightRadius: 0,
         }}

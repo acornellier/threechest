@@ -15,11 +15,11 @@ export function Sidebar() {
 
   const top = 80
   const marginTop = 8
-  const marginBottom = 60 + top
+  const marginBottom = 60
 
   return (
     <div
-      className="fixed top-0 sm:top-20 lg:top-0 right-0 z-20 flex flex-col gap-1.5 transition-all"
+      className="fixed sm:pt-20 lg:pt-0 right-0 z-20 flex flex-col gap-1.5 transition-all"
       style={{
         width: sidebarWidth,
         marginTop,
