@@ -13,7 +13,6 @@ export const sidebarWidth = 290
 
 export function Sidebar() {
   const [collapsed, setCollapsed] = useState(false)
-  const [topCollapsed, setTopCollapsed] = useState(false)
   const isGuestCollab = useIsGuestCollab()
 
   return (
@@ -28,18 +27,8 @@ export function Sidebar() {
       }}
     >
       <SidebarCollapser collapsed={collapsed} setCollapsed={setCollapsed} index={0} />
-      <SidebarCollapser
-        vertical
-        collapsed={topCollapsed}
-        setCollapsed={setTopCollapsed}
-        index={1}
-      />
-      {topCollapsed ? null : isGuestCollab ? (
-        <HostRouteDetails collapsed={topCollapsed} />
-      ) : (
-        <RouteDetails collapsed={topCollapsed} />
-      )}
-      <CollabPanel collapsed={topCollapsed} />
+      {isGuestCollab ? <HostRouteDetails /> : <RouteDetails />}
+      <CollabPanel />
       <Pulls />
       <Footer />
     </div>

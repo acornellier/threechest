@@ -38,13 +38,7 @@ export function CollabButton({ active, shareUrl }: Props) {
       onClick={onClick}
       className="w-full"
     >
-      {!active
-        ? 'Start Collab'
-        : !wsConnected
-          ? 'Connecting...'
-          : isGuestCollab
-            ? 'Collab guest'
-            : 'Collab host'}
+      {!active ? 'Start Collab' : !wsConnected ? 'Connecting...' : 'Leave collab'}
     </Button>
   )
 }

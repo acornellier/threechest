@@ -20,8 +20,8 @@ export function UndoRedo() {
     dispatch(ActionCreators.redo())
   }, [dispatch])
 
-  useShortcut(shortcuts.undo, undo)
-  useShortcut(shortcuts.redo, redo)
+  useShortcut(shortcuts.undo, undo, { allowRepeat: true })
+  useShortcut(shortcuts.redo, redo, { allowRepeat: true })
 
   return (
     <div className="flex items-start gap-2 h-full">

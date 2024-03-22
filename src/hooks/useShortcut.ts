@@ -5,10 +5,11 @@ import { isMac } from '../util/dev.ts'
 export function useShortcut(
   shortcuts: string | Shortcut[],
   callback: (event: KeyboardEvent) => void,
+  options: { allowRepeat?: boolean } | undefined,
 ) {
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.repeat || isEventInInput(event)) return
+      if ((!options?.allowRepeat && event.repeat) || isEventInInput(event)) return
 
       if (typeof shortcuts === 'string') {
         if (event.key.toLowerCase() === shortcuts.toLowerCase()) {
