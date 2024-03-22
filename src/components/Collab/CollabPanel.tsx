@@ -1,7 +1,7 @@
 import { Button } from '../Common/Button.tsx'
 import { joinCollab, useCollabSelector } from '../../store/collab/collabReducer.ts'
 import { useCallback, useEffect, useState } from 'react'
-import { Cog8ToothIcon, ShareIcon } from '@heroicons/react/24/outline'
+import { ArrowUturnLeftIcon, Cog8ToothIcon, ShareIcon } from '@heroicons/react/24/outline'
 import { addToast } from '../../store/reducers/toastReducer.ts'
 import { Panel } from '../Common/Panel.tsx'
 import { AwarenessClients } from './AwarenessClients.tsx'
@@ -14,6 +14,12 @@ interface Props {
   collapsed?: boolean
 }
 
+function updateCollabUrl(room: string) {
+  const url = window.location.origin + `?collab=${room}`
+  window.history.replaceState({}, '', url)
+  return url
+}
+
 export function CollabPanel({ collapsed }: Props) {
   const dispatch = useAppDispatch()
   const [collabSettingsOpen, setCollabSettingsOpen] = useState(false)
@@ -23,15 +29,14 @@ export function CollabPanel({ collapsed }: Props) {
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search)
     const collabRoom = urlParams.get('collab')
-    if (collabRoom) {
+    if (collabRoom && room !== collabRoom) {
       dispatch(joinCollab(collabRoom))
-      dispatch(addToast({ message: 'Collab joined!' }))
+      dispatch(addToast({ message: `Collab joined: ${collabRoom}` }))
     }
-  }, [dispatch])
+  }, [dispatch, room])
 
   const shareUrl = useCallback(async (room: string) => {
-    const url = window.location.origin + `?collab=${room}`
-    window.history.replaceState({}, '', url)
+    const url = updateCollabUrl(room)
     await navigator.clipboard.writeText(url)
   }, [])
 
@@ -40,10 +45,26 @@ export function CollabPanel({ collapsed }: Props) {
     dispatch(addToast({ message: 'Collab URL copied to clipboard.' }))
   }, [dispatch, room, shareUrl])
 
+  const onRejoin = useCallback(() => {
+    dispatch(joinCollab(room))
+    dispatch(addToast({ message: `Collab rejoined: ${room}` }))
+    updateCollabUrl(room)
+  }, [dispatch, room])
+
   return (
     <Panel noRightBorder className={`${collapsed && !active ? 'hidden' : ''}`}>
       <div className="flex gap-1">
         <CollabButton active={active} shareUrl={shareUrl} />
+        {!active && room && (
+          <Button
+            Icon={ArrowUturnLeftIcon}
+            outline
+            short
+            onClick={onRejoin}
+            tooltip="Rejoin last collab"
+            tooltipId="collab-rejoin-tooltip"
+          />
+        )}
         <Button
           outline
           short
@@ -60,7 +81,10 @@ export function CollabPanel({ collapsed }: Props) {
           </Button>
         </div>
       )}
-      {active && <AwarenessClients />}
+      <div className="flex flex-col gap-1">
+        <div className="text-xs -mt-1">Room: {room}</div>
+        {active && <AwarenessClients />}
+      </div>
       {collabSettingsOpen && <CollabSettings onClose={() => setCollabSettingsOpen(false)} />}
     </Panel>
   )

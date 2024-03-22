@@ -14,7 +14,7 @@ export function DuplicateRoute() {
       className="flex-1"
       onClick={() => dispatch(duplicateRoute())}
       tooltipId="duplicate-route-tooltip"
-      tooltip="DuplicateRoute"
+      tooltip="Duplicate route"
     />
   )
 }

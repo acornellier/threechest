@@ -1,5 +1,4 @@
-﻿- Move Route dropdown to middle?
-- Ensure selected pull is valid at all costs
+﻿- Ensure selected pull is valid at all costs
 
 Collab
 - Prevent guest from modifying route id at all costs
@@ -8,12 +7,12 @@ Collab
 
 - Handling incompatible dungeons and routes
 - Collab docs
-
 - Hire QA dude
+- Pull % hard to read
 
 Questionable, maybe post release
+- Drawing on map
 - S4 dungeons
 -- Nokhud zoom
 - Embed
-- Drawing on map
 - Npc portaits

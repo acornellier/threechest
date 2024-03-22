@@ -7,6 +7,7 @@ import {
   savedCollabNameKey,
 } from './collabReducer.ts'
 import { generateSlug } from 'random-word-slugs'
+import { current } from '@reduxjs/toolkit'
 
 function checkLocalAwareness(state: CollabState, localAwareness: AwarenessState) {
   if (localAwareness.name && localAwareness.clientType && localAwareness.joinTime) return
@@ -67,7 +68,8 @@ function checkForNoHost(state: CollabState, localAwareness: AwarenessState) {
   if (shouldPromoteToHost(state)) localAwareness.clientType = 'host'
 }
 
-function checkForMultipleHost(state: CollabState, localAwareness: AwarenessState) {
+function checkForMultipleHosts(state: CollabState, localAwareness: AwarenessState) {
+  console.log('checkForMultipleHosts', current(state), localAwareness)
   if (!localAwareness.joinTime) {
     console.error('setAwarenessColor should not be called without localAwareness.joinTime')
     return
@@ -94,5 +96,5 @@ export function postAwarenessUpdateChecks(state: CollabState, localAwareness: Aw
   if (!state.wsConnected) return
   setAwarenessColor(state, localAwareness)
   checkForNoHost(state, localAwareness)
-  checkForMultipleHost(state, localAwareness)
+  checkForMultipleHosts(state, localAwareness)
 }

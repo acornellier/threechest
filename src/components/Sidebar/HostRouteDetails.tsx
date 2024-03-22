@@ -17,7 +17,7 @@ export function HostRouteDetails({ collapsed }: Props) {
   const dispatch = useAppDispatch()
   const route = useRoute()
   const savedRoutes = useSavedRoutes()
-  const [saved, setSaved] = useState(false)
+  const [saved, setSaved] = useState(true)
 
   useEffect(() => {
     if (!savedRoutes.some(({ uid }) => route.uid === uid)) setSaved(false)

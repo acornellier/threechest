@@ -1,7 +1,7 @@
 import { UserGroupIcon } from '@heroicons/react/24/outline'
 import { Button } from '../Common/Button.tsx'
 import { useCallback } from 'react'
-import { endCollab, startCollab, useIsGuestCollab } from '../../store/collab/collabReducer.ts'
+import { endCollab, startCollab } from '../../store/collab/collabReducer.ts'
 import { addToast } from '../../store/reducers/toastReducer.ts'
 import { generateSlug } from 'random-word-slugs'
 import { useAppDispatch, useRootSelector } from '../../store/storeUtil.ts'
@@ -14,7 +14,6 @@ interface Props {
 export function CollabButton({ active, shareUrl }: Props) {
   const dispatch = useAppDispatch()
   const wsConnected = useRootSelector((state) => state.collab.wsConnected)
-  const isGuestCollab = useIsGuestCollab()
 
   const onClick = useCallback(async () => {
     if (active) {
