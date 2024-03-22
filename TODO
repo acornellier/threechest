@@ -2,14 +2,14 @@
 - Prevent guest from modifying route id at all costs
 - Backup route
 - Request promotion to host, or host promotes a guest
+- Docs
 
 - Handling incompatible dungeons and routes
-- Collab docs
-- Hire QA dude
 - Pull % hard to read
+- Drawing on map
+- Hire QA dude
 
 Questionable, maybe post release
-- Drawing on map
 - S4 dungeons
 -- Nokhud zoom
 - Embed
