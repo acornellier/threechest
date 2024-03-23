@@ -19,9 +19,6 @@ const initialState: MapState = {
   drawWeight: Number(localStorage.getItem(drawWeightKey)) || 4,
 }
 
-console.log(localStorage.getItem(drawColorKey))
-console.log(initialState)
-
 export const mapSlice = createAppSlice({
   name: 'map',
   initialState,

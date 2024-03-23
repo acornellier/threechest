@@ -40,8 +40,10 @@ function MobSpawnComponent({
 }: MobSpawnMemoProps) {
   const { mob, spawn } = mobSpawn
   const dispatch = useAppDispatch()
+  const isDrawing = useRootSelector((state) => state.map.isDrawing)
   const isBoxHovering = useRootSelector(selectIsBoxHovering)
-  const isActuallyHovered = isHovered && !isBoxHovering
+  const disableHover = isDrawing || isBoxHovering
+  const isActuallyHovered = isHovered && !disableHover
   const iconSize = iconScaling * mobScale(mobSpawn) * (isActuallyHovered ? 1.15 : 1)
   const hidden = useMapObjectsHidden()
 
@@ -77,13 +79,13 @@ function MobSpawnComponent({
             <MobIcon
               mobSpawn={mobSpawn}
               iconScaling={iconScaling}
-              isGroupHovered={isGroupHovered && !isBoxHovering}
+              isGroupHovered={isGroupHovered && !disableHover}
               matchingPullIndex={matchingPullIndex}
             />,
           ),
         })}
       >
-        {!isBoxHovering && <MobSpawnTooltip mob={mob} spawn={spawn} iconScaling={iconScaling} />}
+        {!disableHover && <MobSpawnTooltip mob={mob} spawn={spawn} iconScaling={iconScaling} />}
       </Marker>
       {mob.isBoss && (
         <BossMarker

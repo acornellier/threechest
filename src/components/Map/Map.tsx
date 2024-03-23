@@ -1,4 +1,3 @@
-import 'leaflet/dist/leaflet.css'
 import { MapContainer, TileLayer } from 'react-leaflet'
 import { CRS } from 'leaflet'
 import '../Leaflet/SmoothWheelZoom.ts'
