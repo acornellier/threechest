@@ -3,7 +3,7 @@ import { keyText, Shortcut } from '../../data/shortcuts.ts'
 import { IconComponent } from '../../util/types.ts'
 import { TooltipStyled } from './TooltipStyled.tsx'
 
-type TooltipProps =
+export type ButtonTooltipProps =
   | {
       tooltip: ReactNode
       tooltipId: string
@@ -27,7 +27,7 @@ export type ButtonProps = DetailedHTMLProps<
   twoDimensional?: boolean
   justifyStart?: boolean
   color?: 'red' | 'green' | 'yellow'
-} & TooltipProps
+} & ButtonTooltipProps
 
 function ButtonIconText({
   Icon,

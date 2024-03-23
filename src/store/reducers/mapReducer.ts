@@ -1,7 +1,6 @@
 import { PayloadAction } from '@reduxjs/toolkit'
 import { useEffect, useState } from 'react'
 import { createAppSlice, useRootSelector } from '../storeUtil.ts'
-import { savedCollabColorKey } from '../collab/collabReducer.ts'
 
 export interface MapState {
   objectsHidden: boolean
@@ -10,12 +9,18 @@ export interface MapState {
   drawWeight: number
 }
 
+const drawColorKey = 'drawColorKey'
+const drawWeightKey = 'drawWeightKey'
+
 const initialState: MapState = {
   objectsHidden: true,
   isDrawing: false,
-  drawColor: localStorage.getItem(savedCollabColorKey) || 'blue',
-  drawWeight: 4,
+  drawColor: localStorage.getItem(drawColorKey) || 'blue',
+  drawWeight: Number(localStorage.getItem(drawWeightKey)) || 4,
 }
+
+console.log(localStorage.getItem(drawColorKey))
+console.log(initialState)
 
 export const mapSlice = createAppSlice({
   name: 'map',
@@ -29,6 +34,11 @@ export const mapSlice = createAppSlice({
     },
     setDrawColor(state, { payload: drawColor }: PayloadAction<string>) {
       state.drawColor = drawColor
+      localStorage.setItem(drawColorKey, drawColor)
+    },
+    setDrawWeight(state, { payload: drawWeight }: PayloadAction<number>) {
+      state.drawWeight = drawWeight
+      localStorage.setItem(drawWeightKey, drawWeight.toString())
     },
   },
 })
@@ -47,4 +57,4 @@ export function useMapObjectsHidden(minDelay: number = 0, maxDelay: number = 100
 
 export const mapReducer = mapSlice.reducer
 
-export const { setMapObjectsHidden, setIsDrawing, setDrawColor } = mapSlice.actions
+export const { setMapObjectsHidden, setIsDrawing, setDrawColor, setDrawWeight } = mapSlice.actions

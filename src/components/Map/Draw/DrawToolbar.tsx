@@ -1,13 +1,25 @@
 ﻿import { Button } from '../../Common/Button.tsx'
 import { PaintBrushIcon } from '@heroicons/react/24/outline'
 import { useAppDispatch, useRootSelector } from '../../../store/storeUtil.ts'
-import { setDrawColor, setIsDrawing } from '../../../store/reducers/mapReducer.ts'
+import { setDrawColor, setDrawWeight, setIsDrawing } from '../../../store/reducers/mapReducer.ts'
 import { clearDrawings } from '../../../store/routes/routesReducer.ts'
 import { ClearIcon } from '../../Common/Icons/ClearIcon.tsx'
 import { useCallback, useState } from 'react'
 import { DrawColorWheel } from './DrawColorWheel.tsx'
 import { keyText, shortcuts } from '../../../data/shortcuts.ts'
 import { useShortcut } from '../../../hooks/useShortcut.ts'
+import { Dropdown, DropdownOption } from '../../Common/Dropdown.tsx'
+import { WeightIcon } from '../../Common/Icons/WeightIcon.tsx'
+
+type WeightOption = DropdownOption & { weight: number }
+
+const weightToOption = (weight: number): WeightOption => ({
+  id: weight.toString(),
+  content: `${weight}`,
+  weight,
+})
+
+const weightOptions: WeightOption[] = [1, 2, 3, 4, 8, 12, 16, 24].map(weightToOption)
 
 export function DrawToolbar() {
   const dispatch = useAppDispatch()
@@ -48,11 +60,23 @@ export function DrawToolbar() {
               e.stopPropagation()
             }}
             justifyStart
-            tooltip={`Choose color`}
+            tooltip={`Line color`}
             tooltipId="draw-color-tooltip"
           >
-            <div style={{ backgroundColor: drawColor, width: 16, height: 16 }} />
+            <div
+              className="rounded-sm"
+              style={{ backgroundColor: drawColor, width: 20, height: 20 }}
+            />
           </Button>
+          <Dropdown
+            buttonContent={<WeightIcon width={24} height={24} />}
+            options={weightOptions}
+            selected={weightToOption(drawWeight)}
+            onSelect={(option) => dispatch(setDrawWeight(option.weight))}
+            hideArrow
+            tooltip="Line weight"
+            tooltipId="draw-weight-tooltip"
+          />
           <Button
             Icon={ClearIcon}
             onClick={() => dispatch(clearDrawings())}

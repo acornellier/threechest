@@ -12,7 +12,7 @@ export function DrawColorWheel({ onChangeColor, onClickOutsideCanvas }: Props) {
   const outsideClickRef = useOutsideClick(onClickOutsideCanvas)
 
   return (
-    <Panel ref={outsideClickRef}>
+    <Panel className="z-30" ref={outsideClickRef}>
       <canvas ref={colorWheelRef} />
     </Panel>
   )

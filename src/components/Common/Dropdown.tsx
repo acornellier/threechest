@@ -1,4 +1,4 @@
-import { Button } from './Button.tsx'
+import { Button, ButtonTooltipProps } from './Button.tsx'
 import { ReactNode, useCallback, useRef, useState } from 'react'
 import { ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/24/outline'
 import { useOutsideClick } from '../../hooks/useOutsideClick.ts'
@@ -10,20 +10,21 @@ export interface DropdownOption {
   icon?: ReactNode
 }
 
-interface Props<T extends DropdownOption> {
+type Props<T extends DropdownOption> = {
   options: T[]
   onOpen?: () => void
   onClose?: () => void
   onSelect: (option: T) => void
   onHover?: (option: T | null) => void
   selected?: T
-  buttonText?: string
+  buttonContent?: ReactNode
   MainButtonIcon?: IconComponent
   short?: boolean
   outline?: boolean
   className?: string
   disabled?: boolean
-}
+  hideArrow?: boolean
+} & ButtonTooltipProps
 
 const transitionDuration = 200
 
@@ -34,12 +35,15 @@ export function Dropdown<T extends DropdownOption>({
   onClose,
   onSelect,
   onHover,
-  buttonText,
+  buttonContent,
   MainButtonIcon,
   short,
   outline,
   className,
   disabled,
+  hideArrow,
+  tooltip,
+  tooltipId,
 }: Props<T>) {
   const [open, setOpen] = useState(false)
   const [optionsVisible, setOptionsVisible] = useState(false)
@@ -84,7 +88,7 @@ export function Dropdown<T extends DropdownOption>({
   return (
     <div ref={ref} className={`relative flex-1 min-w-0 h-full ${className ?? ''}`}>
       <Button
-        twoDimensional={!buttonText}
+        twoDimensional={!buttonContent}
         short={short}
         outline={outline}
         onClick={toggleOpen}
@@ -93,6 +97,8 @@ export function Dropdown<T extends DropdownOption>({
         className={`dropdown-main 
                     ${optionsVisible ? 'options-visible' : ''} 
                     ${className ?? ''}`}
+        tooltip={tooltip}
+        tooltipId={tooltipId}
         style={{
           transitionDuration: transitionDuration.toString(),
           ...(open
@@ -103,22 +109,22 @@ export function Dropdown<T extends DropdownOption>({
             : {}),
         }}
       >
-        {buttonText ? (
-          buttonText
+        {buttonContent ? (
+          buttonContent
         ) : (
           <>
             {selected?.icon && <div className="mr-1">{selected?.icon}</div>}
             {selected?.content ? (
               <div className="dropdown-main-text">{selected?.content}</div>
             ) : null}
-            <ChevronIcon width={20} height={20} className="ml-auto" />
+            {!hideArrow && <ChevronIcon width={20} height={20} className="ml-auto" />}
           </>
         )}
       </Button>
 
       <div
         className={`absolute w-full z-50 ${open ? '' : 'hidden'}`}
-        style={{ marginTop: buttonText ? -3 : 0 }}
+        style={{ marginTop: buttonContent ? -3 : 0 }}
       >
         <div className="flex flex-col">
           {options.map((option) => (

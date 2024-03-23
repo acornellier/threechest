@@ -66,7 +66,7 @@ export function SampleRoutes({ hidden }: Props) {
       options={options}
       onSelect={onSelect}
       onHover={onHover}
-      buttonText="Sample routes"
+      buttonContent="Sample routes"
       MainButtonIcon={MagnifyingGlassIcon}
       className={`${hidden ? '[&]:hidden' : ''}`}
     />

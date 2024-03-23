@@ -107,9 +107,11 @@ export class Pather extends FeatureGroup {
         .append('path')
         .classed('leaflet-line', true)
         .attr('d', lineFunction(lineData as any))
-        .attr('fill', 'none')
+        .attr('fill', this.options.strokeColor)
         .attr('stroke', this.options.strokeColor)
         .attr('stroke-width', this.options.strokeWidth)
+        .attr('stroke-linecap', 'round')
+        .attr('stroke-linejoin', 'round')
     }
   }
 
