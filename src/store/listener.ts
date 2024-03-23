@@ -14,9 +14,10 @@ import {
   setRouteFromSample,
   updateSavedRoutes,
 } from './routes/routesReducer.ts'
-import { selectLocalAwarenessIsGuest } from './collab/collabReducer.ts'
+import { selectLocalAwareness, selectLocalAwarenessIsGuest } from './collab/collabReducer.ts'
 import { findMobSpawn } from '../util/mobSpawns.ts'
 import { dungeonsByKey } from '../data/dungeons.ts'
+import { setDrawColor } from './reducers/mapReducer.ts'
 
 export const listenerMiddleware = createListenerMiddleware()
 
@@ -108,5 +109,20 @@ listenerMiddleware.startListening({
       addToast({ message: 'Invalid enemies found in route have been removed.', type: 'error' }),
     )
     listenerApi.dispatch(ActionCreators.clearHistory())
+  },
+})
+
+// if collab color changes, change draw color
+listenerMiddleware.startListening({
+  predicate: (action: Action, currentState, originalState) => {
+    if (!action.type.startsWith('collab/')) return false
+    const oldColor = selectLocalAwareness(originalState as RootState)?.color
+    const newColor = selectLocalAwareness(currentState as RootState)?.color
+    return !!newColor && oldColor !== newColor
+  },
+  effect: (_action, listenerApi) => {
+    const state = listenerApi.getState() as RootState
+    const localAwareness = selectLocalAwareness(state)
+    if (localAwareness?.color) listenerApi.dispatch(setDrawColor(localAwareness.color))
   },
 })

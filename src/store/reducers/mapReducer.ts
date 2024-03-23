@@ -1,6 +1,7 @@
 import { PayloadAction } from '@reduxjs/toolkit'
 import { useEffect, useState } from 'react'
 import { createAppSlice, useRootSelector } from '../storeUtil.ts'
+import { savedCollabColorKey } from '../collab/collabReducer.ts'
 
 export interface MapState {
   objectsHidden: boolean
@@ -12,7 +13,7 @@ export interface MapState {
 const initialState: MapState = {
   objectsHidden: true,
   isDrawing: false,
-  drawColor: 'blue',
+  drawColor: localStorage.getItem(savedCollabColorKey) || 'blue',
   drawWeight: 4,
 }
 
