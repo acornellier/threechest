@@ -67,10 +67,7 @@ export class Pather extends FeatureGroup {
 
   simplifyLine(latLngs: LatLngLiteral[]): LatLngLiteral[] {
     const points = latLngs.map(({ lat, lng }) => ({ y: lat, x: lng }))
-    console.log(this.options.simplifyThreshold)
-    console.log(points)
     const simplifiedPoints = rdpSimplification(points, this.options.simplifyThreshold)
-    console.log(simplifiedPoints)
     return simplifiedPoints.map(({ x, y }) => ({ lat: y, lng: x }))
   }
 
