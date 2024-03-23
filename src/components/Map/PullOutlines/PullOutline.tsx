@@ -53,7 +53,8 @@ function PullOutlineComponent({ pull, index, isSelected, isHovered }: Props) {
   const dispatch = useAppDispatch()
   const dungeon = useDungeon()
   const mobSpawns = useMemo(
-    () => pull.spawns.map((spawnId) => findMobSpawn(spawnId, dungeon)),
+    () =>
+      pull.spawns.map((spawnId) => findMobSpawn(spawnId, dungeon)).filter(Boolean) as MobSpawn[],
     [dungeon, pull.spawns],
   )
   const { hull, circle } = useMemo(() => createOutline(mobSpawns), [mobSpawns])

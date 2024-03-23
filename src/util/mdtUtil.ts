@@ -133,6 +133,11 @@ export function mdtRouteToRoute(mdtRoute: MdtRoute): Route {
 function mobSpawnsToMdtEnemies(spawns: SpawnId[], dungeon: Dungeon) {
   return spawns.reduce<Record<number, number[]>>((acc, spawn) => {
     const mobSpawn = findMobSpawn(spawn, dungeon)
+    if (!mobSpawn) {
+      console.error(`Could not find spawnId ${spawn} in dungeon ${dungeon.key}`)
+      return acc
+    }
+
     acc[mobSpawn.mob.enemyIndex] ??= []
     acc[mobSpawn.mob.enemyIndex]!.push(mobSpawn.spawn.spawnIndex)
     return acc

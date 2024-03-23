@@ -200,6 +200,12 @@ const baseReducer = createAppSlice({
     toggleSpawn(state, { payload }: PayloadAction<{ spawn: SpawnId; individual: boolean }>) {
       state.route.pulls = toggleSpawnAction(state, payload)
     },
+    removeInvalidSpawns(state, { payload: invalidSpawnIds }: PayloadAction<SpawnId[]>) {
+      state.route.pulls = state.route.pulls.map((pull) => ({
+        ...pull,
+        spawns: pull.spawns.filter((spawnId) => !invalidSpawnIds.includes(spawnId)),
+      }))
+    },
     boxSelectStart(state) {
       const pull = state.route.pulls[state.selectedPull]
       if (pull) pull.spawnsBackup = pull.spawns
@@ -352,6 +358,7 @@ export const {
   selectPull,
   selectPullRelative,
   toggleSpawn,
+  removeInvalidSpawns,
   boxSelectStart,
   boxSelectSpawns,
   boxSelectEnd,

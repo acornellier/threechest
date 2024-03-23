@@ -1,4 +1,4 @@
-﻿import { createListenerMiddleware, isAnyOf } from '@reduxjs/toolkit'
+﻿import { Action, createListenerMiddleware, isAnyOf } from '@reduxjs/toolkit'
 import { RootState } from './store.ts'
 import { addToast } from './reducers/toastReducer.ts'
 import { importRoute } from './reducers/importReducer.ts'
@@ -8,14 +8,19 @@ import {
   duplicateRoute,
   loadRoute,
   newRoute,
+  removeInvalidSpawns,
   setDungeon,
   setRouteFromMdt,
   setRouteFromSample,
   updateSavedRoutes,
 } from './routes/routesReducer.ts'
+import { selectLocalAwarenessIsGuest } from './collab/collabReducer.ts'
+import { findMobSpawn } from '../util/mobSpawns.ts'
+import { dungeonsByKey } from '../data/dungeons.ts'
 
 export const listenerMiddleware = createListenerMiddleware()
 
+// on import route, send a toast
 listenerMiddleware.startListening({
   actionCreator: setRouteFromMdt,
   effect: async ({ payload: { mdtRoute, copy } }, listenerApi) => {
@@ -32,6 +37,7 @@ listenerMiddleware.startListening({
   },
 })
 
+// on import route fail, send an error toast
 listenerMiddleware.startListening({
   matcher: isAnyOf(importRoute.rejected),
   effect: async ({ error }, listenerApi) => {
@@ -42,6 +48,7 @@ listenerMiddleware.startListening({
   },
 })
 
+// on rehydrate, clear history
 listenerMiddleware.startListening({
   type: REHYDRATE,
   effect: async (_action, listenerApi) => {
@@ -49,6 +56,7 @@ listenerMiddleware.startListening({
   },
 })
 
+// on new route, clear history, but save saved routes first
 listenerMiddleware.startListening({
   matcher: isAnyOf(
     setDungeon.fulfilled,
@@ -59,7 +67,46 @@ listenerMiddleware.startListening({
     newRoute,
   ),
   effect: async (_action, listenerApi) => {
-    listenerApi.dispatch(updateSavedRoutes())
+    const state = listenerApi.getState() as RootState
+    const isGuest = selectLocalAwarenessIsGuest(state)
+    if (!isGuest) listenerApi.dispatch(updateSavedRoutes())
+    listenerApi.dispatch(ActionCreators.clearHistory())
+  },
+})
+
+// on load route, verify mob spawns
+listenerMiddleware.startListening({
+  matcher: isAnyOf(
+    (action): action is Action => action.type === REHYDRATE,
+    loadRoute.fulfilled,
+    setRouteFromMdt,
+    setRouteFromSample,
+  ),
+  effect: async (_action, listenerApi) => {
+    const state = listenerApi.getState() as RootState
+    const route = state.routes.present.route
+    if (!route) return
+
+    const dungeon = dungeonsByKey[route.dungeonKey]
+    if (!dungeon) return
+
+    const missingIds = []
+    for (const pull of route.pulls) {
+      for (const spawnId of pull.spawns) {
+        const mobSpawn = findMobSpawn(spawnId, dungeon)
+        if (mobSpawn) continue
+
+        missingIds.push(spawnId)
+      }
+    }
+
+    if (missingIds.length === 0) return
+
+    console.error(`Found invalid spawnIds in current route: ${missingIds.join(',')}`)
+    listenerApi.dispatch(removeInvalidSpawns(missingIds))
+    listenerApi.dispatch(
+      addToast({ message: 'Invalid enemies found in route have been removed.', type: 'error' }),
+    )
     listenerApi.dispatch(ActionCreators.clearHistory())
   },
 })

@@ -1,11 +1,7 @@
 import { Dungeon, Mob, MobSpawn, SpawnId } from '../data/types.ts'
 
-export function findMobSpawn(spawnId: SpawnId, dungeon: Dungeon): MobSpawn {
-  const mobSpawn = dungeon.mobSpawns[spawnId]
-
-  if (!mobSpawn) throw new Error(`Could not find spawn with id ${spawnId}`)
-
-  return mobSpawn
+export function findMobSpawn(spawnId: SpawnId, dungeon: Dungeon) {
+  return dungeon.mobSpawns[spawnId]
 }
 
 export const mobScale = ({ mob, spawn }: MobSpawn) =>

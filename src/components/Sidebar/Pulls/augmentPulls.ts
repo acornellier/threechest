@@ -7,10 +7,15 @@ export function augmentPulls(pulls: Pull[], dungeon: Dungeon): PullDetailed[] {
 
   let countCumulative = 0
   for (const pull of pulls) {
-    const count = pull.spawns.reduce(
-      (acc, spawnId) => acc + findMobSpawn(spawnId, dungeon).mob.count,
-      0,
-    )
+    const count = pull.spawns.reduce((acc, spawnId) => {
+      const mobSpawn = findMobSpawn(spawnId, dungeon)
+      if (!mobSpawn) {
+        console.error(`Could not find spawnId ${spawnId} in dungeon ${dungeon.key}`)
+        return acc
+      }
+
+      return acc + mobSpawn.mob.count
+    }, 0)
 
     countCumulative += count
 

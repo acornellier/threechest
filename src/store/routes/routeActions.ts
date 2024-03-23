@@ -13,6 +13,10 @@ export function toggleSpawnAction(
 ): Pull[] {
   const dungeon = dungeonsByKey[route.dungeonKey]
   const mobSpawn = findMobSpawn(payload.spawn, dungeon)
+  if (!mobSpawn) {
+    console.error(`Could not find spawnId ${payload.spawn} in dungeon ${dungeon.key}`)
+    return route.pulls
+  }
 
   const origSelectedPull = findSelectedPull(route, payload.spawn)
 

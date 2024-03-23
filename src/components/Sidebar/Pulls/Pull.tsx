@@ -32,7 +32,13 @@ export function Pull({ pullIndex, pull, ghost, onRightClick, isShiftHeld }: Prop
 
   const sortedCounts = useMemo(() => {
     const mobCounts = pull.spawns.reduce<MobCount>((acc, spawnId) => {
-      const { mob } = findMobSpawn(spawnId, dungeon)
+      const mobSpawn = findMobSpawn(spawnId, dungeon)
+      if (!mobSpawn) {
+        console.error(`Could not find spawnId ${spawnId} in dungeon ${dungeon.key}`)
+        return acc
+      }
+
+      const { mob } = mobSpawn
       acc[mob.id] ??= { mob, count: 0 }
       acc[mob.id]!.count += 1
       return acc

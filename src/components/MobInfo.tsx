@@ -14,7 +14,10 @@ export function MobInfo() {
   const dungeon = useDungeon()
   if (selectedSpawn === null) return
 
-  const { mob } = findMobSpawn(selectedSpawn, dungeon)
+  const mobSpawn = findMobSpawn(selectedSpawn, dungeon)
+  if (!mobSpawn) return
+
+  const { mob } = mobSpawn
   const spells = dungeon.spells[mob.id]
 
   const onClickSpellId = async (spellId: number) => {
