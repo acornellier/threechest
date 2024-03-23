@@ -98,7 +98,7 @@ export function Dropdown<T extends DropdownOption>({
                     ${optionsVisible ? 'options-visible' : ''} 
                     ${className ?? ''}`}
         tooltip={tooltip}
-        tooltipId={tooltipId}
+        tooltipId={tooltipId!}
         style={{
           transitionDuration: transitionDuration.toString(),
           ...(open
