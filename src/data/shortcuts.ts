@@ -20,6 +20,7 @@ const selectPullNumber: Shortcut[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0].map((n) => (
 const copy: Shortcut[] = [{ key: 'C', ctrl: true }]
 const paste: Shortcut[] = [{ key: 'V', ctrl: true }]
 const help: Shortcut[] = [{ key: '?', allowShift: true }]
+const draw: Shortcut[] = [{ key: 'F' }]
 
 export function keyText({ key, ctrl, shift }: Shortcut) {
   let text = ''
@@ -58,4 +59,5 @@ export const shortcuts = {
   help,
   copy,
   paste,
+  draw,
 } as const

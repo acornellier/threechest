@@ -25,7 +25,6 @@
     "d3-selection": "^3.0.0",
     "d3-shape": "^3.2.0",
     "leaflet": "^1.9.4",
-    "leaflet-freedraw": "^2.13.3",
     "lib0": "^0.2.93",
     "localforage": "^1.10.0",
     "node-weakauras-parser": "^3.2.3",

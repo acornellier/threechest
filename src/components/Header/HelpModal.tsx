@@ -16,6 +16,7 @@ const shortcutDescriptions = [
   { desc: 'Add pull before selected', shortcuts: shortcuts.prependPull },
   { desc: 'Clear selected pull', shortcuts: shortcuts.clearPull },
   { desc: 'Delete selected pull', shortcuts: shortcuts.deletePull.concat(shortcuts.backspacePull) },
+  { desc: 'Toggle drawing mode', shortcuts: shortcuts.draw },
   { desc: 'Show help menu', shortcuts: shortcuts.help },
 ]
   .map(({ desc, shortcuts }) => ({ desc, texts: shortcuts.map((shortcut) => keyText(shortcut)) }))

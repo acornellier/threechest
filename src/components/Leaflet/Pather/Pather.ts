@@ -1,6 +1,7 @@
 ﻿import {
   FeatureGroup,
   LatLng,
+  LatLngLiteral,
   LayerOptions,
   LeafletEvent,
   LeafletMouseEvent,
@@ -24,26 +25,22 @@ export type Mode = keyof typeof MODES
 
 export interface PatherOptions extends LayerOptions {
   mode: number
+  simplifyThreshold: number
+  strokeColor: string
+  strokeWidth: number
   detectTouch?: boolean
-  removePolylines?: boolean
-  strokeColor?: string
-  strokeWidth?: number
-  lineClass?: string
-  elbowClass?: string
 }
 
 export const defaultOptions: PatherOptions = {
   mode: MODES.ALL,
-  lineClass: 'drawing-line',
-  detectTouch: true,
-  elbowClass: 'elbow',
-  removePolylines: true,
+  simplifyThreshold: 1,
   strokeColor: 'rgba(0,0,0,.5)',
   strokeWidth: 2,
+  detectTouch: true,
 }
 
 export interface CreatedEvent extends LeafletEvent {
-  latLngs: LatLng[]
+  latLngs: LatLngLiteral[]
 }
 
 export class Pather extends FeatureGroup {
@@ -52,7 +49,7 @@ export class Pather extends FeatureGroup {
   element?: HTMLElement
   svg?: any
 
-  constructor(options: PatherOptions) {
+  constructor(options: Partial<PatherOptions>) {
     super()
     this.options = { ...defaultOptions, ...options }
   }
@@ -63,10 +60,18 @@ export class Pather extends FeatureGroup {
     }
 
     this.clearAll()
-
     this.fire('created', {
-      latLngs,
+      latLngs: this.simplifyLine(latLngs),
     })
+  }
+
+  simplifyLine(latLngs: LatLngLiteral[]): LatLngLiteral[] {
+    const points = latLngs.map(({ lat, lng }) => ({ y: lat, x: lng }))
+    console.log(this.options.simplifyThreshold)
+    console.log(points)
+    const simplifiedPoints = rdpSimplification(points, this.options.simplifyThreshold)
+    console.log(simplifiedPoints)
+    return simplifiedPoints.map(({ x, y }) => ({ lat: y, lng: x }))
   }
 
   onAdd(map: Map) {
@@ -143,6 +148,10 @@ export class Pather extends FeatureGroup {
     return this.options.mode & MODES.CREATE
   }
 
+  setOptions(options: Partial<PatherOptions>) {
+    this.options = { ...this.options, ...options }
+  }
+
   setMode(mode: number) {
     this.setClassName(mode)
     this.options.mode = mode
@@ -166,7 +175,7 @@ export class Pather extends FeatureGroup {
 
   setClassName(mode: number) {
     const conditionallyAppendClassName = (modeName: Mode) => {
-      const className = ['mode', modeName].join('-')
+      const className = ['mode', modeName.toLocaleLowerCase()].join('-')
 
       if (MODES[modeName] & mode) {
         return void this.element!.classList.add(className)
@@ -238,4 +247,36 @@ export class Pather extends FeatureGroup {
     }
     map.on('mousedown', mouseDown)
   }
+}
+
+function rdpSimplification(
+  l: Array<{ x: number; y: number }>,
+  eps: number,
+): Array<{ x: number; y: number }> {
+  if (l.length <= 1) return l
+
+  const last = l.length - 1
+  const p1 = l[0]!
+  const p2 = l[last]!
+  const x21 = p2.x - p1.x
+  const y21 = p2.y - p1.y
+
+  const [dMax, x] = l
+    .slice(1, last)
+    .map((p) => Math.abs(y21 * p.x - x21 * p.y + p2.x * p1.y - p2.y * p1.x))
+    .reduce(
+      (p, c, i) => {
+        const v = Math.max(p[0], c)
+        return [v, v === p[0] ? p[1] : i + 1]
+      },
+      [-1, 0],
+    )
+
+  if (dMax > eps) {
+    return [
+      ...rdpSimplification(l.slice(0, x + 1), eps),
+      ...rdpSimplification(l.slice(x), eps).slice(1),
+    ]
+  }
+  return [l[0]!, l[last]!]
 }

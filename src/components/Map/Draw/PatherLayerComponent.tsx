@@ -1,6 +1,6 @@
 ﻿import { LayerOptions, type LeafletEventHandlerFnMap } from 'leaflet'
 import { PropsWithChildren } from 'react'
-import { CreatedEvent, Pather, PatherOptions } from '../../Leaflet/Pather.ts'
+import { CreatedEvent, Pather, PatherOptions } from '../../Leaflet/Pather/Pather.ts'
 import { createLayerComponent } from '@react-leaflet/core'
 
 type Props = LayerOptions &
@@ -22,5 +22,7 @@ export const ReactPatherLayerComponent = createLayerComponent<Pather, Props>(
     if (props.strokeColor && props.strokeColor !== prevProps.strokeColor) {
       instance.setStrokeColor(props.strokeColor)
     }
+
+    instance.setOptions(props)
   },
 )

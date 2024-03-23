@@ -6,11 +6,16 @@ import { clearDrawings } from '../../../store/routes/routesReducer.ts'
 import { ClearIcon } from '../../Common/Icons/ClearIcon.tsx'
 import { useCallback, useState } from 'react'
 import { DrawColorWheel } from './DrawColorWheel.tsx'
+import { keyText, shortcuts } from '../../../data/shortcuts.ts'
+import { useShortcut } from '../../../hooks/useShortcut.ts'
 
 export function DrawToolbar() {
   const dispatch = useAppDispatch()
   const { isDrawing, drawColor, drawWeight } = useRootSelector((state) => state.map)
   const [isChoosingColor, setChoosingColor] = useState(false)
+
+  const toggleDraw = useCallback(() => dispatch(setIsDrawing(!isDrawing)), [dispatch, isDrawing])
+  useShortcut(shortcuts.draw, toggleDraw)
 
   const onChangeColor = useCallback(
     (newColor: string) => {
@@ -29,9 +34,9 @@ export function DrawToolbar() {
         twoDimensional={isDrawing}
         color={isDrawing ? 'green' : 'red'}
         Icon={PaintBrushIcon}
-        onClick={() => dispatch(setIsDrawing(!isDrawing))}
+        onClick={toggleDraw}
         justifyStart
-        tooltip={`Draw`}
+        tooltip={`Draw (${keyText(shortcuts.draw[0]!)})`}
         tooltipId="draw-tooltip"
       />
       {isDrawing && (

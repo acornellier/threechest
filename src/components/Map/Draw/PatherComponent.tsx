@@ -1,6 +1,6 @@
 import { useAppDispatch, useRootSelector } from '../../../store/storeUtil.ts'
 import { useMemo } from 'react'
-import { CreatedEvent, MODES } from '../../Leaflet/Pather.ts'
+import { CreatedEvent, MODES } from '../../Leaflet/Pather/Pather.ts'
 import { latLngToPoint } from '../../../util/map.ts'
 import { addDrawing } from '../../../store/routes/routesReducer.ts'
 import { Drawing } from '../../../util/types.ts'
@@ -32,6 +32,7 @@ export function PatherComponent() {
       mode={MODES.CREATE}
       strokeWidth={drawWeight}
       strokeColor={drawColor}
+      simplifyThreshold={5}
       eventHandlers={eventHandlers}
     />
   )
