@@ -228,19 +228,13 @@ export class Pather extends FeatureGroup {
       const mouseUp = () => {
         map.off('mouseup', mouseUp)
         map.off('mousemove', mouseMove)
-        map.getContainer().removeEventListener('mouseleave', mouseLeave)
 
         this.clearAll()
         this.createPath(Array.from(latLngs))
       }
 
-      const mouseLeave = () => {
-        this.clearAll()
-      }
-
       map.on('mousemove', mouseMove)
       map.on('mouseup', mouseUp)
-      map.getContainer().addEventListener('mouseleave', mouseLeave)
     }
     map.on('mousedown', mouseDown)
   }
