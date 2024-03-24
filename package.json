@@ -44,6 +44,7 @@
     "sass": "^1.71.1",
     "simple-peer": "^9.11.1",
     "sortablejs": "^1.15.2",
+    "usehooks-ts": "^3.0.2",
     "y-protocols": "^1.0.6",
     "yjs": "^13.6.14"
   },

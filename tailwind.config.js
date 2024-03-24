@@ -4,8 +4,8 @@ export default {
   theme: {
     extend: {
       screens: {
-        sm: '640px',
-        md: '768px',
+        sm: '700px',
+        md: '850px',
         lg: '1130px',
         xl: '1280px',
         '2xl': '1536px',

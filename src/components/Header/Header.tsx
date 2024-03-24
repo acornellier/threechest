@@ -17,14 +17,14 @@ export function Header() {
   const smMaxWidth = `sm:max-w-[${sidebarWidth + 32}px]`
 
   return (
-    <div className="fixed top-4 left-4 z-10 sm:z-30 w-full grid items-center pointer-events-none">
+    <div className="fixed pt-4 px-4 z-10 sm:z-30 w-full grid items-center pointer-events-none">
       <div className="pointer-events-none flex flex-col items-start gap-4 lg: flex-row]">
         <div
-          className={`w-fit flex gap-4 flex-col flex-wrap sm:flex-nowrap items-start sm:flex-row sm:items-stretch pointer-events-auto ${smMaxWidth}`}
+          className={`w-fit flex gap-4 flex-col flex-wrap items-start sm:flex-row sm:items-stretch pointer-events-auto ${smMaxWidth}`}
         >
-          <Button twoDimensional className="min-w-fit [&]:hidden [&]:md:flex" innerClass="text-2xl">
+          <Button twoDimensional className="[&]:hidden [&]:sm:flex min-w-fit" innerClass="text-2xl">
             <img src="/images/favicon2.png" alt="logo" width={36} className="min-w-[36] mr-1" />
-            <div>Threechest</div>
+            <div className="[&]:hidden [&]:md:flex">Threechest</div>
           </Button>
           <div className="h-full" style={{ width: dropdownWidth }}>
             <DungeonDropdown />

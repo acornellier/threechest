@@ -7,10 +7,10 @@ import { MobInfo } from './MobInfo.tsx'
 import { Header } from './Header/Header.tsx'
 import { useEffect } from 'react'
 import { defaultDungeonKey, setDungeon } from '../store/routes/routesReducer.ts'
-
 import { useDungeon } from '../store/routes/routeHooks.ts'
 import { useAppDispatch } from '../store/storeUtil.ts'
 import { TailwindBreakpoint } from './Common/TailwindBreakpoint.tsx'
+import { isDev } from '../util/dev.ts'
 
 export function Page() {
   const dispatch = useAppDispatch()
@@ -31,7 +31,7 @@ export function Page() {
       <Toasts />
       <ConfirmImportModal />
       <RouteSaver />
-      <TailwindBreakpoint />
+      {isDev && <TailwindBreakpoint />}
     </div>
   )
 }
