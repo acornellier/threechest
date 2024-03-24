@@ -1,5 +1,5 @@
 ﻿import { Button } from '../../Common/Button.tsx'
-import { PaintBrushIcon } from '@heroicons/react/24/outline'
+import { PaintBrushIcon } from '@heroicons/react/24/solid'
 import { useAppDispatch, useRootSelector } from '../../../store/storeUtil.ts'
 import { setDrawColor, setDrawWeight, setIsDrawing } from '../../../store/reducers/mapReducer.ts'
 import { clearDrawings } from '../../../store/routes/routesReducer.ts'
