@@ -3,8 +3,8 @@ import { Button } from '../Common/Button.tsx'
 import { useCallback } from 'react'
 import { endCollab, startCollab } from '../../store/collab/collabReducer.ts'
 import { addToast } from '../../store/reducers/toastReducer.ts'
-import { generateSlug } from 'random-word-slugs'
 import { useAppDispatch, useRootSelector } from '../../store/storeUtil.ts'
+import { generateCollabRoom } from '../../util/slugs/slugGenerator.ts'
 
 interface Props {
   active: boolean
@@ -20,7 +20,7 @@ export function CollabButton({ active, shareUrl }: Props) {
       dispatch(endCollab())
       dispatch(addToast({ message: 'Collab ended.', type: 'info' }))
     } else {
-      const room = generateSlug()
+      const room = generateCollabRoom()
       dispatch(startCollab(room))
       await shareUrl(room)
       dispatch(addToast({ message: 'Collab started! URL copied to clipboard.' }))

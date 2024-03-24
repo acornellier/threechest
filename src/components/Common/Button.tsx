@@ -24,6 +24,7 @@ export type ButtonProps = DetailedHTMLProps<
   innerClass?: string
   outline?: boolean
   short?: boolean
+  tiny?: boolean
   twoDimensional?: boolean
   justifyStart?: boolean
   color?: 'red' | 'green' | 'yellow'
@@ -61,6 +62,7 @@ export function Button({
   innerClass,
   outline,
   short,
+  tiny,
   twoDimensional,
   justifyStart,
   className,
@@ -82,7 +84,7 @@ export function Button({
         className={`fancy-button
                   ${color ?? ''}
                   ${outline ? 'outline-button' : ''} 
-                  ${short ? 'short' : ''} 
+                  ${tiny ? 'tiny' : short ? 'short' : ''} 
                   ${twoDimensional ? 'two-d' : ''} 
                   ${className ?? ''}`}
         data-tooltip-id={tooltipId}

@@ -30,7 +30,6 @@
     "node-weakauras-parser": "^3.2.3",
     "patch-package": "^8.0.0",
     "prettier": "^3.2.5",
-    "random-word-slugs": "^0.1.7",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-gtm-module": "^2.0.11",

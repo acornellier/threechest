@@ -4,7 +4,7 @@ import { useCallback, useEffect, useState } from 'react'
 import { ArrowUturnLeftIcon, Cog8ToothIcon, ShareIcon } from '@heroicons/react/24/outline'
 import { addToast } from '../../store/reducers/toastReducer.ts'
 import { Panel } from '../Common/Panel.tsx'
-import { AwarenessClients } from './AwarenessClients.tsx'
+import { CollabRoomDetails } from './CollabRoomDetails.tsx'
 import { CollabSettings } from './CollabSettings.tsx'
 import { CollabButton } from './CollabButton.tsx'
 
@@ -83,10 +83,7 @@ export function CollabPanel({ collapsed }: Props) {
             </Button>
             <RestoreBackup />
           </div>
-          <div className="flex flex-col gap-1">
-            <div className="text-xs -mt-1">Room: {room}</div>
-            <AwarenessClients />
-          </div>
+          <CollabRoomDetails />
         </>
       )}
       {collabSettingsOpen && <CollabSettings onClose={() => setCollabSettingsOpen(false)} />}

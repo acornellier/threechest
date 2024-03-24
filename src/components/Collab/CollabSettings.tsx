@@ -5,19 +5,16 @@ import {
   useSavedCollabColor,
   useSavedCollabName,
 } from '../../store/collab/collabReducer.ts'
-import { generateSlug } from 'random-word-slugs'
 import { useCallback } from 'react'
 import { Button } from '../Common/Button.tsx'
 import { TooltipStyled } from '../Common/TooltipStyled.tsx'
-
 import { useAppDispatch } from '../../store/storeUtil.ts'
 import { useColorWheelCanvas } from '../Common/useColorWheelCanvas.ts'
+import { generateCollabName } from '../../util/slugs/slugGenerator.ts'
 
 interface Props {
   onClose: () => void
 }
-
-const generateCollabName = () => generateSlug(2, { format: 'title' })
 
 export function CollabSettings({ onClose }: Props) {
   const dispatch = useAppDispatch()

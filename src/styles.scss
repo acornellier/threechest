@@ -141,9 +141,15 @@ $fancy-yellow: #7f6b1d;
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.3);
 
   &.short {
-    min-height: 32px;
+    min-height: 0;
     padding-top: 4px;
     padding-bottom: 4px;
+  }
+
+  &.tiny {
+    min-height: 0;
+    padding: 0 4px;
+    font-size: 12px;
   }
 
   &.green {

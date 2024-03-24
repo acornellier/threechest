@@ -1,6 +1,7 @@
 ﻿Collab
 - Prevent guest from modifying route id at all costs
 - Request promotion to host, or host promotes a guest
+- Password?
 
 - Pull % hard to read
 - Mobile - add pull while sidebar collapsed, delete pull

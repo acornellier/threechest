@@ -6,8 +6,8 @@ import {
   savedCollabColorKey,
   savedCollabNameKey,
 } from './collabReducer.ts'
-import { generateSlug } from 'random-word-slugs'
 import { current } from '@reduxjs/toolkit'
+import { generateCollabName } from '../../util/slugs/slugGenerator.ts'
 
 function checkLocalAwareness(state: CollabState, localAwareness: AwarenessState) {
   if (localAwareness.name && localAwareness.clientType && localAwareness.joinTime) return
@@ -15,7 +15,7 @@ function checkLocalAwareness(state: CollabState, localAwareness: AwarenessState)
   const savedName = localStorage.getItem(savedCollabNameKey)
   const savedColor = localStorage.getItem(savedCollabColorKey)
 
-  localAwareness.name ??= savedName || generateSlug(2, { format: 'title' })
+  localAwareness.name ??= savedName || generateCollabName()
   localAwareness.clientType ??= state.startedCollab ? 'host' : 'guest'
   localAwareness.joinTime ??= new Date().getTime()
   localAwareness.color ??= savedColor || null
