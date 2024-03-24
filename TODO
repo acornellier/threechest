@@ -1,6 +1,5 @@
 ﻿Collab
 - Prevent guest from modifying route id at all costs
-- Backup route
 - Request promotion to host, or host promotes a guest
 
 - Pull % hard to read

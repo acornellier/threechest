@@ -9,6 +9,7 @@ import { CollabSettings } from './CollabSettings.tsx'
 import { CollabButton } from './CollabButton.tsx'
 
 import { useAppDispatch } from '../../store/storeUtil.ts'
+import { RestoreBackup } from './RestoreBackup.tsx'
 
 interface Props {
   collapsed?: boolean
@@ -75,17 +76,18 @@ export function CollabPanel({ collapsed }: Props) {
         />
       </div>
       {active && (
-        <div className="flex gap-1">
-          <Button Icon={ShareIcon} short outline onClick={onShare} className="w-full">
-            Share room
-          </Button>
-        </div>
-      )}
-      {active && (
-        <div className="flex flex-col gap-1">
-          <div className="text-xs -mt-1">Room: {room}</div>
-          <AwarenessClients />
-        </div>
+        <>
+          <div className="flex gap-1">
+            <Button Icon={ShareIcon} short outline onClick={onShare} className="w-full">
+              Share room
+            </Button>
+            <RestoreBackup />
+          </div>
+          <div className="flex flex-col gap-1">
+            <div className="text-xs -mt-1">Room: {room}</div>
+            <AwarenessClients />
+          </div>
+        </>
       )}
       {collabSettingsOpen && <CollabSettings onClose={() => setCollabSettingsOpen(false)} />}
     </Panel>

@@ -5,6 +5,7 @@ import { importRoute } from './reducers/importReducer.ts'
 import { REHYDRATE } from 'redux-persist/es/constants'
 import { ActionCreators } from 'redux-undo'
 import {
+  backupRoute,
   duplicateRoute,
   loadRoute,
   newRoute,
@@ -14,7 +15,11 @@ import {
   setRouteFromSample,
   updateSavedRoutes,
 } from './routes/routesReducer.ts'
-import { selectLocalAwareness, selectLocalAwarenessIsGuest } from './collab/collabReducer.ts'
+import {
+  selectLocalAwareness,
+  selectLocalAwarenessIsGuest,
+  startCollab,
+} from './collab/collabReducer.ts'
 import { findMobSpawn } from '../util/mobSpawns.ts'
 import { dungeonsByKey } from '../data/dungeons.ts'
 import { setDrawColor } from './reducers/mapReducer.ts'
@@ -124,5 +129,21 @@ listenerMiddleware.startListening({
     const state = listenerApi.getState() as RootState
     const localAwareness = selectLocalAwareness(state)
     if (localAwareness?.color) listenerApi.dispatch(setDrawColor(localAwareness.color))
+  },
+})
+
+// Whenever route UID changes or collab starts, update backup
+listenerMiddleware.startListening({
+  predicate: (action: Action, currentState, originalState) => {
+    if (action.type === startCollab.type) return true
+
+    if (!action.type.startsWith('routes/')) return false
+    return (
+      (originalState as RootState).routes.present.route.uid !==
+      (currentState as RootState).routes.present.route.uid
+    )
+  },
+  effect: (_action, listenerApi) => {
+    listenerApi.dispatch(backupRoute())
   },
 })

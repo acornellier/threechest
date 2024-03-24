@@ -21,10 +21,12 @@ export function RouteSaver() {
     }
   }, [dispatch])
 
+  // Whenever route UID or name changes, update saved routes, unless guest
   useEffect(() => {
     if (!isGuestCollab) dispatch(updateSavedRoutes())
   }, [dispatch, route.uid, route.name, isGuestCollab])
 
+  // Whenever route changes, save it, unless guest
   useEffect(() => {
     if (!isGuestCollab) saveRoute(route)
   }, [isGuestCollab, route])

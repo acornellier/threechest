@@ -16,6 +16,7 @@ export interface RouteState {
   route: Route
   selectedPull: number
   savedRoutes: SavedRoute[]
+  backupRoute?: Route | null
 }
 
 const emptyPull: Pull = { id: 0, spawns: [] }
@@ -149,6 +150,9 @@ const baseReducer = createAppSlice({
       const newRoute = { ...route }
       giveRouteNewNameUid(state, newRoute)
       setRouteFresh(state, newRoute)
+    },
+    backupRoute(state) {
+      state.backupRoute = state.route
     },
     clearRoute(state) {
       state.route.pulls = [emptyPull]
@@ -347,6 +351,7 @@ export const {
   setRoute,
   setRouteFromMdt,
   setRouteFromSample,
+  backupRoute,
   clearRoute,
   clearDrawings,
   setName,

@@ -8,7 +8,8 @@ import { useRootSelector } from '../storeUtil.ts'
 export const useRoutesSelector = <T>(selector: (state: RouteState) => T): T =>
   useRootSelector((state) => selector(state.routes.present))
 
-const selectRoute = (state: RootState) => state.import.previewRoute ?? state.routes.present.route
+export const selectRoute = (state: RootState) =>
+  state.import.previewRoute ?? state.routes.present.route
 export const useRoute = () => useRootSelector(selectRoute)
 
 export const useSelectedPull = () => useRoutesSelector((state) => state.selectedPull)
