@@ -4,10 +4,6 @@
 
 Mobile
 - Tapping on Sample Route or a Pull triggers Hover first
-- MiniPulls should be collapsible
-- MiniPulls list is wrong sometimes
-- MobInfo is unusable
-- Drawing
 
 Questionable, maybe post release
 - Import from WCL
@@ -15,6 +11,7 @@ Questionable, maybe post release
 - Change color wheel to grid of colors
 - Embed
 - Collab password 
+- Mobile Drawing
 
 Definitely post release
 - Npc portaits

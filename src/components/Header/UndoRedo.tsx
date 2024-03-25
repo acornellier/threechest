@@ -24,7 +24,7 @@ export function UndoRedo() {
   useShortcut(shortcuts.redo, redo, { allowRepeat: true })
 
   return (
-    <div className="flex items-start gap-2 h-full">
+    <div className="flex items-start gap-2 h-full flex-col sm:flex-row">
       <Button
         Icon={ArrowUturnLeftIcon}
         onClick={undo}

@@ -55,8 +55,8 @@ export function HelpModal({ onClose }: Props) {
               selected pull.
             </div>
             <div>
-              Your pulls are displayed in the right sidebar. Right click on them to insert or delete
-              pulls, or use the keyboard shortcuts.
+              Your pulls are displayed in the right sidebar. Right click or hold your finger on them
+              to insert or delete pulls.
             </div>
             <div>Select dungeon and route using the dropdowns at the top.</div>
             <div>Any changes you make are immediately saved to your browser.</div>

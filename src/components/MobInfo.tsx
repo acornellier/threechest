@@ -26,7 +26,7 @@ export function MobInfo() {
   }
 
   return (
-    <div className="fixed bottom-2 left-2 z-10 min-w-[250px]">
+    <div className="fixed bottom-12 sm:bottom-2 left-2 z-10 min-w-[250px]">
       <Panel blue>
         <div>
           <div className="flex items-center justify-between gap-2">

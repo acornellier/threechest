@@ -8,7 +8,6 @@ import { selectPull, setPulls } from '../../../store/routes/routesReducer.ts'
 import { useAppDispatch } from '../../../store/storeUtil.ts'
 import { PullContextMenu } from './PullContextMenu.tsx'
 import { useContextMenu } from '../../Common/useContextMenu.ts'
-import { usePullShortcuts } from './usePullShortcuts.ts'
 
 type SortablePull = PullDetailed & ItemInterface
 
@@ -23,8 +22,6 @@ export function PullList({ pullsDetailed, disableSorting }: Props) {
   const isShiftHeld = useKeyHeld('Shift')
   const [contextMenuPullIndex, setContextMenuPullIndex] = useState<number>(0)
   const { contextMenuPosition, onRightClick, onClose } = useContextMenu()
-
-  usePullShortcuts()
 
   const pullsWithGhost = useMemo(() => {
     const pulls: SortablePull[] = [...pullsDetailed]

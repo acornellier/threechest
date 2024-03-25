@@ -10,7 +10,7 @@ import { Dispatch, SetStateAction } from 'react'
 interface Props {
   collapsed: boolean
   setCollapsed: Dispatch<SetStateAction<boolean>>
-  index: number
+  index?: number
   vertical?: boolean
 }
 
@@ -18,7 +18,7 @@ const initialTop = 8
 const height = 48
 const gap = 8
 
-export function SidebarCollapser({ collapsed, setCollapsed, index, vertical }: Props) {
+export function SidebarCollapser({ collapsed, setCollapsed, vertical, index = 0 }: Props) {
   const paddingTop = initialTop + index * (height + gap)
 
   return (

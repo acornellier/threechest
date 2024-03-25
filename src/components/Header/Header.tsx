@@ -14,7 +14,7 @@ export function Header() {
   const smMaxWidth = `sm:max-w-[${sidebarWidth + 32}px]`
 
   return (
-    <div className="fixed pt-4 px-4 z-10 sm:z-30 w-full grid items-center pointer-events-none">
+    <div className="z-30 fixed pt-4 px-4 w-full grid items-center pointer-events-none">
       <div className="pointer-events-none flex flex-col items-start gap-4 lg: flex-row]">
         <div
           className={`w-fit flex gap-4 flex-wrap items-start sm:items-stretch pointer-events-auto ${smMaxWidth}`}
@@ -31,11 +31,9 @@ export function Header() {
             <DungeonDropdown />
           </div>
         </div>
-        <div className="pointer-events-auto">
-          <div className="flex items-start gap-6 h-full">
-            {!isGuestCollab && <UndoRedo />}
-            {!isMobile && <DrawToolbar />}
-          </div>
+        <div className="flex items-start gap-6 h-full pointer-events-auto">
+          {!isGuestCollab && <UndoRedo />}
+          {!isMobile && <DrawToolbar />}
         </div>
       </div>
     </div>
