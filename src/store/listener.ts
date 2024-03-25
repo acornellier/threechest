@@ -16,13 +16,16 @@ import {
   updateSavedRoutes,
 } from './routes/routesReducer.ts'
 import {
+  promoteSelfToHost,
   selectLocalAwareness,
   selectLocalAwarenessIsGuest,
+  setAwarenessStates,
   startCollab,
 } from './collab/collabReducer.ts'
 import { findMobSpawn } from '../util/mobSpawns.ts'
 import { dungeonsByKey } from '../data/dungeons.ts'
 import { setDrawColor } from './reducers/mapReducer.ts'
+import { UnknownAction } from 'redux'
 
 export const listenerMiddleware = createListenerMiddleware()
 
@@ -129,6 +132,23 @@ listenerMiddleware.startListening({
     const state = listenerApi.getState() as RootState
     const localAwareness = selectLocalAwareness(state)
     if (localAwareness?.color) listenerApi.dispatch(setDrawColor(localAwareness.color))
+  },
+})
+
+// on host promotion, send a toast
+listenerMiddleware.startListening({
+  predicate: (action: UnknownAction, currentState, originalState) => {
+    if (action.type === promoteSelfToHost.type) return action.payload === true
+    if (action.type !== setAwarenessStates.type) return false
+
+    const oldClientType = selectLocalAwareness(originalState as RootState)?.clientType
+    const newClientType = selectLocalAwareness(currentState as RootState)?.clientType
+    return oldClientType === 'guest' && newClientType === 'host'
+  },
+  effect: async (_, listenerApi) => {
+    listenerApi.dispatch(
+      addToast({ message: 'You have been promoted to the host of this collab.', type: 'info' }),
+    )
   },
 })
 

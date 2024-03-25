@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import * as Y from 'yjs'
 import { SyncYAwareness, SyncYJson } from './YRedux'
 import {
-  promoteToHost,
+  promoteSelfToHost,
   selectLocalAwareness,
   setAwarenessStates,
   setMousePosition,
@@ -55,7 +55,7 @@ export function Collab() {
     const onMouseOut = () => dispatch(setMousePosition(null))
     const onRoomSize = (roomSize: number) => {
       if (roomSize === 1) {
-        dispatch(promoteToHost())
+        dispatch(promoteSelfToHost(false))
       }
     }
 

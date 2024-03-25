@@ -6,7 +6,6 @@ import {
   savedCollabColorKey,
   savedCollabNameKey,
 } from './collabReducer.ts'
-import { current } from '@reduxjs/toolkit'
 import { generateCollabName } from '../../util/slugs/slugGenerator.ts'
 
 function checkLocalAwareness(state: CollabState, localAwareness: AwarenessState) {
@@ -49,6 +48,16 @@ export function shouldPromoteToHost(state: CollabState): boolean {
   if (!state.wsConnected) return false
 
   const localAwareness = getLocalAwareness(state)
+  if (!localAwareness) return false
+
+  // Check for someone promoting us to host
+  if (
+    state.awarenessStates.some(
+      ({ promotingClientId }) => promotingClientId === localAwareness.clientId,
+    )
+  )
+    return true
+
   if (!localAwareness?.joinTime) return false
 
   // Check that at least 1 second has passed since we joined
@@ -64,30 +73,43 @@ export function shouldPromoteToHost(state: CollabState): boolean {
   )
 }
 
-function checkForNoHost(state: CollabState, localAwareness: AwarenessState) {
-  if (shouldPromoteToHost(state)) localAwareness.clientType = 'host'
+function checkForPromotion(state: CollabState, localAwareness: AwarenessState) {
+  if (shouldPromoteToHost(state)) {
+    localAwareness.clientType = 'host'
+  }
 }
 
-function checkForMultipleHosts(state: CollabState, localAwareness: AwarenessState) {
-  console.log('checkForMultipleHosts', current(state), localAwareness)
-  if (!localAwareness.joinTime) {
+function shouldDemoteToGuest(state: CollabState, localAwareness: AwarenessState) {
+  const localJoinTime = localAwareness.joinTime
+  if (!localJoinTime) {
     console.error('setAwarenessColor should not be called without localAwareness.joinTime')
-    return
+    return false
   }
 
   const hosts = state.awarenessStates.filter(({ clientType }) => clientType === 'host')
-  if (hosts.length < 2) return
+  if (hosts.length < 2) return false
 
-  // Check for another host who joined later than me
+  const otherHosts = hosts.filter(({ isCurrentClient }) => !isCurrentClient)
+
+  // Demote if we've completed promoting someone else
   if (
-    state.awarenessStates.some(
-      ({ isCurrentClient, joinTime }) =>
-        !isCurrentClient && joinTime && joinTime > localAwareness.joinTime!,
-    )
+    localAwareness.promotingClientId &&
+    otherHosts.some(({ clientId }) => localAwareness.promotingClientId === clientId)
   )
-    return
+    return true
 
-  localAwareness.clientType = 'guest'
+  // Demote if there is any other host joined earlier but isn't promoting us
+  return otherHosts.some(
+    ({ joinTime, promotingClientId }) =>
+      joinTime && joinTime < localJoinTime && promotingClientId !== localAwareness.clientId,
+  )
+}
+
+function checkForDemotion(state: CollabState, localAwareness: AwarenessState) {
+  if (shouldDemoteToGuest(state, localAwareness)) {
+    localAwareness.clientType = 'guest'
+    localAwareness.promotingClientId = null
+  }
 }
 
 export function postAwarenessUpdateChecks(state: CollabState, localAwareness: AwarenessState) {
@@ -95,6 +117,6 @@ export function postAwarenessUpdateChecks(state: CollabState, localAwareness: Aw
 
   if (!state.wsConnected) return
   setAwarenessColor(state, localAwareness)
-  checkForNoHost(state, localAwareness)
-  checkForMultipleHosts(state, localAwareness)
+  checkForPromotion(state, localAwareness)
+  checkForDemotion(state, localAwareness)
 }

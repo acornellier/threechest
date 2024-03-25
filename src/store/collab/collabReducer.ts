@@ -10,6 +10,7 @@ export type ClientType = 'host' | 'guest'
 export interface AwarenessState extends BaseAwarenessState {
   name: string
   clientType?: ClientType
+  promotingClientId?: number | null
   joinTime?: number
   color?: string | null
   mousePosition?: LatLng | null
@@ -60,44 +61,36 @@ export const collabSlice = createAppSlice({
       state.wsConnected = connected
 
       const localAwareness = getLocalAwareness(state)
-      if (!localAwareness) return
-
-      postAwarenessUpdateChecks(state, localAwareness)
+      if (localAwareness) postAwarenessUpdateChecks(state, localAwareness)
     },
     setAwarenessStates(state, { payload: awarenessStates }: PayloadAction<AwarenessState[]>) {
       state.awarenessStates = awarenessStates
 
       const localAwareness = getLocalAwareness(state)
-      if (!localAwareness) return
-
-      postAwarenessUpdateChecks(state, localAwareness)
+      if (localAwareness) postAwarenessUpdateChecks(state, localAwareness)
     },
-    promoteToHost(state) {
+    promoteSelfToHost(state, _action: PayloadAction<boolean>) {
       const localAwareness = getLocalAwareness(state)
-      if (!localAwareness) return
-
-      localAwareness.clientType = 'host'
+      if (localAwareness) localAwareness.clientType = 'host'
+    },
+    promoteGuestToHost(state, { payload: clientId }: PayloadAction<number>) {
+      const localAwareness = getLocalAwareness(state)
+      if (localAwareness) localAwareness.promotingClientId = clientId
     },
     setMousePosition(
       state,
       { payload: mousePosition }: PayloadAction<AwarenessState['mousePosition']>,
     ) {
       const localAwareness = getLocalAwareness(state)
-      if (!localAwareness) return
-
-      localAwareness.mousePosition = mousePosition
+      if (localAwareness) localAwareness.mousePosition = mousePosition
     },
     setCollabName(state, { payload: name }: PayloadAction<string>) {
       const localAwareness = getLocalAwareness(state)
-      if (!localAwareness) return
-
-      localAwareness.name = name
+      if (localAwareness) localAwareness.name = name
     },
     setCollabColor(state, { payload: color }: PayloadAction<string>) {
       const localAwareness = getLocalAwareness(state)
-      if (!localAwareness) return
-
-      localAwareness.color = color
+      if (localAwareness) localAwareness.color = color
     },
   },
   selectors: {
@@ -133,7 +126,8 @@ export const {
   joinCollab,
   setWsConnected,
   setAwarenessStates,
-  promoteToHost,
+  promoteSelfToHost,
+  promoteGuestToHost,
   setMousePosition,
   setCollabName,
   setCollabColor,

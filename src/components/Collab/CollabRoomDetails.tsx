@@ -1,11 +1,17 @@
 import { getTextColor } from '../../util/colors.ts'
 import { TooltipStyled } from '../Common/TooltipStyled.tsx'
-import { useAwarenessStates, useCollabSelector } from '../../store/collab/collabReducer.ts'
+import {
+  promoteGuestToHost,
+  useAwarenessStates,
+  useCollabSelector,
+} from '../../store/collab/collabReducer.ts'
 import { useState } from 'react'
 import { ChevronDownIcon } from '@heroicons/react/24/outline'
 import { Button } from '../Common/Button.tsx'
+import { useAppDispatch } from '../../store/storeUtil.ts'
 
 export function CollabRoomDetails() {
+  const dispatch = useAppDispatch()
   const room = useCollabSelector((state) => state.room)
   const awarenessStates = useAwarenessStates()
   const [showClients, setShowClients] = useState(false)
@@ -71,22 +77,27 @@ export function CollabRoomDetails() {
         )}
       </TooltipStyled>
       {showClients && (
-        <TooltipStyled id="collab-guests-tooltip" padding={4} isOpen>
+        <TooltipStyled id="collab-guests-tooltip" padding={4} isOpen clickable>
           <div className="flex flex-col gap-1">
             {awarenessStates.map((awareness) => (
               <div key={awareness.clientId} className="flex items-center gap-1">
                 <div
-                  className="rounded-sm px-1 flex-1"
+                  className="rounded-sm px-1 flex-1 flex justify-between gap-2 text-sm"
                   style={{
                     backgroundColor: awareness.color ?? 'none',
                     color: awareness.color ? getTextColor(awareness.color) : 'inherit',
                   }}
                 >
-                  {awareness.name}
-                  {awareness.clientType === 'host' && ' - host'}
+                  <div>{awareness.name}</div>
+                  {awareness.clientType === 'host' && <b>host</b>}
                 </div>
-                {false && isHost && awareness.clientType === 'guest' && (
-                  <Button tiny outline twoDimensional>
+                {isHost && awareness.clientType === 'guest' && (
+                  <Button
+                    tiny
+                    outline
+                    twoDimensional
+                    onClick={() => dispatch(promoteGuestToHost(awareness.clientId))}
+                  >
                     Promote
                   </Button>
                 )}

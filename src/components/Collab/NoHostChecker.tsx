@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { shouldPromoteToHost } from '../../store/collab/collabActions.ts'
-import { promoteToHost } from '../../store/collab/collabReducer.ts'
+import { promoteSelfToHost } from '../../store/collab/collabReducer.ts'
 import { useAppDispatch, useAppStore } from '../../store/storeUtil.ts'
 
 export function NoHostChecker() {
@@ -9,7 +9,7 @@ export function NoHostChecker() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      if (shouldPromoteToHost(store.getState().collab)) dispatch(promoteToHost())
+      if (shouldPromoteToHost(store.getState().collab)) dispatch(promoteSelfToHost(true))
     }, 1000)
 
     return () => clearInterval(interval)
