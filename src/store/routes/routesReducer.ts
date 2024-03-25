@@ -344,8 +344,6 @@ const persistedReducer = persistReducer(
 export const routesReducer = persistedReducer
 
 export const {
-  updateSavedRoutes,
-  deleteSavedRoute,
   newRoute,
   duplicateRoute,
   setRoute,
@@ -373,4 +371,6 @@ export const {
   deleteNote,
   addDrawing,
   moveNote,
+  updateSavedRoutes,
+  deleteSavedRoute,
 } = baseReducer.actions

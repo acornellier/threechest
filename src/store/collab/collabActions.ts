@@ -9,15 +9,10 @@ import {
 import { generateCollabName } from '../../util/slugs/slugGenerator.ts'
 
 function checkLocalAwareness(state: CollabState, localAwareness: AwarenessState) {
-  if (localAwareness.name && localAwareness.clientType && localAwareness.joinTime) return
-
-  const savedName = localStorage.getItem(savedCollabNameKey)
-  const savedColor = localStorage.getItem(savedCollabColorKey)
-
-  localAwareness.name ??= savedName || generateCollabName()
+  localAwareness.name ??= localStorage.getItem(savedCollabNameKey) || generateCollabName()
   localAwareness.clientType ??= state.startedCollab ? 'host' : 'guest'
   localAwareness.joinTime ??= new Date().getTime()
-  localAwareness.color ??= savedColor || null
+  localAwareness.color ??= localStorage.getItem(savedCollabColorKey) || null
 }
 
 function setAwarenessColor(state: CollabState, localAwareness: AwarenessState) {
@@ -58,18 +53,18 @@ export function shouldPromoteToHost(state: CollabState): boolean {
   )
     return true
 
-  if (!localAwareness?.joinTime) return false
+  const localJoinTime = localAwareness.joinTime
+  if (!localJoinTime) return false
 
   // Check that at least 1 second has passed since we joined
-  if (localAwareness.joinTime && new Date().getTime() - localAwareness.joinTime < 1000) return false
+  if (new Date().getTime() - localJoinTime < 1000) return false
 
-  // Check for any hosts
+  // If there is already a host, do not promote
   if (state.awarenessStates.some(({ clientType }) => clientType === 'host')) return false
 
-  // Check for another client who joined earlier than us
+  // Promote if no other client joined earlier than us
   return !state.awarenessStates.some(
-    ({ isCurrentClient, joinTime }) =>
-      !isCurrentClient && joinTime && joinTime < localAwareness.joinTime!,
+    ({ isCurrentClient, joinTime }) => !isCurrentClient && joinTime && joinTime < localJoinTime,
   )
 }
 
@@ -81,10 +76,7 @@ function checkForPromotion(state: CollabState, localAwareness: AwarenessState) {
 
 function shouldDemoteToGuest(state: CollabState, localAwareness: AwarenessState) {
   const localJoinTime = localAwareness.joinTime
-  if (!localJoinTime) {
-    console.error('setAwarenessColor should not be called without localAwareness.joinTime')
-    return false
-  }
+  if (!localJoinTime) return false
 
   const hosts = state.awarenessStates.filter(({ clientType }) => clientType === 'host')
   if (hosts.length < 2) return false

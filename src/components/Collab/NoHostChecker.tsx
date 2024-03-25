@@ -9,7 +9,9 @@ export function NoHostChecker() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      if (shouldPromoteToHost(store.getState().collab)) dispatch(promoteSelfToHost(true))
+      if (shouldPromoteToHost(store.getState().collab)) {
+        dispatch(promoteSelfToHost(true))
+      }
     }, 1000)
 
     return () => clearInterval(interval)

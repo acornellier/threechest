@@ -14,16 +14,14 @@ import { MapInitialZoom } from './MapInitialZoom.tsx'
 import { mapBounds, mapCenter } from '../../util/map.ts'
 import { useEffect } from 'react'
 import { setMapObjectsHidden } from '../../store/reducers/mapReducer.ts'
-import { Collab } from '../Collab/Collab.tsx'
-import { useCollabSelector } from '../../store/collab/collabReducer.ts'
 import { useDungeon } from '../../store/routes/routeHooks.ts'
 import { useAppDispatch } from '../../store/storeUtil.ts'
 import { PatherComponent } from './Draw/PatherComponent.tsx'
+import { AwarenessCursors } from '../Collab/AwarenessCursors.tsx'
 
 export function Map() {
   const dispatch = useAppDispatch()
   const dungeon = useDungeon()
-  const collabActive = useCollabSelector((state) => state.active)
 
   useEffect(() => {
     dispatch(setMapObjectsHidden(true))
@@ -65,7 +63,7 @@ export function Map() {
         <MapContextMenu />
         <PatherComponent />
         <MapInitialZoom />
-        {collabActive && <Collab />}
+        <AwarenessCursors />
         {isDev && <MousePosition />}
       </MapContainer>
     </div>

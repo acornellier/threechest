@@ -11,10 +11,13 @@ import { useDungeon } from '../store/routes/routeHooks.ts'
 import { useAppDispatch } from '../store/storeUtil.ts'
 import { TailwindBreakpoint } from './Common/TailwindBreakpoint.tsx'
 import { isDev } from '../util/dev.ts'
+import { CollabSync } from './Collab/CollabSync.tsx'
+import { useCollabSelector } from '../store/collab/collabReducer.ts'
 
 export function Page() {
   const dispatch = useAppDispatch()
   const dungeon = useDungeon()
+  const collabActive = useCollabSelector((state) => state.active)
 
   useEffect(() => {
     if (!dungeon) dispatch(setDungeon(defaultDungeonKey))
@@ -31,6 +34,7 @@ export function Page() {
       <Toasts />
       <ConfirmImportModal />
       <RouteSaver />
+      {collabActive && <CollabSync />}
       {isDev && <TailwindBreakpoint />}
     </div>
   )
