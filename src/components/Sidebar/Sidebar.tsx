@@ -12,10 +12,10 @@ const marginTop = 8
 const marginBottom = 60
 
 export function Sidebar() {
-  const [collapsed, setCollapsed] = useState(false)
+  const [topCollapsed, setTopCollapsed] = useState(false)
   const [bottomCollapsed, setBottomCollapsed] = useState(false)
+  const isBottomCollapsed = !topCollapsed || bottomCollapsed
   const isGuestCollab = useIsGuestCollab()
-  const isBottomCollapsed = collapsed && bottomCollapsed
 
   return (
     <>
@@ -26,26 +26,27 @@ export function Sidebar() {
           marginTop,
           marginBottom,
           maxHeight: `calc(100% - ${marginTop}px - ${marginBottom}px)`,
-          right: collapsed ? -sidebarWidth : 0,
+          right: topCollapsed ? -sidebarWidth : 0,
         }}
       >
-        <SidebarCollapser collapsed={collapsed} setCollapsed={setCollapsed} />
+        <SidebarCollapser collapsed={topCollapsed} setCollapsed={setTopCollapsed} />
         {isGuestCollab ? <HostRouteDetails /> : <RouteDetails />}
         <CollabPanel />
         <Pulls />
       </div>
       <div
-        className="fixed bottom-0 z-20 transition-all"
+        className="fixed z-20 transition-all"
         style={{
           width: sidebarWidth,
           marginTop,
           marginBottom,
           maxHeight: `calc(100% - ${marginTop}px - ${marginBottom}px)`,
-          right: isBottomCollapsed ? 0 : -sidebarWidth,
+          right: isBottomCollapsed ? -sidebarWidth : 0,
+          bottom: 0,
         }}
       >
-        {collapsed && (
-          <SidebarCollapser collapsed={!isBottomCollapsed} setCollapsed={setBottomCollapsed} />
+        {topCollapsed && (
+          <SidebarCollapser collapsed={bottomCollapsed} setCollapsed={setBottomCollapsed} />
         )}
         <MiniPulls />
       </div>
