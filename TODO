@@ -1,13 +1,18 @@
 ﻿- Pull % hard to read on Windows
 - Button default should be short
-- Drawing on mobile?
 - Hire QA dude
+
+Mobile
+- Tapping on Sample Route or a Pull triggers Hover first
+- MiniPulls should be collapsible
+- MiniPulls list is wrong sometimes
+- MobInfo is unusable
+- Drawing
 
 Questionable, maybe post release
 - Import from WCL
 - Erase parts of drawings
 - Change color wheel to grid of colors
-- Drag pull out of list to delete?
 - Embed
 - Collab password 
 
