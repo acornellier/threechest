@@ -11,11 +11,13 @@ import {
   newRoute,
   removeInvalidSpawns,
   setDungeon,
+  setRouteForCollab,
   setRouteFromMdt,
   setRouteFromSample,
   updateSavedRoutes,
 } from './routes/routesReducer.ts'
 import {
+  endCollab,
   promoteSelfToHost,
   selectLocalAwareness,
   selectLocalAwarenessIsGuest,
@@ -26,6 +28,7 @@ import { findMobSpawn } from '../util/mobSpawns.ts'
 import { dungeonsByKey } from '../data/dungeons.ts'
 import { setDrawColor } from './reducers/mapReducer.ts'
 import { UnknownAction } from 'redux'
+import { selectActualRoute } from './routes/routeHooks.ts'
 
 export const listenerMiddleware = createListenerMiddleware()
 
@@ -165,5 +168,36 @@ listenerMiddleware.startListening({
   },
   effect: (_action, listenerApi) => {
     listenerApi.dispatch(backupRoute())
+  },
+})
+
+// Check that guests aren't modifying things they shouldn't be
+listenerMiddleware.startListening({
+  predicate: (action: Action, currentState, originalState) => {
+    const isGuestCollab = selectLocalAwarenessIsGuest(currentState as RootState)
+    if (!isGuestCollab) return false
+
+    // This means the change was done by another client
+    if (action.type === setRouteForCollab.type) return false
+
+    const prevRoute = selectActualRoute(originalState as RootState)
+    const curRoute = selectActualRoute(currentState as RootState)
+    return (
+      prevRoute.uid !== curRoute.uid ||
+      prevRoute.name !== curRoute.name ||
+      prevRoute.dungeonKey !== curRoute.dungeonKey
+    )
+  },
+  effect: (action, listenerApi) => {
+    console.error(`Guest somehow made illegal changes with action ${JSON.stringify(action)}`)
+    listenerApi.dispatch(endCollab())
+    listenerApi.dispatch(
+      addToast({
+        message:
+          'An error occured and you were removed from the collab room. To rejoin use the "Rejoin last collab" button to the right of "Start Collab". This is a bug and should not happen, so please report it to the discord!',
+        type: 'error',
+        duration: 10_000,
+      }),
+    )
   },
 })

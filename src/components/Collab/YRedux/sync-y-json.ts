@@ -1,21 +1,16 @@
-import { useEffect, useState } from 'react'
-import { Store } from 'redux'
+import { useEffect, useRef, useState } from 'react'
 import * as Y from 'yjs'
-import { cachedSubscribe } from './redux-subscriber.ts'
 import { isEmpty, patchYJson } from '../YJson'
 import { JsonTemplateContainer } from '../Json'
 import { Action } from '@reduxjs/toolkit'
-import { AppStore, RootState } from '../../../store/store.ts'
-import { useAppStore, useRootSelector } from '../../../store/storeUtil.ts'
+import { AppDispatch, RootState } from '../../../store/store.ts'
+import { useAppDispatch, useRootSelector } from '../../../store/storeUtil.ts'
 import { selectLocalAwarenessIsHost } from '../../../store/collab/collabReducer.ts'
 
 function syncLocalIntoRemote<T extends JsonTemplateContainer>(
-  store: AppStore,
-  selectData: (state: RootState) => T | undefined,
+  localData: T | undefined,
   yJson: Y.Map<T> | Y.Array<T>,
 ): void {
-  const localData = selectData(store.getState() as RootState)
-
   if (localData === undefined) {
     console.debug('syncLocalIntoRemote Not syncing: Local data is undefined')
     return
@@ -26,7 +21,7 @@ function syncLocalIntoRemote<T extends JsonTemplateContainer>(
 }
 
 function syncRemoteIntoLocal<T extends JsonTemplateContainer>(
-  store: Store,
+  dispatch: AppDispatch,
   setData: (data: T) => Action,
   yJson: Y.Map<T> | Y.Array<T>,
   setRemoteDataReceived: (val: boolean) => void,
@@ -39,8 +34,8 @@ function syncRemoteIntoLocal<T extends JsonTemplateContainer>(
   }
 
   const remoteData = yJson.toJSON() as T
-  // console.debug('syncRemoteIntoLocal Syncing', remoteData)
-  store.dispatch(setData(remoteData))
+  console.debug('syncRemoteIntoLocal Syncing', remoteData)
+  dispatch(setData(remoteData))
   setRemoteDataReceived(true)
 }
 
@@ -55,41 +50,40 @@ export function SyncYJson<T extends JsonTemplateContainer>({
   setData,
   selectData,
 }: Props<T>): null {
-  const store = useAppStore()
+  const dispatch = useAppDispatch()
   const [remoteDataReceived, setRemoteDataReceived] = useState(false)
   const isHost = useRootSelector(selectLocalAwarenessIsHost)
   const canPublishToRemote = remoteDataReceived || isHost
-  const [, setFailCounter] = useState(0) // TODO: remove debug
 
   // On mount sync remote into local
   useEffect(() => {
-    syncRemoteIntoLocal(store, setData, yJson, setRemoteDataReceived)
-  }, [store, setData, yJson])
+    syncRemoteIntoLocal(dispatch, setData, yJson, setRemoteDataReceived)
+  }, [dispatch, setData, yJson])
 
   // Subscribe to local changes
+  const stateCache = useRef<T | undefined>()
+  const newState = useRootSelector(selectData)
   useEffect(() => {
-    const unsubscribe = cachedSubscribe(store, selectData, () => {
-      // TODO: remove debug
-      if (!canPublishToRemote) {
-        setFailCounter((val) => {
-          if (val >= 3) {
-            console.error("CAN'T PUBLISH - NO REMOTE DATA RECEIVED YET")
-          }
-          return val + 1
-        })
-        return
-      }
-      syncLocalIntoRemote(store, selectData, yJson)
-    })
+    if (stateCache.current !== newState) {
+      stateCache.current = newState
+      if (canPublishToRemote) syncLocalIntoRemote(newState, yJson)
+    }
+  }, [canPublishToRemote, newState, yJson])
 
-    return () => unsubscribe()
-  }, [store, selectData, setData, yJson, canPublishToRemote])
+  // const store = useAppStore()
+  // useEffect(() => {
+  //   const unsubscribe = cachedSubscribe(store, selectData, (newState) => {
+  //     if (canPublishToRemote) syncLocalIntoRemote(newState, yJson)
+  //   })
+  //
+  //   return () => unsubscribe()
+  // }, [store, selectData, yJson, canPublishToRemote])
 
   // Subscribe to remote changes
   useEffect(() => {
     const observer = (_events: any, transaction: Y.Transaction): void => {
       if (transaction.local) return
-      syncRemoteIntoLocal(store, setData, yJson, setRemoteDataReceived)
+      syncRemoteIntoLocal(dispatch, setData, yJson, setRemoteDataReceived)
     }
 
     yJson.observeDeep(observer)
@@ -97,7 +91,7 @@ export function SyncYJson<T extends JsonTemplateContainer>({
     return () => {
       yJson.unobserveDeep(observer)
     }
-  }, [store, setData, yJson])
+  }, [dispatch, setData, yJson])
 
   return null
 }

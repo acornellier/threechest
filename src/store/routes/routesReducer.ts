@@ -128,7 +128,7 @@ const baseReducer = createAppSlice({
   name: 'routes',
   initialState,
   reducers: {
-    setRoute(state, { payload: route }: PayloadAction<Route>) {
+    setRouteForCollab(state, { payload: route }: PayloadAction<Route>) {
       setRouteFresh(state, route)
     },
     newRoute(state, { payload: dungeonKey }: PayloadAction<DungeonKey | undefined>) {
@@ -307,7 +307,7 @@ const undoableReducer = undoable(baseReducer.reducer, {
   limit: 100,
   filter: combineFilters(
     includeAction([
-      baseReducer.actions.setRoute.type,
+      baseReducer.actions.setRouteForCollab.type,
       baseReducer.actions.newRoute.type,
       baseReducer.actions.clearRoute.type,
       baseReducer.actions.addPull.type,
@@ -346,7 +346,7 @@ export const routesReducer = persistedReducer
 export const {
   newRoute,
   duplicateRoute,
-  setRoute,
+  setRouteForCollab,
   setRouteFromMdt,
   setRouteFromSample,
   backupRoute,

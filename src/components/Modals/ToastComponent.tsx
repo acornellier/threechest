@@ -40,7 +40,7 @@ export function ToastComponent({ toast }: Props) {
                   ${toast.removing ? 'opacity-0' : ''}`}
       onClick={onRemove}
     >
-      <Icon width={24} height={24} />
+      <Icon width={24} height={24} className="min-w-6" />
       <div>{toast.message}</div>
       {(toast.isTip || toast.duration === 0 || toast.duration > 5_000) && (
         <XMarkIcon className="cursor-pointer" width={20} height={20} onClick={onRemove} />

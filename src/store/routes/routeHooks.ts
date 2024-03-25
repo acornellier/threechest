@@ -13,7 +13,9 @@ export const selectRoute = (state: RootState) =>
 export const useRoute = () => useRootSelector(selectRoute)
 
 export const useSelectedPull = () => useRoutesSelector((state) => state.selectedPull)
-export const useActualRoute = () => useRoutesSelector((state) => state.route)
+
+export const selectActualRoute = (state: RootState) => state.routes.present.route
+export const useActualRoute = () => useRootSelector(selectActualRoute)
 export const usePreviewRoute = () => useRootSelector((state) => state.import.previewRoute)
 
 const selectSavedRoutes = (state: RouteState) => state.savedRoutes

@@ -44,11 +44,11 @@ export function ConfirmImportModalComponent({ importingRoute }: Props) {
       onClose={cancel}
       closeOnEscape
       contents={
-        <>
+        <div className="leading-loose">
           <p>Would you like to overwrite it or make a copy?</p>
           <p>Route name: {importingRoute.text}</p>
           <p>Dungeon: {dungeon?.name}</p>
-        </>
+        </div>
       }
       buttons={
         <>

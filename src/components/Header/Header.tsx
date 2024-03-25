@@ -18,7 +18,11 @@ export function Header() {
         <div
           className={`w-fit flex gap-4 flex-wrap items-start sm:items-stretch pointer-events-auto ${smMaxWidth}`}
         >
-          <Button twoDimensional className="[&]:hidden [&]:sm:flex min-w-fit" innerClass="text-2xl">
+          <Button
+            twoDimensional
+            className="[&]:hidden [&]:sm:flex [&]:cursor-default min-w-fit"
+            innerClass="text-2xl"
+          >
             <img src="/images/favicon2.png" alt="logo" width={36} className="min-w-[36] mr-1" />
             <div className="flex">Threechest</div>
           </Button>

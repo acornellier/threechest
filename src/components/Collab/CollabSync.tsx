@@ -10,7 +10,7 @@ import {
 } from '../../store/collab/collabReducer.ts'
 import { RootState } from '../../store/store.ts'
 import { Route } from '../../util/types.ts'
-import { setRoute } from '../../store/routes/routesReducer.ts'
+import { setRouteForCollab } from '../../store/routes/routesReducer.ts'
 import { addToast } from '../../store/reducers/toastReducer.ts'
 import { WebrtcProvider } from './y-webrtc/y-webrtc.js'
 import { NoHostChecker } from './NoHostChecker.tsx'
@@ -71,7 +71,7 @@ export function CollabSync() {
 
   return (
     <>
-      <SyncYJson yJson={map} setData={setRoute} selectData={selectData} />
+      <SyncYJson yJson={map} setData={setRouteForCollab} selectData={selectData} />
       <SyncYAwareness
         awareness={provider.awareness}
         setAwarenessStates={setAwarenessStates}

@@ -3,7 +3,7 @@ import { CloudArrowDownIcon } from '@heroicons/react/24/outline'
 import { useRoutesSelector } from '../../store/routes/routeHooks.ts'
 import { useIsGuestCollab } from '../../store/collab/collabReducer.ts'
 import { useCallback } from 'react'
-import { setRoute } from '../../store/routes/routesReducer.ts'
+import { setRouteForCollab } from '../../store/routes/routesReducer.ts'
 import { addToast } from '../../store/reducers/toastReducer.ts'
 import { useAppDispatch } from '../../store/storeUtil.ts'
 
@@ -14,7 +14,7 @@ export function RestoreBackup() {
 
   const onRestoreBackup = useCallback(() => {
     if (!backupRoute) return
-    dispatch(setRoute(backupRoute))
+    dispatch(setRouteForCollab(backupRoute))
     dispatch(addToast({ message: `Route restored from backup` }))
   }, [backupRoute, dispatch])
 
