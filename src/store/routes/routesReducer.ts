@@ -1,5 +1,5 @@
 import { createAsyncThunk, PayloadAction } from '@reduxjs/toolkit'
-import { Drawing, MdtRoute, Note, Pull, Route, SavedRoute } from '../../util/types.ts'
+import { Drawing, MdtRoute, Note, Pull, Route, SavedRoute, WclRoute } from '../../util/types.ts'
 import { DungeonKey, SpawnId } from '../../data/types.ts'
 import { mdtRouteToRoute } from '../../util/mdtUtil.ts'
 import undoable, { combineFilters, excludeAction, includeAction } from 'redux-undo'
@@ -11,6 +11,7 @@ import { indexedDbStorage } from '../storage.ts'
 import { routeMigrate, routePersistVersion } from './routeMigrations.ts'
 import { addToast } from '../reducers/toastReducer.ts'
 import { createAppSlice } from '../storeUtil.ts'
+import { wclRouteToRoute } from '../../util/wclUtil.ts'
 
 export interface RouteState {
   route: Route
@@ -144,6 +145,11 @@ const baseReducer = createAppSlice({
     ) {
       const route = mdtRouteToRoute(mdtRoute)
       if (copy) giveRouteNewNameUid(state, route)
+      setRouteFresh(state, route)
+    },
+    setRouteFromWcl(state, { payload: wclRoute }: PayloadAction<WclRoute>) {
+      const route = wclRouteToRoute(wclRoute)
+      console.log('route', route)
       setRouteFresh(state, route)
     },
     setRouteFromSample(state, { payload: route }: PayloadAction<Route>) {
@@ -348,6 +354,7 @@ export const {
   duplicateRoute,
   setRouteForCollab,
   setRouteFromMdt,
+  setRouteFromWcl,
   setRouteFromSample,
   backupRoute,
   clearRoute,

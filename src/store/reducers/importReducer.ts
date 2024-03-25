@@ -1,8 +1,9 @@
 import { MdtRoute, Route } from '../../util/types.ts'
 import { importRouteApi } from '../../api/importRouteApi.ts'
 import { AppDispatch, RootState } from '../store.ts'
-import { loadRouteFromStorage, setRouteFromMdt } from '../routes/routesReducer.ts'
+import { loadRouteFromStorage, setRouteFromMdt, setRouteFromWcl } from '../routes/routesReducer.ts'
 import { createAppSlice } from '../storeUtil.ts'
+import { wclRouteApi } from '../../api/wclRouteApi.ts'
 
 export interface ImportState {
   importingRoute: MdtRoute | null
@@ -30,11 +31,15 @@ export const importSlice = createAppSlice({
       }
     }),
     importRoute: create.asyncThunk(
-      async ({ mdtString, mdtRoute }: { mdtString?: string; mdtRoute?: MdtRoute }, thunkApi) => {
-        if (!mdtString && !mdtRoute)
-          throw new Error('Must specify either string or route to import')
+      async ({ text, mdtRoute }: { text?: string; mdtRoute?: MdtRoute }, thunkApi) => {
+        if (!text && !mdtRoute) throw new Error('Must specify either string or route to import')
 
-        mdtRoute = mdtRoute ?? (await importRouteApi(mdtString!))
+        const wclRoute = await wclRouteApi(text!)
+        console.log('wclRoute', wclRoute)
+        thunkApi.dispatch(setRouteFromWcl(wclRoute))
+        return
+
+        mdtRoute = mdtRoute ?? (await importRouteApi(text!))
         const state = thunkApi.getState() as RootState
         const savedRoute = state.routes.present.savedRoutes.find(
           (route) => route.uid === mdtRoute.uid,

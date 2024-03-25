@@ -94,4 +94,19 @@ export type SampleRoute = {
   affix?: 'fortified' | 'tyrannical'
 }
 
+export type WclPull = {
+  enemyNPCs: Array<{
+    gameID: number
+    minimumInstanceID: number
+    maximumInstanceID: number
+  }>
+}
+
+export type WclRoute = {
+  gameZone: {
+    name: string
+  }
+  dungeonPulls: WclPull[]
+}
+
 export type IconComponent = ForwardRefExoticComponent<PropsWithoutRef<SVGProps<SVGSVGElement>>>
