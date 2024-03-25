@@ -1,4 +1,4 @@
-import { Button, ButtonTooltipProps } from './Button.tsx'
+import { Button, ButtonProps, ButtonTooltipProps } from './Button.tsx'
 import { ReactNode, useCallback, useRef, useState } from 'react'
 import { ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/24/outline'
 import { useOutsideClick } from '../../hooks/useOutsideClick.ts'
@@ -19,12 +19,11 @@ type Props<T extends DropdownOption> = {
   selected?: T
   buttonContent?: ReactNode
   MainButtonIcon?: IconComponent
-  short?: boolean
-  outline?: boolean
   className?: string
   disabled?: boolean
   hideArrow?: boolean
-} & ButtonTooltipProps
+} & Pick<ButtonProps, 'short' | 'twoDimensional' | 'outline'> &
+  ButtonTooltipProps
 
 const transitionDuration = 200
 
@@ -39,6 +38,7 @@ export function Dropdown<T extends DropdownOption>({
   MainButtonIcon,
   short,
   outline,
+  twoDimensional,
   className,
   disabled,
   hideArrow,
@@ -78,9 +78,9 @@ export function Dropdown<T extends DropdownOption>({
   const selectOption = useCallback(
     (option: T) => {
       if (option.id !== selected?.id) onSelect(option)
-      toggleOpen()
+      handleClose()
     },
-    [onSelect, selected?.id, toggleOpen],
+    [handleClose, onSelect, selected?.id],
   )
 
   const ChevronIcon = optionsVisible ? ChevronUpIcon : ChevronDownIcon
@@ -88,7 +88,7 @@ export function Dropdown<T extends DropdownOption>({
   return (
     <div ref={ref} className={`relative flex-1 min-w-0 h-full ${className ?? ''}`}>
       <Button
-        twoDimensional={!buttonContent}
+        twoDimensional={twoDimensional}
         short={short}
         outline={outline}
         onClick={toggleOpen}
@@ -101,7 +101,7 @@ export function Dropdown<T extends DropdownOption>({
         tooltipId={tooltipId!}
         style={{
           transitionDuration: transitionDuration.toString(),
-          ...(open
+          ...(optionsVisible
             ? {
                 borderBottomLeftRadius: 0,
                 borderBottomRightRadius: 0,
@@ -130,16 +130,19 @@ export function Dropdown<T extends DropdownOption>({
 
       <div
         className={`absolute w-full z-50 ${open ? '' : 'hidden'}`}
-        style={{ marginTop: buttonContent ? -3 : 0 }}
+        style={{ marginTop: twoDimensional ? 0 : -3 }}
       >
         <div className="flex flex-col">
           {options.map((option) => (
             <Button
               key={option.id}
+              className={`dropdown-option ${optionsVisible ? 'options-visible' : ''}`}
               twoDimensional
               outline={outline}
-              className={`dropdown-option ${optionsVisible ? 'options-visible' : ''}`}
-              onClick={() => selectOption(option)}
+              onClick={() => {
+                selectOption(option)
+              }}
+              onTouchEnd={() => selectOption(option)}
               onMouseEnter={() => {
                 if (!fullyOpen) return
                 onHover?.(option)

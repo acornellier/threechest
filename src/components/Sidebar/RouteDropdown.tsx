@@ -12,12 +12,7 @@ const routeToOption = (route: SavedRoute): DropdownOption => ({
   content: route.name,
 })
 
-interface Props {
-  onOpen?: () => void
-  onClose?: () => void
-}
-
-export function RouteDropdown({ onOpen, onClose }: Props) {
+export function RouteDropdown() {
   const dispatch = useAppDispatch()
   const route = useActualRoute()
   const routes = useDungeonRoutes(route.dungeonKey)
@@ -46,13 +41,11 @@ export function RouteDropdown({ onOpen, onClose }: Props) {
 
   return (
     <Dropdown
-      className="dungeon-dropdown"
+      className="route-dropdown"
       options={options}
       selected={selected}
       onSelect={onSelect}
       onHover={onHover}
-      onOpen={onOpen}
-      onClose={onClose}
       buttonContent={isGuestCollab ? route.name : undefined}
       disabled={isGuestCollab}
     />

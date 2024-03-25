@@ -32,6 +32,7 @@ export function DungeonDropdown() {
   return (
     <Dropdown
       className="dungeon-dropdown"
+      twoDimensional
       options={options}
       selected={selected}
       onSelect={(newDungeon) => dispatch(setDungeon(newDungeon.id as DungeonKey))}

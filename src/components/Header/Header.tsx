@@ -6,7 +6,7 @@ import { UndoRedo } from './UndoRedo.tsx'
 import { DrawToolbar } from '../Map/Draw/DrawToolbar.tsx'
 import { isMobile } from '../../util/dev.ts'
 
-export const dropdownWidth = 258
+export const dropdownWidth = 270
 
 export function Header() {
   const isGuestCollab = useIsGuestCollab()
