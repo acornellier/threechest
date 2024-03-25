@@ -1,5 +1,5 @@
 import { createAsyncThunk, PayloadAction } from '@reduxjs/toolkit'
-import { Drawing, MdtRoute, Note, Pull, Route, SavedRoute, WclRoute } from '../../util/types.ts'
+import { Drawing, MdtRoute, Note, Pull, Route, SavedRoute } from '../../util/types.ts'
 import { DungeonKey, SpawnId } from '../../data/types.ts'
 import { mdtRouteToRoute } from '../../util/mdtUtil.ts'
 import undoable, { combineFilters, excludeAction, includeAction } from 'redux-undo'
@@ -11,7 +11,6 @@ import { indexedDbStorage } from '../storage.ts'
 import { routeMigrate, routePersistVersion } from './routeMigrations.ts'
 import { addToast } from '../reducers/toastReducer.ts'
 import { createAppSlice } from '../storeUtil.ts'
-import { wclRouteToRoute } from '../../util/wclUtil.ts'
 
 export interface RouteState {
   route: Route
@@ -24,7 +23,11 @@ const emptyPull: Pull = { id: 0, spawns: [] }
 
 export const newRouteUid = () => Math.random().toString(36).slice(2)
 
-function nextName(routeName: string, dungeonKey: DungeonKey, savedRoutes: SavedRoute[]) {
+export function nextRouteName(
+  routeName: string,
+  dungeonKey: DungeonKey,
+  savedRoutes: SavedRoute[],
+) {
   const match = routeName.match(/(.*\s)(\d+)$/)
   const baseName = match?.[1] ?? routeName
   const defaultNamesRoutes = savedRoutes.filter(
@@ -38,7 +41,7 @@ function nextName(routeName: string, dungeonKey: DungeonKey, savedRoutes: SavedR
 }
 
 const makeEmptyRoute = (dungeonKey: DungeonKey, savedRoutes: SavedRoute[]): Route => ({
-  name: nextName('Default threechest.io', dungeonKey, savedRoutes),
+  name: nextRouteName('Default threechest.io', dungeonKey, savedRoutes),
   dungeonKey,
   pulls: [emptyPull],
   drawings: [],
@@ -122,7 +125,7 @@ function setRouteFresh(state: RouteState, route: Route) {
 
 function giveRouteNewNameUid(state: RouteState, route: Route) {
   route.uid = newRouteUid()
-  route.name = nextName(route.name, route.dungeonKey, state.savedRoutes)
+  route.name = nextRouteName(route.name, route.dungeonKey, state.savedRoutes)
 }
 
 const baseReducer = createAppSlice({
@@ -147,9 +150,7 @@ const baseReducer = createAppSlice({
       if (copy) giveRouteNewNameUid(state, route)
       setRouteFresh(state, route)
     },
-    setRouteFromWcl(state, { payload: wclRoute }: PayloadAction<WclRoute>) {
-      const route = wclRouteToRoute(wclRoute)
-      console.log('route', route)
+    setRouteFromWcl(state, { payload: route }: PayloadAction<Route>) {
       setRouteFresh(state, route)
     },
     setRouteFromSample(state, { payload: route }: PayloadAction<Route>) {

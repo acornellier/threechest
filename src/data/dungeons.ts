@@ -1,13 +1,15 @@
 import { Dungeon, DungeonKey } from './types.ts'
-import { mdtDungeons, mdtMobSpawns } from './mdtDungeons.ts'
-import { dungeonSpells } from './spells.ts'
+import { mdtDungeons, mdtMobSpawns } from './mdtDungeons/mdtDungeons.ts'
+import { dungeonSpells } from './spells/spells.ts'
 import { mapHeight } from '../util/map.ts'
+import { wclDungeons } from './wcl/wclData.ts'
 
 export const dungeonData = (key: DungeonKey) => ({
   mdt: mdtDungeons[key],
   mobSpawns: mdtMobSpawns[key],
   mobSpawnsList: Object.values(mdtMobSpawns[key]),
   spells: dungeonSpells[key],
+  wcl: wclDungeons[key],
 })
 
 export const aa: Dungeon = {

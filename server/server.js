@@ -32,7 +32,7 @@ app.post('/api/encodeRoute', async (req, res) => {
 
 app.post('/api/wclRoute', async (req, res) => {
   try {
-    const route = await getWclRoute(req.body.url)
+    const route = await getWclRoute(req.body.code, req.body.fightId)
     res.json(route)
   } catch (e) {
     console.error(e)

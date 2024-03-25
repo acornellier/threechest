@@ -103,9 +103,8 @@ export type WclPull = {
 }
 
 export type WclRoute = {
-  gameZone: {
-    name: string
-  }
+  encounterID: number
+  keystoneLevel: number
   dungeonPulls: WclPull[]
 }
 

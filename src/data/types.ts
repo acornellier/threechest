@@ -6,14 +6,20 @@ export type MdtDungeon = {
   enemies: Mob[]
 }
 
+export type WclDungeon = {
+  encounterId: number
+  gameIdToInstanceIdToSpawnIds: Record<number, Record<number, SpawnId>>
+}
+
 export type Dungeon = {
+  key: DungeonKey
   name: string
   defaultBounds?: [Point, Point]
-  key: DungeonKey
   mdt: MdtDungeon
   mobSpawns: Record<SpawnId, MobSpawn>
   mobSpawnsList: MobSpawn[]
   spells: Record<number, Spell[]>
+  wcl: WclDungeon | null
   icon: string
 }
 
