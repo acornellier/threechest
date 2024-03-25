@@ -14,7 +14,7 @@ type MobCount = Record<number, { mob: Mob; count: number }>
 interface Props {
   pull: PullDetailed
   ghost?: boolean | undefined
-  onRightClick?: (e: MouseEvent, pullIndex: number) => void
+  onRightClick: (e: MouseEvent, pullIndex: number) => void
   isShiftHeld?: boolean
 }
 
@@ -61,7 +61,7 @@ export function Pull({ pull, ghost, onRightClick, isShiftHeld }: Props) {
       onMouseLeave={() => dispatch(hoverPull(null))}
       onContextMenu={(e) => {
         e.preventDefault()
-        onRightClick?.(e.nativeEvent, pull.index)
+        onRightClick(e.nativeEvent, pull.index)
       }}
     >
       <div className="relative h-8 min-h-8">
@@ -81,6 +81,7 @@ export function Pull({ pull, ghost, onRightClick, isShiftHeld }: Props) {
             }}
           />
         )}
+
         <div className="relative flex justify-between py-0.5 px-2 h-full z-10">
           <div className="flex items-center">
             <div

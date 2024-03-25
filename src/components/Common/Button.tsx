@@ -2,6 +2,7 @@ import { ButtonHTMLAttributes, DetailedHTMLProps, ReactNode } from 'react'
 import { keyText, Shortcut } from '../../data/shortcuts.ts'
 import { IconComponent } from '../../util/types.ts'
 import { TooltipStyled } from './TooltipStyled.tsx'
+import { isMobile } from '../../util/dev.ts'
 
 export type ButtonTooltipProps =
   | {
@@ -97,7 +98,7 @@ export function Button({
             ...(justifyStart ? { justifyContent: 'flex-start' } : {}),
           }}
         >
-          {shortcut ? (
+          {shortcut && !isMobile ? (
             <div
               className={`w-full gap-2 ${
                 justifyStart

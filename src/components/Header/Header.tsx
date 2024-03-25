@@ -4,6 +4,7 @@ import { useIsGuestCollab } from '../../store/collab/collabReducer.ts'
 import { sidebarWidth } from '../Sidebar/Sidebar.tsx'
 import { UndoRedo } from './UndoRedo.tsx'
 import { DrawToolbar } from '../Map/Draw/DrawToolbar.tsx'
+import { isMobile } from '../../util/dev.ts'
 
 export const dropdownWidth = 258
 
@@ -33,7 +34,7 @@ export function Header() {
         <div className="pointer-events-auto">
           <div className="flex items-start gap-6 h-full">
             {!isGuestCollab && <UndoRedo />}
-            <DrawToolbar />
+            {!isMobile && <DrawToolbar />}
           </div>
         </div>
       </div>

@@ -1,26 +1,34 @@
-﻿import { Pull as PullComponent } from './Pull.tsx'
+﻿import { Pull } from './Pull.tsx'
 import { useKeyHeld } from '../../../hooks/useKeyHeld.ts'
 import type { PullDetailed } from '../../../util/types.ts'
 import { ItemInterface, ReactSortable } from 'react-sortablejs'
 import { useCallback, useMemo, useState } from 'react'
-import { setPulls } from '../../../store/routes/routesReducer.ts'
+import { selectPull, setPulls } from '../../../store/routes/routesReducer.ts'
 
 import { useAppDispatch } from '../../../store/storeUtil.ts'
+import { PullContextMenu } from './PullContextMenu.tsx'
+import { useContextMenu } from '../../Common/useContextMenu.ts'
+import { usePullShortcuts } from './usePullShortcuts.ts'
 
 type SortablePull = PullDetailed & ItemInterface
 
 interface Props {
   pullsDetailed: PullDetailed[]
-  onRightClickPull?: (e: MouseEvent, pullIndex: number) => void
+  disableSorting?: boolean
 }
 
-export function PullList({ pullsDetailed, onRightClickPull }: Props) {
+export function PullList({ pullsDetailed, disableSorting }: Props) {
   const dispatch = useAppDispatch()
   const [ghostPullIndex, setGhostPullIndex] = useState<number | null>(null)
   const isShiftHeld = useKeyHeld('Shift')
+  const [contextMenuPullIndex, setContextMenuPullIndex] = useState<number>(0)
+  const { contextMenuPosition, onRightClick, onClose } = useContextMenu()
+
+  usePullShortcuts()
 
   const pullsWithGhost = useMemo(() => {
     const pulls: SortablePull[] = [...pullsDetailed]
+    if (disableSorting) return pulls
     if (ghostPullIndex !== null) {
       const ghostPull = pullsDetailed[ghostPullIndex]
       if (ghostPull) {
@@ -32,7 +40,7 @@ export function PullList({ pullsDetailed, onRightClickPull }: Props) {
       }
     }
     return pulls
-  }, [pullsDetailed, ghostPullIndex])
+  }, [disableSorting, pullsDetailed, ghostPullIndex])
 
   const setPullsWrapper = useCallback(
     (pulls: SortablePull[]) => {
@@ -43,23 +51,44 @@ export function PullList({ pullsDetailed, onRightClickPull }: Props) {
     [dispatch, pullsWithGhost],
   )
 
+  const onRightClickPull = useCallback(
+    (e: MouseEvent, pullIndex: number) => {
+      dispatch(selectPull(pullIndex))
+      setContextMenuPullIndex(pullIndex)
+      onRightClick(e)
+    },
+    [dispatch, onRightClick],
+  )
+
   return (
-    <ReactSortable
-      onStart={(e) => e.oldIndex !== undefined && setGhostPullIndex(e.oldIndex)}
-      onEnd={() => setGhostPullIndex(null)}
-      list={pullsWithGhost}
-      setList={setPullsWrapper}
-      className="flex flex-col relative overflow-auto h-fit"
-    >
-      {pullsWithGhost.map((pull) => (
-        <PullComponent
-          key={pull.id}
-          pull={pull}
-          ghost={pull.filtered}
-          onRightClick={onRightClickPull}
-          isShiftHeld={isShiftHeld}
+    <>
+      <ReactSortable
+        className="flex flex-col relative overflow-auto h-fit"
+        disabled={disableSorting}
+        onStart={(e) => e.oldIndex !== undefined && setGhostPullIndex(e.oldIndex)}
+        onEnd={() => setGhostPullIndex(null)}
+        list={pullsWithGhost}
+        setList={setPullsWrapper}
+        delay={100}
+        delayOnTouchOnly
+      >
+        {pullsWithGhost.map((pull) => (
+          <Pull
+            key={pull.id}
+            pull={pull}
+            ghost={pull.filtered}
+            onRightClick={onRightClickPull}
+            isShiftHeld={isShiftHeld}
+          />
+        ))}
+      </ReactSortable>
+      {contextMenuPosition && (
+        <PullContextMenu
+          position={contextMenuPosition}
+          pullIndex={contextMenuPullIndex}
+          onClose={() => onClose()}
         />
-      ))}
-    </ReactSortable>
+      )}
+    </>
   )
 }

@@ -5,14 +5,16 @@ import { PullDetailed } from '../../../util/types.ts'
 
 interface Props {
   pullsDetailed: PullDetailed[]
+  alwaysShowTotal?: boolean
 }
 
-export function TotalCount({ pullsDetailed }: Props) {
+export function TotalCount({ pullsDetailed, alwaysShowTotal }: Props) {
   const dungeon = useDungeon()
   const hoveredPull = useHoveredPull()
-  const clampedHoveredPull = hoveredPull
-    ? Math.min(Math.max(hoveredPull, 0), pullsDetailed.length - 1)
-    : pullsDetailed.length - 1
+  const clampedHoveredPull =
+    hoveredPull && !alwaysShowTotal
+      ? Math.min(Math.max(hoveredPull, 0), pullsDetailed.length - 1)
+      : pullsDetailed.length - 1
   const totalCount = pullsDetailed[clampedHoveredPull]?.countCumulative ?? 0
   const percent = (totalCount / dungeon.mdt.totalCount) * 100
 
