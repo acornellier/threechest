@@ -117,7 +117,7 @@ export function Dropdown<T extends DropdownOption>({
             {selected?.content ? (
               <div className="dropdown-main-text">{selected?.content}</div>
             ) : null}
-            {!hideArrow && <ChevronIcon width={20} height={20} className="ml-auto" />}
+            {!disabled && !hideArrow && <ChevronIcon width={20} height={20} className="ml-auto" />}
           </>
         )}
       </Button>

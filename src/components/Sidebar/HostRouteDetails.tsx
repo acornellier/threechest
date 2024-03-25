@@ -8,6 +8,7 @@ import { useRoute, useSavedRoutes } from '../../store/routes/routeHooks.ts'
 import { useCallback, useEffect, useState } from 'react'
 import { useAppDispatch } from '../../store/storeUtil.ts'
 import { saveRoute, updateSavedRoutes } from '../../store/routes/routesReducer.ts'
+import { RouteDropdown } from './RouteDropdown.tsx'
 
 interface Props {
   collapsed?: boolean
@@ -31,6 +32,7 @@ export function HostRouteDetails({ collapsed }: Props) {
 
   return (
     <Panel noRightBorder>
+      <RouteDropdown />
       <Button
         Icon={saved ? CheckIcon : ArchiveBoxArrowDownIcon}
         short

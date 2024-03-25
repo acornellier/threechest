@@ -53,6 +53,7 @@ export function RouteDropdown({ onOpen, onClose }: Props) {
       onHover={onHover}
       onOpen={onOpen}
       onClose={onClose}
+      buttonContent={isGuestCollab ? route.name : undefined}
       disabled={isGuestCollab}
     />
   )
