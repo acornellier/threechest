@@ -36,6 +36,7 @@ export type Route = {
 }
 
 export type PullDetailed = Pull & {
+  index: number
   count: number
   countCumulative: number
 }

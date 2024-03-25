@@ -12,23 +12,22 @@ import { useAppDispatch } from '../../../store/storeUtil.ts'
 type MobCount = Record<number, { mob: Mob; count: number }>
 
 interface Props {
-  pullIndex: number
   pull: PullDetailed
-  ghost: boolean | undefined
-  onRightClick: (e: MouseEvent, pullIndex: number) => void
-  isShiftHeld: boolean
+  ghost?: boolean | undefined
+  onRightClick?: (e: MouseEvent, pullIndex: number) => void
+  isShiftHeld?: boolean
 }
 
-export function Pull({ pullIndex, pull, ghost, onRightClick, isShiftHeld }: Props) {
+export function Pull({ pull, ghost, onRightClick, isShiftHeld }: Props) {
   const ref = useRef<HTMLDivElement>(null)
 
   const dispatch = useAppDispatch()
   const selectedPull = useSelectedPull()
   const dungeon = useDungeon()
 
-  const pullColor = getPullColor(pullIndex)
-  const darkPullColor = getPullColor(pullIndex, true)
-  const isSelectedPull = pullIndex === selectedPull
+  const pullColor = getPullColor(pull.index)
+  const darkPullColor = getPullColor(pull.index, true)
+  const isSelectedPull = pull.index === selectedPull
 
   const sortedCounts = useMemo(() => {
     const mobCounts = pull.spawns.reduce<MobCount>((acc, spawnId) => {
@@ -57,12 +56,12 @@ export function Pull({ pullIndex, pull, ghost, onRightClick, isShiftHeld }: Prop
     <div
       className="pull"
       ref={ref}
-      onClick={() => dispatch(selectPull(pullIndex))}
-      onMouseEnter={() => dispatch(hoverPull(pullIndex))}
+      onClick={() => dispatch(selectPull(pull.index))}
+      onMouseEnter={() => dispatch(hoverPull(pull.index))}
       onMouseLeave={() => dispatch(hoverPull(null))}
       onContextMenu={(e) => {
         e.preventDefault()
-        onRightClick(e.nativeEvent, pullIndex)
+        onRightClick?.(e.nativeEvent, pull.index)
       }}
     >
       <div className="relative h-8 min-h-8">
@@ -88,7 +87,7 @@ export function Pull({ pullIndex, pull, ghost, onRightClick, isShiftHeld }: Prop
               className="min-w-4 mr-1 text-yellow-200 text-sm font-bold"
               style={{ WebkitTextStroke: '0.6px black' }}
             >
-              {ghost ? pullIndex : pullIndex + 1}
+              {ghost ? pull.index : pull.index + 1}
             </div>
             <div className="flex h-full items-center">
               {sortedCounts.slice(0, 7).map(({ mob, count }) => (

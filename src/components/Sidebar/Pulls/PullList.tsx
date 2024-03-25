@@ -11,7 +11,7 @@ type SortablePull = PullDetailed & ItemInterface
 
 interface Props {
   pullsDetailed: PullDetailed[]
-  onRightClickPull: (e: MouseEvent, pullIndex: number) => void
+  onRightClickPull?: (e: MouseEvent, pullIndex: number) => void
 }
 
 export function PullList({ pullsDetailed, onRightClickPull }: Props) {
@@ -43,7 +43,6 @@ export function PullList({ pullsDetailed, onRightClickPull }: Props) {
     [dispatch, pullsWithGhost],
   )
 
-  let pullIndex = 0
   return (
     <ReactSortable
       onStart={(e) => e.oldIndex !== undefined && setGhostPullIndex(e.oldIndex)}
@@ -55,7 +54,6 @@ export function PullList({ pullsDetailed, onRightClickPull }: Props) {
       {pullsWithGhost.map((pull) => (
         <PullComponent
           key={pull.id}
-          pullIndex={pull.id === -1 ? pullIndex : pullIndex++}
           pull={pull}
           ghost={pull.filtered}
           onRightClick={onRightClickPull}
