@@ -24,7 +24,7 @@ function NoteComponent({ note, noteIndex, iconScaling }: Props) {
   const [input, setInput] = useState(note.text)
   const [popupOpen, setPopupOpen] = useState(false)
   const markerRef = useRef<LeafletMarker>(null)
-  const inputRef = useRef<HTMLInputElement>(null)
+  const inputRef = useRef<HTMLTextAreaElement>(null)
 
   useEffect(() => {
     if (input !== note.text && !popupOpen) setInput(note.text)
@@ -104,15 +104,21 @@ function NoteComponent({ note, noteIndex, iconScaling }: Props) {
           >
             <div className="relative min-w-14 w-fit border border-gray-400 rounded-md">
               <div className="absolute w-full h-full bg-slate-800 opacity-85 -z-10 rounded-md" />
-              <div className="p-2 whitespace-normal text-white text-md">{note.text}</div>
+              <div className="p-2 whitespace-normal text-white text-xs">{note.text}</div>
             </div>
           </Tooltip>
         )}
-        <Popup className="plain-popup" closeButton={false} eventHandlers={popupEventHandlers}>
-          <input
+        <Popup
+          className="plain-popup"
+          minWidth={256}
+          offset={[65, 36.5]}
+          closeButton={false}
+          eventHandlers={popupEventHandlers}
+        >
+          <textarea
             ref={inputRef}
             autoFocus
-            className="fancy w-full min-w-32"
+            className="fancy w-full [&]:min-h-24 [&]:text-xs resize-none"
             onKeyDown={(e) => {
               if (e.key === 'Enter') markerRef.current?.closePopup()
             }}

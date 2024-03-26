@@ -83,11 +83,13 @@ $fancy-yellow: #7f6b1d;
 
   &.selected {
     color: white;
+    z-index: 1;
   }
 
   &.hovered {
     font-size: 36px;
     color: white;
+    z-index: 2;
   }
 }
 
@@ -180,7 +182,8 @@ $fancy-yellow: #7f6b1d;
   background-color: $fancy-blue;
 }
 
-input.fancy {
+input.fancy,
+textarea.fancy {
   background-color: rgb(78 78 87);
   padding: 8px;
 }
