@@ -60,6 +60,7 @@ export function HelpModal({ onClose }: Props) {
             </div>
             <div>Select dungeon and route using the dropdowns at the top.</div>
             <div>Any changes you make are immediately saved to your browser.</div>
+            <div>Not sure where to start? Check out a sample route.</div>
             <div className="text-lg font-bold mt-2">Advanced tips</div>
             <div>
               <span className="rounded bg-fancy-red px-1 min-w-6 text-center">
