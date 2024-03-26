@@ -59,30 +59,31 @@ $fancy-yellow: #7f6b1d;
   }
 }
 
+@mixin text-outline($size) {
+  text-shadow:
+    $size $size 0 #000,
+    (-$size) (-$size) 0 #000,
+    $size (-$size) 0 #000,
+    (-$size) $size 0 #000;
+}
+
+.text-outline {
+  @include text-outline(1px);
+}
+
 .pull-number-tooltip {
+  @include text-outline(1.4px);
+
   font-size: 32px;
   background-color: unset;
   border: unset;
   box-shadow: unset;
   font-weight: 700;
   color: rgb(238, 238, 238);
-  -webkit-text-stroke: 1px black;
 
   &.hovered {
     font-size: 36px;
   }
-}
-
-.note {
-}
-
-.note-tooltip {
-  font-size: 32px;
-  background-color: unset;
-  border: unset;
-  box-shadow: unset;
-  font-weight: 700;
-  -webkit-text-stroke: 1px black;
 }
 
 .pull {

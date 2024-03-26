@@ -27,7 +27,7 @@ export function TotalCount({ pullsDetailed, alwaysShowTotal }: Props) {
           width: `${percent}%`,
         }}
       />
-      <div>
+      <div className="text-outline">
         {totalCount}/{dungeon.mdt.totalCount} -{' '}
         {mobCountPercentStr(totalCount, dungeon.mdt.totalCount)}
       </div>

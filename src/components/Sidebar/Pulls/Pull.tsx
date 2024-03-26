@@ -84,10 +84,7 @@ export function Pull({ pull, ghost, onRightClick, isShiftHeld }: Props) {
 
         <div className="relative flex justify-between py-0.5 px-2 h-full z-10">
           <div className="flex items-center">
-            <div
-              className="min-w-4 mr-1 text-yellow-200 text-sm font-bold"
-              style={{ WebkitTextStroke: '0.6px black' }}
-            >
+            <div className="text-outline min-w-4 mr-1 text-yellow-200 text-sm font-bold">
               {ghost ? pull.index : pull.index + 1}
             </div>
             <div className="flex h-full items-center">
@@ -102,20 +99,14 @@ export function Pull({ pull, ghost, onRightClick, isShiftHeld }: Props) {
                     src={`/npc_portraits/${mob.id}.png`}
                     alt={mob.name}
                   />
-                  <div
-                    className="absolute bottom-[-3px] w-full font-bold text-sm text-center"
-                    style={{ WebkitTextStroke: '0.6px black' }}
-                  >
+                  <div className="text-outline absolute bottom-[-3px] w-full font-bold text-xs text-center">
                     x{count}
                   </div>
                 </div>
               ))}
             </div>
           </div>
-          <div
-            className="flex items-center font-bold text-sm"
-            style={{ WebkitTextStroke: '0.6px black' }}
-          >
+          <div className="text-outline flex items-center font-bold text-sm">
             {isShiftHeld
               ? pull.countCumulative
               : mobCountPercentStr(pull.countCumulative, dungeon.mdt.totalCount)}

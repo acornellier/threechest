@@ -32,10 +32,9 @@ export function MobIcon({ mobSpawn, matchingPullIndex, iconScaling, isGroupHover
       >
         {isGroupHovered && mobSpawn.mob.count > 0 && (
           <div
-            className="absolute flex items-center justify-center w-full h-full font-bold"
+            className="text-outline absolute flex items-center justify-center w-full h-full font-bold"
             style={{
               fontSize: iconScaling * 0.7 * mobScale(mobSpawn),
-              WebkitTextStroke: `${iconScaling * 0.02}px black`,
             }}
           >
             {mobSpawn.mob.count}
