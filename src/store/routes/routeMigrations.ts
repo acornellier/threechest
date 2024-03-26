@@ -6,7 +6,7 @@ type PersistedStateCur = StateWithHistory<RouteState>
 
 type PersistedStatePrev = StateWithHistory<RouteState>
 
-export const routePersistVersion = 5
+export const routePersistVersion = 6
 
 /*
  * Each migration step will take one version as input and return the next version as output.
