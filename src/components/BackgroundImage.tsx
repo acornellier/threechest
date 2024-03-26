@@ -10,7 +10,7 @@ export function BackgroundImage() {
         className={`fixed w-screen h-screen bg-cover`}
         // @ts-ignore
         // eslint-disable-next-line react/no-unknown-property
-        fetchPriority="low"
+        fetchpriority="low"
       />
     </Delayed>
   )
