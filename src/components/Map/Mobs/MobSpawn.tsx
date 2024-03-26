@@ -17,7 +17,7 @@ import { BossMarker } from './BossMarker.tsx'
 import { Patrol } from './Patrol.tsx'
 import { useMapObjectsHidden } from '../../../store/reducers/mapReducer.ts'
 
-import { useRoute } from '../../../store/routes/routeHooks.ts'
+import { useRoute, useSelectedPull } from '../../../store/routes/routeHooks.ts'
 import { useAppDispatch, useRootSelector } from '../../../store/storeUtil.ts'
 
 interface MobSpawnProps {
@@ -42,6 +42,7 @@ function MobSpawnComponent({
   const dispatch = useAppDispatch()
   const isDrawing = useRootSelector((state) => state.map.isDrawing)
   const isBoxHovering = useRootSelector(selectIsBoxHovering)
+  const selectedPull = useSelectedPull()
   const disableHover = isDrawing || isBoxHovering
   const isActuallyHovered = isHovered && !disableHover
   const iconSize = iconScaling * mobScale(mobSpawn) * (isActuallyHovered ? 1.15 : 1)
@@ -80,6 +81,7 @@ function MobSpawnComponent({
               mobSpawn={mobSpawn}
               iconScaling={iconScaling}
               isGroupHovered={isGroupHovered && !disableHover}
+              isSelected={selectedPull === matchingPullIndex}
               matchingPullIndex={matchingPullIndex}
             />,
           ),
