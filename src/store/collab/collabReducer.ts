@@ -2,7 +2,7 @@ import { PayloadAction } from '@reduxjs/toolkit'
 import { BaseAwarenessState } from '../../components/Collab/YRedux'
 import { LatLng } from 'leaflet'
 import { postAwarenessUpdateChecks } from './collabActions.ts'
-import { useLocalStorage } from '../../hooks/useLocalStorage.ts'
+import { useLocalStorage } from '../../util/hooks/useLocalStorage.ts'
 import { createAppSlice, useRootSelector } from '../storeUtil.ts'
 
 export type ClientType = 'host' | 'guest'

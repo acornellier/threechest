@@ -1,6 +1,6 @@
 ﻿import { Panel } from '../../Common/Panel.tsx'
 import { useColorWheelCanvas } from '../../Common/useColorWheelCanvas.ts'
-import { useOutsideClick } from '../../../hooks/useOutsideClick.ts'
+import { useOutsideClick } from '../../../util/hooks/useOutsideClick.ts'
 
 interface Props {
   onChangeColor: (color: string) => void

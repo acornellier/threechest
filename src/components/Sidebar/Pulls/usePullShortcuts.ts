@@ -8,7 +8,7 @@ import {
   selectPull,
   selectPullRelative,
 } from '../../../store/routes/routesReducer.ts'
-import { useShortcut } from '../../../hooks/useShortcut.ts'
+import { useShortcut } from '../../../util/hooks/useShortcut.ts'
 import { shortcuts } from '../../../data/shortcuts.ts'
 
 import { useAppDispatch } from '../../../store/storeUtil.ts'

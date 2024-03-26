@@ -7,7 +7,7 @@ import { ClearIcon } from '../../Common/Icons/ClearIcon.tsx'
 import { useCallback, useState } from 'react'
 import { DrawColorWheel } from './DrawColorWheel.tsx'
 import { keyText, shortcuts } from '../../../data/shortcuts.ts'
-import { useShortcut } from '../../../hooks/useShortcut.ts'
+import { useShortcut } from '../../../util/hooks/useShortcut.ts'
 import { Dropdown, DropdownOption } from '../../Common/Dropdown.tsx'
 import { WeightIcon } from '../../Common/Icons/WeightIcon.tsx'
 

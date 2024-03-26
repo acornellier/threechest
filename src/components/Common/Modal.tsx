@@ -1,6 +1,6 @@
 import { ReactNode, useCallback } from 'react'
-import { useShortcut } from '../../hooks/useShortcut.ts'
-import { useOutsideClick } from '../../hooks/useOutsideClick.ts'
+import { useShortcut } from '../../util/hooks/useShortcut.ts'
+import { useOutsideClick } from '../../util/hooks/useOutsideClick.ts'
 import { Button } from './Button.tsx'
 import { XMarkIcon } from '@heroicons/react/24/outline'
 import { Portal } from 'react-portal'

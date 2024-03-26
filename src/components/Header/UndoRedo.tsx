@@ -1,7 +1,7 @@
 ﻿import { Button } from '../Common/Button.tsx'
 import { ActionCreators } from 'redux-undo'
 import { useCallback } from 'react'
-import { useShortcut } from '../../hooks/useShortcut.ts'
+import { useShortcut } from '../../util/hooks/useShortcut.ts'
 import { ArrowUturnLeftIcon, ArrowUturnRightIcon } from '@heroicons/react/24/outline'
 import { keyText, shortcuts } from '../../data/shortcuts.ts'
 import { useAppDispatch, useRootSelector } from '../../store/storeUtil.ts'

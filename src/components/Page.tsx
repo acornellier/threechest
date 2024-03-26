@@ -14,6 +14,7 @@ import { isDev } from '../util/dev.ts'
 import { CollabSync } from './Collab/CollabSync.tsx'
 import { useCollabSelector } from '../store/collab/collabReducer.ts'
 import { Footer } from './Header/Footer.tsx'
+import { BackgroundImage } from './BackgroundImage.tsx'
 
 export function Page() {
   const dispatch = useAppDispatch()
@@ -27,7 +28,8 @@ export function Page() {
   if (!dungeon) return null
 
   return (
-    <div className="flex flex-row bg-[#241c15]">
+    <div className="flex flex-row">
+      <BackgroundImage />
       <Map />
       <Header />
       <Sidebar />

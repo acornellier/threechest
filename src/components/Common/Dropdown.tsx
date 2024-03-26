@@ -1,7 +1,7 @@
 import { Button, ButtonProps, ButtonTooltipProps } from './Button.tsx'
 import { ReactNode, useCallback, useRef, useState } from 'react'
 import { ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/24/outline'
-import { useOutsideClick } from '../../hooks/useOutsideClick.ts'
+import { useOutsideClick } from '../../util/hooks/useOutsideClick.ts'
 import { IconComponent } from '../../util/types.ts'
 
 export interface DropdownOption {

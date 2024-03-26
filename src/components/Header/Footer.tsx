@@ -4,7 +4,7 @@ import { GithubIcon } from '../Common/Icons/GithubIcon.tsx'
 import { KofiIcon } from '../Common/Icons/KofiIcon.tsx'
 import { useCallback, useState } from 'react'
 import { HelpModal } from './HelpModal.tsx'
-import { useShortcut } from '../../hooks/useShortcut.ts'
+import { useShortcut } from '../../util/hooks/useShortcut.ts'
 import { shortcuts } from '../../data/shortcuts.ts'
 
 interface Props {

@@ -24,7 +24,7 @@ export function Header() {
             className="[&]:hidden [&]:sm:flex [&]:cursor-default min-w-fit"
             innerClass="text-2xl"
           >
-            <img src="/images/favicon2.png" alt="logo" width={36} className="min-w-[36] mr-1" />
+            <img src="/images/logo_64x64.png" alt="logo" width={36} className="min-w-[36] mr-1" />
             <div className="flex">Threechest</div>
           </Button>
           <div className="h-full" style={{ width: dropdownWidth }}>

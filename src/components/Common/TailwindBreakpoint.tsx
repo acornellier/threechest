@@ -1,6 +1,6 @@
 ﻿import { useWindowSize } from 'usehooks-ts'
 import { useCallback, useState } from 'react'
-import { useShortcut } from '../../hooks/useShortcut.ts'
+import { useShortcut } from '../../util/hooks/useShortcut.ts'
 import { Shortcut } from '../../data/shortcuts.ts'
 
 const shortcut: Shortcut[] = [{ key: 'B', ctrl: true }]
