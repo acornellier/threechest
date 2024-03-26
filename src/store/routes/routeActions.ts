@@ -2,7 +2,7 @@ import { Pull, Route } from '../../util/types.ts'
 import { SpawnId } from '../../data/types.ts'
 import { dungeonsByKey } from '../../data/dungeons.ts'
 import { RouteState } from './routesReducer.ts'
-import { findMobSpawn, joinSpawns, subtractSpawns } from '../../util/mobSpawns.ts'
+import { joinSpawns, subtractSpawns } from '../../util/mobSpawns.ts'
 
 const findSelectedPull = (route: Route, spawn: SpawnId) =>
   route.pulls.findIndex((pull) => pull.spawns.some((spawn2) => spawn === spawn2))
@@ -12,7 +12,7 @@ export function toggleSpawnAction(
   payload: { spawn: SpawnId; individual: boolean },
 ): Pull[] {
   const dungeon = dungeonsByKey[route.dungeonKey]
-  const mobSpawn = findMobSpawn(payload.spawn, dungeon)
+  const mobSpawn = dungeon.mobSpawns[payload.spawn]
   if (!mobSpawn) {
     console.error(`Could not find spawnId ${payload.spawn} in dungeon ${dungeon.key}`)
     return route.pulls
@@ -22,7 +22,7 @@ export function toggleSpawnAction(
 
   const groupSpawns = payload.individual
     ? [{ mobSpawn, selectedPull: origSelectedPull }]
-    : Object.values(dungeon.mobSpawns)
+    : dungeon.mobSpawnsList
         .filter(
           (mobSpawn2) =>
             mobSpawn2.spawn.id === payload.spawn ||

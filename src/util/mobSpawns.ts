@@ -1,8 +1,4 @@
-import { Dungeon, Mob, MobSpawn, SpawnId } from '../data/types.ts'
-
-export function findMobSpawn(spawnId: SpawnId, dungeon: Dungeon) {
-  return dungeon.mobSpawns[spawnId]
-}
+import { Mob, MobSpawn, SpawnId } from '../data/types.ts'
 
 export const mobScale = ({ mob, spawn }: MobSpawn) =>
   (mob.scale ?? 1) * (spawn.scale ?? 1) * (mob.isBoss ? 1.7 : 1)

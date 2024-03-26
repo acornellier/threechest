@@ -3,7 +3,6 @@ import { Dungeon, Point, SpawnId } from '../data/types.ts'
 import { dungeonsByKey, dungeonsByMdtIdx } from '../data/dungeons.ts'
 import { getPullColor } from './colors.ts'
 import { equalPoints } from './map.ts'
-import { findMobSpawn } from './mobSpawns.ts'
 
 const coordinateRatio = 2.185
 
@@ -107,7 +106,7 @@ export function mdtRouteToRoute(mdtRoute: MdtRoute): Route {
 
           const enemyIndex = Number(enemyIndexOrCount)
           return spawnIndexes.map((spawnIndex) => {
-            const mobSpawn = Object.values(dungeon.mobSpawns).find(
+            const mobSpawn = dungeon.mobSpawnsList.find(
               ({ mob, spawn }) => mob.enemyIndex == enemyIndex && spawn.spawnIndex === spawnIndex,
             )
 
@@ -132,7 +131,7 @@ export function mdtRouteToRoute(mdtRoute: MdtRoute): Route {
 
 function mobSpawnsToMdtEnemies(spawns: SpawnId[], dungeon: Dungeon) {
   return spawns.reduce<Record<number, number[]>>((acc, spawn) => {
-    const mobSpawn = findMobSpawn(spawn, dungeon)
+    const mobSpawn = dungeon.mobSpawns[spawn]
     if (!mobSpawn) {
       console.error(`Could not find spawnId ${spawn} in dungeon ${dungeon.key}`)
       return acc

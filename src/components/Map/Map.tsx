@@ -10,7 +10,6 @@ import { MousePosition } from '../Leaflet/MousePosition/MousePosition'
 import { isDev } from '../../util/dev.ts'
 import { Mobs } from './Mobs/Mobs.tsx'
 import { PullOutlines } from './PullOutlines/PullOutlines.tsx'
-import { MapInitialZoom } from './MapInitialZoom.tsx'
 import { mapBounds, mapCenter } from '../../util/map.ts'
 import { useEffect } from 'react'
 import { setMapObjectsHidden } from '../../store/reducers/mapReducer.ts'
@@ -18,6 +17,7 @@ import { useDungeon } from '../../store/routes/routeHooks.ts'
 import { useAppDispatch } from '../../store/storeUtil.ts'
 import { PatherComponent } from './Draw/PatherComponent.tsx'
 import { AwarenessCursors } from '../Collab/AwarenessCursors.tsx'
+import { MapInitialZoom } from './MapInitialZoom.tsx'
 
 export function Map() {
   const dispatch = useAppDispatch()

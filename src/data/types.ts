@@ -12,6 +12,7 @@ export type Dungeon = {
   key: DungeonKey
   mdt: MdtDungeon
   mobSpawns: Record<SpawnId, MobSpawn>
+  mobSpawnsList: MobSpawn[]
   spells: Record<number, Spell[]>
   icon: string
 }

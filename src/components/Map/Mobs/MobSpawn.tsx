@@ -15,10 +15,9 @@ import {
 import { MobSpawn } from '../../../data/types.ts'
 import { BossMarker } from './BossMarker.tsx'
 import { Patrol } from './Patrol.tsx'
-import { useMapObjectsHidden } from '../../../store/reducers/mapReducer.ts'
-
 import { useRoute, useSelectedPull } from '../../../store/routes/routeHooks.ts'
 import { useAppDispatch, useRootSelector } from '../../../store/storeUtil.ts'
+import { useMapObjectsHidden } from '../../../store/reducers/mapReducer.ts'
 
 interface MobSpawnProps {
   iconScaling: number
@@ -29,6 +28,7 @@ interface MobSpawnMemoProps extends MobSpawnProps {
   isHovered: boolean
   isGroupHovered: boolean
   matchingPullIndex: number | null
+  hidden: boolean
 }
 
 function MobSpawnComponent({
@@ -37,16 +37,16 @@ function MobSpawnComponent({
   isHovered,
   isGroupHovered,
   matchingPullIndex,
+  hidden,
 }: MobSpawnMemoProps) {
   const { mob, spawn } = mobSpawn
   const dispatch = useAppDispatch()
   const isDrawing = useRootSelector((state) => state.map.isDrawing)
   const isBoxHovering = useRootSelector(selectIsBoxHovering)
-  const selectedPull = useSelectedPull()
   const disableHover = isDrawing || isBoxHovering
+  const selectedPull = useSelectedPull()
   const isActuallyHovered = isHovered && !disableHover
   const iconSize = iconScaling * mobScale(mobSpawn) * (isActuallyHovered ? 1.15 : 1)
-  const hidden = useMapObjectsHidden()
 
   const eventHandlers: LeafletEventHandlerFnMap = useMemo(
     () => ({
@@ -107,6 +107,8 @@ const MobSpawnMemo = memo(MobSpawnComponent)
 export function MobSpawnWrapper({ iconScaling, mobSpawn }: MobSpawnProps) {
   const route = useRoute()
 
+  const hidden = useMapObjectsHidden()
+
   const hoveredMobSpawn = useHoveredMobSpawn()
   const isHovered = !!hoveredMobSpawn && hoveredMobSpawn.spawn.id === mobSpawn.spawn.id
   const isGroupHovered =
@@ -127,6 +129,7 @@ export function MobSpawnWrapper({ iconScaling, mobSpawn }: MobSpawnProps) {
       isHovered={isHovered}
       isGroupHovered={isGroupHovered}
       matchingPullIndex={matchingPullIndex}
+      hidden={hidden}
     />
   )
 }

@@ -3,7 +3,7 @@ import { memo, useEffect, useMemo, useState } from 'react'
 import { getPullColor } from '../../../util/colors.ts'
 import { MobSpawn, Point } from '../../../data/types.ts'
 import { expandPolygon, iconSizeMagicScaling, makeConvexHull } from '../../../util/hull.ts'
-import { findMobSpawn, mobScale } from '../../../util/mobSpawns.ts'
+import { mobScale } from '../../../util/mobSpawns.ts'
 import { selectPull } from '../../../store/routes/routesReducer.ts'
 import { Pull } from '../../../util/types.ts'
 import { useMapObjectsHidden } from '../../../store/reducers/mapReducer.ts'
@@ -53,8 +53,7 @@ function PullOutlineComponent({ pull, index, isSelected, isHovered }: Props) {
   const dispatch = useAppDispatch()
   const dungeon = useDungeon()
   const mobSpawns = useMemo(
-    () =>
-      pull.spawns.map((spawnId) => findMobSpawn(spawnId, dungeon)).filter(Boolean) as MobSpawn[],
+    () => pull.spawns.map((spawnId) => dungeon.mobSpawns[spawnId]).filter(Boolean) as MobSpawn[],
     [dungeon, pull.spawns],
   )
   const { hull, circle } = useMemo(() => createOutline(mobSpawns), [mobSpawns])

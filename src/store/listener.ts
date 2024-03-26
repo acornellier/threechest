@@ -24,7 +24,6 @@ import {
   setAwarenessStates,
   startCollab,
 } from './collab/collabReducer.ts'
-import { findMobSpawn } from '../util/mobSpawns.ts'
 import { dungeonsByKey } from '../data/dungeons.ts'
 import { setDrawColor } from './reducers/mapReducer.ts'
 import { UnknownAction } from 'redux'
@@ -105,7 +104,7 @@ listenerMiddleware.startListening({
     const missingIds = []
     for (const pull of route.pulls) {
       for (const spawnId of pull.spawns) {
-        const mobSpawn = findMobSpawn(spawnId, dungeon)
+        const mobSpawn = dungeon.mobSpawns[spawnId]
         if (mobSpawn) continue
 
         missingIds.push(spawnId)

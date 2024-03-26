@@ -1,6 +1,5 @@
 import type { PayloadAction } from '@reduxjs/toolkit'
 import { SpawnId } from '../../data/types.ts'
-import { findMobSpawn } from '../../util/mobSpawns.ts'
 import { useDungeon, usePreviewRoute } from '../routes/routeHooks.ts'
 import { createAppSlice, useRootSelector } from '../storeUtil.ts'
 
@@ -59,8 +58,8 @@ export const useHoveredPull = () => {
 
 export function useHoveredMobSpawn() {
   const dungeon = useDungeon()
-  const hoveredMobSpawn = useRootSelector(selectHoveredSpawn)
-  return hoveredMobSpawn === null ? null : findMobSpawn(hoveredMobSpawn, dungeon)
+  const hoveredSpawn = useRootSelector(selectHoveredSpawn)
+  return hoveredSpawn === null ? null : dungeon.mobSpawns[hoveredSpawn]
 }
 
 export const hoverReducer = hoverSlice.reducer

@@ -5,7 +5,6 @@ import { selectPull } from '../../../store/routes/routesReducer.ts'
 import { useEffect, useMemo, useRef } from 'react'
 import { mobCountPercentStr } from '../../../util/numbers.ts'
 import { hoverPull } from '../../../store/reducers/hoverReducer.ts'
-import { findMobSpawn } from '../../../util/mobSpawns.ts'
 import { useDungeon, useSelectedPull } from '../../../store/routes/routeHooks.ts'
 import { useAppDispatch } from '../../../store/storeUtil.ts'
 
@@ -31,7 +30,7 @@ export function Pull({ pull, ghost, onRightClick, isShiftHeld }: Props) {
 
   const sortedCounts = useMemo(() => {
     const mobCounts = pull.spawns.reduce<MobCount>((acc, spawnId) => {
-      const mobSpawn = findMobSpawn(spawnId, dungeon)
+      const mobSpawn = dungeon.mobSpawns[spawnId]
       if (!mobSpawn) {
         console.error(`Could not find spawnId ${spawnId} in dungeon ${dungeon.key}`)
         return acc

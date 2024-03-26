@@ -3,7 +3,6 @@ import { XMarkIcon } from '@heroicons/react/24/outline'
 import { selectSelectedSpawn, selectSpawn } from '../store/reducers/hoverReducer.ts'
 import { getIconLink } from '../data/spells/mergeSpells.ts'
 import { addToast } from '../store/reducers/toastReducer.ts'
-import { findMobSpawn } from '../util/mobSpawns.ts'
 
 import { useDungeon } from '../store/routes/routeHooks.ts'
 import { useAppDispatch, useRootSelector } from '../store/storeUtil.ts'
@@ -14,7 +13,7 @@ export function MobInfo() {
   const dungeon = useDungeon()
   if (selectedSpawn === null) return
 
-  const mobSpawn = findMobSpawn(selectedSpawn, dungeon)
+  const mobSpawn = dungeon.mobSpawns[selectedSpawn]
   if (!mobSpawn) return
 
   const { mob } = mobSpawn

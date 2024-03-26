@@ -6,6 +6,7 @@ import { mapHeight } from '../util/map.ts'
 export const dungeonData = (key: DungeonKey) => ({
   mdt: mdtDungeons[key],
   mobSpawns: mdtMobSpawns[key],
+  mobSpawnsList: Object.values(mdtMobSpawns[key]),
   spells: dungeonSpells[key],
 })
 

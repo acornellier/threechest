@@ -28,7 +28,7 @@ export function Mobs() {
         dispatch(boxSelectStart())
       },
       boxselectmove({ bounds, inverse }) {
-        const spawns = Object.values(dungeon.mobSpawns)
+        const spawns = dungeon.mobSpawnsList
           .filter(({ spawn }) => bounds.contains(spawn.pos))
           .map(({ spawn }) => spawn.id)
 
@@ -45,7 +45,7 @@ export function Mobs() {
 
   return (
     <>
-      {Object.values(dungeon.mobSpawns).map((mobSpawn) => (
+      {dungeon.mobSpawnsList.map((mobSpawn) => (
         <MobSpawnWrapper key={mobSpawn.spawn.id} iconScaling={iconScaling} mobSpawn={mobSpawn} />
       ))}
     </>
