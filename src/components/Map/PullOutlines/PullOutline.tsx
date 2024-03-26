@@ -76,6 +76,11 @@ function PullOutlineComponent({ pull, index, isSelected, isHovered }: Props) {
     [dispatch, index],
   )
 
+  const tooltipClass = `pull-number-tooltip ${isHovered ? 'hovered' : ''} ${isSelected ? 'selected' : ''}`
+  const outlineOacity = hidden ? 0 : isSelected || isHovered ? 1 : 0.6
+  const textOpacity = hidden ? 0 : isSelected || isHovered ? 1 : 0.9
+  const weight = isSelected ? 6 : isHovered ? 4.5 : 3.5
+
   return circle ? (
     <Circle
       key={key}
@@ -84,15 +89,15 @@ function PullOutlineComponent({ pull, index, isSelected, isHovered }: Props) {
       eventHandlers={eventHandlers}
       color={pullColor}
       fillOpacity={0}
-      opacity={hidden ? 0 : isSelected || isHovered ? 1 : 0.6}
-      weight={isSelected ? 6 : isHovered ? 5 : 3.5}
+      opacity={outlineOacity}
+      weight={weight}
     >
       <Tooltip
-        className={`pull-number-tooltip ${isHovered ? 'hovered' : ''}`}
+        className={tooltipClass}
         direction="center"
         permanent
+        opacity={textOpacity}
         offset={[0, -15]}
-        opacity={hidden ? 0 : 1}
       >
         {index + 1}
       </Tooltip>
@@ -104,15 +109,10 @@ function PullOutlineComponent({ pull, index, isSelected, isHovered }: Props) {
       eventHandlers={eventHandlers}
       color={pullColor}
       fillOpacity={0}
-      opacity={hidden ? 0 : isSelected || isHovered ? 1 : 0.6}
-      weight={isSelected ? 6 : isHovered ? 5 : 3.5}
+      opacity={outlineOacity}
+      weight={weight}
     >
-      <Tooltip
-        className={`pull-number-tooltip ${isHovered ? 'hovered' : ''}`}
-        direction="center"
-        permanent
-        opacity={hidden ? 0 : 1}
-      >
+      <Tooltip className={tooltipClass} direction="center" permanent opacity={textOpacity}>
         {index + 1}
       </Tooltip>
     </Polygon>

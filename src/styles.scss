@@ -72,17 +72,22 @@ $fancy-yellow: #7f6b1d;
 }
 
 .pull-number-tooltip {
-  @include text-outline(1.4px);
+  @include text-outline(1px);
 
-  font-size: 32px;
+  font-size: 28px;
   background-color: unset;
   border: unset;
   box-shadow: unset;
   font-weight: 700;
-  color: rgb(238, 238, 238);
+  color: #dddddd;
+
+  &.selected {
+    color: white;
+  }
 
   &.hovered {
     font-size: 36px;
+    color: white;
   }
 }
 
@@ -94,11 +99,11 @@ $fancy-yellow: #7f6b1d;
   }
 
   &:not(:first-child) {
-    padding-top: 2px;
+    padding-top: 1.5px;
   }
 
   &:not(:last-child) {
-    padding-bottom: 2px;
+    padding-bottom: 1.5px;
   }
 }
 

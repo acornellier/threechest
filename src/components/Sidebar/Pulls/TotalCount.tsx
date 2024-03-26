@@ -12,7 +12,7 @@ export function TotalCount({ pullsDetailed, alwaysShowTotal }: Props) {
   const dungeon = useDungeon()
   const hoveredPull = useHoveredPull()
   const clampedHoveredPull =
-    hoveredPull && !alwaysShowTotal
+    hoveredPull !== null && !alwaysShowTotal
       ? Math.min(Math.max(hoveredPull, 0), pullsDetailed.length - 1)
       : pullsDetailed.length - 1
   const totalCount = pullsDetailed[clampedHoveredPull]?.countCumulative ?? 0

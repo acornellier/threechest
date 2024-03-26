@@ -46,9 +46,11 @@ export function Sidebar() {
         }}
       >
         {topCollapsed && (
-          <SidebarCollapser collapsed={bottomCollapsed} setCollapsed={setBottomCollapsed} />
+          <>
+            <SidebarCollapser collapsed={bottomCollapsed} setCollapsed={setBottomCollapsed} />
+            <MiniPulls />
+          </>
         )}
-        <MiniPulls />
       </div>
     </>
   )
