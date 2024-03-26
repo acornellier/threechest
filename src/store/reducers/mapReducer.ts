@@ -42,7 +42,7 @@ export const mapSlice = createAppSlice({
 
 export function useMapObjectsHidden(minDelay: number = 0, maxDelay: number = 100) {
   const hidden = useRootSelector((state) => state.map.objectsHidden)
-  const [delayedHidden, setDelayedHidden] = useState(hidden)
+  const [delayedHidden, setDelayedHidden] = useState(true)
 
   useEffect(() => {
     if (!hidden) setTimeout(() => setDelayedHidden(false), minDelay + Math.random() * maxDelay)

@@ -13,11 +13,12 @@ import {
   useHoveredMobSpawn,
 } from '../../../store/reducers/hoverReducer.ts'
 import { MobSpawn } from '../../../data/types.ts'
-import { BossMarker } from './BossMarker.tsx'
-import { Patrol } from './Patrol.tsx'
 import { useRoute, useSelectedPull } from '../../../store/routes/routeHooks.ts'
 import { useAppDispatch, useRootSelector } from '../../../store/storeUtil.ts'
 import { useMapObjectsHidden } from '../../../store/reducers/mapReducer.ts'
+import { Delayed } from '../../Common/Delayed.tsx'
+import { BossMarker } from './BossMarker.tsx'
+import { Patrol } from './Patrol.tsx'
 
 interface MobSpawnProps {
   iconScaling: number
@@ -66,13 +67,14 @@ function MobSpawnComponent({
   )
 
   return (
-    <div>
+    <>
       <Marker
         position={spawn.pos}
         zIndexOffset={isActuallyHovered ? 1000 : 0}
         eventHandlers={eventHandlers}
+        opacity={hidden ? 0 : 1}
         icon={divIcon({
-          className: `fade-in-map-object ${hidden ? 'opacity-0' : 'opacity-1'}`,
+          className: `fade-in-map-object`,
           popupAnchor: [100, 0],
           iconUrl: `/npc_portaits/${mob.id}.png`,
           iconSize: [iconSize, iconSize],
@@ -87,7 +89,14 @@ function MobSpawnComponent({
           ),
         })}
       >
-        {!disableHover && <MobSpawnTooltip mob={mob} spawn={spawn} iconScaling={iconScaling} />}
+        <Delayed delay={300}>
+          <MobSpawnTooltip
+            mob={mob}
+            spawn={spawn}
+            iconScaling={iconScaling}
+            hidden={disableHover}
+          />
+        </Delayed>
       </Marker>
       {mob.isBoss && (
         <BossMarker
@@ -97,8 +106,8 @@ function MobSpawnComponent({
           hidden={hidden}
         />
       )}
-      <Patrol spawn={spawn} isGroupHovered={isGroupHovered} />
-    </div>
+      <Patrol spawn={spawn} isGroupHovered={isGroupHovered} hidden={hidden} />
+    </>
   )
 }
 
@@ -107,7 +116,8 @@ const MobSpawnMemo = memo(MobSpawnComponent)
 export function MobSpawnWrapper({ iconScaling, mobSpawn }: MobSpawnProps) {
   const route = useRoute()
 
-  const hidden = useMapObjectsHidden()
+  // Delay each individual mob by up to 100ms for performance and because it looks cool
+  const hidden = useMapObjectsHidden(0, 100)
 
   const hoveredMobSpawn = useHoveredMobSpawn()
   const isHovered = !!hoveredMobSpawn && hoveredMobSpawn.spawn.id === mobSpawn.spawn.id

@@ -9,9 +9,9 @@ import {
 } from '../../../store/routes/routesReducer.ts'
 import type { LeafletEventHandlerFnMap } from 'leaflet'
 import { setBoxHovering } from '../../../store/reducers/hoverReducer.ts'
-
 import { useDungeon } from '../../../store/routes/routeHooks.ts'
 import { useAppDispatch } from '../../../store/storeUtil.ts'
+import { Delayed } from '../../Common/Delayed.tsx'
 
 export function Mobs() {
   const dungeon = useDungeon()
@@ -43,11 +43,12 @@ export function Mobs() {
 
   useMapEvents(mapEvents)
 
+  // Delay all mobs by 50ms for performance
   return (
-    <>
+    <Delayed delay={50}>
       {dungeon.mobSpawnsList.map((mobSpawn) => (
         <MobSpawnWrapper key={mobSpawn.spawn.id} iconScaling={iconScaling} mobSpawn={mobSpawn} />
       ))}
-    </>
+    </Delayed>
   )
 }

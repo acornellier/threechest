@@ -10,9 +10,10 @@ interface Props {
   mob: Mob
   spawn: Spawn
   iconScaling: number
+  hidden: boolean
 }
 
-export function MobSpawnTooltip({ mob, spawn, iconScaling }: Props) {
+export function MobSpawnTooltip({ mob, spawn, iconScaling, hidden }: Props) {
   const dungeon = useDungeon()
 
   if (isMobile) return null
@@ -33,7 +34,8 @@ export function MobSpawnTooltip({ mob, spawn, iconScaling }: Props) {
 
   return (
     <Tooltip
-      className="no-arrow flex flex-col text-white p-0 bg-transparent rounded-sm border-gray-400"
+      key={hidden.toString()}
+      className={`no-arrow flex flex-col text-white p-0 bg-transparent rounded-sm border-gray-400 ${hidden ? 'hidden' : ''}`}
       direction="right"
       offset={[iconScaling * 0.8, 0]}
     >
