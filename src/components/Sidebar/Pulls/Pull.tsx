@@ -56,6 +56,7 @@ export function Pull({ pull, ghost, onRightClick, isShiftHeld }: Props) {
       className="pull"
       ref={ref}
       onClick={() => dispatch(selectPull(pull.index))}
+      onTouchEnd={() => dispatch(selectPull(pull.index))}
       onMouseEnter={() => dispatch(hoverPull(pull.index))}
       onMouseLeave={() => dispatch(hoverPull(null))}
       onContextMenu={(e) => {

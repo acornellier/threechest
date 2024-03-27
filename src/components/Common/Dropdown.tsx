@@ -139,9 +139,7 @@ export function Dropdown<T extends DropdownOption>({
               className={`dropdown-option ${optionsVisible ? 'options-visible' : ''}`}
               twoDimensional
               outline={outline}
-              onClick={() => {
-                selectOption(option)
-              }}
+              onClick={() => selectOption(option)}
               onTouchEnd={() => selectOption(option)}
               onMouseEnter={() => {
                 if (!fullyOpen) return
