@@ -13,8 +13,8 @@ import { TailwindBreakpoint } from './Common/TailwindBreakpoint.tsx'
 import { isDev } from '../util/dev.ts'
 import { CollabSync } from './Collab/CollabSync.tsx'
 import { useCollabSelector } from '../store/collab/collabReducer.ts'
-import { Footer } from './Header/Footer.tsx'
 import { BackgroundImage } from './BackgroundImage.tsx'
+import { Footer } from './Header/Footer.tsx'
 
 export function Page() {
   const dispatch = useAppDispatch()

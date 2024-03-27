@@ -5,9 +5,12 @@ import { useShortcut } from '../../util/hooks/useShortcut.ts'
 import { ArrowUturnLeftIcon, ArrowUturnRightIcon } from '@heroicons/react/24/outline'
 import { keyText, shortcuts } from '../../data/shortcuts.ts'
 import { useAppDispatch, useRootSelector } from '../../store/storeUtil.ts'
+import { useIsGuestCollab } from '../../store/collab/collabReducer.ts'
 
 export function UndoRedo() {
   const dispatch = useAppDispatch()
+
+  const isGuestCollab = useIsGuestCollab()
 
   const hasPast = useRootSelector((state) => state.routes.past.length > 0)
   const hasFuture = useRootSelector((state) => state.routes.future.length > 0)
@@ -23,8 +26,10 @@ export function UndoRedo() {
   useShortcut(shortcuts.undo, undo, { allowRepeat: true })
   useShortcut(shortcuts.redo, redo, { allowRepeat: true })
 
+  if (isGuestCollab) return
+
   return (
-    <div className="flex items-start gap-2 h-full flex-col sm:flex-row">
+    <div className="flex items-start gap-2 h-full flex-row">
       <Button
         Icon={ArrowUturnLeftIcon}
         onClick={undo}

@@ -6,6 +6,8 @@ import { useCallback, useState } from 'react'
 import { HelpModal } from './HelpModal.tsx'
 import { useShortcut } from '../../util/hooks/useShortcut.ts'
 import { shortcuts } from '../../data/shortcuts.ts'
+import { useRootSelector } from '../../store/storeUtil.ts'
+import { isMobile } from '../../util/dev.ts'
 
 interface Props {
   right?: number
@@ -13,9 +15,12 @@ interface Props {
 
 export function Footer({ right }: Props) {
   const [helpModalOpen, setHelpModalOpen] = useState(false)
+  const sidebarCollapsed = useRootSelector((state) => state.map.sidebarCollapsed)
 
   const onHelp = useCallback(() => setHelpModalOpen(true), [])
   useShortcut(shortcuts.help, onHelp)
+
+  if (sidebarCollapsed && isMobile) return
 
   return (
     <>

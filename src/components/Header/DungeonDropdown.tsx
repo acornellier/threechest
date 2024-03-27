@@ -4,9 +4,9 @@ import { dungeons } from '../../data/dungeons.ts'
 import { setDungeon } from '../../store/routes/routesReducer.ts'
 import { Dropdown, DropdownOption } from '../Common/Dropdown.tsx'
 import { useIsGuestCollab } from '../../store/collab/collabReducer.ts'
-
 import { useDungeon } from '../../store/routes/routeHooks.ts'
 import { useAppDispatch } from '../../store/storeUtil.ts'
+import { isMobile } from '../../util/dev.ts'
 
 const options: DropdownOption[] = dungeons.map((dungeon) => ({
   id: dungeon.key,
@@ -33,6 +33,7 @@ export function DungeonDropdown() {
     <Dropdown
       className="dungeon-dropdown"
       twoDimensional
+      short={isMobile}
       options={options}
       selected={selected}
       onSelect={(newDungeon) => dispatch(setDungeon(newDungeon.id as DungeonKey))}

@@ -4,6 +4,7 @@ import { createAppSlice, useRootSelector } from '../storeUtil.ts'
 
 export interface MapState {
   objectsHidden: boolean
+  sidebarCollapsed: boolean
   isDrawing: boolean
   drawColor: string
   drawWeight: number
@@ -14,6 +15,7 @@ const drawWeightKey = 'drawWeightKey'
 
 const initialState: MapState = {
   objectsHidden: true,
+  sidebarCollapsed: false,
   isDrawing: false,
   drawColor: localStorage.getItem(drawColorKey) || 'blue',
   drawWeight: Number(localStorage.getItem(drawWeightKey)) || 4,
@@ -25,6 +27,9 @@ export const mapSlice = createAppSlice({
   reducers: {
     setMapObjectsHidden(state, { payload: hidden }: PayloadAction<boolean>) {
       state.objectsHidden = hidden
+    },
+    setSidebarCollapsed(state, { payload: collapsed }: PayloadAction<boolean>) {
+      state.sidebarCollapsed = collapsed
     },
     setIsDrawing(state, { payload: isDrawing }: PayloadAction<boolean>) {
       state.isDrawing = isDrawing
@@ -54,4 +59,10 @@ export function useMapObjectsHidden(minDelay: number = 0, maxDelay: number = 100
 
 export const mapReducer = mapSlice.reducer
 
-export const { setMapObjectsHidden, setIsDrawing, setDrawColor, setDrawWeight } = mapSlice.actions
+export const {
+  setMapObjectsHidden,
+  setSidebarCollapsed,
+  setIsDrawing,
+  setDrawColor,
+  setDrawWeight,
+} = mapSlice.actions

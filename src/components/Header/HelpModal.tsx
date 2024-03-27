@@ -1,6 +1,6 @@
 import { Modal } from '../Common/Modal.tsx'
 import { keyText, shortcuts } from '../../data/shortcuts.ts'
-import { isMac } from '../../util/dev.ts'
+import { isMac, isMobile } from '../../util/dev.ts'
 
 interface Props {
   onClose: () => void
@@ -33,7 +33,7 @@ export function HelpModal({ onClose }: Props) {
       closeOnClickOutside
       closeButton
       contents={
-        <div className="flex flex-col sm:flex-row sm:gap-8">
+        <div className="flex flex-col md:flex-row sm:gap-8">
           <div>
             <div className="text-lg font-bold mt-2">Contact</div>
             <div>
@@ -91,23 +91,25 @@ export function HelpModal({ onClose }: Props) {
               Changes are not saved to their browser unless they leave, or choose to save it.
             </div>
           </div>
-          <div>
-            <div className="text-lg font-bold mt-2">Shortcuts</div>
-            <div className="flex flex-col gap-1 whitespace-nowrap">
-              {shortcutDescriptions.map(({ desc, texts }) => (
-                <div key={desc} className="flex justify-between gap-4">
-                  <div>{desc}</div>
-                  <div className="flex gap-2">
-                    {texts.map((text) => (
-                      <div key={text} className="rounded bg-fancy-red px-1 min-w-6 text-center">
-                        {text}
-                      </div>
-                    ))}
+          {!isMobile && (
+            <div>
+              <div className="text-lg font-bold mt-2">Shortcuts</div>
+              <div className="flex flex-col gap-1 whitespace-nowrap">
+                {shortcutDescriptions.map(({ desc, texts }) => (
+                  <div key={desc} className="flex justify-between gap-4">
+                    <div>{desc}</div>
+                    <div className="flex gap-2">
+                      {texts.map((text) => (
+                        <div key={text} className="rounded bg-fancy-red px-1 min-w-6 text-center">
+                          {text}
+                        </div>
+                      ))}
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
-          </div>
+          )}
         </div>
       }
     />
