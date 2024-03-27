@@ -42,48 +42,61 @@ query {
 async function getFirstEvents(
   code: string,
   fightId: string | number,
-  enemies: Array<{ gameID: number; instanceId: number }>,
+  enemies: Array<{ id: number; instanceId: number }>,
 ) {
-  const matches = enemies
-    .slice(0, 50)
-    .map(({ gameID, instanceId }) => {
-      return `matched (target.id=${gameID} and target.instance=${instanceId}) in (1) end`
-    })
-    .filter(Boolean)
+  const events: WclEvent[] = []
 
-  console.log(matches.join('\n'))
+  console.time('total')
+  const batchSize = 100
+  for (let i = 0; i < enemies.length; i += batchSize) {
+    const start = i
+    const end = Math.min(i + batchSize, enemies.length)
+    const subQueries = enemies
+      .slice(start, end)
+      .map(({ id, instanceId }, idx) => {
+        return `
+      _${idx}: events(
+        fightIDs: ${fightId}
+        limit: 1
+        targetID: ${id}
+        targetInstanceID: ${instanceId}
+        dataType: DamageDone
+        hostilityType: Friendlies
+        includeResources: true
+      ) {
+        data
+      }`
+      })
+      .join('\n')
 
-  const filter = matches.join(' or ')
-
-  const query = `
+    const query = `
 query {
   reportData {
     report(code:"${code}") {
-      events(
-        fightIDs: ${fightId}
-        # includeResources: true
-        filterExpression: "${filter}"
-      ) {
-        nextPageTimestamp
-        data
-      }
+      ${subQueries}
     }
   }
 }`
-  console.log(query)
 
-  const data = await fetch('https://www.warcraftlogs.com/api/v2/client', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      authorization: `Bearer ${token}`,
-    },
-    body: JSON.stringify({ query }),
-  })
+    console.time(`query ${start}-${end}`)
+    const data = await fetch('https://www.warcraftlogs.com/api/v2/client', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify({ query }),
+    })
+    console.timeEnd(`query ${start}-${end}`)
 
-  const json = await data.json()
+    const json = await data.json()
+    const resultsMap = json.data.reportData.report
+    const newEvents = Object.values(resultsMap).map((v: any) => v.data) as WclEvent[]
+    events.push(...newEvents)
+  }
+  console.timeEnd('total')
 
-  return json.data.reportData.report.events.data as WclEvent[]
+  return events
 }
 
 export async function getWclRoute(code: string, fightId: string | number) {
@@ -100,5 +113,4 @@ export async function getWclRoute(code: string, fightId: string | number) {
   )
 
   const firstEvents = await getFirstEvents(code, fightId, enemies)
-  console.log(firstEvents)
 }
