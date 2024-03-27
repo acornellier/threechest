@@ -8,7 +8,7 @@ export type MdtDungeon = {
 
 export type WclDungeon = {
   encounterId: number
-  gameIdToInstanceIdToSpawnIds: Record<number, Record<number, SpawnId>>
+  gameIdToInstanceIdToSpawnIndexes: Record<number, Record<number, number>>
 }
 
 export type Dungeon = {

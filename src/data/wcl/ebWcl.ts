@@ -2,5 +2,7 @@
 
 export const ebWcl: WclDungeon = {
   encounterId: 61279,
-  gameIdToInstanceIdToSpawnIds: {},
+  gameIdToInstanceIdToSpawnIndexes: {
+    84767: { 1: 1 },
+  },
 }

@@ -1,7 +1,31 @@
-import { Route, WclRoute } from './types.ts'
+import { Route } from './types.ts'
 import { newRouteUid } from '../store/routes/routesReducer.ts'
 import { wclDungeons } from '../data/wcl/wclData.ts'
 import { DungeonKey, SpawnId, WclDungeon } from '../data/types.ts'
+import { dungeonsByKey } from '../data/dungeons.ts'
+
+export type WclPull = {
+  enemyNPCs: Array<{
+    id: number
+    gameID: number
+    minimumInstanceID: number
+    maximumInstanceID: number
+  }>
+}
+
+export type WclRoute = {
+  encounterID: number
+  keystoneLevel: number
+  dungeonPulls: WclPull[]
+}
+
+export type WclEvent = {
+  timestamp: number
+  targetID: 1030
+  targetInstance: 1
+  x: -138398
+  y: 52060
+}
 
 export function urlToWclInfo(url: string) {
   if (!url.startsWith('http')) url = 'https://' + url
@@ -30,8 +54,9 @@ export function wclRouteToRoute(wclRoute: WclRoute) {
     throw new Error(`This WCL dungeon is not yet supported by Threechest.`)
 
   const [dungeonKey, wclDungeon] = wclDungeonEntry as [DungeonKey, WclDungeon]
+  const mobSpawns = Object.values(dungeonsByKey[dungeonKey].mobSpawns)
 
-  let errors = false
+  const errors: string[] = []
   const route: Route = {
     uid: newRouteUid(),
     name: `WCL ${dungeonKey.toUpperCase()} +${wclRoute.keystoneLevel}`,
@@ -39,21 +64,26 @@ export function wclRouteToRoute(wclRoute: WclRoute) {
     pulls: wclRoute.dungeonPulls.map(({ enemyNPCs }, index) => ({
       id: index,
       spawns: enemyNPCs.flatMap(({ gameID, minimumInstanceID, maximumInstanceID }) => {
-        const instanceIdToSpawnId = wclDungeon.gameIdToInstanceIdToSpawnIds[gameID]
-        if (!instanceIdToSpawnId) {
-          console.error(`Could not find gameId ${gameID} in ${dungeonKey} WCL data`)
-          errors = true
+        const instanceIdToSpawnIndexes = wclDungeon.gameIdToInstanceIdToSpawnIndexes[gameID]
+        if (!instanceIdToSpawnIndexes) {
+          errors.push(`Could not find gameId ${gameID} in ${dungeonKey} WCL data`)
           return []
         }
 
         const spawnIds: SpawnId[] = []
         for (let instanceId = minimumInstanceID; instanceId <= maximumInstanceID; ++instanceId) {
-          const spawnId = instanceIdToSpawnId[instanceId]
-          if (!spawnId) {
-            errors = true
-            console.error(`Could not find instanceId ${instanceId} in ${dungeonKey} WCL data`)
+          const spawnIndex = instanceIdToSpawnIndexes[instanceId]
+          if (!spawnIndex) {
+            errors.push(`Could not find instanceId ${instanceId} in ${dungeonKey} WCL data`)
           } else {
-            spawnIds.push(spawnId)
+            const mobSpawn = mobSpawns.find(
+              ({ mob, spawn }) => mob.id === gameID && spawn.spawnIndex === spawnIndex,
+            )
+            if (!mobSpawn) {
+              errors.push(`Could not find enemy ${gameID}/${spawnIndex} in ${dungeonKey} MDT data`)
+            } else {
+              spawnIds.push(mobSpawn.spawn.id)
+            }
           }
         }
 

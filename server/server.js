@@ -3,7 +3,7 @@ import cors from 'cors'
 
 import { decodeRoute } from './decodeRoute.js'
 import { encodeRoute } from './encodeRoute.js'
-import { getWclRoute } from './wclRoute.js'
+import { getWclRoute } from './wclRoute.ts'
 
 const app = express()
 

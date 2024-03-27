@@ -8,7 +8,6 @@ import { Notes } from './Notes/Notes.tsx'
 import { MapContextMenu } from './MapContextMenu.tsx'
 import { MousePosition } from '../Leaflet/MousePosition/MousePosition'
 import { isDev } from '../../util/dev.ts'
-import { Mobs } from './Mobs/Mobs.tsx'
 import { PullOutlines } from './PullOutlines/PullOutlines.tsx'
 import { mapBounds, mapCenter } from '../../util/map.ts'
 import { useEffect } from 'react'
@@ -18,6 +17,7 @@ import { useAppDispatch } from '../../store/storeUtil.ts'
 import { PatherComponent } from './Draw/PatherComponent.tsx'
 import { AwarenessCursors } from '../Collab/AwarenessCursors.tsx'
 import { MapInitialZoom } from './MapInitialZoom.tsx'
+import { WclCoordinateTest } from './WclCoordinateTest.tsx'
 
 export function Map() {
   const dispatch = useAppDispatch()
@@ -65,6 +65,7 @@ export function Map() {
         <MapInitialZoom />
         <AwarenessCursors />
         {isDev && <MousePosition />}
+        <WclCoordinateTest />
       </MapContainer>
     </div>
   )

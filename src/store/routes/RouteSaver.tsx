@@ -14,9 +14,9 @@ export function RouteSaver() {
   // initial import from URL on page load
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search)
-    const mdtString = urlParams.get('mdt')
-    if (mdtString) {
-      dispatch(importRoute({ mdtString }))
+    const text = urlParams.get('mdt')
+    if (text) {
+      dispatch(importRoute({ text }))
       window.history.pushState(null, '', window.location.origin)
     }
   }, [dispatch])

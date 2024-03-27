@@ -45,11 +45,14 @@ export const importSlice = createAppSlice({
           const { code, fightId } = urlToWclInfo(text)
           const wclRoute = await wclRouteApi(code, fightId)
           if (!wclRoute || !wclRoute.dungeonPulls) throw new Error('Failed to parse WCL report.')
+
           const { route, errors } = wclRouteToRoute(wclRoute)
           const savedRoutes = (thunkApi.getState() as RootState).routes.present.savedRoutes
           route.name = nextRouteName(route.name, route.dungeonKey, savedRoutes)
           thunkApi.dispatch(setRouteFromWcl(route))
-          if (errors)
+
+          if (errors.length) {
+            console.error(errors.join('\n'))
             thunkApi.dispatch(
               addToast({
                 message:
@@ -58,7 +61,9 @@ export const importSlice = createAppSlice({
                 duration: 10_000,
               }),
             )
-          else thunkApi.dispatch(addToast({ message: `WCL route imported as ${route.name}` }))
+          } else {
+            thunkApi.dispatch(addToast({ message: `WCL route imported as ${route.name}` }))
+          }
 
           return
         }
