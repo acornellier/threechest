@@ -8,7 +8,7 @@ Questionable, maybe post release
 - Mobile Drawing
 
 WCL
-- Don't have WCL api key in git
+- Persist WCL token somehow? https://vercel.com/docs/storage/vercel-kv/quickstart
 - Test more logs. Prob need to adjust 20s period
 - Remove unknown mobs from query
 - Loading state
