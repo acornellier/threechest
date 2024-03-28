@@ -4,8 +4,6 @@ import path from 'path'
 import { DungeonKey, Spell } from '../src/data/types.ts'
 import { getWclToken } from './wclToken.ts'
 
-const token = await getWclToken()
-
 interface CastEvent {
   ability: {
     guid: number
@@ -26,6 +24,8 @@ export async function dungeonSpells({
   fightId: number | string
   dungeonKey: DungeonKey
 }) {
+  const token = await getWclToken()
+
   const toQuery = (startTime: number) => `
 query {
   reportData {
