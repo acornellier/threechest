@@ -1,9 +1,10 @@
-import parser, { NumericLiteral, TableConstructorExpression, TableKey } from 'luaparse'
+import parser, { Expression, NumericLiteral, TableConstructorExpression, TableKey } from 'luaparse'
 import * as fs from 'fs'
 import * as path from 'path'
 import { fileURLToPath } from 'url'
 import { DungeonKey, MdtDungeon, Mob, Point, Spawn } from '../src/data/types.ts'
 import { StringLiteral } from 'luaparse/lib/ast'
+import { roundTo } from '../src/util/numbers.ts'
 
 export function importMdtDungeon(key: DungeonKey, dungeonPath: string) {
   const __filename = fileURLToPath(import.meta.url)
@@ -35,13 +36,7 @@ export function importMdtDungeon(key: DungeonKey, dungeonPath: string) {
     (field: any) => field.value,
   )
 
-  const getFieldValue = (fields: TableKey[], key: string): any => {
-    const field = fields.find((field) => (field.key as StringLiteral).raw === `"${key}"`)
-
-    if (!field) return null
-
-    const { value } = field
-
+  const parseExpression = (value: Expression): any => {
     if (value.type === 'NumericLiteral') {
       return value.value
     } else if (value.type === 'BooleanLiteral') {
@@ -57,7 +52,18 @@ export function importMdtDungeon(key: DungeonKey, dungeonPath: string) {
     }
   }
 
-  const convertCoords = (x: number, y: number): Point => [y / 2.185, x / 2.185]
+  const getFieldValue = (fields: TableKey[], key: string) => {
+    const field = fields.find((field) => (field.key as StringLiteral).raw === `"${key}"`)
+
+    if (!field) return null
+
+    return parseExpression(field.value)
+  }
+
+  const convertCoords = (x: number, y: number): Point => [
+    roundTo(y / 2.185, 2),
+    roundTo(x / 2.185, 2),
+  ]
 
   const enemies: Mob[] = []
   for (let enemyIndex = 0; enemyIndex < luaEnemies.length; ++enemyIndex) {
@@ -72,12 +78,17 @@ export function importMdtDungeon(key: DungeonKey, dungeonPath: string) {
       creatureType: getFieldValue(fields, 'creatureType'),
       scale: getFieldValue(fields, 'scale'),
       isBoss: !!getFieldValue(fields, 'isBoss'),
+      characteristics: [],
       spawns: [],
     }
 
     if (getFieldValue(fields, 'stealthDetect')) enemy.stealthDetect = true
 
-    const spawns = []
+    const characteristicFields = getFieldValue(fields, 'characteristics') as TableKey[]
+    if (characteristicFields)
+      enemy.characteristics = characteristicFields.map((field) => parseExpression(field.key))
+
+    const spawns: Spawn[] = []
     const clones = getFieldValue(fields, 'clones')
     for (const clone of clones) {
       const cloneFields = clone.value.fields
@@ -90,20 +101,23 @@ export function importMdtDungeon(key: DungeonKey, dungeonPath: string) {
       const y = getFieldValue(cloneFields, 'y')
       const spawn: Spawn = {
         id: `${enemyIndexVal}-${spawnIndex}`,
-        spawnIndex,
+        idx: spawnIndex,
         group: getFieldValue(cloneFields, 'g'),
         pos: convertCoords(x, y),
-        scale: getFieldValue(cloneFields, 'scale'),
-        patrol: [],
       }
 
-      const patrol = getFieldValue(cloneFields, 'patrol') as TableKey[]
-      spawn.patrol = (patrol ?? []).map((item) => {
-        const fields = (item.value as TableConstructorExpression).fields as TableKey[]
-        const x = getFieldValue(fields, 'x')
-        const y = getFieldValue(fields, 'y')
-        return convertCoords(x, y)
-      })
+      const scale = getFieldValue(cloneFields, 'scale')
+      if (scale) spawn.scale = scale
+
+      const patrol = getFieldValue(cloneFields, 'patrol') as TableKey[] | null
+      if (patrol) {
+        spawn.patrol = patrol.map((item) => {
+          const fields = (item.value as TableConstructorExpression).fields as TableKey[]
+          const x = getFieldValue(fields, 'x')
+          const y = getFieldValue(fields, 'y')
+          return convertCoords(x, y)
+        })
+      }
 
       spawns.push(spawn)
     }

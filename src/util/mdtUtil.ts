@@ -107,7 +107,7 @@ export function mdtRouteToRoute(mdtRoute: MdtRoute): Route {
           const enemyIndex = Number(enemyIndexOrCount)
           return spawnIndexes.map((spawnIndex) => {
             const mobSpawn = dungeon.mobSpawnsList.find(
-              ({ mob, spawn }) => mob.enemyIndex == enemyIndex && spawn.spawnIndex === spawnIndex,
+              ({ mob, spawn }) => mob.enemyIndex == enemyIndex && spawn.idx === spawnIndex,
             )
 
             if (!mobSpawn) {
@@ -138,7 +138,7 @@ function mobSpawnsToMdtEnemies(spawns: SpawnId[], dungeon: Dungeon) {
     }
 
     acc[mobSpawn.mob.enemyIndex] ??= []
-    acc[mobSpawn.mob.enemyIndex]!.push(mobSpawn.spawn.spawnIndex)
+    acc[mobSpawn.mob.enemyIndex]!.push(mobSpawn.spawn.idx)
     return acc
   }, {})
 }

@@ -16,3 +16,17 @@ export const mdtEnemiesToMobSpawns = (mobs: Mob[]) =>
     })
     return acc
   }, {})
+
+export function mobCcTypes(mob: Mob): string[] {
+  if (mob.isBoss) return ['Boss']
+
+  const { characteristics } = mob
+  if (characteristics.length <= 2) return ['Immune to all CC']
+
+  const immunities: string[] = []
+  if (!characteristics.includes('Fear')) immunities.push('Fear')
+
+  if (immunities.length) return immunities.map((cc) => `Immune to ${cc}`)
+
+  return ['Susceptible to standard CC']
+}

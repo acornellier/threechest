@@ -6,6 +6,7 @@ import { addToast } from '../store/reducers/toastReducer.ts'
 
 import { useDungeon } from '../store/routes/routeHooks.ts'
 import { useAppDispatch, useRootSelector } from '../store/storeUtil.ts'
+import { mobCcTypes } from '../util/mobSpawns.ts'
 
 export function MobInfo() {
   const dispatch = useAppDispatch()
@@ -55,6 +56,9 @@ export function MobInfo() {
               Detects stealth
             </div>
           )}
+          {mobCcTypes(mob).map((ccType) => (
+            <div key={ccType}>{ccType}</div>
+          ))}
         </div>
         {spells?.length && (
           <div className="flex flex-col gap-2">
