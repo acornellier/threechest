@@ -39,6 +39,12 @@ export function HostRouteDetails({ collapsed }: Props) {
         onClick={onSave}
         disabled={saved}
         className={`${collapsed ? '[&]:hidden' : ''}`}
+        tooltip={
+          saved
+            ? 'Any changes to this route will be saved for you'
+            : 'Changes to this route are not currently being saved for you. They will be saved if you leave the collab while the route is active or click this button.'
+        }
+        tooltipId="save-host-route-locally-tooltip"
       >
         {saved ? 'Route saved' : "Save host's route locally"}
       </Button>
