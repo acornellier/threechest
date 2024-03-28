@@ -1,12 +1,32 @@
 import fs from 'fs'
 import { fileURLToPath } from 'url'
 import path from 'path'
+import { DungeonKey, Spell } from '../src/data/types.ts'
+import { getWclToken } from './wclToken.ts'
 
-const token =
-  'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI5YjgzMmFjMC05OTE3LTRjMzgtOTVhMy1kNmRkOTIwOTM5YzMiLCJqdGkiOiIxZjI0NGVmN2RlZGY2YTg3YTUwMjUyZWI5YTRkZGZhYzdjMDI0ZDU1YTE5ODU2MDgzMjMxMjIxMzhjOWRiMDJjMDYzOGZjZGExOGNlZmQzMiIsImlhdCI6MTcwOTg3NzY0NC40MzMzNjksIm5iZiI6MTcwOTg3NzY0NC40MzMzNzMsImV4cCI6MTc0MDk4MTY0NC40MjUxNTgsInN1YiI6IiIsInNjb3BlcyI6WyJ2aWV3LXVzZXItcHJvZmlsZSIsInZpZXctcHJpdmF0ZS1yZXBvcnRzIl19.Ja9sun9mng7q_KbszrB5Cq-viYk3aWQ9qVx5vEq-q_06xYP1VNwjcPsLOXxUHpueokI9HKgtPoa4N2THj6Tuhgv8O8y5sL7K7zO6XEwOjTpvf3CUnCob4FcHOsBq8ARUGk_DTs38eYeXBkHLX_6aoCIOE6pkUQA-5nA2Rj7b5iZ8LE1mLuloDMnQx2od45wKUQoe57uuabY8yGP1J5pRJQD53jM8t7IV2I4I_oatVi9MtsuLqPjJWZh4q_f59UvZU4dhEn9ab3K7XO8iesO4KGf9VYWsOxz0aY-TwO19j4bt6iZ1Zv147PK2BzoQ9YkeVvuHY5SY92mfeK7Eeoqq69lpsd2wiw3BAsdYTPh9YLtxL3TEJCQXBrVtfWrTuhg5RbwWm_FsPLtCq-LIb6sfhKlvpVFGc9zsBqh8rnFhLYgd9jpGiexgXjF3rTto-rpEimNt7bLmLkl8SNJixYJBSbdIHdLIykQwDsbjdJtQzDGrF61j5-Sx6gmks1qPcW1AV_y0dz8TCjrZjg9F6DCJzYqmQMvrYc_RmEY3e72AJszaxCwadDvP2v_-2abiF51jdHd6QMvieIkIWHeVQdwzf4H6ww19hVNEJg3n8TDAeJNNWjuaabtZrC9HudAzrruQDxtjTKvrd6q7uPDHA66-58Wd1SXPyGylJ4VIMPZreF4'
+const token = await getWclToken()
 
-export async function getDungeonSpells({ code, fightId, dungeonKey }) {
-  const toQuery = (startTime) => `
+interface CastEvent {
+  ability: {
+    guid: number
+    name: string
+    abilityIcon: string
+  }
+  source: {
+    guid: number
+  }
+}
+
+export async function dungeonSpells({
+  code,
+  fightId,
+  dungeonKey,
+}: {
+  code: string
+  fightId: number | string
+  dungeonKey: DungeonKey
+}) {
+  const toQuery = (startTime: number) => `
 query {
   reportData {
     report(code:"${code}") {
@@ -26,7 +46,7 @@ query {
 }
 `
 
-  const spells = {}
+  const spells: Record<number, Spell[]> = {}
   const ids = new Set()
   let nextTimestamp = 0
 
@@ -41,7 +61,7 @@ query {
     })
 
     const json = await data.json()
-    const events = json.data.reportData.report.events.data
+    const events: CastEvent[] = json.data.reportData.report.events.data
     nextTimestamp = json.data.reportData.report.events.nextPageTimestamp
 
     for (const event of events) {
@@ -50,14 +70,14 @@ query {
 
       ids.add(spellId)
 
-      const spell = {
+      const spell: Spell = {
         id: spellId,
         name: event.ability.name,
         icon: event.ability.abilityIcon,
       }
 
       spells[event.source.guid] ??= []
-      spells[event.source.guid].push(spell)
+      spells[event.source.guid]!.push(spell)
     }
   }
 
