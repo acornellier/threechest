@@ -1,12 +1,18 @@
 - NEC link
 - QA
 - Announcement
-- Don't have WCL api key in git
 
 Questionable, maybe post release
 - Erase parts of drawings
 - Change color wheel to grid of colors
 - Mobile Drawing
+
+WCL
+- Don't have WCL api key in git
+- Test more logs. Prob need to adjust 20s period
+- Remove unknown mobs from query
+- Loading state
+- Rate limiting?
 
 Definitely post release
 - Npc portaits

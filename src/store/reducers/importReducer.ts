@@ -8,9 +8,9 @@ import {
   setRouteFromWcl,
 } from '../routes/routesReducer.ts'
 import { createAppSlice } from '../storeUtil.ts'
-import { wclRouteApi } from '../../api/wclRouteApi.ts'
 import { urlToWclInfo, wclRouteToRoute } from '../../util/wclUtil.ts'
 import { addToast } from './toastReducer.ts'
+import { wclRouteApi } from '../../api/wclRouteApi.ts'
 
 export interface ImportState {
   importingRoute: MdtRoute | null
@@ -43,10 +43,10 @@ export const importSlice = createAppSlice({
 
         if (text?.includes('warcraftlogs.com')) {
           const { code, fightId } = urlToWclInfo(text)
-          const wclRoute = await wclRouteApi(code, fightId)
-          if (!wclRoute || !wclRoute.dungeonPulls) throw new Error('Failed to parse WCL report.')
+          const wclResult = await wclRouteApi(code, fightId)
+          if (!wclResult || !wclResult.events) throw new Error('Failed to parse WCL report.')
 
-          const { route, errors } = wclRouteToRoute(wclRoute)
+          const { route, errors } = wclRouteToRoute(wclResult)
           const savedRoutes = (thunkApi.getState() as RootState).routes.present.savedRoutes
           route.name = nextRouteName(route.name, route.dungeonKey, savedRoutes)
           thunkApi.dispatch(setRouteFromWcl(route))

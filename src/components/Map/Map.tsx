@@ -17,7 +17,7 @@ import { useAppDispatch } from '../../store/storeUtil.ts'
 import { PatherComponent } from './Draw/PatherComponent.tsx'
 import { AwarenessCursors } from '../Collab/AwarenessCursors.tsx'
 import { MapInitialZoom } from './MapInitialZoom.tsx'
-import { WclCoordinateTest } from './WclCoordinateTest.tsx'
+import { Mobs } from './Mobs/Mobs.tsx'
 
 export function Map() {
   const dispatch = useAppDispatch()
@@ -65,7 +65,6 @@ export function Map() {
         <MapInitialZoom />
         <AwarenessCursors />
         {isDev && <MousePosition />}
-        <WclCoordinateTest />
       </MapContainer>
     </div>
   )

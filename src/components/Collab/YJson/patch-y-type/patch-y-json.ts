@@ -19,7 +19,7 @@ import {
   JsonTemplateObject,
   OperationType,
 } from '../../Json'
-import { isDeepEqual } from '../../../../util/dev.ts'
+import { isDeepEqual } from '../../../../util/nodash.ts'
 
 function patch(yType: Y.Map<unknown> | Y.Array<unknown>, delta: Delta): void {
   if (delta.type === DeltaType.Array) {
