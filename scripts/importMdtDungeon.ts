@@ -75,7 +75,7 @@ export function importMdtDungeon(key: DungeonKey, dungeonPath: string) {
       spawns: [],
     }
 
-    // if (getFieldValue(fields, 'stealthDetect')) enemy.stealthDetect = true
+    if (getFieldValue(fields, 'stealthDetect')) enemy.stealthDetect = true
 
     const spawns = []
     const clones = getFieldValue(fields, 'clones')
