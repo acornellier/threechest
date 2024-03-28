@@ -23,7 +23,7 @@ export function ConfirmImportModalComponent({ importingRoute }: Props) {
   const confirm = useCallback(
     (copy: boolean) => {
       if (!importingRoute) return
-      dispatch(setRouteFromMdt({ mdtRoute: importingRoute, copy: exportRoute }))
+      dispatch(setRouteFromMdt({ mdtRoute: importingRoute, copy }))
       dispatch(clearImportingRoute())
     },
     [dispatch, importingRoute],

@@ -4,12 +4,14 @@ import { useAppDispatch, useRootSelector } from '../../../store/storeUtil.ts'
 import { setDrawColor, setDrawWeight, setIsDrawing } from '../../../store/reducers/mapReducer.ts'
 import { clearDrawings } from '../../../store/routes/routesReducer.ts'
 import { useCallback, useState } from 'react'
-import { DrawColorWheel } from './DrawColorWheel.tsx'
 import { keyText, shortcuts } from '../../../data/shortcuts.ts'
 import { useShortcut } from '../../../util/hooks/useShortcut.ts'
 import { Dropdown, DropdownOption } from '../../Common/Dropdown.tsx'
 import { WeightIcon } from '../../Common/Icons/WeightIcon.tsx'
 import { TrashIcon } from '@heroicons/react/24/outline'
+import { ColorGrid } from '../../Common/ColorGrid.tsx'
+import { useOutsideClick } from '../../../util/hooks/useOutsideClick.ts'
+import { TooltipStyled } from '../../Common/TooltipStyled.tsx'
 
 type WeightOption = DropdownOption & { weight: number }
 
@@ -31,6 +33,7 @@ export function DrawToolbar() {
 
   const onChangeColor = useCallback(
     (newColor: string) => {
+      setChoosingColor(false)
       dispatch(setDrawColor(newColor))
     },
     [dispatch],
@@ -39,6 +42,8 @@ export function DrawToolbar() {
   const onClickOutsideCanvas = useCallback(() => {
     setChoosingColor(false)
   }, [])
+
+  const outsideClickRef = useOutsideClick(onClickOutsideCanvas)
 
   return (
     <div className="flex items-start gap-2 h-full">
@@ -54,11 +59,7 @@ export function DrawToolbar() {
       {isDrawing && (
         <>
           <Button
-            onMouseDown={(e) => e.stopPropagation()}
-            onClick={(e) => {
-              setChoosingColor((val) => !val)
-              e.stopPropagation()
-            }}
+            onClick={() => setChoosingColor((val) => !val)}
             justifyStart
             tooltip={`Line color`}
             tooltipId="draw-color-tooltip"
@@ -68,6 +69,15 @@ export function DrawToolbar() {
               style={{ backgroundColor: drawColor, width: 20, height: 20 }}
             />
           </Button>
+          <TooltipStyled
+            id="draw-color-tooltip"
+            isOpen={isChoosingColor}
+            clickable
+            place="bottom"
+            padding={8}
+          >
+            <ColorGrid onSelectColor={onChangeColor} />
+          </TooltipStyled>
           <Dropdown
             buttonContent={<WeightIcon width={24} height={24} />}
             options={weightOptions}
@@ -84,12 +94,6 @@ export function DrawToolbar() {
             tooltip={`Clear ALL drawings`}
             tooltipId="clear-drawings-tooltip"
           />
-          {isChoosingColor && (
-            <DrawColorWheel
-              onChangeColor={onChangeColor}
-              onClickOutsideCanvas={onClickOutsideCanvas}
-            />
-          )}
         </>
       )}
     </div>

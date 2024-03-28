@@ -69,9 +69,8 @@ export function AwarenessCursors() {
   return (
     <>
       {awarenessStates
-        .filter(
-          ({ color, isCurrentClient, mousePosition }) => !isCurrentClient && mousePosition && color,
-        )
+        .filter(({ isCurrentClient }) => !isCurrentClient)
+        .filter(({ color, mousePosition }) => mousePosition && color)
         .map((awareness) => (
           <AwarenessCursorMemo
             key={awareness.clientId}
