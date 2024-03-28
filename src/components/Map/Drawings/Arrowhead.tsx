@@ -1,7 +1,6 @@
 import { Point } from '../../../data/types.ts'
 import { Polygon } from 'react-leaflet'
 import { Drawing as DrawingType } from '../../../util/types.ts'
-import { useEffect, useState } from 'react'
 
 const arrowheadPositions: Point[] = [
   [-1, 0],
@@ -15,12 +14,6 @@ interface Props {
 }
 
 export function Arrowhead({ drawing, hidden }: Props) {
-  // Change key to force re-render
-  const [key, setKey] = useState(0)
-  useEffect(() => {
-    setKey((prevKey) => prevKey + 1000)
-  }, [hidden])
-
   const rotation = drawing.arrowRotation
   if (rotation === undefined) return null
 
@@ -42,7 +35,7 @@ export function Arrowhead({ drawing, hidden }: Props) {
 
   return (
     <Polygon
-      key={key}
+      key={`${hidden}`}
       className="fade-in-map-object"
       positions={positions}
       color={drawing.color}

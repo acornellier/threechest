@@ -2,10 +2,13 @@ import { PayloadAction } from '@reduxjs/toolkit'
 import { useEffect, useState } from 'react'
 import { createAppSlice, useRootSelector } from '../storeUtil.ts'
 
+export type DrawMode = 'drawing' | 'deleting'
+
 export interface MapState {
   objectsHidden: boolean
   sidebarCollapsed: boolean
   isDrawing: boolean
+  drawMode: DrawMode
   drawColor: string
   drawWeight: number
 }
@@ -17,6 +20,7 @@ const initialState: MapState = {
   objectsHidden: true,
   sidebarCollapsed: false,
   isDrawing: false,
+  drawMode: 'drawing',
   drawColor: localStorage.getItem(drawColorKey) || 'blue',
   drawWeight: Number(localStorage.getItem(drawWeightKey)) || 4,
 }
@@ -33,6 +37,10 @@ export const mapSlice = createAppSlice({
     },
     setIsDrawing(state, { payload: isDrawing }: PayloadAction<boolean>) {
       state.isDrawing = isDrawing
+      if (isDrawing) state.drawMode = 'drawing'
+    },
+    setDrawMode(state, { payload: drawMode }: PayloadAction<DrawMode>) {
+      state.drawMode = drawMode
     },
     setDrawColor(state, { payload: drawColor }: PayloadAction<string>) {
       state.drawColor = drawColor
@@ -63,6 +71,7 @@ export const {
   setMapObjectsHidden,
   setSidebarCollapsed,
   setIsDrawing,
+  setDrawMode,
   setDrawColor,
   setDrawWeight,
 } = mapSlice.actions

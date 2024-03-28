@@ -1,6 +1,6 @@
 import { useAppDispatch, useRootSelector } from '../../../store/storeUtil.ts'
 import { useMemo } from 'react'
-import { CreatedEvent, MODES } from '../../Leaflet/Pather/Pather.ts'
+import { CreatedEvent } from '../../Leaflet/Pather/Pather.ts'
 import { latLngToPoint } from '../../../util/map.ts'
 import { addDrawing } from '../../../store/routes/routesReducer.ts'
 import { Drawing } from '../../../util/types.ts'
@@ -9,12 +9,12 @@ import { ReactPatherLayerComponent } from './PatherLayerComponent.tsx'
 export function PatherComponent() {
   const dispatch = useAppDispatch()
 
-  const { isDrawing, drawColor, drawWeight } = useRootSelector((state) => state.map)
+  const { isDrawing, drawMode, drawColor, drawWeight } = useRootSelector((state) => state.map)
 
   const eventHandlers = useMemo(
     () => ({
       created: (e: CreatedEvent) => {
-        const drawing: Drawing = {
+        const drawing: Omit<Drawing, 'id'> = {
           positions: [e.latLngs.map(latLngToPoint)],
           weight: drawWeight,
           color: drawColor,
@@ -29,7 +29,7 @@ export function PatherComponent() {
 
   return (
     <ReactPatherLayerComponent
-      mode={MODES.CREATE}
+      mode={drawMode}
       strokeWidth={drawWeight}
       strokeColor={drawColor}
       simplifyThreshold={5}

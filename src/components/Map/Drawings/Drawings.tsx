@@ -5,5 +5,5 @@ import { useRoute } from '../../../store/routes/routeHooks.ts'
 export function Drawings() {
   const route = useRoute()
 
-  return route.drawings.map((drawing, index) => <Drawing key={index} drawing={drawing} />)
+  return route.drawings.map((drawing) => <Drawing key={drawing.id} drawing={drawing} />)
 }

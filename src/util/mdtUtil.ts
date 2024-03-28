@@ -20,7 +20,7 @@ function noteToMdt(note: Note): MdtNote {
   }
 }
 
-function mdtPolygonToDrawing(polygon: MdtPolygon | MdtArrow): Drawing {
+function mdtPolygonToDrawing(polygon: MdtPolygon | MdtArrow, index: number): Drawing {
   const convertedPoints: Point[] = []
   for (let i = 0; i < polygon.l.length; i += 2) {
     const [x, y] = polygon.l.slice(i, i + 2).map(Number) as [number, number]
@@ -49,6 +49,7 @@ function mdtPolygonToDrawing(polygon: MdtPolygon | MdtArrow): Drawing {
   polylines.push(curPolyline)
 
   return {
+    id: index,
     weight: polygon.d[0],
     color: '#' + polygon.d[4],
     positions: polylines,

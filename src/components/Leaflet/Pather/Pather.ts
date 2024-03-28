@@ -10,21 +10,10 @@
 } from 'leaflet'
 import { curveMonotoneX, line } from 'd3-shape'
 import { select } from 'd3-selection'
-
-export const MODES = {
-  VIEW: 1,
-  CREATE: 2,
-  EDIT: 4,
-  DELETE: 8,
-  APPEND: 16,
-  EDIT_APPEND: 4 | 16,
-  ALL: 1 | 2 | 4 | 8 | 16,
-}
-
-export type Mode = keyof typeof MODES
+import { DrawMode } from '../../../store/reducers/mapReducer.ts'
 
 export interface PatherOptions extends LayerOptions {
-  mode: number
+  mode: DrawMode
   simplifyThreshold: number
   strokeColor: string
   strokeWidth: number
@@ -32,7 +21,7 @@ export interface PatherOptions extends LayerOptions {
 }
 
 export const defaultOptions: PatherOptions = {
-  mode: MODES.ALL,
+  mode: 'drawing',
   simplifyThreshold: 1,
   strokeColor: 'rgba(0,0,0,.5)',
   strokeWidth: 2,
@@ -48,6 +37,7 @@ export class Pather extends FeatureGroup {
   map?: Map
   element?: HTMLElement
   svg?: any
+  clearSvgTimer?: NodeJS.Timeout
 
   constructor(options: Partial<PatherOptions>) {
     super()
@@ -59,7 +49,8 @@ export class Pather extends FeatureGroup {
       return false
     }
 
-    this.clearAll()
+    // give map a second to draw it before clearing
+    this.clearSvgTimer = setTimeout(() => this.svg.text(''), 500)
     this.fire('created', {
       latLngs: this.simplifyLine(latLngs),
     })
@@ -119,10 +110,7 @@ export class Pather extends FeatureGroup {
     this.svg.remove()
 
     if (this.element) {
-      this.element.classList.remove('mode-create')
-      this.element.classList.remove('mode-delete')
-      this.element.classList.remove('mode-edit')
-      this.element.classList.remove('mode-append')
+      this.element!.classList.remove(this.modeToClassName(this.options.mode))
     }
 
     const tileLayer = map.getContainer().querySelector('.leaflet-tile-pane') as HTMLElement
@@ -131,62 +119,28 @@ export class Pather extends FeatureGroup {
     return this
   }
 
-  isPolylineCreatable() {
-    return !!(this.options.mode & MODES.CREATE)
-  }
-
-  clearAll() {
-    this.svg.text('')
-  }
-
-  shouldDisableDrag() {
-    if (this.options.detectTouch && ('ontouchstart' in window || 'onmsgesturechange' in window)) {
-      return this.options.mode & MODES.CREATE || this.options.mode & MODES.EDIT
-    }
-
-    return this.options.mode & MODES.CREATE
-  }
-
   setOptions(options: Partial<PatherOptions>) {
     this.options = { ...this.options, ...options }
   }
 
-  setMode(mode: number) {
-    this.setClassName(mode)
+  setMode(mode: DrawMode) {
+    this.element!.classList.remove(this.modeToClassName(this.options.mode))
+    this.element!.classList.add(this.modeToClassName(mode))
     this.options.mode = mode
 
     const tileLayer = this.map!.getContainer().querySelector('.leaflet-tile-pane') as HTMLElement
 
-    if (this.shouldDisableDrag()) {
-      if (tileLayer && tileLayer.style) tileLayer.style.pointerEvents = 'none'
-      this.map!.dragging.disable()
-      return
-    }
+    if (tileLayer && tileLayer.style) tileLayer.style.pointerEvents = 'none'
+    this.map!.dragging.disable()
+  }
 
-    tileLayer.style.pointerEvents = 'all'
-    this.map!.dragging.enable()
+  modeToClassName(mode: DrawMode) {
+    return `mode-${mode}`
   }
 
   setStrokeColor(strokeColor: string) {
     this.options.strokeColor = strokeColor
     this.svg.attr('stroke-color', strokeColor)
-  }
-
-  setClassName(mode: number) {
-    const conditionallyAppendClassName = (modeName: Mode) => {
-      const className = ['mode', modeName.toLocaleLowerCase()].join('-')
-
-      if (MODES[modeName] & mode) {
-        return void this.element!.classList.add(className)
-      }
-
-      this.element!.classList.remove(className)
-    }
-
-    conditionallyAppendClassName('CREATE')
-    conditionallyAppendClassName('DELETE')
-    conditionallyAppendClassName('EDIT')
-    conditionallyAppendClassName('APPEND')
   }
 
   attachEvents(map: Map) {
@@ -211,7 +165,14 @@ export class Pather extends FeatureGroup {
         return
       }
 
-      if (!this.isPolylineCreatable()) return
+      if (this.options.mode === 'deleting') {
+        return
+      }
+
+      if (this.clearSvgTimer) {
+        clearTimeout(this.clearSvgTimer)
+        this.svg.text('')
+      }
 
       const latLngs = new Set<LatLng>()
 
@@ -231,7 +192,6 @@ export class Pather extends FeatureGroup {
         map.off('mouseup', mouseUp)
         map.off('mousemove', mouseMove)
 
-        this.clearAll()
         this.createPath(Array.from(latLngs))
       }
 
