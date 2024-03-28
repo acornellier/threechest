@@ -50,6 +50,7 @@ export type Mob = {
   creatureType: string
   scale: number
   isBoss: boolean
+  stealthDetect?: true
   spawns: Spawn[]
 }
 

@@ -9,7 +9,7 @@ const dungeons = [
   { dungeonKey: 'rise', code: 'GLDKQX1cynTJ9gdY', fightId: 29 },
   { dungeonKey: 'tott', code: 'KytwXgGaZ7vk2WBd', fightId: 1 },
   { dungeonKey: 'wcm', code: 'ZA3yV8WGr2v4TxMY', fightId: 22 },
-]
+] as const
 
 const filterDungeonKey = process.argv[2]
 

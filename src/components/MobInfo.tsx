@@ -43,6 +43,18 @@ export function MobInfo() {
             <div>{mob.creatureType}</div>
             <div>ID: {mob.id}</div>
           </div>
+          {mob.stealthDetect && (
+            <div className="flex gap-2">
+              <img
+                src={getIconLink('ability_eyeoftheowl')}
+                width={24}
+                height={24}
+                alt="stealth detect"
+                className="rounded-md rounded-r-none"
+              />
+              Detects stealth
+            </div>
+          )}
         </div>
         {spells?.length && (
           <div className="flex flex-col gap-2">

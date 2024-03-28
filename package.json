@@ -11,7 +11,10 @@
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "vercel-dev": "env NODE_ENV=vercel_dev vercel dev --listen 1234",
-    "postinstall": "patch-package"
+    "postinstall": "patch-package",
+    "dungeons": "tsx scripts/importAllDungeons.ts",
+    "samples": "tsx ./scripts/sampleRouteImport.ts",
+    "spells": "tsx ./scripts/allDungeonSpells.ts"
   },
   "engines": {
     "node": ">=20"
