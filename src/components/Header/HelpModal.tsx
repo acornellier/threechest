@@ -9,6 +9,8 @@ interface Props {
 const shortcutDescriptions = [
   { desc: 'Undo', shortcuts: shortcuts.undo },
   { desc: 'Redo', shortcuts: shortcuts.redo },
+  { desc: 'Import route', shortcuts: shortcuts.importRoute },
+  { desc: 'Export route', shortcuts: shortcuts.exportRoute },
   { desc: 'Select next pull', shortcuts: shortcuts.pullDown },
   { desc: 'Select previous pull', shortcuts: shortcuts.pullUp },
   { desc: 'Add pull after selected', shortcuts: shortcuts.appendPull },

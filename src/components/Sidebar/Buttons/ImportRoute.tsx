@@ -66,7 +66,7 @@ export function ImportRoute({ hidden }: Props) {
         Icon={canPasteFromClipboard ? ClipboardIcon : ArrowUpTrayIcon}
         short
         onClick={handleClick}
-        shortcut={shortcuts.paste[0]}
+        shortcut={shortcuts.importRoute[0]}
         className={`${hidden ? '[&]:hidden' : ''}`}
       >
         Import MDT
