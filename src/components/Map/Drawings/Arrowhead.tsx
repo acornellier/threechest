@@ -48,6 +48,7 @@ export function Arrowhead({ drawing, hidden }: Props) {
       color={drawing.color}
       fillOpacity={hidden ? 0 : 1}
       opacity={hidden ? 0 : 1}
+      interactive={false}
     />
   )
 }

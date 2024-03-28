@@ -27,6 +27,7 @@ function DrawingComponent({ drawing }: Props) {
         weight={drawing.weight}
         opacity={hidden ? 0 : 1}
         fillOpacity={0}
+        interactive={false}
       />
       <Arrowhead drawing={drawing} hidden={hidden} />
     </>
