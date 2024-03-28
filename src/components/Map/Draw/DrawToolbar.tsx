@@ -3,13 +3,13 @@ import { PaintBrushIcon } from '@heroicons/react/24/solid'
 import { useAppDispatch, useRootSelector } from '../../../store/storeUtil.ts'
 import { setDrawColor, setDrawWeight, setIsDrawing } from '../../../store/reducers/mapReducer.ts'
 import { clearDrawings } from '../../../store/routes/routesReducer.ts'
-import { ClearIcon } from '../../Common/Icons/ClearIcon.tsx'
 import { useCallback, useState } from 'react'
 import { DrawColorWheel } from './DrawColorWheel.tsx'
 import { keyText, shortcuts } from '../../../data/shortcuts.ts'
 import { useShortcut } from '../../../util/hooks/useShortcut.ts'
 import { Dropdown, DropdownOption } from '../../Common/Dropdown.tsx'
 import { WeightIcon } from '../../Common/Icons/WeightIcon.tsx'
+import { TrashIcon } from '@heroicons/react/24/outline'
 
 type WeightOption = DropdownOption & { weight: number }
 
@@ -78,7 +78,7 @@ export function DrawToolbar() {
             tooltipId="draw-weight-tooltip"
           />
           <Button
-            Icon={ClearIcon}
+            Icon={TrashIcon}
             onClick={() => dispatch(clearDrawings())}
             justifyStart
             tooltip={`Clear ALL drawings`}
