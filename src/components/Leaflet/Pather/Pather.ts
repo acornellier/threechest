@@ -165,7 +165,7 @@ export class Pather extends FeatureGroup {
         return
       }
 
-      if (this.options.mode === 'deleting') {
+      if (this.options.mode !== 'drawing') {
         return
       }
 

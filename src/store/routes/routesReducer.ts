@@ -265,6 +265,11 @@ const baseReducer = createAppSlice({
     deleteDrawing(state, { payload: drawing }: PayloadAction<Drawing>) {
       state.route.drawings = state.route.drawings.filter(({ id }) => id !== drawing.id)
     },
+    updateDrawing(state, { payload: newDrawing }: PayloadAction<Drawing>) {
+      state.route.drawings = state.route.drawings.map((oldDrawing) =>
+        oldDrawing.id === newDrawing.id ? newDrawing : oldDrawing,
+      )
+    },
     updateSavedRoutes(state) {
       const savedRoute = state.savedRoutes.find((route) => route.uid === state.route.uid)
       if (!savedRoute) {
@@ -329,6 +334,7 @@ const undoableReducer = undoable(baseReducer.reducer, {
       baseReducer.actions.moveNote.type,
       baseReducer.actions.addDrawing.type,
       baseReducer.actions.deleteDrawing.type,
+      baseReducer.actions.updateDrawing.type,
       baseReducer.actions.clearDrawings.type,
     ]),
     excludeAction(['persist/PERSIST', 'persist/REHYDRATE']),
@@ -377,6 +383,7 @@ export const {
   deleteNote,
   addDrawing,
   deleteDrawing,
+  updateDrawing,
   moveNote,
   updateSavedRoutes,
   deleteSavedRoute,

@@ -16,6 +16,7 @@ import { WeightIcon } from '../../Common/Icons/WeightIcon.tsx'
 import { TrashIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import { ColorGrid } from '../../Common/ColorGrid.tsx'
 import { TooltipStyled } from '../../Common/TooltipStyled.tsx'
+import { ClearIcon } from '../../Common/Icons/ClearIcon.tsx'
 
 type WeightOption = DropdownOption & { weight: number }
 
@@ -44,6 +45,7 @@ export function DrawToolbar() {
   )
 
   const isDeleting = drawMode === 'deleting'
+  const isErasing = drawMode === 'erasing'
 
   return (
     <div className="flex items-start gap-2 h-full">
@@ -90,6 +92,14 @@ export function DrawToolbar() {
             />
           </div>
           <div className="flex items-start gap-2 h-full">
+            <Button
+              twoDimensional={isErasing}
+              color={isErasing ? 'green' : 'red'}
+              Icon={ClearIcon}
+              onClick={() => dispatch(setDrawMode(isErasing ? 'drawing' : 'erasing'))}
+              tooltip={`Erase parts of drawings`}
+              tooltipId="erase-drawings-tooltip"
+            />
             <Button
               twoDimensional={isDeleting}
               color={isDeleting ? 'green' : 'red'}
