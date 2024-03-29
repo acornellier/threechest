@@ -17,7 +17,6 @@ export interface PatherOptions extends LayerOptions {
   simplifyThreshold: number
   strokeColor: string
   strokeWidth: number
-  detectTouch?: boolean
 }
 
 export const defaultOptions: PatherOptions = {
@@ -25,7 +24,6 @@ export const defaultOptions: PatherOptions = {
   simplifyThreshold: 1,
   strokeColor: 'rgba(0,0,0,.5)',
   strokeWidth: 2,
-  detectTouch: true,
 }
 
 export interface CreatedEvent extends LeafletEvent {
@@ -37,7 +35,9 @@ export class Pather extends FeatureGroup {
   map?: Map
   element?: HTMLElement
   svg?: any
+  dragging?: boolean
   clearSvgTimer?: NodeJS.Timeout
+  mouseDownCallback?: (event: any) => void
 
   constructor(options: Partial<PatherOptions>) {
     super()
@@ -116,6 +116,9 @@ export class Pather extends FeatureGroup {
     const tileLayer = map.getContainer().querySelector('.leaflet-tile-pane') as HTMLElement
     if (tileLayer && tileLayer.style) tileLayer.style.pointerEvents = 'all'
     map.dragging.enable()
+
+    map.off('mousedown', this.mouseDownCallback)
+
     return this
   }
 
@@ -144,61 +147,65 @@ export class Pather extends FeatureGroup {
   }
 
   attachEvents(map: Map) {
-    let dragging = false
-    const mouseDown = (event: LeafletMouseEvent) => {
-      if (dragging) return
+    this.mouseDownCallback = this.mouseDown.bind(this)
+    map.on('mousedown', this.mouseDownCallback)
+    // map.getContainer().addEventListener('touchstart', this.fire.bind(map, 'mousedown'))
+  }
 
-      // On middle mouse button
-      if (event.originalEvent.button === 1) {
-        dragging = true
-        map.dragging.enable()
-        // Re-send the cloned event so that the map receives it with dragging enabled
-        const eventClone = new MouseEvent(event.originalEvent.type, event.originalEvent)
-        map.getContainer().dispatchEvent(eventClone)
+  mouseDown(untypedEvent: LeafletEvent) {
+    const event = untypedEvent as LeafletMouseEvent
 
-        const mouseUp = () => {
-          dragging = false
-          map.dragging.disable()
-        }
+    if (this.dragging) return
 
-        map.on('mouseup', mouseUp)
-        return
-      }
-
-      if (this.options.mode !== 'drawing') {
-        return
-      }
-
-      if (this.clearSvgTimer) {
-        clearTimeout(this.clearSvgTimer)
-        this.svg.text('')
-      }
-
-      const latLngs = new Set<LatLng>()
-
-      const lineIterator = this.createPathTemp(map.latLngToContainerPoint(event.latlng))
-
-      const mouseMove = (event: LeafletMouseEvent) => {
-        const point: Point = map.mouseEventToContainerPoint(event.originalEvent)
-
-        // Push each lat/lng value into the points set.
-        latLngs.add(map.containerPointToLatLng(point))
-
-        // Invoke the generator by passing in the starting point for the path.
-        lineIterator(new Point(point.x, point.y))
-      }
+    // On middle mouse button
+    if (event.originalEvent.button === 1) {
+      this.dragging = true
+      this.map!.dragging.enable()
+      // Re-send the cloned event so that the map receives it with dragging enabled
+      const eventClone = new MouseEvent(event.originalEvent.type, event.originalEvent)
+      this.map!.getContainer().dispatchEvent(eventClone)
 
       const mouseUp = () => {
-        map.off('mouseup', mouseUp)
-        map.off('mousemove', mouseMove)
-
-        this.createPath(Array.from(latLngs))
+        this.dragging = false
+        this.map!.dragging.disable()
       }
 
-      map.on('mousemove', mouseMove)
-      map.on('mouseup', mouseUp)
+      this.map!.on('mouseup', mouseUp)
+      return
     }
-    map.on('mousedown', mouseDown)
+
+    if (this.options.mode !== 'drawing') {
+      return
+    }
+
+    if (this.clearSvgTimer) {
+      clearTimeout(this.clearSvgTimer)
+      this.svg.text('')
+    }
+
+    const latLngs = new Set<LatLng>()
+
+    const lineIterator = this.createPathTemp(this.map!.latLngToContainerPoint(event.latlng))
+
+    const mouseMove = (event: LeafletMouseEvent) => {
+      const point: Point = this.map!.mouseEventToContainerPoint(event.originalEvent)
+
+      // Push each lat/lng value into the points set.
+      latLngs.add(this.map!.containerPointToLatLng(point))
+
+      // Invoke the generator by passing in the starting point for the path.
+      lineIterator(new Point(point.x, point.y))
+    }
+
+    const mouseUp = () => {
+      this.map!.off('mousemove', mouseMove)
+      this.map!.off('mouseup', mouseUp)
+
+      this.createPath(Array.from(latLngs))
+    }
+
+    this.map!.on('mousemove', mouseMove)
+    this.map!.on('mouseup', mouseUp)
   }
 }
 

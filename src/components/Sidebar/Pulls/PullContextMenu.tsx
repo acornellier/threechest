@@ -1,7 +1,7 @@
-import { addPull, clearPull, deletePull } from '../../../store/routes/routesReducer.ts'
+import { addPull, clearPull, clearRoute, deletePull } from '../../../store/routes/routesReducer.ts'
 import { ContextMenu, ContextMenuProps } from '../../Common/ContextMenu.tsx'
 import { shortcuts } from '../../../data/shortcuts.ts'
-import { PlusIcon, TrashIcon } from '@heroicons/react/24/outline'
+import { BackspaceIcon, PlusIcon, TrashIcon } from '@heroicons/react/24/outline'
 import { ClearIcon } from '../../Common/Icons/ClearIcon.tsx'
 
 import { useAppDispatch } from '../../../store/storeUtil.ts'
@@ -10,6 +10,9 @@ interface Props extends Omit<ContextMenuProps, 'buttons'> {
   pullIndex: number
 }
 
+export const pullContextMenuMinHeight = 250
+export const pullContextMenuMinWidth = 180
+
 export function PullContextMenu({ position, pullIndex, onClose }: Props) {
   const dispatch = useAppDispatch()
 
@@ -17,6 +20,8 @@ export function PullContextMenu({ position, pullIndex, onClose }: Props) {
     <ContextMenu
       position={position}
       onClose={onClose}
+      minHeight={pullContextMenuMinHeight}
+      minWidth={pullContextMenuMinWidth}
       buttons={[
         {
           Icon: PlusIcon,
@@ -32,7 +37,7 @@ export function PullContextMenu({ position, pullIndex, onClose }: Props) {
         },
         {
           Icon: ClearIcon,
-          text: 'Clear',
+          text: 'Clear pull',
           shortcut: shortcuts.clearPull[0],
           onClick: () => dispatch(clearPull(pullIndex)),
         },
@@ -41,6 +46,11 @@ export function PullContextMenu({ position, pullIndex, onClose }: Props) {
           text: 'Delete',
           shortcut: shortcuts.deletePull[0],
           onClick: () => dispatch(deletePull({ pullIndex })),
+        },
+        {
+          Icon: BackspaceIcon,
+          text: 'Clear route',
+          onClick: () => dispatch(clearRoute()),
         },
       ]}
     />

@@ -1,10 +1,9 @@
 import { useMemo } from 'react'
 import { Button } from '../../Common/Button.tsx'
-import { addPull, clearRoute } from '../../../store/routes/routesReducer.ts'
+import { addPull, deletePull } from '../../../store/routes/routesReducer.ts'
 import { Panel } from '../../Common/Panel.tsx'
 import { augmentPulls } from './augmentPulls.ts'
-import { PlusIcon } from '@heroicons/react/24/outline'
-import { ClearIcon } from '../../Common/Icons/ClearIcon.tsx'
+import { PlusIcon, TrashIcon } from '@heroicons/react/24/outline'
 import { shortcuts } from '../../../data/shortcuts.ts'
 import { PullList } from './PullList.tsx'
 import { useDungeon, useRoute } from '../../../store/routes/routeHooks.ts'
@@ -33,10 +32,11 @@ export function Pulls() {
         >
           Add pull
         </Button>
-        <Button onClick={() => dispatch(clearRoute())}>
-          <ClearIcon />
-          Clear
-        </Button>
+        <Button
+          Icon={TrashIcon}
+          onClick={() => dispatch(deletePull({}))}
+          shortcut={shortcuts.deletePull[0]}
+        ></Button>
       </div>
     </Panel>
   )

@@ -1,6 +1,6 @@
 import { Modal } from '../Common/Modal.tsx'
 import { keyText, shortcuts } from '../../data/shortcuts.ts'
-import { isMac, isMobile } from '../../util/dev.ts'
+import { isMac, isTouch } from '../../util/dev.ts'
 
 interface Props {
   onClose: () => void
@@ -79,7 +79,7 @@ export function HelpModal({ onClose }: Props) {
               Once saved, all changes are persisted.
             </div>
           </div>
-          {!isMobile && (
+          {!isTouch && (
             <div className="min-w-[330px]">
               <div className="text-lg font-bold mt-2">Notes</div>
               <div>Right click on the map to create notes.</div>

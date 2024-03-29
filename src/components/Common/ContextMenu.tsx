@@ -20,19 +20,19 @@ export interface ContextMenuProps {
   position: ContextMenuPosition
   buttons: ContextMenuButton[]
   onClose: () => void
+  minHeight: number
+  minWidth: number
 }
 
-export const minContextMenuWidth = 180
-
-export function ContextMenu({ position, buttons, onClose }: ContextMenuProps) {
+export function ContextMenu({ position, buttons, onClose, minHeight, minWidth }: ContextMenuProps) {
   return (
     <div
       className="fixed z-[10000]"
       onContextMenu={(e) => e.preventDefault()}
       style={{
-        minWidth: minContextMenuWidth,
-        top: position.top,
-        left: position.left,
+        minWidth,
+        minHeight,
+        ...position,
       }}
     >
       <Panel blue>

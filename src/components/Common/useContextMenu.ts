@@ -1,10 +1,15 @@
 import { useCallback, useEffect } from 'react'
-import { ContextMenuPosition, minContextMenuWidth } from './ContextMenu.tsx'
+import { ContextMenuPosition } from './ContextMenu.tsx'
 import { makeUseExclusiveState } from '../../util/hooks/exclusiveState.ts'
 
 const useExclusiveState = makeUseExclusiveState<ContextMenuPosition>()
 
-export function useContextMenu() {
+interface Props {
+  minHeight: number
+  minWidth: number
+}
+
+export function useContextMenu({ minHeight, minWidth }: Props) {
   const [position, setPosition] = useExclusiveState()
 
   const onClose = useCallback(() => {
@@ -14,10 +19,10 @@ export function useContextMenu() {
   const onRightClick = useCallback(
     (e: MouseEvent) => {
       const windowWidth = window.innerWidth
-      const newPos = {
-        top: e.pageY,
-        left:
-          e.pageX + minContextMenuWidth < windowWidth ? e.pageX : windowWidth - minContextMenuWidth,
+      const windowHeight = window.innerHeight
+      const newPos: ContextMenuPosition = {
+        top: e.pageY + minHeight < windowHeight ? e.pageY : windowHeight - minHeight,
+        left: e.pageX + minWidth < windowWidth ? e.pageX : windowWidth - minWidth,
       }
 
       setPosition((pos) => {
@@ -27,7 +32,7 @@ export function useContextMenu() {
         return Math.hypot(a, b) < 20 ? null : newPos
       })
     },
-    [setPosition],
+    [minHeight, minWidth, setPosition],
   )
 
   useEffect(() => {
