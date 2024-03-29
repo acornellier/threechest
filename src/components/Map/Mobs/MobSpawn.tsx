@@ -55,7 +55,8 @@ function MobSpawnComponent({
         dispatch(
           toggleSpawn({
             spawn: spawn.id,
-            individual: e.originalEvent?.ctrlKey || e.originalEvent?.metaKey,
+            individual: e.originalEvent.ctrlKey || e.originalEvent.metaKey,
+            newPull: e.originalEvent.shiftKey,
           }),
         )
       },

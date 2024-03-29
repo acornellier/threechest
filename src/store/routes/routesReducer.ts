@@ -201,7 +201,14 @@ const baseReducer = createAppSlice({
         state.selectedPull = newIndex
       }
     },
-    toggleSpawn(state, { payload }: PayloadAction<{ spawn: SpawnId; individual: boolean }>) {
+    toggleSpawn(
+      state,
+      { payload }: PayloadAction<{ spawn: SpawnId; individual: boolean; newPull: boolean }>,
+    ) {
+      if (payload.newPull) {
+        addPullFunc(state, state.selectedPull + 1)
+      }
+
       state.route.pulls = toggleSpawnAction(state, payload)
     },
     removeInvalidSpawns(state, { payload: invalidSpawnIds }: PayloadAction<SpawnId[]>) {
