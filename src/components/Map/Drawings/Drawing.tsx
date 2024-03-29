@@ -100,8 +100,6 @@ function DrawingComponent({ drawing }: Props) {
       },
       mouseout: () => map.getContainer().classList.remove(overDrawingClass),
       mousemove: (e) => {
-        map.getContainer().classList.add(overDrawingClass)
-
         if (isErasing) {
           eraseAtPoint(e.latlng)
         }
