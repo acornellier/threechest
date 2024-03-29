@@ -8,14 +8,19 @@ import { addToast } from './toastReducer.ts'
 import { wclRouteApi } from '../../api/wclRouteApi.ts'
 
 export interface ImportState {
+  isImporting: boolean
   importingRoute: MdtRoute | null
   previewRoute: Route | null
 }
 
 const initialState: ImportState = {
+  isImporting: false,
   importingRoute: null,
   previewRoute: null,
 }
+
+const wclErrorMessage =
+  'WCL route imported with errors. Some enemies were unable to be matched with MDT data. There will be enemies missing in the pulls.'
 
 export const importSlice = createAppSlice({
   name: 'import',
@@ -48,12 +53,7 @@ export const importSlice = createAppSlice({
           if (errors.length) {
             console.error(errors.join('\n'))
             thunkApi.dispatch(
-              addToast({
-                message:
-                  'WCL route imported with errors. Some enemies were unable to be matched with MDT data. There will be enemies missing in the pulls.',
-                type: 'error',
-                duration: 10_000,
-              }),
+              addToast({ message: wclErrorMessage, type: 'error', duration: 10_000 }),
             )
           } else {
             thunkApi.dispatch(addToast({ message: `WCL route imported as ${route.name}` }))
@@ -108,6 +108,15 @@ export const importSlice = createAppSlice({
       },
     ),
   }),
+  extraReducers: (builder) => {
+    builder.addCase(importRoute.pending, (state) => {
+      state.isImporting = true
+    })
+
+    builder.addMatcher(importRoute.settled, (state) => {
+      state.isImporting = false
+    })
+  },
 })
 
 export const importReducer = importSlice.reducer

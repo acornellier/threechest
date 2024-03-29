@@ -1,8 +1,5 @@
 import { WclEventSimplified, WclResult } from '../src/util/wclUtil.ts'
 import { uniqBy } from '../src/util/nodash.ts'
-import fs from 'fs'
-import { fileURLToPath } from 'url'
-import path from 'path'
 import { getWclToken } from '../scripts/wclToken.ts'
 import { dungeons } from '../src/data/dungeons.ts'
 
@@ -184,16 +181,16 @@ export async function getWclRoute(code: string, fightId: string | number): Promi
     events: firstPositions,
   }
 
-  const __filename = fileURLToPath(import.meta.url)
-  const __dirname = path.dirname(__filename)
-  fs.writeFileSync(
-    `${__dirname}/../src/util/wclTest.ts`,
-    `
-import { WclResult } from './wclUtil.ts'
-
-export const wclTest: WclResult = ${JSON.stringify(result)}
-`,
-  )
+  //   const __filename = fileURLToPath(import.meta.url)
+  //   const __dirname = path.dirname(__filename)
+  //   fs.writeFileSync(
+  //     `${__dirname}/../src/util/wclTest.ts`,
+  //     `
+  // import { WclResult } from './wclUtil.ts'
+  //
+  // export const wclTest: WclResult = ${JSON.stringify(result)}
+  // `,
+  //   )
 
   return result
 }

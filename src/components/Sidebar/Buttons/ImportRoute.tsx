@@ -4,7 +4,7 @@ import { Modal } from '../../Common/Modal.tsx'
 import { importRoute } from '../../../store/reducers/importReducer.ts'
 import { ArrowUpTrayIcon, ClipboardIcon } from '@heroicons/react/24/outline'
 import { isEventInInput, shortcuts } from '../../../data/shortcuts.ts'
-import { useAppDispatch } from '../../../store/storeUtil.ts'
+import { useAppDispatch, useRootSelector } from '../../../store/storeUtil.ts'
 
 const canPasteFromClipboard = !!navigator.clipboard.readText
 
@@ -14,6 +14,7 @@ interface Props {
 
 export function ImportRoute({ hidden }: Props) {
   const dispatch = useAppDispatch()
+  const isImporting = useRootSelector((state) => state.import.isImporting)
   const [input, setInput] = useState('')
   const [inputModalOpen, setInputModalOpen] = useState(false)
 
@@ -64,8 +65,9 @@ export function ImportRoute({ hidden }: Props) {
         onClick={handleClick}
         shortcut={shortcuts.importRoute[0]}
         className={`${hidden ? '[&]:hidden' : ''}`}
+        disabled={isImporting}
       >
-        Import MDT or WCL
+        {isImporting ? 'Importing...' : 'Import MDT or WCL'}
       </Button>
       {inputModalOpen && (
         <Modal
