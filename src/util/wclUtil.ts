@@ -72,9 +72,8 @@ export function wclRouteToRoute(wclResult: WclResult) {
     errors,
   }
 }
-export function wclEventsToPulls(events: WclEventSimplified[], dungeon: Dungeon, errors: string[]) {
-  if (!events.length) return []
 
+function getPullMobIds(events: WclEventSimplified[], dungeon: Dungeon) {
   const filteredEvents = events.filter((event) =>
     dungeon.mobSpawnsList.some(({ mob }) => mob.id === event.gameId),
   )
@@ -83,15 +82,6 @@ export function wclEventsToPulls(events: WclEventSimplified[], dungeon: Dungeon,
     ...event,
     timestamp: event.timestamp - sortedEvents[0]!.timestamp,
   }))
-
-  const groupsBasic = Object.groupBy(dungeon.mobSpawnsList, ({ spawn }) => spawn.group ?? spawn.id)
-  let groupsRemaining: Group[] = Object.entries(groupsBasic).map(([groupId, mobSpawns]) => ({
-    id: groupId,
-    mobCounts: tally(mobSpawns!, ({ mob }) => mob.id),
-    averagePos: averagePoint(mobSpawns!.map(({ spawn }) => spawn.pos)),
-  }))
-
-  const spawnIdsTaken = new Set<string>()
 
   const pullMobIds: Array<Array<{ mobId: number; pos: Point }>> = []
   const newPull = (): Array<{ mobId: number; pos: Point }> => []
@@ -108,98 +98,143 @@ export function wclEventsToPulls(events: WclEventSimplified[], dungeon: Dungeon,
     currentPull.push({ mobId: event.gameId, pos: wclPointToLeafletPoint(event) })
   }
 
-  const pullSpawns: SpawnId[][] = []
-  pullMobIds.forEach((pull, idx) => {
-    const pullAveragePos = averagePoint(pull.map(({ pos }) => pos))
-    const pullMobCounts = tally(pull, ({ mobId }) => mobId)
+  return pullMobIds
+}
 
-    let sortedGroups = groupsRemaining.sort(
-      (a, b) => distance(a.averagePos, pullAveragePos) - distance(b.averagePos, pullAveragePos),
-    )
+function getPulledGroups(
+  remainingMobs: Record<number, number>,
+  groups: Group[],
+  groupIdx: number = 0,
+): string[] | null {
+  if (Object.values(remainingMobs).every((n) => n === 0)) {
+    // no mobs left, solved!
+    return []
+  }
 
-    if (idx === 9) console.log(sortedGroups)
-    sortedGroups = sortedGroups.filter(({ mobCounts }) =>
-      pull.some(({ mobId }) => (mobCounts[mobId] ?? 0) > 0),
-    )
-    if (idx === 9) console.log(sortedGroups)
+  const group = groups[groupIdx]
+  if (group === undefined) return null
 
-    const getPulledGroups = (
-      groupIdx: number,
-      remainingMobs: Record<number, number>,
-    ): string[] | null => {
-      if (Object.values(remainingMobs).every((n) => n === 0)) {
-        // no mobs left, solved!
-        return []
-      }
+  const newRemainingMobs = { ...remainingMobs }
 
-      const group = sortedGroups[groupIdx]
-      if (group === undefined) return null
+  let isCompatible = true
+  for (const [mobId, count] of Object.entries(group.mobCounts)) {
+    const remainingCount = (newRemainingMobs[Number(mobId)] ?? 0) - count
+    if (remainingCount < 0) {
+      isCompatible = false
+      break
+    }
+    newRemainingMobs[Number(mobId)] = remainingCount
+  }
 
-      const newRemainingMobs = { ...remainingMobs }
+  if (isCompatible) {
+    const addedGroups = getPulledGroups(newRemainingMobs, groups, groupIdx + 1)
+    if (addedGroups !== null) {
+      return [group.id, ...addedGroups]
+    }
+  }
 
-      let isCompatible = true
-      for (const [mobId, count] of Object.entries(group.mobCounts)) {
-        const remainingCount = (newRemainingMobs[Number(mobId)] ?? 0) - count
-        if (remainingCount < 0) {
-          if (idx === 9) console.log(`NOT compaitble`, group.id)
-          isCompatible = false
-          break
-        }
-        newRemainingMobs[Number(mobId)] = remainingCount
-      }
+  return getPulledGroups(remainingMobs, groups, groupIdx + 1)
+}
 
-      if (isCompatible) {
-        const addedGroups = getPulledGroups(groupIdx + 1, newRemainingMobs)
-        if (addedGroups !== null) {
-          return [group.id, ...addedGroups]
-        }
-      }
+function calculateExactPull(
+  pull: Array<{ mobId: number; pos: Point }>,
+  groupsRemaining: Group[],
+  groupMobSpawns: Partial<Record<number | string, MobSpawn[]>>,
+  spawnIdsTaken: Set<string>,
+  dungeon: Dungeon,
+  idx: number,
+  errors: string[],
+): { spawnIds: SpawnId[] | null; groupsRemaining: Group[] } {
+  const pullAveragePos = averagePoint(pull.map(({ pos }) => pos))
+  const pullMobCounts = tally(pull, ({ mobId }) => mobId)
 
-      return getPulledGroups(groupIdx + 1, remainingMobs)
+  const groups = groupsRemaining
+    .sort((a, b) => distance(a.averagePos, pullAveragePos) - distance(b.averagePos, pullAveragePos))
+    .filter(({ mobCounts }) => pull.some(({ mobId }) => (mobCounts[mobId] ?? 0) > 0))
+
+  const pulledGroups = getPulledGroups(pullMobCounts, groups)
+
+  if (pulledGroups === null)
+    return findExactSpawns(pull, groupsRemaining, spawnIdsTaken, dungeon, errors, idx)
+
+  const spawnIds = pulledGroups.flatMap((groupId) =>
+    groupMobSpawns[groupId]!.map(({ spawn }) => spawn.id),
+  )
+
+  groupsRemaining = groupsRemaining.filter((group) => !pulledGroups.includes(group.id))
+
+  spawnIds.forEach(spawnIdsTaken.add, spawnIdsTaken)
+  return { spawnIds, groupsRemaining }
+}
+
+function findExactSpawns(
+  pull: Array<{ mobId: number; pos: Point }>,
+  groupsRemaining: Group[],
+  spawnIdsTaken: Set<string>,
+  dungeon: Dungeon,
+  errors: string[],
+  idx: number,
+) {
+  const mobSpawns: MobSpawn[] = []
+  for (const { mobId, pos } of pull) {
+    const matchingMobs = dungeon.mobSpawnsList.filter(({ mob }) => mob.id === mobId)
+    const available = matchingMobs.filter(({ spawn }) => !spawnIdsTaken.has(spawn.id))
+
+    if (available.length === 0) {
+      // If it doesn't matter for count just ignore it
+      if (matchingMobs.length !== 0 && matchingMobs[0]!.mob.count === 0) continue
+
+      errors.push(`Failed at finding individual matching mob id ${mobId} in pull ${idx}`)
+      return { spawnIds: null, groupsRemaining }
     }
 
-    const pulledGroups = getPulledGroups(0, pullMobCounts)
-    if (idx === 9) console.log(`pull 9`, pulledGroups)
+    const nearest = available.sort(
+      (a, b) => distance(a.spawn.pos, pos) - distance(b.spawn.pos, pos),
+    )[0]
+    mobSpawns.push(nearest!)
+  }
 
-    if (pulledGroups !== null) {
-      groupsRemaining = groupsRemaining.filter((group) => !pulledGroups.includes(group.id))
+  groupsRemaining = groupsRemaining.filter((group) =>
+    mobSpawns.some(({ spawn }) =>
+      spawn.group ? group.id !== String(spawn.group) : group.id !== spawn.id,
+    ),
+  )
 
-      const spawnIds = pulledGroups.flatMap((groupId) =>
-        groupsBasic[groupId]!.map(({ spawn }) => spawn.id),
+  const spawnIds = mobSpawns.map(({ spawn }) => spawn.id)
+  spawnIds.forEach(spawnIdsTaken.add, spawnIdsTaken)
+  return { spawnIds, groupsRemaining }
+}
+
+export function wclEventsToPulls(events: WclEventSimplified[], dungeon: Dungeon, errors: string[]) {
+  if (!events.length) return []
+
+  const pullMobIds = getPullMobIds(events, dungeon)
+
+  const groupsBasic = Object.groupBy(dungeon.mobSpawnsList, ({ spawn }) => spawn.group ?? spawn.id)
+  let groupsRemaining: Group[] = Object.entries(groupsBasic).map(([groupId, mobSpawns]) => ({
+    id: groupId,
+    mobCounts: tally(mobSpawns!, ({ mob }) => mob.id),
+    averagePos: averagePoint(mobSpawns!.map(({ spawn }) => spawn.pos)),
+  }))
+
+  const spawnIdsTaken = new Set<string>()
+
+  const pullSpawns = pullMobIds
+    .map((pull, idx) => {
+      const { spawnIds, groupsRemaining: newGroupsRemaining } = calculateExactPull(
+        pull,
+        groupsRemaining,
+        groupsBasic,
+        spawnIdsTaken,
+        dungeon,
+        idx,
+        errors,
       )
-      spawnIds.forEach(spawnIdsTaken.add, spawnIdsTaken)
-      pullSpawns.push(spawnIds)
-      return
-    }
 
-    const mobSpawns: MobSpawn[] = []
-    for (const { mobId, pos } of pull) {
-      const matchingMobs = dungeon.mobSpawnsList.filter(({ mob }) => mob.id === mobId)
-      const available = matchingMobs.filter(({ spawn }) => !spawnIdsTaken.has(spawn.id))
-
-      if (available.length === 0) {
-        // If it doesn't matter for count just ignore it
-        if (matchingMobs.length !== 0 && matchingMobs[0]!.mob.count === 0) continue
-
-        errors.push(`Failed at finding individual matching mob id ${mobId} in pull ${idx}`)
-        return
-      }
-
-      const nearest = available.sort(
-        (a, b) => distance(a.spawn.pos, pos) - distance(b.spawn.pos, pos),
-      )[0]
-      mobSpawns.push(nearest!)
-    }
-
-    const spawnIds = mobSpawns.map(({ spawn }) => spawn.id)
-    spawnIds.forEach(spawnIdsTaken.add, spawnIdsTaken)
-    pullSpawns.push(spawnIds)
-    groupsRemaining = groupsRemaining.filter((group) =>
-      mobSpawns.some(({ spawn }) =>
-        spawn.group ? group.id !== String(spawn.group) : group.id !== spawn.id,
-      ),
-    )
-  })
+      groupsRemaining = newGroupsRemaining
+      return spawnIds
+    })
+    .filter(Boolean) as SpawnId[][]
 
   return pullSpawns.map<Pull>((spawns, idx) => ({
     id: idx,

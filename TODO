@@ -9,7 +9,6 @@ WCL
 - Test more logs. Prob need to adjust 20s period
 - Loading button state
 - Rate limiting?
-- Refactor wclUtil
 
 Definitely post release
 - Npc portaits
