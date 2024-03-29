@@ -90,6 +90,7 @@ export const nok: Dungeon = {
 export const rise: Dungeon = {
   name: "DOTI: Murozond's Rise",
   key: 'rise',
+  wclEncounterId: 12580,
   defaultBounds: [
     [-10, 50],
     [-mapHeight, 350],

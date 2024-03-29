@@ -7,9 +7,9 @@ Questionable, maybe post release
 WCL
 - Persist WCL token somehow? https://vercel.com/docs/storage/vercel-kv/quickstart
 - Test more logs. Prob need to adjust 20s period
-- Remove unknown mobs from query
-- Loading state
+- Loading button state
 - Rate limiting?
+- Refactor wclUtil
 
 Definitely post release
 - Npc portaits

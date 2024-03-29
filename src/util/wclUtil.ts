@@ -1,5 +1,4 @@
 import { Pull, Route } from './types.ts'
-import { newRouteUid } from '../store/routes/routesReducer.ts'
 import { Dungeon, MobSpawn, Point, SpawnId } from '../data/types.ts'
 import { dungeons } from '../data/dungeons.ts'
 import { distance } from './numbers.ts'
@@ -14,16 +13,27 @@ export type WclEventSimplified = {
   y: number
 }
 
-export type WclResult = {
+export type WclResult = WclUrlInfo & {
   encounterID: number
   keystoneLevel: number
   events: WclEventSimplified[]
 }
 
+export type WclUrlInfo = {
+  code: string
+  fightId: number
+}
+
+type Group = {
+  id: string
+  mobCounts: Record<number, number>
+  averagePos: Point
+}
+
 export const wclPointToLeafletPoint = ({ x, y }: { x: number; y: number }) =>
   [0.00268 * y - 258, 0.002688 * x + 634] as Point
 
-export function urlToWclInfo(url: string) {
+export function urlToWclInfo(url: string): WclUrlInfo {
   if (!url.startsWith('http')) url = 'https://' + url
 
   const code = url.match(/\/reports\/(\w+)/)?.[1]
@@ -47,9 +57,9 @@ export function wclRouteToRoute(wclResult: WclResult) {
   if (!dungeon) throw new Error(`This WCL dungeon is not yet supported by Threechest.`)
 
   const errors: string[] = []
-  const { pulls } = wclEventsToPulls(wclResult.events, dungeon, errors)
+  const pulls = wclEventsToPulls(wclResult.events, dungeon, errors)
   const route: Route = {
-    uid: newRouteUid(),
+    uid: `${wclResult.code}-${wclResult.fightId}`,
     name: `WCL ${dungeon.key.toUpperCase()} +${wclResult.keystoneLevel}`,
     dungeonKey: dungeon.key,
     pulls,
@@ -62,15 +72,8 @@ export function wclRouteToRoute(wclResult: WclResult) {
     errors,
   }
 }
-
-type Group = {
-  id: string
-  mobCounts: Record<number, number>
-  averagePos: Point
-}
-
 export function wclEventsToPulls(events: WclEventSimplified[], dungeon: Dungeon, errors: string[]) {
-  if (!events.length) return { pulls: [], sortedEvents: [], groups: [] }
+  if (!events.length) return []
 
   const filteredEvents = events.filter((event) =>
     dungeon.mobSpawnsList.some(({ mob }) => mob.id === event.gameId),
@@ -108,12 +111,17 @@ export function wclEventsToPulls(events: WclEventSimplified[], dungeon: Dungeon,
   const pullSpawns: SpawnId[][] = []
   pullMobIds.forEach((pull, idx) => {
     const pullAveragePos = averagePoint(pull.map(({ pos }) => pos))
-
     const pullMobCounts = tally(pull, ({ mobId }) => mobId)
 
-    const sortedGroups = groupsRemaining.sort(
+    let sortedGroups = groupsRemaining.sort(
       (a, b) => distance(a.averagePos, pullAveragePos) - distance(b.averagePos, pullAveragePos),
     )
+
+    if (idx === 9) console.log(sortedGroups)
+    sortedGroups = sortedGroups.filter(({ mobCounts }) =>
+      pull.some(({ mobId }) => (mobCounts[mobId] ?? 0) > 0),
+    )
+    if (idx === 9) console.log(sortedGroups)
 
     const getPulledGroups = (
       groupIdx: number,
@@ -133,6 +141,7 @@ export function wclEventsToPulls(events: WclEventSimplified[], dungeon: Dungeon,
       for (const [mobId, count] of Object.entries(group.mobCounts)) {
         const remainingCount = (newRemainingMobs[Number(mobId)] ?? 0) - count
         if (remainingCount < 0) {
+          if (idx === 9) console.log(`NOT compaitble`, group.id)
           isCompatible = false
           break
         }
@@ -140,17 +149,17 @@ export function wclEventsToPulls(events: WclEventSimplified[], dungeon: Dungeon,
       }
 
       if (isCompatible) {
-        for (let newGroupIdx = groupIdx + 1; newGroupIdx < sortedGroups.length; ++newGroupIdx) {
-          const addedGroups = getPulledGroups(newGroupIdx, newRemainingMobs)
-          if (addedGroups !== null) {
-            return [group.id, ...addedGroups]
-          }
+        const addedGroups = getPulledGroups(groupIdx + 1, newRemainingMobs)
+        if (addedGroups !== null) {
+          return [group.id, ...addedGroups]
         }
       }
-      return getPulledGroups(groupIdx + 1, newRemainingMobs)
+
+      return getPulledGroups(groupIdx + 1, remainingMobs)
     }
 
     const pulledGroups = getPulledGroups(0, pullMobCounts)
+    if (idx === 9) console.log(`pull 9`, pulledGroups)
 
     if (pulledGroups !== null) {
       groupsRemaining = groupsRemaining.filter((group) => !pulledGroups.includes(group.id))
@@ -192,12 +201,8 @@ export function wclEventsToPulls(events: WclEventSimplified[], dungeon: Dungeon,
     )
   })
 
-  const pulls: Pull[] = pullSpawns.map((spawns, idx) => {
-    return {
-      id: idx,
-      spawns,
-    }
-  })
-
-  return { pulls }
+  return pullSpawns.map<Pull>((spawns, idx) => ({
+    id: idx,
+    spawns,
+  }))
 }

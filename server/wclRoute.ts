@@ -3,9 +3,8 @@ import { uniqBy } from '../src/util/nodash.ts'
 import fs from 'fs'
 import { fileURLToPath } from 'url'
 import path from 'path'
-
-const token =
-  'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI5YjgzMmFjMC05OTE3LTRjMzgtOTVhMy1kNmRkOTIwOTM5YzMiLCJqdGkiOiIxZjI0NGVmN2RlZGY2YTg3YTUwMjUyZWI5YTRkZGZhYzdjMDI0ZDU1YTE5ODU2MDgzMjMxMjIxMzhjOWRiMDJjMDYzOGZjZGExOGNlZmQzMiIsImlhdCI6MTcwOTg3NzY0NC40MzMzNjksIm5iZiI6MTcwOTg3NzY0NC40MzMzNzMsImV4cCI6MTc0MDk4MTY0NC40MjUxNTgsInN1YiI6IiIsInNjb3BlcyI6WyJ2aWV3LXVzZXItcHJvZmlsZSIsInZpZXctcHJpdmF0ZS1yZXBvcnRzIl19.Ja9sun9mng7q_KbszrB5Cq-viYk3aWQ9qVx5vEq-q_06xYP1VNwjcPsLOXxUHpueokI9HKgtPoa4N2THj6Tuhgv8O8y5sL7K7zO6XEwOjTpvf3CUnCob4FcHOsBq8ARUGk_DTs38eYeXBkHLX_6aoCIOE6pkUQA-5nA2Rj7b5iZ8LE1mLuloDMnQx2od45wKUQoe57uuabY8yGP1J5pRJQD53jM8t7IV2I4I_oatVi9MtsuLqPjJWZh4q_f59UvZU4dhEn9ab3K7XO8iesO4KGf9VYWsOxz0aY-TwO19j4bt6iZ1Zv147PK2BzoQ9YkeVvuHY5SY92mfeK7Eeoqq69lpsd2wiw3BAsdYTPh9YLtxL3TEJCQXBrVtfWrTuhg5RbwWm_FsPLtCq-LIb6sfhKlvpVFGc9zsBqh8rnFhLYgd9jpGiexgXjF3rTto-rpEimNt7bLmLkl8SNJixYJBSbdIHdLIykQwDsbjdJtQzDGrF61j5-Sx6gmks1qPcW1AV_y0dz8TCjrZjg9F6DCJzYqmQMvrYc_RmEY3e72AJszaxCwadDvP2v_-2abiF51jdHd6QMvieIkIWHeVQdwzf4H6ww19hVNEJg3n8TDAeJNNWjuaabtZrC9HudAzrruQDxtjTKvrd6q7uPDHA66-58Wd1SXPyGylJ4VIMPZreF4'
+import { getWclToken } from '../scripts/wclToken.ts'
+import { dungeons } from '../src/data/dungeons.ts'
 
 type WclEnemyNpc = {
   id: number
@@ -54,6 +53,7 @@ query {
 }
 `
 
+  const token = await getWclToken()
   const data = await fetch('https://www.warcraftlogs.com/api/v2/client', {
     method: 'POST',
     headers: {
@@ -106,6 +106,8 @@ query {
   }
 }`
 
+    const token = await getWclToken()
+
     console.time(`query ${start}-${end}`)
     const data = await fetch('https://www.warcraftlogs.com/api/v2/client', {
       method: 'POST',
@@ -132,6 +134,9 @@ query {
 export async function getWclRoute(code: string, fightId: string | number): Promise<WclResult> {
   const wclRoute = await getRoute(code, fightId)
 
+  const dungeon = dungeons.find((dungeon) => dungeon.wclEncounterId === wclRoute.encounterID)
+  if (!dungeon) throw new Error(`Dungeon not supported, WCL encounter ID ${wclRoute.encounterID}`)
+
   let enemies = wclRoute.dungeonPulls.flatMap(({ enemyNPCs }) =>
     enemyNPCs.flatMap(({ id, gameID, minimumInstanceID, maximumInstanceID }) =>
       Array.from({ length: maximumInstanceID - minimumInstanceID + 1 }, (_, i) => ({
@@ -143,6 +148,13 @@ export async function getWclRoute(code: string, fightId: string | number): Promi
   )
 
   enemies = uniqBy(enemies, ['actorId', 'instanceId'])
+
+  // Filter out mobs that aren't in the route, or have no count (unless they're a boss)
+  enemies = enemies.filter((enemy) =>
+    dungeon.mobSpawnsList.some(
+      ({ mob }) => mob.id === enemy.gameID && (mob.count > 0 || mob.isBoss),
+    ),
+  )
 
   const firstEvents = await getFirstEvents(code, fightId, enemies)
 
@@ -164,7 +176,9 @@ export async function getWclRoute(code: string, fightId: string | number): Promi
     })
     .filter(Boolean) as WclEventSimplified[]
 
-  const result = {
+  const result: WclResult = {
+    code,
+    fightId: Number(fightId),
     encounterID: wclRoute.encounterID,
     keystoneLevel: wclRoute.keystoneLevel,
     events: firstPositions,
