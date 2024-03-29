@@ -43,7 +43,7 @@ export function PullContextMenu({ position, pullIndex, onClose }: Props) {
         },
         {
           Icon: TrashIcon,
-          text: 'Delete',
+          text: 'Delete pull',
           shortcut: shortcuts.deletePull[0],
           onClick: () => dispatch(deletePull({ pullIndex })),
         },
