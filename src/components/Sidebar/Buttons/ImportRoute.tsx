@@ -68,6 +68,8 @@ export function ImportRoute({ hidden }: Props) {
         onClick={handleClick}
         shortcut={shortcuts.importRoute[0]}
         className={`${hidden ? '[&]:hidden' : ''}`}
+        tooltip="Import an MDT string from the clipboard"
+        tooltipId="import-route-tooltip"
       >
         Import MDT
       </Button>
