@@ -75,7 +75,7 @@ function MobSpawnComponent({
         eventHandlers={eventHandlers}
         opacity={hidden ? 0 : 1}
         icon={divIcon({
-          className: `fade-in-map-object`,
+          className: `mob-spawn-icon fade-in-map-object`,
           popupAnchor: [100, 0],
           iconUrl: `/npc_portaits/${mob.id}.png`,
           iconSize: [iconSize, iconSize],

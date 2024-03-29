@@ -92,6 +92,10 @@ export function HelpModal({ onClose }: Props) {
                 to select indivudal mobs.
               </div>
               <div>
+                <span className="rounded bg-fancy-red px-1 min-w-6 text-center">Shift + click</span>{' '}
+                to create a new pull before selecting the mobs
+              </div>
+              <div>
                 <span className="rounded bg-fancy-red px-1 min-w-6 text-center">Shift + drag</span>{' '}
                 to batch select mobs.
               </div>
