@@ -61,8 +61,8 @@ function MobSpawnComponent({
         )
       },
       contextmenu: () => dispatch(selectSpawn(spawn.id)),
-      mouseover: () => dispatch(hoverSpawn(spawn.id)),
-      mouseout: () => dispatch(hoverSpawn(null)),
+      mouseenter: () => dispatch(hoverSpawn(spawn.id)),
+      mouseleave: () => dispatch(hoverSpawn(null)),
     }),
     [dispatch, spawn],
   )
