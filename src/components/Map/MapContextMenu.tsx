@@ -5,11 +5,12 @@ import { LatLng, LeafletMouseEvent } from 'leaflet'
 import { ContextMenu } from '../Common/ContextMenu.tsx'
 import { addNote } from '../../store/routes/routesReducer.ts'
 
-import { useAppDispatch } from '../../store/storeUtil.ts'
+import { useAppDispatch, useRootSelector } from '../../store/storeUtil.ts'
 
 export function MapContextMenu() {
   const dispatch = useAppDispatch()
   const map = useMap()
+  const isDrawing = useRootSelector((state) => state.map.isDrawing)
 
   const { contextMenuPosition, onRightClick, onClose } = useContextMenu()
   const [leafletPos, setLeafletPos] = useState<LatLng | null>(null)
@@ -30,7 +31,7 @@ export function MapContextMenu() {
     })
   }, [map, onClose, onRightClickMap])
 
-  if (!contextMenuPosition || !leafletPos) return null
+  if (!contextMenuPosition || !leafletPos || isDrawing) return null
 
   return (
     <ContextMenu

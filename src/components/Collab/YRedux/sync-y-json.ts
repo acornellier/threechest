@@ -34,7 +34,7 @@ function syncRemoteIntoLocal<T extends JsonTemplateContainer>(
   }
 
   const remoteData = yJson.toJSON() as T
-  console.debug('syncRemoteIntoLocal Syncing', remoteData)
+  // console.debug('syncRemoteIntoLocal Syncing', remoteData)
   dispatch(setData(remoteData))
   setRemoteDataReceived(true)
 }
@@ -65,19 +65,12 @@ export function SyncYJson<T extends JsonTemplateContainer>({
   const newState = useRootSelector(selectData)
   useEffect(() => {
     if (stateCache.current !== newState) {
-      stateCache.current = newState
-      if (canPublishToRemote) syncLocalIntoRemote(newState, yJson)
+      if (canPublishToRemote) {
+        stateCache.current = newState
+        syncLocalIntoRemote(newState, yJson)
+      }
     }
   }, [canPublishToRemote, newState, yJson])
-
-  // const store = useAppStore()
-  // useEffect(() => {
-  //   const unsubscribe = cachedSubscribe(store, selectData, (newState) => {
-  //     if (canPublishToRemote) syncLocalIntoRemote(newState, yJson)
-  //   })
-  //
-  //   return () => unsubscribe()
-  // }, [store, selectData, yJson, canPublishToRemote])
 
   // Subscribe to remote changes
   useEffect(() => {

@@ -36,10 +36,10 @@ export type SpawnId = string
 export type Spawn = {
   id: SpawnId
   group: number | null
-  spawnIndex: number
+  idx: number
   pos: Point
-  scale: number | null
-  patrol: Array<Point>
+  scale?: number | null
+  patrol?: Array<Point>
 }
 
 export type Mob = {
@@ -51,6 +51,8 @@ export type Mob = {
   creatureType: string
   scale: number
   isBoss: boolean
+  stealthDetect?: boolean
+  characteristics: string[]
   spawns: Spawn[]
 }
 
@@ -70,7 +72,7 @@ export type Spells = Record<number, Spell[]>
 // Change [number, number] to number[] to type-check JSON
 export type SpawnFake = Omit<Spawn, 'pos' | 'patrol'> & {
   pos: number[]
-  patrol: Array<number[]>
+  patrol?: Array<number[]>
 }
 
 export type MobFake = Omit<Mob, 'spawns'> & {

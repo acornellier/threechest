@@ -1,4 +1,4 @@
-import { getDungeonSpells } from './getDungeonSpells.js'
+import { dungeonSpells } from './dungeonSpells.ts'
 
 const dungeons = [
   { dungeonKey: 'ad', code: '6gAz9tCPKFRkVQJv', fightId: 67 },
@@ -9,13 +9,13 @@ const dungeons = [
   { dungeonKey: 'rise', code: 'GLDKQX1cynTJ9gdY', fightId: 29 },
   { dungeonKey: 'tott', code: 'KytwXgGaZ7vk2WBd', fightId: 1 },
   { dungeonKey: 'wcm', code: 'ZA3yV8WGr2v4TxMY', fightId: 22 },
-]
+] as const
 
 const filterDungeonKey = process.argv[2]
 
 for (const dungeon of dungeons) {
   if (!filterDungeonKey || dungeon.dungeonKey === filterDungeonKey) {
     console.log(`Fetching ${dungeon.dungeonKey}...`)
-    await getDungeonSpells(dungeon)
+    await dungeonSpells(dungeon)
   }
 }

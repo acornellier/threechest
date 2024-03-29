@@ -17,8 +17,8 @@ const pullDown: Shortcut[] = [{ key: 'ArrowDown' }, { key: 'Tab' }]
 const selectPullNumber: Shortcut[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0].map((n) => ({
   key: n.toString(),
 }))
-const copy: Shortcut[] = [{ key: 'C', ctrl: true }]
-const paste: Shortcut[] = [{ key: 'V', ctrl: true }]
+const exportRoute: Shortcut[] = [{ key: 'E', ctrl: true }]
+const importRoute: Shortcut[] = [{ key: 'V', ctrl: true }]
 const help: Shortcut[] = [{ key: '?', allowShift: true }]
 const draw: Shortcut[] = [{ key: 'F' }]
 
@@ -57,7 +57,7 @@ export const shortcuts = {
   pullDown,
   selectPullNumber,
   help,
-  copy,
-  paste,
+  exportRoute,
+  importRoute,
   draw,
 } as const

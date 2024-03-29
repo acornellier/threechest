@@ -264,8 +264,18 @@ const baseReducer = createAppSlice({
       state.route.notes[noteIndex] = noteToSwap
       state.route.notes[newIndex] = noteToMove
     },
-    addDrawing(state, { payload: drawing }: PayloadAction<Drawing>) {
+    addDrawing(state, { payload: partialDrawing }: PayloadAction<Omit<Drawing, 'id'>>) {
+      const maxId = state.route.drawings.reduce<number>((acc, { id }) => (id > acc ? id : acc), 0)
+      const drawing = { ...partialDrawing, id: maxId + 1 }
       state.route.drawings.push(drawing)
+    },
+    deleteDrawing(state, { payload: drawing }: PayloadAction<Drawing>) {
+      state.route.drawings = state.route.drawings.filter(({ id }) => id !== drawing.id)
+    },
+    updateDrawing(state, { payload: newDrawing }: PayloadAction<Drawing>) {
+      state.route.drawings = state.route.drawings.map((oldDrawing) =>
+        oldDrawing.id === newDrawing.id ? newDrawing : oldDrawing,
+      )
     },
     updateSavedRoutes(state) {
       const savedRoute = state.savedRoutes.find((route) => route.uid === state.route.uid)
@@ -330,6 +340,8 @@ const undoableReducer = undoable(baseReducer.reducer, {
       baseReducer.actions.deleteNote.type,
       baseReducer.actions.moveNote.type,
       baseReducer.actions.addDrawing.type,
+      baseReducer.actions.deleteDrawing.type,
+      baseReducer.actions.updateDrawing.type,
       baseReducer.actions.clearDrawings.type,
     ]),
     excludeAction(['persist/PERSIST', 'persist/REHYDRATE']),
@@ -378,6 +390,8 @@ export const {
   editNote,
   deleteNote,
   addDrawing,
+  deleteDrawing,
+  updateDrawing,
   moveNote,
   updateSavedRoutes,
   deleteSavedRoute,

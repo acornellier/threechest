@@ -20,6 +20,7 @@ export type Note = {
 }
 
 export type Drawing = {
+  id: number
   weight: number
   color: string
   positions: Point[][]

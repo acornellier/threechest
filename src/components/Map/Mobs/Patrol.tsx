@@ -8,7 +8,7 @@ interface Props {
 }
 
 export function Patrol({ spawn, isGroupHovered, hidden }: Props) {
-  if (!spawn.patrol.length) return null
+  if (!spawn.patrol || spawn.patrol.length === 0) return null
 
   return (
     <Polygon

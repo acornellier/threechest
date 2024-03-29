@@ -5,7 +5,6 @@ import { ArrowDownTrayIcon } from '@heroicons/react/24/outline'
 import { useShortcut } from '../../../util/hooks/useShortcut.ts'
 import { useCallback } from 'react'
 import { shortcuts } from '../../../data/shortcuts.ts'
-
 import { useRoute } from '../../../store/routes/routeHooks.ts'
 import { useAppDispatch } from '../../../store/storeUtil.ts'
 
@@ -27,7 +26,7 @@ export function ExportRoute({ hidden }: Props) {
     }
   }, [dispatch, route])
 
-  useShortcut(shortcuts.copy, handleClick)
+  useShortcut(shortcuts.exportRoute, handleClick)
 
   return (
     <Button
@@ -35,7 +34,7 @@ export function ExportRoute({ hidden }: Props) {
       short
       className={`flex-1 ${hidden ? '[&]:hidden' : ''}`}
       onClick={handleClick}
-      shortcut={{ key: 'C', ctrl: true }}
+      shortcut={shortcuts.exportRoute[0]}
       justifyStart
     >
       Export MDT

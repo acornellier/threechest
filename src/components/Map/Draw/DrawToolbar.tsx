@@ -1,15 +1,22 @@
 ﻿import { Button } from '../../Common/Button.tsx'
 import { PaintBrushIcon } from '@heroicons/react/24/solid'
 import { useAppDispatch, useRootSelector } from '../../../store/storeUtil.ts'
-import { setDrawColor, setDrawWeight, setIsDrawing } from '../../../store/reducers/mapReducer.ts'
+import {
+  setDrawColor,
+  setDrawMode,
+  setDrawWeight,
+  setIsDrawing,
+} from '../../../store/reducers/mapReducer.ts'
 import { clearDrawings } from '../../../store/routes/routesReducer.ts'
-import { ClearIcon } from '../../Common/Icons/ClearIcon.tsx'
 import { useCallback, useState } from 'react'
-import { DrawColorWheel } from './DrawColorWheel.tsx'
 import { keyText, shortcuts } from '../../../data/shortcuts.ts'
 import { useShortcut } from '../../../util/hooks/useShortcut.ts'
 import { Dropdown, DropdownOption } from '../../Common/Dropdown.tsx'
 import { WeightIcon } from '../../Common/Icons/WeightIcon.tsx'
+import { TrashIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import { ColorGrid } from '../../Common/ColorGrid.tsx'
+import { TooltipStyled } from '../../Common/TooltipStyled.tsx'
+import { ClearIcon } from '../../Common/Icons/ClearIcon.tsx'
 
 type WeightOption = DropdownOption & { weight: number }
 
@@ -23,7 +30,7 @@ const weightOptions: WeightOption[] = [1, 2, 3, 4, 8, 12, 16, 24].map(weightToOp
 
 export function DrawToolbar() {
   const dispatch = useAppDispatch()
-  const { isDrawing, drawColor, drawWeight } = useRootSelector((state) => state.map)
+  const { isDrawing, drawMode, drawColor, drawWeight } = useRootSelector((state) => state.map)
   const [isChoosingColor, setChoosingColor] = useState(false)
 
   const toggleDraw = useCallback(() => dispatch(setIsDrawing(!isDrawing)), [dispatch, isDrawing])
@@ -31,14 +38,14 @@ export function DrawToolbar() {
 
   const onChangeColor = useCallback(
     (newColor: string) => {
+      setChoosingColor(false)
       dispatch(setDrawColor(newColor))
     },
     [dispatch],
   )
 
-  const onClickOutsideCanvas = useCallback(() => {
-    setChoosingColor(false)
-  }, [])
+  const isDeleting = drawMode === 'deleting'
+  const isErasing = drawMode === 'erasing'
 
   return (
     <div className="flex items-start gap-2 h-full">
@@ -52,45 +59,63 @@ export function DrawToolbar() {
         tooltipId="draw-tooltip"
       />
       {isDrawing && (
-        <>
-          <Button
-            onMouseDown={(e) => e.stopPropagation()}
-            onClick={(e) => {
-              setChoosingColor((val) => !val)
-              e.stopPropagation()
-            }}
-            justifyStart
-            tooltip={`Line color`}
-            tooltipId="draw-color-tooltip"
-          >
-            <div
-              className="rounded-sm"
-              style={{ backgroundColor: drawColor, width: 20, height: 20 }}
+        <div className="flex items-start gap-6 h-full">
+          <div className="flex items-start gap-2 h-full">
+            <Button
+              onClick={() => setChoosingColor((val) => !val)}
+              justifyStart
+              tooltip={`Line color`}
+              tooltipId="draw-color-tooltip"
+            >
+              <div
+                className="rounded-sm"
+                style={{ backgroundColor: drawColor, width: 20, height: 20 }}
+              />
+            </Button>
+            <TooltipStyled
+              id="draw-color-tooltip"
+              isOpen={isChoosingColor}
+              clickable
+              place="bottom"
+              padding={8}
+            >
+              <ColorGrid onSelectColor={onChangeColor} />
+            </TooltipStyled>
+            <Dropdown
+              buttonContent={<WeightIcon width={24} height={24} />}
+              options={weightOptions}
+              selected={weightToOption(drawWeight)}
+              onSelect={(option) => dispatch(setDrawWeight(option.weight))}
+              hideArrow
+              tooltip="Line weight"
+              tooltipId="draw-weight-tooltip"
             />
-          </Button>
-          <Dropdown
-            buttonContent={<WeightIcon width={24} height={24} />}
-            options={weightOptions}
-            selected={weightToOption(drawWeight)}
-            onSelect={(option) => dispatch(setDrawWeight(option.weight))}
-            hideArrow
-            tooltip="Line weight"
-            tooltipId="draw-weight-tooltip"
-          />
-          <Button
-            Icon={ClearIcon}
-            onClick={() => dispatch(clearDrawings())}
-            justifyStart
-            tooltip={`Clear ALL drawings`}
-            tooltipId="clear-drawings-tooltip"
-          />
-          {isChoosingColor && (
-            <DrawColorWheel
-              onChangeColor={onChangeColor}
-              onClickOutsideCanvas={onClickOutsideCanvas}
+          </div>
+          <div className="flex items-start gap-2 h-full">
+            <Button
+              twoDimensional={isErasing}
+              color={isErasing ? 'green' : 'red'}
+              Icon={ClearIcon}
+              onClick={() => dispatch(setDrawMode(isErasing ? 'drawing' : 'erasing'))}
+              tooltip={`Erase parts of drawings`}
+              tooltipId="erase-drawings-tooltip"
             />
-          )}
-        </>
+            <Button
+              twoDimensional={isDeleting}
+              color={isDeleting ? 'green' : 'red'}
+              Icon={XMarkIcon}
+              onClick={() => dispatch(setDrawMode(isDeleting ? 'drawing' : 'deleting'))}
+              tooltip={`Delete individual drawings`}
+              tooltipId="delete-drawings-tooltip"
+            />
+            <Button
+              Icon={TrashIcon}
+              onClick={() => dispatch(clearDrawings())}
+              tooltip={`Clear ALL drawings`}
+              tooltipId="clear-drawings-tooltip"
+            />
+          </div>
+        </div>
       )}
     </div>
   )

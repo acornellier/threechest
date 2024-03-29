@@ -2,10 +2,14 @@ import { PayloadAction } from '@reduxjs/toolkit'
 import { useEffect, useState } from 'react'
 import { createAppSlice, useRootSelector } from '../storeUtil.ts'
 
+export type DrawMode = 'drawing' | 'deleting' | 'erasing'
+
 export interface MapState {
   objectsHidden: boolean
   sidebarCollapsed: boolean
   isDrawing: boolean
+  isErasing: boolean
+  drawMode: DrawMode
   drawColor: string
   drawWeight: number
 }
@@ -17,6 +21,8 @@ const initialState: MapState = {
   objectsHidden: true,
   sidebarCollapsed: false,
   isDrawing: false,
+  isErasing: false,
+  drawMode: 'drawing',
   drawColor: localStorage.getItem(drawColorKey) || 'blue',
   drawWeight: Number(localStorage.getItem(drawWeightKey)) || 4,
 }
@@ -33,6 +39,17 @@ export const mapSlice = createAppSlice({
     },
     setIsDrawing(state, { payload: isDrawing }: PayloadAction<boolean>) {
       state.isDrawing = isDrawing
+      if (isDrawing) {
+        state.drawMode = 'drawing'
+        state.isErasing = false
+      }
+    },
+    setIsErasing(state, { payload: isErasing }: PayloadAction<boolean>) {
+      state.isErasing = isErasing
+    },
+    setDrawMode(state, { payload: drawMode }: PayloadAction<DrawMode>) {
+      state.drawMode = drawMode
+      state.isErasing = false
     },
     setDrawColor(state, { payload: drawColor }: PayloadAction<string>) {
       state.drawColor = drawColor
@@ -63,6 +80,8 @@ export const {
   setMapObjectsHidden,
   setSidebarCollapsed,
   setIsDrawing,
+  setIsErasing,
+  setDrawMode,
   setDrawColor,
   setDrawWeight,
 } = mapSlice.actions

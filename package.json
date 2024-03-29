@@ -11,7 +11,10 @@
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "vercel-dev": "env NODE_ENV=vercel_dev vercel dev --listen 1234",
-    "postinstall": "patch-package"
+    "postinstall": "patch-package",
+    "dungeons": "tsx scripts/importAllDungeons.ts",
+    "samples": "tsx ./scripts/sampleRouteImport.ts",
+    "spells": "tsx ./scripts/allDungeonSpells.ts"
   },
   "engines": {
     "node": ">=20"
@@ -24,9 +27,11 @@
     "d3": "^7.9.0",
     "d3-selection": "^3.0.0",
     "d3-shape": "^3.2.0",
+    "dotenv-flow": "^4.1.0",
     "leaflet": "^1.9.4",
     "lib0": "^0.2.93",
     "localforage": "^1.10.0",
+    "node-cache": "^5.1.2",
     "node-weakauras-parser": "^3.2.3",
     "patch-package": "^8.0.0",
     "prettier": "^3.2.5",
@@ -48,12 +53,14 @@
     "yjs": "^13.6.14"
   },
   "devDependencies": {
+    "@dotenvx/dotenvx": "^0.27.1",
     "@types/cors": "^2.8.14",
     "@types/d3": "^7.4.3",
     "@types/express": "^4.17.17",
     "@types/leaflet": "^1.9.4",
     "@types/luaparse": "^0.2.10",
     "@types/node": "^20.5.9",
+    "@types/node-cache": "^4.2.5",
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
     "@types/react-gtm-module": "^2.0.3",

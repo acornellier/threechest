@@ -29,7 +29,7 @@ export function MobSpawnTooltip({ mob, spawn, iconScaling, hidden }: Props) {
     0,
   )
 
-  const spawnText = mob.spawns.length > 1 ? ` ${spawn.spawnIndex}` : ''
+  const spawnText = mob.spawns.length > 1 ? ` ${spawn.idx}` : ''
   const groupText = spawn.group ? ` | G${spawn.group}` : ''
 
   return (

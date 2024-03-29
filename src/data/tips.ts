@@ -1,7 +1,7 @@
 import { isMac } from '../util/dev.ts'
 
 export interface Tip {
-  id: number
+  id: string
   tip: string
 }
 
@@ -9,7 +9,7 @@ export const pageVisitsKey = 'tips:pageVists'
 export const tipsSeenKey = 'tips:tipsSeen'
 export const neverShowTipsKey = 'tips:neverShowTips'
 
-export function getTipsSeen(): number[] {
+export function getTipsSeen(): string[] {
   const tipsSeenItem = localStorage.getItem(tipsSeenKey)
   const tipsSeen = tipsSeenItem ? JSON.parse(tipsSeenItem) : []
   return Array.isArray(tipsSeen) ? tipsSeen : []
@@ -20,9 +20,16 @@ export function neverShowTips() {
 }
 
 export const tips: Tip[] = [
-  { id: 0, tip: 'Hold shift then drag to select many mobs at once' },
-  { id: 1, tip: `Hold ${isMac ? 'cmd' : 'ctrl'} then click to select invidual mobs` },
-  { id: 2, tip: `Click Help in the bottom right to view all available shortcuts` },
-  { id: 3, tip: `Join the discord in the bottom right` },
-  { id: 4, tip: `Hold shift to view total forces instead of percent` },
+  { id: 'shift-drag', tip: 'Hold shift then drag to select many mobs at once' },
+  {
+    id: 'select-individual-mobs',
+    tip: `Hold ${isMac ? 'cmd' : 'ctrl'} then click to select invidual mobs`,
+  },
+  { id: 'help-button', tip: `Click Help in the bottom right to view all available shortcuts` },
+  {
+    id: 'note-howto',
+    tip: `Right click on the map to create a note. Once placed, left click to edit it, or drag to move it around.`,
+  },
+  { id: 'discord', tip: `Join the discord in the bottom right with and suggestions or feedback` },
+  { id: 'shift-forces-percent', tip: `Hold shift to view total forces instead of percent` },
 ]

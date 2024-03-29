@@ -21,11 +21,43 @@ $fancy-yellow: #7f6b1d;
 .leaflet-container {
   font-family: unset;
 
-  &.mode-create,
-  &.mode-create .leaflet-interactive {
+  &.mode-drawing,
+  &.mode-drawing .leaflet-interactive {
     cursor:
-      url('data:image/svg+xml,<%3Fxml version="1.0" encoding="utf-8"%3F><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M 20.599 1.5 C 20.223 1.5 19.856 1.611 19.544 1.82 L 14.663 5.355 C 13.388 6.205 9.107 10.397 8.076 11.531 C 10.29 12.075 11.522 12.514 12.371 15.548 C 13.505 14.517 17.718 10.533 18.568 9.258 L 22.181 4.456 C 22.992 3.237 22.18 1.597 20.719 1.504 C 20.679 1.501 20.639 1.5 20.599 1.5 Z" clip-rule="evenodd" style="stroke: rgb(255, 255, 255);"/><path fill-rule="evenodd" d="M 6.75 13.5 C 4.679 13.5 3 15.179 3 17.25 C 3 18.118 2.265 18.805 1.399 18.747 C 0.8230000000000001 18.708 0.42100000000000004 19.308 0.6749999999999999 19.826 C 0.6829999999999999 19.841 0.691 19.856 0.699 19.87 C 2.715 23.373 7.767 23.379 9.792 19.882 C 10.255 19.082 10.499 18.174 10.499 17.25 C 10.499 15.179 8.82 13.5 6.749 13.5 L 6.75 13.5 Z" clip-rule="evenodd" style="stroke: rgb(255, 255, 255);"/></svg>')
+      url('data:image/svg+xml,<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M 20.599 1.5 C 20.223 1.5 19.856 1.611 19.544 1.82 L 14.663 5.355 C 13.388 6.205 9.107 10.397 8.076 11.531 C 10.29 12.075 11.522 12.514 12.371 15.548 C 13.505 14.517 17.718 10.533 18.568 9.258 L 22.181 4.456 C 22.992 3.237 22.18 1.597 20.719 1.504 C 20.679 1.501 20.639 1.5 20.599 1.5 Z" clip-rule="evenodd" style="stroke: rgb(255, 255, 255);"/><path fill-rule="evenodd" d="M 6.75 13.5 C 4.679 13.5 3 15.179 3 17.25 C 3 18.118 2.265 18.805 1.399 18.747 C 0.8230000000000001 18.708 0.42100000000000004 19.308 0.6749999999999999 19.826 C 0.6829999999999999 19.841 0.691 19.856 0.699 19.87 C 2.715 23.373 7.767 23.379 9.792 19.882 C 10.255 19.082 10.499 18.174 10.499 17.25 C 10.499 15.179 8.82 13.5 6.749 13.5 L 6.75 13.5 Z" clip-rule="evenodd" style="stroke: rgb(255, 255, 255);"/></svg>')
         0 22,
+      auto !important;
+  }
+
+  &.mode-deleting,
+  &.mode-deleting .leaflet-interactive {
+    cursor:
+      url('data:image/svg+xml,<svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="black" stroke-width="0.4800000000000001"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M6.99486 7.00636C6.60433 7.39689 6.60433 8.03005 6.99486 8.42058L10.58 12.0057L6.99486 15.5909C6.60433 15.9814 6.60433 16.6146 6.99486 17.0051C7.38538 17.3956 8.01855 17.3956 8.40907 17.0051L11.9942 13.4199L15.5794 17.0051C15.9699 17.3956 16.6031 17.3956 16.9936 17.0051C17.3841 16.6146 17.3841 15.9814 16.9936 15.5909L13.4084 12.0057L16.9936 8.42059C17.3841 8.03007 17.3841 7.3969 16.9936 7.00638C16.603 6.61585 15.9699 6.61585 15.5794 7.00638L11.9942 10.5915L8.40907 7.00636C8.01855 6.61584 7.38538 6.61584 6.99486 7.00636Z" fill="black"></path></g></svg>')
+        22 22,
+      auto !important;
+  }
+
+  &.mode-deleting.over-drawing,
+  &.mode-deleting.over-drawing .leaflet-interactive {
+    cursor:
+      url('data:image/svg+xml,<svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="black" stroke-width="0.4800000000000001"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M6.99486 7.00636C6.60433 7.39689 6.60433 8.03005 6.99486 8.42058L10.58 12.0057L6.99486 15.5909C6.60433 15.9814 6.60433 16.6146 6.99486 17.0051C7.38538 17.3956 8.01855 17.3956 8.40907 17.0051L11.9942 13.4199L15.5794 17.0051C15.9699 17.3956 16.6031 17.3956 16.9936 17.0051C17.3841 16.6146 17.3841 15.9814 16.9936 15.5909L13.4084 12.0057L16.9936 8.42059C17.3841 8.03007 17.3841 7.3969 16.9936 7.00638C16.603 6.61585 15.9699 6.61585 15.5794 7.00638L11.9942 10.5915L8.40907 7.00636C8.01855 6.61584 7.38538 6.61584 6.99486 7.00636Z" fill="red"></path></g></svg>')
+        22 22,
+      auto !important;
+  }
+
+  &.mode-erasing,
+  &.mode-erasing .leaflet-interactive {
+    cursor:
+      url('data:image/svg+xml,<svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="%23ffffff" stroke-width="1"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M11.4096 5.50506C13.0796 3.83502 13.9146 3 14.9522 3C15.9899 3 16.8249 3.83502 18.4949 5.50506C20.165 7.1751 21 8.01013 21 9.04776C21 10.0854 20.165 10.9204 18.4949 12.5904L14.3017 16.7837L7.21634 9.69828L11.4096 5.50506Z" fill="%23000000"></path><path d="M6.1557 10.759L13.2411 17.8443L12.5904 18.4949C12.2127 18.8727 11.8777 19.2077 11.5734 19.5H21C21.4142 19.5 21.75 19.8358 21.75 20.25C21.75 20.6642 21.4142 21 21 21H9C7.98423 20.9747 7.1494 20.1393 5.50506 18.4949C3.83502 16.8249 3 15.9899 3 14.9522C3 13.9146 3.83502 13.0796 5.50506 11.4096L6.1557 10.759Z" fill="%23000000"></path></g></svg>')
+        14 28,
+      auto !important;
+  }
+
+  &.mode-erasing.over-drawing,
+  &.mode-erasing.over-drawing .leaflet-interactive {
+    cursor:
+      url('data:image/svg+xml,<svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="red" stroke-width="1"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M11.4096 5.50506C13.0796 3.83502 13.9146 3 14.9522 3C15.9899 3 16.8249 3.83502 18.4949 5.50506C20.165 7.1751 21 8.01013 21 9.04776C21 10.0854 20.165 10.9204 18.4949 12.5904L14.3017 16.7837L7.21634 9.69828L11.4096 5.50506Z" fill="%23000000"></path><path d="M6.1557 10.759L13.2411 17.8443L12.5904 18.4949C12.2127 18.8727 11.8777 19.2077 11.5734 19.5H21C21.4142 19.5 21.75 19.8358 21.75 20.25C21.75 20.6642 21.4142 21 21 21H9C7.98423 20.9747 7.1494 20.1393 5.50506 18.4949C3.83502 16.8249 3 15.9899 3 14.9522C3 13.9146 3.83502 13.0796 5.50506 11.4096L6.1557 10.759Z" fill="%23000000"></path></g></svg>')
+        14 28,
       auto !important;
   }
 }

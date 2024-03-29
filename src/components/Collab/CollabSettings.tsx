@@ -5,12 +5,12 @@ import {
   useSavedCollabColor,
   useSavedCollabName,
 } from '../../store/collab/collabReducer.ts'
-import { useCallback } from 'react'
+import { useCallback, useState } from 'react'
 import { Button } from '../Common/Button.tsx'
 import { TooltipStyled } from '../Common/TooltipStyled.tsx'
 import { useAppDispatch } from '../../store/storeUtil.ts'
-import { useColorWheelCanvas } from '../Common/useColorWheelCanvas.ts'
 import { generateCollabName } from '../../util/slugs/slugGenerator.ts'
+import { ColorGrid } from '../Common/ColorGrid.tsx'
 
 interface Props {
   onClose: () => void
@@ -20,6 +20,7 @@ export function CollabSettings({ onClose }: Props) {
   const dispatch = useAppDispatch()
   const [savedName, setSavedName] = useSavedCollabName()
   const [savedColor, setSavedColor] = useSavedCollabColor()
+  const [isChoosingColor, setChoosingColor] = useState(false)
 
   const onChangeName = (newName: string) => {
     setSavedName(newName)
@@ -28,13 +29,12 @@ export function CollabSettings({ onClose }: Props) {
 
   const onChangeColor = useCallback(
     (newColor: string) => {
+      setChoosingColor(false)
       setSavedColor(newColor)
       dispatch(setCollabColor(newColor))
     },
     [dispatch, setSavedColor],
   )
-
-  const canvasRef = useColorWheelCanvas(onChangeColor)
 
   return (
     <Modal title="Collab settings" onClose={onClose} closeOnEscape closeOnClickOutside>
@@ -60,6 +60,7 @@ export function CollabSettings({ onClose }: Props) {
               className="min-h-10 flex-1 flex items-center rounded-md cursor-pointer p-2 text-gray-400 text-[15px] "
               style={{ backgroundColor: savedColor || 'rgb(78, 78, 87)' }}
               data-tooltip-id="collab-color-canvas-tooltip"
+              onClick={() => setChoosingColor(true)}
             >
               {savedColor === '' ? '<Random>' : ''}
             </div>
@@ -69,12 +70,12 @@ export function CollabSettings({ onClose }: Props) {
           </div>
           <TooltipStyled
             id="collab-color-canvas-tooltip"
-            openOnClick
-            closeEvents={{ click: true }}
+            isOpen={isChoosingColor}
             clickable
             place="bottom"
+            padding={8}
           >
-            <canvas ref={canvasRef} />
+            <ColorGrid onSelectColor={onChangeColor} />
           </TooltipStyled>
         </div>
       </div>

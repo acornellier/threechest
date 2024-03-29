@@ -6,6 +6,7 @@ import { addToast } from '../store/reducers/toastReducer.ts'
 
 import { useDungeon } from '../store/routes/routeHooks.ts'
 import { useAppDispatch, useRootSelector } from '../store/storeUtil.ts'
+import { mobCcTypes } from '../util/mobSpawns.ts'
 
 export function MobInfo() {
   const dispatch = useAppDispatch()
@@ -43,6 +44,21 @@ export function MobInfo() {
             <div>{mob.creatureType}</div>
             <div>ID: {mob.id}</div>
           </div>
+          {mob.stealthDetect && (
+            <div className="flex gap-2">
+              <img
+                src={getIconLink('ability_eyeoftheowl')}
+                width={24}
+                height={24}
+                alt="stealth detect"
+                className="rounded-md rounded-r-none"
+              />
+              Detects stealth
+            </div>
+          )}
+          {mobCcTypes(mob).map((ccType) => (
+            <div key={ccType}>{ccType}</div>
+          ))}
         </div>
         {spells?.length && (
           <div className="flex flex-col gap-2">
