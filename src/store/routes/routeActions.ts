@@ -8,9 +8,10 @@ const findSelectedPull = (route: Route, spawn: SpawnId) =>
   route.pulls.findIndex((pull) => pull.spawns.some((spawn2) => spawn === spawn2))
 
 export function toggleSpawnAction(
-  { route, selectedPull }: RouteState,
-  payload: { spawn: SpawnId; individual: boolean },
+  state: RouteState,
+  payload: { spawn: SpawnId; individual: boolean; newPull: boolean },
 ): Pull[] {
+  const { route } = state
   const dungeon = dungeonsByKey[route.dungeonKey]
   const mobSpawn = dungeon.mobSpawns[payload.spawn]
   if (!mobSpawn) {
@@ -46,9 +47,13 @@ export function toggleSpawnAction(
           },
     )
   } else {
+    if (payload.newPull) {
+      addPullFunc(state, state.selectedPull + 1)
+    }
+
     // otherwise, select
     return route.pulls.map((pull, pullIdx) =>
-      pullIdx !== selectedPull
+      pullIdx !== state.selectedPull
         ? pull
         : {
             ...pull,
