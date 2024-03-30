@@ -25,6 +25,10 @@ export const tips: Tip[] = [
     id: 'select-individual-mobs',
     tip: `Hold ${isMac ? 'cmd' : 'ctrl'} then click to select invidual mobs`,
   },
+  {
+    id: 'shift-mob-new-pull',
+    tip: `Hold shift then click to create a new pull before selecting the new mobs`,
+  },
   { id: 'help-button', tip: `Click Help in the bottom right to view all available shortcuts` },
   {
     id: 'note-howto',

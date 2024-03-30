@@ -17,6 +17,7 @@ import { TrashIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import { ColorGrid } from '../../Common/ColorGrid.tsx'
 import { TooltipStyled } from '../../Common/TooltipStyled.tsx'
 import { ClearIcon } from '../../Common/Icons/ClearIcon.tsx'
+import { isTouch } from '../../../util/dev.ts'
 
 type WeightOption = DropdownOption & { weight: number }
 
@@ -43,6 +44,8 @@ export function DrawToolbar() {
     },
     [dispatch],
   )
+
+  if (isTouch) return
 
   const isDeleting = drawMode === 'deleting'
   const isErasing = drawMode === 'erasing'

@@ -55,13 +55,14 @@ function MobSpawnComponent({
         dispatch(
           toggleSpawn({
             spawn: spawn.id,
-            individual: e.originalEvent?.ctrlKey || e.originalEvent?.metaKey,
+            individual: e.originalEvent.ctrlKey || e.originalEvent.metaKey,
+            newPull: e.originalEvent.shiftKey,
           }),
         )
       },
       contextmenu: () => dispatch(selectSpawn(spawn.id)),
-      mouseover: () => dispatch(hoverSpawn(spawn.id)),
-      mouseout: () => dispatch(hoverSpawn(null)),
+      mouseenter: () => dispatch(hoverSpawn(spawn.id)),
+      mouseleave: () => dispatch(hoverSpawn(null)),
     }),
     [dispatch, spawn],
   )
@@ -74,7 +75,7 @@ function MobSpawnComponent({
         eventHandlers={eventHandlers}
         opacity={hidden ? 0 : 1}
         icon={divIcon({
-          className: `fade-in-map-object`,
+          className: `mob-spawn-icon fade-in-map-object`,
           popupAnchor: [100, 0],
           iconUrl: `/npc_portaits/${mob.id}.png`,
           iconSize: [iconSize, iconSize],

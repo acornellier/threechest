@@ -7,12 +7,15 @@ import { addNote } from '../../store/routes/routesReducer.ts'
 
 import { useAppDispatch, useRootSelector } from '../../store/storeUtil.ts'
 
+const minHeight = 50
+const minWidth = 180
+
 export function MapContextMenu() {
   const dispatch = useAppDispatch()
   const map = useMap()
   const isDrawing = useRootSelector((state) => state.map.isDrawing)
 
-  const { contextMenuPosition, onRightClick, onClose } = useContextMenu()
+  const { contextMenuPosition, onRightClick, onClose } = useContextMenu({ minHeight, minWidth })
   const [leafletPos, setLeafletPos] = useState<LatLng | null>(null)
 
   const onRightClickMap = useCallback(
@@ -37,6 +40,8 @@ export function MapContextMenu() {
     <ContextMenu
       position={contextMenuPosition}
       onClose={onClose}
+      minHeight={minHeight}
+      minWidth={minWidth}
       buttons={[
         {
           text: 'Add note',

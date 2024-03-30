@@ -16,11 +16,17 @@ interface Props {
   iconScaling: number
 }
 
+const contextMenuMinHeight = 150
+const contextMenuMinWidth = 180
+
 function NoteComponent({ note, noteIndex, iconScaling }: Props) {
   const dispatch = useAppDispatch()
   const iconSize = iconScaling
   const hidden = useMapObjectsHidden()
-  const { contextMenuPosition, onRightClick, onClose } = useContextMenu()
+  const { contextMenuPosition, onRightClick, onClose } = useContextMenu({
+    minHeight: contextMenuMinHeight,
+    minWidth: contextMenuMinWidth,
+  })
   const [input, setInput] = useState(note.text)
   const [popupOpen, setPopupOpen] = useState(false)
   const markerRef = useRef<LeafletMarker>(null)
@@ -131,6 +137,8 @@ function NoteComponent({ note, noteIndex, iconScaling }: Props) {
         <ContextMenu
           position={contextMenuPosition}
           onClose={onClose}
+          minHeight={contextMenuMinHeight}
+          minWidth={contextMenuMinWidth}
           buttons={[
             {
               text: 'Delete note',

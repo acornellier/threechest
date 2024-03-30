@@ -6,7 +6,11 @@ import { useCallback, useMemo, useState } from 'react'
 import { selectPull, setPulls } from '../../../store/routes/routesReducer.ts'
 
 import { useAppDispatch } from '../../../store/storeUtil.ts'
-import { PullContextMenu } from './PullContextMenu.tsx'
+import {
+  PullContextMenu,
+  pullContextMenuMinHeight,
+  pullContextMenuMinWidth,
+} from './PullContextMenu.tsx'
 import { useContextMenu } from '../../Common/useContextMenu.ts'
 
 type SortablePull = PullDetailed & ItemInterface
@@ -21,7 +25,10 @@ export function PullList({ pullsDetailed, disableSorting }: Props) {
   const [ghostPullIndex, setGhostPullIndex] = useState<number | null>(null)
   const isShiftHeld = useKeyHeld('Shift')
   const [contextMenuPullIndex, setContextMenuPullIndex] = useState<number>(0)
-  const { contextMenuPosition, onRightClick, onClose } = useContextMenu()
+  const { contextMenuPosition, onRightClick, onClose } = useContextMenu({
+    minHeight: pullContextMenuMinHeight,
+    minWidth: pullContextMenuMinWidth,
+  })
 
   const pullsWithGhost = useMemo(() => {
     const pulls: SortablePull[] = [...pullsDetailed]
@@ -84,6 +91,8 @@ export function PullList({ pullsDetailed, disableSorting }: Props) {
           position={contextMenuPosition}
           pullIndex={contextMenuPullIndex}
           onClose={() => onClose()}
+          minHeight={pullContextMenuMinHeight}
+          minWidth={pullContextMenuMinWidth}
         />
       )}
     </>

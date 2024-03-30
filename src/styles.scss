@@ -436,3 +436,9 @@ textarea.fancy {
     font-size: 16px;
   }
 }
+
+.mob-spawn-icon {
+  &:focus-visible {
+    outline: none;
+  }
+}
