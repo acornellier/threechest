@@ -27,7 +27,7 @@ function splitDrawingAtPoint(drawing: Drawing, point: Point, mapZoom: number): D
   let lineIndex = 0
   let posIndex = 1
   let solved = false
-  const width = drawing.weight / mapZoom / 2
+  const width = drawing.weight / mapZoom / 4
 
   for (; lineIndex < drawing.positions.length; ++lineIndex) {
     const line = drawing.positions[lineIndex]!
@@ -95,10 +95,10 @@ function DrawingComponent({ drawing }: Props) {
           eraseAtPoint(e.latlng)
         }
       },
-      mouseenter: () => {
+      mouseover: () => {
         map.getContainer().classList.add(overDrawingClass)
       },
-      mouseleave: () => map.getContainer().classList.remove(overDrawingClass),
+      mouseout: () => map.getContainer().classList.remove(overDrawingClass),
       mousemove: (e) => {
         if (isErasing) {
           eraseAtPoint(e.latlng)
