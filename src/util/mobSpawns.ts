@@ -1,4 +1,5 @@
-import { Mob, MobSpawn, SpawnId } from '../data/types.ts'
+import { Dungeon, Mob, MobSpawn, SpawnId } from '../data/types.ts'
+import { PullDetailed } from './types.ts'
 
 export const mobScale = ({ mob, spawn }: MobSpawn) =>
   (mob.scale ?? 1) * (spawn.scale ?? 1) * (mob.isBoss ? 1.7 : 1)
@@ -29,4 +30,23 @@ export function mobCcTypes(mob: Mob): string[] {
   if (immunities.length) return immunities.map((cc) => `Immune to ${cc}`)
 
   return ['Susceptible to standard CC']
+}
+
+type MobCount = Record<number, { mob: Mob; count: number }>
+
+export const countMobs = (pull: PullDetailed, dungeon: Dungeon) => {
+  const mobCounts = pull.spawns.reduce<MobCount>((acc, spawnId) => {
+    const mobSpawn = dungeon.mobSpawns[spawnId]
+    if (!mobSpawn) {
+      console.error(`Could not find spawnId ${spawnId} in dungeon ${dungeon.key}`)
+      return acc
+    }
+
+    const { mob } = mobSpawn
+    acc[mob.id] ??= { mob, count: 0 }
+    acc[mob.id]!.count += 1
+    return acc
+  }, {})
+
+  return Object.values(mobCounts).sort((a, b) => b.mob.count - a.mob.count)
 }
