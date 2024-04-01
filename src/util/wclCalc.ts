@@ -1,5 +1,5 @@
 import { Pull, Route } from './types.ts'
-import { Dungeon, MobSpawn, Point, SpawnId } from '../data/types.ts'
+import { Dungeon, MobSpawn, Point, Spawn, SpawnId } from '../data/types.ts'
 import { dungeons } from '../data/dungeons.ts'
 import { distance } from './numbers.ts'
 import { averagePoint, tally } from './nodash.ts'
@@ -226,7 +226,7 @@ function findExactSpawns(
   errors: string[],
   idx: number,
 ): CalculatedPull {
-  const mobSpawns: MobSpawn[] = []
+  const spawns: Spawn[] = []
   for (const { mobId, pos } of pull) {
     const matchingMobs = dungeon.mobSpawnsList.filter(({ mob }) => mob.id === mobId)
     const available = matchingMobs.filter(({ spawn }) => !spawnIdsTaken.has(spawn.id))
@@ -242,17 +242,17 @@ function findExactSpawns(
     const sortedAvailable = !pos
       ? available
       : available.sort((a, b) => distance(a.spawn.pos, pos) - distance(b.spawn.pos, pos))
-    const nearest = sortedAvailable[0]
-    mobSpawns.push(nearest!)
+    const nearest = sortedAvailable[0]!
+    spawns.push(nearest.spawn)
+    spawnIdsTaken.add(nearest.spawn.id)
   }
 
   groupsRemaining = groupsRemaining.filter((group) =>
-    mobSpawns.some(({ spawn }) =>
+    spawns.some((spawn) =>
       spawn.group ? group.id !== String(spawn.group) : group.id !== spawn.id,
     ),
   )
 
-  const spawnIds = mobSpawns.map(({ spawn }) => spawn.id)
-  spawnIds.forEach(spawnIdsTaken.add, spawnIdsTaken)
+  const spawnIds = spawns.map(({ id }) => id)
   return { spawnIds, groupsRemaining }
 }

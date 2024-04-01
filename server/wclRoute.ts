@@ -6,6 +6,7 @@ import fs from 'fs'
 import { getDirname } from './files.ts'
 
 const dirname = getDirname(import.meta.url)
+const batchSize = 82
 
 type WclEnemyNpc = {
   id: number
@@ -35,6 +36,33 @@ type WclEvent = {
   y: number
 }
 
+interface WclJson {
+  error?: string
+  errors?: Array<{ message: string }>
+  data: any
+}
+
+async function fetchWcl(query: string) {
+  const token = await getWclToken()
+  const data = await fetch('https://www.warcraftlogs.com/api/v2/client', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify({ query }),
+  })
+
+  const json: WclJson = await data.json()
+
+  const error = json.error ?? json.errors?.[0]?.message
+  if (error) {
+    throw new Error(error)
+  }
+
+  return json
+}
+
 async function getRoute(code: string, fightId: string | number) {
   const query = `
 query {
@@ -57,21 +85,7 @@ query {
 }
 `
 
-  const token = await getWclToken()
-  const data = await fetch('https://www.warcraftlogs.com/api/v2/client', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      authorization: `Bearer ${token}`,
-    },
-    body: JSON.stringify({ query }),
-  })
-
-  const json = await data.json()
-  if (json.error) {
-    throw new Error(json.error)
-  }
-
+  const json = await fetchWcl(query)
   return json.data.reportData.report.fights[0] as WclRoute
 }
 
@@ -82,7 +96,6 @@ async function getFirstEvents(code: string, fightId: string | number, enemies: E
   const events: WclEvent[] = []
 
   console.time('total')
-  const batchSize = 50
   for (let start = 0; start < enemies.length; start += batchSize) {
     const end = Math.min(start + batchSize, enemies.length)
     const enemyBatch = enemies.slice(start, end)
@@ -125,26 +138,7 @@ query {
   }
 }`
 
-    fs.writeFileSync(`${dirname}/foo_${start}.json`, query)
-
-    const token = await getWclToken()
-
-    const logStr = `query ${start}-${end}`
-    console.time(logStr)
-    const data = await fetch('https://www.warcraftlogs.com/api/v2/client', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        authorization: `Bearer ${token}`,
-      },
-      body: JSON.stringify({ query }),
-    })
-    console.timeEnd(logStr)
-
-    const json = await data.json()
-    if (json.error) {
-      throw new Error(json.error)
-    }
+    const json = await fetchWcl(query)
 
     const resultsMap = json.data.reportData.report as Record<string, { data: WclEvent[] }>
 
@@ -241,7 +235,7 @@ export async function getWclRoute(code: string, fightId: string | number): Promi
 
   fs.writeFileSync(
     `${dirname}/../src/util/wclTestData.ts`,
-    `import { WclResult } from './wclUtil.ts'
+    `import { WclResult } from './wclCalc.ts'
 
   export const wclTestData: WclResult = ${JSON.stringify(result)}
   `,
