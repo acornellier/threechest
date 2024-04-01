@@ -52,6 +52,10 @@ export function ImportRoute({ hidden }: Props) {
     setInputModalOpen(true)
   }, [handlePaste])
 
+  const handleClick2 = async () => {
+    dispatch(importRoute({ test: true }))
+  }
+
   const modalConfirm = () => {
     handlePaste(input)
     onClose()
@@ -70,6 +74,15 @@ export function ImportRoute({ hidden }: Props) {
         disabled={isImporting}
       >
         {isImporting ? 'Importing...' : 'Import MDT or WCL'}
+      </Button>
+      <Button
+        Icon={canPasteFromClipboard ? ClipboardIcon : ArrowUpTrayIcon}
+        short
+        onClick={handleClick2}
+        className={`${hidden ? '[&]:hidden' : ''}`}
+        disabled={isImporting}
+      >
+        {isImporting ? 'Importing...' : 'TEST TEMP'}
       </Button>
       {inputModalOpen && (
         <Modal

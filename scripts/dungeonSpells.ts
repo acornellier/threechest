@@ -1,8 +1,9 @@
 import fs from 'fs'
-import { fileURLToPath } from 'url'
-import path from 'path'
 import { DungeonKey, Spell } from '../src/data/types.ts'
-import { getWclToken } from './wclToken.ts'
+import { getWclToken } from '../server/wclToken.ts'
+import { getDirname } from '../server/files.ts'
+
+const dirname = getDirname(import.meta.url)
 
 interface CastEvent {
   ability: {
@@ -81,10 +82,7 @@ query {
     }
   }
 
-  const __filename = fileURLToPath(import.meta.url)
-  const __dirname = path.dirname(__filename)
-
-  const file = `${__dirname}/../src/data/spells/${dungeonKey}_spells.json`
+  const file = `${dirname}/../src/data/spells/${dungeonKey}_spells.json`
   fs.writeFileSync(file, JSON.stringify(spells))
   console.log(`Wrote to ${file}`)
 }

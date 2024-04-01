@@ -7,10 +7,13 @@ import { averagePoint, tally } from './nodash.ts'
 export type WclEventSimplified = {
   timestamp: number
   gameId: number
+  x?: number
+  y?: number
+  // TODO: debug
+  ogTimestamp: number
   instanceId?: number
+  name: string
   actorId: number
-  x: number
-  y: number
 }
 
 export type WclResult = WclUrlInfo & {
@@ -73,18 +76,21 @@ export function wclRouteToRoute(wclResult: WclResult) {
   }
 }
 
+type MobPos = { mobId: number; pos?: Point }
+
 function getPullMobIds(events: WclEventSimplified[], dungeon: Dungeon) {
   const filteredEvents = events.filter((event) =>
     dungeon.mobSpawnsList.some(({ mob }) => mob.id === event.gameId),
   )
+
   let sortedEvents = filteredEvents.sort((a, b) => a.timestamp - b.timestamp)
   sortedEvents = sortedEvents.map((event) => ({
     ...event,
     timestamp: event.timestamp - sortedEvents[0]!.timestamp,
   }))
 
-  const pullMobIds: Array<Array<{ mobId: number; pos: Point }>> = []
-  const newPull = (): Array<{ mobId: number; pos: Point }> => []
+  const pullMobIds: MobPos[][] = []
+  const newPull = (): MobPos[] => []
   let currentPull = newPull()
   let currentTimestamp = sortedEvents[0]!.timestamp
 
@@ -95,7 +101,10 @@ function getPullMobIds(events: WclEventSimplified[], dungeon: Dungeon) {
     }
 
     currentTimestamp = event.timestamp
-    currentPull.push({ mobId: event.gameId, pos: wclPointToLeafletPoint(event) })
+    currentPull.push({
+      mobId: event.gameId,
+      pos: event.x && event.y ? wclPointToLeafletPoint({ x: event.x, y: event.y }) : undefined,
+    })
   }
 
   return pullMobIds
@@ -137,7 +146,7 @@ function getPulledGroups(
 }
 
 function calculateExactPull(
-  pull: Array<{ mobId: number; pos: Point }>,
+  pull: MobPos[],
   groupsRemaining: Group[],
   groupMobSpawns: Partial<Record<number | string, MobSpawn[]>>,
   spawnIdsTaken: Set<string>,
@@ -145,7 +154,8 @@ function calculateExactPull(
   idx: number,
   errors: string[],
 ): { spawnIds: SpawnId[] | null; groupsRemaining: Group[] } {
-  const pullAveragePos = averagePoint(pull.map(({ pos }) => pos))
+  const filteredPositions = pull.map(({ pos }) => pos).filter(Boolean) as Point[]
+  const pullAveragePos = averagePoint(filteredPositions)
   const pullMobCounts = tally(pull, ({ mobId }) => mobId)
 
   const groups = groupsRemaining
@@ -168,7 +178,7 @@ function calculateExactPull(
 }
 
 function findExactSpawns(
-  pull: Array<{ mobId: number; pos: Point }>,
+  pull: MobPos[],
   groupsRemaining: Group[],
   spawnIdsTaken: Set<string>,
   dungeon: Dungeon,
@@ -188,9 +198,10 @@ function findExactSpawns(
       return { spawnIds: null, groupsRemaining }
     }
 
-    const nearest = available.sort(
-      (a, b) => distance(a.spawn.pos, pos) - distance(b.spawn.pos, pos),
-    )[0]
+    const sortedAvailable = !pos
+      ? available
+      : available.sort((a, b) => distance(a.spawn.pos, pos) - distance(b.spawn.pos, pos))
+    const nearest = sortedAvailable[0]
     mobSpawns.push(nearest!)
   }
 

@@ -1,7 +1,11 @@
-import { WclEventSimplified, WclResult } from '../src/util/wclUtil.ts'
+import type { WclEventSimplified, WclResult } from '../src/util/wclUtil.ts'
 import { uniqBy } from '../src/util/nodash.ts'
-import { getWclToken } from '../scripts/wclToken.ts'
+import { getWclToken } from './wclToken.ts'
 import { dungeons } from '../src/data/dungeons.ts'
+import fs from 'fs'
+import { getDirname } from './files.ts'
+
+const dirname = getDirname(import.meta.url)
 
 type WclEnemyNpc = {
   id: number
@@ -24,6 +28,8 @@ type WclEvent = {
   timestamp: number
   targetID: number
   targetInstance?: number
+  sourceID: number
+  sourceInstance?: number
   x: number
   y: number
 }
@@ -61,36 +67,51 @@ query {
   })
 
   const json = await data.json()
+  if (json.error) {
+    throw new Error(json.error)
+  }
 
   return json.data.reportData.report.fights[0] as WclRoute
 }
 
-async function getFirstEvents(
-  code: string,
-  fightId: string | number,
-  enemies: Array<{ actorId: number; instanceId: number }>,
-) {
+type WclEnemy = { gameId: number; actorId: number; instanceId: number }
+type EnemyRequest = { actorId: number; instanceId: number }
+
+async function getFirstEvents(code: string, fightId: string | number, enemies: EnemyRequest[]) {
   const events: WclEvent[] = []
 
   console.time('total')
-  const batchSize = 100
-  for (let i = 0; i < enemies.length; i += batchSize) {
-    const start = i
-    const end = Math.min(i + batchSize, enemies.length)
-    const subQueries = enemies
-      .slice(start, end)
+  const batchSize = 50
+  for (let start = 0; start < enemies.length; start += batchSize) {
+    const end = Math.min(start + batchSize, enemies.length)
+    const enemyBatch = enemies.slice(start, end)
+
+    const subQueries = enemyBatch
       .map(({ actorId, instanceId }, idx) => {
         return `
-      _${idx}: events(
+      c${idx}: events(
         fightIDs: ${fightId}
+        sourceID: ${actorId}
+        sourceInstanceID: ${instanceId}
         limit: 1
+        dataType: Casts
+        hostilityType: Enemies
+        includeResources: true
+      ) {
+        data
+      }
+
+      d${idx}: events(
+        fightIDs: ${fightId}
         targetID: ${actorId}
         targetInstanceID: ${instanceId}
+        limit: 3
         dataType: DamageDone
         includeResources: true
       ) {
         data
-      }`
+      }
+      `
       })
       .join('\n')
 
@@ -103,9 +124,12 @@ query {
   }
 }`
 
+    fs.writeFileSync(`${dirname}/foo_${start}.json`, query)
+
     const token = await getWclToken()
 
-    console.time(`query ${start}-${end}`)
+    const logStr = `query ${start}-${end}`
+    console.time(logStr)
     const data = await fetch('https://www.warcraftlogs.com/api/v2/client', {
       method: 'POST',
       headers: {
@@ -114,13 +138,30 @@ query {
       },
       body: JSON.stringify({ query }),
     })
-    console.timeEnd(`query ${start}-${end}`)
+    console.timeEnd(logStr)
 
     const json = await data.json()
-    const resultsMap = json.data.reportData.report
-    const newEvents = Object.values(resultsMap)
-      .map((v: any) => v.data[0])
+    if (json.error) {
+      throw new Error(json.error)
+    }
+
+    const resultsMap = json.data.reportData.report as Record<string, { data: WclEvent[] }>
+
+    const newEvents = enemyBatch
+      .map((_, idx) => {
+        const castsData = resultsMap[`c${idx}`]!.data
+        const damageData = resultsMap[`d${idx}`]!.data
+        const firstCast = castsData.find(({ x, y }) => x && y)
+        const firstDamage = damageData.find(({ x, y }) => x && y)
+        if (firstCast && firstDamage) {
+          // Cast data is more useful, so take it over damage data even if it's 3 seconds later
+          return firstCast.timestamp - 3000 < firstDamage.timestamp ? firstCast : firstDamage
+        } else {
+          return firstCast ?? firstDamage
+        }
+      })
       .filter(Boolean) as WclEvent[]
+
     events.push(...newEvents)
   }
   console.timeEnd('total')
@@ -134,11 +175,11 @@ export async function getWclRoute(code: string, fightId: string | number): Promi
   const dungeon = dungeons.find((dungeon) => dungeon.wclEncounterId === wclRoute.encounterID)
   if (!dungeon) throw new Error(`Dungeon not supported, WCL encounter ID ${wclRoute.encounterID}`)
 
-  let enemies = wclRoute.dungeonPulls.flatMap(({ enemyNPCs }) =>
+  let enemies: WclEnemy[] = wclRoute.dungeonPulls.flatMap(({ enemyNPCs }) =>
     enemyNPCs.flatMap(({ id, gameID, minimumInstanceID, maximumInstanceID }) =>
       Array.from({ length: maximumInstanceID - minimumInstanceID + 1 }, (_, i) => ({
         actorId: id,
-        gameID,
+        gameId: gameID,
         instanceId: minimumInstanceID + i,
       })),
     ),
@@ -149,29 +190,45 @@ export async function getWclRoute(code: string, fightId: string | number): Promi
   // Filter out mobs that aren't in the route, or have no count (unless they're a boss)
   enemies = enemies.filter((enemy) =>
     dungeon.mobSpawnsList.some(
-      ({ mob }) => mob.id === enemy.gameID && (mob.count > 0 || mob.isBoss),
+      ({ mob }) => mob.id === enemy.gameId && (mob.count > 0 || mob.isBoss),
     ),
   )
 
   const firstEvents = await getFirstEvents(code, fightId, enemies)
 
-  const firstPositions = firstEvents
-    .map(({ timestamp, targetID, targetInstance, x, y }) => {
-      const gameId = enemies.find(({ actorId }) => actorId === targetID)?.gameID
-      if (!gameId) {
-        console.error(`Could not find targetID ${targetID} in enemy list`)
+  let firstPositions = firstEvents
+    .map((event) => {
+      const { timestamp, targetID, sourceID, x, y } = event
+
+      const matchingEnemy = enemies.find(
+        ({ actorId }) => actorId === targetID || actorId === sourceID,
+      )
+
+      if (!matchingEnemy) {
+        console.error(`Could not find targetID ${targetID} or sourceID ${sourceID} in enemy list`)
         return null
       }
+
       return {
         timestamp,
-        gameId,
-        actorId: targetID,
-        instanceId: targetInstance,
+        gameId: matchingEnemy.gameId,
         x,
         y,
+        // TODO remove debug fields: actorId, name, and instanceId
+        ogTimestamp: timestamp,
+        actorId: matchingEnemy.actorId,
+        instanceId: matchingEnemy.instanceId,
+        name: `${dungeon.mobSpawnsList.find(({ mob }) => mob.id === matchingEnemy.gameId)?.mob.name} ${matchingEnemy.instanceId}`,
       }
     })
     .filter(Boolean) as WclEventSimplified[]
+
+  firstPositions = firstPositions.sort((a, b) => a.timestamp - b.timestamp)
+
+  firstPositions = firstPositions.map((event) => ({
+    ...event,
+    timestamp: event.timestamp - firstPositions[0]!.timestamp,
+  }))
 
   const result: WclResult = {
     code,
@@ -181,16 +238,13 @@ export async function getWclRoute(code: string, fightId: string | number): Promi
     events: firstPositions,
   }
 
-  //   const __filename = fileURLToPath(import.meta.url)
-  //   const __dirname = path.dirname(__filename)
-  //   fs.writeFileSync(
-  //     `${__dirname}/../src/util/wclTest.ts`,
-  //     `
-  // import { WclResult } from './wclUtil.ts'
-  //
-  // export const wclTest: WclResult = ${JSON.stringify(result)}
-  // `,
-  //   )
+  fs.writeFileSync(
+    `${dirname}/../src/util/wclTest.ts`,
+    `import { WclResult } from './wclUtil.ts'
+
+  export const wclTest: WclResult = ${JSON.stringify(result)}
+  `,
+  )
 
   return result
 }

@@ -1,16 +1,14 @@
 import parser, { Expression, NumericLiteral, TableConstructorExpression, TableKey } from 'luaparse'
 import * as fs from 'fs'
-import * as path from 'path'
-import { fileURLToPath } from 'url'
 import { DungeonKey, MdtDungeon, Mob, Point, Spawn } from '../src/data/types.ts'
 import { StringLiteral } from 'luaparse/lib/ast'
 import { roundTo } from '../src/util/numbers.ts'
+import { getDirname } from '../server/files.ts'
+
+const dirname = getDirname(import.meta.url)
 
 export function importMdtDungeon(key: DungeonKey, dungeonPath: string) {
-  const __filename = fileURLToPath(import.meta.url)
-  const __dirname = path.dirname(__filename)
-
-  const data = fs.readFileSync(`${__dirname}/../MythicDungeonTools/${dungeonPath}.lua`)
+  const data = fs.readFileSync(`${dirname}/../MythicDungeonTools/${dungeonPath}.lua`)
   const ast = parser.parse(data.toString())
 
   const dungeonIndexItem: any = ast.body.find((item: any) =>
@@ -132,5 +130,5 @@ export function importMdtDungeon(key: DungeonKey, dungeonPath: string) {
     enemies,
   }
 
-  fs.writeFileSync(`${__dirname}/../src/data/mdtDungeons/${key}_mdt.json`, JSON.stringify(mdtData))
+  fs.writeFileSync(`${dirname}/../src/data/mdtDungeons/${key}_mdt.json`, JSON.stringify(mdtData))
 }

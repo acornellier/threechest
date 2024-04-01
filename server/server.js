@@ -36,7 +36,7 @@ app.post('/api/wclRoute', async (req, res) => {
     res.json(route)
   } catch (e) {
     console.error(e)
-    throw e
+    res.status(422).send(e.message)
   }
 })
 
