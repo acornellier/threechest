@@ -82,7 +82,7 @@ function NoteComponent({ note, noteIndex, iconScaling }: Props) {
         draggable
         eventHandlers={markerEventHandlers}
         icon={divIcon({
-          className: `fade-in-map-object ${hidden ? 'opacity-0' : 'opacity-1'}`,
+          className: `note-icon fade-in-map-object ${hidden ? 'opacity-0' : 'opacity-1'}`,
           tooltipAnchor: [20 + (iconScaling - 40) / 2, 0],
           popupAnchor: [90 + (iconScaling - 40) / 2, 32],
           iconSize: [iconSize, iconSize],

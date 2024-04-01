@@ -15,7 +15,7 @@ export function MobBorder({ iconScaling, mobSpawn, scale = 1, children }: Props)
 
   return (
     <div
-      className="absolute rounded-full overflow-hidden border-transparent pointer-events-none"
+      className="mob-border absolute rounded-full overflow-hidden border-transparent pointer-events-none"
       style={{
         height: `${percentSize}%`,
         width: `${percentSize}%`,

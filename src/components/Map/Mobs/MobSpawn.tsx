@@ -1,4 +1,4 @@
-﻿import { Marker } from 'react-leaflet'
+﻿import { Marker, useMap } from 'react-leaflet'
 import { divIcon, type LeafletEventHandlerFnMap } from 'leaflet'
 import { renderToString } from 'react-dom/server'
 import { memo, useMemo } from 'react'
@@ -17,11 +17,11 @@ import { useRoute, useSelectedPull } from '../../../store/routes/routeHooks.ts'
 import { useAppDispatch, useRootSelector } from '../../../store/storeUtil.ts'
 import { useMapObjectsHidden } from '../../../store/reducers/mapReducer.ts'
 import { Delayed } from '../../Common/Delayed.tsx'
-import { BossMarker } from './BossMarker.tsx'
 import { Patrol } from './Patrol.tsx'
+import { mapIconScaling, useIconScaling } from '../../../util/map.ts'
+import { BossMarker } from './BossMarker.tsx'
 
 interface MobSpawnProps {
-  iconScaling: number
   mobSpawn: MobSpawn
 }
 
@@ -33,7 +33,6 @@ interface MobSpawnMemoProps extends MobSpawnProps {
 }
 
 function MobSpawnComponent({
-  iconScaling,
   mobSpawn,
   isHovered,
   isGroupHovered,
@@ -47,6 +46,14 @@ function MobSpawnComponent({
   const disableHover = isDrawing || isBoxHovering
   const selectedPull = useSelectedPull()
   const isActuallyHovered = isHovered && !disableHover
+
+  // Call useIconScaling() to trigger render when it changes
+  // Ignore returned value, and calculate ourselves instead, because it only changes on zoomend
+  // But we want the latest value from the map's current zoom
+  // in case this component renders during a zoom
+  useIconScaling()
+  const map = useMap()
+  const iconScaling = mapIconScaling(map)
   const iconSize = iconScaling * mobScale(mobSpawn) * (isActuallyHovered ? 1.15 : 1)
 
   const eventHandlers: LeafletEventHandlerFnMap = useMemo(
@@ -114,7 +121,7 @@ function MobSpawnComponent({
 
 const MobSpawnMemo = memo(MobSpawnComponent)
 
-export function MobSpawnWrapper({ iconScaling, mobSpawn }: MobSpawnProps) {
+export function MobSpawnWrapper({ mobSpawn }: MobSpawnProps) {
   const route = useRoute()
 
   // Delay each individual mob by up to 100ms for performance and because it looks cool
@@ -135,7 +142,6 @@ export function MobSpawnWrapper({ iconScaling, mobSpawn }: MobSpawnProps) {
 
   return (
     <MobSpawnMemo
-      iconScaling={iconScaling}
       mobSpawn={mobSpawn}
       isHovered={isHovered}
       isGroupHovered={isGroupHovered}

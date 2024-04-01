@@ -19,7 +19,7 @@ export function BossMarker({ spawn, isHovered, iconSize, hidden }: Props) {
       opacity={hidden ? 0 : 1}
       icon={divIcon({
         iconSize: [iconSize, iconSize],
-        className: `fade-in-map-object`,
+        className: `boss-marker fade-in-map-object`,
         html: renderToStaticMarkup(
           <div
             className="absolute"

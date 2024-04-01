@@ -1,6 +1,6 @@
 import { useMap, useMapEvents } from 'react-leaflet'
-import { useMemo, useState } from 'react'
-import { mapIconScaling } from '../../../util/map.ts'
+import { useCallback, useMemo, useRef } from 'react'
+import { cssPixels, mapIconScaling, updateIconZoom, useIconScaling } from '../../../util/map.ts'
 import { MobSpawnWrapper } from './MobSpawn.tsx'
 import {
   boxSelectEnd,
@@ -18,11 +18,40 @@ export function Mobs() {
   const map = useMap()
   const dispatch = useAppDispatch()
 
-  const [iconScaling, setIconScaling] = useState(mapIconScaling(map))
+  const lastZoom = useRef(map.getZoom())
+  const { tempIconScaling } = useIconScaling()
+
+  const zoomEvent = useCallback(() => {
+    const curZoom = map.getZoom()
+    const diff = Math.abs(curZoom - lastZoom.current)
+    const minChange = (5.5 - map.getZoom()) / 30
+    if (diff < minChange) return
+
+    lastZoom.current = curZoom
+    const newIconScaling = mapIconScaling(map)
+    const icons = document.querySelectorAll<HTMLDivElement>('.mob-spawn-icon')
+    for (const icon of icons) {
+      updateIconZoom(icon, tempIconScaling.current, newIconScaling)
+
+      const borders = icon.querySelectorAll<HTMLDivElement>('.mob-border')
+      for (const border of borders) {
+        const curWidth = cssPixels(border.style.borderWidth)
+        const borderScale = curWidth / tempIconScaling.current
+        border.style.borderWidth = `${borderScale * newIconScaling}px`
+      }
+    }
+
+    const bossMakers = document.querySelectorAll<HTMLDivElement>('.boss-marker')
+    for (const bossMarker of bossMakers) {
+      updateIconZoom(bossMarker, tempIconScaling.current, newIconScaling)
+    }
+
+    tempIconScaling.current = newIconScaling
+  }, [map, tempIconScaling])
 
   const mapEvents: LeafletEventHandlerFnMap = useMemo(() => {
     return {
-      zoomend: () => setIconScaling(mapIconScaling(map)),
+      zoom: zoomEvent,
       boxselectstart: () => {
         dispatch(setBoxHovering(true))
         dispatch(boxSelectStart())
@@ -39,7 +68,7 @@ export function Mobs() {
         dispatch(boxSelectEnd())
       },
     }
-  }, [dispatch, dungeon, map])
+  }, [dispatch, dungeon.mobSpawnsList, zoomEvent])
 
   useMapEvents(mapEvents)
 
@@ -47,7 +76,7 @@ export function Mobs() {
   return (
     <Delayed delay={50}>
       {dungeon.mobSpawnsList.map((mobSpawn) => (
-        <MobSpawnWrapper key={mobSpawn.spawn.id} iconScaling={iconScaling} mobSpawn={mobSpawn} />
+        <MobSpawnWrapper key={mobSpawn.spawn.id} mobSpawn={mobSpawn} />
       ))}
     </Delayed>
   )
