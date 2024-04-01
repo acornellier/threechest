@@ -4,7 +4,6 @@ import type { PullDetailed } from '../../../util/types.ts'
 import { ItemInterface, ReactSortable } from 'react-sortablejs'
 import { useCallback, useMemo, useState } from 'react'
 import { selectPull, setPulls } from '../../../store/routes/routesReducer.ts'
-
 import { useAppDispatch } from '../../../store/storeUtil.ts'
 import {
   PullContextMenu,
@@ -12,6 +11,9 @@ import {
   pullContextMenuMinWidth,
 } from './PullContextMenu.tsx'
 import { useContextMenu } from '../../Common/useContextMenu.ts'
+import { TooltipStyled } from '../../Common/TooltipStyled.tsx'
+import { useHoveredPull } from '../../../store/reducers/hoverReducer.ts'
+import { PullTooltip } from './PullTooltip.tsx'
 
 type SortablePull = PullDetailed & ItemInterface
 
@@ -22,6 +24,8 @@ interface Props {
 
 export function PullList({ pullsDetailed, disableSorting }: Props) {
   const dispatch = useAppDispatch()
+  const hoveredPull = useHoveredPull()
+  const hoveredPullDetailed = pullsDetailed.find(({ index }) => index === hoveredPull)
   const [ghostPullIndex, setGhostPullIndex] = useState<number | null>(null)
   const isShiftHeld = useKeyHeld('Shift')
   const [contextMenuPullIndex, setContextMenuPullIndex] = useState<number>(0)
@@ -95,6 +99,9 @@ export function PullList({ pullsDetailed, disableSorting }: Props) {
           minWidth={pullContextMenuMinWidth}
         />
       )}
+      <TooltipStyled id="pull-tooltip" place="left-start" positionStrategy="fixed">
+        {hoveredPullDetailed ? <PullTooltip pull={hoveredPullDetailed} /> : null}
+      </TooltipStyled>
     </>
   )
 }

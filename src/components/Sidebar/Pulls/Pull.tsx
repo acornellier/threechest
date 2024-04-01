@@ -1,5 +1,4 @@
 import { PullDetailed } from '../../../util/types.ts'
-import { Mob } from '../../../data/types.ts'
 import { getPullColor, lightenColor } from '../../../util/colors.ts'
 import { selectPull } from '../../../store/routes/routesReducer.ts'
 import { useEffect, useMemo, useRef } from 'react'
@@ -7,8 +6,7 @@ import { mobCountPercentStr } from '../../../util/numbers.ts'
 import { hoverPull } from '../../../store/reducers/hoverReducer.ts'
 import { useDungeon, useSelectedPull } from '../../../store/routes/routeHooks.ts'
 import { useAppDispatch } from '../../../store/storeUtil.ts'
-
-type MobCount = Record<number, { mob: Mob; count: number }>
+import { countMobs } from '../../../util/mobSpawns.ts'
 
 interface Props {
   pull: PullDetailed
@@ -28,22 +26,7 @@ export function Pull({ pull, ghost, onRightClick, isShiftHeld }: Props) {
   const darkPullColor = getPullColor(pull.index, true)
   const isSelectedPull = pull.index === selectedPull
 
-  const sortedCounts = useMemo(() => {
-    const mobCounts = pull.spawns.reduce<MobCount>((acc, spawnId) => {
-      const mobSpawn = dungeon.mobSpawns[spawnId]
-      if (!mobSpawn) {
-        console.error(`Could not find spawnId ${spawnId} in dungeon ${dungeon.key}`)
-        return acc
-      }
-
-      const { mob } = mobSpawn
-      acc[mob.id] ??= { mob, count: 0 }
-      acc[mob.id]!.count += 1
-      return acc
-    }, {})
-
-    return Object.values(mobCounts).sort((a, b) => b.mob.count - a.mob.count)
-  }, [dungeon, pull.spawns])
+  const sortedCounts = useMemo(() => countMobs(pull, dungeon), [pull, dungeon])
 
   useEffect(() => {
     if (isSelectedPull) {
@@ -54,6 +37,7 @@ export function Pull({ pull, ghost, onRightClick, isShiftHeld }: Props) {
   return (
     <div
       className="pull"
+      data-tooltip-id="pull-tooltip"
       ref={ref}
       onClick={() => dispatch(selectPull(pull.index))}
       onTouchEnd={() => dispatch(selectPull(pull.index))}
