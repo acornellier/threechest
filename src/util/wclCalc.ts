@@ -10,7 +10,6 @@ export type WclEventSimplified = {
   x?: number
   y?: number
   // TODO: debug
-  ogTimestamp: number
   instanceId?: number
   name: string
   actorId: number
@@ -32,6 +31,8 @@ type Group = {
   mobCounts: Record<number, number>
   averagePos: Point
 }
+
+type CalculatedPull = { spawnIds: SpawnId[] | null; groupsRemaining: Group[] }
 
 export const wclPointToLeafletPoint = ({ x, y }: { x: number; y: number }) =>
   [0.00268 * y - 258, 0.002688 * x + 634] as Point
@@ -153,14 +154,17 @@ function calculateExactPull(
   dungeon: Dungeon,
   idx: number,
   errors: string[],
-): { spawnIds: SpawnId[] | null; groupsRemaining: Group[] } {
+): CalculatedPull {
   const filteredPositions = pull.map(({ pos }) => pos).filter(Boolean) as Point[]
   const pullAveragePos = averagePoint(filteredPositions)
   const pullMobCounts = tally(pull, ({ mobId }) => mobId)
 
+  const maxDistanceToGroup = 40
   const groups = groupsRemaining
-    .sort((a, b) => distance(a.averagePos, pullAveragePos) - distance(b.averagePos, pullAveragePos))
+    .filter(({ id }) => !groupMobSpawns[id]!.some(({ spawn }) => spawnIdsTaken.has(spawn.id)))
     .filter(({ mobCounts }) => pull.some(({ mobId }) => (mobCounts[mobId] ?? 0) > 0))
+    .filter(({ averagePos }) => distance(averagePos, pullAveragePos) < maxDistanceToGroup)
+    .sort((a, b) => distance(a.averagePos, pullAveragePos) - distance(b.averagePos, pullAveragePos))
 
   const pulledGroups = getPulledGroups(pullMobCounts, groups)
 
@@ -184,7 +188,7 @@ function findExactSpawns(
   dungeon: Dungeon,
   errors: string[],
   idx: number,
-) {
+): CalculatedPull {
   const mobSpawns: MobSpawn[] = []
   for (const { mobId, pos } of pull) {
     const matchingMobs = dungeon.mobSpawnsList.filter(({ mob }) => mob.id === mobId)

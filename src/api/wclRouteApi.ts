@@ -1,5 +1,5 @@
 ﻿import { isDev } from '../util/dev.ts'
-import { WclResult, WclUrlInfo } from '../util/wclUtil.ts'
+import { WclResult, WclUrlInfo } from '../util/wclCalc.ts'
 
 const importUrl = isDev ? 'http://localhost:6173/api/wclRoute' : '/api/wclRoute'
 

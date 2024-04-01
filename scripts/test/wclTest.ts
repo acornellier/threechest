@@ -1,3 +1,4 @@
 ﻿import { getWclRoute } from '../../server/wclRoute.ts'
+import { wclTestData } from '../../src/util/wclTestData.ts'
 
-await getWclRoute('17A9CZwXJPRc8f6v', 1)
+await getWclRoute(wclTestData.code, wclTestData.fightId)

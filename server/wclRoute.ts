@@ -1,4 +1,4 @@
-import type { WclEventSimplified, WclResult } from '../src/util/wclUtil.ts'
+import type { WclEventSimplified, WclResult } from '../src/util/wclCalc.ts'
 import { uniqBy } from '../src/util/nodash.ts'
 import { getWclToken } from './wclToken.ts'
 import { dungeons } from '../src/data/dungeons.ts'
@@ -26,6 +26,7 @@ export type WclRoute = {
 
 type WclEvent = {
   timestamp: number
+  type: 'damage' | 'cast'
   targetID: number
   targetInstance?: number
   sourceID: number
@@ -93,7 +94,7 @@ async function getFirstEvents(code: string, fightId: string | number, enemies: E
         fightIDs: ${fightId}
         sourceID: ${actorId}
         sourceInstanceID: ${instanceId}
-        limit: 1
+        limit: 2
         dataType: Casts
         hostilityType: Enemies
         includeResources: true
@@ -165,6 +166,7 @@ query {
     events.push(...newEvents)
   }
   console.timeEnd('total')
+  console.log(`spent points: ${enemies.length * 2}`)
 
   return events
 }
@@ -198,14 +200,14 @@ export async function getWclRoute(code: string, fightId: string | number): Promi
 
   let firstPositions = firstEvents
     .map((event) => {
-      const { timestamp, targetID, sourceID, x, y } = event
+      const { timestamp, targetID, targetInstance, sourceID, sourceInstance, x, y } = event
 
-      const matchingEnemy = enemies.find(
-        ({ actorId }) => actorId === targetID || actorId === sourceID,
-      )
+      const actorId = event.type === 'cast' ? sourceID : targetID
+      const instanceId = event.type === 'cast' ? sourceInstance : targetInstance
+      const matchingEnemy = enemies.find((enemy) => enemy.actorId === actorId)
 
       if (!matchingEnemy) {
-        console.error(`Could not find targetID ${targetID} or sourceID ${sourceID} in enemy list`)
+        console.error(`Could not find actorId ${actorId} in enemy list`)
         return null
       }
 
@@ -215,10 +217,9 @@ export async function getWclRoute(code: string, fightId: string | number): Promi
         x,
         y,
         // TODO remove debug fields: actorId, name, and instanceId
-        ogTimestamp: timestamp,
-        actorId: matchingEnemy.actorId,
-        instanceId: matchingEnemy.instanceId,
-        name: `${dungeon.mobSpawnsList.find(({ mob }) => mob.id === matchingEnemy.gameId)?.mob.name} ${matchingEnemy.instanceId}`,
+        actorId,
+        instanceId,
+        name: `${dungeon.mobSpawnsList.find(({ mob }) => mob.id === matchingEnemy.gameId)?.mob.name} ${instanceId}`,
       }
     })
     .filter(Boolean) as WclEventSimplified[]
@@ -239,10 +240,10 @@ export async function getWclRoute(code: string, fightId: string | number): Promi
   }
 
   fs.writeFileSync(
-    `${dirname}/../src/util/wclTest.ts`,
+    `${dirname}/../src/util/wclTestData.ts`,
     `import { WclResult } from './wclUtil.ts'
 
-  export const wclTest: WclResult = ${JSON.stringify(result)}
+  export const wclTestData: WclResult = ${JSON.stringify(result)}
   `,
   )
 
