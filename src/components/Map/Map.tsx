@@ -52,8 +52,8 @@ export function Map() {
         <TileLayer
           bounds={mapBounds}
           noWrap
-          minNativeZoom={1}
-          maxNativeZoom={4}
+          minNativeZoom={2}
+          maxNativeZoom={2}
           url={`/maps/${dungeon.key}/{z}/{x}_{y}.png`}
         />
         <Mobs />
