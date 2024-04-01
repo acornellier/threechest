@@ -2,11 +2,12 @@ import { Dungeon, DungeonKey } from './types.ts'
 import { mdtDungeons, mdtMobSpawns } from './mdtDungeons.ts'
 import { dungeonSpells } from './spells.ts'
 import { mapHeight } from '../util/map.ts'
+import { isSeason4 } from './dungeonKeys.ts'
 
 export const dungeonData = (key: DungeonKey) => ({
   mdt: mdtDungeons[key],
-  mobSpawns: mdtMobSpawns[key],
-  mobSpawnsList: Object.values(mdtMobSpawns[key]),
+  mobSpawns: isSeason4(key) ? {} : mdtMobSpawns[key],
+  mobSpawnsList: isSeason4(key) ? [] : Object.values(mdtMobSpawns[key]),
   spells: dungeonSpells[key],
 })
 
@@ -15,6 +16,55 @@ export const aa: Dungeon = {
   key: 'aa',
   icon: 'achievement_dungeon_dragonacademy',
   ...dungeonData('aa'),
+}
+
+export const av: Dungeon = {
+  name: 'Azure Vault',
+  key: 'av',
+  icon: 'achievement_dungeon_arcanevaults',
+  ...dungeonData('av'),
+}
+
+export const bh: Dungeon = {
+  name: 'Brackenhide Hollow',
+  key: 'bh',
+  icon: 'achievement_dungeon_brackenhidehollow',
+  ...dungeonData('bh'),
+}
+
+export const hoi: Dungeon = {
+  name: 'Halls of Infusion',
+  key: 'hoi',
+  icon: 'achievement_dungeon_hallsofinfusion',
+  ...dungeonData('hoi'),
+}
+
+export const nelth: Dungeon = {
+  name: 'Neltharus',
+  key: 'nelth',
+  icon: 'achievement_dungeon_neltharus',
+  ...dungeonData('nelth'),
+}
+
+export const nok: Dungeon = {
+  name: 'Nokhud Offensive',
+  key: 'nok',
+  icon: 'achievement_dungeon_centaurplains',
+  ...dungeonData('nok'),
+}
+
+export const rlp: Dungeon = {
+  name: 'Ruby Life Pools',
+  key: 'rlp',
+  icon: 'achievement_dungeon_lifepools',
+  ...dungeonData('nok'),
+}
+
+export const uld: Dungeon = {
+  name: 'Uldaman',
+  key: 'uld',
+  icon: 'achievement_dungeon_uldaman',
+  ...dungeonData('nok'),
 }
 
 export const ad: Dungeon = {
@@ -26,13 +76,6 @@ export const ad: Dungeon = {
   ],
   icon: 'achievement_dungeon_ataldazar',
   ...dungeonData('ad'),
-}
-
-export const bh: Dungeon = {
-  name: 'Brackenhide Hollow',
-  key: 'bh',
-  icon: 'achievement_dungeon_brackenhidehollow',
-  ...dungeonData('bh'),
 }
 
 export const brh: Dungeon = {
@@ -75,17 +118,6 @@ export const fall: Dungeon = {
   ...dungeonData('fall'),
 }
 
-export const nok: Dungeon = {
-  name: 'Nokhud Offensive',
-  key: 'nok',
-  icon: 'achievement_dungeon_centaurplains',
-  defaultBounds: [
-    [-70, 90],
-    [-215, 270],
-  ],
-  ...dungeonData('nok'),
-}
-
 export const rise: Dungeon = {
   name: "DOTI: Murozond's Rise",
   key: 'rise',
@@ -115,7 +147,24 @@ export const wcm: Dungeon = {
   ...dungeonData('wcm'),
 }
 
-export const dungeons = [ad, brh, dht, fall, rise, eb, tott, wcm]
+export const dungeons = [
+  aa,
+  av,
+  ad,
+  bh,
+  hoi,
+  nelth,
+  nok,
+  rlp,
+  uld,
+  brh,
+  dht,
+  fall,
+  rise,
+  eb,
+  tott,
+  wcm,
+]
 
 export const dungeonsByKey = dungeons.reduce(
   (acc, dungeon) => {

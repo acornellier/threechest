@@ -11,4 +11,4 @@ const extraSpells: Spells = {
   ],
 }
 
-export const fallSpells = mergeSpells(wclSpells, extraSpells)
+export default mergeSpells(wclSpells, extraSpells)

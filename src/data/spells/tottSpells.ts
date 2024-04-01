@@ -6,4 +6,4 @@ const extraSpells: Spells = {}
 
 const spellsToRemove = [429089]
 
-export const tottSpells = mergeSpells(wclSpells, extraSpells, spellsToRemove)
+export default mergeSpells(wclSpells, extraSpells, spellsToRemove)

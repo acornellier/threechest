@@ -24,7 +24,7 @@ export function Sidebar() {
   return (
     <>
       <div
-        className="fixed pt-16 md:pt-0 z-20 flex flex-col gap-1.5 transition-all"
+        className="fixed z-20 flex flex-col gap-1.5 transition-all"
         style={{
           width: sidebarWidth,
           marginTop,

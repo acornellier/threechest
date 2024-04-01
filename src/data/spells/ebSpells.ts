@@ -7,4 +7,4 @@ const extraSpells: Spells = {
   81522: [{ id: 177734, name: 'Agitated Water', icon: 'spell_frost_frostbolt.jpg' }],
 }
 
-export const ebSpells = mergeSpells(wclSpells, extraSpells)
+export default mergeSpells(wclSpells, extraSpells)

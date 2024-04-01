@@ -1,5 +1,5 @@
-import { SampleRoute } from '../../util/types.ts'
-import { DungeonKey } from '../types.ts'
+import type { SampleRoute } from '../../util/types.ts'
+import type { DungeonKey } from '../types.ts'
 
 type SampleRouteDefinition = Omit<SampleRoute, 'route'> & {
   mdt: string
@@ -7,6 +7,14 @@ type SampleRouteDefinition = Omit<SampleRoute, 'route'> & {
 }
 
 export const sampleRoutesDefinitions: Record<DungeonKey, SampleRouteDefinition[]> = {
+  aa: [],
+  bh: [],
+  av: [],
+  hoi: [],
+  nelth: [],
+  nok: [],
+  rlp: [],
+  uld: [],
   ad: [
     {
       name: 'Safe starter - Bunten',
@@ -25,8 +33,6 @@ export const sampleRoutesDefinitions: Record<DungeonKey, SampleRouteDefinition[]
       mdt: '!nwvtZTjmq0Fm9qp0juaj(6AsMPtM2sZuYm9gdyJiwjkipGW29c)27UsIyuWPtSTSxwT6P3(2vYLbLpuwOyNuLf)UM3W69U7xtv3)JhUFQ6lKWYIJm2ZL5bE(Lfn82w(2rH6VL5HOJrEtzH)th(J4i70PV)TYId1Irgc52X(EwN6(rHOmpgd26PyCJGDGjSyA9E7y3Jmz3DnNa)r4edmbBRIl7a0aYThaAamZdw8LgI8qdBuO1A35e4d(lTmpYeg5nHrSHzrH(FqbMoAX0aX2kfY(YIp12syTTNzXCyexkgeF5LJloR9v2nNjj2vhB5a1ndOUmM6YWW1mKWweVlbP2TiYvlZStN6UvrUUJFdyRYUnPgXjA5whBJoXf734o2jDYtEp9VDRj7mXpdgjCUkpxMjuB7arxHJGzXSawxEOwVtadDANcgAYKbb7Jgb4qJyasbnsby(QHkGGdTf12hJncqrxBHBGbLeCOTsXH2kdhAUIdJqIzTEpcXoitdj2OAuFk6xBfnR8X221WeBbnmDUwLz7Oj(MQgK(Z9vwTgKimd1wutLxTOtoDrTf1XyRmMSUt2uisCoiqTlpADxPPXpfdm9cDLkTAV(aHsR9UK7cKX04LPdK8EnpzBmCgkWpOlbVZPu7HC8DHCZtWvuVERurZ8zJSaVynBUIeN5r0QvGrTUgB4kUwiLnIXbnmDGt7bUZq4Nodbnk2lznecw9b2uvlVFqnvvp(4y)u1n385MPQXofxmvjv7yGpzhewdNnSyVil3lAwOxODVO(xIU32d30pvnCKR2UJna7AV8LPQn1I6UTa6k5uvpBa)54oUa9SJdHHxApvHwdmGKJ7xqbQdfiPEb(NFfyPdiKbFm1lYbUeFVmBbik8szunsSM9dFDhRwW6rgYvOwHuh4VGVhEQfIrk7pw)3ZjwD3ZtvpwJAlSQxKBW1cj(q9ypVbEOd(3nq2FA8LLPBSd)OZT3xfa39KTMF)K3bcEHeRHlqjzjkeFFpQbLWmFSD5diu47Y)b',
     },
   ],
-  aa: [],
-  bh: [],
   brh: [
     {
       name: 'Safe starter - Bunten',
@@ -108,7 +114,6 @@ export const sampleRoutesDefinitions: Record<DungeonKey, SampleRouteDefinition[]
       mdt: '!nw52oUjmqy4hMEzvrydMd3gTsvrTIMUSxJGaMS0LIxXHKS9cE27y7XSCirkHaXEW5B(NzmdjKKxsI75x7tIFoRQG3AT)xJPh(5lhgt)QJDs8fo)TKiIfmSOQSSkFOU)JKiQ0WqvrsC(U)97dnpD96p(Es85S6bUez(qBlVP)WqDn(VrlXdhR5N5RS(0qZjUOzFXvWUTT8oD8AEEFLObWbQ7DGuhmmIm7suaSYiAsKp8BVCK2SNEQdoLGRskAWyKJ8xx4REzUZwg4PCrTOnj(lLLo8YYjSE3agCp)BBoybtiMUTpKEiSCsRmCvRGqr2oAZHOzNT61Hpfqg96UuNUlzfSYmBT(ogOZbS56BtMQmx7zV5EELC9rxeGvHWvPg62uJgQs6gketIMyJC8WQPu6Gc1HIhwr8NsMeY9lZ6sGoxCVnnUOBcq3eIUHHUrRNaJcdXTzeBuHejtfmIu96B6GPfIR8uncqt1JKXGYlezuOxhWNQ4tahqv3Lkpv4OYSOYzuPlyyG7UyNWIeSU2gUmW9mrUPsrzySt8XGNAJrpLAc)GvEBZUZWJ6YjwWzREcXB1C)vZdU3tqMNsjl6meUEBIUS4IfHznl8x2SWK1cFOMht6iJA2UsuGPZ6qnJU3YgwtEHDVEp6YcDz)dzLE5C6nBdTTpJ8iwC8pqR1PUPXfMsMn1IAp7dtX6Bexhtsuh87KBcI3vlef1dDkMnGrmPoXZZJz5BqWSccN9j4X45mNhJ5AfQ5XCywShdH7CeKaILjQGhAC2IyFZ5QUQJv1v9FaVjuOEf0N0yZP565B5PPrz(wKT0UK1wlYFBm9uwphEL6yA7qZyAwhCoM2ZZ(lCvmMM3k6aBh5LIwyD9VcxkAZojAaRLvnvDVQSw1oM29E2fGXZh(uwYJK)d',
     },
   ],
-  nok: [],
   rise: [
     {
       name: 'Safe starter - Bunten',

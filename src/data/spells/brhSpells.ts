@@ -15,4 +15,4 @@ const extraSpells: Spells = {
   101549: [{ id: 200256, name: 'Phased Explosion', icon: 'spell_arcane_arcanetorrent.jpg' }],
 }
 
-export const brhSpells = mergeSpells(wclSpells, extraSpells)
+export default mergeSpells(wclSpells, extraSpells)

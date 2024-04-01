@@ -1,3 +1,5 @@
+import { dungeonKeys } from './dungeonKeys.ts'
+
 export type Point = [number, number]
 
 export type MdtDungeon = {
@@ -17,18 +19,7 @@ export type Dungeon = {
   icon: string
 }
 
-export type DungeonKey =
-  | 'aa'
-  | 'ad'
-  | 'bh'
-  | 'brh'
-  | 'dht'
-  | 'fall'
-  | 'nok'
-  | 'rise'
-  | 'eb'
-  | 'tott'
-  | 'wcm'
+export type DungeonKey = (typeof dungeonKeys)[number]
 
 export type SpawnId = string
 

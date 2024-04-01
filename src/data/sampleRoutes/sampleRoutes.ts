@@ -3,6 +3,11 @@ import { DungeonKey } from '../types.ts'
 import { dungeons } from '../dungeons.ts'
 
 const modules: Record<DungeonKey, Record<string, unknown>> = {
+  av: import.meta.glob('./av/*.json', { eager: true }),
+  hoi: import.meta.glob('./hoi/*.json', { eager: true }),
+  nelth: import.meta.glob('./nelth/*.json', { eager: true }),
+  rlp: import.meta.glob('./rlp/*.json', { eager: true }),
+  uld: import.meta.glob('./uld/*.json', { eager: true }),
   aa: import.meta.glob('./aa/*.json', { eager: true }),
   ad: import.meta.glob('./ad/*.json', { eager: true }),
   bh: import.meta.glob('./bh/*.json', { eager: true }),

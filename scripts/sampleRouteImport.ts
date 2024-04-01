@@ -1,7 +1,7 @@
 import { decodeRoute } from '../server/decodeRoute.js'
 import fs from 'fs/promises'
 import { sampleRoutesDefinitions } from '../src/data/sampleRoutes/sampleRoutesDefinitions.ts'
-import { SampleRoute } from '../src/util/types.ts'
+import type { SampleRoute } from '../src/util/types.ts'
 import { mdtRouteToRoute } from '../src/util/mdtUtil.ts'
 import { getDirname } from '../server/files.ts'
 
