@@ -1,5 +1,3 @@
-import { DungeonKey } from './types.ts'
-
 export const dungeonKeys = [
   'aa',
   'av',
@@ -18,6 +16,8 @@ export const dungeonKeys = [
   'tott',
   'wcm',
 ] as const
+
+export type DungeonKey = (typeof dungeonKeys)[number]
 
 export const isSeason4 = (key: DungeonKey) =>
   ['aa', 'av', 'bh', 'hoi', 'nelth', 'nok', 'rlp', 'uld'].includes(key)

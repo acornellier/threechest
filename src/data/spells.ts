@@ -1,4 +1,4 @@
-import { DungeonKey, Spells } from './types.ts'
+import { Spells } from './types.ts'
 import aa from './spells/aaSpells.ts'
 import ad from './spells/adSpells.ts'
 import av from './spells/avSpells.ts'
@@ -15,6 +15,7 @@ import nok from './spells/nokSpells.ts'
 import rise from './spells/riseSpells.ts'
 import rlp from './spells/rlpSpells.ts'
 import uld from './spells/uldSpells.ts'
+import { DungeonKey } from './dungeonKeys.ts'
 
 export const dungeonSpells: Record<DungeonKey, Spells> = {
   aa,

@@ -1,5 +1,6 @@
 import type { SampleRoute } from '../../util/types.ts'
-import type { DungeonKey } from '../types.ts'
+
+import { DungeonKey } from '../dungeonKeys.ts'
 
 type SampleRouteDefinition = Omit<SampleRoute, 'route'> & {
   mdt: string

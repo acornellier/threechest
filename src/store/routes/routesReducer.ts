@@ -1,6 +1,6 @@
 import { createAsyncThunk, PayloadAction } from '@reduxjs/toolkit'
 import { Drawing, MdtRoute, Note, Pull, Route, SavedRoute } from '../../util/types.ts'
-import { DungeonKey, SpawnId } from '../../data/types.ts'
+import { SpawnId } from '../../data/types.ts'
 import { mdtRouteToRoute } from '../../util/mdtUtil.ts'
 import undoable, { combineFilters, excludeAction, includeAction } from 'redux-undo'
 import { addPullFunc, boxSelectSpawnsAction, toggleSpawnAction } from './routeActions.ts'
@@ -11,6 +11,7 @@ import { indexedDbStorage } from '../storage.ts'
 import { routeMigrate, routePersistVersion } from './routeMigrations.ts'
 import { addToast } from '../reducers/toastReducer.ts'
 import { createAppSlice } from '../storeUtil.ts'
+import { DungeonKey } from '../../data/dungeonKeys.ts'
 
 export interface RouteState {
   route: Route

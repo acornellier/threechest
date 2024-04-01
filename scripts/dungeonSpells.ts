@@ -1,7 +1,8 @@
 import fs from 'fs'
-import { DungeonKey, Spell } from '../src/data/types.ts'
+import { Spell } from '../src/data/types.ts'
 import { getWclToken } from '../server/wclToken.ts'
 import { getDirname } from '../server/files.ts'
+import { DungeonKey } from '../src/data/dungeonKeys.ts'
 
 const dirname = getDirname(import.meta.url)
 

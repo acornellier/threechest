@@ -1,4 +1,4 @@
-import { dungeonKeys } from './dungeonKeys.ts'
+import { DungeonKey } from './dungeonKeys.ts'
 
 export type Point = [number, number]
 
@@ -18,8 +18,6 @@ export type Dungeon = {
   spells: Record<number, Spell[]>
   icon: string
 }
-
-export type DungeonKey = (typeof dungeonKeys)[number]
 
 export type SpawnId = string
 

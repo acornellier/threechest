@@ -1,5 +1,6 @@
-﻿import { DungeonKey, Point, SpawnId } from '../data/types.ts'
+﻿import { Point, SpawnId } from '../data/types.ts'
 import { ForwardRefExoticComponent, PropsWithoutRef, SVGProps } from 'react'
+import { DungeonKey } from '../data/dungeonKeys.ts'
 
 export type Pull = {
   id: number

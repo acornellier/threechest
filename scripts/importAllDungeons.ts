@@ -1,5 +1,6 @@
 import { importMdtDungeon } from './importMdtDungeon.ts'
-import { DungeonKey } from '../src/data/types.ts'
+
+import { DungeonKey } from '../src/data/dungeonKeys.ts'
 
 export const dungeonPaths = new Map<DungeonKey, string>([
   ['aa', 'Dragonflight/AlgetharAcademy'],

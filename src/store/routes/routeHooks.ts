@@ -1,9 +1,9 @@
 ﻿import { RouteState } from './routesReducer.ts'
 import { RootState } from '../store.ts'
-import { DungeonKey } from '../../data/types.ts'
 import { dungeonsByKey } from '../../data/dungeons.ts'
 import { createSelector } from '@reduxjs/toolkit'
 import { useRootSelector } from '../storeUtil.ts'
+import { DungeonKey } from '../../data/dungeonKeys.ts'
 
 export const useRoutesSelector = <T>(selector: (state: RouteState) => T): T =>
   useRootSelector((state) => selector(state.routes.present))
