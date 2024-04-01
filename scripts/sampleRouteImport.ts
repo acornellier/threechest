@@ -1,16 +1,14 @@
 import { decodeRoute } from '../server/decodeRoute.js'
 import fs from 'fs/promises'
-import { fileURLToPath } from 'url'
-import path from 'path'
 import { sampleRoutesDefinitions } from '../src/data/sampleRoutes/sampleRoutesDefinitions.ts'
 import { SampleRoute } from '../src/util/types.ts'
 import { mdtRouteToRoute } from '../src/util/mdtUtil.ts'
+import { getDirname } from '../server/files.ts'
 
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = path.dirname(__filename)
+const dirname = getDirname(import.meta.url)
 
 for (const [dungeonKey, routes] of Object.entries(sampleRoutesDefinitions)) {
-  const folder = `${__dirname}/../src/data/sampleRoutes/${dungeonKey}`
+  const folder = `${dirname}/../src/data/sampleRoutes/${dungeonKey}`
   await fs.rm(folder, { recursive: true, force: true })
   await fs.mkdir(folder)
 
