@@ -19,7 +19,8 @@ type WclPull = {
   enemyNPCs: Array<WclEnemyNpc>
 }
 
-export type WclRoute = {
+type WclRoute = {
+  startTime: number
   encounterID: number
   keystoneLevel: number
   dungeonPulls: WclPull[]
@@ -69,6 +70,7 @@ query {
   reportData {
     report(code:"${code}") {
       fights(fightIDs:${fightId}) {
+        startTime
         encounterID
         keystoneLevel
         dungeonPulls {
@@ -92,8 +94,14 @@ query {
 type WclEnemy = { gameId: number; actorId: number; instanceId: number }
 type EnemyRequest = { actorId: number; instanceId: number }
 
-async function getFirstEvents(code: string, fightId: string | number, enemies: EnemyRequest[]) {
+async function getFirstEvents(
+  code: string,
+  fightId: string | number,
+  enemies: EnemyRequest[],
+  startTime: number,
+) {
   const events: WclEvent[] = []
+  const eventStart = startTime + 10_000 // ignore first 10 seconds, mobs do random casts
 
   console.time('total')
   for (let start = 0; start < enemies.length; start += batchSize) {
@@ -107,9 +115,11 @@ async function getFirstEvents(code: string, fightId: string | number, enemies: E
         fightIDs: ${fightId}
         sourceID: ${actorId}
         sourceInstanceID: ${instanceId}
-        limit: 2
         dataType: Casts
         hostilityType: Enemies
+        limit: 2
+        startTime: ${eventStart}
+        endTime: 9999999999
         includeResources: true
       ) {
         data
@@ -121,6 +131,8 @@ async function getFirstEvents(code: string, fightId: string | number, enemies: E
         targetInstanceID: ${instanceId}
         limit: 3
         dataType: DamageDone
+        startTime: ${eventStart}
+        endTime: 9999999999
         includeResources: true
       ) {
         data
@@ -190,7 +202,7 @@ export async function getWclRoute(code: string, fightId: string | number): Promi
     ),
   )
 
-  const firstEvents = await getFirstEvents(code, fightId, enemies)
+  const firstEvents = await getFirstEvents(code, fightId, enemies, wclRoute.startTime)
 
   let firstPositions = firstEvents
     .map((event) => {
@@ -206,7 +218,7 @@ export async function getWclRoute(code: string, fightId: string | number): Promi
       }
 
       return {
-        timestamp,
+        timestamp: timestamp - wclRoute.startTime,
         gameId: matchingEnemy.gameId,
         x,
         y,
@@ -219,11 +231,6 @@ export async function getWclRoute(code: string, fightId: string | number): Promi
     .filter(Boolean) as WclEventSimplified[]
 
   firstPositions = firstPositions.sort((a, b) => a.timestamp - b.timestamp)
-
-  firstPositions = firstPositions.map((event) => ({
-    ...event,
-    timestamp: event.timestamp - firstPositions[0]!.timestamp,
-  }))
 
   const result: WclResult = {
     code,

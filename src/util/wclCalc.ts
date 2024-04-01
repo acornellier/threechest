@@ -121,11 +121,7 @@ function getPullMobIds(events: WclEventSimplified[], dungeon: Dungeon) {
     dungeon.mobSpawnsList.some(({ mob }) => mob.id === event.gameId),
   )
 
-  let sortedEvents = filteredEvents.sort((a, b) => a.timestamp - b.timestamp)
-  sortedEvents = sortedEvents.map((event) => ({
-    ...event,
-    timestamp: event.timestamp - sortedEvents[0]!.timestamp,
-  }))
+  const sortedEvents = filteredEvents.sort((a, b) => a.timestamp - b.timestamp)
 
   const pullMobIds: MobPos[][] = []
   const newPull = (): MobPos[] => []
@@ -161,13 +157,14 @@ function calculateExactPull(
   const pullAveragePos = averagePoint(filteredPositions)
   const pullMobCounts = tally(pull, ({ mobId }) => mobId)
 
-  const maxDistanceToGroup = 40
+  const maxDistanceToGroup = 80
   const groups = groupsRemaining
     .filter(({ id }) => !groupMobSpawns[id]!.some(({ spawn }) => spawnIdsTaken.has(spawn.id)))
     .filter(({ mobCounts }) => pull.some(({ mobId }) => (mobCounts[mobId] ?? 0) > 0))
     .filter(({ averagePos }) => distance(averagePos, pullAveragePos) < maxDistanceToGroup)
     .sort((a, b) => distance(a.averagePos, pullAveragePos) - distance(b.averagePos, pullAveragePos))
 
+  if (idx === 0) console.log(filteredPositions, pullAveragePos, groupsRemaining, groups)
   const pulledGroups = getPulledGroups(pullMobCounts, groups)
 
   if (pulledGroups === null)

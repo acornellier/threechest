@@ -25,6 +25,7 @@ export const ad: Dungeon = {
     [-240, 330],
   ],
   icon: 'achievement_dungeon_ataldazar',
+  wclEncounterId: 61763,
   ...dungeonData('ad'),
 }
 

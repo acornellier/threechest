@@ -14,6 +14,7 @@ import {
   setRouteForCollab,
   setRouteFromMdt,
   setRouteFromSample,
+  setRouteFromWcl,
   updateSavedRoutes,
 } from './routes/routesReducer.ts'
 import {
@@ -74,6 +75,7 @@ listenerMiddleware.startListening({
     loadRoute.fulfilled,
     duplicateRoute,
     setRouteFromMdt,
+    setRouteFromWcl,
     setRouteFromSample,
     newRoute,
   ),
