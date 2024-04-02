@@ -35,7 +35,7 @@ export function ToastComponent({ toast }: Props) {
 
   return (
     <div
-      className={`fancy-toast flex items-center gap-2 transition-opacity duration-500
+      className={`fancy-toast flex items-center gap-2 transition-opacity duration-500 pointer-events-auto
                   ${toast.type} 
                   ${toast.removing ? 'opacity-0' : ''}`}
       onClick={onRemove}
