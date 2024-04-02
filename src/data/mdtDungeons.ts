@@ -1,6 +1,6 @@
 import aa from './mdtDungeons/aa_mdt.json'
 import ad from './mdtDungeons/ad_mdt.json'
-import av from './mdtDungeons/ad_mdt.json'
+import av from './mdtDungeons/av_mdt.json'
 import bh from './mdtDungeons/bh_mdt.json'
 import brh from './mdtDungeons/brh_mdt.json'
 import dht from './mdtDungeons/dht_mdt.json'
