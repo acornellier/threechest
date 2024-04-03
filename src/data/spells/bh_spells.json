@@ -1,0 +1,153 @@
+{
+  "185508": [
+    {
+      "id": 367484,
+      "name": "Vicious Clawmangle",
+      "icon": "artifactability_feraldruid_ashamanesbite.jpg"
+    },
+    {
+      "id": 384150,
+      "name": "Vicious Clawmangle",
+      "icon": "artifactability_feraldruid_ashamanesbite.jpg"
+    },
+    {
+      "id": 367485,
+      "name": "Vicious Clawmangle",
+      "icon": "artifactability_feraldruid_ashamanesbite.jpg"
+    }
+  ],
+  "185528": [
+    { "id": 382249, "name": "Earth Bolt", "icon": "inv_10_elementalshardfoozles_earth.jpg" }
+  ],
+  "185529": [
+    { "id": 382555, "name": "Ragestorm", "icon": "ability_warrior_warcry.jpg" },
+    { "id": 367500, "name": "Hideous Cackle", "icon": "spell_druid_bristlingfur.jpg" }
+  ],
+  "185534": [
+    { "id": 382620, "name": "Shoot", "icon": "ability_hunter_thrillofthehunt.jpg" },
+    { "id": 368287, "name": "Toxic Trap", "icon": "inv_misc_herb_flytrap.jpg" },
+    { "id": 367521, "name": "Bone Bolt", "icon": "inv_weapon_crossbow_08.jpg" }
+  ],
+  "185656": [
+    { "id": 382474, "name": "Decay Surge", "icon": "spell_deathknight_necroticplague.jpg" },
+    { "id": 383385, "name": "Rotting Surge", "icon": "spell_shadow_creepingplague.jpg" }
+  ],
+  "185691": [{ "id": 368091, "name": "Infected Bite", "icon": "ability_druid_primaltenacity.jpg" }],
+  "186116": [
+    { "id": 382620, "name": "Shoot", "icon": "ability_hunter_thrillofthehunt.jpg" },
+    { "id": 385359, "name": "Ensnaring Trap", "icon": "ability_hunter_traplauncher.jpg" },
+    { "id": 383979, "name": "Ensnaring Trap", "icon": "ability_hunter_traplauncher.jpg" },
+    { "id": 384353, "name": "Gut Shot", "icon": "ability_hunter_barbedshot.jpg" },
+    { "id": 384416, "name": "Meat Toss", "icon": "inv_misc_food_14.jpg" },
+    { "id": 384827, "name": "Call Hyenas", "icon": "ability_hunter_pet_hyena.jpg" },
+    { "id": 384633, "name": "Master's Call", "icon": "ability_hunter_invigeration.jpg" }
+  ],
+  "186120": [
+    { "id": 377559, "name": "Vine Whip", "icon": "ability_creature_poison_04.jpg" },
+    { "id": 376811, "name": "Decay Spray", "icon": "ability_creature_poison_02.jpg" },
+    { "id": 376934, "name": "Grasping Vines", "icon": "spell_nature_stranglevines.jpg" },
+    { "id": 376933, "name": "Grasping Vines", "icon": "spell_nature_stranglevines.jpg" },
+    { "id": 378764, "name": "Consume", "icon": "inv_misc_monsterfang_02.jpg" }
+  ],
+  "186121": [
+    { "id": 376170, "name": "Choking Rotcloud", "icon": "spell_deathvortex.jpg" },
+    { "id": 373912, "name": "Decaystrike", "icon": "spell_deathknight_thrash_ghoul.jpg" },
+    { "id": 373915, "name": "Decaystrike", "icon": "spell_deathknight_thrash_ghoul.jpg" },
+    { "id": 373917, "name": "Decaystrike", "icon": "spell_deathknight_thrash_ghoul.jpg" },
+    { "id": 373942, "name": "Rotburst Totem", "icon": "spell_nature_agitatingtotem.jpg" },
+    { "id": 373960, "name": "Decaying Strength", "icon": "ability_warrior_strengthofarms.jpg" },
+    { "id": 385361, "name": "Rotting Sickness", "icon": "spell_shadow_plaguecloud.jpg" }
+  ],
+  "186122": [
+    { "id": 381834, "name": "Bladestorm", "icon": "ability_warrior_bladestorm.jpg" },
+    { "id": 377844, "name": "Bladestorm", "icon": "ability_fixated_state_red.jpg" },
+    { "id": 381444, "name": "Savage Charge", "icon": "spell_deathknight_butcher2.jpg" },
+    { "id": 381416, "name": "Savage Charge", "icon": "spell_deathknight_butcher2.jpg" },
+    { "id": 381419, "name": "Savage Charge", "icon": "spell_deathknight_butcher2.jpg" }
+  ],
+  "186124": [
+    { "id": 378029, "name": "Gash Frenzy", "icon": "ability_rogue_murderspree.jpg" },
+    { "id": 378208, "name": "Marked for Butchery", "icon": "ability_blackhand_marked4death.jpg" },
+    { "id": 378229, "name": "Marked for Butchery", "icon": "ability_blackhand_marked4death.jpg" },
+    { "id": 381694, "name": "Decayed Senses", "icon": "spell_shadow_mindsteal.jpg" }
+  ],
+  "186125": [
+    { "id": 378155, "name": "Earth Bolt", "icon": "inv_10_elementalshardfoozles_earth.jpg" },
+    { "id": 377950, "name": "Greater Healing Rapids", "icon": "shaman_pvp_ripplingwaters.jpg" },
+    { "id": 381470, "name": "Hextrick Totem", "icon": "ability_shaman_totemcooldownrefund.jpg" },
+    { "id": 377965, "name": "Bloodfrenzy", "icon": "spell_nature_bloodlust.jpg" }
+  ],
+  "186191": [
+    { "id": 382474, "name": "Decay Surge", "icon": "spell_deathknight_necroticplague.jpg" },
+    { "id": 367503, "name": "Withering Burst", "icon": "ability_rogue_deviouspoisons.jpg" }
+  ],
+  "186206": [{ "id": 382593, "name": "Crushing Smash", "icon": "ability_shockwave.jpg" }],
+  "186220": [
+    { "id": 372711, "name": "Infuse Corruption", "icon": "spell_nature_naturetouchdecay.jpg" }
+  ],
+  "186226": [
+    { "id": 375065, "name": "Summon Totem", "icon": "spell_totem_wardofdraining.jpg" },
+    { "id": 374544, "name": "Burst of Decay", "icon": "spell_shadow_plaguecloud.jpg" }
+  ],
+  "186227": [
+    { "id": 373872, "name": "Gushing Ooze", "icon": "ability_creature_poison_02.jpg" },
+    { "id": 374569, "name": "Burst", "icon": "ability_creature_poison_06.jpg" }
+  ],
+  "186229": [
+    { "id": 383062, "name": "Summon Lashers", "icon": "spell_lifegivingseed.jpg" },
+    { "id": 373936, "name": "Summon Lashers", "icon": "spell_lifegivingseed.jpg" },
+    { "id": 373943, "name": "Stomp", "icon": "spell_nature_earthquake.jpg" },
+    { "id": 382712, "name": "Necrotic Breath", "icon": "spell_fire_felflamebreath.jpg" }
+  ],
+  "186242": [{ "id": 384930, "name": "Stealth", "icon": "ability_stealth.jpg" }],
+  "186246": [{ "id": 385029, "name": "Screech", "icon": "warrior_disruptingshout.jpg" }],
+  "186284": [{ "id": 372151, "name": "Maul", "icon": "ability_druid_maul.jpg" }],
+  "187033": [
+    { "id": 388060, "name": "Stink Breath", "icon": "spell_fire_felflamebreath.jpg" },
+    { "id": 388046, "name": "Violent Whirlwind", "icon": "ability_butcher_whirl.jpg" }
+  ],
+  "187224": [
+    { "id": 382802, "name": "Withering Contagion", "icon": "ability_creature_disease_03.jpg" },
+    { "id": 382883, "name": "Siphon Decay", "icon": "spell_fire_ragnaros_molteninfernogreen.jpg" }
+  ],
+  "187231": [{ "id": 367481, "name": "Bloody Bite", "icon": "ability_druid_lacerate.jpg" }],
+  "187315": [
+    { "id": 382787, "name": "Decay Claws", "icon": "spell_deathknight_thrash_ghoul.jpg" },
+    { "id": 367481, "name": "Bloody Bite", "icon": "ability_druid_lacerate.jpg" }
+  ],
+  "189299": [{ "id": 375614, "name": "Burst", "icon": "ability_creature_poison_06.jpg" }],
+  "189363": [
+    { "id": 372113, "name": "Charge", "icon": "ability_druid_dash_orange.jpg" },
+    { "id": 375416, "name": "Bleeding", "icon": "spell_shadow_lifedrain.jpg" }
+  ],
+  "189531": [
+    { "id": 383062, "name": "Summon Lashers", "icon": "spell_lifegivingseed.jpg" },
+    { "id": 373024, "name": "Summon Lashers", "icon": "spell_lifegivingseed.jpg" },
+    { "id": 373897, "name": "Decaying Roots", "icon": "spell_nature_stranglevines.jpg" }
+  ],
+  "190381": [
+    { "id": 373939, "name": "Rotting Burst", "icon": "sha_spell_shaman_lavaburst_nightmare.jpg" }
+  ],
+  "191243": [
+    { "id": 372113, "name": "Charge", "icon": "ability_druid_dash_orange.jpg" },
+    { "id": 375416, "name": "Bleeding", "icon": "spell_shadow_lifedrain.jpg" }
+  ],
+  "192481": [
+    { "id": 381770, "name": "Gushing Ooze", "icon": "spell_nature_elementalshields.jpg" },
+    { "id": 378057, "name": "Burst", "icon": "ability_creature_poison_06.jpg" }
+  ],
+  "194330": [{ "id": 375614, "name": "Burst", "icon": "ability_creature_poison_06.jpg" }],
+  "194745": [
+    { "id": 384531, "name": "Bounding Leap", "icon": "spell_frost_stun.jpg" },
+    { "id": 384529, "name": "Bounding Leap", "icon": "spell_frost_stun.jpg" },
+    { "id": 384558, "name": "Bounding Leap", "icon": "spell_frost_stun.jpg" },
+    { "id": 384764, "name": "Feeding Frenzy", "icon": "spell_shadow_unholyfrenzy.jpg" },
+    { "id": 384725, "name": "Feeding Frenzy", "icon": "spell_shadow_unholyfrenzy.jpg" },
+    { "id": 384577, "name": "Crippling Bite", "icon": "ability_druid_ferociousbite.jpg" }
+  ],
+  "197857": [{ "id": 384930, "name": "Stealth", "icon": "ability_stealth.jpg" }],
+  "208994": [
+    { "id": 372113, "name": "Charge", "icon": "ability_druid_dash_orange.jpg" },
+    { "id": 375416, "name": "Bleeding", "icon": "spell_shadow_lifedrain.jpg" }
+  ]
+}
