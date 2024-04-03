@@ -57,14 +57,14 @@ const rlp: Dungeon = {
   name: 'Ruby Life Pools',
   key: 'rlp',
   icon: 'achievement_dungeon_lifepools',
-  ...dungeonData('nok'),
+  ...dungeonData('rlp'),
 }
 
 const uld: Dungeon = {
   name: 'Uldaman',
   key: 'uld',
   icon: 'achievement_dungeon_uldaman',
-  ...dungeonData('nok'),
+  ...dungeonData('uld'),
 }
 
 const ad: Dungeon = {
