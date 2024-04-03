@@ -11,63 +11,63 @@ export const dungeonData = (key: DungeonKey) => ({
   spells: dungeonSpells[key],
 })
 
-export const aa: Dungeon = {
+const aa: Dungeon = {
   name: 'Algethar Academy',
   key: 'aa',
   icon: 'achievement_dungeon_dragonacademy',
   ...dungeonData('aa'),
 }
 
-export const av: Dungeon = {
+const av: Dungeon = {
   name: 'Azure Vault',
   key: 'av',
   icon: 'achievement_dungeon_arcanevaults',
   ...dungeonData('av'),
 }
 
-export const bh: Dungeon = {
+const bh: Dungeon = {
   name: 'Brackenhide Hollow',
   key: 'bh',
   icon: 'achievement_dungeon_brackenhidehollow',
   ...dungeonData('bh'),
 }
 
-export const hoi: Dungeon = {
+const hoi: Dungeon = {
   name: 'Halls of Infusion',
   key: 'hoi',
   icon: 'achievement_dungeon_hallsofinfusion',
   ...dungeonData('hoi'),
 }
 
-export const nelth: Dungeon = {
+const nelth: Dungeon = {
   name: 'Neltharus',
   key: 'nelth',
   icon: 'achievement_dungeon_neltharus',
   ...dungeonData('nelth'),
 }
 
-export const nok: Dungeon = {
+const nok: Dungeon = {
   name: 'Nokhud Offensive',
   key: 'nok',
   icon: 'achievement_dungeon_centaurplains',
   ...dungeonData('nok'),
 }
 
-export const rlp: Dungeon = {
+const rlp: Dungeon = {
   name: 'Ruby Life Pools',
   key: 'rlp',
   icon: 'achievement_dungeon_lifepools',
   ...dungeonData('nok'),
 }
 
-export const uld: Dungeon = {
+const uld: Dungeon = {
   name: 'Uldaman',
   key: 'uld',
   icon: 'achievement_dungeon_uldaman',
   ...dungeonData('nok'),
 }
 
-export const ad: Dungeon = {
+const ad: Dungeon = {
   name: "Atal'Dazar",
   key: 'ad',
   defaultBounds: [
@@ -78,14 +78,14 @@ export const ad: Dungeon = {
   ...dungeonData('ad'),
 }
 
-export const brh: Dungeon = {
+const brh: Dungeon = {
   name: 'Black Rook Hold',
   key: 'brh',
   icon: 'achievement_dungeon_blackrookhold',
   ...dungeonData('brh'),
 }
 
-export const dht: Dungeon = {
+const dht: Dungeon = {
   name: 'Darkheart Thicket',
   key: 'dht',
   defaultBounds: [
@@ -96,7 +96,7 @@ export const dht: Dungeon = {
   ...dungeonData('dht'),
 }
 
-export const eb: Dungeon = {
+const eb: Dungeon = {
   name: 'Everbloom',
   key: 'eb',
   defaultBounds: [
@@ -107,7 +107,7 @@ export const eb: Dungeon = {
   ...dungeonData('eb'),
 }
 
-export const fall: Dungeon = {
+const fall: Dungeon = {
   name: 'DOTI: Fall of Galakrond',
   key: 'fall',
   defaultBounds: [
@@ -118,7 +118,7 @@ export const fall: Dungeon = {
   ...dungeonData('fall'),
 }
 
-export const rise: Dungeon = {
+const rise: Dungeon = {
   name: "DOTI: Murozond's Rise",
   key: 'rise',
   defaultBounds: [
@@ -129,7 +129,7 @@ export const rise: Dungeon = {
   ...dungeonData('rise'),
 }
 
-export const tott: Dungeon = {
+const tott: Dungeon = {
   name: 'Throne of the Tides',
   key: 'tott',
   defaultBounds: [
@@ -140,7 +140,7 @@ export const tott: Dungeon = {
   ...dungeonData('tott'),
 }
 
-export const wcm: Dungeon = {
+const wcm: Dungeon = {
   name: 'Waycrest Manor',
   key: 'wcm',
   icon: 'achievement_dungeon_waycrestmannor',

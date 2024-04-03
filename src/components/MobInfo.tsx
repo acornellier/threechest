@@ -44,6 +44,9 @@ export function MobInfo() {
             <div>{mob.creatureType}</div>
             <div>ID: {mob.id}</div>
           </div>
+          {mobCcTypes(mob).map((ccType) => (
+            <div key={ccType}>{ccType}</div>
+          ))}
           {mob.stealthDetect && (
             <div className="flex gap-2">
               <img
@@ -56,9 +59,6 @@ export function MobInfo() {
               Detects stealth
             </div>
           )}
-          {mobCcTypes(mob).map((ccType) => (
-            <div key={ccType}>{ccType}</div>
-          ))}
         </div>
         {spells?.length && (
           <div className="flex flex-col gap-2">

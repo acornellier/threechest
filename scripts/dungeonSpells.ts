@@ -11,6 +11,7 @@ type DungeonLog = { dungeonKey: DungeonKey; code: string; fightId: number }
 const dungeons: DungeonLog[] = [
   { dungeonKey: 'av', code: 'yzWxcC21P4jRXJbY', fightId: 1 },
   { dungeonKey: 'bh', code: 'BjLZVQfJ4r7wP6pF', fightId: 5 },
+  { dungeonKey: 'hoi', code: 'yzWxcC21P4jRXJbY', fightId: 5 },
   { dungeonKey: 'nok', code: 'Qp9Y6wTgd1xjJtZN', fightId: 1 },
   // s3
   { dungeonKey: 'ad', code: '6gAz9tCPKFRkVQJv', fightId: 67 },
