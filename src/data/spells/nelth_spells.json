@@ -1,0 +1,441 @@
+{
+  "0": [
+    {
+      "id": 145629,
+      "name": "Anti-Magic Zone",
+      "icon": "spell_deathknight_antimagiczone.jpg"
+    }
+  ],
+  "181861": [
+    {
+      "id": 374410,
+      "name": "Magma Tentacle",
+      "icon": "spell_shaman_lavaburst.jpg"
+    },
+    {
+      "id": 375251,
+      "name": "Lava Spray",
+      "icon": "spell_shaman_lavasurge.jpg"
+    },
+    {
+      "id": 375439,
+      "name": "Blazing Charge",
+      "icon": "spell_fire_moltenblood.jpg"
+    },
+    {
+      "id": 375436,
+      "name": "Blazing Charge",
+      "icon": "spell_fire_moltenblood.jpg"
+    },
+    {
+      "id": 374365,
+      "name": "Volatile Mutation",
+      "icon": "ability_rhyolith_magmaflow_whole.jpg"
+    }
+  ],
+  "189227": [
+    {
+      "id": 372566,
+      "name": "Bold Ambush",
+      "icon": "spell_warrior_wildstrike.jpg"
+    },
+    {
+      "id": 372561,
+      "name": "Binding Spear",
+      "icon": "inv_spear_11.jpg"
+    }
+  ],
+  "189235": [
+    {
+      "id": 376186,
+      "name": "Eruptive Crush",
+      "icon": "ability_xavius_crushingshadows.jpg"
+    },
+    {
+      "id": 373406,
+      "name": "Eruptive Crush",
+      "icon": "ability_xavius_crushingshadows.jpg"
+    },
+    {
+      "id": 395427,
+      "name": "Burning Roar",
+      "icon": "spell_fire_incinerate.jpg"
+    }
+  ],
+  "189265": [
+    {
+      "id": 372226,
+      "name": "Bone Toss",
+      "icon": "inv_misc_bone_01.jpg"
+    },
+    {
+      "id": 372223,
+      "name": "Mending Clay",
+      "icon": "inv_misc_volatilefire.jpg"
+    }
+  ],
+  "189266": [
+    {
+      "id": 372311,
+      "name": "Magma Fist",
+      "icon": "spell_shaman_improvedfirenova.jpg"
+    },
+    {
+      "id": 371875,
+      "name": "Fired Up",
+      "icon": "spell_nature_shamanrage.jpg"
+    }
+  ],
+  "189340": [
+    {
+      "id": 373742,
+      "name": "Magma Wave",
+      "icon": "ability_rhyolith_magmaflow_wave.jpg"
+    },
+    {
+      "id": 373762,
+      "name": "Magma Wave",
+      "icon": "trade_engineering.jpg"
+    },
+    {
+      "id": 373733,
+      "name": "Dragon Strike",
+      "icon": "spell_warrior_wildstrike.jpg"
+    },
+    {
+      "id": 373735,
+      "name": "Dragon Strike",
+      "icon": "spell_warrior_wildstrike.jpg"
+    },
+    {
+      "id": 373424,
+      "name": "Grounding Spear",
+      "icon": "inv_spear_11.jpg"
+    },
+    {
+      "id": 375057,
+      "name": "Grounding Spear",
+      "icon": "inv_spear_11.jpg"
+    },
+    {
+      "id": 396424,
+      "name": "Grounding Spear",
+      "icon": "inv_spear_11.jpg"
+    },
+    {
+      "id": 375056,
+      "name": "Fiery Focus",
+      "icon": "spell_fire_selfdestruct.jpg"
+    },
+    {
+      "id": 374704,
+      "name": "Fiery Focus",
+      "icon": "ability_rogue_shadowyduel.jpg"
+    },
+    {
+      "id": 375055,
+      "name": "Fiery Focus",
+      "icon": "spell_fire_selfdestruct.jpg"
+    }
+  ],
+  "189464": [
+    {
+      "id": 384161,
+      "name": "Mote of Combustion",
+      "icon": "inv_elemental_mote_fire01.jpg"
+    },
+    {
+      "id": 372201,
+      "name": "Scorching Breath",
+      "icon": "ability_monk_breathoffire.jpg"
+    }
+  ],
+  "189466": [
+    {
+      "id": 373084,
+      "name": "Scorching Fusillade",
+      "icon": "inv_gizmo_supersappercharge.jpg"
+    },
+    {
+      "id": 373089,
+      "name": "Scorching Fusillade",
+      "icon": "inv_gizmo_supersappercharge.jpg"
+    },
+    {
+      "id": 372543,
+      "name": "Scorching Fusillade",
+      "icon": "inv_gizmo_supersappercharge.jpg"
+    },
+    {
+      "id": 372296,
+      "name": "Conflagrant Battery",
+      "icon": "spell_shadow_rainoffire.jpg"
+    }
+  ],
+  "189467": [
+    {
+      "id": 372262,
+      "name": "Pierce Marrow",
+      "icon": "ability_maldraxxus_rogue.jpg"
+    },
+    {
+      "id": 372225,
+      "name": "Dragonbone Axe",
+      "icon": "inv_axe_1h_pvpcataclysms3_c_01.jpg"
+    },
+    {
+      "id": 372266,
+      "name": "Pierce Marrow",
+      "icon": "ability_maldraxxus_rogue.jpg"
+    }
+  ],
+  "189470": [
+    {
+      "id": 372538,
+      "name": "Melt",
+      "icon": "inv_ragnaros_heart.jpg"
+    }
+  ],
+  "189471": [
+    {
+      "id": 384623,
+      "name": "Forgestomp",
+      "icon": "spell_shaman_improvedfirenova.jpg"
+    },
+    {
+      "id": 372971,
+      "name": "Reverberating Slam",
+      "icon": "inv_mace_1h_blacksmithing_b_01_black.jpg"
+    }
+  ],
+  "189472": [
+    {
+      "id": 379406,
+      "name": "Throw Lava",
+      "icon": "ability_warlock_backdraft.jpg"
+    },
+    {
+      "id": 381329,
+      "name": "Throw Lava",
+      "icon": "ability_warlock_backdraft.jpg"
+    },
+    {
+      "id": 379404,
+      "name": "Throw Lava",
+      "icon": "ability_warlock_backdraft.jpg"
+    },
+    {
+      "id": 372213,
+      "name": "Lava Spill",
+      "icon": "inv_misc_cauldron_fire.jpg"
+    }
+  ],
+  "189474": [
+    {
+      "id": 374355,
+      "name": "Heated Swings",
+      "icon": "inv_mace_1h_blacksmithing_b_01_black.jpg"
+    },
+    {
+      "id": 375209,
+      "name": "Forgestorm",
+      "icon": "spell_shadow_rainoffire.jpg"
+    }
+  ],
+  "189478": [
+    {
+      "id": 374635,
+      "name": "Might of the Forge",
+      "icon": "mace_1h_blacksmithing_d_04_icon.jpg"
+    },
+    {
+      "id": 374586,
+      "name": "Might of the Forge",
+      "icon": "mace_1h_blacksmithing_d_04_icon.jpg"
+    },
+    {
+      "id": 374839,
+      "name": "Blazing Aegis",
+      "icon": "inv_shield_1h_dragondungeon_c_01.jpg"
+    },
+    {
+      "id": 374842,
+      "name": "Blazing Aegis",
+      "icon": "inv_shield_1h_dragondungeon_c_01.jpg"
+    },
+    {
+      "id": 374812,
+      "name": "Blazing Aegis",
+      "icon": "inv_shield_1h_dragondungeon_c_01.jpg"
+    },
+    {
+      "id": 374533,
+      "name": "Heated Swings",
+      "icon": "inv_mace_1h_blacksmithing_b_01_black.jpg"
+    },
+    {
+      "id": 374534,
+      "name": "Heated Swings",
+      "icon": "inv_mace_1h_blacksmithing_b_01_black.jpg"
+    },
+    {
+      "id": 374535,
+      "name": "Heated Swings",
+      "icon": "inv_mace_1h_blacksmithing_b_01_black.jpg"
+    },
+    {
+      "id": 374969,
+      "name": "Forgestorm",
+      "icon": "spell_shadow_rainoffire.jpg"
+    },
+    {
+      "id": 377995,
+      "name": "Forgestorm",
+      "icon": "spell_shadow_rainoffire.jpg"
+    }
+  ],
+  "189901": [
+    {
+      "id": 377204,
+      "name": "The Dragon's Kiln",
+      "icon": "ability_mage_firestarter.jpg"
+    },
+    {
+      "id": 377017,
+      "name": "Molten Gold",
+      "icon": "ability_creature_amber_02.jpg"
+    },
+    {
+      "id": 377473,
+      "name": "Burning Ember",
+      "icon": "spell_fire_ragnaros_supernova.jpg"
+    },
+    {
+      "id": 376780,
+      "name": "Magma Shield",
+      "icon": "spell_fire_sealoffire.jpg"
+    }
+  ],
+  "189905": [
+    {
+      "id": 376169,
+      "name": "Throw Experimental Concoction",
+      "icon": "inv_potion_24.jpg"
+    }
+  ],
+  "190085": [
+    {
+      "id": 374471,
+      "name": "Erupted Ground",
+      "icon": "spell_fire_moltenblood.jpg"
+    },
+    {
+      "id": 374482,
+      "name": "Grounding Chain",
+      "icon": "inv_belt_19.jpg"
+    }
+  ],
+  "192464": [
+    {
+      "id": 377522,
+      "name": "Burning Pursuit",
+      "icon": "ability_fixated_state_orange.jpg"
+    }
+  ],
+  "192781": [
+    {
+      "id": 378149,
+      "name": "Granite Shell",
+      "icon": "spell_shaman_improvedearthshield.jpg"
+    },
+    {
+      "id": 378172,
+      "name": "Molten Core",
+      "icon": "inv_10_elementalspiritfoozles_fire.jpg"
+    }
+  ],
+  "192786": [
+    {
+      "id": 378827,
+      "name": "Explosive Concoction",
+      "icon": "trade_alchemy_dpotion_a16.jpg"
+    }
+  ],
+  "192787": [
+    {
+      "id": 378847,
+      "name": "Brutal Strike",
+      "icon": "ability_smash.jpg"
+    }
+  ],
+  "192788": [
+    {
+      "id": 378282,
+      "name": "Molten Core",
+      "icon": "spell_fire_lavaspawn.jpg"
+    },
+    {
+      "id": 378281,
+      "name": "Molten Core",
+      "icon": "trade_engineering.jpg"
+    },
+    {
+      "id": 378818,
+      "name": "Magma Conflagration",
+      "icon": "spell_shaman_lavasurge.jpg"
+    }
+  ],
+  "193291": [
+    {
+      "id": 381663,
+      "name": "Candescent Tempest",
+      "icon": "spell_fire_burnout.jpg"
+    }
+  ],
+  "193293": [
+    {
+      "id": 384597,
+      "name": "Blazing Slash",
+      "icon": "inv_knife_1h_bwdraid_d_01.jpg"
+    },
+    {
+      "id": 382708,
+      "name": "Volcanic Guard",
+      "icon": "inv_shield_1h_dragondungeon_c_01.jpg"
+    }
+  ],
+  "193944": [
+    {
+      "id": 383231,
+      "name": "Lava Bolt",
+      "icon": "spell_fire_fireball02.jpg"
+    },
+    {
+      "id": 382791,
+      "name": "Molten Barrier",
+      "icon": "ability_mage_moltenarmor.jpg"
+    },
+    {
+      "id": 383651,
+      "name": "Molten Army",
+      "icon": "spell_fire_lavaspawn.jpg"
+    },
+    {
+      "id": 382795,
+      "name": "Molten Barrier",
+      "icon": "ability_mage_moltenarmor.jpg"
+    },
+    {
+      "id": 372213,
+      "name": "Lava Spill",
+      "icon": "inv_misc_cauldron_fire.jpg"
+    }
+  ],
+  "195919": [
+    {
+      "id": 374451,
+      "name": "Burning Chain",
+      "icon": "inv_belt_20.jpg"
+    }
+  ]
+}

@@ -7,6 +7,7 @@ import { addToast } from '../store/reducers/toastReducer.ts'
 import { useDungeon } from '../store/routes/routeHooks.ts'
 import { useAppDispatch, useRootSelector } from '../store/storeUtil.ts'
 import { mobCcTypes } from '../util/mobSpawns.ts'
+import { Spell } from '../data/types.ts'
 
 export function MobInfo() {
   const dispatch = useAppDispatch()
@@ -20,9 +21,26 @@ export function MobInfo() {
   const { mob } = mobSpawn
   const spells = dungeon.spells[mob.id]
 
-  const onClickSpellId = async (spellId: number) => {
-    await navigator.clipboard.writeText(spellId.toString())
-    dispatch(addToast({ message: `Copied Spell ID to clipboard: ${spellId}` }))
+  const onClickSpellId = async (spell: Spell, altKey: boolean) => {
+    if (!altKey) {
+      await navigator.clipboard.writeText(spell.id.toString())
+      dispatch(addToast({ message: `Copied Spell ID to clipboard: ${spell.id}` }))
+      return
+    }
+
+    const varName = spell.name[0]!.toLowerCase() + spell.name.substring(1).replaceAll(' ', '')
+    const ts = `
+    
+const ${varName}: EnemyAbility = {
+  name: '${spell.name}',
+  id: ${spell.id},
+  icon: '${spell.icon.split('.jpg')[0]!}',
+  baseDamage: 0,
+  isAoe: true,
+}`
+
+    await navigator.clipboard.writeText(ts.toString())
+    dispatch(addToast({ message: `Copied NEC text to clipboard: ${ts}` }))
   }
 
   return (
@@ -68,7 +86,7 @@ export function MobInfo() {
                 className="h-8 flex items-center border border-gray-500 rounded-md"
               >
                 <a
-                  href={`https://www.wowhead.com/spell=${spell.id}`}
+                  href={`https://www.wowhead.com/spell=${spell.id}?dd=23&ddsize=5`}
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -83,7 +101,7 @@ export function MobInfo() {
 
                 <a
                   className="flex-grow h-full"
-                  href={`https://www.wowhead.com/spell=${spell.id}`}
+                  href={`https://www.wowhead.com/spell=${spell.id}?dd=23&ddsize=5`}
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -93,7 +111,7 @@ export function MobInfo() {
                 </a>
                 <div
                   className="gritty flex w-[70px] justify-between items-center gap-2 px-2 h-full bg-fancy-red rounded-md rounded-l-none opacity-90 cursor-pointer select-none"
-                  onClick={() => onClickSpellId(spell.id)}
+                  onClick={(e) => onClickSpellId(spell, e.altKey)}
                 >
                   {spell.id}
                 </div>
