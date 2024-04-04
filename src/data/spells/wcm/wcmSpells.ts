@@ -1,6 +1,6 @@
 import wclSpells from './wcm_spells.json'
-import { Spells } from '../types.ts'
-import { mergeSpells } from './mergeSpells.ts'
+import { Spells } from '../../types.ts'
+import { mergeSpells } from '../mergeSpells.ts'
 
 const extraSpells: Spells = {
   135234: [{ id: 265642, name: 'Diseased Crunch', icon: 'ability_creature_poison_01' }],

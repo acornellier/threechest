@@ -1,6 +1,6 @@
 import spells from './hoi_spells.json'
-import { Spells } from '../types.ts'
-import { mergeSpells } from './mergeSpells.ts'
+import { Spells } from '../../types.ts'
+import { mergeSpells } from '../mergeSpells.ts'
 
 const extraSpells: Spells = {
   189722: [

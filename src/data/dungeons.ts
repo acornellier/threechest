@@ -1,6 +1,6 @@
 import { Dungeon } from './types.ts'
 import { mdtDungeons, mdtMobSpawns } from './mdtDungeons.ts'
-import { dungeonSpells } from './spells.ts'
+import { dungeonSpells } from './spells/spells.ts'
 import { mapHeight } from '../util/map.ts'
 import { DungeonKey } from './dungeonKeys.ts'
 

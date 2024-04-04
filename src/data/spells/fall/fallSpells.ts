@@ -1,6 +1,6 @@
 import wclSpells from './fall_spells.json'
-import { Spells } from '../types.ts'
-import { mergeSpells } from './mergeSpells.ts'
+import { Spells } from '../../types.ts'
+import { mergeSpells } from '../mergeSpells.ts'
 
 const extraSpells: Spells = {
   198933: [{ id: 198933, name: 'Timerip', icon: 'ability_evoker_timespiral' }],

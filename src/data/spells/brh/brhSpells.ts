@@ -1,6 +1,6 @@
 import wclSpells from './brh_spells.json'
-import { Spells } from '../types.ts'
-import { mergeSpells } from './mergeSpells.ts'
+import { Spells } from '../../types.ts'
+import { mergeSpells } from '../mergeSpells.ts'
 
 const extraSpells: Spells = {
   98521: [

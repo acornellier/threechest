@@ -16,6 +16,7 @@ const dungeons: DungeonLog[] = [
   { dungeonKey: 'nelth', code: '6xZb9QNfPLyCHKdM', fightId: 1 },
   { dungeonKey: 'nok', code: 'Qp9Y6wTgd1xjJtZN', fightId: 1 },
   { dungeonKey: 'rlp', code: 'HYC1GWAvgc7NaLxp', fightId: 5 },
+  { dungeonKey: 'uld', code: '23BYFzapv6KmRdV7', fightId: 1 },
   // s3
   { dungeonKey: 'ad', code: '6gAz9tCPKFRkVQJv', fightId: 67 },
   { dungeonKey: 'brh', code: 'C42jfKx1PkcYFmXT', fightId: 120 },
@@ -115,7 +116,7 @@ query {
     }
   }
 
-  const file = `${dirname}/../src/data/spells/${dungeonKey}_spells.json`
+  const file = `${dirname}/../src/data/spells/${dungeonKey}/${dungeonKey}_spells.json`
   fs.writeFileSync(file, JSON.stringify(spells))
   console.log(`Wrote ${ids.size} spells to ${file}`)
 }

@@ -1,6 +1,6 @@
 import wclSpells from './dht_spells.json'
-import { Spells } from '../types.ts'
-import { mergeSpells } from './mergeSpells.ts'
+import { Spells } from '../../types.ts'
+import { mergeSpells } from '../mergeSpells.ts'
 
 const extraSpells: Spells = {
   95772: [{ id: 225484, name: 'Grievous Rip', icon: 'spell_frost_iceclaw.jpg' }],

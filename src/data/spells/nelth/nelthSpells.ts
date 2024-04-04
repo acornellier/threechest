@@ -1,6 +1,6 @@
 import spells from './nelth_spells.json'
-import { mergeSpells } from './mergeSpells.ts'
-import { Spells } from '../types.ts'
+import { mergeSpells } from '../mergeSpells.ts'
+import { Spells } from '../../types.ts'
 
 const extraSpells: Spells = {
   181861: [{ id: 375890, name: 'Magma Eruption', icon: 'ability_rhyolith_volcano' }],

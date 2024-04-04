@@ -1,6 +1,6 @@
 import spells from './rlp_spells.json'
-import { mergeSpells } from './mergeSpells.ts'
-import { Spells } from '../types.ts'
+import { mergeSpells } from '../mergeSpells.ts'
+import { Spells } from '../../types.ts'
 
 const extraSpells: Spells = {
   188011: [{ id: 371956, name: 'Stone Missile', icon: 'inv_ore_blackrock_ore' }],
