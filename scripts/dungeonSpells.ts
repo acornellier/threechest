@@ -15,6 +15,7 @@ const dungeons: DungeonLog[] = [
   { dungeonKey: 'hoi', code: 'yzWxcC21P4jRXJbY', fightId: 5 },
   { dungeonKey: 'nelth', code: '6xZb9QNfPLyCHKdM', fightId: 1 },
   { dungeonKey: 'nok', code: 'Qp9Y6wTgd1xjJtZN', fightId: 1 },
+  { dungeonKey: 'rlp', code: 'HYC1GWAvgc7NaLxp', fightId: 5 },
   // s3
   { dungeonKey: 'ad', code: '6gAz9tCPKFRkVQJv', fightId: 67 },
   { dungeonKey: 'brh', code: 'C42jfKx1PkcYFmXT', fightId: 120 },
