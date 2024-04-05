@@ -10,6 +10,7 @@ export const useRoutesSelector = <T>(selector: (state: RouteState) => T): T =>
 
 export const selectRoute = (state: RootState) =>
   state.import.previewRoute ?? state.routes.present.route
+
 export const useRoute = () => useRootSelector(selectRoute)
 
 export const useSelectedPull = () => useRoutesSelector((state) => state.selectedPull)

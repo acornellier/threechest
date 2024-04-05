@@ -1,13 +1,18 @@
-﻿import { Circle, Polygon, Tooltip } from 'react-leaflet'
-import { memo, useEffect, useMemo, useState } from 'react'
+﻿import { Circle as LeafletCircle, Polygon as LeafletPolygon } from 'leaflet'
+import { Circle, CircleProps, Polygon, PolygonProps, Tooltip } from 'react-leaflet'
+import { memo, useEffect, useMemo, useRef } from 'react'
 import { getPullColor } from '../../../util/colors.ts'
 import { MobSpawn, Point } from '../../../data/types.ts'
-import { expandPolygon, iconSizeMagicScaling, makeConvexHull } from '../../../util/hull.ts'
+import {
+  expandPolygon,
+  makeConvexHull,
+  mobScaleToRadius,
+  PolygonVertex,
+} from '../../../util/hull.ts'
 import { mobScale } from '../../../util/mobSpawns.ts'
 import { selectPull } from '../../../store/routes/routesReducer.ts'
 import { Pull } from '../../../util/types.ts'
 import { useMapObjectsHidden } from '../../../store/reducers/mapReducer.ts'
-
 import { useDungeon } from '../../../store/routes/routeHooks.ts'
 import { useAppDispatch } from '../../../store/storeUtil.ts'
 
@@ -16,6 +21,7 @@ interface Props {
   index: number
   isHovered: boolean
   isSelected: boolean
+  faded: boolean
 }
 
 interface Outline {
@@ -32,12 +38,12 @@ function createOutline(mobSpawns: MobSpawn[]): Outline {
     return {
       circle: {
         center: mobSpawn.spawn.pos,
-        radius: scale * iconSizeMagicScaling * (mobSpawn.mob.isBoss ? 1.1 : 1),
+        radius: mobScaleToRadius(scale),
       },
     }
   }
 
-  const vertices = mobSpawns.map((mobSpawn) => ({
+  const vertices: PolygonVertex[] = mobSpawns.map((mobSpawn) => ({
     pos: mobSpawn.spawn.pos,
     scale: mobScale(mobSpawn),
   }))
@@ -49,7 +55,7 @@ function createOutline(mobSpawns: MobSpawn[]): Outline {
   return { hull: hull.map((m) => m.pos) }
 }
 
-function PullOutlineComponent({ pull, index, isSelected, isHovered }: Props) {
+function PullOutlineComponent({ pull, index, isSelected, isHovered, faded }: Props) {
   const dispatch = useAppDispatch()
   const dungeon = useDungeon()
   const mobSpawns = useMemo(
@@ -57,14 +63,10 @@ function PullOutlineComponent({ pull, index, isSelected, isHovered }: Props) {
     [dungeon, pull.spawns],
   )
   const { hull, circle } = useMemo(() => createOutline(mobSpawns), [mobSpawns])
-  const pullColor = getPullColor(index)
   const hidden = useMapObjectsHidden(100)
 
-  // Change key to force re-render
-  const [key, setKey] = useState(0)
-  useEffect(() => {
-    setKey((prevKey) => prevKey + 1000)
-  }, [isHovered, isSelected, pull, index, hidden])
+  const polygonRef = useRef<PolygonProps & LeafletPolygon<any>>(null)
+  const circleRef = useRef<CircleProps & LeafletCircle<any>>(null)
 
   const eventHandlers = useMemo(
     () => ({
@@ -76,19 +78,72 @@ function PullOutlineComponent({ pull, index, isSelected, isHovered }: Props) {
   )
 
   const tooltipClass = `pull-number-tooltip ${isHovered ? 'hovered' : ''} ${isSelected ? 'selected' : ''}`
-  const outlineOacity = hidden ? 0 : isSelected || isHovered ? 1 : 0.6
-  const textOpacity = hidden ? 0 : isSelected || isHovered ? 1 : 0.9
+  const color = faded ? '#222222' : getPullColor(index)
+  const opacity = hidden ? 0 : isSelected || isHovered ? 1 : 0.6
   const weight = isSelected ? 6 : isHovered ? 4.5 : 3.5
+  const textOpacity = hidden ? 0 : isSelected || isHovered ? 1 : 0.9
 
-  return circle ? (
+  useEffect(() => {
+    if (hull) polygonRef.current?.setLatLngs(hull)
+  }, [hull])
+
+  useEffect(() => {
+    if (circle) {
+      circleRef.current?.setRadius(circle.radius)
+      circleRef.current?.setRadius(circle.radius)
+    }
+  }, [circle])
+
+  useEffect(() => {
+    const ref = polygonRef.current ?? circleRef.current
+    if (!ref) return
+
+    ref.setStyle({
+      color,
+      opacity,
+      weight,
+    })
+  }, [color, opacity, weight])
+
+  useEffect(() => {
+    const ref = polygonRef.current ?? circleRef.current
+    const tooltip = ref?.getTooltip()
+    if (!tooltip) return
+
+    tooltip.setOpacity(textOpacity)
+    tooltip.setTooltipContent(`${index + 1}`)
+    const el = tooltip.getElement()
+    if (el) {
+      el.classList.toggle('hovered', isHovered)
+      el.classList.toggle('selected', isSelected)
+    }
+    tooltip.update()
+  }, [index, isHovered, isSelected, textOpacity])
+
+  // Remember to update the useEffects above when making changes below
+  return hull ? (
+    <Polygon
+      ref={polygonRef}
+      positions={hull}
+      eventHandlers={eventHandlers}
+      color={color}
+      fillOpacity={0}
+      opacity={opacity}
+      weight={weight}
+    >
+      <Tooltip className={tooltipClass} direction="center" permanent opacity={textOpacity}>
+        {index + 1}
+      </Tooltip>
+    </Polygon>
+  ) : circle ? (
     <Circle
-      key={key}
+      ref={circleRef}
       center={circle.center}
       radius={circle.radius}
       eventHandlers={eventHandlers}
-      color={pullColor}
+      color={color}
       fillOpacity={0}
-      opacity={outlineOacity}
+      opacity={opacity}
       weight={weight}
     >
       <Tooltip
@@ -101,20 +156,6 @@ function PullOutlineComponent({ pull, index, isSelected, isHovered }: Props) {
         {index + 1}
       </Tooltip>
     </Circle>
-  ) : hull ? (
-    <Polygon
-      key={key}
-      positions={hull}
-      eventHandlers={eventHandlers}
-      color={pullColor}
-      fillOpacity={0}
-      opacity={outlineOacity}
-      weight={weight}
-    >
-      <Tooltip className={tooltipClass} direction="center" permanent opacity={textOpacity}>
-        {index + 1}
-      </Tooltip>
-    </Polygon>
   ) : null
 }
 

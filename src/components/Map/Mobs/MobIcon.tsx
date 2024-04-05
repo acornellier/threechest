@@ -9,6 +9,7 @@ interface Props {
   isGroupHovered: boolean
   isSelected: boolean
   iconScaling: number
+  faded: boolean
 }
 
 export function MobIcon({
@@ -17,6 +18,7 @@ export function MobIcon({
   iconScaling,
   isGroupHovered,
   isSelected,
+  faded,
 }: Props) {
   return (
     <>
@@ -28,8 +30,11 @@ export function MobIcon({
             backgroundImage: `url(/npc_portraits/${mobSpawn.mob.id}.png)`,
             backgroundSize: 'contain',
             backgroundBlendMode: 'overlay',
-            backgroundColor:
-              matchingPullIndex !== null ? getPullColor(matchingPullIndex, true) : undefined,
+            backgroundColor: faded
+              ? '#444444'
+              : matchingPullIndex !== null
+                ? getPullColor(matchingPullIndex, true)
+                : undefined,
           }}
         >
           {isGroupHovered && mobSpawn.mob.count > 0 && (

@@ -15,7 +15,7 @@ import {
 import { MobSpawn } from '../../../data/types.ts'
 import { useRoute, useSelectedPull } from '../../../store/routes/routeHooks.ts'
 import { useAppDispatch, useRootSelector } from '../../../store/storeUtil.ts'
-import { useMapObjectsHidden } from '../../../store/reducers/mapReducer.ts'
+import { selectIsLive, useMapObjectsHidden } from '../../../store/reducers/mapReducer.ts'
 import { Delayed } from '../../Common/Delayed.tsx'
 import { Patrol } from './Patrol.tsx'
 import { mapIconScaling, useIconScaling } from '../../../util/map.ts'
@@ -26,25 +26,28 @@ interface MobSpawnProps {
 }
 
 interface MobSpawnMemoProps extends MobSpawnProps {
+  isSelected: boolean
   isHovered: boolean
   isGroupHovered: boolean
   matchingPullIndex: number | null
   hidden: boolean
+  faded: boolean
 }
 
 function MobSpawnComponent({
   mobSpawn,
+  isSelected,
   isHovered,
   isGroupHovered,
   matchingPullIndex,
   hidden,
+  faded,
 }: MobSpawnMemoProps) {
   const { mob, spawn } = mobSpawn
   const dispatch = useAppDispatch()
-  const isDrawing = useRootSelector((state) => state.map.isDrawing)
+  const isDrawing = useRootSelector((state) => state.map.mapMode === 'drawing')
   const isBoxHovering = useRootSelector(selectIsBoxHovering)
   const disableHover = isDrawing || isBoxHovering
-  const selectedPull = useSelectedPull()
   const isActuallyHovered = isHovered && !disableHover
 
   // Call useIconScaling() to trigger render when it changes
@@ -74,28 +77,38 @@ function MobSpawnComponent({
     [dispatch, spawn],
   )
 
+  const mobIcon = useMemo(
+    () => (
+      <MobIcon
+        mobSpawn={mobSpawn}
+        iconScaling={iconScaling}
+        isGroupHovered={isGroupHovered && !disableHover}
+        isSelected={isSelected}
+        matchingPullIndex={matchingPullIndex}
+        faded={faded}
+      />
+    ),
+    [disableHover, faded, iconScaling, isGroupHovered, isSelected, matchingPullIndex, mobSpawn],
+  )
+
+  const icon = useMemo(() => {
+    return divIcon({
+      className: `mob-spawn-icon fade-in-map-object`,
+      popupAnchor: [100, 0],
+      iconUrl: `/npc_portaits/${mob.id}.png`,
+      iconSize: [iconSize, iconSize],
+      html: renderToString(mobIcon),
+    })
+  }, [iconSize, mob.id, mobIcon])
+
   return (
     <>
       <Marker
         position={spawn.pos}
         zIndexOffset={isActuallyHovered ? 1000 : 0}
         eventHandlers={eventHandlers}
-        opacity={hidden ? 0 : 1}
-        icon={divIcon({
-          className: `mob-spawn-icon fade-in-map-object`,
-          popupAnchor: [100, 0],
-          iconUrl: `/npc_portaits/${mob.id}.png`,
-          iconSize: [iconSize, iconSize],
-          html: renderToString(
-            <MobIcon
-              mobSpawn={mobSpawn}
-              iconScaling={iconScaling}
-              isGroupHovered={isGroupHovered && !disableHover}
-              isSelected={selectedPull === matchingPullIndex}
-              matchingPullIndex={matchingPullIndex}
-            />,
-          ),
-        })}
+        opacity={hidden ? 0 : faded ? 0.5 : 1}
+        icon={icon}
       >
         <Delayed delay={300}>
           <MobSpawnTooltip
@@ -126,7 +139,9 @@ export function MobSpawnWrapper({ mobSpawn }: MobSpawnProps) {
 
   // Delay each individual mob by up to 100ms for performance and because it looks cool
   const hidden = useMapObjectsHidden(0, 100)
+  const isLive = useRootSelector(selectIsLive)
 
+  const selectedPull = useSelectedPull()
   const hoveredMobSpawn = useHoveredMobSpawn()
   const isHovered = !!hoveredMobSpawn && hoveredMobSpawn.spawn.id === mobSpawn.spawn.id
   const isGroupHovered =
@@ -140,13 +155,18 @@ export function MobSpawnWrapper({ mobSpawn }: MobSpawnProps) {
     return index !== -1 ? index : null
   }, [route.pulls, mobSpawn])
 
+  const isSelected = matchingPullIndex !== null && selectedPull === matchingPullIndex
+  const faded = isLive && matchingPullIndex !== null && matchingPullIndex < selectedPull
+
   return (
     <MobSpawnMemo
       mobSpawn={mobSpawn}
+      isSelected={isSelected}
       isHovered={isHovered}
       isGroupHovered={isGroupHovered}
       matchingPullIndex={matchingPullIndex}
       hidden={hidden}
+      faded={faded}
     />
   )
 }

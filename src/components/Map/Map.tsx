@@ -19,6 +19,8 @@ import { PatherComponent } from './Draw/PatherComponent.tsx'
 import { AwarenessCursors } from '../Collab/AwarenessCursors.tsx'
 import { MapInitialZoom } from './MapInitialZoom.tsx'
 
+import { LiveControllerWrapper } from '../Live/LiveControllerWrapper.tsx'
+
 export function Map() {
   const dispatch = useAppDispatch()
   const dungeon = useDungeon()
@@ -64,6 +66,7 @@ export function Map() {
         <PatherComponent />
         <MapInitialZoom />
         <AwarenessCursors />
+        <LiveControllerWrapper />
         {isDev && <MousePosition />}
       </MapContainer>
     </div>

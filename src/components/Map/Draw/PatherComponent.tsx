@@ -9,7 +9,7 @@ import { ReactPatherLayerComponent } from './PatherLayerComponent.tsx'
 export function PatherComponent() {
   const dispatch = useAppDispatch()
 
-  const { isDrawing, drawMode, drawColor, drawWeight } = useRootSelector((state) => state.map)
+  const { mapMode, drawMode, drawColor, drawWeight } = useRootSelector((state) => state.map)
 
   const eventHandlers = useMemo(
     () => ({
@@ -25,7 +25,7 @@ export function PatherComponent() {
     [drawColor, dispatch, drawWeight],
   )
 
-  if (!isDrawing) return
+  if (mapMode !== 'drawing') return
 
   return (
     <ReactPatherLayerComponent

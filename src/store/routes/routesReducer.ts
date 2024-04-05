@@ -12,12 +12,14 @@ import { routeMigrate, routePersistVersion } from './routeMigrations.ts'
 import { addToast } from '../reducers/toastReducer.ts'
 import { createAppSlice } from '../storeUtil.ts'
 import { DungeonKey } from '../../data/dungeonKeys.ts'
+import { setMapMode } from '../reducers/mapReducer.ts'
 
 export interface RouteState {
   route: Route
   selectedPull: number
   savedRoutes: SavedRoute[]
-  backupRoute?: Route | null
+  collabBackupRoute?: Route | null
+  liveBackupRoute?: Route | null
 }
 
 const emptyPull: Pull = { id: 0, spawns: [] }
@@ -107,7 +109,7 @@ export const deleteRoute = createAsyncThunk('routes/deleteRoute', async (_, thun
   return { deletedRouteId: routeId, route }
 })
 
-export const defaultDungeonKey = 'eb'
+export const defaultDungeonKey: DungeonKey = 'eb'
 
 export const initialState: RouteState = {
   route: makeEmptyRoute(defaultDungeonKey, []),
@@ -152,8 +154,13 @@ const baseReducer = createAppSlice({
       giveRouteNewNameUid(state, newRoute)
       setRouteFresh(state, newRoute)
     },
-    backupRoute(state) {
-      state.backupRoute = state.route
+    backupCollabRoute(state) {
+      state.collabBackupRoute = state.route
+    },
+    restoreLiveBackup(state) {
+      if (!state.liveBackupRoute) return
+      state.route = state.liveBackupRoute
+      state.liveBackupRoute = null
     },
     clearRoute(state) {
       state.route.pulls = [emptyPull]
@@ -306,6 +313,18 @@ const baseReducer = createAppSlice({
       setRouteFresh(state, route)
     })
 
+    builder.addCase(setMapMode, (state, { payload }) => {
+      if (payload === 'live') {
+        state.selectedPull = 0
+        state.liveBackupRoute = state.route
+      } else {
+        if (state.liveBackupRoute) {
+          state.route = state.liveBackupRoute
+        }
+        state.liveBackupRoute = null
+      }
+    })
+
     builder.addMatcher(
       (action) => action.type.startsWith('routes/'),
       (state) => {
@@ -365,7 +384,8 @@ export const {
   setRouteForCollab,
   setRouteFromMdt,
   setRouteFromSample,
-  backupRoute,
+  backupCollabRoute,
+  restoreLiveBackup,
   clearRoute,
   clearDrawings,
   setName,

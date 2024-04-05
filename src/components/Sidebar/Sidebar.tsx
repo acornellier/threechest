@@ -8,7 +8,7 @@ import { useIsGuestCollab } from '../../store/collab/collabReducer.ts'
 import { MiniPulls } from './Pulls/MiniPulls.tsx'
 import { isMobile } from '../../util/dev.ts'
 import { useAppDispatch, useRootSelector } from '../../store/storeUtil.ts'
-import { setSidebarCollapsed } from '../../store/reducers/mapReducer.ts'
+import { selectIsLive, setSidebarCollapsed } from '../../store/reducers/mapReducer.ts'
 
 export const sidebarWidth = 290
 const marginTop = 8
@@ -20,6 +20,9 @@ export function Sidebar() {
   const [bottomCollapsed, setBottomCollapsed] = useState(false)
   const isBottomCollapsed = !topCollapsed || bottomCollapsed
   const isGuestCollab = useIsGuestCollab()
+  const isLive = useRootSelector(selectIsLive)
+
+  if (isLive) return
 
   return (
     <>
@@ -37,7 +40,7 @@ export function Sidebar() {
           collapsed={topCollapsed}
           setCollapsed={() => dispatch(setSidebarCollapsed(!topCollapsed))}
         />
-        {isGuestCollab ? <HostRouteDetails /> : <RouteDetails />}
+        {isLive ? null : isGuestCollab ? <HostRouteDetails /> : <RouteDetails />}
         <CollabPanel />
         <Pulls />
       </div>

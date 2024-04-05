@@ -5,7 +5,7 @@ import {
   setDrawColor,
   setDrawMode,
   setDrawWeight,
-  setIsDrawing,
+  setMapMode,
 } from '../../../store/reducers/mapReducer.ts'
 import { clearDrawings } from '../../../store/routes/routesReducer.ts'
 import { useCallback, useState } from 'react'
@@ -31,10 +31,14 @@ const weightOptions: WeightOption[] = [1, 2, 3, 4, 8, 12, 16, 24].map(weightToOp
 
 export function DrawToolbar() {
   const dispatch = useAppDispatch()
-  const { isDrawing, drawMode, drawColor, drawWeight } = useRootSelector((state) => state.map)
+  const { mapMode, drawMode, drawColor, drawWeight } = useRootSelector((state) => state.map)
   const [isChoosingColor, setChoosingColor] = useState(false)
 
-  const toggleDraw = useCallback(() => dispatch(setIsDrawing(!isDrawing)), [dispatch, isDrawing])
+  const isDrawing = mapMode === 'drawing'
+  const toggleDraw = useCallback(
+    () => dispatch(setMapMode(isDrawing ? 'editing' : 'live')),
+    [dispatch, isDrawing],
+  )
   useShortcut(shortcuts.draw, toggleDraw)
 
   const onChangeColor = useCallback(

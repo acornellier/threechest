@@ -5,11 +5,12 @@ import { importRoute } from './reducers/importReducer.ts'
 import { REHYDRATE } from 'redux-persist/es/constants'
 import { ActionCreators } from 'redux-undo'
 import {
-  backupRoute,
+  backupCollabRoute,
   duplicateRoute,
   loadRoute,
   newRoute,
   removeInvalidSpawns,
+  restoreLiveBackup,
   setDungeon,
   setRouteForCollab,
   setRouteFromMdt,
@@ -63,6 +64,7 @@ listenerMiddleware.startListening({
 listenerMiddleware.startListening({
   type: REHYDRATE,
   effect: async (_action, listenerApi) => {
+    listenerApi.dispatch(restoreLiveBackup())
     listenerApi.dispatch(ActionCreators.clearHistory())
   },
 })
@@ -166,7 +168,7 @@ listenerMiddleware.startListening({
     )
   },
   effect: (_action, listenerApi) => {
-    listenerApi.dispatch(backupRoute())
+    listenerApi.dispatch(backupCollabRoute())
   },
 })
 

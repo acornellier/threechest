@@ -27,7 +27,7 @@ if (signaling.length !== 1) {
   console.error('Signaling length should be exactly 1')
 }
 
-export function CollabSync() {
+function CollabSync() {
   const dispatch = useAppDispatch()
   const room = useCollabSelector((state) => state.room)
   const [yObjects, setYObjects] = useState<{ map: Y.Map<Route>; provider: WebrtcProvider }>()
@@ -80,4 +80,11 @@ export function CollabSync() {
       <NoHostChecker />
     </>
   )
+}
+
+export function CollabSyncWrapper() {
+  const collabActive = useCollabSelector((state) => state.active)
+  if (!collabActive) return
+
+  return <CollabSync />
 }

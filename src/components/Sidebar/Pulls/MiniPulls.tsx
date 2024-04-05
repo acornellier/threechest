@@ -25,7 +25,7 @@ export function MiniPulls() {
 
   return (
     <Panel>
-      <TotalCount pullsDetailed={pullsDetailed} alwaysShowTotal />
+      <TotalCount pullsDetailed={pullsDetailed} curPullIndex={pullsDetailed.length - 1} />
       <PullList pullsDetailed={threePulls} disableSorting />
       <Button
         short
