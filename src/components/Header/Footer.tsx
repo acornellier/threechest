@@ -32,7 +32,7 @@ export function Footer({ right }: Props) {
       >
         <div className="my-1 mx-2 flex items-center gap-2 h-[48px]">
           <Button justifyStart onClick={() => setHelpModalOpen(true)}>
-            Helpp
+            Help
           </Button>
           <a href="https://discord.gg/btHjKxn7YB" target="_blank" rel="noreferrer">
             <Button Icon={DiscordIcon} />
