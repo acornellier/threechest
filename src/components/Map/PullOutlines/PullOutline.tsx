@@ -1,6 +1,6 @@
 ﻿import { Circle as LeafletCircle, Polygon as LeafletPolygon } from 'leaflet'
 import { Circle, CircleProps, Polygon, PolygonProps, Tooltip } from 'react-leaflet'
-import { memo, useEffect, useMemo, useRef } from 'react'
+import { memo, useEffect, useMemo, useRef, useState } from 'react'
 import { getPullColor } from '../../../util/colors.ts'
 import { MobSpawn, Point } from '../../../data/types.ts'
 import {
@@ -83,16 +83,15 @@ function PullOutlineComponent({ pull, index, isSelected, isHovered, faded }: Pro
   const weight = isSelected ? 6 : isHovered ? 4.5 : 3.5
   const textOpacity = hidden ? 0 : isSelected || isHovered ? 1 : 0.9
 
+  const [key, setKey] = useState(0)
   useEffect(() => {
-    if (hull) polygonRef.current?.setLatLngs(hull)
-  }, [hull])
-
-  useEffect(() => {
-    if (circle) {
-      circleRef.current?.setRadius(circle.radius)
-      circleRef.current?.setRadius(circle.radius)
-    }
-  }, [circle])
+    setKey((v) => v + 1)
+    // if (hull) polygonRef.current?.setLatLngs(hull)
+    // if (circle) {
+    //   circleRef.current?.setRadius(circle.radius)
+    //   circleRef.current?.setRadius(circle.radius)
+    // }
+  }, [hull, circle])
 
   useEffect(() => {
     const ref = polygonRef.current ?? circleRef.current
@@ -123,6 +122,7 @@ function PullOutlineComponent({ pull, index, isSelected, isHovered, faded }: Pro
   // Remember to update the useEffects above when making changes below
   return hull ? (
     <Polygon
+      key={key}
       ref={polygonRef}
       positions={hull}
       eventHandlers={eventHandlers}
@@ -137,6 +137,7 @@ function PullOutlineComponent({ pull, index, isSelected, isHovered, faded }: Pro
     </Polygon>
   ) : circle ? (
     <Circle
+      key={key}
       ref={circleRef}
       center={circle.center}
       radius={circle.radius}
