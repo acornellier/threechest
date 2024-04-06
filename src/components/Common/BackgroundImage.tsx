@@ -1,4 +1,4 @@
-﻿import { Delayed } from './Common/Delayed.tsx'
+﻿import { Delayed } from './Delayed.tsx'
 
 export function BackgroundImage() {
   // delay by 1 second to de-prioritize image loading

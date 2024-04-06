@@ -1,6 +1,6 @@
-import { Button } from './Common/Button.tsx'
+import { Button } from './Button.tsx'
 import { ErrorInfo, useEffect } from 'react'
-import { defaultDungeonKey, deleteRoute, newRoute } from '../store/routes/routesReducer.ts'
+import { defaultDungeonKey, deleteRoute, newRoute } from '../../store/routes/routesReducer.ts'
 import {
   ArrowPathIcon,
   ArrowTopRightOnSquareIcon,
@@ -8,9 +8,9 @@ import {
   PlusCircleIcon,
   TrashIcon,
 } from '@heroicons/react/24/outline'
-import { isDev } from '../util/dev.ts'
-import { useAppDispatch, useRootSelector } from '../store/storeUtil.ts'
-import { endCollab } from '../store/collab/collabReducer.ts'
+import { isDev } from '../../util/dev.ts'
+import { useAppDispatch, useRootSelector } from '../../store/storeUtil.ts'
+import { endCollab } from '../../store/collab/collabReducer.ts'
 
 interface Props {
   errors: Array<{ error: Error; info: ErrorInfo }>

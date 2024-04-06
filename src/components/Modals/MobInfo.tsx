@@ -1,13 +1,12 @@
-import { Panel } from './Common/Panel.tsx'
+import { Panel } from '../Common/Panel.tsx'
 import { XMarkIcon } from '@heroicons/react/24/outline'
-import { selectSelectedSpawn, selectSpawn } from '../store/reducers/hoverReducer.ts'
-import { getIconLink } from '../data/spells/mergeSpells.ts'
-import { addToast } from '../store/reducers/toastReducer.ts'
-
-import { useDungeon } from '../store/routes/routeHooks.ts'
-import { useAppDispatch, useRootSelector } from '../store/storeUtil.ts'
-import { mobCcTypes } from '../util/mobSpawns.ts'
-import { Spell } from '../data/types.ts'
+import { selectSelectedSpawn, selectSpawn } from '../../store/reducers/hoverReducer.ts'
+import { getIconLink } from '../../data/spells/mergeSpells.ts'
+import { addToast } from '../../store/reducers/toastReducer.ts'
+import { useDungeon } from '../../store/routes/routeHooks.ts'
+import { useAppDispatch, useRootSelector } from '../../store/storeUtil.ts'
+import { mobCcTypes } from '../../util/mobSpawns.ts'
+import { Spell } from '../../data/types.ts'
 
 export function MobInfo() {
   const dispatch = useAppDispatch()

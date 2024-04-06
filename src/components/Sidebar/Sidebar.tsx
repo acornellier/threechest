@@ -10,8 +10,6 @@ import { useAppDispatch, useRootSelector } from '../../store/storeUtil.ts'
 import { selectIsLive, setSidebarCollapsed } from '../../store/reducers/mapReducer.ts'
 
 export const sidebarWidth = 290
-const marginTop = 8
-const marginBottom = 8
 
 export function Sidebar() {
   const dispatch = useAppDispatch()
