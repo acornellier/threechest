@@ -89,7 +89,7 @@ export function HelpModal({ onClose }: Props) {
                 <span className="rounded bg-fancy-red px-1 min-w-6 text-center">
                   {isMac ? 'Cmd' : 'Ctrl'} + click
                 </span>{' '}
-                to select indivudal mobs.
+                to select indivudal mobs
               </div>
               <div>
                 <span className="rounded bg-fancy-red px-1 min-w-6 text-center">Shift + click</span>{' '}
@@ -101,7 +101,15 @@ export function HelpModal({ onClose }: Props) {
               </div>
               <div>
                 Hold <span className="rounded bg-fancy-red px-1 min-w-6 text-center">Shift</span> to
-                view total forces instead of %.
+                view total forces instead of %
+              </div>
+              <div>
+                Hold <span className="rounded bg-fancy-red px-1 min-w-6 text-center">Ctrl</span> to
+                show each mob&apos;s count
+              </div>
+              <div>
+                Hold <span className="rounded bg-fancy-red px-1 min-w-6 text-center">Alt</span> to
+                show each mob&apos;s group
               </div>
               <div className="text-lg font-bold mt-2">Shortcuts</div>
               <div className="flex flex-col gap-1 whitespace-nowrap">

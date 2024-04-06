@@ -36,4 +36,6 @@ export const tips: Tip[] = [
   },
   { id: 'discord', tip: `Join the discord in the bottom right with and suggestions or feedback` },
   { id: 'shift-forces-percent', tip: `Hold shift to view total forces instead of percent` },
+  { id: 'ctrl-mob-count', tip: `Hold ctrl to show each mob's count` },
+  { id: 'alt-mob-group', tip: `Hold alt to show each mob's group` },
 ]

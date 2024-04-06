@@ -18,8 +18,13 @@ export function useKeyHeld(key: string): boolean {
     [key],
   )
 
+  const onFocus = useCallback(() => {
+    setKeyHeld(false)
+  }, [])
+
   useWindowEvent('keydown', handleKeyDown)
   useWindowEvent('keyup', handleKeyUp)
+  useWindowEvent('focus', onFocus)
 
   return isKeyHeld
 }

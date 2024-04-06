@@ -20,6 +20,7 @@ import { Delayed } from '../../Common/Delayed.tsx'
 import { Patrol } from './Patrol.tsx'
 import { mapIconScaling, useIconScaling } from '../../../util/map.ts'
 import { BossMarker } from './BossMarker.tsx'
+import { useKeyHeld } from '../../../util/hooks/useKeyHeld.ts'
 
 interface MobSpawnProps {
   mobSpawn: MobSpawn
@@ -32,6 +33,8 @@ interface MobSpawnMemoProps extends MobSpawnProps {
   matchingPullIndex: number | null
   hidden: boolean
   faded: boolean
+  isCtrlKeyDown: boolean
+  isAltKeyDown: boolean
 }
 
 function MobSpawnComponent({
@@ -42,6 +45,8 @@ function MobSpawnComponent({
   matchingPullIndex,
   hidden,
   faded,
+  isCtrlKeyDown,
+  isAltKeyDown,
 }: MobSpawnMemoProps) {
   const { mob, spawn } = mobSpawn
   const dispatch = useAppDispatch()
@@ -82,13 +87,24 @@ function MobSpawnComponent({
       <MobIcon
         mobSpawn={mobSpawn}
         iconScaling={iconScaling}
-        isGroupHovered={isGroupHovered && !disableHover}
+        showCount={(isGroupHovered && !disableHover) || isCtrlKeyDown}
+        showGroup={isAltKeyDown && mobSpawn.spawn.group !== null}
         isSelected={isSelected}
         matchingPullIndex={matchingPullIndex}
         faded={faded}
       />
     ),
-    [disableHover, faded, iconScaling, isGroupHovered, isSelected, matchingPullIndex, mobSpawn],
+    [
+      disableHover,
+      faded,
+      iconScaling,
+      isGroupHovered,
+      isSelected,
+      matchingPullIndex,
+      mobSpawn,
+      isCtrlKeyDown,
+      isAltKeyDown,
+    ],
   )
 
   const icon = useMemo(() => {
@@ -140,6 +156,8 @@ export function MobSpawnWrapper({ mobSpawn }: MobSpawnProps) {
   // Delay each individual mob by up to 100ms for performance and because it looks cool
   const hidden = useMapObjectsHidden(0, 100)
   const isLive = useRootSelector(selectIsLive)
+  const isCtrlKeyDown = useKeyHeld('Control')
+  const isAltKeyDown = useKeyHeld('Alt')
 
   const selectedPull = useSelectedPull()
   const hoveredMobSpawn = useHoveredMobSpawn()
@@ -167,6 +185,8 @@ export function MobSpawnWrapper({ mobSpawn }: MobSpawnProps) {
       matchingPullIndex={matchingPullIndex}
       hidden={hidden}
       faded={faded}
+      isCtrlKeyDown={isCtrlKeyDown}
+      isAltKeyDown={isAltKeyDown}
     />
   )
 }

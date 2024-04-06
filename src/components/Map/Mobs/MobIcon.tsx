@@ -6,7 +6,8 @@ import { MobBorder } from './MobBorder.tsx'
 interface Props {
   mobSpawn: MobSpawn
   matchingPullIndex: number | null
-  isGroupHovered: boolean
+  showCount: boolean
+  showGroup: boolean
   isSelected: boolean
   iconScaling: number
   faded: boolean
@@ -16,7 +17,8 @@ export function MobIcon({
   mobSpawn,
   matchingPullIndex,
   iconScaling,
-  isGroupHovered,
+  showCount,
+  showGroup,
   isSelected,
   faded,
 }: Props) {
@@ -37,14 +39,14 @@ export function MobIcon({
                 : undefined,
           }}
         >
-          {isGroupHovered && mobSpawn.mob.count > 0 && (
+          {(showGroup || (showCount && mobSpawn.mob.count > 0)) && (
             <div
               className="text-outline absolute flex items-center justify-center w-full h-full font-bold"
               style={{
-                fontSize: iconScaling * 0.7 * mobScale(mobSpawn),
+                fontSize: iconScaling * 0.7 * mobScale(mobSpawn) * (showGroup ? 0.8 : 1),
               }}
             >
-              {mobSpawn.mob.count}
+              {showGroup ? `G${mobSpawn.spawn.group}` : mobSpawn.mob.count}
             </div>
           )}
         </div>
