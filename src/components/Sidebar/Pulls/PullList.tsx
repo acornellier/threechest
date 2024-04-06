@@ -74,7 +74,12 @@ export function PullList({ pullsDetailed, disableSorting }: Props) {
         className="flex flex-col relative overflow-auto h-fit"
         disabled={disableSorting}
         onStart={(e) => e.oldIndex !== undefined && setGhostPullIndex(e.oldIndex)}
-        onEnd={() => setGhostPullIndex(null)}
+        onEnd={(e) => {
+          setGhostPullIndex(null)
+          if (e.newIndex !== undefined && ghostPullIndex !== null) {
+            dispatch(selectPull(e.newIndex > ghostPullIndex ? e.newIndex - 1 : e.newIndex))
+          }
+        }}
         list={pullsWithGhost}
         setList={setPullsWrapper}
         delay={100}

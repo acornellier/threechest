@@ -20,7 +20,7 @@ const selectPullNumber: Shortcut[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0].map((n) => (
 const exportRoute: Shortcut[] = [{ key: 'E', ctrl: true }]
 const importRoute: Shortcut[] = [{ key: 'V', ctrl: true }]
 const help: Shortcut[] = [{ key: '?', allowShift: true }]
-const draw: Shortcut[] = [{ key: 'F' }]
+const draw: Shortcut[] = [{ key: 'P' }]
 
 export function keyText({ key, ctrl, shift }: Shortcut) {
   let text = ''

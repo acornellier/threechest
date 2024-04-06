@@ -18,7 +18,6 @@ import { useAppDispatch } from '../../store/storeUtil.ts'
 import { PatherComponent } from './Draw/PatherComponent.tsx'
 import { AwarenessCursors } from '../Collab/AwarenessCursors.tsx'
 import { MapInitialZoom } from './MapInitialZoom.tsx'
-
 import { LiveControllerWrapper } from '../Live/LiveControllerWrapper.tsx'
 
 export function Map() {

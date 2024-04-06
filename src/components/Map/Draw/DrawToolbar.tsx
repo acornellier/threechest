@@ -36,7 +36,7 @@ export function DrawToolbar() {
 
   const isDrawing = mapMode === 'drawing'
   const toggleDraw = useCallback(
-    () => dispatch(setMapMode(isDrawing ? 'editing' : 'live')),
+    () => dispatch(setMapMode(isDrawing ? 'editing' : 'drawing')),
     [dispatch, isDrawing],
   )
   useShortcut(shortcuts.draw, toggleDraw)

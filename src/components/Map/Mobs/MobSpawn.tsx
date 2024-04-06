@@ -20,10 +20,11 @@ import { Delayed } from '../../Common/Delayed.tsx'
 import { Patrol } from './Patrol.tsx'
 import { mapIconScaling, useIconScaling } from '../../../util/map.ts'
 import { BossMarker } from './BossMarker.tsx'
-import { useKeyHeld } from '../../../util/hooks/useKeyHeld.ts'
 
 interface MobSpawnProps {
   mobSpawn: MobSpawn
+  isCtrlKeyDown: boolean
+  isAltKeyDown: boolean
 }
 
 interface MobSpawnMemoProps extends MobSpawnProps {
@@ -54,15 +55,15 @@ function MobSpawnComponent({
   const isBoxHovering = useRootSelector(selectIsBoxHovering)
   const disableHover = isDrawing || isBoxHovering
   const isActuallyHovered = isHovered && !disableHover
+  const map = useMap()
+  const iconScaling = mapIconScaling(map)
+  const iconSize = iconScaling * mobScale(mobSpawn) * (isActuallyHovered ? 1.15 : 1)
 
   // Call useIconScaling() to trigger render when it changes
   // Ignore returned value, and calculate ourselves instead, because it only changes on zoomend
   // But we want the latest value from the map's current zoom
   // in case this component renders during a zoom
   useIconScaling()
-  const map = useMap()
-  const iconScaling = mapIconScaling(map)
-  const iconSize = iconScaling * mobScale(mobSpawn) * (isActuallyHovered ? 1.15 : 1)
 
   const eventHandlers: LeafletEventHandlerFnMap = useMemo(
     () => ({
@@ -150,14 +151,12 @@ function MobSpawnComponent({
 
 const MobSpawnMemo = memo(MobSpawnComponent)
 
-export function MobSpawnWrapper({ mobSpawn }: MobSpawnProps) {
+export function MobSpawnWrapper({ mobSpawn, isCtrlKeyDown, isAltKeyDown }: MobSpawnProps) {
   const route = useRoute()
 
   // Delay each individual mob by up to 100ms for performance and because it looks cool
   const hidden = useMapObjectsHidden(0, 100)
   const isLive = useRootSelector(selectIsLive)
-  const isCtrlKeyDown = useKeyHeld('Control')
-  const isAltKeyDown = useKeyHeld('Alt')
 
   const selectedPull = useSelectedPull()
   const hoveredMobSpawn = useHoveredMobSpawn()

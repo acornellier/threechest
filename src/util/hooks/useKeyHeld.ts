@@ -18,13 +18,15 @@ export function useKeyHeld(key: string): boolean {
     [key],
   )
 
-  const onFocus = useCallback(() => {
+  const onLoseFocus = useCallback(() => {
     setKeyHeld(false)
   }, [])
 
   useWindowEvent('keydown', handleKeyDown)
   useWindowEvent('keyup', handleKeyUp)
-  useWindowEvent('focus', onFocus)
+
+  useWindowEvent('blur', onLoseFocus)
+  useWindowEvent('visibilitychange' as keyof WindowEventMap, onLoseFocus)
 
   return isKeyHeld
 }

@@ -12,6 +12,7 @@ import { setBoxHovering } from '../../../store/reducers/hoverReducer.ts'
 import { useDungeon } from '../../../store/routes/routeHooks.ts'
 import { useAppDispatch } from '../../../store/storeUtil.ts'
 import { Delayed } from '../../Common/Delayed.tsx'
+import { useKeyHeld } from '../../../util/hooks/useKeyHeld.ts'
 
 export function Mobs() {
   const dungeon = useDungeon()
@@ -20,6 +21,9 @@ export function Mobs() {
 
   const lastZoom = useRef(map.getZoom())
   const { tempIconScaling } = useIconScaling()
+
+  const isCtrlKeyDown = useKeyHeld('Control')
+  const isAltKeyDown = useKeyHeld('Alt')
 
   const zoomEvent = useCallback(() => {
     const curZoom = map.getZoom()
@@ -76,7 +80,12 @@ export function Mobs() {
   return (
     <Delayed delay={50}>
       {dungeon.mobSpawnsList.map((mobSpawn) => (
-        <MobSpawnWrapper key={mobSpawn.spawn.id} mobSpawn={mobSpawn} />
+        <MobSpawnWrapper
+          key={mobSpawn.spawn.id}
+          mobSpawn={mobSpawn}
+          isCtrlKeyDown={isCtrlKeyDown}
+          isAltKeyDown={isAltKeyDown}
+        />
       ))}
     </Delayed>
   )
