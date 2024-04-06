@@ -13,7 +13,7 @@ const minWidth = 180
 export function MapContextMenu() {
   const dispatch = useAppDispatch()
   const map = useMap()
-  const isDrawing = useRootSelector((state) => state.map.mapMode)
+  const isDrawing = useRootSelector((state) => state.map.mapMode === 'drawing')
 
   const { contextMenuPosition, onRightClick, onClose } = useContextMenu({ minHeight, minWidth })
   const [leafletPos, setLeafletPos] = useState<LatLng | null>(null)
