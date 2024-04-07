@@ -12,10 +12,10 @@ export function MobInfo() {
   const dispatch = useAppDispatch()
   const selectedSpawn = useRootSelector(selectSelectedSpawn)
   const dungeon = useDungeon()
-  if (selectedSpawn === null) return
+  if (selectedSpawn === null) return false
 
   const mobSpawn = dungeon.mobSpawns[selectedSpawn]
-  if (!mobSpawn) return
+  if (!mobSpawn) return false
 
   const { mob } = mobSpawn
   const spells = dungeon.spells[mob.id]

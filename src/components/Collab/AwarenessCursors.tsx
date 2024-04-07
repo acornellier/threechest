@@ -64,7 +64,7 @@ export function AwarenessCursors() {
 
   useMapEvents(mapEvents)
 
-  if (!active) return
+  if (!active) return false
 
   return (
     <>

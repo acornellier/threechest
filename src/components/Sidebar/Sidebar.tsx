@@ -19,7 +19,7 @@ export function Sidebar() {
   const isGuestCollab = useIsGuestCollab()
   const isLive = useRootSelector(selectIsLive)
 
-  if (isLive) return
+  if (isLive) return false
 
   return (
     <>

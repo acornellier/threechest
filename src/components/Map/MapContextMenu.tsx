@@ -34,7 +34,7 @@ export function MapContextMenu() {
     })
   }, [map, onClose, onRightClickMap])
 
-  if (!contextMenuPosition || !leafletPos || isDrawing) return null
+  if (!contextMenuPosition || !leafletPos || isDrawing) return false
 
   return (
     <ContextMenu

@@ -34,7 +34,7 @@ export function ConfirmImportModalComponent({ importingRoute }: Props) {
 
   useShortcut(shortcuts.confirm, overwrite)
 
-  if (!importingRoute) return null
+  if (!importingRoute) return false
 
   const dungeon = dungeonsByMdtIdx[importingRoute.value.currentDungeonIdx]
 
@@ -67,6 +67,6 @@ export function ConfirmImportModalComponent({ importingRoute }: Props) {
 
 export function ConfirmImportModal() {
   const importingRoute = useRootSelector((state) => state.import.importingRoute)
-  if (!importingRoute) return null
+  if (!importingRoute) return false
   return <ConfirmImportModalComponent importingRoute={importingRoute} />
 }

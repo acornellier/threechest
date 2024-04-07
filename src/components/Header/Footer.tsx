@@ -18,7 +18,7 @@ export function Footer() {
   const onHelp = useCallback(() => setHelpModalOpen(true), [])
   useShortcut(shortcuts.help, onHelp)
 
-  if ((sidebarCollapsed && isMobile) || isLive) return
+  if ((sidebarCollapsed && isMobile) || isLive) return false
 
   return (
     <>

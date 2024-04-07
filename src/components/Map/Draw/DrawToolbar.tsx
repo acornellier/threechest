@@ -49,7 +49,7 @@ export function DrawToolbar() {
     [dispatch],
   )
 
-  if (isTouch) return
+  if (isTouch) return null
 
   const isDeleting = drawMode === 'deleting'
   const isErasing = drawMode === 'erasing'

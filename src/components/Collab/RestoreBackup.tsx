@@ -18,7 +18,7 @@ export function RestoreBackup() {
     dispatch(addToast({ message: `Route restored from backup` }))
   }, [backupRoute, dispatch])
 
-  if (!backupRoute || isGuestCollab) return
+  if (!backupRoute || isGuestCollab) return null
 
   return (
     <div className="flex gap-1">

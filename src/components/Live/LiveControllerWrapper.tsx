@@ -4,7 +4,7 @@ import { LiveController } from './LiveController.tsx'
 
 export function LiveControllerWrapper() {
   const isLive = useRootSelector(selectIsLive)
-  if (!isLive) return null
+  if (!isLive) return false
 
   return <LiveController />
 }

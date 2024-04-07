@@ -84,7 +84,7 @@ function CollabSync() {
 
 export function CollabSyncWrapper() {
   const collabActive = useCollabSelector((state) => state.active)
-  if (!collabActive) return
+  if (!collabActive) return false
 
   return <CollabSync />
 }

@@ -25,7 +25,7 @@ export function PatherComponent() {
     [drawColor, dispatch, drawWeight],
   )
 
-  if (mapMode !== 'drawing') return
+  if (mapMode !== 'drawing') return null
 
   return (
     <ReactPatherLayerComponent

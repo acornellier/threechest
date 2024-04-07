@@ -12,7 +12,7 @@ export function TailwindBreakpoint() {
   const onShow = useCallback(() => setShow((v) => !v), [])
   useShortcut(shortcut, onShow)
 
-  if (!show) return
+  if (!show) return null
 
   return (
     <div className="fixed top-0 left-0 bg-amber-950 px-1 text-white z-[9999]">
