@@ -55,15 +55,15 @@ function MobSpawnComponent({
   const isBoxHovering = useRootSelector(selectIsBoxHovering)
   const disableHover = isDrawing || isBoxHovering
   const isActuallyHovered = isHovered && !disableHover
-  const map = useMap()
-  const iconScaling = mapIconScaling(map)
-  const iconSize = iconScaling * mobScale(mobSpawn) * (isActuallyHovered ? 1.15 : 1)
 
   // Call useIconScaling() to trigger render when it changes
   // Ignore returned value, and calculate ourselves instead, because it only changes on zoomend
   // But we want the latest value from the map's current zoom
   // in case this component renders during a zoom
   useIconScaling()
+  const map = useMap()
+  const iconScaling = mapIconScaling(map)
+  const iconSize = iconScaling * mobScale(mobSpawn) * (isActuallyHovered ? 1.15 : 1)
 
   const eventHandlers: LeafletEventHandlerFnMap = useMemo(
     () => ({
@@ -111,7 +111,7 @@ function MobSpawnComponent({
   const icon = useMemo(() => {
     return divIcon({
       className: `mob-spawn-icon fade-in-map-object`,
-      popupAnchor: [100, 0],
+      tooltipAnchor: [iconSize / 2, 0],
       iconUrl: `/npc_portaits/${mob.id}.png`,
       iconSize: [iconSize, iconSize],
       html: renderToString(mobIcon),
@@ -128,12 +128,7 @@ function MobSpawnComponent({
         icon={icon}
       >
         <Delayed delay={300}>
-          <MobSpawnTooltip
-            mob={mob}
-            spawn={spawn}
-            iconScaling={iconScaling}
-            hidden={disableHover}
-          />
+          <MobSpawnTooltip mob={mob} spawn={spawn} hidden={disableHover} />
         </Delayed>
       </Marker>
       {mob.isBoss && (
