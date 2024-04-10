@@ -55,7 +55,7 @@ export function Map() {
           noWrap
           minNativeZoom={2}
           maxNativeZoom={2}
-          url={`/maps/${dungeon.key}/{z}/{x}_{y}.png`}
+          url={`/maps/${dungeon.key}/{z}/{x}_{y}.jpg`}
         />
         <Mobs />
         <PullOutlines />
