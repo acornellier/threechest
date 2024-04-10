@@ -1,6 +1,6 @@
 import wclSpells from './brh_spells.json'
 import { Spells } from '../../types.ts'
-import { mergeSpells } from '../mergeSpells.ts'
+import { mergeSpellsOld } from '../mergeSpells.ts'
 
 const extraSpells: Spells = {
   98521: [
@@ -15,4 +15,4 @@ const extraSpells: Spells = {
   101549: [{ id: 200256, name: 'Phased Explosion', icon: 'spell_arcane_arcanetorrent.jpg' }],
 }
 
-export default mergeSpells(wclSpells, extraSpells)
+export default mergeSpellsOld(wclSpells, extraSpells)

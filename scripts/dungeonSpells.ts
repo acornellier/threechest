@@ -1,8 +1,9 @@
 import { DungeonKey } from '../src/data/dungeonKeys.ts'
 import { getDirname } from '../server/files.ts'
 import { getWclToken } from '../server/wclToken.ts'
-import { Spell } from '../src/data/types.ts'
 import fs from 'fs'
+import { sum } from 'd3'
+import { SpellIdMap } from '../src/data/types.ts'
 
 const dirname = getDirname(import.meta.url)
 
@@ -79,8 +80,7 @@ query {
 }
 `
 
-  const spells: Record<number, Spell[]> = {}
-  const ids = new Set<string>()
+  const spellSets: Record<number, Set<number>> = {}
   let nextTimestamp = 0
 
   while (nextTimestamp !== null) {
@@ -101,22 +101,19 @@ query {
       const sourceId = event.source.guid
       const spellId = event.ability.guid
 
-      const id = `${sourceId}-${spellId}`
-      if (ids.has(id)) continue
-      ids.add(id)
-
-      const spell: Spell = {
-        id: spellId,
-        name: event.ability.name,
-        icon: event.ability.abilityIcon,
-      }
-
-      spells[sourceId] ??= []
-      spells[sourceId]!.push(spell)
+      spellSets[sourceId] ??= new Set()
+      spellSets[sourceId]!.add(spellId)
     }
   }
 
+  const spells = Object.entries(spellSets).reduce((acc, [enemyId, set]) => {
+    acc[Number(enemyId)] = [...set]
+    return acc
+  }, {} as SpellIdMap)
+
   const file = `${dirname}/../src/data/spells/${dungeonKey}/${dungeonKey}_spells.json`
   fs.writeFileSync(file, JSON.stringify(spells))
-  console.log(`Wrote ${ids.size} spells to ${file}`)
+
+  const count = sum(Object.values(spellSets).map((set) => set.size))
+  console.log(`Wrote ${count} spells to ${file}`)
 }

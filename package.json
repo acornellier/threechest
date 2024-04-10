@@ -28,6 +28,7 @@
     "d3-selection": "^3.0.0",
     "d3-shape": "^3.2.0",
     "dotenv-flow": "^4.1.0",
+    "grimoire-wow": "^1.0.2",
     "leaflet": "^1.9.4",
     "lib0": "^0.2.93",
     "localforage": "^1.10.0",
@@ -81,6 +82,7 @@
     "tailwindcss": "^3.4.1",
     "tsx": "^4.7.1",
     "typescript": "^5.4.2",
-    "vite": "^5.1.5"
+    "vite": "^5.1.5",
+    "vite-plugin-compile-time": "^0.2.1"
   }
 }

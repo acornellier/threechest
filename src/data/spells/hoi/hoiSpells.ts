@@ -1,17 +1,13 @@
 import spells from './hoi_spells.json'
-import { Spells } from '../../types.ts'
-import { mergeSpells } from '../mergeSpells.ts'
+import { SpellIdMap } from '../../types.ts'
+import { mergeSpells } from '../grimoire.ts'
 
-const extraSpells: Spells = {
-  189722: [
-    {
-      id: 385187,
-      name: 'Overpowering Croak',
-      icon: 'ability_vehicle_sonicshockwave',
-    },
-  ],
+const extraSpells: SpellIdMap = {
+  189722: [385187], // Frog boss - Overpowering Croak
 }
 
-const removedSpells = [385181]
+const removedSpells: number[] = []
 
-export default mergeSpells(spells, extraSpells, removedSpells)
+export default async () => ({
+  data: mergeSpells(spells as SpellIdMap, extraSpells, removedSpells),
+})

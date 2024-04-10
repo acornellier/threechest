@@ -1,14 +1,13 @@
 import spells from './uld_spells.json'
-import { Spells } from '../../types.ts'
-import { mergeSpells } from '../mergeSpells.ts'
+import { SpellIdMap } from '../../types.ts'
+import { mergeSpells } from '../grimoire.ts'
 
-const extraSpells: Spells = {
-  184422: [
-    { id: 369006, name: 'Burning Heat', icon: 'ability_warlock_fireandbrimstone' },
-    { id: 369052, name: 'Seeking Flame', icon: 'spell_fire_fireball02' },
-  ],
+const extraSpells: SpellIdMap = {
+  184422: [369006, 369052], // Boss 4
 }
 
 const removedSpells = [373662, 375339, 369792, 369423, 369022, 369026]
 
-export default mergeSpells(spells, extraSpells, removedSpells)
+export default async () => ({
+  data: mergeSpells(spells as SpellIdMap, extraSpells, removedSpells),
+})

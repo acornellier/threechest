@@ -1,6 +1,9 @@
 import spells from './av_spells.json'
-import { mergeSpells } from '../mergeSpells.ts'
+import { SpellIdMap } from '../../types.ts'
+import { mergeSpells } from '../grimoire.ts'
 
-const spellsToRemove = [388804, 436652, 374582, 374731]
+const removedSpells = [388804, 436652, 374582, 374731]
 
-export default mergeSpells(spells, {}, spellsToRemove)
+export default async () => ({
+  data: mergeSpells(spells as SpellIdMap, [], removedSpells),
+})

@@ -1,11 +1,17 @@
 import spells from './aa_spells.json'
-import { mergeSpells } from '../mergeSpells.ts'
-import { Spells } from '../../types.ts'
+import { SpellIdMap } from '../../types.ts'
+import { mergeSpells } from '../grimoire.ts'
 
-const extraSpells: Spells = {
-  191736: [{ id: 397210, name: 'Sonic Vulnerability', icon: 'ability_vehicle_sonicshockwave' }],
+const extraSpells: SpellIdMap = {
+  191736: [397210], // Crawth - Sonic Vulnerability
+  190609: [389011], // Echo of Doragosa - Overwhelming Power
 }
 
-const removedSpells = [387523, 386181, 38865, 388984, 388982, 388940, 390915, 181089]
+const removedSpells = [
+  387523, // Return to Book
+  181089, // Crawth - Encounter Event
+]
 
-export default mergeSpells(spells, extraSpells, removedSpells)
+export default async () => ({
+  data: mergeSpells(spells as SpellIdMap, extraSpells, removedSpells),
+})

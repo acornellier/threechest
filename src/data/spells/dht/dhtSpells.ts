@@ -1,6 +1,6 @@
 import wclSpells from './dht_spells.json'
 import { Spells } from '../../types.ts'
-import { mergeSpells } from '../mergeSpells.ts'
+import { mergeSpellsOld } from '../mergeSpells.ts'
 
 const extraSpells: Spells = {
   95772: [{ id: 225484, name: 'Grievous Rip', icon: 'spell_frost_iceclaw.jpg' }],
@@ -10,4 +10,4 @@ const extraSpells: Spells = {
   ],
 }
 
-export default mergeSpells(wclSpells, extraSpells)
+export default mergeSpellsOld(wclSpells, extraSpells)

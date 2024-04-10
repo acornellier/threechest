@@ -1,7 +1,9 @@
 import spells from './nok_spells.json'
-import { Spells } from '../../types.ts'
-import { mergeSpells } from '../mergeSpells.ts'
+import { SpellIdMap } from '../../types.ts'
+import { mergeSpells } from '../grimoire.ts'
 
-const extraSpells: Spells = {}
+const extraSpells: SpellIdMap = {}
 
-export default mergeSpells(spells, extraSpells)
+export default async () => ({
+  data: mergeSpells(spells as SpellIdMap, extraSpells),
+})

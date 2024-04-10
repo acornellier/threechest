@@ -1,6 +1,6 @@
 import wclSpells from './ad_spells.json'
 import { Spells } from '../../types.ts'
-import { mergeSpells } from '../mergeSpells.ts'
+import { mergeSpellsOld } from '../mergeSpells.ts'
 
 const extraSpells: Spells = {
   122973: [
@@ -29,4 +29,4 @@ const extraSpells: Spells = {
   ],
 }
 
-export default mergeSpells(wclSpells, extraSpells)
+export default mergeSpellsOld(wclSpells, extraSpells)

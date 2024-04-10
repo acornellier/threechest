@@ -56,6 +56,7 @@ export type Spell = {
 }
 
 export type Spells = Record<number, Spell[]>
+export type SpellIdMap = Record<number, number[]>
 
 // Change [number, number] to number[] to type-check JSON
 export type SpawnFake = Omit<Spawn, 'pos' | 'patrol'> & {
