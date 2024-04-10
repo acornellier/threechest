@@ -5,7 +5,7 @@ export function BackgroundImage() {
   return (
     <Delayed delay={1}>
       <img
-        src="/images/wood.jpeg"
+        src="/images/wood2.jpeg"
         alt="background"
         className={`fixed w-screen h-screen bg-cover`}
         // @ts-ignore
