@@ -23,6 +23,9 @@ function spellIdToSpell(spellId: number): Spell {
     name: spell.name,
     id: spell.id,
     icon: spell.icon,
+    damage: spell.damage,
+    aoe: !!spell.aoe,
+    physical: !!spell.physical,
   }
 }
 

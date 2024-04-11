@@ -2,11 +2,11 @@ import { Panel } from '../Common/Panel.tsx'
 import { XMarkIcon } from '@heroicons/react/24/outline'
 import { selectSelectedSpawn, selectSpawn } from '../../store/reducers/hoverReducer.ts'
 import { getIconLink } from '../../data/spells/mergeSpells.ts'
-import { addToast } from '../../store/reducers/toastReducer.ts'
 import { useDungeon } from '../../store/routes/routeHooks.ts'
 import { useAppDispatch, useRootSelector } from '../../store/storeUtil.ts'
 import { mobCcTypes } from '../../util/mobSpawns.ts'
-import { Spell } from '../../data/types.ts'
+import { TooltipStyled } from '../Common/TooltipStyled.tsx'
+import { isSeason4 } from '../../data/dungeonKeys.ts'
 
 export function MobInfo() {
   const dispatch = useAppDispatch()
@@ -19,28 +19,6 @@ export function MobInfo() {
 
   const { mob } = mobSpawn
   const spells = dungeon.spells[mob.id]
-
-  const onClickSpellId = async (spell: Spell, altKey: boolean) => {
-    if (!altKey) {
-      await navigator.clipboard.writeText(spell.id.toString())
-      dispatch(addToast({ message: `Copied Spell ID to clipboard: ${spell.id}` }))
-      return
-    }
-
-    const varName = spell.name[0]!.toLowerCase() + spell.name.substring(1).replaceAll(' ', '')
-    const ts = `
-    
-const ${varName}: EnemyAbility = {
-  name: '${spell.name}',
-  id: ${spell.id},
-  icon: '${spell.icon.split('.jpg')[0]!}',
-  baseDamage: 0,
-  isAoe: true,
-}`
-
-    await navigator.clipboard.writeText(ts.toString())
-    dispatch(addToast({ message: `Copied NEC text to clipboard: ${ts}` }))
-  }
 
   return (
     <div className="fixed bottom-14 left-2 z-10 min-w-[250px]">
@@ -98,27 +76,43 @@ const ${varName}: EnemyAbility = {
                   />
                 </a>
 
-                <a
-                  className="flex-grow h-full"
-                  href={`https://www.wowhead.com/spell=${spell.id}?dd=23&ddsize=5`}
-                  target="_blank"
-                  rel="noreferrer"
-                >
+                <a className="flex-grow h-full" data-tooltip-id={`spell-details-${spell.id}`}>
                   <div className="gritty flex justify-between items-center gap-2 px-2 h-full bg-fancy-red opacity-90 text-nowrap border border-transparent border-r-gray-500">
                     {spell.name}
                   </div>
                 </a>
-                <div
-                  className="gritty flex w-[70px] justify-between items-center gap-2 px-2 h-full bg-fancy-red rounded-md rounded-l-none opacity-90 cursor-pointer select-none"
-                  onClick={(e) => onClickSpellId(spell, e.altKey)}
-                >
-                  {spell.id}
-                </div>
+                <TooltipStyled id={`spell-details-${spell.id}`} place="top">
+                  {spell.damage && (
+                    <div>{isSeason4(dungeon.key) ? spell.damage.s4 : spell.damage.s3} damage</div>
+                  )}
+                  {spell.aoe && <div>AoE</div>}
+                  <div>{spell.physical ? 'Physical' : 'Magic'}</div>
+                </TooltipStyled>
+                {spell.damage !== undefined && (
+                  <a
+                    className="flex h-full"
+                    href={`http://localhost:3000/spell/${spell.id}?trash=${!mob.isBoss}`}
+                    target="_blank"
+                    rel="noreferrer"
+                    data-tooltip-id="view-in-not-even-close"
+                  >
+                    <img
+                      src={getIconLink('ability_argus_soulburst')}
+                      width={30}
+                      height={30}
+                      alt="stealth detect"
+                      className="rounded-md rounded-r-none"
+                    />
+                  </a>
+                )}
               </div>
             ))}
           </div>
         )}
       </Panel>
+      <TooltipStyled id="view-in-not-even-close" place="right">
+        View in Not Even Close
+      </TooltipStyled>
     </div>
   )
 }
