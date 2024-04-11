@@ -91,7 +91,7 @@ export function MobInfo() {
                 {spell.damage !== undefined && (
                   <a
                     className="flex h-full"
-                    href={`http://localhost:3000/spell/${spell.id}?trash=${!mob.isBoss}`}
+                    href={`https://not-even-close.com/spell/${spell.id}?trash=${!mob.isBoss}`}
                     target="_blank"
                     rel="noreferrer"
                     data-tooltip-id="view-in-not-even-close"
