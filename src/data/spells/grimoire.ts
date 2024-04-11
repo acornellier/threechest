@@ -1,21 +1,5 @@
-﻿import { getGrimoireSpell, initGrimoire } from 'grimoire-wow'
+﻿import { getGrimoireSpell } from 'grimoire-wow'
 import { Spell, SpellIdMap, Spells } from '../types.ts'
-
-export const grimoireSpellsJson = process.cwd() + '/node_modules/grimoire-wow/dist/spells.json'
-
-initGrimoire(grimoireSpellsJson)
-
-export async function compileTimeSpellsAsyncFunction(
-  spells1: SpellIdMap,
-  spells2: SpellIdMap,
-  spellsToRemove?: number[],
-) {
-  return async function () {
-    return {
-      data: mergeSpells(spells1, spells2, spellsToRemove),
-    }
-  }
-}
 
 function spellIdToSpell(spellId: number): Spell {
   const spell = getGrimoireSpell(spellId)

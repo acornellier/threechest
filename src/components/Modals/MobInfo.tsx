@@ -88,23 +88,23 @@ export function MobInfo() {
                   {spell.aoe && <div>AoE</div>}
                   <div>{spell.physical ? 'Physical' : 'Magic'}</div>
                 </TooltipStyled>
-                {/*{spell.damage !== undefined && (*/}
-                {/*  <a*/}
-                {/*    className="flex h-full"*/}
-                {/*    href={`https://not-even-close.com/spell/${spell.id}?trash=${!mob.isBoss}`}*/}
-                {/*    target="_blank"*/}
-                {/*    rel="noreferrer"*/}
-                {/*    data-tooltip-id="view-in-not-even-close"*/}
-                {/*  >*/}
-                {/*    <img*/}
-                {/*      src={getIconLink('ability_argus_soulburst')}*/}
-                {/*      width={30}*/}
-                {/*      height={30}*/}
-                {/*      alt="stealth detect"*/}
-                {/*      className="rounded-md rounded-r-none"*/}
-                {/*    />*/}
-                {/*  </a>*/}
-                {/*)}*/}
+                {spell.damage !== undefined && (
+                  <a
+                    className="flex h-full"
+                    href={`https://not-even-close.com/spell/${spell.id}?trash=${!mob.isBoss}`}
+                    target="_blank"
+                    rel="noreferrer"
+                    data-tooltip-id="view-in-not-even-close"
+                  >
+                    <img
+                      src={getIconLink('ability_argus_soulburst')}
+                      width={30}
+                      height={30}
+                      alt="stealth detect"
+                      className="rounded-md rounded-r-none"
+                    />
+                  </a>
+                )}
               </div>
             ))}
           </div>
