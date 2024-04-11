@@ -81,13 +81,15 @@ export function MobInfo() {
                     {spell.name}
                   </div>
                 </a>
-                <TooltipStyled id={`spell-details-${spell.id}`} place="top">
-                  {spell.damage && (
-                    <div>{isSeason4(dungeon.key) ? spell.damage.s4 : spell.damage.s3} damage</div>
-                  )}
-                  {spell.aoe && <div>AoE</div>}
-                  <div>{spell.physical ? 'Physical' : 'Magic'}</div>
-                </TooltipStyled>
+                {spell.damage && (
+                  <TooltipStyled id={`spell-details-${spell.id}`} place="top">
+                    <div>
+                      {isSeason4(dungeon.key) ? spell.damage.s4 : spell.damage.s3}{' '}
+                      {spell.physical ? 'physical' : 'magic'} damage
+                    </div>
+                    {spell.aoe && <div>AoE</div>}
+                  </TooltipStyled>
+                )}
                 {spell.damage !== undefined && (
                   <a
                     className="flex h-full"
