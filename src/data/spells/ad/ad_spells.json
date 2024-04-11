@@ -1,1 +1,267 @@
-{"122963":[{"id":255372,"name":"Tail","icon":"inv_misc_monstertail_07.jpg"},{"id":255434,"name":"Serrated Teeth","icon":"ability_warrior_bloodbath.jpg"},{"id":255371,"name":"Terrifying Visage","icon":"ability_devour.jpg"},{"id":257407,"name":"Pursuit","icon":"ability_hunter_pet_devilsaur.jpg"},{"id":255421,"name":"Devour","icon":"ability_mount_fossilizedraptor.jpg"},{"id":255373,"name":"Tail","icon":"inv_misc_monstertail_07.jpg"}],"122965":[{"id":250258,"name":"Toxic Leap","icon":"ability_rogue_quickrecovery.jpg"},{"id":250259,"name":"Toxic Leap","icon":"ability_rogue_quickrecovery.jpg"},{"id":259572,"name":"Noxious Stench","icon":"ability_creature_poison_06.jpg"},{"id":250241,"name":"Rapid Decay","icon":"spell_nature_naturetouchdecay.jpg"}],"122967":[{"id":255579,"name":"Gilded Claws","icon":"inv_misc_monsterclaw_05.jpg"},{"id":255591,"name":"Molten Gold","icon":"spell_holy_excorcism_02.jpg"},{"id":255577,"name":"Transfusion","icon":"spell_holy_purify.jpg"}],"122968":[{"id":250096,"name":"Wracking Pain","icon":"ability_warlock_improvedsoulleech.jpg"},{"id":249919,"name":"Skewer","icon":"ability_druid_ravage.jpg"},{"id":259187,"name":"Soulrend","icon":"ability_demonhunter_soulcleave2.jpg"},{"id":250050,"name":"Echoes of Shadra","icon":"inv_misc_monsterspidercarapace_01.jpg"}],"122969":[{"id":252923,"name":"Venom Blast","icon":"spell_nature_poisoncleansingtotem.jpg"},{"id":252781,"name":"Unstable Hex","icon":"inv_zandalaribabyraptorred.jpg"}],"122970":[{"id":252661,"name":"Venom-Tipped Blade","icon":"rogue_venomzest.jpg"},{"id":252687,"name":"Venomfang Strike","icon":"ability_rogue_creepingvenom.jpg"},{"id":427000,"name":"Fan of Knives","icon":"ability_rogue_fanofknives.jpg"}],"122971":[{"id":255824,"name":"Fanatic's Rage","icon":"spell_nature_shamanrage.jpg"},{"id":253239,"name":"Merciless Assault","icon":"ability_butcher_whirl.jpg"},{"id":253279,"name":"Merciless Assault","icon":"ability_butcher_whirl.jpg"}],"122972":[{"id":253562,"name":"Wildfire","icon":"spell_fire_flamebolt.jpg"},{"id":253583,"name":"Fiery Enchant","icon":"spell_fire_fire.jpg"}],"122984":[{"id":254958,"name":"Soulforged Construct","icon":"inv_belt_mail_zandalarquest_b_01.jpg"}],"125977":[{"id":259531,"name":"Reanimate","icon":"ability_priest_surgeofdarkness.jpg"}],"127757":[{"id":256959,"name":"Rotting Decay","icon":"ability_rogue_deviouspoisons.jpg"},{"id":255814,"name":"Rending Maul","icon":"ability_druid_ravage.jpg"},{"id":255626,"name":"Festering Eruption","icon":"ability_rogue_deviouspoisons.jpg"}],"127799":[{"id":256138,"name":"Fervent Strike","icon":"inv_sword_1h_zandalari_c_02red.jpg"}],"127879":[{"id":273185,"name":"Shield Bash","icon":"ability_warrior_shieldmastery.jpg"},{"id":253721,"name":"Bulwark of Juju","icon":"inv_shield_zandalari_c_02.jpg"}],"128434":[{"id":255041,"name":"Terrifying Screech","icon":"ability_creature_cursed_02.jpg"}],"128435":[{"id":251188,"name":"Leaping Thrash","icon":"spell_druid_bloodythrash.jpg"},{"id":251187,"name":"Leaping Thrash","icon":"spell_druid_bloodythrash.jpg"}],"128455":[{"id":255567,"name":"Frenzied Charge","icon":"ability_mount_triceratopsmount.jpg"}],"129552":[{"id":256882,"name":"Wild Thrash","icon":"spell_druid_bloodythrash.jpg"}],"129553":[{"id":256864,"name":"Quickshot","icon":"inv_ammo_arrow_01.jpg"},{"id":256849,"name":"Dino Might","icon":"inv_pet_direhorn.jpg"},{"id":256846,"name":"Deadeye Aim","icon":"ability_boss_kilrogg_heartseeker.jpg"}],"132126":[{"id":260666,"name":"Transfusion","icon":"spell_holy_purify.jpg"}],"204560":[{"id":408805,"name":"Destabilize","icon":"achievement_boss_anomalus.jpg"}]}
+{
+  "122963": [
+    {
+      "id": 255372,
+      "name": "Tail",
+      "icon": "inv_misc_monstertail_07.jpg"
+    },
+    {
+      "id": 255434,
+      "name": "Serrated Teeth",
+      "icon": "ability_warrior_bloodbath.jpg"
+    },
+    {
+      "id": 255371,
+      "name": "Terrifying Visage",
+      "icon": "ability_devour.jpg"
+    },
+    {
+      "id": 257407,
+      "name": "Pursuit",
+      "icon": "ability_hunter_pet_devilsaur.jpg"
+    },
+    {
+      "id": 255421,
+      "name": "Devour",
+      "icon": "ability_mount_fossilizedraptor.jpg"
+    },
+    {
+      "id": 255373,
+      "name": "Tail",
+      "icon": "inv_misc_monstertail_07.jpg"
+    }
+  ],
+  "122965": [
+    {
+      "id": 250258,
+      "name": "Toxic Leap",
+      "icon": "ability_rogue_quickrecovery.jpg"
+    },
+    {
+      "id": 250259,
+      "name": "Toxic Leap",
+      "icon": "ability_rogue_quickrecovery.jpg"
+    },
+    {
+      "id": 259572,
+      "name": "Noxious Stench",
+      "icon": "ability_creature_poison_06.jpg"
+    },
+    {
+      "id": 250241,
+      "name": "Rapid Decay",
+      "icon": "spell_nature_naturetouchdecay.jpg"
+    }
+  ],
+  "122967": [
+    {
+      "id": 255579,
+      "name": "Gilded Claws",
+      "icon": "inv_misc_monsterclaw_05.jpg"
+    },
+    {
+      "id": 255591,
+      "name": "Molten Gold",
+      "icon": "spell_holy_excorcism_02.jpg"
+    },
+    {
+      "id": 255577,
+      "name": "Transfusion",
+      "icon": "spell_holy_purify.jpg"
+    }
+  ],
+  "122968": [
+    {
+      "id": 250096,
+      "name": "Wracking Pain",
+      "icon": "ability_warlock_improvedsoulleech.jpg"
+    },
+    {
+      "id": 249919,
+      "name": "Skewer",
+      "icon": "ability_druid_ravage.jpg"
+    },
+    {
+      "id": 259187,
+      "name": "Soulrend",
+      "icon": "ability_demonhunter_soulcleave2.jpg"
+    },
+    {
+      "id": 250050,
+      "name": "Echoes of Shadra",
+      "icon": "inv_misc_monsterspidercarapace_01.jpg"
+    }
+  ],
+  "122969": [
+    {
+      "id": 252923,
+      "name": "Venom Blast",
+      "icon": "spell_nature_poisoncleansingtotem.jpg"
+    },
+    {
+      "id": 252781,
+      "name": "Unstable Hex",
+      "icon": "inv_zandalaribabyraptorred.jpg"
+    }
+  ],
+  "122970": [
+    {
+      "id": 252661,
+      "name": "Venom-Tipped Blade",
+      "icon": "rogue_venomzest.jpg"
+    },
+    {
+      "id": 252687,
+      "name": "Venomfang Strike",
+      "icon": "ability_rogue_creepingvenom.jpg"
+    },
+    {
+      "id": 427000,
+      "name": "Fan of Knives",
+      "icon": "ability_rogue_fanofknives.jpg"
+    }
+  ],
+  "122971": [
+    {
+      "id": 255824,
+      "name": "Fanatic's Rage",
+      "icon": "spell_nature_shamanrage.jpg"
+    },
+    {
+      "id": 253239,
+      "name": "Merciless Assault",
+      "icon": "ability_butcher_whirl.jpg"
+    },
+    {
+      "id": 253279,
+      "name": "Merciless Assault",
+      "icon": "ability_butcher_whirl.jpg"
+    }
+  ],
+  "122972": [
+    {
+      "id": 253562,
+      "name": "Wildfire",
+      "icon": "spell_fire_flamebolt.jpg"
+    },
+    {
+      "id": 253583,
+      "name": "Fiery Enchant",
+      "icon": "spell_fire_fire.jpg"
+    }
+  ],
+  "122984": [
+    {
+      "id": 254958,
+      "name": "Soulforged Construct",
+      "icon": "inv_belt_mail_zandalarquest_b_01.jpg"
+    }
+  ],
+  "125977": [
+    {
+      "id": 259531,
+      "name": "Reanimate",
+      "icon": "ability_priest_surgeofdarkness.jpg"
+    }
+  ],
+  "127757": [
+    {
+      "id": 256959,
+      "name": "Rotting Decay",
+      "icon": "ability_rogue_deviouspoisons.jpg"
+    },
+    {
+      "id": 255814,
+      "name": "Rending Maul",
+      "icon": "ability_druid_ravage.jpg"
+    },
+    {
+      "id": 255626,
+      "name": "Festering Eruption",
+      "icon": "ability_rogue_deviouspoisons.jpg"
+    }
+  ],
+  "127799": [
+    {
+      "id": 256138,
+      "name": "Fervent Strike",
+      "icon": "inv_sword_1h_zandalari_c_02red.jpg"
+    }
+  ],
+  "127879": [
+    {
+      "id": 273185,
+      "name": "Shield Bash",
+      "icon": "ability_warrior_shieldmastery.jpg"
+    },
+    {
+      "id": 253721,
+      "name": "Bulwark of Juju",
+      "icon": "inv_shield_zandalari_c_02.jpg"
+    }
+  ],
+  "128434": [
+    {
+      "id": 255041,
+      "name": "Terrifying Screech",
+      "icon": "ability_creature_cursed_02.jpg"
+    }
+  ],
+  "128435": [
+    {
+      "id": 251188,
+      "name": "Leaping Thrash",
+      "icon": "spell_druid_bloodythrash.jpg"
+    },
+    {
+      "id": 251187,
+      "name": "Leaping Thrash",
+      "icon": "spell_druid_bloodythrash.jpg"
+    }
+  ],
+  "128455": [
+    {
+      "id": 255567,
+      "name": "Frenzied Charge",
+      "icon": "ability_mount_triceratopsmount.jpg"
+    }
+  ],
+  "129552": [
+    {
+      "id": 256882,
+      "name": "Wild Thrash",
+      "icon": "spell_druid_bloodythrash.jpg"
+    }
+  ],
+  "129553": [
+    {
+      "id": 256864,
+      "name": "Quickshot",
+      "icon": "inv_ammo_arrow_01.jpg"
+    },
+    {
+      "id": 256849,
+      "name": "Dino Might",
+      "icon": "inv_pet_direhorn.jpg"
+    },
+    {
+      "id": 256846,
+      "name": "Deadeye Aim",
+      "icon": "ability_boss_kilrogg_heartseeker.jpg"
+    }
+  ],
+  "132126": [
+    {
+      "id": 260666,
+      "name": "Transfusion",
+      "icon": "spell_holy_purify.jpg"
+    }
+  ],
+  "204560": [
+    {
+      "id": 408805,
+      "name": "Destabilize",
+      "icon": "achievement_boss_anomalus.jpg"
+    }
+  ]
+}
