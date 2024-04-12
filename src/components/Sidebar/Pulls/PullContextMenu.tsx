@@ -1,5 +1,6 @@
 import { addPull, clearPull, clearRoute, deletePull } from '../../../store/routes/routesReducer.ts'
-import { ContextMenu, ContextMenuProps } from '../../Common/ContextMenu.tsx'
+import type { ContextMenuProps } from '../../Common/ContextMenu.tsx';
+import { ContextMenu } from '../../Common/ContextMenu.tsx'
 import { shortcuts } from '../../../data/shortcuts.ts'
 import { BackspaceIcon, PlusIcon, TrashIcon } from '@heroicons/react/24/outline'
 import { ClearIcon } from '../../Common/Icons/ClearIcon.tsx'

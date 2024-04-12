@@ -1,5 +1,6 @@
 import { Marker, useMapEvents } from 'react-leaflet'
-import { divIcon, LeafletMouseEvent } from 'leaflet'
+import type { LeafletMouseEvent } from 'leaflet';
+import { divIcon } from 'leaflet'
 import { renderToStaticMarkup } from 'react-dom/server'
 import { CursorIcon } from '../Common/Icons/CursorIcon.tsx'
 import { getTextColor } from '../../util/colors.ts'

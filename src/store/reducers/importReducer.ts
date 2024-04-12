@@ -1,6 +1,6 @@
-import { MdtRoute, Route } from '../../util/types.ts'
+import type { MdtRoute, Route } from '../../util/types.ts'
 import { importRouteApi } from '../../api/importRouteApi.ts'
-import { AppDispatch, RootState } from '../store.ts'
+import type { AppDispatch, RootState } from '../store.ts'
 import { loadRouteFromStorage, setRouteFromMdt } from '../routes/routesReducer.ts'
 import { createAppSlice } from '../storeUtil.ts'
 

@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef } from 'react'
 import { useDungeon, useRoute, useSelectedPull } from '../../store/routes/routeHooks.ts'
 import { useMap } from 'react-leaflet'
-import { Point } from '../../data/types.ts'
+import type { Point } from '../../data/types.ts'
 import { augmentPulls } from '../Sidebar/Pulls/augmentPulls.ts'
 import { LivePanel, livePanelRight } from './LivePanel.tsx'
 import { LivePlayhead, livePlayheadBottom } from './LivePlayhead.tsx'

@@ -1,4 +1,5 @@
-import { ReactNode, useCallback } from 'react'
+import type { ReactNode} from 'react';
+import { useCallback } from 'react'
 import { useShortcut } from '../../util/hooks/useShortcut.ts'
 import { useOutsideClick } from '../../util/hooks/useOutsideClick.ts'
 import { Button } from './Button.tsx'

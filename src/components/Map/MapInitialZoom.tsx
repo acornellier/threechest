@@ -1,5 +1,5 @@
-import { Dungeon, Point } from '../../data/types.ts'
-import { LatLngBoundsExpression } from 'leaflet'
+import type { Dungeon, Point } from '../../data/types.ts'
+import type { LatLngBoundsExpression } from 'leaflet'
 import { useMap } from 'react-leaflet'
 import { useEffect } from 'react'
 import { mapBounds } from '../../util/map.ts'

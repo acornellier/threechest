@@ -1,6 +1,6 @@
 import { mobScale } from '../../../util/mobSpawns.ts'
 import { getPullColor } from '../../../util/colors.ts'
-import { MobSpawn } from '../../../data/types.ts'
+import type { MobSpawn } from '../../../data/types.ts'
 import { MobBorder } from './MobBorder.tsx'
 
 interface Props {

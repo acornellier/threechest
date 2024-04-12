@@ -1,4 +1,4 @@
-import { PayloadAction } from '@reduxjs/toolkit'
+import type { PayloadAction } from '@reduxjs/toolkit'
 import { useEffect, useState } from 'react'
 import { createAppSlice, useRootSelector } from '../storeUtil.ts'
 

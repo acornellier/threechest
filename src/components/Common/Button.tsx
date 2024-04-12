@@ -1,9 +1,10 @@
-import { ButtonHTMLAttributes, DetailedHTMLProps, ReactNode } from 'react'
-import { keyText, Shortcut } from '../../data/shortcuts.ts'
-import { IconComponent } from '../../util/types.ts'
+import type { ButtonHTMLAttributes, DetailedHTMLProps, ReactNode } from 'react'
+import type { Shortcut } from '../../data/shortcuts.ts';
+import { keyText } from '../../data/shortcuts.ts'
+import type { IconComponent } from '../../util/types.ts'
 import { TooltipStyled } from './TooltipStyled.tsx'
 import { isTouch } from '../../util/dev.ts'
-import { TooltipRefProps } from 'react-tooltip'
+import type { TooltipRefProps } from 'react-tooltip'
 
 export type ButtonTooltipProps =
   | {

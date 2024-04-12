@@ -1,5 +1,6 @@
 import { Button } from './Button.tsx'
-import { ErrorInfo, useEffect } from 'react'
+import type { ErrorInfo} from 'react';
+import { useEffect } from 'react'
 import { defaultDungeonKey, deleteRoute, newRoute } from '../../store/routes/routesReducer.ts'
 import {
   ArrowPathIcon,

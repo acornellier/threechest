@@ -1,4 +1,4 @@
-import { PullDetailed } from '../../../util/types.ts'
+import type { PullDetailed } from '../../../util/types.ts'
 import { getPullColor, lightenColor } from '../../../util/colors.ts'
 import { selectPull } from '../../../store/routes/routesReducer.ts'
 import { useEffect, useMemo, useRef } from 'react'

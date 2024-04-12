@@ -6,7 +6,7 @@ import { Modal } from '../Common/Modal.tsx'
 import { useCallback } from 'react'
 import { useShortcut } from '../../util/hooks/useShortcut.ts'
 import { shortcuts } from '../../data/shortcuts.ts'
-import { MdtRoute } from '../../util/types.ts'
+import type { MdtRoute } from '../../util/types.ts'
 import { useAppDispatch, useRootSelector } from '../../store/storeUtil.ts'
 
 interface Props {

@@ -1,4 +1,4 @@
-import { DungeonKey } from './dungeonKeys.ts'
+import type { DungeonKey } from './dungeonKeys.ts'
 
 export type Point = [number, number]
 

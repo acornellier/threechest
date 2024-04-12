@@ -1,5 +1,5 @@
-import { Dungeon, Mob, MobSpawn, SpawnId } from '../data/types.ts'
-import { PullDetailed } from './types.ts'
+import type { Dungeon, Mob, MobSpawn, SpawnId } from '../data/types.ts'
+import type { PullDetailed } from './types.ts'
 
 export const mobScale = ({ mob, spawn }: MobSpawn) =>
   (mob.scale ?? 1) * (spawn.scale ?? 1) * (mob.isBoss ? 1.7 : 1)

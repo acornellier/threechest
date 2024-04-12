@@ -1,4 +1,4 @@
-import { Mob, Spawn } from '../../../data/types.ts'
+import type { Mob, Spawn } from '../../../data/types.ts'
 import { Tooltip } from 'react-leaflet'
 import { mobCountPercentStr, roundTo } from '../../../util/numbers.ts'
 import { rgbToHex } from '../../../util/colors.ts'

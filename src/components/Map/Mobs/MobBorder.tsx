@@ -1,6 +1,6 @@
 import { mobScale } from '../../../util/mobSpawns.ts'
-import { MobSpawn } from '../../../data/types.ts'
-import { ReactNode } from 'react'
+import type { MobSpawn } from '../../../data/types.ts'
+import type { ReactNode } from 'react'
 
 interface Props {
   mobSpawn: MobSpawn

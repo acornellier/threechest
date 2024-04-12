@@ -8,8 +8,8 @@ import {
   setWsConnected,
   useCollabSelector,
 } from '../../store/collab/collabReducer.ts'
-import { RootState } from '../../store/store.ts'
-import { Route } from '../../util/types.ts'
+import type { RootState } from '../../store/store.ts'
+import type { Route } from '../../util/types.ts'
 import { setRouteForCollab } from '../../store/routes/routesReducer.ts'
 import { addToast } from '../../store/reducers/toastReducer.ts'
 import { WebrtcProvider } from './y-webrtc/y-webrtc.js'

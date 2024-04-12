@@ -1,7 +1,7 @@
 import { mobCountPercentStr } from '../../../util/numbers.ts'
 import { useDungeon } from '../../../store/routes/routeHooks.ts'
 import { useHoveredPull } from '../../../store/reducers/hoverReducer.ts'
-import { PullDetailed } from '../../../util/types.ts'
+import type { PullDetailed } from '../../../util/types.ts'
 
 interface Props {
   pullsDetailed: PullDetailed[]

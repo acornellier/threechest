@@ -1,5 +1,5 @@
-﻿import { Drawing, MdtArrow, MdtNote, MdtPolygon, MdtRoute, Note, Route } from './types.ts'
-import { Dungeon, Point, SpawnId } from '../data/types.ts'
+﻿import type { Drawing, MdtArrow, MdtNote, MdtPolygon, MdtRoute, Note, Route } from './types.ts'
+import type { Dungeon, Point, SpawnId } from '../data/types.ts'
 import { dungeonsByKey, dungeonsByMdtIdx } from '../data/dungeons.ts'
 import { getPullColor } from './colors.ts'
 import { equalPoints } from './map.ts'

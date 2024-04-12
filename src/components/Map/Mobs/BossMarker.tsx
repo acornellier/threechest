@@ -1,6 +1,6 @@
 import { divIcon } from 'leaflet'
 import { renderToStaticMarkup } from 'react-dom/server'
-import { Spawn } from '../../../data/types.ts'
+import type { Spawn } from '../../../data/types.ts'
 import { Marker } from 'react-leaflet'
 
 interface Props {

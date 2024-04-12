@@ -4,7 +4,8 @@ import {
   InformationCircleIcon,
   XMarkIcon,
 } from '@heroicons/react/24/outline'
-import { removeToast, Toast } from '../../store/reducers/toastReducer.ts'
+import type { Toast } from '../../store/reducers/toastReducer.ts';
+import { removeToast } from '../../store/reducers/toastReducer.ts'
 import { Button } from '../Common/Button.tsx'
 import { neverShowTips } from '../../data/tips.ts'
 

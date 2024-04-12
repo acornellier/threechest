@@ -1,5 +1,5 @@
 import spells from './rlp_spells.json'
-import { SpellIdMap } from '../../types.ts'
+import type { SpellIdMap } from '../../types.ts'
 import { mergeSpells } from '../grimoire.ts'
 
 const extraSpells: SpellIdMap = {

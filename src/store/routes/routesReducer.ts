@@ -1,17 +1,18 @@
-import { createAsyncThunk, PayloadAction } from '@reduxjs/toolkit'
-import { Drawing, MdtRoute, Note, Pull, Route, SavedRoute } from '../../util/types.ts'
-import { SpawnId } from '../../data/types.ts'
+import type { PayloadAction } from '@reduxjs/toolkit';
+import { createAsyncThunk } from '@reduxjs/toolkit'
+import type { Drawing, MdtRoute, Note, Pull, Route, SavedRoute } from '../../util/types.ts'
+import type { SpawnId } from '../../data/types.ts'
 import { mdtRouteToRoute } from '../../util/mdtUtil.ts'
 import undoable, { combineFilters, excludeAction, includeAction } from 'redux-undo'
 import { addPullFunc, boxSelectSpawnsAction, toggleSpawnAction } from './routeActions.ts'
 import * as localforage from 'localforage'
-import { AppDispatch, RootState } from '../store.ts'
+import type { AppDispatch, RootState } from '../store.ts'
 import { persistReducer } from 'redux-persist'
 import { indexedDbStorage } from '../storage.ts'
 import { routeMigrate, routePersistVersion } from './routeMigrations.ts'
 import { addToast } from '../reducers/toastReducer.ts'
 import { createAppSlice } from '../storeUtil.ts'
-import { DungeonKey } from '../../data/dungeonKeys.ts'
+import type { DungeonKey } from '../../data/dungeonKeys.ts'
 import { setMapMode } from '../reducers/mapReducer.ts'
 
 export interface RouteState {

@@ -1,5 +1,6 @@
-import { forwardRef, SVGProps } from 'react'
-import { IconComponent } from '../../../util/types.ts'
+import type { SVGProps } from 'react';
+import { forwardRef } from 'react'
+import type { IconComponent } from '../../../util/types.ts'
 
 export const CursorIcon: IconComponent = forwardRef<SVGSVGElement, SVGProps<SVGSVGElement>>(
   (props, ref) => {

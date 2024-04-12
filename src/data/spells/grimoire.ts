@@ -1,5 +1,5 @@
 ﻿import { getGrimoireSpell } from 'grimoire-wow'
-import { Spell, SpellIdMap, Spells } from '../types.ts'
+import type { Spell, SpellIdMap, Spells } from '../types.ts'
 
 function spellIdToSpell(spellId: number): Spell {
   const spell = getGrimoireSpell(spellId)

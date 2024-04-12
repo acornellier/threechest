@@ -1,4 +1,4 @@
-import { Point } from '../data/types.ts'
+import type { Point } from '../data/types.ts'
 
 export function uniqBy<T extends Record<string, any>, U extends keyof T>(array: T[], fields: U[]) {
   return array.filter(

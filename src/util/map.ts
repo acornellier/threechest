@@ -1,5 +1,5 @@
-import { LatLngLiteral, Map } from 'leaflet'
-import { Point } from '../data/types.ts'
+import type { LatLngLiteral, Map } from 'leaflet'
+import type { Point } from '../data/types.ts'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { useMap, useMapEvent } from 'react-leaflet'
 

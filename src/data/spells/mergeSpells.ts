@@ -1,4 +1,4 @@
-import { Spells } from '../types.ts'
+import type { Spells } from '../types.ts'
 
 export function mergeSpellsOld(spells1: Spells, spells2: Spells, spellsToRemove?: number[]) {
   let res: Spells = {}

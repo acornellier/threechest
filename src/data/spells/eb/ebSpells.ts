@@ -1,5 +1,5 @@
 import wclSpells from './eb_spells.json'
-import { Spells } from '../../types.ts'
+import type { Spells } from '../../types.ts'
 import { mergeSpellsOld } from '../mergeSpells.ts'
 
 const extraSpells: Spells = {

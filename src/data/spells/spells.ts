@@ -1,4 +1,4 @@
-import { Spells } from '../types.ts'
+import type { Spells } from '../types.ts'
 import ad from './ad/adSpells.ts'
 import eb from './eb/ebSpells.ts'
 import brh from './brh/brhSpells.ts'
@@ -7,7 +7,7 @@ import fall from './fall/fallSpells.ts'
 import tott from './tott/tottSpells.ts'
 import wcm from './wcm/wcmSpells.ts'
 import rise from './rise/riseSpells.ts'
-import { DungeonKey } from '../dungeonKeys.ts'
+import type { DungeonKey } from '../dungeonKeys.ts'
 
 const aa = import.meta.compileTime<Spells>('./aa/aaSpells.ts')
 const av = import.meta.compileTime<Spells>('./av/avSpells.ts')

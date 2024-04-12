@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction } from 'react'
+import type { Dispatch, SetStateAction } from 'react'
 import { Button } from '../../Common/Button.tsx'
 import { CheckIcon, PencilIcon } from '@heroicons/react/24/outline'
 

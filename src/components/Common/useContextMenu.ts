@@ -1,5 +1,5 @@
 import { useCallback, useEffect } from 'react'
-import { ContextMenuPosition } from './ContextMenu.tsx'
+import type { ContextMenuPosition } from './ContextMenu.tsx'
 import { makeUseExclusiveState } from '../../util/hooks/exclusiveState.ts'
 
 const useExclusiveState = makeUseExclusiveState<ContextMenuPosition>()

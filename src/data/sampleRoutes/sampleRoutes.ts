@@ -1,6 +1,6 @@
-import { SampleRoute } from '../../util/types.ts'
+import type { SampleRoute } from '../../util/types.ts'
 import { dungeons } from '../dungeons.ts'
-import { DungeonKey } from '../dungeonKeys.ts'
+import type { DungeonKey } from '../dungeonKeys.ts'
 
 const modules: Record<DungeonKey, Record<string, unknown>> = {
   av: import.meta.glob('./av/*.json', { eager: true }),

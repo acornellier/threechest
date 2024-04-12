@@ -1,7 +1,8 @@
 ﻿import { Pull } from './Pull.tsx'
 import { useKeyHeld } from '../../../util/hooks/useKeyHeld.ts'
 import type { PullDetailed } from '../../../util/types.ts'
-import { ItemInterface, ReactSortable } from 'react-sortablejs'
+import type { ItemInterface} from 'react-sortablejs';
+import { ReactSortable } from 'react-sortablejs'
 import { useCallback, useMemo, useState } from 'react'
 import { selectPull, setPulls } from '../../../store/routes/routesReducer.ts'
 import { useAppDispatch } from '../../../store/storeUtil.ts'

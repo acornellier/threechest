@@ -1,4 +1,4 @@
-﻿import { Route } from '../util/types.ts'
+﻿import type { Route } from '../util/types.ts'
 import { routeToMdtRoute } from '../util/mdtUtil.ts'
 import { isDev } from '../util/dev.ts'
 

@@ -1,5 +1,5 @@
 import { Polygon } from 'react-leaflet'
-import { Spawn } from '../../../data/types.ts'
+import type { Spawn } from '../../../data/types.ts'
 
 interface Props {
   spawn: Spawn

@@ -12,7 +12,7 @@ import {
   selectSpawn,
   useHoveredMobSpawn,
 } from '../../../store/reducers/hoverReducer.ts'
-import { MobSpawn } from '../../../data/types.ts'
+import type { MobSpawn } from '../../../data/types.ts'
 import { useRoute, useSelectedPull } from '../../../store/routes/routeHooks.ts'
 import { useAppDispatch, useRootSelector } from '../../../store/storeUtil.ts'
 import { selectIsLive, useMapObjectsHidden } from '../../../store/reducers/mapReducer.ts'

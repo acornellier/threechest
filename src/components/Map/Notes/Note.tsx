@@ -1,7 +1,8 @@
 import { memo, useEffect, useMemo, useRef, useState } from 'react'
-import { Note as NoteType } from '../../../util/types.ts'
+import type { Note as NoteType } from '../../../util/types.ts'
 import { Marker, Popup, Tooltip } from 'react-leaflet'
-import { divIcon, type LeafletEventHandlerFnMap, Marker as LeafletMarker } from 'leaflet'
+import type { Marker as LeafletMarker } from 'leaflet';
+import { divIcon, type LeafletEventHandlerFnMap } from 'leaflet'
 import { renderToString } from 'react-dom/server'
 import { useContextMenu } from '../../Common/useContextMenu.ts'
 import { deleteNote, editNote, moveNote } from '../../../store/routes/routesReducer.ts'

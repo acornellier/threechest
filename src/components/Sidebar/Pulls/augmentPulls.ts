@@ -1,5 +1,5 @@
-﻿import { Pull, PullDetailed } from '../../../util/types.ts'
-import { Dungeon } from '../../../data/types.ts'
+﻿import type { Pull, PullDetailed } from '../../../util/types.ts'
+import type { Dungeon } from '../../../data/types.ts'
 
 export function augmentPulls(pulls: Pull[], dungeon: Dungeon): PullDetailed[] {
   const pullsDetailed: PullDetailed[] = []

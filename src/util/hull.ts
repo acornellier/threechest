@@ -1,4 +1,4 @@
-import { Point } from '../data/types.ts'
+import type { Point } from '../data/types.ts'
 
 export interface PolygonVertex {
   pos: Point

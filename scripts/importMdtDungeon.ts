@@ -1,10 +1,11 @@
-import parser, { Expression, NumericLiteral, TableConstructorExpression, TableKey } from 'luaparse'
+import type { Expression, NumericLiteral, TableConstructorExpression, TableKey } from 'luaparse';
+import parser from 'luaparse'
 import * as fs from 'fs'
-import { MdtDungeon, Mob, Point, Spawn } from '../src/data/types.ts'
-import { StringLiteral } from 'luaparse/lib/ast'
+import type { MdtDungeon, Mob, Point, Spawn } from '../src/data/types.ts'
+import type { StringLiteral } from 'luaparse/lib/ast'
 import { roundTo } from '../src/util/numbers.ts'
 import { getDirname } from '../server/files.ts'
-import { DungeonKey } from '../src/data/dungeonKeys.ts'
+import type { DungeonKey } from '../src/data/dungeonKeys.ts'
 
 const dirname = getDirname(import.meta.url)
 

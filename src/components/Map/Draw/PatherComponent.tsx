@@ -1,9 +1,9 @@
 import { useAppDispatch, useRootSelector } from '../../../store/storeUtil.ts'
 import { useMemo } from 'react'
-import { CreatedEvent } from '../../Leaflet/Pather/Pather.ts'
+import type { CreatedEvent } from '../../Leaflet/Pather/Pather.ts'
 import { latLngToPoint } from '../../../util/map.ts'
 import { addDrawing } from '../../../store/routes/routesReducer.ts'
-import { Drawing } from '../../../util/types.ts'
+import type { Drawing } from '../../../util/types.ts'
 import { ReactPatherLayerComponent } from './PatherLayerComponent.tsx'
 
 export function PatherComponent() {

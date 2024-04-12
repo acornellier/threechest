@@ -1,7 +1,8 @@
 ﻿import { useCallback, useMemo } from 'react'
 import { loadRoute } from '../../store/routes/routesReducer.ts'
-import { SavedRoute } from '../../util/types.ts'
-import { Dropdown, DropdownOption } from '../Common/Dropdown.tsx'
+import type { SavedRoute } from '../../util/types.ts'
+import type { DropdownOption } from '../Common/Dropdown.tsx';
+import { Dropdown } from '../Common/Dropdown.tsx'
 import { setPreviewRouteAsync } from '../../store/reducers/importReducer.ts'
 import { useActualRoute, useDungeonRoutes } from '../../store/routes/routeHooks.ts'
 import { useAppDispatch } from '../../store/storeUtil.ts'

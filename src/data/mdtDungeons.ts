@@ -14,9 +14,9 @@ import rlp from './mdtDungeons/rlp_mdt.json'
 import tott from './mdtDungeons/tott_mdt.json'
 import uld from './mdtDungeons/uld_mdt.json'
 import wcm from './mdtDungeons/wcm_mdt.json'
-import { MdtDungeon, MdtDungeonFake, MobSpawn, SpawnId } from './types.ts'
+import type { MdtDungeon, MdtDungeonFake, MobSpawn, SpawnId } from './types.ts'
 import { mdtEnemiesToMobSpawns } from '../util/mobSpawns.ts'
-import { DungeonKey } from './dungeonKeys.ts'
+import type { DungeonKey } from './dungeonKeys.ts'
 
 const mdtDungeonsFake: Record<DungeonKey, MdtDungeonFake> = {
   aa,

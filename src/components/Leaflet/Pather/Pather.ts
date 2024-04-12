@@ -1,16 +1,17 @@
-﻿import {
-  FeatureGroup,
+﻿import type {
   LatLng,
   LatLngLiteral,
   LayerOptions,
   LeafletEvent,
   LeafletMouseEvent,
-  Map,
+  Map} from 'leaflet';
+import {
+  FeatureGroup,
   Point,
 } from 'leaflet'
 import { curveMonotoneX, line } from 'd3-shape'
 import { select } from 'd3-selection'
-import { DrawMode } from '../../../store/reducers/mapReducer.ts'
+import type { DrawMode } from '../../../store/reducers/mapReducer.ts'
 
 export interface PatherOptions extends LayerOptions {
   mode: DrawMode

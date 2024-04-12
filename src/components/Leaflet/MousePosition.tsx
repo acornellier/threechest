@@ -1,6 +1,6 @@
 import { useMapEvent } from 'react-leaflet'
 import { useCallback, useState } from 'react'
-import { LatLngLiteral, LeafletMouseEvent } from 'leaflet'
+import type { LatLngLiteral, LeafletMouseEvent } from 'leaflet'
 import { roundTo } from '../../util/numbers.ts'
 import { Portal } from 'react-portal'
 

@@ -1,7 +1,7 @@
 import { useMap } from 'react-leaflet'
 import { useContextMenu } from '../Common/useContextMenu.ts'
 import { useCallback, useEffect, useState } from 'react'
-import { LatLng, LeafletMouseEvent } from 'leaflet'
+import type { LatLng, LeafletMouseEvent } from 'leaflet'
 import { ContextMenu } from '../Common/ContextMenu.tsx'
 import { addNote } from '../../store/routes/routesReducer.ts'
 
