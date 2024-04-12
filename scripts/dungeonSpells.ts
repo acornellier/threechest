@@ -18,15 +18,6 @@ const dungeons: DungeonLog[] = [
   { dungeonKey: 'nok', code: 'Qp9Y6wTgd1xjJtZN', fightId: 1 },
   { dungeonKey: 'rlp', code: 'HYC1GWAvgc7NaLxp', fightId: 5 },
   { dungeonKey: 'uld', code: '23BYFzapv6KmRdV7', fightId: 1 },
-  // s3
-  // { dungeonKey: 'ad', code: '6gAz9tCPKFRkVQJv', fightId: 67 },
-  // { dungeonKey: 'brh', code: 'C42jfKx1PkcYFmXT', fightId: 120 },
-  // { dungeonKey: 'dht', code: 'XbymrF9fGxkwaB8h', fightId: 5 },
-  // { dungeonKey: 'eb', code: 'LFwG2JxXfQnVyYZT', fightId: 3 },
-  // { dungeonKey: 'fall', code: 'kLDbtFm926HG1Jwy', fightId: 106 },
-  // { dungeonKey: 'rise', code: 'GLDKQX1cynTJ9gdY', fightId: 29 },
-  // { dungeonKey: 'tott', code: 'KytwXgGaZ7vk2WBd', fightId: 1 },
-  // { dungeonKey: 'wcm', code: 'ZA3yV8WGr2v4TxMY', fightId: 22 },
 ]
 
 const filterDungeonKey = process.argv[2]

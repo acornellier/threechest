@@ -1,15 +1,24 @@
 ﻿import { getGrimoireSpell } from 'grimoire-wow'
-import type { Spell, SpellIdMap, Spells } from '../types.ts'
+import type { ExtraSpellData, Spell, SpellIdMap, Spells } from '../types.ts'
+import extraSpellDataJson from './extraSpellData.json'
+import { mapBy } from '../../util/nodash.ts'
+
+const extraSpellsData = extraSpellDataJson.result.data.allContentfulPatternItem
+  .nodes as ExtraSpellData[]
+const extraSpellDataById = mapBy(extraSpellsData, 'spellId')
 
 function spellIdToSpell(spellId: number): Spell {
   const spell = getGrimoireSpell(spellId)
+  const extraSpellData = extraSpellDataById[spellId]
   return {
     name: spell.name,
     id: spell.id,
     icon: spell.icon,
     damage: spell.damage,
-    aoe: !!spell.aoe,
-    physical: !!spell.physical,
+    aoe: spell.aoe,
+    physical: spell.physical,
+    interrupt: !!extraSpellData?.interruptible,
+    stop: !!extraSpellData?.ccable,
   }
 }
 

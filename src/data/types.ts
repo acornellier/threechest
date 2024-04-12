@@ -57,10 +57,18 @@ export type Spell = {
   aoe?: boolean
   physical?: boolean
   variance?: number
+  interrupt?: boolean
+  stop?: boolean
 }
 
 export type Spells = Record<number, Spell[]>
 export type SpellIdMap = Record<number, number[]>
+
+export interface ExtraSpellData {
+  spellId: number
+  interruptible: true | null
+  ccable: true | null
+}
 
 // Change [number, number] to number[] to type-check JSON
 export type SpawnFake = Omit<Spawn, 'pos' | 'patrol'> & {
