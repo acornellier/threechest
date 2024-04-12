@@ -19,14 +19,14 @@ const dungeons: DungeonLog[] = [
   { dungeonKey: 'rlp', code: 'HYC1GWAvgc7NaLxp', fightId: 5 },
   { dungeonKey: 'uld', code: '23BYFzapv6KmRdV7', fightId: 1 },
   // s3
-  { dungeonKey: 'ad', code: '6gAz9tCPKFRkVQJv', fightId: 67 },
-  { dungeonKey: 'brh', code: 'C42jfKx1PkcYFmXT', fightId: 120 },
-  { dungeonKey: 'dht', code: 'XbymrF9fGxkwaB8h', fightId: 5 },
-  { dungeonKey: 'eb', code: 'LFwG2JxXfQnVyYZT', fightId: 3 },
-  { dungeonKey: 'fall', code: 'kLDbtFm926HG1Jwy', fightId: 106 },
-  { dungeonKey: 'rise', code: 'GLDKQX1cynTJ9gdY', fightId: 29 },
-  { dungeonKey: 'tott', code: 'KytwXgGaZ7vk2WBd', fightId: 1 },
-  { dungeonKey: 'wcm', code: 'ZA3yV8WGr2v4TxMY', fightId: 22 },
+  // { dungeonKey: 'ad', code: '6gAz9tCPKFRkVQJv', fightId: 67 },
+  // { dungeonKey: 'brh', code: 'C42jfKx1PkcYFmXT', fightId: 120 },
+  // { dungeonKey: 'dht', code: 'XbymrF9fGxkwaB8h', fightId: 5 },
+  // { dungeonKey: 'eb', code: 'LFwG2JxXfQnVyYZT', fightId: 3 },
+  // { dungeonKey: 'fall', code: 'kLDbtFm926HG1Jwy', fightId: 106 },
+  // { dungeonKey: 'rise', code: 'GLDKQX1cynTJ9gdY', fightId: 29 },
+  // { dungeonKey: 'tott', code: 'KytwXgGaZ7vk2WBd', fightId: 1 },
+  // { dungeonKey: 'wcm', code: 'ZA3yV8WGr2v4TxMY', fightId: 22 },
 ]
 
 const filterDungeonKey = process.argv[2]
@@ -48,6 +48,11 @@ interface CastEvent {
     id: number
     guid: number
   }
+}
+
+interface DebuffEvent {
+  sourceID: number
+  abilityGameID: number
 }
 
 export async function dungeonSpells({
@@ -96,6 +101,41 @@ query {
       spellSets[sourceGuid] ??= new Set()
       spellSets[sourceGuid]!.add(spellId)
       actorIdToGuid[sourceId] = event.source.guid
+    }
+  }
+
+  const toDebuffQuery = (startTime: number) => `
+query {
+  reportData {
+    report(code:"${code}") {
+      events(fightIDs:${fightId},
+             dataType:Debuffs,
+             hostilityType:Friendlies,
+             startTime:${startTime},
+             endTime:999999999) 
+      {
+        nextPageTimestamp,
+        data,
+      }
+    }
+  }
+}
+`
+
+  nextTimestamp = 0
+  while (nextTimestamp !== null) {
+    const data = await fetchWcl(toDebuffQuery(nextTimestamp))
+    const events: DebuffEvent[] = data.reportData.report.events.data
+    nextTimestamp = data.reportData.report.events.nextPageTimestamp
+
+    for (const event of events) {
+      const sourceId = event.sourceID
+      const enemyGuid = actorIdToGuid[sourceId]
+      if (!enemyGuid) continue
+
+      const spellId = event.abilityGameID
+      spellSets[enemyGuid] ??= new Set()
+      spellSets[enemyGuid]!.add(spellId)
     }
   }
 
