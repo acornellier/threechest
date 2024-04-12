@@ -24,7 +24,7 @@ export function Sidebar() {
   return (
     <>
       <div
-        className="fixed z-20 flex flex-col gap-1.5 transition-all top-2 bottom-14 sm:bottom-2"
+        className="fixed z-20 flex flex-col gap-1.5 transition-all top-2 mb-14 sm:mb-2"
         style={{
           width: sidebarWidth,
           right: topCollapsed ? -sidebarWidth : 0,

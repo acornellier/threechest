@@ -214,6 +214,14 @@ $fancy-yellow: #7f6b1d;
   background-color: $fancy-blue;
 }
 
+.bg-fancy-yellow {
+  background-color: $fancy-yellow;
+}
+
+.bg-fancy-green {
+  background-color: $fancy-green;
+}
+
 input.fancy,
 textarea.fancy {
   background-color: rgb(78 78 87);
