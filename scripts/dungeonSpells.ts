@@ -1,16 +1,16 @@
 import { DungeonKey } from '../src/data/dungeonKeys.ts'
 import { getDirname } from '../server/files.ts'
-import { getWclToken } from '../server/wclToken.ts'
 import fs from 'fs'
 import { sum } from 'd3'
 import { SpellIdMap } from '../src/data/types.ts'
+import { fetchWcl } from './wcl.ts'
 
 const dirname = getDirname(import.meta.url)
 
 type DungeonLog = { dungeonKey: DungeonKey; code: string; fightId: number }
 
 const dungeons: DungeonLog[] = [
-  { dungeonKey: 'aa', code: 'ztABjYb3mHpMqZ14', fightId: 1 },
+  { dungeonKey: 'aa', code: 'gkfYnQ9mvjChc2Gd', fightId: 1 },
   { dungeonKey: 'av', code: 'yzWxcC21P4jRXJbY', fightId: 1 },
   { dungeonKey: 'bh', code: 'BjLZVQfJ4r7wP6pF', fightId: 5 },
   { dungeonKey: 'hoi', code: 'yzWxcC21P4jRXJbY', fightId: 5 },
@@ -45,6 +45,7 @@ interface CastEvent {
     abilityIcon: string
   }
   source: {
+    id: number
     guid: number
   }
 }
@@ -58,9 +59,7 @@ export async function dungeonSpells({
   fightId: number | string
   dungeonKey: DungeonKey
 }) {
-  const token = await getWclToken()
-
-  const toQuery = (startTime: number) => `
+  const toCastQuery = (startTime: number) => `
 query {
   reportData {
     report(code:"${code}") {
@@ -81,29 +80,49 @@ query {
 `
 
   const spellSets: Record<number, Set<number>> = {}
+  const actorIdToGuid: Record<number, number> = {}
   let nextTimestamp = 0
 
   while (nextTimestamp !== null) {
-    const data = await fetch('https://www.warcraftlogs.com/api/v2/client', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        authorization: `Bearer ${token}`,
-      },
-      body: JSON.stringify({ query: toQuery(nextTimestamp) }),
-    })
-
-    const json = await data.json()
-    const events: CastEvent[] = json.data.reportData.report.events.data
-    nextTimestamp = json.data.reportData.report.events.nextPageTimestamp
+    const data = await fetchWcl(toCastQuery(nextTimestamp))
+    const events: CastEvent[] = data.reportData.report.events.data
+    nextTimestamp = data.reportData.report.events.nextPageTimestamp
 
     for (const event of events) {
-      const sourceId = event.source.guid
+      const sourceGuid = event.source.guid
+      const sourceId = event.source.id
       const spellId = event.ability.guid
 
-      spellSets[sourceId] ??= new Set()
-      spellSets[sourceId]!.add(spellId)
+      spellSets[sourceGuid] ??= new Set()
+      spellSets[sourceGuid]!.add(spellId)
+      actorIdToGuid[sourceId] = event.source.guid
     }
+  }
+
+  const enemyDamageDoneTableQuery = `
+query {
+  reportData {
+    report(code:"${code}") {
+      table: table(
+        fightIDs: ${fightId}
+        dataType: DamageDone
+        hostilityType: Enemies
+        viewBy: Ability
+      )
+    }
+  }
+}
+`
+
+  const enemyDamageDoneTable = await fetchWcl(enemyDamageDoneTableQuery)
+  const rows = enemyDamageDoneTable.reportData.report.table.data.entries
+  for (const row of rows) {
+    const enemyGuid = actorIdToGuid[row.actor]
+    if (!enemyGuid) continue
+
+    const spellId = row.guid
+    spellSets[enemyGuid] ??= new Set()
+    spellSets[enemyGuid]!.add(spellId)
   }
 
   const spells = Object.entries(spellSets).reduce((acc, [enemyId, set]) => {

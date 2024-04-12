@@ -18,7 +18,9 @@ export function MobInfo() {
   if (!mobSpawn) return false
 
   const { mob } = mobSpawn
-  const spells = dungeon.spells[mob.id]
+  const spells = dungeon.spells[mob.id]?.sort((a, b) => {
+    return a.name === b.name ? a.id - b.id : a.name.localeCompare(b.name)
+  })
 
   return (
     <div className="fixed bottom-14 left-2 z-10 min-w-[250px]">
