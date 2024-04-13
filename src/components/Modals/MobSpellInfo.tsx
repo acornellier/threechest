@@ -2,8 +2,7 @@ import { getIconLink } from '../../data/spells/mergeSpells.ts'
 import { TooltipStyled } from '../Common/TooltipStyled.tsx'
 import { isSeason4 } from '../../data/dungeonKeys.ts'
 import type { Dungeon, Mob, Spell } from '../../data/types.ts'
-import { BoltIcon } from '@heroicons/react/24/outline'
-import { VortexIcon } from '../Common/Icons/VortexIcon.tsx'
+import { BoltIcon, HandRaisedIcon } from '@heroicons/react/24/outline'
 
 interface Props {
   spell: Spell
@@ -37,17 +36,14 @@ export function MobSpellInfo({ spell, mob, dungeon }: Props) {
             <div className="text-xs">{spell.id}</div>
             {spell.interrupt && (
               <BoltIcon
-                width={20}
+                height={20}
                 data-tooltip-id={`spell-details-icon-${id}`}
                 data-tooltip-content="Interruptible"
               />
             )}
             {spell.stop && (
-              <VortexIcon
-                className="-m-1"
-                width={24}
-                height={24}
-                color="white"
+              <HandRaisedIcon
+                height={20}
                 data-tooltip-id={`spell-details-icon-${id}`}
                 data-tooltip-content="Stoppable"
               />

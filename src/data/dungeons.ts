@@ -1,7 +1,7 @@
 import type { Dungeon } from './types.ts'
 import { mdtDungeons, mdtMobSpawns } from './mdtDungeons.ts'
 import { dungeonSpells } from './spells/spells.ts'
-import { mapHeight } from '../util/map.ts'
+import { mapHeight, mapWidth } from '../util/map.ts'
 import type { DungeonKey } from './dungeonKeys.ts'
 
 export const dungeonData = (key: DungeonKey) => ({
@@ -57,6 +57,10 @@ const rlp: Dungeon = {
   name: 'Ruby Life Pools',
   key: 'rlp',
   icon: 'achievement_dungeon_lifepools',
+  defaultBounds: [
+    [10, 0],
+    [-mapHeight, mapWidth],
+  ],
   ...dungeonData('rlp'),
 }
 
