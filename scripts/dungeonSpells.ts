@@ -148,19 +148,17 @@ query {
   const enemyDamageDoneTable = await fetchWcl(enemyDamageDoneTableQuery)
   const rows = enemyDamageDoneTable.reportData.report.table.data.entries
   for (const row of rows) {
-    if (row.name === 'Melee') continue
-
     const entries = row.subentries ?? [row]
 
     for (const entry of entries) {
+      if (entry.name === 'Melee') continue
+
       const enemyGuid = actorIdToGuid[entry.actor]
       if (!enemyGuid) continue
 
       const spellId = entry.guid
       spellSets[enemyGuid] ??= new Set()
       spellSets[enemyGuid]!.add(spellId)
-
-      if (spellId === 1) console.log(row, entry)
     }
   }
 

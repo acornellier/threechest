@@ -1,10 +1,9 @@
 ﻿import { getGrimoireSpell } from 'grimoire-wow'
-import type { ExtraSpellData, Spell, SpellIdMap, Spells } from '../types.ts'
-import extraSpellDataJson from './extraSpellData.json'
+import type { DispelType, Spell, SpellIdMap, Spells } from '../types.ts'
+import spellBankJson from './spellBank.json'
 import { mapBy } from '../../util/nodash.ts'
 
-const extraSpellsData = extraSpellDataJson.result.data.allContentfulPatternItem
-  .nodes as ExtraSpellData[]
+const extraSpellsData = spellBankJson.result.data.allContentfulPatternItem.nodes
 const extraSpellDataById = mapBy(extraSpellsData, 'spellId')
 
 function spellIdToSpell(spellId: number): Spell {
@@ -19,6 +18,7 @@ function spellIdToSpell(spellId: number): Spell {
     physical: spell.physical,
     interrupt: !!extraSpellData?.interruptible,
     stop: !!extraSpellData?.ccable,
+    dispel: (extraSpellData?.dispell as DispelType[]) ?? [],
   }
 }
 

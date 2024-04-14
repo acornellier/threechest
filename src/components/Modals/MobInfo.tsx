@@ -5,7 +5,6 @@ import { getIconLink } from '../../data/spells/mergeSpells.ts'
 import { useDungeon } from '../../store/routes/routeHooks.ts'
 import { useAppDispatch, useRootSelector } from '../../store/storeUtil.ts'
 import { mobCcTypes } from '../../util/mobSpawns.ts'
-import { TooltipStyled } from '../Common/TooltipStyled.tsx'
 import { MobSpellInfo } from './MobSpellInfo.tsx'
 
 export function MobInfo() {
@@ -65,9 +64,6 @@ export function MobInfo() {
           </div>
         )}
       </Panel>
-      <TooltipStyled id="view-in-not-even-close" place="right">
-        View in Not Even Close
-      </TooltipStyled>
     </div>
   )
 }
