@@ -1,6 +1,6 @@
 {
-  "componentChunkName": "component---src-pages-dungeons-spell-bank-temp-tsx",
-  "path": "/dungeons/SpellBank_temp/",
+  "componentChunkName": "component---src-pages-dungeons-spell-bank-s-4-tsx",
+  "path": "/dungeons/SpellBank_S4/",
   "result": {
     "data": {
       "allContentfulPatternItem": {
@@ -4160,7 +4160,7 @@
             "type": "Aura",
             "damage": "Physical",
             "debuff": null,
-            "important": true,
+            "important": null,
             "dispellable": null,
             "dispell": null,
             "interruptible": null,
@@ -4898,7 +4898,7 @@
             "debuff": true,
             "important": null,
             "dispellable": true,
-            "dispell": ["Curse"],
+            "dispell": ["Curse", "Movement"],
             "interruptible": true,
             "ccable": true,
             "cooldown": null,
@@ -4932,6 +4932,52 @@
                 "npcId": 184132,
                 "category": "Humanoid",
                 "isBoss": null
+              }
+            ]
+          },
+          {
+            "id": "05ad8cc6-796b-5c6e-add0-64031d415c46",
+            "spellId": 391762,
+            "abilityName": "Curse of the Dragon Hoard",
+            "type": "Single Target Over Time",
+            "damage": "Shadow",
+            "debuff": true,
+            "important": true,
+            "dispellable": true,
+            "dispell": ["Curse"],
+            "interruptible": null,
+            "ccable": null,
+            "cooldown": null,
+            "offset": null,
+            "diffuse": null,
+            "stun": null,
+            "charm": null,
+            "grievous": null,
+            "healAbsorb": null,
+            "healReduction": null,
+            "silence": null,
+            "fear": null,
+            "fire": null,
+            "notes": null,
+            "metadata": {
+              "tags": [
+                {
+                  "name": "Dragonflight S4"
+                },
+                {
+                  "name": "Neltharus"
+                },
+                {
+                  "name": "test"
+                }
+              ]
+            },
+            "enemies": [
+              {
+                "name": "Warlord Sargha",
+                "npcId": 189901,
+                "category": "Humanoid",
+                "isBoss": true
               }
             ]
           },
@@ -5317,7 +5363,7 @@
             "dispell": null,
             "interruptible": true,
             "ccable": null,
-            "cooldown": null,
+            "cooldown": 12,
             "offset": null,
             "diffuse": null,
             "stun": null,
@@ -5847,7 +5893,7 @@
             "dispell": ["Movement", "Magic"],
             "interruptible": null,
             "ccable": null,
-            "cooldown": null,
+            "cooldown": 25,
             "offset": null,
             "diffuse": null,
             "stun": null,
@@ -5977,7 +6023,7 @@
             "id": "5cbbb5af-f8f8-54df-b164-007ed28c6996",
             "spellId": 374339,
             "abilityName": "Demoralizing Shout",
-            "type": "Aura",
+            "type": "Control",
             "damage": null,
             "debuff": true,
             "important": true,
@@ -6819,8 +6865,8 @@
             "dispell": null,
             "interruptible": null,
             "ccable": null,
-            "cooldown": null,
-            "offset": null,
+            "cooldown": 80,
+            "offset": 30,
             "diffuse": null,
             "stun": null,
             "charm": null,
@@ -7969,8 +8015,8 @@
             "important": true,
             "dispellable": null,
             "dispell": null,
-            "interruptible": true,
-            "ccable": null,
+            "interruptible": null,
+            "ccable": true,
             "cooldown": null,
             "offset": null,
             "diffuse": null,
@@ -8423,7 +8469,7 @@
             "id": "f32b8929-a6f9-56ce-828e-c84a056d2cbe",
             "spellId": 385331,
             "abilityName": "Fracture",
-            "type": null,
+            "type": "Burst",
             "damage": null,
             "debuff": true,
             "important": null,
@@ -9067,7 +9113,7 @@
             "id": "512ee204-7e87-5a32-8693-fb98cf129993",
             "spellId": 388084,
             "abilityName": "Glacial Shield",
-            "type": null,
+            "type": "Aura",
             "damage": null,
             "debuff": null,
             "important": null,
@@ -9301,8 +9347,8 @@
             "damage": null,
             "debuff": null,
             "important": null,
-            "dispellable": null,
-            "dispell": null,
+            "dispellable": true,
+            "dispell": ["Purge"],
             "interruptible": true,
             "ccable": null,
             "cooldown": null,
@@ -9389,7 +9435,7 @@
             "id": "c01eb2e4-cc2a-5c73-8928-5d81341447e5",
             "spellId": 384808,
             "abilityName": "Guardian Wind",
-            "type": null,
+            "type": "Aura",
             "damage": null,
             "debuff": null,
             "important": null,
@@ -9631,8 +9677,8 @@
             "damage": "Physical",
             "debuff": true,
             "important": null,
-            "dispellable": null,
-            "dispell": null,
+            "dispellable": true,
+            "dispell": ["Bleed"],
             "interruptible": null,
             "ccable": null,
             "cooldown": null,
@@ -9647,7 +9693,7 @@
             "fear": null,
             "fire": null,
             "notes": {
-              "raw": "{\"nodeType\":\"document\",\"data\":{},\"content\":[{\"nodeType\":\"paragraph\",\"data\":{},\"content\":[{\"nodeType\":\"text\",\"value\":\"can be Bopped\",\"marks\":[],\"data\":{}}]}]}"
+              "raw": "{\"data\":{},\"content\":[{\"data\":{},\"content\":[{\"data\":{},\"marks\":[],\"value\":\"can be Bopped\",\"nodeType\":\"text\"}],\"nodeType\":\"paragraph\"}],\"nodeType\":\"document\"}"
             },
             "metadata": {
               "tags": [
@@ -10089,7 +10135,7 @@
             "id": "7562bf67-d9ed-5cc7-b47a-c643e82c22ab",
             "spellId": 389804,
             "abilityName": "Heavy Tome",
-            "type": "Single Target",
+            "type": "Tank Buster",
             "damage": "Arcane",
             "debuff": false,
             "important": null,
@@ -10506,17 +10552,17 @@
             ]
           },
           {
-            "id": "5e4bebc1-4dd1-5997-93be-5ba8aa41096f",
-            "spellId": 372749,
+            "id": "6ada9740-6bd6-594f-8b05-2afb9f24efc5",
+            "spellId": 372743,
             "abilityName": "Ice Shield",
             "type": "Aura",
             "damage": null,
             "debuff": null,
-            "important": null,
+            "important": true,
             "dispellable": true,
             "dispell": ["Purge"],
-            "interruptible": null,
-            "ccable": null,
+            "interruptible": true,
+            "ccable": true,
             "cooldown": null,
             "offset": null,
             "diffuse": null,
@@ -10552,17 +10598,17 @@
             ]
           },
           {
-            "id": "6ada9740-6bd6-594f-8b05-2afb9f24efc5",
-            "spellId": 372743,
+            "id": "5e4bebc1-4dd1-5997-93be-5ba8aa41096f",
+            "spellId": 372749,
             "abilityName": "Ice Shield",
             "type": "Aura",
             "damage": null,
             "debuff": null,
-            "important": true,
-            "dispellable": null,
-            "dispell": null,
-            "interruptible": true,
-            "ccable": true,
+            "important": null,
+            "dispellable": true,
+            "dispell": ["Purge"],
+            "interruptible": null,
+            "ccable": null,
             "cooldown": null,
             "offset": null,
             "diffuse": null,
@@ -10644,10 +10690,56 @@
             ]
           },
           {
-            "id": "06076fbe-f771-513c-aa34-b2088dd6ced4",
-            "spellId": 387151,
+            "id": "568c9360-cb7f-524c-a83f-f6dbe5092b5d",
+            "spellId": 377488,
+            "abilityName": "Icy Bindings",
+            "type": "Control",
+            "damage": null,
+            "debuff": true,
+            "important": null,
+            "dispellable": true,
+            "dispell": ["Magic", "Movement"],
+            "interruptible": true,
+            "ccable": true,
+            "cooldown": null,
+            "offset": null,
+            "diffuse": null,
+            "stun": null,
+            "charm": null,
+            "grievous": null,
+            "healAbsorb": null,
+            "healReduction": null,
+            "silence": null,
+            "fear": null,
+            "fire": null,
+            "notes": null,
+            "metadata": {
+              "tags": [
+                {
+                  "name": "Dragonflight S4"
+                },
+                {
+                  "name": "test"
+                },
+                {
+                  "name": "The Azure Vault"
+                }
+              ]
+            },
+            "enemies": [
+              {
+                "name": "Rune Seal Keeper",
+                "npcId": 187155,
+                "category": "Dragonkin",
+                "isBoss": null
+              }
+            ]
+          },
+          {
+            "id": "9eb6ad6d-953f-591c-90c3-0d97b7dc612a",
+            "spellId": 387152,
             "abilityName": "Icy Devastator",
-            "type": null,
+            "type": "Single Target",
             "damage": null,
             "debuff": true,
             "important": null,
@@ -10690,10 +10782,10 @@
             ]
           },
           {
-            "id": "9eb6ad6d-953f-591c-90c3-0d97b7dc612a",
-            "spellId": 387152,
+            "id": "06076fbe-f771-513c-aa34-b2088dd6ced4",
+            "spellId": 387151,
             "abilityName": "Icy Devastator",
-            "type": null,
+            "type": "Single Target Over Time",
             "damage": null,
             "debuff": true,
             "important": null,
@@ -12002,18 +12094,18 @@
             ]
           },
           {
-            "id": "718c664c-6f47-53ac-ad68-0741c940c7e7",
-            "spellId": 384316,
+            "id": "6aac3415-7782-57e4-b5d1-24405d5b08c2",
+            "spellId": 384185,
             "abilityName": "Lightning Strike",
-            "type": "1-Hit",
+            "type": "Single Target",
             "damage": "Nature",
-            "debuff": null,
-            "important": null,
+            "debuff": true,
+            "important": true,
             "dispellable": null,
             "dispell": null,
             "interruptible": null,
             "ccable": null,
-            "cooldown": null,
+            "cooldown": 20,
             "offset": null,
             "diffuse": null,
             "stun": null,
@@ -12024,7 +12116,9 @@
             "silence": null,
             "fear": null,
             "fire": null,
-            "notes": null,
+            "notes": {
+              "raw": "{\"data\":{},\"content\":[{\"data\":{},\"content\":[{\"data\":{},\"marks\":[],\"value\":\"I\",\"nodeType\":\"text\"},{\"data\":{},\"marks\":[],\"value\":\"t will make the orbs inside the circle explode\",\"nodeType\":\"text\"}],\"nodeType\":\"paragraph\"}],\"nodeType\":\"document\"}"
+            },
             "metadata": {
               "tags": [
                 {
@@ -12048,18 +12142,18 @@
             ]
           },
           {
-            "id": "6aac3415-7782-57e4-b5d1-24405d5b08c2",
-            "spellId": 384185,
+            "id": "718c664c-6f47-53ac-ad68-0741c940c7e7",
+            "spellId": 384316,
             "abilityName": "Lightning Strike",
-            "type": "Single Target",
+            "type": "1-Hit",
             "damage": "Nature",
-            "debuff": true,
-            "important": true,
+            "debuff": null,
+            "important": null,
             "dispellable": null,
             "dispell": null,
             "interruptible": null,
             "ccable": null,
-            "cooldown": null,
+            "cooldown": 20,
             "offset": null,
             "diffuse": null,
             "stun": null,
@@ -12070,9 +12164,7 @@
             "silence": null,
             "fear": null,
             "fire": null,
-            "notes": {
-              "raw": "{\"nodeType\":\"document\",\"data\":{},\"content\":[{\"nodeType\":\"paragraph\",\"data\":{},\"content\":[{\"nodeType\":\"text\",\"value\":\"I\",\"marks\":[],\"data\":{}},{\"nodeType\":\"text\",\"value\":\"t will make the orbs inside the circle explode\",\"marks\":[],\"data\":{}}]}]}"
-            },
+            "notes": null,
             "metadata": {
               "tags": [
                 {
@@ -13512,7 +13604,7 @@
             "type": "Single Target Over Time",
             "damage": "Fire",
             "debuff": true,
-            "important": true,
+            "important": null,
             "dispellable": null,
             "dispell": null,
             "interruptible": null,
@@ -13527,7 +13619,7 @@
             "healReduction": null,
             "silence": null,
             "fear": null,
-            "fire": null,
+            "fire": true,
             "notes": null,
             "metadata": {
               "tags": [
@@ -13757,7 +13849,7 @@
             "healReduction": true,
             "silence": null,
             "fear": null,
-            "fire": null,
+            "fire": true,
             "notes": null,
             "metadata": {
               "tags": [
@@ -13776,7 +13868,7 @@
               {
                 "name": "Risen Warrior",
                 "npcId": 195855,
-                "category": null,
+                "category": "Undead",
                 "isBoss": null
               }
             ]
@@ -13785,12 +13877,12 @@
             "id": "f212de6c-98a1-59bf-9c49-180d73d601be",
             "spellId": 384161,
             "abilityName": "Mote of Combustion",
-            "type": null,
+            "type": "Single Target Over Time",
             "damage": null,
             "debuff": true,
             "important": null,
-            "dispellable": null,
-            "dispell": null,
+            "dispellable": true,
+            "dispell": ["Magic"],
             "interruptible": true,
             "ccable": true,
             "cooldown": null,
@@ -13877,7 +13969,7 @@
             "id": "873a982e-d237-51ce-bafa-bd907fba5a8b",
             "spellId": 387564,
             "abilityName": "Mystic Vapors",
-            "type": null,
+            "type": "Burst",
             "damage": null,
             "debuff": true,
             "important": true,
@@ -14012,17 +14104,17 @@
             ]
           },
           {
-            "id": "6e38fd5c-259a-5dcf-87b5-8578ee85a1e5",
-            "spellId": 386526,
+            "id": "4be342ef-8143-5463-b5d9-af0e5b8a06ab",
+            "spellId": 386536,
             "abilityName": "Null Stomp",
-            "type": null,
+            "type": "Dodge",
             "damage": null,
-            "debuff": null,
+            "debuff": true,
             "important": null,
             "dispellable": null,
             "dispell": null,
             "interruptible": null,
-            "ccable": true,
+            "ccable": null,
             "cooldown": null,
             "offset": null,
             "diffuse": null,
@@ -14058,17 +14150,17 @@
             ]
           },
           {
-            "id": "4be342ef-8143-5463-b5d9-af0e5b8a06ab",
-            "spellId": 386536,
+            "id": "6e38fd5c-259a-5dcf-87b5-8578ee85a1e5",
+            "spellId": 386526,
             "abilityName": "Null Stomp",
-            "type": null,
+            "type": "Dodge",
             "damage": null,
-            "debuff": true,
+            "debuff": null,
             "important": null,
             "dispellable": null,
             "dispell": null,
             "interruptible": null,
-            "ccable": null,
+            "ccable": true,
             "cooldown": null,
             "offset": null,
             "diffuse": null,
@@ -14207,7 +14299,7 @@
             "dispell": null,
             "interruptible": null,
             "ccable": null,
-            "cooldown": null,
+            "cooldown": 39,
             "offset": null,
             "diffuse": null,
             "stun": null,
@@ -14478,7 +14570,7 @@
             "type": "Single Target Over Time",
             "damage": "Physical",
             "debuff": true,
-            "important": true,
+            "important": null,
             "dispellable": null,
             "dispell": null,
             "interruptible": null,
@@ -14755,8 +14847,8 @@
             "damage": "Nature",
             "debuff": true,
             "important": true,
-            "dispellable": null,
-            "dispell": null,
+            "dispellable": true,
+            "dispell": ["Magic"],
             "interruptible": null,
             "ccable": null,
             "cooldown": null,
@@ -15428,7 +15520,7 @@
             "type": "Aura",
             "damage": null,
             "debuff": null,
-            "important": null,
+            "important": true,
             "dispellable": true,
             "dispell": ["Soothe"],
             "interruptible": null,
@@ -15613,8 +15705,8 @@
             "damage": "Physical",
             "debuff": true,
             "important": true,
-            "dispellable": null,
-            "dispell": null,
+            "dispellable": true,
+            "dispell": ["Bleed"],
             "interruptible": null,
             "ccable": null,
             "cooldown": null,
@@ -16437,10 +16529,10 @@
             "id": "5f9e9fea-6059-52be-8430-07245412f260",
             "spellId": 436841,
             "abilityName": "Rotting Wind",
-            "type": "Frontal",
+            "type": "Burst",
             "damage": "Shadow",
             "debuff": true,
-            "important": null,
+            "important": true,
             "dispellable": true,
             "dispell": ["Disease"],
             "interruptible": true,
@@ -17038,76 +17130,6 @@
             ]
           },
           {
-            "id": "15a3f8ae-1fff-53b8-814c-86c68665b34f",
-            "spellId": 395498,
-            "abilityName": "Scornful Haste",
-            "type": "Aura",
-            "damage": null,
-            "debuff": null,
-            "important": null,
-            "dispellable": null,
-            "dispell": null,
-            "interruptible": null,
-            "ccable": null,
-            "cooldown": null,
-            "offset": null,
-            "diffuse": null,
-            "stun": null,
-            "charm": null,
-            "grievous": null,
-            "healAbsorb": null,
-            "healReduction": null,
-            "silence": null,
-            "fear": null,
-            "fire": null,
-            "notes": null,
-            "metadata": {
-              "tags": [
-                {
-                  "name": "Dragonflight S4"
-                },
-                {
-                  "name": "test"
-                },
-                {
-                  "name": "The Azure Vault"
-                }
-              ]
-            },
-            "enemies": [
-              {
-                "name": "Unstable Curator",
-                "npcId": 187154,
-                "category": "Elemental",
-                "isBoss": null
-              },
-              {
-                "name": "Rune Seal Keeper",
-                "npcId": 187155,
-                "category": "Dragonkin",
-                "isBoss": null
-              },
-              {
-                "name": "Astral Attendant",
-                "npcId": 189555,
-                "category": "Elemental",
-                "isBoss": null
-              },
-              {
-                "name": "Arcane Construct",
-                "npcId": 186740,
-                "category": "Elemental",
-                "isBoss": null
-              },
-              {
-                "name": "Arcane Elemental",
-                "npcId": 186741,
-                "category": "Elemental",
-                "isBoss": null
-              }
-            ]
-          },
-          {
             "id": "c03fcaac-dd3b-5564-b921-bcc75c87b8c2",
             "spellId": 385029,
             "abilityName": "Screech",
@@ -17580,7 +17602,7 @@
             "type": "Single Target Over Time",
             "damage": null,
             "debuff": true,
-            "important": true,
+            "important": null,
             "dispellable": null,
             "dispell": null,
             "interruptible": null,
@@ -17834,17 +17856,17 @@
             ]
           },
           {
-            "id": "3613ec89-f379-5296-9ddc-f9f1d87b9034",
-            "spellId": 436652,
+            "id": "d34788cf-30bf-5e0f-8353-561798b47d3e",
+            "spellId": 391136,
             "abilityName": "Shoulder Slam",
-            "type": "Single Target Over Time",
-            "damage": "Physical",
-            "debuff": true,
-            "important": true,
+            "type": "Single Target",
+            "damage": null,
+            "debuff": null,
+            "important": null,
             "dispellable": null,
             "dispell": null,
             "interruptible": null,
-            "ccable": true,
+            "ccable": null,
             "cooldown": null,
             "offset": null,
             "diffuse": null,
@@ -17880,17 +17902,17 @@
             ]
           },
           {
-            "id": "d34788cf-30bf-5e0f-8353-561798b47d3e",
-            "spellId": 391136,
+            "id": "3613ec89-f379-5296-9ddc-f9f1d87b9034",
+            "spellId": 436652,
             "abilityName": "Shoulder Slam",
-            "type": "Single Target",
-            "damage": null,
-            "debuff": null,
-            "important": null,
+            "type": "Single Target Over Time",
+            "damage": "Physical",
+            "debuff": true,
+            "important": true,
             "dispellable": null,
             "dispell": null,
             "interruptible": null,
-            "ccable": true,
+            "ccable": null,
             "cooldown": null,
             "offset": null,
             "diffuse": null,
@@ -18710,13 +18732,13 @@
             ]
           },
           {
-            "id": "69a3f0d3-f5e1-5369-83f9-e0bde2ef2c8a",
-            "spellId": 376864,
+            "id": "c9dba5a8-a7d7-558a-b3b1-ce2bca8b4dae",
+            "spellId": 376866,
             "abilityName": "Static Spear",
-            "type": "Single Target",
-            "damage": "Nature",
-            "debuff": true,
-            "important": true,
+            "type": "1-Hit",
+            "damage": null,
+            "debuff": null,
+            "important": null,
             "dispellable": null,
             "dispell": null,
             "interruptible": null,
@@ -18756,13 +18778,13 @@
             ]
           },
           {
-            "id": "c9dba5a8-a7d7-558a-b3b1-ce2bca8b4dae",
-            "spellId": 376866,
+            "id": "69a3f0d3-f5e1-5369-83f9-e0bde2ef2c8a",
+            "spellId": 376864,
             "abilityName": "Static Spear",
-            "type": null,
-            "damage": null,
-            "debuff": null,
-            "important": null,
+            "type": "Single Target",
+            "damage": "Nature",
+            "debuff": true,
+            "important": true,
             "dispellable": null,
             "dispell": null,
             "interruptible": null,
@@ -18813,8 +18835,8 @@
             "dispell": null,
             "interruptible": null,
             "ccable": null,
-            "cooldown": null,
-            "offset": null,
+            "cooldown": 28,
+            "offset": 11,
             "diffuse": null,
             "stun": null,
             "charm": null,
@@ -19847,7 +19869,7 @@
             "id": "fc111d81-7fc4-5544-88a9-a830b65f9b9a",
             "spellId": 386015,
             "abilityName": "Summon Squall",
-            "type": null,
+            "type": "Summon",
             "damage": null,
             "debuff": null,
             "important": null,
@@ -20145,7 +20167,7 @@
             "healReduction": null,
             "silence": null,
             "fear": null,
-            "fire": null,
+            "fire": true,
             "notes": null,
             "metadata": {
               "tags": [
@@ -21673,7 +21695,7 @@
             "dispell": null,
             "interruptible": null,
             "ccable": null,
-            "cooldown": null,
+            "cooldown": 39,
             "offset": null,
             "diffuse": null,
             "stun": null,
@@ -21987,7 +22009,7 @@
             "id": "a61957b6-c83f-56d9-a918-0d19fe036f3e",
             "spellId": 389855,
             "abilityName": "Unstable Magic",
-            "type": null,
+            "type": "Dodge",
             "damage": null,
             "debuff": true,
             "important": null,
@@ -22720,6 +22742,52 @@
             ]
           },
           {
+            "id": "64060ba2-14e4-5581-a561-dc866d138c1d",
+            "spellId": 386546,
+            "abilityName": "Waking Bane",
+            "type": "Control",
+            "damage": null,
+            "debuff": null,
+            "important": null,
+            "dispellable": null,
+            "dispell": null,
+            "interruptible": true,
+            "ccable": true,
+            "cooldown": null,
+            "offset": null,
+            "diffuse": null,
+            "stun": null,
+            "charm": null,
+            "grievous": null,
+            "healAbsorb": null,
+            "healReduction": null,
+            "silence": null,
+            "fear": null,
+            "fire": null,
+            "notes": null,
+            "metadata": {
+              "tags": [
+                {
+                  "name": "Dragonflight S4"
+                },
+                {
+                  "name": "test"
+                },
+                {
+                  "name": "The Azure Vault"
+                }
+              ]
+            },
+            "enemies": [
+              {
+                "name": "Arcane Elemental",
+                "npcId": 186741,
+                "category": "Elemental",
+                "isBoss": null
+              }
+            ]
+          },
+          {
             "id": "ae0713ff-fe3c-56b0-a500-558fa644c2ff",
             "spellId": 386549,
             "abilityName": "Waking Bane",
@@ -22766,59 +22834,13 @@
             ]
           },
           {
-            "id": "64060ba2-14e4-5581-a561-dc866d138c1d",
-            "spellId": 386546,
-            "abilityName": "Waking Bane",
-            "type": null,
-            "damage": null,
-            "debuff": null,
-            "important": null,
-            "dispellable": null,
-            "dispell": null,
-            "interruptible": true,
-            "ccable": true,
-            "cooldown": null,
-            "offset": null,
-            "diffuse": null,
-            "stun": null,
-            "charm": null,
-            "grievous": null,
-            "healAbsorb": null,
-            "healReduction": null,
-            "silence": null,
-            "fear": null,
-            "fire": null,
-            "notes": null,
-            "metadata": {
-              "tags": [
-                {
-                  "name": "Dragonflight S4"
-                },
-                {
-                  "name": "test"
-                },
-                {
-                  "name": "The Azure Vault"
-                }
-              ]
-            },
-            "enemies": [
-              {
-                "name": "Arcane Elemental",
-                "npcId": 186741,
-                "category": "Elemental",
-                "isBoss": null
-              }
-            ]
-          },
-          {
             "id": "06d544c8-b0cf-5b27-829c-3fdb2b85f1c6",
             "spellId": 384336,
             "abilityName": "War Stomp",
             "type": "Dodge",
             "damage": "Physical",
             "debuff": true,
-            "important": true,
+            "important": null,
             "dispellable": null,
             "dispell": null,
             "interruptible": null,
@@ -23372,6 +23394,52 @@
               {
                 "name": "Decay Speaker",
                 "npcId": 186191,
+                "category": "Humanoid",
+                "isBoss": null
+              }
+            ]
+          },
+          {
+            "id": "cd2060d4-54c3-57f8-bd32-e914b8acd6cf",
+            "spellId": 396305,
+            "abilityName": "Withering Contagion",
+            "type": "Single Target Over Time",
+            "damage": "Nature",
+            "debuff": true,
+            "important": true,
+            "dispellable": true,
+            "dispell": ["Disease"],
+            "interruptible": null,
+            "ccable": null,
+            "cooldown": null,
+            "offset": null,
+            "diffuse": null,
+            "stun": null,
+            "charm": null,
+            "grievous": null,
+            "healAbsorb": null,
+            "healReduction": null,
+            "silence": null,
+            "fear": null,
+            "fire": null,
+            "notes": null,
+            "metadata": {
+              "tags": [
+                {
+                  "name": "Brackenhide Hollow"
+                },
+                {
+                  "name": "Dragonflight S4"
+                },
+                {
+                  "name": "test"
+                }
+              ]
+            },
+            "enemies": [
+              {
+                "name": "Vile Rothexer",
+                "npcId": 187224,
                 "category": "Humanoid",
                 "isBoss": null
               }
