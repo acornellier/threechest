@@ -1,7 +1,7 @@
 import { getIconLink } from '../../data/spells/mergeSpells.ts'
 import { TooltipStyled } from '../Common/TooltipStyled.tsx'
 import { isSeason4 } from '../../data/dungeonKeys.ts'
-import type { Dungeon, Mob, Spell } from '../../data/types.ts'
+import type { DispelType, Dungeon, Mob, Spell } from '../../data/types.ts'
 import { BoltIcon, HandRaisedIcon, SparklesIcon } from '@heroicons/react/24/outline'
 import { SootheIcon } from '../Common/Icons/SootheIcon.tsx'
 import { DiseaseIcon } from '../Common/Icons/DiseaseIcon.tsx'
@@ -10,6 +10,7 @@ import { CurseIcon } from '../Common/Icons/CurseIcon.tsx'
 import { ChainIcon } from '../Common/Icons/ChainIcon.tsx'
 import { PurgeIcon } from '../Common/Icons/PurgeIcon.tsx'
 import { PoisonIcon } from '../Common/Icons/PoisonIcon.tsx'
+import type { FC, SVGProps } from 'react'
 
 interface Props {
   spell: Spell
@@ -17,16 +18,22 @@ interface Props {
   mob: Mob
 }
 
-const dispelTypes = [
+interface DispelIcon {
+  name: DispelType
+  Icon: FC<SVGProps<SVGSVGElement>>
+  label?: string
+}
+
+const dispelTypes: DispelIcon[] = [
   { name: 'Bleed', Icon: BleedIcon },
   { name: 'Curse', Icon: CurseIcon },
   { name: 'Disease', Icon: DiseaseIcon },
   { name: 'Poison', Icon: PoisonIcon },
-  { name: 'Magic', Icon: SparklesIcon },
+  { name: 'Magic', Icon: SparklesIcon, label: 'Magic dispel' },
   { name: 'Soothe', Icon: SootheIcon },
   { name: 'Purge', Icon: PurgeIcon },
-  { name: 'Movement', Icon: ChainIcon },
-] as const
+  { name: 'Movement', Icon: ChainIcon, label: 'Movement dispel' },
+]
 
 export function MobSpellInfo({ spell, mob, dungeon }: Props) {
   const { icon, aoe, damage, physical, name, id } = spell
@@ -53,22 +60,27 @@ export function MobSpellInfo({ spell, mob, dungeon }: Props) {
       </a>
 
       <div className="gritty flex flex-grow justify-between items-center gap-6 pl-2 h-full bg-fancy-red opacity-90 text-nowrap rounded-md rounded-l-none">
-        <a
-          href={`https://www.wowhead.com/spell=${id}?dd=23&ddsize=5`}
-          target="_blank"
-          rel="noreferrer"
-        >
-          {name} <span className="text-xs">{spell.id}</span>
-        </a>
+        <div>
+          <span>
+            <a
+              href={`https://www.wowhead.com/spell=${id}?dd=23&ddsize=5`}
+              target="_blank"
+              rel="noreferrer"
+            >
+              {name}
+            </a>
+          </span>
+          <span className="text-xs"> {spell.id}</span>
+        </div>
         <div className={`flex items-center gap-1 ${damage ? '' : 'pr-1'}`}>
           {dispelTypes.map(
-            ({ name, Icon }) =>
+            ({ name, Icon, label }) =>
               spell.dispel?.includes(name) && (
                 <Icon
                   key={name}
                   height={20}
                   data-tooltip-id={spellDetailsTooltipId}
-                  data-tooltip-content={name}
+                  data-tooltip-content={label ?? name}
                 />
               ),
           )}
