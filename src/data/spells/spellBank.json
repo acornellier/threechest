@@ -198,7 +198,9 @@
             "debuff": null,
             "important": null,
             "dispellable": true,
-            "dispell": ["Soothe"],
+            "dispell": [
+              "Soothe"
+            ],
             "interruptible": null,
             "ccable": true,
             "cooldown": null,
@@ -486,7 +488,9 @@
             "debuff": null,
             "important": null,
             "dispellable": true,
-            "dispell": ["Purge"],
+            "dispell": [
+              "Purge"
+            ],
             "interruptible": true,
             "ccable": null,
             "cooldown": null,
@@ -762,7 +766,10 @@
             "debuff": null,
             "important": null,
             "dispellable": true,
-            "dispell": ["Soothe", "Purge"],
+            "dispell": [
+              "Soothe",
+              "Purge"
+            ],
             "interruptible": null,
             "ccable": true,
             "cooldown": null,
@@ -1452,7 +1459,9 @@
             "debuff": null,
             "important": true,
             "dispellable": true,
-            "dispell": ["Purge"],
+            "dispell": [
+              "Purge"
+            ],
             "interruptible": null,
             "ccable": null,
             "cooldown": null,
@@ -1720,6 +1729,54 @@
             ]
           },
           {
+            "id": "26d5b735-807f-5a69-99f5-5c9e0b913233",
+            "spellId": 372796,
+            "abilityName": "Blazing Rush",
+            "type": "Single Target Over Time",
+            "damage": "Physical",
+            "debuff": true,
+            "important": null,
+            "dispellable": true,
+            "dispell": [
+              "Bleed"
+            ],
+            "interruptible": null,
+            "ccable": null,
+            "cooldown": null,
+            "offset": null,
+            "diffuse": null,
+            "stun": null,
+            "charm": null,
+            "grievous": null,
+            "healAbsorb": null,
+            "healReduction": null,
+            "silence": null,
+            "fear": null,
+            "fire": null,
+            "notes": null,
+            "metadata": {
+              "tags": [
+                {
+                  "name": "Dragonflight S4"
+                },
+                {
+                  "name": "Ruby Life Pools"
+                },
+                {
+                  "name": "test"
+                }
+              ]
+            },
+            "enemies": [
+              {
+                "name": "Defier Draghar",
+                "npcId": 187897,
+                "category": "Dragonkin",
+                "isBoss": null
+              }
+            ]
+          },
+          {
             "id": "dbe85a6a-ebbc-5d16-8a60-0c7244e54a75",
             "spellId": 372087,
             "abilityName": "Blazing Rush",
@@ -1820,7 +1877,9 @@
             "debuff": true,
             "important": null,
             "dispellable": true,
-            "dispell": ["Bleed"],
+            "dispell": [
+              "Bleed"
+            ],
             "interruptible": null,
             "ccable": null,
             "cooldown": null,
@@ -1964,7 +2023,9 @@
             "debuff": true,
             "important": true,
             "dispellable": true,
-            "dispell": ["Magic"],
+            "dispell": [
+              "Magic"
+            ],
             "interruptible": true,
             "ccable": null,
             "cooldown": null,
@@ -2114,7 +2175,9 @@
             "debuff": true,
             "important": null,
             "dispellable": true,
-            "dispell": ["Bleed"],
+            "dispell": [
+              "Bleed"
+            ],
             "interruptible": null,
             "ccable": true,
             "cooldown": null,
@@ -2166,7 +2229,9 @@
             "debuff": null,
             "important": null,
             "dispellable": true,
-            "dispell": ["Soothe"],
+            "dispell": [
+              "Soothe"
+            ],
             "interruptible": true,
             "ccable": true,
             "cooldown": null,
@@ -2212,7 +2277,9 @@
             "debuff": true,
             "important": null,
             "dispellable": true,
-            "dispell": ["Bleed"],
+            "dispell": [
+              "Bleed"
+            ],
             "interruptible": null,
             "ccable": true,
             "cooldown": null,
@@ -2442,7 +2509,9 @@
             "debuff": null,
             "important": null,
             "dispellable": true,
-            "dispell": ["Purge"],
+            "dispell": [
+              "Purge"
+            ],
             "interruptible": null,
             "ccable": null,
             "cooldown": null,
@@ -2724,7 +2793,9 @@
             "debuff": null,
             "important": null,
             "dispellable": true,
-            "dispell": ["Purge"],
+            "dispell": [
+              "Purge"
+            ],
             "interruptible": null,
             "ccable": true,
             "cooldown": null,
@@ -2816,7 +2887,9 @@
             "debuff": true,
             "important": true,
             "dispellable": true,
-            "dispell": ["Magic"],
+            "dispell": [
+              "Magic"
+            ],
             "interruptible": null,
             "ccable": null,
             "cooldown": null,
@@ -2956,7 +3029,9 @@
             "debuff": null,
             "important": null,
             "dispellable": true,
-            "dispell": ["Purge"],
+            "dispell": [
+              "Purge"
+            ],
             "interruptible": null,
             "ccable": null,
             "cooldown": null,
@@ -3416,7 +3491,9 @@
             "debuff": null,
             "important": true,
             "dispellable": true,
-            "dispell": ["Soothe"],
+            "dispell": [
+              "Soothe"
+            ],
             "interruptible": true,
             "ccable": null,
             "cooldown": null,
@@ -3554,7 +3631,9 @@
             "debuff": null,
             "important": null,
             "dispellable": true,
-            "dispell": ["Purge"],
+            "dispell": [
+              "Purge"
+            ],
             "interruptible": null,
             "ccable": true,
             "cooldown": null,
@@ -3976,7 +4055,9 @@
             "debuff": true,
             "important": null,
             "dispellable": true,
-            "dispell": ["Bleed"],
+            "dispell": [
+              "Bleed"
+            ],
             "interruptible": null,
             "ccable": true,
             "cooldown": null,
@@ -4300,7 +4381,9 @@
             "debuff": true,
             "important": null,
             "dispellable": true,
-            "dispell": ["Magic"],
+            "dispell": [
+              "Magic"
+            ],
             "interruptible": null,
             "ccable": null,
             "cooldown": null,
@@ -4346,7 +4429,9 @@
             "debuff": null,
             "important": null,
             "dispellable": true,
-            "dispell": ["Purge"],
+            "dispell": [
+              "Purge"
+            ],
             "interruptible": true,
             "ccable": true,
             "cooldown": null,
@@ -4484,7 +4569,9 @@
             "debuff": true,
             "important": true,
             "dispellable": true,
-            "dispell": ["Movement"],
+            "dispell": [
+              "Movement"
+            ],
             "interruptible": null,
             "ccable": true,
             "cooldown": null,
@@ -4668,7 +4755,9 @@
             "debuff": true,
             "important": null,
             "dispellable": true,
-            "dispell": ["Movement"],
+            "dispell": [
+              "Movement"
+            ],
             "interruptible": null,
             "ccable": true,
             "cooldown": null,
@@ -4852,7 +4941,10 @@
             "debuff": true,
             "important": null,
             "dispellable": true,
-            "dispell": ["Magic", "Movement"],
+            "dispell": [
+              "Magic",
+              "Movement"
+            ],
             "interruptible": null,
             "ccable": null,
             "cooldown": null,
@@ -4898,7 +4990,10 @@
             "debuff": true,
             "important": null,
             "dispellable": true,
-            "dispell": ["Curse", "Movement"],
+            "dispell": [
+              "Curse",
+              "Movement"
+            ],
             "interruptible": true,
             "ccable": true,
             "cooldown": null,
@@ -4944,7 +5039,9 @@
             "debuff": true,
             "important": true,
             "dispellable": true,
-            "dispell": ["Curse"],
+            "dispell": [
+              "Curse"
+            ],
             "interruptible": null,
             "ccable": null,
             "cooldown": null,
@@ -5082,7 +5179,9 @@
             "debuff": true,
             "important": true,
             "dispellable": true,
-            "dispell": ["Magic"],
+            "dispell": [
+              "Magic"
+            ],
             "interruptible": true,
             "ccable": true,
             "cooldown": null,
@@ -5568,7 +5667,9 @@
             "debuff": true,
             "important": null,
             "dispellable": true,
-            "dispell": ["Magic"],
+            "dispell": [
+              "Magic"
+            ],
             "interruptible": null,
             "ccable": null,
             "cooldown": null,
@@ -5706,7 +5807,10 @@
             "debuff": true,
             "important": null,
             "dispellable": true,
-            "dispell": ["Magic", "Movement"],
+            "dispell": [
+              "Magic",
+              "Movement"
+            ],
             "interruptible": null,
             "ccable": null,
             "cooldown": null,
@@ -5890,7 +5994,10 @@
             "debuff": true,
             "important": null,
             "dispellable": true,
-            "dispell": ["Movement", "Magic"],
+            "dispell": [
+              "Movement",
+              "Magic"
+            ],
             "interruptible": null,
             "ccable": null,
             "cooldown": 25,
@@ -6212,7 +6319,10 @@
             "debuff": true,
             "important": null,
             "dispellable": true,
-            "dispell": ["Movement", "Disease"],
+            "dispell": [
+              "Movement",
+              "Disease"
+            ],
             "interruptible": null,
             "ccable": null,
             "cooldown": null,
@@ -6356,7 +6466,9 @@
             "debuff": true,
             "important": null,
             "dispellable": true,
-            "dispell": ["Bleed"],
+            "dispell": [
+              "Bleed"
+            ],
             "interruptible": null,
             "ccable": null,
             "cooldown": null,
@@ -6494,7 +6606,9 @@
             "debuff": true,
             "important": null,
             "dispellable": true,
-            "dispell": ["Bleed"],
+            "dispell": [
+              "Bleed"
+            ],
             "interruptible": null,
             "ccable": null,
             "cooldown": null,
@@ -6678,7 +6792,9 @@
             "debuff": true,
             "important": null,
             "dispellable": true,
-            "dispell": ["Bleed"],
+            "dispell": [
+              "Bleed"
+            ],
             "interruptible": null,
             "ccable": true,
             "cooldown": null,
@@ -6724,7 +6840,9 @@
             "debuff": null,
             "important": null,
             "dispellable": true,
-            "dispell": ["Purge"],
+            "dispell": [
+              "Purge"
+            ],
             "interruptible": true,
             "ccable": true,
             "cooldown": null,
@@ -6908,7 +7026,9 @@
             "debuff": null,
             "important": true,
             "dispellable": true,
-            "dispell": ["Purge"],
+            "dispell": [
+              "Purge"
+            ],
             "interruptible": true,
             "ccable": true,
             "cooldown": null,
@@ -7046,7 +7166,9 @@
             "debuff": null,
             "important": true,
             "dispellable": true,
-            "dispell": ["Purge"],
+            "dispell": [
+              "Purge"
+            ],
             "interruptible": null,
             "ccable": null,
             "cooldown": null,
@@ -7876,7 +7998,9 @@
             "debuff": null,
             "important": null,
             "dispellable": true,
-            "dispell": ["Soothe"],
+            "dispell": [
+              "Soothe"
+            ],
             "interruptible": null,
             "ccable": true,
             "cooldown": null,
@@ -8520,7 +8644,9 @@
             "debuff": true,
             "important": null,
             "dispellable": true,
-            "dispell": ["Magic"],
+            "dispell": [
+              "Magic"
+            ],
             "interruptible": null,
             "ccable": null,
             "cooldown": null,
@@ -8750,7 +8876,10 @@
             "debuff": true,
             "important": null,
             "dispellable": true,
-            "dispell": ["Magic", "Movement"],
+            "dispell": [
+              "Magic",
+              "Movement"
+            ],
             "interruptible": null,
             "ccable": null,
             "cooldown": null,
@@ -9026,7 +9155,9 @@
             "debuff": true,
             "important": null,
             "dispellable": true,
-            "dispell": ["Bleed"],
+            "dispell": [
+              "Bleed"
+            ],
             "interruptible": null,
             "ccable": null,
             "cooldown": 60,
@@ -9210,7 +9341,9 @@
             "debuff": null,
             "important": null,
             "dispellable": true,
-            "dispell": ["Purge"],
+            "dispell": [
+              "Purge"
+            ],
             "interruptible": null,
             "ccable": null,
             "cooldown": null,
@@ -9348,7 +9481,9 @@
             "debuff": null,
             "important": null,
             "dispellable": true,
-            "dispell": ["Purge"],
+            "dispell": [
+              "Purge"
+            ],
             "interruptible": true,
             "ccable": null,
             "cooldown": null,
@@ -9532,7 +9667,9 @@
             "debuff": true,
             "important": true,
             "dispellable": true,
-            "dispell": ["Poison"],
+            "dispell": [
+              "Poison"
+            ],
             "interruptible": null,
             "ccable": null,
             "cooldown": null,
@@ -9678,7 +9815,9 @@
             "debuff": true,
             "important": null,
             "dispellable": true,
-            "dispell": ["Bleed"],
+            "dispell": [
+              "Bleed"
+            ],
             "interruptible": null,
             "ccable": null,
             "cooldown": null,
@@ -9956,7 +10095,9 @@
             "debuff": null,
             "important": true,
             "dispellable": true,
-            "dispell": ["Purge"],
+            "dispell": [
+              "Purge"
+            ],
             "interruptible": true,
             "ccable": null,
             "cooldown": null,
@@ -10278,7 +10419,9 @@
             "debuff": true,
             "important": true,
             "dispellable": true,
-            "dispell": ["Magic"],
+            "dispell": [
+              "Magic"
+            ],
             "interruptible": true,
             "ccable": null,
             "cooldown": null,
@@ -10324,7 +10467,9 @@
             "debuff": null,
             "important": null,
             "dispellable": true,
-            "dispell": ["Soothe"],
+            "dispell": [
+              "Soothe"
+            ],
             "interruptible": null,
             "ccable": true,
             "cooldown": null,
@@ -10560,7 +10705,9 @@
             "debuff": null,
             "important": true,
             "dispellable": true,
-            "dispell": ["Purge"],
+            "dispell": [
+              "Purge"
+            ],
             "interruptible": true,
             "ccable": true,
             "cooldown": null,
@@ -10606,7 +10753,9 @@
             "debuff": null,
             "important": null,
             "dispellable": true,
-            "dispell": ["Purge"],
+            "dispell": [
+              "Purge"
+            ],
             "interruptible": null,
             "ccable": null,
             "cooldown": null,
@@ -10698,7 +10847,10 @@
             "debuff": true,
             "important": null,
             "dispellable": true,
-            "dispell": ["Magic", "Movement"],
+            "dispell": [
+              "Magic",
+              "Movement"
+            ],
             "interruptible": true,
             "ccable": true,
             "cooldown": null,
@@ -10882,7 +11034,9 @@
             "debuff": true,
             "important": null,
             "dispellable": true,
-            "dispell": ["Magic"],
+            "dispell": [
+              "Magic"
+            ],
             "interruptible": null,
             "ccable": null,
             "cooldown": null,
@@ -11582,7 +11736,9 @@
             "debuff": true,
             "important": null,
             "dispellable": true,
-            "dispell": ["Bleed"],
+            "dispell": [
+              "Bleed"
+            ],
             "interruptible": null,
             "ccable": true,
             "cooldown": null,
@@ -11630,7 +11786,9 @@
             "debuff": true,
             "important": true,
             "dispellable": true,
-            "dispell": ["Poison"],
+            "dispell": [
+              "Poison"
+            ],
             "interruptible": null,
             "ccable": null,
             "cooldown": null,
@@ -13698,7 +13856,10 @@
             "debuff": true,
             "important": null,
             "dispellable": true,
-            "dispell": ["Magic", "Movement"],
+            "dispell": [
+              "Magic",
+              "Movement"
+            ],
             "interruptible": null,
             "ccable": null,
             "cooldown": null,
@@ -13790,7 +13951,9 @@
             "debuff": true,
             "important": true,
             "dispellable": true,
-            "dispell": ["Magic"],
+            "dispell": [
+              "Magic"
+            ],
             "interruptible": true,
             "ccable": true,
             "cooldown": null,
@@ -13882,7 +14045,9 @@
             "debuff": true,
             "important": null,
             "dispellable": true,
-            "dispell": ["Magic"],
+            "dispell": [
+              "Magic"
+            ],
             "interruptible": true,
             "ccable": true,
             "cooldown": null,
@@ -13974,7 +14139,9 @@
             "debuff": true,
             "important": true,
             "dispellable": true,
-            "dispell": ["Magic"],
+            "dispell": [
+              "Magic"
+            ],
             "interruptible": true,
             "ccable": true,
             "cooldown": null,
@@ -14020,7 +14187,9 @@
             "debuff": true,
             "important": null,
             "dispellable": true,
-            "dispell": ["Disease"],
+            "dispell": [
+              "Disease"
+            ],
             "interruptible": null,
             "ccable": null,
             "cooldown": null,
@@ -14526,7 +14695,9 @@
             "debuff": true,
             "important": true,
             "dispellable": true,
-            "dispell": ["Bleed"],
+            "dispell": [
+              "Bleed"
+            ],
             "interruptible": null,
             "ccable": null,
             "cooldown": null,
@@ -14848,7 +15019,9 @@
             "debuff": true,
             "important": true,
             "dispellable": true,
-            "dispell": ["Magic"],
+            "dispell": [
+              "Magic"
+            ],
             "interruptible": null,
             "ccable": null,
             "cooldown": null,
@@ -15048,6 +15221,55 @@
             ]
           },
           {
+            "id": "c5239c00-0248-5306-9793-cf1c179254b6",
+            "spellId": 372682,
+            "abilityName": "Primal Chill",
+            "type": "Control",
+            "damage": null,
+            "debuff": true,
+            "important": null,
+            "dispellable": true,
+            "dispell": [
+              "Magic",
+              "Movement"
+            ],
+            "interruptible": null,
+            "ccable": null,
+            "cooldown": null,
+            "offset": null,
+            "diffuse": null,
+            "stun": null,
+            "charm": null,
+            "grievous": null,
+            "healAbsorb": null,
+            "healReduction": null,
+            "silence": null,
+            "fear": null,
+            "fire": null,
+            "notes": null,
+            "metadata": {
+              "tags": [
+                {
+                  "name": "Dragonflight S4"
+                },
+                {
+                  "name": "Ruby Life Pools"
+                },
+                {
+                  "name": "test"
+                }
+              ]
+            },
+            "enemies": [
+              {
+                "name": "Infused Whelp",
+                "npcId": 187894,
+                "category": "Dragonkin",
+                "isBoss": null
+              }
+            ]
+          },
+          {
             "id": "862ceb0d-7bec-59ee-bb16-2350c6634c8d",
             "spellId": 368990,
             "abilityName": "Purging Flames",
@@ -15102,7 +15324,9 @@
             "debuff": true,
             "important": null,
             "dispellable": true,
-            "dispell": ["Magic"],
+            "dispell": [
+              "Magic"
+            ],
             "interruptible": true,
             "ccable": true,
             "cooldown": null,
@@ -15378,7 +15602,9 @@
             "debuff": null,
             "important": null,
             "dispellable": true,
-            "dispell": ["Soothe"],
+            "dispell": [
+              "Soothe"
+            ],
             "interruptible": null,
             "ccable": null,
             "cooldown": null,
@@ -15522,7 +15748,9 @@
             "debuff": null,
             "important": true,
             "dispellable": true,
-            "dispell": ["Soothe"],
+            "dispell": [
+              "Soothe"
+            ],
             "interruptible": null,
             "ccable": true,
             "cooldown": null,
@@ -15614,7 +15842,9 @@
             "debuff": null,
             "important": true,
             "dispellable": true,
-            "dispell": ["Soothe"],
+            "dispell": [
+              "Soothe"
+            ],
             "interruptible": null,
             "ccable": null,
             "cooldown": null,
@@ -15706,7 +15936,9 @@
             "debuff": true,
             "important": true,
             "dispellable": true,
-            "dispell": ["Bleed"],
+            "dispell": [
+              "Bleed"
+            ],
             "interruptible": null,
             "ccable": null,
             "cooldown": null,
@@ -16258,7 +16490,9 @@
             "debuff": true,
             "important": true,
             "dispellable": true,
-            "dispell": ["Magic"],
+            "dispell": [
+              "Magic"
+            ],
             "interruptible": null,
             "ccable": null,
             "cooldown": null,
@@ -16534,7 +16768,9 @@
             "debuff": true,
             "important": true,
             "dispellable": true,
-            "dispell": ["Disease"],
+            "dispell": [
+              "Disease"
+            ],
             "interruptible": true,
             "ccable": true,
             "cooldown": null,
@@ -16718,7 +16954,9 @@
             "debuff": true,
             "important": null,
             "dispellable": true,
-            "dispell": ["Movement"],
+            "dispell": [
+              "Movement"
+            ],
             "interruptible": null,
             "ccable": false,
             "cooldown": null,
@@ -16908,7 +17146,9 @@
             "debuff": true,
             "important": true,
             "dispellable": true,
-            "dispell": ["Bleed"],
+            "dispell": [
+              "Bleed"
+            ],
             "interruptible": null,
             "ccable": null,
             "cooldown": null,
@@ -17328,7 +17568,9 @@
             "debuff": true,
             "important": null,
             "dispellable": true,
-            "dispell": ["Bleed"],
+            "dispell": [
+              "Bleed"
+            ],
             "interruptible": null,
             "ccable": null,
             "cooldown": null,
@@ -17466,7 +17708,9 @@
             "debuff": true,
             "important": null,
             "dispellable": true,
-            "dispell": ["Bleed"],
+            "dispell": [
+              "Bleed"
+            ],
             "interruptible": null,
             "ccable": null,
             "cooldown": null,
@@ -17668,7 +17912,9 @@
             "debuff": true,
             "important": true,
             "dispellable": true,
-            "dispell": ["Magic"],
+            "dispell": [
+              "Magic"
+            ],
             "interruptible": true,
             "ccable": null,
             "cooldown": null,
@@ -18556,7 +18802,9 @@
             "debuff": null,
             "important": null,
             "dispellable": true,
-            "dispell": ["Purge"],
+            "dispell": [
+              "Purge"
+            ],
             "interruptible": true,
             "ccable": true,
             "cooldown": null,
@@ -18648,7 +18896,9 @@
             "debuff": true,
             "important": null,
             "dispellable": true,
-            "dispell": ["Bleed"],
+            "dispell": [
+              "Bleed"
+            ],
             "interruptible": null,
             "ccable": null,
             "cooldown": null,
@@ -18970,7 +19220,9 @@
             "debuff": true,
             "important": true,
             "dispellable": true,
-            "dispell": ["Magic"],
+            "dispell": [
+              "Magic"
+            ],
             "interruptible": null,
             "ccable": null,
             "cooldown": null,
@@ -19016,7 +19268,9 @@
             "debuff": null,
             "important": null,
             "dispellable": true,
-            "dispell": ["Purge"],
+            "dispell": [
+              "Purge"
+            ],
             "interruptible": null,
             "ccable": null,
             "cooldown": null,
@@ -19402,7 +19656,9 @@
             "debuff": null,
             "important": null,
             "dispellable": true,
-            "dispell": ["Purge"],
+            "dispell": [
+              "Purge"
+            ],
             "interruptible": null,
             "ccable": true,
             "cooldown": null,
@@ -19448,7 +19704,9 @@
             "debuff": true,
             "important": null,
             "dispellable": true,
-            "dispell": ["Magic"],
+            "dispell": [
+              "Magic"
+            ],
             "interruptible": null,
             "ccable": null,
             "cooldown": null,
@@ -20154,7 +20412,9 @@
             "debuff": true,
             "important": null,
             "dispellable": true,
-            "dispell": ["Bleed"],
+            "dispell": [
+              "Bleed"
+            ],
             "interruptible": null,
             "ccable": true,
             "cooldown": null,
@@ -20200,7 +20460,9 @@
             "debuff": null,
             "important": null,
             "dispellable": true,
-            "dispell": ["Purge"],
+            "dispell": [
+              "Purge"
+            ],
             "interruptible": true,
             "ccable": true,
             "cooldown": null,
@@ -20246,7 +20508,9 @@
             "debuff": null,
             "important": null,
             "dispellable": true,
-            "dispell": ["Purge"],
+            "dispell": [
+              "Purge"
+            ],
             "interruptible": null,
             "ccable": null,
             "cooldown": null,
@@ -20384,7 +20648,9 @@
             "debuff": true,
             "important": null,
             "dispellable": true,
-            "dispell": ["Bleed"],
+            "dispell": [
+              "Bleed"
+            ],
             "interruptible": null,
             "ccable": true,
             "cooldown": null,
@@ -20522,7 +20788,9 @@
             "debuff": true,
             "important": true,
             "dispellable": true,
-            "dispell": ["Magic"],
+            "dispell": [
+              "Magic"
+            ],
             "interruptible": true,
             "ccable": true,
             "cooldown": null,
@@ -20568,7 +20836,9 @@
             "debuff": null,
             "important": null,
             "dispellable": true,
-            "dispell": ["Purge"],
+            "dispell": [
+              "Purge"
+            ],
             "interruptible": null,
             "ccable": null,
             "cooldown": null,
@@ -20892,7 +21162,10 @@
             "debuff": true,
             "important": null,
             "dispellable": true,
-            "dispell": ["Magic", "Movement"],
+            "dispell": [
+              "Magic",
+              "Movement"
+            ],
             "interruptible": null,
             "ccable": null,
             "cooldown": null,
@@ -21030,7 +21303,9 @@
             "debuff": true,
             "important": null,
             "dispellable": true,
-            "dispell": ["Movement"],
+            "dispell": [
+              "Movement"
+            ],
             "interruptible": null,
             "ccable": true,
             "cooldown": null,
@@ -21306,7 +21581,9 @@
             "debuff": true,
             "important": null,
             "dispellable": true,
-            "dispell": ["Movement"],
+            "dispell": [
+              "Movement"
+            ],
             "interruptible": null,
             "ccable": null,
             "cooldown": null,
@@ -21398,7 +21675,10 @@
             "debuff": true,
             "important": true,
             "dispellable": true,
-            "dispell": ["Magic", "Movement"],
+            "dispell": [
+              "Magic",
+              "Movement"
+            ],
             "interruptible": null,
             "ccable": null,
             "cooldown": null,
@@ -22290,7 +22570,9 @@
             "debuff": true,
             "important": null,
             "dispellable": true,
-            "dispell": ["Poison"],
+            "dispell": [
+              "Poison"
+            ],
             "interruptible": null,
             "ccable": null,
             "cooldown": null,
@@ -22796,7 +23078,9 @@
             "debuff": true,
             "important": true,
             "dispellable": true,
-            "dispell": ["Magic"],
+            "dispell": [
+              "Magic"
+            ],
             "interruptible": null,
             "ccable": null,
             "cooldown": null,
@@ -22894,7 +23178,10 @@
             "debuff": true,
             "important": null,
             "dispellable": true,
-            "dispell": ["Magic", "Movement"],
+            "dispell": [
+              "Magic",
+              "Movement"
+            ],
             "interruptible": null,
             "ccable": null,
             "cooldown": null,
@@ -23310,7 +23597,10 @@
             "debuff": true,
             "important": null,
             "dispellable": true,
-            "dispell": ["Disease", "Movement"],
+            "dispell": [
+              "Disease",
+              "Movement"
+            ],
             "interruptible": null,
             "ccable": null,
             "cooldown": null,
@@ -23408,7 +23698,9 @@
             "debuff": true,
             "important": true,
             "dispellable": true,
-            "dispell": ["Disease"],
+            "dispell": [
+              "Disease"
+            ],
             "interruptible": null,
             "ccable": null,
             "cooldown": null,
@@ -23542,6 +23834,8 @@
     },
     "pageContext": {}
   },
-  "staticQueryHashes": ["1010394210"],
+  "staticQueryHashes": [
+    "1010394210"
+  ],
   "slicesMap": {}
 }
