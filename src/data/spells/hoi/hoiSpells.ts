@@ -3,7 +3,7 @@ import type { SpellIdMap } from '../../types.ts'
 import { mergeSpells } from '../grimoire.ts'
 
 const extraSpells: SpellIdMap = {
-  189722: [385187], // Frog boss - Overpowering Croak
+  190366: [374389], // Froglets poison
 }
 
 const removedSpells: number[] = []
