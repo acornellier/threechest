@@ -24,10 +24,11 @@ export function Sidebar() {
   return (
     <>
       <div
-        className="fixed z-20 flex flex-col gap-1.5 transition-all top-2 mb-14 sm:mb-2"
+        className="fixed max-h-full z-20 flex flex-col gap-1.5 transition-all pt-2 pb-14 sm:pb-2"
         style={{
           width: sidebarWidth,
           right: topCollapsed ? -sidebarWidth : 0,
+          // maxHeight: 'calc(100% - 16px)',
         }}
       >
         <SidebarCollapser
@@ -39,10 +40,11 @@ export function Sidebar() {
         <Pulls />
       </div>
       <div
-        className="fixed z-20 transition-all bottom-14 sm:bottom-2"
+        className="fixed max-h-full z-20 transition-all pb-4 sm:pb-2"
         style={{
           width: sidebarWidth,
           right: isBottomCollapsed ? -sidebarWidth : 0,
+          maxHeight: 800,
         }}
       >
         {topCollapsed && (

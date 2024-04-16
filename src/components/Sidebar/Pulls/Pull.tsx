@@ -83,7 +83,7 @@ export function Pull({ pull, ghost, onRightClick, isShiftHeld }: Props) {
                     src={`/npc_portraits/${mob.id}.png`}
                     alt={mob.name}
                   />
-                  <div className="text-outline absolute bottom-[-3px] w-full font-bold text-xs text-center">
+                  <div className="text-outline absolute bottom-[-2px] w-full font-bold text-xs text-center">
                     x{count}
                   </div>
                 </div>
