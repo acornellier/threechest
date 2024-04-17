@@ -1,9 +1,10 @@
 import { Note } from './Note.tsx'
-import { cssPixels, mapIconScaling, updateIconZoom, useIconScaling } from '../../../util/map.ts'
+import { cssPixels, mapIconScaling, updateIconZoom } from '../../../util/map.ts'
 
 import { useRoute } from '../../../store/routes/routeHooks.ts'
 import { useCallback } from 'react'
 import { useMap, useMapEvent } from 'react-leaflet'
+import { useIconScaling } from '../../../util/hooks/useIconScaling.ts'
 
 export function Notes() {
   const map = useMap()

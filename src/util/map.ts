@@ -1,7 +1,5 @@
 import type { LatLngLiteral, Map } from 'leaflet'
 import type { Point } from '../data/types.ts'
-import { useCallback, useEffect, useRef, useState } from 'react'
-import { useMap, useMapEvent } from 'react-leaflet'
 
 export const mapHeight = 256
 export const mapWidth = 384
@@ -26,21 +24,4 @@ export function updateIconZoom(icon: HTMLDivElement, prevScaling: number, newSca
   icon.style.width = `${newSize}px`
   icon.style.marginLeft = `-${newSize / 2}px`
   icon.style.marginTop = `-${newSize / 2}px`
-}
-
-export function useIconScaling() {
-  const map = useMap()
-
-  const [iconScaling, setIconScaling] = useState(mapIconScaling(map))
-  const tempIconScaling = useRef(mapIconScaling(map))
-  useEffect(() => {
-    tempIconScaling.current = iconScaling
-  }, [iconScaling])
-
-  const zoomEndEvent = useCallback(() => {
-    setIconScaling(mapIconScaling(map))
-  }, [map])
-  useMapEvent('zoomend', zoomEndEvent)
-
-  return { iconScaling, tempIconScaling }
 }

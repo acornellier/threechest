@@ -1,5 +1,4 @@
 import type { SampleRoute } from '../../util/types.ts'
-
 import type { DungeonKey } from '../dungeonKeys.ts'
 
 type SampleRouteDefinition = Omit<SampleRoute, 'route'> & {
@@ -8,9 +7,50 @@ type SampleRouteDefinition = Omit<SampleRoute, 'route'> & {
 }
 
 export const sampleRoutesDefinitions: Record<DungeonKey, SampleRouteDefinition[]> = {
-  aa: [],
+  aa: [
+    {
+      name: 'Safely press W',
+      difficulty: 'beginner',
+      mdt: '!TwvYoUnmm0pMEVWusEr37LErOaQa9MWKf5I0XiEqS9SCz(2ROeLJPh72ldsCcHm5JVhxSDG7No7O)1rN1EO13927p80n)WW7p8lN9fV)rNb(AHZE(sB7LttDJV5mc8GPlND2Yd6xol7FSbC2Np0n5r0onD7M)64pM66CMc0x6e70Xo)Z(ocs60VnD93((RF)8RoJQeVXGVZFA8s)1aAbE9uaOHGPbI)isMgvWvJWzWqmsNPk8FW7t9D93C2V02QkABdNysbiPWKuyIO7gqrNd10nGgcqqJgQWHOimLbdK3MQGbgTPoyeHRjyePJo8f)hIxrle6yyaIDmoabpgyi7HROvjEfTQWlUyqPOJIrYQbWcXGuwsIsU4(mrUH)OcvKalj9vrYRMuxZhRTQiYjGlzPBbRp2KAbrhA22R2weo0Rk0b9Nav)S7dio)RcoRpL0sDmaypjRksTZM7Z1Kee5QTj3Kl)yosv1yPA56W88X8KqUXtt7ZnQ8waOwZmnjGSKVZb0)ko1K8KkwZ08kyQqO4tLL7utRPoDd1PLuNEfv1ZZn51HT12mzjUxTnzV)8I82tYnDgTcoA1C0G9wyZ7EKBzXccEPtXHlRb1ElEPDU6)3IhuTm7CuNLYkQS7(juZKc)bPI9leu0Pz9QTQRRB7ls2(7oGMbOCvCckbY9wFefS4x((ew(Pgp0WAvBSYisLg9EvcAad)y7p(NW74gIVHB05(l',
+    },
+    {
+      name: 'Standard fort',
+      difficulty: 'intermediate',
+      affix: 'fortified',
+      mdt: '!fwvtVTnmm0Fm76wGLSKL11UIb0lgdWb7OHCJLt1QRDH)OP5I)Tprjkx78bgksdJe5Jp(OOubPyFr(O(ZXI88XY2QY(QzvDxV93N06xlYi7IkYRm11MdtnJNlYOWctMQI8HjX7htMoMglkY)OSzsdGDyQVx3o(7PMMISiWzCL8PNB0FOBqmXvFCQ9OUR9PQplYyCyJbDJ(WOPR1IMLgVBbAWAMrC)J6nZsSUMrTXaFhxKbHoA3jg3NI7tW9JX9z4(Kaas0bcW1mM1WfchYfyKaGcgciAWi1AaPltIWtIW8riiHS0ml1zGudsSJd2qrYtSilCgaYElaAFCwSPogrHpU0qHYYxxw4PUerJHpolG6sxvMFORPRVi)B11SO6AOUPBepcw70nIZsyqqsxyE1KVkSlqN5uvNOMEBVyrpN65Gdg5L6Vx3JdY9MgahBacu)tr5xguF2vYVVxrcDEq)zb9Nh0)4G(NGNkIqwfFHWCvfd1merIlaY9k5GBIVo4ISN6RMLwYYjx(vcd)A523vCkDiCMp84vvqOJGJbRbpuGe21u23LKRPCGl8TuoEBoPxsujw(bD92jpB9S8kskq3s3TsQVklWzppJdTbVBY1NRwLeXw0UOLjx6SHHe0TL7riBRz2w4IxDD0nha9xmX2K9Lk(wxwbtcS7nx6VgJF7UK4)nUggO)QsGOJxDMhsoDR(TMJR0H7oTt8sZIEhDX9TPyAW(c5USEPXi2aiBBr)v8yFNKUPtDJHt0d59LlNyd)L398FTpkT8ouEvqvej74IKuPKLY5XeQWrQFehfTJXTcojnvq4Y0K1A7dqVl)bZXzf882S6Kz8LzvZ0W4SYmmRkNvh76SpfFQ88SASZ(tTDlM3hRdMw7YVaUw5FaDw90VMvN7MMvtd6zfSYpFC3SAVZl4txBZzaOwDFzdyUKftLU0hc80VP2OHfFR77ZQHo)g7p3xcjXYaZRAiqtRL()r)z5BtwWRn9oY3omQlR2bAwRTo9YxX)a',
+    },
+    {
+      name: 'Tyran skips',
+      difficulty: 'intermediate',
+      affix: 'tyrannical',
+      mdt: '!fwvYoUnmm0pMEUbMAxxl6LEXOaAol0SypiZyypi2EwU0V9kkr5APjffgoHrs8XhFKIXd(h8ULU3x8Uh(42XXF)R5NV(YS39wx3Z(w4qJ3D5AF)1ZRdlF4Bz4cRxV4DhF6n1YCd7M5rV71JdRDiuNxVDRBC5NRdd(2g8W0kU1tdDV2nqysR(91Xh7Mg)XL39TcjUXC3q35LRtJb0cK6LaqZbZwi(blz2QchTLf8b)M7Brxxc7WP9z0(aTpN2xq7dzaS0baKRTIGr0fjgl0qHGIgA0B0WemWW1Aj4HgkEaqekqZwt0GOgg4ihcUsKhciRJgiYjle6KFbSzrgXW3yyyyALYRa8SyGyC8nAHu3gZs35PHPBE3x67fn99yEZkepGYDwH4S5g6Kn6wsnL7CRcDruvJIQ5(Ns0CYK4qegBT(N0DEwUlkasQaOj93qYVnR(Ipj)PAfKR8O(lY6VmR)8S(ROUIgIv8kH5tzmMZOhQOdW)kLZhtJhiR6IuW47Ivw7Og2SiTLhSCoYZQHilDssguzjuNvodPLvLQuf183Rs3li2CmAs0P(6MUKLAAzZHDQs5LVkDj1kylyX2XHsfsuIkF3v(ICZsQDQmkkkkBuLxnWaOmLrIzUxtvZ58vOu1wF)sUDRZGUKLjDQ2SBoJHIRo3KtXLr1WClPU6UAEDtr)YDUQtJav7er0Fz1GqDnbzvhWuufUZWbAwQ9)mDaFCtNEkmuFBoU7Y2ya7bl0agqibfWm2ix(kWnhyAqZ5gDJvP1Y9fTVHkNZf(Fke7XWVPw1nCznYdCHHzTGWy5svcwEyzqBbLqAaUahtuJ6CbQ4J)p',
+    },
+    {
+      name: 'Fort snapping',
+      difficulty: 'expert',
+      affix: 'fortified',
+      mdt: '!9vztVrnmqy4FmCguSDSDYveQiuLSqYCIdw7xzlHgswL4uw4W(BNzShNgVDxuLANgp(DE9ZmXXXCFZz9nN9o7ddJ(lBM63E6uB)to7VBAE2zyFOWzp0E8y7(5o)FCgo(G52do703FSt8J)E(8JF2zFzB3Cdk2(5XXME)xN76CMcmz6j25DDnV00rAsp9tZ9p1m0)LdNDMsjUWutxZEF7qpOgyRtGqtqOHf(fpgAuqQgoSh8VcNb3QhwrqRlO1z06CA9sADMoLqvkd0SMsiiShjeGBYOGGqv0qqq2kyx1yqn5dwbviglwj0NrRbgYeQau5Gjnmj5ogOCWfmn(pHiq6GYSAu1GfdYgIqBhuNJ(oEcfOYHOsu6WP0UFOBy0zF3XJLfhpIN7i2KPdFEAys1H0eVcAYB8O9xKyH0v3wlSKLHecKUMYINOTGOnJGDjXAjHAbrAfbAnX5QeNRtCoESrqZKjshrgI6iYqwhrgc7aJ9bzE17OR4KPexZLDvr8fbh7Ehz8qJPPwJpjjUkhFXAKiDAUm1zQtCQiXjobkwAQmIqfbGRAJrFOx7d2YRcL5orLx6RA3QmdM1FJZkvRlsMVxvdDEnkP0e514gZJrUxNDqsTlgpNHL5QLxKvoVMWtQ))20xpzYZpj8vxOSQ2VX6P34Itl6BNw9YidDHM6otKS0Ls1u3VIA(6vVN4dxHKlq65v3Vns(uKzGenKjdWUQax3PxQW6D6d3G9)VSb)XoS7NWL9l3VBpKSlm1QzAjVqwwi1cvq63J3rlufWcYcLUsRLRBzFejK1cFb7YM5j4Jyx24hB3)80LndJWN2A)vB3wiy7U2UwFBZe6GEyBrZ4(ha',
+    },
+    {
+      name: 'Tyran big pulls + snapping',
+      difficulty: 'expert',
+      affix: 'tyrannical',
+      mdt: '!1vvYUTnmq0pMEUbCF5ArV0lefG5mH3KtzSSSHTuwU4V9YHCOwCCGbSPjN5nV5npkfOHNd((Mp6d(N)8Y6UBRU2T(85y3lb)7nnhco6tKGFxC)(42H2(pdogSXqCxWRgI83)3X4rdp4FBD7qdG22HlxA66)7qBBWrGGXD8dBABERPfXe393dDV0CQ7p7(i4es4GRnTnB7JN6sOL415eqxtlD08xSYsNkfQJLYb(LhCqQorbBNSqtNkDu63(02CmpoMhfZJHNlWZP6AaMAeeeA2i2vWz5QRtlYWAszzHfwKFucwikfzeTs5eHC5kKQCH8ujYoAc5mlOA4p5vjOZitTaQzkMHnVcODgDgW7shYbKZRarrM7s)2tTNUe8)y)Ebz)EOVlYPS28lddcYMdlREJrjRsKQiEMhNoufroGS4AXOy1S5Oatr9vGYRC2OdexfQTAuAnvP1wL2sNcABHBG4wujqDlQeiVfvc03k1tWmXDGvmKu87LInMIIvub631YqtdHPMSSyhXkDYOOp6n5ZeM(jz2w1jsvNyvpE1iwKqfka3n5k8qpNh0r3F9AJTcjzj1QxV0pnVBMMDFDsxmkMfLRkQu2YoTWwNyHio241BGM78hSLCrGHX)ARxMu25M25JG68TA6MKPV2ywuhrJI6BSl06djS4OXGtg9mtCF(k9saQ7BwycM1n1BQOL7(UxUWVodFYdn0tfcBCQ9XDUT6KHp(tBEn9m5Xhd73vzBYrPPAjJifePMRYL8NWJm5ks6ajrPnATC(G8xGa59Px0CB1W107AUTQ)sC7HR3wD6s6nqXJX21PfR3eBJ9XMRad6sPH(ZPQtsDVsqOmIvP1c4kouEEAFMKjywbxkmCJ6bL)q88eUWNW)ba',
+    },
+  ],
+  av: [
+    {
+      name: 'Safely press W',
+      difficulty: 'beginner',
+      mdt: '!fwvWsYjiq0pMCFlObv8(EjxO2QmNPYQdMXnwJjJ4Mj5q(2dinoirMTMQg12hV(1p6gvu1xung9nJQ5zD)RlJM)(vZ5RAD3z9S5PHjvZV06VRK0NiQMtd99dDwq)wjbxGLHtwa3ER9NNp1o)hvZ7VoUODC2TC9Q(I5LLXrLK4WIrAwAh1VRhrkXOpVC5B6PlF(0nLKZDVywpQ7mdtxSSzv3pSenBVvsJ(t6qkbLSWDLPKLURCp1YcViLL2xzVAjPBAC6QQ5t99CsFVnIDTrSvHSjq2QxxL9o)RP7jXrrDFeaeffzHYrAOfbvv()YGVMcUBXLidfibL46RWLl8YPcHbimwQSAf(ARWbKfH2Cphbrcyoyyo4OXvJgh1T1ztjwwc7nqAr4kJnUf5nlEK8jhOJeNX7TIDWzi8G1gCwVXAf5USB1AE149O6D0xLqddFML0UfIZpMExFHVyrMlEC166c8YbZCqpceFDOtIKux4U6wcccR8yHvVTxHmazwxG3Qh0UC48eAvquRCmVXT2U4IpA0cTyiAdiMV4(Hy9YZnOHovDU8gMD8zai77NaAIFWq)GJ9HOVbqcoEYyw2ziFfSLxijVj(hahg)GPoVtdK973WJo5B9elcEEGF8VCB8)EQRYn56n57wwy4HYsnjssBUi30Qx)Bvr8P)ho(5toK9a8TVcSkfG)btnUFntTVz)U086xLmk1)a',
+    },
+    {
+      name: 'No second ring',
+      difficulty: 'intermediate',
+      mdt: '!nsvZoUniq4hMEUvEWagUw1lDpGwjQuVH8MeC3061oYXE3S9qE2lygsaR4Mvro2gpZ89ddJbm)WOhTNgnA9tn223pxFyWE8456FA0VzT)XOGVuy07230SF7u747gfXVW0(DgD)WZ)vCQTOBqA0V(u7K1xUTtdd2UXhNABnQcFW4k6PnT2xTTynXv)2u3VS9DFF3jJIs9F4OT1UDCFFNRAoIDWvOJUhvqYFkFKkIrX83lnkU)onuAflWsf39j39rFKH0GWRu81kSkcSkY5pR3232py0FQPHw00KK)6znJDeCGgGPmd1lL1xuztsayumSUapN0KCsdyy4YSBdIN70R5vMxlo(AesokLkukIOsqBC2oRc2PsG2VeLomFn)eeDbWRdeSQeS9GH7jI1CNnIGPpRSOQlXKPitzit55UacP8gELpleAhJVLxMyEE77Qrv8Xiba5Tzaz9gaAI1qskVpnEUyGQ7OgX6TaH(mrgmSevKc3YMHsuD0f0GMe3cvf24cUVCnwjrXhSvsrUPrG)JAtOdH8HIlHEXdZHTPl4swG79otiXZeZT8PeHVyMuvobKxAQc7eKI8T9RcpQiikjiQjyP4fyOYyKfRncdkZanDa6nNnbZN8iL3B8cmF0JqVZPz)pD)MF7gTFzAUExCIQtGCjNYyLYsjJpZSpdo1kLcoNjkRQagJgKyWl(QFZq)W0lhoxVR)TUZ1nd9VCU(z7G1JvNlIaSM)b',
+    },
+  ],
   bh: [],
-  av: [],
   hoi: [],
   nelth: [],
   nok: [],

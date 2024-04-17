@@ -25,7 +25,7 @@ const filterDungeonKey = process.argv[2]
 for (const dungeon of dungeons) {
   if (!filterDungeonKey || dungeon.dungeonKey === filterDungeonKey) {
     console.log(`Fetching ${dungeon.dungeonKey}...`)
-    await dungeonSpells(dungeon)
+    await guessDungeonSpells(dungeon)
   }
 }
 
@@ -46,7 +46,7 @@ interface DebuffEvent {
   abilityGameID: number
 }
 
-export async function dungeonSpells({
+export async function guessDungeonSpells({
   code,
   fightId,
   dungeonKey,

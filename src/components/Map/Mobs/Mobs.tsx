@@ -1,6 +1,6 @@
 import { useMap, useMapEvents } from 'react-leaflet'
 import { useCallback, useMemo, useRef } from 'react'
-import { cssPixels, mapIconScaling, updateIconZoom, useIconScaling } from '../../../util/map.ts'
+import { cssPixels, mapIconScaling, updateIconZoom } from '../../../util/map.ts'
 import { MobSpawnWrapper } from './MobSpawn.tsx'
 import {
   boxSelectEnd,
@@ -13,6 +13,7 @@ import { useDungeon } from '../../../store/routes/routeHooks.ts'
 import { useAppDispatch } from '../../../store/storeUtil.ts'
 import { Delayed } from '../../Common/Delayed.tsx'
 import { useKeyHeld } from '../../../util/hooks/useKeyHeld.ts'
+import { useIconScaling } from '../../../util/hooks/useIconScaling.ts'
 
 export function Mobs() {
   const dungeon = useDungeon()

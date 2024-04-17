@@ -1,6 +1,5 @@
 import type { SampleRoute } from '../../util/types.ts'
-import { dungeons } from '../dungeons.ts'
-import type { DungeonKey } from '../dungeonKeys.ts'
+import { type DungeonKey, dungeonKeys } from '../dungeonKeys.ts'
 
 const modules: Record<DungeonKey, Record<string, unknown>> = {
   av: import.meta.glob('./av/*.json', { eager: true }),
@@ -45,8 +44,8 @@ function importSampleRoutes(dungeonKey: DungeonKey) {
     .sort(sortSampleRoutes)
 }
 
-export const sampleRoutes = dungeons.reduce(
-  (acc, { key }) => {
+export const sampleRoutes = dungeonKeys.reduce(
+  (acc, key) => {
     acc[key] = importSampleRoutes(key)
     return acc
   },

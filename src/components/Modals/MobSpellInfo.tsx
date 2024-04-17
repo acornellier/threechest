@@ -1,7 +1,7 @@
 import { getIconLink } from '../../data/spells/mergeSpells.ts'
 import { TooltipStyled } from '../Common/TooltipStyled.tsx'
-import { isSeason4 } from '../../data/dungeonKeys.ts'
-import type { DispelType, Dungeon, Mob, Spell } from '../../data/types.ts'
+import { type DungeonKey, isSeason4 } from '../../data/dungeonKeys.ts'
+import type { DispelType, Mob, Spell } from '../../data/types.ts'
 import { BoltIcon, HandRaisedIcon, SparklesIcon } from '@heroicons/react/24/outline'
 import { SootheIcon } from '../Common/Icons/SootheIcon.tsx'
 import { DiseaseIcon } from '../Common/Icons/DiseaseIcon.tsx'
@@ -11,10 +11,11 @@ import { ChainIcon } from '../Common/Icons/ChainIcon.tsx'
 import { PurgeIcon } from '../Common/Icons/PurgeIcon.tsx'
 import { PoisonIcon } from '../Common/Icons/PoisonIcon.tsx'
 import type { FC, SVGProps } from 'react'
+import { dungeonSpells } from '../../data/spells/spells.ts'
 
 interface Props {
   spell: Spell
-  dungeon: Dungeon
+  dungeonKey: DungeonKey
   mob: Mob
 }
 
@@ -35,17 +36,17 @@ const dispelTypes: DispelIcon[] = [
   { name: 'Movement', Icon: ChainIcon, label: 'Movement dispel' },
 ]
 
-export function MobSpellInfo({ spell, mob, dungeon }: Props) {
+export function MobSpellInfo({ spell, mob, dungeonKey }: Props) {
   const { icon, aoe, damage, physical, name, id } = spell
   const spellDetailsTooltipId = `spell-details-${id}`
 
   const damageText =
     damage &&
-    `${isSeason4(dungeon.key) ? damage.s4 : damage.s3} ${aoe ? 'AoE' : 'ST'} ${physical ? 'physical' : 'magic'} damage`
+    `${isSeason4(dungeonKey) ? damage.s4 : damage.s3} ${aoe ? 'AoE' : 'ST'} ${physical ? 'physical' : 'magic'} damage`
 
   const isAlternateCast =
     spell.castTime &&
-    dungeon.spells[mob.id]?.find((s) => s.id !== spell.id && s.name === spell.name)
+    dungeonSpells[dungeonKey][mob.id]?.find((s) => s.id !== spell.id && s.name === spell.name)
 
   return (
     <div className="h-8 flex items-center border border-gray-500 rounded-md">

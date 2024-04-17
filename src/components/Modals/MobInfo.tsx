@@ -6,6 +6,7 @@ import { useDungeon } from '../../store/routes/routeHooks.ts'
 import { useAppDispatch, useRootSelector } from '../../store/storeUtil.ts'
 import { mobCcTypes } from '../../util/mobSpawns.ts'
 import { MobSpellInfo } from './MobSpellInfo.tsx'
+import { dungeonSpells } from '../../data/spells/spells.ts'
 
 export function MobInfo() {
   const dispatch = useAppDispatch()
@@ -17,7 +18,7 @@ export function MobInfo() {
   if (!mobSpawn) return false
 
   const { mob } = mobSpawn
-  const spells = dungeon.spells[mob.id]?.sort((a, b) => {
+  const spells = dungeonSpells[dungeon.key][mob.id]?.sort((a, b) => {
     return a.name === b.name ? a.id - b.id : a.name.localeCompare(b.name)
   })
 
@@ -59,7 +60,7 @@ export function MobInfo() {
         {spells?.length && (
           <div className="flex flex-col gap-2">
             {spells.map((spell) => (
-              <MobSpellInfo key={spell.id} spell={spell} dungeon={dungeon} mob={mob} />
+              <MobSpellInfo key={spell.id} spell={spell} dungeonKey={dungeon.key} mob={mob} />
             ))}
           </div>
         )}

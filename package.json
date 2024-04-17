@@ -14,7 +14,7 @@
     "postinstall": "patch-package",
     "dungeons": "tsx scripts/importAllDungeons.ts",
     "samples": "tsx ./scripts/sampleRouteImport.ts",
-    "spells": "tsx scripts/dungeonSpells.ts"
+    "spells": "tsx scripts/guessDungeonSpells.ts"
   },
   "engines": {
     "node": ">=20"

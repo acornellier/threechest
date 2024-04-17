@@ -18,8 +18,9 @@ import { useAppDispatch, useRootSelector } from '../../../store/storeUtil.ts'
 import { selectIsLive, useMapObjectsHidden } from '../../../store/reducers/mapReducer.ts'
 import { Delayed } from '../../Common/Delayed.tsx'
 import { Patrol } from './Patrol.tsx'
-import { mapIconScaling, useIconScaling } from '../../../util/map.ts'
+import { mapIconScaling } from '../../../util/map.ts'
 import { BossMarker } from './BossMarker.tsx'
+import { useIconScaling } from '../../../util/hooks/useIconScaling.ts'
 
 interface MobSpawnProps {
   mobSpawn: MobSpawn

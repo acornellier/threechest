@@ -1,20 +1,24 @@
 import type { Dungeon } from './types.ts'
 import { mdtDungeons, mdtMobSpawns } from './mdtDungeons.ts'
-import { dungeonSpells } from './spells/spells.ts'
 import { mapHeight, mapWidth } from '../util/map.ts'
 import type { DungeonKey } from './dungeonKeys.ts'
 
-export const dungeonData = (key: DungeonKey) => ({
+export const dungeonData = (
+  key: DungeonKey,
+): Pick<Dungeon, 'mdt' | 'mobSpawns' | 'mobSpawnsList'> => ({
   mdt: mdtDungeons[key],
   mobSpawns: mdtMobSpawns[key],
   mobSpawnsList: Object.values(mdtMobSpawns[key]),
-  spells: dungeonSpells[key],
 })
 
 const aa: Dungeon = {
   name: 'Algethar Academy',
   key: 'aa',
   icon: 'achievement_dungeon_dragonacademy',
+  defaultBounds: [
+    [10, 0],
+    [-mapHeight, mapWidth],
+  ],
   ...dungeonData('aa'),
 }
 
