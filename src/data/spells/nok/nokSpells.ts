@@ -9,6 +9,15 @@ const extraSpells: SpellIdMap = {
   186339: [392198], // Teera: Ancestral Bond
 }
 
+const removedSpells = [
+  384185, // Lightning Strike
+  392151, // Gale Arrow
+  376894, // Crackling Upheaval
+  376634, // Iron Spear
+  393421, // Quake
+  376864, // Static Spear
+]
+
 export default async () => ({
-  data: mergeSpells(spells as SpellIdMap, extraSpells),
+  data: mergeSpells(spells as SpellIdMap, extraSpells, removedSpells),
 })

@@ -43,6 +43,10 @@ export function MobSpellInfo({ spell, mob, dungeon }: Props) {
     damage &&
     `${isSeason4(dungeon.key) ? damage.s4 : damage.s3} ${aoe ? 'AoE' : 'ST'} ${physical ? 'physical' : 'magic'} damage`
 
+  const isAlternateCast =
+    spell.castTime &&
+    dungeon.spells[mob.id]?.find((s) => s.id !== spell.id && s.name === spell.name)
+
   return (
     <div className="h-8 flex items-center border border-gray-500 rounded-md">
       <a
@@ -59,7 +63,10 @@ export function MobSpellInfo({ spell, mob, dungeon }: Props) {
         />
       </a>
 
-      <div className="gritty flex flex-grow justify-between items-center gap-6 pl-2 h-full bg-fancy-red opacity-90 text-nowrap rounded-md rounded-l-none">
+      <div
+        className={`gritty flex flex-grow justify-between items-center gap-6 pl-2 h-full opacity-90 text-nowrap rounded-md rounded-l-none
+                 ${isAlternateCast ? 'bg-fancy-orange' : 'bg-fancy-red'}`}
+      >
         <div>
           <span>
             <a
@@ -70,7 +77,10 @@ export function MobSpellInfo({ spell, mob, dungeon }: Props) {
               {name}
             </a>
           </span>
-          <span className="text-xs"> {spell.id}</span>
+          <span className="text-xs">
+            {' '}
+            {spell.id} {isAlternateCast && ` (cast)`}
+          </span>
         </div>
         <div className={`flex items-center gap-1 ${damage ? '' : 'pr-1'}`}>
           {dispelTypes.map(

@@ -16,6 +16,7 @@ function spellIdToSpell(spellId: number): Spell {
     damage: spell.damage,
     aoe: spell.aoe,
     physical: spell.physical,
+    castTime: spell.castTime,
     interrupt: !!extraSpellData?.interruptible,
     stop: !!extraSpellData?.ccable,
     dispel: (extraSpellData?.dispell as DispelType[]) ?? [],

@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 $fancy-red: #7f1d1d;
+$fancy-orange: #7f3f1d;
 $fancy-blue: #131a34;
 $fancy-green: #1d7f1f;
 $fancy-yellow: #7f6b1d;
@@ -204,6 +205,10 @@ $fancy-yellow: #7f6b1d;
 
 .bg-fancy-red {
   background-color: $fancy-red;
+}
+
+.bg-fancy-orange {
+  background-color: $fancy-orange;
 }
 
 .text-fancy-red {

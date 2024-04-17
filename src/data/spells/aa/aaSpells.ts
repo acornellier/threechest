@@ -8,6 +8,8 @@ const extraSpells: SpellIdMap = {
 
 const removedSpells = [
   387523, // Return to Book
+  386181, // Vexamus Mana Bomb
+  388651, // Vexamus Fissure
   181089, // Crawth - Encounter Event
 ]
 

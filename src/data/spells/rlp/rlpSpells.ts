@@ -8,7 +8,11 @@ const extraSpells: SpellIdMap = {
   189232: [384823, 373017, 373087], // Boss 2 spawned ad
 }
 
-const removedSpells: number[] = []
+const removedSpells: number[] = [
+  372963, // Chillstorm
+  385518, // Chillstorm
+  397077, // Chillstorm
+]
 
 export default async () => ({
   data: mergeSpells(spells as SpellIdMap, extraSpells, removedSpells),

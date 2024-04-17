@@ -57,6 +57,7 @@ export type Spell = {
   aoe?: boolean
   physical?: boolean
   variance?: number
+  castTime?: number
   dispel?: DispelType[]
   interrupt?: boolean
   stop?: boolean
