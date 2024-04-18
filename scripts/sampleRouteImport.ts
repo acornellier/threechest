@@ -25,6 +25,7 @@ for (const [dungeonKey, routes] of Object.entries(sampleRoutesDefinitions)) {
     }
 
     const file = `${folder}/${route.uid}.json`
+    if (route.dungeonKey === 'hoi') console.log(sampleRoute, file)
     await fs.writeFile(file, JSON.stringify(sampleRoute))
   }
 }

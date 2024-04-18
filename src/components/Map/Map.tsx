@@ -2,7 +2,7 @@ import 'leaflet/dist/leaflet.css'
 import { MapContainer, TileLayer } from 'react-leaflet'
 import { CRS } from 'leaflet'
 import '../Leaflet/SmoothWheelZoom.ts'
-import '../Leaflet/BoxSelect/BoxSelect'
+import '../Leaflet/BoxSelect.ts'
 import { Drawings } from './Drawings/Drawings.tsx'
 import { Notes } from './Notes/Notes.tsx'
 import { MapContextMenu } from './MapContextMenu.tsx'
@@ -45,10 +45,10 @@ export function Map() {
         zoomSnap={0}
         zoomControl={false}
         scrollWheelZoom={false}
-        smoothWheelZoom={true}
+        smoothWheelZoom
         smoothSensitivity={2}
         boxZoom={false}
-        boxSelect={true}
+        boxSelect
       >
         <TileLayer
           bounds={mapBounds}

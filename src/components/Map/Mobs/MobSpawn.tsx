@@ -90,7 +90,7 @@ function MobSpawnComponent({
         mobSpawn={mobSpawn}
         iconScaling={iconScaling}
         showCount={(isGroupHovered && !disableHover) || isCtrlKeyDown}
-        showGroup={isAltKeyDown && mobSpawn.spawn.group !== null}
+        showGroup={isAltKeyDown && mobSpawn.spawn.group !== null && !isBoxHovering}
         isSelected={isSelected}
         matchingPullIndex={matchingPullIndex}
         faded={faded}

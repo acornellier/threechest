@@ -1,52 +1,51 @@
+// noinspection JSUnresolvedReference,JSUnusedGlobalSymbols
+
 import { Bounds, DomEvent, DomUtil, Handler, LatLngBounds, Map, Util } from 'leaflet'
 
 Map.mergeOptions({
-  // @option boxSelect: Boolean = true
-  // Whether the map can be zoomed to a rectangular area specified by
-  // dragging the mouse while pressing the shift key.
   boxSelect: true,
 })
 
-export var BoxSelect = Handler.extend({
-  initialize: function (map) {
+export const BoxSelect = Handler.extend({
+  initialize(map: Map) {
     this._map = map
-    this._container = map._container
-    this._pane = map._panes.overlayPane
+    this._container = map.getContainer()
+    this._pane = map.getPanes().overlayPane
     this._resetStateTimeout = 0
     map.on('unload', this._destroy, this)
   },
 
-  addHooks: function () {
+  addHooks() {
     DomEvent.on(this._container, 'mousedown', this._onMouseDown, this)
   },
 
-  removeHooks: function () {
+  removeHooks() {
     DomEvent.off(this._container, 'mousedown', this._onMouseDown, this)
   },
 
-  moved: function () {
+  moved() {
     return this._moved
   },
 
-  _destroy: function () {
+  _destroy() {
     DomUtil.remove(this._pane)
     delete this._pane
   },
 
-  _resetState: function () {
+  _resetState() {
     this._resetStateTimeout = 0
     this._moved = false
     this._inverse = false
   },
 
-  _clearDeferredResetState: function () {
+  _clearDeferredResetState() {
     if (this._resetStateTimeout !== 0) {
       clearTimeout(this._resetStateTimeout)
       this._resetStateTimeout = 0
     }
   },
 
-  _onMouseDown: function (e) {
+  _onMouseDown(e: MouseEvent) {
     if (!e.shiftKey || (e.which !== 1 && e.button !== 1)) {
       return false
     }
@@ -63,7 +62,7 @@ export var BoxSelect = Handler.extend({
     this._setInverse(e.altKey)
 
     DomEvent.on(
-      document,
+      document as unknown as HTMLElement,
       {
         contextmenu: DomEvent.stop,
         mousemove: this._onMouseMove,
@@ -75,8 +74,11 @@ export var BoxSelect = Handler.extend({
     )
   },
 
-  _onMouseMove: function (e) {
+  _onMouseMove(e: MouseEvent) {
     if (!this._moved) {
+      const distFromStart = this._startPoint.distanceTo(this._map.mouseEventToContainerPoint(e))
+      if (distFromStart < 10) return
+
       this._moved = true
 
       this._box = DomUtil.create('div', 'leaflet-zoom-box', this._container)
@@ -90,7 +92,7 @@ export var BoxSelect = Handler.extend({
     const bounds = new Bounds(this._point, this._startPoint)
     const size = bounds.getSize()
 
-    DomUtil.setPosition(this._box, bounds.min)
+    DomUtil.setPosition(this._box, bounds.min!)
 
     this._box.style.width = size.x + 'px'
     this._box.style.height = size.y + 'px'
@@ -98,7 +100,7 @@ export var BoxSelect = Handler.extend({
     this._fireMove()
   },
 
-  _finish: function () {
+  _finish() {
     if (this._moved) {
       DomUtil.remove(this._box)
       DomUtil.removeClass(this._container, 'leaflet-crosshair')
@@ -108,7 +110,7 @@ export var BoxSelect = Handler.extend({
     DomUtil.enableImageDrag()
 
     DomEvent.off(
-      document,
+      document as unknown as HTMLElement,
       {
         contextmenu: DomEvent.stop,
         mousemove: this._onMouseMove,
@@ -120,7 +122,7 @@ export var BoxSelect = Handler.extend({
     )
   },
 
-  _onMouseUp: function (e) {
+  _onMouseUp(e: MouseEvent) {
     if (e.which !== 1 && e.button !== 1) {
       return
     }
@@ -143,12 +145,12 @@ export var BoxSelect = Handler.extend({
     this._map.fire('boxselectend', { bounds, inverse: this._inverse })
   },
 
-  _setInverse: function (inverse) {
+  _setInverse(inverse: boolean) {
     this._inverse = inverse
     if (this._box) this._box.classList.toggle('inverse', inverse)
   },
 
-  _fireMove: function () {
+  _fireMove() {
     const latLngBounds = new LatLngBounds(
       this._map.containerPointToLatLng(this._startPoint),
       this._map.containerPointToLatLng(this._point),
@@ -160,7 +162,7 @@ export var BoxSelect = Handler.extend({
     })
   },
 
-  _onKeyDown: function (e) {
+  _onKeyDown(e: KeyboardEvent) {
     if (e.key === 'Escape') {
       this._finish()
       this._clearDeferredResetState()
@@ -171,7 +173,7 @@ export var BoxSelect = Handler.extend({
     }
   },
 
-  _onKeyUp: function (e) {
+  _onKeyUp(e: KeyboardEvent) {
     if (e.key === 'Alt') {
       this._setInverse(false)
       this._fireMove()
