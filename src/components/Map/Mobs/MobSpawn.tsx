@@ -79,7 +79,11 @@ function MobSpawnComponent({
       },
       contextmenu: () => dispatch(selectSpawn(spawn.id)),
       mouseover: () => dispatch(hoverSpawn(spawn.id)),
-      mouseout: () => dispatch(hoverSpawn(null)),
+      mouseout: (e) => {
+        const target = e.originalEvent.target as HTMLElement
+        target.blur()
+        dispatch(hoverSpawn(null))
+      },
     }),
     [dispatch, spawn],
   )
