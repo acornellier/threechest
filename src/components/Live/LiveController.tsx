@@ -68,7 +68,7 @@ export function LiveController() {
     ]
 
     const padding = 150
-    map.flyToBounds(bounds, { maxZoom: 4, padding: [padding, padding] })
+    map.flyToBounds(bounds, { maxZoom: 3.6, padding: [padding, padding] })
 
     lastSelectedPull.current = selectedPull
   }, [dungeon.mobSpawns, lastSelectedPull, map, pull, selectedPull, windowHeight, windowWidth])
