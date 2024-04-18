@@ -1,4 +1,4 @@
-﻿import { useMemo, useState } from 'react'
+﻿import { useMemo } from 'react'
 import { dungeons } from '../../data/dungeons.ts'
 import { useIsGuestCollab } from '../../store/collab/collabReducer.ts'
 import { useDungeon } from '../../store/routes/routeHooks.ts'
@@ -6,15 +6,13 @@ import { useAppDispatch } from '../../store/storeUtil.ts'
 import { isSeason4 } from '../../data/dungeonKeys.ts'
 import { Button } from '../Common/Button.tsx'
 import { setDungeon } from '../../store/routes/routesReducer.ts'
-import { useKeyHeld } from '../../util/hooks/useKeyHeld.ts'
+import { useLocalStorage } from '../../util/hooks/useLocalStorage.ts'
 
 export function DungeonDropdown() {
   const dispatch = useAppDispatch()
   const dungeon = useDungeon()
   const isGuestCollab = useIsGuestCollab()
-  const isAltHeld = useKeyHeld('Alt')
-  const isShiftHeld = useKeyHeld('Shift')
-  const [isBeta, setIsBeta] = useState(false)
+  const [isBeta, setIsBeta] = useLocalStorage('s4-dungeons', false)
 
   const selected = useMemo(() => dungeons.find(({ key }) => key === dungeon.key), [dungeon])
 
@@ -41,11 +39,9 @@ export function DungeonDropdown() {
             />
           </Button>
         ))}
-      {((isAltHeld && isShiftHeld) || isBeta) && (
-        <Button key={dungeon.key} twoDimensional onClick={() => setIsBeta(!isBeta)}>
-          {isBeta ? 'S3' : 'S4 (WIP)'}
-        </Button>
-      )}
+      <Button key={dungeon.key} twoDimensional onClick={() => setIsBeta(!isBeta)}>
+        {isBeta ? 'S3' : 'S4 (WIP)'}
+      </Button>
     </div>
   )
 }

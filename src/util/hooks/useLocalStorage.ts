@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-export function useLocalStorage<T>(key: string, defaultValue: T, json: boolean) {
+export function useLocalStorage<T>(key: string, defaultValue: T, json: boolean = true) {
   const [value, setValue] = useState(() => {
     let currentValue
 

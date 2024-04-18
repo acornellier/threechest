@@ -30,7 +30,7 @@ const av: Dungeon = {
 }
 
 const bh: Dungeon = {
-  name: 'Brackenhide Hollow',
+  name: 'Brackenhide Hollow (WIP!)',
   key: 'bh',
   icon: 'achievement_dungeon_brackenhidehollow',
   ...dungeonData('bh'),
@@ -44,7 +44,7 @@ const hoi: Dungeon = {
 }
 
 const nelth: Dungeon = {
-  name: 'Neltharus',
+  name: 'Neltharus (WIP!)',
   key: 'nelth',
   icon: 'achievement_dungeon_neltharus',
   ...dungeonData('nelth'),
