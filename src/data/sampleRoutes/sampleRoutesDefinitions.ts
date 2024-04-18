@@ -69,7 +69,18 @@ export const sampleRoutesDefinitions: Record<DungeonKey, SampleRouteDefinition[]
     },
   ],
   nelth: [],
-  nok: [],
+  nok: [
+    {
+      name: 'Safely press W',
+      difficulty: 'beginner',
+      mdt: '!fAvtVTnmm0Fm7EHjL8x37LDXOaENfwtI8QxnIdsSBtVSF7tkI2rK1cbbiXur694xpkBaZVmTt2RtM2NTDVopm9VFp92zRD)B2ltp1pAA)0AF30apLzAp0311V3TPVmnOFH5(dUnC69d9FD6ZJxTM2pEDy26bD)85Z2JtVmpmyAY8BMwPDE3G9d7aHjT6ZZh)JD84ppC10Ov()4IDWUFQF8OdnN7DYb0f3Jnq0xn5UD2GMMc3Vt(NclxqlxgwwrlRcMAYecM5CZcMz7(XHXZM2F01PZ66wjzHjqrubAoxfCU0CWjZsMJTYLNP6Ui0c7QMZGMZaYJgKti(9OrhFCkAaEEeqoL5C3gLU9UQqkkpg0skdvXXUIwUMJ53s7ExDnsQ2Ex(eM(om1r7YtbffqgVsdq6sDi9xfJMMqlxCAQoaI6cO5DDywAFpK1ceb8JbIMxq0rb8kCdujcYTsgUc6n8CvFcNOGVMsLH0vTGEqqNsqNqCb5PI6f5eHik4PiQP)M(kJdq9AJr4Oi8iDBWvrHdJ5jYpAk)CBet(9rmvrT1E7AM6CdnCiLGI62kVcDawKq2uk8BrDgRth)6OsbIsTEUGqktFNbkYvyQs5ISpu0q5u4valtK6ksP5HsgGcf4kEvc8wg7dpAArqSSIJ82Kk(ypC7jbBm3ii6W4E64sCPOvOsyxN(Ab6kOmMFRe4Oe4G8wjvwQwLfPFqmPesfL(rA5qeRe3OQsCL6DjCquQkFGe2)PDC3FDVxWLBVvWKX8Fa',
+    },
+    {
+      name: 'Standard - skip brothers',
+      difficulty: 'intermediate',
+      mdt: '!fA1spUjmq4Fm9qBLAJWp4HVw1l7fuLyL6nlibZg2qWR4r2nx43ETXgw7zHUkse8W4VVzgpFdWr8h5zdI3g4zzfvIM7t5V0j67NY)lp7vH4cpfDiGNvwxvvFASz4opfRnmwxYZIF(PZhjDxorpZZUv0mk0WDASRt0o8NXMgEAG2zRLSXJnIBIglMwR)ES9jHS9HY34PuI(b9IgXPHAzRcnvG9IcOE1TPiNlPHkptX80i1)d67mMJSMJnMjwZeZsQDjYSm0FzK3YStYgzhp7lvv0GQQvswycrSuHO(Cf5Zf1hC7YyVaBLlntSkh0mEX8zG6Za2pBW(eI)y2qD3UnBq(1re2NYq)Wgdd7JjMsuOlOX2kuIp2jwZmFm)qzxhQozI1RaqGgSCmG8Rke)YWgfA670NS)rV54y2bMJxAkT1iuGFFecTnAAonvjMlAulAHGDBpLrGtDeibXb7f7mBgAJpK)(qaTbc0WI8BGsrjGSCRQHQFzgp1PGfhNSFrgzIegGEeGocGoG2ffUDAZwBBqMwemGNihn1CFtGnUdTXD0EYFtiH)pNUMEftOIbjaoCN6f1Y7m)HVprlXrfPxZ8ggSHG2usWyOKoeihxLqXGimbeHraMT(rW7vbwMcykYRrcOdFL3ea(ldTrF2eb0mcR4aFxqI)ql82kTnMfy6XXUTmodQw5Jc4Hc4HS3ueJMbhduWjG1mhPGZ8tsWNnxXmlatb7)dDGlhWlegT9GnS)4(3du8EJAmIdcO1Nq3lWxFZ6CjNe)jAA9Vm5XNvFEW6xeKvUeuQ3iZIy04eAycMQud6u5NiC0bkjkmGXyjbHQJyTOdzeD)sR4YEuoL3FP(LP8HZIEXuoEk)Q8y)pMYluFqutXDr3u(R1dNv(DUOu(6vrt5u(3KkZ91xRBk6(UYr9hQSIHfa1Q25RQlfTxw96OSh84fE0y3Fyk)HQP87YXP8sz7xhu8x0QUoi1g0BPwV)Nh7vg7exL3uqGmWpLx1jVUaBN4wTCurzrNO4GUc2QYBtXK)pa',
+    },
+  ],
   rlp: [],
   uld: [],
   ad: [
