@@ -1,12 +1,14 @@
 import type { SampleRoute } from '../../util/types.ts'
-import type { DungeonKey } from '../dungeonKeys.ts'
+import { type DungeonKey, dungeonKeys } from '../dungeonKeys.ts'
+import { decodeRoute } from '../../../server/decodeRoute'
+import { mdtRouteToRoute } from '../../util/mdtUtil.ts'
 
 type SampleRouteDefinition = Omit<SampleRoute, 'route'> & {
   mdt: string
   name?: string
 }
 
-export const sampleRoutesDefinitions: Record<DungeonKey, SampleRouteDefinition[]> = {
+const sampleRouteDefinitions: Record<DungeonKey, SampleRouteDefinition[]> = {
   aa: [
     {
       name: 'Safely press W',
@@ -99,7 +101,23 @@ export const sampleRoutesDefinitions: Record<DungeonKey, SampleRouteDefinition[]
       mdt: '!nA12oUjmq0VLQ(y1MfFdB)y3UVuvjuLyL6BiCaZLDP4iUKDZ(aF7DCWolHKOUcuWmEMZCMJhStck5PK4b9BdjXpQluJndtPdvDADwLUFytTzkDkfNe)Qw)sseAtqsCEDrrDg45HKiS1WyDEsmF)ZHh6hfM3ZsI3RAg1wKZg760Td)ESPjjkW6SZs842g9EDJdtN1hhBl1M2FM)wse9i296gD2qTPfqd44oaOEyyKL3r45rhHaE5iBIiWT9jfUHNdwlFk3OxXniLzMgtxs8xlkObffwhXlZn78CWCbhEoMeNz25yAruwCkEV385GdxqOveH(b68R7fnyRyMUmRdcNx4tvhXPcyQtgWZfCekybnSUkCE6QjeYnVt3qEPi86fzrHLXNkiptqE3rCh(iHJjiPDadM12YaHfHoYwom4OalGb0vSLTIDKvSZ7p9w6LNL8ZyPxVqbEwIDSuUIa0veaVIaKlxgNx7flt4srFj6RlNB0LAlJ5LD5sudxH25r)bNVOvt6eL5ifRANPonH5BHCRBihSSBP1(pLCjo8Z9fkIVYV15p0334AB8IM468qEQZ0jREEix0jVSZ)u(5Ra2RJYfVFSR5w7HGiNLW1R68lA)8scYRjyNiJdUDd9C)1Clp(81y4Z9)Z2l2RyZ2NH9FpTLBCUpii9ukft4mIafesWhP5DuoEdHgWcdPyQiGnZ5zk)GDTjo(L6DBMs)HQDkDxN(U62919tPFBkTZO6U)D9UQdD3)ADBE3yF1gljAHqD77(bbcHpi50GqMGW4ccDo)ySCtOqgIccKyQercVKb)rvdNYvy6MsvtPLgtoWefyY0Ap8tpL(8yzPURvncgvTW0vJLa)QlRgaQ)R6SxCoMvv308QwTxdGv3ct(99MABaQbyU2sNF6YY(LLczzPWOIncgbHfybriL85sHibZubNZzugwIOxrmFaWgY9bGjQoDXyZuARXEeoCUT9SYP0NQgBZ1DvAvULHw(yLBWB1xSZQTLDdaqVQqpB)4VoIVRrnak1FHq2EWz7Hg176TMrRW8i8Ve6mh0Dllp7vY)a',
     },
   ],
-  uld: [],
+  uld: [
+    {
+      name: 'Safely press W',
+      difficulty: 'beginner',
+      mdt: '!nwvtZTjmq0Fm9EgTls8X9CPxy6mQN1KySOHwIPdwK6Cj)2ReScSuqoEGXye7(23(2DLuG6NkPrFXOKpQBFEQ38XtMxg16Mx0Nnp0n8XtXxvk5)06)OQHhyk5XU22UgRFVRQr3ctDhvYlIcg)q37JJVQKV9C)K2fNMPXr9jZpM67v1mNX0kYPd96309eM0QpoD6x6HtF)4fvTy(dN196gt3WjlAwg)xlqNT)TgU6NziQXf2uNzVDp52B7tJBLnZmUpC9RYMH(HrL8BTTCwBRZa0zaswHe2zHoF9YUqYdbZbvv7AW9GXjVeHeddXwqwL)zcY3mueMv5HVwSFsYzhkxssX1cyffrGrPdaKece38zqozzriLlOLlxwU8gfMGmYLtRS3hJYq1jJazhjMVLRvPRQlfIfoX2Hzgx(MsVCC0zXc(qeNW4OvrCIceMcwFVgHiBNC1jycQmKt0m7(e2QvHLyGhF033cL(kDvm0(2pWhuEIGwLAaIWAvRzEeHOyfhbAidebdg7mvrEKFFBaaf3B)OFcJyq5xnfrmiB)Xaizt5A5PiuPW4IXNKUQ0sdbzuJUVLc89uGis1jvczF1ief81Mjp5qiUtHfX2Bmdt75Ua6(BbUHJi18gcb(hviwtnm1CiUSPpS)2dyI54T5mmlW)Si)WKN1mZ4v7UHonxcCxYHd)2EM455tenk1)ba',
+    },
+    {
+      name: 'Standard',
+      difficulty: 'intermediate',
+      mdt: '!TwvtZTniq0Fm9C9ai0hCntV0EqtNHEMrX2OmkMiPOpCC7b)BVSMfIKIuQp0Xmgje7BF7B3fuu1VuYb9LbL8bDxVU7K9)Rfv1dnxl2303RKVP1Nu50DeL8yvzz1HrZWVv5myHXQJk5RNB)ZL3OplE1(Y5hnJAa0dJDD66HFoAmQCcSzCf54EJ(S2GyIR(TX6N0n1F)4fvE8Tp0Rn6ddvn1w0S0R1cuV9XC6K)UbroZXM8i7aM52bmhBhWCIDaZP2bmNzh25bWYTHzaE69ppa4o9v5HgttNs(LYsoPSmaNhtoIz8CSyZXIH7kc9mFo2aYIYG9ERIrRsCGfpNNjZFnDBAZNYf3Uei0ucYikf1ukBUOLG7mDEeLIlJsC2NkXtc09zormEQiMnx8Iqq4ldfiycHUy9ag0s(efHScZgG49(ymaMl14cr22E1fyIzEDAOaOhJQmMsPr3lleyqHi7XN5RSOz(ePyj0(YiQ3P8nCQyzm5R4rXkiLepI0f(APhWomA8S2IGheHmkQRj3rdpS707p5HrGJHzBN9CjzK5rRxLtf)RMmmsdkfBzY4dsNyDP59ofuucq6lPO(AkQVOIrWZdz0f5b(02DO5MSvGesiojEJJIcSET67vBgrPFJJpc8XF4dD9UwgB7eaMaVXSG9rlSZJt0)HBwST6FSLbpga(jB2)S9UTW1zYJEXKLTJls4jreEsACk7gf(kpozNiJgLriccxKMYDPxhLEa4J8hJV0ETOSR5LRfTvgZJDxlGlXn6JpPDp2FQQf8ET1ehru)f',
+    },
+    {
+      name: 'Berserkers into boss',
+      difficulty: 'expert',
+      mdt: '!TwztpUjmqy4Flvvv9ur(7pUUTsvThqvLEgbbmBydbIat2DVWV9AhSjqc0UvQkoXeJ9mp(DMXogg)R4iT6fDCuKoTopTnpo6zL6qCimaehLxwuuM1xPFnoezhOV0mHo2tz8MIDzNLXrNtR6vwZK132QQ1)OVQkoeyNSBKO(DvQZQkNnDJ(L(6hvn1Fl)L4q6Lx0PQuz6YMAJ1maDYyOoZJHWz)CXeHOrAcXMMTNyA2EQPz7zMMTNBA2EHPz612vUTz02NU(AT1U)DNAinRPQPno69ffeqrXKB8(I4wnDPpql9b1nl24W0LKWw(x(I)obG19YIzozCwsNPHah)qOBdarlLfMBM8LSXDd7erXFuexihKR2X7dXsza7mYOwgk3ANTtmkTJcdyfe02n2BfnlCxfw026jzMGdwHzR1Po50f7G43UangUelmpc5dycFatERL9PlqVp3kxvE)wAuiLlfsG3GWBC1ToWvQaPlYJNTPKonZzB2BQikeYFBIMnNACd4c2I1JDYPqSl6IxpzgUrg31Iz3kNuk0TXI7Ko56sZ1YtNyozsFcf0Nrb9PuiG7Gne8M4azEvTTggS9gHmpKTXjotuVw29QLIUq7gNsmXJ)mg461Si0wCpfaVKAmTE8nRZBh8)HRimvfRvXCHd7NOMDpzUKA6EPOCVtfGajgdPsb30ZWSlm8jO0moHI4qIeJGigEm(oY0dwGIIYsBFDiPOSTtpKyV37Ddj)uDS5SAirVx1z62L2vwv2DOZmV2MJxgFXsgsklmF1F0mdDtZqYX(S9bwKRnUXDg)vC5IaUGZbCSeWicQdxjpaXauisGg)9EA)8(0YAJNQ1gNSRPZ4VN3RmJSt12PApOAnV0myABtFD(qcf8H5yGNJbYEZpKljqiNr4ak3PAuqauazCcciGecx8pWXxvnhtRZ8CKRsnuKAr5bpHxWtTGXzisMJifjcisgHHbegNYrJesOSaPaIfaGeqKCo5Ec)E)Xt(W1PYQQ0wBOziPsL)OA8XUdLNU6z7N4Fd',
+    },
+  ],
   ad: [
     {
       name: 'Safe starter - Bunten',
@@ -267,3 +285,58 @@ export const sampleRoutesDefinitions: Record<DungeonKey, SampleRouteDefinition[]
     },
   ],
 }
+
+async function convertRouteDefinition({
+  affix,
+  difficulty,
+  name,
+  mdt,
+}: SampleRouteDefinition): Promise<SampleRoute> {
+  const mdtRoute = await decodeRoute(mdt)
+  const route = mdtRouteToRoute(mdtRoute)
+
+  if (name) route.name = name
+
+  return {
+    affix,
+    difficulty,
+    route,
+  }
+}
+
+export type SampleRoutes = Record<DungeonKey, SampleRoute[]>
+
+const sampleRoutes = dungeonKeys.reduce((acc, key) => {
+  acc[key as DungeonKey] = []
+  return acc
+}, {} as SampleRoutes)
+
+const difficultyToNum = (difficulty: SampleRoute['difficulty']) =>
+  difficulty === 'beginner' ? 0 : difficulty === 'intermediate' ? 1 : 2
+
+const affixToNum = (affix: SampleRoute['affix']) =>
+  affix === undefined ? 0 : affix === 'fortified' ? 1 : 2
+
+function sortSampleRoutes(route1: SampleRoute, route2: SampleRoute) {
+  if (route1.difficulty !== route2.difficulty) {
+    return difficultyToNum(route1.difficulty) - difficultyToNum(route2.difficulty)
+  }
+
+  if (route1.affix !== route2.affix) {
+    return affixToNum(route1.affix) - affixToNum(route2.affix)
+  }
+
+  return route1.route.name.localeCompare(route2.route.name)
+}
+
+for (const dungeonKey of dungeonKeys) {
+  for (const routeDefinition of sampleRouteDefinitions[dungeonKey]) {
+    const sampleRoute = await convertRouteDefinition(routeDefinition)
+    sampleRoutes[dungeonKey].push(sampleRoute)
+  }
+  sampleRoutes[dungeonKey].sort(sortSampleRoutes)
+}
+
+export default async () => ({
+  data: sampleRoutes,
+})

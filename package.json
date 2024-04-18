@@ -13,7 +13,6 @@
     "vercel-dev": "env NODE_ENV=vercel_dev vercel dev --listen 1234",
     "postinstall": "patch-package",
     "dungeons": "tsx scripts/importAllDungeons.ts",
-    "samples": "tsx ./scripts/sampleRouteImport.ts",
     "spells": "tsx scripts/guessDungeonSpells.ts"
   },
   "engines": {
