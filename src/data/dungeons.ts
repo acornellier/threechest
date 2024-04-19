@@ -35,6 +35,7 @@ const bh: Dungeon = {
   name: 'Brackenhide Hollow (WIP!)',
   key: 'bh',
   icon: 'achievement_dungeon_brackenhidehollow',
+  wclEncounterId: 62520,
   ...dungeonData('bh'),
 }
 
@@ -42,6 +43,7 @@ const hoi: Dungeon = {
   name: 'Halls of Infusion',
   key: 'hoi',
   icon: 'achievement_dungeon_hallsofinfusion',
+  wclEncounterId: 62527,
   ...dungeonData('hoi'),
 }
 
@@ -49,6 +51,7 @@ const nelth: Dungeon = {
   name: 'Neltharus (WIP!)',
   key: 'nelth',
   icon: 'achievement_dungeon_neltharus',
+  wclEncounterId: 62519,
   ...dungeonData('nelth'),
 }
 
@@ -56,6 +59,7 @@ const nok: Dungeon = {
   name: 'Nokhud Offensive',
   key: 'nok',
   icon: 'achievement_dungeon_centaurplains',
+  wclEncounterId: 62516,
   ...dungeonData('nok'),
 }
 
@@ -63,6 +67,7 @@ const rlp: Dungeon = {
   name: 'Ruby Life Pools',
   key: 'rlp',
   icon: 'achievement_dungeon_lifepools',
+  wclEncounterId: 62521,
   defaultBounds: [
     [10, 0],
     [-mapHeight, mapWidth],
@@ -74,6 +79,7 @@ const uld: Dungeon = {
   name: 'Uldaman',
   key: 'uld',
   icon: 'achievement_dungeon_uldaman',
+  wclEncounterId: 62451,
   ...dungeonData('uld'),
 }
 

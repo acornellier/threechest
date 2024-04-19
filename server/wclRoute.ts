@@ -138,7 +138,7 @@ query {
       .map((_, idx) => {
         const castsData = resultsMap[`c${idx}`]!.data
         const damageData = resultsMap[`d${idx}`]!.data
-        const firstCast = castsData.find(({ x, y }) => x && y)
+        const firstCast = castsData.find(({ x, y, targetID }) => x && y && targetID !== -1)
         const firstDamage = damageData.find(({ x, y }) => x && y)
         if (firstCast && firstDamage) {
           // Cast data is more useful, so take it over damage data even if it's 3 seconds later

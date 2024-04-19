@@ -17,9 +17,9 @@ import { PatherComponent } from './Draw/PatherComponent.tsx'
 import { AwarenessCursors } from '../Collab/AwarenessCursors.tsx'
 import { MapInitialZoom } from './MapInitialZoom.tsx'
 import { LiveControllerWrapper } from '../Live/LiveControllerWrapper.tsx'
-import { WclCoordinateTest } from './WclCoordinateTest.tsx'
 import { Mobs } from './Mobs/Mobs.tsx'
 import { PullOutlines } from './PullOutlines/PullOutlines.tsx'
+import { WclCoordinateTest } from './WclCoordinateTest.tsx'
 
 export function Map() {
   const dispatch = useAppDispatch()
