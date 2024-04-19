@@ -136,15 +136,18 @@ query {
 
     const newEvents = enemyBatch
       .map((_, idx) => {
-        const castsData = resultsMap[`c${idx}`]!.data
+        const castsData = resultsMap[`c${idx}`]!.data.filter(({ targetID }) => targetID !== -1)
         const damageData = resultsMap[`d${idx}`]!.data
-        const firstCast = castsData.find(({ x, y, targetID }) => x && y && targetID !== -1)
+        const firstCast = castsData.find(({ x, y }) => x && y)
         const firstDamage = damageData.find(({ x, y }) => x && y)
         if (firstCast && firstDamage) {
           // Cast data is more useful, so take it over damage data even if it's 3 seconds later
           return firstCast.timestamp - 3000 < firstDamage.timestamp ? firstCast : firstDamage
-        } else {
+        } else if (firstCast || firstDamage) {
           return firstCast ?? firstDamage
+        } else {
+          // No events with coordinates found
+          return damageData[0] ?? castsData[0]
         }
       })
       .filter(Boolean) as WclEvent[]

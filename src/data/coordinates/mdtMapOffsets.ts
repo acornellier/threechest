@@ -66,3 +66,30 @@ export const mdtMapOffsets: Record<number, MapOffset> = {
     rotate: 43,
   },
 }
+
+export const nokOffsets = [
+  {
+    x: -5861 / 3840,
+    y: -3429 / 2560,
+    scaleX: 11981 / 3840,
+    scaleY: 7988 / 2560,
+  },
+  {
+    x: -3665 / 3840,
+    y: -4111 / 2560,
+    scaleX: 11981 / 3840,
+    scaleY: 7988 / 2560,
+  },
+  {
+    x: -3794 / 3840,
+    y: -4065 / 2560,
+    scaleX: 13638 / 3840,
+    scaleY: 9093 / 2560,
+  },
+  {
+    x: -2050 / 3840,
+    y: -1629 / 2560,
+    scaleX: 8413 / 3840,
+    scaleY: 5610 / 2560,
+  },
+] as [MapOffset, MapOffset, MapOffset, MapOffset]

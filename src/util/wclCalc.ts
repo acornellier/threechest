@@ -4,7 +4,7 @@ import { dungeons } from '../data/dungeons.ts'
 import { distance } from './numbers.ts'
 import { averagePoint, tally } from './nodash.ts'
 import { mapHeight, mapWidth } from './map.ts'
-import { type MapOffset, mdtMapOffsets } from '../data/coordinates/mdtMapOffsets.ts'
+import { type MapOffset, mdtMapOffsets, nokOffsets } from '../data/coordinates/mdtMapOffsets.ts'
 import { mapBounds } from '../data/coordinates/mapBounds.ts'
 
 export type WclEventSimplified = {
@@ -44,14 +44,23 @@ type WclPoint = {
   mapID: number
 }
 
-const defaultMdtMapOffset: MapOffset = { y: 0, x: 0, scaleY: 1, scaleX: 1 }
+const getNokOffsets = ({ x, y }: WclPoint): MapOffset => {
+  console.log([x, y])
+  if (x > -200_000) return nokOffsets[0]
+  else if (x > -300_000) return nokOffsets[1]
+  else if (y < -150_000) return nokOffsets[2]
+  else return nokOffsets[3]
+}
 
-export const wclPointToLeafletPoint = ({ x, y, mapID }: WclPoint): Point => {
+export const wclPointToLeafletPoint = (wclPoint: WclPoint): Point => {
+  const { mapID } = wclPoint
+  let { x, y } = wclPoint
   const bounds = mapBounds[mapID]
   if (!bounds) throw new Error(`Map ID ${mapID} bounds not defined.`)
 
   const { yMin, yMax, xMin, xMax } = bounds
-  const mdtMapOffset = mdtMapOffsets[mapID] ?? defaultMdtMapOffset
+  const mdtMapOffset = mapID === 2093 ? getNokOffsets(wclPoint) : mdtMapOffsets[mapID]
+  if (!mdtMapOffset) throw new Error(`Map ID ${mapID} bounds not defined.`)
 
   x /= 100
   y /= 100
@@ -123,12 +132,18 @@ export function wclEventsToPulls(events: WclEventSimplified[], dungeon: Dungeon,
 
   const pullMobIds = getPullMobIds(events, dungeon)
 
-  const groupsBasic = Object.groupBy(dungeon.mobSpawnsList, ({ spawn }) => spawn.group ?? spawn.id)
-  let groupsRemaining: Group[] = Object.entries(groupsBasic).map(([groupId, mobSpawns]) => ({
-    id: groupId,
-    mobCounts: tally(mobSpawns!, ({ mob }) => mob.id),
-    averagePos: averagePoint(mobSpawns!.map(({ spawn }) => spawn.pos)),
-  }))
+  const groupMobSpawns = Object.groupBy(
+    dungeon.mobSpawnsList,
+    ({ spawn }) => spawn.group ?? spawn.id,
+  )
+  let groupsRemaining: Group[] = Object.entries(groupMobSpawns).map(([groupId, mobSpawns]) => {
+    const nonZeroCountMobSpawns = mobSpawns!.filter(({ mob }) => mob.count > 0)
+    return {
+      id: groupId,
+      mobCounts: tally(nonZeroCountMobSpawns, ({ mob }) => mob.id),
+      averagePos: averagePoint(nonZeroCountMobSpawns.map(({ spawn }) => spawn.pos)),
+    }
+  })
 
   const spawnIdsTaken = new Set<string>()
 
@@ -137,7 +152,7 @@ export function wclEventsToPulls(events: WclEventSimplified[], dungeon: Dungeon,
       const { spawnIds, groupsRemaining: newGroupsRemaining } = calculateExactPull(
         pull,
         groupsRemaining,
-        groupsBasic,
+        groupMobSpawns,
         spawnIdsTaken,
         dungeon,
         idx,
