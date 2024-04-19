@@ -7,9 +7,6 @@ import { Drawings } from './Drawings/Drawings.tsx'
 import { Notes } from './Notes/Notes.tsx'
 import { MapContextMenu } from './MapContextMenu.tsx'
 import { MousePosition } from '../Leaflet/MousePosition.tsx'
-import { isDev } from '../../util/dev.ts'
-import { Mobs } from './Mobs/Mobs.tsx'
-import { PullOutlines } from './PullOutlines/PullOutlines.tsx'
 import { mapBounds, mapCenter } from '../../util/map.ts'
 import { useEffect } from 'react'
 import { setMapObjectsHidden } from '../../store/reducers/mapReducer.ts'
@@ -19,6 +16,9 @@ import { PatherComponent } from './Draw/PatherComponent.tsx'
 import { AwarenessCursors } from '../Collab/AwarenessCursors.tsx'
 import { MapInitialZoom } from './MapInitialZoom.tsx'
 import { LiveControllerWrapper } from '../Live/LiveControllerWrapper.tsx'
+import { Mobs } from './Mobs/Mobs.tsx'
+import { PullOutlines } from './PullOutlines/PullOutlines.tsx'
+import { isDev } from '../../util/isDev.ts'
 
 export function Map() {
   const dispatch = useAppDispatch()
@@ -57,6 +57,7 @@ export function Map() {
           maxNativeZoom={2}
           url={`/maps/${dungeon.key}/{z}/{x}_{y}.jpg`}
         />
+        {/*<WclCoordinateTest />*/}
         <Mobs />
         <PullOutlines />
         <Drawings />

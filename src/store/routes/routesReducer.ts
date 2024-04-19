@@ -27,7 +27,11 @@ const emptyPull: Pull = { id: 0, spawns: [] }
 
 export const newRouteUid = () => Math.random().toString(36).slice(2)
 
-function nextName(routeName: string, dungeonKey: DungeonKey, savedRoutes: SavedRoute[]) {
+export function nextRouteName(
+  routeName: string,
+  dungeonKey: DungeonKey,
+  savedRoutes: SavedRoute[],
+) {
   const match = routeName.match(/(.*\s)(\d+)$/)
   const baseName = match?.[1] ?? routeName
   const defaultNamesRoutes = savedRoutes.filter(
@@ -41,7 +45,7 @@ function nextName(routeName: string, dungeonKey: DungeonKey, savedRoutes: SavedR
 }
 
 const makeEmptyRoute = (dungeonKey: DungeonKey, savedRoutes: SavedRoute[]): Route => ({
-  name: nextName('Default threechest.io', dungeonKey, savedRoutes),
+  name: nextRouteName('Default threechest.io', dungeonKey, savedRoutes),
   dungeonKey,
   pulls: [emptyPull],
   drawings: [],
@@ -125,7 +129,7 @@ function setRouteFresh(state: RouteState, route: Route) {
 
 function giveRouteNewNameUid(state: RouteState, route: Route) {
   route.uid = newRouteUid()
-  route.name = nextName(route.name, route.dungeonKey, state.savedRoutes)
+  route.name = nextRouteName(route.name, route.dungeonKey, state.savedRoutes)
 }
 
 const baseReducer = createAppSlice({
@@ -148,6 +152,9 @@ const baseReducer = createAppSlice({
     ) {
       const route = mdtRouteToRoute(mdtRoute)
       if (copy) giveRouteNewNameUid(state, route)
+      setRouteFresh(state, route)
+    },
+    setRouteFromWcl(state, { payload: route }: PayloadAction<Route>) {
       setRouteFresh(state, route)
     },
     setRouteFromSample(state, { payload: route }: PayloadAction<Route>) {
@@ -384,6 +391,7 @@ export const {
   duplicateRoute,
   setRouteForCollab,
   setRouteFromMdt,
+  setRouteFromWcl,
   setRouteFromSample,
   backupCollabRoute,
   restoreLiveBackup,

@@ -1,18 +1,27 @@
 import type { MdtRoute, Route } from '../../util/types.ts'
 import { importRouteApi } from '../../api/importRouteApi.ts'
 import type { AppDispatch, RootState } from '../store.ts'
-import { loadRouteFromStorage, setRouteFromMdt } from '../routes/routesReducer.ts'
+import { loadRouteFromStorage, setRouteFromMdt, setRouteFromWcl } from '../routes/routesReducer.ts'
 import { createAppSlice } from '../storeUtil.ts'
+import { urlToWclInfo, type WclResult, wclRouteToRoute } from '../../util/wclCalc.ts'
+import { addToast } from './toastReducer.ts'
+import { wclRouteApi } from '../../api/wclRouteApi.ts'
+import wclTestData from '../../util/wclTestData.json'
 
 export interface ImportState {
+  isImporting: boolean
   importingRoute: MdtRoute | null
   previewRoute: Route | null
 }
 
 const initialState: ImportState = {
+  isImporting: false,
   importingRoute: null,
   previewRoute: null,
 }
+
+const wclErrorMessage =
+  'WCL route imported with errors. Some enemies were unable to be matched with MDT data. There will be enemies missing in the pulls.'
 
 export const importSlice = createAppSlice({
   name: 'import',
@@ -30,11 +39,42 @@ export const importSlice = createAppSlice({
       }
     }),
     importRoute: create.asyncThunk(
-      async ({ mdtString, mdtRoute }: { mdtString?: string; mdtRoute?: MdtRoute }, thunkApi) => {
-        if (!mdtString && !mdtRoute)
+      async (
+        {
+          text,
+          mdtRoute,
+          testServer,
+          testClient,
+        }: { text?: string; mdtRoute?: MdtRoute; testServer?: true; testClient?: true },
+        thunkApi,
+      ) => {
+        if (!text && !mdtRoute && !testServer && !testClient)
           throw new Error('Must specify either string or route to import')
 
-        mdtRoute = mdtRoute ?? (await importRouteApi(mdtString!))
+        if (testServer || testClient || text?.includes('warcraftlogs.com')) {
+          const wclResult = testClient
+            ? (wclTestData as WclResult)
+            : testServer
+              ? await wclRouteApi(wclTestData as WclResult)
+              : await wclRouteApi(urlToWclInfo(text!))
+          if (!wclResult || !wclResult.events) throw new Error('Failed to parse WCL report.')
+
+          const { route, errors } = wclRouteToRoute(wclResult)
+          thunkApi.dispatch(setRouteFromWcl(route))
+
+          if (errors.length) {
+            console.error(errors.join('\n'))
+            thunkApi.dispatch(
+              addToast({ message: wclErrorMessage, type: 'error', duration: 10_000 }),
+            )
+          } else {
+            thunkApi.dispatch(addToast({ message: `WCL route imported as ${route.name}` }))
+          }
+
+          return
+        }
+
+        mdtRoute = mdtRoute ?? (await importRouteApi(text!))
         const state = thunkApi.getState() as RootState
         const savedRoute = state.routes.present.savedRoutes.find(
           (route) => route.uid === mdtRoute.uid,
@@ -80,6 +120,15 @@ export const importSlice = createAppSlice({
       },
     ),
   }),
+  extraReducers: (builder) => {
+    builder.addCase(importRoute.pending, (state) => {
+      state.isImporting = true
+    })
+
+    builder.addMatcher(importRoute.settled, (state) => {
+      state.isImporting = false
+    })
+  },
 })
 
 export const importReducer = importSlice.reducer

@@ -9,12 +9,13 @@ export type MdtDungeon = {
 }
 
 export type Dungeon = {
+  key: DungeonKey
   name: string
   defaultBounds?: [Point, Point]
-  key: DungeonKey
   mdt: MdtDungeon
   mobSpawns: Record<SpawnId, MobSpawn>
   mobSpawnsList: MobSpawn[]
+  wclEncounterId?: number
   icon: string
 }
 

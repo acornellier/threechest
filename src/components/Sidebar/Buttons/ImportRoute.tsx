@@ -4,8 +4,8 @@ import { Modal } from '../../Common/Modal.tsx'
 import { importRoute } from '../../../store/reducers/importReducer.ts'
 import { ArrowUpTrayIcon, ClipboardIcon } from '@heroicons/react/24/outline'
 import { isEventInInput, shortcuts } from '../../../data/shortcuts.ts'
-
-import { useAppDispatch } from '../../../store/storeUtil.ts'
+import { useAppDispatch, useRootSelector } from '../../../store/storeUtil.ts'
+import { isDev } from '../../../util/isDev.ts'
 
 const canPasteFromClipboard = !!navigator.clipboard.readText
 
@@ -15,13 +15,11 @@ interface Props {
 
 export function ImportRoute({ hidden }: Props) {
   const dispatch = useAppDispatch()
+  const isImporting = useRootSelector((state) => state.import.isImporting)
   const [input, setInput] = useState('')
   const [inputModalOpen, setInputModalOpen] = useState(false)
 
-  const handlePaste = useCallback(
-    (mdtString: string) => dispatch(importRoute({ mdtString })),
-    [dispatch],
-  )
+  const handlePaste = useCallback((text: string) => dispatch(importRoute({ text })), [dispatch])
 
   const onGlobalPaste = useCallback(
     async (event: ClipboardEvent) => {
@@ -70,9 +68,36 @@ export function ImportRoute({ hidden }: Props) {
         className={`${hidden ? '[&]:hidden' : ''}`}
         tooltip="Import an MDT string from the clipboard"
         tooltipId="import-route-tooltip"
+        disabled={isImporting}
       >
-        Import MDT
+        {isImporting ? 'Importing...' : 'Import MDT or WCL'}
       </Button>
+      {isDev && (
+        <>
+          <Button
+            Icon={canPasteFromClipboard ? ClipboardIcon : ArrowUpTrayIcon}
+            short
+            onClick={async () => {
+              dispatch(importRoute({ testServer: true }))
+            }}
+            className={`${hidden ? '[&]:hidden' : ''}`}
+            disabled={isImporting}
+          >
+            {isImporting ? 'Importing...' : 'TEST SERVER'}
+          </Button>
+          <Button
+            Icon={canPasteFromClipboard ? ClipboardIcon : ArrowUpTrayIcon}
+            short
+            onClick={async () => {
+              dispatch(importRoute({ testClient: true }))
+            }}
+            className={`${hidden ? '[&]:hidden' : ''}`}
+            disabled={isImporting}
+          >
+            {isImporting ? 'Importing...' : 'TEST CLIENT'}
+          </Button>
+        </>
+      )}
       {inputModalOpen && (
         <Modal
           title="Paste MDT string"

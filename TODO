@@ -1,5 +1,11 @@
-﻿New season
+New season
 - Sample routes
+
+WCL
+- Persist WCL token somehow? https://vercel.com/docs/storage/vercel-kv/quickstart
+- Test more logs. Prob need to adjust 20s period
+- Rate limiting?
+- Confirm overwrite like MDT 
 
 - F to focus pull
 - Live mode

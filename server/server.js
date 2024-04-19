@@ -1,8 +1,8 @@
 import express from 'express'
 import cors from 'cors'
-
 import { decodeRoute } from './decodeRoute.js'
 import { encodeRoute } from './encodeRoute.js'
+import { getWclRoute } from './wclRoute.ts'
 
 const app = express()
 
@@ -26,6 +26,16 @@ app.post('/api/encodeRoute', async (req, res) => {
   } catch (e) {
     console.error(e)
     throw e
+  }
+})
+
+app.post('/api/wclRoute', async (req, res) => {
+  try {
+    const route = await getWclRoute(req.body.code, req.body.fightId)
+    res.json(route)
+  } catch (e) {
+    console.error(e)
+    res.status(422).send(e.message)
   }
 })
 

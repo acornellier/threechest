@@ -16,6 +16,7 @@ import {
   setRouteForCollab,
   setRouteFromMdt,
   setRouteFromSample,
+  setRouteFromWcl,
   updateSavedRoutes,
 } from './routes/routesReducer.ts'
 import {
@@ -41,7 +42,7 @@ listenerMiddleware.startListening({
       const state = listenerApi.getState() as RootState
       listenerApi.dispatch(
         addToast({
-          message: `Imported route ${mdtRoute.text} as ${state.routes.present.route.name}`,
+          message: `Imported MDT route ${mdtRoute.text} as ${state.routes.present.route.name}`,
         }),
       )
     } else {
@@ -77,6 +78,7 @@ listenerMiddleware.startListening({
     loadRoute.fulfilled,
     duplicateRoute,
     setRouteFromMdt,
+    setRouteFromWcl,
     setRouteFromSample,
     newRoute,
   ),
