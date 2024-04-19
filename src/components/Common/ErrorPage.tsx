@@ -1,5 +1,5 @@
 import { Button } from './Button.tsx'
-import type { ErrorInfo} from 'react';
+import type { ErrorInfo } from 'react'
 import { useEffect } from 'react'
 import { defaultDungeonKey, deleteRoute, newRoute } from '../../store/routes/routesReducer.ts'
 import {
@@ -9,9 +9,9 @@ import {
   PlusCircleIcon,
   TrashIcon,
 } from '@heroicons/react/24/outline'
-import { isDev } from '../../util/dev.ts'
 import { useAppDispatch, useRootSelector } from '../../store/storeUtil.ts'
 import { endCollab } from '../../store/collab/collabReducer.ts'
+import { isDev } from '../../util/isDev.ts'
 
 interface Props {
   errors: Array<{ error: Error; info: ErrorInfo }>

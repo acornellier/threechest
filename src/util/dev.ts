@@ -1,6 +1,4 @@
-﻿export const isDev = process.env.NODE_ENV === 'development'
-
-export const isMobile = /Mobi|Android/i.test(navigator.userAgent)
+﻿export const isMobile = /Mobi|Android/i.test(navigator.userAgent)
 export const isTouch = 'ontouchstart' in window
 export const isMac = /Macintosh/.test(navigator.userAgent)
 

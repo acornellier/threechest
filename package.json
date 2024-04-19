@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "server": "tsx server/server.js",
+    "server": "set \"NODE_ENV=development\" && tsx server/server.js",
     "rtc": "tsx rtc-server/rtc-server.ts",
     "build": "tsc && vite build",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",

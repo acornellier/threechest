@@ -4,6 +4,7 @@ import { dungeons } from '../src/data/dungeons.ts'
 import fs from 'fs'
 import { getDirname } from './files.ts'
 import { fetchWcl } from '../scripts/wcl.ts'
+import { isDev } from '../src/util/isDev.ts'
 
 const dirname = getDirname(import.meta.url)
 const batchSize = 82
@@ -36,12 +37,6 @@ type WclEvent = {
   x: number
   y: number
   mapID: number
-}
-
-interface WclJson {
-  error?: string
-  errors?: Array<{ message: string }>
-  data: any
 }
 
 async function getRoute(code: string, fightId: string | number) {
@@ -224,13 +219,9 @@ export async function getWclRoute(code: string, fightId: string | number): Promi
     events: firstPositions,
   }
 
-  fs.writeFileSync(
-    `${dirname}/../src/util/wclTestData.ts`,
-    `import { WclResult } from './wclCalc.ts'
-
-  export const wclTestData: WclResult = ${JSON.stringify(result)}
-  `,
-  )
+  if (isDev) {
+    fs.writeFileSync(`${dirname}/../src/util/wclTestData.json`, JSON.stringify(result))
+  }
 
   return result
 }

@@ -10,10 +10,10 @@ import { defaultDungeonKey, setDungeon } from '../store/routes/routesReducer.ts'
 import { useDungeon } from '../store/routes/routeHooks.ts'
 import { useAppDispatch } from '../store/storeUtil.ts'
 import { TailwindBreakpoint } from './Common/TailwindBreakpoint.tsx'
-import { isDev } from '../util/dev.ts'
 import { CollabSyncWrapper } from './Collab/CollabSync.tsx'
 import { BackgroundImage } from './Common/BackgroundImage.tsx'
 import { Footer } from './Header/Footer.tsx'
+import { isDev } from '../util/isDev.ts'
 
 export function Page() {
   const dispatch = useAppDispatch()

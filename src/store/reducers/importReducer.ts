@@ -3,10 +3,10 @@ import { importRouteApi } from '../../api/importRouteApi.ts'
 import type { AppDispatch, RootState } from '../store.ts'
 import { loadRouteFromStorage, setRouteFromMdt, setRouteFromWcl } from '../routes/routesReducer.ts'
 import { createAppSlice } from '../storeUtil.ts'
-import { urlToWclInfo, wclRouteToRoute } from '../../util/wclCalc.ts'
+import { urlToWclInfo, type WclResult, wclRouteToRoute } from '../../util/wclCalc.ts'
 import { addToast } from './toastReducer.ts'
 import { wclRouteApi } from '../../api/wclRouteApi.ts'
-import { wclTestData } from '../../util/wclTestData.ts'
+import wclTestData from '../../util/wclTestData.json'
 
 export interface ImportState {
   isImporting: boolean
@@ -53,9 +53,9 @@ export const importSlice = createAppSlice({
 
         if (testServer || testClient || text?.includes('warcraftlogs.com')) {
           const wclResult = testClient
-            ? wclTestData
+            ? (wclTestData as WclResult)
             : testServer
-              ? await wclRouteApi(wclTestData)
+              ? await wclRouteApi(wclTestData as WclResult)
               : await wclRouteApi(urlToWclInfo(text!))
           if (!wclResult || !wclResult.events) throw new Error('Failed to parse WCL report.')
 

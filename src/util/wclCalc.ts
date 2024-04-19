@@ -45,11 +45,17 @@ type WclPoint = {
 }
 
 const getNokOffsets = ({ x, y }: WclPoint): MapOffset => {
-  console.log([x, y])
   if (x > -200_000) return nokOffsets[0]
   else if (x > -300_000) return nokOffsets[1]
   else if (y < -150_000) return nokOffsets[2]
   else return nokOffsets[3]
+}
+
+const defaultMapOffsets: MapOffset = {
+  x: 0,
+  y: 0,
+  scaleX: 1,
+  scaleY: 1,
 }
 
 export const wclPointToLeafletPoint = (wclPoint: WclPoint): Point => {
@@ -59,8 +65,8 @@ export const wclPointToLeafletPoint = (wclPoint: WclPoint): Point => {
   if (!bounds) throw new Error(`Map ID ${mapID} bounds not defined.`)
 
   const { yMin, yMax, xMin, xMax } = bounds
-  const mdtMapOffset = mapID === 2093 ? getNokOffsets(wclPoint) : mdtMapOffsets[mapID]
-  if (!mdtMapOffset) throw new Error(`Map ID ${mapID} bounds not defined.`)
+  const mdtMapOffset =
+    mapID === 2093 ? getNokOffsets(wclPoint) : mdtMapOffsets[mapID] ?? defaultMapOffsets
 
   x /= 100
   y /= 100
@@ -221,7 +227,6 @@ function calculateExactPull(
     .filter(({ averagePos }) => distance(averagePos, pullAveragePos) < maxDistanceToGroup)
     .sort((a, b) => distance(a.averagePos, pullAveragePos) - distance(b.averagePos, pullAveragePos))
 
-  if (idx === 0) console.log(filteredPositions, pullAveragePos, groupsRemaining, groups)
   const pulledGroups = getPulledGroups(pullMobCounts, groups)
 
   if (pulledGroups === null)

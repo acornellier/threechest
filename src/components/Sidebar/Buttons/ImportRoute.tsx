@@ -5,6 +5,7 @@ import { importRoute } from '../../../store/reducers/importReducer.ts'
 import { ArrowUpTrayIcon, ClipboardIcon } from '@heroicons/react/24/outline'
 import { isEventInInput, shortcuts } from '../../../data/shortcuts.ts'
 import { useAppDispatch, useRootSelector } from '../../../store/storeUtil.ts'
+import { isDev } from '../../../util/isDev.ts'
 
 const canPasteFromClipboard = !!navigator.clipboard.readText
 
@@ -71,28 +72,32 @@ export function ImportRoute({ hidden }: Props) {
       >
         {isImporting ? 'Importing...' : 'Import MDT or WCL'}
       </Button>
-      <Button
-        Icon={canPasteFromClipboard ? ClipboardIcon : ArrowUpTrayIcon}
-        short
-        onClick={async () => {
-          dispatch(importRoute({ testServer: true }))
-        }}
-        className={`${hidden ? '[&]:hidden' : ''}`}
-        disabled={isImporting}
-      >
-        {isImporting ? 'Importing...' : 'TEST SERVER'}
-      </Button>
-      <Button
-        Icon={canPasteFromClipboard ? ClipboardIcon : ArrowUpTrayIcon}
-        short
-        onClick={async () => {
-          dispatch(importRoute({ testClient: true }))
-        }}
-        className={`${hidden ? '[&]:hidden' : ''}`}
-        disabled={isImporting}
-      >
-        {isImporting ? 'Importing...' : 'TEST CLIENT'}
-      </Button>
+      {isDev && (
+        <>
+          <Button
+            Icon={canPasteFromClipboard ? ClipboardIcon : ArrowUpTrayIcon}
+            short
+            onClick={async () => {
+              dispatch(importRoute({ testServer: true }))
+            }}
+            className={`${hidden ? '[&]:hidden' : ''}`}
+            disabled={isImporting}
+          >
+            {isImporting ? 'Importing...' : 'TEST SERVER'}
+          </Button>
+          <Button
+            Icon={canPasteFromClipboard ? ClipboardIcon : ArrowUpTrayIcon}
+            short
+            onClick={async () => {
+              dispatch(importRoute({ testClient: true }))
+            }}
+            className={`${hidden ? '[&]:hidden' : ''}`}
+            disabled={isImporting}
+          >
+            {isImporting ? 'Importing...' : 'TEST CLIENT'}
+          </Button>
+        </>
+      )}
       {inputModalOpen && (
         <Modal
           title="Paste MDT string"
