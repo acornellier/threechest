@@ -18,7 +18,7 @@ import { PatherComponent } from './Draw/PatherComponent.tsx'
 import { AwarenessCursors } from '../Collab/AwarenessCursors.tsx'
 import { MapInitialZoom } from './MapInitialZoom.tsx'
 import { LiveControllerWrapper } from '../Live/LiveControllerWrapper.tsx'
-import { Mobs } from './Mobs/Mobs.tsx'
+import { WclCoordinateTest } from './WclCoordinateTest.tsx'
 
 export function Map() {
   const dispatch = useAppDispatch()
@@ -57,7 +57,8 @@ export function Map() {
           maxNativeZoom={2}
           url={`/maps/${dungeon.key}/{z}/{x}_{y}.jpg`}
         />
-        <Mobs />
+        <WclCoordinateTest />
+        {/*<Mobs />*/}
         <PullOutlines />
         <Drawings />
         <Notes />

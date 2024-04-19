@@ -15,6 +15,7 @@ const aa: Dungeon = {
   name: 'Algethar Academy',
   key: 'aa',
   icon: 'achievement_dungeon_dragonacademy',
+  wclEncounterId: 62526,
   defaultBounds: [
     [10, 0],
     [-mapHeight, mapWidth],
@@ -83,7 +84,6 @@ const ad: Dungeon = {
     [-240, 330],
   ],
   icon: 'achievement_dungeon_ataldazar',
-  wclEncounterId: 61763,
   ...dungeonData('ad'),
 }
 
@@ -131,7 +131,6 @@ const fall: Dungeon = {
 const rise: Dungeon = {
   name: "DOTI: Murozond's Rise",
   key: 'rise',
-  wclEncounterId: 12580,
   defaultBounds: [
     [-10, 50],
     [-mapHeight, 350],

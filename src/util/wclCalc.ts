@@ -1,5 +1,5 @@
-import { Pull, Route } from './types.ts'
-import { Dungeon, MobSpawn, Point, Spawn, SpawnId } from '../data/types.ts'
+import type { Pull, Route } from './types.ts'
+import type { Dungeon, MobSpawn, Point, Spawn, SpawnId } from '../data/types.ts'
 import { dungeons } from '../data/dungeons.ts'
 import { distance } from './numbers.ts'
 import { averagePoint, tally } from './nodash.ts'
@@ -161,7 +161,7 @@ function calculateExactPull(
   const groups = groupsRemaining
     .filter(({ id }) => !groupMobSpawns[id]!.some(({ spawn }) => spawnIdsTaken.has(spawn.id)))
     .filter(({ mobCounts }) => pull.some(({ mobId }) => (mobCounts[mobId] ?? 0) > 0))
-    .filter(({ averagePos }) => distance(averagePos, pullAveragePos) < maxDistanceToGroup)
+    // .filter(({ averagePos }) => distance(averagePos, pullAveragePos) < maxDistanceToGroup)
     .sort((a, b) => distance(a.averagePos, pullAveragePos) - distance(b.averagePos, pullAveragePos))
 
   if (idx === 0) console.log(filteredPositions, pullAveragePos, groupsRemaining, groups)

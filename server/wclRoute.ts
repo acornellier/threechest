@@ -1,9 +1,9 @@
 import type { WclEventSimplified, WclResult } from '../src/util/wclCalc.ts'
 import { uniqBy } from '../src/util/nodash.ts'
-import { getWclToken } from './wclToken.ts'
 import { dungeons } from '../src/data/dungeons.ts'
 import fs from 'fs'
 import { getDirname } from './files.ts'
+import { fetchWcl } from '../scripts/wcl.ts'
 
 const dirname = getDirname(import.meta.url)
 const batchSize = 82
@@ -43,27 +43,6 @@ interface WclJson {
   data: any
 }
 
-async function fetchWcl(query: string) {
-  const token = await getWclToken()
-  const data = await fetch('https://www.warcraftlogs.com/api/v2/client', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      authorization: `Bearer ${token}`,
-    },
-    body: JSON.stringify({ query }),
-  })
-
-  const json: WclJson = await data.json()
-
-  const error = json.error ?? json.errors?.[0]?.message
-  if (error) {
-    throw new Error(error)
-  }
-
-  return json
-}
-
 async function getRoute(code: string, fightId: string | number) {
   const query = `
 query {
@@ -88,7 +67,7 @@ query {
 `
 
   const json = await fetchWcl(query)
-  return json.data.reportData.report.fights[0] as WclRoute
+  return json.reportData.report.fights[0] as WclRoute
 }
 
 type WclEnemy = { gameId: number; actorId: number; instanceId: number }
@@ -152,7 +131,7 @@ query {
 
     const json = await fetchWcl(query)
 
-    const resultsMap = json.data.reportData.report as Record<string, { data: WclEvent[] }>
+    const resultsMap = json.reportData.report as Record<string, { data: WclEvent[] }>
 
     const newEvents = enemyBatch
       .map((_, idx) => {
