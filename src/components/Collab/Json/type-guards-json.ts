@@ -1,13 +1,14 @@
-import {
-  assertIsPlainArray,
-  assertIsPlainObject,
-  isPlainArray,
-  isPlainObject,
+import type {
   Json,
   JsonArray,
   JsonObject,
   JsonPrimitive,
-  JsonTemplatePrimitive,
+  JsonTemplatePrimitive} from './index.ts';
+import {
+  assertIsPlainArray,
+  assertIsPlainObject,
+  isPlainArray,
+  isPlainObject
 } from './index.ts'
 
 function mkErr(val: unknown, type: string): Error {

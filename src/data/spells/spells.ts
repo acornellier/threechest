@@ -1,24 +1,39 @@
-import { DungeonKey, Spells } from '../types.ts'
-import { adSpells } from './adSpells.ts'
-import { ebSpells } from './ebSpells.ts'
-import { brhSpells } from './brhSpells.ts'
-import { dhtSpells } from './dhtSpells.ts'
-import { fallSpells } from './fallSpells.ts'
-import { tottSpells } from './tottSpells.ts'
-import { wcmSpells } from './wcmSpells.ts'
-import { nokSpells } from './nok.ts'
-import { riseSpells } from './riseSpells.ts'
+import type { Spells } from '../types.ts'
+import ad from './ad/adSpells.ts'
+import eb from './eb/ebSpells.ts'
+import brh from './brh/brhSpells.ts'
+import dht from './dht/dhtSpells.ts'
+import fall from './fall/fallSpells.ts'
+import tott from './tott/tottSpells.ts'
+import wcm from './wcm/wcmSpells.ts'
+import rise from './rise/riseSpells.ts'
+import type { DungeonKey } from '../dungeonKeys.ts'
+
+const aa = import.meta.compileTime<Spells>('./aa/aaSpells.ts')
+const av = import.meta.compileTime<Spells>('./av/avSpells.ts')
+const bh = import.meta.compileTime<Spells>('./bh/bhSpells.ts')
+const hoi = import.meta.compileTime<Spells>('./hoi/hoiSpells.ts')
+const nelth = import.meta.compileTime<Spells>('./nelth/nelthSpells.ts')
+const nok = import.meta.compileTime<Spells>('./nok/nokSpells.ts')
+const rlp = import.meta.compileTime<Spells>('./rlp/rlpSpells.ts')
+const uld = import.meta.compileTime<Spells>('./uld/uldSpells.ts')
 
 export const dungeonSpells: Record<DungeonKey, Spells> = {
-  aa: {}, // TODO
-  ad: adSpells,
-  bh: {}, // TODO
-  brh: brhSpells,
-  dht: dhtSpells,
-  fall: fallSpells,
-  eb: ebSpells,
-  nok: nokSpells, // TODO
-  rise: riseSpells,
-  tott: tottSpells,
-  wcm: wcmSpells,
+  aa,
+  av,
+  bh,
+  hoi,
+  nelth,
+  nok,
+  rlp,
+  uld,
+
+  ad,
+  brh,
+  dht,
+  fall,
+  eb,
+  rise,
+  tott,
+  wcm,
 }

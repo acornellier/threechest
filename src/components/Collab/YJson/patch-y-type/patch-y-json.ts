@@ -1,4 +1,4 @@
-import * as Y from 'yjs'
+import type * as Y from 'yjs'
 import {
   assertIsYArray,
   assertIsYJson,
@@ -8,15 +8,16 @@ import {
   isYMap,
 } from '../assertions.ts'
 import { transact, unknownToYTypeOrPrimitive } from '../y-utils'
+import type {
+  Delta,
+  JsonTemplateArray,
+  JsonTemplateObject} from '../../Json';
 import {
   deepNormalizeJson,
-  Delta,
   DeltaType,
   diff,
   isPlainArray,
   isPlainObject,
-  JsonTemplateArray,
-  JsonTemplateObject,
   OperationType,
 } from '../../Json'
 import { isDeepEqual } from '../../../../util/nodash.ts'

@@ -1,4 +1,4 @@
-import { Store, Unsubscribe } from 'redux'
+import type { Store, Unsubscribe } from 'redux'
 
 /**
  * Reference equality caching for store.subscribe

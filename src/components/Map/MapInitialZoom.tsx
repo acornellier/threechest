@@ -1,5 +1,5 @@
-import { Dungeon, Point } from '../../data/types.ts'
-import { LatLngBoundsExpression } from 'leaflet'
+import type { Dungeon, Point } from '../../data/types.ts'
+import type { LatLngBoundsExpression } from 'leaflet'
 import { useMap } from 'react-leaflet'
 import { useEffect } from 'react'
 import { mapBounds } from '../../util/map.ts'
@@ -10,7 +10,7 @@ function getAdjustedBounds(dungeon: Dungeon): LatLngBoundsExpression {
   const defaultBounds: [Point, Point] = dungeon.defaultBounds ?? mapBounds
 
   const topbarOffset = 10
-  const top = Math.min(0, defaultBounds[0][0] + topbarOffset)
+  const top = defaultBounds[0][0] + topbarOffset
   const left = defaultBounds[0][1]
   const bottom = defaultBounds[1][0]
   const sidebarOffset = 50

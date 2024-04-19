@@ -1,6 +1,6 @@
 import { mobScale } from '../../../util/mobSpawns.ts'
-import { MobSpawn } from '../../../data/types.ts'
-import { ReactNode } from 'react'
+import type { MobSpawn } from '../../../data/types.ts'
+import type { ReactNode } from 'react'
 
 interface Props {
   mobSpawn: MobSpawn
@@ -15,7 +15,7 @@ export function MobBorder({ iconScaling, mobSpawn, scale = 1, children }: Props)
 
   return (
     <div
-      className="absolute rounded-full overflow-hidden border-transparent pointer-events-none"
+      className="mob-border absolute rounded-full overflow-hidden border-transparent pointer-events-none"
       style={{
         height: `${percentSize}%`,
         width: `${percentSize}%`,

@@ -1,5 +1,5 @@
 import type { PayloadAction } from '@reduxjs/toolkit'
-import { SpawnId } from '../../data/types.ts'
+import type { SpawnId } from '../../data/types.ts'
 import { useDungeon, usePreviewRoute } from '../routes/routeHooks.ts'
 import { createAppSlice, useRootSelector } from '../storeUtil.ts'
 

@@ -1,4 +1,4 @@
-import * as Y from 'yjs'
+import type * as Y from 'yjs'
 
 /**
  * Run a transaction within `yType`'s document's transaction, if it is available. Otherwise throw since Yjs

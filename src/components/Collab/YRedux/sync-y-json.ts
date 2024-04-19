@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from 'react'
-import * as Y from 'yjs'
+import type * as Y from 'yjs'
 import { isEmpty, patchYJson } from '../YJson'
-import { JsonTemplateContainer } from '../Json'
-import { Action } from '@reduxjs/toolkit'
-import { AppDispatch, RootState } from '../../../store/store.ts'
+import type { JsonTemplateContainer } from '../Json'
+import type { Action } from '@reduxjs/toolkit'
+import type { AppDispatch, RootState } from '../../../store/store.ts'
 import { useAppDispatch, useRootSelector } from '../../../store/storeUtil.ts'
 import { selectLocalAwarenessIsHost } from '../../../store/collab/collabReducer.ts'
 

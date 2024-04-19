@@ -1,8 +1,10 @@
-import { ButtonHTMLAttributes, DetailedHTMLProps, ReactNode } from 'react'
-import { keyText, Shortcut } from '../../data/shortcuts.ts'
-import { IconComponent } from '../../util/types.ts'
+import type { ButtonHTMLAttributes, DetailedHTMLProps, ReactNode } from 'react'
+import type { Shortcut } from '../../data/shortcuts.ts';
+import { keyText } from '../../data/shortcuts.ts'
+import type { IconComponent } from '../../util/types.ts'
 import { TooltipStyled } from './TooltipStyled.tsx'
 import { isTouch } from '../../util/dev.ts'
+import type { TooltipRefProps } from 'react-tooltip'
 
 export type ButtonTooltipProps =
   | {
@@ -29,6 +31,7 @@ export type ButtonProps = DetailedHTMLProps<
   twoDimensional?: boolean
   justifyStart?: boolean
   color?: 'red' | 'green' | 'yellow'
+  tooltipPlace?: TooltipRefProps['place']
 } & ButtonTooltipProps
 
 function ButtonIconText({
@@ -71,6 +74,7 @@ export function Button({
   color,
   tooltip,
   tooltipId,
+  tooltipPlace,
   ...props
 }: ButtonProps) {
   const buttonIconText = (
@@ -122,7 +126,11 @@ export function Button({
           )}
         </div>
       </button>
-      {tooltip && <TooltipStyled id={tooltipId}>{tooltip}</TooltipStyled>}
+      {tooltip && (
+        <TooltipStyled id={tooltipId} place={tooltipPlace}>
+          {tooltip}
+        </TooltipStyled>
+      )}
     </>
   )
 }

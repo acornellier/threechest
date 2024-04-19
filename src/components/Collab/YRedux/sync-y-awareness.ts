@@ -1,8 +1,8 @@
 import { useEffect } from 'react'
-import { Action } from 'redux'
-import { Awareness } from 'y-protocols/awareness.js'
+import type { Action } from 'redux'
+import type { Awareness } from 'y-protocols/awareness.js'
 import { cachedSubscribe } from './redux-subscriber.ts'
-import { AppStore, RootState } from '../../../store/store.ts'
+import type { AppStore, RootState } from '../../../store/store.ts'
 import { useAppStore } from '../../../store/storeUtil.ts'
 
 export type BaseAwarenessState = {

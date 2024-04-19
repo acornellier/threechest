@@ -1,5 +1,6 @@
-import { Component, ErrorInfo, ReactNode } from 'react'
-import { ErrorPage } from '../ErrorPage.tsx'
+import type { ErrorInfo, ReactNode } from 'react';
+import { Component } from 'react'
+import { ErrorPage } from './ErrorPage.tsx'
 
 interface Props {
   children?: ReactNode

@@ -3,7 +3,7 @@ import { Sidebar } from './Sidebar/Sidebar.tsx'
 import { Toasts } from './Modals/Toasts.tsx'
 import { ConfirmImportModal } from './Modals/ConfirmImportModal.tsx'
 import { RouteSaver } from '../store/routes/RouteSaver.tsx'
-import { MobInfo } from './MobInfo.tsx'
+import { MobInfo } from './Modals/MobInfo.tsx'
 import { Header } from './Header/Header.tsx'
 import { useEffect } from 'react'
 import { defaultDungeonKey, setDungeon } from '../store/routes/routesReducer.ts'
@@ -11,15 +11,13 @@ import { useDungeon } from '../store/routes/routeHooks.ts'
 import { useAppDispatch } from '../store/storeUtil.ts'
 import { TailwindBreakpoint } from './Common/TailwindBreakpoint.tsx'
 import { isDev } from '../util/dev.ts'
-import { CollabSync } from './Collab/CollabSync.tsx'
-import { useCollabSelector } from '../store/collab/collabReducer.ts'
-import { BackgroundImage } from './BackgroundImage.tsx'
+import { CollabSyncWrapper } from './Collab/CollabSync.tsx'
+import { BackgroundImage } from './Common/BackgroundImage.tsx'
 import { Footer } from './Header/Footer.tsx'
 
 export function Page() {
   const dispatch = useAppDispatch()
   const dungeon = useDungeon()
-  const collabActive = useCollabSelector((state) => state.active)
 
   useEffect(() => {
     if (!dungeon) dispatch(setDungeon(defaultDungeonKey))
@@ -38,7 +36,7 @@ export function Page() {
       <Toasts />
       <ConfirmImportModal />
       <RouteSaver />
-      {collabActive && <CollabSync />}
+      <CollabSyncWrapper />
       {isDev && <TailwindBreakpoint />}
     </div>
   )

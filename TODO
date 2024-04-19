@@ -1,6 +1,5 @@
-- Pull tooltip
-- Logo shouldn't be clickable
-- Mobile Drawing
+New season
+- Sample routes
 
 WCL
 - Persist WCL token somehow? https://vercel.com/docs/storage/vercel-kv/quickstart
@@ -8,11 +7,13 @@ WCL
 - Rate limiting?
 - Confirm overwrite like MDT 
 
-- S4 dungeons
--- Nokhud zoom
-- If over %, suggestions on what to drop
-- Embed
+
+- Live mode
+-- Suggestions on what to add/drop
+-- Show note contents if within pull 
 
 Harder
+- Embed
 - Npc portaits
 - Collab password 
+- Import from WCL

@@ -1,11 +1,13 @@
-import { Point } from '../data/types.ts'
+import type { Point } from '../data/types.ts'
 
-interface PolygonVertex {
+export interface PolygonVertex {
   pos: Point
   scale: number
 }
 
-export const iconSizeMagicScaling = 2.8 // no idea lol
+const iconSizeMagicScaling = 2.8 // no idea lol
+
+export const mobScaleToRadius = (scale: number) => scale * iconSizeMagicScaling
 
 function isStrictlyLowerLeft(point1: Point, point2: Point): boolean {
   return (
@@ -65,7 +67,7 @@ export function expandPolygon(vertices: PolygonVertex[], numCirclePoints: number
   for (const { pos, scale } of vertices) {
     const x = pos[0]
     const y = pos[1]
-    const radius = iconSizeMagicScaling * scale
+    const radius = mobScaleToRadius(scale)
     const adjustedNumPoints = Math.max(1, Math.floor(numCirclePoints * radius))
 
     for (let i = 1; i <= adjustedNumPoints; i++) {

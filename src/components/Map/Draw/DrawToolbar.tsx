@@ -5,13 +5,14 @@ import {
   setDrawColor,
   setDrawMode,
   setDrawWeight,
-  setIsDrawing,
+  setMapMode,
 } from '../../../store/reducers/mapReducer.ts'
 import { clearDrawings } from '../../../store/routes/routesReducer.ts'
 import { useCallback, useState } from 'react'
 import { keyText, shortcuts } from '../../../data/shortcuts.ts'
 import { useShortcut } from '../../../util/hooks/useShortcut.ts'
-import { Dropdown, DropdownOption } from '../../Common/Dropdown.tsx'
+import type { DropdownOption } from '../../Common/Dropdown.tsx';
+import { Dropdown } from '../../Common/Dropdown.tsx'
 import { WeightIcon } from '../../Common/Icons/WeightIcon.tsx'
 import { TrashIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import { ColorGrid } from '../../Common/ColorGrid.tsx'
@@ -31,10 +32,14 @@ const weightOptions: WeightOption[] = [1, 2, 3, 4, 8, 12, 16, 24].map(weightToOp
 
 export function DrawToolbar() {
   const dispatch = useAppDispatch()
-  const { isDrawing, drawMode, drawColor, drawWeight } = useRootSelector((state) => state.map)
+  const { mapMode, drawMode, drawColor, drawWeight } = useRootSelector((state) => state.map)
   const [isChoosingColor, setChoosingColor] = useState(false)
 
-  const toggleDraw = useCallback(() => dispatch(setIsDrawing(!isDrawing)), [dispatch, isDrawing])
+  const isDrawing = mapMode === 'drawing'
+  const toggleDraw = useCallback(
+    () => dispatch(setMapMode(isDrawing ? 'editing' : 'drawing')),
+    [dispatch, isDrawing],
+  )
   useShortcut(shortcuts.draw, toggleDraw)
 
   const onChangeColor = useCallback(
@@ -45,7 +50,7 @@ export function DrawToolbar() {
     [dispatch],
   )
 
-  if (isTouch) return
+  if (isTouch) return null
 
   const isDeleting = drawMode === 'deleting'
   const isErasing = drawMode === 'erasing'

@@ -1,7 +1,8 @@
 import { highContrastColors } from '../../util/colors.ts'
-import {
+import type {
   AwarenessState,
-  CollabState,
+  CollabState} from './collabReducer.ts';
+import {
   getLocalAwareness,
   savedCollabColorKey,
   savedCollabNameKey,

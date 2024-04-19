@@ -1,13 +1,14 @@
-import { PayloadAction } from '@reduxjs/toolkit'
+import type { PayloadAction } from '@reduxjs/toolkit'
 import { useEffect, useState } from 'react'
 import { createAppSlice, useRootSelector } from '../storeUtil.ts'
 
+export type MapMode = 'editing' | 'drawing' | 'live'
 export type DrawMode = 'drawing' | 'deleting' | 'erasing'
 
 export interface MapState {
   objectsHidden: boolean
   sidebarCollapsed: boolean
-  isDrawing: boolean
+  mapMode: MapMode
   isErasing: boolean
   drawMode: DrawMode
   drawColor: string
@@ -20,7 +21,7 @@ const drawWeightKey = 'drawWeightKey'
 const initialState: MapState = {
   objectsHidden: true,
   sidebarCollapsed: false,
-  isDrawing: false,
+  mapMode: 'editing',
   isErasing: false,
   drawMode: 'drawing',
   drawColor: localStorage.getItem(drawColorKey) || 'blue',
@@ -37,9 +38,9 @@ export const mapSlice = createAppSlice({
     setSidebarCollapsed(state, { payload: collapsed }: PayloadAction<boolean>) {
       state.sidebarCollapsed = collapsed
     },
-    setIsDrawing(state, { payload: isDrawing }: PayloadAction<boolean>) {
-      state.isDrawing = isDrawing
-      if (isDrawing) {
+    setMapMode(state, { payload: mapMode }: PayloadAction<MapMode>) {
+      state.mapMode = mapMode
+      if (mapMode === 'drawing') {
         state.drawMode = 'drawing'
         state.isErasing = false
       }
@@ -60,6 +61,9 @@ export const mapSlice = createAppSlice({
       localStorage.setItem(drawWeightKey, drawWeight.toString())
     },
   },
+  selectors: {
+    selectIsLive: (state) => state.mapMode === 'live',
+  },
 })
 
 export function useMapObjectsHidden(minDelay: number = 0, maxDelay: number = 100) {
@@ -79,9 +83,11 @@ export const mapReducer = mapSlice.reducer
 export const {
   setMapObjectsHidden,
   setSidebarCollapsed,
-  setIsDrawing,
+  setMapMode,
   setIsErasing,
   setDrawMode,
   setDrawColor,
   setDrawWeight,
 } = mapSlice.actions
+
+export const { selectIsLive } = mapSlice.selectors

@@ -1,4 +1,4 @@
-import { PlainArray, PlainContainer, PlainObject } from './index.ts'
+import type { PlainArray, PlainContainer, PlainObject } from './index.ts'
 
 function mkErr(val: unknown, type: string): Error {
   return new Error(`Expected ${JSON.stringify(val)} to be ${type}`)

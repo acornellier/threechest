@@ -1,3 +1,5 @@
+import type { DungeonKey } from './dungeonKeys.ts'
+
 export type Point = [number, number]
 
 export type MdtDungeon = {
@@ -13,23 +15,9 @@ export type Dungeon = {
   mdt: MdtDungeon
   mobSpawns: Record<SpawnId, MobSpawn>
   mobSpawnsList: MobSpawn[]
-  spells: Record<number, Spell[]>
   wclEncounterId?: number
   icon: string
 }
-
-export type DungeonKey =
-  | 'aa'
-  | 'ad'
-  | 'bh'
-  | 'brh'
-  | 'dht'
-  | 'fall'
-  | 'nok'
-  | 'rise'
-  | 'eb'
-  | 'tott'
-  | 'wcm'
 
 export type SpawnId = string
 
@@ -65,9 +53,28 @@ export type Spell = {
   id: number
   name: string
   icon: string
+  damage?: { s3: number; s4: number }
+  aoe?: boolean
+  physical?: boolean
+  variance?: number
+  castTime?: number
+  dispel?: DispelType[]
+  interrupt?: boolean
+  stop?: boolean
 }
 
 export type Spells = Record<number, Spell[]>
+export type SpellIdMap = Record<number, number[]>
+
+export type DispelType =
+  | 'Soothe'
+  | 'Purge'
+  | 'Bleed'
+  | 'Magic'
+  | 'Curse'
+  | 'Poison'
+  | 'Disease'
+  | 'Movement'
 
 // Change [number, number] to number[] to type-check JSON
 export type SpawnFake = Omit<Spawn, 'pos' | 'patrol'> & {

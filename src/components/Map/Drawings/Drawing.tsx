@@ -1,12 +1,13 @@
 import { memo, useCallback, useMemo } from 'react'
-import { Drawing, Drawing as DrawingType } from '../../../util/types.ts'
+import type { Drawing, Drawing as DrawingType } from '../../../util/types.ts'
 import { Polyline, useMap } from 'react-leaflet'
 import { Arrowhead } from './Arrowhead.tsx'
 import { useMapObjectsHidden } from '../../../store/reducers/mapReducer.ts'
 import { useAppDispatch, useRootSelector } from '../../../store/storeUtil.ts'
 import { deleteDrawing, updateDrawing } from '../../../store/routes/routesReducer.ts'
-import { Point } from '../../../data/types.ts'
-import { LatLng, type LeafletEventHandlerFnMap } from 'leaflet'
+import type { Point } from '../../../data/types.ts'
+import type { LatLng} from 'leaflet';
+import { type LeafletEventHandlerFnMap } from 'leaflet'
 import { latLngToPoint } from '../../../util/map.ts'
 
 interface Props {

@@ -6,13 +6,10 @@ import { useState } from 'react'
 import { HostRouteDetails } from './HostRouteDetails.tsx'
 import { useIsGuestCollab } from '../../store/collab/collabReducer.ts'
 import { MiniPulls } from './Pulls/MiniPulls.tsx'
-import { isMobile } from '../../util/dev.ts'
 import { useAppDispatch, useRootSelector } from '../../store/storeUtil.ts'
-import { setSidebarCollapsed } from '../../store/reducers/mapReducer.ts'
+import { selectIsLive, setSidebarCollapsed } from '../../store/reducers/mapReducer.ts'
 
 export const sidebarWidth = 290
-const marginTop = 8
-const marginBottom = 60
 
 export function Sidebar() {
   const dispatch = useAppDispatch()
@@ -20,36 +17,34 @@ export function Sidebar() {
   const [bottomCollapsed, setBottomCollapsed] = useState(false)
   const isBottomCollapsed = !topCollapsed || bottomCollapsed
   const isGuestCollab = useIsGuestCollab()
+  const isLive = useRootSelector(selectIsLive)
+
+  if (isLive) return false
 
   return (
     <>
       <div
-        className="fixed pt-16 md:pt-0 z-20 flex flex-col gap-1.5 transition-all"
+        className="fixed max-h-full z-20 flex flex-col gap-1.5 transition-all pt-2 pb-14 sm:pb-2"
         style={{
           width: sidebarWidth,
-          marginTop,
-          marginBottom,
-          maxHeight: `calc(100% - ${marginTop}px - ${marginBottom}px)`,
           right: topCollapsed ? -sidebarWidth : 0,
+          // maxHeight: 'calc(100% - 16px)',
         }}
       >
         <SidebarCollapser
           collapsed={topCollapsed}
           setCollapsed={() => dispatch(setSidebarCollapsed(!topCollapsed))}
         />
-        {isGuestCollab ? <HostRouteDetails /> : <RouteDetails />}
+        {isLive ? null : isGuestCollab ? <HostRouteDetails /> : <RouteDetails />}
         <CollabPanel />
         <Pulls />
       </div>
       <div
-        className="fixed z-20 transition-all"
+        className="fixed max-h-full z-20 transition-all pb-4 sm:pb-2"
         style={{
           width: sidebarWidth,
-          marginTop,
-          marginBottom: isMobile ? marginTop : marginBottom,
-          maxHeight: `calc(100% - ${marginTop}px - ${marginBottom}px)`,
           right: isBottomCollapsed ? -sidebarWidth : 0,
-          bottom: 0,
+          maxHeight: 800,
         }}
       >
         {topCollapsed && (

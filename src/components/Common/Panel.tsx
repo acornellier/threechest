@@ -1,4 +1,5 @@
-import { forwardRef, ReactNode } from 'react'
+import type { ReactNode } from 'react';
+import { forwardRef } from 'react'
 
 interface Props {
   row?: boolean

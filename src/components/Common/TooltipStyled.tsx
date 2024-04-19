@@ -1,4 +1,5 @@
-import { ITooltip, Tooltip, TooltipRefProps } from 'react-tooltip'
+import type { ITooltip, TooltipRefProps } from 'react-tooltip';
+import { Tooltip } from 'react-tooltip'
 import { forwardRef } from 'react'
 import { isMobile } from '../../util/dev.ts'
 

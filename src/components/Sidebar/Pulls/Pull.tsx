@@ -1,4 +1,4 @@
-import { PullDetailed } from '../../../util/types.ts'
+import type { PullDetailed } from '../../../util/types.ts'
 import { getPullColor, lightenColor } from '../../../util/colors.ts'
 import { selectPull } from '../../../store/routes/routesReducer.ts'
 import { useEffect, useMemo, useRef } from 'react'
@@ -83,7 +83,7 @@ export function Pull({ pull, ghost, onRightClick, isShiftHeld }: Props) {
                     src={`/npc_portraits/${mob.id}.png`}
                     alt={mob.name}
                   />
-                  <div className="text-outline absolute bottom-[-3px] w-full font-bold text-xs text-center">
+                  <div className="text-outline absolute bottom-[-2px] w-full font-bold text-xs text-center">
                     x{count}
                   </div>
                 </div>

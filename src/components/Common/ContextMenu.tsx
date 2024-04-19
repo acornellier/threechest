@@ -1,8 +1,8 @@
-import { MouseEventHandler } from 'react'
+import type { MouseEventHandler } from 'react'
 import { Panel } from './Panel.tsx'
-import { Shortcut } from '../../data/shortcuts.ts'
+import type { Shortcut } from '../../data/shortcuts.ts'
 import { Button } from './Button.tsx'
-import { IconComponent } from '../../util/types.ts'
+import type { IconComponent } from '../../util/types.ts'
 
 export type ContextMenuPosition = {
   left: number

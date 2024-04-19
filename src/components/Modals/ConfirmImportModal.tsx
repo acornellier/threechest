@@ -6,7 +6,7 @@ import { Modal } from '../Common/Modal.tsx'
 import { useCallback } from 'react'
 import { useShortcut } from '../../util/hooks/useShortcut.ts'
 import { shortcuts } from '../../data/shortcuts.ts'
-import { MdtRoute } from '../../util/types.ts'
+import type { MdtRoute } from '../../util/types.ts'
 import { useAppDispatch, useRootSelector } from '../../store/storeUtil.ts'
 
 interface Props {
@@ -34,7 +34,7 @@ export function ConfirmImportModalComponent({ importingRoute }: Props) {
 
   useShortcut(shortcuts.confirm, overwrite)
 
-  if (!importingRoute) return null
+  if (!importingRoute) return false
 
   const dungeon = dungeonsByMdtIdx[importingRoute.value.currentDungeonIdx]
 
@@ -67,6 +67,6 @@ export function ConfirmImportModalComponent({ importingRoute }: Props) {
 
 export function ConfirmImportModal() {
   const importingRoute = useRootSelector((state) => state.import.importingRoute)
-  if (!importingRoute) return null
+  if (!importingRoute) return false
   return <ConfirmImportModalComponent importingRoute={importingRoute} />
 }

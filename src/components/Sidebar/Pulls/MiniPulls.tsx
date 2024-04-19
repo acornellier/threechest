@@ -9,7 +9,7 @@ import { useDungeon, useRoute, useSelectedPull } from '../../../store/routes/rou
 import { useMemo } from 'react'
 import { augmentPulls } from './augmentPulls.ts'
 import { PullList } from './PullList.tsx'
-import { PullDetailed } from '../../../util/types.ts'
+import type { PullDetailed } from '../../../util/types.ts'
 
 export function MiniPulls() {
   const dispatch = useAppDispatch()
@@ -25,7 +25,7 @@ export function MiniPulls() {
 
   return (
     <Panel>
-      <TotalCount pullsDetailed={pullsDetailed} alwaysShowTotal />
+      <TotalCount pullsDetailed={pullsDetailed} curPullIndex={pullsDetailed.length - 1} />
       <PullList pullsDetailed={threePulls} disableSorting />
       <Button
         short

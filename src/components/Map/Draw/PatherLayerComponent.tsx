@@ -1,6 +1,8 @@
-﻿import { LayerOptions, type LeafletEventHandlerFnMap } from 'leaflet'
-import { PropsWithChildren } from 'react'
-import { CreatedEvent, Pather, PatherOptions } from '../../Leaflet/Pather/Pather.ts'
+﻿import type { LayerOptions} from 'leaflet';
+import { type LeafletEventHandlerFnMap } from 'leaflet'
+import type { PropsWithChildren } from 'react'
+import type { CreatedEvent, PatherOptions } from '../../Leaflet/Pather/Pather.ts';
+import { Pather } from '../../Leaflet/Pather/Pather.ts'
 import { createLayerComponent } from '@react-leaflet/core'
 
 type Props = LayerOptions &

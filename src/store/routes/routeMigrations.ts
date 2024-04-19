@@ -1,6 +1,7 @@
 ﻿import { createMigrate } from 'redux-persist'
-import { initialState, RouteState } from './routesReducer.ts'
-import { StateWithHistory } from 'redux-undo'
+import type { RouteState } from './routesReducer.ts';
+import { initialState } from './routesReducer.ts'
+import type { StateWithHistory } from 'redux-undo'
 
 type PersistedStateCur = StateWithHistory<RouteState>
 

@@ -1,5 +1,9 @@
 import * as Y from 'yjs'
-import { YJson } from '../index.ts'
+import type { YJson } from '../index.ts'
+import type {
+  Json,
+  JsonArray,
+  JsonObject} from '../../Json';
 import {
   assertIsJsonArray,
   assertIsJsonObject,
@@ -7,10 +11,7 @@ import {
   assertIsPlainObject,
   isJsonPrimitive,
   isPlainArray,
-  isPlainObject,
-  Json,
-  JsonArray,
-  JsonObject,
+  isPlainObject
 } from '../../Json'
 
 export function objectToYMap(object: JsonObject): Y.Map<YJson> {

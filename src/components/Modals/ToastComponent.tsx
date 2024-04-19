@@ -4,7 +4,8 @@ import {
   InformationCircleIcon,
   XMarkIcon,
 } from '@heroicons/react/24/outline'
-import { removeToast, Toast } from '../../store/reducers/toastReducer.ts'
+import type { Toast } from '../../store/reducers/toastReducer.ts';
+import { removeToast } from '../../store/reducers/toastReducer.ts'
 import { Button } from '../Common/Button.tsx'
 import { neverShowTips } from '../../data/tips.ts'
 
@@ -35,7 +36,7 @@ export function ToastComponent({ toast }: Props) {
 
   return (
     <div
-      className={`fancy-toast flex items-center gap-2 transition-opacity duration-500
+      className={`fancy-toast flex items-center gap-2 transition-opacity duration-500 pointer-events-auto
                   ${toast.type} 
                   ${toast.removing ? 'opacity-0' : ''}`}
       onClick={onRemove}

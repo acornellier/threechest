@@ -1,7 +1,7 @@
-import { Pull, Route } from '../../util/types.ts'
-import { SpawnId } from '../../data/types.ts'
+import type { Pull, Route } from '../../util/types.ts'
+import type { SpawnId } from '../../data/types.ts'
 import { dungeonsByKey } from '../../data/dungeons.ts'
-import { RouteState } from './routesReducer.ts'
+import type { RouteState } from './routesReducer.ts'
 import { joinSpawns, subtractSpawns } from '../../util/mobSpawns.ts'
 
 const findSelectedPull = (route: Route, spawn: SpawnId) =>

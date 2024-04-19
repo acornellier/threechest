@@ -1,23 +1,81 @@
-import { Dungeon, DungeonKey } from './types.ts'
-import { mdtDungeons, mdtMobSpawns } from './mdtDungeons/mdtDungeons.ts'
-import { dungeonSpells } from './spells/spells.ts'
-import { mapHeight } from '../util/map.ts'
+import type { Dungeon } from './types.ts'
+import { mapHeight, mapWidth } from '../util/map.ts'
+import type { DungeonKey } from './dungeonKeys.ts'
+import { mdtDungeons, mdtMobSpawns } from './mdtDungeons.ts'
 
-export const dungeonData = (key: DungeonKey) => ({
+export const dungeonData = (
+  key: DungeonKey,
+): Pick<Dungeon, 'mdt' | 'mobSpawns' | 'mobSpawnsList'> => ({
   mdt: mdtDungeons[key],
   mobSpawns: mdtMobSpawns[key],
   mobSpawnsList: Object.values(mdtMobSpawns[key]),
-  spells: dungeonSpells[key],
 })
 
-export const aa: Dungeon = {
+const aa: Dungeon = {
   name: 'Algethar Academy',
   key: 'aa',
   icon: 'achievement_dungeon_dragonacademy',
+  defaultBounds: [
+    [10, 0],
+    [-mapHeight, mapWidth],
+  ],
   ...dungeonData('aa'),
 }
 
-export const ad: Dungeon = {
+const av: Dungeon = {
+  name: 'Azure Vault',
+  key: 'av',
+  icon: 'achievement_dungeon_arcanevaults',
+  ...dungeonData('av'),
+}
+
+const bh: Dungeon = {
+  name: 'Brackenhide Hollow (WIP!)',
+  key: 'bh',
+  icon: 'achievement_dungeon_brackenhidehollow',
+  ...dungeonData('bh'),
+}
+
+const hoi: Dungeon = {
+  name: 'Halls of Infusion',
+  key: 'hoi',
+  icon: 'achievement_dungeon_hallsofinfusion',
+  ...dungeonData('hoi'),
+}
+
+const nelth: Dungeon = {
+  name: 'Neltharus (WIP!)',
+  key: 'nelth',
+  icon: 'achievement_dungeon_neltharus',
+  ...dungeonData('nelth'),
+}
+
+const nok: Dungeon = {
+  name: 'Nokhud Offensive',
+  key: 'nok',
+  icon: 'achievement_dungeon_centaurplains',
+  ...dungeonData('nok'),
+}
+
+const rlp: Dungeon = {
+  name: 'Ruby Life Pools',
+  key: 'rlp',
+  icon: 'achievement_dungeon_lifepools',
+  defaultBounds: [
+    [10, 0],
+    [-mapHeight, mapWidth],
+  ],
+  ...dungeonData('rlp'),
+}
+
+const uld: Dungeon = {
+  name: 'Uldaman',
+  key: 'uld',
+  icon: 'achievement_dungeon_uldaman',
+  ...dungeonData('uld'),
+}
+
+const ad: Dungeon = {
   name: "Atal'Dazar",
   key: 'ad',
   defaultBounds: [
@@ -29,21 +87,14 @@ export const ad: Dungeon = {
   ...dungeonData('ad'),
 }
 
-export const bh: Dungeon = {
-  name: 'Brackenhide Hollow',
-  key: 'bh',
-  icon: 'achievement_dungeon_brackenhidehollow',
-  ...dungeonData('bh'),
-}
-
-export const brh: Dungeon = {
+const brh: Dungeon = {
   name: 'Black Rook Hold',
   key: 'brh',
   icon: 'achievement_dungeon_blackrookhold',
   ...dungeonData('brh'),
 }
 
-export const dht: Dungeon = {
+const dht: Dungeon = {
   name: 'Darkheart Thicket',
   key: 'dht',
   defaultBounds: [
@@ -54,7 +105,7 @@ export const dht: Dungeon = {
   ...dungeonData('dht'),
 }
 
-export const eb: Dungeon = {
+const eb: Dungeon = {
   name: 'Everbloom',
   key: 'eb',
   defaultBounds: [
@@ -66,7 +117,7 @@ export const eb: Dungeon = {
   ...dungeonData('eb'),
 }
 
-export const fall: Dungeon = {
+const fall: Dungeon = {
   name: 'DOTI: Fall of Galakrond',
   key: 'fall',
   defaultBounds: [
@@ -77,18 +128,7 @@ export const fall: Dungeon = {
   ...dungeonData('fall'),
 }
 
-export const nok: Dungeon = {
-  name: 'Nokhud Offensive',
-  key: 'nok',
-  icon: 'achievement_dungeon_centaurplains',
-  defaultBounds: [
-    [-70, 90],
-    [-215, 270],
-  ],
-  ...dungeonData('nok'),
-}
-
-export const rise: Dungeon = {
+const rise: Dungeon = {
   name: "DOTI: Murozond's Rise",
   key: 'rise',
   wclEncounterId: 12580,
@@ -100,7 +140,7 @@ export const rise: Dungeon = {
   ...dungeonData('rise'),
 }
 
-export const tott: Dungeon = {
+const tott: Dungeon = {
   name: 'Throne of the Tides',
   key: 'tott',
   defaultBounds: [
@@ -111,14 +151,31 @@ export const tott: Dungeon = {
   ...dungeonData('tott'),
 }
 
-export const wcm: Dungeon = {
+const wcm: Dungeon = {
   name: 'Waycrest Manor',
   key: 'wcm',
   icon: 'achievement_dungeon_waycrestmannor',
   ...dungeonData('wcm'),
 }
 
-export const dungeons = [ad, brh, dht, fall, rise, eb, tott, wcm]
+export const dungeons = [
+  aa,
+  av,
+  ad,
+  bh,
+  hoi,
+  nelth,
+  nok,
+  rlp,
+  uld,
+  brh,
+  dht,
+  fall,
+  rise,
+  eb,
+  tott,
+  wcm,
+]
 
 export const dungeonsByKey = dungeons.reduce(
   (acc, dungeon) => {

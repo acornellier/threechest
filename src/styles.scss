@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 $fancy-red: #7f1d1d;
+$fancy-orange: #7f3f1d;
 $fancy-blue: #131a34;
 $fancy-green: #1d7f1f;
 $fancy-yellow: #7f6b1d;
@@ -206,12 +207,24 @@ $fancy-yellow: #7f6b1d;
   background-color: $fancy-red;
 }
 
+.bg-fancy-orange {
+  background-color: $fancy-orange;
+}
+
 .text-fancy-red {
   color: $fancy-red;
 }
 
 .bg-fancy-blue {
   background-color: $fancy-blue;
+}
+
+.bg-fancy-yellow {
+  background-color: $fancy-yellow;
+}
+
+.bg-fancy-green {
+  background-color: $fancy-green;
 }
 
 input.fancy,
@@ -430,7 +443,6 @@ textarea.fancy {
   }
 }
 
-.dungeon-dropdown,
 .route-dropdown {
   .dropdown-main-text {
     font-size: 16px;

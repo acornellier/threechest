@@ -26,7 +26,7 @@ export function UndoRedo() {
   useShortcut(shortcuts.undo, undo, { allowRepeat: true })
   useShortcut(shortcuts.redo, redo, { allowRepeat: true })
 
-  if (isGuestCollab) return
+  if (isGuestCollab) return false
 
   return (
     <div className="flex items-start gap-2 h-full flex-row">

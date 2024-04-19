@@ -1,11 +1,13 @@
-import {
-  assertIsJsonTemplate,
+import type {
   JsonTemplateArray,
   JsonTemplateContainer,
   JsonTemplateObject,
-  JsonTemplateObjectDeep,
+  JsonTemplateObjectDeep} from './index.ts';
+import {
+  assertIsJsonTemplate
 } from './index.ts'
-import { Delta, DeltaType, diff, OperationType, patch } from './diff-json.ts'
+import type { Delta} from './diff-json.ts';
+import { DeltaType, diff, OperationType, patch } from './diff-json.ts'
 import { deepNormalizeJson } from './normalize-json.ts'
 
 type DeepPartial<T> = { [P in keyof T]?: DeepPartial<T[P]> | undefined }

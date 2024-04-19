@@ -2,11 +2,11 @@ import 'leaflet/dist/leaflet.css'
 import { MapContainer, TileLayer } from 'react-leaflet'
 import { CRS } from 'leaflet'
 import '../Leaflet/SmoothWheelZoom.ts'
-import '../Leaflet/BoxSelect/BoxSelect'
+import '../Leaflet/BoxSelect.ts'
 import { Drawings } from './Drawings/Drawings.tsx'
 import { Notes } from './Notes/Notes.tsx'
 import { MapContextMenu } from './MapContextMenu.tsx'
-import { MousePosition } from '../Leaflet/MousePosition/MousePosition'
+import { MousePosition } from '../Leaflet/MousePosition.tsx'
 import { isDev } from '../../util/dev.ts'
 import { PullOutlines } from './PullOutlines/PullOutlines.tsx'
 import { mapBounds, mapCenter } from '../../util/map.ts'
@@ -17,6 +17,7 @@ import { useAppDispatch } from '../../store/storeUtil.ts'
 import { PatherComponent } from './Draw/PatherComponent.tsx'
 import { AwarenessCursors } from '../Collab/AwarenessCursors.tsx'
 import { MapInitialZoom } from './MapInitialZoom.tsx'
+import { LiveControllerWrapper } from '../Live/LiveControllerWrapper.tsx'
 import { Mobs } from './Mobs/Mobs.tsx'
 
 export function Map() {
@@ -44,17 +45,17 @@ export function Map() {
         zoomSnap={0}
         zoomControl={false}
         scrollWheelZoom={false}
-        smoothWheelZoom={true}
+        smoothWheelZoom
         smoothSensitivity={2}
         boxZoom={false}
-        boxSelect={true}
+        boxSelect
       >
         <TileLayer
           bounds={mapBounds}
           noWrap
-          minNativeZoom={1}
-          maxNativeZoom={4}
-          url={`/maps/${dungeon.key}/{z}/{x}_{y}.png`}
+          minNativeZoom={2}
+          maxNativeZoom={2}
+          url={`/maps/${dungeon.key}/{z}/{x}_{y}.jpg`}
         />
         <Mobs />
         <PullOutlines />
@@ -64,6 +65,7 @@ export function Map() {
         <PatherComponent />
         <MapInitialZoom />
         <AwarenessCursors />
+        <LiveControllerWrapper />
         {isDev && <MousePosition />}
       </MapContainer>
     </div>

@@ -1,5 +1,6 @@
-﻿import { TypedUseSelectorHook, useDispatch, useSelector, UseStore, useStore } from 'react-redux'
-import { AppDispatch, RootState, store } from './store.ts'
+﻿import type { TypedUseSelectorHook, UseStore} from 'react-redux';
+import { useDispatch, useSelector, useStore } from 'react-redux'
+import type { AppDispatch, RootState, store } from './store.ts'
 import { asyncThunkCreator, buildCreateSlice } from '@reduxjs/toolkit'
 
 export const useRootSelector: TypedUseSelectorHook<RootState> = useSelector

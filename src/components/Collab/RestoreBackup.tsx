@@ -9,7 +9,7 @@ import { useAppDispatch } from '../../store/storeUtil.ts'
 
 export function RestoreBackup() {
   const dispatch = useAppDispatch()
-  const backupRoute = useRoutesSelector((state) => state.backupRoute)
+  const backupRoute = useRoutesSelector((state) => state.collabBackupRoute)
   const isGuestCollab = useIsGuestCollab()
 
   const onRestoreBackup = useCallback(() => {
@@ -18,7 +18,7 @@ export function RestoreBackup() {
     dispatch(addToast({ message: `Route restored from backup` }))
   }, [backupRoute, dispatch])
 
-  if (!backupRoute || isGuestCollab) return
+  if (!backupRoute || isGuestCollab) return null
 
   return (
     <div className="flex gap-1">

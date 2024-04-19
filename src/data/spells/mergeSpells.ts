@@ -1,6 +1,6 @@
-import { Spells } from '../types.ts'
+import type { Spells } from '../types.ts'
 
-export function mergeSpells(spells1: Spells, spells2: Spells, spellsToRemove?: number[]) {
+export function mergeSpellsOld(spells1: Spells, spells2: Spells, spellsToRemove?: number[]) {
   let res: Spells = {}
 
   Object.entries(spells1).forEach(([enemyId, spells]) => {

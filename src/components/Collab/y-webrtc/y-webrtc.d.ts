@@ -156,7 +156,7 @@ export type WebrtcProviderEvents = {
     bcPeers: Array<string>
   }) => void
 }
-import * as Y from 'yjs'
-import * as awarenessProtocol from 'y-protocols/awareness'
+import type * as Y from 'yjs'
+import type * as awarenessProtocol from 'y-protocols/awareness'
 import * as ws from 'lib0/websocket'
 import { ObservableV2 } from 'lib0/observable'

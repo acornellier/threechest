@@ -1,11 +1,12 @@
+import type {
+  JsonContainer,
+  PlainContainer} from './index.ts';
 import {
   assertIsPlainContainer,
   isJsonPrimitive,
   isPlainArray,
   isPlainContainer,
-  isPlainObject,
-  JsonContainer,
-  PlainContainer,
+  isPlainObject
 } from './index.ts'
 
 // Deep remove all non-json values
