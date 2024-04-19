@@ -35,6 +35,7 @@ type WclEvent = {
   sourceInstance?: number
   x: number
   y: number
+  mapID: number
 }
 
 interface WclJson {
@@ -185,7 +186,7 @@ export async function getWclRoute(code: string, fightId: string | number): Promi
 
   let firstPositions = firstEvents
     .map((event) => {
-      const { timestamp, targetID, targetInstance, sourceID, sourceInstance, x, y } = event
+      const { timestamp, targetID, targetInstance, sourceID, sourceInstance, x, y, mapID } = event
 
       const actorId = event.type === 'cast' ? sourceID : targetID
       const instanceId = event.type === 'cast' ? sourceInstance : targetInstance
@@ -201,6 +202,7 @@ export async function getWclRoute(code: string, fightId: string | number): Promi
         gameId: matchingEnemy.gameId,
         x,
         y,
+        mapID,
         // TODO remove debug fields: actorId, name, and instanceId
         actorId,
         instanceId,

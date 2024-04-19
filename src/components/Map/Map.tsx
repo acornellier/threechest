@@ -8,7 +8,6 @@ import { Notes } from './Notes/Notes.tsx'
 import { MapContextMenu } from './MapContextMenu.tsx'
 import { MousePosition } from '../Leaflet/MousePosition.tsx'
 import { isDev } from '../../util/dev.ts'
-import { PullOutlines } from './PullOutlines/PullOutlines.tsx'
 import { mapBounds, mapCenter } from '../../util/map.ts'
 import { useEffect } from 'react'
 import { setMapObjectsHidden } from '../../store/reducers/mapReducer.ts'
@@ -19,6 +18,8 @@ import { AwarenessCursors } from '../Collab/AwarenessCursors.tsx'
 import { MapInitialZoom } from './MapInitialZoom.tsx'
 import { LiveControllerWrapper } from '../Live/LiveControllerWrapper.tsx'
 import { WclCoordinateTest } from './WclCoordinateTest.tsx'
+import { Mobs } from './Mobs/Mobs.tsx'
+import { PullOutlines } from './PullOutlines/PullOutlines.tsx'
 
 export function Map() {
   const dispatch = useAppDispatch()
@@ -58,7 +59,7 @@ export function Map() {
           url={`/maps/${dungeon.key}/{z}/{x}_{y}.jpg`}
         />
         <WclCoordinateTest />
-        {/*<Mobs />*/}
+        <Mobs />
         <PullOutlines />
         <Drawings />
         <Notes />

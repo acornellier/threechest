@@ -27,6 +27,7 @@ const av: Dungeon = {
   name: 'Azure Vault',
   key: 'av',
   icon: 'achievement_dungeon_arcanevaults',
+  wclEncounterId: 62515,
   ...dungeonData('av'),
 }
 

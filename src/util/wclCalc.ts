@@ -3,12 +3,16 @@ import type { Dungeon, MobSpawn, Point, Spawn, SpawnId } from '../data/types.ts'
 import { dungeons } from '../data/dungeons.ts'
 import { distance } from './numbers.ts'
 import { averagePoint, tally } from './nodash.ts'
+import { mapHeight, mapWidth } from './map.ts'
+import { type MapOffset, mdtMapOffsets } from '../data/coordinates/mdtMapOffsets.ts'
+import { mapBounds } from '../data/coordinates/mapBounds.ts'
 
 export type WclEventSimplified = {
   timestamp: number
   gameId: number
   x?: number
   y?: number
+  mapID?: number
   // TODO: debug
   instanceId?: number
   name: string
@@ -34,8 +38,43 @@ type Group = {
 
 type CalculatedPull = { spawnIds: SpawnId[] | null; groupsRemaining: Group[] }
 
-export const wclPointToLeafletPoint = ({ x, y }: { x: number; y: number }) =>
-  [0.00268 * y - 258, 0.002688 * x + 634] as Point
+type WclPoint = {
+  x: number
+  y: number
+  mapID: number
+}
+
+const defaultMdtMapOffset: MapOffset = { y: 0, x: 0, scaleY: 1, scaleX: 1 }
+
+export const wclPointToLeafletPoint = ({ x, y, mapID }: WclPoint): Point => {
+  const bounds = mapBounds[mapID]
+  if (!bounds) throw new Error(`Map ID ${mapID} bounds not defined.`)
+
+  const { yMin, yMax, xMin, xMax } = bounds
+  const mdtMapOffset = mdtMapOffsets[mapID] ?? defaultMdtMapOffset
+
+  x /= 100
+  y /= 100
+
+  if (mdtMapOffset.rotate) {
+    const angle = (mdtMapOffset.rotate * Math.PI) / 180
+    const x1 = x
+    const y1 = y
+    const a = xMin + (xMax - xMin) / 2
+    const b = yMin + (yMax - yMin) / 2
+
+    x = (x1 - a) * Math.cos(angle) - (y1 - b) * Math.sin(angle) + a
+    y = (x1 - a) * Math.sin(angle) + (y1 - b) * Math.cos(angle) + b
+  }
+
+  const topFracWow = 1 - (y - yMin) / (yMax - yMin)
+  const topFracMdt = topFracWow * mdtMapOffset.scaleY + mdtMapOffset.y
+
+  const leftFracWow = (x - xMin) / (xMax - xMin)
+  const leftFracMdt = leftFracWow * mdtMapOffset.scaleX + mdtMapOffset.x
+
+  return [-topFracMdt * mapHeight, leftFracMdt * mapWidth]
+}
 
 export function urlToWclInfo(url: string): WclUrlInfo {
   if (!url.startsWith('http')) url = 'https://' + url
@@ -137,7 +176,10 @@ function getPullMobIds(events: WclEventSimplified[], dungeon: Dungeon) {
     currentTimestamp = event.timestamp
     currentPull.push({
       mobId: event.gameId,
-      pos: event.x && event.y ? wclPointToLeafletPoint({ x: event.x, y: event.y }) : undefined,
+      pos:
+        event.x && event.y && event.mapID
+          ? wclPointToLeafletPoint({ x: event.x, y: event.y, mapID: event.mapID })
+          : undefined,
     })
   }
 
