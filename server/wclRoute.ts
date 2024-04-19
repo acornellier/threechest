@@ -156,6 +156,8 @@ query {
 }
 
 export async function getWclRoute(code: string, fightId: string | number): Promise<WclResult> {
+  console.log('getWclRoute', code, fightId)
+
   const wclRoute = await getRoute(code, fightId)
 
   const dungeon = dungeons.find((dungeon) => dungeon.wclEncounterId === wclRoute.encounterID)
