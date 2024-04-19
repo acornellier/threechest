@@ -218,7 +218,7 @@ function calculateExactPull(
   const groups = groupsRemaining
     .filter(({ id }) => !groupMobSpawns[id]!.some(({ spawn }) => spawnIdsTaken.has(spawn.id)))
     .filter(({ mobCounts }) => pull.some(({ mobId }) => (mobCounts[mobId] ?? 0) > 0))
-    // .filter(({ averagePos }) => distance(averagePos, pullAveragePos) < maxDistanceToGroup)
+    .filter(({ averagePos }) => distance(averagePos, pullAveragePos) < maxDistanceToGroup)
     .sort((a, b) => distance(a.averagePos, pullAveragePos) - distance(b.averagePos, pullAveragePos))
 
   if (idx === 0) console.log(filteredPositions, pullAveragePos, groupsRemaining, groups)
