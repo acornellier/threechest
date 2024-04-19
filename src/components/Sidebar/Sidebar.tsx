@@ -28,7 +28,6 @@ export function Sidebar() {
         style={{
           width: sidebarWidth,
           right: topCollapsed ? -sidebarWidth : 0,
-          // maxHeight: 'calc(100% - 16px)',
         }}
       >
         <SidebarCollapser
@@ -40,7 +39,7 @@ export function Sidebar() {
         <Pulls />
       </div>
       <div
-        className="fixed max-h-full z-20 transition-all pb-4 sm:pb-2"
+        className="fixed max-h-full z-20 transition-all bottom-0 pb-14 sm:pb-2"
         style={{
           width: sidebarWidth,
           right: isBottomCollapsed ? -sidebarWidth : 0,
