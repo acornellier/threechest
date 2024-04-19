@@ -70,7 +70,7 @@ export function ImportRoute({ hidden }: Props) {
         tooltipId="import-route-tooltip"
         disabled={isImporting}
       >
-        {isImporting ? 'Importing...' : 'Import MDT or WCL'}
+        {isImporting ? 'Importing...' : 'Import MDT'}
       </Button>
       {isDev && (
         <>
