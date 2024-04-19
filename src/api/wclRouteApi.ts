@@ -1,4 +1,4 @@
-﻿import { WclResult, WclUrlInfo } from '../util/wclCalc.ts'
+﻿import type { WclResult, WclUrlInfo } from '../util/wclCalc.ts'
 import { isDev } from '../util/isDev.ts'
 
 const importUrl = isDev ? 'http://localhost:6173/api/wclRoute' : '/api/wclRoute'

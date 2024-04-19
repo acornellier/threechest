@@ -1,4 +1,4 @@
-import { Point } from '../data/types.ts'
+import type { Point } from '../data/types.ts'
 
 export const roundTo = (number: number, to: number) => Math.round(number * 10 ** to) / 10 ** to
 
