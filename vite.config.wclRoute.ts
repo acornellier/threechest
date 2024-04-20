@@ -11,5 +11,8 @@ export default defineConfig({
       entry: 'server/wclRoute.ts',
       fileName: 'wclRoute',
     },
+    rollupOptions: {
+      external: ['fs', 'path', 'dotenv-flow'],
+    },
   },
 })
