@@ -7,7 +7,7 @@
     "dev": "vite",
     "server": "set \"NODE_ENV=development\" && tsx server/server.js",
     "rtc": "tsx rtc-server/rtc-server.ts",
-    "build": "tsc && vite build",
+    "build": "tsc && vite build && tsc -p ./tsconfig.build.json ",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "vercel-dev": "set \"NODE_ENV=vercel_dev\" && vercel dev --listen 6173",

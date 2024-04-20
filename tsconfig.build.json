@@ -1,0 +1,9 @@
+﻿{
+  "extends": "./tsconfig.json",
+  "files": ["./server/wclRoute.ts"],
+  "include": [],
+  "compilerOptions": {
+    "outDir": "./dist/wclRoute",
+    "noEmit": false
+  }
+}

@@ -1,4 +1,4 @@
-import { getWclToken } from '../server/wclToken.ts'
+import { getWclToken } from './wclToken.ts'
 
 interface WclJson {
   error?: string

@@ -3,7 +3,7 @@ import { getDirname } from '../server/files.ts'
 import fs from 'fs'
 import { sum } from 'd3'
 import type { SpellIdMap } from '../src/data/types.ts'
-import { fetchWcl } from './wcl.ts'
+import { fetchWcl } from '../server/wcl.ts'
 
 const dirname = getDirname(import.meta.url)
 

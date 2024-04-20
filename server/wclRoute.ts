@@ -1,9 +1,9 @@
-import type { WclEventSimplified, WclResult } from '../src/util/wclCalc.ts'
+// import type { WclEventSimplified, WclResult } from '../src/util/wclCalc.ts'
 import { uniqBy } from '../src/util/nodash.ts'
 import { dungeons } from '../src/data/dungeons.ts'
 import fs from 'fs'
 import { getDirname } from './files.ts'
-import { fetchWcl } from '../scripts/wcl.ts'
+import { fetchWcl } from './wcl.ts'
 import { isDev } from '../src/util/isDev.ts'
 
 const dirname = getDirname(import.meta.url)
@@ -155,7 +155,7 @@ query {
   return events
 }
 
-export async function getWclRoute(code: string, fightId: string | number): Promise<WclResult> {
+export async function getWclRoute(code: string, fightId: string | number): Promise<any> {
   console.log('getWclRoute', code, fightId)
 
   const wclRoute = await getRoute(code, fightId)
@@ -209,11 +209,11 @@ export async function getWclRoute(code: string, fightId: string | number): Promi
         name: `${dungeon.mobSpawnsList.find(({ mob }) => mob.id === matchingEnemy.gameId)?.mob.name} ${instanceId}`,
       }
     })
-    .filter(Boolean) as WclEventSimplified[]
+    .filter(Boolean) as any[]
 
   firstPositions = firstPositions.sort((a, b) => a.timestamp - b.timestamp)
 
-  const result: WclResult = {
+  const result: any = {
     code,
     fightId: Number(fightId),
     encounterID: wclRoute.encounterID,
