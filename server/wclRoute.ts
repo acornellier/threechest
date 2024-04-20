@@ -39,6 +39,23 @@ type WclEvent = {
   mapID: number
 }
 
+async function getLastFightId(code: string): Promise<number> {
+  const query = `
+query {
+  reportData {
+    report(code:"${code}") {
+      fights {
+        id
+      }
+    }
+  }
+}`
+
+  const json = await fetchWcl(query)
+  const fights = json.reportData.report.fights
+  return fights[fights.length - 1].id
+}
+
 async function getRoute(code: string, fightId: string | number) {
   const query = `
 query {
@@ -155,8 +172,15 @@ query {
   return events
 }
 
-export async function getWclRoute(code: string, fightId: string | number): Promise<WclResult> {
+export async function getWclRoute(
+  code: string,
+  fightId: 'last' | string | number,
+): Promise<WclResult> {
   console.log('getWclRoute', code, fightId)
+
+  if (fightId === 'last') {
+    fightId = await getLastFightId(code)
+  }
 
   const wclRoute = await getRoute(code, fightId)
 
@@ -184,7 +208,7 @@ export async function getWclRoute(code: string, fightId: string | number): Promi
 
   const firstEvents = await getFirstEvents(code, fightId, enemies, wclRoute.startTime)
 
-  let firstPositions = firstEvents
+  const firstPositions = firstEvents
     .map((event) => {
       const { timestamp, targetID, targetInstance, sourceID, sourceInstance, x, y, mapID } = event
 
@@ -212,7 +236,7 @@ export async function getWclRoute(code: string, fightId: string | number): Promi
     })
     .filter(Boolean) as WclEventSimplified[]
 
-  firstPositions = firstPositions.sort((a, b) => a.timestamp - b.timestamp)
+  firstPositions.sort((a, b) => a.timestamp - b.timestamp)
 
   const result: WclResult = {
     code,

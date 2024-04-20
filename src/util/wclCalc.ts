@@ -27,7 +27,7 @@ export type WclResult = WclUrlInfo & {
 
 export type WclUrlInfo = {
   code: string
-  fightId: number
+  fightId: number | 'last'
 }
 
 type Group = {
@@ -100,13 +100,13 @@ export function urlToWclInfo(url: string): WclUrlInfo {
       `Invalid warcraftlogs URL: missing report code. The URL have /reports/[code] in it.`,
     )
 
-  const fightId = url.match(/fight=(\d+)/)?.[1]
+  const fightId = url.match(/fight=(\d+|last)/)?.[1]
   if (!fightId)
     throw new Error(
       `Invalid warcraftlogs URL: missing fight ID. Make sure you have a dungeon run selected. The URL must have fight=[number] in it.`,
     )
 
-  return { code, fightId: Number(fightId) }
+  return { code, fightId: fightId === 'last' ? fightId : Number(fightId) }
 }
 
 export function wclRouteToRoute(wclResult: WclResult) {
