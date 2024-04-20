@@ -142,8 +142,9 @@ export function wclEventsToPulls(events: WclEventSimplified[], dungeon: Dungeon,
     dungeon.mobSpawnsList,
     ({ spawn }) => spawn.group ?? spawn.id,
   )
+
   let groupsRemaining: Group[] = Object.entries(groupMobSpawns).map(([groupId, mobSpawns]) => {
-    const nonZeroCountMobSpawns = mobSpawns!.filter(({ mob }) => mob.count > 0)
+    const nonZeroCountMobSpawns = mobSpawns!.filter(({ mob }) => mob.count > 0 || mob.isBoss)
     return {
       id: groupId,
       mobCounts: tally(nonZeroCountMobSpawns, ({ mob }) => mob.id),
@@ -153,8 +154,11 @@ export function wclEventsToPulls(events: WclEventSimplified[], dungeon: Dungeon,
 
   const spawnIdsTaken = new Set<string>()
 
-  const pullSpawns = pullMobIds
-    .map((pull, idx) => {
+  const pullSpawns: SpawnId[][] = []
+  for (let pass = 1; pass <= 2; ++pass) {
+    pullMobIds.forEach((pull, idx) => {
+      if (pullSpawns[idx] !== undefined) return
+
       const { spawnIds, groupsRemaining: newGroupsRemaining } = calculateExactPull(
         pull,
         groupsRemaining,
@@ -162,15 +166,19 @@ export function wclEventsToPulls(events: WclEventSimplified[], dungeon: Dungeon,
         spawnIdsTaken,
         dungeon,
         idx,
+        pass === 2,
         errors,
       )
 
       groupsRemaining = newGroupsRemaining
-      return spawnIds
-    })
-    .filter(Boolean) as SpawnId[][]
 
-  return pullSpawns.map<Pull>((spawns, idx) => ({
+      if (spawnIds !== null) {
+        pullSpawns[idx] = spawnIds
+      }
+    })
+  }
+
+  return pullSpawns.filter(Boolean).map<Pull>((spawns, idx) => ({
     id: idx,
     spawns,
   }))
@@ -214,6 +222,7 @@ function calculateExactPull(
   spawnIdsTaken: Set<string>,
   dungeon: Dungeon,
   idx: number,
+  secondPass: boolean,
   errors: string[],
 ): CalculatedPull {
   const filteredPositions = pull.map(({ pos }) => pos).filter(Boolean) as Point[]
@@ -224,13 +233,18 @@ function calculateExactPull(
   const groups = groupsRemaining
     .filter(({ id }) => !groupMobSpawns[id]!.some(({ spawn }) => spawnIdsTaken.has(spawn.id)))
     .filter(({ mobCounts }) => pull.some(({ mobId }) => (mobCounts[mobId] ?? 0) > 0))
-    .filter(({ averagePos }) => distance(averagePos, pullAveragePos) < maxDistanceToGroup)
+    .filter(
+      ({ averagePos }) => secondPass || distance(averagePos, pullAveragePos) < maxDistanceToGroup,
+    )
     .sort((a, b) => distance(a.averagePos, pullAveragePos) - distance(b.averagePos, pullAveragePos))
 
   const pulledGroups = getPulledGroups(pullMobCounts, groups)
 
-  if (pulledGroups === null)
+  if (pulledGroups === null) {
+    if (!secondPass) return { spawnIds: null, groupsRemaining }
+
     return findExactSpawns(pull, groupsRemaining, spawnIdsTaken, dungeon, errors, idx)
+  }
 
   const spawnIds = pulledGroups.flatMap((groupId) =>
     groupMobSpawns[groupId]!.map(({ spawn }) => spawn.id),
