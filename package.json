@@ -10,7 +10,7 @@
     "build": "tsc && vite build",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "vercel-dev": "set \"NODE_ENV=vercel_dev\" && vercel dev --listen 1234",
+    "vercel-dev": "set \"NODE_ENV=vercel_dev\" && vercel dev --listen 6173",
     "postinstall": "patch-package",
     "dungeons": "tsx scripts/importAllDungeons.ts",
     "spells": "tsx scripts/guessDungeonSpells.ts"
