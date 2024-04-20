@@ -1,11 +1,8 @@
 ﻿import type { MdtRoute } from '../util/types.ts'
-
-import { isDev } from '../util/isDev.ts'
-
-const importUrl = isDev ? 'http://localhost:6173/api/decodeRoute' : '/api/decodeRoute'
+import { apiBaseUrl } from './api.ts'
 
 export const importRouteApi = (str: string): Promise<MdtRoute> =>
-  fetch(importUrl, {
+  fetch(`${apiBaseUrl}/decodeRoute`, {
     method: 'post',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ str }),
