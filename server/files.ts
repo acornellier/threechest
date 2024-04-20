@@ -1,7 +1,6 @@
-import { fileURLToPath } from 'url'
-import path from 'path'
+import * as path from 'path'
 
 export function getDirname(file: string) {
-  const __filename = fileURLToPath(file)
-  return path.dirname(__filename)
+  const dirname = new URL('.', file).pathname
+  return path.sep === '\\' ? dirname.slice(1) : dirname
 }
