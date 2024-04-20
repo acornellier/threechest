@@ -1,11 +1,12 @@
 import DotenvFlow from 'dotenv-flow'
 import fs from 'fs'
 import { getDirname } from './files.ts'
+import { isDev } from '../src/util/isDev.ts'
 
 DotenvFlow.config()
 
 const dirname = getDirname(import.meta.url)
-const tokenPath = `${dirname}/wclToken.json`
+const tokenPath = isDev ? `${dirname}/wclToken.json` : '/tmp/wclToken.json'
 
 const tokenUrl = 'https://www.warcraftlogs.com/oauth/token'
 const clientId = process.env.WCL_CLIENT_ID
