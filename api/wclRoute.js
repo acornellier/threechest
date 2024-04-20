@@ -1,4 +1,4 @@
-import { getWclRoute } from '../dist/wclRoute/server/wclRoute.js'
+import { getWclRoute } from '../dist/server/wclRoute.js'
 
 export default async function wclRouteApi(request, response) {
   const route = await getWclRoute(request.body.code, request.body.fightId)
