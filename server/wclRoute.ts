@@ -66,8 +66,8 @@ query {
 }
 `
 
-  const json = await fetchWcl(query)
-  const fights = json.reportData.report.fights as WclRoute[]
+  const json = await fetchWcl<{ reportData: { report: { fights: WclRoute[] } } }>(query)
+  const fights = json.reportData.report.fights
   fights.reverse()
   return fights.find(
     ({ id, encounterID }) => !!encounterID && (fightId === 'last' || id === Number(fightId)),
@@ -129,9 +129,11 @@ query {
   }
 }`
 
-    const json = await fetchWcl(query)
+    const json = await fetchWcl<{ reportData: { report: Record<string, { data: WclEvent[] }> } }>(
+      query,
+    )
 
-    const resultsMap = json.reportData.report as Record<string, { data: WclEvent[] }>
+    const resultsMap = json.reportData.report
 
     const newEvents = enemyBatch
       .map((_, idx) => {
@@ -199,7 +201,7 @@ export async function getWclRoute(
   const firstEvents = await getFirstEvents(code, fight, enemies)
 
   const firstPositions = firstEvents
-    .map((event) => {
+    .map<WclEventSimplified | null>((event) => {
       const { timestamp, targetID, targetInstance, sourceID, sourceInstance, x, y, mapID } = event
 
       const actorId = event.type === 'cast' ? sourceID : targetID
@@ -227,6 +229,11 @@ export async function getWclRoute(
     .filter(Boolean) as WclEventSimplified[]
 
   firstPositions.sort((a, b) => a.timestamp - b.timestamp)
+
+  let idx = 1
+  for (const pos of firstPositions) {
+    if (pos.x && pos.y && pos.mapID) pos.id = idx++
+  }
 
   const result: WclResult = {
     code,

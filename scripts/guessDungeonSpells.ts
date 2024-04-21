@@ -3,7 +3,7 @@ import { getDirname } from '../server/files.ts'
 import fs from 'fs'
 import { sum } from 'd3'
 import type { SpellIdMap } from '../src/data/types.ts'
-import { fetchWcl } from '../server/wcl.ts'
+import { type PagedEventsQuery, fetchWcl, type TableQuery } from '../server/wcl.ts'
 
 const dirname = getDirname(import.meta.url)
 
@@ -80,8 +80,9 @@ query {
   let nextTimestamp = 0
 
   while (nextTimestamp !== null) {
-    const data = await fetchWcl(toCastQuery(nextTimestamp))
-    const events: CastEvent[] = data.reportData.report.events.data
+    const data = await fetchWcl<PagedEventsQuery<CastEvent>>(toCastQuery(nextTimestamp))
+
+    const events = data.reportData.report.events.data
     nextTimestamp = data.reportData.report.events.nextPageTimestamp
 
     for (const event of events) {
@@ -115,8 +116,8 @@ query {
 
   nextTimestamp = 0
   while (nextTimestamp !== null) {
-    const data = await fetchWcl(toDebuffQuery(nextTimestamp))
-    const events: DebuffEvent[] = data.reportData.report.events.data
+    const data = await fetchWcl<PagedEventsQuery<DebuffEvent>>(toDebuffQuery(nextTimestamp))
+    const events = data.reportData.report.events.data
     nextTimestamp = data.reportData.report.events.nextPageTimestamp
 
     for (const event of events) {
@@ -145,7 +146,7 @@ query {
 }
 `
 
-  const enemyDamageDoneTable = await fetchWcl(enemyDamageDoneTableQuery)
+  const enemyDamageDoneTable = await fetchWcl<TableQuery>(enemyDamageDoneTableQuery)
   const rows = enemyDamageDoneTable.reportData.report.table.data.entries
   for (const row of rows) {
     const entries = row.subentries ?? [row]

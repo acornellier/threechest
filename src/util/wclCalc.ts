@@ -18,6 +18,7 @@ export type WclEventSimplified = {
   instanceId?: number
   name: string
   actorId: number
+  id?: number
 }
 
 export type WclResult = WclUrlInfo & {

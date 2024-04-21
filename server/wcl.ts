@@ -6,7 +6,30 @@ interface WclJson {
   data: any
 }
 
-export async function fetchWcl(query: string) {
+export interface PagedEventsQuery<TEvent> {
+  reportData: {
+    report: {
+      events: {
+        data: TEvent[]
+        nextPageTimestamp: number
+      }
+    }
+  }
+}
+
+export interface TableQuery {
+  reportData: {
+    report: {
+      table: {
+        data: {
+          entries: any[]
+        }
+      }
+    }
+  }
+}
+
+export async function fetchWcl<T>(query: string): Promise<T> {
   const token = await getWclToken()
   const data = await fetch('https://www.warcraftlogs.com/api/v2/client', {
     method: 'POST',
