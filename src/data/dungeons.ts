@@ -51,7 +51,7 @@ const nelth: Dungeon = {
   name: 'Neltharus',
   key: 'nelth',
   icon: 'achievement_dungeon_neltharus',
-  // wclEncounterId: 62519,
+  wclEncounterId: 62519,
   ...dungeonData('nelth'),
 }
 

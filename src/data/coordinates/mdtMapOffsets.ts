@@ -65,6 +65,22 @@ export const mdtMapOffsets: Record<number, MapOffset> = {
     scaleY: 2951 / 2560,
     rotate: 43,
   },
+
+  // nelth
+  2080: {
+    x: -1053 / 3840,
+    y: -113 / 2560,
+    scaleX: 4660 / 3840,
+    scaleY: 3109 / 2560,
+    rotate: 180,
+  },
+  2081: {
+    x: 1368 / 3840,
+    y: -183 / 2560,
+    scaleX: 3572 / 3840,
+    scaleY: 2381 / 2560,
+    rotate: 60,
+  },
 }
 
 export const nokOffsets = [
