@@ -81,6 +81,21 @@ export const mdtMapOffsets: Record<number, MapOffset> = {
     scaleY: 2381 / 2560,
     rotate: 60,
   },
+
+  // rlp
+  2094: {
+    x: 402 / 3840,
+    y: -187 / 2560,
+    scaleX: 4405 / 3840,
+    scaleY: 2938 / 2560,
+  },
+  2095: {
+    x: -1142 / 3840,
+    y: 262 / 2560,
+    scaleX: 3890 / 3840,
+    scaleY: 2594 / 2560,
+    rotate: -8,
+  },
 }
 
 export const nokOffsets = [

@@ -67,7 +67,7 @@ const rlp: Dungeon = {
   name: 'Ruby Life Pools',
   key: 'rlp',
   icon: 'achievement_dungeon_lifepools',
-  // wclEncounterId: 62521,
+  wclEncounterId: 62521,
   defaultBounds: [
     [10, 0],
     [-mapHeight, mapWidth],

@@ -39,7 +39,7 @@ type Group = {
 
 type CalculatedPull = { spawnIds: SpawnId[] | null; groupsRemaining: Group[] }
 
-type WclPoint = {
+export type WclPoint = {
   x: number
   y: number
   mapID: number
@@ -134,15 +134,14 @@ export function wclRouteToRoute(wclResult: WclResult) {
 
 type MobPos = { mobId: number; pos?: Point }
 
+const spawnGroup = (spawn: Spawn) => (spawn.group ? String(spawn.group) : spawn.id)
+
 export function wclEventsToPulls(events: WclEventSimplified[], dungeon: Dungeon, errors: string[]) {
   if (!events.length) return []
 
   const pullMobIds = getPullMobIds(events, dungeon)
 
-  const groupMobSpawns = Object.groupBy(
-    dungeon.mobSpawnsList,
-    ({ spawn }) => spawn.group ?? spawn.id,
-  )
+  const groupMobSpawns = Object.groupBy(dungeon.mobSpawnsList, ({ spawn }) => spawnGroup(spawn))
 
   let groupsRemaining: Group[] = Object.entries(groupMobSpawns).map(([groupId, mobSpawns]) => {
     const nonZeroCountMobSpawns = mobSpawns!.filter(({ mob }) => mob.count > 0 || mob.isBoss)
@@ -298,7 +297,7 @@ function findExactSpawns(
   errors: string[],
   idx: number,
 ): CalculatedPull {
-  const spawns: Spawn[] = []
+  const mobSpawns: MobSpawn[] = []
   for (const { mobId, pos } of pull) {
     const matchingMobs = dungeon.mobSpawnsList.filter(({ mob }) => mob.id === mobId)
     const available = matchingMobs.filter(({ spawn }) => !spawnIdsTaken.has(spawn.id))
@@ -315,16 +314,23 @@ function findExactSpawns(
       ? available
       : available.sort((a, b) => distance(a.spawn.pos, pos) - distance(b.spawn.pos, pos))
     const nearest = sortedAvailable[0]!
-    spawns.push(nearest.spawn)
+    mobSpawns.push(nearest)
     spawnIdsTaken.add(nearest.spawn.id)
   }
 
-  groupsRemaining = groupsRemaining.filter((group) =>
-    spawns.some((spawn) =>
-      spawn.group ? group.id !== String(spawn.group) : group.id !== spawn.id,
-    ),
-  )
+  groupsRemaining = groupsRemaining.map((group) => ({
+    ...group,
+    mobCounts: mobSpawns.reduce((acc, { mob, spawn }) => {
+      const groupId = spawnGroup(spawn)
+      if (groupId !== group.id) return acc
 
-  const spawnIds = spawns.map(({ id }) => id)
+      if (!acc[mob.id]) throw new Error(`Mob ${mob.id} not found in group ${group.id}`)
+
+      acc[mob.id] = acc[mob.id]! - 1
+      return acc
+    }, group.mobCounts),
+  }))
+
+  const spawnIds = mobSpawns.map(({ spawn }) => spawn.id)
   return { spawnIds, groupsRemaining }
 }
