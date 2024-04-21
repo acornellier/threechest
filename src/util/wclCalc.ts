@@ -213,6 +213,8 @@ function getPullMobIds(events: WclEventSimplified[], dungeon: Dungeon) {
     })
   }
 
+  if (currentPull.length > 0) pullMobIds.push(currentPull)
+
   return pullMobIds
 }
 
