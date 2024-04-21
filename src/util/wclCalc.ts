@@ -2,7 +2,8 @@ import type { Pull, Route } from './types.ts'
 import type { Dungeon, MobSpawn, Point, Spawn, SpawnId } from '../data/types.ts'
 import { dungeons } from '../data/dungeons.ts'
 import { distance } from './numbers.ts'
-import { averagePoint, tally } from './nodash.ts'
+import { tally } from './nodash.ts'
+import { averagePoint, polygonCenter } from './polygon.ts'
 import { mapHeight, mapWidth } from './map.ts'
 import { type MapOffset, mdtMapOffsets, nokOffsets } from '../data/coordinates/mdtMapOffsets.ts'
 import { mapBounds } from '../data/coordinates/mapBounds.ts'
@@ -189,14 +190,14 @@ function getPullMobIds(events: WclEventSimplified[], dungeon: Dungeon) {
     dungeon.mobSpawnsList.some(({ mob }) => mob.id === event.gameId),
   )
 
-  const sortedEvents = filteredEvents.sort((a, b) => a.timestamp - b.timestamp)
+  filteredEvents.sort((a, b) => a.timestamp - b.timestamp)
 
   const pullMobIds: MobPos[][] = []
   const newPull = (): MobPos[] => []
   let currentPull = newPull()
-  let currentTimestamp = sortedEvents[0]!.timestamp
+  let currentTimestamp = filteredEvents[0]!.timestamp
 
-  for (const event of sortedEvents) {
+  for (const event of filteredEvents) {
     if (event.timestamp - currentTimestamp > 20_000) {
       pullMobIds.push(currentPull)
       currentPull = newPull()
@@ -226,17 +227,15 @@ function calculateExactPull(
   errors: string[],
 ): CalculatedPull {
   const filteredPositions = pull.map(({ pos }) => pos).filter(Boolean) as Point[]
-  const pullAveragePos = averagePoint(filteredPositions)
+  const pullCenter = polygonCenter(filteredPositions)
   const pullMobCounts = tally(pull, ({ mobId }) => mobId)
 
   const maxDistanceToGroup = 80
   const groups = groupsRemaining
     .filter(({ id }) => !groupMobSpawns[id]!.some(({ spawn }) => spawnIdsTaken.has(spawn.id)))
     .filter(({ mobCounts }) => pull.some(({ mobId }) => (mobCounts[mobId] ?? 0) > 0))
-    .filter(
-      ({ averagePos }) => secondPass || distance(averagePos, pullAveragePos) < maxDistanceToGroup,
-    )
-    .sort((a, b) => distance(a.averagePos, pullAveragePos) - distance(b.averagePos, pullAveragePos))
+    .filter(({ averagePos }) => secondPass || distance(averagePos, pullCenter) < maxDistanceToGroup)
+    .sort((a, b) => distance(a.averagePos, pullCenter) - distance(b.averagePos, pullCenter))
 
   const pulledGroups = getPulledGroups(pullMobCounts, groups)
 

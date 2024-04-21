@@ -2,6 +2,9 @@ import type { Point } from '../data/types.ts'
 
 export interface PolygonVertex {
   pos: Point
+}
+
+export interface PolygonVertexScaled extends PolygonVertex {
   scale: number
 }
 
@@ -23,7 +26,7 @@ function isLeftOfLineSegment(origin: Point, point1: Point, point2: Point): boole
   return crossProduct > 0
 }
 
-export function makeConvexHull(vertices: PolygonVertex[]): PolygonVertex[] {
+export function makeConvexHull<T extends PolygonVertex>(vertices: T[]): T[] {
   if (vertices.length === 0) return []
 
   const points = vertices.map((vertex) => vertex.pos)
@@ -61,8 +64,11 @@ export function makeConvexHull(vertices: PolygonVertex[]): PolygonVertex[] {
   return hullIndexes.map((index) => vertices[index]!)
 }
 
-export function expandPolygon(vertices: PolygonVertex[], numCirclePoints: number): PolygonVertex[] {
-  const expandedPolygon: PolygonVertex[] = []
+export function expandPolygon(
+  vertices: PolygonVertexScaled[],
+  numCirclePoints: number,
+): PolygonVertexScaled[] {
+  const expandedPolygon: PolygonVertexScaled[] = []
 
   for (const { pos, scale } of vertices) {
     const x = pos[0]

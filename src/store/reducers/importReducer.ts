@@ -59,7 +59,9 @@ export const importSlice = createAppSlice({
               : await wclRouteApi(urlToWclInfo(text!))
           if (!wclResult || !wclResult.events) throw new Error('Failed to parse WCL report.')
 
+          console.time('wclConversion')
           const { route, errors } = wclRouteToRoute(wclResult)
+          console.timeEnd('wclConversion')
           thunkApi.dispatch(setRouteFromWcl(route))
 
           if (errors.length) {

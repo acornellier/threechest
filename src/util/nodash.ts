@@ -1,5 +1,3 @@
-import type { Point } from '../data/types.ts'
-
 export function uniqBy<T extends Record<string, any>, U extends keyof T>(array: T[], fields: U[]) {
   return array.filter(
     (item, i, newArray) =>
@@ -11,10 +9,6 @@ export function uniqBy<T extends Record<string, any>, U extends keyof T>(array: 
 
 export const sum = (numbers: number[]) => numbers.reduce((acc, cur) => acc + cur, 0)
 export const average = (numbers: number[]) => sum(numbers) / numbers.length
-export const averagePoint = (points: Point[]): Point => [
-  average(points.map((point) => point[0])),
-  average(points.map((point) => point[1])),
-]
 
 export function mapBy<T extends object>(array: T[], field: keyof T) {
   return array.reduce(

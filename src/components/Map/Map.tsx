@@ -19,6 +19,7 @@ import { LiveControllerWrapper } from '../Live/LiveControllerWrapper.tsx'
 import { Mobs } from './Mobs/Mobs.tsx'
 import { PullOutlines } from './PullOutlines/PullOutlines.tsx'
 import { isDev } from '../../util/isDev.ts'
+import { WclCoordinateTest } from './WclCoordinateTest.tsx'
 
 export function Map() {
   const dispatch = useAppDispatch()
@@ -57,7 +58,7 @@ export function Map() {
           maxNativeZoom={2}
           url={`/maps/${dungeon.key}/{z}/{x}_{y}.jpg`}
         />
-        {/*<WclCoordinateTest />*/}
+        <WclCoordinateTest />
         <Mobs />
         <PullOutlines />
         <Drawings />

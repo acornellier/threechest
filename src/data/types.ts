@@ -1,6 +1,6 @@
 import type { DungeonKey } from './dungeonKeys.ts'
 
-export type Point = [number, number]
+export type Point = [number, number] // [y, x]
 
 export type MdtDungeon = {
   dungeonIndex: number
