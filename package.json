@@ -5,12 +5,12 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "server": "NODE_ENV=development tsx server/server.js",
+    "server": "cross-env NODE_ENV=development tsx server/server.js",
     "rtc": "tsx rtc-server/rtc-server.ts",
     "build": "tsc && vite build && vite build -c vite.config.wclRoute.ts",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "vercel-dev": "set \"NODE_ENV=vercel_dev\" && vercel dev --listen 6173",
+    "vercel-dev": "cross-env NODE_ENV=vercel_dev && vercel dev --listen 6173",
     "postinstall": "patch-package",
     "dungeons": "tsx scripts/importAllDungeons.ts",
     "spells": "tsx scripts/guessDungeonSpells.ts"
@@ -70,6 +70,7 @@
     "@vitejs/plugin-react-swc": "3.6.0",
     "autoprefixer": "10.4.19",
     "cors": "2.8.5",
+    "cross-env": "7.0.3",
     "eslint": "8.45.0",
     "eslint-plugin-react": "7.34.1",
     "eslint-plugin-react-hooks": "4.6.0",

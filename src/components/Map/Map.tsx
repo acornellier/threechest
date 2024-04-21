@@ -58,7 +58,7 @@ export function Map() {
           maxNativeZoom={2}
           url={`/maps/${dungeon.key}/{z}/{x}_{y}.jpg`}
         />
-        {/*<WclCoordinateTest />*/}
+        <WclCoordinateTest />
         <Mobs />
         <PullOutlines />
         <Drawings />

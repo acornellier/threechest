@@ -1,0 +1,6818 @@
+[
+  {
+    "id": 439488,
+    "name": "Unleash Energy",
+    "icon": "inv_enchant_essencearcanelarge",
+    "damage": {
+      "s3": 54931,
+      "s4": 182376
+    },
+    "aoe": true,
+    "castTime": 2000
+  },
+  {
+    "id": 374343,
+    "name": "Energy Bomb",
+    "icon": "spell_frost_frostshock",
+    "castTime": 1500
+  },
+  {
+    "id": 388822,
+    "name": "Power Vacuum",
+    "icon": "ability_socererking_arcanewrath",
+    "damage": {
+      "s3": 219723,
+      "s4": 729502
+    },
+    "aoe": true,
+    "castTime": 3000
+  },
+  {
+    "id": 374361,
+    "name": "Astral Breath",
+    "icon": "spell_frost_frostshock",
+    "damage": {
+      "s3": 219723,
+      "s4": 729502
+    },
+    "aoe": true,
+    "castTime": 2000
+  },
+  {
+    "id": 374350,
+    "name": "Energy Bomb",
+    "icon": "spell_arcane_blast"
+  },
+  {
+    "id": 373326,
+    "name": "Arcane Missiles",
+    "icon": "ability_socererking_arcanereplication",
+    "damage": {
+      "s3": 54931,
+      "s4": 182376
+    }
+  },
+  {
+    "id": 374352,
+    "name": "Energy Bomb",
+    "icon": "spell_arcane_blast",
+    "damage": {
+      "s3": 98875,
+      "s4": 328276
+    },
+    "aoe": true
+  },
+  {
+    "id": 389011,
+    "name": "Overwhelming Power",
+    "icon": "ability_socererking_arcanefortification"
+  },
+  {
+    "id": 376997,
+    "name": "Savage Peck",
+    "icon": "inv_misc_raptortalon_nightmare",
+    "damage": {
+      "s3": 357050,
+      "s4": 1185441
+    },
+    "physical": true,
+    "castTime": 1500
+  },
+  {
+    "id": 377004,
+    "name": "Deafening Screech",
+    "icon": "ability_vehicle_sonicshockwave",
+    "castTime": 2500
+  },
+  {
+    "id": 377034,
+    "name": "Overpowering Gust",
+    "icon": "inv_icon_wing06b",
+    "damage": {
+      "s3": 274654,
+      "s4": 911878
+    },
+    "aoe": true,
+    "castTime": 3000
+  },
+  {
+    "id": 397210,
+    "name": "Sonic Vulnerability",
+    "icon": "ability_vehicle_sonicshockwave"
+  },
+  {
+    "id": 377009,
+    "name": "Deafening Screech",
+    "icon": "ability_vehicle_sonicshockwave",
+    "damage": {
+      "s3": 65917,
+      "s4": 218851
+    },
+    "aoe": true
+  },
+  {
+    "id": 377344,
+    "name": "Peck",
+    "icon": "inv_misc_birdbeck_01",
+    "damage": {
+      "s3": 137327,
+      "s4": 455939
+    },
+    "physical": true,
+    "castTime": 1000
+  },
+  {
+    "id": 377383,
+    "name": "Gust",
+    "icon": "ability_skyreach_wind",
+    "damage": {
+      "s3": 192258,
+      "s4": 638314
+    },
+    "aoe": true,
+    "castTime": 2500
+  },
+  {
+    "id": 377389,
+    "name": "Call of the Flock",
+    "icon": "ability_hunter_aspectoftheironhawk",
+    "physical": true,
+    "castTime": 2000
+  },
+  {
+    "id": 377991,
+    "name": "Storm Slash",
+    "icon": "spell_nature_unrelentingstorm",
+    "damage": {
+      "s3": 164792,
+      "s4": 547127
+    },
+    "castTime": 1500
+  },
+  {
+    "id": 378003,
+    "name": "Deadly Winds",
+    "icon": "ability_skyreach_four_wind",
+    "physical": true,
+    "castTime": 2500
+  },
+  {
+    "id": 377912,
+    "name": "Expel Intruders",
+    "icon": "ability_druid_galewinds",
+    "damage": {
+      "s3": 164792,
+      "s4": 547127
+    },
+    "aoe": true,
+    "castTime": 5500
+  },
+  {
+    "id": 378011,
+    "name": "Deadly Winds",
+    "icon": "ability_skyreach_four_wind",
+    "damage": {
+      "s3": 192258,
+      "s4": 638314
+    }
+  },
+  {
+    "id": 387691,
+    "name": "Arcane Orbs",
+    "icon": "spell_mage_arcaneorb_nightborne",
+    "physical": true
+  },
+  {
+    "id": 385958,
+    "name": "Arcane Expulsion",
+    "icon": "spell_arcane_arcanetorrent",
+    "damage": {
+      "s3": 247189,
+      "s4": 820690
+    },
+    "aoe": true,
+    "castTime": 2500
+  },
+  {
+    "id": 386173,
+    "name": "Mana Bombs",
+    "icon": "spell_mage_flameorb_blue",
+    "physical": true,
+    "castTime": 2500
+  },
+  {
+    "id": 388537,
+    "name": "Arcane Fissure",
+    "icon": "spell_arcane_invocation",
+    "damage": {
+      "s3": 71410,
+      "s4": 237088
+    },
+    "aoe": true,
+    "castTime": 3000
+  },
+  {
+    "id": 388546,
+    "name": "Arcane Fissure",
+    "icon": "spell_arcane_invocation",
+    "damage": {
+      "s3": 274654,
+      "s4": 911878
+    },
+    "aoe": true
+  },
+  {
+    "id": 386202,
+    "name": "Mana Bomb",
+    "icon": "spell_mage_flameorb_blue",
+    "damage": {
+      "s3": 54931,
+      "s4": 182376
+    },
+    "aoe": true
+  },
+  {
+    "id": 388392,
+    "name": "Monotonous Lecture",
+    "icon": "inv_misc_book_18",
+    "castTime": 3000
+  },
+  {
+    "id": 388862,
+    "name": "Surge",
+    "icon": "spell_arcane_arcane04",
+    "damage": {
+      "s3": 65917,
+      "s4": 218851
+    },
+    "castTime": 2500
+  },
+  {
+    "id": 388863,
+    "name": "Mana Void",
+    "icon": "spell_mage_flameorb_blue",
+    "castTime": 2500
+  },
+  {
+    "id": 388866,
+    "name": "Mana Void",
+    "icon": "spell_arcane_blast"
+  },
+  {
+    "id": 387910,
+    "name": "Astral Whirlwind",
+    "icon": "ability_socererking_arcanewrath",
+    "physical": true,
+    "castTime": 1500
+  },
+  {
+    "id": 387932,
+    "name": "Astral Whirlwind",
+    "icon": "ability_socererking_arcanewrath"
+  },
+  {
+    "id": 387843,
+    "name": "Astral Bomb",
+    "icon": "ability_socererking_arcanemines",
+    "castTime": 2000
+  },
+  {
+    "id": 387848,
+    "name": "Astral Nova",
+    "icon": "ability_socererking_arcanemines",
+    "damage": {
+      "s3": 62344,
+      "s4": 62344
+    },
+    "aoe": true
+  },
+  {
+    "id": 387975,
+    "name": "Arcane Missiles",
+    "icon": "spell_nature_starfall",
+    "damage": {
+      "s3": 21972,
+      "s4": 72950
+    },
+    "variance": 0.05
+  },
+  {
+    "id": 387955,
+    "name": "Celestial Shield",
+    "icon": "ability_mage_arcanosphere",
+    "physical": true,
+    "castTime": 2000
+  },
+  {
+    "id": 388544,
+    "name": "Barkbreaker",
+    "icon": "ability_smash",
+    "damage": {
+      "s3": 263668,
+      "s4": 875403
+    },
+    "physical": true,
+    "castTime": 1000
+  },
+  {
+    "id": 388796,
+    "name": "Germinate",
+    "icon": "spell_lifegivingseed",
+    "physical": true
+  },
+  {
+    "id": 388623,
+    "name": "Branch Out",
+    "icon": "inv_misc_branch_01",
+    "physical": true,
+    "castTime": 2500
+  },
+  {
+    "id": 388923,
+    "name": "Burst Forth",
+    "icon": "spell_nature_earthquake",
+    "damage": {
+      "s3": 109862,
+      "s4": 364751
+    },
+    "aoe": true,
+    "castTime": 2000
+  },
+  {
+    "id": 396716,
+    "name": "Splinterbark",
+    "icon": "inv_misc_herb_writhebark",
+    "physical": true
+  },
+  {
+    "id": 388799,
+    "name": "Germinate",
+    "icon": "spell_lifegivingseed",
+    "damage": {
+      "s3": 137327,
+      "s4": 455939
+    },
+    "aoe": true,
+    "physical": true
+  },
+  {
+    "id": 396640,
+    "name": "Healing Touch",
+    "icon": "spell_nature_healingtouch",
+    "castTime": 2500
+  },
+  {
+    "id": 396812,
+    "name": "Mystic Blast",
+    "icon": "spell_arcane_arcanetorrent",
+    "damage": {
+      "s3": 82396,
+      "s4": 273563
+    },
+    "aoe": true,
+    "castTime": 3000
+  },
+  {
+    "id": 388911,
+    "name": "Severing Slash",
+    "icon": "ability_gouge",
+    "damage": {
+      "s3": 274654,
+      "s4": 911878
+    },
+    "physical": true,
+    "castTime": 1500
+  },
+  {
+    "id": 388912,
+    "name": "Severing Slash",
+    "icon": "ability_gouge",
+    "physical": true
+  },
+  {
+    "id": 388942,
+    "name": "Vicious Ambush",
+    "icon": "ability_ambush",
+    "physical": true,
+    "castTime": 2500
+  },
+  {
+    "id": 388984,
+    "name": "Vicious Ambush",
+    "icon": "ability_ambush",
+    "physical": true
+  },
+  {
+    "id": 388982,
+    "name": "Vicious Ambush",
+    "icon": "ability_ambush",
+    "physical": true
+  },
+  {
+    "id": 388940,
+    "name": "Vicious Ambush",
+    "icon": "ability_ambush",
+    "damage": {
+      "s3": 65917,
+      "s4": 218851
+    },
+    "aoe": true
+  },
+  {
+    "id": 388976,
+    "name": "Riftbreath",
+    "icon": "spell_arcane_arcanetorrent",
+    "castTime": 2500
+  },
+  {
+    "id": 388957,
+    "name": "Riftbreath",
+    "icon": "spell_arcane_arcanetorrent",
+    "damage": {
+      "s3": 32958,
+      "s4": 109425
+    },
+    "aoe": true
+  },
+  {
+    "id": 389054,
+    "name": "Vicious Lunge",
+    "icon": "ability_druid_ferociousbite",
+    "physical": true,
+    "castTime": 1500
+  },
+  {
+    "id": 389055,
+    "name": "Vicious Lunge",
+    "icon": "ability_druid_ferociousbite",
+    "damage": {
+      "s3": 32958,
+      "s4": 109425
+    },
+    "physical": true
+  },
+  {
+    "id": 390912,
+    "name": "Detonation Seeds",
+    "icon": "inv_herbalism_70_yserallineseed",
+    "physical": true,
+    "castTime": 1500
+  },
+  {
+    "id": 390915,
+    "name": "Detonation Seeds",
+    "icon": "inv_herbalism_70_yserallineseed",
+    "physical": true
+  },
+  {
+    "id": 390918,
+    "name": "Seed Detonation",
+    "icon": "inv_herbalism_70_yserallineseed",
+    "damage": {
+      "s3": 219723,
+      "s4": 729502
+    },
+    "aoe": true
+  },
+  {
+    "id": 390942,
+    "name": "Darting Sting",
+    "icon": "ability_poisonsting"
+  },
+  {
+    "id": 390944,
+    "name": "Darting Sting",
+    "icon": "ability_poisonsting",
+    "damage": {
+      "s3": 57677,
+      "s4": 191494
+    }
+  },
+  {
+    "id": 390938,
+    "name": "Agitation",
+    "icon": "ability_druid_enrage",
+    "physical": true,
+    "castTime": 1000
+  },
+  {
+    "id": 393092,
+    "name": "Twister Visual DNT",
+    "icon": "trade_engineering",
+    "physical": true
+  },
+  {
+    "id": 377119,
+    "name": "Wind Goal Throw Visuals",
+    "icon": "trade_engineering",
+    "physical": true
+  },
+  {
+    "id": 374364,
+    "name": "Ley-Line Sprouts",
+    "icon": "ability_druid_treeoflife",
+    "physical": true,
+    "castTime": 1500
+  },
+  {
+    "id": 374789,
+    "name": "Infused Strike",
+    "icon": "spell_frost_manaburn",
+    "damage": {
+      "s3": 219723,
+      "s4": 729502
+    },
+    "castTime": 1500
+  },
+  {
+    "id": 386660,
+    "name": "Erupting Fissure",
+    "icon": "inv_enchant_essencearcanelarge",
+    "damage": {
+      "s3": 274654,
+      "s4": 911878
+    },
+    "aoe": true,
+    "castTime": 3000
+  },
+  {
+    "id": 374567,
+    "name": "Explosive Brand",
+    "icon": "spell_arcane_arcanetorrent",
+    "physical": true,
+    "castTime": 2500
+  },
+  {
+    "id": 374582,
+    "name": "Explosive Brand",
+    "icon": "spell_mage_arcaneorb",
+    "damage": {
+      "s3": 219723,
+      "s4": 729502
+    },
+    "aoe": true
+  },
+  {
+    "id": 374720,
+    "name": "Consuming Stomp",
+    "icon": "spell_arcane_blast",
+    "physical": true
+  },
+  {
+    "id": 374731,
+    "name": "Consuming Stomp",
+    "icon": "spell_arcane_blast",
+    "damage": {
+      "s3": 123594,
+      "s4": 410345
+    },
+    "aoe": true
+  },
+  {
+    "id": 374570,
+    "name": "Explosive Brand",
+    "icon": "spell_arcane_arcanetorrent",
+    "damage": {
+      "s3": 93382,
+      "s4": 310038
+    },
+    "aoe": true
+  },
+  {
+    "id": 386781,
+    "name": "Frost Bomb",
+    "icon": "inv_10_elementalcombinedfoozles_frost",
+    "castTime": 2000
+  },
+  {
+    "id": 387151,
+    "name": "Icy Devastator",
+    "icon": "ability_evoker_disintegrate",
+    "castTime": 2000
+  },
+  {
+    "id": 388084,
+    "name": "Glacial Shield",
+    "icon": "spell_fire_bluefireward"
+  },
+  {
+    "id": 388008,
+    "name": "Absolute Zero",
+    "icon": "spell_frost_arcticwinds",
+    "damage": {
+      "s3": 247189,
+      "s4": 820690
+    },
+    "aoe": true,
+    "castTime": 8000
+  },
+  {
+    "id": 386881,
+    "name": "Frost Bomb",
+    "icon": "inv_10_elementalcombinedfoozles_frost"
+  },
+  {
+    "id": 387150,
+    "name": "Frozen Ground",
+    "icon": "spell_frost_frostward"
+  },
+  {
+    "id": 387152,
+    "name": "Icy Devastator",
+    "icon": "ability_evoker_disintegrate",
+    "damage": {
+      "s3": 32958,
+      "s4": 109425
+    },
+    "aoe": true
+  },
+  {
+    "id": 386910,
+    "name": "Frost Bomb",
+    "icon": "inv_10_elementalcombinedfoozles_frost",
+    "damage": {
+      "s3": 82396,
+      "s4": 273563
+    },
+    "aoe": true
+  },
+  {
+    "id": 384978,
+    "name": "Dragon Strike",
+    "icon": "achievement_boss_malygos_01",
+    "damage": {
+      "s3": 274654,
+      "s4": 911878
+    },
+    "variance": 0.1,
+    "castTime": 2500
+  },
+  {
+    "id": 384696,
+    "name": "Crystalline Roar",
+    "icon": "spell_arcane_arcane03"
+  },
+  {
+    "id": 385075,
+    "name": "Arcane Eruption",
+    "icon": "spell_arcane_starfire",
+    "castTime": 3000
+  },
+  {
+    "id": 388804,
+    "name": "Unleashed Destruction",
+    "icon": "spell_arcane_blast",
+    "damage": {
+      "s3": 65917,
+      "s4": 218851
+    },
+    "aoe": true,
+    "castTime": 3000
+  },
+  {
+    "id": 384223,
+    "name": "Summon Draconic Image",
+    "icon": "ability_mage_massinvisibility",
+    "castTime": 1000
+  },
+  {
+    "id": 372222,
+    "name": "Arcane Cleave",
+    "icon": "inv_offhand_outlandraid_02",
+    "damage": {
+      "s3": 252682,
+      "s4": 838927
+    },
+    "aoe": true,
+    "castTime": 2000
+  },
+  {
+    "id": 385578,
+    "name": "Ancient Orb",
+    "icon": "ability_monk_forcesphere_arcane",
+    "castTime": 2500
+  },
+  {
+    "id": 384132,
+    "name": "Overwhelming Energy",
+    "icon": "inv_10_dungeonjewelry_dragon_trinket_2arcanemagical_blue",
+    "castTime": 3000
+  },
+  {
+    "id": 390462,
+    "name": "Ancient Orb Fragment",
+    "icon": "ability_socererking_arcanereplication",
+    "damage": {
+      "s3": 164792,
+      "s4": 547127
+    }
+  },
+  {
+    "id": 384625,
+    "name": "Overwhelming Energy",
+    "icon": "spell_arcane_blast",
+    "damage": {
+      "s3": 27465,
+      "s4": 91188
+    },
+    "aoe": true
+  },
+  {
+    "id": 387067,
+    "name": "Arcane Bash",
+    "icon": "inv_shield_1h_dragonquest_b_01",
+    "damage": {
+      "s3": 164792,
+      "s4": 547127
+    },
+    "aoe": true,
+    "variance": 0.1,
+    "castTime": 2000
+  },
+  {
+    "id": 387122,
+    "name": "Conjured Barrier",
+    "icon": "inv_legendary_shield",
+    "physical": true,
+    "castTime": 1500
+  },
+  {
+    "id": 386546,
+    "name": "Waking Bane",
+    "icon": "spell_nature_sleep",
+    "castTime": 2500
+  },
+  {
+    "id": 386549,
+    "name": "Waking Bane",
+    "icon": "spell_nature_sleep"
+  },
+  {
+    "id": 370766,
+    "name": "Crystalline Rupture",
+    "icon": "spell_shadow_demonicempathy",
+    "damage": {
+      "s3": 274654,
+      "s4": 911878
+    },
+    "aoe": true,
+    "variance": 0.1,
+    "castTime": 4500
+  },
+  {
+    "id": 389804,
+    "name": "Heavy Tome",
+    "icon": "inv_misc_profession_book_jewelcrafting",
+    "damage": {
+      "s3": 46691,
+      "s4": 155019
+    },
+    "variance": 0.1,
+    "castTime": 2500
+  },
+  {
+    "id": 371358,
+    "name": "Forbidden Knowledge",
+    "icon": "spell_arcane_blast_nightborne",
+    "castTime": 2000
+  },
+  {
+    "id": 377503,
+    "name": "Condensed Frost",
+    "icon": "spell_fire_bluepyroblast",
+    "damage": {
+      "s3": 49438,
+      "s4": 164138
+    },
+    "castTime": 1500
+  },
+  {
+    "id": 377488,
+    "name": "Icy Bindings",
+    "icon": "spell_frost_chainsofice",
+    "damage": {
+      "s3": 49438,
+      "s4": 164138
+    },
+    "aoe": true,
+    "castTime": 2000
+  },
+  {
+    "id": 397726,
+    "name": "Shriek",
+    "icon": "ability_warrior_battleshout",
+    "physical": true,
+    "castTime": 3000
+  },
+  {
+    "id": 389686,
+    "name": "Arcane Fury",
+    "icon": "spell_animaardenweald_buff",
+    "physical": true,
+    "castTime": 1500
+  },
+  {
+    "id": 370764,
+    "name": "Piercing Shards",
+    "icon": "inv_leycrystalsmall",
+    "damage": {
+      "s3": 120848,
+      "s4": 401226
+    },
+    "aoe": true,
+    "castTime": 2250
+  },
+  {
+    "id": 391136,
+    "name": "Shoulder Slam",
+    "icon": "ability_warrior_shieldcharge",
+    "physical": true,
+    "castTime": 2000
+  },
+  {
+    "id": 436652,
+    "name": "Shoulder Slam",
+    "icon": "ability_warrior_shieldcharge",
+    "damage": {
+      "s3": 98875,
+      "s4": 328276
+    },
+    "aoe": true,
+    "physical": true
+  },
+  {
+    "id": 396991,
+    "name": "Bestial Roar",
+    "icon": "ability_warrior_dragonroar",
+    "damage": {
+      "s3": 82396,
+      "s4": 273563
+    },
+    "aoe": true,
+    "physical": true,
+    "castTime": 2000
+  },
+  {
+    "id": 386640,
+    "name": "Tear Flesh",
+    "icon": "ability_rogue_bloodsplatter",
+    "damage": {
+      "s3": 137327,
+      "s4": 455939
+    },
+    "physical": true,
+    "castTime": 1000
+  },
+  {
+    "id": 386526,
+    "name": "Null Stomp",
+    "icon": "spell_arcane_massdispel",
+    "castTime": 2000
+  },
+  {
+    "id": 386536,
+    "name": "Null Stomp",
+    "icon": "spell_arcane_massdispel",
+    "damage": {
+      "s3": 137327,
+      "s4": 455939
+    },
+    "aoe": true
+  },
+  {
+    "id": 397726,
+    "name": "Shriek",
+    "icon": "ability_warrior_battleshout",
+    "physical": true,
+    "castTime": 3000
+  },
+  {
+    "id": 374885,
+    "name": "Unstable Power",
+    "icon": "spell_arcane_starfire",
+    "castTime": 2000
+  },
+  {
+    "id": 374868,
+    "name": "Unstable Power",
+    "icon": "spell_arcane_starfire",
+    "damage": {
+      "s3": 137327,
+      "s4": 455939
+    },
+    "aoe": true
+  },
+  {
+    "id": 373932,
+    "name": "Illusionary Bolt",
+    "icon": "spell_ice_magicdamage",
+    "damage": {
+      "s3": 109862,
+      "s4": 364751
+    },
+    "castTime": 1500
+  },
+  {
+    "id": 389855,
+    "name": "Unstable Magic",
+    "icon": "spell_nature_astralrecalgroup",
+    "damage": {
+      "s3": 164792,
+      "s4": 547127
+    },
+    "aoe": true
+  },
+  {
+    "id": 374523,
+    "name": "Stinging Sap",
+    "icon": "inv_enchant_essencearcanelarge"
+  },
+  {
+    "id": 374778,
+    "name": "Brilliant Scales",
+    "icon": "inv_misc_monsterscales_10"
+  },
+  {
+    "id": 377105,
+    "name": "Ice Cutter",
+    "icon": "inv_throwingknife_06",
+    "damage": {
+      "s3": 153806,
+      "s4": 510651
+    },
+    "castTime": 1500
+  },
+  {
+    "id": 375732,
+    "name": "Stasis Ritual",
+    "icon": "ability_creature_cursed_05",
+    "physical": true
+  },
+  {
+    "id": 375596,
+    "name": "Erratic Growth",
+    "icon": "ability_druid_manatree"
+  },
+  {
+    "id": 375652,
+    "name": "Wild Eruption",
+    "icon": "spell_arcane_arcanetorrent",
+    "physical": true,
+    "castTime": 1500
+  },
+  {
+    "id": 375649,
+    "name": "Infused Ground",
+    "icon": "spell_arcane_arcanetorrent"
+  },
+  {
+    "id": 375602,
+    "name": "Erratic Growth",
+    "icon": "ability_druid_manatree"
+  },
+  {
+    "id": 375591,
+    "name": "Sappy Burst",
+    "icon": "sha_inv_misc_slime_01_nightborne",
+    "damage": {
+      "s3": 192258,
+      "s4": 638314
+    },
+    "aoe": true,
+    "castTime": 2000
+  },
+  {
+    "id": 391118,
+    "name": "Spellfrost Breath",
+    "icon": "spell_fire_blueflamebreath",
+    "castTime": 2000
+  },
+  {
+    "id": 374778,
+    "name": "Brilliant Scales",
+    "icon": "inv_misc_monsterscales_10"
+  },
+  {
+    "id": 377105,
+    "name": "Ice Cutter",
+    "icon": "inv_throwingknife_06",
+    "damage": {
+      "s3": 153806,
+      "s4": 510651
+    },
+    "castTime": 1500
+  },
+  {
+    "id": 391120,
+    "name": "Spellfrost Breath",
+    "icon": "spell_fire_blueflamebreath",
+    "damage": {
+      "s3": 54931,
+      "s4": 182376
+    },
+    "aoe": true
+  },
+  {
+    "id": 379256,
+    "name": "Seal Empowerment",
+    "icon": "inv_10_dungeonjewelry_dragon_trinket_1arcanemagical_blue",
+    "physical": true
+  },
+  {
+    "id": 385078,
+    "name": "Arcane Eruption",
+    "icon": "spell_arcane_starfire",
+    "damage": {
+      "s3": 494377,
+      "s4": 1641380
+    },
+    "aoe": true,
+    "variance": 0.1
+  },
+  {
+    "id": 385267,
+    "name": "Crackling Vortex",
+    "icon": "inv_enchant_essencearcanelarge"
+  },
+  {
+    "id": 387564,
+    "name": "Mystic Vapors",
+    "icon": "inv_10_enchanting2_magicswirl_blue",
+    "damage": {
+      "s3": 24719,
+      "s4": 82069
+    },
+    "aoe": true,
+    "castTime": 2500
+  },
+  {
+    "id": 375596,
+    "name": "Erratic Growth",
+    "icon": "ability_druid_manatree"
+  },
+  {
+    "id": 375652,
+    "name": "Wild Eruption",
+    "icon": "spell_arcane_arcanetorrent",
+    "physical": true,
+    "castTime": 1500
+  },
+  {
+    "id": 375649,
+    "name": "Infused Ground",
+    "icon": "spell_arcane_arcanetorrent"
+  },
+  {
+    "id": 389686,
+    "name": "Arcane Fury",
+    "icon": "spell_animaardenweald_buff",
+    "physical": true,
+    "castTime": 1500
+  },
+  {
+    "id": 370764,
+    "name": "Piercing Shards",
+    "icon": "inv_leycrystalsmall",
+    "damage": {
+      "s3": 120848,
+      "s4": 401226
+    },
+    "aoe": true,
+    "castTime": 2250
+  },
+  {
+    "id": 370766,
+    "name": "Crystalline Rupture",
+    "icon": "spell_shadow_demonicempathy",
+    "damage": {
+      "s3": 274654,
+      "s4": 911878
+    },
+    "aoe": true,
+    "variance": 0.1,
+    "castTime": 4500
+  },
+  {
+    "id": 375591,
+    "name": "Sappy Burst",
+    "icon": "sha_inv_misc_slime_01_nightborne",
+    "damage": {
+      "s3": 192258,
+      "s4": 638314
+    },
+    "aoe": true,
+    "castTime": 2000
+  },
+  {
+    "id": 131347,
+    "name": "Glide",
+    "icon": "ability_demonhunter_glide",
+    "physical": true
+  },
+  {
+    "id": 212283,
+    "name": "Symbols of Death",
+    "icon": "spell_shadow_rune",
+    "physical": true
+  },
+  {
+    "id": 384631,
+    "name": "Flagellation",
+    "icon": "ability_revendreth_rogue",
+    "variance": 0.05
+  },
+  {
+    "id": 1943,
+    "name": "Rupture",
+    "icon": "ability_rogue_rupture",
+    "physical": true
+  },
+  {
+    "id": 212743,
+    "name": "Shuriken Storm",
+    "icon": "ability_rogue_shurikenstorm",
+    "physical": true
+  },
+  {
+    "id": 197835,
+    "name": "Shuriken Storm",
+    "icon": "ability_rogue_shurikenstorm",
+    "aoe": true,
+    "physical": true,
+    "variance": 0.05
+  },
+  {
+    "id": 381623,
+    "name": "Thistle Tea",
+    "icon": "inv_drink_milk_05",
+    "physical": true
+  },
+  {
+    "id": 185313,
+    "name": "Shadow Dance",
+    "icon": "ability_rogue_shadowdance",
+    "physical": true
+  },
+  {
+    "id": 372608,
+    "name": "Surge Forward",
+    "icon": "ability_dragonriding_forwardflap01",
+    "physical": true
+  },
+  {
+    "id": 361584,
+    "name": "Whirling Surge",
+    "icon": "ability_dragonriding_barrelroll01",
+    "physical": true
+  },
+  {
+    "id": 29722,
+    "name": "Incinerate",
+    "icon": "spell_fire_burnout",
+    "aoe": true,
+    "variance": 0.05,
+    "castTime": 2000
+  },
+  {
+    "id": 17962,
+    "name": "Conflagrate",
+    "icon": "spell_fire_fireball",
+    "variance": 0.05
+  },
+  {
+    "id": 400185,
+    "name": "Fel Barrage",
+    "icon": "ability_felarakkoa_feldetonation_green"
+  },
+  {
+    "id": 152108,
+    "name": "Cataclysm",
+    "icon": "achievement_zone_cataclysm",
+    "aoe": true,
+    "variance": 0.05,
+    "castTime": 2000
+  },
+  {
+    "id": 30451,
+    "name": "Arcane Blast",
+    "icon": "spell_arcane_blast",
+    "variance": 0.05,
+    "castTime": 2250
+  },
+  {
+    "id": 205385,
+    "name": "Shadow Crash",
+    "icon": "spell_shadow_shadowfury"
+  },
+  {
+    "id": 32379,
+    "name": "Shadow Word: Death",
+    "icon": "spell_shadow_demonicfortitude",
+    "variance": 0.05
+  },
+  {
+    "id": 8092,
+    "name": "Mind Blast",
+    "icon": "spell_shadow_unholyfrenzy",
+    "variance": 0.05,
+    "castTime": 1500
+  },
+  {
+    "id": 341263,
+    "name": "Shadowy Apparition",
+    "icon": "ability_priest_shadowyapparition"
+  },
+  {
+    "id": 80240,
+    "name": "Havoc",
+    "icon": "ability_warlock_baneofhavoc"
+  },
+  {
+    "id": 348,
+    "name": "Immolate",
+    "icon": "spell_fire_immolation",
+    "variance": 0.05,
+    "castTime": 1500
+  },
+  {
+    "id": 17962,
+    "name": "Conflagrate",
+    "icon": "spell_fire_fireball",
+    "variance": 0.05
+  },
+  {
+    "id": 367484,
+    "name": "Vicious Clawmangle",
+    "icon": "artifactability_feraldruid_ashamanesbite",
+    "physical": true,
+    "castTime": 3000
+  },
+  {
+    "id": 384150,
+    "name": "Vicious Clawmangle",
+    "icon": "artifactability_feraldruid_ashamanesbite",
+    "physical": true
+  },
+  {
+    "id": 367485,
+    "name": "Vicious Clawmangle",
+    "icon": "artifactability_feraldruid_ashamanesbite",
+    "damage": {
+      "s3": 54931,
+      "s4": 182376
+    },
+    "physical": true
+  },
+  {
+    "id": 382249,
+    "name": "Earth Bolt",
+    "icon": "inv_10_elementalshardfoozles_earth",
+    "damage": {
+      "s3": 65917,
+      "s4": 218851
+    },
+    "castTime": 2500
+  },
+  {
+    "id": 382555,
+    "name": "Ragestorm",
+    "icon": "ability_warrior_warcry",
+    "physical": true,
+    "castTime": 3000
+  },
+  {
+    "id": 367500,
+    "name": "Hideous Cackle",
+    "icon": "spell_druid_bristlingfur",
+    "physical": true,
+    "castTime": 4000
+  },
+  {
+    "id": 382556,
+    "name": "Ragestorm",
+    "icon": "ability_warrior_warcry",
+    "damage": {
+      "s3": 137327,
+      "s4": 455939
+    },
+    "aoe": true,
+    "physical": true
+  },
+  {
+    "id": 382620,
+    "name": "Shoot",
+    "icon": "ability_hunter_thrillofthehunt",
+    "damage": {
+      "s3": 54931,
+      "s4": 182376
+    },
+    "physical": true,
+    "variance": 0.05,
+    "castTime": 1500
+  },
+  {
+    "id": 368287,
+    "name": "Toxic Trap",
+    "icon": "inv_misc_herb_flytrap",
+    "physical": true,
+    "castTime": 1500
+  },
+  {
+    "id": 367521,
+    "name": "Bone Bolt",
+    "icon": "inv_weapon_crossbow_08",
+    "damage": {
+      "s3": 32958,
+      "s4": 109425
+    },
+    "physical": true,
+    "castTime": 1500
+  },
+  {
+    "id": 382474,
+    "name": "Decay Surge",
+    "icon": "spell_deathknight_necroticplague",
+    "damage": {
+      "s3": 71410,
+      "s4": 237088
+    },
+    "castTime": 2500
+  },
+  {
+    "id": 383385,
+    "name": "Rotting Surge",
+    "icon": "spell_shadow_creepingplague",
+    "physical": true,
+    "castTime": 3000
+  },
+  {
+    "id": 383392,
+    "name": "Rotting Surge",
+    "icon": "spell_shadow_creepingplague",
+    "damage": {
+      "s3": 274654,
+      "s4": 911878
+    },
+    "aoe": true
+  },
+  {
+    "id": 368091,
+    "name": "Infected Bite",
+    "icon": "ability_druid_primaltenacity",
+    "damage": {
+      "s3": 109862,
+      "s4": 364751
+    },
+    "physical": true
+  },
+  {
+    "id": 382620,
+    "name": "Shoot",
+    "icon": "ability_hunter_thrillofthehunt",
+    "damage": {
+      "s3": 54931,
+      "s4": 182376
+    },
+    "physical": true,
+    "variance": 0.05,
+    "castTime": 1500
+  },
+  {
+    "id": 385359,
+    "name": "Ensnaring Trap",
+    "icon": "ability_hunter_traplauncher",
+    "physical": true,
+    "castTime": 3000
+  },
+  {
+    "id": 383979,
+    "name": "Ensnaring Trap",
+    "icon": "ability_hunter_traplauncher",
+    "physical": true
+  },
+  {
+    "id": 384353,
+    "name": "Gut Shot",
+    "icon": "ability_hunter_barbedshot",
+    "physical": true,
+    "castTime": 2500
+  },
+  {
+    "id": 384416,
+    "name": "Meat Toss",
+    "icon": "inv_misc_food_14",
+    "physical": true,
+    "castTime": 1500
+  },
+  {
+    "id": 384827,
+    "name": "Call Hyenas",
+    "icon": "ability_hunter_pet_hyena",
+    "physical": true,
+    "castTime": 1500
+  },
+  {
+    "id": 384633,
+    "name": "Master's Call",
+    "icon": "ability_hunter_invigeration",
+    "physical": true,
+    "castTime": 2000
+  },
+  {
+    "id": 385356,
+    "name": "Ensnaring Trap",
+    "icon": "ability_hunter_traplauncher",
+    "physical": true
+  },
+  {
+    "id": 384425,
+    "name": "Smell Like Meat",
+    "icon": "inv_misc_food_14",
+    "physical": true
+  },
+  {
+    "id": 383974,
+    "name": "Ensnaring Trap",
+    "icon": "trade_engineering",
+    "damage": {
+      "s3": 46005,
+      "s4": 181965
+    },
+    "aoe": true,
+    "physical": true
+  },
+  {
+    "id": 396124,
+    "name": "Ensnaring Trap",
+    "icon": "trade_engineering",
+    "damage": {
+      "s3": 54931,
+      "s4": 182376
+    },
+    "aoe": true,
+    "physical": true
+  },
+  {
+    "id": 384343,
+    "name": "Gut Shot",
+    "icon": "ability_hunter_barbedshot",
+    "damage": {
+      "s3": 329585,
+      "s4": 1094253
+    },
+    "physical": true
+  },
+  {
+    "id": 377559,
+    "name": "Vine Whip",
+    "icon": "ability_creature_poison_04",
+    "damage": {
+      "s3": 219723,
+      "s4": 729502
+    },
+    "aoe": true,
+    "physical": true,
+    "castTime": 1500
+  },
+  {
+    "id": 376811,
+    "name": "Decay Spray",
+    "icon": "ability_creature_poison_02",
+    "damage": {
+      "s3": 137327,
+      "s4": 455939
+    },
+    "aoe": true,
+    "castTime": 2500
+  },
+  {
+    "id": 376934,
+    "name": "Grasping Vines",
+    "icon": "spell_nature_stranglevines",
+    "physical": true,
+    "castTime": 5000
+  },
+  {
+    "id": 376933,
+    "name": "Grasping Vines",
+    "icon": "spell_nature_stranglevines",
+    "physical": true
+  },
+  {
+    "id": 378764,
+    "name": "Consume",
+    "icon": "inv_misc_monsterfang_02",
+    "physical": true
+  },
+  {
+    "id": 383875,
+    "name": "Partially Digested",
+    "icon": "spell_nature_acid_01"
+  },
+  {
+    "id": 376170,
+    "name": "Choking Rotcloud",
+    "icon": "spell_deathvortex",
+    "damage": {
+      "s3": 219723,
+      "s4": 729502
+    },
+    "aoe": true,
+    "castTime": 2500
+  },
+  {
+    "id": 373912,
+    "name": "Decaystrike",
+    "icon": "spell_deathknight_thrash_ghoul",
+    "physical": true,
+    "castTime": 2000
+  },
+  {
+    "id": 373915,
+    "name": "Decaystrike",
+    "icon": "spell_deathknight_thrash_ghoul",
+    "damage": {
+      "s3": 137327,
+      "s4": 455939
+    },
+    "physical": true
+  },
+  {
+    "id": 373917,
+    "name": "Decaystrike",
+    "icon": "spell_deathknight_thrash_ghoul",
+    "physical": true
+  },
+  {
+    "id": 373942,
+    "name": "Rotburst Totem",
+    "icon": "spell_nature_agitatingtotem",
+    "physical": true,
+    "castTime": 2000
+  },
+  {
+    "id": 373960,
+    "name": "Decaying Strength",
+    "icon": "warlock_curse_weakness_aura",
+    "physical": true,
+    "castTime": 4000
+  },
+  {
+    "id": 385361,
+    "name": "Rotting Sickness",
+    "icon": "spell_shadow_plaguecloud"
+  },
+  {
+    "id": 387264,
+    "name": "Withered Eruption",
+    "icon": "warlock_curse_weakness_aura",
+    "damage": {
+      "s3": 98875,
+      "s4": 328276
+    }
+  },
+  {
+    "id": 373939,
+    "name": "Rotting Burst",
+    "icon": "sha_spell_shaman_lavaburst_nightmare",
+    "damage": {
+      "s3": 54931,
+      "s4": 182376
+    },
+    "aoe": true,
+    "castTime": 7000
+  },
+  {
+    "id": 387264,
+    "name": "Withered Eruption",
+    "icon": "warlock_curse_weakness_aura",
+    "damage": {
+      "s3": 98875,
+      "s4": 328276
+    }
+  },
+  {
+    "id": 381834,
+    "name": "Bladestorm",
+    "icon": "ability_warrior_bladestorm",
+    "physical": true,
+    "castTime": 3000
+  },
+  {
+    "id": 377844,
+    "name": "Bladestorm",
+    "icon": "ability_fixated_state_red",
+    "physical": true,
+    "castTime": 1000
+  },
+  {
+    "id": 381444,
+    "name": "Savage Charge",
+    "icon": "spell_deathknight_butcher2",
+    "physical": true,
+    "castTime": 14000
+  },
+  {
+    "id": 381416,
+    "name": "Savage Charge",
+    "icon": "spell_deathknight_butcher2",
+    "physical": true
+  },
+  {
+    "id": 381419,
+    "name": "Savage Charge",
+    "icon": "spell_deathknight_butcher2",
+    "damage": {
+      "s3": 658372,
+      "s4": 2185858
+    },
+    "physical": true
+  },
+  {
+    "id": 381835,
+    "name": "Bladestorm",
+    "icon": "ability_hunter_markedfordeath",
+    "physical": true
+  },
+  {
+    "id": 381461,
+    "name": "Savage Charge",
+    "icon": "ability_hunter_markedfordeath",
+    "physical": true
+  },
+  {
+    "id": 377807,
+    "name": "Cleave",
+    "icon": "warrior_talent_icon_mastercleaver",
+    "physical": true
+  },
+  {
+    "id": 377830,
+    "name": "Bladestorm",
+    "icon": "ability_whirlwind",
+    "damage": {
+      "s3": 219724,
+      "s4": 729502
+    },
+    "aoe": true,
+    "physical": true
+  },
+  {
+    "id": 378029,
+    "name": "Gash Frenzy",
+    "icon": "ability_rogue_murderspree",
+    "physical": true,
+    "castTime": 1500
+  },
+  {
+    "id": 378208,
+    "name": "Marked for Butchery",
+    "icon": "ability_blackhand_marked4death",
+    "physical": true,
+    "castTime": 3500
+  },
+  {
+    "id": 378229,
+    "name": "Marked for Butchery",
+    "icon": "ability_blackhand_marked4death",
+    "physical": true
+  },
+  {
+    "id": 381694,
+    "name": "Decayed Senses",
+    "icon": "spell_shadow_mindsteal",
+    "castTime": 3000
+  },
+  {
+    "id": 378020,
+    "name": "Gash Frenzy",
+    "icon": "ability_rogue_murderspree",
+    "damage": {
+      "s3": 82396,
+      "s4": 273563
+    },
+    "physical": true
+  },
+  {
+    "id": 381379,
+    "name": "Decayed Senses",
+    "icon": "spell_shadow_mindsteal",
+    "damage": {
+      "s3": 54931,
+      "s4": 182376
+    }
+  },
+  {
+    "id": 378235,
+    "name": "Marked for Butchery",
+    "icon": "ability_blackhand_marked4death",
+    "damage": {
+      "s3": 38452,
+      "s4": 127663
+    },
+    "physical": true
+  },
+  {
+    "id": 378230,
+    "name": "Marked for Butchery",
+    "icon": "ability_blackhand_marked4death",
+    "damage": {
+      "s3": 38452,
+      "s4": 127663
+    },
+    "physical": true
+  },
+  {
+    "id": 378155,
+    "name": "Earth Bolt",
+    "icon": "inv_10_elementalshardfoozles_earth",
+    "damage": {
+      "s3": 71410,
+      "s4": 237088
+    },
+    "castTime": 2500
+  },
+  {
+    "id": 377950,
+    "name": "Greater Healing Rapids",
+    "icon": "shaman_pvp_ripplingwaters",
+    "castTime": 3500
+  },
+  {
+    "id": 381470,
+    "name": "Hextrick Totem",
+    "icon": "ability_shaman_totemcooldownrefund",
+    "physical": true,
+    "castTime": 1500
+  },
+  {
+    "id": 377965,
+    "name": "Bloodfrenzy",
+    "icon": "spell_nature_bloodlust",
+    "physical": true
+  },
+  {
+    "id": 382474,
+    "name": "Decay Surge",
+    "icon": "spell_deathknight_necroticplague",
+    "damage": {
+      "s3": 71410,
+      "s4": 237088
+    },
+    "castTime": 2500
+  },
+  {
+    "id": 367503,
+    "name": "Withering Burst",
+    "icon": "ability_rogue_deviouspoisons",
+    "castTime": 3000
+  },
+  {
+    "id": 368081,
+    "name": "Withering",
+    "icon": "ability_rogue_deviouspoisons"
+  },
+  {
+    "id": 367504,
+    "name": "Withering Burst",
+    "icon": "ability_rogue_deviouspoisons",
+    "damage": {
+      "s3": 98875,
+      "s4": 328276
+    },
+    "aoe": true
+  },
+  {
+    "id": 382593,
+    "name": "Crushing Smash",
+    "icon": "ability_shockwave",
+    "damage": {
+      "s3": 54931,
+      "s4": 182376
+    },
+    "physical": true,
+    "castTime": 1500
+  },
+  {
+    "id": 382723,
+    "name": "Crushing Smash",
+    "icon": "ability_shockwave",
+    "physical": true
+  },
+  {
+    "id": 372711,
+    "name": "Infuse Corruption",
+    "icon": "spell_nature_naturetouchdecay",
+    "physical": true
+  },
+  {
+    "id": 368081,
+    "name": "Withering",
+    "icon": "ability_rogue_deviouspoisons"
+  },
+  {
+    "id": 375065,
+    "name": "Summon Totem",
+    "icon": "spell_totem_wardofdraining",
+    "physical": true,
+    "castTime": 2500
+  },
+  {
+    "id": 374544,
+    "name": "Burst of Decay",
+    "icon": "spell_shadow_plaguecloud",
+    "damage": {
+      "s3": 164792,
+      "s4": 547127
+    },
+    "aoe": true,
+    "castTime": 3250
+  },
+  {
+    "id": 368081,
+    "name": "Withering",
+    "icon": "ability_rogue_deviouspoisons"
+  },
+  {
+    "id": 373872,
+    "name": "Gushing Ooze",
+    "icon": "ability_creature_poison_02",
+    "damage": {
+      "s3": 38452,
+      "s4": 127663
+    },
+    "castTime": 1500
+  },
+  {
+    "id": 374569,
+    "name": "Burst",
+    "icon": "ability_creature_poison_06",
+    "damage": {
+      "s3": 302119,
+      "s4": 1003065
+    },
+    "aoe": true,
+    "castTime": 6000
+  },
+  {
+    "id": 383062,
+    "name": "Summon Lashers",
+    "icon": "spell_lifegivingseed",
+    "physical": true,
+    "castTime": 3000
+  },
+  {
+    "id": 373936,
+    "name": "Summon Lashers",
+    "icon": "spell_lifegivingseed",
+    "physical": true,
+    "castTime": 1500
+  },
+  {
+    "id": 373943,
+    "name": "Stomp",
+    "icon": "spell_nature_earthquake",
+    "damage": {
+      "s3": 71193,
+      "s4": 71193
+    },
+    "aoe": true,
+    "physical": true,
+    "castTime": 3500
+  },
+  {
+    "id": 382712,
+    "name": "Necrotic Breath",
+    "icon": "spell_fire_felflamebreath",
+    "damage": {
+      "s3": 164792,
+      "s4": 547127
+    },
+    "aoe": true,
+    "castTime": 3000
+  },
+  {
+    "id": 382805,
+    "name": "Necrotic Breath",
+    "icon": "spell_fire_felflamebreath"
+  },
+  {
+    "id": 375416,
+    "name": "Bleeding",
+    "icon": "spell_shadow_lifedrain",
+    "physical": true
+  },
+  {
+    "id": 384930,
+    "name": "Stealth",
+    "icon": "ability_stealth",
+    "physical": true
+  },
+  {
+    "id": 385029,
+    "name": "Screech",
+    "icon": "warrior_disruptingshout",
+    "damage": {
+      "s3": 186765,
+      "s4": 620077
+    },
+    "aoe": true,
+    "physical": true,
+    "castTime": 4000
+  },
+  {
+    "id": 372151,
+    "name": "Maul",
+    "icon": "ability_druid_maul",
+    "damage": {
+      "s3": 219723,
+      "s4": 729502
+    },
+    "physical": true,
+    "castTime": 2000
+  },
+  {
+    "id": 388060,
+    "name": "Stink Breath",
+    "icon": "spell_fire_felflamebreath",
+    "physical": true,
+    "castTime": 1500
+  },
+  {
+    "id": 388046,
+    "name": "Violent Whirlwind",
+    "icon": "ability_butcher_whirl",
+    "physical": true,
+    "castTime": 3000
+  },
+  {
+    "id": 385185,
+    "name": "Disoriented",
+    "icon": "spell_frost_stun",
+    "physical": true
+  },
+  {
+    "id": 385186,
+    "name": "Stink Breath",
+    "icon": "ability_creature_poison_02",
+    "damage": {
+      "s3": 164792,
+      "s4": 547127
+    },
+    "aoe": true,
+    "physical": true
+  },
+  {
+    "id": 385185,
+    "name": "Disoriented",
+    "icon": "spell_frost_stun",
+    "physical": true
+  },
+  {
+    "id": 382802,
+    "name": "Withering Contagion",
+    "icon": "ability_creature_disease_03",
+    "castTime": 3000
+  },
+  {
+    "id": 382883,
+    "name": "Siphon Decay",
+    "icon": "spell_fire_ragnaros_molteninfernogreen",
+    "damage": {
+      "s3": 115355,
+      "s4": 382989
+    },
+    "aoe": true,
+    "castTime": 3000
+  },
+  {
+    "id": 383087,
+    "name": "Withering Contagion",
+    "icon": "ability_creature_disease_03"
+  },
+  {
+    "id": 367481,
+    "name": "Bloody Bite",
+    "icon": "ability_druid_lacerate",
+    "damage": {
+      "s3": 71410,
+      "s4": 237088
+    },
+    "physical": true,
+    "castTime": 1000
+  },
+  {
+    "id": 367481,
+    "name": "Bloody Bite",
+    "icon": "ability_druid_lacerate",
+    "damage": {
+      "s3": 71410,
+      "s4": 237088
+    },
+    "physical": true,
+    "castTime": 1000
+  },
+  {
+    "id": 382787,
+    "name": "Decay Claws",
+    "icon": "spell_deathknight_thrash_ghoul",
+    "damage": {
+      "s3": 137327,
+      "s4": 455939
+    },
+    "physical": true,
+    "castTime": 2000
+  },
+  {
+    "id": 367481,
+    "name": "Bloody Bite",
+    "icon": "ability_druid_lacerate",
+    "damage": {
+      "s3": 71410,
+      "s4": 237088
+    },
+    "physical": true,
+    "castTime": 1000
+  },
+  {
+    "id": 375614,
+    "name": "Burst",
+    "icon": "ability_creature_poison_06",
+    "physical": true
+  },
+  {
+    "id": 372113,
+    "name": "Charge",
+    "icon": "ability_druid_dash_orange",
+    "physical": true
+  },
+  {
+    "id": 375416,
+    "name": "Bleeding",
+    "icon": "spell_shadow_lifedrain",
+    "physical": true
+  },
+  {
+    "id": 383062,
+    "name": "Summon Lashers",
+    "icon": "spell_lifegivingseed",
+    "physical": true,
+    "castTime": 3000
+  },
+  {
+    "id": 373024,
+    "name": "Summon Lashers",
+    "icon": "spell_lifegivingseed",
+    "physical": true,
+    "castTime": 1500
+  },
+  {
+    "id": 373897,
+    "name": "Decaying Roots",
+    "icon": "spell_nature_stranglevines",
+    "physical": true,
+    "castTime": 3500
+  },
+  {
+    "id": 373899,
+    "name": "Decaying Roots",
+    "icon": "spell_nature_stranglevines"
+  },
+  {
+    "id": 373939,
+    "name": "Rotting Burst",
+    "icon": "sha_spell_shaman_lavaburst_nightmare",
+    "damage": {
+      "s3": 54931,
+      "s4": 182376
+    },
+    "aoe": true,
+    "castTime": 7000
+  },
+  {
+    "id": 372113,
+    "name": "Charge",
+    "icon": "ability_druid_dash_orange",
+    "physical": true
+  },
+  {
+    "id": 375416,
+    "name": "Bleeding",
+    "icon": "spell_shadow_lifedrain",
+    "physical": true
+  },
+  {
+    "id": 384854,
+    "name": "Fish Slap!",
+    "icon": "inv_10_fishing_fishdecayed_color2",
+    "aoe": true,
+    "physical": true,
+    "castTime": 2000
+  },
+  {
+    "id": 384847,
+    "name": "Fresh Catch",
+    "icon": "achievement_profession_fishing_northrendangler",
+    "damage": {
+      "s3": 54931,
+      "s4": 182376
+    },
+    "aoe": true,
+    "physical": true,
+    "castTime": 1500
+  },
+  {
+    "id": 381770,
+    "name": "Gushing Ooze",
+    "icon": "spell_nature_elementalshields",
+    "damage": {
+      "s3": 32958,
+      "s4": 109425
+    },
+    "aoe": true,
+    "castTime": 2500
+  },
+  {
+    "id": 378057,
+    "name": "Burst",
+    "icon": "ability_creature_poison_06",
+    "physical": true
+  },
+  {
+    "id": 378055,
+    "name": "Burst",
+    "icon": "ability_creature_poison_06",
+    "damage": {
+      "s3": 109862,
+      "s4": 364751
+    },
+    "aoe": true
+  },
+  {
+    "id": 382802,
+    "name": "Withering Contagion",
+    "icon": "ability_creature_disease_03",
+    "castTime": 3000
+  },
+  {
+    "id": 382883,
+    "name": "Siphon Decay",
+    "icon": "spell_fire_ragnaros_molteninfernogreen",
+    "damage": {
+      "s3": 115355,
+      "s4": 382989
+    },
+    "aoe": true,
+    "castTime": 3000
+  },
+  {
+    "id": 383087,
+    "name": "Withering Contagion",
+    "icon": "ability_creature_disease_03"
+  },
+  {
+    "id": 375614,
+    "name": "Burst",
+    "icon": "ability_creature_poison_06",
+    "physical": true
+  },
+  {
+    "id": 382802,
+    "name": "Withering Contagion",
+    "icon": "ability_creature_disease_03",
+    "castTime": 3000
+  },
+  {
+    "id": 382883,
+    "name": "Siphon Decay",
+    "icon": "spell_fire_ragnaros_molteninfernogreen",
+    "damage": {
+      "s3": 115355,
+      "s4": 382989
+    },
+    "aoe": true,
+    "castTime": 3000
+  },
+  {
+    "id": 383087,
+    "name": "Withering Contagion",
+    "icon": "ability_creature_disease_03"
+  },
+  {
+    "id": 384531,
+    "name": "Bounding Leap",
+    "icon": "spell_frost_stun",
+    "physical": true,
+    "castTime": 2500
+  },
+  {
+    "id": 384529,
+    "name": "Bounding Leap",
+    "icon": "spell_frost_stun",
+    "physical": true
+  },
+  {
+    "id": 384558,
+    "name": "Bounding Leap",
+    "icon": "spell_frost_stun",
+    "damage": {
+      "s3": 109862,
+      "s4": 364751
+    },
+    "aoe": true,
+    "physical": true
+  },
+  {
+    "id": 384764,
+    "name": "Feeding Frenzy",
+    "icon": "spell_shadow_unholyfrenzy",
+    "physical": true
+  },
+  {
+    "id": 384725,
+    "name": "Feeding Frenzy",
+    "icon": "spell_shadow_unholyfrenzy",
+    "physical": true
+  },
+  {
+    "id": 384577,
+    "name": "Crippling Bite",
+    "icon": "ability_druid_ferociousbite",
+    "damage": {
+      "s3": 54931,
+      "s4": 182376
+    },
+    "physical": true,
+    "castTime": 1500
+  },
+  {
+    "id": 384930,
+    "name": "Stealth",
+    "icon": "ability_stealth",
+    "physical": true
+  },
+  {
+    "id": 372113,
+    "name": "Charge",
+    "icon": "ability_druid_dash_orange",
+    "physical": true
+  },
+  {
+    "id": 375416,
+    "name": "Bleeding",
+    "icon": "spell_shadow_lifedrain",
+    "physical": true
+  },
+  {
+    "id": 372683,
+    "name": "Cold Claws",
+    "icon": "ability_mage_wintersgrasp",
+    "damage": {
+      "s3": 87889,
+      "s4": 291801
+    },
+    "physical": true,
+    "castTime": 2000
+  },
+  {
+    "id": 372047,
+    "name": "Steel Barrage",
+    "icon": "inv_axe_1h_deathwingraiddw_d_01",
+    "physical": true,
+    "castTime": 1000
+  },
+  {
+    "id": 372794,
+    "name": "Steel Barrage",
+    "icon": "inv_axe_1h_deathwingraiddw_d_01",
+    "damage": {
+      "s3": 142820,
+      "s4": 474176
+    },
+    "physical": true
+  },
+  {
+    "id": 372087,
+    "name": "Blazing Rush",
+    "icon": "spell_deathknight_butcher2",
+    "physical": true,
+    "castTime": 3000
+  },
+  {
+    "id": 372735,
+    "name": "Tectonic Slam",
+    "icon": "inv_misc_volatileearth",
+    "damage": {
+      "s3": 76903,
+      "s4": 255326
+    },
+    "aoe": true,
+    "castTime": 4000
+  },
+  {
+    "id": 371984,
+    "name": "Icebolt",
+    "icon": "spell_frost_iceshard",
+    "damage": {
+      "s3": 65917,
+      "s4": 218851
+    },
+    "castTime": 2000
+  },
+  {
+    "id": 372743,
+    "name": "Ice Shield",
+    "icon": "ability_mage_coldasice"
+  },
+  {
+    "id": 371489,
+    "name": "Numbing Cold",
+    "icon": "spell_frost_arcticwinds"
+  },
+  {
+    "id": 372793,
+    "name": "Excavate",
+    "icon": "ability_gift_of_earth"
+  },
+  {
+    "id": 373727,
+    "name": "Frost Infusion",
+    "icon": "spell_frost_manarecharge"
+  },
+  {
+    "id": 372808,
+    "name": "Frigid Shard",
+    "icon": "spell_frost_iceshard",
+    "damage": {
+      "s3": 109862,
+      "s4": 364751
+    },
+    "castTime": 750
+  },
+  {
+    "id": 396044,
+    "name": "Hailbombs",
+    "icon": "spell_frost_frostshock",
+    "damage": {
+      "s3": 21972,
+      "s4": 72950
+    },
+    "aoe": true,
+    "castTime": 2000
+  },
+  {
+    "id": 372851,
+    "name": "Chillstorm",
+    "icon": "spell_shadow_soulleech_2",
+    "castTime": 3500
+  },
+  {
+    "id": 373046,
+    "name": "Awaken Whelps",
+    "icon": "inv_dragonwhelp3_gemmed_red",
+    "castTime": 4000
+  },
+  {
+    "id": 373680,
+    "name": "Frost Overload",
+    "icon": "spell_fire_blueflamering"
+  },
+  {
+    "id": 385518,
+    "name": "Chillstorm",
+    "icon": "spell_shadow_soulleech_2"
+  },
+  {
+    "id": 372963,
+    "name": "Chillstorm",
+    "icon": "spell_shadow_soulleech_2"
+  },
+  {
+    "id": 373688,
+    "name": "Frost Overload",
+    "icon": "spell_fire_blueflamering",
+    "damage": {
+      "s3": 52184,
+      "s4": 173257
+    },
+    "aoe": true
+  },
+  {
+    "id": 384024,
+    "name": "Hailbombs",
+    "icon": "spell_frost_frostshock",
+    "damage": {
+      "s3": 164792,
+      "s4": 547127
+    },
+    "aoe": true
+  },
+  {
+    "id": 383925,
+    "name": "Chillstorm",
+    "icon": "spell_shadow_soulleech_2",
+    "damage": {
+      "s3": 65917,
+      "s4": 218851
+    },
+    "aoe": true
+  },
+  {
+    "id": 397077,
+    "name": "Chillstorm",
+    "icon": "spell_shadow_soulleech_2",
+    "damage": {
+      "s3": 16479,
+      "s4": 54713
+    },
+    "aoe": true
+  },
+  {
+    "id": 372863,
+    "name": "Ritual of Blazebinding",
+    "icon": "spell_fire_totemofwrath",
+    "damage": {
+      "s3": 247189,
+      "s4": 820690
+    },
+    "aoe": true,
+    "castTime": 4000
+  },
+  {
+    "id": 372107,
+    "name": "Molten Boulder",
+    "icon": "spell_mage_flameorb",
+    "castTime": 2500
+  },
+  {
+    "id": 372858,
+    "name": "Searing Blows",
+    "icon": "ability_shaman_lavalash",
+    "physical": true
+  },
+  {
+    "id": 372820,
+    "name": "Scorched Earth",
+    "icon": "spell_shaman_stormearthfire"
+  },
+  {
+    "id": 372860,
+    "name": "Searing Wounds",
+    "icon": "spell_fire_moltenblood",
+    "physical": true
+  },
+  {
+    "id": 372859,
+    "name": "Searing Blows",
+    "icon": "ability_shaman_lavalash",
+    "physical": true
+  },
+  {
+    "id": 384524,
+    "name": "Titanic Fist",
+    "icon": "spell_holy_fistofjustice",
+    "damage": {
+      "s3": 219723,
+      "s4": 729502
+    },
+    "aoe": true,
+    "physical": true,
+    "castTime": 2000
+  },
+  {
+    "id": 384014,
+    "name": "Static Surge",
+    "icon": "spell_nature_unrelentingstorm",
+    "castTime": 1000
+  },
+  {
+    "id": 389179,
+    "name": "Power Overload",
+    "icon": "ability_thunderking_lightningwhip",
+    "castTime": 1500
+  },
+  {
+    "id": 384351,
+    "name": "Spark Volley",
+    "icon": "inv_enchant_essencemagiclarge",
+    "castTime": 1000
+  },
+  {
+    "id": 383840,
+    "name": "Ablative Barrier",
+    "icon": "spell_nature_lightningshield"
+  },
+  {
+    "id": 389056,
+    "name": "Siphon Power",
+    "icon": "ability_priest_flashoflight",
+    "castTime": 5000
+  },
+  {
+    "id": 389181,
+    "name": "Power Field",
+    "icon": "spell_shaman_thunderstorm"
+  },
+  {
+    "id": 384015,
+    "name": "Static Surge",
+    "icon": "spell_nature_unrelentingstorm",
+    "damage": {
+      "s3": 46691,
+      "s4": 155019
+    },
+    "aoe": true
+  },
+  {
+    "id": 385181,
+    "name": "Overpowering Croak",
+    "icon": "ability_vehicle_sonicshockwave",
+    "physical": true,
+    "castTime": 1500
+  },
+  {
+    "id": 385551,
+    "name": "Gulp",
+    "icon": "ability_druid_ferociousbite",
+    "castTime": 3000
+  },
+  {
+    "id": 385442,
+    "name": "Toxic Effluvia",
+    "icon": "ability_creature_poison_02",
+    "castTime": 1500
+  },
+  {
+    "id": 385531,
+    "name": "Belly Slam",
+    "icon": "spell_nature_skinofearth",
+    "physical": true,
+    "castTime": 1500
+  },
+  {
+    "id": 385555,
+    "name": "Gulp",
+    "icon": "ability_druid_ferociousbite"
+  },
+  {
+    "id": 374389,
+    "name": "Gulp Swog Toxin",
+    "icon": "rogue_leeching_poison"
+  },
+  {
+    "id": 388245,
+    "name": "Gulp",
+    "icon": "ability_druid_ferociousbite",
+    "damage": {
+      "s3": 54931,
+      "s4": 182376
+    }
+  },
+  {
+    "id": 385691,
+    "name": "Belly Slam",
+    "icon": "spell_nature_skinofearth",
+    "damage": {
+      "s3": 192258,
+      "s4": 638314
+    },
+    "aoe": true,
+    "physical": true
+  },
+  {
+    "id": 385187,
+    "name": "Overpowering Croak",
+    "icon": "ability_vehicle_sonicshockwave",
+    "damage": {
+      "s3": 43945,
+      "s4": 145900
+    },
+    "aoe": true,
+    "physical": true
+  },
+  {
+    "id": 385451,
+    "name": "Toxic Effluvia",
+    "icon": "ability_creature_poison_02",
+    "damage": {
+      "s3": 32958,
+      "s4": 109425
+    },
+    "aoe": true
+  },
+  {
+    "id": 385963,
+    "name": "Frost Shock",
+    "icon": "spell_frost_frostshock",
+    "damage": {
+      "s3": 98875,
+      "s4": 328276
+    }
+  },
+  {
+    "id": 390111,
+    "name": "Frost Cyclone",
+    "icon": "spell_nature_cyclone",
+    "castTime": 2000
+  },
+  {
+    "id": 386757,
+    "name": "Hailstorm",
+    "icon": "spell_frost_ice shards",
+    "damage": {
+      "s3": 439446,
+      "s4": 1459004
+    },
+    "aoe": true,
+    "castTime": 7000
+  },
+  {
+    "id": 386559,
+    "name": "Glacial Surge",
+    "icon": "spell_hunter_icetrap",
+    "castTime": 1500
+  },
+  {
+    "id": 386743,
+    "name": "Polar Winds",
+    "icon": "spell_frost_arcticwinds"
+  },
+  {
+    "id": 390118,
+    "name": "Frost Cyclone",
+    "icon": "spell_nature_cyclone",
+    "damage": {
+      "s3": 192258,
+      "s4": 638314
+    },
+    "variance": 0.1
+  },
+  {
+    "id": 389872,
+    "name": "Undertow",
+    "icon": "shaman_pvp_ripplingwaters"
+  },
+  {
+    "id": 388424,
+    "name": "Tempest's Fury",
+    "icon": "spell_druid_astralstorm",
+    "damage": {
+      "s3": 112608,
+      "s4": 373870
+    },
+    "aoe": true,
+    "castTime": 3000
+  },
+  {
+    "id": 387559,
+    "name": "Infused Globules",
+    "icon": "inv_elemental_primal_water",
+    "castTime": 2000
+  },
+  {
+    "id": 387504,
+    "name": "Squall Buffet",
+    "icon": "ability_mage_waterjet",
+    "damage": {
+      "s3": 219723,
+      "s4": 729502
+    },
+    "castTime": 2000
+  },
+  {
+    "id": 387571,
+    "name": "Focused Deluge",
+    "icon": "spell_mage_cometstorm",
+    "castTime": 2000
+  },
+  {
+    "id": 387585,
+    "name": "Submerge",
+    "icon": "inv_waterelementalmount",
+    "castTime": 3000
+  },
+  {
+    "id": 384823,
+    "name": "Inferno",
+    "icon": "ability_warlock_inferno",
+    "damage": {
+      "s3": 87889,
+      "s4": 291801
+    },
+    "aoe": true,
+    "castTime": 3000
+  },
+  {
+    "id": 373017,
+    "name": "Roaring Blaze",
+    "icon": "spell_fire_flamebolt",
+    "damage": {
+      "s3": 87889,
+      "s4": 291801
+    },
+    "aoe": true,
+    "castTime": 3000
+  },
+  {
+    "id": 373087,
+    "name": "Burnout",
+    "icon": "spell_fire_selfdestruct",
+    "damage": {
+      "s3": 357050,
+      "s4": 1185441
+    },
+    "aoe": true,
+    "castTime": 5000
+  },
+  {
+    "id": 373803,
+    "name": "Cold Claws",
+    "icon": "ability_mage_wintersgrasp",
+    "damage": {
+      "s3": 87889,
+      "s4": 291801
+    },
+    "physical": true,
+    "castTime": 2000
+  },
+  {
+    "id": 373693,
+    "name": "Living Bomb",
+    "icon": "inv_summerfest_firespirit",
+    "castTime": 1000
+  },
+  {
+    "id": 373692,
+    "name": "Inferno",
+    "icon": "ability_warlock_inferno",
+    "damage": {
+      "s3": 65917,
+      "s4": 218851
+    },
+    "aoe": true,
+    "castTime": 3000
+  },
+  {
+    "id": 373614,
+    "name": "Burnout",
+    "icon": "spell_fire_selfdestruct",
+    "damage": {
+      "s3": 357050,
+      "s4": 1185441
+    },
+    "aoe": true,
+    "castTime": 5000
+  },
+  {
+    "id": 384139,
+    "name": "Summon Scorchlings",
+    "icon": "spell_fire_elemental_totem",
+    "castTime": 1500
+  },
+  {
+    "id": 385536,
+    "name": "Flame Dance",
+    "icon": "ability_warlock_burningembers"
+  },
+  {
+    "id": 373972,
+    "name": "Blaze of Glory",
+    "icon": "inv_ember"
+  },
+  {
+    "id": 385567,
+    "name": "Flame Dance",
+    "icon": "ability_warlock_burningembers",
+    "damage": {
+      "s3": 43945,
+      "s4": 145900
+    }
+  },
+  {
+    "id": 373977,
+    "name": "Blaze of Glory",
+    "icon": "inv_ember",
+    "damage": {
+      "s3": 131834,
+      "s4": 437701
+    },
+    "aoe": true
+  },
+  {
+    "id": 385568,
+    "name": "Flame Dance",
+    "icon": "ability_warlock_burningembers",
+    "damage": {
+      "s3": 98875,
+      "s4": 328276
+    },
+    "aoe": true
+  },
+  {
+    "id": 373973,
+    "name": "Blaze of Glory",
+    "icon": "inv_ember",
+    "damage": {
+      "s3": 65917,
+      "s4": 218851
+    },
+    "aoe": true
+  },
+  {
+    "id": 384194,
+    "name": "Cinderbolt",
+    "icon": "spell_fire_firebolt",
+    "damage": {
+      "s3": 38452,
+      "s4": 127663
+    },
+    "castTime": 2500
+  },
+  {
+    "id": 384197,
+    "name": "Cinderbolt",
+    "icon": "spell_fire_firebolt",
+    "castTime": 2500
+  },
+  {
+    "id": 385063,
+    "name": "Burning Ambition",
+    "icon": "spell_fire_incinerate",
+    "castTime": 1000
+  },
+  {
+    "id": 374339,
+    "name": "Demoralizing Shout",
+    "icon": "ability_warrior_warcry",
+    "physical": true,
+    "castTime": 2500
+  },
+  {
+    "id": 393432,
+    "name": "Spear Flurry",
+    "icon": "ability_dualwield",
+    "physical": true,
+    "castTime": 1500
+  },
+  {
+    "id": 393444,
+    "name": "Gushing Wound",
+    "icon": "ability_gouge",
+    "damage": {
+      "s3": 54931,
+      "s4": 182376
+    },
+    "aoe": true,
+    "physical": true
+  },
+  {
+    "id": 374020,
+    "name": "Containment Beam",
+    "icon": "spell_progenitor_beam"
+  },
+  {
+    "id": 374045,
+    "name": "Expulse",
+    "icon": "spell_fire_ragnaros_supernova",
+    "damage": {
+      "s3": 137327,
+      "s4": 455939
+    },
+    "aoe": true,
+    "castTime": 3500
+  },
+  {
+    "id": 374073,
+    "name": "Seismic Slam",
+    "icon": "spell_shaman_earthquake",
+    "castTime": 1000
+  },
+  {
+    "id": 374075,
+    "name": "Seismic Slam",
+    "icon": "spell_shaman_earthquake",
+    "damage": {
+      "s3": 192258,
+      "s4": 638314
+    },
+    "aoe": true
+  },
+  {
+    "id": 374612,
+    "name": "Stealth",
+    "icon": "ability_stealth",
+    "physical": true
+  },
+  {
+    "id": 374615,
+    "name": "Cheap Shot",
+    "icon": "ability_cheapshot",
+    "physical": true
+  },
+  {
+    "id": 374563,
+    "name": "Dazzle",
+    "icon": "ability_monk_chiswirl",
+    "damage": {
+      "s3": 137327,
+      "s4": 455939
+    },
+    "aoe": true,
+    "castTime": 2500
+  },
+  {
+    "id": 374578,
+    "name": "Evasive Flutter",
+    "icon": "inv_icon_wing03e",
+    "physical": true
+  },
+  {
+    "id": 374389,
+    "name": "Gulp Swog Toxin",
+    "icon": "rogue_leeching_poison"
+  },
+  {
+    "id": 374706,
+    "name": "Pyretic Burst",
+    "icon": "spell_fire_firebolt",
+    "damage": {
+      "s3": 82396,
+      "s4": 273563
+    },
+    "castTime": 2000
+  },
+  {
+    "id": 374724,
+    "name": "Molten Subduction",
+    "icon": "spell_nature_earthquake",
+    "castTime": 2000
+  },
+  {
+    "id": 374735,
+    "name": "Magma Crush",
+    "icon": "spell_fire_meteorstorm",
+    "castTime": 1500
+  },
+  {
+    "id": 374699,
+    "name": "Cauterize",
+    "icon": "spell_burningsoul",
+    "castTime": 3000
+  },
+  {
+    "id": 374741,
+    "name": "Magma Crush",
+    "icon": "spell_fire_meteorstorm",
+    "damage": {
+      "s3": 219723,
+      "s4": 729502
+    },
+    "aoe": true
+  },
+  {
+    "id": 374863,
+    "name": "Gale Force Charge",
+    "icon": "ability_skyreach_wind"
+  },
+  {
+    "id": 375079,
+    "name": "Whirling Fury",
+    "icon": "ability_whirlwind",
+    "physical": true,
+    "castTime": 1500
+  },
+  {
+    "id": 374823,
+    "name": "Zephyr's Call",
+    "icon": "inv_misc_volatileair",
+    "castTime": 1500
+  },
+  {
+    "id": 375080,
+    "name": "Whirling Fury",
+    "icon": "ability_whirlwind",
+    "damage": {
+      "s3": 65917,
+      "s4": 218851
+    },
+    "aoe": true,
+    "physical": true
+  },
+  {
+    "id": 408388,
+    "name": "Rumbling Earth",
+    "icon": "spell_shaman_earthquake"
+  },
+  {
+    "id": 375384,
+    "name": "Rumbling Earth",
+    "icon": "spell_shaman_earthquake",
+    "damage": {
+      "s3": 137327,
+      "s4": 455939
+    },
+    "aoe": true
+  },
+  {
+    "id": 437719,
+    "name": "Thunderstrike",
+    "icon": "spell_shaman_thunderstorm",
+    "physical": true,
+    "castTime": 3000
+  },
+  {
+    "id": 437730,
+    "name": "Thunderstrike",
+    "icon": "spell_shaman_thunderstorm",
+    "damage": {
+      "s3": 43945,
+      "s4": 145900
+    },
+    "aoe": true
+  },
+  {
+    "id": 375950,
+    "name": "Ice Shard",
+    "icon": "spell_frost_frostbolt02",
+    "damage": {
+      "s3": 126341,
+      "s4": 419464
+    },
+    "castTime": 1500
+  },
+  {
+    "id": 376171,
+    "name": "Refreshing Tides",
+    "icon": "spell_nature_giftofthewaterspirit",
+    "castTime": 3000
+  },
+  {
+    "id": 391634,
+    "name": "Deep Chill",
+    "icon": "ability_mage_wintersgrasp",
+    "damage": {
+      "s3": 87889,
+      "s4": 291801
+    },
+    "aoe": true,
+    "castTime": 2500
+  },
+  {
+    "id": 375351,
+    "name": "Oceanic Breath",
+    "icon": "ability_mage_waterjet",
+    "castTime": 2000
+  },
+  {
+    "id": 375353,
+    "name": "Oceanic Breath",
+    "icon": "ability_mage_waterjet",
+    "damage": {
+      "s3": 82396,
+      "s4": 273563
+    },
+    "aoe": true
+  },
+  {
+    "id": 388882,
+    "name": "Inundate",
+    "icon": "spell_frost_frostbolt02",
+    "damage": {
+      "s3": 98875,
+      "s4": 328276
+    },
+    "aoe": true,
+    "castTime": 3000
+  },
+  {
+    "id": 377402,
+    "name": "Aqueous Barrier",
+    "icon": "ability_shawaterelemental_reform",
+    "castTime": 2500
+  },
+  {
+    "id": 390290,
+    "name": "Flash Flood",
+    "icon": "ability_mage_waterjet",
+    "damage": {
+      "s3": 192258,
+      "s4": 638314
+    },
+    "aoe": true,
+    "castTime": 3000
+  },
+  {
+    "id": 377384,
+    "name": "Boiling Rage",
+    "icon": "spell_nature_shamanrage",
+    "castTime": 2000
+  },
+  {
+    "id": 377341,
+    "name": "Tidal Divergence",
+    "icon": "spell_frost_summonwaterelemental_2",
+    "castTime": 6000
+  },
+  {
+    "id": 384494,
+    "name": "Infernocore",
+    "icon": "ability_mage_livingbomb"
+  },
+  {
+    "id": 381525,
+    "name": "Roaring Firebreath",
+    "icon": "ability_warlock_inferno",
+    "castTime": 3000
+  },
+  {
+    "id": 381602,
+    "name": "Flamespit",
+    "icon": "spell_fire_firebolt",
+    "castTime": 2000
+  },
+  {
+    "id": 381605,
+    "name": "Flamespit",
+    "icon": "spell_fire_firebolt",
+    "castTime": 2000
+  },
+  {
+    "id": 381862,
+    "name": "Infernocore",
+    "icon": "ability_mage_livingbomb"
+  },
+  {
+    "id": 381526,
+    "name": "Roaring Firebreath",
+    "icon": "ability_warlock_inferno"
+  },
+  {
+    "id": 384773,
+    "name": "Flaming Embers",
+    "icon": "spell_fire_felflamering_red"
+  },
+  {
+    "id": 381864,
+    "name": "Infernocore",
+    "icon": "ability_mage_livingbomb",
+    "damage": {
+      "s3": 35705,
+      "s4": 118544
+    },
+    "aoe": true
+  },
+  {
+    "id": 381607,
+    "name": "Flamespit",
+    "icon": "spell_fire_firebolt",
+    "damage": {
+      "s3": 54931,
+      "s4": 182376
+    }
+  },
+  {
+    "id": 381512,
+    "name": "Stormslam",
+    "icon": "ability_shaman_stormstrike",
+    "physical": true,
+    "castTime": 1000
+  },
+  {
+    "id": 381516,
+    "name": "Interrupting Cloudburst",
+    "icon": "spell_nature_cyclone",
+    "damage": {
+      "s3": 54931,
+      "s4": 182376
+    },
+    "aoe": true,
+    "variance": 0.1,
+    "castTime": 3000
+  },
+  {
+    "id": 381517,
+    "name": "Winds of Change",
+    "icon": "spell_nature_purge",
+    "castTime": 1500
+  },
+  {
+    "id": 381515,
+    "name": "Stormslam",
+    "icon": "ability_shaman_stormstrike"
+  },
+  {
+    "id": 381518,
+    "name": "Winds of Change",
+    "icon": "spell_nature_purge"
+  },
+  {
+    "id": 381514,
+    "name": "Stormslam",
+    "icon": "ability_shaman_stormstrike",
+    "damage": {
+      "s3": 274654,
+      "s4": 911878
+    },
+    "physical": true,
+    "variance": 0.05
+  },
+  {
+    "id": 381513,
+    "name": "Stormslam",
+    "icon": "ability_shaman_stormstrike",
+    "damage": {
+      "s3": 87889,
+      "s4": 291801
+    },
+    "variance": 0.05
+  },
+  {
+    "id": 387618,
+    "name": "Infuse",
+    "icon": "inv_misc_volatilewater",
+    "castTime": 5000
+  },
+  {
+    "id": 388882,
+    "name": "Inundate",
+    "icon": "spell_frost_frostbolt02",
+    "damage": {
+      "s3": 98875,
+      "s4": 328276
+    },
+    "aoe": true,
+    "castTime": 3000
+  },
+  {
+    "id": 389443,
+    "name": "Purifying Blast",
+    "icon": "ability_priest_holybolts01",
+    "damage": {
+      "s3": 21972,
+      "s4": 72950
+    },
+    "castTime": 2500
+  },
+  {
+    "id": 389446,
+    "name": "Nullifying Pulse",
+    "icon": "ability_priest_halo",
+    "damage": {
+      "s3": 219723,
+      "s4": 729502
+    },
+    "aoe": true,
+    "castTime": 3000
+  },
+  {
+    "id": 392398,
+    "name": "Crackling Detonation",
+    "icon": "spell_nature_unrelentingstorm",
+    "castTime": 1500
+  },
+  {
+    "id": 391031,
+    "name": "Tempest Barrier",
+    "icon": "spell_mage_temporalshield"
+  },
+  {
+    "id": 392399,
+    "name": "Crackling Detonation",
+    "icon": "spell_nature_unrelentingstorm",
+    "damage": {
+      "s3": 109862,
+      "s4": 364751
+    },
+    "aoe": true,
+    "variance": 0.1
+  },
+  {
+    "id": 392924,
+    "name": "Shock Blast",
+    "icon": "spell_nature_stormreach",
+    "damage": {
+      "s3": 60424,
+      "s4": 200613
+    },
+    "variance": 0.1,
+    "castTime": 1500
+  },
+  {
+    "id": 392486,
+    "name": "Lightning Storm",
+    "icon": "spell_shaman_thunderstorm",
+    "castTime": 1500
+  },
+  {
+    "id": 392574,
+    "name": "Summon Primal Thundercloud",
+    "icon": "ability_vehicle_electrocharge",
+    "castTime": 500
+  },
+  {
+    "id": 391050,
+    "name": "Tempest Stormshield",
+    "icon": "inv_10_worlddroplevelingoptionalreagent_misc_orb_air",
+    "castTime": 3000
+  },
+  {
+    "id": 392488,
+    "name": "Lightning Storm",
+    "icon": "spell_shaman_thunderstorm",
+    "damage": {
+      "s3": 27465,
+      "s4": 91188
+    },
+    "aoe": true
+  },
+  {
+    "id": 391723,
+    "name": "Flame Breath",
+    "icon": "ability_mage_firestarter",
+    "physical": true,
+    "castTime": 3000
+  },
+  {
+    "id": 392394,
+    "name": "Fire Maw",
+    "icon": "ability_warrior_dragonroar",
+    "damage": {
+      "s3": 219723,
+      "s4": 729502
+    },
+    "physical": true,
+    "castTime": 1000
+  },
+  {
+    "id": 392569,
+    "name": "Molten Blood",
+    "icon": "spell_nzinsanity_floorislava",
+    "castTime": 1000
+  },
+  {
+    "id": 395292,
+    "name": "Fire Maw",
+    "icon": "ability_warrior_dragonroar",
+    "damage": {
+      "s3": 109862,
+      "s4": 364751
+    }
+  },
+  {
+    "id": 392570,
+    "name": "Molten Blood",
+    "icon": "spell_nzinsanity_floorislava",
+    "damage": {
+      "s3": 4120,
+      "s4": 13678
+    },
+    "aoe": true
+  },
+  {
+    "id": 391726,
+    "name": "Storm Breath",
+    "icon": "inv_misc_stormlordsfavor",
+    "physical": true,
+    "castTime": 3000
+  },
+  {
+    "id": 392395,
+    "name": "Thunder Jaw",
+    "icon": "inv_misc_stormdragonpale",
+    "damage": {
+      "s3": 219723,
+      "s4": 729502
+    },
+    "physical": true,
+    "castTime": 1000
+  },
+  {
+    "id": 392640,
+    "name": "Rolling Thunder",
+    "icon": "spell_nature_lightningoverload",
+    "castTime": 1000
+  },
+  {
+    "id": 392641,
+    "name": "Rolling Thunder",
+    "icon": "spell_nature_lightningoverload"
+  },
+  {
+    "id": 391727,
+    "name": "Storm Breath",
+    "icon": "ability_mage_firestarter",
+    "damage": {
+      "s3": 131834,
+      "s4": 437701
+    },
+    "aoe": true
+  },
+  {
+    "id": 392642,
+    "name": "Rolling Thunder",
+    "icon": "spell_nature_lightningoverload",
+    "damage": {
+      "s3": 54931,
+      "s4": 182376
+    },
+    "aoe": true
+  },
+  {
+    "id": 395303,
+    "name": "Thunder Jaw",
+    "icon": "inv_misc_stormdragonpale",
+    "damage": {
+      "s3": 164792,
+      "s4": 547127
+    }
+  },
+  {
+    "id": 392406,
+    "name": "Thunderclap",
+    "icon": "ability_thunderclap",
+    "damage": {
+      "s3": 21972,
+      "s4": 72950
+    },
+    "aoe": true,
+    "variance": 0.1,
+    "castTime": 1000
+  },
+  {
+    "id": 392451,
+    "name": "Flashfire",
+    "icon": "spell_fire_felflamering_red",
+    "castTime": 2000
+  },
+  {
+    "id": 392576,
+    "name": "Thunder Bolt",
+    "icon": "inv_misc_stormlordsfavor",
+    "damage": {
+      "s3": 60424,
+      "s4": 200613
+    },
+    "variance": 0.1,
+    "castTime": 1500
+  },
+  {
+    "id": 392574,
+    "name": "Summon Primal Thundercloud",
+    "icon": "ability_vehicle_electrocharge",
+    "castTime": 500
+  },
+  {
+    "id": 392486,
+    "name": "Lightning Storm",
+    "icon": "spell_shaman_thunderstorm",
+    "castTime": 1500
+  },
+  {
+    "id": 392488,
+    "name": "Lightning Storm",
+    "icon": "spell_shaman_thunderstorm",
+    "damage": {
+      "s3": 27465,
+      "s4": 91188
+    },
+    "aoe": true
+  },
+  {
+    "id": 395690,
+    "name": "Lightning Blast",
+    "icon": "spell_nature_lightning",
+    "damage": {
+      "s3": 65917,
+      "s4": 218851
+    }
+  },
+  {
+    "id": 395694,
+    "name": "Elemental Focus",
+    "icon": "inv_10_elementalcombinedfoozles_lightning",
+    "castTime": 2000
+  },
+  {
+    "id": 395691,
+    "name": "Infused Lightning",
+    "icon": "ability_vehicle_electrocharge",
+    "damage": {
+      "s3": 82396,
+      "s4": 273563
+    }
+  },
+  {
+    "id": 190784,
+    "name": "Divine Steed",
+    "icon": "ability_paladin_divinesteed"
+  },
+  {
+    "id": 49020,
+    "name": "Obliterate",
+    "icon": "spell_deathknight_classicon",
+    "physical": true
+  },
+  {
+    "id": 49143,
+    "name": "Frost Strike",
+    "icon": "spell_deathknight_empowerruneblade2"
+  },
+  {
+    "id": 131347,
+    "name": "Glide",
+    "icon": "ability_demonhunter_glide",
+    "physical": true
+  },
+  {
+    "id": 145629,
+    "name": "Anti-Magic Zone",
+    "icon": "spell_deathknight_antimagiczone"
+  },
+  {
+    "id": 374410,
+    "name": "Magma Tentacle",
+    "icon": "spell_shaman_lavaburst",
+    "physical": true
+  },
+  {
+    "id": 375251,
+    "name": "Lava Spray",
+    "icon": "spell_shaman_lavasurge",
+    "damage": {
+      "s3": 10986,
+      "s4": 36475
+    },
+    "aoe": true,
+    "castTime": 3500
+  },
+  {
+    "id": 375439,
+    "name": "Blazing Charge",
+    "icon": "spell_fire_moltenblood",
+    "physical": true,
+    "castTime": 3000
+  },
+  {
+    "id": 374365,
+    "name": "Volatile Mutation",
+    "icon": "ability_rhyolith_magmaflow_whole",
+    "castTime": 2500
+  },
+  {
+    "id": 375890,
+    "name": "Magma Eruption",
+    "icon": "ability_rhyolith_volcano",
+    "damage": {
+      "s3": 82396,
+      "s4": 273563
+    },
+    "aoe": true
+  },
+  {
+    "id": 375535,
+    "name": "Lava Wave",
+    "icon": "ability_rhyolith_magmaflow_wave",
+    "damage": {
+      "s3": 164792,
+      "s4": 547127
+    }
+  },
+  {
+    "id": 375449,
+    "name": "Blazing Charge",
+    "icon": "spell_fire_moltenblood",
+    "damage": {
+      "s3": 192258,
+      "s4": 638314
+    }
+  },
+  {
+    "id": 372566,
+    "name": "Bold Ambush",
+    "icon": "spell_warrior_wildstrike",
+    "physical": true
+  },
+  {
+    "id": 372561,
+    "name": "Binding Spear",
+    "icon": "inv_spear_11",
+    "physical": true,
+    "castTime": 3000
+  },
+  {
+    "id": 372570,
+    "name": "Bold Ambush",
+    "icon": "spell_warrior_wildstrike",
+    "damage": {
+      "s3": 54931,
+      "s4": 182376
+    },
+    "physical": true,
+    "variance": 0.01
+  },
+  {
+    "id": 376186,
+    "name": "Eruptive Crush",
+    "icon": "ability_xavius_crushingshadows",
+    "damage": {
+      "s3": 142820,
+      "s4": 474176
+    },
+    "aoe": true,
+    "castTime": 3000
+  },
+  {
+    "id": 373406,
+    "name": "Eruptive Crush",
+    "icon": "ability_xavius_crushingshadows"
+  },
+  {
+    "id": 395427,
+    "name": "Burning Roar",
+    "icon": "spell_fire_incinerate",
+    "damage": {
+      "s3": 109862,
+      "s4": 364751
+    },
+    "aoe": true,
+    "variance": 0.05,
+    "castTime": 3000
+  },
+  {
+    "id": 372461,
+    "name": "Imbued Magma",
+    "icon": "inv_mace_2h_artifactsilverhand_d_03",
+    "damage": {
+      "s3": 27465,
+      "s4": 91188
+    }
+  },
+  {
+    "id": 383928,
+    "name": "Eruptive Crush",
+    "icon": "trade_engineering",
+    "damage": {
+      "s3": 82396,
+      "s4": 273563
+    },
+    "aoe": true
+  },
+  {
+    "id": 372226,
+    "name": "Bone Toss",
+    "icon": "inv_misc_bone_01",
+    "damage": {
+      "s3": 43945,
+      "s4": 145900
+    },
+    "physical": true,
+    "variance": 0.1,
+    "castTime": 2125
+  },
+  {
+    "id": 372223,
+    "name": "Mending Clay",
+    "icon": "inv_misc_volatilefire",
+    "castTime": 3000
+  },
+  {
+    "id": 372311,
+    "name": "Magma Fist",
+    "icon": "spell_shaman_improvedfirenova",
+    "castTime": 2000
+  },
+  {
+    "id": 371875,
+    "name": "Fired Up",
+    "icon": "spell_nature_shamanrage",
+    "physical": true,
+    "castTime": 1500
+  },
+  {
+    "id": 372372,
+    "name": "Magma Fist",
+    "icon": "spell_shaman_improvedfirenova",
+    "damage": {
+      "s3": 59325,
+      "s4": 196966
+    },
+    "aoe": true
+  },
+  {
+    "id": 373742,
+    "name": "Magma Wave",
+    "icon": "ability_rhyolith_magmaflow_wave",
+    "physical": true,
+    "castTime": 2000
+  },
+  {
+    "id": 373733,
+    "name": "Dragon Strike",
+    "icon": "spell_warrior_wildstrike",
+    "physical": true,
+    "castTime": 2000
+  },
+  {
+    "id": 373735,
+    "name": "Dragon Strike",
+    "icon": "spell_warrior_wildstrike",
+    "damage": {
+      "s3": 98875,
+      "s4": 328276
+    },
+    "physical": true,
+    "variance": 0.05
+  },
+  {
+    "id": 375056,
+    "name": "Fiery Focus",
+    "icon": "spell_fire_selfdestruct",
+    "physical": true,
+    "castTime": 3500
+  },
+  {
+    "id": 374704,
+    "name": "Fiery Focus",
+    "icon": "ability_rogue_shadowyduel",
+    "physical": true
+  },
+  {
+    "id": 389059,
+    "name": "Slag Eruption",
+    "icon": "spell_shaman_lavaburst",
+    "damage": {
+      "s3": 24719,
+      "s4": 82069
+    },
+    "aoe": true
+  },
+  {
+    "id": 396672,
+    "name": "Grounding Spear",
+    "icon": "inv_spear_11",
+    "damage": {
+      "s3": 87889,
+      "s4": 291801
+    },
+    "physical": true
+  },
+  {
+    "id": 388523,
+    "name": "Fetter",
+    "icon": "spell_nature_slow",
+    "physical": true
+  },
+  {
+    "id": 375397,
+    "name": "Lava Splash",
+    "icon": "spell_fire_ragnaros_lavabolt",
+    "damage": {
+      "s3": 137327,
+      "s4": 455939
+    },
+    "aoe": true
+  },
+  {
+    "id": 374482,
+    "name": "Grounding Chain",
+    "icon": "inv_belt_19",
+    "physical": true
+  },
+  {
+    "id": 414585,
+    "name": "Fiery Demise",
+    "icon": "ability_warlock_fireandbrimstone"
+  },
+  {
+    "id": 384161,
+    "name": "Mote of Combustion",
+    "icon": "inv_elemental_mote_fire01",
+    "castTime": 2000
+  },
+  {
+    "id": 372201,
+    "name": "Scorching Breath",
+    "icon": "ability_monk_breathoffire",
+    "castTime": 2000
+  },
+  {
+    "id": 372203,
+    "name": "Scorching Breath",
+    "icon": "ability_monk_breathoffire",
+    "damage": {
+      "s3": 27465,
+      "s4": 91188
+    },
+    "aoe": true
+  },
+  {
+    "id": 373084,
+    "name": "Scorching Fusillade",
+    "icon": "inv_gizmo_supersappercharge",
+    "physical": true,
+    "castTime": 4000
+  },
+  {
+    "id": 373089,
+    "name": "Scorching Fusillade",
+    "icon": "inv_gizmo_supersappercharge",
+    "physical": true
+  },
+  {
+    "id": 372543,
+    "name": "Scorching Fusillade",
+    "icon": "inv_gizmo_supersappercharge"
+  },
+  {
+    "id": 372296,
+    "name": "Conflagrant Battery",
+    "icon": "spell_shadow_rainoffire",
+    "physical": true,
+    "castTime": 2000
+  },
+  {
+    "id": 372542,
+    "name": "Scorching Fusillade",
+    "icon": "inv_gizmo_supersappercharge",
+    "damage": {
+      "s3": 82396,
+      "s4": 273563
+    },
+    "aoe": true
+  },
+  {
+    "id": 372293,
+    "name": "Conflagrant Battery",
+    "icon": "spell_shadow_rainoffire",
+    "damage": {
+      "s3": 164792,
+      "s4": 547127
+    },
+    "aoe": true
+  },
+  {
+    "id": 372262,
+    "name": "Pierce Marrow",
+    "icon": "ability_maldraxxus_rogue",
+    "physical": true,
+    "castTime": 2000
+  },
+  {
+    "id": 372225,
+    "name": "Dragonbone Axe",
+    "icon": "inv_axe_1h_pvpcataclysms3_c_01",
+    "physical": true,
+    "castTime": 3000
+  },
+  {
+    "id": 372266,
+    "name": "Pierce Marrow",
+    "icon": "ability_maldraxxus_rogue",
+    "damage": {
+      "s3": 109862,
+      "s4": 364751
+    },
+    "physical": true
+  },
+  {
+    "id": 372224,
+    "name": "Dragonbone Axe",
+    "icon": "inv_axe_1h_pvpcataclysms3_c_01",
+    "damage": {
+      "s3": 54931,
+      "s4": 182376
+    },
+    "physical": true
+  },
+  {
+    "id": 372538,
+    "name": "Melt",
+    "icon": "inv_ragnaros_heart",
+    "damage": {
+      "s3": 71410,
+      "s4": 237088
+    },
+    "castTime": 2500
+  },
+  {
+    "id": 384623,
+    "name": "Forgestomp",
+    "icon": "spell_shaman_improvedfirenova",
+    "damage": {
+      "s3": 38452,
+      "s4": 127663
+    },
+    "aoe": true,
+    "castTime": 2000
+  },
+  {
+    "id": 372971,
+    "name": "Reverberating Slam",
+    "icon": "inv_mace_1h_blacksmithing_b_01_black",
+    "damage": {
+      "s3": 219723,
+      "s4": 729502
+    },
+    "physical": true,
+    "castTime": 2000
+  },
+  {
+    "id": 379406,
+    "name": "Throw Lava",
+    "icon": "ability_warlock_backdraft",
+    "physical": true,
+    "castTime": 2500
+  },
+  {
+    "id": 381329,
+    "name": "Throw Lava",
+    "icon": "ability_warlock_backdraft",
+    "physical": true
+  },
+  {
+    "id": 379404,
+    "name": "Throw Lava",
+    "icon": "ability_warlock_backdraft"
+  },
+  {
+    "id": 372213,
+    "name": "Lava Spill",
+    "icon": "inv_misc_cauldron_fire"
+  },
+  {
+    "id": 379410,
+    "name": "Throw Lava",
+    "icon": "ability_warlock_backdraft",
+    "damage": {
+      "s3": 109862,
+      "s4": 364751
+    },
+    "aoe": true
+  },
+  {
+    "id": 374355,
+    "name": "Heated Swings",
+    "icon": "inv_mace_1h_blacksmithing_b_01_black",
+    "physical": true
+  },
+  {
+    "id": 375209,
+    "name": "Forgestorm",
+    "icon": "spell_shadow_rainoffire",
+    "physical": true
+  },
+  {
+    "id": 374586,
+    "name": "Might of the Forge",
+    "icon": "mace_1h_blacksmithing_d_04_icon",
+    "damage": {
+      "s3": 82396,
+      "s4": 273563
+    },
+    "aoe": true,
+    "physical": true
+  },
+  {
+    "id": 374839,
+    "name": "Blazing Aegis",
+    "icon": "inv_shield_1h_dragondungeon_c_01",
+    "physical": true,
+    "castTime": 3500
+  },
+  {
+    "id": 374533,
+    "name": "Heated Swings",
+    "icon": "inv_mace_1h_blacksmithing_b_01_black",
+    "physical": true,
+    "castTime": 1000
+  },
+  {
+    "id": 374969,
+    "name": "Forgestorm",
+    "icon": "spell_shadow_rainoffire",
+    "physical": true,
+    "castTime": 2000
+  },
+  {
+    "id": 375291,
+    "name": "Heated Swings",
+    "icon": "inv_mace_1h_blacksmithing_b_01_black",
+    "damage": {
+      "s3": 219723,
+      "s4": 729502
+    },
+    "physical": true
+  },
+  {
+    "id": 374641,
+    "name": "Blazing Hammer",
+    "icon": "inv_mace_2h_pvp410_c_01",
+    "damage": {
+      "s3": 43945,
+      "s4": 145900
+    },
+    "aoe": true
+  },
+  {
+    "id": 375046,
+    "name": "Blazing Aegis",
+    "icon": "inv_shield_1h_dragondungeon_c_01",
+    "damage": {
+      "s3": 65917,
+      "s4": 218851
+    },
+    "aoe": true
+  },
+  {
+    "id": 377204,
+    "name": "The Dragon's Kiln",
+    "icon": "ability_mage_firestarter",
+    "damage": {
+      "s3": 192258,
+      "s4": 638314
+    },
+    "aoe": true,
+    "castTime": 3000
+  },
+  {
+    "id": 377017,
+    "name": "Molten Gold",
+    "icon": "ability_creature_amber_02",
+    "physical": true,
+    "castTime": 2000
+  },
+  {
+    "id": 377473,
+    "name": "Burning Ember",
+    "icon": "spell_fire_ragnaros_supernova",
+    "physical": true,
+    "castTime": 2500
+  },
+  {
+    "id": 376780,
+    "name": "Magma Shield",
+    "icon": "spell_fire_sealoffire",
+    "physical": true,
+    "castTime": 2500
+  },
+  {
+    "id": 377018,
+    "name": "Molten Gold",
+    "icon": "ability_creature_amber_02"
+  },
+  {
+    "id": 376784,
+    "name": "Flame Vulnerability",
+    "icon": "inv_summerfest_firespirit"
+  },
+  {
+    "id": 376783,
+    "name": "Flame Eruption",
+    "icon": "ability_warlock_inferno",
+    "damage": {
+      "s3": 27465,
+      "s4": 91188
+    },
+    "aoe": true
+  },
+  {
+    "id": 377477,
+    "name": "Burning Ember",
+    "icon": "spell_fire_ragnaros_supernova",
+    "damage": {
+      "s3": 164792,
+      "s4": 547127
+    },
+    "aoe": true,
+    "physical": true
+  },
+  {
+    "id": 391762,
+    "name": "Curse of the Dragon Hoard",
+    "icon": "warlock_curse_shadow"
+  },
+  {
+    "id": 376169,
+    "name": "Throw Experimental Concoction",
+    "icon": "inv_potion_24",
+    "physical": true,
+    "castTime": 2000
+  },
+  {
+    "id": 374471,
+    "name": "Erupted Ground",
+    "icon": "spell_fire_moltenblood",
+    "physical": true
+  },
+  {
+    "id": 374482,
+    "name": "Grounding Chain",
+    "icon": "inv_belt_19",
+    "physical": true
+  },
+  {
+    "id": 374854,
+    "name": "Erupted Ground",
+    "icon": "spell_nzinsanity_floorislava"
+  },
+  {
+    "id": 377522,
+    "name": "Burning Pursuit",
+    "icon": "ability_fixated_state_orange",
+    "physical": true
+  },
+  {
+    "id": 378149,
+    "name": "Granite Shell",
+    "icon": "spell_shaman_improvedearthshield",
+    "physical": true
+  },
+  {
+    "id": 378172,
+    "name": "Molten Core",
+    "icon": "inv_10_elementalspiritfoozles_fire",
+    "physical": true
+  },
+  {
+    "id": 378221,
+    "name": "Molten Vulnerability",
+    "icon": "spell_fire_felflamering_red"
+  },
+  {
+    "id": 378202,
+    "name": "Molten Explosion",
+    "icon": "inv_10_elementalspiritfoozles_fire",
+    "damage": {
+      "s3": 43945,
+      "s4": 145900
+    },
+    "aoe": true
+  },
+  {
+    "id": 378827,
+    "name": "Explosive Concoction",
+    "icon": "trade_alchemy_dpotion_a16",
+    "physical": true,
+    "castTime": 2500
+  },
+  {
+    "id": 378831,
+    "name": "Explosive Concoction",
+    "icon": "trade_alchemy_dpotion_a16",
+    "damage": {
+      "s3": 219723,
+      "s4": 729502
+    },
+    "aoe": true
+  },
+  {
+    "id": 378847,
+    "name": "Brutal Strike",
+    "icon": "ability_smash",
+    "damage": {
+      "s3": 247189,
+      "s4": 820690
+    },
+    "physical": true,
+    "castTime": 2000
+  },
+  {
+    "id": 378282,
+    "name": "Molten Core",
+    "icon": "spell_fire_lavaspawn",
+    "physical": true,
+    "castTime": 2500
+  },
+  {
+    "id": 378281,
+    "name": "Molten Core",
+    "icon": "trade_engineering",
+    "physical": true
+  },
+  {
+    "id": 378818,
+    "name": "Magma Conflagration",
+    "icon": "spell_shaman_lavasurge",
+    "castTime": 1000
+  },
+  {
+    "id": 381663,
+    "name": "Candescent Tempest",
+    "icon": "spell_fire_burnout",
+    "physical": true,
+    "castTime": 2000
+  },
+  {
+    "id": 381670,
+    "name": "Candescent Tempest",
+    "icon": "spell_fire_burnout",
+    "damage": {
+      "s3": 27465,
+      "s4": 91188
+    },
+    "aoe": true
+  },
+  {
+    "id": 381662,
+    "name": "Candescent Tempest",
+    "icon": "spell_fire_burnout",
+    "damage": {
+      "s3": 16479,
+      "s4": 54713
+    },
+    "aoe": true
+  },
+  {
+    "id": 384597,
+    "name": "Blazing Slash",
+    "icon": "inv_knife_1h_bwdraid_d_01",
+    "damage": {
+      "s3": 137327,
+      "s4": 455939
+    },
+    "castTime": 1000
+  },
+  {
+    "id": 382708,
+    "name": "Volcanic Guard",
+    "icon": "inv_shield_1h_dragondungeon_c_01",
+    "damage": {
+      "s3": 274654,
+      "s4": 911878
+    },
+    "aoe": true,
+    "castTime": 3000
+  },
+  {
+    "id": 383231,
+    "name": "Lava Bolt",
+    "icon": "spell_fire_fireball02",
+    "damage": {
+      "s3": 82396,
+      "s4": 273563
+    },
+    "castTime": 3000
+  },
+  {
+    "id": 382791,
+    "name": "Molten Barrier",
+    "icon": "ability_mage_moltenarmor",
+    "physical": true,
+    "castTime": 2000
+  },
+  {
+    "id": 383651,
+    "name": "Molten Army",
+    "icon": "spell_fire_lavaspawn",
+    "physical": true,
+    "castTime": 1000
+  },
+  {
+    "id": 382795,
+    "name": "Molten Barrier",
+    "icon": "ability_mage_moltenarmor",
+    "damage": {
+      "s3": 54931,
+      "s4": 182376
+    },
+    "aoe": true
+  },
+  {
+    "id": 372213,
+    "name": "Lava Spill",
+    "icon": "inv_misc_cauldron_fire"
+  },
+  {
+    "id": 374451,
+    "name": "Burning Chain",
+    "icon": "inv_belt_20",
+    "physical": true,
+    "castTime": 1470
+  },
+  {
+    "id": 376730,
+    "name": "Stormwinds",
+    "icon": "spell_shaman_thunderstorm",
+    "physical": true
+  },
+  {
+    "id": 375937,
+    "name": "Rending Strike",
+    "icon": "ability_gouge",
+    "damage": {
+      "s3": 384515,
+      "s4": 1276629
+    },
+    "physical": true,
+    "castTime": 1500
+  },
+  {
+    "id": 375929,
+    "name": "Savage Strike",
+    "icon": "inv_spear_11",
+    "damage": {
+      "s3": 49438,
+      "s4": 164138
+    },
+    "physical": true,
+    "castTime": 1500
+  },
+  {
+    "id": 376644,
+    "name": "Iron Spear",
+    "icon": "inv_spear_07",
+    "physical": true,
+    "castTime": 2500
+  },
+  {
+    "id": 376683,
+    "name": "Iron Stampede",
+    "icon": "inv_misc_foot_centaur",
+    "physical": true,
+    "castTime": 1000
+  },
+  {
+    "id": 375943,
+    "name": "Upheaval",
+    "icon": "ability_earthen_pillar",
+    "damage": {
+      "s3": 219723,
+      "s4": 729502
+    },
+    "aoe": true,
+    "physical": true,
+    "castTime": 2500
+  },
+  {
+    "id": 376727,
+    "name": "Siphon Power",
+    "icon": "inv_tradeskillitem_sorcererswind_tong",
+    "physical": true,
+    "castTime": 4000
+  },
+  {
+    "id": 376827,
+    "name": "Conductive Strike",
+    "icon": "ability_thunderking_lightningwhip",
+    "damage": {
+      "s3": 192258,
+      "s4": 638314
+    },
+    "castTime": 1500
+  },
+  {
+    "id": 376829,
+    "name": "Thunder Strike",
+    "icon": "inv_sword_2h_artifactashbringerlightning_d_03",
+    "damage": {
+      "s3": 49438,
+      "s4": 164138
+    },
+    "castTime": 1500
+  },
+  {
+    "id": 376865,
+    "name": "Static Spear",
+    "icon": "inv_spear_04",
+    "physical": true,
+    "castTime": 2500
+  },
+  {
+    "id": 376892,
+    "name": "Crackling Upheaval",
+    "icon": "spell_nature_unrelentingstorm",
+    "damage": {
+      "s3": 219723,
+      "s4": 729502
+    },
+    "aoe": true,
+    "physical": true,
+    "castTime": 2500
+  },
+  {
+    "id": 376685,
+    "name": "Iron Stampede",
+    "icon": "inv_misc_foot_centaur",
+    "damage": {
+      "s3": 219723,
+      "s4": 729502
+    },
+    "physical": true
+  },
+  {
+    "id": 376660,
+    "name": "Iron Spear",
+    "icon": "inv_spear_07",
+    "damage": {
+      "s3": 164792,
+      "s4": 547127
+    },
+    "aoe": true,
+    "physical": true
+  },
+  {
+    "id": 376896,
+    "name": "Crackling Upheaval",
+    "icon": "spell_nature_unrelentingstorm",
+    "damage": {
+      "s3": 109862,
+      "s4": 364751
+    },
+    "aoe": true
+  },
+  {
+    "id": 376866,
+    "name": "Static Spear",
+    "icon": "inv_spear_04",
+    "damage": {
+      "s3": 167539,
+      "s4": 556245
+    },
+    "aoe": true
+  },
+  {
+    "id": 393425,
+    "name": "Quake",
+    "icon": "spell_shaman_earthquake",
+    "damage": {
+      "s3": 82396,
+      "s4": 273563
+    },
+    "aoe": true
+  },
+  {
+    "id": 386063,
+    "name": "Frightful Roar",
+    "icon": "spell_shadow_deathscream",
+    "damage": {
+      "s3": 137327,
+      "s4": 455939
+    },
+    "aoe": true,
+    "castTime": 4000
+  },
+  {
+    "id": 382836,
+    "name": "Brutalize",
+    "icon": "ability_warrior_bloodbath",
+    "damage": {
+      "s3": 439446,
+      "s4": 1459004
+    },
+    "physical": true,
+    "castTime": 2500
+  },
+  {
+    "id": 385339,
+    "name": "Earthsplitter",
+    "icon": "spell_nature_earthquake",
+    "physical": true,
+    "castTime": 2000
+  },
+  {
+    "id": 395669,
+    "name": "Aftershock",
+    "icon": "inv_misc_volatileearth",
+    "physical": true
+  },
+  {
+    "id": 392198,
+    "name": "Ancestral Bond",
+    "icon": "spell_shaman_ancestralawakening"
+  },
+  {
+    "id": 386411,
+    "name": "Quick Shot",
+    "icon": "inv_ammo_arrow_06",
+    "damage": {
+      "s3": 76903,
+      "s4": 255326
+    },
+    "physical": true,
+    "variance": 0.05,
+    "castTime": 1400
+  },
+  {
+    "id": 385434,
+    "name": "Spirit Leap",
+    "icon": "spell_arcane_blink",
+    "physical": true,
+    "castTime": 4000
+  },
+  {
+    "id": 382670,
+    "name": "Gale Arrow",
+    "icon": "ability_skyreach_four_wind",
+    "castTime": 4000
+  },
+  {
+    "id": 386547,
+    "name": "Repel",
+    "icon": "ability_skyreach_wind",
+    "physical": true,
+    "castTime": 2000
+  },
+  {
+    "id": 386016,
+    "name": "Gale Arrow",
+    "icon": "ability_skyreach_four_wind",
+    "damage": {
+      "s3": 126341,
+      "s4": 419464
+    },
+    "variance": 0.1
+  },
+  {
+    "id": 392198,
+    "name": "Ancestral Bond",
+    "icon": "spell_shaman_ancestralawakening"
+  },
+  {
+    "id": 384761,
+    "name": "Wind Burst",
+    "icon": "spell_nature_cyclone",
+    "castTime": 1500
+  },
+  {
+    "id": 384686,
+    "name": "Energy Surge",
+    "icon": "spell_shaman_crashlightning",
+    "castTime": 1500
+  },
+  {
+    "id": 384316,
+    "name": "Lightning Strike",
+    "icon": "ability_vehicle_electrocharge",
+    "castTime": 2000
+  },
+  {
+    "id": 384620,
+    "name": "Electrical Storm",
+    "icon": "spell_shaman_thunderstorm",
+    "castTime": 3000
+  },
+  {
+    "id": 382628,
+    "name": "Surge of Power",
+    "icon": "spell_shaman_staticshock",
+    "damage": {
+      "s3": 8789,
+      "s4": 29180
+    }
+  },
+  {
+    "id": 386916,
+    "name": "The Raging Tempest",
+    "icon": "inv_10_elementalspiritfoozles_lightning"
+  },
+  {
+    "id": 384628,
+    "name": "Electrical Storm",
+    "icon": "spell_shaman_thunderstorm",
+    "damage": {
+      "s3": 13183,
+      "s4": 43770
+    },
+    "aoe": true
+  },
+  {
+    "id": 384687,
+    "name": "Energy Surge",
+    "icon": "spell_shaman_crashlightning",
+    "damage": {
+      "s3": 27465,
+      "s4": 91188
+    }
+  },
+  {
+    "id": 384186,
+    "name": "Lightning Strike",
+    "icon": "ability_vehicle_electrocharge",
+    "damage": {
+      "s3": 98875,
+      "s4": 328276
+    },
+    "aoe": true
+  },
+  {
+    "id": 388817,
+    "name": "Shards of Stone",
+    "icon": "inv_10_elementalshardfoozles_earth",
+    "damage": {
+      "s3": 98875,
+      "s4": 328276
+    },
+    "aoe": true,
+    "castTime": 3000
+  },
+  {
+    "id": 385916,
+    "name": "Tectonic Stomp",
+    "icon": "ability_earthen_pillar",
+    "damage": {
+      "s3": 274654,
+      "s4": 911878
+    },
+    "aoe": true,
+    "castTime": 4000
+  },
+  {
+    "id": 388283,
+    "name": "Eruption",
+    "icon": "spell_nature_earthquake",
+    "physical": true,
+    "castTime": 6000
+  },
+  {
+    "id": 387155,
+    "name": "Lanced!",
+    "icon": "inv_ammo_arrow_03"
+  },
+  {
+    "id": 376723,
+    "name": "Transfer Power",
+    "icon": "inv_tradeskillitem_sorcererswind_tong",
+    "physical": true,
+    "castTime": 5000
+  },
+  {
+    "id": 376725,
+    "name": "Storm Bolt",
+    "icon": "spell_nature_lightning",
+    "damage": {
+      "s3": 93382,
+      "s4": 310038
+    },
+    "castTime": 3500
+  },
+  {
+    "id": 384336,
+    "name": "War Stomp",
+    "icon": "ability_warstomp",
+    "damage": {
+      "s3": 164792,
+      "s4": 547127
+    },
+    "aoe": true,
+    "physical": true,
+    "castTime": 3000
+  },
+  {
+    "id": 384365,
+    "name": "Disruptive Shout",
+    "icon": "ability_warrior_battleshout",
+    "damage": {
+      "s3": 109862,
+      "s4": 364751
+    },
+    "aoe": true,
+    "physical": true,
+    "castTime": 4000
+  },
+  {
+    "id": 373392,
+    "name": "Shoot",
+    "icon": "inv_ammo_arrow_06",
+    "physical": true,
+    "castTime": 1500
+  },
+  {
+    "id": 384476,
+    "name": "Rain of Arrows",
+    "icon": "ability_hunter_quickshot",
+    "physical": true,
+    "castTime": 1500
+  },
+  {
+    "id": 384479,
+    "name": "Rain of Arrows",
+    "icon": "ability_hunter_quickshot",
+    "damage": {
+      "s3": 109862,
+      "s4": 364751
+    },
+    "aoe": true,
+    "physical": true
+  },
+  {
+    "id": 381683,
+    "name": "Swift Stab",
+    "icon": "ability_backstab",
+    "physical": true,
+    "castTime": 500
+  },
+  {
+    "id": 384134,
+    "name": "Pierce",
+    "icon": "inv_spear_11",
+    "physical": true,
+    "castTime": 1500
+  },
+  {
+    "id": 381692,
+    "name": "Swift Stab",
+    "icon": "ability_backstab",
+    "damage": {
+      "s3": 54931,
+      "s4": 182376
+    },
+    "physical": true,
+    "variance": 0.002
+  },
+  {
+    "id": 384492,
+    "name": "Hunter's Mark",
+    "icon": "ability_hunter_snipershot",
+    "physical": true,
+    "castTime": 2000
+  },
+  {
+    "id": 383693,
+    "name": "Hunt Prey",
+    "icon": "inv_eagle2windmount_red",
+    "physical": true,
+    "castTime": 2000
+  },
+  {
+    "id": 373392,
+    "name": "Shoot",
+    "icon": "inv_ammo_arrow_06",
+    "physical": true,
+    "castTime": 1500
+  },
+  {
+    "id": 383823,
+    "name": "Rally the Clan",
+    "icon": "inv_misc_horn_01",
+    "physical": true,
+    "castTime": 6000
+  },
+  {
+    "id": 384336,
+    "name": "War Stomp",
+    "icon": "ability_warstomp",
+    "damage": {
+      "s3": 164792,
+      "s4": 547127
+    },
+    "aoe": true,
+    "physical": true,
+    "castTime": 3000
+  },
+  {
+    "id": 384365,
+    "name": "Disruptive Shout",
+    "icon": "ability_warrior_battleshout",
+    "damage": {
+      "s3": 109862,
+      "s4": 364751
+    },
+    "aoe": true,
+    "physical": true,
+    "castTime": 4000
+  },
+  {
+    "id": 384512,
+    "name": "Cleaving Strikes",
+    "icon": "ability_warrior_cleave",
+    "physical": true
+  },
+  {
+    "id": 397394,
+    "name": "Deadly Thunder",
+    "icon": "spell_shaman_crashlightning",
+    "damage": {
+      "s3": 329585,
+      "s4": 1094253
+    },
+    "castTime": 3000
+  },
+  {
+    "id": 372147,
+    "name": "Ravaging Spear",
+    "icon": "inv_spear_05",
+    "physical": true,
+    "castTime": 2500
+  },
+  {
+    "id": 382277,
+    "name": "Vehement Charge",
+    "icon": "ability_warrior_victoryrush",
+    "physical": true,
+    "castTime": 2125
+  },
+  {
+    "id": 382267,
+    "name": "Vehement Charge",
+    "icon": "trade_engineering",
+    "physical": true
+  },
+  {
+    "id": 383067,
+    "name": "Raging Kin",
+    "icon": "ability_garrosh_hellscreams_warsong",
+    "physical": true
+  },
+  {
+    "id": 382274,
+    "name": "Vehement Charge",
+    "icon": "trade_engineering",
+    "damage": {
+      "s3": 137327,
+      "s4": 455939
+    },
+    "physical": true
+  },
+  {
+    "id": 374711,
+    "name": "Ravaging Spear",
+    "icon": "trade_engineering",
+    "damage": {
+      "s3": 145567,
+      "s4": 483295
+    },
+    "aoe": true,
+    "physical": true
+  },
+  {
+    "id": 382233,
+    "name": "Broad Stomp",
+    "icon": "ability_warstomp",
+    "damage": {
+      "s3": 164792,
+      "s4": 547127
+    },
+    "aoe": true,
+    "physical": true,
+    "castTime": 2500
+  },
+  {
+    "id": 373395,
+    "name": "Bloodcurdling Shout",
+    "icon": "spell_shadow_ragingscream",
+    "damage": {
+      "s3": 137327,
+      "s4": 455939
+    },
+    "aoe": true,
+    "castTime": 4000
+  },
+  {
+    "id": 386012,
+    "name": "Stormbolt",
+    "icon": "spell_nature_lightning",
+    "damage": {
+      "s3": 93382,
+      "s4": 310038
+    },
+    "castTime": 3500
+  },
+  {
+    "id": 387145,
+    "name": "Totemic Overload",
+    "icon": "spell_shaman_stormtotem",
+    "physical": true,
+    "castTime": 3000
+  },
+  {
+    "id": 386012,
+    "name": "Stormbolt",
+    "icon": "spell_nature_lightning",
+    "damage": {
+      "s3": 93382,
+      "s4": 310038
+    },
+    "castTime": 3500
+  },
+  {
+    "id": 387145,
+    "name": "Totemic Overload",
+    "icon": "spell_shaman_stormtotem",
+    "physical": true,
+    "castTime": 3000
+  },
+  {
+    "id": 386012,
+    "name": "Stormbolt",
+    "icon": "spell_nature_lightning",
+    "damage": {
+      "s3": 93382,
+      "s4": 310038
+    },
+    "castTime": 3500
+  },
+  {
+    "id": 387145,
+    "name": "Totemic Overload",
+    "icon": "spell_shaman_stormtotem",
+    "physical": true,
+    "castTime": 3000
+  },
+  {
+    "id": 386024,
+    "name": "Tempest",
+    "icon": "spell_shaman_thunderstorm",
+    "castTime": 1500
+  },
+  {
+    "id": 386015,
+    "name": "Summon Squall",
+    "icon": "inv_10_elementalspiritfoozles_air",
+    "castTime": 1500
+  },
+  {
+    "id": 386022,
+    "name": "Unstable Squall",
+    "icon": "inv_10_elementalspiritfoozles_air",
+    "physical": true
+  },
+  {
+    "id": 386025,
+    "name": "Tempest",
+    "icon": "spell_shaman_thunderstorm",
+    "damage": {
+      "s3": 8240,
+      "s4": 27356
+    },
+    "aoe": true
+  },
+  {
+    "id": 386223,
+    "name": "Stormshield",
+    "icon": "spell_nature_lightningshield",
+    "castTime": 800
+  },
+  {
+    "id": 386228,
+    "name": "Lightning Cudgel",
+    "icon": "spell_shaman_primalstrike"
+  },
+  {
+    "id": 386694,
+    "name": "Stormsurge",
+    "icon": "spell_shaman_stormtotem",
+    "damage": {
+      "s3": 137327,
+      "s4": 455939
+    },
+    "aoe": true,
+    "castTime": 3000
+  },
+  {
+    "id": 400474,
+    "name": "Surge of Power",
+    "icon": "spell_shaman_staticshock",
+    "damage": {
+      "s3": 43945,
+      "s4": 145900
+    }
+  },
+  {
+    "id": 387146,
+    "name": "Totemic Overload",
+    "icon": "spell_shaman_stormtotem",
+    "damage": {
+      "s3": 54931,
+      "s4": 182376
+    },
+    "aoe": true
+  },
+  {
+    "id": 387135,
+    "name": "Arcing Strike",
+    "icon": "ability_paladin_bladeofjusticeblue",
+    "damage": {
+      "s3": 109862,
+      "s4": 364751
+    },
+    "castTime": 1500
+  },
+  {
+    "id": 386012,
+    "name": "Stormbolt",
+    "icon": "spell_nature_lightning",
+    "damage": {
+      "s3": 93382,
+      "s4": 310038
+    },
+    "castTime": 3500
+  },
+  {
+    "id": 387145,
+    "name": "Totemic Overload",
+    "icon": "spell_shaman_stormtotem",
+    "physical": true,
+    "castTime": 3000
+  },
+  {
+    "id": 386319,
+    "name": "Swirling Gusts",
+    "icon": "ability_skyreach_four_wind"
+  },
+  {
+    "id": 387125,
+    "name": "Thunderstrike",
+    "icon": "spell_lightning_lightningbolt01",
+    "castTime": 3000
+  },
+  {
+    "id": 387127,
+    "name": "Chain Lightning",
+    "icon": "spell_nature_chainlightning",
+    "damage": {
+      "s3": 96129,
+      "s4": 319157
+    },
+    "castTime": 3000
+  },
+  {
+    "id": 386028,
+    "name": "Thunder Clap",
+    "icon": "spell_nature_thunderclap",
+    "damage": {
+      "s3": 219723,
+      "s4": 729502
+    },
+    "aoe": true,
+    "castTime": 3000
+  },
+  {
+    "id": 387613,
+    "name": "Death Bolt",
+    "icon": "spell_necro_voodooblast",
+    "damage": {
+      "s3": 82396,
+      "s4": 273563
+    },
+    "castTime": 2500
+  },
+  {
+    "id": 387608,
+    "name": "Necrotic Eruption",
+    "icon": "spell_necro_dischargenecroticcore"
+  },
+  {
+    "id": 387611,
+    "name": "Necrotic Eruption",
+    "icon": "spell_necro_dischargenecroticcore",
+    "damage": {
+      "s3": 137327,
+      "s4": 455939
+    },
+    "aoe": true
+  },
+  {
+    "id": 387614,
+    "name": "Chant of the Dead",
+    "icon": "spell_necro_inevitableend",
+    "castTime": 8000
+  },
+  {
+    "id": 396376,
+    "name": "Chant of the Dead",
+    "icon": "spell_necro_inevitableend",
+    "damage": {
+      "s3": 109862,
+      "s4": 364751
+    },
+    "aoe": true
+  },
+  {
+    "id": 388801,
+    "name": "Mortal Strike",
+    "icon": "ability_warrior_savageblow",
+    "damage": {
+      "s3": 82396,
+      "s4": 273563
+    },
+    "physical": true,
+    "castTime": 1500
+  },
+  {
+    "id": 436841,
+    "name": "Rotting Wind",
+    "icon": "ability_druid_galewinds",
+    "damage": {
+      "s3": 54931,
+      "s4": 182376
+    },
+    "aoe": true,
+    "castTime": 3000
+  },
+  {
+    "id": 387596,
+    "name": "Swift Wind",
+    "icon": "spell_frost_windwalkon",
+    "castTime": 3000
+  },
+  {
+    "id": 387440,
+    "name": "Desecrating Roar",
+    "icon": "spell_necro_conclave",
+    "castTime": 2500
+  },
+  {
+    "id": 387826,
+    "name": "Sundering Slash",
+    "icon": "ability_hunter_swiftstrike",
+    "damage": {
+      "s3": 247189,
+      "s4": 820690
+    },
+    "physical": true,
+    "castTime": 2000
+  },
+  {
+    "id": 387411,
+    "name": "Death Bolt Volley",
+    "icon": "spell_necro_voodooblast",
+    "damage": {
+      "s3": 49438,
+      "s4": 164138
+    },
+    "aoe": true,
+    "castTime": 3000
+  },
+  {
+    "id": 395035,
+    "name": "Shatter Soul",
+    "icon": "spell_shadow_soulleech_1",
+    "damage": {
+      "s3": 54931,
+      "s4": 182376
+    },
+    "aoe": true,
+    "castTime": 3000
+  },
+  {
+    "id": 387411,
+    "name": "Death Bolt Volley",
+    "icon": "spell_necro_voodooblast",
+    "damage": {
+      "s3": 49438,
+      "s4": 164138
+    },
+    "aoe": true,
+    "castTime": 3000
+  },
+  {
+    "id": 395035,
+    "name": "Shatter Soul",
+    "icon": "spell_shadow_soulleech_1",
+    "damage": {
+      "s3": 54931,
+      "s4": 182376
+    },
+    "aoe": true,
+    "castTime": 3000
+  },
+  {
+    "id": 387411,
+    "name": "Death Bolt Volley",
+    "icon": "spell_necro_voodooblast",
+    "damage": {
+      "s3": 49438,
+      "s4": 164138
+    },
+    "aoe": true,
+    "castTime": 3000
+  },
+  {
+    "id": 395035,
+    "name": "Shatter Soul",
+    "icon": "spell_shadow_soulleech_1",
+    "damage": {
+      "s3": 54931,
+      "s4": 182376
+    },
+    "aoe": true,
+    "castTime": 3000
+  },
+  {
+    "id": 387411,
+    "name": "Death Bolt Volley",
+    "icon": "spell_necro_voodooblast",
+    "damage": {
+      "s3": 49438,
+      "s4": 164138
+    },
+    "aoe": true,
+    "castTime": 3000
+  },
+  {
+    "id": 395035,
+    "name": "Shatter Soul",
+    "icon": "spell_shadow_soulleech_1",
+    "damage": {
+      "s3": 54931,
+      "s4": 182376
+    },
+    "aoe": true,
+    "castTime": 3000
+  },
+  {
+    "id": 386012,
+    "name": "Stormbolt",
+    "icon": "spell_nature_lightning",
+    "damage": {
+      "s3": 93382,
+      "s4": 310038
+    },
+    "castTime": 3500
+  },
+  {
+    "id": 384336,
+    "name": "War Stomp",
+    "icon": "ability_warstomp",
+    "damage": {
+      "s3": 164792,
+      "s4": 547127
+    },
+    "aoe": true,
+    "physical": true,
+    "castTime": 3000
+  },
+  {
+    "id": 373395,
+    "name": "Bloodcurdling Shout",
+    "icon": "spell_shadow_ragingscream",
+    "damage": {
+      "s3": 137327,
+      "s4": 455939
+    },
+    "aoe": true,
+    "castTime": 4000
+  },
+  {
+    "id": 384512,
+    "name": "Cleaving Strikes",
+    "icon": "ability_warrior_cleave",
+    "physical": true
+  },
+  {
+    "id": 372683,
+    "name": "Cold Claws",
+    "icon": "ability_mage_wintersgrasp",
+    "damage": {
+      "s3": 87889,
+      "s4": 291801
+    },
+    "physical": true,
+    "castTime": 2000
+  },
+  {
+    "id": 372047,
+    "name": "Steel Barrage",
+    "icon": "inv_axe_1h_deathwingraiddw_d_01",
+    "physical": true,
+    "castTime": 1000
+  },
+  {
+    "id": 372794,
+    "name": "Steel Barrage",
+    "icon": "inv_axe_1h_deathwingraiddw_d_01",
+    "damage": {
+      "s3": 142820,
+      "s4": 474176
+    },
+    "physical": true
+  },
+  {
+    "id": 372087,
+    "name": "Blazing Rush",
+    "icon": "spell_deathknight_butcher2",
+    "physical": true,
+    "castTime": 3000
+  },
+  {
+    "id": 372796,
+    "name": "Blazing Rush",
+    "icon": "spell_deathknight_butcher2",
+    "physical": true
+  },
+  {
+    "id": 372088,
+    "name": "Blazing Rush",
+    "icon": "spell_deathknight_butcher2",
+    "damage": {
+      "s3": 192258,
+      "s4": 638314
+    },
+    "physical": true
+  },
+  {
+    "id": 372735,
+    "name": "Tectonic Slam",
+    "icon": "inv_misc_volatileearth",
+    "damage": {
+      "s3": 76903,
+      "s4": 255326
+    },
+    "aoe": true,
+    "castTime": 4000
+  },
+  {
+    "id": 371956,
+    "name": "Stone Missile",
+    "icon": "inv_ore_blackrock_ore",
+    "castTime": 1500
+  },
+  {
+    "id": 371984,
+    "name": "Icebolt",
+    "icon": "spell_frost_iceshard",
+    "damage": {
+      "s3": 65917,
+      "s4": 218851
+    },
+    "castTime": 2000
+  },
+  {
+    "id": 372743,
+    "name": "Ice Shield",
+    "icon": "ability_mage_coldasice"
+  },
+  {
+    "id": 371489,
+    "name": "Numbing Cold",
+    "icon": "spell_frost_arcticwinds"
+  },
+  {
+    "id": 372568,
+    "name": "Frost Infusion",
+    "icon": "spell_frost_manarecharge"
+  },
+  {
+    "id": 372793,
+    "name": "Excavate",
+    "icon": "ability_gift_of_earth"
+  },
+  {
+    "id": 372696,
+    "name": "Excavating Blast",
+    "icon": "spell_nature_earthquake",
+    "damage": {
+      "s3": 274654,
+      "s4": 911878
+    },
+    "aoe": true,
+    "castTime": 2500
+  },
+  {
+    "id": 372730,
+    "name": "Crushing Smash",
+    "icon": "spell_shaman_earthquake",
+    "damage": {
+      "s3": 368036,
+      "s4": 1221916
+    },
+    "physical": true,
+    "castTime": 1000
+  },
+  {
+    "id": 372697,
+    "name": "Jagged Earth",
+    "icon": "ability_earthen_pillar"
+  },
+  {
+    "id": 373727,
+    "name": "Frost Infusion",
+    "icon": "spell_frost_manarecharge"
+  },
+  {
+    "id": 372808,
+    "name": "Frigid Shard",
+    "icon": "spell_frost_iceshard",
+    "damage": {
+      "s3": 109862,
+      "s4": 364751
+    },
+    "castTime": 750
+  },
+  {
+    "id": 396044,
+    "name": "Hailbombs",
+    "icon": "spell_frost_frostshock",
+    "damage": {
+      "s3": 21972,
+      "s4": 72950
+    },
+    "aoe": true,
+    "castTime": 2000
+  },
+  {
+    "id": 372851,
+    "name": "Chillstorm",
+    "icon": "spell_shadow_soulleech_2",
+    "castTime": 3500
+  },
+  {
+    "id": 373046,
+    "name": "Awaken Whelps",
+    "icon": "inv_dragonwhelp3_gemmed_red",
+    "castTime": 4000
+  },
+  {
+    "id": 373680,
+    "name": "Frost Overload",
+    "icon": "spell_fire_blueflamering"
+  },
+  {
+    "id": 383925,
+    "name": "Chillstorm",
+    "icon": "spell_shadow_soulleech_2",
+    "damage": {
+      "s3": 65917,
+      "s4": 218851
+    },
+    "aoe": true
+  },
+  {
+    "id": 373688,
+    "name": "Frost Overload",
+    "icon": "spell_fire_blueflamering",
+    "damage": {
+      "s3": 52184,
+      "s4": 173257
+    },
+    "aoe": true
+  },
+  {
+    "id": 384024,
+    "name": "Hailbombs",
+    "icon": "spell_frost_frostshock",
+    "damage": {
+      "s3": 164792,
+      "s4": 547127
+    },
+    "aoe": true
+  },
+  {
+    "id": 372863,
+    "name": "Ritual of Blazebinding",
+    "icon": "spell_fire_totemofwrath",
+    "damage": {
+      "s3": 247189,
+      "s4": 820690
+    },
+    "aoe": true,
+    "castTime": 4000
+  },
+  {
+    "id": 372107,
+    "name": "Molten Boulder",
+    "icon": "spell_mage_flameorb",
+    "castTime": 2500
+  },
+  {
+    "id": 372858,
+    "name": "Searing Blows",
+    "icon": "ability_shaman_lavalash",
+    "physical": true
+  },
+  {
+    "id": 372860,
+    "name": "Searing Wounds",
+    "icon": "spell_fire_moltenblood",
+    "physical": true
+  },
+  {
+    "id": 372820,
+    "name": "Scorched Earth",
+    "icon": "spell_shaman_stormearthfire"
+  },
+  {
+    "id": 372859,
+    "name": "Searing Blows",
+    "icon": "ability_shaman_lavalash",
+    "physical": true
+  },
+  {
+    "id": 384823,
+    "name": "Inferno",
+    "icon": "ability_warlock_inferno",
+    "damage": {
+      "s3": 87889,
+      "s4": 291801
+    },
+    "aoe": true,
+    "castTime": 3000
+  },
+  {
+    "id": 373017,
+    "name": "Roaring Blaze",
+    "icon": "spell_fire_flamebolt",
+    "damage": {
+      "s3": 87889,
+      "s4": 291801
+    },
+    "aoe": true,
+    "castTime": 3000
+  },
+  {
+    "id": 373087,
+    "name": "Burnout",
+    "icon": "spell_fire_selfdestruct",
+    "damage": {
+      "s3": 357050,
+      "s4": 1185441
+    },
+    "aoe": true,
+    "castTime": 5000
+  },
+  {
+    "id": 384823,
+    "name": "Inferno",
+    "icon": "ability_warlock_inferno",
+    "damage": {
+      "s3": 87889,
+      "s4": 291801
+    },
+    "aoe": true,
+    "castTime": 3000
+  },
+  {
+    "id": 373017,
+    "name": "Roaring Blaze",
+    "icon": "spell_fire_flamebolt",
+    "damage": {
+      "s3": 87889,
+      "s4": 291801
+    },
+    "aoe": true,
+    "castTime": 3000
+  },
+  {
+    "id": 373087,
+    "name": "Burnout",
+    "icon": "spell_fire_selfdestruct",
+    "damage": {
+      "s3": 357050,
+      "s4": 1185441
+    },
+    "aoe": true,
+    "castTime": 5000
+  },
+  {
+    "id": 373803,
+    "name": "Cold Claws",
+    "icon": "ability_mage_wintersgrasp",
+    "damage": {
+      "s3": 87889,
+      "s4": 291801
+    },
+    "physical": true,
+    "castTime": 2000
+  },
+  {
+    "id": 373693,
+    "name": "Living Bomb",
+    "icon": "inv_summerfest_firespirit",
+    "castTime": 1000
+  },
+  {
+    "id": 373692,
+    "name": "Inferno",
+    "icon": "ability_warlock_inferno",
+    "damage": {
+      "s3": 65917,
+      "s4": 218851
+    },
+    "aoe": true,
+    "castTime": 3000
+  },
+  {
+    "id": 373614,
+    "name": "Burnout",
+    "icon": "spell_fire_selfdestruct",
+    "damage": {
+      "s3": 357050,
+      "s4": 1185441
+    },
+    "aoe": true,
+    "castTime": 5000
+  },
+  {
+    "id": 385536,
+    "name": "Flame Dance",
+    "icon": "ability_warlock_burningembers"
+  },
+  {
+    "id": 373972,
+    "name": "Blaze of Glory",
+    "icon": "inv_ember"
+  },
+  {
+    "id": 373973,
+    "name": "Blaze of Glory",
+    "icon": "inv_ember",
+    "damage": {
+      "s3": 65917,
+      "s4": 218851
+    },
+    "aoe": true
+  },
+  {
+    "id": 385568,
+    "name": "Flame Dance",
+    "icon": "ability_warlock_burningembers",
+    "damage": {
+      "s3": 98875,
+      "s4": 328276
+    },
+    "aoe": true
+  },
+  {
+    "id": 373977,
+    "name": "Blaze of Glory",
+    "icon": "inv_ember",
+    "damage": {
+      "s3": 131834,
+      "s4": 437701
+    },
+    "aoe": true
+  },
+  {
+    "id": 385567,
+    "name": "Flame Dance",
+    "icon": "ability_warlock_burningembers",
+    "damage": {
+      "s3": 43945,
+      "s4": 145900
+    }
+  },
+  {
+    "id": 384194,
+    "name": "Cinderbolt",
+    "icon": "spell_fire_firebolt",
+    "damage": {
+      "s3": 38452,
+      "s4": 127663
+    },
+    "castTime": 2500
+  },
+  {
+    "id": 385063,
+    "name": "Burning Ambition",
+    "icon": "spell_fire_incinerate",
+    "castTime": 1000
+  },
+  {
+    "id": 384197,
+    "name": "Cinderbolt",
+    "icon": "spell_fire_firebolt",
+    "castTime": 2500
+  },
+  {
+    "id": 384494,
+    "name": "Infernocore",
+    "icon": "ability_mage_livingbomb"
+  },
+  {
+    "id": 381525,
+    "name": "Roaring Firebreath",
+    "icon": "ability_warlock_inferno",
+    "castTime": 3000
+  },
+  {
+    "id": 381602,
+    "name": "Flamespit",
+    "icon": "spell_fire_firebolt",
+    "castTime": 2000
+  },
+  {
+    "id": 381605,
+    "name": "Flamespit",
+    "icon": "spell_fire_firebolt",
+    "castTime": 2000
+  },
+  {
+    "id": 381862,
+    "name": "Infernocore",
+    "icon": "ability_mage_livingbomb"
+  },
+  {
+    "id": 381526,
+    "name": "Roaring Firebreath",
+    "icon": "ability_warlock_inferno"
+  },
+  {
+    "id": 384773,
+    "name": "Flaming Embers",
+    "icon": "spell_fire_felflamering_red"
+  },
+  {
+    "id": 381607,
+    "name": "Flamespit",
+    "icon": "spell_fire_firebolt",
+    "damage": {
+      "s3": 54931,
+      "s4": 182376
+    }
+  },
+  {
+    "id": 381864,
+    "name": "Infernocore",
+    "icon": "ability_mage_livingbomb",
+    "damage": {
+      "s3": 35705,
+      "s4": 118544
+    },
+    "aoe": true
+  },
+  {
+    "id": 381512,
+    "name": "Stormslam",
+    "icon": "ability_shaman_stormstrike",
+    "physical": true,
+    "castTime": 1000
+  },
+  {
+    "id": 381516,
+    "name": "Interrupting Cloudburst",
+    "icon": "spell_nature_cyclone",
+    "damage": {
+      "s3": 54931,
+      "s4": 182376
+    },
+    "aoe": true,
+    "variance": 0.1,
+    "castTime": 3000
+  },
+  {
+    "id": 381517,
+    "name": "Winds of Change",
+    "icon": "spell_nature_purge",
+    "castTime": 1500
+  },
+  {
+    "id": 381515,
+    "name": "Stormslam",
+    "icon": "ability_shaman_stormstrike"
+  },
+  {
+    "id": 381518,
+    "name": "Winds of Change",
+    "icon": "spell_nature_purge"
+  },
+  {
+    "id": 381513,
+    "name": "Stormslam",
+    "icon": "ability_shaman_stormstrike",
+    "damage": {
+      "s3": 87889,
+      "s4": 291801
+    },
+    "variance": 0.05
+  },
+  {
+    "id": 381514,
+    "name": "Stormslam",
+    "icon": "ability_shaman_stormstrike",
+    "damage": {
+      "s3": 274654,
+      "s4": 911878
+    },
+    "physical": true,
+    "variance": 0.05
+  },
+  {
+    "id": 385310,
+    "name": "Lightning Bolt",
+    "icon": "spell_lightning_lightningbolt01",
+    "damage": {
+      "s3": 131834,
+      "s4": 437701
+    },
+    "castTime": 2000
+  },
+  {
+    "id": 385311,
+    "name": "Thunderstorm",
+    "icon": "spell_shaman_thunderstorm",
+    "damage": {
+      "s3": 54931,
+      "s4": 182376
+    },
+    "aoe": true
+  },
+  {
+    "id": 385313,
+    "name": "Unlucky Strike",
+    "icon": "spell_nature_unrelentingstorm",
+    "castTime": 2000
+  },
+  {
+    "id": 391031,
+    "name": "Tempest Barrier",
+    "icon": "spell_mage_temporalshield"
+  },
+  {
+    "id": 392398,
+    "name": "Crackling Detonation",
+    "icon": "spell_nature_unrelentingstorm",
+    "castTime": 1500
+  },
+  {
+    "id": 392399,
+    "name": "Crackling Detonation",
+    "icon": "spell_nature_unrelentingstorm",
+    "damage": {
+      "s3": 109862,
+      "s4": 364751
+    },
+    "aoe": true,
+    "variance": 0.1
+  },
+  {
+    "id": 392924,
+    "name": "Shock Blast",
+    "icon": "spell_nature_stormreach",
+    "damage": {
+      "s3": 60424,
+      "s4": 200613
+    },
+    "variance": 0.1,
+    "castTime": 1500
+  },
+  {
+    "id": 392486,
+    "name": "Lightning Storm",
+    "icon": "spell_shaman_thunderstorm",
+    "castTime": 1500
+  },
+  {
+    "id": 392574,
+    "name": "Summon Primal Thundercloud",
+    "icon": "ability_vehicle_electrocharge",
+    "castTime": 500
+  },
+  {
+    "id": 391050,
+    "name": "Tempest Stormshield",
+    "icon": "inv_10_worlddroplevelingoptionalreagent_misc_orb_air",
+    "castTime": 3000
+  },
+  {
+    "id": 392488,
+    "name": "Lightning Storm",
+    "icon": "spell_shaman_thunderstorm",
+    "damage": {
+      "s3": 27465,
+      "s4": 91188
+    },
+    "aoe": true
+  },
+  {
+    "id": 391723,
+    "name": "Flame Breath",
+    "icon": "ability_mage_firestarter",
+    "physical": true,
+    "castTime": 3000
+  },
+  {
+    "id": 392394,
+    "name": "Fire Maw",
+    "icon": "ability_warrior_dragonroar",
+    "damage": {
+      "s3": 219723,
+      "s4": 729502
+    },
+    "physical": true,
+    "castTime": 1000
+  },
+  {
+    "id": 392569,
+    "name": "Molten Blood",
+    "icon": "spell_nzinsanity_floorislava",
+    "castTime": 1000
+  },
+  {
+    "id": 395292,
+    "name": "Fire Maw",
+    "icon": "ability_warrior_dragonroar",
+    "damage": {
+      "s3": 109862,
+      "s4": 364751
+    }
+  },
+  {
+    "id": 392570,
+    "name": "Molten Blood",
+    "icon": "spell_nzinsanity_floorislava",
+    "damage": {
+      "s3": 4120,
+      "s4": 13678
+    },
+    "aoe": true
+  },
+  {
+    "id": 391724,
+    "name": "Flame Breath",
+    "icon": "ability_mage_firestarter",
+    "damage": {
+      "s3": 131834,
+      "s4": 437701
+    },
+    "aoe": true
+  },
+  {
+    "id": 391726,
+    "name": "Storm Breath",
+    "icon": "inv_misc_stormlordsfavor",
+    "physical": true,
+    "castTime": 3000
+  },
+  {
+    "id": 392640,
+    "name": "Rolling Thunder",
+    "icon": "spell_nature_lightningoverload",
+    "castTime": 1000
+  },
+  {
+    "id": 392395,
+    "name": "Thunder Jaw",
+    "icon": "inv_misc_stormdragonpale",
+    "damage": {
+      "s3": 219723,
+      "s4": 729502
+    },
+    "physical": true,
+    "castTime": 1000
+  },
+  {
+    "id": 392641,
+    "name": "Rolling Thunder",
+    "icon": "spell_nature_lightningoverload"
+  },
+  {
+    "id": 391727,
+    "name": "Storm Breath",
+    "icon": "ability_mage_firestarter",
+    "damage": {
+      "s3": 131834,
+      "s4": 437701
+    },
+    "aoe": true
+  },
+  {
+    "id": 392642,
+    "name": "Rolling Thunder",
+    "icon": "spell_nature_lightningoverload",
+    "damage": {
+      "s3": 54931,
+      "s4": 182376
+    },
+    "aoe": true
+  },
+  {
+    "id": 395303,
+    "name": "Thunder Jaw",
+    "icon": "inv_misc_stormdragonpale",
+    "damage": {
+      "s3": 164792,
+      "s4": 547127
+    }
+  },
+  {
+    "id": 392406,
+    "name": "Thunderclap",
+    "icon": "ability_thunderclap",
+    "damage": {
+      "s3": 21972,
+      "s4": 72950
+    },
+    "aoe": true,
+    "variance": 0.1,
+    "castTime": 1000
+  },
+  {
+    "id": 392451,
+    "name": "Flashfire",
+    "icon": "spell_fire_felflamering_red",
+    "castTime": 2000
+  },
+  {
+    "id": 392452,
+    "name": "Flashfire",
+    "icon": "spell_fire_felflamering_red",
+    "damage": {
+      "s3": 54931,
+      "s4": 182376
+    },
+    "aoe": true
+  },
+  {
+    "id": 392576,
+    "name": "Thunder Bolt",
+    "icon": "inv_misc_stormlordsfavor",
+    "damage": {
+      "s3": 60424,
+      "s4": 200613
+    },
+    "variance": 0.1,
+    "castTime": 1500
+  },
+  {
+    "id": 392574,
+    "name": "Summon Primal Thundercloud",
+    "icon": "ability_vehicle_electrocharge",
+    "castTime": 500
+  },
+  {
+    "id": 392486,
+    "name": "Lightning Storm",
+    "icon": "spell_shaman_thunderstorm",
+    "castTime": 1500
+  },
+  {
+    "id": 392488,
+    "name": "Lightning Storm",
+    "icon": "spell_shaman_thunderstorm",
+    "damage": {
+      "s3": 27465,
+      "s4": 91188
+    },
+    "aoe": true
+  },
+  {
+    "id": 384494,
+    "name": "Infernocore",
+    "icon": "ability_mage_livingbomb"
+  },
+  {
+    "id": 369605,
+    "name": "Call of the Deep",
+    "icon": "ability_fomor_boss_shout",
+    "physical": true
+  },
+  {
+    "id": 369703,
+    "name": "Thundering Slam",
+    "icon": "ability_shaman_stormstrike",
+    "damage": {
+      "s3": 219723,
+      "s4": 729502
+    },
+    "aoe": true,
+    "castTime": 3500
+  },
+  {
+    "id": 382303,
+    "name": "Quaking Totem",
+    "icon": "spell_shaman_totemrecall",
+    "physical": true,
+    "castTime": 1000
+  },
+  {
+    "id": 369754,
+    "name": "Bloodlust",
+    "icon": "spell_nature_bloodlust",
+    "physical": true,
+    "castTime": 5000
+  },
+  {
+    "id": 369853,
+    "name": "Throw Rock",
+    "icon": "inv_elemental_primal_earth",
+    "physical": true,
+    "castTime": 2000
+  },
+  {
+    "id": 369854,
+    "name": "Throw Rock",
+    "icon": "inv_elemental_primal_earth",
+    "damage": {
+      "s3": 65917,
+      "s4": 218851
+    },
+    "aoe": true,
+    "physical": true
+  },
+  {
+    "id": 369811,
+    "name": "Brutal Slam",
+    "icon": "ability_warrior_decisivestrike",
+    "damage": {
+      "s3": 164792,
+      "s4": 547127
+    },
+    "aoe": true,
+    "physical": true,
+    "castTime": 2000
+  },
+  {
+    "id": 369818,
+    "name": "Diseased Bite",
+    "icon": "spell_shadow_plaguecloud",
+    "damage": {
+      "s3": 247189,
+      "s4": 820690
+    },
+    "physical": true,
+    "castTime": 1000
+  },
+  {
+    "id": 369806,
+    "name": "Reckless Rage",
+    "icon": "ability_warrior_endlessrage",
+    "physical": true,
+    "castTime": 1000
+  },
+  {
+    "id": 369674,
+    "name": "Stone Spike",
+    "icon": "6bf_blackrock_nova",
+    "damage": {
+      "s3": 71410,
+      "s4": 237088
+    },
+    "castTime": 2500
+  },
+  {
+    "id": 369675,
+    "name": "Chain Lightning",
+    "icon": "spell_nature_chainlightning",
+    "damage": {
+      "s3": 109862,
+      "s4": 364751
+    },
+    "castTime": 3000
+  },
+  {
+    "id": 369828,
+    "name": "Chomp",
+    "icon": "ability_druid_ferociousbite",
+    "physical": true,
+    "castTime": 1000
+  },
+  {
+    "id": 369823,
+    "name": "Spiked Carapace",
+    "icon": "ability_demonhunter_demonspikes2",
+    "castTime": 2000
+  },
+  {
+    "id": 369826,
+    "name": "Spiked Carapace",
+    "icon": "ability_demonhunter_demonspikes2",
+    "damage": {
+      "s3": 19226,
+      "s4": 63831
+    }
+  },
+  {
+    "id": 369335,
+    "name": "Fissuring Slam",
+    "icon": "ability_shockwave",
+    "damage": {
+      "s3": 164792,
+      "s4": 547127
+    },
+    "castTime": 1500
+  },
+  {
+    "id": 369337,
+    "name": "Difficult Terrain",
+    "icon": "spell_shaman_earthquake",
+    "physical": true
+  },
+  {
+    "id": 369328,
+    "name": "Earthquake",
+    "icon": "spell_nature_earthquake",
+    "physical": true
+  },
+  {
+    "id": 369327,
+    "name": "Earthquake",
+    "icon": "spell_nature_earthquake",
+    "damage": {
+      "s3": 43945,
+      "s4": 145900
+    },
+    "aoe": true,
+    "physical": true
+  },
+  {
+    "id": 372600,
+    "name": "Inexorable",
+    "icon": "ability_rogue_combatreadiness",
+    "physical": true,
+    "castTime": 2500
+  },
+  {
+    "id": 372623,
+    "name": "Resonating Orb",
+    "icon": "inv_trinket_80_titan01d",
+    "castTime": 1000
+  },
+  {
+    "id": 372701,
+    "name": "Crushing Stomp",
+    "icon": "warrior_talent_icon_thunderstruck",
+    "damage": {
+      "s3": 82396,
+      "s4": 273563
+    },
+    "aoe": true,
+    "physical": true,
+    "variance": 0.05,
+    "castTime": 2000
+  },
+  {
+    "id": 372718,
+    "name": "Earthen Shards",
+    "icon": "6bf_blackrock_nova",
+    "damage": {
+      "s3": 82396,
+      "s4": 273563
+    },
+    "physical": true,
+    "variance": 0.05
+  },
+  {
+    "id": 372719,
+    "name": "Titanic Empowerment",
+    "icon": "spell_nature_shamanrage",
+    "physical": true,
+    "castTime": 5000
+  },
+  {
+    "id": 382071,
+    "name": "Resonating Orb",
+    "icon": "inv_trinket_80_titan01d",
+    "physical": true
+  },
+  {
+    "id": 376292,
+    "name": "Eternity Orb",
+    "icon": "spell_sandbolt",
+    "physical": true,
+    "castTime": 500
+  },
+  {
+    "id": 376049,
+    "name": "Wing Buffet",
+    "icon": "inv_icon_wing07e",
+    "damage": {
+      "s3": 96129,
+      "s4": 319157
+    },
+    "aoe": true,
+    "castTime": 2000
+  },
+  {
+    "id": 375727,
+    "name": "Sand Breath",
+    "icon": "inv_elementalearth2",
+    "damage": {
+      "s3": 247189,
+      "s4": 820690
+    },
+    "aoe": true,
+    "castTime": 2500
+  },
+  {
+    "id": 376208,
+    "name": "Rewind Timeflow",
+    "icon": "spell_mage_altertime",
+    "castTime": 2000
+  },
+  {
+    "id": 377405,
+    "name": "Time Sink",
+    "icon": "spell_sandstorm"
+  },
+  {
+    "id": 377561,
+    "name": "Time Eruption",
+    "icon": "spell_nature_earthquake",
+    "damage": {
+      "s3": 109862,
+      "s4": 364751
+    },
+    "aoe": true
+  },
+  {
+    "id": 376209,
+    "name": "Rewind Timeflow",
+    "icon": "spell_mage_altertime",
+    "damage": {
+      "s3": 16479,
+      "s4": 54713
+    },
+    "aoe": true
+  },
+  {
+    "id": 376319,
+    "name": "Eternity Orb",
+    "icon": "spell_sandbolt",
+    "damage": {
+      "s3": 6866,
+      "s4": 22797
+    },
+    "aoe": true
+  },
+  {
+    "id": 369409,
+    "name": "Cleave",
+    "icon": "ability_warrior_cleave",
+    "damage": {
+      "s3": 137327,
+      "s4": 455939
+    },
+    "aoe": true,
+    "physical": true,
+    "castTime": 1000
+  },
+  {
+    "id": 382578,
+    "name": "Blessing of Tyr",
+    "icon": "ability_titankeeper_cleansingorb",
+    "physical": true,
+    "castTime": 2500
+  },
+  {
+    "id": 382573,
+    "name": "Blessing of Tyr",
+    "icon": "ability_paladin_lightofthemartyr",
+    "physical": true
+  },
+  {
+    "id": 382576,
+    "name": "Scorn of Tyr",
+    "icon": "achievement_dungeon_ulduarraid_titan_01"
+  },
+  {
+    "id": 382696,
+    "name": "Bulwark Slam",
+    "icon": "ability_warrior_shieldmastery",
+    "damage": {
+      "s3": 285640,
+      "s4": 948353
+    },
+    "physical": true,
+    "castTime": 1500
+  },
+  {
+    "id": 373662,
+    "name": "Ancient Studies",
+    "icon": "inv_misc_profession_book_mining",
+    "physical": true
+  },
+  {
+    "id": 369400,
+    "name": "Earthen Ward",
+    "icon": "spell_shaman_improvedearthshield",
+    "castTime": 2000
+  },
+  {
+    "id": 369365,
+    "name": "Curse of Stone",
+    "icon": "inv_zulgurubtrinket",
+    "physical": true,
+    "castTime": 3000
+  },
+  {
+    "id": 369368,
+    "name": "Stone Eruption",
+    "icon": "icon_upgradestone_undead_legendary",
+    "damage": {
+      "s3": 219723,
+      "s4": 729502
+    },
+    "aoe": true
+  },
+  {
+    "id": 369366,
+    "name": "Trapped in Stone",
+    "icon": "icon_upgradestone_undead_legendary",
+    "physical": true
+  },
+  {
+    "id": 369697,
+    "name": "Ambush",
+    "icon": "ability_heroicleap",
+    "physical": true
+  },
+  {
+    "id": 369696,
+    "name": "Ambush",
+    "icon": "ability_heroicleap",
+    "damage": {
+      "s3": 16479,
+      "s4": 54713
+    },
+    "aoe": true,
+    "physical": true
+  },
+  {
+    "id": 381593,
+    "name": "Thunderous Clap",
+    "icon": "ability_earthenfury_giftofearth",
+    "damage": {
+      "s3": 87889,
+      "s4": 291801
+    },
+    "aoe": true,
+    "castTime": 2500
+  },
+  {
+    "id": 369411,
+    "name": "Sonic Burst",
+    "icon": "ability_vehicle_sonicshockwave",
+    "damage": {
+      "s3": 82396,
+      "s4": 273563
+    },
+    "aoe": true,
+    "physical": true,
+    "castTime": 3000
+  },
+  {
+    "id": 369417,
+    "name": "Venomous Fangs",
+    "icon": "spell_nature_nullifypoison",
+    "physical": true
+  },
+  {
+    "id": 369423,
+    "name": "Pounce",
+    "icon": "ability_hunter_pet_spider",
+    "physical": true,
+    "castTime": 1000
+  },
+  {
+    "id": 369424,
+    "name": "Pounce",
+    "icon": "ability_hunter_pet_spider",
+    "damage": {
+      "s3": 43945,
+      "s4": 145900
+    },
+    "physical": true
+  },
+  {
+    "id": 369419,
+    "name": "Venomous Fangs",
+    "icon": "spell_nature_nullifypoison"
+  },
+  {
+    "id": 377723,
+    "name": "Antique Constitution",
+    "icon": "spell_shaman_earthquake",
+    "physical": true
+  },
+  {
+    "id": 377738,
+    "name": "Ancient Power",
+    "icon": "shaman_talent_unleashedfury",
+    "physical": true
+  },
+  {
+    "id": 377732,
+    "name": "Jagged Bite",
+    "icon": "inv_artifact_corruptedbloodofzakajz",
+    "damage": {
+      "s3": 109862,
+      "s4": 364751
+    },
+    "physical": true,
+    "castTime": 1500
+  },
+  {
+    "id": 377510,
+    "name": "Stolen Time",
+    "icon": "ability_bossmagistrix_timewarp2"
+  },
+  {
+    "id": 377500,
+    "name": "Hasten",
+    "icon": "spell_mage_altertime_active",
+    "castTime": 2000
+  },
+  {
+    "id": 377486,
+    "name": "Time Blade",
+    "icon": "inv_weapon_shortblade_75",
+    "damage": {
+      "s3": 192258,
+      "s4": 638314
+    },
+    "physical": true,
+    "castTime": 1000
+  },
+  {
+    "id": 369033,
+    "name": "Activate Keepers",
+    "icon": "inv_misc_desecrated_platehelm",
+    "physical": true
+  },
+  {
+    "id": 369061,
+    "name": "Searing Clap",
+    "icon": "spell_fire_immolation",
+    "damage": {
+      "s3": 192258,
+      "s4": 638314
+    },
+    "aoe": true,
+    "castTime": 2000
+  },
+  {
+    "id": 369110,
+    "name": "Unstable Embers",
+    "icon": "ability_creature_cursed_01",
+    "physical": true,
+    "castTime": 1000
+  },
+  {
+    "id": 368990,
+    "name": "Purging Flames",
+    "icon": "ability_mage_firestarter",
+    "physical": true,
+    "castTime": 2000
+  },
+  {
+    "id": 369026,
+    "name": "Heat Engine",
+    "icon": "inv_ember",
+    "physical": true
+  },
+  {
+    "id": 369006,
+    "name": "Burning Heat",
+    "icon": "ability_warlock_fireandbrimstone"
+  },
+  {
+    "id": 369116,
+    "name": "Unstable Embers",
+    "icon": "spell_shaman_improvedfirenova",
+    "damage": {
+      "s3": 98875,
+      "s4": 328276
+    },
+    "aoe": true
+  },
+  {
+    "id": 369025,
+    "name": "Fire Wave",
+    "icon": "spell_fire_selfdestruct",
+    "damage": {
+      "s3": 21972,
+      "s4": 72950
+    },
+    "aoe": true
+  },
+  {
+    "id": 369052,
+    "name": "Seeking Flame",
+    "icon": "spell_fire_fireball02",
+    "damage": {
+      "s3": 137327,
+      "s4": 455939
+    }
+  },
+  {
+    "id": 369677,
+    "name": "Ricocheting Shield",
+    "icon": "spell_holy_avengersshield",
+    "damage": {
+      "s3": 137327,
+      "s4": 455939
+    },
+    "physical": true,
+    "castTime": 4000
+  },
+  {
+    "id": 369602,
+    "name": "Defensive Bulwark",
+    "icon": "ability_warrior_shieldwall"
+  },
+  {
+    "id": 375924,
+    "name": "Longboat Raid!",
+    "icon": "ability_rogue_cannonballbarrage",
+    "physical": true,
+    "castTime": 2000
+  },
+  {
+    "id": 375339,
+    "name": "Recovering...",
+    "icon": "spell_frost_stun",
+    "physical": true
+  },
+  {
+    "id": 369563,
+    "name": "Wild Cleave",
+    "icon": "ability_warrior_cleave",
+    "damage": {
+      "s3": 247189,
+      "s4": 820690
+    },
+    "aoe": true,
+    "physical": true,
+    "castTime": 2000
+  },
+  {
+    "id": 369573,
+    "name": "Heavy Arrow",
+    "icon": "inv_misc_ammo_arrow_01",
+    "damage": {
+      "s3": 274654,
+      "s4": 911878
+    },
+    "aoe": true,
+    "physical": true,
+    "castTime": 3000
+  },
+  {
+    "id": 375924,
+    "name": "Longboat Raid!",
+    "icon": "ability_rogue_cannonballbarrage",
+    "physical": true,
+    "castTime": 2000
+  },
+  {
+    "id": 375339,
+    "name": "Recovering...",
+    "icon": "spell_frost_stun",
+    "physical": true
+  },
+  {
+    "id": 369781,
+    "name": "Dagger Throw",
+    "icon": "ability_throw",
+    "physical": true,
+    "castTime": 2000
+  },
+  {
+    "id": 369791,
+    "name": "Skullcracker",
+    "icon": "ability_warrior_throwdown",
+    "physical": true,
+    "castTime": 2500
+  },
+  {
+    "id": 369792,
+    "name": "Skullcracker",
+    "icon": "ability_warrior_throwdown",
+    "damage": {
+      "s3": 192258,
+      "s4": 638314
+    },
+    "aoe": true,
+    "physical": true
+  },
+  {
+    "id": 375924,
+    "name": "Longboat Raid!",
+    "icon": "ability_rogue_cannonballbarrage",
+    "physical": true,
+    "castTime": 2000
+  },
+  {
+    "id": 375339,
+    "name": "Recovering...",
+    "icon": "spell_frost_stun",
+    "physical": true
+  },
+  {
+    "id": 369049,
+    "name": "Seeking Flame",
+    "icon": "spell_fire_fireball02",
+    "physical": true,
+    "castTime": 1500
+  },
+  {
+    "id": 369043,
+    "name": "Infusion",
+    "icon": "ability_warlock_backdraft",
+    "physical": true
+  },
+  {
+    "id": 369052,
+    "name": "Seeking Flame",
+    "icon": "spell_fire_fireball02",
+    "damage": {
+      "s3": 137327,
+      "s4": 455939
+    }
+  },
+  {
+    "id": 369399,
+    "name": "Stone Bolt",
+    "icon": "inv_ore_blackrock_ore",
+    "damage": {
+      "s3": 65917,
+      "s4": 218851
+    },
+    "castTime": 2000
+  },
+  {
+    "id": 369465,
+    "name": "Hail of Stone",
+    "icon": "6bf_blackrock_nova",
+    "castTime": 1000
+  },
+  {
+    "id": 369466,
+    "name": "Hail of Stone",
+    "icon": "6bf_blackrock_nova",
+    "damage": {
+      "s3": 16479,
+      "s4": 54713
+    },
+    "aoe": true
+  },
+  {
+    "id": 369674,
+    "name": "Stone Spike",
+    "icon": "6bf_blackrock_nova",
+    "damage": {
+      "s3": 71410,
+      "s4": 237088
+    },
+    "castTime": 2500
+  },
+  {
+    "id": 369675,
+    "name": "Chain Lightning",
+    "icon": "spell_nature_chainlightning",
+    "damage": {
+      "s3": 109862,
+      "s4": 364751
+    },
+    "castTime": 3000
+  },
+  {
+    "id": 369697,
+    "name": "Ambush",
+    "icon": "ability_heroicleap",
+    "physical": true
+  },
+  {
+    "id": 369696,
+    "name": "Ambush",
+    "icon": "ability_heroicleap",
+    "damage": {
+      "s3": 16479,
+      "s4": 54713
+    },
+    "aoe": true,
+    "physical": true
+  },
+  {
+    "id": 369660,
+    "name": "Tremor",
+    "icon": "spell_shaman_earthquake",
+    "physical": true
+  },
+  {
+    "id": 369662,
+    "name": "Tremor",
+    "icon": "spell_shaman_earthquake",
+    "physical": true
+  },
+  {
+    "id": 369663,
+    "name": "Tremor",
+    "icon": "spell_shaman_earthquake",
+    "physical": true
+  },
+  {
+    "id": 369610,
+    "name": "Shocking Quake",
+    "icon": "spell_shaman_thunderstorm",
+    "damage": {
+      "s3": 43945,
+      "s4": 145900
+    },
+    "aoe": true
+  },
+  {
+    "id": 372793,
+    "name": "Excavate",
+    "icon": "ability_gift_of_earth"
+  },
+  {
+    "id": 382264,
+    "name": "Temporal Theft",
+    "icon": "inv_10_enchanting2_magicswirl_bronze"
+  },
+  {
+    "id": 181113,
+    "name": "Encounter Spawn",
+    "icon": "inv_misc_questionmark",
+    "physical": true
+  },
+  {
+    "id": 845,
+    "name": "Cleave",
+    "icon": "ability_warrior_cleave",
+    "aoe": true,
+    "physical": true,
+    "variance": 0.05
+  }
+]
