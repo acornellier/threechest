@@ -79,7 +79,7 @@ const uld: Dungeon = {
   name: 'Uldaman',
   key: 'uld',
   icon: 'achievement_dungeon_uldaman',
-  // wclEncounterId: 62451,
+  wclEncounterId: 62451,
   ...dungeonData('uld'),
 }
 
