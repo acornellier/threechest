@@ -44,7 +44,7 @@ const sampleRouteDefinitions: Record<DungeonKey, SampleRouteDefinition[]> = {
     {
       name: 'Safely press W',
       difficulty: 'beginner',
-      mdt: '!fwvtpUniq0Fm79vMXyB899sVGQevQ3qB(aQsxuCuS92n9W(BVGzWbOMSksb7HH38MhZmwsK)qkMuFmjfIDAL52NVE5QAC8Zx)Pu8hL6njN8CLuC8KwF6WSz6MKdodZNokfm6FpQVT)YKzNu8(oZSYb3H5RxvNN((SXi5voNrlI59g17kdIjA9L5Z)snC(Bh)qYPu3gJkJ6W0PHZw0Se7IfOr7JCs0FCNNCqYBCR1sERBL6HM34zjV1ULD1cYHbZWvP4jTMwP1wl2ZgHwhIgdrRF5u2N8BtsbXbrVoYb0lcIcHIWqAcSQ9)PbDjeu3HBreAqaAXZ3HhN5Pth6wn6gnNw7z(CRjg0aRae0AeukQu9OsrC3v2yG5bZ(aKg3M8KWLgohwcfRSyrJGPAdALPmETLL4ECo7YIGY6fwlNtIUL6LzJxJ6tGVldMA896SYTGD62W7Ql8jlICZJZwxvGNoyKd8HH(3hQKQYYl8QznabI1UnX6xVRqeGcNlGB3dQE2SFcLkiPw5oUXL2o7SVQ1cLyi6cigV0EG78LwQrdvQ(sXn074JauLwpbKm9Og1dkwhI6gaz(rZ66Gs9q(mynUqwCZ0pa20(gDDELgQsVVHhn5BzIvfoEWpnO9(0G1q3vQZ1lY3LSqZdPoxKQYkZzL6w98FnlIN(Vz7Np4qXb4RFfyHka9l6AC)ed7)T97sJlFvAsk)ha',
+      mdt: '!fwvtpUniq0Fm9(kZySn((EPxqRevQ3qB(awLwuCuS92n9W(BFbZGdqnPksX24zEZ79ygSKi)HumP(yske70kZTpF9Yv144NV(tP4pk1VLCYtvsXXtA9PdZMPBso4wy(0rPGr)7r9T9xMm7KI33zMvo4omF9Q680lZgJKx5cgxrmV3OExzqmXvFE(8BQHZF)4hsoL6EXOYOomDA4SfnlXUybA0ElNe9h3fjhK8g31AjV1DL6HM34zjV1(k7vlihgmdxLIVP10kT2UIn3i06q0yiA9lzzVZ)Askioi61rbGrrquiuegstGvT)lnOlLG6sUfrObbOfZVdtN5PthgwnggnNw7zET1edAGvacAnckfDQE0PiU9kBnqDWS3aP1Tjxeoz4cyPuSYMfncMQnOvMZ49wws4XA2PIGZ6nwlNtQUL6LzJ3J6tGVldMA856S2TW60TH31x4flICapidVcQ31v4PhMzZJJVFDlafCqpmm((qNyvMVeiutMGBljSvI5LauiVaUDpO7BZrj0sHKET74gpA4wNvMN0yLbrBGX4LodDNVfNPWm7lv31nIfKGQ0(rGK5h1OFqX(y03ailoA2uluA6Y7iR1fYQBM)bWMRVXyOxXqv6(n8OtoxoXRcpEXFAs79ttwlDivS3CJz0LQUXWLV6RCk(BbBom5lju4487dr(ia6)zgW9tmS)x2VsnU8nQjP8l',
     },
     {
       name: 'No second ring',
