@@ -1,7 +1,7 @@
 ﻿import type { WclResult, WclUrlInfo } from '../util/wclCalc.ts'
 import { apiBaseUrl } from './api.ts'
 
-export const wclRouteApi = (urlInfo: WclUrlInfo): Promise<WclResult> =>
+export const wclRouteApi = (urlInfo: WclUrlInfo): Promise<{ result: WclResult; cached: boolean }> =>
   fetch(`${apiBaseUrl}/wclRoute`, {
     method: 'post',
     headers: { 'Content-Type': 'application/json' },

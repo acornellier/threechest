@@ -1,11 +1,10 @@
 import { useCallback, useEffect, useState } from 'react'
 import { Button } from '../../Common/Button.tsx'
 import { Modal } from '../../Common/Modal.tsx'
-import { importRoute } from '../../../store/reducers/importReducer.ts'
+import { importMdtRoute, importWclRoute } from '../../../store/reducers/importReducer.ts'
 import { ArrowUpTrayIcon, ClipboardIcon } from '@heroicons/react/24/outline'
 import { isEventInInput, shortcuts } from '../../../data/shortcuts.ts'
 import { useAppDispatch, useRootSelector } from '../../../store/storeUtil.ts'
-import { isDev } from '../../../util/isDev.ts'
 
 const canPasteFromClipboard = !!navigator.clipboard.readText
 
@@ -19,7 +18,13 @@ export function ImportRoute({ hidden }: Props) {
   const [input, setInput] = useState('')
   const [inputModalOpen, setInputModalOpen] = useState(false)
 
-  const handlePaste = useCallback((text: string) => dispatch(importRoute({ text })), [dispatch])
+  const handlePaste = useCallback(
+    (text: string) => {
+      if (text?.includes('warcraftlogs.com')) dispatch(importWclRoute({ url: text }))
+      else dispatch(importMdtRoute({ text }))
+    },
+    [dispatch],
+  )
 
   const onGlobalPaste = useCallback(
     async (event: ClipboardEvent) => {

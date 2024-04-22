@@ -42,14 +42,7 @@ type WclEvent = {
   target?: { id: number }
 }
 
-async function getCachedRoute(file: string): Promise<WclResult | null> {
-  if (!fs.existsSync(file)) return null
-
-  const data = fs.readFileSync(file, 'utf8')
-  return JSON.parse(data)
-}
-
-async function getRoute(code: string, fightId: string | number): Promise<WclRoute> {
+async function getRoute(code: string, fightId: 'last' | string | number): Promise<WclRoute> {
   const query = `
 query {
   reportData {
@@ -180,12 +173,15 @@ query {
 export async function getWclRoute(
   code: string,
   fightId: 'last' | string | number,
-): Promise<WclResult> {
-  console.log('getWclRoute', code, fightId)
-
+): Promise<{ result: WclResult; cached: boolean }> {
   const file = `${wclRouteCacheFolder}/${code}-${fightId}.json`
-  if (fs.existsSync(file)) {
-    return JSON.parse(fs.readFileSync(file, 'utf8'))
+  const hasCache = fs.existsSync(file)
+
+  console.log('getWclRoute', code, fightId, hasCache)
+
+  if (hasCache) {
+    const result = JSON.parse(fs.readFileSync(file, 'utf8'))
+    return { result, cached: true }
   }
 
   const fight = await getRoute(code, fightId)
@@ -260,5 +256,5 @@ export async function getWclRoute(
   fs.mkdirSync(path.dirname(file), { recursive: true })
   fs.writeFileSync(file, JSON.stringify(result))
 
-  return result
+  return { result, cached: false }
 }

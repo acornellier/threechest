@@ -2,7 +2,7 @@ New season
 - Sample routes
 
 WCL
-- Rate limiting?
+- Proper vercel blob or redis caching
 
 - F to focus pull
 - Live mode

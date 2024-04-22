@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { saveRoute, updateSavedRoutes } from './routesReducer.ts'
-import { importRoute } from '../reducers/importReducer.ts'
+import { importMdtRoute } from '../reducers/importReducer.ts'
 import { useIsGuestCollab } from '../collab/collabReducer.ts'
 
 import { useActualRoute } from './routeHooks.ts'
@@ -16,7 +16,7 @@ export function RouteSaver() {
     const urlParams = new URLSearchParams(window.location.search)
     const text = urlParams.get('mdt')
     if (text) {
-      dispatch(importRoute({ text }))
+      dispatch(importMdtRoute({ text }))
       window.history.pushState(null, '', window.location.origin)
     }
   }, [dispatch])

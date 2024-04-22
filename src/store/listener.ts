@@ -2,7 +2,6 @@
 import { createListenerMiddleware, isAnyOf } from '@reduxjs/toolkit'
 import type { RootState } from './store.ts'
 import { addToast } from './reducers/toastReducer.ts'
-import { importRoute } from './reducers/importReducer.ts'
 import { REHYDRATE } from 'redux-persist/es/constants'
 import { ActionCreators } from 'redux-undo'
 import {
@@ -31,6 +30,7 @@ import { dungeonsByKey } from '../data/dungeons.ts'
 import { setDrawColor } from './reducers/mapReducer.ts'
 import type { UnknownAction } from 'redux'
 import { selectActualRoute } from './routes/routeHooks.ts'
+import { importMdtRoute, importWclRoute } from './reducers/importReducer.ts'
 
 export const listenerMiddleware = createListenerMiddleware()
 
@@ -53,7 +53,7 @@ listenerMiddleware.startListening({
 
 // on import route fail, send an error toast
 listenerMiddleware.startListening({
-  matcher: isAnyOf(importRoute.rejected),
+  matcher: isAnyOf(importMdtRoute.rejected, importWclRoute.rejected),
   effect: async ({ error }, listenerApi) => {
     console.error((error as Error).stack)
     listenerApi.dispatch(

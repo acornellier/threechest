@@ -3,14 +3,21 @@ import { importRouteApi } from '../../api/importRouteApi.ts'
 import type { AppDispatch, RootState } from '../store.ts'
 import { loadRouteFromStorage, setRouteFromMdt, setRouteFromWcl } from '../routes/routesReducer.ts'
 import { createAppSlice } from '../storeUtil.ts'
-import { urlToWclInfo, type WclResult, wclRouteToRoute } from '../../util/wclCalc.ts'
+import { urlToWclInfo, wclRouteToRoute } from '../../util/wclCalc.ts'
 import { addToast } from './toastReducer.ts'
 import { wclRouteApi } from '../../api/wclRouteApi.ts'
+import { isAnyOf } from '@reduxjs/toolkit'
+import localForage from 'localforage'
 
 export interface ImportState {
   isImporting: boolean
   importingRoute: MdtRoute | null
   previewRoute: Route | null
+}
+
+interface WclRateStatus {
+  usesSinceReset: number
+  resetsAtEpochSec: number
 }
 
 const initialState: ImportState = {
@@ -37,28 +44,9 @@ export const importSlice = createAppSlice({
         state.previewRoute = route
       }
     }),
-    importRoute: create.asyncThunk(
+    importMdtRoute: create.asyncThunk(
       async ({ text, mdtRoute }: { text?: string; mdtRoute?: MdtRoute }, thunkApi) => {
         if (!text && !mdtRoute) throw new Error('Must specify either string or route to import')
-
-        if (text?.includes('warcraftlogs.com')) {
-          const wclResult = await wclRouteApi(urlToWclInfo(text!))
-          if (!wclResult || !wclResult.events) throw new Error('Failed to parse WCL report.')
-
-          const { route, errors } = wclRouteToRoute(wclResult)
-          thunkApi.dispatch(setRouteFromWcl(route))
-
-          if (errors.length) {
-            console.error(errors.join('\n'))
-            thunkApi.dispatch(
-              addToast({ message: wclErrorMessage, type: 'error', duration: 10_000 }),
-            )
-          } else {
-            thunkApi.dispatch(addToast({ message: `WCL route imported as ${route.name}` }))
-          }
-
-          return
-        }
 
         mdtRoute = mdtRoute ?? (await importRouteApi(text!))
         const state = thunkApi.getState() as RootState
@@ -72,6 +60,49 @@ export const importSlice = createAppSlice({
         }
       },
     ),
+    importWclRoute: create.asyncThunk(async ({ url }: { url: string }, thunkApi) => {
+      const wclRateStatus: WclRateStatus = (await localForage.getItem<WclRateStatus>(
+        'wclRateStatus',
+      )) ?? { usesSinceReset: 0, resetsAtEpochSec: 0 }
+
+      if (Date.now() / 1000 > wclRateStatus.resetsAtEpochSec) {
+        wclRateStatus.usesSinceReset = 0
+        wclRateStatus.resetsAtEpochSec = Date.now() / 1000 + 3600
+      }
+
+      const maxUsesPerHour = 5
+      if (wclRateStatus.usesSinceReset >= maxUsesPerHour) {
+        const comeBackAt = new Date(wclRateStatus.resetsAtEpochSec * 1000).toLocaleTimeString()
+        thunkApi.dispatch(
+          addToast({
+            message: `WCL rate limit reached. Please try again at ${comeBackAt}`,
+            type: 'error',
+          }),
+        )
+      } else {
+        const { result, cached } = await wclRouteApi(urlToWclInfo(url))
+        if (!result || !result.events) throw new Error('Failed to parse WCL report.')
+
+        const { route, errors } = wclRouteToRoute(result)
+        thunkApi.dispatch(setRouteFromWcl(route))
+
+        if (!cached) wclRateStatus.usesSinceReset++
+
+        if (errors.length) {
+          console.error(errors.join('\n'))
+          thunkApi.dispatch(addToast({ message: wclErrorMessage, type: 'error', duration: 10_000 }))
+        } else {
+          thunkApi.dispatch(
+            addToast({
+              message: `WCL route imported as ${route.name}. WCL conversions remaining this hour: ${maxUsesPerHour - wclRateStatus.usesSinceReset}/${maxUsesPerHour}`,
+            }),
+          )
+        }
+      }
+
+      await localForage.setItem('wclRateStatus', wclRateStatus)
+      return
+    }),
     setPreviewRouteAsync: create.asyncThunk(
       async (options: { routeId: string; route?: Route } | null, thunkApi) => {
         const state = thunkApi.getState() as RootState
@@ -107,16 +138,21 @@ export const importSlice = createAppSlice({
     ),
   }),
   extraReducers: (builder) => {
-    builder.addCase(importRoute.pending, (state) => {
+    builder.addMatcher(isAnyOf(importWclRoute.pending, importMdtRoute.pending), (state) => {
       state.isImporting = true
     })
 
-    builder.addMatcher(importRoute.settled, (state) => {
+    builder.addMatcher(isAnyOf(importWclRoute.settled, importMdtRoute.settled), (state) => {
       state.isImporting = false
     })
   },
 })
 
 export const importReducer = importSlice.reducer
-export const { setImportingRoute, clearImportingRoute, importRoute, setPreviewRouteAsync } =
-  importSlice.actions
+export const {
+  setImportingRoute,
+  clearImportingRoute,
+  importMdtRoute,
+  importWclRoute,
+  setPreviewRouteAsync,
+} = importSlice.actions
