@@ -40,7 +40,7 @@ function NoteComponent({ poi, index, iconScaling }: Props) {
   useEffect(() => {
     if (poi.justAdded) {
       setTimeout(() => markerRef.current?.openPopup(), 0)
-      dispatch(editNote({ changes: { justAdded: false }, index: index }))
+      dispatch(editNote({ changes: { justAdded: false }, index }))
     }
   }, [dispatch, index, poi.justAdded])
 

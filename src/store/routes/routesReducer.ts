@@ -251,29 +251,25 @@ const baseReducer = createAppSlice({
     },
     editNote(
       state,
-      {
-        payload: { changes, noteIndex },
-      }: PayloadAction<{ changes: Partial<Note>; noteIndex: number }>,
+      { payload: { changes, index } }: PayloadAction<{ changes: Partial<Note>; index: number }>,
     ) {
-      const curNote = state.route.notes[noteIndex]
+      const curNote = state.route.notes[index]
       if (!curNote) return
-      state.route.notes[noteIndex] = { ...curNote, ...changes }
+      state.route.notes[index] = { ...curNote, ...changes }
     },
     deleteNote(state, { payload: noteIndex }: PayloadAction<number>) {
       state.route.notes.splice(noteIndex, 1)
     },
     moveNote(
       state,
-      {
-        payload: { noteIndex, indexChange },
-      }: PayloadAction<{ noteIndex: number; indexChange: number }>,
+      { payload: { index, indexChange } }: PayloadAction<{ index: number; indexChange: number }>,
     ) {
-      const newIndex = noteIndex + indexChange
-      const noteToMove = state.route.notes[noteIndex]
+      const newIndex = index + indexChange
+      const noteToMove = state.route.notes[index]
       const noteToSwap = state.route.notes[newIndex]
       if (!noteToMove || !noteToSwap) return
 
-      state.route.notes[noteIndex] = noteToSwap
+      state.route.notes[index] = noteToSwap
       state.route.notes[newIndex] = noteToMove
     },
     addDrawing(state, { payload: partialDrawing }: PayloadAction<Omit<Drawing, 'id'>>) {

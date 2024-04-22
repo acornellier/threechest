@@ -92,6 +92,11 @@ export type MobFake = Omit<Mob, 'spawns'> & {
   spawns: SpawnFake[]
 }
 
-export type MdtDungeonFake = Omit<MdtDungeon, 'enemies'> & {
+export type PoiFake = Omit<PointOfInterest, 'pos'> & {
+  pos: number[]
+}
+
+export type MdtDungeonFake = Omit<MdtDungeon, 'enemies' | 'pois'> & {
   enemies: MobFake[]
+  pois: PoiFake[]
 }
