@@ -1,4 +1,4 @@
-import type { PayloadAction } from '@reduxjs/toolkit';
+import type { PayloadAction } from '@reduxjs/toolkit'
 import { createAsyncThunk } from '@reduxjs/toolkit'
 import type { Drawing, MdtRoute, Note, Pull, Route, SavedRoute } from '../../util/types.ts'
 import type { SpawnId } from '../../data/types.ts'
@@ -367,6 +367,7 @@ const undoableReducer = undoable(baseReducer.reducer, {
       baseReducer.actions.deleteDrawing.type,
       baseReducer.actions.updateDrawing.type,
       baseReducer.actions.clearDrawings.type,
+      baseReducer.actions.setRouteFromWcl.type,
     ]),
     excludeAction(['persist/PERSIST', 'persist/REHYDRATE']),
   ),

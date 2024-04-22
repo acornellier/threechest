@@ -1,4 +1,4 @@
-﻿import type { Action} from '@reduxjs/toolkit';
+﻿import type { Action } from '@reduxjs/toolkit'
 import { createListenerMiddleware, isAnyOf } from '@reduxjs/toolkit'
 import type { RootState } from './store.ts'
 import { addToast } from './reducers/toastReducer.ts'
@@ -78,7 +78,7 @@ listenerMiddleware.startListening({
     loadRoute.fulfilled,
     duplicateRoute,
     setRouteFromMdt,
-    setRouteFromWcl,
+    // setRouteFromWcl,
     setRouteFromSample,
     newRoute,
   ),
