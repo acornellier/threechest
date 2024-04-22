@@ -1,12 +1,4 @@
 import type { Spells } from '../types.ts'
-import ad from './ad/adSpells.ts'
-import eb from './eb/ebSpells.ts'
-import brh from './brh/brhSpells.ts'
-import dht from './dht/dhtSpells.ts'
-import fall from './fall/fallSpells.ts'
-import tott from './tott/tottSpells.ts'
-import wcm from './wcm/wcmSpells.ts'
-import rise from './rise/riseSpells.ts'
 import type { DungeonKey } from '../dungeonKeys.ts'
 
 const aa = import.meta.compileTime<Spells>('./aa/aaSpells.ts')
@@ -27,13 +19,4 @@ export const dungeonSpells: Record<DungeonKey, Spells> = {
   nok,
   rlp,
   uld,
-
-  ad,
-  brh,
-  dht,
-  fall,
-  eb,
-  rise,
-  tott,
-  wcm,
 }

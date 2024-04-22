@@ -28,15 +28,6 @@ const mapIds: Record<DungeonKey, number> = {
   nok: 2516,
   rlp: 2521,
   uld: 2451,
-
-  ad: 0,
-  brh: 0,
-  dht: 0,
-  eb: 1279,
-  fall: 0,
-  rise: 0,
-  tott: 0,
-  wcm: 0,
 }
 
 const mapBounds = (uimapassignment as UiMapAssignment[]).reduce((acc, assignment) => {

@@ -1,6 +1,6 @@
 import { getIconLink } from '../../data/spells/mergeSpells.ts'
 import { TooltipStyled } from '../Common/TooltipStyled.tsx'
-import { type DungeonKey, isSeason4 } from '../../data/dungeonKeys.ts'
+import { type DungeonKey } from '../../data/dungeonKeys.ts'
 import type { DispelType, Mob, Spell } from '../../data/types.ts'
 import { BoltIcon, HandRaisedIcon, SparklesIcon } from '@heroicons/react/24/outline'
 import { SootheIcon } from '../Common/Icons/SootheIcon.tsx'
@@ -41,8 +41,7 @@ export function MobSpellInfo({ spell, mob, dungeonKey }: Props) {
   const spellDetailsTooltipId = `spell-details-${id}`
 
   const damageText =
-    damage &&
-    `${isSeason4(dungeonKey) ? damage.s4 : damage.s3} ${aoe ? 'AoE' : 'ST'} ${physical ? 'physical' : 'magic'} damage`
+    damage && `${damage.s3} ${aoe ? 'AoE' : 'ST'} ${physical ? 'physical' : 'magic'} damage`
 
   const isAlternateCast =
     spell.castTime &&
