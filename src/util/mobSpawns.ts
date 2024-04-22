@@ -1,5 +1,7 @@
 import type { Dungeon, Mob, MobSpawn, SpawnId } from '../data/types.ts'
 import type { PullDetailed } from './types.ts'
+import { roundTo } from './numbers.ts'
+import { rgbToHex } from './colors.ts'
 
 export const mobScale = ({ mob, spawn }: MobSpawn) =>
   (mob.scale ?? 1) * (spawn.scale ?? 1) * (mob.isBoss ? 1.7 : 1)
@@ -49,4 +51,21 @@ export const countMobs = (pull: PullDetailed, dungeon: Dungeon) => {
   }, {})
 
   return Object.values(mobCounts).sort((a, b) => b.mob.count - a.mob.count)
+}
+
+export function mobEfficiency(
+  { count, health }: { count: number; health: number },
+  dungeon: Dungeon,
+) {
+  const efficiencyScore = roundTo(
+    (2.5 * (count / dungeon.mdt.totalCount) * 300) / (health / 500000),
+    1,
+  )
+  const efficiencyColor = rgbToHex(
+    Math.max(0, Math.min(1, 2 * (1 - efficiencyScore / 10))),
+    Math.min(1, (2 * efficiencyScore) / 10),
+    0,
+  )
+
+  return { efficiencyScore, efficiencyColor }
 }
