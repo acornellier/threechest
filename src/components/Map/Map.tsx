@@ -1,6 +1,6 @@
 import 'leaflet/dist/leaflet.css'
 import { MapContainer, TileLayer } from 'react-leaflet'
-import { CRS } from 'leaflet'
+import { CRS, svg } from 'leaflet'
 import '../Leaflet/SmoothWheelZoom.ts'
 import '../Leaflet/BoxSelect.ts'
 import { Drawings } from './Drawings/Drawings.tsx'
@@ -20,6 +20,8 @@ import { Mobs } from './Mobs/Mobs.tsx'
 import { PullOutlines } from './PullOutlines/PullOutlines.tsx'
 import { isDev } from '../../util/isDev.ts'
 
+const renderer = svg({ padding: 100 })
+
 export function Map() {
   const dispatch = useAppDispatch()
   const dungeon = useDungeon()
@@ -35,6 +37,7 @@ export function Map() {
         key={dungeon.key}
         className="bg-inherit w-screen h-screen"
         crs={CRS.Simple}
+        renderer={renderer}
         center={mapCenter}
         keyboard={false}
         doubleClickZoom={false}
