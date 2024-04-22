@@ -11,7 +11,25 @@
       "creatureType": "Beast",
       "scale": 1,
       "isBoss": false,
-      "characteristics": ["Taunt", "Fear", "Stun"],
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
+        "Polymorph",
+        "Root",
+        "Fear",
+        "Disorient",
+        "Imprison",
+        "Sap",
+        "Stun",
+        "Slow",
+        "Sleep Walk",
+        "Scare Beast",
+        "Hibernate"
+      ],
       "spawns": [
         {
           "id": "1-1",
@@ -94,110 +112,92 @@
         {
           "id": "1-14",
           "idx": 14,
-          "group": 49,
-          "pos": [-159.43, 247.6]
+          "group": 56,
+          "pos": [-159.9, 249.14]
         },
         {
           "id": "1-15",
           "idx": 15,
-          "group": 73,
-          "pos": [-114.6, 270.15]
+          "group": 60,
+          "pos": [-114.08, 270.78]
         },
         {
           "id": "1-16",
           "idx": 16,
-          "group": 73,
-          "pos": [-112.32, 273.63]
+          "group": 60,
+          "pos": [-122.24, 271.33]
         },
         {
           "id": "1-17",
           "idx": 17,
-          "group": 73,
-          "pos": [-117.06, 274.88]
+          "group": 60,
+          "pos": [-116.01, 274.15]
         },
         {
           "id": "1-18",
           "idx": 18,
-          "group": 73,
-          "pos": [-122.18, 274.4]
+          "group": 60,
+          "pos": [-119.46, 274.19]
         },
         {
           "id": "1-19",
           "idx": 19,
-          "group": 72,
-          "pos": [-101.24, 253.93],
-          "patrol": [
-            [-99.41, 227.46],
-            [-99.5, 229.15],
-            [-115.42, 227.55],
-            [-115.24, 225.95],
-            [-99.36, 227.41]
-          ]
+          "group": 62,
+          "pos": [-88.39, 260.83]
         },
         {
           "id": "1-20",
           "idx": 20,
-          "group": 72,
-          "pos": [-106.71, 254.3]
+          "group": 62,
+          "pos": [-88.63, 269.55]
         },
         {
           "id": "1-21",
           "idx": 21,
-          "group": 72,
-          "pos": [-106.24, 258.23]
+          "group": 62,
+          "pos": [-85.24, 267.42]
         },
         {
           "id": "1-22",
           "idx": 22,
-          "group": 72,
-          "pos": [-100.69, 258.87]
+          "group": 62,
+          "pos": [-85.02, 263.47]
         },
         {
           "id": "1-23",
           "idx": 23,
-          "group": 69,
-          "pos": [-124.68, 230.2]
+          "group": 75,
+          "pos": [-125.44, 230.58]
         },
         {
           "id": "1-24",
           "idx": 24,
-          "group": 69,
-          "pos": [-123.54, 226.05]
+          "group": 75,
+          "pos": [-124.11, 227.18]
         },
         {
           "id": "1-25",
           "idx": 25,
-          "group": 69,
-          "pos": [-127.11, 223.25]
+          "group": 75,
+          "pos": [-126.64, 224.39]
         },
         {
           "id": "1-26",
           "idx": 26,
-          "group": 69,
-          "pos": [-128.88, 227.35]
+          "group": 75,
+          "pos": [-128.5, 227.82]
         },
         {
           "id": "1-27",
           "idx": 27,
-          "group": 64,
-          "pos": [-68.31, 194.23],
-          "patrol": [
-            [-86.96, 190.57],
-            [-86.41, 181.51],
-            [-90.34, 172.08],
-            [-97.62, 166.82],
-            [-98.54, 168.56],
-            [-91.3, 173.23],
-            [-87.64, 181.83],
-            [-88.19, 191.08],
-            [-86.96, 190.57]
-          ]
+          "group": 69,
+          "pos": [-64.73, 201.26]
         },
         {
           "id": "1-28",
           "idx": 28,
-          "group": 62,
-          "pos": [-75.55, 176.59]
+          "group": 68,
+          "pos": [-68.21, 183.16]
         }
       ],
       "stealthDetect": true
@@ -211,7 +211,25 @@
       "creatureType": "Humanoid",
       "scale": 1,
       "isBoss": false,
-      "characteristics": ["Incapacitate", "Fear", "Disorient", "Stun"],
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
+        "Polymorph",
+        "Root",
+        "Fear",
+        "Disorient",
+        "Repentance",
+        "Imprison",
+        "Sap",
+        "Stun",
+        "Slow",
+        "Sleep Walk",
+        "Mind Soothe"
+      ],
       "spawns": [
         {
           "id": "2-1",
@@ -333,56 +351,61 @@
         {
           "id": "2-15",
           "idx": 15,
-          "group": 49,
-          "pos": [-158.56, 243.15]
+          "group": 56,
+          "pos": [-158.69, 246.04]
         },
         {
           "id": "2-16",
           "idx": 16,
-          "group": null,
-          "pos": [-140.34, 253.83]
+          "group": 59,
+          "pos": [-138.24, 253.96]
         },
         {
           "id": "2-17",
           "idx": 17,
-          "group": 73,
-          "pos": [-119.42, 270.24]
+          "group": 60,
+          "pos": [-117.96, 270.24]
         },
         {
           "id": "2-18",
           "idx": 18,
-          "group": 71,
-          "pos": [-104.62, 237.84]
+          "group": 77,
+          "pos": [-103.58, 238.97]
         },
         {
           "id": "2-19",
           "idx": 19,
-          "group": 71,
-          "pos": [-105.48, 234.36]
+          "group": 77,
+          "pos": [-105.01, 235.68]
+        },
+        {
+          "id": "2-20",
+          "idx": 20,
+          "group": 67,
+          "pos": [-76.24, 203.36]
         },
         {
           "id": "2-21",
           "idx": 21,
-          "group": 63,
-          "pos": [-81.89, 199.29]
+          "group": 68,
+          "pos": [-65.74, 185.93]
         },
         {
           "id": "2-22",
           "idx": 22,
-          "group": 62,
-          "pos": [-72.98, 179.83]
-        },
-        {
-          "id": "2-23",
-          "idx": 23,
-          "group": 61,
-          "pos": [-92.38, 175.5],
+          "group": 65,
+          "pos": [-85.48, 179.57],
           "patrol": [
-            [-101.88, 161.69],
-            [-98.63, 166.09],
-            [-99.45, 167.46],
-            [-103.2, 162.97],
-            [-101.92, 161.69]
+            [-85.48, 179.57],
+            [-87.22, 177.06],
+            [-88.79, 175.7],
+            [-90.04, 174.45],
+            [-88.79, 175.7],
+            [-87.22, 177.06],
+            [-85.48, 179.57],
+            [-83.36, 181.45],
+            [-81.69, 185],
+            [-83.36, 181.45]
           ]
         }
       ]
@@ -396,7 +419,25 @@
       "creatureType": "Humanoid",
       "scale": 1,
       "isBoss": false,
-      "characteristics": ["Taunt", "Fear", "Stun"],
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
+        "Polymorph",
+        "Root",
+        "Fear",
+        "Disorient",
+        "Repentance",
+        "Imprison",
+        "Sap",
+        "Stun",
+        "Slow",
+        "Sleep Walk",
+        "Mind Soothe"
+      ],
       "spawns": [
         {
           "id": "3-1",
@@ -491,12 +532,12 @@
         {
           "id": "3-14",
           "idx": 14,
-          "group": null,
-          "pos": [-103.24, 206.52]
+          "group": 73,
+          "pos": [-106.35, 208.88]
         },
         {
-          "id": "3-16",
-          "idx": 16,
+          "id": "3-15",
+          "idx": 15,
           "group": 14,
           "pos": [-73.03, 72.89]
         }
@@ -511,7 +552,25 @@
       "creatureType": "Humanoid",
       "scale": 1,
       "isBoss": false,
-      "characteristics": ["Taunt", "Incapacitate", "Fear", "Disorient", "Stun"],
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
+        "Polymorph",
+        "Root",
+        "Fear",
+        "Disorient",
+        "Repentance",
+        "Imprison",
+        "Sap",
+        "Stun",
+        "Slow",
+        "Sleep Walk",
+        "Mind Soothe"
+      ],
       "spawns": [
         {
           "id": "4-1",
@@ -670,8 +729,8 @@
           "pos": [-76.2, 79.55]
         },
         {
-          "id": "4-26",
-          "idx": 26,
+          "id": "4-25",
+          "idx": 25,
           "group": 14,
           "pos": [-72.83, 69.55]
         }
@@ -686,7 +745,7 @@
       "creatureType": "Humanoid",
       "scale": 1.4,
       "isBoss": false,
-      "characteristics": ["Taunt"],
+      "characteristics": ["Taunt", "Mind Soothe"],
       "spawns": [
         {
           "id": "5-1",
@@ -701,32 +760,32 @@
           "pos": [-81.72, 59.31]
         },
         {
-          "id": "5-4",
-          "idx": 4,
+          "id": "5-3",
+          "idx": 3,
           "group": 8,
           "pos": [-86.33, 78.84]
         },
         {
-          "id": "5-5",
-          "idx": 5,
+          "id": "5-4",
+          "idx": 4,
           "group": null,
           "pos": [-65.27, 100.37]
         },
         {
-          "id": "5-6",
-          "idx": 6,
+          "id": "5-5",
+          "idx": 5,
           "group": 29,
           "pos": [-74.33, 124.8]
         },
         {
-          "id": "5-7",
-          "idx": 7,
+          "id": "5-6",
+          "idx": 6,
           "group": 28,
           "pos": [-92.1, 115.33]
         },
         {
-          "id": "5-8",
-          "idx": 8,
+          "id": "5-7",
+          "idx": 7,
           "group": 19,
           "pos": [-32.57, 93.49],
           "patrol": [
@@ -749,14 +808,14 @@
           ]
         },
         {
-          "id": "5-9",
-          "idx": 9,
+          "id": "5-8",
+          "idx": 8,
           "group": 21,
           "pos": [-20.99, 93.73]
         },
         {
-          "id": "5-10",
-          "idx": 10,
+          "id": "5-9",
+          "idx": 9,
           "group": null,
           "pos": [-68.01, 79.39],
           "patrol": [
@@ -785,104 +844,134 @@
           ]
         },
         {
-          "id": "5-11",
-          "idx": 11,
+          "id": "5-10",
+          "idx": 10,
           "group": 13,
           "pos": [-44.62, 66.68]
         },
         {
-          "id": "5-12",
-          "idx": 12,
+          "id": "5-11",
+          "idx": 11,
           "group": null,
           "pos": [-28.66, 47.31]
         },
         {
-          "id": "5-13",
-          "idx": 13,
+          "id": "5-12",
+          "idx": 12,
           "group": 27,
           "pos": [-17.86, 41.79]
         },
         {
+          "id": "5-13",
+          "idx": 13,
+          "group": 58,
+          "pos": [-145.21, 266.03]
+        },
+        {
           "id": "5-14",
           "idx": 14,
-          "group": 60,
-          "pos": [-146.37, 265.28]
+          "group": null,
+          "pos": [-108.57, 221.05],
+          "patrol": [
+            [-108.57, 221.05],
+            [-104.84, 221.09],
+            [-101.91, 221.28],
+            [-99.46, 220.99],
+            [-101.91, 221.28],
+            [-104.84, 221.09],
+            [-108.57, 221.05],
+            [-112.1, 221.18],
+            [-114.75, 221.94],
+            [-112.1, 221.18]
+          ]
         },
         {
           "id": "5-15",
           "idx": 15,
-          "group": 67,
-          "pos": [-108.1, 219.92],
+          "group": null,
+          "pos": [-94.62, 305.74],
           "patrol": [
-            [-108.1, 198.72],
-            [-123.34, 197.62],
-            [-123.3, 198.49],
-            [-108.15, 199.41],
-            [-108.1, 198.67]
+            [-94.62, 305.74],
+            [-98.99, 305.11],
+            [-102.19, 303.69],
+            [-104.08, 301.52],
+            [-105.03, 296.52],
+            [-102.86, 291.99],
+            [-98.04, 288.78],
+            [-92.85, 288.31],
+            [-87.47, 289.16],
+            [-84.64, 291.43],
+            [-83.89, 294.54],
+            [-85.68, 299.26],
+            [-87.95, 303.22]
           ]
         },
         {
           "id": "5-16",
           "idx": 16,
-          "group": null,
-          "pos": [-90.85, 285.54],
-          "patrol": [
-            [-99.91, 250.94],
-            [-103.07, 260.23],
-            [-110.39, 260.55],
-            [-117.44, 261.05],
-            [-113.91, 253.73],
-            [-107.73, 249.7],
-            [-101.69, 249.43],
-            [-99.91, 250.89]
-          ]
+          "group": 84,
+          "pos": [-122.55, 302.96]
+        },
+        {
+          "id": "5-17",
+          "idx": 17,
+          "group": 91,
+          "pos": [-197.67, 303.39]
         },
         {
           "id": "5-18",
           "idx": 18,
-          "group": 82,
-          "pos": [-123.49, 301.93]
+          "group": 93,
+          "pos": [-171.83, 316.63]
         },
         {
           "id": "5-19",
           "idx": 19,
-          "group": 85,
-          "pos": [-197.67, 303.39]
+          "group": 93,
+          "pos": [-172.42, 321.46]
         },
         {
           "id": "5-20",
           "idx": 20,
-          "group": 87,
-          "pos": [-171.83, 316.63]
+          "group": null,
+          "pos": [-138.75, 321.32],
+          "patrol": [
+            [-138.75, 321.32],
+            [-137.66, 324.71],
+            [-133.9, 329.1],
+            [-131.29, 331.19],
+            [-133.9, 329.1],
+            [-137.66, 324.71],
+            [-138.75, 321.32],
+            [-139.96, 316.88],
+            [-140.59, 314.58],
+            [-137.14, 313.01],
+            [-131.6, 312.7],
+            [-128.26, 312.7],
+            [-131.6, 312.7],
+            [-137.14, 313.01],
+            [-140.59, 314.58],
+            [-139.96, 316.88]
+          ]
         },
         {
           "id": "5-21",
           "idx": 21,
           "group": 87,
-          "pos": [-172.42, 321.46]
-        },
-        {
-          "id": "5-22",
-          "idx": 22,
-          "group": null,
-          "pos": [-142.72, 331.66],
+          "pos": [-103.24, 331.17],
           "patrol": [
-            [-143.16, 285.03],
-            [-131.9, 277.49],
-            [-132.72, 275.97],
-            [-143.81, 282.84]
-          ]
-        },
-        {
-          "id": "5-23",
-          "idx": 23,
-          "group": 91,
-          "pos": [-100.82, 329.71],
-          "patrol": [
-            [-111, 281.33],
-            [-120.04, 269.81],
-            [-120.99, 272],
-            [-112.2, 282.43]
+            [-103.24, 331.17],
+            [-103.51, 327.21],
+            [-104.2, 324.54],
+            [-107.07, 324.82],
+            [-104.2, 324.54],
+            [-103.51, 327.21],
+            [-103.24, 331.17],
+            [-102.77, 335.57],
+            [-106.21, 339.01],
+            [-107.76, 341.42],
+            [-106.21, 339.01],
+            [-102.77, 335.57]
           ]
         },
         {
@@ -927,7 +1016,25 @@
       "creatureType": "Humanoid",
       "scale": 1,
       "isBoss": false,
-      "characteristics": ["Taunt", "Incapacitate", "Fear", "Stun"],
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
+        "Polymorph",
+        "Root",
+        "Fear",
+        "Disorient",
+        "Repentance",
+        "Imprison",
+        "Sap",
+        "Stun",
+        "Slow",
+        "Sleep Walk",
+        "Mind Soothe"
+      ],
       "spawns": [
         {
           "id": "6-1",
@@ -948,80 +1055,80 @@
           "pos": [-77.67, 82.3]
         },
         {
-          "id": "6-5",
-          "idx": 5,
+          "id": "6-4",
+          "idx": 4,
           "group": 9,
           "pos": [-102.35, 98.28]
         },
         {
-          "id": "6-6",
-          "idx": 6,
+          "id": "6-5",
+          "idx": 5,
           "group": 16,
           "pos": [-79.68, 96.35]
+        },
+        {
+          "id": "6-6",
+          "idx": 6,
+          "group": 10,
+          "pos": [-60.27, 112.07]
         },
         {
           "id": "6-7",
           "idx": 7,
           "group": 10,
-          "pos": [-60.27, 112.07]
+          "pos": [-64.33, 107.26]
         },
         {
           "id": "6-8",
           "idx": 8,
-          "group": 10,
-          "pos": [-64.33, 107.26]
+          "group": 18,
+          "pos": [-44.22, 93.91]
         },
         {
           "id": "6-9",
           "idx": 9,
-          "group": 18,
-          "pos": [-44.22, 93.91]
+          "group": 11,
+          "pos": [-39.53, 104.09]
         },
         {
           "id": "6-10",
           "idx": 10,
           "group": 11,
-          "pos": [-39.53, 104.09]
+          "pos": [-39.44, 107.69]
         },
         {
           "id": "6-11",
           "idx": 11,
-          "group": 11,
-          "pos": [-39.44, 107.69]
-        },
-        {
-          "id": "6-12",
-          "idx": 12,
           "group": null,
           "pos": [-30.56, 74.53]
         },
         {
-          "id": "6-13",
-          "idx": 13,
+          "id": "6-12",
+          "idx": 12,
           "group": 20,
           "pos": [-35.39, 83.26]
         },
         {
-          "id": "6-14",
-          "idx": 14,
+          "id": "6-13",
+          "idx": 13,
           "group": 13,
           "pos": [-42.49, 70.99]
         },
         {
-          "id": "6-15",
-          "idx": 15,
+          "id": "6-14",
+          "idx": 14,
           "group": 21,
           "pos": [-16.24, 93.79]
         },
         {
-          "id": "6-16",
-          "idx": 16,
+          "id": "6-15",
+          "idx": 15,
           "group": 12,
           "pos": [-55.64, 67.55]
         },
         {
-          "id": "6-17",
-          "idx": 17,
+          "id": "6-16",
+          "idx": 16,
           "group": 12,
           "pos": [-56.06, 71.23]
         },
@@ -1068,8 +1175,8 @@
           "pos": [-9.1, 85]
         },
         {
-          "id": "6-28",
-          "idx": 28,
+          "id": "6-25",
+          "idx": 25,
           "group": 33,
           "pos": [-142.6, 162.39]
         }
@@ -1082,15 +1189,15 @@
       "count": 15,
       "health": 1580808,
       "creatureType": "Humanoid",
-      "scale": 1,
+      "scale": 1.4,
       "isBoss": false,
-      "characteristics": [],
+      "characteristics": ["Taunt", "Mind Soothe"],
       "spawns": [
         {
-          "id": "7-2",
-          "idx": 2,
-          "group": 66,
-          "pos": [-80.59, 218.5]
+          "id": "7-17",
+          "idx": 17,
+          "group": 71,
+          "pos": [-78.01, 226.64]
         }
       ],
       "stealthDetect": true
@@ -1104,7 +1211,7 @@
       "creatureType": "Humanoid",
       "scale": 1,
       "isBoss": false,
-      "characteristics": [],
+      "characteristics": ["Taunt", "Mind Soothe"],
       "spawns": [
         {
           "id": "8-1",
@@ -1155,8 +1262,8 @@
           "pos": [-12, 87.21]
         },
         {
-          "id": "8-10",
-          "idx": 10,
+          "id": "8-9",
+          "idx": 9,
           "group": 33,
           "pos": [-143.2, 159.06]
         }
@@ -1171,7 +1278,7 @@
       "creatureType": "Humanoid",
       "scale": 1.6,
       "isBoss": false,
-      "characteristics": [],
+      "characteristics": ["Taunt", "Mind Soothe"],
       "spawns": [
         {
           "id": "9-1",
@@ -1190,7 +1297,7 @@
       "creatureType": "Humanoid",
       "scale": 1,
       "isBoss": true,
-      "characteristics": ["Taunt"],
+      "characteristics": ["Taunt", "Mind Soothe"],
       "spawns": [
         {
           "id": "10-1",
@@ -1209,7 +1316,7 @@
       "creatureType": "Humanoid",
       "scale": 1,
       "isBoss": true,
-      "characteristics": [],
+      "characteristics": ["Taunt", "Mind Soothe"],
       "spawns": [
         {
           "id": "11-1",
@@ -1228,7 +1335,7 @@
       "creatureType": "Humanoid",
       "scale": 1,
       "isBoss": true,
-      "characteristics": [],
+      "characteristics": ["Taunt", "Mind Soothe"],
       "spawns": [
         {
           "id": "12-1",
@@ -1247,7 +1354,21 @@
       "creatureType": "Elemental",
       "scale": 0.6,
       "isBoss": false,
-      "characteristics": ["Fear", "Stun"],
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
+        "Root",
+        "Fear",
+        "Banish",
+        "Disorient",
+        "Stun",
+        "Slow",
+        "Sleep Walk"
+      ],
       "spawns": [
         {
           "id": "13-1",
@@ -1324,19 +1445,19 @@
         {
           "id": "13-13",
           "idx": 13,
-          "group": 47,
+          "group": 48,
           "pos": [-174.88, 229.36]
         },
         {
           "id": "13-14",
           "idx": 14,
-          "group": 47,
+          "group": 48,
           "pos": [-175.57, 227.04]
         },
         {
           "id": "13-15",
           "idx": 15,
-          "group": 47,
+          "group": 48,
           "pos": [-173.56, 227.87]
         },
         {
@@ -1366,13 +1487,13 @@
         {
           "id": "13-20",
           "idx": 20,
-          "group": 54,
+          "group": 55,
           "pos": [-247.38, 209.79]
         },
         {
           "id": "13-21",
           "idx": 21,
-          "group": 54,
+          "group": 55,
           "pos": [-249.26, 211.83]
         }
       ]
@@ -1386,7 +1507,25 @@
       "creatureType": "Humanoid",
       "scale": 1,
       "isBoss": false,
-      "characteristics": ["Silence", "Fear", "Stun"],
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
+        "Polymorph",
+        "Root",
+        "Fear",
+        "Disorient",
+        "Repentance",
+        "Imprison",
+        "Sap",
+        "Stun",
+        "Slow",
+        "Sleep Walk",
+        "Mind Soothe"
+      ],
       "spawns": [
         {
           "id": "14-1",
@@ -1475,32 +1614,32 @@
         {
           "id": "14-15",
           "idx": 15,
-          "group": 54,
+          "group": 55,
           "pos": [-243.74, 209.8]
         },
         {
           "id": "14-16",
           "idx": 16,
-          "group": 54,
+          "group": 55,
           "pos": [-243.49, 214.53]
         },
         {
           "id": "14-17",
           "idx": 17,
-          "group": 53,
+          "group": 54,
           "pos": [-235.25, 219.98]
         },
         {
           "id": "14-18",
           "idx": 18,
-          "group": 53,
+          "group": 54,
           "pos": [-239.22, 218.5]
         },
         {
           "id": "14-19",
           "idx": 19,
-          "group": 50,
-          "pos": [-169.57, 242.39]
+          "group": 47,
+          "pos": [-171.12, 240.95]
         },
         {
           "id": "14-20",
@@ -1518,7 +1657,7 @@
           "id": "14-22",
           "idx": 22,
           "group": 46,
-          "pos": [-156.04, 236.01]
+          "pos": [-156.85, 234.79]
         }
       ]
     },
@@ -1531,7 +1670,21 @@
       "creatureType": "Elemental",
       "scale": 1.4,
       "isBoss": false,
-      "characteristics": ["Taunt", "Fear", "Stun"],
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
+        "Root",
+        "Fear",
+        "Banish",
+        "Disorient",
+        "Stun",
+        "Slow",
+        "Sleep Walk"
+      ],
       "spawns": [
         {
           "id": "15-1",
@@ -1578,13 +1731,13 @@
         {
           "id": "15-6",
           "idx": 6,
-          "group": 49,
+          "group": 50,
           "pos": [-195.12, 222.12]
         },
         {
           "id": "15-7",
           "idx": 7,
-          "group": 49,
+          "group": 50,
           "pos": [-195.81, 230.42]
         },
         {
@@ -1634,7 +1787,7 @@
       "creatureType": "Humanoid",
       "scale": 1.4,
       "isBoss": false,
-      "characteristics": ["Taunt"],
+      "characteristics": ["Taunt", "Mind Soothe"],
       "spawns": [
         {
           "id": "16-1",
@@ -1674,7 +1827,7 @@
         {
           "id": "16-3",
           "idx": 3,
-          "group": 49,
+          "group": 50,
           "pos": [-192.73, 226.62],
           "patrol": [
             [-194.13, 226.04],
@@ -1696,13 +1849,13 @@
         {
           "id": "16-5",
           "idx": 5,
-          "group": null,
-          "pos": [-108.45, 284]
+          "group": 61,
+          "pos": [-111.27, 283.58]
         },
         {
           "id": "16-6",
           "idx": 6,
-          "group": 86,
+          "group": 92,
           "pos": [-184.09, 309.49]
         }
       ],
@@ -1738,7 +1891,7 @@
         {
           "id": "17-2",
           "idx": 2,
-          "group": 48,
+          "group": 49,
           "pos": [-179.68, 227.88],
           "patrol": [
             [-179.58, 228.2],
@@ -1777,7 +1930,7 @@
         {
           "id": "17-4",
           "idx": 4,
-          "group": 51,
+          "group": 52,
           "pos": [-213.03, 229.25],
           "patrol": [
             [-212.61, 229.15],
@@ -1793,7 +1946,7 @@
         {
           "id": "17-5",
           "idx": 5,
-          "group": 51,
+          "group": 52,
           "pos": [-211.51, 233.7]
         }
       ],
@@ -1837,20 +1990,20 @@
         {
           "id": "18-3",
           "idx": 3,
-          "group": 54,
+          "group": 55,
           "pos": [-246.28, 212.73]
         },
         {
           "id": "18-4",
           "idx": 4,
-          "group": 53,
+          "group": 54,
           "pos": [-235.72, 216.13]
         },
         {
           "id": "18-5",
           "idx": 5,
-          "group": null,
-          "pos": [-112.01, 279.85]
+          "group": 61,
+          "pos": [-114.1, 280.27]
         }
       ]
     },
@@ -1863,54 +2016,68 @@
       "creatureType": "Elemental",
       "scale": 0.6,
       "isBoss": false,
-      "characteristics": ["Taunt", "Fear", "Stun"],
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
+        "Root",
+        "Fear",
+        "Banish",
+        "Disorient",
+        "Stun",
+        "Slow",
+        "Sleep Walk"
+      ],
       "spawns": [
         {
           "id": "19-1",
           "idx": 1,
-          "group": 48,
+          "group": 49,
           "pos": [-172.34, 220.75]
         },
         {
           "id": "19-2",
           "idx": 2,
-          "group": 48,
+          "group": 49,
           "pos": [-169.67, 231.69]
         },
         {
           "id": "19-3",
           "idx": 3,
-          "group": 48,
+          "group": 49,
           "pos": [-172.64, 234.47]
         },
         {
           "id": "19-4",
           "idx": 4,
-          "group": 48,
+          "group": 49,
           "pos": [-183.5, 234.32]
         },
         {
           "id": "19-5",
           "idx": 5,
-          "group": 48,
+          "group": 49,
           "pos": [-184.27, 231.78]
         },
         {
           "id": "19-6",
           "idx": 6,
-          "group": 48,
+          "group": 49,
           "pos": [-179.41, 218.35]
         },
         {
           "id": "19-7",
           "idx": 7,
-          "group": 48,
+          "group": 49,
           "pos": [-181.31, 217.43]
         },
         {
           "id": "19-8",
           "idx": 8,
-          "group": 48,
+          "group": 49,
           "pos": [-181.29, 219.92]
         },
         {
@@ -2022,74 +2189,74 @@
           "pos": [-180.52, 200.23]
         },
         {
-          "id": "19-28",
-          "idx": 28,
+          "id": "19-27",
+          "idx": 27,
           "group": 39,
           "pos": [-177.63, 198.95]
         },
         {
-          "id": "19-29",
-          "idx": 29,
+          "id": "19-28",
+          "idx": 28,
           "group": 39,
           "pos": [-177.78, 200.67]
         },
         {
+          "id": "19-29",
+          "idx": 29,
+          "group": 51,
+          "pos": [-203.48, 228.75]
+        },
+        {
           "id": "19-30",
           "idx": 30,
-          "group": 50,
-          "pos": [-203.48, 228.75]
+          "group": 51,
+          "pos": [-204.85, 226.37]
         },
         {
           "id": "19-31",
           "idx": 31,
-          "group": 50,
-          "pos": [-204.85, 226.37]
+          "group": 51,
+          "pos": [-202.71, 226.55]
         },
         {
           "id": "19-32",
           "idx": 32,
-          "group": 50,
-          "pos": [-202.71, 226.55]
+          "group": 53,
+          "pos": [-223.72, 230.73]
         },
         {
           "id": "19-33",
           "idx": 33,
-          "group": 52,
-          "pos": [-223.72, 230.73]
+          "group": 53,
+          "pos": [-224.77, 232.72]
         },
         {
           "id": "19-34",
           "idx": 34,
-          "group": 52,
-          "pos": [-224.77, 232.72]
+          "group": 53,
+          "pos": [-226, 230.92]
         },
         {
           "id": "19-35",
           "idx": 35,
-          "group": 52,
-          "pos": [-226, 230.92]
+          "group": 53,
+          "pos": [-222.39, 233.04]
         },
         {
           "id": "19-36",
           "idx": 36,
-          "group": 52,
-          "pos": [-222.39, 233.04]
+          "group": 53,
+          "pos": [-224.09, 234.35]
         },
         {
           "id": "19-37",
           "idx": 37,
-          "group": 52,
-          "pos": [-224.09, 234.35]
+          "group": 53,
+          "pos": [-226.1, 234.43]
         },
         {
           "id": "19-38",
           "idx": 38,
-          "group": 52,
-          "pos": [-226.1, 234.43]
-        },
-        {
-          "id": "19-39",
-          "idx": 39,
           "group": 38,
           "pos": [-192.57, 172.94]
         }
@@ -2123,212 +2290,260 @@
       "creatureType": "Humanoid",
       "scale": 1.4,
       "isBoss": false,
-      "characteristics": ["Taunt"],
+      "characteristics": ["Taunt", "Mind Soothe"],
       "spawns": [
         {
           "id": "21-1",
           "idx": 1,
           "group": null,
-          "pos": [-182.73, 254.01],
+          "pos": [-182.73, 256.93],
           "patrol": [
-            [-162.33, 224.58],
-            [-183.52, 223.25],
-            [-183.66, 225.03],
-            [-162.52, 226.54],
-            [-162.38, 224.62]
+            [-182.73, 256.93],
+            [-186.85, 256.49],
+            [-189.17, 256.32],
+            [-190.72, 256.06],
+            [-193.56, 255.98],
+            [-190.72, 256.06],
+            [-189.17, 256.32],
+            [-186.85, 256.49],
+            [-182.73, 256.93],
+            [-178.33, 256.58],
+            [-174.03, 256.92],
+            [-169.9, 257.35],
+            [-174.03, 256.92],
+            [-178.33, 256.58]
           ]
         }
       ],
       "stealthDetect": true
     },
     {
-      "id": 199916,
-      "enemyIndex": 22,
-      "name": "Decaying Slime",
-      "count": 0,
-      "health": 197676,
-      "creatureType": "Elemental",
-      "scale": 0.4,
-      "isBoss": false,
-      "characteristics": [],
-      "spawns": []
-    },
-    {
       "id": 186242,
-      "enemyIndex": 23,
+      "enemyIndex": 22,
       "name": "Skulking Gutstabber",
       "count": 4,
       "health": 889545,
       "creatureType": "Humanoid",
       "scale": 1,
       "isBoss": false,
-      "characteristics": ["Taunt", "Fear"],
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
+        "Polymorph",
+        "Root",
+        "Fear",
+        "Disorient",
+        "Repentance",
+        "Imprison",
+        "Sap",
+        "Stun",
+        "Slow",
+        "Sleep Walk",
+        "Mind Soothe"
+      ],
       "spawns": [
         {
-          "id": "23-1",
+          "id": "22-1",
           "idx": 1,
-          "group": null,
-          "pos": [-164.99, 254.3]
+          "group": 55,
+          "pos": [-165.62, 255.97]
         },
         {
-          "id": "23-2",
+          "id": "22-2",
           "idx": 2,
-          "group": null,
-          "pos": [-164.95, 259.08]
+          "group": 55,
+          "pos": [-165.9, 259.7]
         },
         {
-          "id": "23-3",
+          "id": "22-3",
           "idx": 3,
-          "group": 59,
-          "pos": [-147.21, 246.11]
+          "group": 57,
+          "pos": [-149.45, 253.39]
         },
         {
-          "id": "23-4",
+          "id": "22-4",
           "idx": 4,
-          "group": 59,
-          "pos": [-151.49, 247.07],
-          "patrol": [
-            [-151.49, 247.07],
-            [-175.06, 168.35]
-          ]
+          "group": 57,
+          "pos": [-152.58, 253.87]
         },
         {
-          "id": "23-5",
+          "id": "22-5",
           "idx": 5,
-          "group": 94,
-          "pos": [-81.46, 184.15]
+          "group": 66,
+          "pos": [-79.13, 185.34]
         },
         {
-          "id": "23-6",
+          "id": "22-6",
           "idx": 6,
-          "group": 60,
-          "pos": [-141.95, 263.49]
+          "group": 58,
+          "pos": [-141.07, 263.42]
         },
         {
-          "id": "23-7",
+          "id": "22-7",
           "idx": 7,
-          "group": 60,
-          "pos": [-145.79, 261.2]
+          "group": 58,
+          "pos": [-148.51, 263.78]
         },
         {
-          "id": "23-8",
+          "id": "22-8",
           "idx": 8,
-          "group": null,
-          "pos": [-109.84, 228.26]
+          "group": 72,
+          "pos": [-106.91, 228.35]
         },
         {
-          "id": "23-9",
+          "id": "22-9",
           "idx": 9,
-          "group": null,
-          "pos": [-105.75, 228.23]
+          "group": 72,
+          "pos": [-103.2, 228.32]
         },
         {
-          "id": "23-10",
+          "id": "22-10",
           "idx": 10,
-          "group": null,
+          "group": 72,
           "pos": [-98.95, 228.68]
         },
         {
-          "id": "23-12",
-          "idx": 12,
-          "group": 94,
-          "pos": [-85.92, 185.43]
+          "id": "22-11",
+          "idx": 11,
+          "group": 66,
+          "pos": [-82.12, 187.79]
         }
       ]
     },
     {
       "id": 189318,
-      "enemyIndex": 24,
+      "enemyIndex": 23,
       "name": "Infected Bear",
       "count": 0,
       "health": 1581412,
       "creatureType": "Beast",
       "scale": 1,
       "isBoss": false,
-      "characteristics": [],
+      "characteristics": ["Taunt"],
       "spawns": [
         {
-          "id": "24-1",
+          "id": "23-1",
           "idx": 1,
-          "group": 50,
-          "pos": [-167.55, 245.17]
+          "group": 47,
+          "pos": [-168.68, 243.59]
         }
       ]
     },
     {
       "id": 187192,
-      "enemyIndex": 25,
+      "enemyIndex": 24,
       "name": "Rageclaw",
       "count": 30,
       "health": 2371212,
       "creatureType": "Beast",
-      "scale": 1,
+      "scale": 1.7,
       "isBoss": false,
       "characteristics": ["Taunt"],
       "spawns": [
         {
-          "id": "25-1",
+          "id": "24-1",
           "idx": 1,
           "group": null,
-          "pos": [-136.79, 243.16]
+          "pos": [-145.09, 246.42]
         }
       ],
       "stealthDetect": true
     },
     {
       "id": 186208,
-      "enemyIndex": 26,
+      "enemyIndex": 25,
       "name": "Rotbow Ranger",
       "count": 15,
       "health": 1284898,
       "creatureType": "Humanoid",
-      "scale": 1,
+      "scale": 1.4,
       "isBoss": false,
-      "characteristics": ["Taunt"],
+      "characteristics": ["Taunt", "Mind Soothe"],
       "spawns": [
         {
-          "id": "26-1",
+          "id": "25-1",
           "idx": 1,
-          "group": null,
-          "pos": [-134.89, 254.78]
+          "group": 59,
+          "pos": [-134.05, 254.78]
         },
         {
-          "id": "26-2",
+          "id": "25-2",
           "idx": 2,
-          "group": 72,
-          "pos": [-96.07, 256.51]
-        },
-        {
-          "id": "26-3",
-          "idx": 3,
-          "group": 70,
-          "pos": [-113.87, 240.13],
+          "group": 62,
+          "pos": [-89.9, 265.07],
           "patrol": [
-            [-123.71, 205.58],
-            [-125.13, 206.82],
-            [-120.69, 216.25],
-            [-113.96, 223.02],
-            [-112.72, 221.92],
-            [-119.59, 215.38],
-            [-123.71, 205.58]
+            [-96.28, 261.42],
+            [-101, 260.48],
+            [-104.13, 260.06],
+            [-106.33, 259.01],
+            [-109.15, 257.45],
+            [-110.3, 256.72],
+            [-109.15, 257.45],
+            [-106.33, 259.01],
+            [-104.13, 260.06],
+            [-101, 260.48],
+            [-96.28, 261.42],
+            [-92.01, 261.31],
+            [-89.4, 261.52],
+            [-85.12, 261.63],
+            [-89.4, 261.52],
+            [-92.01, 261.31]
           ]
         },
         {
-          "id": "26-4",
+          "id": "25-3",
+          "idx": 3,
+          "group": 76,
+          "pos": [-112.93, 239],
+          "patrol": [
+            [-112.93, 239],
+            [-111.03, 243.04],
+            [-108.86, 246.91],
+            [-104.8, 250.68],
+            [-108.86, 246.91],
+            [-111.03, 243.04],
+            [-112.93, 239],
+            [-116.22, 232],
+            [-117.45, 227.47],
+            [-117.73, 223.32],
+            [-117.45, 227.47],
+            [-116.22, 232]
+          ]
+        },
+        {
+          "id": "25-4",
           "idx": 4,
-          "group": 65,
-          "pos": [-67.49, 210.08]
+          "group": 70,
+          "pos": [-62.3, 217.41]
         },
         {
-          "id": "26-5",
+          "id": "25-5",
           "idx": 5,
-          "group": 64,
-          "pos": [-70.71, 199.23]
+          "group": 69,
+          "pos": [-68.55, 198.34],
+          "patrol": [
+            [-68.55, 198.34],
+            [-70.38, 192.23],
+            [-71.41, 191],
+            [-73.49, 189.3],
+            [-77.93, 187.79],
+            [-73.49, 189.3],
+            [-71.41, 191],
+            [-70.38, 192.23],
+            [-68.55, 198.34],
+            [-67.45, 205.34],
+            [-68.77, 212.61],
+            [-67.45, 205.34]
+          ]
         },
         {
-          "id": "26-6",
+          "id": "25-6",
           "idx": 6,
-          "group": 68,
+          "group": 74,
           "pos": [-118.1, 211.07]
         }
       ],
@@ -2336,750 +2551,929 @@
     },
     {
       "id": 186246,
-      "enemyIndex": 27,
+      "enemyIndex": 26,
       "name": "Fleshripper Vulture",
       "count": 3,
       "health": 593030,
       "creatureType": "Beast",
       "scale": 1,
       "isBoss": false,
-      "characteristics": ["Taunt", "Fear"],
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
+        "Polymorph",
+        "Root",
+        "Fear",
+        "Disorient",
+        "Imprison",
+        "Sap",
+        "Stun",
+        "Slow",
+        "Sleep Walk",
+        "Scare Beast",
+        "Hibernate"
+      ],
       "spawns": [
         {
-          "id": "27-1",
+          "id": "26-1",
           "idx": 1,
-          "group": 70,
-          "pos": [-113.12, 234.99]
+          "group": 76,
+          "pos": [-114.34, 234.8]
         },
         {
-          "id": "27-2",
+          "id": "26-2",
           "idx": 2,
-          "group": 70,
-          "pos": [-117.17, 234.01]
+          "group": 76,
+          "pos": [-118.12, 236]
         },
         {
-          "id": "27-3",
+          "id": "26-3",
           "idx": 3,
-          "group": 64,
-          "pos": [-72.45, 194.83]
+          "group": 69,
+          "pos": [-69.25, 202.72]
         },
         {
-          "id": "27-4",
+          "id": "26-4",
           "idx": 4,
-          "group": 63,
-          "pos": [-79.56, 196.81]
+          "group": 67,
+          "pos": [-79.03, 200.25]
         },
         {
-          "id": "27-5",
+          "id": "26-5",
           "idx": 5,
-          "group": 61,
-          "pos": [-89.36, 172.14]
+          "group": 65,
+          "pos": [-88.53, 181.75]
         },
         {
-          "id": "27-6",
+          "id": "26-6",
           "idx": 6,
-          "group": 74,
-          "pos": [-74.25, 246.06],
+          "group": 63,
+          "pos": [-67.35, 274.79],
           "patrol": [
-            [-93.55, 231.26],
-            [-91.3, 243.25],
-            [-85.68, 246.64],
-            [-79.95, 244.3],
-            [-79.08, 235.65],
-            [-83.25, 231.3],
-            [-90.94, 226.13],
-            [-92.45, 220.46],
-            [-90.16, 217.3],
-            [-85.17, 217.25],
-            [-82.7, 219.5],
-            [-83.98, 225.49],
-            [-87.73, 227.14],
-            [-93.55, 231.26]
+            [-72.99, 270.72],
+            [-74.02, 266.99],
+            [-75.17, 258.42],
+            [-73.5, 252.05],
+            [-74.34, 244.21],
+            [-78.62, 241.39],
+            [-84.79, 241.81],
+            [-88.02, 244.32],
+            [-89.07, 250.69],
+            [-85.62, 254.56],
+            [-81.44, 257.9],
+            [-79.35, 263.75],
+            [-83.11, 267.41],
+            [-86.56, 272.32],
+            [-83.22, 277.75],
+            [-79.46, 280.15],
+            [-74.23, 278.8],
+            [-72.46, 274.83]
           ]
         },
         {
-          "id": "27-7",
+          "id": "26-7",
           "idx": 7,
-          "group": 74,
-          "pos": [-76.78, 243.88]
+          "group": 63,
+          "pos": [-71.24, 275.27]
         }
       ]
     },
     {
       "id": 186284,
-      "enemyIndex": 28,
+      "enemyIndex": 27,
       "name": "Gutchewer Bear",
       "count": 6,
       "health": 1087222,
       "creatureType": "Beast",
-      "scale": 1,
+      "scale": 1.4,
       "isBoss": false,
-      "characteristics": ["Taunt", "Fear", "Imprison"],
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
+        "Polymorph",
+        "Root",
+        "Fear",
+        "Disorient",
+        "Imprison",
+        "Sap",
+        "Stun",
+        "Slow",
+        "Sleep Walk",
+        "Scare Beast",
+        "Hibernate"
+      ],
       "spawns": [
         {
-          "id": "28-1",
+          "id": "27-1",
           "idx": 1,
-          "group": 70,
-          "pos": [-118.01, 238.47]
+          "group": 76,
+          "pos": [-117.17, 240.55]
         },
         {
-          "id": "28-2",
+          "id": "27-2",
           "idx": 2,
-          "group": 68,
+          "group": 74,
           "pos": [-117.17, 206]
         },
         {
-          "id": "28-3",
+          "id": "27-3",
           "idx": 3,
-          "group": 68,
-          "pos": [-121.53, 207.78]
+          "group": 74,
+          "pos": [-122.1, 207.97]
         },
         {
-          "id": "28-4",
+          "id": "27-4",
           "idx": 4,
-          "group": null,
-          "pos": [-106.79, 207.29]
+          "group": 73,
+          "pos": [-101.88, 209.94]
         },
         {
-          "id": "28-5",
+          "id": "27-5",
           "idx": 5,
           "group": null,
-          "pos": [-73.06, 259.28],
+          "pos": [-72.43, 262.83],
           "patrol": [
-            [-84.3, 229.06],
-            [-98.58, 228.15],
-            [-98.58, 229.34],
-            [-84.35, 230.3],
-            [-84.3, 229.06]
+            [-73.38, 262.42],
+            [-77.85, 261.82],
+            [-78.89, 261.82],
+            [-80.88, 261.62],
+            [-82.03, 261.51],
+            [-80.88, 261.62],
+            [-78.89, 261.82],
+            [-77.85, 261.82],
+            [-73.38, 262.42],
+            [-69.8, 262.56],
+            [-66.67, 262.45],
+            [-64.06, 262.35],
+            [-66.67, 262.45],
+            [-69.8, 262.56]
           ]
         },
         {
-          "id": "28-6",
+          "id": "27-6",
           "idx": 6,
-          "group": 65,
-          "pos": [-63.34, 210.08]
+          "group": 70,
+          "pos": [-59.19, 214.58]
         }
       ]
     },
     {
       "id": 186116,
-      "enemyIndex": 29,
+      "enemyIndex": 28,
       "name": "Gutshot",
       "count": 0,
       "health": 5532828,
       "creatureType": "Humanoid",
       "scale": 1.2,
       "isBoss": true,
-      "characteristics": ["Taunt"],
+      "characteristics": ["Taunt", "Mind Soothe"],
       "spawns": [
         {
-          "id": "29-1",
+          "id": "28-1",
           "idx": 1,
-          "group": 75,
-          "pos": [-54.25, 247.48]
+          "group": 64,
+          "pos": [-46.51, 252.92]
         }
       ]
     },
     {
       "id": 194745,
-      "enemyIndex": 30,
+      "enemyIndex": 29,
       "name": "Rotfang Hyena",
       "count": 0,
       "health": 658922,
       "creatureType": "Beast",
       "scale": 1,
       "isBoss": false,
-      "characteristics": ["Taunt", "Fear", "Stun"],
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
+        "Polymorph",
+        "Root",
+        "Fear",
+        "Disorient",
+        "Imprison",
+        "Sap",
+        "Stun",
+        "Slow",
+        "Sleep Walk",
+        "Scare Beast",
+        "Hibernate"
+      ],
       "spawns": [
         {
-          "id": "30-1",
+          "id": "29-1",
           "idx": 1,
-          "group": 75,
-          "pos": [-49.98, 254.13]
+          "group": 64,
+          "pos": [-43.92, 259.15]
         },
         {
-          "id": "30-2",
+          "id": "29-2",
           "idx": 2,
-          "group": 75,
-          "pos": [-58.12, 253.47]
+          "group": 64,
+          "pos": [-48.4, 259.11]
         }
       ]
     },
     {
       "id": 197857,
-      "enemyIndex": 31,
+      "enemyIndex": 30,
       "name": "Gutstabber",
       "count": 0,
       "health": 988005,
       "creatureType": "Humanoid",
       "scale": 1,
       "isBoss": false,
-      "characteristics": ["Fear"],
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
+        "Polymorph",
+        "Root",
+        "Fear",
+        "Disorient",
+        "Repentance",
+        "Imprison",
+        "Sap",
+        "Stun",
+        "Slow",
+        "Sleep Walk",
+        "Mind Soothe"
+      ],
       "spawns": [
         {
-          "id": "31-1",
+          "id": "30-1",
           "idx": 1,
-          "group": 66,
-          "pos": [-76.74, 219.92]
+          "group": 71,
+          "pos": [-73.87, 229.29]
         },
         {
-          "id": "31-2",
+          "id": "30-2",
           "idx": 2,
-          "group": 66,
-          "pos": [-77.09, 217.37]
+          "group": 71,
+          "pos": [-73.19, 225.32]
         },
         {
-          "id": "31-3",
+          "id": "30-3",
           "idx": 3,
-          "group": 66,
-          "pos": [-77.8, 215.18]
+          "group": 71,
+          "pos": [-75.79, 221.9]
         },
         {
-          "id": "31-4",
+          "id": "30-4",
           "idx": 4,
-          "group": 66,
-          "pos": [-83.85, 216.6]
+          "group": 71,
+          "pos": [-82.13, 223.32]
         },
         {
-          "id": "31-5",
+          "id": "30-5",
           "idx": 5,
-          "group": 66,
-          "pos": [-83.79, 219.33]
+          "group": 71,
+          "pos": [-82.34, 227.28]
         },
         {
-          "id": "31-6",
+          "id": "30-6",
           "idx": 6,
-          "group": 66,
-          "pos": [-83.32, 221.52]
+          "group": 71,
+          "pos": [-79.98, 230.32]
         }
       ]
     },
     {
       "id": 187231,
-      "enemyIndex": 32,
+      "enemyIndex": 31,
       "name": "Wither Biter",
       "count": 1,
       "health": 296515,
       "creatureType": "Humanoid",
-      "scale": 0.8,
+      "scale": 0.6,
       "isBoss": false,
-      "characteristics": ["Taunt", "Fear", "Sap", "Stun"],
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
+        "Polymorph",
+        "Root",
+        "Fear",
+        "Disorient",
+        "Repentance",
+        "Imprison",
+        "Sap",
+        "Stun",
+        "Slow",
+        "Sleep Walk",
+        "Mind Soothe"
+      ],
       "spawns": [
         {
-          "id": "32-1",
+          "id": "31-1",
           "idx": 1,
-          "group": 76,
-          "pos": [-60.61, 273.63]
+          "group": 78,
+          "pos": [-58.73, 278.33]
         },
         {
-          "id": "32-2",
+          "id": "31-2",
           "idx": 2,
-          "group": 76,
-          "pos": [-58.78, 276.18]
+          "group": 78,
+          "pos": [-56.48, 281.29]
         },
         {
-          "id": "32-3",
+          "id": "31-3",
           "idx": 3,
-          "group": 79,
-          "pos": [-89.3, 281.21]
+          "group": 80,
+          "pos": [-90.34, 283.29]
         },
         {
-          "id": "32-4",
+          "id": "31-4",
           "idx": 4,
-          "group": 79,
-          "pos": [-92.09, 281.63]
+          "group": 80,
+          "pos": [-92.85, 284.08]
         },
         {
-          "id": "32-5",
+          "id": "31-5",
           "idx": 5,
-          "group": 79,
-          "pos": [-95.17, 281.69]
+          "group": 80,
+          "pos": [-95.17, 285.09]
         },
         {
-          "id": "32-6",
+          "id": "31-6",
           "idx": 6,
-          "group": 79,
-          "pos": [-86.52, 280.68]
+          "group": 80,
+          "pos": [-90.86, 285.4]
         },
         {
-          "id": "32-7",
+          "id": "31-7",
           "idx": 7,
-          "group": 82,
-          "pos": [-118.95, 303.32]
+          "group": 84,
+          "pos": [-117.91, 301.72]
         },
         {
-          "id": "32-8",
+          "id": "31-8",
           "idx": 8,
-          "group": 82,
-          "pos": [-117.56, 307.85]
+          "group": 84,
+          "pos": [-118.22, 304.16]
         },
         {
-          "id": "32-9",
+          "id": "31-9",
           "idx": 9,
-          "group": 82,
-          "pos": [-122.28, 307.14]
+          "group": 84,
+          "pos": [-119.83, 306.1]
         },
         {
-          "id": "32-10",
+          "id": "31-10",
           "idx": 10,
-          "group": 83,
+          "group": 89,
           "pos": [-217.7, 285.72]
         },
         {
-          "id": "32-11",
+          "id": "31-11",
           "idx": 11,
-          "group": 83,
+          "group": 89,
           "pos": [-213.73, 280.03]
         },
         {
-          "id": "32-13",
-          "idx": 13,
-          "group": 84,
+          "id": "31-12",
+          "idx": 12,
+          "group": 90,
           "pos": [-209.7, 287.56]
         },
         {
-          "id": "32-14",
-          "idx": 14,
-          "group": 84,
+          "id": "31-13",
+          "idx": 13,
+          "group": 90,
           "pos": [-208.04, 284.89]
         },
         {
-          "id": "32-15",
-          "idx": 15,
-          "group": 85,
+          "id": "31-14",
+          "idx": 14,
+          "group": 91,
           "pos": [-201.58, 303.27]
         },
         {
-          "id": "32-16",
-          "idx": 16,
-          "group": 85,
+          "id": "31-15",
+          "idx": 15,
+          "group": 91,
           "pos": [-199.98, 300.3]
         },
         {
-          "id": "32-17",
-          "idx": 17,
-          "group": 86,
+          "id": "31-16",
+          "idx": 16,
+          "group": 92,
           "pos": [-186.11, 306.05]
         },
         {
-          "id": "32-18",
-          "idx": 18,
-          "group": 86,
+          "id": "31-17",
+          "idx": 17,
+          "group": 92,
           "pos": [-187.65, 310.85]
         },
         {
-          "id": "32-19",
+          "id": "31-18",
+          "idx": 18,
+          "group": 93,
+          "pos": [-167.31, 319.58]
+        },
+        {
+          "id": "31-19",
           "idx": 19,
-          "group": 87,
-          "pos": [-167.97, 319.87]
+          "group": 81,
+          "pos": [-83.36, 302.37]
         },
         {
-          "id": "32-20",
+          "id": "31-20",
           "idx": 20,
-          "group": 79,
-          "pos": [-85.16, 296.52]
+          "group": 81,
+          "pos": [-81.19, 303.26]
         },
         {
-          "id": "32-21",
+          "id": "31-21",
           "idx": 21,
-          "group": 79,
-          "pos": [-82.33, 299.11]
-        },
-        {
-          "id": "32-22",
-          "idx": 22,
-          "group": 79,
-          "pos": [-87.3, 300]
+          "group": 81,
+          "pos": [-84, 304.53]
         }
       ]
     },
     {
       "id": 185656,
-      "enemyIndex": 33,
+      "enemyIndex": 32,
       "name": "Filth Caller",
       "count": 5,
       "health": 889545,
       "creatureType": "Humanoid",
       "scale": 1,
       "isBoss": false,
-      "characteristics": ["Taunt", "Incapacitate", "Silence", "Fear", "Stun"],
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
+        "Polymorph",
+        "Root",
+        "Fear",
+        "Disorient",
+        "Repentance",
+        "Imprison",
+        "Sap",
+        "Stun",
+        "Slow",
+        "Sleep Walk",
+        "Mind Soothe"
+      ],
       "spawns": [
         {
-          "id": "33-1",
+          "id": "32-1",
           "idx": 1,
-          "group": 76,
-          "pos": [-62.98, 276.64],
-          "patrol": [
-            [-91.28, 247.92],
-            [-81.6, 242.56]
-          ]
+          "group": 78,
+          "pos": [-60.37, 281.24]
         },
         {
-          "id": "33-2",
+          "id": "32-2",
           "idx": 2,
-          "group": 81,
+          "group": 83,
           "pos": [-108.55, 304.95]
         },
         {
-          "id": "33-3",
+          "id": "32-3",
           "idx": 3,
-          "group": 81,
+          "group": 83,
           "pos": [-110.56, 301.15]
         },
         {
-          "id": "33-4",
+          "id": "32-4",
           "idx": 4,
-          "group": 89,
-          "pos": [-122.27, 319.82]
+          "group": 85,
+          "pos": [-123.12, 320.86]
         },
         {
-          "id": "33-5",
+          "id": "32-5",
           "idx": 5,
-          "group": 90,
-          "pos": [-109.74, 321.66]
+          "group": 86,
+          "pos": [-111.24, 327.26]
         },
         {
-          "id": "33-6",
+          "id": "32-6",
           "idx": 6,
-          "group": 83,
+          "group": 89,
           "pos": [-215.81, 282.7]
         },
         {
-          "id": "33-7",
+          "id": "32-7",
           "idx": 7,
-          "group": 84,
+          "group": 90,
           "pos": [-206.91, 288.8]
         },
         {
-          "id": "33-8",
+          "id": "32-8",
           "idx": 8,
-          "group": 85,
+          "group": 91,
           "pos": [-195.71, 299.59]
         },
         {
-          "id": "33-9",
+          "id": "32-9",
           "idx": 9,
-          "group": 85,
+          "group": 91,
           "pos": [-199.74, 306.7]
         }
       ]
     },
     {
       "id": 187238,
-      "enemyIndex": 34,
+      "enemyIndex": 33,
       "name": "Witherling",
       "count": 1,
       "health": 197676,
       "creatureType": "Humanoid",
-      "scale": 0.8,
+      "scale": 0.6,
       "isBoss": false,
-      "characteristics": ["Fear", "Stun"],
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
+        "Polymorph",
+        "Root",
+        "Fear",
+        "Disorient",
+        "Repentance",
+        "Imprison",
+        "Sap",
+        "Stun",
+        "Slow",
+        "Sleep Walk",
+        "Mind Soothe"
+      ],
       "spawns": [
         {
-          "id": "34-1",
+          "id": "33-1",
           "idx": 1,
-          "group": 78,
-          "pos": [-76.43, 287.6]
+          "group": 79,
+          "pos": [-76.43, 291]
         },
         {
-          "id": "34-2",
+          "id": "33-2",
           "idx": 2,
-          "group": 78,
-          "pos": [-75.91, 283.72]
+          "group": 79,
+          "pos": [-77.04, 288.34]
         },
         {
-          "id": "34-3",
+          "id": "33-3",
           "idx": 3,
-          "group": 78,
-          "pos": [-78.88, 281.87]
+          "group": 79,
+          "pos": [-78.78, 286.59]
         },
         {
-          "id": "34-4",
+          "id": "33-4",
           "idx": 4,
-          "group": 78,
-          "pos": [-81.62, 284.79]
+          "group": 79,
+          "pos": [-79.92, 288.75]
         },
         {
-          "id": "34-5",
+          "id": "33-5",
           "idx": 5,
-          "group": 78,
-          "pos": [-80.34, 288.25]
+          "group": 79,
+          "pos": [-78.83, 290.7]
         },
         {
-          "id": "34-6",
+          "id": "33-6",
           "idx": 6,
-          "group": 89,
-          "pos": [-123.9, 323.86]
+          "group": 85,
+          "pos": [-122.68, 317.82]
         },
         {
-          "id": "34-7",
+          "id": "33-7",
           "idx": 7,
-          "group": 89,
-          "pos": [-119.66, 323.42]
+          "group": 85,
+          "pos": [-124.28, 315.68]
         },
         {
-          "id": "34-8",
+          "id": "33-8",
           "idx": 8,
-          "group": 89,
-          "pos": [-126.95, 321.23]
+          "group": 85,
+          "pos": [-125.44, 318.11]
         },
         {
-          "id": "34-9",
+          "id": "33-9",
           "idx": 9,
-          "group": 89,
-          "pos": [-120.28, 315.88]
+          "group": 85,
+          "pos": [-120.56, 316.83]
         },
         {
-          "id": "34-10",
+          "id": "33-10",
           "idx": 10,
-          "group": 89,
-          "pos": [-117.36, 319.55]
+          "group": 85,
+          "pos": [-120.19, 319.27]
         },
         {
-          "id": "34-11",
+          "id": "33-11",
           "idx": 11,
-          "group": 90,
-          "pos": [-107.28, 324.04]
+          "group": 86,
+          "pos": [-108.22, 323.79]
         },
         {
-          "id": "34-12",
+          "id": "33-12",
           "idx": 12,
-          "group": 90,
-          "pos": [-113.78, 323.78]
+          "group": 86,
+          "pos": [-112.16, 322.59]
         },
         {
-          "id": "34-13",
+          "id": "33-13",
           "idx": 13,
-          "group": 90,
-          "pos": [-108.81, 328.5]
+          "group": 86,
+          "pos": [-108.9, 326.17]
         },
         {
-          "id": "34-14",
+          "id": "33-14",
           "idx": 14,
-          "group": 90,
-          "pos": [-110.49, 325.77]
+          "group": 86,
+          "pos": [-110.48, 324.2]
         },
         {
-          "id": "34-15",
+          "id": "33-15",
           "idx": 15,
-          "group": 90,
-          "pos": [-113.94, 328.42]
+          "group": 86,
+          "pos": [-112.9, 324.87]
         }
       ]
     },
     {
       "id": 187224,
-      "enemyIndex": 35,
+      "enemyIndex": 34,
       "name": "Vile Rothexer",
       "count": 15,
       "health": 1383207,
       "creatureType": "Humanoid",
       "scale": 1,
       "isBoss": false,
-      "characteristics": [],
+      "characteristics": ["Taunt", "Mind Soothe"],
       "spawns": [
         {
-          "id": "35-2",
+          "id": "34-2",
           "idx": 2,
-          "group": null,
-          "pos": [-93.75, 291.23]
+          "group": 82,
+          "pos": [-92.05, 295.48]
         },
         {
-          "id": "35-3",
+          "id": "34-3",
           "idx": 3,
-          "group": null,
-          "pos": [-95.71, 295.2]
+          "group": 82,
+          "pos": [-94.01, 298.89]
         },
         {
-          "id": "35-4",
+          "id": "34-4",
           "idx": 4,
-          "group": null,
-          "pos": [-97.84, 290.94]
+          "group": 82,
+          "pos": [-96.14, 294.62]
         },
         {
-          "id": "35-5",
+          "id": "34-5",
           "idx": 5,
-          "group": null,
-          "pos": [-100.27, 294.97]
+          "group": 82,
+          "pos": [-97.16, 298.27]
         },
         {
-          "id": "35-6",
+          "id": "34-6",
           "idx": 6,
           "group": null,
-          "pos": [-119.3, 330.06],
+          "pos": [-118.44, 324.3],
           "patrol": [
-            [-123.39, 278.08],
-            [-124.9, 285.77],
-            [-124.3, 290.39],
-            [-125.13, 290.48],
-            [-125.86, 285.68],
-            [-124.3, 277.85],
-            [-123.39, 278.08]
+            [-118.44, 324.3],
+            [-119.73, 326.34],
+            [-120.68, 327.89],
+            [-123.35, 331.59],
+            [-120.68, 327.89],
+            [-119.73, 326.34],
+            [-118.44, 324.3],
+            [-116.72, 319.8],
+            [-116.21, 317.74],
+            [-116.72, 313.61],
+            [-116.64, 309.22],
+            [-116.72, 313.61],
+            [-116.21, 317.74],
+            [-116.72, 319.8]
           ]
         }
       ]
     },
     {
       "id": 187315,
-      "enemyIndex": 36,
+      "enemyIndex": 35,
       "name": "Disease Slasher",
       "count": 5,
       "health": 889205,
       "creatureType": "Humanoid",
       "scale": 1,
       "isBoss": false,
-      "characteristics": [],
+      "characteristics": ["Taunt", "Mind Soothe"],
       "spawns": [
         {
-          "id": "36-6",
-          "idx": 6,
-          "group": 84,
+          "id": "35-1",
+          "idx": 1,
+          "group": 90,
           "pos": [-205.2, 286.14]
         },
         {
-          "id": "36-7",
-          "idx": 7,
-          "group": 84,
+          "id": "35-2",
+          "idx": 2,
+          "group": 90,
           "pos": [-208.75, 291.35]
         },
         {
-          "id": "36-8",
-          "idx": 8,
-          "group": 87,
+          "id": "35-3",
+          "idx": 3,
+          "group": 93,
           "pos": [-168.44, 322.41]
         },
         {
-          "id": "36-9",
-          "idx": 9,
+          "id": "35-4",
+          "idx": 4,
+          "group": 93,
+          "pos": [-167.65, 316.73]
+        },
+        {
+          "id": "35-5",
+          "idx": 5,
           "group": 87,
-          "pos": [-167.55, 317.67]
+          "pos": [-100.13, 334.61]
         },
         {
-          "id": "36-11",
-          "idx": 11,
-          "group": 91,
-          "pos": [-97.55, 329.01]
-        },
-        {
-          "id": "36-12",
-          "idx": 12,
-          "group": 91,
-          "pos": [-101.81, 333.45]
+          "id": "35-6",
+          "idx": 6,
+          "group": 87,
+          "pos": [-105.78, 334.47]
         }
       ]
     },
     {
       "id": 194241,
-      "enemyIndex": 37,
+      "enemyIndex": 36,
       "name": "Vile Rothexer",
       "count": 15,
       "health": 1383207,
       "creatureType": "Humanoid",
       "scale": 1,
       "isBoss": false,
-      "characteristics": [],
+      "characteristics": ["Taunt", "Mind Soothe"],
       "spawns": [
         {
-          "id": "37-1",
+          "id": "36-1",
           "idx": 1,
           "group": null,
-          "pos": [-153.21, 316.55]
-        }
-      ]
-    },
-    {
-      "id": 194256,
-      "enemyIndex": 38,
-      "name": "Bloodthirsty Cub",
-      "count": 0,
-      "health": 12345,
-      "creatureType": "Humanoid",
-      "scale": 0.8,
-      "isBoss": false,
-      "characteristics": [],
-      "spawns": [
-        {
-          "id": "38-1",
-          "idx": 1,
-          "group": null,
-          "pos": [-151.55, 325.67]
+          "pos": [-154.29, 318.85]
         }
       ]
     },
     {
       "id": 194469,
-      "enemyIndex": 39,
+      "enemyIndex": 37,
       "name": "Wither Slasher",
       "count": 0,
       "health": 296515,
       "creatureType": "Humanoid",
       "scale": 0.8,
       "isBoss": false,
-      "characteristics": ["Fear", "Stun"],
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
+        "Polymorph",
+        "Root",
+        "Fear",
+        "Disorient",
+        "Repentance",
+        "Imprison",
+        "Sap",
+        "Stun",
+        "Slow",
+        "Sleep Walk",
+        "Mind Soothe"
+      ],
       "spawns": [
         {
-          "id": "39-1",
+          "id": "37-1",
           "idx": 1,
           "group": 88,
-          "pos": [-132.28, 337.17]
+          "pos": [-135.27, 339.4]
         },
         {
-          "id": "39-2",
+          "id": "37-2",
           "idx": 2,
           "group": 88,
-          "pos": [-135.51, 339.25]
+          "pos": [-133.09, 334.29]
         },
         {
-          "id": "39-3",
+          "id": "37-3",
           "idx": 3,
           "group": 88,
-          "pos": [-135.74, 343.59]
+          "pos": [-134.85, 336.53]
         },
         {
-          "id": "39-4",
+          "id": "37-4",
           "idx": 4,
           "group": 88,
-          "pos": [-132.23, 341.53]
+          "pos": [-132.04, 337.65]
         }
       ]
     },
     {
       "id": 194487,
-      "enemyIndex": 40,
+      "enemyIndex": 38,
       "name": "Vile Rothexer",
       "count": 15,
       "health": 1383736,
       "creatureType": "Humanoid",
       "scale": 1,
       "isBoss": false,
-      "characteristics": [],
+      "characteristics": ["Taunt", "Mind Soothe"],
       "spawns": [
         {
-          "id": "40-1",
-          "idx": 1,
+          "id": "38-7",
+          "idx": 7,
           "group": 88,
-          "pos": [-128.9, 339.01]
+          "pos": [-129.22, 338.67]
         }
       ]
     },
     {
       "id": 186121,
-      "enemyIndex": 41,
+      "enemyIndex": 39,
       "name": "Decatriarch Wratheye",
       "count": 0,
       "health": 7904040,
       "creatureType": "Humanoid",
       "scale": 1.2,
       "isBoss": true,
-      "characteristics": ["Taunt"],
+      "characteristics": ["Taunt", "Mind Soothe"],
       "spawns": [
         {
-          "id": "41-1",
+          "id": "39-1",
           "idx": 1,
           "group": null,
           "pos": [-116.87, 342.81]
         }
       ]
+    }
+  ],
+  "pois": [
+    {
+      "type": "graveyard",
+      "pos": [-96.99, 7.77]
+    },
+    {
+      "type": "brackenhideCage",
+      "pos": [-68.04, 19.33]
+    },
+    {
+      "type": "brackenhideCage",
+      "pos": [-90.53, 58.04]
+    },
+    {
+      "type": "brackenhideCage",
+      "pos": [-104.95, 94.17]
+    },
+    {
+      "type": "brackenhideCage",
+      "pos": [-64.07, 115.14]
+    },
+    {
+      "type": "brackenhideCage",
+      "pos": [-43.86, 105.34]
+    },
+    {
+      "type": "brackenhideCage",
+      "pos": [-51.99, 73.72]
+    },
+    {
+      "type": "brackenhideCage",
+      "pos": [-8.31, 89.27]
+    },
+    {
+      "type": "graveyard",
+      "pos": [-236.86, 244.41]
     }
   ]
 }

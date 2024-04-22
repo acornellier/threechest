@@ -1,7 +1,7 @@
-import type { Expression, NumericLiteral, TableConstructorExpression, TableKey } from 'luaparse';
+import type { Expression, NumericLiteral, TableConstructorExpression, TableKey } from 'luaparse'
 import parser from 'luaparse'
 import * as fs from 'fs'
-import type { MdtDungeon, Mob, Point, Spawn } from '../src/data/types.ts'
+import type { MdtDungeon, Mob, Point, PointOfInterest, Spawn } from '../src/data/types.ts'
 import type { StringLiteral } from 'luaparse/lib/ast'
 import { roundTo } from '../src/util/numbers.ts'
 import { getDirname } from '../server/files.ts'
@@ -9,16 +9,63 @@ import type { DungeonKey } from '../src/data/dungeonKeys.ts'
 
 const dirname = getDirname(import.meta.url)
 
+export const dungeonPaths = new Map<DungeonKey, string>([
+  ['aa', 'Dragonflight/AlgetharAcademy'],
+  ['av', 'Dragonflight/TheAzureVault'],
+  ['bh', 'Dragonflight/BrackenhideHollow'],
+  ['hoi', 'Dragonflight/HallsofInfusion'],
+  ['nelth', 'Dragonflight/Neltharus'],
+  ['nok', 'Dragonflight/TheNokhudOffensive'],
+  ['rlp', 'Dragonflight/RubyLifePools'],
+  ['uld', 'Dragonflight/UldamanLegacyOfTyr'],
+])
+
+const filterDungeonKey = process.argv[2]
+
+for (const [key, path] of dungeonPaths) {
+  if (!filterDungeonKey || key === filterDungeonKey) {
+    importMdtDungeon(key, path)
+  }
+}
+
+function parseExpression(value: Expression): any {
+  if (value.type === 'NumericLiteral') {
+    return value.value
+  } else if (value.type === 'BooleanLiteral') {
+    return !!(value.value as boolean | undefined)
+  } else if (value.type === 'StringLiteral') {
+    return value.raw.replaceAll('"', '')
+  } else if (value.type === 'UnaryExpression') {
+    return -1 * (value.argument as NumericLiteral).value
+  } else if (value.type === 'TableConstructorExpression') {
+    return value.fields
+  } else {
+    throw `Unknown field value type: ${value.type}`
+  }
+}
+
+function getFieldValue(fields: TableKey[], key: string) {
+  const field = fields.find((field) => (field.key as StringLiteral).raw === `"${key}"`)
+
+  if (!field) return null
+
+  return parseExpression(field.value)
+}
+
+function convertCoords(x: number, y: number): Point {
+  return [roundTo(y / 2.185, 2), roundTo(x / 2.185, 2)]
+}
+
 export function importMdtDungeon(key: DungeonKey, dungeonPath: string) {
   const data = fs.readFileSync(`${dirname}/../MythicDungeonTools/${dungeonPath}.lua`)
-  const ast = parser.parse(data.toString())
+  const body = parser.parse(data.toString()).body
 
-  const dungeonIndexItem: any = ast.body.find((item: any) =>
+  const dungeonIndexItem: any = body.find((item: any) =>
     item.variables?.some((variable: any) => variable.name === 'dungeonIndex'),
   )
   const dungeonIndex = dungeonIndexItem!.init[0].value
 
-  const dungeonCountItem: any = ast.body.find(
+  const dungeonCountItem: any = body.find(
     (item) =>
       item.type === 'AssignmentStatement' &&
       item.variables?.some(
@@ -28,42 +75,32 @@ export function importMdtDungeon(key: DungeonKey, dungeonPath: string) {
 
   const totalCount = dungeonCountItem.init[0].fields[0].value.value
 
-  const dungeonEnemiesItem: any = ast.body.find((item: any) =>
+  const mapPoisItem: any = body.find((item: any) =>
+    item.variables?.some((variable: any) => variable?.base?.identifier?.name === 'mapPOIs'),
+  )
+
+  const poiItems: TableConstructorExpression[] =
+    mapPoisItem.init[0].fields[0]?.value?.fields?.map((field: any) => field.value) ?? []
+
+  const pois: PointOfInterest[] = []
+  for (let poiIndex = 0; poiIndex < poiItems.length; poiIndex++) {
+    const fields = poiItems[poiIndex]!.fields as TableKey[]
+    console.log(fields)
+    const x = getFieldValue(fields, 'x')
+    const y = getFieldValue(fields, 'y')
+    pois.push({
+      type: getFieldValue(fields, 'type'),
+      pos: convertCoords(x, y),
+    })
+  }
+
+  const dungeonEnemiesItem: any = body.find((item: any) =>
     item.variables?.some((variable: any) => variable?.base?.identifier?.name === 'dungeonEnemies'),
   )
 
   const luaEnemies: TableConstructorExpression[] = dungeonEnemiesItem.init[0].fields.map(
     (field: any) => field.value,
   )
-
-  const parseExpression = (value: Expression): any => {
-    if (value.type === 'NumericLiteral') {
-      return value.value
-    } else if (value.type === 'BooleanLiteral') {
-      return !!(value.value as boolean | undefined)
-    } else if (value.type === 'StringLiteral') {
-      return value.raw.replaceAll('"', '')
-    } else if (value.type === 'UnaryExpression') {
-      return -1 * (value.argument as NumericLiteral).value
-    } else if (value.type === 'TableConstructorExpression') {
-      return value.fields
-    } else {
-      throw `Unknown field value type: ${value.type}`
-    }
-  }
-
-  const getFieldValue = (fields: TableKey[], key: string) => {
-    const field = fields.find((field) => (field.key as StringLiteral).raw === `"${key}"`)
-
-    if (!field) return null
-
-    return parseExpression(field.value)
-  }
-
-  const convertCoords = (x: number, y: number): Point => [
-    roundTo(y / 2.185, 2),
-    roundTo(x / 2.185, 2),
-  ]
 
   const enemies: Mob[] = []
   for (let enemyIndex = 0; enemyIndex < luaEnemies.length; ++enemyIndex) {
@@ -130,6 +167,7 @@ export function importMdtDungeon(key: DungeonKey, dungeonPath: string) {
     dungeonIndex,
     totalCount,
     enemies,
+    pois,
   }
 
   fs.writeFileSync(`${dirname}/../src/data/mdtDungeons/${key}_mdt.json`, JSON.stringify(mdtData))

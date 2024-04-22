@@ -12,7 +12,7 @@
     "preview": "vite preview",
     "vercel-dev": "cross-env NODE_ENV=vercel_dev && vercel dev --listen 6173",
     "postinstall": "patch-package",
-    "dungeons": "tsx scripts/importAllDungeons.ts",
+    "dungeons": "tsx scripts/mdtDungeons.ts",
     "spells": "tsx scripts/guessDungeonSpells.ts"
   },
   "engines": {

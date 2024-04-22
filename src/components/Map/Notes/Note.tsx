@@ -1,7 +1,7 @@
 import { memo, useEffect, useMemo, useRef, useState } from 'react'
 import type { Note as NoteType } from '../../../util/types.ts'
 import { Marker, Popup, Tooltip } from 'react-leaflet'
-import type { Marker as LeafletMarker } from 'leaflet';
+import type { Marker as LeafletMarker } from 'leaflet'
 import { divIcon, type LeafletEventHandlerFnMap } from 'leaflet'
 import { renderToString } from 'react-dom/server'
 import { useContextMenu } from '../../Common/useContextMenu.ts'
@@ -12,15 +12,15 @@ import { useMapObjectsHidden } from '../../../store/reducers/mapReducer.ts'
 import { useAppDispatch } from '../../../store/storeUtil.ts'
 
 interface Props {
-  note: NoteType
-  noteIndex: number
+  poi: NoteType
+  index: number
   iconScaling: number
 }
 
 const contextMenuMinHeight = 150
 const contextMenuMinWidth = 180
 
-function NoteComponent({ note, noteIndex, iconScaling }: Props) {
+function NoteComponent({ poi, index, iconScaling }: Props) {
   const dispatch = useAppDispatch()
   const iconSize = iconScaling
   const hidden = useMapObjectsHidden()
@@ -28,21 +28,21 @@ function NoteComponent({ note, noteIndex, iconScaling }: Props) {
     minHeight: contextMenuMinHeight,
     minWidth: contextMenuMinWidth,
   })
-  const [input, setInput] = useState(note.text)
+  const [input, setInput] = useState(poi.text)
   const [popupOpen, setPopupOpen] = useState(false)
   const markerRef = useRef<LeafletMarker>(null)
   const inputRef = useRef<HTMLTextAreaElement>(null)
 
   useEffect(() => {
-    if (input !== note.text && !popupOpen) setInput(note.text)
-  }, [input, note.text, popupOpen])
+    if (input !== poi.text && !popupOpen) setInput(poi.text)
+  }, [input, poi.text, popupOpen])
 
   useEffect(() => {
-    if (note.justAdded) {
+    if (poi.justAdded) {
       setTimeout(() => markerRef.current?.openPopup(), 0)
-      dispatch(editNote({ changes: { justAdded: false }, noteIndex }))
+      dispatch(editNote({ changes: { justAdded: false }, index: index }))
     }
-  }, [dispatch, noteIndex, note.justAdded])
+  }, [dispatch, index, poi.justAdded])
 
   const markerEventHandlers: LeafletEventHandlerFnMap = useMemo(
     () => ({
@@ -50,7 +50,7 @@ function NoteComponent({ note, noteIndex, iconScaling }: Props) {
       dragend: (e) =>
         dispatch(
           editNote({
-            noteIndex,
+            index: index,
             changes: {
               position: latLngToPoint((e.target as LeafletMarker).getLatLng()),
             },
@@ -61,7 +61,7 @@ function NoteComponent({ note, noteIndex, iconScaling }: Props) {
         e.originalEvent.stopPropagation()
       },
     }),
-    [dispatch, noteIndex, onRightClick],
+    [dispatch, index, onRightClick],
   )
 
   const popupEventHandlers: LeafletEventHandlerFnMap = useMemo(
@@ -69,17 +69,17 @@ function NoteComponent({ note, noteIndex, iconScaling }: Props) {
       add: () => setPopupOpen(true),
       remove: () => {
         setPopupOpen(false)
-        dispatch(editNote({ noteIndex, changes: { text: input } }))
+        dispatch(editNote({ index: index, changes: { text: input } }))
       },
     }),
-    [dispatch, input, noteIndex],
+    [dispatch, input, index],
   )
 
   return (
     <>
       <Marker
         ref={markerRef}
-        position={note.position}
+        position={poi.position}
         draggable
         eventHandlers={markerEventHandlers}
         icon={divIcon({
@@ -98,7 +98,7 @@ function NoteComponent({ note, noteIndex, iconScaling }: Props) {
                 textShadow: '-2px 2px 3px rgba(0, 0, 0, 0.3)',
               }}
             >
-              {noteIndex + 1}
+              {index + 1}
             </div>,
           ),
         })}
@@ -111,7 +111,7 @@ function NoteComponent({ note, noteIndex, iconScaling }: Props) {
           >
             <div className="relative min-w-14 w-fit border border-gray-400 rounded-md">
               <div className="absolute w-full h-full bg-slate-800 opacity-85 -z-10 rounded-md" />
-              <div className="p-2 whitespace-normal text-white text-xs">{note.text}</div>
+              <div className="p-2 whitespace-normal text-white text-xs">{poi.text}</div>
             </div>
           </Tooltip>
         )}
@@ -143,15 +143,15 @@ function NoteComponent({ note, noteIndex, iconScaling }: Props) {
           buttons={[
             {
               text: 'Delete note',
-              onClick: () => dispatch(deleteNote(noteIndex)),
+              onClick: () => dispatch(deleteNote(index)),
             },
             {
               text: 'Move up',
-              onClick: () => dispatch(moveNote({ noteIndex, indexChange: -1 })),
+              onClick: () => dispatch(moveNote({ index: index, indexChange: -1 })),
             },
             {
               text: 'Move down',
-              onClick: () => dispatch(moveNote({ noteIndex, indexChange: +1 })),
+              onClick: () => dispatch(moveNote({ index: index, indexChange: +1 })),
             },
           ]}
         />

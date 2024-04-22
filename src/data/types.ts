@@ -6,6 +6,7 @@ export type MdtDungeon = {
   dungeonIndex: number
   totalCount: number
   enemies: Mob[]
+  pois: PointOfInterest[]
 }
 
 export type Dungeon = {
@@ -47,6 +48,11 @@ export type Mob = {
 export type MobSpawn = {
   mob: Mob
   spawn: Spawn
+}
+
+export type PointOfInterest = {
+  type: 'brackenhideCage' | 'graveyard' | string
+  pos: Point
 }
 
 export type Spell = {

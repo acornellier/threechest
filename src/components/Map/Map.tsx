@@ -19,6 +19,7 @@ import { LiveControllerWrapper } from '../Live/LiveControllerWrapper.tsx'
 import { Mobs } from './Mobs/Mobs.tsx'
 import { PullOutlines } from './PullOutlines/PullOutlines.tsx'
 import { isDev } from '../../util/isDev.ts'
+import { PointsOfInterest } from './PointsOfInterest/PointsOfInterest.tsx'
 
 const renderer = svg({ padding: 100 })
 
@@ -65,6 +66,7 @@ export function Map() {
         <PullOutlines />
         <Drawings />
         <Notes />
+        <PointsOfInterest />
         <MapContextMenu />
         <PatherComponent />
         <MapInitialZoom />
