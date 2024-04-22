@@ -6,7 +6,6 @@ import { createAppSlice } from '../storeUtil.ts'
 import { urlToWclInfo, type WclResult, wclRouteToRoute } from '../../util/wclCalc.ts'
 import { addToast } from './toastReducer.ts'
 import { wclRouteApi } from '../../api/wclRouteApi.ts'
-import wclTestData from '../../util/wclTestData.json'
 
 export interface ImportState {
   isImporting: boolean
@@ -39,29 +38,14 @@ export const importSlice = createAppSlice({
       }
     }),
     importRoute: create.asyncThunk(
-      async (
-        {
-          text,
-          mdtRoute,
-          testServer,
-          testClient,
-        }: { text?: string; mdtRoute?: MdtRoute; testServer?: true; testClient?: true },
-        thunkApi,
-      ) => {
-        if (!text && !mdtRoute && !testServer && !testClient)
-          throw new Error('Must specify either string or route to import')
+      async ({ text, mdtRoute }: { text?: string; mdtRoute?: MdtRoute }, thunkApi) => {
+        if (!text && !mdtRoute) throw new Error('Must specify either string or route to import')
 
-        if (testServer || testClient || text?.includes('warcraftlogs.com')) {
-          const wclResult = testClient
-            ? (wclTestData as WclResult)
-            : testServer
-              ? await wclRouteApi(wclTestData as WclResult)
-              : await wclRouteApi(urlToWclInfo(text!))
+        if (text?.includes('warcraftlogs.com')) {
+          const wclResult = await wclRouteApi(urlToWclInfo(text!))
           if (!wclResult || !wclResult.events) throw new Error('Failed to parse WCL report.')
 
-          console.time('wclConversion')
           const { route, errors } = wclRouteToRoute(wclResult)
-          console.timeEnd('wclConversion')
           thunkApi.dispatch(setRouteFromWcl(route))
 
           if (errors.length) {

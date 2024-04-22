@@ -2,11 +2,11 @@ import type { WclEventSimplified, WclResult } from '../src/util/wclCalc.ts'
 import { uniqBy } from '../src/util/nodash.ts'
 import { dungeons } from '../src/data/dungeons.ts'
 import fs from 'fs'
-import { getDirname } from './files.ts'
+import { cacheFolder } from './files.ts'
 import { fetchWcl } from './wcl.ts'
-import { isDev } from '../src/util/isDev.ts'
+import * as path from 'node:path'
 
-const dirname = getDirname(import.meta.url)
+const wclRouteCacheFolder = path.join(cacheFolder, 'wclRoute')
 const batchSize = 82
 
 type WclEnemyNpc = {
@@ -40,6 +40,13 @@ type WclEvent = {
   mapID: number
   source?: { id: number; name: string }
   target?: { id: number }
+}
+
+async function getCachedRoute(file: string): Promise<WclResult | null> {
+  if (!fs.existsSync(file)) return null
+
+  const data = fs.readFileSync(file, 'utf8')
+  return JSON.parse(data)
 }
 
 async function getRoute(code: string, fightId: string | number): Promise<WclRoute> {
@@ -129,9 +136,11 @@ query {
   }
 }`
 
+    console.time(`query ${start / batchSize}`)
     const json = await fetchWcl<{ reportData: { report: Record<string, { data: WclEvent[] }> } }>(
       query,
     )
+    console.timeEnd(`query ${start / batchSize}`)
 
     const resultsMap = json.reportData.report
 
@@ -173,6 +182,11 @@ export async function getWclRoute(
   fightId: 'last' | string | number,
 ): Promise<WclResult> {
   console.log('getWclRoute', code, fightId)
+
+  const file = `${wclRouteCacheFolder}/${code}-${fightId}.json`
+  if (fs.existsSync(file)) {
+    return JSON.parse(fs.readFileSync(file, 'utf8'))
+  }
 
   const fight = await getRoute(code, fightId)
 
@@ -243,9 +257,8 @@ export async function getWclRoute(
     events: firstPositions,
   }
 
-  if (isDev) {
-    fs.writeFileSync(`${dirname}/../src/util/wclTestData.json`, JSON.stringify(result))
-  }
+  fs.mkdirSync(path.dirname(file), { recursive: true })
+  fs.writeFileSync(file, JSON.stringify(result))
 
   return result
 }

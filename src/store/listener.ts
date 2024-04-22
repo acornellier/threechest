@@ -78,7 +78,7 @@ listenerMiddleware.startListening({
     loadRoute.fulfilled,
     duplicateRoute,
     setRouteFromMdt,
-    // setRouteFromWcl,
+    setRouteFromWcl,
     setRouteFromSample,
     newRoute,
   ),

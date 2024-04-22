@@ -72,32 +72,6 @@ export function ImportRoute({ hidden }: Props) {
       >
         {isImporting ? 'Importing...' : 'Import MDT'}
       </Button>
-      {isDev && (
-        <>
-          <Button
-            Icon={canPasteFromClipboard ? ClipboardIcon : ArrowUpTrayIcon}
-            short
-            onClick={async () => {
-              dispatch(importRoute({ testServer: true }))
-            }}
-            className={`${hidden ? '[&]:hidden' : ''}`}
-            disabled={isImporting}
-          >
-            {isImporting ? 'Importing...' : 'TEST SERVER'}
-          </Button>
-          <Button
-            Icon={canPasteFromClipboard ? ClipboardIcon : ArrowUpTrayIcon}
-            short
-            onClick={async () => {
-              dispatch(importRoute({ testClient: true }))
-            }}
-            className={`${hidden ? '[&]:hidden' : ''}`}
-            disabled={isImporting}
-          >
-            {isImporting ? 'Importing...' : 'TEST CLIENT'}
-          </Button>
-        </>
-      )}
       {inputModalOpen && (
         <Modal
           title="Paste MDT string"

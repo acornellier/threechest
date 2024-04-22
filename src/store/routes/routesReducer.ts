@@ -367,7 +367,6 @@ const undoableReducer = undoable(baseReducer.reducer, {
       baseReducer.actions.deleteDrawing.type,
       baseReducer.actions.updateDrawing.type,
       baseReducer.actions.clearDrawings.type,
-      baseReducer.actions.setRouteFromWcl.type,
     ]),
     excludeAction(['persist/PERSIST', 'persist/REHYDRATE']),
   ),
