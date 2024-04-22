@@ -316,13 +316,15 @@ function calculateExactPull(
   maxDistanceToGroup: number,
 ): CalculatedPull | null {
   const filteredPositions = pull.map(({ pos }) => pos).filter(Boolean) as Point[]
+  if (filteredPositions.length === 0 && pass < 4) return null
+
   const pullCenter = polygonCenter(filteredPositions)
   const pullMobCounts = tally(pull, ({ mobId }) => mobId)
 
   const groups = groupsRemaining
     .filter(({ id }) => !groupMobSpawns[id]!.some(({ spawn }) => spawnIdsTaken.has(spawn.id)))
     .filter(({ mobCounts }) => pull.some(({ mobId }) => (mobCounts[mobId] ?? 0) > 0))
-    .filter(({ averagePos }) => pass === 4 || distance(averagePos, pullCenter) < maxDistanceToGroup)
+    .filter(({ averagePos }) => pass >= 4 || distance(averagePos, pullCenter) < maxDistanceToGroup)
     .sort((a, b) => distance(a.averagePos, pullCenter) - distance(b.averagePos, pullCenter))
 
   const pulledGroups = getPulledGroups(pullMobCounts, groups)
