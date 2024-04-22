@@ -2,8 +2,9 @@ import DotenvFlow from 'dotenv-flow'
 import fs from 'fs'
 import { cacheFolder } from './files.ts'
 import * as path from 'node:path'
+import { isDev } from '../src/util/isDev.ts'
 
-DotenvFlow.config()
+if (isDev) DotenvFlow.config()
 
 const tokenPath = `${cacheFolder}/wclToken.json`
 
