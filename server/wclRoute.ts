@@ -4,7 +4,7 @@ import { dungeons } from '../src/data/dungeons.ts'
 import fs from 'fs'
 import { cacheFolder } from './files.ts'
 import { fetchWcl } from './wcl.ts'
-import * as path from 'node:path'
+import * as path from 'path'
 
 const wclRouteCacheFolder = path.join(cacheFolder, 'wclRoute')
 const batchSize = 82

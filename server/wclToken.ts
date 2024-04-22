@@ -1,7 +1,7 @@
 import DotenvFlow from 'dotenv-flow'
 import fs from 'fs'
 import { cacheFolder } from './files.ts'
-import * as path from 'node:path'
+import * as path from 'path'
 import { isDev } from '../src/util/isDev.ts'
 
 if (isDev) DotenvFlow.config()
