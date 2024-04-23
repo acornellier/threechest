@@ -13,6 +13,10 @@ const extraSpells: SpellIdMap = {
   194487: jsonSpells[187224]!, // Gauntlet Rothexer 2
 }
 
+const removedSpells = [
+  384150, // Fighter Clawmangle
+]
+
 export default async () => ({
-  data: mergeSpells(jsonSpells, extraSpells),
+  data: mergeSpells(jsonSpells, extraSpells, removedSpells),
 })
