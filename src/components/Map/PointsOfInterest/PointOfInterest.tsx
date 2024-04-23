@@ -27,7 +27,7 @@ const configs: PoiConfig[] = [
   {
     type: 'brackenhideCage',
     label: 'Cage',
-    src: '/images/cage.png',
+    src: '/images/cage2.png',
   },
   {
     type: 'brackenhideCauldron',
