@@ -92,7 +92,8 @@ export type MobFake = Omit<Mob, 'spawns'> & {
   spawns: SpawnFake[]
 }
 
-export type PoiFake = Omit<PointOfInterest, 'pos'> & {
+export type PoiFake = Omit<PointOfInterest, 'type' | 'pos'> & {
+  type: string
   pos: number[]
 }
 
