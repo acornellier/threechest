@@ -51,7 +51,7 @@ export type MobSpawn = {
 }
 
 export type PointOfInterest = {
-  type: 'brackenhideCage' | 'graveyard' | string
+  type: 'graveyard' | 'brackenhideCage' | 'brackenhideCauldron' | 'neltharusChain'
   pos: Point
 }
 

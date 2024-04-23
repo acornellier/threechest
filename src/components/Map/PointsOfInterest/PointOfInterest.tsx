@@ -13,28 +13,36 @@ interface Props {
 }
 
 interface PoiConfig {
+  type: PointOfInterestType['type']
   label: string
   src: string
 }
 
-const graveyardConfig: PoiConfig = {
-  label: 'Graveyard',
-  src: '/images/graveyard.png',
-}
-
-const cageConfig: PoiConfig = {
-  label: 'Cage',
-  src: '/images/cage.png',
-}
+const configs: PoiConfig[] = [
+  {
+    type: 'graveyard',
+    label: 'Graveyard',
+    src: '/images/graveyard.png',
+  },
+  {
+    type: 'brackenhideCage',
+    label: 'Cage',
+    src: '/images/cage.png',
+  },
+  {
+    type: 'brackenhideCauldron',
+    label: 'Cauldron',
+    src: '/images/cauldron.png',
+  },
+  {
+    type: 'neltharusChain',
+    label: 'Chain',
+    src: '/images/chain.png',
+  },
+]
 
 function getConfig(poi: PointOfInterestType): PoiConfig | null {
-  if (poi.type === 'graveyard') {
-    return graveyardConfig
-  } else if (poi.type === 'brackenhideCage') {
-    return cageConfig
-  } else {
-    return null
-  }
+  return configs.find((config) => config.type === poi.type) ?? null
 }
 
 function PointOfInterestComponent({ poi, iconScaling }: Props) {
