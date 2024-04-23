@@ -14,10 +14,7 @@ export type WclEventSimplified = {
   x?: number
   y?: number
   mapID?: number
-  // TODO: debug
-  instanceId?: number
   name: string
-  actorId: number
   id?: number
 }
 

@@ -40,6 +40,7 @@ type WclEvent = {
   mapID: number
   source?: { id: number; name: string }
   target?: { id: number }
+  amount?: number
 }
 
 async function getRoute(code: string, fightId: 'last' | string | number): Promise<WclRoute> {
@@ -141,7 +142,7 @@ query {
       .map((_, idx) => {
         const castsData = resultsMap[`c${idx}`]!.data.filter(({ targetID }) => targetID !== -1)
         const damageData = resultsMap[`d${idx}`]!.data.filter(
-          ({ source }) => source?.name !== 'Bloodworm',
+          ({ source, amount }) => source?.name !== 'Bloodworm' && amount,
         ).map((event) => ({
           ...event,
           sourceID: event.source?.id ?? event.sourceID,
@@ -188,6 +189,7 @@ export async function getWclRoute(
 
   const dungeon = dungeons.find((dungeon) => dungeon.wclEncounterId === fight.encounterID)
   if (!dungeon) throw new Error(`Dungeon not supported, WCL encounter ID ${fight.encounterID}`)
+  if (dungeon.key === 'bh') throw new Error(`Brackenhide is not supported for WCL parsing`)
 
   let enemies: WclEnemy[] = fight.dungeonPulls.flatMap(({ enemyNPCs }) =>
     enemyNPCs.flatMap(({ id, gameID, minimumInstanceID, maximumInstanceID }) =>
@@ -229,10 +231,6 @@ export async function getWclRoute(
         x,
         y,
         mapID,
-
-        // TODO remove debug fields
-        actorId,
-        instanceId,
         name: `${dungeon.mobSpawnsList.find(({ mob }) => mob.id === matchingEnemy.gameId)?.mob.name} ${instanceId}`,
       }
     })

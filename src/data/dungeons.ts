@@ -32,10 +32,10 @@ const av: Dungeon = {
 }
 
 const bh: Dungeon = {
-  name: 'Brackenhide Hollow (WIP!)',
+  name: 'Brackenhide Hollow',
   key: 'bh',
   icon: 'achievement_dungeon_brackenhidehollow',
-  // wclEncounterId: 62520,
+  wclEncounterId: 62520,
   ...dungeonData('bh'),
 }
 

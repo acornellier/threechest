@@ -359,7 +359,6 @@ export class Room {
     this.provider = provider
     this.synced = false
     this.name = name
-    // @todo make key secret by scoping
     this.key = key
     /**
      * @type {Map<string, WebrtcConn>}

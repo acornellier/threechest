@@ -51,6 +51,20 @@ export const mdtMapOffsets: Record<number, MapOffset> = {
     rotate: 180,
   },
 
+  //bh
+  2096: {
+    x: -385 / 3840,
+    y: -468 / 2560,
+    scaleX: 5035 / 3840,
+    scaleY: 3358 / 2560,
+  },
+  2106: {
+    x: 3389 / 3840,
+    y: 1299 / 2560,
+    scaleX: 317 / 3840,
+    scaleY: 212 / 2560,
+  },
+
   // hoi
   2082: {
     x: -45 / 3840,
