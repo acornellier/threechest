@@ -1487,13 +1487,13 @@
         {
           "id": "13-20",
           "idx": 20,
-          "group": 55,
+          "group": 54,
           "pos": [-247.38, 209.79]
         },
         {
           "id": "13-21",
           "idx": 21,
-          "group": 55,
+          "group": 54,
           "pos": [-249.26, 211.83]
         }
       ]
@@ -1614,13 +1614,13 @@
         {
           "id": "14-15",
           "idx": 15,
-          "group": 55,
+          "group": 54,
           "pos": [-243.74, 209.8]
         },
         {
           "id": "14-16",
           "idx": 16,
-          "group": 55,
+          "group": 54,
           "pos": [-243.49, 214.53]
         },
         {
@@ -1990,7 +1990,7 @@
         {
           "id": "18-3",
           "idx": 3,
-          "group": 55,
+          "group": 54,
           "pos": [-246.28, 212.73]
         },
         {
@@ -3474,6 +3474,50 @@
     {
       "type": "graveyard",
       "pos": [-236.86, 244.41]
+    },
+    {
+      "type": "brackenhideCauldron",
+      "pos": [-12.64, 82.6]
+    },
+    {
+      "type": "brackenhideCauldron",
+      "pos": [-158.89, 180.67]
+    },
+    {
+      "type": "brackenhideCauldron",
+      "pos": [-202.67, 313.38]
+    },
+    {
+      "type": "brackenhideCauldron",
+      "pos": [-166.79, 330.65]
+    },
+    {
+      "type": "brackenhideCauldron",
+      "pos": [-102.83, 294.35]
+    },
+    {
+      "type": "brackenhideCauldron",
+      "pos": [-86.74, 49.8]
+    },
+    {
+      "type": "brackenhideCauldron",
+      "pos": [-48.55, 71.05]
+    },
+    {
+      "type": "brackenhideCauldron",
+      "pos": [-58.1, 93.53]
+    },
+    {
+      "type": "brackenhideCauldron",
+      "pos": [-174.66, 209.1]
+    },
+    {
+      "type": "brackenhideCauldron",
+      "pos": [-99.08, 173.39]
+    },
+    {
+      "type": "brackenhideCauldron",
+      "pos": [-146.6, 211.5]
     }
   ]
 }

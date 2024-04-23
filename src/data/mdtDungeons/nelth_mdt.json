@@ -205,7 +205,21 @@
       "creatureType": "Giant",
       "scale": 1.4,
       "isBoss": false,
-      "characteristics": ["Taunt", "Root", "Fear", "Stun", "Slow"],
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
+        "Root",
+        "Fear",
+        "Disorient",
+        "Repentance",
+        "Stun",
+        "Slow",
+        "Sleep Walk"
+      ],
       "spawns": [
         {
           "id": "4-1",
@@ -290,7 +304,21 @@
       "creatureType": "Elemental",
       "scale": 1,
       "isBoss": false,
-      "characteristics": ["Taunt", "Root", "Fear", "Stun", "Slow"],
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
+        "Root",
+        "Fear",
+        "Banish",
+        "Disorient",
+        "Stun",
+        "Slow",
+        "Sleep Walk"
+      ],
       "spawns": [
         {
           "id": "5-1",
@@ -530,7 +558,21 @@
       "creatureType": "Giant",
       "scale": 1.4,
       "isBoss": false,
-      "characteristics": ["Taunt", "Root", "Fear", "Stun", "Slow"],
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
+        "Root",
+        "Fear",
+        "Disorient",
+        "Repentance",
+        "Stun",
+        "Slow",
+        "Sleep Walk"
+      ],
       "spawns": [
         {
           "id": "7-1",
@@ -615,7 +657,21 @@
       "creatureType": "Giant",
       "scale": 1.4,
       "isBoss": false,
-      "characteristics": ["Taunt", "Silence", "Fear", "Stun", "Slow"],
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
+        "Root",
+        "Fear",
+        "Disorient",
+        "Repentance",
+        "Stun",
+        "Slow",
+        "Sleep Walk"
+      ],
       "spawns": [
         {
           "id": "8-1",
@@ -683,7 +739,7 @@
       "creatureType": "Humanoid",
       "scale": 1.2,
       "isBoss": true,
-      "characteristics": ["Taunt"],
+      "characteristics": ["Taunt", "Mind Soothe"],
       "spawns": [
         {
           "id": "10-1",
@@ -702,7 +758,21 @@
       "creatureType": "Giant",
       "scale": 1.4,
       "isBoss": false,
-      "characteristics": ["Root", "Fear", "Stun", "Slow"],
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
+        "Root",
+        "Fear",
+        "Disorient",
+        "Repentance",
+        "Stun",
+        "Slow",
+        "Sleep Walk"
+      ],
       "spawns": [
         {
           "id": "11-1",
@@ -739,7 +809,21 @@
       "creatureType": "Elemental",
       "scale": 1,
       "isBoss": false,
-      "characteristics": ["Taunt", "Root", "Fear", "Stun", "Slow"],
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
+        "Root",
+        "Fear",
+        "Banish",
+        "Disorient",
+        "Stun",
+        "Slow",
+        "Sleep Walk"
+      ],
       "spawns": [
         {
           "id": "12-1",
@@ -826,7 +910,21 @@
       "creatureType": "Giant",
       "scale": 1.4,
       "isBoss": false,
-      "characteristics": ["Taunt", "Fear", "Stun", "Slow"],
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
+        "Root",
+        "Fear",
+        "Disorient",
+        "Repentance",
+        "Stun",
+        "Slow",
+        "Sleep Walk"
+      ],
       "spawns": [
         {
           "id": "13-1",
@@ -899,7 +997,21 @@
       "creatureType": "Giant",
       "scale": 1.4,
       "isBoss": false,
-      "characteristics": ["Taunt", "Silence", "Fear", "Disorient", "Stun", "Slow"],
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
+        "Root",
+        "Fear",
+        "Disorient",
+        "Repentance",
+        "Stun",
+        "Slow",
+        "Sleep Walk"
+      ],
       "spawns": [
         {
           "id": "14-1",
@@ -1080,11 +1192,16 @@
         "Taunt",
         "Incapacitate",
         "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
         "Root",
         "Fear",
+        "Banish",
         "Disorient",
         "Stun",
-        "Slow"
+        "Slow",
+        "Sleep Walk"
       ],
       "spawns": [
         {
@@ -1292,7 +1409,21 @@
       "creatureType": "Giant",
       "scale": 1.4,
       "isBoss": false,
-      "characteristics": ["Fear", "Stun", "Slow"],
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
+        "Root",
+        "Fear",
+        "Disorient",
+        "Repentance",
+        "Stun",
+        "Slow",
+        "Sleep Walk"
+      ],
       "spawns": [
         {
           "id": "18-1",
@@ -1359,7 +1490,21 @@
       "creatureType": "Giant",
       "scale": 1.4,
       "isBoss": false,
-      "characteristics": ["Taunt", "Silence", "Fear", "Stun", "Slow"],
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
+        "Root",
+        "Fear",
+        "Disorient",
+        "Repentance",
+        "Stun",
+        "Slow",
+        "Sleep Walk"
+      ],
       "spawns": [
         {
           "id": "19-1",
@@ -1438,7 +1583,7 @@
       "creatureType": "Giant",
       "scale": 1,
       "isBoss": false,
-      "characteristics": [],
+      "characteristics": ["Taunt"],
       "spawns": [
         {
           "id": "20-1",
@@ -1521,7 +1666,7 @@
       "creatureType": "Elemental",
       "scale": 1.4,
       "isBoss": false,
-      "characteristics": [],
+      "characteristics": ["Taunt"],
       "spawns": [
         {
           "id": "23-1",
@@ -1564,6 +1709,46 @@
     {
       "type": "graveyard",
       "pos": [-231.34, 116.64]
+    },
+    {
+      "type": "neltharusChain",
+      "pos": [-164.03, 161.39]
+    },
+    {
+      "type": "neltharusChain",
+      "pos": [-200.6, 151.68]
+    },
+    {
+      "type": "neltharusChain",
+      "pos": [-190.07, 186.44]
+    },
+    {
+      "type": "neltharusChain",
+      "pos": [-148.32, 181.2]
+    },
+    {
+      "type": "neltharusChain",
+      "pos": [-126.89, 177.25]
+    },
+    {
+      "type": "neltharusChain",
+      "pos": [-111.55, 183.68]
+    },
+    {
+      "type": "neltharusChain",
+      "pos": [-63.78, 196.12]
+    },
+    {
+      "type": "neltharusChain",
+      "pos": [-92.5, 220.86]
+    },
+    {
+      "type": "neltharusFood",
+      "pos": [-71.82, 210.33]
+    },
+    {
+      "type": "neltharusShield",
+      "pos": [-162.18, 318.73]
     }
   ]
 }
