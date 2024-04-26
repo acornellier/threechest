@@ -1,10 +1,11 @@
-import type { ButtonProps, ButtonTooltipProps } from './Button.tsx';
+import type { ButtonProps, ButtonTooltipProps } from './Button.tsx'
 import { Button } from './Button.tsx'
-import type { ReactNode} from 'react';
+import type { ReactNode } from 'react'
 import { useCallback, useRef, useState } from 'react'
 import { ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/24/outline'
 import { useOutsideClick } from '../../util/hooks/useOutsideClick.ts'
 import type { IconComponent } from '../../util/types.ts'
+import { ReactSortable } from 'react-sortablejs'
 
 export interface DropdownOption {
   id: string
@@ -18,6 +19,7 @@ type Props<T extends DropdownOption> = {
   onClose?: () => void
   onSelect: (option: T) => void
   onHover?: (option: T | null) => void
+  onReorder?: (options: T[]) => void
   selected?: T
   buttonContent?: ReactNode
   MainButtonIcon?: IconComponent
@@ -36,6 +38,7 @@ export function Dropdown<T extends DropdownOption>({
   onClose,
   onSelect,
   onHover,
+  onReorder,
   buttonContent,
   MainButtonIcon,
   short,
@@ -121,8 +124,8 @@ export function Dropdown<T extends DropdownOption>({
             ) : null}
             {!hideArrow && (
               <ChevronIcon
-                width={20}
-                height={20}
+                width={24}
+                height={24}
                 className={`ml-auto ${disabled ? 'invisible' : ''}`}
               />
             )}
@@ -135,28 +138,42 @@ export function Dropdown<T extends DropdownOption>({
         style={{ marginTop: twoDimensional ? 0 : -3 }}
       >
         <div className="flex flex-col">
-          {options.map((option) => (
-            <Button
-              key={option.id}
-              className={`dropdown-option ${optionsVisible ? 'options-visible' : ''}`}
-              twoDimensional
-              outline={outline}
-              onClick={() => selectOption(option)}
-              onTouchEnd={() => selectOption(option)}
-              onMouseEnter={() => {
-                if (!fullyOpen) return
-                onHover?.(option)
-              }}
-              onMouseLeave={(e) => {
-                if (!fullyOpen) return
-                if ((e.relatedTarget as Element)?.closest?.('.dropdown-option')) return
-                onHover?.(null)
-              }}
-            >
-              {option.icon && <div className="mr-1">{option.icon}</div>}
-              <div className="dropdown-option-text">{option.content}</div>
-            </Button>
-          ))}
+          <ReactSortable
+            className="flex flex-col relative overflow-auto h-fit"
+            disabled={onReorder === undefined}
+            list={options}
+            setList={(newOptions) => {
+              if (!onReorder) return
+              if (newOptions.every((newOption, idx) => newOption.id === options[idx]!.id)) return
+
+              onReorder?.(newOptions)
+            }}
+            delay={100}
+            delayOnTouchOnly
+          >
+            {options.map((option) => (
+              <Button
+                key={option.id}
+                className={`dropdown-option ${optionsVisible ? 'options-visible' : ''}`}
+                twoDimensional
+                outline={outline}
+                onClick={() => selectOption(option)}
+                onTouchEnd={() => selectOption(option)}
+                onMouseEnter={() => {
+                  if (!fullyOpen) return
+                  onHover?.(option)
+                }}
+                onMouseLeave={(e) => {
+                  if (!fullyOpen) return
+                  if ((e.relatedTarget as Element)?.closest?.('.dropdown-option')) return
+                  onHover?.(null)
+                }}
+              >
+                {option.icon && <div className="mr-1">{option.icon}</div>}
+                <div className="dropdown-option-text">{option.content}</div>
+              </Button>
+            ))}
+          </ReactSortable>
         </div>
       </div>
     </div>

@@ -300,6 +300,12 @@ const baseReducer = createAppSlice({
     deleteSavedRoute(state, { payload: routeId }: PayloadAction<string>) {
       state.savedRoutes = state.savedRoutes.filter((route) => route.uid !== routeId)
     },
+    setCurDungeonSavedRoutes(state, { payload: newSavedRoutes }: PayloadAction<SavedRoute[]>) {
+      const otherSavedRoutes = state.savedRoutes.filter(
+        (route) => route.dungeonKey !== state.route.dungeonKey,
+      )
+      state.savedRoutes = [...otherSavedRoutes, ...newSavedRoutes]
+    },
   },
   extraReducers: (builder) => {
     builder.addCase(setDungeon.fulfilled, (state, { payload: route }) => {
@@ -363,6 +369,7 @@ const undoableReducer = undoable(baseReducer.reducer, {
       baseReducer.actions.deleteDrawing.type,
       baseReducer.actions.updateDrawing.type,
       baseReducer.actions.clearDrawings.type,
+      baseReducer.actions.setCurDungeonSavedRoutes.type,
     ]),
     excludeAction(['persist/PERSIST', 'persist/REHYDRATE']),
   ),
@@ -416,4 +423,5 @@ export const {
   moveNote,
   updateSavedRoutes,
   deleteSavedRoute,
+  setCurDungeonSavedRoutes,
 } = baseReducer.actions

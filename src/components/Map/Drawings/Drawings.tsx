@@ -9,6 +9,7 @@ export function Drawings() {
   const route = useRoute()
   const dispatch = useAppDispatch()
   const drawMode = useRootSelector((state) => state.map.drawMode)
+  const isErasing = useRootSelector((state) => state.map.isErasing)
 
   const mapEvents = useMemo(
     () => ({
@@ -16,10 +17,10 @@ export function Drawings() {
         if (drawMode === 'erasing') dispatch(setIsErasing(true))
       },
       mouseup: () => {
-        dispatch(setIsErasing(false))
+        if (isErasing) dispatch(setIsErasing(false))
       },
     }),
-    [dispatch, drawMode],
+    [dispatch, drawMode, isErasing],
   )
 
   useMapEvents(mapEvents)

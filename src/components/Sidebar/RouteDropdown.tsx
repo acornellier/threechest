@@ -1,16 +1,21 @@
 ﻿import { useCallback, useMemo } from 'react'
-import { loadRoute } from '../../store/routes/routesReducer.ts'
+import { loadRoute, setCurDungeonSavedRoutes } from '../../store/routes/routesReducer.ts'
 import type { SavedRoute } from '../../util/types.ts'
-import type { DropdownOption } from '../Common/Dropdown.tsx';
+import type { DropdownOption } from '../Common/Dropdown.tsx'
 import { Dropdown } from '../Common/Dropdown.tsx'
 import { setPreviewRouteAsync } from '../../store/reducers/importReducer.ts'
 import { useActualRoute, useDungeonRoutes } from '../../store/routes/routeHooks.ts'
 import { useAppDispatch } from '../../store/storeUtil.ts'
 import { useIsGuestCollab } from '../../store/collab/collabReducer.ts'
 
-const routeToOption = (route: SavedRoute): DropdownOption => ({
+interface RouteOption extends DropdownOption {
+  route: SavedRoute
+}
+
+const routeToOption = (route: SavedRoute): RouteOption => ({
   id: route.uid,
   content: route.name,
+  route,
 })
 
 export function RouteDropdown() {
@@ -40,6 +45,13 @@ export function RouteDropdown() {
     [dispatch],
   )
 
+  const onReorder = useCallback(
+    (options: RouteOption[]) => {
+      dispatch(setCurDungeonSavedRoutes(options.map((option) => option.route)))
+    },
+    [dispatch],
+  )
+
   return (
     <Dropdown
       className="route-dropdown"
@@ -47,6 +59,7 @@ export function RouteDropdown() {
       selected={selected}
       onSelect={onSelect}
       onHover={onHover}
+      onReorder={onReorder}
       buttonContent={isGuestCollab ? route.name : undefined}
       disabled={isGuestCollab}
     />
