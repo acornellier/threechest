@@ -95,7 +95,7 @@ const sampleRouteDefinitions: Record<DungeonKey, SampleRouteDefinition[]> = {
     {
       name: 'S4 standard',
       difficulty: 'intermediate',
-      mdt: '!fw1spUjmq4Fm9EfEW8W37LEbTsUNTAsWSkDTGkcS72l93E9JzyT9IvvqjKHXFpMXJrXu)qj30VVPKs(F)PC7Y84L1rL8nT(f1a7Rvk549PP732nB)rnaUa73Tj8S5T(xG1rXcxjF9Izx7G62(6QEE7PDJrnu5sgJi3VA0VQniMy0VTp)SEz(7JVRgA8P)qB032UVmBrZkQFBb6H92bw0xEigGGA2S)TuC4K4d12l3VC7fMxDH1ZX4agN5JlVTywwvYVmnXRMMCzgiIGPgtNJ01J0jYGLYRpfwhOcpSbaj3XZCvdU8wKMoKgpDnFq3H7QY4x8z7W9zesOjQQKiVR9bx7tGaRlaEtKyPsMtCakUAuCEX3IIVdfFpkErqBwf7uR)oNo8RH5anuXSRpwHwys5Ub5Un84(Z9Z0KZ4hWr(PhbrK6lMiLRUKE4bh0oM6p3A5FSErjfXRcBacWLztwxHT1TyngBfmrPgOZYUmcj0DUJz9NSDogwix1c0B22wSStRfdqvjzrttSKH9m6HZxT4OlIZhhfjAmHrZjmAqH2gD4O4nooQyLC6HsRtCAtwdciUbIBGHCdqwvwKXjV0HcHXxakV3bRdnXvX4dlIQIOko)aWtg5rRw9)gLcLaE8jp(EalDAcOMlqNvgkzCQKzpPa6sN4yqmy(gAv6WxBHHo3h5Y1FzFbZd)Rx2uQ)b',
+      mdt: '!fwvYookmq0pM5(iCHnGVpxMlOwY5SvNfteDJGreit6lZ3(4LQighqTckHuu(9E1kAM(GwnzEmPvk()E)20X(lhhVOv)1y(uxZ(zMwDPTPP98C30x6AWzyU16qM4(152p5JTIET6(XUzJdRZZJJM(P3M7601zoVrlQ5tDM7Moeu06VM7VAg6)9Lh6AH39BMoZ5P2HElAwv9hlq3S3wZI(YdrneKZK9V7zh2WEDU9Y9l3EH(LVZ55ODaTZ82vNh6gg1QF00WZAACEgiIGjhDNJ0vH0jtGL8RAnSoqLEydasrhpjQe4XlqAkrA80jEs3s0LLWV81WH79i4GikRSsENQcrT3bcSYa4IiXsPmN4auC5O48IVafFjk(ku8YG2Sk2Pw)DoD4pdZbAiJzpFScTWSMBbYDr4XvBhpnnUaFbokEQqqKRJlMCnxLRQHlCqDm5VwA5ppVCpfXZcnavXkYx)85u2AnbuJeqDCGat3qbMVHY16MbXG5od1EqHqXRspu2dQoj3Zk3zwRavcYpB3ywIzgBr)qeEj1bw1gdzX4cPYMMrX5OInRq1q226sU0DGZDlXjn(XO5pgnasTNlAkUH0XfBBT(CFcoZwenPhNJbIBG4gyubhsYtYeo57TSjSwaG97jX8GiEvCsza(UDgum96kSOtJXW2RL3yWftmz7ro6N7JA40h2xWCZ)6LjT()a',
     },
     {
       name: 'I heard you like Wardens',
