@@ -46,7 +46,7 @@ export async function getWclToken() {
     headers,
   })
 
-  const res: OAuthResult = await fetchRes.json()
+  const res = (await fetchRes.json()) as OAuthResult
   if (res.error) {
     throw new Error(`${res.error_description}: ${res.error}`)
   }

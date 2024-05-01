@@ -9,9 +9,9 @@ export const pageVisitsKey = 'tips:pageVists'
 export const tipsSeenKey = 'tips:tipsSeen'
 export const neverShowTipsKey = 'tips:neverShowTips'
 
-export function getTipsSeen(): string[] {
+export function getTipsSeen() {
   const tipsSeenItem = localStorage.getItem(tipsSeenKey)
-  const tipsSeen = tipsSeenItem ? JSON.parse(tipsSeenItem) : []
+  const tipsSeen = tipsSeenItem ? (JSON.parse(tipsSeenItem) as string[]) : []
   return Array.isArray(tipsSeen) ? tipsSeen : []
 }
 

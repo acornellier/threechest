@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import type { Shortcut } from '../../data/shortcuts.ts';
+import type { Shortcut } from '../../data/shortcuts.ts'
 import { isEventInInput } from '../../data/shortcuts.ts'
 import { isMac } from '../dev.ts'
 
@@ -42,5 +42,5 @@ export function useShortcut(
     return () => {
       window.removeEventListener('keydown', handleKeyDown)
     }
-  }, [callback, shortcuts])
+  }, [callback, shortcuts, options?.allowRepeat])
 }

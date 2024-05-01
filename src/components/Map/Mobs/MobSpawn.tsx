@@ -110,6 +110,7 @@ function MobSpawnComponent({
       mobSpawn,
       isCtrlKeyDown,
       isAltKeyDown,
+      isBoxHovering,
     ],
   )
 

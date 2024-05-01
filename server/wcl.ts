@@ -40,7 +40,7 @@ export async function fetchWcl<T>(query: string): Promise<T> {
     body: JSON.stringify({ query }),
   })
 
-  const json: WclJson = await data.json()
+  const json = (await data.json()) as WclJson
 
   const error = json.error ?? json.errors?.[0]?.message
   if (error) {

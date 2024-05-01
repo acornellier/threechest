@@ -8,6 +8,6 @@ export const exportRouteApi = (route: Route) =>
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ mdtRoute: routeToMdtRoute(route) }),
   }).then(async (res) => {
-    if (res.ok) return res.json()
+    if (res.ok) return (await res.json()) as string
     else throw await res.text()
   })

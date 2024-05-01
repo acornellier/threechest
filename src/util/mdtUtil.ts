@@ -119,7 +119,7 @@ export function mdtRouteToRoute(mdtRoute: MdtRoute): Route {
             return mobSpawn.spawn.id
           })
         })
-        .filter(Boolean) as SpawnId[],
+        .filter(Boolean),
     })),
     notes: mdtObjects
       .filter((object): object is MdtNote => 'n' in object)

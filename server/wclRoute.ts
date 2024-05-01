@@ -161,7 +161,7 @@ query {
           return damageData[0] ?? castsData[0]
         }
       })
-      .filter(Boolean) as WclEvent[]
+      .filter(Boolean)
 
     events.push(...newEvents)
   }
@@ -181,7 +181,7 @@ export async function getWclRoute(
   console.log('getWclRoute', code, fightId, hasCache)
 
   if (hasCache) {
-    const result = JSON.parse(fs.readFileSync(file, 'utf8'))
+    const result = JSON.parse(fs.readFileSync(file, 'utf8')) as WclResult
     return { result, cached: true }
   }
 
@@ -234,7 +234,7 @@ export async function getWclRoute(
         name: `${dungeon.mobSpawnsList.find(({ mob }) => mob.id === matchingEnemy.gameId)?.mob.name} ${instanceId}`,
       }
     })
-    .filter(Boolean) as WclEventSimplified[]
+    .filter(Boolean)
 
   firstPositions.sort((a, b) => a.timestamp - b.timestamp)
 

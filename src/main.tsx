@@ -1,7 +1,7 @@
-import './roboto-slab.css'
+import './styles/roboto-slab.css'
 import ReactDOM from 'react-dom/client'
 import App from './App.tsx'
-import './styles.scss'
+import './styles/styles.scss'
 import TagManager from 'react-gtm-module'
 // import { StrictMode } from 'react'
 

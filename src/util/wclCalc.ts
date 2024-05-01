@@ -307,7 +307,7 @@ function calculateExactPull(
   pass: Pass,
   maxDistanceToGroup: number,
 ): CalculatedPull | null {
-  const filteredPositions = pull.map(({ pos }) => pos).filter(Boolean) as Point[]
+  const filteredPositions = pull.map(({ pos }) => pos).filter(Boolean)
   if (filteredPositions.length === 0 && pass < 4) return null
 
   const pullCenter = polygonCenter(filteredPositions)

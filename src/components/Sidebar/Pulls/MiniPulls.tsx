@@ -9,7 +9,6 @@ import { useDungeon, useRoute, useSelectedPull } from '../../../store/routes/rou
 import { useMemo } from 'react'
 import { augmentPulls } from './augmentPulls.ts'
 import { PullList } from './PullList.tsx'
-import type { PullDetailed } from '../../../util/types.ts'
 
 export function MiniPulls() {
   const dispatch = useAppDispatch()
@@ -21,7 +20,7 @@ export function MiniPulls() {
     pullsDetailed[selectedPull - 1],
     pullsDetailed[selectedPull],
     pullsDetailed[selectedPull + 1],
-  ].filter(Boolean) as PullDetailed[]
+  ].filter(Boolean)
 
   return (
     <Panel>

@@ -1,3 +1,9 @@
+import type { mutex } from 'lib0/mutex'
+import type * as Y from 'yjs'
+import type * as awarenessProtocol from 'y-protocols/awareness'
+import * as ws from 'lib0/websocket'
+import { ObservableV2 } from 'lib0/observable'
+
 export class WebrtcConn {
   /**
    * @param {SignalingConn} signalingConn
@@ -49,7 +55,7 @@ export class Room {
    * @type {Set<string>}
    */
   bcConns: Set<string>
-  mux: import('lib0/mutex').mutex
+  mux: mutex
   bcconnected: boolean
   expectedNumberOfClients: number | null
   /**
@@ -156,7 +162,3 @@ export type WebrtcProviderEvents = {
     bcPeers: Array<string>
   }) => void
 }
-import type * as Y from 'yjs'
-import type * as awarenessProtocol from 'y-protocols/awareness'
-import * as ws from 'lib0/websocket'
-import { ObservableV2 } from 'lib0/observable'
