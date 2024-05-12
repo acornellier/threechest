@@ -18,7 +18,7 @@ export function ShareRoute({ hidden }: Props) {
   const handleClick = useCallback(async () => {
     try {
       const str = await exportRouteApi(route)
-      const url = window.location.host + `?mdt=${str}`
+      const url = window.location.origin + `?mdt=${str}`
       await navigator.clipboard.writeText(url)
       dispatch(addToast({ message: 'URL copied to clipboard!' }))
     } catch (err) {
