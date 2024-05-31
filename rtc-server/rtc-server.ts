@@ -53,6 +53,7 @@ const onConnection = (socket: WebSocketEx) => {
       }
 
       if (message.type === 'subscribe') {
+        console.log('SUBSCRIBE MESSAGE RECEIVED!')
         message.topics.forEach((topicName) => {
           subscribedTopics.add(topicName)
 
