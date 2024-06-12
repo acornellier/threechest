@@ -11,7 +11,7 @@ import { clearDrawings } from '../../../store/routes/routesReducer.ts'
 import { useCallback, useState } from 'react'
 import { keyText, shortcuts } from '../../../data/shortcuts.ts'
 import { useShortcut } from '../../../util/hooks/useShortcut.ts'
-import type { DropdownOption } from '../../Common/Dropdown.tsx';
+import type { DropdownOption } from '../../Common/Dropdown.tsx'
 import { Dropdown } from '../../Common/Dropdown.tsx'
 import { WeightIcon } from '../../Common/Icons/WeightIcon.tsx'
 import { TrashIcon, XMarkIcon } from '@heroicons/react/24/outline'
@@ -80,15 +80,6 @@ export function DrawToolbar() {
                 style={{ backgroundColor: drawColor, width: 20, height: 20 }}
               />
             </Button>
-            <TooltipStyled
-              id="draw-color-tooltip"
-              isOpen={isChoosingColor}
-              clickable
-              place="bottom"
-              padding={8}
-            >
-              <ColorGrid onSelectColor={onChangeColor} />
-            </TooltipStyled>
             <Dropdown
               buttonContent={<WeightIcon width={24} height={24} />}
               options={weightOptions}
@@ -98,6 +89,15 @@ export function DrawToolbar() {
               tooltip="Line weight"
               tooltipId="draw-weight-tooltip"
             />
+            <TooltipStyled
+              id="draw-color-tooltip"
+              isOpen={isChoosingColor}
+              clickable
+              place="bottom-start"
+              padding={8}
+            >
+              <ColorGrid onSelectColor={onChangeColor} />
+            </TooltipStyled>
           </div>
           <div className="flex items-start gap-2 h-full">
             <Button
