@@ -6,7 +6,7 @@ import { useMapObjectsHidden } from '../../../store/reducers/mapReducer.ts'
 import { useAppDispatch, useRootSelector } from '../../../store/storeUtil.ts'
 import { deleteDrawing, updateDrawing } from '../../../store/routes/routesReducer.ts'
 import type { Point } from '../../../data/types.ts'
-import type { LatLng} from 'leaflet';
+import type { LatLng } from 'leaflet'
 import { type LeafletEventHandlerFnMap } from 'leaflet'
 import { latLngToPoint } from '../../../util/map.ts'
 
@@ -107,6 +107,11 @@ function DrawingComponent({ drawing }: Props) {
       },
     }
   }, [dispatch, drawMode, drawing, map, isErasing, eraseAtPoint])
+
+  if (drawing.positions.some((line) => line.some((point) => point.length !== 2))) {
+    console.error('invalid drawing')
+    return
+  }
 
   return (
     <>
