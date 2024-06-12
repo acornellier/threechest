@@ -71,13 +71,13 @@ export function ErrorPage({ errors }: Props) {
           <p>Current route name: {route?.name ?? 'Unknown'}</p>
           <p>Current route dungeon key: {route?.dungeonKey ?? 'Unknown'}</p>
           {isDev && errors[0] && (
-            <p className="text-sm">
+            <div className="text-sm">
               {errors[0].error.name}: {errors[0].error.message}
               {errors[0].info.componentStack &&
                 errors[0].info.componentStack
                   .split('\n')
                   .map((text, idx) => <p key={idx}>{text}</p>)}
-            </p>
+            </div>
           )}
         </div>
         <div className="flex flex-col gap-4">
