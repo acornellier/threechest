@@ -1,5 +1,5 @@
 import { Marker, useMapEvents } from 'react-leaflet'
-import type { LeafletMouseEvent } from 'leaflet';
+import type { LeafletMouseEvent } from 'leaflet'
 import { divIcon } from 'leaflet'
 import { renderToStaticMarkup } from 'react-dom/server'
 import { CursorIcon } from '../Common/Icons/CursorIcon.tsx'
@@ -28,7 +28,7 @@ function AwarenessCursor({ mouseLat, mouseLng, color, name }: Props) {
       zIndexOffset={999999}
       interactive={false}
       icon={divIcon({
-        className: 'awareness-cursor',
+        className: 'awareness-cursor select-none',
         html: renderToStaticMarkup(
           <div className="relative">
             <CursorIcon width={24} height={24} color={color} stroke={textColor} />
