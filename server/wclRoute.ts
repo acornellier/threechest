@@ -189,7 +189,6 @@ export async function getWclRoute(
 
   const dungeon = dungeons.find((dungeon) => dungeon.wclEncounterId === fight.encounterID)
   if (!dungeon) throw new Error(`Dungeon not supported, WCL encounter ID ${fight.encounterID}`)
-  if (dungeon.key === 'bh') throw new Error(`Brackenhide is not supported for WCL parsing`)
 
   let enemies: WclEnemy[] = fight.dungeonPulls.flatMap(({ enemyNPCs }) =>
     enemyNPCs.flatMap(({ id, gameID, minimumInstanceID, maximumInstanceID }) =>

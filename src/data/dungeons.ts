@@ -1,5 +1,4 @@
 import type { Dungeon } from './types.ts'
-import { mapHeight, mapWidth } from '../util/map.ts'
 import type { DungeonKey } from './dungeonKeys.ts'
 import { mdtDungeons, mdtMobSpawns } from './mdtDungeons.ts'
 
@@ -11,79 +10,63 @@ export const dungeonData = (
   mobSpawnsList: Object.values(mdtMobSpawns[key]),
 })
 
-const aa: Dungeon = {
-  name: 'Algethar Academy',
-  key: 'aa',
-  icon: 'achievement_dungeon_dragonacademy',
-  wclEncounterId: 62526,
-  defaultBounds: [
-    [10, 0],
-    [-mapHeight, mapWidth],
-  ],
-  ...dungeonData('aa'),
+const ak: Dungeon = {
+  name: 'Ara-Kara',
+  key: 'ak',
+  icon: 'inv_achievement_dungeon_arak-ara',
+  ...dungeonData('ak'),
 }
 
-const av: Dungeon = {
-  name: 'Azure Vault',
-  key: 'av',
-  icon: 'achievement_dungeon_arcanevaults',
-  wclEncounterId: 62515,
-  ...dungeonData('av'),
+const cot: Dungeon = {
+  name: 'City of Threads',
+  key: 'cot',
+  icon: 'inv_achievement_dungeon_cityofthreads',
+  ...dungeonData('cot'),
 }
 
-const bh: Dungeon = {
-  name: 'Brackenhide Hollow',
-  key: 'bh',
-  icon: 'achievement_dungeon_brackenhidehollow',
-  wclEncounterId: 62520,
-  ...dungeonData('bh'),
+const db: Dungeon = {
+  name: 'Dawnbreaker',
+  key: 'db',
+  icon: 'inv_achievement_dungeon_dawnbreaker',
+  ...dungeonData('db'),
 }
 
-const hoi: Dungeon = {
-  name: 'Halls of Infusion',
-  key: 'hoi',
-  icon: 'achievement_dungeon_hallsofinfusion',
-  wclEncounterId: 62527,
-  ...dungeonData('hoi'),
+const gb: Dungeon = {
+  name: 'Grim Batol',
+  key: 'gb',
+  icon: 'achievement_dungeon_grimbatol',
+  ...dungeonData('gb'),
 }
 
-const nelth: Dungeon = {
-  name: 'Neltharus',
-  key: 'nelth',
-  icon: 'achievement_dungeon_neltharus',
-  wclEncounterId: 62519,
-  ...dungeonData('nelth'),
+const mot: Dungeon = {
+  name: 'Mists of Tirna Scithe',
+  key: 'mot',
+  icon: 'achievement_dungeon_mistsoftirnascithe',
+  ...dungeonData('mot'),
 }
 
-const nok: Dungeon = {
-  name: 'Nokhud Offensive',
-  key: 'nok',
-  icon: 'achievement_dungeon_centaurplains',
-  wclEncounterId: 62516,
-  ...dungeonData('nok'),
+const nw: Dungeon = {
+  name: 'Necrotic Wake',
+  key: 'nw',
+  icon: 'achievement_dungeon_theneroticwake',
+  ...dungeonData('nw'),
 }
 
-const rlp: Dungeon = {
-  name: 'Ruby Life Pools',
-  key: 'rlp',
-  icon: 'achievement_dungeon_lifepools',
-  wclEncounterId: 62521,
-  defaultBounds: [
-    [10, 0],
-    [-mapHeight, mapWidth],
-  ],
-  ...dungeonData('rlp'),
+const sob: Dungeon = {
+  name: 'Siege of Boralus',
+  key: 'sob',
+  icon: 'achievement_dungeon_siegeofboralus',
+  ...dungeonData('sob'),
 }
 
-const uld: Dungeon = {
-  name: 'Uldaman',
-  key: 'uld',
-  icon: 'achievement_dungeon_uldaman',
-  wclEncounterId: 62451,
-  ...dungeonData('uld'),
+const sv: Dungeon = {
+  name: 'Stonevault',
+  key: 'sv',
+  icon: 'inv_achievement_dungeon_stonevault',
+  ...dungeonData('sv'),
 }
 
-export const dungeons = [aa, av, bh, hoi, nelth, nok, rlp, uld]
+export const dungeons = [ak, cot, db, gb, mot, nw, sob, sv]
 
 export const dungeonsByKey = dungeons.reduce(
   (acc, dungeon) => {

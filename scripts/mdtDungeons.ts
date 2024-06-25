@@ -10,14 +10,14 @@ import type { DungeonKey } from '../src/data/dungeonKeys.ts'
 const dirname = getDirname(import.meta.url)
 
 export const dungeonPaths = new Map<DungeonKey, string>([
-  ['aa', 'Dragonflight/AlgetharAcademy'],
-  ['av', 'Dragonflight/TheAzureVault'],
-  ['bh', 'Dragonflight/BrackenhideHollow'],
-  ['hoi', 'Dragonflight/HallsofInfusion'],
-  ['nelth', 'Dragonflight/Neltharus'],
-  ['nok', 'Dragonflight/TheNokhudOffensive'],
-  ['rlp', 'Dragonflight/RubyLifePools'],
-  ['uld', 'Dragonflight/UldamanLegacyOfTyr'],
+  ['ak', 'TheWarWithin/ArasKara'],
+  ['cot', 'TheWarWithin/CityOfThreads'],
+  ['db', 'TheWarWithin/TheDawnbreaker'],
+  ['gb', 'TheWarWithin/GrimBatol'],
+  ['mot', 'Shadowlands/MistsOfTirnaScithe'],
+  ['nw', 'Shadowlands/TheNecroticWake'],
+  ['sob', 'BattleForAzeroth/SiegeofBoralus'],
+  ['sv', 'TheWarWithin/TheStonevault'],
 ])
 
 const filterDungeonKey = process.argv[2]
