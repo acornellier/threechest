@@ -10,7 +10,7 @@ const dirname = getDirname(import.meta.url)
 type DungeonLog = { dungeonKey: DungeonKey; code: string; fightId: number }
 
 const dungeons: DungeonLog[] = [
-  // { dungeonKey: 'mot', code: 'gkfYnQ9mvjChc2Gd', fightId: 1 },
+  // { dungeonKey: 'mot', code: 'gkfYnQ9mvjdChc2Gd', fightId: 1 },
 ]
 
 const filterDungeonKey = process.argv[2]
