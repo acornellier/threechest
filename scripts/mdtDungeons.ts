@@ -10,7 +10,7 @@ import type { DungeonKey } from '../src/data/dungeonKeys.ts'
 const dirname = getDirname(import.meta.url)
 
 export const dungeonPaths = new Map<DungeonKey, string>([
-  ['ak', 'TheWarWithin/ArasKara'],
+  ['ak', 'TheWarWithin/AraKara'],
   ['cot', 'TheWarWithin/CityOfThreads'],
   ['db', 'TheWarWithin/TheDawnbreaker'],
   ['gb', 'TheWarWithin/GrimBatol'],
