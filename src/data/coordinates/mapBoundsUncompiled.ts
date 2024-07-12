@@ -30,19 +30,22 @@ const mapIds: Record<DungeonKey, number> = {
   uld: 2451,
 }
 
-const mapBounds = (uimapassignment as UiMapAssignment[]).reduce((acc, assignment) => {
-  if (!Object.values(mapIds).includes(assignment.MapID)) return acc
+export const mapBoundsUncompiled = (uimapassignment as UiMapAssignment[]).reduce(
+  (acc, assignment) => {
+    if (!Object.values(mapIds).includes(assignment.MapID)) return acc
 
-  acc[assignment.UiMapID] = {
-    yMin: assignment['Region[0]'],
-    yMax: assignment['Region[3]'],
-    xMin: -assignment['Region[4]'],
-    xMax: -assignment['Region[1]'],
-  }
+    acc[assignment.UiMapID] = {
+      yMin: assignment['Region[0]'],
+      yMax: assignment['Region[3]'],
+      xMin: -assignment['Region[4]'],
+      xMax: -assignment['Region[1]'],
+    }
 
-  return acc
-}, {} as MapBoundsByUiMapId)
+    return acc
+  },
+  {} as MapBoundsByUiMapId,
+)
 
 export default async () => ({
-  data: mapBounds,
+  data: mapBoundsUncompiled,
 })

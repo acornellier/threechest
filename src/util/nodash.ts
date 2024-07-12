@@ -20,23 +20,20 @@ export function mapBy<T extends object>(array: T[], field: keyof T) {
   )
 }
 
-export function groupBy<T extends object>(array: T[], field: keyof T) {
+export function groupBy<K extends PropertyKey, T>(array: T[], by: keyof T | ((item: T) => K)) {
   return array.reduce(
     (acc, item) => {
-      const key = item[field] as number
+      const key = typeof by === 'function' ? by(item) : (item[by] as K)
       acc[key] ??= []
       acc[key]!.push(item)
       return acc
     },
-    {} as Record<number, T[]>,
+    {} as Record<K, T[]>,
   )
 }
 
-export function tally<K extends PropertyKey, T>(
-  arr: T[],
-  keySelector: (item: T, index: number) => K,
-) {
-  return Object.entries(Object.groupBy(arr, keySelector)).reduce(
+export function tally<K extends PropertyKey, T>(arr: T[], keySelector: (item: T) => K) {
+  return Object.entries(groupBy(arr, keySelector)).reduce(
     (acc, [id, items]) => {
       acc[id as K] = (items as T[]).length
       return acc

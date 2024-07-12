@@ -2,7 +2,7 @@ import type { Pull, Route } from './types.ts'
 import type { Dungeon, MobSpawn, Point, Spawn, SpawnId } from '../data/types.ts'
 import { dungeons } from '../data/dungeons.ts'
 import { distance } from './numbers.ts'
-import { tally } from './nodash.ts'
+import { groupBy, tally } from './nodash.ts'
 import { averagePoint, polygonCenter } from './polygon.ts'
 import { mapHeight, mapWidth } from './map.ts'
 import { type MapOffset, mdtMapOffsets, nokOffsets } from '../data/coordinates/mdtMapOffsets.ts'
@@ -73,6 +73,7 @@ export const wclPointToLeafletPoint = (wclPoint: WclPoint): Point => {
   const { mapID } = wclPoint
   let { x, y } = wclPoint
   const bounds = mapBounds[mapID]
+  // const bounds = mapBoundsUncompiled[mapID]
   if (!bounds) throw new Error(`Map ID ${mapID} bounds not defined.`)
 
   const { yMin, yMax, xMin, xMax } = bounds
@@ -120,7 +121,7 @@ export function urlToWclInfo(url: string): WclUrlInfo {
   return { code, fightId: fightId === 'last' ? fightId : Number(fightId) }
 }
 
-export function wclRouteToRoute(wclResult: WclResult) {
+export function wclResultToRoute(wclResult: WclResult) {
   const dungeon = dungeons.find((dungeon) => dungeon.wclEncounterId === wclResult.encounterID)
 
   if (!dungeon) throw new Error(`This WCL dungeon is not yet supported by Threechest.`)
@@ -151,7 +152,7 @@ function wclEventsToPulls(events: WclEventSimplified[], dungeon: Dungeon, errors
 
   const pullMobIds = getPullMobIds(events, dungeon)
 
-  const groupMobSpawns = Object.groupBy(dungeon.mobSpawnsList, ({ spawn }) => spawnGroup(spawn))
+  const groupMobSpawns = groupBy(dungeon.mobSpawnsList, ({ spawn }) => spawnGroup(spawn))
 
   let groupsRemaining = Object.entries(groupMobSpawns).map<Group>(([groupId, mobSpawns]) => {
     const nonZeroCountMobSpawns = mobSpawns!.filter(({ mob }) => mob.count > 0 || mob.isBoss)

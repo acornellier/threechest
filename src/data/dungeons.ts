@@ -35,7 +35,6 @@ const bh: Dungeon = {
   name: 'Brackenhide Hollow',
   key: 'bh',
   icon: 'achievement_dungeon_brackenhidehollow',
-  wclEncounterId: 62520,
   ...dungeonData('bh'),
 }
 
