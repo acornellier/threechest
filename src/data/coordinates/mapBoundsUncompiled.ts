@@ -45,7 +45,3 @@ export const mapBoundsUncompiled = (uimapassignment as UiMapAssignment[]).reduce
   },
   {} as MapBoundsByUiMapId,
 )
-
-export default async () => ({
-  data: mapBoundsUncompiled,
-})

@@ -73,7 +73,6 @@ export const wclPointToLeafletPoint = (wclPoint: WclPoint): Point => {
   const { mapID } = wclPoint
   let { x, y } = wclPoint
   const bounds = mapBounds[mapID]
-  // const bounds = mapBoundsUncompiled[mapID]
   if (!bounds) throw new Error(`Map ID ${mapID} bounds not defined.`)
 
   const { yMin, yMax, xMin, xMax } = bounds
