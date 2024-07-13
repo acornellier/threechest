@@ -46,13 +46,16 @@ export function SampleRoutes({ hidden }: Props) {
 
   const options: SampleRouteOption[] = useMemo(
     () =>
-      sampleRoutes[dungeon.key].map(({ route, affix, difficulty, wclRanking }) => ({
+      sampleRoutes[dungeon.key].map(({ route, wclRanking }) => ({
         content: (
           <div className="flex flex-col gap-0.5">
-            <div>{route.name}</div>
-            <div className="flex gap-1">
-              {difficulty && <SampleRouteChip>{difficulty}</SampleRouteChip>}
-              {affix && <SampleRouteChip>{affix}</SampleRouteChip>}
+            <div className="flex items-center gap-1">
+              {wclRanking && (
+                <div className="rounded-sm px-1 bg-cyan-800 text-xs">Rank {wclRanking.rank}</div>
+              )}
+              {route.name}
+            </div>
+            <div className="flex gap-1 flex-wrap">
               {wclRanking &&
                 wclRanking.team.toSorted(sortTeam).map((member, idx) => (
                   <div

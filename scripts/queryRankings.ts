@@ -28,7 +28,8 @@ for (const dungeon of dungeons) {
 
     const { result } = await getWclRoute(code, fightID)
     const { route, errors } = wclResultToRoute(result)
-    route.name = `+${ranking.bracketData} WCL rank #${ranking.rank}`
+    const tank = ranking.team.find((member) => member.role === 'Tank') ?? ranking.team[0]!
+    route.name = `${tank.name}${tank.name.endsWith('s') ? "'" : "'s"} +${ranking.bracketData}`
 
     if (errors.length) {
       console.error(`Errors parsing ${code}-${fightID}: ${errors.join('\n')}`)

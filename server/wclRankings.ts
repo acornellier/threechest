@@ -12,31 +12,47 @@ interface WclRankingRaw {
   bracketData: number
   score: number
   report: {
-    code: string
+    code: string | null
     fightID: number
   }
   team: WclRankingTeamMember[]
 }
 
-export interface WclRanking extends WclRankingRaw {
+export interface WclRanking extends Omit<WclRankingRaw, 'report'> {
   rank: number
+  report: {
+    code: string
+    fightID: number
+  }
 }
 
-export async function topRankings(encounterId: number): Promise<WclRanking[]> {
+async function fetchRankings(encounterId: number, page: number): Promise<WclRankingRaw[]> {
   const data = await fetchWcl<{
-    worldData: { encounter: { fightRankings: { rankings: WclRanking[] } } }
+    worldData: { encounter: { fightRankings: { rankings: WclRankingRaw[] } } }
   }>(`
 query {
   worldData {
     encounter(id: ${encounterId}) {
-      fightRankings(leaderboard: LogsOnly)
+      fightRankings(leaderboard: Any, page: ${page})
     }
   }
 }
 `)
 
-  const rankingsRaw = data.worldData.encounter.fightRankings.rankings
-  const rankings = rankingsRaw.map((ranking, index) => ({ ...ranking, rank: index + 1 }))
+  return data.worldData.encounter.fightRankings.rankings
+}
+
+export async function topRankings(encounterId: number): Promise<WclRanking[]> {
+  const rankingsRaw: WclRankingRaw[] = []
+  for (let page = 1; page <= 4; ++page) {
+    rankingsRaw.push(...(await fetchRankings(encounterId, page)))
+
+    if (rankingsRaw.filter((ranking) => ranking.report.code).length >= 50) break
+  }
+
+  const rankings: WclRanking[] = rankingsRaw
+    .map((ranking, idx) => ({ ...ranking, rank: idx + 1 }))
+    .filter((ranking) => ranking.report.code !== null) as WclRanking[]
 
   const chosenRankings: WclRanking[] = []
   const takenComps: string[][] = []
@@ -60,9 +76,9 @@ query {
     }
   }
 
-  pushRankings(2)
-  pushRankings(1)
-  pushRankings(0)
+  for (let minCompDifferences = 2; minCompDifferences >= 0; minCompDifferences--) {
+    pushRankings(minCompDifferences)
+  }
 
   return chosenRankings
 }
