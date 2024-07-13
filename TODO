@@ -1,3 +1,7 @@
+Sample routes
+- Automate
+- wclCalc needs mapBoundsUncompiled
+
 WCL
 - Proper vercel blob or redis caching
 

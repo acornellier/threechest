@@ -1,7 +1,7 @@
 ﻿import type { Point, SpawnId } from '../data/types.ts'
 import type { ForwardRefExoticComponent, PropsWithoutRef, SVGProps } from 'react'
 import type { DungeonKey } from '../data/dungeonKeys.ts'
-import type { WclRanking } from '../../server/wclRankings.ts'
+import type { WclRanking } from './wclRankings.ts'
 
 export type Pull = {
   id: number

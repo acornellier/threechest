@@ -3,7 +3,7 @@ import fs from 'fs'
 import { getWclRoute } from '../server/wclRoute.ts'
 import { wclResultToRoute } from '../src/util/wclCalc.ts'
 import { getDirname } from '../server/files.ts'
-import { topRankings } from '../server/wclRankings.ts'
+import { topRankings } from '../server/wclRankingsFetcher.ts'
 import type { SampleRoute } from '../src/util/types.ts'
 import * as path from 'path'
 
@@ -12,6 +12,7 @@ const dirname = getDirname(import.meta.url)
 for (const dungeon of dungeons) {
   if (!dungeon.wclEncounterId) continue
 
+  console.log(`Querying dungeon ${dungeon.key}`)
   const dungeonFolder = `${dirname}/../src/data/sampleRoutes/${dungeon.key}`
   const rankings = await topRankings(dungeon.wclEncounterId)
 

@@ -17,7 +17,7 @@ type Props<T extends DropdownOption> = {
   options: T[]
   onOpen?: () => void
   onClose?: () => void
-  onSelect: (option: T) => void
+  onSelect: (option: T) => any
   onHover?: (option: T | null) => void
   onReorder?: (options: T[]) => void
   selected?: T
@@ -82,8 +82,12 @@ export function Dropdown<T extends DropdownOption>({
 
   const selectOption = useCallback(
     (option: T) => {
-      if (option.id !== selected?.id) onSelect(option)
-      handleClose()
+      let shouldClose = true
+      if (option.id !== selected?.id) {
+        const res = onSelect(option)
+        if (res === false) shouldClose = false
+      }
+      if (shouldClose) handleClose()
     },
     [handleClose, onSelect, selected?.id],
   )
