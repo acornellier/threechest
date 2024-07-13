@@ -3,7 +3,7 @@ import fs from 'fs'
 import { getWclRoute } from '../server/wclRoute.ts'
 import { wclResultToRoute } from '../src/util/wclCalc.ts'
 import { getDirname } from '../server/files.ts'
-import { topRankings } from '../server/wclRankingsFetcher.ts'
+import { fetchTopRankings } from '../server/wclRankingsFetcher.ts'
 import type { SampleRoute } from '../src/util/types.ts'
 import * as path from 'path'
 
@@ -14,7 +14,7 @@ for (const dungeon of dungeons) {
 
   console.log(`Querying dungeon ${dungeon.key}`)
   const dungeonFolder = `${dirname}/../src/data/sampleRoutes/${dungeon.key}`
-  const rankings = await topRankings(dungeon.wclEncounterId)
+  const rankings = await fetchTopRankings(dungeon.wclEncounterId)
 
   for (const file of fs.readdirSync(dungeonFolder)) {
     if (!rankings.some(({ report: { code, fightID } }) => file === `${code}-${fightID}.json`)) {

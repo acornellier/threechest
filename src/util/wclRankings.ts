@@ -24,6 +24,10 @@ export interface WclRanking extends Omit<WclRankingRaw, 'report'> {
   }
 }
 
+export function pickTopRankings(rankings: WclRanking[], count: number) {
+  return rankings.toSorted((a, b) => b.bracketData - a.bracketData).slice(0, count)
+}
+
 export function pickVariedComps(rankings: WclRanking[], count: number) {
   const chosenRankings: WclRanking[] = []
   const takenComps: string[][] = []
