@@ -84,7 +84,7 @@ export function SampleRoutes({ hidden }: Props) {
           </div>
         ),
       }))
-    options.push(showTop ? showLessOption : showMoreOption)
+    if (rankings.length >= 10) options.push(showTop ? showLessOption : showMoreOption)
     return options
   }, [dungeon.key, showTop])
 
