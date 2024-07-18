@@ -3,7 +3,7 @@ import { importRouteApi } from '../../api/importRouteApi.ts'
 import type { AppDispatch, RootState } from '../store.ts'
 import { loadRouteFromStorage, setRouteFromMdt, setRouteFromWcl } from '../routes/routesReducer.ts'
 import { createAppSlice } from '../storeUtil.ts'
-import { urlToWclInfo, wclRouteToRoute } from '../../util/wclCalc.ts'
+import { urlToWclInfo, wclResultToRoute } from '../../util/wclCalc.ts'
 import { addToast } from './toastReducer.ts'
 import { wclRouteApi } from '../../api/wclRouteApi.ts'
 import { isAnyOf } from '@reduxjs/toolkit'
@@ -83,7 +83,7 @@ export const importSlice = createAppSlice({
         const { result, cached } = await wclRouteApi(urlToWclInfo(url))
         if (!result || !result.events) throw new Error('Failed to parse WCL report.')
 
-        const { route, errors } = wclRouteToRoute(result)
+        const { route, errors } = wclResultToRoute(result)
         thunkApi.dispatch(setRouteFromWcl(route))
 
         if (!cached) wclRateStatus.usesSinceReset++

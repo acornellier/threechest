@@ -384,7 +384,7 @@ textarea.fancy {
   height: 100%;
   justify-content: flex-start;
 
-  transition: border;
+  transition: border, width;
   transition-duration: 0.2s;
   transition-timing-function: ease-out;
 

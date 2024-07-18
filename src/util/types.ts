@@ -1,6 +1,7 @@
 ﻿import type { Point, SpawnId } from '../data/types.ts'
 import type { ForwardRefExoticComponent, PropsWithoutRef, SVGProps } from 'react'
 import type { DungeonKey } from '../data/dungeonKeys.ts'
+import type { WclRanking } from './wclRankings.ts'
 
 export type Pull = {
   id: number
@@ -92,8 +93,9 @@ export type MdtRoute = {
 
 export type SampleRoute = {
   route: Route
-  difficulty: 'beginner' | 'intermediate' | 'expert'
+  difficulty?: 'beginner' | 'intermediate' | 'expert'
   affix?: 'fortified' | 'tyrannical'
+  wclRanking?: WclRanking
 }
 
 export type IconComponent = ForwardRefExoticComponent<PropsWithoutRef<SVGProps<SVGSVGElement>>>

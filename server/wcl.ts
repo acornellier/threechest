@@ -1,9 +1,9 @@
 import { getWclToken } from './wclToken.ts'
 
-interface WclJson {
+interface WclJson<T> {
   error?: string
   errors?: Array<{ message: string }>
-  data: any
+  data: T
 }
 
 export interface PagedEventsQuery<TEvent> {
@@ -40,7 +40,7 @@ export async function fetchWcl<T>(query: string): Promise<T> {
     body: JSON.stringify({ query }),
   })
 
-  const json = (await data.json()) as WclJson
+  const json = (await data.json()) as WclJson<T>
 
   const error = json.error ?? json.errors?.[0]?.message
   if (error) {

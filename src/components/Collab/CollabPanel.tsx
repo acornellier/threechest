@@ -88,7 +88,7 @@ export function CollabPanel({ collapsed }: Props) {
           tooltipId="start-live-route-button"
           tooltip="Use this during your run to navigate through your pulls one by one and get detailed information on each one. Any changes made while Live is active will be discarded."
         >
-          {isLive ? 'End live route' : '(NEW) Start live route'}
+          {isLive ? 'End live route' : 'Start live route'}
         </Button>
       )}
       {collabActive && (

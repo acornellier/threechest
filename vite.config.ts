@@ -19,6 +19,8 @@ export default defineConfig({
           )
             return 'collab'
 
+          if (id.includes('/sampleRoutes.ts')) return 'sampleRoutes'
+
           const mdtDungeonMatch = id.match(/mdtDungeons\/(.+_mdt).json/)
           if (mdtDungeonMatch) return mdtDungeonMatch[1]
         },
