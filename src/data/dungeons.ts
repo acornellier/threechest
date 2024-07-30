@@ -21,6 +21,7 @@ const cot: Dungeon = {
   name: 'City of Threads',
   key: 'cot',
   icon: 'inv_achievement_dungeon_cityofthreads',
+  wclEncounterId: 12669,
   ...dungeonData('cot'),
 }
 

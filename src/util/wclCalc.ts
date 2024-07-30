@@ -5,7 +5,7 @@ import { distance } from './numbers.ts'
 import { groupBy, tally } from './nodash.ts'
 import { averagePoint, polygonCenter } from './polygon.ts'
 import { mapHeight, mapWidth } from './map.ts'
-import { type MapOffset, mdtMapOffsets, nokOffsets } from '../data/coordinates/mdtMapOffsets.ts'
+import { type MapOffset, mdtMapOffsets } from '../data/coordinates/mdtMapOffsets.ts'
 import { mapBounds } from '../data/coordinates/mapBounds.ts'
 
 export type WclEventSimplified = {
@@ -55,13 +55,6 @@ export type WclPoint = {
   mapID: number
 }
 
-const getNokOffsets = ({ x, y }: WclPoint): MapOffset => {
-  if (x > -200_000) return nokOffsets[0]
-  else if (x > -300_000) return nokOffsets[1]
-  else if (y < -150_000) return nokOffsets[2]
-  else return nokOffsets[3]
-}
-
 const defaultMapOffsets: MapOffset = {
   x: 0,
   y: 0,
@@ -76,8 +69,7 @@ export const wclPointToLeafletPoint = (wclPoint: WclPoint): Point => {
   if (!bounds) throw new Error(`Map ID ${mapID} bounds not defined.`)
 
   const { yMin, yMax, xMin, xMax } = bounds
-  const mdtMapOffset =
-    mapID === 2093 ? getNokOffsets(wclPoint) : mdtMapOffsets[mapID] ?? defaultMapOffsets
+  const mdtMapOffset = mdtMapOffsets[mapID] ?? defaultMapOffsets
 
   x /= 100
   y /= 100

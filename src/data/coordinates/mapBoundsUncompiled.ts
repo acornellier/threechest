@@ -33,6 +33,7 @@ const mapIds: Record<DungeonKey, number> = {
 export const mapBoundsUncompiled = (uimapassignment as UiMapAssignment[]).reduce(
   (acc, assignment) => {
     if (!Object.values(mapIds).includes(assignment.MapID)) return acc
+    console.log(assignment.MapID)
 
     acc[assignment.UiMapID] = {
       yMin: assignment['Region[0]'],
