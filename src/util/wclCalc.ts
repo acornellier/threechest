@@ -138,7 +138,11 @@ type MobEvent = { timestamp: number; mobId: number; pos?: Point }
 
 const spawnGroup = (spawn: Spawn) => (spawn.group ? String(spawn.group) : spawn.id)
 
-function wclEventsToPulls(events: WclEventSimplified[], dungeon: Dungeon, errors: string[]) {
+function wclEventsToPulls(
+  events: WclEventSimplified[],
+  dungeon: Dungeon,
+  errors: string[],
+): Pull[] {
   if (!events.length) return []
 
   const pullMobIds = getPullMobIds(events, dungeon)
