@@ -14,6 +14,7 @@ const ak: Dungeon = {
   name: 'Ara-Kara',
   key: 'ak',
   icon: 'inv_achievement_dungeon_arak-ara',
+  wclEncounterId: 12660,
   ...dungeonData('ak'),
 }
 
@@ -29,6 +30,7 @@ const db: Dungeon = {
   name: 'Dawnbreaker',
   key: 'db',
   icon: 'inv_achievement_dungeon_dawnbreaker',
+  // wclEncounterId: 12662,
   ...dungeonData('db'),
 }
 
@@ -36,6 +38,7 @@ const gb: Dungeon = {
   name: 'Grim Batol',
   key: 'gb',
   icon: 'achievement_dungeon_grimbatol',
+  wclEncounterId: 60670,
   ...dungeonData('gb'),
 }
 
@@ -43,6 +46,7 @@ const mot: Dungeon = {
   name: 'Mists of Tirna Scithe',
   key: 'mot',
   icon: 'achievement_dungeon_mistsoftirnascithe',
+  wclEncounterId: 62290,
   ...dungeonData('mot'),
 }
 
@@ -51,12 +55,14 @@ const nw: Dungeon = {
   key: 'nw',
   icon: 'achievement_dungeon_theneroticwake',
   ...dungeonData('nw'),
+  wclEncounterId: 62286,
 }
 
 const sob: Dungeon = {
   name: 'Siege of Boralus',
   key: 'sob',
   icon: 'achievement_dungeon_siegeofboralus',
+  wclEncounterId: 61822,
   ...dungeonData('sob'),
 }
 
@@ -64,6 +70,7 @@ const sv: Dungeon = {
   name: 'Stonevault',
   key: 'sv',
   icon: 'inv_achievement_dungeon_stonevault',
+  wclEncounterId: 12652,
   ...dungeonData('sv'),
 }
 

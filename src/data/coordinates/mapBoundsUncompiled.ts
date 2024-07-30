@@ -19,20 +19,21 @@ interface MapBounds {
 
 export type MapBoundsByUiMapId = Record<number, MapBounds>
 
-const mapIds: Record<DungeonKey, number> = {
-  ak: 2660,
-  cot: 2669,
-  db: 2662,
-  gb: 670,
-  mot: 2290,
-  nw: 2286,
-  sob: 1822,
-  sv: 2652,
-}
+const mapIds: number[] = [
+  2660, // ak
+  2669, // cot
+  2662, // db
+  670, // gb
+  2290, // mot
+  2286, // nw
+  1822, // sob
+  1643, // sob weird??
+  2652, // sv
+]
 
 export const mapBoundsUncompiled = (uimapassignment as UiMapAssignment[]).reduce(
   (acc, assignment) => {
-    if (!Object.values(mapIds).includes(assignment.MapID)) return acc
+    if (!mapIds.includes(assignment.MapID)) return acc
     console.log(assignment.MapID)
 
     acc[assignment.UiMapID] = {
