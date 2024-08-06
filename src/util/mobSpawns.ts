@@ -12,13 +12,22 @@ export const joinSpawns = (spawns1: SpawnId[], spawns2: SpawnId[]) =>
 export const subtractSpawns = (spawns1: SpawnId[], spawns2: SpawnId[]) =>
   spawns1.filter((spawn1) => !spawns2.includes(spawn1))
 
+const seasonalMobIds = [
+  // encrypted
+  185685, 185683, 185680,
+  // tormented
+  179891, 179892, 179890, 179446,
+]
+
 export const mdtEnemiesToMobSpawns = (mobs: Mob[]) =>
-  mobs.reduce<Record<SpawnId, MobSpawn>>((acc, mob) => {
-    mob.spawns.forEach((spawn) => {
-      acc[spawn.id] = { mob, spawn }
-    })
-    return acc
-  }, {})
+  mobs
+    .filter(({ id }) => !seasonalMobIds.includes(id))
+    .reduce<Record<SpawnId, MobSpawn>>((acc, mob) => {
+      mob.spawns.forEach((spawn) => {
+        acc[spawn.id] = { mob, spawn }
+      })
+      return acc
+    }, {})
 
 export function mobCcTypes(mob: Mob): string[] {
   if (mob.isBoss) return ['Boss']
