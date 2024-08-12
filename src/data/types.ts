@@ -59,7 +59,7 @@ export type Spell = {
   id: number
   name: string
   icon: string
-  damage?: { s3: number; s4: number }
+  damage?: number
   aoe?: boolean
   physical?: boolean
   variance?: number

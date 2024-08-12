@@ -1,4 +1,3 @@
-import { getIconLink } from '../../data/spells/mergeSpells.ts'
 import { TooltipStyled } from '../Common/TooltipStyled.tsx'
 import { type DungeonKey } from '../../data/dungeonKeys.ts'
 import type { DispelType, Mob, Spell } from '../../data/types.ts'
@@ -11,7 +10,7 @@ import { ChainIcon } from '../Common/Icons/ChainIcon.tsx'
 import { PurgeIcon } from '../Common/Icons/PurgeIcon.tsx'
 import { PoisonIcon } from '../Common/Icons/PoisonIcon.tsx'
 import type { FC, SVGProps } from 'react'
-import { dungeonSpells } from '../../data/spells/spells.ts'
+import { dungeonSpells, getIconLink } from '../../data/spells/spells.ts'
 
 interface Props {
   spell: Spell
@@ -41,7 +40,7 @@ export function MobSpellInfo({ spell, mob, dungeonKey }: Props) {
   const spellDetailsTooltipId = `spell-details-${id}`
 
   const damageText =
-    damage && `${damage.s3} ${aoe ? 'AoE' : 'ST'} ${physical ? 'physical' : 'magic'} damage`
+    damage && `${damage} ${aoe ? 'AoE' : 'ST'} ${physical ? 'physical' : 'magic'} damage`
 
   const isAlternateCast =
     spell.castTime &&
@@ -112,7 +111,7 @@ export function MobSpellInfo({ spell, mob, dungeonKey }: Props) {
           {damageText && (
             <a
               className="flex h-full"
-              href={`https://not-even-close.com/spell/${id}?trash=${!mob.isBoss}`}
+              href={`https://not-even-close-tww.vercel.app/spell/${id}?trash=${!mob.isBoss}`}
               target="_blank"
               rel="noreferrer"
               data-tooltip-id={`spell-${id}-nec`}

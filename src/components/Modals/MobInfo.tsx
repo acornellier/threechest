@@ -1,12 +1,11 @@
 import { Panel } from '../Common/Panel.tsx'
 import { XMarkIcon } from '@heroicons/react/24/outline'
 import { selectSelectedSpawn, selectSpawn } from '../../store/reducers/hoverReducer.ts'
-import { getIconLink } from '../../data/spells/mergeSpells.ts'
 import { useDungeon } from '../../store/routes/routeHooks.ts'
 import { useAppDispatch, useRootSelector } from '../../store/storeUtil.ts'
 import { mobCcTypes } from '../../util/mobSpawns.ts'
 import { MobSpellInfo } from './MobSpellInfo.tsx'
-import { dungeonSpells } from '../../data/spells/spells.ts'
+import { dungeonSpells, getIconLink } from '../../data/spells/spells.ts'
 
 export function MobInfo() {
   const dispatch = useAppDispatch()

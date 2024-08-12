@@ -8,14 +8,16 @@ const extraSpellDataById = mapBy(extraSpellsData, 'spellId')
 
 function spellIdToSpell(spellId: number): Spell {
   const spell = getGrimoireSpell(spellId)
+  const effect = spell.effects?.[0]
+
   const extraSpellData = extraSpellDataById[spellId]
   return {
     name: spell.name,
     id: spell.id,
     icon: spell.icon,
-    damage: spell.damage,
-    aoe: spell.aoe,
-    physical: spell.physical,
+    damage: effect?.damage,
+    aoe: effect?.aoe,
+    physical: spell.schools && spell.schools[0] === 'physical',
     castTime: spell.castTime,
     interrupt: !!extraSpellData?.interruptible,
     stop: !!extraSpellData?.ccable,
@@ -23,13 +25,26 @@ function spellIdToSpell(spellId: number): Spell {
   }
 }
 
-export function mergeSpells(spells1: SpellIdMap, spells2: SpellIdMap, spellsToRemove?: number[]) {
+export function mergeSpells(
+  spellBankDungeon: string,
+  spells2: SpellIdMap,
+  spellsToRemove?: number[],
+) {
   let res: Spells = {}
 
-  Object.entries(spells1).forEach(([enemyId, spells]) => {
-    res[Number(enemyId)] ??= []
-    res[Number(enemyId)]!.push(...spells.map(spellIdToSpell))
-  })
+  for (const spell of extraSpellsData) {
+    if (!spell.enemies) continue
+
+    const spellId = Number(spell.spellId)
+    if (res[spellId]) continue
+
+    if (!spell.metadata.tags.some((tag) => tag.name != spellBankDungeon)) continue
+
+    for (const enemy of spell.enemies) {
+      res[Number(enemy.npcId)] ??= []
+      res[Number(enemy.npcId)]!.push(spellIdToSpell(spellId))
+    }
+  }
 
   Object.entries(spells2).forEach(([enemyId, spells]) => {
     res[Number(enemyId)] ??= []
