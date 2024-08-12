@@ -1,6 +1,6 @@
 {
   "dungeonIndex": 31,
-  "totalCount": 260,
+  "totalCount": 290,
   "enemies": [
     {
       "id": 165111,
@@ -861,7 +861,7 @@
       "id": 167111,
       "enemyIndex": 16,
       "name": "Spinemaw Staghorn",
-      "count": 5,
+      "count": 7,
       "health": 29154165,
       "creatureType": "Beast",
       "scale": 1,
