@@ -16,6 +16,8 @@ for (const dungeon of dungeons) {
   const dungeonFolder = `${dirname}/../src/data/sampleRoutes/${dungeon.key}`
   const rankings = await fetchTopRankings(dungeon.wclEncounterId)
 
+  if (!fs.existsSync(dungeonFolder)) fs.mkdirSync(dungeonFolder)
+
   for (const file of fs.readdirSync(dungeonFolder)) {
     if (!rankings.some(({ report: { code, fightID } }) => file === `${code}-${fightID}.json`)) {
       fs.rmSync(path.join(dungeonFolder, file))

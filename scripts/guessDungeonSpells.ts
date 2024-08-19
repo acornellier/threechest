@@ -3,21 +3,14 @@ import { getDirname } from '../server/files.ts'
 import fs from 'fs'
 import { sum } from 'd3'
 import type { SpellIdMap } from '../src/data/types.ts'
-import { type PagedEventsQuery, fetchWcl, type TableQuery } from '../server/wcl.ts'
+import { fetchWcl, type PagedEventsQuery, type TableQuery } from '../server/wcl.ts'
 
 const dirname = getDirname(import.meta.url)
 
 type DungeonLog = { dungeonKey: DungeonKey; code: string; fightId: number }
 
 const dungeons: DungeonLog[] = [
-  { dungeonKey: 'aa', code: 'gkfYnQ9mvjChc2Gd', fightId: 1 },
-  { dungeonKey: 'av', code: 'yzWxcC21P4jRXJbY', fightId: 1 },
-  { dungeonKey: 'bh', code: 'BjLZVQfJ4r7wP6pF', fightId: 5 },
-  { dungeonKey: 'hoi', code: 'yzWxcC21P4jRXJbY', fightId: 5 },
-  { dungeonKey: 'nelth', code: '6xZb9QNfPLyCHKdM', fightId: 1 },
-  { dungeonKey: 'nok', code: 'Qp9Y6wTgd1xjJtZN', fightId: 1 },
-  { dungeonKey: 'rlp', code: 'HYC1GWAvgc7NaLxp', fightId: 5 },
-  { dungeonKey: 'uld', code: '23BYFzapv6KmRdV7', fightId: 1 },
+  // { dungeonKey: 'mot', code: 'gkfYnQ9mvjdChc2Gd', fightId: 1 },
 ]
 
 const filterDungeonKey = process.argv[2]

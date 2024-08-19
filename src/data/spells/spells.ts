@@ -1,22 +1,27 @@
 import type { Spells } from '../types.ts'
 import type { DungeonKey } from '../dungeonKeys.ts'
 
-const aa = import.meta.compileTime<Spells>('./aa/aaSpells.ts')
-const av = import.meta.compileTime<Spells>('./av/avSpells.ts')
-const bh = import.meta.compileTime<Spells>('./bh/bhSpells.ts')
-const hoi = import.meta.compileTime<Spells>('./hoi/hoiSpells.ts')
-const nelth = import.meta.compileTime<Spells>('./nelth/nelthSpells.ts')
-const nok = import.meta.compileTime<Spells>('./nok/nokSpells.ts')
-const rlp = import.meta.compileTime<Spells>('./rlp/rlpSpells.ts')
-const uld = import.meta.compileTime<Spells>('./uld/uldSpells.ts')
+const ak = import.meta.compileTime<Spells>('./ak/akSpells.ts')
+const cot = import.meta.compileTime<Spells>('./cot/cotSpells.ts')
+const db = import.meta.compileTime<Spells>('./db/dbSpells.ts')
+const gb = import.meta.compileTime<Spells>('./gb/gbSpells.ts')
+const mot = import.meta.compileTime<Spells>('./mot/motSpells.ts')
+const nw = import.meta.compileTime<Spells>('./nw/nwSpells.ts')
+const sob = import.meta.compileTime<Spells>('./sob/sobSpells.ts')
+const sv = import.meta.compileTime<Spells>('./sv/svSpells.ts')
 
 export const dungeonSpells: Record<DungeonKey, Spells> = {
-  aa,
-  av,
-  bh,
-  hoi,
-  nelth,
-  nok,
-  rlp,
-  uld,
+  ak,
+  cot,
+  db,
+  gb,
+  mot,
+  nw,
+  sob,
+  sv,
+}
+
+export function getIconLink(icon: string) {
+  if (!icon.endsWith('.jpg')) icon += '.jpg'
+  return `https://wow.zamimg.com/images/wow/icons/large/${icon}`
 }
