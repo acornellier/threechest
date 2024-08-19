@@ -27,10 +27,10 @@ function spellIdToSpell(spellId: number): Spell {
 
 export function mergeSpells(
   spellBankDungeon: string,
-  spells2: SpellIdMap,
+  extraSpells: SpellIdMap,
   spellsToRemove?: number[],
 ) {
-  let res: Spells = {}
+  const res: Spells = {}
 
   for (const spell of extraSpellsData) {
     if (!spell.enemies) continue
@@ -38,25 +38,24 @@ export function mergeSpells(
     const spellId = Number(spell.spellId)
     if (res[spellId]) continue
 
-    if (!spell.metadata.tags.some((tag) => tag.name != spellBankDungeon)) continue
+    if (spellsToRemove?.includes(spellId)) continue
+
+    if (!spell.metadata.tags.some((tag) => tag.name == spellBankDungeon)) continue
 
     for (const enemy of spell.enemies) {
       res[Number(enemy.npcId)] ??= []
-      res[Number(enemy.npcId)]!.push(spellIdToSpell(spellId))
+      try {
+        res[Number(enemy.npcId)]!.push(spellIdToSpell(spellId))
+      } catch (e) {
+        console.log(`failed to fetch spell ${spellId}`)
+      }
     }
   }
 
-  Object.entries(spells2).forEach(([enemyId, spells]) => {
+  Object.entries(extraSpells).forEach(([enemyId, spells]) => {
     res[Number(enemyId)] ??= []
     res[Number(enemyId)]!.push(...spells.map(spellIdToSpell))
   })
-
-  if (spellsToRemove) {
-    res = Object.entries(res).reduce<Spells>((acc, [enemyId, spells]) => {
-      acc[Number(enemyId)] = spells.filter((spell) => !spellsToRemove.includes(spell.id))
-      return acc
-    }, {})
-  }
 
   return res
 }
