@@ -11,7 +11,24 @@
       "creatureType": "Undead",
       "scale": 1.2,
       "isBoss": false,
-      "characteristics": ["Disorient", "Slow"],
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Control Undead",
+        "Silence",
+        "Knock",
+        "Grip",
+        "Shackle Undead",
+        "Root",
+        "Fear",
+        "Banish",
+        "Disorient",
+        "Repentance",
+        "Stun",
+        "Slow",
+        "Sleep Walk",
+        "Turn Evil"
+      ],
       "spawns": [
         {
           "id": "1-1",
@@ -192,7 +209,24 @@
       "creatureType": "Undead",
       "scale": 0.7,
       "isBoss": false,
-      "characteristics": ["Taunt", "Disorient", "Slow"],
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Control Undead",
+        "Silence",
+        "Knock",
+        "Grip",
+        "Shackle Undead",
+        "Root",
+        "Fear",
+        "Banish",
+        "Disorient",
+        "Repentance",
+        "Stun",
+        "Slow",
+        "Sleep Walk",
+        "Turn Evil"
+      ],
       "spawns": [
         {
           "id": "2-1",
@@ -320,7 +354,25 @@
       "creatureType": "Humanoid",
       "scale": 1.2,
       "isBoss": false,
-      "characteristics": ["Disorient", "Stun", "Slow"],
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
+        "Polymorph",
+        "Root",
+        "Fear",
+        "Disorient",
+        "Repentance",
+        "Imprison",
+        "Sap",
+        "Stun",
+        "Slow",
+        "Sleep Walk",
+        "Mind Soothe"
+      ],
       "spawns": [
         {
           "id": "3-1",
@@ -381,7 +433,24 @@
       "creatureType": "Undead",
       "scale": 1.2,
       "isBoss": false,
-      "characteristics": ["Disorient", "Slow"],
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Control Undead",
+        "Silence",
+        "Knock",
+        "Grip",
+        "Shackle Undead",
+        "Root",
+        "Fear",
+        "Banish",
+        "Disorient",
+        "Repentance",
+        "Stun",
+        "Slow",
+        "Sleep Walk",
+        "Turn Evil"
+      ],
       "spawns": [
         {
           "id": "4-1",
@@ -418,7 +487,7 @@
       "creatureType": "Humanoid",
       "scale": 1.6,
       "isBoss": false,
-      "characteristics": ["Taunt"],
+      "characteristics": ["Taunt", "Mind Soothe"],
       "spawns": [
         {
           "id": "5-1",
@@ -449,7 +518,25 @@
       "creatureType": "Humanoid",
       "scale": 1.2,
       "isBoss": false,
-      "characteristics": ["Disorient", "Slow"],
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
+        "Polymorph",
+        "Root",
+        "Fear",
+        "Disorient",
+        "Repentance",
+        "Imprison",
+        "Sap",
+        "Stun",
+        "Slow",
+        "Sleep Walk",
+        "Mind Soothe"
+      ],
       "spawns": [
         {
           "id": "6-1",
@@ -499,7 +586,25 @@
       "creatureType": "Humanoid",
       "scale": 1.2,
       "isBoss": false,
-      "characteristics": ["Disorient", "Slow"],
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
+        "Polymorph",
+        "Root",
+        "Fear",
+        "Disorient",
+        "Repentance",
+        "Imprison",
+        "Sap",
+        "Stun",
+        "Slow",
+        "Sleep Walk",
+        "Mind Soothe"
+      ],
       "spawns": [
         {
           "id": "8-1",
@@ -554,7 +659,25 @@
       "creatureType": "Humanoid",
       "scale": 1.2,
       "isBoss": false,
-      "characteristics": ["Slow"],
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
+        "Polymorph",
+        "Root",
+        "Fear",
+        "Disorient",
+        "Repentance",
+        "Imprison",
+        "Sap",
+        "Stun",
+        "Slow",
+        "Sleep Walk",
+        "Mind Soothe"
+      ],
       "spawns": [
         {
           "id": "9-1",
@@ -609,7 +732,25 @@
       "creatureType": "Humanoid",
       "scale": 1.4,
       "isBoss": false,
-      "characteristics": ["Disorient", "Slow"],
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
+        "Polymorph",
+        "Root",
+        "Fear",
+        "Disorient",
+        "Repentance",
+        "Imprison",
+        "Sap",
+        "Stun",
+        "Slow",
+        "Sleep Walk",
+        "Mind Soothe"
+      ],
       "spawns": [
         {
           "id": "10-1",
@@ -640,7 +781,24 @@
       "creatureType": "Undead",
       "scale": 0.9,
       "isBoss": false,
-      "characteristics": ["Disorient", "Slow"],
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Control Undead",
+        "Silence",
+        "Knock",
+        "Grip",
+        "Shackle Undead",
+        "Root",
+        "Fear",
+        "Banish",
+        "Disorient",
+        "Repentance",
+        "Stun",
+        "Slow",
+        "Sleep Walk",
+        "Turn Evil"
+      ],
       "spawns": [
         {
           "id": "11-1",
@@ -677,7 +835,24 @@
       "creatureType": "Undead",
       "scale": 0.8,
       "isBoss": false,
-      "characteristics": ["Disorient", "Slow"],
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Control Undead",
+        "Silence",
+        "Knock",
+        "Grip",
+        "Shackle Undead",
+        "Root",
+        "Fear",
+        "Banish",
+        "Disorient",
+        "Repentance",
+        "Stun",
+        "Slow",
+        "Sleep Walk",
+        "Turn Evil"
+      ],
       "spawns": [
         {
           "id": "12-1",
@@ -794,7 +969,25 @@
       "creatureType": "Humanoid",
       "scale": 1.2,
       "isBoss": false,
-      "characteristics": ["Disorient", "Slow"],
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
+        "Polymorph",
+        "Root",
+        "Fear",
+        "Disorient",
+        "Repentance",
+        "Imprison",
+        "Sap",
+        "Stun",
+        "Slow",
+        "Sleep Walk",
+        "Mind Soothe"
+      ],
       "spawns": [
         {
           "id": "14-1",
@@ -819,7 +1012,7 @@
       "creatureType": "Humanoid",
       "scale": 1.6,
       "isBoss": false,
-      "characteristics": [],
+      "characteristics": ["Taunt", "Mind Soothe"],
       "spawns": [
         {
           "id": "15-1",
@@ -869,7 +1062,24 @@
       "creatureType": "Undead",
       "scale": 0.9,
       "isBoss": false,
-      "characteristics": ["Disorient", "Slow"],
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Control Undead",
+        "Silence",
+        "Knock",
+        "Grip",
+        "Shackle Undead",
+        "Root",
+        "Fear",
+        "Banish",
+        "Disorient",
+        "Repentance",
+        "Stun",
+        "Slow",
+        "Sleep Walk",
+        "Turn Evil"
+      ],
       "spawns": [
         {
           "id": "17-1",
@@ -894,7 +1104,24 @@
       "creatureType": "Undead",
       "scale": 0.7,
       "isBoss": false,
-      "characteristics": ["Slow"],
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Control Undead",
+        "Silence",
+        "Knock",
+        "Grip",
+        "Shackle Undead",
+        "Root",
+        "Fear",
+        "Banish",
+        "Disorient",
+        "Repentance",
+        "Stun",
+        "Slow",
+        "Sleep Walk",
+        "Turn Evil"
+      ],
       "spawns": [
         {
           "id": "18-1",
@@ -974,7 +1201,25 @@
       "creatureType": "Humanoid",
       "scale": 1.2,
       "isBoss": false,
-      "characteristics": ["Incapacitate", "Disorient", "Slow"],
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
+        "Polymorph",
+        "Root",
+        "Fear",
+        "Disorient",
+        "Repentance",
+        "Imprison",
+        "Sap",
+        "Stun",
+        "Slow",
+        "Sleep Walk",
+        "Mind Soothe"
+      ],
       "spawns": [
         {
           "id": "20-1",
@@ -1065,7 +1310,24 @@
       "creatureType": "Undead",
       "scale": 0.7,
       "isBoss": false,
-      "characteristics": ["Slow"],
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Control Undead",
+        "Silence",
+        "Knock",
+        "Grip",
+        "Shackle Undead",
+        "Root",
+        "Fear",
+        "Banish",
+        "Disorient",
+        "Repentance",
+        "Stun",
+        "Slow",
+        "Sleep Walk",
+        "Turn Evil"
+      ],
       "spawns": [
         {
           "id": "22-1",
@@ -1132,7 +1394,24 @@
       "creatureType": "Undead",
       "scale": 1.2,
       "isBoss": false,
-      "characteristics": ["Taunt", "Disorient", "Slow"],
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Control Undead",
+        "Silence",
+        "Knock",
+        "Grip",
+        "Shackle Undead",
+        "Root",
+        "Fear",
+        "Banish",
+        "Disorient",
+        "Repentance",
+        "Stun",
+        "Slow",
+        "Sleep Walk",
+        "Turn Evil"
+      ],
       "spawns": [
         {
           "id": "23-1",
@@ -1157,7 +1436,7 @@
       "creatureType": "Humanoid",
       "scale": 2,
       "isBoss": false,
-      "characteristics": [],
+      "characteristics": ["Taunt", "Mind Soothe"],
       "spawns": [
         {
           "id": "24-1",
@@ -1176,7 +1455,7 @@
       "creatureType": "Humanoid",
       "scale": 2,
       "isBoss": false,
-      "characteristics": [],
+      "characteristics": ["Taunt", "Mind Soothe"],
       "spawns": [
         {
           "id": "25-1",
@@ -1195,7 +1474,7 @@
       "creatureType": "Undead",
       "scale": 1.6,
       "isBoss": false,
-      "characteristics": [],
+      "characteristics": ["Taunt"],
       "spawns": [
         {
           "id": "26-1",
@@ -1214,7 +1493,24 @@
       "creatureType": "Undead",
       "scale": 1,
       "isBoss": false,
-      "characteristics": ["Slow"],
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Control Undead",
+        "Silence",
+        "Knock",
+        "Grip",
+        "Shackle Undead",
+        "Root",
+        "Fear",
+        "Banish",
+        "Disorient",
+        "Repentance",
+        "Stun",
+        "Slow",
+        "Sleep Walk",
+        "Turn Evil"
+      ],
       "spawns": [
         {
           "id": "27-1",
@@ -1245,7 +1541,24 @@
       "creatureType": "Undead",
       "scale": 1,
       "isBoss": false,
-      "characteristics": ["Slow"],
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Control Undead",
+        "Silence",
+        "Knock",
+        "Grip",
+        "Shackle Undead",
+        "Root",
+        "Fear",
+        "Banish",
+        "Disorient",
+        "Repentance",
+        "Stun",
+        "Slow",
+        "Sleep Walk",
+        "Turn Evil"
+      ],
       "spawns": [
         {
           "id": "28-1",
@@ -1276,7 +1589,7 @@
       "creatureType": "Undead",
       "scale": 1.6,
       "isBoss": false,
-      "characteristics": [],
+      "characteristics": ["Taunt"],
       "spawns": [
         {
           "id": "29-1",
@@ -1314,7 +1627,7 @@
       "creatureType": "Humanoid",
       "scale": 1.5,
       "isBoss": true,
-      "characteristics": ["Taunt"],
+      "characteristics": ["Taunt", "Mind Soothe"],
       "spawns": [
         {
           "id": "31-1",
@@ -1333,7 +1646,7 @@
       "creatureType": "Undead",
       "scale": 1.5,
       "isBoss": true,
-      "characteristics": [],
+      "characteristics": ["Taunt"],
       "spawns": [
         {
           "id": "32-1",

@@ -11,7 +11,25 @@
       "creatureType": "Humanoid",
       "scale": 1.5,
       "isBoss": false,
-      "characteristics": ["Taunt", "Disorient", "Stun", "Slow"],
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
+        "Polymorph",
+        "Root",
+        "Fear",
+        "Disorient",
+        "Repentance",
+        "Imprison",
+        "Sap",
+        "Stun",
+        "Slow",
+        "Sleep Walk",
+        "Mind Soothe"
+      ],
       "spawns": [
         {
           "id": "1-1",
@@ -78,7 +96,25 @@
       "creatureType": "Humanoid",
       "scale": 1.5,
       "isBoss": false,
-      "characteristics": ["Disorient", "Stun", "Slow"],
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
+        "Polymorph",
+        "Root",
+        "Fear",
+        "Disorient",
+        "Repentance",
+        "Imprison",
+        "Sap",
+        "Stun",
+        "Slow",
+        "Sleep Walk",
+        "Mind Soothe"
+      ],
       "spawns": [
         {
           "id": "2-1",
@@ -127,7 +163,7 @@
       "creatureType": "Humanoid",
       "scale": 2,
       "isBoss": false,
-      "characteristics": ["Taunt"],
+      "characteristics": ["Taunt", "Mind Soothe"],
       "spawns": [
         {
           "id": "3-1",
@@ -152,7 +188,7 @@
       "creatureType": "Humanoid",
       "scale": 2,
       "isBoss": false,
-      "characteristics": ["Taunt"],
+      "characteristics": ["Taunt", "Mind Soothe"],
       "spawns": [
         {
           "id": "4-1",
@@ -171,7 +207,7 @@
       "creatureType": "Humanoid",
       "scale": 1.7,
       "isBoss": false,
-      "characteristics": [],
+      "characteristics": ["Taunt", "Mind Soothe"],
       "spawns": [
         {
           "id": "5-1",
@@ -214,7 +250,25 @@
       "creatureType": "Humanoid",
       "scale": 1.2,
       "isBoss": false,
-      "characteristics": ["Incapacitate", "Disorient", "Stun", "Slow"],
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
+        "Polymorph",
+        "Root",
+        "Fear",
+        "Disorient",
+        "Repentance",
+        "Imprison",
+        "Sap",
+        "Stun",
+        "Slow",
+        "Sleep Walk",
+        "Mind Soothe"
+      ],
       "spawns": [
         {
           "id": "6-1",
@@ -467,7 +521,25 @@
       "creatureType": "Humanoid",
       "scale": 1.2,
       "isBoss": false,
-      "characteristics": ["Taunt", "Disorient", "Stun", "Slow"],
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
+        "Polymorph",
+        "Root",
+        "Fear",
+        "Disorient",
+        "Repentance",
+        "Imprison",
+        "Sap",
+        "Stun",
+        "Slow",
+        "Sleep Walk",
+        "Mind Soothe"
+      ],
       "spawns": [
         {
           "id": "7-1",
@@ -823,7 +895,7 @@
       "creatureType": "Humanoid",
       "scale": 1.8,
       "isBoss": false,
-      "characteristics": [],
+      "characteristics": ["Taunt", "Mind Soothe"],
       "spawns": [
         {
           "id": "9-1",
@@ -872,7 +944,7 @@
       "creatureType": "Humanoid",
       "scale": 1.2,
       "isBoss": false,
-      "characteristics": ["Taunt"],
+      "characteristics": ["Taunt", "Mind Soothe"],
       "spawns": [
         {
           "id": "10-1",
@@ -1053,7 +1125,7 @@
       "creatureType": "Humanoid",
       "scale": 3,
       "isBoss": false,
-      "characteristics": ["Taunt"],
+      "characteristics": ["Taunt", "Mind Soothe"],
       "spawns": [
         {
           "id": "11-1",
@@ -1072,13 +1144,13 @@
       "creatureType": "Humanoid",
       "scale": 3,
       "isBoss": false,
-      "characteristics": ["Taunt"],
+      "characteristics": ["Taunt", "Mind Soothe"],
       "spawns": [
         {
           "id": "12-1",
           "idx": 1,
           "group": null,
-          "pos": [-72.44, 45.62]
+          "pos": [-200.6, 121.65]
         }
       ]
     },
@@ -1091,13 +1163,13 @@
       "creatureType": "Humanoid",
       "scale": 3,
       "isBoss": false,
-      "characteristics": ["Taunt"],
+      "characteristics": ["Taunt", "Mind Soothe"],
       "spawns": [
         {
           "id": "13-1",
           "idx": 1,
           "group": null,
-          "pos": [-200.09, 121.34]
+          "pos": [-72.35, 45.32]
         }
       ]
     },
@@ -1110,7 +1182,7 @@
       "creatureType": "Humanoid",
       "scale": 3,
       "isBoss": false,
-      "characteristics": ["Taunt"],
+      "characteristics": ["Taunt", "Mind Soothe"],
       "spawns": [
         {
           "id": "14-1",
@@ -1129,7 +1201,7 @@
       "creatureType": "Humanoid",
       "scale": 2,
       "isBoss": true,
-      "characteristics": ["Taunt"],
+      "characteristics": ["Taunt", "Mind Soothe"],
       "spawns": [
         {
           "id": "15-1",
@@ -1148,7 +1220,7 @@
       "creatureType": "Humanoid",
       "scale": 2,
       "isBoss": true,
-      "characteristics": ["Taunt"],
+      "characteristics": ["Taunt", "Mind Soothe"],
       "spawns": [
         {
           "id": "16-1",
@@ -1167,7 +1239,7 @@
       "creatureType": "Humanoid",
       "scale": 2,
       "isBoss": true,
-      "characteristics": ["Taunt"],
+      "characteristics": ["Taunt", "Mind Soothe"],
       "spawns": [
         {
           "id": "17-1",

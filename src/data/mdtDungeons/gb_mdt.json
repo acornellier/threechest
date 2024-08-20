@@ -11,7 +11,24 @@
       "creatureType": "Dragonkin",
       "scale": 1.2,
       "isBoss": false,
-      "characteristics": ["Taunt", "Disorient", "Stun", "Slow"],
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
+        "Root",
+        "Fear",
+        "Disorient",
+        "Repentance",
+        "Sap",
+        "Stun",
+        "Slow",
+        "Sleep Walk",
+        "Hibernate",
+        "Mind Soothe"
+      ],
       "spawns": [
         {
           "id": "1-1",
@@ -114,7 +131,24 @@
       "creatureType": "Dragonkin",
       "scale": 1.2,
       "isBoss": false,
-      "characteristics": ["Taunt", "Incapacitate", "Disorient", "Stun", "Slow"],
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
+        "Root",
+        "Fear",
+        "Disorient",
+        "Repentance",
+        "Sap",
+        "Stun",
+        "Slow",
+        "Sleep Walk",
+        "Hibernate",
+        "Mind Soothe"
+      ],
       "spawns": [
         {
           "id": "2-1",
@@ -235,7 +269,7 @@
       "creatureType": "Dragonkin",
       "scale": 1.7,
       "isBoss": false,
-      "characteristics": ["Taunt"],
+      "characteristics": ["Taunt", "Mind Soothe"],
       "spawns": [
         {
           "id": "3-1",
@@ -284,7 +318,7 @@
       "creatureType": "Dragonkin",
       "scale": 1.4,
       "isBoss": false,
-      "characteristics": ["Taunt"],
+      "characteristics": ["Taunt", "Mind Soothe"],
       "spawns": [
         {
           "id": "4-1",
@@ -357,7 +391,25 @@
       "creatureType": "Humanoid",
       "scale": 1.2,
       "isBoss": false,
-      "characteristics": ["Taunt", "Incapacitate", "Disorient", "Stun", "Slow"],
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
+        "Polymorph",
+        "Root",
+        "Fear",
+        "Disorient",
+        "Repentance",
+        "Imprison",
+        "Sap",
+        "Stun",
+        "Slow",
+        "Sleep Walk",
+        "Mind Soothe"
+      ],
       "spawns": [
         {
           "id": "5-1",
@@ -509,7 +561,25 @@
       "creatureType": "Humanoid",
       "scale": 1.2,
       "isBoss": false,
-      "characteristics": ["Taunt", "Root", "Disorient", "Stun", "Slow"],
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
+        "Polymorph",
+        "Root",
+        "Fear",
+        "Disorient",
+        "Repentance",
+        "Imprison",
+        "Sap",
+        "Stun",
+        "Slow",
+        "Sleep Walk",
+        "Mind Soothe"
+      ],
       "spawns": [
         {
           "id": "7-1",
@@ -552,7 +622,25 @@
       "creatureType": "Humanoid",
       "scale": 1.2,
       "isBoss": false,
-      "characteristics": ["Taunt", "Incapacitate", "Root", "Disorient", "Stun", "Slow"],
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
+        "Polymorph",
+        "Root",
+        "Fear",
+        "Disorient",
+        "Repentance",
+        "Imprison",
+        "Sap",
+        "Stun",
+        "Slow",
+        "Sleep Walk",
+        "Mind Soothe"
+      ],
       "spawns": [
         {
           "id": "8-1",
@@ -649,7 +737,25 @@
       "creatureType": "Humanoid",
       "scale": 1.2,
       "isBoss": false,
-      "characteristics": ["Taunt", "Disorient", "Stun", "Slow"],
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
+        "Polymorph",
+        "Root",
+        "Fear",
+        "Disorient",
+        "Repentance",
+        "Imprison",
+        "Sap",
+        "Stun",
+        "Slow",
+        "Sleep Walk",
+        "Mind Soothe"
+      ],
       "spawns": [
         {
           "id": "9-1",
@@ -722,7 +828,7 @@
       "creatureType": "Humanoid",
       "scale": 1.6,
       "isBoss": false,
-      "characteristics": ["Taunt"],
+      "characteristics": ["Taunt", "Mind Soothe"],
       "spawns": [
         {
           "id": "10-1",
@@ -786,7 +892,24 @@
       "creatureType": "Dragonkin",
       "scale": 0.8,
       "isBoss": false,
-      "characteristics": ["Taunt", "Stun", "Slow"],
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
+        "Root",
+        "Fear",
+        "Disorient",
+        "Repentance",
+        "Sap",
+        "Stun",
+        "Slow",
+        "Sleep Walk",
+        "Hibernate",
+        "Mind Soothe"
+      ],
       "spawns": [
         {
           "id": "11-1",
@@ -1052,7 +1175,7 @@
       "creatureType": "Dragonkin",
       "scale": 2,
       "isBoss": true,
-      "characteristics": ["Taunt"],
+      "characteristics": ["Taunt", "Mind Soothe"],
       "spawns": [
         {
           "id": "13-1",
@@ -1090,7 +1213,7 @@
       "creatureType": "Humanoid",
       "scale": 2,
       "isBoss": true,
-      "characteristics": ["Taunt"],
+      "characteristics": ["Taunt", "Mind Soothe"],
       "spawns": [
         {
           "id": "15-1",
@@ -1109,7 +1232,7 @@
       "creatureType": "Dragonkin",
       "scale": 2,
       "isBoss": true,
-      "characteristics": ["Taunt"],
+      "characteristics": ["Taunt", "Mind Soothe"],
       "spawns": [
         {
           "id": "16-1",
@@ -1147,7 +1270,21 @@
       "creatureType": "Elemental",
       "scale": 1,
       "isBoss": false,
-      "characteristics": ["Root", "Stun", "Slow"],
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
+        "Root",
+        "Fear",
+        "Banish",
+        "Disorient",
+        "Stun",
+        "Slow",
+        "Sleep Walk"
+      ],
       "spawns": [
         {
           "id": "18-1",
@@ -1166,7 +1303,7 @@
       "creatureType": "Dragonkin",
       "scale": 1.5,
       "isBoss": false,
-      "characteristics": [],
+      "characteristics": ["Taunt", "Mind Soothe"],
       "spawns": [
         {
           "id": "19-1",
@@ -1209,7 +1346,24 @@
       "creatureType": "Dragonkin",
       "scale": 1,
       "isBoss": true,
-      "characteristics": ["Taunt", "Stun", "Slow"],
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
+        "Root",
+        "Fear",
+        "Disorient",
+        "Repentance",
+        "Sap",
+        "Stun",
+        "Slow",
+        "Sleep Walk",
+        "Hibernate",
+        "Mind Soothe"
+      ],
       "spawns": [
         {
           "id": "20-1",
