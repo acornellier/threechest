@@ -1,6 +1,6 @@
 {
   "dungeonIndex": 111,
-  "totalCount": 430,
+  "totalCount": 460,
   "enemies": [
     {
       "id": 213894,
@@ -516,7 +516,7 @@
       "id": 213895,
       "enemyIndex": 7,
       "name": "Nightfall Shadowalker",
-      "count": 3,
+      "count": 5,
       "health": 18221353,
       "creatureType": "Humanoid",
       "scale": 1.2,
