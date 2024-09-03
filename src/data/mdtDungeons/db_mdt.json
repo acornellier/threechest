@@ -7,9 +7,9 @@
       "enemyIndex": 1,
       "name": "Nightfall Curseblade",
       "count": 5,
-      "health": 19132421,
+      "health": 19106613,
       "creatureType": "Humanoid",
-      "scale": 1.5,
+      "scale": 1.3,
       "isBoss": false,
       "characteristics": [
         "Taunt",
@@ -35,55 +35,79 @@
           "id": "1-1",
           "idx": 1,
           "group": 1,
-          "pos": [-204.27, 292.65]
+          "pos": [-203.93, 294.64]
         },
         {
           "id": "1-2",
           "idx": 2,
           "group": 1,
-          "pos": [-192.07, 302.11]
+          "pos": [-193.67, 301.39]
         },
         {
           "id": "1-3",
           "idx": 3,
           "group": 1,
-          "pos": [-201.71, 311.58]
+          "pos": [-201.59, 310.58]
         },
         {
           "id": "1-4",
           "idx": 4,
           "group": 3,
-          "pos": [-82.88, 291.41]
+          "pos": [-90.32, 300.79]
         },
         {
           "id": "1-5",
           "idx": 5,
           "group": 4,
-          "pos": [-80.41, 276.73]
+          "pos": [-79.76, 278.46]
         },
         {
           "id": "1-6",
           "idx": 6,
           "group": 4,
-          "pos": [-69.67, 288.14]
+          "pos": [-71.72, 286.96]
         },
         {
           "id": "1-7",
           "idx": 7,
           "group": 5,
-          "pos": [-121.29, 257.38]
+          "pos": [-42.47, 327.78]
         },
         {
           "id": "1-8",
           "idx": 8,
           "group": 5,
-          "pos": [-130.84, 268.02]
+          "pos": [-49.64, 337.23]
         },
         {
           "id": "1-9",
           "idx": 9,
           "group": 6,
-          "pos": [-52.33, 328.01]
+          "pos": [-122.94, 264.31]
+        },
+        {
+          "id": "1-10",
+          "idx": 10,
+          "group": 32,
+          "pos": [-69.45, 7.74]
+        },
+        {
+          "id": "1-11",
+          "idx": 11,
+          "group": 17,
+          "pos": [-99.23, 26.61]
+        },
+        {
+          "id": "1-12",
+          "idx": 12,
+          "group": 36,
+          "pos": [-164.9, 111.67]
+        },
+        {
+          "id": "1-13",
+          "idx": 13,
+          "group": 46,
+          "pos": [-181.7, 126.9]
         }
       ]
     },
@@ -92,9 +116,9 @@
       "enemyIndex": 2,
       "name": "Nightfall Shadowmage",
       "count": 5,
-      "health": 16399218,
+      "health": 16377097,
       "creatureType": "Humanoid",
-      "scale": 1.5,
+      "scale": 1.3,
       "isBoss": false,
       "characteristics": [
         "Taunt",
@@ -120,37 +144,37 @@
           "id": "2-1",
           "idx": 1,
           "group": 1,
-          "pos": [-212.48, 302.45]
+          "pos": [-210.16, 302.29]
         },
         {
           "id": "2-2",
           "idx": 2,
           "group": 1,
-          "pos": [-196.46, 306.81]
+          "pos": [-197.9, 305.7]
         },
         {
           "id": "2-3",
           "idx": 3,
           "group": 3,
-          "pos": [-92.68, 303.13]
+          "pos": [-82.75, 291.69]
         },
         {
           "id": "2-4",
           "idx": 4,
           "group": 5,
-          "pos": [-119.83, 267.68]
+          "pos": [-51.31, 328.77]
         },
         {
           "id": "2-5",
           "idx": 5,
-          "group": 6,
-          "pos": [-41.93, 327.32]
+          "group": 35,
+          "pos": [-162.92, 92.92]
         },
         {
           "id": "2-6",
           "idx": 6,
-          "group": 6,
-          "pos": [-50.37, 338.3]
+          "group": 36,
+          "pos": [-159.8, 109.27]
         }
       ]
     },
@@ -159,9 +183,9 @@
       "enemyIndex": 3,
       "name": "Nightfall Ritualist",
       "count": 12,
-      "health": 30976301,
+      "health": 30934517,
       "creatureType": "Humanoid",
-      "scale": 2,
+      "scale": 1.4,
       "isBoss": false,
       "characteristics": ["Taunt", "Mind Soothe"],
       "spawns": [
@@ -175,7 +199,7 @@
           "id": "3-2",
           "idx": 2,
           "group": 4,
-          "pos": [-75.12, 282.43]
+          "pos": [-75.88, 282.87]
         }
       ]
     },
@@ -184,9 +208,9 @@
       "enemyIndex": 4,
       "name": "Nightfall Commander",
       "count": 12,
-      "health": 34620572,
+      "health": 34573871,
       "creatureType": "Humanoid",
-      "scale": 2,
+      "scale": 1.4,
       "isBoss": false,
       "characteristics": ["Taunt", "Mind Soothe"],
       "spawns": [
@@ -194,7 +218,13 @@
           "id": "4-1",
           "idx": 1,
           "group": 3,
-          "pos": [-87.29, 297.54]
+          "pos": [-86.86, 296.46]
+        },
+        {
+          "id": "4-2",
+          "idx": 2,
+          "group": 6,
+          "pos": [-124.27, 258.76]
         }
       ]
     },
@@ -203,9 +233,9 @@
       "enemyIndex": 5,
       "name": "Sureki Webmage",
       "count": 12,
-      "health": 36442707,
+      "health": 36393549,
       "creatureType": "Humanoid",
-      "scale": 1.7,
+      "scale": 1.4,
       "isBoss": false,
       "characteristics": ["Taunt", "Mind Soothe"],
       "spawns": [
@@ -213,13 +243,13 @@
           "id": "5-1",
           "idx": 1,
           "group": 5,
-          "pos": [-125.74, 262.69]
+          "pos": [-46.16, 332.32]
         },
         {
           "id": "5-2",
           "idx": 2,
           "group": 6,
-          "pos": [-46.31, 332.24]
+          "pos": [-129.13, 263.5]
         },
         {
           "id": "5-3",
@@ -246,9 +276,9 @@
       "enemyIndex": 6,
       "name": "Nightfall Darkcaster",
       "count": 5,
-      "health": 17310286,
+      "health": 17286936,
       "creatureType": "Humanoid",
-      "scale": 1.2,
+      "scale": 1.3,
       "isBoss": false,
       "characteristics": [
         "Taunt",
@@ -270,12 +300,6 @@
         "Mind Soothe"
       ],
       "spawns": [
-        {
-          "id": "6-1",
-          "idx": 1,
-          "group": 23,
-          "pos": [-72.74, 67.38]
-        },
         {
           "id": "6-2",
           "idx": 2,
@@ -310,7 +334,7 @@
           "id": "6-7",
           "idx": 7,
           "group": 15,
-          "pos": [-48.25, 24.38]
+          "pos": [-53.1, 25.03]
         },
         {
           "id": "6-8",
@@ -352,19 +376,13 @@
           "id": "6-14",
           "idx": 14,
           "group": 16,
-          "pos": [-66.82, 28.56]
+          "pos": [-71.99, 28.39]
         },
         {
           "id": "6-15",
           "idx": 15,
-          "group": 16,
-          "pos": [-72.15, 28.51]
-        },
-        {
-          "id": "6-16",
-          "idx": 16,
-          "group": 16,
-          "pos": [-77.31, 28.36]
+          "group": 17,
+          "pos": [-94.83, 24.38]
         },
         {
           "id": "6-17",
@@ -427,28 +445,16 @@
           "pos": [-150.54, 91.04]
         },
         {
-          "id": "6-27",
-          "idx": 27,
-          "group": 35,
-          "pos": [-163.03, 93.53]
-        },
-        {
           "id": "6-28",
           "idx": 28,
           "group": 35,
           "pos": [-162.93, 98.62]
         },
         {
-          "id": "6-29",
-          "idx": 29,
-          "group": 36,
-          "pos": [-161.87, 108.81]
-        },
-        {
           "id": "6-30",
           "idx": 30,
           "group": 36,
-          "pos": [-161.82, 113.88]
+          "pos": [-159.92, 114.58]
         },
         {
           "id": "6-31",
@@ -517,7 +523,7 @@
       "enemyIndex": 7,
       "name": "Nightfall Shadowalker",
       "count": 5,
-      "health": 18221353,
+      "health": 18196774,
       "creatureType": "Humanoid",
       "scale": 1.2,
       "isBoss": false,
@@ -611,7 +617,7 @@
           "id": "7-12",
           "idx": 12,
           "group": 15,
-          "pos": [-48.21, 29.49]
+          "pos": [-52.96, 30.23]
         },
         {
           "id": "7-13",
@@ -634,26 +640,14 @@
         {
           "id": "7-16",
           "idx": 16,
-          "group": 17,
-          "pos": [-100.8, 24.07]
-        },
-        {
-          "id": "7-17",
-          "idx": 17,
-          "group": 17,
-          "pos": [-100.8, 29.87]
+          "group": 23,
+          "pos": [-69.8, 67.62]
         },
         {
           "id": "7-18",
           "idx": 18,
           "group": 19,
           "pos": [-110.92, 48.89]
-        },
-        {
-          "id": "7-19",
-          "idx": 19,
-          "group": 32,
-          "pos": [-68.95, 8.12]
         },
         {
           "id": "7-20",
@@ -690,18 +684,6 @@
           "idx": 25,
           "group": 29,
           "pos": [-117.92, 94.67]
-        },
-        {
-          "id": "7-26",
-          "idx": 26,
-          "group": 36,
-          "pos": [-166.45, 111.44]
-        },
-        {
-          "id": "7-27",
-          "idx": 27,
-          "group": 46,
-          "pos": [-181.31, 126.97]
         },
         {
           "id": "7-28",
@@ -762,6 +744,24 @@
           "idx": 37,
           "group": 44,
           "pos": [-184.32, 101.98]
+        },
+        {
+          "id": "7-38",
+          "idx": 38,
+          "group": 16,
+          "pos": [-77.3, 28.39]
+        },
+        {
+          "id": "7-39",
+          "idx": 39,
+          "group": 16,
+          "pos": [-66.47, 28.64]
+        },
+        {
+          "id": "7-40",
+          "idx": 40,
+          "group": 23,
+          "pos": [-75.12, 67.69]
         }
       ]
     },
@@ -770,9 +770,9 @@
       "enemyIndex": 8,
       "name": "Manifested Shadow",
       "count": 16,
-      "health": 23687760,
+      "health": 25475484,
       "creatureType": "Elemental",
-      "scale": 1.3,
+      "scale": 1.4,
       "isBoss": false,
       "characteristics": ["Taunt"],
       "spawns": [
@@ -780,13 +780,13 @@
           "id": "8-1",
           "idx": 1,
           "group": 23,
-          "pos": [-69.87, 62.71]
+          "pos": [-69.54, 62.38]
         },
         {
           "id": "8-2",
           "idx": 2,
           "group": 23,
-          "pos": [-75.88, 62.74]
+          "pos": [-76.21, 62.21]
         },
         {
           "id": "8-3",
@@ -804,19 +804,13 @@
           "id": "8-5",
           "idx": 5,
           "group": 15,
-          "pos": [-53.56, 29.75]
+          "pos": [-47.6, 27.8]
         },
         {
           "id": "8-6",
           "idx": 6,
           "group": 25,
           "pos": [-69.89, 82.01]
-        },
-        {
-          "id": "8-7",
-          "idx": 7,
-          "group": 17,
-          "pos": [-94.87, 24.17]
         },
         {
           "id": "8-8",
@@ -840,13 +834,7 @@
           "id": "8-11",
           "idx": 11,
           "group": 32,
-          "pos": [-69.26, 14.13]
-        },
-        {
-          "id": "8-12",
-          "idx": 12,
-          "group": 32,
-          "pos": [-75.94, 13.78]
+          "pos": [-72.08, 12.59]
         },
         {
           "id": "8-13",
@@ -891,7 +879,7 @@
       "enemyIndex": 9,
       "name": "Sureki Militant",
       "count": 12,
-      "health": 30856855,
+      "health": 32754194,
       "creatureType": "Humanoid",
       "scale": 1.8,
       "isBoss": false,
@@ -940,9 +928,9 @@
       "enemyIndex": 10,
       "name": "Nightfall Tactician",
       "count": 10,
-      "health": 30976301,
+      "health": 30934517,
       "creatureType": "Humanoid",
-      "scale": 1.2,
+      "scale": 1.3,
       "isBoss": false,
       "characteristics": ["Taunt", "Mind Soothe"],
       "spawns": [
@@ -989,12 +977,6 @@
           "pos": [-37.42, 49.27]
         },
         {
-          "id": "10-8",
-          "idx": 8,
-          "group": 15,
-          "pos": [-53.61, 24.25]
-        },
-        {
           "id": "10-9",
           "idx": 9,
           "group": 25,
@@ -1011,12 +993,6 @@
           "idx": 11,
           "group": 19,
           "pos": [-114.79, 45.15]
-        },
-        {
-          "id": "10-12",
-          "idx": 12,
-          "group": 16,
-          "pos": [-74.73, 33.14]
         },
         {
           "id": "10-13",
@@ -1113,6 +1089,12 @@
           "idx": 28,
           "group": 13,
           "pos": [-54.66, 49.74]
+        },
+        {
+          "id": "10-29",
+          "idx": 29,
+          "group": 16,
+          "pos": [-74.66, 33.24]
         }
       ]
     },
@@ -1121,7 +1103,7 @@
       "enemyIndex": 11,
       "name": "Ascendant Viscoxria",
       "count": 25,
-      "health": 51930859,
+      "health": 51860807,
       "creatureType": "Humanoid",
       "scale": 3,
       "isBoss": false,
@@ -1140,7 +1122,7 @@
       "enemyIndex": 12,
       "name": "Deathscreamer Ikentak",
       "count": 25,
-      "health": 49197655,
+      "health": 32754194,
       "creatureType": "Humanoid",
       "scale": 3,
       "isBoss": false,
@@ -1159,7 +1141,7 @@
       "enemyIndex": 13,
       "name": "Ixkreten The Unbreakable",
       "count": 25,
-      "health": 60130467,
+      "health": 60049355,
       "creatureType": "Humanoid",
       "scale": 3,
       "isBoss": false,
@@ -1178,7 +1160,7 @@
       "enemyIndex": 14,
       "name": "Nightfall Dark Architect",
       "count": 20,
-      "health": 51019789,
+      "health": 50950968,
       "creatureType": "Humanoid",
       "scale": 3,
       "isBoss": false,
@@ -1197,7 +1179,7 @@
       "enemyIndex": 15,
       "name": "Speaker Shadowcrown",
       "count": 0,
-      "health": 127376353,
+      "health": 126969165,
       "creatureType": "Humanoid",
       "scale": 2,
       "isBoss": true,
@@ -1216,7 +1198,7 @@
       "enemyIndex": 16,
       "name": "Anubikkaj",
       "count": 0,
-      "health": 127376353,
+      "health": 126969165,
       "creatureType": "Humanoid",
       "scale": 2,
       "isBoss": true,
@@ -1235,7 +1217,7 @@
       "enemyIndex": 17,
       "name": "Rashanan",
       "count": 0,
-      "health": 3275391932,
+      "health": 3264921378,
       "creatureType": "Humanoid",
       "scale": 2,
       "isBoss": true,
