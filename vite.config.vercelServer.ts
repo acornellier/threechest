@@ -7,9 +7,9 @@ export default defineConfig({
   build: {
     emptyOutDir: false,
     lib: {
-      name: 'wclRoute',
-      entry: 'server/wclRoute.ts',
-      fileName: 'wclRoute',
+      name: 'vercelServer',
+      entry: 'server/vercelServer.ts',
+      fileName: 'vercelServer',
     },
     rollupOptions: {
       external: ['fs', 'path', 'dotenv-flow'],
