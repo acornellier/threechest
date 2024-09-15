@@ -2,7 +2,7 @@ import type { DropdownOption } from '../../Common/Dropdown.tsx'
 import { Dropdown } from '../../Common/Dropdown.tsx'
 import { useCallback, useMemo, useState } from 'react'
 import type { Route } from '../../../util/types.ts'
-import { sampleRoutes, topRoutes } from '../../../data/sampleRoutes/sampleRoutes.ts'
+import { sampleRoutes } from '../../../data/sampleRoutes/sampleRoutes.ts'
 import { setPreviewRouteAsync } from '../../../store/reducers/importReducer.ts'
 import { MagnifyingGlassIcon } from '@heroicons/react/24/outline'
 import { setRouteFromSample } from '../../../store/routes/routesReducer.ts'
@@ -41,7 +41,6 @@ function sortTeam(member1: WclRankingTeamMember, member2: WclRankingTeamMember) 
 }
 
 export function SampleRoutes({ hidden }: Props) {
-  console.log(topRoutes)
   const dispatch = useAppDispatch()
   const dungeon = useDungeon()
   const [showTop, setShowTop] = useState(false)
