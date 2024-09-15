@@ -1,13 +1,14 @@
-import type { MdtRoute, SampleRoute } from '../src/util/types.ts'
+import type { SampleRoute } from '../src/util/types.ts'
 import { type DungeonKey, dungeonKeys } from '../src/data/dungeonKeys.ts'
 import { getDirname } from './files.ts'
 import fs from 'fs'
 import * as path from 'path'
 import type { WclRanking } from '../src/util/wclRankings.ts'
 import { routeToMdtRoute } from '../src/util/mdtUtil.ts'
+import { encodeRoute } from './encodeRoute'
 
 export interface TopRoute {
-  mdt: MdtRoute
+  mdtString: string
   wclRanking: WclRanking
 }
 
@@ -33,8 +34,9 @@ for (const dungeonKey of dungeonKeys) {
     console.log(sampleRoute)
     if (sampleRoute.wclRanking === undefined) continue
 
+    const mdtRoute = routeToMdtRoute(sampleRoute.route)
     topRoutes[dungeonKey].push({
-      mdt: routeToMdtRoute(sampleRoute.route),
+      mdtString: await encodeRoute(JSON.stringify({ mdtRoute })),
       wclRanking: sampleRoute.wclRanking,
     })
   }
