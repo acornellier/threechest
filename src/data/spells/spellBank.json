@@ -114,9 +114,7 @@
             "debuff": null,
             "important": null,
             "dispellable": true,
-            "dispell": [
-              "Purge"
-            ],
+            "dispell": ["Purge"],
             "interruptible": true,
             "ccable": null,
             "cooldown": null,
@@ -650,9 +648,7 @@
             "debuff": true,
             "important": null,
             "dispellable": true,
-            "dispell": [
-              "Movement"
-            ],
+            "dispell": ["Movement"],
             "interruptible": null,
             "ccable": null,
             "cooldown": null,
@@ -740,9 +736,7 @@
             "debuff": true,
             "important": null,
             "dispellable": true,
-            "dispell": [
-              "Magic"
-            ],
+            "dispell": ["Magic"],
             "interruptible": null,
             "ccable": null,
             "cooldown": null,
@@ -828,7 +822,7 @@
             "type": "Burst",
             "damage": null,
             "debuff": null,
-            "important": null,
+            "important": true,
             "dispellable": null,
             "dispell": null,
             "interruptible": null,
@@ -1546,10 +1540,7 @@
             "debuff": true,
             "important": null,
             "dispellable": true,
-            "dispell": [
-              "Movement",
-              "Magic"
-            ],
+            "dispell": ["Movement", "Magic"],
             "interruptible": null,
             "ccable": null,
             "cooldown": null,
@@ -1725,9 +1716,7 @@
             "debuff": true,
             "important": null,
             "dispellable": true,
-            "dispell": [
-              "Bleed"
-            ],
+            "dispell": ["Bleed"],
             "interruptible": null,
             "ccable": null,
             "cooldown": null,
@@ -1947,9 +1936,7 @@
             "debuff": true,
             "important": null,
             "dispellable": true,
-            "dispell": [
-              "Bleed"
-            ],
+            "dispell": ["Bleed"],
             "interruptible": null,
             "ccable": null,
             "cooldown": null,
@@ -2037,9 +2024,7 @@
             "debuff": null,
             "important": true,
             "dispellable": true,
-            "dispell": [
-              "Purge"
-            ],
+            "dispell": ["Purge"],
             "interruptible": true,
             "ccable": null,
             "cooldown": null,
@@ -2083,9 +2068,7 @@
             "debuff": true,
             "important": null,
             "dispellable": true,
-            "dispell": [
-              "Bleed"
-            ],
+            "dispell": ["Bleed"],
             "interruptible": null,
             "ccable": true,
             "cooldown": null,
@@ -2305,9 +2288,7 @@
             "debuff": null,
             "important": true,
             "dispellable": true,
-            "dispell": [
-              "Purge"
-            ],
+            "dispell": ["Purge"],
             "interruptible": true,
             "ccable": true,
             "cooldown": null,
@@ -2351,10 +2332,7 @@
             "debuff": true,
             "important": null,
             "dispellable": true,
-            "dispell": [
-              "Movement",
-              "Magic"
-            ],
+            "dispell": ["Movement", "Magic"],
             "interruptible": null,
             "ccable": null,
             "cooldown": null,
@@ -2574,9 +2552,7 @@
             "debuff": true,
             "important": true,
             "dispellable": true,
-            "dispell": [
-              "Magic"
-            ],
+            "dispell": ["Magic"],
             "interruptible": null,
             "ccable": null,
             "cooldown": null,
@@ -2928,9 +2904,7 @@
             "debuff": true,
             "important": null,
             "dispellable": true,
-            "dispell": [
-              "Magic"
-            ],
+            "dispell": ["Magic"],
             "interruptible": true,
             "ccable": true,
             "cooldown": null,
@@ -3068,10 +3042,7 @@
             "debuff": true,
             "important": null,
             "dispellable": true,
-            "dispell": [
-              "Magic",
-              "Movement"
-            ],
+            "dispell": ["Magic", "Movement"],
             "interruptible": null,
             "ccable": null,
             "cooldown": null,
@@ -3385,10 +3356,7 @@
             "debuff": true,
             "important": null,
             "dispellable": true,
-            "dispell": [
-              "Magic",
-              "Movement"
-            ],
+            "dispell": ["Magic", "Movement"],
             "interruptible": null,
             "ccable": null,
             "cooldown": null,
@@ -3518,7 +3486,7 @@
             "type": "Single Target Over Time",
             "damage": "Nature",
             "debuff": true,
-            "important": true,
+            "important": null,
             "dispellable": null,
             "dispell": null,
             "interruptible": null,
@@ -3955,7 +3923,7 @@
             "id": "25b6097a-0a0a-5977-91a3-149d8988c890",
             "spellId": 426345,
             "abilityName": "Crystal Salvo",
-            "type": "1-Hit",
+            "type": "Dodge",
             "damage": "Shadow",
             "debuff": null,
             "important": true,
@@ -4042,6 +4010,52 @@
             ]
           },
           {
+            "id": "b40e2630-2d1b-52e6-a3cf-d7246d563876",
+            "spellId": 422233,
+            "abilityName": "Crystalline Smash",
+            "type": "Tank Buster",
+            "damage": "Physical",
+            "debuff": null,
+            "important": null,
+            "dispellable": null,
+            "dispell": null,
+            "interruptible": null,
+            "ccable": null,
+            "cooldown": null,
+            "offset": null,
+            "diffuse": null,
+            "stun": null,
+            "charm": null,
+            "vanish": null,
+            "grievous": null,
+            "healAbsorb": null,
+            "healReduction": null,
+            "silence": null,
+            "fear": null,
+            "fire": null,
+            "notes": {
+              "raw": "{\"data\":{},\"content\":[{\"data\":{},\"content\":[{\"data\":{},\"marks\":[],\"value\":\"summons Crystal Shards\",\"nodeType\":\"text\"}],\"nodeType\":\"paragraph\"}],\"nodeType\":\"document\"}"
+            },
+            "metadata": {
+              "tags": [
+                {
+                  "name": "The Stonevault"
+                },
+                {
+                  "name": "The War Within S1"
+                }
+              ]
+            },
+            "enemies": [
+              {
+                "name": "Skarmorak",
+                "npcId": 210156,
+                "category": "Elemental",
+                "isBoss": true
+              }
+            ]
+          },
+          {
             "id": "c6ba55ae-1dc6-51b6-a648-3089c21d9c6d",
             "spellId": 461487,
             "abilityName": "Cultivated Poisons",
@@ -4050,9 +4064,7 @@
             "debuff": true,
             "important": true,
             "dispellable": true,
-            "dispell": [
-              "Poison"
-            ],
+            "dispell": ["Poison"],
             "interruptible": null,
             "ccable": null,
             "cooldown": null,
@@ -4096,10 +4108,7 @@
             "debuff": true,
             "important": true,
             "dispellable": true,
-            "dispell": [
-              "Curse",
-              "Movement"
-            ],
+            "dispell": ["Curse", "Movement"],
             "interruptible": null,
             "ccable": null,
             "cooldown": null,
@@ -4143,9 +4152,7 @@
             "debuff": true,
             "important": true,
             "dispellable": true,
-            "dispell": [
-              "Curse"
-            ],
+            "dispell": ["Curse"],
             "interruptible": null,
             "ccable": null,
             "cooldown": null,
@@ -4629,9 +4636,7 @@
             "debuff": null,
             "important": null,
             "dispellable": true,
-            "dispell": [
-              "Purge"
-            ],
+            "dispell": ["Purge"],
             "interruptible": null,
             "ccable": true,
             "cooldown": null,
@@ -4661,12 +4666,6 @@
               {
                 "name": "Nightfall Curseblade",
                 "npcId": 213894,
-                "category": "Humanoid",
-                "isBoss": null
-              },
-              {
-                "name": "Nightfall Curseblade",
-                "npcId": 228538,
                 "category": "Humanoid",
                 "isBoss": null
               }
@@ -4849,6 +4848,50 @@
             ]
           },
           {
+            "id": "2142081f-27e6-5fc5-aed2-f484927bd855",
+            "spellId": 450087,
+            "abilityName": "Death's Grasp",
+            "type": "Control",
+            "damage": null,
+            "debuff": true,
+            "important": true,
+            "dispellable": null,
+            "dispell": null,
+            "interruptible": null,
+            "ccable": null,
+            "cooldown": null,
+            "offset": null,
+            "diffuse": null,
+            "stun": true,
+            "charm": null,
+            "vanish": null,
+            "grievous": null,
+            "healAbsorb": null,
+            "healReduction": null,
+            "silence": null,
+            "fear": null,
+            "fire": null,
+            "notes": null,
+            "metadata": {
+              "tags": [
+                {
+                  "name": "Grim Batol"
+                },
+                {
+                  "name": "The War Within S1"
+                }
+              ]
+            },
+            "enemies": [
+              {
+                "name": "Erudax",
+                "npcId": 40484,
+                "category": "Aberration",
+                "isBoss": true
+              }
+            ]
+          },
+          {
             "id": "575e5dc0-69b9-5884-8d1c-385fccedc9ca",
             "spellId": 326092,
             "abilityName": "Debilitating Poison",
@@ -4857,10 +4900,7 @@
             "debuff": true,
             "important": null,
             "dispellable": true,
-            "dispell": [
-              "Poison",
-              "Movement"
-            ],
+            "dispell": ["Poison", "Movement"],
             "interruptible": null,
             "ccable": null,
             "cooldown": null,
@@ -4992,9 +5032,7 @@
             "debuff": true,
             "important": true,
             "dispellable": true,
-            "dispell": [
-              "Disease"
-            ],
+            "dispell": ["Disease"],
             "interruptible": null,
             "ccable": null,
             "cooldown": null,
@@ -5314,9 +5352,7 @@
             "debuff": true,
             "important": true,
             "dispellable": true,
-            "dispell": [
-              "Curse"
-            ],
+            "dispell": ["Curse"],
             "interruptible": null,
             "ccable": null,
             "cooldown": null,
@@ -5764,9 +5800,7 @@
             "debuff": null,
             "important": true,
             "dispellable": true,
-            "dispell": [
-              "Soothe"
-            ],
+            "dispell": ["Soothe"],
             "interruptible": null,
             "ccable": null,
             "cooldown": null,
@@ -5810,10 +5844,7 @@
             "debuff": true,
             "important": true,
             "dispellable": true,
-            "dispell": [
-              "Curse",
-              "Movement"
-            ],
+            "dispell": ["Curse", "Movement"],
             "interruptible": true,
             "ccable": true,
             "cooldown": null,
@@ -5945,9 +5976,7 @@
             "debuff": true,
             "important": null,
             "dispellable": true,
-            "dispell": [
-              "Curse"
-            ],
+            "dispell": ["Curse"],
             "interruptible": null,
             "ccable": true,
             "cooldown": null,
@@ -6030,7 +6059,7 @@
             "id": "4d0a14f5-3746-5656-9207-0a76e0dea6ff",
             "spellId": 448887,
             "abilityName": "Erosive Spray",
-            "type": "1-Hit",
+            "type": "Burst",
             "damage": "Nature",
             "debuff": null,
             "important": true,
@@ -6349,9 +6378,7 @@
             "debuff": true,
             "important": null,
             "dispellable": true,
-            "dispell": [
-              "Movement"
-            ],
+            "dispell": ["Movement"],
             "interruptible": null,
             "ccable": null,
             "cooldown": null,
@@ -7497,10 +7524,7 @@
             "debuff": true,
             "important": true,
             "dispellable": true,
-            "dispell": [
-              "Magic",
-              "Movement"
-            ],
+            "dispell": ["Magic", "Movement"],
             "interruptible": null,
             "ccable": null,
             "cooldown": null,
@@ -7634,9 +7658,7 @@
             "debuff": true,
             "important": true,
             "dispellable": true,
-            "dispell": [
-              "Disease"
-            ],
+            "dispell": ["Disease"],
             "interruptible": true,
             "ccable": true,
             "cooldown": null,
@@ -7900,9 +7922,7 @@
             "debuff": true,
             "important": null,
             "dispellable": true,
-            "dispell": [
-              "Movement"
-            ],
+            "dispell": ["Movement"],
             "interruptible": null,
             "ccable": true,
             "cooldown": null,
@@ -8046,10 +8066,7 @@
             "debuff": true,
             "important": true,
             "dispellable": true,
-            "dispell": [
-              "Magic",
-              "Movement"
-            ],
+            "dispell": ["Magic", "Movement"],
             "interruptible": null,
             "ccable": null,
             "cooldown": null,
@@ -8493,9 +8510,7 @@
             "debuff": true,
             "important": null,
             "dispellable": true,
-            "dispell": [
-              "Disease"
-            ],
+            "dispell": ["Disease"],
             "interruptible": null,
             "ccable": null,
             "cooldown": null,
@@ -8619,43 +8634,6 @@
             ]
           },
           {
-            "id": "771ee15f-622f-59eb-8612-e26479cee2c2",
-            "spellId": 257292,
-            "abilityName": "Heavy Slash",
-            "type": "Frontal",
-            "damage": "Physical",
-            "debuff": true,
-            "important": null,
-            "dispellable": null,
-            "dispell": null,
-            "interruptible": null,
-            "ccable": null,
-            "cooldown": null,
-            "offset": null,
-            "diffuse": null,
-            "stun": true,
-            "charm": null,
-            "vanish": null,
-            "grievous": null,
-            "healAbsorb": null,
-            "healReduction": null,
-            "silence": null,
-            "fear": null,
-            "fire": null,
-            "notes": null,
-            "metadata": {
-              "tags": [
-                {
-                  "name": "Siege of Boralus"
-                },
-                {
-                  "name": "The War Within S1"
-                }
-              ]
-            },
-            "enemies": null
-          },
-          {
             "id": "0a6b5f0b-1f69-5797-96f7-d19bcecf77b3",
             "spellId": 434802,
             "abilityName": "Horrifying Shrill",
@@ -8708,9 +8686,7 @@
             "debuff": true,
             "important": null,
             "dispellable": true,
-            "dispell": [
-              "Magic"
-            ],
+            "dispell": ["Magic"],
             "interruptible": true,
             "ccable": true,
             "cooldown": null,
@@ -8842,10 +8818,7 @@
             "debuff": true,
             "important": true,
             "dispellable": true,
-            "dispell": [
-              "Magic",
-              "Movement"
-            ],
+            "dispell": ["Magic", "Movement"],
             "interruptible": null,
             "ccable": null,
             "cooldown": null,
@@ -9341,9 +9314,7 @@
             "debuff": true,
             "important": true,
             "dispellable": true,
-            "dispell": [
-              "Bleed"
-            ],
+            "dispell": ["Bleed"],
             "interruptible": null,
             "ccable": null,
             "cooldown": null,
@@ -9373,6 +9344,12 @@
               {
                 "name": "Vx",
                 "npcId": 216649,
+                "category": "Humanoid",
+                "isBoss": true
+              },
+              {
+                "name": "Nx",
+                "npcId": 216648,
                 "category": "Humanoid",
                 "isBoss": true
               }
@@ -9711,7 +9688,7 @@
             "type": "Single Target Over Time",
             "damage": "Nature",
             "debuff": true,
-            "important": null,
+            "important": true,
             "dispellable": null,
             "dispell": null,
             "interruptible": null,
@@ -9845,9 +9822,7 @@
             "debuff": true,
             "important": true,
             "dispellable": true,
-            "dispell": [
-              "Movement"
-            ],
+            "dispell": ["Movement"],
             "interruptible": true,
             "ccable": true,
             "cooldown": 25,
@@ -10173,9 +10148,7 @@
             "debuff": true,
             "important": true,
             "dispellable": true,
-            "dispell": [
-              "Bleed"
-            ],
+            "dispell": ["Bleed"],
             "interruptible": null,
             "ccable": null,
             "cooldown": null,
@@ -10302,7 +10275,7 @@
             "id": "9ba08268-52fd-540c-84c6-9cfa0f37242f",
             "spellId": 430097,
             "abilityName": "Molten Metal",
-            "type": "Single Target",
+            "type": "1-Hit",
             "damage": null,
             "debuff": null,
             "important": true,
@@ -10351,9 +10324,7 @@
             "debuff": true,
             "important": null,
             "dispellable": true,
-            "dispell": [
-              "Movement"
-            ],
+            "dispell": ["Movement"],
             "interruptible": null,
             "ccable": null,
             "cooldown": null,
@@ -10995,9 +10966,7 @@
             "debuff": null,
             "important": true,
             "dispellable": true,
-            "dispell": [
-              "Purge"
-            ],
+            "dispell": ["Purge"],
             "interruptible": true,
             "ccable": true,
             "cooldown": null,
@@ -11117,6 +11086,50 @@
                 "npcId": 220003,
                 "category": "Humanoid",
                 "isBoss": null
+              }
+            ]
+          },
+          {
+            "id": "c27e81e7-f495-55a9-8d9c-b9ad49e035bb",
+            "spellId": 453214,
+            "abilityName": "Obsidian Beam",
+            "type": "Dodge",
+            "damage": "Shadow",
+            "debuff": true,
+            "important": null,
+            "dispellable": null,
+            "dispell": null,
+            "interruptible": null,
+            "ccable": null,
+            "cooldown": null,
+            "offset": null,
+            "diffuse": null,
+            "stun": null,
+            "charm": null,
+            "vanish": null,
+            "grievous": null,
+            "healAbsorb": null,
+            "healReduction": null,
+            "silence": null,
+            "fear": null,
+            "fire": true,
+            "notes": null,
+            "metadata": {
+              "tags": [
+                {
+                  "name": "The Dawnbreaker"
+                },
+                {
+                  "name": "The War Within S1"
+                }
+              ]
+            },
+            "enemies": [
+              {
+                "name": "Speaker Shadowcrown",
+                "npcId": 211087,
+                "category": "Humanoid",
+                "isBoss": true
               }
             ]
           },
@@ -11261,9 +11274,7 @@
             "debuff": true,
             "important": true,
             "dispellable": true,
-            "dispell": [
-              "Movement"
-            ],
+            "dispell": ["Movement"],
             "interruptible": null,
             "ccable": null,
             "cooldown": null,
@@ -11609,6 +11620,50 @@
             ]
           },
           {
+            "id": "9c431fc8-0ffe-53d6-a007-9d1152d7d819",
+            "spellId": 340283,
+            "abilityName": "Poisonous Discharge",
+            "type": "Dodge",
+            "damage": "Nature",
+            "debuff": true,
+            "important": null,
+            "dispellable": true,
+            "dispell": ["Poison"],
+            "interruptible": null,
+            "ccable": null,
+            "cooldown": null,
+            "offset": null,
+            "diffuse": null,
+            "stun": null,
+            "charm": null,
+            "vanish": null,
+            "grievous": null,
+            "healAbsorb": null,
+            "healReduction": null,
+            "silence": null,
+            "fear": null,
+            "fire": null,
+            "notes": null,
+            "metadata": {
+              "tags": [
+                {
+                  "name": "Mists of Tirna Scithe"
+                },
+                {
+                  "name": "The War Within S1"
+                }
+              ]
+            },
+            "enemies": [
+              {
+                "name": "Mistveil Nightblossom",
+                "npcId": 173714,
+                "category": "Elemental",
+                "isBoss": null
+              }
+            ]
+          },
+          {
             "id": "34c56203-cb1d-52f3-b13c-fd9434a6e889",
             "spellId": 340304,
             "abilityName": "Poisonous Secretions",
@@ -11617,9 +11672,7 @@
             "debuff": null,
             "important": true,
             "dispellable": true,
-            "dispell": [
-              "Poison"
-            ],
+            "dispell": ["Poison"],
             "interruptible": null,
             "ccable": null,
             "cooldown": null,
@@ -11650,6 +11703,50 @@
                 "name": "Mistveil Gorgegullet",
                 "npcId": 173720,
                 "category": "Beast",
+                "isBoss": null
+              }
+            ]
+          },
+          {
+            "id": "ed972ddc-aff8-5d90-98f0-62fe3513d555",
+            "spellId": 340189,
+            "abilityName": "Pool of Radiance",
+            "type": "Heal",
+            "damage": null,
+            "debuff": null,
+            "important": true,
+            "dispellable": null,
+            "dispell": null,
+            "interruptible": null,
+            "ccable": null,
+            "cooldown": null,
+            "offset": null,
+            "diffuse": null,
+            "stun": null,
+            "charm": null,
+            "vanish": null,
+            "grievous": null,
+            "healAbsorb": null,
+            "healReduction": null,
+            "silence": null,
+            "fear": null,
+            "fire": null,
+            "notes": null,
+            "metadata": {
+              "tags": [
+                {
+                  "name": "Mists of Tirna Scithe"
+                },
+                {
+                  "name": "The War Within S1"
+                }
+              ]
+            },
+            "enemies": [
+              {
+                "name": "Mistveil Matriarch",
+                "npcId": 173655,
+                "category": "Dragonkin",
                 "isBoss": null
               }
             ]
@@ -11751,9 +11848,7 @@
             "debuff": true,
             "important": true,
             "dispellable": true,
-            "dispell": [
-              "Magic"
-            ],
+            "dispell": ["Magic"],
             "interruptible": null,
             "ccable": null,
             "cooldown": null,
@@ -11789,6 +11884,50 @@
             ]
           },
           {
+            "id": "a3642ac7-f6e9-50c0-8401-b8504863326a",
+            "spellId": 340160,
+            "abilityName": "Radiant Breath",
+            "type": "Frontal",
+            "damage": "Nature",
+            "debuff": true,
+            "important": null,
+            "dispellable": null,
+            "dispell": null,
+            "interruptible": null,
+            "ccable": null,
+            "cooldown": null,
+            "offset": null,
+            "diffuse": null,
+            "stun": true,
+            "charm": null,
+            "vanish": null,
+            "grievous": null,
+            "healAbsorb": null,
+            "healReduction": null,
+            "silence": null,
+            "fear": null,
+            "fire": null,
+            "notes": null,
+            "metadata": {
+              "tags": [
+                {
+                  "name": "Mists of Tirna Scithe"
+                },
+                {
+                  "name": "The War Within S1"
+                }
+              ]
+            },
+            "enemies": [
+              {
+                "name": "Mistveil Matriarch",
+                "npcId": 173655,
+                "category": "Dragonkin",
+                "isBoss": null
+              }
+            ]
+          },
+          {
             "id": "67314aec-5aa2-54e4-afa6-30534c267c73",
             "spellId": 451040,
             "abilityName": "Rage",
@@ -11797,9 +11936,7 @@
             "debuff": null,
             "important": null,
             "dispellable": true,
-            "dispell": [
-              "Soothe"
-            ],
+            "dispell": ["Soothe"],
             "interruptible": null,
             "ccable": null,
             "cooldown": null,
@@ -11887,9 +12024,7 @@
             "debuff": null,
             "important": true,
             "dispellable": true,
-            "dispell": [
-              "Magic"
-            ],
+            "dispell": ["Magic"],
             "interruptible": true,
             "ccable": null,
             "cooldown": null,
@@ -11983,9 +12118,7 @@
             "debuff": null,
             "important": true,
             "dispellable": true,
-            "dispell": [
-              "Soothe"
-            ],
+            "dispell": ["Soothe"],
             "interruptible": null,
             "ccable": null,
             "cooldown": null,
@@ -12301,9 +12434,7 @@
             "debuff": true,
             "important": true,
             "dispellable": true,
-            "dispell": [
-              "Poison"
-            ],
+            "dispell": ["Poison"],
             "interruptible": true,
             "ccable": true,
             "cooldown": null,
@@ -12333,6 +12464,50 @@
               {
                 "name": "Bloodstained Webmage",
                 "npcId": 223253,
+                "category": "Humanoid",
+                "isBoss": null
+              }
+            ]
+          },
+          {
+            "id": "61ee14f7-d0f5-5a2d-8d0c-08c4dcf61921",
+            "spellId": 272542,
+            "abilityName": "Ricochet",
+            "type": "Rebound",
+            "damage": "Physical",
+            "debuff": null,
+            "important": true,
+            "dispellable": null,
+            "dispell": null,
+            "interruptible": null,
+            "ccable": true,
+            "cooldown": null,
+            "offset": null,
+            "diffuse": null,
+            "stun": null,
+            "charm": null,
+            "vanish": null,
+            "grievous": null,
+            "healAbsorb": null,
+            "healReduction": null,
+            "silence": null,
+            "fear": null,
+            "fire": null,
+            "notes": null,
+            "metadata": {
+              "tags": [
+                {
+                  "name": "Siege of Boralus"
+                },
+                {
+                  "name": "The War Within S1"
+                }
+              ]
+            },
+            "enemies": [
+              {
+                "name": "Ashvane Sniper",
+                "npcId": 128967,
                 "category": "Humanoid",
                 "isBoss": null
               }
@@ -12573,9 +12748,7 @@
             "debuff": true,
             "important": null,
             "dispellable": true,
-            "dispell": [
-              "Disease"
-            ],
+            "dispell": ["Disease"],
             "interruptible": null,
             "ccable": true,
             "cooldown": null,
@@ -12839,9 +13012,7 @@
             "debuff": true,
             "important": null,
             "dispellable": true,
-            "dispell": [
-              "Magic"
-            ],
+            "dispell": ["Magic"],
             "interruptible": null,
             "ccable": null,
             "cooldown": null,
@@ -13319,50 +13490,6 @@
             ]
           },
           {
-            "id": "acb358cf-23f8-5ddd-bf27-1b7967a0f586",
-            "spellId": 440437,
-            "abilityName": "Shadow Shunpo",
-            "type": "Single Target Over Time",
-            "damage": "Shadow",
-            "debuff": true,
-            "important": null,
-            "dispellable": null,
-            "dispell": null,
-            "interruptible": null,
-            "ccable": null,
-            "cooldown": null,
-            "offset": null,
-            "diffuse": null,
-            "stun": null,
-            "charm": null,
-            "vanish": null,
-            "grievous": null,
-            "healAbsorb": null,
-            "healReduction": null,
-            "silence": null,
-            "fear": null,
-            "fire": null,
-            "notes": null,
-            "metadata": {
-              "tags": [
-                {
-                  "name": "City of Threads"
-                },
-                {
-                  "name": "The War Within S1"
-                }
-              ]
-            },
-            "enemies": [
-              {
-                "name": "Nx",
-                "npcId": 216648,
-                "category": "Humanoid",
-                "isBoss": true
-              }
-            ]
-          },
-          {
             "id": "c8ab6725-6901-559f-a5e7-20db6c7837ba",
             "spellId": 320573,
             "abilityName": "Shadow Well",
@@ -13641,9 +13768,7 @@
             "debuff": true,
             "important": true,
             "dispellable": true,
-            "dispell": [
-              "Magic"
-            ],
+            "dispell": ["Magic"],
             "interruptible": null,
             "ccable": null,
             "cooldown": null,
@@ -13687,9 +13812,7 @@
             "debuff": true,
             "important": true,
             "dispellable": true,
-            "dispell": [
-              "Magic"
-            ],
+            "dispell": ["Magic"],
             "interruptible": null,
             "ccable": null,
             "cooldown": null,
@@ -13731,7 +13854,7 @@
             "type": "Burst",
             "damage": "Shadow",
             "debuff": null,
-            "important": null,
+            "important": true,
             "dispellable": null,
             "dispell": null,
             "interruptible": null,
@@ -13901,6 +14024,50 @@
             ]
           },
           {
+            "id": "455b99ce-2e3b-5793-9ddf-1a7e10cdf0a6",
+            "spellId": 272528,
+            "abilityName": "Shoot",
+            "type": "Spam Random Cast",
+            "damage": "Physical",
+            "debuff": null,
+            "important": null,
+            "dispellable": null,
+            "dispell": null,
+            "interruptible": null,
+            "ccable": true,
+            "cooldown": null,
+            "offset": null,
+            "diffuse": null,
+            "stun": null,
+            "charm": null,
+            "vanish": null,
+            "grievous": null,
+            "healAbsorb": null,
+            "healReduction": null,
+            "silence": null,
+            "fear": null,
+            "fire": null,
+            "notes": null,
+            "metadata": {
+              "tags": [
+                {
+                  "name": "Siege of Boralus"
+                },
+                {
+                  "name": "The War Within S1"
+                }
+              ]
+            },
+            "enemies": [
+              {
+                "name": "Ashvane Sniper",
+                "npcId": 128967,
+                "category": "Humanoid",
+                "isBoss": null
+              }
+            ]
+          },
+          {
             "id": "19606445-46e6-571e-9bbb-99e969f7fbaf",
             "spellId": 333629,
             "abilityName": "Shoot",
@@ -13989,43 +14156,6 @@
             ]
           },
           {
-            "id": "155f8dfa-873f-5930-a76a-96a0c4ba6062",
-            "spellId": 272528,
-            "abilityName": "Shoot",
-            "type": "Single Target",
-            "damage": "Physical",
-            "debuff": null,
-            "important": null,
-            "dispellable": null,
-            "dispell": null,
-            "interruptible": null,
-            "ccable": true,
-            "cooldown": null,
-            "offset": null,
-            "diffuse": null,
-            "stun": null,
-            "charm": null,
-            "vanish": null,
-            "grievous": null,
-            "healAbsorb": null,
-            "healReduction": null,
-            "silence": null,
-            "fear": null,
-            "fire": null,
-            "notes": null,
-            "metadata": {
-              "tags": [
-                {
-                  "name": "Siege of Boralus"
-                },
-                {
-                  "name": "The War Within S1"
-                }
-              ]
-            },
-            "enemies": null
-          },
-          {
             "id": "57e8978e-13a2-5634-8d13-f67312d9c399",
             "spellId": 280389,
             "abilityName": "Shoot",
@@ -14066,6 +14196,50 @@
                 "npcId": 129208,
                 "category": "Humanoid",
                 "isBoss": true
+              }
+            ]
+          },
+          {
+            "id": "d2c3334a-c53e-5cf3-85db-63cacabb7506",
+            "spellId": 340208,
+            "abilityName": "Shred Armor",
+            "type": "Tank Buster",
+            "damage": "Physical",
+            "debuff": true,
+            "important": null,
+            "dispellable": null,
+            "dispell": null,
+            "interruptible": null,
+            "ccable": null,
+            "cooldown": null,
+            "offset": null,
+            "diffuse": null,
+            "stun": null,
+            "charm": null,
+            "vanish": null,
+            "grievous": null,
+            "healAbsorb": null,
+            "healReduction": null,
+            "silence": null,
+            "fear": null,
+            "fire": null,
+            "notes": null,
+            "metadata": {
+              "tags": [
+                {
+                  "name": "Mists of Tirna Scithe"
+                },
+                {
+                  "name": "The War Within S1"
+                }
+              ]
+            },
+            "enemies": [
+              {
+                "name": "Mistveil Matriarch",
+                "npcId": 173655,
+                "category": "Dragonkin",
+                "isBoss": null
               }
             ]
           },
@@ -14178,9 +14352,7 @@
             "debuff": true,
             "important": true,
             "dispellable": true,
-            "dispell": [
-              "Movement"
-            ],
+            "dispell": ["Movement"],
             "interruptible": true,
             "ccable": true,
             "cooldown": null,
@@ -14224,9 +14396,7 @@
             "debuff": true,
             "important": null,
             "dispellable": true,
-            "dispell": [
-              "Bleed"
-            ],
+            "dispell": ["Bleed"],
             "interruptible": null,
             "ccable": true,
             "cooldown": null,
@@ -14270,9 +14440,7 @@
             "debuff": true,
             "important": true,
             "dispellable": true,
-            "dispell": [
-              "Bleed"
-            ],
+            "dispell": ["Bleed"],
             "interruptible": null,
             "ccable": null,
             "cooldown": null,
@@ -14582,9 +14750,7 @@
             "debuff": true,
             "important": true,
             "dispellable": true,
-            "dispell": [
-              "Magic"
-            ],
+            "dispell": ["Magic"],
             "interruptible": null,
             "ccable": null,
             "cooldown": null,
@@ -14654,7 +14820,14 @@
                 }
               ]
             },
-            "enemies": null
+            "enemies": [
+              {
+                "name": "Rasha'nan",
+                "npcId": 213937,
+                "category": "Humanoid",
+                "isBoss": true
+              }
+            ]
           },
           {
             "id": "df9e7429-18d6-506b-bfcd-1dadb93d0913",
@@ -14888,7 +15061,7 @@
             "dispell": null,
             "interruptible": null,
             "ccable": null,
-            "cooldown": 20,
+            "cooldown": 22,
             "offset": null,
             "diffuse": null,
             "stun": null,
@@ -15017,9 +15190,7 @@
             "debuff": null,
             "important": true,
             "dispellable": true,
-            "dispell": [
-              "Purge"
-            ],
+            "dispell": ["Purge"],
             "interruptible": true,
             "ccable": null,
             "cooldown": null,
@@ -15063,9 +15234,7 @@
             "debuff": true,
             "important": null,
             "dispellable": true,
-            "dispell": [
-              "Poison"
-            ],
+            "dispell": ["Poison"],
             "interruptible": null,
             "ccable": null,
             "cooldown": null,
@@ -15153,9 +15322,7 @@
             "debuff": true,
             "important": null,
             "dispellable": true,
-            "dispell": [
-              "Disease"
-            ],
+            "dispell": ["Disease"],
             "interruptible": true,
             "ccable": true,
             "cooldown": null,
@@ -15199,9 +15366,7 @@
             "debuff": true,
             "important": true,
             "dispellable": true,
-            "dispell": [
-              "Bleed"
-            ],
+            "dispell": ["Bleed"],
             "interruptible": null,
             "ccable": null,
             "cooldown": null,
@@ -15333,9 +15498,7 @@
             "debuff": true,
             "important": null,
             "dispellable": true,
-            "dispell": [
-              "Magic"
-            ],
+            "dispell": ["Magic"],
             "interruptible": null,
             "ccable": null,
             "cooldown": null,
@@ -15379,9 +15542,7 @@
             "debuff": true,
             "important": null,
             "dispellable": true,
-            "dispell": [
-              "Movement"
-            ],
+            "dispell": ["Movement"],
             "interruptible": null,
             "ccable": null,
             "cooldown": null,
@@ -15521,9 +15682,7 @@
             "debuff": null,
             "important": true,
             "dispellable": true,
-            "dispell": [
-              "Soothe"
-            ],
+            "dispell": ["Soothe"],
             "interruptible": null,
             "ccable": true,
             "cooldown": null,
@@ -15567,9 +15726,7 @@
             "debuff": true,
             "important": null,
             "dispellable": true,
-            "dispell": [
-              "Bleed"
-            ],
+            "dispell": ["Bleed"],
             "interruptible": null,
             "ccable": null,
             "cooldown": null,
@@ -16077,9 +16234,7 @@
             "debuff": true,
             "important": null,
             "dispellable": true,
-            "dispell": [
-              "Movement"
-            ],
+            "dispell": ["Movement"],
             "interruptible": null,
             "ccable": null,
             "cooldown": null,
@@ -16469,6 +16624,50 @@
             ]
           },
           {
+            "id": "a9e32052-f3c6-5153-9165-61b5e6298124",
+            "spellId": 340288,
+            "abilityName": "Triple Bite",
+            "type": "Tank Buster",
+            "damage": "Nature",
+            "debuff": true,
+            "important": null,
+            "dispellable": true,
+            "dispell": ["Poison"],
+            "interruptible": null,
+            "ccable": null,
+            "cooldown": null,
+            "offset": null,
+            "diffuse": null,
+            "stun": null,
+            "charm": null,
+            "vanish": null,
+            "grievous": null,
+            "healAbsorb": null,
+            "healReduction": null,
+            "silence": null,
+            "fear": null,
+            "fire": null,
+            "notes": null,
+            "metadata": {
+              "tags": [
+                {
+                  "name": "Mists of Tirna Scithe"
+                },
+                {
+                  "name": "The War Within S1"
+                }
+              ]
+            },
+            "enemies": [
+              {
+                "name": "Mistveil Nightblossom",
+                "npcId": 173714,
+                "category": "Elemental",
+                "isBoss": null
+              }
+            ]
+          },
+          {
             "id": "9bb781f2-7e4a-54d0-92d1-7f1b8b2ab1ab",
             "spellId": 456751,
             "abilityName": "Twilight Buffet",
@@ -16609,9 +16808,7 @@
             "debuff": true,
             "important": true,
             "dispellable": true,
-            "dispell": [
-              "Movement"
-            ],
+            "dispell": ["Movement"],
             "interruptible": null,
             "ccable": null,
             "cooldown": null,
@@ -16837,9 +17034,7 @@
             "debuff": true,
             "important": true,
             "dispellable": true,
-            "dispell": [
-              "Movement"
-            ],
+            "dispell": ["Movement"],
             "interruptible": null,
             "ccable": null,
             "cooldown": null,
@@ -16883,9 +17078,7 @@
             "debuff": true,
             "important": true,
             "dispellable": true,
-            "dispell": [
-              "Movement"
-            ],
+            "dispell": ["Movement"],
             "interruptible": null,
             "ccable": null,
             "cooldown": null,
@@ -17117,9 +17310,7 @@
             "debuff": null,
             "important": true,
             "dispellable": true,
-            "dispell": [
-              "Soothe"
-            ],
+            "dispell": ["Soothe"],
             "interruptible": null,
             "ccable": true,
             "cooldown": null,
@@ -17429,9 +17620,7 @@
             "debuff": true,
             "important": null,
             "dispellable": true,
-            "dispell": [
-              "Poison"
-            ],
+            "dispell": ["Poison"],
             "interruptible": null,
             "ccable": true,
             "cooldown": null,
@@ -17475,9 +17664,7 @@
             "debuff": true,
             "important": true,
             "dispellable": true,
-            "dispell": [
-              "Poison"
-            ],
+            "dispell": ["Poison"],
             "interruptible": true,
             "ccable": true,
             "cooldown": null,
@@ -17521,9 +17708,7 @@
             "debuff": true,
             "important": null,
             "dispellable": true,
-            "dispell": [
-              "Poison"
-            ],
+            "dispell": ["Poison"],
             "interruptible": null,
             "ccable": true,
             "cooldown": null,
@@ -17567,9 +17752,7 @@
             "debuff": true,
             "important": true,
             "dispellable": true,
-            "dispell": [
-              "Poison"
-            ],
+            "dispell": ["Poison"],
             "interruptible": null,
             "ccable": null,
             "cooldown": null,
@@ -17783,6 +17966,50 @@
             ]
           },
           {
+            "id": "cba7c129-33ee-53f0-8965-3e9e1297b067",
+            "spellId": 423327,
+            "abilityName": "Void Discharge",
+            "type": "Burst",
+            "damage": "Shadow",
+            "debuff": null,
+            "important": true,
+            "dispellable": null,
+            "dispell": null,
+            "interruptible": null,
+            "ccable": null,
+            "cooldown": null,
+            "offset": null,
+            "diffuse": null,
+            "stun": null,
+            "charm": null,
+            "vanish": null,
+            "grievous": null,
+            "healAbsorb": null,
+            "healReduction": null,
+            "silence": null,
+            "fear": null,
+            "fire": null,
+            "notes": null,
+            "metadata": {
+              "tags": [
+                {
+                  "name": "The Stonevault"
+                },
+                {
+                  "name": "The War Within S1"
+                }
+              ]
+            },
+            "enemies": [
+              {
+                "name": "Skarmorak",
+                "npcId": 210156,
+                "category": "Elemental",
+                "isBoss": true
+              }
+            ]
+          },
+          {
             "id": "e0d80267-c0be-5b02-9353-5c01df167e81",
             "spellId": 426308,
             "abilityName": "Void Infection",
@@ -17791,9 +18018,7 @@
             "debuff": true,
             "important": null,
             "dispellable": true,
-            "dispell": [
-              "Curse"
-            ],
+            "dispell": ["Curse"],
             "interruptible": null,
             "ccable": null,
             "cooldown": null,
@@ -17882,10 +18107,10 @@
             "id": "70584f0b-43f3-51de-8b34-7b0d65c62144",
             "spellId": 426771,
             "abilityName": "Void Outburst",
-            "type": "Aura",
+            "type": "Burst",
             "damage": "Shadow",
             "debuff": null,
-            "important": null,
+            "important": true,
             "dispellable": null,
             "dispell": null,
             "interruptible": null,
@@ -18099,6 +18324,50 @@
             ]
           },
           {
+            "id": "4df6883f-fe51-5919-a3b6-551985beab8e",
+            "spellId": 424913,
+            "abilityName": "Volatile Explosion",
+            "type": "Burst",
+            "damage": "Fire",
+            "debuff": null,
+            "important": true,
+            "dispellable": null,
+            "dispell": null,
+            "interruptible": null,
+            "ccable": null,
+            "cooldown": null,
+            "offset": null,
+            "diffuse": null,
+            "stun": null,
+            "charm": null,
+            "vanish": null,
+            "grievous": null,
+            "healAbsorb": null,
+            "healReduction": null,
+            "silence": null,
+            "fear": null,
+            "fire": null,
+            "notes": null,
+            "metadata": {
+              "tags": [
+                {
+                  "name": "The Stonevault"
+                },
+                {
+                  "name": "The War Within S1"
+                }
+              ]
+            },
+            "enemies": [
+              {
+                "name": "E.D.N.A",
+                "npcId": 210108,
+                "category": "Mechanical",
+                "isBoss": true
+              }
+            ]
+          },
+          {
             "id": "815a3f09-86b7-5eac-a2de-4904635c4ee8",
             "spellId": 424903,
             "abilityName": "Volatile Spike",
@@ -18234,7 +18503,7 @@
             "id": "2cdcd5f0-c2a4-5c9b-8c01-0a3829f294e9",
             "spellId": 257069,
             "abilityName": "Watertight Shell",
-            "type": "Dodge",
+            "type": "Get away",
             "damage": "Nature",
             "debuff": true,
             "important": null,
@@ -18265,7 +18534,14 @@
                 }
               ]
             },
-            "enemies": null
+            "enemies": [
+              {
+                "name": "Irontide Waveshaper",
+                "npcId": 129370,
+                "category": "Humanoid",
+                "isBoss": null
+              }
+            ]
           },
           {
             "id": "b81205f5-fcf3-571d-ae3a-5acfa70c1e6f",
@@ -18276,9 +18552,7 @@
             "debuff": null,
             "important": true,
             "dispellable": true,
-            "dispell": [
-              "Purge"
-            ],
+            "dispell": ["Purge"],
             "interruptible": true,
             "ccable": true,
             "cooldown": null,
@@ -18410,9 +18684,7 @@
             "debuff": true,
             "important": null,
             "dispellable": true,
-            "dispell": [
-              "Movement"
-            ],
+            "dispell": ["Movement"],
             "interruptible": true,
             "ccable": true,
             "cooldown": null,
@@ -18582,8 +18854,6 @@
     },
     "pageContext": {}
   },
-  "staticQueryHashes": [
-    "1010394210"
-  ],
+  "staticQueryHashes": ["3024682050"],
   "slicesMap": {}
 }
