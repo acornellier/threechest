@@ -55,7 +55,6 @@ const sampleRouteDefinitions: Record<DungeonKey, SampleRouteDefinition[]> = {
 }
 
 async function convertRouteDefinition({
-  affix,
   difficulty,
   name,
   mdt,
@@ -66,7 +65,6 @@ async function convertRouteDefinition({
   if (name) route.name = name
 
   return {
-    affix,
     difficulty,
     route,
   }
@@ -88,9 +86,6 @@ const difficultyToNum = (difficulty: SampleRoute['difficulty']) =>
         ? 2
         : 3
 
-const affixToNum = (affix: SampleRoute['affix']) =>
-  affix === undefined ? 0 : affix === 'fortified' ? 1 : 2
-
 const wclRankingToNum = (wclRanking: SampleRoute['wclRanking']) =>
   wclRanking === undefined ? -Infinity : -wclRanking.score
 
@@ -101,10 +96,6 @@ function sortSampleRoutes(route1: SampleRoute, route2: SampleRoute) {
 
   if (route1.difficulty !== route2.difficulty) {
     return difficultyToNum(route1.difficulty) - difficultyToNum(route2.difficulty)
-  }
-
-  if (route1.affix !== route2.affix) {
-    return affixToNum(route1.affix) - affixToNum(route2.affix)
   }
 
   return route1.route.name.localeCompare(route2.route.name)

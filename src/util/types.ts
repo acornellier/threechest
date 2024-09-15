@@ -94,7 +94,6 @@ export type MdtRoute = {
 export type SampleRoute = {
   route: Route
   difficulty?: 'beginner' | 'intermediate' | 'expert'
-  affix?: 'fortified' | 'tyrannical'
   wclRanking?: WclRanking
 }
 
