@@ -7,7 +7,7 @@
       "enemyIndex": 1,
       "name": "Scrimshaw Gutter",
       "count": 1,
-      "health": 3644271,
+      "health": 3978267,
       "creatureType": "Humanoid",
       "scale": 0.9,
       "isBoss": false,
@@ -212,7 +212,7 @@
       "enemyIndex": 2,
       "name": "Blacktar Bomber",
       "count": 6,
-      "health": 18221353,
+      "health": 19891335,
       "creatureType": "Humanoid",
       "scale": 1.1,
       "isBoss": false,
@@ -246,13 +246,13 @@
           "id": "2-2",
           "idx": 2,
           "group": 7,
-          "pos": [-203.17, 338.9]
+          "pos": [-205.75, 338.46]
         },
         {
           "id": "2-3",
           "idx": 3,
           "group": 7,
-          "pos": [-202.67, 342.18]
+          "pos": [-204.61, 342.61]
         },
         {
           "id": "2-4",
@@ -276,7 +276,7 @@
           "id": "2-7",
           "idx": 7,
           "group": 15,
-          "pos": [-145.94, 317.28]
+          "pos": [-147.77, 318.79]
         },
         {
           "id": "2-8",
@@ -338,8 +338,8 @@
       "id": 129374,
       "enemyIndex": 3,
       "name": "Scrimshaw Enforcer",
-      "count": 5,
-      "health": 18221353,
+      "count": 8,
+      "health": 31826136,
       "creatureType": "Humanoid",
       "scale": 1.1,
       "isBoss": false,
@@ -403,7 +403,7 @@
           "id": "3-7",
           "idx": 7,
           "group": null,
-          "pos": [-145.15, 332.41]
+          "pos": [-141.92, 332.41]
         },
         {
           "id": "3-8",
@@ -418,7 +418,7 @@
       "enemyIndex": 4,
       "name": "Irontide Waveshaper",
       "count": 6,
-      "health": 14577080,
+      "health": 15913070,
       "creatureType": "Humanoid",
       "scale": 1.1,
       "isBoss": false,
@@ -476,7 +476,7 @@
           "id": "4-6",
           "idx": 6,
           "group": 15,
-          "pos": [-143.26, 320.95]
+          "pos": [-143.15, 320.19]
         },
         {
           "id": "4-7",
@@ -500,7 +500,7 @@
           "id": "4-10",
           "idx": 10,
           "group": 22,
-          "pos": [-103.16, 266.47]
+          "pos": [-100.98, 271.47]
         },
         {
           "id": "4-11",
@@ -539,11 +539,11 @@
       "enemyIndex": 5,
       "name": "Irontide Raider",
       "count": 10,
-      "health": 29154165,
+      "health": 31826136,
       "creatureType": "Humanoid",
       "scale": 1.2,
       "isBoss": false,
-      "characteristics": ["Taunt", "Mind Soothe"],
+      "characteristics": ["Taunt", "Slow", "Mind Soothe"],
       "spawns": [
         {
           "id": "5-1",
@@ -600,14 +600,14 @@
         {
           "id": "5-8",
           "idx": 8,
-          "group": null,
-          "pos": [-126.43, 259.52]
+          "group": 24,
+          "pos": [-113.65, 249.57]
         },
         {
           "id": "5-9",
           "idx": 9,
           "group": 11,
-          "pos": [-168.07, 355.24]
+          "pos": [-167.63, 354.7]
         },
         {
           "id": "5-10",
@@ -628,7 +628,7 @@
       "enemyIndex": 6,
       "name": "Riptide Shredder",
       "count": 6,
-      "health": 18221353,
+      "health": 19891335,
       "creatureType": "Humanoid",
       "scale": 1,
       "isBoss": false,
@@ -668,13 +668,25 @@
           "id": "6-3",
           "idx": 3,
           "group": 15,
-          "pos": [-146.63, 313.18]
+          "pos": [-144.58, 315.66]
         },
         {
           "id": "6-4",
           "idx": 4,
           "group": 18,
           "pos": [-128.24, 293.79]
+        },
+        {
+          "id": "6-5",
+          "idx": 5,
+          "group": 21,
+          "pos": [-113.44, 274.42]
+        },
+        {
+          "id": "6-6",
+          "idx": 6,
+          "group": 21,
+          "pos": [-117.51, 275.51]
         }
       ]
     },
@@ -708,7 +720,7 @@
       "enemyIndex": 8,
       "name": "Irontide Curseblade",
       "count": 1,
-      "health": 3644271,
+      "health": 3978267,
       "creatureType": "Humanoid",
       "scale": 1,
       "isBoss": false,
@@ -760,43 +772,31 @@
           "id": "8-5",
           "idx": 5,
           "group": 21,
-          "pos": [-110.95, 270.08]
-        },
-        {
-          "id": "8-6",
-          "idx": 6,
-          "group": 21,
-          "pos": [-113.53, 272.7]
-        },
-        {
-          "id": "8-7",
-          "idx": 7,
-          "group": 21,
-          "pos": [-116.71, 274.54]
+          "pos": [-112.68, 270.21]
         },
         {
           "id": "8-8",
           "idx": 8,
           "group": 21,
-          "pos": [-119.98, 276.29]
+          "pos": [-120.31, 273.64]
         },
         {
           "id": "8-9",
           "idx": 9,
           "group": 22,
-          "pos": [-101.45, 270.96]
+          "pos": [-102.6, 267.11]
         },
         {
           "id": "8-10",
           "idx": 10,
           "group": 26,
-          "pos": [-150.66, 207.71]
+          "pos": [-151.75, 208.37]
         },
         {
           "id": "8-11",
           "idx": 11,
           "group": 26,
-          "pos": [-146.32, 219.7]
+          "pos": [-147.49, 219.33]
         },
         {
           "id": "8-12",
@@ -817,7 +817,7 @@
       "enemyIndex": 9,
       "name": "Irontide Powdershot",
       "count": 4,
-      "health": 3644271,
+      "health": 3978267,
       "creatureType": "Humanoid",
       "scale": 1,
       "isBoss": false,
@@ -851,31 +851,37 @@
           "id": "9-2",
           "idx": 2,
           "group": 23,
-          "pos": [-122.86, 266.35]
+          "pos": [-124.32, 256.89]
         },
         {
           "id": "9-3",
           "idx": 3,
           "group": 23,
-          "pos": [-118.23, 263.97]
+          "pos": [-119.07, 257.67]
         },
         {
           "id": "9-4",
           "idx": 4,
           "group": 24,
-          "pos": [-110.65, 245.83]
+          "pos": [-112.19, 253.74]
         },
         {
           "id": "9-5",
           "idx": 5,
           "group": 26,
-          "pos": [-145.28, 215.47]
+          "pos": [-145.64, 215.18]
         },
         {
           "id": "9-6",
           "idx": 6,
           "group": 28,
           "pos": [-149.25, 165.15]
+        },
+        {
+          "id": "9-7",
+          "idx": 7,
+          "group": 23,
+          "pos": [-110.59, 178.22]
         }
       ]
     },
@@ -884,11 +890,11 @@
       "enemyIndex": 10,
       "name": "Ashvane Commander",
       "count": 10,
-      "health": 29154165,
+      "health": 31826136,
       "creatureType": "Humanoid",
       "scale": 1.2,
       "isBoss": false,
-      "characteristics": ["Taunt", "Mind Soothe"],
+      "characteristics": ["Taunt", "Slow", "Mind Soothe"],
       "spawns": [
         {
           "id": "10-1",
@@ -900,7 +906,7 @@
           "id": "10-2",
           "idx": 2,
           "group": 23,
-          "pos": [-118.52, 268.36],
+          "pos": [-122.38, 261.22],
           "patrol": [
             [-118.52, 268.36],
             [-122.15, 260.7],
@@ -929,7 +935,7 @@
           "id": "10-6",
           "idx": 6,
           "group": 29,
-          "pos": [-110.09, 158.68]
+          "pos": [-110.16, 156.11]
         },
         {
           "id": "10-7",
@@ -944,17 +950,17 @@
       "enemyIndex": 11,
       "name": "Ashvane Spotter",
       "count": 4,
-      "health": 18221353,
+      "health": 19891335,
       "creatureType": "Humanoid",
       "scale": 1,
       "isBoss": false,
-      "characteristics": ["Taunt", "Mind Soothe"],
+      "characteristics": ["Taunt", "Slow", "Mind Soothe"],
       "spawns": [
         {
           "id": "11-1",
           "idx": 1,
           "group": 25,
-          "pos": [-128.21, 216.77]
+          "pos": [-128.07, 217.5]
         }
       ]
     },
@@ -963,7 +969,7 @@
       "enemyIndex": 12,
       "name": "Ashvane Spotter",
       "count": 4,
-      "health": 18221353,
+      "health": 19891335,
       "creatureType": "Humanoid",
       "scale": 1.1,
       "isBoss": false,
@@ -997,7 +1003,7 @@
           "id": "12-3",
           "idx": 3,
           "group": 29,
-          "pos": [-108.52, 163.15]
+          "pos": [-108.6, 161.03]
         }
       ]
     },
@@ -1006,7 +1012,7 @@
       "enemyIndex": 13,
       "name": "Ashvane Deckhand",
       "count": 2,
-      "health": 9110677,
+      "health": 9945668,
       "creatureType": "Humanoid",
       "scale": 1,
       "isBoss": false,
@@ -1031,22 +1037,16 @@
       ],
       "spawns": [
         {
-          "id": "13-1",
-          "idx": 1,
-          "group": 29,
-          "pos": [-103.93, 160.9]
-        },
-        {
           "id": "13-2",
           "idx": 2,
           "group": 29,
-          "pos": [-107.07, 152.9]
+          "pos": [-106.56, 153.7]
         },
         {
           "id": "13-3",
           "idx": 3,
           "group": 29,
-          "pos": [-105.61, 157.12]
+          "pos": [-105.24, 157.78]
         }
       ]
     },
@@ -1055,17 +1055,17 @@
       "enemyIndex": 14,
       "name": "Ashvane Cannoneer",
       "count": 8,
-      "health": 18221353,
+      "health": 19891335,
       "creatureType": "Humanoid",
       "scale": 1,
       "isBoss": false,
-      "characteristics": ["Taunt", "Mind Soothe"],
+      "characteristics": ["Taunt", "Slow", "Mind Soothe"],
       "spawns": [
         {
           "id": "14-1",
           "idx": 1,
           "group": 29,
-          "pos": [-111.22, 153.73]
+          "pos": [-104.04, 161.93]
         }
       ]
     },
@@ -1074,7 +1074,7 @@
       "enemyIndex": 15,
       "name": "Bilge Rat Pillager",
       "count": 7,
-      "health": 18221353,
+      "health": 19891335,
       "creatureType": "Humanoid",
       "scale": 1,
       "isBoss": false,
@@ -1147,7 +1147,7 @@
       "enemyIndex": 16,
       "name": "Bilge Rat Buccaneer",
       "count": 4,
-      "health": 18221353,
+      "health": 19891335,
       "creatureType": "Humanoid",
       "scale": 1,
       "isBoss": false,
@@ -1175,13 +1175,13 @@
           "id": "16-1",
           "idx": 1,
           "group": 30,
-          "pos": [-79.08, 106.27]
+          "pos": [-80.32, 108.1]
         },
         {
           "id": "16-2",
           "idx": 2,
           "group": null,
-          "pos": [-92.13, 108.36]
+          "pos": [-92.78, 109.02]
         },
         {
           "id": "16-3",
@@ -1244,17 +1244,17 @@
       "enemyIndex": 17,
       "name": "Bilge Rat Demolisher",
       "count": 10,
-      "health": 36442707,
+      "health": 39782670,
       "creatureType": "Humanoid",
       "scale": 1.2,
       "isBoss": false,
-      "characteristics": ["Taunt", "Mind Soothe"],
+      "characteristics": ["Taunt", "Slow", "Mind Soothe"],
       "spawns": [
         {
           "id": "17-1",
           "idx": 1,
           "group": null,
-          "pos": [-85.04, 113.08]
+          "pos": [-85.19, 113.88]
         },
         {
           "id": "17-2",
@@ -1275,7 +1275,7 @@
           "id": "17-3",
           "idx": 3,
           "group": null,
-          "pos": [-112.54, 106.89]
+          "pos": [-112.61, 107.25]
         }
       ]
     },
@@ -1284,7 +1284,7 @@
       "enemyIndex": 18,
       "name": "Bilge Rat Tempest",
       "count": 7,
-      "health": 14577080,
+      "health": 15913070,
       "creatureType": "Humanoid",
       "scale": 1,
       "isBoss": false,
@@ -1312,7 +1312,7 @@
           "id": "18-1",
           "idx": 1,
           "group": 31,
-          "pos": [-97.35, 119.42]
+          "pos": [-97.43, 119.86]
         },
         {
           "id": "18-2",
@@ -1339,7 +1339,7 @@
       "enemyIndex": 19,
       "name": "Bilge Rat Cutthroat",
       "count": 4,
-      "health": 14577083,
+      "health": 15913068,
       "creatureType": "Humanoid",
       "scale": 1,
       "isBoss": false,
@@ -1382,7 +1382,7 @@
       "enemyIndex": 20,
       "name": "Ashvane Invader",
       "count": 4,
-      "health": 18221353,
+      "health": 19891335,
       "creatureType": "Humanoid",
       "scale": 1,
       "isBoss": false,
@@ -1437,7 +1437,7 @@
       "enemyIndex": 21,
       "name": "Ashvane Destroyer",
       "count": 4,
-      "health": 18221353,
+      "health": 19891335,
       "creatureType": "Humanoid",
       "scale": 1,
       "isBoss": false,
@@ -1480,7 +1480,7 @@
       "enemyIndex": 22,
       "name": "Irontide Waveshaper",
       "count": 6,
-      "health": 14577080,
+      "health": 15913070,
       "creatureType": "Humanoid",
       "scale": 1,
       "isBoss": false,
@@ -1508,7 +1508,7 @@
           "id": "22-16",
           "idx": 16,
           "group": 24,
-          "pos": [-108.78, 249.66]
+          "pos": [-114.79, 245.04]
         }
       ]
     },
@@ -1517,7 +1517,7 @@
       "enemyIndex": 23,
       "name": "Irontide Powdershot",
       "count": 4,
-      "health": 3644271,
+      "health": 3978267,
       "creatureType": "Humanoid",
       "scale": 1,
       "isBoss": false,
@@ -1545,25 +1545,25 @@
           "id": "23-7",
           "idx": 7,
           "group": 25,
-          "pos": [-127.74, 212.53]
+          "pos": [-127.96, 212.53]
         },
         {
           "id": "23-8",
           "idx": 8,
           "group": 25,
-          "pos": [-131.64, 213.96]
+          "pos": [-131.57, 213.96]
         },
         {
           "id": "23-9",
           "idx": 9,
           "group": 25,
-          "pos": [-135.61, 216.23]
+          "pos": [-134.66, 215.28]
         },
         {
           "id": "23-10",
           "idx": 10,
           "group": 25,
-          "pos": [-123.45, 210.53]
+          "pos": [-124.48, 211.33]
         }
       ]
     },
@@ -1572,7 +1572,7 @@
       "enemyIndex": 24,
       "name": "Ashvane Sniper",
       "count": 4,
-      "health": 18221353,
+      "health": 19891335,
       "creatureType": "Humanoid",
       "scale": 1,
       "isBoss": false,
@@ -1639,7 +1639,7 @@
       "enemyIndex": 25,
       "name": "Irontide Curseblade",
       "count": 1,
-      "health": 3644271,
+      "health": 3978267,
       "creatureType": "Humanoid",
       "scale": 1,
       "isBoss": false,
@@ -1664,22 +1664,52 @@
       ],
       "spawns": [
         {
+          "id": "25-1",
+          "idx": 1,
+          "group": null,
+          "pos": [-62.92, 134.8]
+        },
+        {
+          "id": "25-2",
+          "idx": 2,
+          "group": null,
+          "pos": [-59.92, 138.68]
+        },
+        {
+          "id": "25-3",
+          "idx": 3,
+          "group": null,
+          "pos": [-58.02, 143.29]
+        },
+        {
+          "id": "25-4",
+          "idx": 4,
+          "group": null,
+          "pos": [-59.33, 147.83]
+        },
+        {
+          "id": "25-5",
+          "idx": 5,
+          "group": null,
+          "pos": [-61.37, 152.64]
+        },
+        {
           "id": "25-14",
           "idx": 14,
           "group": 24,
-          "pos": [-115, 245.17]
+          "pos": [-110.57, 243.98]
         },
         {
           "id": "25-15",
           "idx": 15,
           "group": 24,
-          "pos": [-111.28, 253.15]
+          "pos": [-109.03, 248.19]
         },
         {
           "id": "25-16",
           "idx": 16,
           "group": 24,
-          "pos": [-113.47, 249.27]
+          "pos": [-107.85, 252.37]
         },
         {
           "id": "25-17",
@@ -1808,11 +1838,11 @@
       "enemyIndex": 26,
       "name": "Chopper Redhook",
       "count": 0,
-      "health": 101901082,
+      "health": 111391476,
       "creatureType": "Humanoid",
       "scale": 0.8,
       "isBoss": true,
-      "characteristics": ["Taunt", "Mind Soothe"],
+      "characteristics": ["Taunt", "Slow", "Mind Soothe"],
       "spawns": [
         {
           "id": "26-1",
@@ -1827,11 +1857,11 @@
       "enemyIndex": 27,
       "name": "Irontide Cleaver",
       "count": 0,
-      "health": 15184460,
+      "health": 19891335,
       "creatureType": "Humanoid",
       "scale": 1,
       "isBoss": false,
-      "characteristics": ["Taunt", "Mind Soothe"],
+      "characteristics": ["Taunt", "Stun", "Slow", "Mind Soothe"],
       "spawns": [
         {
           "id": "27-1",
@@ -1846,7 +1876,7 @@
       "enemyIndex": 28,
       "name": "Irontide Powdershot",
       "count": 0,
-      "health": 3036892,
+      "health": 3978267,
       "creatureType": "Humanoid",
       "scale": 1,
       "isBoss": false,
@@ -1880,7 +1910,7 @@
           "id": "28-12",
           "idx": 12,
           "group": null,
-          "pos": [-126.62, 329.46]
+          "pos": [-126.41, 330.21]
         }
       ]
     },
@@ -1889,17 +1919,17 @@
       "enemyIndex": 29,
       "name": "Dread Captain Lockwood",
       "count": 0,
-      "health": 89163448,
+      "health": 97467542,
       "creatureType": "Humanoid",
       "scale": 1.6,
       "isBoss": true,
-      "characteristics": ["Taunt", "Mind Soothe"],
+      "characteristics": ["Taunt", "Slow", "Mind Soothe"],
       "spawns": [
         {
           "id": "29-1",
           "idx": 1,
           "group": null,
-          "pos": [-89.08, 154.51]
+          "pos": [-87.62, 153.56]
         }
       ]
     },
@@ -1908,7 +1938,7 @@
       "enemyIndex": 30,
       "name": "Ashvane Deckhand",
       "count": 0,
-      "health": 6998701,
+      "health": 9945668,
       "creatureType": "Humanoid",
       "scale": 1,
       "isBoss": true,
@@ -1936,7 +1966,7 @@
           "id": "30-4",
           "idx": 4,
           "group": null,
-          "pos": [-80.22, 147.62]
+          "pos": [-80.8, 145.72]
         }
       ]
     },
@@ -1945,17 +1975,17 @@
       "enemyIndex": 31,
       "name": "Ashvane Cannoneer",
       "count": 0,
-      "health": 13997402,
+      "health": 19891335,
       "creatureType": "Humanoid",
       "scale": 1,
       "isBoss": true,
-      "characteristics": ["Taunt", "Mind Soothe"],
+      "characteristics": ["Taunt", "Slow", "Mind Soothe"],
       "spawns": [
         {
           "id": "31-2",
           "idx": 2,
           "group": null,
-          "pos": [-77.62, 159.92]
+          "pos": [-78.35, 158.75]
         }
       ]
     },
@@ -1964,11 +1994,11 @@
       "enemyIndex": 32,
       "name": "Hadal Darkfathom",
       "count": 0,
-      "health": 145572975,
+      "health": 159130680,
       "creatureType": "Giant",
       "scale": 1.5,
       "isBoss": true,
-      "characteristics": ["Taunt"],
+      "characteristics": ["Taunt", "Slow"],
       "spawns": [
         {
           "id": "32-1",
@@ -1983,7 +2013,7 @@
       "enemyIndex": 33,
       "name": "Viqgoth",
       "count": 0,
-      "health": 454915546,
+      "health": 497283375,
       "creatureType": "Aberration",
       "scale": 1.5,
       "isBoss": true,
@@ -2002,11 +2032,11 @@
       "enemyIndex": 34,
       "name": "Gripping Terror",
       "count": 0,
-      "health": 21835946,
+      "health": 23869602,
       "creatureType": "Aberration",
       "scale": 1.1,
       "isBoss": true,
-      "characteristics": ["Taunt"],
+      "characteristics": ["Taunt", "Slow"],
       "spawns": [
         {
           "id": "34-1",
@@ -2021,17 +2051,72 @@
       "enemyIndex": 35,
       "name": "Demolishing Terror",
       "count": 0,
-      "health": 33593764,
+      "health": 47739204,
       "creatureType": "Aberration",
       "scale": 1.1,
       "isBoss": true,
-      "characteristics": ["Taunt"],
+      "characteristics": ["Taunt", "Slow"],
       "spawns": [
         {
           "id": "35-1",
           "idx": 1,
           "group": null,
           "pos": [-83.25, 31.49]
+        }
+      ]
+    },
+    {
+      "id": 138002,
+      "enemyIndex": 36,
+      "name": "Scrimshaw Gutter",
+      "count": 1,
+      "health": 3978267,
+      "creatureType": "Humanoid",
+      "scale": 0.8,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
+        "Polymorph",
+        "Root",
+        "Fear",
+        "Disorient",
+        "Repentance",
+        "Imprison",
+        "Sap",
+        "Stun",
+        "Slow",
+        "Sleep Walk",
+        "Mind Soothe"
+      ],
+      "spawns": [
+        {
+          "id": "36-1",
+          "idx": 1,
+          "group": null,
+          "pos": [-200.46, 339.44]
+        },
+        {
+          "id": "36-2",
+          "idx": 2,
+          "group": null,
+          "pos": [-197.18, 334.66]
+        },
+        {
+          "id": "36-3",
+          "idx": 3,
+          "group": null,
+          "pos": [-133.52, 320]
+        },
+        {
+          "id": "36-4",
+          "idx": 4,
+          "group": null,
+          "pos": [-127.8, 316.77]
         }
       ]
     }
