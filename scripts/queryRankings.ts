@@ -10,6 +10,9 @@ import { shuffle } from '../src/util/nodash.ts'
 
 const dirname = getDirname(import.meta.url)
 
+const toFileName = (report: { code: string; fightID: number }) =>
+  `${report.code}-${report.fightID}.json`
+
 for (const dungeon of shuffle(dungeons)) {
   if (!dungeon.wclEncounterId) continue
 
@@ -19,15 +22,30 @@ for (const dungeon of shuffle(dungeons)) {
 
   if (!fs.existsSync(dungeonFolder)) fs.mkdirSync(dungeonFolder)
 
+  // Remove old rankings
   for (const file of fs.readdirSync(dungeonFolder)) {
-    if (!rankings.some(({ report: { code, fightID } }) => file === `${code}-${fightID}.json`)) {
+    if (!rankings.some(({ report }) => file === toFileName(report))) {
       fs.rmSync(path.join(dungeonFolder, file))
     }
   }
 
+  // Update existing rankings
   for (const ranking of rankings) {
     const { code, fightID } = ranking.report
-    const file = `${dungeonFolder}/${code}-${fightID}.json`
+    const file = `${dungeonFolder}/${toFileName(ranking.report)}`
+    if (!fs.existsSync(file)) continue
+
+    const sampleRoute = JSON.parse(fs.readFileSync(file).toString()) as SampleRoute
+    const oldRank = sampleRoute.wclRanking?.rank
+    sampleRoute.wclRanking = ranking
+    fs.writeFileSync(file, JSON.stringify(sampleRoute))
+    console.log(`Updated ${code}-${fightID} from rank ${oldRank} to ${ranking.rank}`)
+  }
+
+  // Add new rankings
+  for (const ranking of rankings) {
+    const { code, fightID } = ranking.report
+    const file = `${dungeonFolder}/${toFileName(ranking.report)}`
     if (fs.existsSync(file)) continue
 
     const { result } = await getWclRoute(code, fightID)
