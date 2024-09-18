@@ -6,10 +6,11 @@ import { getDirname } from '../server/files.ts'
 import { fetchTopRankings } from '../server/wclRankingsFetcher.ts'
 import type { SampleRoute } from '../src/util/types.ts'
 import * as path from 'path'
+import { shuffle } from '../src/util/nodash.ts'
 
 const dirname = getDirname(import.meta.url)
 
-for (const dungeon of dungeons) {
+for (const dungeon of shuffle(dungeons)) {
   if (!dungeon.wclEncounterId) continue
 
   console.log(`Querying dungeon ${dungeon.key}`)

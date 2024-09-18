@@ -66,3 +66,12 @@ export function isDeepEqual(object1: Record<string, unknown>, object2: Record<st
 }
 
 const isObject = (object: unknown) => object != null && typeof object === 'object'
+
+export function shuffle<T>(prevArray: T[]) {
+  const array = [...prevArray]
+  for (let i = array.length - 1; i >= 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1))
+    ;[array[i], array[j]] = [array[j]!, array[i]!]
+  }
+  return array
+}

@@ -1,5 +1,4 @@
 ﻿import uimapassignment from './uimapassignment.json'
-import type { DungeonKey } from '../dungeonKeys.ts'
 
 interface UiMapAssignment {
   MapID: number
@@ -22,19 +21,20 @@ export type MapBoundsByUiMapId = Record<number, MapBounds>
 const mapIds: number[] = [
   2660, // ak
   2669, // cot
+  2601, // cot 2
   2662, // db
   670, // gb
   2290, // mot
   2286, // nw
+  2222, // nw 2
   1822, // sob
-  1643, // sob weird??
+  1643, // sob 2
   2652, // sv
 ]
 
 export const mapBoundsUncompiled = (uimapassignment as UiMapAssignment[]).reduce(
   (acc, assignment) => {
     if (!mapIds.includes(assignment.MapID)) return acc
-    console.log(assignment.MapID)
 
     acc[assignment.UiMapID] = {
       yMin: assignment['Region[0]'],
