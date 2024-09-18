@@ -55,7 +55,5 @@ export function pickVariedComps(rankings: WclRanking[], count: number) {
     pushRankings(minCompDifferences)
   }
 
-  console.log(chosenRankings)
-
   return chosenRankings
 }
