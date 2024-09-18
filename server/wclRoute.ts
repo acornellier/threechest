@@ -82,7 +82,7 @@ async function getFirstEvents(code: string, fight: WclRoute, enemies: EnemyReque
   const events: WclEvent[] = []
   const eventStart = fight.startTime + 10_000 // ignore first 10 seconds, mobs do random casts
 
-  console.time('total')
+  console.time('query time')
   for (let start = 0; start < enemies.length; start += batchSize) {
     const end = Math.min(start + batchSize, enemies.length)
     const enemyBatch = enemies.slice(start, end)
@@ -130,11 +130,9 @@ query {
   }
 }`
 
-    console.time(`query ${start / batchSize}`)
     const json = await fetchWcl<{ reportData: { report: Record<string, { data: WclEvent[] }> } }>(
       query,
     )
-    console.timeEnd(`query ${start / batchSize}`)
 
     const resultsMap = json.reportData.report
 
@@ -165,7 +163,7 @@ query {
 
     events.push(...newEvents)
   }
-  console.timeEnd('total')
+  console.timeEnd('query time')
   console.log(`spent points: ${enemies.length * 2}`)
 
   return events
