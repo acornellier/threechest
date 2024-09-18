@@ -409,7 +409,7 @@ function findExactSpawns(
       if (matchingMobs.length !== 0 && matchingMobs[0]!.mob.count === 0) continue
 
       errors.push(`Failed at finding individual matching mob id ${mobId} in pull ${idx}`)
-      return null
+      continue
     }
 
     const sortedAvailable = !pos
