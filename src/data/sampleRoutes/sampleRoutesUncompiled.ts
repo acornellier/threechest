@@ -87,7 +87,7 @@ const difficultyToNum = (difficulty: SampleRoute['difficulty']) =>
         : 3
 
 const wclRankingToNum = (wclRanking: SampleRoute['wclRanking']) =>
-  wclRanking === undefined ? -Infinity : -wclRanking.score
+  wclRanking === undefined ? -Infinity : wclRanking.rank
 
 function sortSampleRoutes(route1: SampleRoute, route2: SampleRoute) {
   if (route1.wclRanking !== route2.wclRanking) {

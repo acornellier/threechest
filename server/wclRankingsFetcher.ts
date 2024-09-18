@@ -34,5 +34,5 @@ export async function fetchTopRankings(encounterId: number): Promise<WclRanking[
     .map((ranking, idx) => ({ ...ranking, rank: idx + 1 }))
     .filter((ranking) => ranking.report.code !== null) as WclRanking[]
 
-  return [...pickVariedComps(rankings, 5), ...pickTopRankings(rankings, 5)]
+  return [...pickVariedComps(rankings, 5), ...pickTopRankings(rankings, 10)]
 }
