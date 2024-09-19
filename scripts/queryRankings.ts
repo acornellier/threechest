@@ -21,8 +21,13 @@ interface DungeonRankings {
   rankings: WclRanking[]
 }
 
+const arg = process.argv.slice(2)
+const resetDungeon: DungeonKey | null = arg.length ? (arg[0] as DungeonKey) : null
+
 const dungeonRankings: DungeonRankings[] = []
 for (const dungeon of shuffle(dungeons)) {
+  if (resetDungeon && dungeon.key !== resetDungeon) continue
+
   if (!dungeon.wclEncounterId) continue
 
   const dungeonFolder = `${dirname}/../src/data/sampleRoutes/${dungeon.key}`
@@ -69,10 +74,11 @@ for (const { dungeonFolder, rankings, dungeonKey } of dungeonRankings) {
   // Add new rankings
   for (const ranking of rankings) {
     const { code, fightID } = ranking.report
+    const ignoreCache = resetDungeon === dungeonKey
     const file = `${dungeonFolder}/${toFileName(ranking.report)}`
-    if (fs.existsSync(file)) continue
+    if (fs.existsSync(file) && !ignoreCache) continue
 
-    const { result } = await getWclRoute(code, fightID)
+    const { result } = await getWclRoute(code, fightID, ignoreCache)
     const { route, errors } = wclResultToRoute(result)
     const tank = ranking.team.find((member) => member.role === 'Tank') ?? ranking.team[0]!
     route.name = `${tank.name}${tank.name.endsWith('s') ? "'" : "'s"} +${ranking.bracketData}`

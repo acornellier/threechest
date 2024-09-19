@@ -39,7 +39,7 @@ type WclEvent = {
   y: number
   mapID: number
   source?: { id: number; name: string }
-  target?: { id: number }
+  target?: { id: number; type: string | 'NPC' }
   amount?: number
 }
 
@@ -100,6 +100,7 @@ async function getFirstEvents(code: string, fight: WclRoute, enemies: EnemyReque
         startTime: ${eventStart}
         endTime: 9999999999
         includeResources: true
+        useActorIDs: false
       ) {
         data
       }
@@ -138,7 +139,14 @@ query {
 
     const newEvents = enemyBatch
       .map((_, idx) => {
-        const castsData = resultsMap[`c${idx}`]!.data.filter(({ targetID }) => targetID !== -1)
+        const castsData = resultsMap[`c${idx}`]!.data.filter(
+          ({ target }) => target?.id !== -1 && target?.type !== 'NPC',
+        ).map((event) => ({
+          ...event,
+          sourceID: event.source?.id ?? event.sourceID,
+          targetID: event.target?.id ?? event.targetID,
+        }))
+
         const damageData = resultsMap[`d${idx}`]!.data.filter(
           ({ source, amount }) => source?.name !== 'Bloodworm' && amount,
         ).map((event) => ({
@@ -172,16 +180,17 @@ query {
 export async function getWclRoute(
   code: string,
   fightId: 'last' | string | number,
+  ignoreCache: boolean = false,
 ): Promise<{ result: WclResult; cached: boolean }> {
   const file = `${wclRouteCacheFolder}/${code}-${fightId}.json`
-  const hasCache = fs.existsSync(file)
+  const hasCache = !ignoreCache && fs.existsSync(file)
 
   console.log('getWclRoute', code, fightId, hasCache)
 
-  if (hasCache) {
-    const result = JSON.parse(fs.readFileSync(file, 'utf8')) as WclResult
-    return { result, cached: true }
-  }
+  // if (hasCache) {
+  //   const result = JSON.parse(fs.readFileSync(file, 'utf8')) as WclResult
+  //   return { result, cached: true }
+  // }
 
   const fight = await getRoute(code, fightId)
 
