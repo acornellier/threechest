@@ -13,7 +13,8 @@
     "vercel-dev": "cross-env NODE_ENV=vercel_dev && vercel dev --listen 6173",
     "postinstall": "patch-package",
     "dungeons": "tsx scripts/mdtDungeons.ts",
-    "spells": "tsx scripts/guessDungeonSpells.ts"
+    "spells": "tsx scripts/guessDungeonSpells.ts",
+    "r": "tsx scripts/queryRankings.ts"
   },
   "engines": {
     "node": ">=20"
