@@ -187,10 +187,10 @@ export async function getWclRoute(
 
   console.log('getWclRoute', code, fightId, hasCache)
 
-  // if (hasCache) {
-  //   const result = JSON.parse(fs.readFileSync(file, 'utf8')) as WclResult
-  //   return { result, cached: true }
-  // }
+  if (hasCache) {
+    const result = JSON.parse(fs.readFileSync(file, 'utf8')) as WclResult
+    return { result, cached: true }
+  }
 
   const fight = await getRoute(code, fightId)
 
