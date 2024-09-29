@@ -1,7 +1,9 @@
 import type { SpellIdMap } from '../../types.ts'
 import { mergeSpells } from '../grimoire.ts'
 
-const extraSpells: SpellIdMap = {}
+const extraSpells: SpellIdMap = {
+  220423: [443500, 443507],
+}
 
 const removedSpells: number[] = []
 
