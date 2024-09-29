@@ -111,7 +111,7 @@ export function MobSpellInfo({ spell, mob, dungeonKey }: Props) {
           {damageText && (
             <a
               className="flex h-full"
-              href={`https://not-even-close-tww.vercel.app/spell/${id}?trash=${!mob.isBoss}`}
+              href={`https://not-even-close.com/spell/${id}?trash=${!mob.isBoss}`}
               target="_blank"
               rel="noreferrer"
               data-tooltip-id={`spell-${id}-nec`}
