@@ -8,6 +8,7 @@ import { addToast } from './toastReducer.ts'
 import { wclRouteApi } from '../../api/wclRouteApi.ts'
 import { isAnyOf } from '@reduxjs/toolkit'
 import localForage from 'localforage'
+import { isDev } from '../../util/isDev.ts'
 
 export interface ImportState {
   isImporting: boolean
@@ -71,7 +72,7 @@ export const importSlice = createAppSlice({
       }
 
       const maxUsesPerHour = 5
-      if (wclRateStatus.usesSinceReset >= maxUsesPerHour) {
+      if (wclRateStatus.usesSinceReset >= maxUsesPerHour && !isDev) {
         const comeBackAt = new Date(wclRateStatus.resetsAtEpochSec * 1000).toLocaleTimeString()
         thunkApi.dispatch(
           addToast({

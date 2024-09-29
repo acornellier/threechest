@@ -81,6 +81,7 @@ function NoteComponent({ poi, index, iconScaling }: Props) {
         ref={markerRef}
         position={poi.position}
         draggable
+        zIndexOffset={1100}
         eventHandlers={markerEventHandlers}
         icon={divIcon({
           className: `note-icon fade-in-map-object ${hidden ? 'opacity-0' : 'opacity-1'}`,

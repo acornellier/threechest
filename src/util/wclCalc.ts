@@ -1,4 +1,4 @@
-import type { Pull, Route } from './types.ts'
+import type { Note, Pull, Route } from './types.ts'
 import type { Dungeon, MobSpawn, Point, Spawn, SpawnId } from '../data/types.ts'
 import { dungeons } from '../data/dungeons.ts'
 import { distance } from './numbers.ts'
@@ -8,12 +8,15 @@ import { mapHeight, mapWidth } from './map.ts'
 import { type MapOffset, mdtMapOffsets } from '../data/coordinates/mdtMapOffsets.ts'
 import { mapBounds } from '../data/coordinates/mapBounds.ts'
 
-export type WclEventSimplified = {
+export type WclEventBase = {
   timestamp: number
-  gameId: number
   x?: number
   y?: number
   mapID?: number
+}
+
+export type WclEventSimplified = WclEventBase & {
+  gameId: number
   name: string
   id?: number
 }
@@ -22,6 +25,7 @@ export type WclResult = WclUrlInfo & {
   encounterID: number
   keystoneLevel: number
   events: WclEventSimplified[]
+  lustEvents: WclEventBase[]
 }
 
 export type WclUrlInfo = {
@@ -124,7 +128,7 @@ export function wclResultToRoute(wclResult: WclResult) {
     name: `WCL ${dungeon.key.toUpperCase()} +${wclResult.keystoneLevel}`,
     dungeonKey: dungeon.key,
     pulls,
-    notes: [],
+    notes: wclResultToNotes(wclResult),
     drawings: [],
   }
 
@@ -132,6 +136,22 @@ export function wclResultToRoute(wclResult: WclResult) {
     route,
     errors,
   }
+}
+
+function wclResultToNotes(wclResult: WclResult): Note[] {
+  let lastLustTimestamp = -Infinity
+  return wclResult.lustEvents
+    .filter((event) => event.x && event.y && event.mapID)
+    .reduce<Note[]>((acc, event) => {
+      if (event.timestamp - lastLustTimestamp < 10_000) return acc
+
+      lastLustTimestamp = event.timestamp
+      acc.push({
+        text: 'Lust',
+        position: wclPointToLeafletPoint({ x: event.x!, y: event.y!, mapID: event.mapID! }),
+      })
+      return acc
+    }, [])
 }
 
 type MobEvent = { timestamp: number; mobId: number; pos?: Point }

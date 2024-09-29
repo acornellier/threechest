@@ -177,6 +177,28 @@ query {
   return events
 }
 
+async function getLustEvents(code: string, fight: WclRoute) {
+  const query = `query {
+  reportData {
+    report(code:"${code}") {
+      events(
+        fightIDs: ${fight.id}
+        dataType: Casts
+        hostilityType: Friendlies
+        filterExpression: "ability.id=272678 or ability.id=390386 or ability.id=80353 or ability.id=32182 or ability.id=2825"
+        includeResources: true
+      ) {
+        data
+      }
+    }
+  }
+}`
+
+  const json = await fetchWcl<{ reportData: { report: { events: { data: WclEvent[] } } } }>(query)
+
+  return json.reportData.report.events.data
+}
+
 export async function getWclRoute(
   code: string,
   fightId: 'last' | string | number,
@@ -249,12 +271,15 @@ export async function getWclRoute(
     if (pos.x && pos.y && pos.mapID) pos.id = idx++
   }
 
+  const lustEvents = await getLustEvents(code, fight)
+
   const result: WclResult = {
     code,
     fightId: fight.id,
     encounterID: fight.encounterID,
     keystoneLevel: fight.keystoneLevel,
     events: firstPositions,
+    lustEvents,
   }
 
   fs.mkdirSync(path.dirname(file), { recursive: true })
