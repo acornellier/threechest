@@ -1,5 +1,5 @@
 import { initializeApp } from 'firebase/app'
-import { collection, getFirestore } from 'firebase/firestore'
+import { getFirestore } from 'firebase/firestore'
 
 const firebaseConfig = {
   apiKey: 'AIzaSyB_aaDs-FmuJKfo-kxlX2ROviIsurfNOSA',
@@ -12,7 +12,6 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig)
 export const firestore = getFirestore(app)
-export const routesCollection = collection(firestore, 'routes')
 
 export type FirestoreRoute = {
   mdtString: string

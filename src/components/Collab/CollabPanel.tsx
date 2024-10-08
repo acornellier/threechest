@@ -11,6 +11,7 @@ import { useAppDispatch, useRootSelector } from '../../store/storeUtil.ts'
 import { RestoreBackup } from './RestoreBackup.tsx'
 import { selectIsLive, setMapMode } from '../../store/reducers/mapReducer.ts'
 import { StopIcon } from '@heroicons/react/24/solid'
+import { copyText } from '../../util/dev.ts'
 
 interface Props {
   collapsed?: boolean
@@ -40,7 +41,7 @@ export function CollabPanel({ collapsed }: Props) {
 
   const shareUrl = useCallback(async (room: string) => {
     const url = updateCollabUrl(room)
-    await navigator.clipboard.writeText(url)
+    await copyText(url)
   }, [])
 
   const onShare = useCallback(async () => {

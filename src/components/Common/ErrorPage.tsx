@@ -12,6 +12,7 @@ import {
 import { useAppDispatch, useRootSelector } from '../../store/storeUtil.ts'
 import { endCollab } from '../../store/collab/collabReducer.ts'
 import { isDev } from '../../util/isDev.ts'
+import { copyText } from '../../util/dev.ts'
 
 interface Props {
   errors: Array<{ error: Error; info: ErrorInfo }>
@@ -51,7 +52,7 @@ export function ErrorPage({ errors }: Props) {
 
     text += `\n\nStore:\n${JSON.stringify(rootState)}\n\n`
 
-    await navigator.clipboard.writeText(text)
+    await copyText(text)
   }
 
   return (
