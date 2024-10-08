@@ -9,6 +9,7 @@ import { wclRouteApi } from '../../api/wclRouteApi.ts'
 import { isAnyOf } from '@reduxjs/toolkit'
 import localForage from 'localforage'
 import { isDev } from '../../util/isDev.ts'
+import { getFirestoreRouteApi } from '../../api/getFirestoreRouteApi.ts'
 
 export interface ImportState {
   isImporting: boolean
@@ -61,6 +62,10 @@ export const importSlice = createAppSlice({
         }
       },
     ),
+    importFirestoreRoute: create.asyncThunk(async ({ routeId }: { routeId: string }, thunkApi) => {
+      const firestoreRoute = await getFirestoreRouteApi(routeId)
+      thunkApi.dispatch(importMdtRoute({ text: firestoreRoute.mdtString }))
+    }),
     importWclRoute: create.asyncThunk(async ({ url }: { url: string }, thunkApi) => {
       const wclRateStatus: WclRateStatus = (await localForage.getItem<WclRateStatus>(
         'wclRateStatus',
@@ -154,6 +159,7 @@ export const {
   setImportingRoute,
   clearImportingRoute,
   importMdtRoute,
+  importFirestoreRoute,
   importWclRoute,
   setPreviewRouteAsync,
 } = importSlice.actions

@@ -22,7 +22,7 @@ export function ExportRoute({ hidden }: Props) {
       dispatch(addToast({ message: 'MDT string copied to clipboard!' }))
       return navigator.clipboard.writeText(str)
     } catch (err) {
-      dispatch(addToast({ message: `Failed to export MDT string: ${err}`, type: 'error' }))
+      dispatch(addToast({ message: `Failed to export route: ${err}`, type: 'error' }))
     }
   }, [dispatch, route])
 
