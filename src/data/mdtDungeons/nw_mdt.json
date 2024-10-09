@@ -1651,46 +1651,57 @@
   "pois": [
     {
       "type": "nwItem",
+      "itemType": 1,
       "pos": [-56.66, 294.52]
     },
     {
       "type": "nwItem",
+      "itemType": 1,
       "pos": [-143.46, 95.7]
     },
     {
       "type": "nwItem",
+      "itemType": 1,
       "pos": [-63.11, 71]
     },
     {
       "type": "nwItem",
+      "itemType": 2,
       "pos": [-224.82, 233.09]
     },
     {
       "type": "nwItem",
+      "itemType": 2,
       "pos": [-172.69, 195.33]
     },
     {
       "type": "nwItem",
+      "itemType": 2,
       "pos": [-73.35, 166.62]
     },
     {
       "type": "nwItem",
+      "itemType": 3,
       "pos": [-75.32, 300.75]
     },
     {
       "type": "nwItem",
+      "itemType": 3,
       "pos": [-132.38, 282.17]
     },
     {
       "type": "nwItem",
+      "itemType": 3,
       "pos": [-190.07, 170.76]
     },
     {
       "type": "nwItem",
+      "itemType": 3,
       "pos": [-115.34, 155.77]
     },
     {
       "type": "dungeonEntrance",
+      "itemType": null,
       "pos": [-96.38, 341.49]
     }
   ]

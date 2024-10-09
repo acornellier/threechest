@@ -14,35 +14,76 @@ interface Props {
 
 interface PoiConfig {
   type: PointOfInterestType['type']
+  itemType?: PointOfInterestType['itemType']
   label: string
   src: string
 }
 
 const configs: PoiConfig[] = [
   {
+    type: 'dungeonEntrance',
+    label: 'Entrance',
+    src: '/images/dungeon_start.png',
+  },
+  {
     type: 'graveyard',
     label: 'Graveyard',
     src: '/images/graveyard.png',
   },
   {
-    type: 'brackenhideCage',
-    label: 'Cage',
-    src: '/images/cage2.png',
+    type: 'nwItem',
+    itemType: 1,
+    label: 'Bloody Javelin',
+    src: '/images/bloody_javelin.jpg',
   },
   {
-    type: 'brackenhideCauldron',
-    label: 'Cauldron',
-    src: '/images/cauldron.png',
+    type: 'nwItem',
+    itemType: 2,
+    label: 'Discharged Anima',
+    src: '/images/discharged_anima.jpg',
   },
   {
-    type: 'neltharusChain',
-    label: 'Chain',
-    src: '/images/chain.png',
+    type: 'nwItem',
+    itemType: 3,
+    label: 'Discarded Shield',
+    src: '/images/discarded_shield.jpg',
+  },
+  {
+    type: 'cityOfThreadsItem',
+    label: 'Stolen Power: 15% damage and healing',
+    src: '/images/stolen_power.jpg',
+  },
+  {
+    type: 'stonevaultItem',
+    label: 'Imbued Iron Energy',
+    src: '/images/imbued_iron_energy.jpg',
+  },
+  {
+    type: 'mistsItem',
+    itemType: 1,
+    label: 'Overgrown Roots: usable by Night Elves, Tauren, Druids, and Herbalists',
+    src: '/images/overgrown_roots.jpg',
+  },
+  {
+    type: 'mistsItem',
+    itemType: 2,
+    label: 'Depleted Anima Seed: updates graveyard location',
+    src: '/images/anima_seed.jpg',
+  },
+  {
+    type: 'mistsItem',
+    itemType: 5,
+    label: 'Depleted Anima Seed: updates graveyard location',
+    src: '/images/anima_seed.jpg',
   },
 ]
 
 function getConfig(poi: PointOfInterestType): PoiConfig | null {
-  return configs.find((config) => config.type === poi.type) ?? null
+  return (
+    configs.find(
+      (config) => config.type === poi.type && (!config.itemType || config.itemType == poi.itemType),
+    ) ?? null
+  )
 }
 
 function PointOfInterestComponent({ poi, iconScaling }: Props) {

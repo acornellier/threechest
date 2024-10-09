@@ -1345,10 +1345,12 @@
   "pois": [
     {
       "type": "stonevaultItem",
+      "itemType": null,
       "pos": [-140.69, 113.26]
     },
     {
       "type": "dungeonEntrance",
+      "itemType": null,
       "pos": [-31.06, 192.28]
     }
   ]

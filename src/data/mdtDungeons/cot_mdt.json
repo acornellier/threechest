@@ -1853,22 +1853,27 @@
   "pois": [
     {
       "type": "dungeonEntrance",
+      "itemType": null,
       "pos": [-38.42, 146.81]
     },
     {
       "type": "cityOfThreadsItem",
+      "itemType": null,
       "pos": [-54.24, 230.1]
     },
     {
       "type": "cityOfThreadsItem",
+      "itemType": null,
       "pos": [-118.78, 199.33]
     },
     {
       "type": "cityOfThreadsItem",
+      "itemType": null,
       "pos": [-65.67, 149.26]
     },
     {
       "type": "cityOfThreadsItem",
+      "itemType": null,
       "pos": [-76.5, 196.87]
     }
   ]

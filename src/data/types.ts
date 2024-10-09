@@ -51,7 +51,14 @@ export type MobSpawn = {
 }
 
 export type PointOfInterest = {
-  type: 'graveyard' | 'brackenhideCage' | 'brackenhideCauldron' | 'neltharusChain'
+  type:
+    | 'dungeonEntrance'
+    | 'graveyard'
+    | 'nwItem'
+    | 'cityOfThreadsItem'
+    | 'stonevaultItem'
+    | 'mistsItem'
+  itemType: 1 | 2 | 3 | 4 | 5
   pos: Point
 }
 

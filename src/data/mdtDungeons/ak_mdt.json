@@ -1924,26 +1924,32 @@
   "pois": [
     {
       "type": "dungeonEntrance",
+      "itemType": null,
       "pos": [-221.9, 359.1]
     },
     {
       "type": "araKaraItem",
+      "itemType": null,
       "pos": [-97.99, 117.49]
     },
     {
       "type": "araKaraItem",
+      "itemType": null,
       "pos": [-168.6, 280.77]
     },
     {
       "type": "araKaraItem",
+      "itemType": null,
       "pos": [-140.79, 46.67]
     },
     {
       "type": "araKaraItem",
+      "itemType": null,
       "pos": [-120.38, 256.9]
     },
     {
       "type": "araKaraItem",
+      "itemType": null,
       "pos": [-148.9, 298.13]
     }
   ]

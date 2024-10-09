@@ -89,6 +89,7 @@ export function importMdtDungeon(key: DungeonKey, dungeonPath: string) {
     const y = getFieldValue(fields, 'y')
     pois.push({
       type: getFieldValue(fields, 'type'),
+      itemType: getFieldValue(fields, 'itemType'),
       pos: convertCoords(x, y),
     })
   }

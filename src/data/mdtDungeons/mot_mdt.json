@@ -1946,30 +1946,37 @@
   "pois": [
     {
       "type": "mistsItem",
+      "itemType": 1,
       "pos": [-66.13, 364.14]
     },
     {
       "type": "mistsItem",
+      "itemType": 1,
       "pos": [-86.84, 309.35]
     },
     {
       "type": "mistsItem",
+      "itemType": 2,
       "pos": [-95.87, 300.56]
     },
     {
       "type": "mistsItem",
+      "itemType": 3,
       "pos": [-90.55, 292.48]
     },
     {
       "type": "mistsItem",
+      "itemType": 4,
       "pos": [-88.61, 272.3]
     },
     {
       "type": "mistsItem",
+      "itemType": 5,
       "pos": [-146.14, 151.43]
     },
     {
       "type": "dungeonEntrance",
+      "itemType": null,
       "pos": [-51.23, 376.2]
     }
   ]

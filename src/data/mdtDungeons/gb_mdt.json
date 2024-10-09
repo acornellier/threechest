@@ -1382,6 +1382,7 @@
   "pois": [
     {
       "type": "dungeonEntrance",
+      "itemType": null,
       "pos": [-159.14, 5.28]
     }
   ]
