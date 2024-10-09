@@ -58,7 +58,7 @@ export type PointOfInterest = {
     | 'cityOfThreadsItem'
     | 'stonevaultItem'
     | 'mistsItem'
-  itemType: 1 | 2 | 3 | 4 | 5
+  itemType: null | number
   pos: Point
 }
 
