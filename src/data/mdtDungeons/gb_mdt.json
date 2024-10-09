@@ -269,7 +269,7 @@
       "creatureType": "Dragonkin",
       "scale": 1.7,
       "isBoss": false,
-      "characteristics": ["Taunt", "Slow", "Mind Soothe"],
+      "characteristics": ["Taunt", "Mind Soothe"],
       "spawns": [
         {
           "id": "3-1",
@@ -307,7 +307,8 @@
           "group": null,
           "pos": [-160.07, 262]
         }
-      ]
+      ],
+      "stealthDetect": true
     },
     {
       "id": 224221,
@@ -318,7 +319,7 @@
       "creatureType": "Dragonkin",
       "scale": 1.4,
       "isBoss": false,
-      "characteristics": ["Taunt", "Slow", "Mind Soothe"],
+      "characteristics": ["Taunt", "Mind Soothe"],
       "spawns": [
         {
           "id": "4-1",
@@ -380,7 +381,8 @@
           "group": 13,
           "pos": [-181.06, 143.51]
         }
-      ]
+      ],
+      "stealthDetect": true
     },
     {
       "id": 40167,
@@ -530,7 +532,7 @@
       "creatureType": "Giant",
       "scale": 1.6,
       "isBoss": false,
-      "characteristics": ["Taunt", "Slow"],
+      "characteristics": ["Taunt"],
       "spawns": [
         {
           "id": "6-1",
@@ -550,7 +552,8 @@
           "group": 16,
           "pos": [-91.08, 193.54]
         }
-      ]
+      ],
+      "stealthDetect": true
     },
     {
       "id": 224276,
@@ -828,7 +831,7 @@
       "creatureType": "Humanoid",
       "scale": 1.6,
       "isBoss": false,
-      "characteristics": ["Taunt", "Slow", "Mind Soothe"],
+      "characteristics": ["Taunt", "Mind Soothe"],
       "spawns": [
         {
           "id": "10-1",
@@ -881,7 +884,8 @@
           "group": 29,
           "pos": [-74.39, 279.24]
         }
-      ]
+      ],
+      "stealthDetect": true
     },
     {
       "id": 224853,
@@ -1138,7 +1142,7 @@
       "creatureType": "Aberration",
       "scale": 1.5,
       "isBoss": false,
-      "characteristics": ["Taunt", "Slow"],
+      "characteristics": ["Taunt"],
       "spawns": [
         {
           "id": "12-1",
@@ -1164,7 +1168,8 @@
           "group": 36,
           "pos": [-175.64, 348.2]
         }
-      ]
+      ],
+      "stealthDetect": true
     },
     {
       "id": 39625,
@@ -1175,7 +1180,7 @@
       "creatureType": "Dragonkin",
       "scale": 2,
       "isBoss": true,
-      "characteristics": ["Taunt", "Slow", "Mind Soothe"],
+      "characteristics": ["Taunt", "Mind Soothe"],
       "spawns": [
         {
           "id": "13-1",
@@ -1194,7 +1199,7 @@
       "creatureType": "Giant",
       "scale": 2,
       "isBoss": true,
-      "characteristics": ["Taunt", "Slow"],
+      "characteristics": ["Taunt"],
       "spawns": [
         {
           "id": "14-1",
@@ -1213,12 +1218,12 @@
       "creatureType": "Humanoid",
       "scale": 2,
       "isBoss": true,
-      "characteristics": ["Taunt", "Slow", "Mind Soothe"],
+      "characteristics": ["Taunt", "Mind Soothe"],
       "spawns": [
         {
           "id": "15-1",
           "idx": 1,
-          "group": null,
+          "group": 37,
           "pos": [-40.33, 275.46]
         }
       ]
@@ -1232,12 +1237,12 @@
       "creatureType": "Dragonkin",
       "scale": 2,
       "isBoss": true,
-      "characteristics": ["Taunt", "Slow", "Mind Soothe"],
+      "characteristics": ["Taunt", "Mind Soothe"],
       "spawns": [
         {
           "id": "16-1",
           "idx": 1,
-          "group": null,
+          "group": 37,
           "pos": [-45.68, 259.01]
         }
       ]
@@ -1256,7 +1261,7 @@
         {
           "id": "17-1",
           "idx": 1,
-          "group": null,
+          "group": 38,
           "pos": [-233.73, 336.67]
         }
       ]
@@ -1289,7 +1294,7 @@
         {
           "id": "18-1",
           "idx": 1,
-          "group": null,
+          "group": 37,
           "pos": [-53.42, 272.4]
         }
       ]
@@ -1368,11 +1373,16 @@
         {
           "id": "20-1",
           "idx": 1,
-          "group": null,
+          "group": 38,
           "pos": [-234.87, 351.89]
         }
       ]
     }
   ],
-  "pois": []
+  "pois": [
+    {
+      "type": "dungeonEntrance",
+      "pos": [-159.14, 5.28]
+    }
+  ]
 }

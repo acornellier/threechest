@@ -14,9 +14,9 @@ export const dungeonPaths = new Map<DungeonKey, string>([
   ['cot', 'TheWarWithin/CityOfThreads'],
   ['db', 'TheWarWithin/TheDawnbreaker'],
   ['gb', 'TheWarWithin/GrimBatol'],
-  ['mot', 'Shadowlands/MistsOfTirnaScithe'],
-  ['nw', 'Shadowlands/TheNecroticWake'],
-  ['sob', 'BattleForAzeroth/SiegeofBoralus'],
+  ['mot', 'TheWarWithin/MistsOfTirnaScithe'],
+  ['nw', 'TheWarWithin/TheNecroticWake'],
+  ['sob', 'TheWarWithin/SiegeofBoralus'],
   ['sv', 'TheWarWithin/TheStonevault'],
 ])
 

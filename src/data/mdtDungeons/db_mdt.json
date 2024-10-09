@@ -201,7 +201,8 @@
           "group": 4,
           "pos": [-75.88, 282.87]
         }
-      ]
+      ],
+      "stealthDetect": true
     },
     {
       "id": 214762,
@@ -226,7 +227,8 @@
           "group": 6,
           "pos": [-124.27, 258.76]
         }
-      ]
+      ],
+      "stealthDetect": true
     },
     {
       "id": 210966,
@@ -269,7 +271,8 @@
           "group": null,
           "pos": [-115.32, 109.57]
         }
-      ]
+      ],
+      "stealthDetect": true
     },
     {
       "id": 213893,
@@ -872,7 +875,8 @@
           "group": 12,
           "pos": [-38.57, 66.49]
         }
-      ]
+      ],
+      "stealthDetect": true
     },
     {
       "id": 213932,
@@ -921,7 +925,8 @@
           "group": null,
           "pos": [-156.64, 141.45]
         }
-      ]
+      ],
+      "stealthDetect": true
     },
     {
       "id": 213934,
@@ -1096,7 +1101,8 @@
           "group": 16,
           "pos": [-74.66, 33.24]
         }
-      ]
+      ],
+      "stealthDetect": true
     },
     {
       "id": 211261,
@@ -1115,7 +1121,8 @@
           "group": null,
           "pos": [-72.26, 189.36]
         }
-      ]
+      ],
+      "stealthDetect": true
     },
     {
       "id": 211263,
@@ -1134,7 +1141,8 @@
           "group": null,
           "pos": [-200.6, 121.65]
         }
-      ]
+      ],
+      "stealthDetect": true
     },
     {
       "id": 211262,
@@ -1153,7 +1161,8 @@
           "group": null,
           "pos": [-72.35, 45.32]
         }
-      ]
+      ],
+      "stealthDetect": true
     },
     {
       "id": 213885,
@@ -1172,7 +1181,8 @@
           "group": null,
           "pos": [-215.55, 34.22]
         }
-      ]
+      ],
+      "stealthDetect": true
     },
     {
       "id": 211087,
@@ -1232,5 +1242,10 @@
       ]
     }
   ],
-  "pois": []
+  "pois": [
+    {
+      "type": "dungeonEntrance",
+      "pos": [-237.27, 272.01]
+    }
+  ]
 }

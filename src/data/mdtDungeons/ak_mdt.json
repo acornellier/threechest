@@ -83,13 +83,13 @@
           "id": "1-9",
           "idx": 9,
           "group": 4,
-          "pos": [-170.94, 276.22]
+          "pos": [-172.68, 275.05]
         },
         {
           "id": "1-10",
           "idx": 10,
           "group": 4,
-          "pos": [-170.66, 281]
+          "pos": [-175.03, 279.69]
         },
         {
           "id": "1-11",
@@ -209,19 +209,19 @@
           "id": "1-30",
           "idx": 30,
           "group": 12,
-          "pos": [-120.39, 255.21]
+          "pos": [-118.63, 250.87]
         },
         {
           "id": "1-31",
           "idx": 31,
           "group": 12,
-          "pos": [-124.9, 252.56]
+          "pos": [-123.14, 250.8]
         },
         {
           "id": "1-32",
           "idx": 32,
           "group": 12,
-          "pos": [-125.2, 257.76]
+          "pos": [-126.65, 253.94]
         },
         {
           "id": "1-33",
@@ -632,7 +632,7 @@
           "id": "4-2",
           "idx": 2,
           "group": 4,
-          "pos": [-166.09, 277.94]
+          "pos": [-167.4, 274.59]
         },
         {
           "id": "4-3",
@@ -644,13 +644,13 @@
           "id": "4-4",
           "idx": 4,
           "group": 2,
-          "pos": [-148.14, 298.86]
+          "pos": [-142.67, 300.1]
         },
         {
           "id": "4-5",
           "idx": 5,
           "group": 2,
-          "pos": [-150.55, 302.5]
+          "pos": [-151.48, 303.84]
         },
         {
           "id": "4-6",
@@ -777,7 +777,7 @@
       "creatureType": "Humanoid",
       "scale": 2.5,
       "isBoss": false,
-      "characteristics": ["Taunt", "Slow", "Mind Soothe"],
+      "characteristics": ["Taunt", "Mind Soothe"],
       "spawns": [
         {
           "id": "5-1",
@@ -785,7 +785,8 @@
           "group": 32,
           "pos": [-38.72, 344.74]
         }
-      ]
+      ],
+      "stealthDetect": true
     },
     {
       "id": 218324,
@@ -796,7 +797,7 @@
       "creatureType": "Humanoid",
       "scale": 2.5,
       "isBoss": false,
-      "characteristics": ["Taunt", "Slow", "Mind Soothe"],
+      "characteristics": ["Taunt", "Mind Soothe"],
       "spawns": [
         {
           "id": "6-1",
@@ -804,7 +805,8 @@
           "group": 20,
           "pos": [-49.88, 281.61]
         }
-      ]
+      ],
+      "stealthDetect": true
     },
     {
       "id": 217531,
@@ -815,7 +817,7 @@
       "creatureType": "Humanoid",
       "scale": 2.5,
       "isBoss": false,
-      "characteristics": ["Taunt", "Slow", "Mind Soothe"],
+      "characteristics": ["Taunt", "Mind Soothe"],
       "spawns": [
         {
           "id": "7-1",
@@ -823,7 +825,8 @@
           "group": 9,
           "pos": [-120.68, 214.48]
         }
-      ]
+      ],
+      "stealthDetect": true
     },
     {
       "id": 216337,
@@ -948,37 +951,25 @@
           "id": "8-16",
           "idx": 16,
           "group": 44,
-          "pos": [-86.21, 123.23]
+          "pos": [-85.82, 122.98]
         },
         {
           "id": "8-17",
           "idx": 17,
           "group": 44,
-          "pos": [-83.28, 126.11]
+          "pos": [-83.66, 125.59]
         },
         {
           "id": "8-18",
           "idx": 18,
           "group": 44,
-          "pos": [-89.69, 121.17]
+          "pos": [-88.92, 121.94]
         },
         {
           "id": "8-19",
           "idx": 19,
           "group": 44,
-          "pos": [-93.53, 119.89]
-        },
-        {
-          "id": "8-20",
-          "idx": 20,
-          "group": 46,
-          "pos": [-116.03, 131.37]
-        },
-        {
-          "id": "8-21",
-          "idx": 21,
-          "group": 46,
-          "pos": [-114.3, 128.33]
+          "pos": [-92.76, 120.53]
         },
         {
           "id": "8-22",
@@ -990,13 +981,13 @@
           "id": "8-23",
           "idx": 23,
           "group": 46,
-          "pos": [-110.54, 127.35]
+          "pos": [-110.54, 128.04]
         },
         {
           "id": "8-24",
           "idx": 24,
           "group": 46,
-          "pos": [-114.64, 134.69]
+          "pos": [-114.55, 135.29]
         },
         {
           "id": "8-25",
@@ -1148,6 +1139,12 @@
           "idx": 3,
           "group": 39,
           "pos": [-58.4, 141.7]
+        },
+        {
+          "id": "9-4",
+          "idx": 4,
+          "group": 46,
+          "pos": [-115.21, 127.86]
         },
         {
           "id": "9-5",
@@ -1315,6 +1312,12 @@
           "idx": 12,
           "group": 51,
           "pos": [-76.56, 100.34]
+        },
+        {
+          "id": "10-13",
+          "idx": 13,
+          "group": 46,
+          "pos": [-117.39, 132.03]
         }
       ]
     },
@@ -1327,7 +1330,7 @@
       "creatureType": "Humanoid",
       "scale": 1.5,
       "isBoss": false,
-      "characteristics": ["Taunt", "Slow", "Mind Soothe"],
+      "characteristics": ["Taunt", "Mind Soothe"],
       "spawns": [
         {
           "id": "11-1",
@@ -1378,7 +1381,8 @@
           "group": 70,
           "pos": [-61.08, 58.91]
         }
-      ]
+      ],
+      "stealthDetect": true
     },
     {
       "id": 216340,
@@ -1425,7 +1429,7 @@
           "id": "12-3",
           "idx": 3,
           "group": 46,
-          "pos": [-110.53, 131.74]
+          "pos": [-111.48, 132]
         },
         {
           "id": "12-4",
@@ -1451,7 +1455,8 @@
           "group": 48,
           "pos": [-105.81, 83.33]
         }
-      ]
+      ],
+      "stealthDetect": true
     },
     {
       "id": 216364,
@@ -1462,7 +1467,7 @@
       "creatureType": "Humanoid",
       "scale": 1.3,
       "isBoss": false,
-      "characteristics": ["Taunt", "Slow", "Mind Soothe"],
+      "characteristics": ["Taunt", "Mind Soothe"],
       "spawns": [
         {
           "id": "13-1",
@@ -1517,7 +1522,8 @@
           "group": 62,
           "pos": [-202.86, 154.64]
         }
-      ]
+      ],
+      "stealthDetect": true
     },
     {
       "id": 216365,
@@ -1654,7 +1660,8 @@
             [-195.43, 136.64]
           ]
         }
-      ]
+      ],
+      "stealthDetect": true
     },
     {
       "id": 216363,
@@ -1828,7 +1835,7 @@
       "creatureType": "Beast",
       "scale": 2,
       "isBoss": true,
-      "characteristics": ["Taunt", "Slow"],
+      "characteristics": ["Taunt"],
       "spawns": [
         {
           "id": "17-1",
@@ -1847,12 +1854,12 @@
       "creatureType": "Humanoid",
       "scale": 1.8,
       "isBoss": true,
-      "characteristics": ["Taunt", "Slow", "Mind Soothe"],
+      "characteristics": ["Taunt", "Mind Soothe"],
       "spawns": [
         {
           "id": "18-1",
           "idx": 1,
-          "group": null,
+          "group": 71,
           "pos": [-87.94, 48.93]
         }
       ]
@@ -1889,7 +1896,7 @@
         {
           "id": "19-1",
           "idx": 1,
-          "group": null,
+          "group": 71,
           "pos": [-103.14, 55.49]
         }
       ]
@@ -1903,7 +1910,7 @@
       "creatureType": "Humanoid",
       "scale": 1.8,
       "isBoss": true,
-      "characteristics": ["Taunt", "Slow", "Mind Soothe"],
+      "characteristics": ["Taunt", "Mind Soothe"],
       "spawns": [
         {
           "id": "20-1",
@@ -1914,5 +1921,30 @@
       ]
     }
   ],
-  "pois": []
+  "pois": [
+    {
+      "type": "dungeonEntrance",
+      "pos": [-221.9, 359.1]
+    },
+    {
+      "type": "araKaraItem",
+      "pos": [-97.99, 117.49]
+    },
+    {
+      "type": "araKaraItem",
+      "pos": [-168.6, 280.77]
+    },
+    {
+      "type": "araKaraItem",
+      "pos": [-140.79, 46.67]
+    },
+    {
+      "type": "araKaraItem",
+      "pos": [-120.38, 256.9]
+    },
+    {
+      "type": "araKaraItem",
+      "pos": [-148.9, 298.13]
+    }
+  ]
 }
