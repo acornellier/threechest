@@ -1,1 +1,1851 @@
-{"dungeonIndex":114,"totalCount":742,"enemies":[{"id":220195,"enemyIndex":1,"name":"Sureki Silkbinder","count":10,"health":17106549,"creatureType":"Humanoid","scale":1.2,"isBoss":false,"characteristics":["Taunt","Incapacitate","Silence","Knock","Grip","Mind Control","Polymorph","Root","Fear","Disorient","Repentance","Imprison","Sap","Stun","Slow","Sleep Walk","Mind Soothe"],"spawns":[{"id":"1-1","idx":1,"group":11,"pos":[-61.11,206.63]},{"id":"1-2","idx":2,"group":1,"pos":[-52.28,145.59]},{"id":"1-3","idx":3,"group":2,"pos":[-62.44,165.01]},{"id":"1-4","idx":4,"group":2,"pos":[-56.34,159.58]},{"id":"1-5","idx":5,"group":50,"pos":[-53.4,188.06]},{"id":"1-6","idx":6,"group":10,"pos":[-43.74,197.41]},{"id":"1-7","idx":7,"group":11,"pos":[-50.64,206.91]},{"id":"1-8","idx":8,"group":null,"pos":[-66.86,186.91]},{"id":"1-9","idx":9,"group":6,"pos":[-88.52,192.94]},{"id":"1-10","idx":10,"group":6,"pos":[-88.7,200.19]},{"id":"1-11","idx":11,"group":7,"pos":[-74.61,200.12]},{"id":"1-12","idx":12,"group":7,"pos":[-71.69,204.42]},{"id":"1-13","idx":13,"group":23,"pos":[-101.61,184.85]},{"id":"1-14","idx":14,"group":22,"pos":[-115.68,187.35]},{"id":"1-15","idx":15,"group":20,"pos":[-102.13,200.04]},{"id":"1-16","idx":16,"group":20,"pos":[-110.45,206.21]},{"id":"1-17","idx":17,"group":13,"pos":[-44.1,215.05]},{"id":"1-18","idx":18,"group":15,"pos":[-66.11,214.78]},{"id":"1-19","idx":19,"group":15,"pos":[-75.73,218.08]},{"id":"1-20","idx":20,"group":null,"pos":[-58.37,238.77]},{"id":"1-21","idx":21,"group":null,"pos":[-75.03,238.96]},{"id":"1-22","idx":22,"group":17,"pos":[-85.36,230.91]}]},{"id":220193,"enemyIndex":2,"name":"Sureki Venomblade","count":10,"health":18300028,"creatureType":"Uncategorized","scale":1.2,"isBoss":false,"characteristics":["Taunt","Incapacitate","Silence","Knock","Grip","Root","Fear","Disorient","Stun","Slow","Sleep Walk"],"spawns":[{"id":"2-1","idx":1,"group":10,"pos":[-38.82,200.24]},{"id":"2-2","idx":2,"group":1,"pos":[-52.18,151.28]},{"id":"2-3","idx":3,"group":2,"pos":[-62.31,159.36]},{"id":"2-4","idx":4,"group":2,"pos":[-56.52,165.04]},{"id":"2-5","idx":5,"group":50,"pos":[-49.73,184.3]},{"id":"2-6","idx":6,"group":10,"pos":[-38.89,194.46]},{"id":"2-7","idx":7,"group":11,"pos":[-55.65,207.05]},{"id":"2-8","idx":8,"group":5,"pos":[-79.23,172.51]},{"id":"2-9","idx":9,"group":5,"pos":[-84.41,172.19]},{"id":"2-10","idx":10,"group":22,"pos":[-115.59,182.41]},{"id":"2-11","idx":11,"group":20,"pos":[-106.36,202.98]},{"id":"2-12","idx":12,"group":13,"pos":[-52.41,214.94]},{"id":"2-13","idx":13,"group":15,"pos":[-71.03,216.52]},{"id":"2-14","idx":14,"group":16,"pos":[-64.77,244.55]},{"id":"2-15","idx":15,"group":16,"pos":[-69.96,244.68]},{"id":"2-16","idx":16,"group":17,"pos":[-85.55,225.72]},{"id":"2-17","idx":17,"group":17,"pos":[-85.05,235.98]}]},{"id":220197,"enemyIndex":3,"name":"Royal Swarmguard","count":20,"health":35804403,"creatureType":"Demon","scale":1.4,"isBoss":false,"characteristics":["Taunt"],"spawns":[{"id":"3-1","idx":1,"group":4,"pos":[-64.37,174.63]},{"id":"3-2","idx":2,"group":8,"pos":[-78.99,188.76],"patrol":[[-78.99,188.76],[-87.89,181.79],[-78.99,188.76],[-68.81,194.31],[-63.32,196.46],[-68.81,194.31]]},{"id":"3-3","idx":3,"group":6,"pos":[-84.63,196.43]},{"id":"3-4","idx":4,"group":21,"pos":[-114.2,196.01],"patrol":[[-116.23,196.13],[-112.22,199.68],[-107.57,198.01],[-105.3,193.96],[-108.16,190.38],[-110.67,190.14],[-113.53,191.45]]},{"id":"3-5","idx":5,"group":18,"pos":[-91.42,217.78]},{"id":"3-6","idx":6,"group":13,"pos":[-48.41,219.68]},{"id":"3-7","idx":7,"group":15,"pos":[-69.1,221.89]}]},{"id":220196,"enemyIndex":4,"name":"Herald Of Ansurek","count":20,"health":31826136,"creatureType":"Humanoid","scale":1.4,"isBoss":false,"characteristics":["Taunt","Mind Soothe"],"spawns":[{"id":"4-1","idx":1,"group":null,"pos":[-48.08,174.63]},{"id":"4-2","idx":2,"group":5,"pos":[-81.96,176.92]},{"id":"4-3","idx":3,"group":7,"pos":[-77.45,205.07]},{"id":"4-4","idx":4,"group":20,"pos":[-102.84,207.02]},{"id":"4-5","idx":5,"group":18,"pos":[-95.96,212.74]},{"id":"4-6","idx":6,"group":null,"pos":[-65.86,235.45]},{"id":"4-7","idx":7,"group":17,"pos":[-79.67,231.13]},{"id":"4-8","idx":8,"group":36,"pos":[-232.61,213.06]}]},{"id":219984,"enemyIndex":5,"name":"Xephitik","count":8,"health":29837003,"creatureType":"Uncategorized","scale":1.8,"isBoss":false,"characteristics":["Taunt"],"spawns":[{"id":"5-1","idx":1,"group":null,"pos":[-127.88,249.98]}]},{"id":219983,"enemyIndex":6,"name":"Eye Of The Queen","count":20,"health":35804403,"creatureType":"Humanoid","scale":2,"isBoss":false,"characteristics":["Taunt","Mind Soothe"],"spawns":[{"id":"6-1","idx":1,"group":null,"pos":[-140.98,264.52]},{"id":"6-2","idx":2,"group":25,"pos":[-123.31,283.59]},{"id":"6-3","idx":3,"group":26,"pos":[-152.9,317.72]},{"id":"6-4","idx":4,"group":27,"pos":[-152.79,246.42]}]},{"id":223182,"enemyIndex":7,"name":"Web Marauder","count":14,"health":25858736,"creatureType":"Humanoid","scale":1.2,"isBoss":false,"characteristics":["Taunt","Incapacitate","Silence","Knock","Grip","Mind Control","Polymorph","Root","Fear","Disorient","Repentance","Imprison","Sap","Stun","Slow","Sleep Walk","Mind Soothe"],"spawns":[{"id":"7-1","idx":1,"group":25,"pos":[-130.62,286.89]},{"id":"7-2","idx":2,"group":26,"pos":[-159.73,321.36]},{"id":"7-3","idx":3,"group":27,"pos":[-158.4,251.46]}]},{"id":223181,"enemyIndex":8,"name":"Agile Pursuer","count":14,"health":19891335,"creatureType":"Humanoid","scale":1.2,"isBoss":false,"characteristics":["Taunt","Incapacitate","Silence","Knock","Grip","Mind Control","Polymorph","Root","Fear","Disorient","Repentance","Imprison","Sap","Stun","Slow","Sleep Walk","Mind Soothe"],"spawns":[{"id":"8-1","idx":1,"group":25,"pos":[-129.66,278.68]},{"id":"8-2","idx":2,"group":27,"pos":[-163.69,246.52]},{"id":"8-3","idx":3,"group":32,"pos":[-223.53,258.47]},{"id":"8-4","idx":4,"group":32,"pos":[-228.37,249.92]}]},{"id":216329,"enemyIndex":9,"name":"Congealed Droplet","count":1,"health":3978267,"creatureType":"Aberration","scale":1,"isBoss":false,"characteristics":["Taunt","Incapacitate","Silence","Knock","Grip","Root","Fear","Banish","Disorient","Stun","Slow","Sleep Walk"],"spawns":[{"id":"9-1","idx":1,"group":40,"pos":[-182.58,58.85]},{"id":"9-2","idx":2,"group":40,"pos":[-182.73,62.85]},{"id":"9-3","idx":3,"group":40,"pos":[-182.85,67.08]},{"id":"9-4","idx":4,"group":40,"pos":[-182.81,71.31]},{"id":"9-5","idx":5,"group":40,"pos":[-182.84,75.49]},{"id":"9-6","idx":6,"group":40,"pos":[-187.11,58.83]},{"id":"9-7","idx":7,"group":40,"pos":[-187.23,62.79]},{"id":"9-8","idx":8,"group":40,"pos":[-187.3,66.99]},{"id":"9-9","idx":9,"group":40,"pos":[-187.13,71.01]},{"id":"9-10","idx":10,"group":40,"pos":[-187.13,75.33]}]},{"id":220199,"enemyIndex":10,"name":"Battle Scarab","count":1,"health":3978267,"creatureType":"Beast","scale":0.6,"isBoss":false,"characteristics":["Taunt","Incapacitate","Silence","Knock","Grip","Mind Control","Polymorph","Root","Fear","Disorient","Imprison","Sap","Stun","Slow","Sleep Walk","Scare Beast","Hibernate"],"spawns":[{"id":"10-1","idx":1,"group":3,"pos":[-37.59,159.17]},{"id":"10-2","idx":2,"group":3,"pos":[-40.21,159.11]},{"id":"10-3","idx":3,"group":3,"pos":[-39.06,161.57]},{"id":"10-4","idx":4,"group":4,"pos":[-68.99,172.65]},{"id":"10-5","idx":5,"group":4,"pos":[-69.2,176.2]},{"id":"10-6","idx":6,"group":4,"pos":[-63.04,179.68]},{"id":"10-7","idx":7,"group":4,"pos":[-67.2,179.06]},{"id":"10-8","idx":8,"group":9,"pos":[-59.56,188.19]},{"id":"10-9","idx":9,"group":9,"pos":[-61.06,190.29]},{"id":"10-10","idx":10,"group":9,"pos":[-58.28,190.32]},{"id":"10-11","idx":11,"group":12,"pos":[-38.55,208.7]},{"id":"10-12","idx":12,"group":12,"pos":[-42.09,208.7]},{"id":"10-13","idx":13,"group":12,"pos":[-40.22,206.17]},{"id":"10-14","idx":14,"group":8,"pos":[-75.31,186.17]},{"id":"10-15","idx":15,"group":8,"pos":[-74.51,188.89]},{"id":"10-16","idx":16,"group":8,"pos":[-75.43,191.82]},{"id":"10-17","idx":17,"group":8,"pos":[-78.2,192.92]},{"id":"10-18","idx":18,"group":6,"pos":[-93,192.09]},{"id":"10-19","idx":19,"group":6,"pos":[-92.84,194.75]},{"id":"10-20","idx":20,"group":6,"pos":[-92.89,197.28]},{"id":"10-21","idx":21,"group":6,"pos":[-89.55,196.61]},{"id":"10-22","idx":22,"group":6,"pos":[-92.89,200.21]},{"id":"10-23","idx":23,"group":23,"pos":[-106.31,186.11]},{"id":"10-24","idx":24,"group":23,"pos":[-106.45,183.28]},{"id":"10-25","idx":25,"group":23,"pos":[-109.16,185.97]},{"id":"10-26","idx":26,"group":23,"pos":[-109.21,183.38]},{"id":"10-27","idx":27,"group":23,"pos":[-112.16,186.1]},{"id":"10-28","idx":28,"group":23,"pos":[-112.05,183.23]},{"id":"10-29","idx":29,"group":18,"pos":[-93.69,207.14]},{"id":"10-30","idx":30,"group":18,"pos":[-92.12,209.22]},{"id":"10-31","idx":31,"group":18,"pos":[-90.51,211.14]},{"id":"10-32","idx":32,"group":18,"pos":[-88.86,213.34]},{"id":"10-33","idx":33,"group":18,"pos":[-87.18,215.35]},{"id":"10-34","idx":34,"group":18,"pos":[-85.6,217.24]},{"id":"10-35","idx":35,"group":18,"pos":[-91.59,213.56]},{"id":"10-36","idx":36,"group":19,"pos":[-97.62,221.37]},{"id":"10-37","idx":37,"group":19,"pos":[-99.44,219.33]},{"id":"10-38","idx":38,"group":19,"pos":[-101.45,217.27]},{"id":"10-39","idx":39,"group":19,"pos":[-95.85,223.51]},{"id":"10-40","idx":40,"group":19,"pos":[-99.55,223.07]},{"id":"10-41","idx":41,"group":19,"pos":[-103.47,219.23]},{"id":"10-42","idx":42,"group":19,"pos":[-101.49,221.06]},{"id":"10-43","idx":43,"group":19,"pos":[-95.77,227.05]},{"id":"10-44","idx":44,"group":19,"pos":[-97.81,225.18]},{"id":"10-45","idx":45,"group":13,"pos":[-48.03,214.99]},{"id":"10-46","idx":46,"group":13,"pos":[-43.8,219.08]},{"id":"10-47","idx":47,"group":13,"pos":[-53.15,218.88]},{"id":"10-48","idx":48,"group":15,"pos":[-64.94,218.98]},{"id":"10-49","idx":49,"group":15,"pos":[-63.99,221.68]},{"id":"10-50","idx":50,"group":15,"pos":[-74.18,222.12]}]},{"id":223844,"enemyIndex":11,"name":"Covert Webmancer","count":14,"health":19891335,"creatureType":"Humanoid","scale":1.2,"isBoss":false,"characteristics":["Taunt","Incapacitate","Silence","Knock","Grip","Mind Control","Polymorph","Root","Fear","Disorient","Repentance","Imprison","Sap","Stun","Slow","Sleep Walk","Mind Soothe"],"spawns":[{"id":"11-1","idx":1,"group":26,"pos":[-159.18,313.43]},{"id":"11-2","idx":2,"group":27,"pos":[-159.16,241.15]}]},{"id":223357,"enemyIndex":12,"name":"Sureki Conscript","count":3,"health":11934801,"creatureType":"Humanoid","scale":0.7,"isBoss":false,"characteristics":["Taunt","Incapacitate","Silence","Knock","Grip","Mind Control","Polymorph","Root","Fear","Disorient","Repentance","Imprison","Sap","Stun","Slow","Sleep Walk","Mind Soothe"],"spawns":[{"id":"12-1","idx":1,"group":28,"pos":[-203.89,253.33]},{"id":"12-2","idx":2,"group":28,"pos":[-206.4,254.89]},{"id":"12-3","idx":3,"group":28,"pos":[-209.11,256.25]},{"id":"12-4","idx":4,"group":28,"pos":[-211.92,257.81]},{"id":"12-5","idx":5,"group":29,"pos":[-210.14,242.19]},{"id":"12-6","idx":6,"group":29,"pos":[-208.84,244.84]},{"id":"12-7","idx":7,"group":29,"pos":[-205.7,245.27]},{"id":"12-8","idx":8,"group":31,"pos":[-216.02,244.97]},{"id":"12-9","idx":9,"group":31,"pos":[-219.24,245.22]},{"id":"12-10","idx":10,"group":31,"pos":[-214.95,242.09]},{"id":"12-11","idx":11,"group":33,"pos":[-224.15,232.47]},{"id":"12-12","idx":12,"group":33,"pos":[-223.97,235.41]},{"id":"12-13","idx":13,"group":33,"pos":[-223.96,238.37]},{"id":"12-14","idx":14,"group":33,"pos":[-223.92,241.36]},{"id":"12-15","idx":15,"group":32,"pos":[-224.52,248.4]},{"id":"12-16","idx":16,"group":32,"pos":[-223.1,251.03]},{"id":"12-17","idx":17,"group":32,"pos":[-221.54,253.48]},{"id":"12-18","idx":18,"group":32,"pos":[-220.1,255.99]},{"id":"12-19","idx":19,"group":35,"pos":[-238.02,243.76]},{"id":"12-20","idx":20,"group":35,"pos":[-235.3,241.68]},{"id":"12-21","idx":21,"group":35,"pos":[-235.31,238.77]},{"id":"12-22","idx":22,"group":35,"pos":[-237.66,236.55]},{"id":"12-23","idx":23,"group":34,"pos":[-232.64,229.48]},{"id":"12-24","idx":24,"group":34,"pos":[-235.77,229.64]},{"id":"12-25","idx":25,"group":34,"pos":[-232.72,232.48]},{"id":"12-26","idx":26,"group":34,"pos":[-235.76,232.53]},{"id":"12-27","idx":27,"group":36,"pos":[-227.66,212.7]},{"id":"12-28","idx":28,"group":36,"pos":[-229.01,216.25]},{"id":"12-29","idx":29,"group":36,"pos":[-232.55,217.65]}]},{"id":220730,"enemyIndex":13,"name":"Royal Venomshell","count":20,"health":39782670,"creatureType":"Humanoid","scale":1.4,"isBoss":false,"characteristics":["Taunt","Mind Soothe"],"spawns":[{"id":"13-1","idx":1,"group":null,"pos":[-250.03,236.09]}]},{"id":216342,"enemyIndex":14,"name":"Assistant Unnaturaler","count":3,"health":7956534,"creatureType":"Humanoid","scale":1,"isBoss":false,"characteristics":["Taunt","Incapacitate","Silence","Knock","Grip","Mind Control","Polymorph","Root","Fear","Disorient","Repentance","Imprison","Sap","Stun","Slow","Sleep Walk","Mind Soothe"],"spawns":[{"id":"14-1","idx":1,"group":41,"pos":[-174.56,97.28]},{"id":"14-2","idx":2,"group":41,"pos":[-172.11,100.75]},{"id":"14-3","idx":3,"group":41,"pos":[-169.46,103.95]},{"id":"14-4","idx":4,"group":47,"pos":[-205.95,87.68]},{"id":"14-5","idx":5,"group":47,"pos":[-201.67,88.64]},{"id":"14-6","idx":6,"group":47,"pos":[-204.4,92.14]},{"id":"14-7","idx":7,"group":47,"pos":[-207.72,95.54]},{"id":"14-8","idx":8,"group":47,"pos":[-208.77,91.29]},{"id":"14-9","idx":9,"group":42,"pos":[-152.59,49.12]},{"id":"14-10","idx":10,"group":42,"pos":[-155.18,52.36]},{"id":"14-11","idx":11,"group":42,"pos":[-158.46,55.25]}]},{"id":216328,"enemyIndex":15,"name":"Unstable Test Subject","count":20,"health":31826136,"creatureType":"Humanoid","scale":1.4,"isBoss":false,"characteristics":["Taunt","Mind Soothe"],"spawns":[{"id":"15-1","idx":1,"group":42,"pos":[-159.76,48.86]},{"id":"15-2","idx":2,"group":41,"pos":[-176.97,103.79]},{"id":"15-3","idx":3,"group":47,"pos":[-211.57,85.31]}]},{"id":216339,"enemyIndex":16,"name":"Sureki Unnaturaler","count":6,"health":15913068,"creatureType":"Uncategorized","scale":1.2,"isBoss":false,"characteristics":["Taunt","Incapacitate","Silence","Knock","Grip","Root","Fear","Disorient","Stun","Slow","Sleep Walk"],"spawns":[{"id":"16-1","idx":1,"group":46,"pos":[-160.01,82.1]},{"id":"16-2","idx":2,"group":46,"pos":[-159.88,94.64]},{"id":"16-3","idx":3,"group":44,"pos":[-208.41,39.34]},{"id":"16-4","idx":4,"group":44,"pos":[-213.12,45.88]},{"id":"16-5","idx":5,"group":43,"pos":[-179.19,29.39]},{"id":"16-6","idx":6,"group":43,"pos":[-184.68,29.49]},{"id":"16-7","idx":7,"group":43,"pos":[-189.96,29.68]},{"id":"16-8","idx":8,"group":45,"pos":[-162.73,36.71]},{"id":"16-9","idx":9,"group":45,"pos":[-173.09,36.59]}]},{"id":221102,"enemyIndex":17,"name":"Elder Shadeweaver","count":40,"health":39782670,"creatureType":"Demon","scale":2,"isBoss":false,"characteristics":["Taunt"],"spawns":[{"id":"17-1","idx":1,"group":null,"pos":[-228.31,76.79]}]},{"id":221103,"enemyIndex":18,"name":"Hulking Warshell","count":40,"health":55695738,"creatureType":"Humanoid","scale":2,"isBoss":false,"characteristics":["Taunt","Mind Soothe"],"spawns":[{"id":"18-1","idx":1,"group":null,"pos":[-228.44,61.08]}]},{"id":216619,"enemyIndex":19,"name":"Orator Krixvizk","count":0,"health":139239345,"creatureType":"Humanoid","scale":1.2,"isBoss":true,"characteristics":["Taunt","Mind Soothe"],"spawns":[{"id":"19-1","idx":1,"group":null,"pos":[-107.57,231.11]}]},{"id":216648,"enemyIndex":20,"name":"Nx","count":0,"health":218804685,"creatureType":"Humanoid","scale":1.5,"isBoss":true,"characteristics":["Taunt","Mind Soothe"],"spawns":[{"id":"20-1","idx":1,"group":null,"pos":[-195.71,288.12]}]},{"id":216649,"enemyIndex":21,"name":"Vx","count":0,"health":218804685,"creatureType":"Humanoid","scale":1.5,"isBoss":true,"characteristics":["Taunt","Mind Soothe"],"spawns":[{"id":"21-1","idx":1,"group":null,"pos":[-194.94,301.82]}]},{"id":216658,"enemyIndex":22,"name":"Izo The Grand Splicer","count":0,"health":159130680,"creatureType":"Humanoid","scale":1.5,"isBoss":true,"characteristics":["Taunt","Mind Soothe"],"spawns":[{"id":"22-1","idx":1,"group":null,"pos":[-245.95,68.64]}]},{"id":216320,"enemyIndex":23,"name":"The Coaglamation","count":0,"health":159130680,"creatureType":"Elemental","scale":1.5,"isBoss":true,"characteristics":["Taunt"],"spawns":[{"id":"23-1","idx":1,"group":null,"pos":[-201.7,68.74]}]},{"id":219198,"enemyIndex":24,"name":"Ravenous Scarab","count":0,"health":3978267,"creatureType":"Beast","scale":1.5,"isBoss":false,"characteristics":["Taunt","Incapacitate","Silence","Knock","Grip","Mind Control","Polymorph","Root","Fear","Disorient","Imprison","Sap","Stun","Slow","Sleep Walk","Scare Beast","Hibernate"],"spawns":[{"id":"24-1","idx":1,"group":null,"pos":[-247.91,77.94]}]},{"id":224731,"enemyIndex":25,"name":"Web Marauder","count":14,"health":25858736,"creatureType":"Humanoid","scale":1,"isBoss":false,"characteristics":["Taunt","Incapacitate","Silence","Knock","Grip","Mind Control","Polymorph","Root","Fear","Disorient","Repentance","Imprison","Sap","Stun","Slow","Sleep Walk","Mind Soothe"],"spawns":[{"id":"25-1","idx":1,"group":28,"pos":[-205.93,258.77]},{"id":"25-2","idx":2,"group":32,"pos":[-225.51,253.85]},{"id":"25-3","idx":3,"group":30,"pos":[-211.21,233.73]},{"id":"25-4","idx":4,"group":35,"pos":[-238.8,240.12]}]},{"id":224732,"enemyIndex":26,"name":"Covert Webmancer","count":14,"health":19891335,"creatureType":"Humanoid","scale":1,"isBoss":false,"characteristics":["Taunt","Incapacitate","Silence","Knock","Grip","Mind Control","Polymorph","Root","Fear","Disorient","Repentance","Imprison","Sap","Stun","Slow","Sleep Walk","Mind Soothe"],"spawns":[{"id":"26-1","idx":1,"group":31,"pos":[-218.58,241.87]},{"id":"26-2","idx":2,"group":33,"pos":[-227.58,239.12]},{"id":"26-3","idx":3,"group":30,"pos":[-206.99,232.77]},{"id":"26-4","idx":4,"group":37,"pos":[-214.63,225.05]},{"id":"26-5","idx":5,"group":35,"pos":[-242.5,242.05]},{"id":"26-6","idx":6,"group":35,"pos":[-242.4,237.62]}]},{"id":228361,"enemyIndex":27,"name":"Agile Pursuer","count":14,"health":19891335,"creatureType":"Humanoid","scale":1,"isBoss":false,"characteristics":["Taunt","Incapacitate","Silence","Knock","Grip","Mind Control","Polymorph","Root","Fear","Disorient","Repentance","Imprison","Sap","Stun","Slow","Sleep Walk","Mind Soothe"],"spawns":[{"id":"27-1","idx":1,"group":29,"pos":[-206.31,241.6]},{"id":"27-2","idx":2,"group":33,"pos":[-227.75,235.03]},{"id":"27-3","idx":3,"group":37,"pos":[-218.23,227.62]}]},{"id":220423,"enemyIndex":28,"name":"Retired Lord Vul'azak","count":20,"health":32727423,"creatureType":"Humanoid","scale":2.1,"isBoss":false,"characteristics":["Taunt","Mind Soothe"],"spawns":[{"id":"28-1","idx":1,"group":null,"pos":[-152.5,277.4],"patrol":[[-152.5,277.4],[-157.1,266.99],[-152.5,277.4],[-145.77,283.31],[-140.33,292.6],[-142.37,305.29],[-140.33,292.6],[-145.77,283.31]]}]}],"pois":[]}
+{
+  "dungeonIndex": 114,
+  "totalCount": 742,
+  "enemies": [
+    {
+      "id": 220195,
+      "enemyIndex": 1,
+      "name": "Sureki Silkbinder",
+      "count": 10,
+      "health": 17106549,
+      "creatureType": "Humanoid",
+      "scale": 1.2,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
+        "Polymorph",
+        "Root",
+        "Fear",
+        "Disorient",
+        "Repentance",
+        "Imprison",
+        "Sap",
+        "Stun",
+        "Slow",
+        "Sleep Walk",
+        "Mind Soothe"
+      ],
+      "spawns": [
+        {
+          "id": "1-1",
+          "idx": 1,
+          "group": 11,
+          "pos": [-61.11, 206.63]
+        },
+        {
+          "id": "1-2",
+          "idx": 2,
+          "group": 1,
+          "pos": [-52.28, 145.59]
+        },
+        {
+          "id": "1-3",
+          "idx": 3,
+          "group": 2,
+          "pos": [-62.44, 165.01]
+        },
+        {
+          "id": "1-4",
+          "idx": 4,
+          "group": 2,
+          "pos": [-56.34, 159.58]
+        },
+        {
+          "id": "1-5",
+          "idx": 5,
+          "group": 50,
+          "pos": [-53.4, 188.06]
+        },
+        {
+          "id": "1-6",
+          "idx": 6,
+          "group": 10,
+          "pos": [-43.74, 197.41]
+        },
+        {
+          "id": "1-7",
+          "idx": 7,
+          "group": 11,
+          "pos": [-50.64, 206.91]
+        },
+        {
+          "id": "1-8",
+          "idx": 8,
+          "group": null,
+          "pos": [-66.86, 186.91]
+        },
+        {
+          "id": "1-9",
+          "idx": 9,
+          "group": 6,
+          "pos": [-88.52, 192.94]
+        },
+        {
+          "id": "1-10",
+          "idx": 10,
+          "group": 6,
+          "pos": [-88.7, 200.19]
+        },
+        {
+          "id": "1-11",
+          "idx": 11,
+          "group": 7,
+          "pos": [-74.61, 200.12]
+        },
+        {
+          "id": "1-12",
+          "idx": 12,
+          "group": 7,
+          "pos": [-71.69, 204.42]
+        },
+        {
+          "id": "1-13",
+          "idx": 13,
+          "group": 23,
+          "pos": [-101.61, 184.85]
+        },
+        {
+          "id": "1-14",
+          "idx": 14,
+          "group": 22,
+          "pos": [-115.68, 187.35]
+        },
+        {
+          "id": "1-15",
+          "idx": 15,
+          "group": 20,
+          "pos": [-102.13, 200.04]
+        },
+        {
+          "id": "1-16",
+          "idx": 16,
+          "group": 20,
+          "pos": [-110.45, 206.21]
+        },
+        {
+          "id": "1-17",
+          "idx": 17,
+          "group": 13,
+          "pos": [-44.1, 215.05]
+        },
+        {
+          "id": "1-18",
+          "idx": 18,
+          "group": 15,
+          "pos": [-66.11, 214.78]
+        },
+        {
+          "id": "1-19",
+          "idx": 19,
+          "group": 15,
+          "pos": [-75.73, 218.08]
+        },
+        {
+          "id": "1-20",
+          "idx": 20,
+          "group": null,
+          "pos": [-58.37, 238.77]
+        },
+        {
+          "id": "1-21",
+          "idx": 21,
+          "group": null,
+          "pos": [-75.03, 238.96]
+        },
+        {
+          "id": "1-22",
+          "idx": 22,
+          "group": 17,
+          "pos": [-85.36, 230.91]
+        }
+      ]
+    },
+    {
+      "id": 220193,
+      "enemyIndex": 2,
+      "name": "Sureki Venomblade",
+      "count": 10,
+      "health": 18300028,
+      "creatureType": "Uncategorized",
+      "scale": 1.2,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Knock",
+        "Grip",
+        "Root",
+        "Fear",
+        "Disorient",
+        "Stun",
+        "Slow",
+        "Sleep Walk"
+      ],
+      "spawns": [
+        {
+          "id": "2-1",
+          "idx": 1,
+          "group": 10,
+          "pos": [-38.82, 200.24]
+        },
+        {
+          "id": "2-2",
+          "idx": 2,
+          "group": 1,
+          "pos": [-52.18, 151.28]
+        },
+        {
+          "id": "2-3",
+          "idx": 3,
+          "group": 2,
+          "pos": [-62.31, 159.36]
+        },
+        {
+          "id": "2-4",
+          "idx": 4,
+          "group": 2,
+          "pos": [-56.52, 165.04]
+        },
+        {
+          "id": "2-5",
+          "idx": 5,
+          "group": 50,
+          "pos": [-49.73, 184.3]
+        },
+        {
+          "id": "2-6",
+          "idx": 6,
+          "group": 10,
+          "pos": [-38.89, 194.46]
+        },
+        {
+          "id": "2-7",
+          "idx": 7,
+          "group": 11,
+          "pos": [-55.65, 207.05]
+        },
+        {
+          "id": "2-8",
+          "idx": 8,
+          "group": 5,
+          "pos": [-79.23, 172.51]
+        },
+        {
+          "id": "2-9",
+          "idx": 9,
+          "group": 5,
+          "pos": [-84.41, 172.19]
+        },
+        {
+          "id": "2-10",
+          "idx": 10,
+          "group": 22,
+          "pos": [-115.59, 182.41]
+        },
+        {
+          "id": "2-11",
+          "idx": 11,
+          "group": 20,
+          "pos": [-106.36, 202.98]
+        },
+        {
+          "id": "2-12",
+          "idx": 12,
+          "group": 13,
+          "pos": [-52.41, 214.94]
+        },
+        {
+          "id": "2-13",
+          "idx": 13,
+          "group": 15,
+          "pos": [-71.03, 216.52]
+        },
+        {
+          "id": "2-14",
+          "idx": 14,
+          "group": 16,
+          "pos": [-64.77, 244.55]
+        },
+        {
+          "id": "2-15",
+          "idx": 15,
+          "group": 16,
+          "pos": [-69.96, 244.68]
+        },
+        {
+          "id": "2-16",
+          "idx": 16,
+          "group": 17,
+          "pos": [-85.55, 225.72]
+        },
+        {
+          "id": "2-17",
+          "idx": 17,
+          "group": 17,
+          "pos": [-85.05, 235.98]
+        }
+      ]
+    },
+    {
+      "id": 220197,
+      "enemyIndex": 3,
+      "name": "Royal Swarmguard",
+      "count": 20,
+      "health": 35804403,
+      "creatureType": "Demon",
+      "scale": 1.4,
+      "isBoss": false,
+      "characteristics": ["Taunt"],
+      "spawns": [
+        {
+          "id": "3-1",
+          "idx": 1,
+          "group": 4,
+          "pos": [-64.37, 174.63]
+        },
+        {
+          "id": "3-2",
+          "idx": 2,
+          "group": 8,
+          "pos": [-78.99, 188.76],
+          "patrol": [
+            [-78.99, 188.76],
+            [-87.89, 181.79],
+            [-78.99, 188.76],
+            [-68.81, 194.31],
+            [-63.32, 196.46],
+            [-68.81, 194.31]
+          ]
+        },
+        {
+          "id": "3-3",
+          "idx": 3,
+          "group": 6,
+          "pos": [-84.63, 196.43]
+        },
+        {
+          "id": "3-4",
+          "idx": 4,
+          "group": 21,
+          "pos": [-114.2, 196.01],
+          "patrol": [
+            [-116.23, 196.13],
+            [-112.22, 199.68],
+            [-107.57, 198.01],
+            [-105.3, 193.96],
+            [-108.16, 190.38],
+            [-110.67, 190.14],
+            [-113.53, 191.45]
+          ]
+        },
+        {
+          "id": "3-5",
+          "idx": 5,
+          "group": 18,
+          "pos": [-91.42, 217.78]
+        },
+        {
+          "id": "3-6",
+          "idx": 6,
+          "group": 13,
+          "pos": [-48.41, 219.68]
+        },
+        {
+          "id": "3-7",
+          "idx": 7,
+          "group": 15,
+          "pos": [-69.1, 221.89]
+        }
+      ]
+    },
+    {
+      "id": 220196,
+      "enemyIndex": 4,
+      "name": "Herald Of Ansurek",
+      "count": 20,
+      "health": 31826136,
+      "creatureType": "Humanoid",
+      "scale": 1.4,
+      "isBoss": false,
+      "characteristics": ["Taunt", "Mind Soothe"],
+      "spawns": [
+        {
+          "id": "4-1",
+          "idx": 1,
+          "group": null,
+          "pos": [-48.08, 174.63]
+        },
+        {
+          "id": "4-2",
+          "idx": 2,
+          "group": 5,
+          "pos": [-81.96, 176.92]
+        },
+        {
+          "id": "4-3",
+          "idx": 3,
+          "group": 7,
+          "pos": [-77.45, 205.07]
+        },
+        {
+          "id": "4-4",
+          "idx": 4,
+          "group": 20,
+          "pos": [-102.84, 207.02]
+        },
+        {
+          "id": "4-5",
+          "idx": 5,
+          "group": 18,
+          "pos": [-95.96, 212.74]
+        },
+        {
+          "id": "4-6",
+          "idx": 6,
+          "group": null,
+          "pos": [-65.86, 235.45]
+        },
+        {
+          "id": "4-7",
+          "idx": 7,
+          "group": 17,
+          "pos": [-79.67, 231.13]
+        },
+        {
+          "id": "4-8",
+          "idx": 8,
+          "group": 36,
+          "pos": [-232.61, 213.06]
+        }
+      ]
+    },
+    {
+      "id": 219984,
+      "enemyIndex": 5,
+      "name": "Xephitik",
+      "count": 8,
+      "health": 29837003,
+      "creatureType": "Uncategorized",
+      "scale": 1.8,
+      "isBoss": false,
+      "characteristics": ["Taunt"],
+      "spawns": [
+        {
+          "id": "5-1",
+          "idx": 1,
+          "group": null,
+          "pos": [-127.88, 249.98]
+        }
+      ]
+    },
+    {
+      "id": 219983,
+      "enemyIndex": 6,
+      "name": "Eye Of The Queen",
+      "count": 20,
+      "health": 35804403,
+      "creatureType": "Humanoid",
+      "scale": 2,
+      "isBoss": false,
+      "characteristics": ["Taunt", "Mind Soothe"],
+      "spawns": [
+        {
+          "id": "6-1",
+          "idx": 1,
+          "group": null,
+          "pos": [-140.98, 264.52]
+        },
+        {
+          "id": "6-2",
+          "idx": 2,
+          "group": 25,
+          "pos": [-123.31, 283.59]
+        },
+        {
+          "id": "6-3",
+          "idx": 3,
+          "group": 26,
+          "pos": [-152.9, 317.72]
+        },
+        {
+          "id": "6-4",
+          "idx": 4,
+          "group": 27,
+          "pos": [-152.79, 246.42]
+        }
+      ]
+    },
+    {
+      "id": 223182,
+      "enemyIndex": 7,
+      "name": "Web Marauder",
+      "count": 14,
+      "health": 25858736,
+      "creatureType": "Humanoid",
+      "scale": 1.2,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
+        "Polymorph",
+        "Root",
+        "Fear",
+        "Disorient",
+        "Repentance",
+        "Imprison",
+        "Sap",
+        "Stun",
+        "Slow",
+        "Sleep Walk",
+        "Mind Soothe"
+      ],
+      "spawns": [
+        {
+          "id": "7-1",
+          "idx": 1,
+          "group": 25,
+          "pos": [-130.62, 286.89]
+        },
+        {
+          "id": "7-2",
+          "idx": 2,
+          "group": 26,
+          "pos": [-159.73, 321.36]
+        },
+        {
+          "id": "7-3",
+          "idx": 3,
+          "group": 27,
+          "pos": [-158.4, 251.46]
+        }
+      ]
+    },
+    {
+      "id": 223181,
+      "enemyIndex": 8,
+      "name": "Agile Pursuer",
+      "count": 14,
+      "health": 19891335,
+      "creatureType": "Humanoid",
+      "scale": 1.2,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
+        "Polymorph",
+        "Root",
+        "Fear",
+        "Disorient",
+        "Repentance",
+        "Imprison",
+        "Sap",
+        "Stun",
+        "Slow",
+        "Sleep Walk",
+        "Mind Soothe"
+      ],
+      "spawns": [
+        {
+          "id": "8-1",
+          "idx": 1,
+          "group": 25,
+          "pos": [-129.66, 278.68]
+        },
+        {
+          "id": "8-2",
+          "idx": 2,
+          "group": 27,
+          "pos": [-163.69, 246.52]
+        },
+        {
+          "id": "8-3",
+          "idx": 3,
+          "group": 32,
+          "pos": [-223.53, 258.47]
+        },
+        {
+          "id": "8-4",
+          "idx": 4,
+          "group": 32,
+          "pos": [-228.37, 249.92]
+        }
+      ]
+    },
+    {
+      "id": 216329,
+      "enemyIndex": 9,
+      "name": "Congealed Droplet",
+      "count": 1,
+      "health": 3978267,
+      "creatureType": "Aberration",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Knock",
+        "Grip",
+        "Root",
+        "Fear",
+        "Banish",
+        "Disorient",
+        "Stun",
+        "Slow",
+        "Sleep Walk"
+      ],
+      "spawns": [
+        {
+          "id": "9-1",
+          "idx": 1,
+          "group": 40,
+          "pos": [-182.58, 58.85]
+        },
+        {
+          "id": "9-2",
+          "idx": 2,
+          "group": 40,
+          "pos": [-182.73, 62.85]
+        },
+        {
+          "id": "9-3",
+          "idx": 3,
+          "group": 40,
+          "pos": [-182.85, 67.08]
+        },
+        {
+          "id": "9-4",
+          "idx": 4,
+          "group": 40,
+          "pos": [-182.81, 71.31]
+        },
+        {
+          "id": "9-5",
+          "idx": 5,
+          "group": 40,
+          "pos": [-182.84, 75.49]
+        },
+        {
+          "id": "9-6",
+          "idx": 6,
+          "group": 40,
+          "pos": [-187.11, 58.83]
+        },
+        {
+          "id": "9-7",
+          "idx": 7,
+          "group": 40,
+          "pos": [-187.23, 62.79]
+        },
+        {
+          "id": "9-8",
+          "idx": 8,
+          "group": 40,
+          "pos": [-187.3, 66.99]
+        },
+        {
+          "id": "9-9",
+          "idx": 9,
+          "group": 40,
+          "pos": [-187.13, 71.01]
+        },
+        {
+          "id": "9-10",
+          "idx": 10,
+          "group": 40,
+          "pos": [-187.13, 75.33]
+        }
+      ]
+    },
+    {
+      "id": 220199,
+      "enemyIndex": 10,
+      "name": "Battle Scarab",
+      "count": 1,
+      "health": 3978267,
+      "creatureType": "Beast",
+      "scale": 0.6,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
+        "Polymorph",
+        "Root",
+        "Fear",
+        "Disorient",
+        "Imprison",
+        "Sap",
+        "Stun",
+        "Slow",
+        "Sleep Walk",
+        "Scare Beast",
+        "Hibernate"
+      ],
+      "spawns": [
+        {
+          "id": "10-1",
+          "idx": 1,
+          "group": 3,
+          "pos": [-37.59, 159.17]
+        },
+        {
+          "id": "10-2",
+          "idx": 2,
+          "group": 3,
+          "pos": [-40.21, 159.11]
+        },
+        {
+          "id": "10-3",
+          "idx": 3,
+          "group": 3,
+          "pos": [-39.06, 161.57]
+        },
+        {
+          "id": "10-4",
+          "idx": 4,
+          "group": 4,
+          "pos": [-68.99, 172.65]
+        },
+        {
+          "id": "10-5",
+          "idx": 5,
+          "group": 4,
+          "pos": [-69.2, 176.2]
+        },
+        {
+          "id": "10-6",
+          "idx": 6,
+          "group": 4,
+          "pos": [-63.04, 179.68]
+        },
+        {
+          "id": "10-7",
+          "idx": 7,
+          "group": 4,
+          "pos": [-67.2, 179.06]
+        },
+        {
+          "id": "10-8",
+          "idx": 8,
+          "group": 9,
+          "pos": [-59.56, 188.19]
+        },
+        {
+          "id": "10-9",
+          "idx": 9,
+          "group": 9,
+          "pos": [-61.06, 190.29]
+        },
+        {
+          "id": "10-10",
+          "idx": 10,
+          "group": 9,
+          "pos": [-58.28, 190.32]
+        },
+        {
+          "id": "10-11",
+          "idx": 11,
+          "group": 12,
+          "pos": [-38.55, 208.7]
+        },
+        {
+          "id": "10-12",
+          "idx": 12,
+          "group": 12,
+          "pos": [-42.09, 208.7]
+        },
+        {
+          "id": "10-13",
+          "idx": 13,
+          "group": 12,
+          "pos": [-40.22, 206.17]
+        },
+        {
+          "id": "10-14",
+          "idx": 14,
+          "group": 8,
+          "pos": [-75.31, 186.17]
+        },
+        {
+          "id": "10-15",
+          "idx": 15,
+          "group": 8,
+          "pos": [-74.51, 188.89]
+        },
+        {
+          "id": "10-16",
+          "idx": 16,
+          "group": 8,
+          "pos": [-75.43, 191.82]
+        },
+        {
+          "id": "10-17",
+          "idx": 17,
+          "group": 8,
+          "pos": [-78.2, 192.92]
+        },
+        {
+          "id": "10-18",
+          "idx": 18,
+          "group": 6,
+          "pos": [-93, 192.09]
+        },
+        {
+          "id": "10-19",
+          "idx": 19,
+          "group": 6,
+          "pos": [-92.84, 194.75]
+        },
+        {
+          "id": "10-20",
+          "idx": 20,
+          "group": 6,
+          "pos": [-92.89, 197.28]
+        },
+        {
+          "id": "10-21",
+          "idx": 21,
+          "group": 6,
+          "pos": [-89.55, 196.61]
+        },
+        {
+          "id": "10-22",
+          "idx": 22,
+          "group": 6,
+          "pos": [-92.89, 200.21]
+        },
+        {
+          "id": "10-23",
+          "idx": 23,
+          "group": 23,
+          "pos": [-106.31, 186.11]
+        },
+        {
+          "id": "10-24",
+          "idx": 24,
+          "group": 23,
+          "pos": [-106.45, 183.28]
+        },
+        {
+          "id": "10-25",
+          "idx": 25,
+          "group": 23,
+          "pos": [-109.16, 185.97]
+        },
+        {
+          "id": "10-26",
+          "idx": 26,
+          "group": 23,
+          "pos": [-109.21, 183.38]
+        },
+        {
+          "id": "10-27",
+          "idx": 27,
+          "group": 23,
+          "pos": [-112.16, 186.1]
+        },
+        {
+          "id": "10-28",
+          "idx": 28,
+          "group": 23,
+          "pos": [-112.05, 183.23]
+        },
+        {
+          "id": "10-29",
+          "idx": 29,
+          "group": 18,
+          "pos": [-93.69, 207.14]
+        },
+        {
+          "id": "10-30",
+          "idx": 30,
+          "group": 18,
+          "pos": [-92.12, 209.22]
+        },
+        {
+          "id": "10-31",
+          "idx": 31,
+          "group": 18,
+          "pos": [-90.51, 211.14]
+        },
+        {
+          "id": "10-32",
+          "idx": 32,
+          "group": 18,
+          "pos": [-88.86, 213.34]
+        },
+        {
+          "id": "10-33",
+          "idx": 33,
+          "group": 18,
+          "pos": [-87.18, 215.35]
+        },
+        {
+          "id": "10-34",
+          "idx": 34,
+          "group": 18,
+          "pos": [-85.6, 217.24]
+        },
+        {
+          "id": "10-35",
+          "idx": 35,
+          "group": 18,
+          "pos": [-91.59, 213.56]
+        },
+        {
+          "id": "10-36",
+          "idx": 36,
+          "group": 19,
+          "pos": [-97.62, 221.37]
+        },
+        {
+          "id": "10-37",
+          "idx": 37,
+          "group": 19,
+          "pos": [-99.44, 219.33]
+        },
+        {
+          "id": "10-38",
+          "idx": 38,
+          "group": 19,
+          "pos": [-101.45, 217.27]
+        },
+        {
+          "id": "10-39",
+          "idx": 39,
+          "group": 19,
+          "pos": [-95.85, 223.51]
+        },
+        {
+          "id": "10-40",
+          "idx": 40,
+          "group": 19,
+          "pos": [-99.55, 223.07]
+        },
+        {
+          "id": "10-41",
+          "idx": 41,
+          "group": 19,
+          "pos": [-103.47, 219.23]
+        },
+        {
+          "id": "10-42",
+          "idx": 42,
+          "group": 19,
+          "pos": [-101.49, 221.06]
+        },
+        {
+          "id": "10-43",
+          "idx": 43,
+          "group": 19,
+          "pos": [-95.77, 227.05]
+        },
+        {
+          "id": "10-44",
+          "idx": 44,
+          "group": 19,
+          "pos": [-97.81, 225.18]
+        },
+        {
+          "id": "10-45",
+          "idx": 45,
+          "group": 13,
+          "pos": [-48.03, 214.99]
+        },
+        {
+          "id": "10-46",
+          "idx": 46,
+          "group": 13,
+          "pos": [-43.8, 219.08]
+        },
+        {
+          "id": "10-47",
+          "idx": 47,
+          "group": 13,
+          "pos": [-53.15, 218.88]
+        },
+        {
+          "id": "10-48",
+          "idx": 48,
+          "group": 15,
+          "pos": [-64.94, 218.98]
+        },
+        {
+          "id": "10-49",
+          "idx": 49,
+          "group": 15,
+          "pos": [-63.99, 221.68]
+        },
+        {
+          "id": "10-50",
+          "idx": 50,
+          "group": 15,
+          "pos": [-74.18, 222.12]
+        }
+      ]
+    },
+    {
+      "id": 223844,
+      "enemyIndex": 11,
+      "name": "Covert Webmancer",
+      "count": 14,
+      "health": 19891335,
+      "creatureType": "Humanoid",
+      "scale": 1.2,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
+        "Polymorph",
+        "Root",
+        "Fear",
+        "Disorient",
+        "Repentance",
+        "Imprison",
+        "Sap",
+        "Stun",
+        "Slow",
+        "Sleep Walk",
+        "Mind Soothe"
+      ],
+      "spawns": [
+        {
+          "id": "11-1",
+          "idx": 1,
+          "group": 26,
+          "pos": [-159.18, 313.43]
+        },
+        {
+          "id": "11-2",
+          "idx": 2,
+          "group": 27,
+          "pos": [-159.16, 241.15]
+        }
+      ]
+    },
+    {
+      "id": 223357,
+      "enemyIndex": 12,
+      "name": "Sureki Conscript",
+      "count": 3,
+      "health": 11934801,
+      "creatureType": "Humanoid",
+      "scale": 0.7,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
+        "Polymorph",
+        "Root",
+        "Fear",
+        "Disorient",
+        "Repentance",
+        "Imprison",
+        "Sap",
+        "Stun",
+        "Slow",
+        "Sleep Walk",
+        "Mind Soothe"
+      ],
+      "spawns": [
+        {
+          "id": "12-1",
+          "idx": 1,
+          "group": 28,
+          "pos": [-203.89, 253.33]
+        },
+        {
+          "id": "12-2",
+          "idx": 2,
+          "group": 28,
+          "pos": [-206.4, 254.89]
+        },
+        {
+          "id": "12-3",
+          "idx": 3,
+          "group": 28,
+          "pos": [-209.11, 256.25]
+        },
+        {
+          "id": "12-4",
+          "idx": 4,
+          "group": 28,
+          "pos": [-211.92, 257.81]
+        },
+        {
+          "id": "12-5",
+          "idx": 5,
+          "group": 29,
+          "pos": [-210.14, 242.19]
+        },
+        {
+          "id": "12-6",
+          "idx": 6,
+          "group": 29,
+          "pos": [-208.84, 244.84]
+        },
+        {
+          "id": "12-7",
+          "idx": 7,
+          "group": 29,
+          "pos": [-205.7, 245.27]
+        },
+        {
+          "id": "12-8",
+          "idx": 8,
+          "group": 31,
+          "pos": [-216.02, 244.97]
+        },
+        {
+          "id": "12-9",
+          "idx": 9,
+          "group": 31,
+          "pos": [-219.24, 245.22]
+        },
+        {
+          "id": "12-10",
+          "idx": 10,
+          "group": 31,
+          "pos": [-214.95, 242.09]
+        },
+        {
+          "id": "12-11",
+          "idx": 11,
+          "group": 33,
+          "pos": [-224.15, 232.47]
+        },
+        {
+          "id": "12-12",
+          "idx": 12,
+          "group": 33,
+          "pos": [-223.97, 235.41]
+        },
+        {
+          "id": "12-13",
+          "idx": 13,
+          "group": 33,
+          "pos": [-223.96, 238.37]
+        },
+        {
+          "id": "12-14",
+          "idx": 14,
+          "group": 33,
+          "pos": [-223.92, 241.36]
+        },
+        {
+          "id": "12-15",
+          "idx": 15,
+          "group": 32,
+          "pos": [-224.52, 248.4]
+        },
+        {
+          "id": "12-16",
+          "idx": 16,
+          "group": 32,
+          "pos": [-223.1, 251.03]
+        },
+        {
+          "id": "12-17",
+          "idx": 17,
+          "group": 32,
+          "pos": [-221.54, 253.48]
+        },
+        {
+          "id": "12-18",
+          "idx": 18,
+          "group": 32,
+          "pos": [-220.1, 255.99]
+        },
+        {
+          "id": "12-19",
+          "idx": 19,
+          "group": 35,
+          "pos": [-238.02, 243.76]
+        },
+        {
+          "id": "12-20",
+          "idx": 20,
+          "group": 35,
+          "pos": [-235.3, 241.68]
+        },
+        {
+          "id": "12-21",
+          "idx": 21,
+          "group": 35,
+          "pos": [-235.31, 238.77]
+        },
+        {
+          "id": "12-22",
+          "idx": 22,
+          "group": 35,
+          "pos": [-237.66, 236.55]
+        },
+        {
+          "id": "12-23",
+          "idx": 23,
+          "group": 34,
+          "pos": [-232.64, 229.48]
+        },
+        {
+          "id": "12-24",
+          "idx": 24,
+          "group": 34,
+          "pos": [-235.77, 229.64]
+        },
+        {
+          "id": "12-25",
+          "idx": 25,
+          "group": 34,
+          "pos": [-232.72, 232.48]
+        },
+        {
+          "id": "12-26",
+          "idx": 26,
+          "group": 34,
+          "pos": [-235.76, 232.53]
+        },
+        {
+          "id": "12-27",
+          "idx": 27,
+          "group": 36,
+          "pos": [-227.66, 212.7]
+        },
+        {
+          "id": "12-28",
+          "idx": 28,
+          "group": 36,
+          "pos": [-229.01, 216.25]
+        },
+        {
+          "id": "12-29",
+          "idx": 29,
+          "group": 36,
+          "pos": [-232.55, 217.65]
+        }
+      ]
+    },
+    {
+      "id": 220730,
+      "enemyIndex": 13,
+      "name": "Royal Venomshell",
+      "count": 20,
+      "health": 39782670,
+      "creatureType": "Humanoid",
+      "scale": 1.4,
+      "isBoss": false,
+      "characteristics": ["Taunt", "Mind Soothe"],
+      "spawns": [
+        {
+          "id": "13-1",
+          "idx": 1,
+          "group": null,
+          "pos": [-250.03, 236.09]
+        }
+      ]
+    },
+    {
+      "id": 216342,
+      "enemyIndex": 14,
+      "name": "Assistant Unnaturaler",
+      "count": 3,
+      "health": 7956534,
+      "creatureType": "Humanoid",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
+        "Polymorph",
+        "Root",
+        "Fear",
+        "Disorient",
+        "Repentance",
+        "Imprison",
+        "Sap",
+        "Stun",
+        "Slow",
+        "Sleep Walk",
+        "Mind Soothe"
+      ],
+      "spawns": [
+        {
+          "id": "14-1",
+          "idx": 1,
+          "group": 41,
+          "pos": [-174.56, 97.28]
+        },
+        {
+          "id": "14-2",
+          "idx": 2,
+          "group": 41,
+          "pos": [-172.11, 100.75]
+        },
+        {
+          "id": "14-3",
+          "idx": 3,
+          "group": 41,
+          "pos": [-169.46, 103.95]
+        },
+        {
+          "id": "14-4",
+          "idx": 4,
+          "group": 47,
+          "pos": [-205.95, 87.68]
+        },
+        {
+          "id": "14-5",
+          "idx": 5,
+          "group": 47,
+          "pos": [-201.67, 88.64]
+        },
+        {
+          "id": "14-6",
+          "idx": 6,
+          "group": 47,
+          "pos": [-204.4, 92.14]
+        },
+        {
+          "id": "14-7",
+          "idx": 7,
+          "group": 47,
+          "pos": [-207.72, 95.54]
+        },
+        {
+          "id": "14-8",
+          "idx": 8,
+          "group": 47,
+          "pos": [-208.77, 91.29]
+        },
+        {
+          "id": "14-9",
+          "idx": 9,
+          "group": 42,
+          "pos": [-152.59, 49.12]
+        },
+        {
+          "id": "14-10",
+          "idx": 10,
+          "group": 42,
+          "pos": [-155.18, 52.36]
+        },
+        {
+          "id": "14-11",
+          "idx": 11,
+          "group": 42,
+          "pos": [-158.46, 55.25]
+        }
+      ]
+    },
+    {
+      "id": 216328,
+      "enemyIndex": 15,
+      "name": "Unstable Test Subject",
+      "count": 20,
+      "health": 31826136,
+      "creatureType": "Humanoid",
+      "scale": 1.4,
+      "isBoss": false,
+      "characteristics": ["Taunt", "Mind Soothe"],
+      "spawns": [
+        {
+          "id": "15-1",
+          "idx": 1,
+          "group": 42,
+          "pos": [-159.76, 48.86]
+        },
+        {
+          "id": "15-2",
+          "idx": 2,
+          "group": 41,
+          "pos": [-176.97, 103.79]
+        },
+        {
+          "id": "15-3",
+          "idx": 3,
+          "group": 47,
+          "pos": [-211.57, 85.31]
+        }
+      ]
+    },
+    {
+      "id": 216339,
+      "enemyIndex": 16,
+      "name": "Sureki Unnaturaler",
+      "count": 6,
+      "health": 15913068,
+      "creatureType": "Uncategorized",
+      "scale": 1.2,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Knock",
+        "Grip",
+        "Root",
+        "Fear",
+        "Disorient",
+        "Stun",
+        "Slow",
+        "Sleep Walk"
+      ],
+      "spawns": [
+        {
+          "id": "16-1",
+          "idx": 1,
+          "group": 46,
+          "pos": [-160.01, 82.1]
+        },
+        {
+          "id": "16-2",
+          "idx": 2,
+          "group": 46,
+          "pos": [-159.88, 94.64]
+        },
+        {
+          "id": "16-3",
+          "idx": 3,
+          "group": 44,
+          "pos": [-208.41, 39.34]
+        },
+        {
+          "id": "16-4",
+          "idx": 4,
+          "group": 44,
+          "pos": [-213.12, 45.88]
+        },
+        {
+          "id": "16-5",
+          "idx": 5,
+          "group": 43,
+          "pos": [-179.19, 29.39]
+        },
+        {
+          "id": "16-6",
+          "idx": 6,
+          "group": 43,
+          "pos": [-184.68, 29.49]
+        },
+        {
+          "id": "16-7",
+          "idx": 7,
+          "group": 43,
+          "pos": [-189.96, 29.68]
+        },
+        {
+          "id": "16-8",
+          "idx": 8,
+          "group": 45,
+          "pos": [-162.73, 36.71]
+        },
+        {
+          "id": "16-9",
+          "idx": 9,
+          "group": 45,
+          "pos": [-173.09, 36.59]
+        }
+      ]
+    },
+    {
+      "id": 221102,
+      "enemyIndex": 17,
+      "name": "Elder Shadeweaver",
+      "count": 40,
+      "health": 39782670,
+      "creatureType": "Demon",
+      "scale": 2,
+      "isBoss": false,
+      "characteristics": ["Taunt"],
+      "spawns": [
+        {
+          "id": "17-1",
+          "idx": 1,
+          "group": null,
+          "pos": [-228.31, 76.79]
+        }
+      ]
+    },
+    {
+      "id": 221103,
+      "enemyIndex": 18,
+      "name": "Hulking Warshell",
+      "count": 40,
+      "health": 55695738,
+      "creatureType": "Humanoid",
+      "scale": 2,
+      "isBoss": false,
+      "characteristics": ["Taunt", "Mind Soothe"],
+      "spawns": [
+        {
+          "id": "18-1",
+          "idx": 1,
+          "group": null,
+          "pos": [-228.44, 61.08]
+        }
+      ]
+    },
+    {
+      "id": 216619,
+      "enemyIndex": 19,
+      "name": "Orator Krixvizk",
+      "count": 0,
+      "health": 139239345,
+      "creatureType": "Humanoid",
+      "scale": 1.2,
+      "isBoss": true,
+      "characteristics": ["Taunt", "Mind Soothe"],
+      "spawns": [
+        {
+          "id": "19-1",
+          "idx": 1,
+          "group": null,
+          "pos": [-107.57, 231.11]
+        }
+      ]
+    },
+    {
+      "id": 216648,
+      "enemyIndex": 20,
+      "name": "Nx",
+      "count": 0,
+      "health": 218804685,
+      "creatureType": "Humanoid",
+      "scale": 1.5,
+      "isBoss": true,
+      "characteristics": ["Taunt", "Mind Soothe"],
+      "spawns": [
+        {
+          "id": "20-1",
+          "idx": 1,
+          "group": null,
+          "pos": [-195.71, 288.12]
+        }
+      ]
+    },
+    {
+      "id": 216649,
+      "enemyIndex": 21,
+      "name": "Vx",
+      "count": 0,
+      "health": 218804685,
+      "creatureType": "Humanoid",
+      "scale": 1.5,
+      "isBoss": true,
+      "characteristics": ["Taunt", "Mind Soothe"],
+      "spawns": [
+        {
+          "id": "21-1",
+          "idx": 1,
+          "group": null,
+          "pos": [-194.94, 301.82]
+        }
+      ]
+    },
+    {
+      "id": 216658,
+      "enemyIndex": 22,
+      "name": "Izo The Grand Splicer",
+      "count": 0,
+      "health": 159130680,
+      "creatureType": "Humanoid",
+      "scale": 1.5,
+      "isBoss": true,
+      "characteristics": ["Taunt", "Mind Soothe"],
+      "spawns": [
+        {
+          "id": "22-1",
+          "idx": 1,
+          "group": null,
+          "pos": [-245.95, 68.64]
+        }
+      ]
+    },
+    {
+      "id": 216320,
+      "enemyIndex": 23,
+      "name": "The Coaglamation",
+      "count": 0,
+      "health": 159130680,
+      "creatureType": "Elemental",
+      "scale": 1.5,
+      "isBoss": true,
+      "characteristics": ["Taunt"],
+      "spawns": [
+        {
+          "id": "23-1",
+          "idx": 1,
+          "group": null,
+          "pos": [-201.7, 68.74]
+        }
+      ]
+    },
+    {
+      "id": 219198,
+      "enemyIndex": 24,
+      "name": "Ravenous Scarab",
+      "count": 0,
+      "health": 3978267,
+      "creatureType": "Beast",
+      "scale": 1.5,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
+        "Polymorph",
+        "Root",
+        "Fear",
+        "Disorient",
+        "Imprison",
+        "Sap",
+        "Stun",
+        "Slow",
+        "Sleep Walk",
+        "Scare Beast",
+        "Hibernate"
+      ],
+      "spawns": [
+        {
+          "id": "24-1",
+          "idx": 1,
+          "group": null,
+          "pos": [-247.91, 77.94]
+        }
+      ]
+    },
+    {
+      "id": 224731,
+      "enemyIndex": 25,
+      "name": "Web Marauder",
+      "count": 14,
+      "health": 25858736,
+      "creatureType": "Humanoid",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
+        "Polymorph",
+        "Root",
+        "Fear",
+        "Disorient",
+        "Repentance",
+        "Imprison",
+        "Sap",
+        "Stun",
+        "Slow",
+        "Sleep Walk",
+        "Mind Soothe"
+      ],
+      "spawns": [
+        {
+          "id": "25-1",
+          "idx": 1,
+          "group": 28,
+          "pos": [-205.93, 258.77]
+        },
+        {
+          "id": "25-2",
+          "idx": 2,
+          "group": 32,
+          "pos": [-225.51, 253.85]
+        },
+        {
+          "id": "25-3",
+          "idx": 3,
+          "group": 30,
+          "pos": [-211.21, 233.73]
+        },
+        {
+          "id": "25-4",
+          "idx": 4,
+          "group": 35,
+          "pos": [-238.8, 240.12]
+        }
+      ]
+    },
+    {
+      "id": 224732,
+      "enemyIndex": 26,
+      "name": "Covert Webmancer",
+      "count": 14,
+      "health": 19891335,
+      "creatureType": "Humanoid",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
+        "Polymorph",
+        "Root",
+        "Fear",
+        "Disorient",
+        "Repentance",
+        "Imprison",
+        "Sap",
+        "Stun",
+        "Slow",
+        "Sleep Walk",
+        "Mind Soothe"
+      ],
+      "spawns": [
+        {
+          "id": "26-1",
+          "idx": 1,
+          "group": 31,
+          "pos": [-218.58, 241.87]
+        },
+        {
+          "id": "26-2",
+          "idx": 2,
+          "group": 33,
+          "pos": [-227.58, 239.12]
+        },
+        {
+          "id": "26-3",
+          "idx": 3,
+          "group": 30,
+          "pos": [-206.99, 232.77]
+        },
+        {
+          "id": "26-4",
+          "idx": 4,
+          "group": 37,
+          "pos": [-214.63, 225.05]
+        },
+        {
+          "id": "26-5",
+          "idx": 5,
+          "group": 35,
+          "pos": [-242.5, 242.05]
+        },
+        {
+          "id": "26-6",
+          "idx": 6,
+          "group": 35,
+          "pos": [-242.4, 237.62]
+        }
+      ]
+    },
+    {
+      "id": 228361,
+      "enemyIndex": 27,
+      "name": "Agile Pursuer",
+      "count": 14,
+      "health": 19891335,
+      "creatureType": "Humanoid",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
+        "Polymorph",
+        "Root",
+        "Fear",
+        "Disorient",
+        "Repentance",
+        "Imprison",
+        "Sap",
+        "Stun",
+        "Slow",
+        "Sleep Walk",
+        "Mind Soothe"
+      ],
+      "spawns": [
+        {
+          "id": "27-1",
+          "idx": 1,
+          "group": 29,
+          "pos": [-206.31, 241.6]
+        },
+        {
+          "id": "27-2",
+          "idx": 2,
+          "group": 33,
+          "pos": [-227.75, 235.03]
+        },
+        {
+          "id": "27-3",
+          "idx": 3,
+          "group": 37,
+          "pos": [-218.23, 227.62]
+        }
+      ]
+    },
+    {
+      "id": 220423,
+      "enemyIndex": 28,
+      "name": "Retired Lord Vul'azak",
+      "count": 20,
+      "health": 32727423,
+      "creatureType": "Humanoid",
+      "scale": 2.1,
+      "isBoss": false,
+      "characteristics": ["Taunt", "Mind Soothe"],
+      "spawns": [
+        {
+          "id": "28-1",
+          "idx": 1,
+          "group": null,
+          "pos": [-152.5, 277.4],
+          "patrol": [
+            [-152.5, 277.4],
+            [-157.1, 266.99],
+            [-152.5, 277.4],
+            [-145.77, 283.31],
+            [-140.33, 292.6],
+            [-142.37, 305.29],
+            [-140.33, 292.6],
+            [-145.77, 283.31]
+          ]
+        }
+      ]
+    }
+  ],
+  "pois": []
+}
