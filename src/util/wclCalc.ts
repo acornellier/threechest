@@ -329,11 +329,17 @@ function calculateExactPull(
   const pullCenter = polygonCenter(filteredPositions)
   const pullMobCounts = tally(pull, ({ mobId }) => mobId)
 
-  const groups = groupsRemaining
+  let groups = groupsRemaining
     .filter(({ id }) => !groupMobSpawns[id]!.some(({ spawn }) => spawnIdsTaken.has(spawn.id)))
     .filter(({ mobCounts }) => pull.some(({ mobId }) => (mobCounts[mobId] ?? 0) > 0))
-    .filter(({ averagePos }) => pass >= 4 || distance(averagePos, pullCenter) < maxDistanceToGroup)
-    .sort((a, b) => distance(a.averagePos, pullCenter) - distance(b.averagePos, pullCenter))
+
+  if (pass < 4 && pullCenter !== null) {
+    groups = groups
+      .filter(
+        ({ averagePos }) => pass >= 4 || distance(averagePos, pullCenter!) < maxDistanceToGroup,
+      )
+      .sort((a, b) => distance(a.averagePos, pullCenter) - distance(b.averagePos, pullCenter))
+  }
 
   const pulledGroups = getPulledGroups(pullMobCounts, groups)
   if (pulledGroups === null) return null

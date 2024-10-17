@@ -7,7 +7,8 @@ export const averagePoint = (points: Point[]): Point => [
   average(points.map((point) => point[1])),
 ]
 
-export function polygonCenter(points: Point[]): Point {
+export function polygonCenter(points: Point[]): Point | null {
+  if (points.length === 0) return null
   if (points.length === 1) return points[0]!
 
   const hull = makeConvexHull(points.map((pos) => ({ pos }))).map(({ pos }) => pos)
