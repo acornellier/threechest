@@ -105,7 +105,6 @@ export function SampleRoutes({ hidden }: Props) {
   const onHover = useCallback(
     (option: SampleRouteOption | null) => {
       if (option?.route === 'TOP' || option?.route === 'DEFAULT') return
-      console.log(option?.id)
       dispatch(setPreviewRouteAsync(option ? { routeId: option.id, route: option.route } : null))
     },
     [dispatch],

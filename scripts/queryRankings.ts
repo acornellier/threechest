@@ -1,7 +1,7 @@
 import { dungeons } from '../src/data/dungeons.ts'
 import fs from 'fs'
 import { getWclRoute } from '../server/wclRoute.ts'
-import { wclResultToRoute } from '../src/util/wclCalc.ts'
+import { type WclResult, wclResultToRoute } from '../src/util/wclCalc.ts'
 import { getDirname } from '../server/files.ts'
 import { fetchTopRankings } from '../server/wclRankingsFetcher.ts'
 import type { SampleRoute } from '../src/util/types.ts'
@@ -78,8 +78,17 @@ for (const { dungeonFolder, rankings, dungeonKey } of dungeonRankings) {
     const file = `${dungeonFolder}/${toFileName(ranking.report)}`
     if (fs.existsSync(file) && !ignoreCache) continue
 
-    const { result } = await getWclRoute(code, fightID, ignoreCache)
-    const { route, errors } = wclResultToRoute(result)
+    let result: WclResult | null = null
+    try {
+      result = (await getWclRoute(code, fightID, ignoreCache)).result
+    } catch (e) {
+      if ((e as Error).message === 'You do not have permission to view this report.') {
+        console.log(`Private log: ${code}`)
+        continue
+      }
+    }
+
+    const { route, errors } = wclResultToRoute(result!)
     const tank = ranking.team.find((member) => member.role === 'Tank') ?? ranking.team[0]!
     route.name = `${tank.name}${tank.name.endsWith('s') ? "'" : "'s"} +${ranking.bracketData}`
 
