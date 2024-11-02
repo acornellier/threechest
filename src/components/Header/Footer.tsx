@@ -29,7 +29,7 @@ export function Footer() {
               Donate
             </Button>
           </a>
-          <a href="https://github.com/acornellier/keys" target="_blank" rel="noreferrer">
+          <a href="https://github.com/acornellier/threechest" target="_blank" rel="noreferrer">
             <Button Icon={GithubIcon} />
           </a>
           <a href="https://discord.gg/btHjKxn7YB" target="_blank" rel="noreferrer">
