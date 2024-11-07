@@ -181,6 +181,12 @@
           "idx": 7,
           "group": 17,
           "pos": [-94.38, 24.37]
+        },
+        {
+          "id": "2-8",
+          "idx": 8,
+          "group": 42,
+          "pos": [-199.46, 112.69]
         }
       ]
     },
@@ -193,7 +199,7 @@
       "creatureType": "Humanoid",
       "scale": 1.4,
       "isBoss": false,
-      "characteristics": ["Taunt", "Mind Soothe"],
+      "characteristics": ["Taunt", "Slow", "Mind Soothe"],
       "spawns": [
         {
           "id": "3-1",
@@ -219,7 +225,7 @@
       "creatureType": "Humanoid",
       "scale": 1.4,
       "isBoss": false,
-      "characteristics": ["Taunt", "Mind Soothe"],
+      "characteristics": ["Taunt", "Slow", "Mind Soothe"],
       "spawns": [
         {
           "id": "4-1",
@@ -245,7 +251,7 @@
       "creatureType": "Humanoid",
       "scale": 1.4,
       "isBoss": false,
-      "characteristics": ["Taunt", "Mind Soothe"],
+      "characteristics": ["Taunt", "Slow", "Mind Soothe"],
       "spawns": [
         {
           "id": "5-1",
@@ -310,12 +316,6 @@
       ],
       "spawns": [
         {
-          "id": "6-1",
-          "idx": 1,
-          "group": 42,
-          "pos": [-198.89, 112.83]
-        },
-        {
           "id": "6-2",
           "idx": 2,
           "group": 49,
@@ -373,13 +373,13 @@
           "id": "6-11",
           "idx": 11,
           "group": 21,
-          "pos": [-89.97, 55.83]
+          "pos": [-88.77, 55.16]
         },
         {
           "id": "6-12",
           "idx": 12,
           "group": 21,
-          "pos": [-94.36, 58.72]
+          "pos": [-94.07, 57.61]
         },
         {
           "id": "6-13",
@@ -493,7 +493,7 @@
           "id": "6-35",
           "idx": 35,
           "group": 43,
-          "pos": [-188.67, 96.16]
+          "pos": [-192.52, 98.8]
         },
         {
           "id": "6-36",
@@ -644,7 +644,23 @@
           "id": "7-15",
           "idx": 15,
           "group": 21,
-          "pos": [-89.71, 60.39]
+          "pos": [-89.71, 60.39],
+          "patrol": [
+            [-89.71, 60.39],
+            [-86.48, 63.02],
+            [-83.56, 65.94],
+            [-86.48, 63.02],
+            [-89.71, 60.39],
+            [-90.89, 55.51],
+            [-92.19, 52.24],
+            [-95.71, 47.26],
+            [-98.69, 43.75],
+            [-101.62, 39.91],
+            [-98.69, 43.75],
+            [-95.71, 47.26],
+            [-92.19, 52.24],
+            [-90.89, 55.51]
+          ]
         },
         {
           "id": "7-16",
@@ -746,7 +762,7 @@
           "id": "7-36",
           "idx": 36,
           "group": 43,
-          "pos": [-193.06, 99.68]
+          "pos": [-188.85, 95.83]
         },
         {
           "id": "7-37",
@@ -801,7 +817,7 @@
       "creatureType": "Elemental",
       "scale": 1.4,
       "isBoss": false,
-      "characteristics": ["Taunt"],
+      "characteristics": ["Taunt", "Slow"],
       "spawns": [
         {
           "id": "8-1",
@@ -901,7 +917,7 @@
       "enemyIndex": 9,
       "name": "Sureki Militant",
       "count": 12,
-      "health": 32754194,
+      "health": 35835879,
       "creatureType": "Humanoid",
       "scale": 1.8,
       "isBoss": false,
@@ -955,7 +971,7 @@
       "creatureType": "Humanoid",
       "scale": 1.3,
       "isBoss": false,
-      "characteristics": ["Taunt", "Mind Soothe"],
+      "characteristics": ["Taunt", "Slow", "Mind Soothe"],
       "spawns": [
         {
           "id": "10-1",
@@ -1127,11 +1143,11 @@
       "enemyIndex": 11,
       "name": "Ascendant Viscoxria",
       "count": 25,
-      "health": 56690306,
+      "health": 37826761,
       "creatureType": "Humanoid",
       "scale": 2.5,
       "isBoss": false,
-      "characteristics": ["Taunt", "Mind Soothe"],
+      "characteristics": ["Taunt", "Slow", "Mind Soothe"],
       "spawns": [
         {
           "id": "11-1",
@@ -1151,7 +1167,7 @@
       "creatureType": "Humanoid",
       "scale": 2.5,
       "isBoss": false,
-      "characteristics": ["Taunt", "Mind Soothe"],
+      "characteristics": ["Taunt", "Slow", "Mind Soothe"],
       "spawns": [
         {
           "id": "12-1",
@@ -1171,7 +1187,7 @@
       "creatureType": "Humanoid",
       "scale": 2.5,
       "isBoss": false,
-      "characteristics": ["Taunt", "Mind Soothe"],
+      "characteristics": ["Taunt", "Slow", "Mind Soothe"],
       "spawns": [
         {
           "id": "13-1",
@@ -1191,7 +1207,7 @@
       "creatureType": "Humanoid",
       "scale": 2.5,
       "isBoss": false,
-      "characteristics": ["Taunt", "Mind Soothe"],
+      "characteristics": ["Taunt", "Slow", "Mind Soothe"],
       "spawns": [
         {
           "id": "14-1",
@@ -1211,7 +1227,7 @@
       "creatureType": "Humanoid",
       "scale": 2,
       "isBoss": true,
-      "characteristics": ["Taunt", "Mind Soothe"],
+      "characteristics": ["Taunt", "Slow", "Mind Soothe"],
       "spawns": [
         {
           "id": "15-1",
@@ -1226,11 +1242,11 @@
       "enemyIndex": 16,
       "name": "Anubikkaj",
       "count": 0,
-      "health": 208859018,
+      "health": 139349505,
       "creatureType": "Humanoid",
       "scale": 1.7,
       "isBoss": true,
-      "characteristics": ["Taunt", "Mind Soothe"],
+      "characteristics": ["Taunt", "Slow", "Mind Soothe"],
       "spawns": [
         {
           "id": "16-1",
@@ -1249,7 +1265,7 @@
       "creatureType": "Humanoid",
       "scale": 2,
       "isBoss": true,
-      "characteristics": ["Taunt", "Mind Soothe"],
+      "characteristics": ["Taunt", "Slow", "Mind Soothe"],
       "spawns": [
         {
           "id": "17-1",
