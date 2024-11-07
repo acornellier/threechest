@@ -240,12 +240,16 @@ function getPullMobIds(events: WclEventSimplified[], dungeon: Dungeon) {
       currentPull = newPull()
     }
 
+    if (event.mapID && !mapBounds[event.mapID]) {
+      console.warn(`Map ID ${event.mapID} bounds missing from mapBounds`)
+    }
+
     currentTimestamp = event.timestamp
     currentPull.push({
       timestamp: event.timestamp,
       mobId: event.gameId,
       pos:
-        event.x && event.y && event.mapID
+        event.x && event.y && event.mapID && mapBounds[event.mapID]
           ? wclPointToLeafletPoint({ x: event.x, y: event.y, mapID: event.mapID })
           : undefined,
     })
