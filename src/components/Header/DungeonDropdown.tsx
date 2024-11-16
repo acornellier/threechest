@@ -32,6 +32,7 @@ export function DungeonDropdown() {
             src={`https://wow.zamimg.com/images/wow/icons/large/${dungeon.icon}.jpg`}
             alt={dungeon.name}
           />
+          <div className="absolute bottom-0 text-outline">{dungeon.key.toUpperCase()}</div>
         </Button>
       ))}
     </div>
