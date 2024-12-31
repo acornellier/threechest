@@ -9,16 +9,7 @@ import type { DungeonKey } from '../src/data/dungeonKeys.ts'
 
 const dirname = getDirname(import.meta.url)
 
-export const dungeonPaths = new Map<DungeonKey, string>([
-  ['ak', 'TheWarWithin/AraKara'],
-  ['cot', 'TheWarWithin/CityOfThreads'],
-  ['db', 'TheWarWithin/TheDawnbreaker'],
-  ['gb', 'TheWarWithin/GrimBatol'],
-  ['mot', 'TheWarWithin/MistsOfTirnaScithe'],
-  ['nw', 'TheWarWithin/TheNecroticWake'],
-  ['sob', 'TheWarWithin/SiegeofBoralus'],
-  ['sv', 'TheWarWithin/TheStonevault'],
-])
+export const dungeonPaths = new Map<DungeonKey, string>([['top', 'TheWarWithin/TheaterOfPain']])
 
 const filterDungeonKey = process.argv[2]
 

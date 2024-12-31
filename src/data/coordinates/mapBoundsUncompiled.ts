@@ -18,18 +18,9 @@ interface MapBounds {
 
 export type MapBoundsByUiMapId = Record<number, MapBounds>
 
+// https://wago.tools/db2/Map
 const mapIds: number[] = [
-  2660, // ak
-  2669, // cot
-  2601, // cot 2
-  2662, // db
-  670, // gb
-  2290, // mot
-  2286, // nw
-  2222, // nw 2
-  1822, // sob
-  1643, // sob 2
-  2652, // sv
+  2293, // top
 ]
 
 export const mapBoundsUncompiled = (uimapassignment as UiMapAssignment[]).reduce(

@@ -10,71 +10,15 @@ export const dungeonData = (
   mobSpawnsList: Object.values(mdtMobSpawns[key]),
 })
 
-const ak: Dungeon = {
-  name: 'Ara-Kara',
-  key: 'ak',
-  icon: 'inv_achievement_dungeon_arak-ara',
-  wclEncounterId: 12660,
-  ...dungeonData('ak'),
+const top: Dungeon = {
+  name: 'Theater of Pain',
+  key: 'top',
+  icon: 'achievement_dungeon_theatreofpain',
+  wclEncounterId: 12293,
+  ...dungeonData('top'),
 }
 
-const cot: Dungeon = {
-  name: 'City of Threads',
-  key: 'cot',
-  icon: 'inv_achievement_dungeon_cityofthreads',
-  wclEncounterId: 12669,
-  ...dungeonData('cot'),
-}
-
-const db: Dungeon = {
-  name: 'Dawnbreaker',
-  key: 'db',
-  icon: 'inv_achievement_dungeon_dawnbreaker',
-  // wclEncounterId: 12662,
-  ...dungeonData('db'),
-}
-
-const gb: Dungeon = {
-  name: 'Grim Batol',
-  key: 'gb',
-  icon: 'achievement_dungeon_grimbatol',
-  wclEncounterId: 60670,
-  ...dungeonData('gb'),
-}
-
-const mot: Dungeon = {
-  name: 'Mists of Tirna Scithe',
-  key: 'mot',
-  icon: 'achievement_dungeon_mistsoftirnascithe',
-  wclEncounterId: 62290,
-  ...dungeonData('mot'),
-}
-
-const nw: Dungeon = {
-  name: 'Necrotic Wake',
-  key: 'nw',
-  icon: 'achievement_dungeon_theneroticwake',
-  ...dungeonData('nw'),
-  wclEncounterId: 62286,
-}
-
-const sob: Dungeon = {
-  name: 'Siege of Boralus',
-  key: 'sob',
-  icon: 'achievement_dungeon_siegeofboralus',
-  wclEncounterId: 61822,
-  ...dungeonData('sob'),
-}
-
-const sv: Dungeon = {
-  name: 'Stonevault',
-  key: 'sv',
-  icon: 'inv_achievement_dungeon_stonevault',
-  wclEncounterId: 12652,
-  ...dungeonData('sv'),
-}
-
-export const dungeons = [ak, cot, db, gb, mot, nw, sob, sv]
+export const dungeons = [top]
 
 export const dungeonsByKey = dungeons.reduce(
   (acc, dungeon) => {
