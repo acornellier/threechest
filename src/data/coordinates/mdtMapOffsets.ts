@@ -19,6 +19,42 @@ export interface MapOffset {
 // scaleY: originalHeight / mdtHeight
 // rotation: negative rotation
 export const mdtMapOffsets: Record<number, MapOffset> = {
+  // mw
+  1573: {
+    x: -154 / 1920,
+    y: -64 / 1080,
+    scaleX: 1336 / 1920,
+    scaleY: 892 / 1080,
+  },
+  1574: {
+    x: 813 / 1920,
+    y: 424 / 1080,
+    scaleX: 1370 / 1920,
+    scaleY: 915 / 1080,
+  },
+  // psf
+  2308: {
+    x: 678 / 1920,
+    y: 145 / 1080,
+    scaleX: 1445 / 1920,
+    scaleY: 964 / 1080,
+    rotate: 3.3,
+  },
+  2309: {
+    x: -29 / 1920,
+    y: 230 / 1080,
+    scaleX: 1202 / 1920,
+    scaleY: 802 / 1080,
+    rotate: 5.5,
+  },
+  2330: {
+    // copy of 2308, seems to be a dup?
+    x: 678 / 1920,
+    y: 145 / 1080,
+    scaleX: 1445 / 1920,
+    scaleY: 964 / 1080,
+    rotate: 3.3,
+  },
   // top
   1683: {
     x: -338 / 1920,
@@ -50,5 +86,36 @@ export const mdtMapOffsets: Record<number, MapOffset> = {
     y: 646 / 1080,
     scaleX: 944 / 1920,
     scaleY: 632 / 1080,
+  },
+  // tr
+  2315: {
+    x: 85 / 1920,
+    y: 80 / 1080,
+    scaleX: 1002 / 1920,
+    scaleY: 668 / 1080,
+  },
+  2316: {
+    x: 504 / 1920,
+    y: 87 / 1080,
+    scaleX: 926 / 1920,
+    scaleY: 618 / 1080,
+  },
+  2318: {
+    x: 1154 / 1920,
+    y: 33 / 1080,
+    scaleX: 1002 / 1920,
+    scaleY: 668 / 1080,
+  },
+  2319: {
+    x: 126 / 1920,
+    y: 607 / 1080,
+    scaleX: 988 / 1920,
+    scaleY: 658 / 1080,
+  },
+  2320: {
+    x: 777 / 1920,
+    y: 602 / 1080,
+    scaleX: 1018 / 1920,
+    scaleY: 678 / 1080,
   },
 }
