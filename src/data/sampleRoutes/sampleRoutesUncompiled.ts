@@ -12,6 +12,13 @@ type SampleRouteDefinition = Omit<SampleRoute, 'route'> & {
 }
 
 const sampleRouteDefinitions: Record<DungeonKey, SampleRouteDefinition[]> = {
+  cm: [],
+  dc: [],
+  mw: [],
+  of: [],
+  psf: [],
+  tm: [],
+  tr: [],
   top: [],
 }
 

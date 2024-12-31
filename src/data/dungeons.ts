@@ -10,6 +10,62 @@ export const dungeonData = (
   mobSpawnsList: Object.values(mdtMobSpawns[key]),
 })
 
+const cm: Dungeon = {
+  name: 'Cinderbrew Meadery',
+  key: 'cm',
+  icon: 'inv_achievement_dungeon_cinderbrewmeadery',
+  // wclEncounterId: TODO,
+  ...dungeonData('cm'),
+}
+
+const dc: Dungeon = {
+  name: 'Darkflame Crest',
+  key: 'dc',
+  icon: 'inv_achievement_dungeon_darkflamecleft',
+  // wclEncounterId: TODO,
+  ...dungeonData('dc'),
+}
+
+const mw: Dungeon = {
+  name: 'Mechagon: Workshop',
+  key: 'mw',
+  icon: 'achievement_boss_mechagon',
+  // wclEncounterId: TODO,
+  ...dungeonData('mw'),
+}
+
+const of: Dungeon = {
+  name: 'Operation: Floodgate',
+  key: 'of',
+  icon: 'inv_achievement_dungeon_waterworks',
+  // wclEncounterId: TODO,
+  ...dungeonData('of'),
+}
+
+const psf: Dungeon = {
+  name: 'Priory of the Sacred Flame',
+  key: 'psf',
+  icon: 'inv_achievement_dungeon_prioryofthesacredflame',
+  // wclEncounterId: TODO,
+  ...dungeonData('psf'),
+}
+
+const tm: Dungeon = {
+  name: 'The Motherlode',
+  key: 'tm',
+  icon: 'achievement_dungeon_kezan',
+  // wclEncounterId: TODO,
+  ...dungeonData('tm'),
+}
+
+const tr: Dungeon = {
+  name: 'The Rookery',
+  key: 'tr',
+  icon: 'inv_achievement_dungeon_rookery',
+  // wclEncounterId: TODO,
+  ...dungeonData('tr'),
+}
+
 const top: Dungeon = {
   name: 'Theater of Pain',
   key: 'top',
@@ -18,7 +74,7 @@ const top: Dungeon = {
   ...dungeonData('top'),
 }
 
-export const dungeons = [top]
+export const dungeons = [cm, dc, mw, of, psf, tm, tr, top]
 
 export const dungeonsByKey = dungeons.reduce(
   (acc, dungeon) => {

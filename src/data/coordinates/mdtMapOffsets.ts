@@ -19,6 +19,7 @@ export interface MapOffset {
 // scaleY: originalHeight / mdtHeight
 // rotation: negative rotation
 export const mdtMapOffsets: Record<number, MapOffset> = {
+  // top
   1683: {
     x: -338 / 1920,
     y: -63 / 1080,

@@ -6,5 +6,5 @@ const extraSpells: SpellIdMap = {}
 const removedSpells: number[] = []
 
 export default async () => ({
-  data: mergeSpells('The Stonevault', extraSpells, removedSpells),
+  data: mergeSpells('Theater of Pain', extraSpells, removedSpells),
 })
