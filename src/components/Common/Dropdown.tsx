@@ -174,7 +174,7 @@ export function Dropdown<T extends DropdownOption>({
                 }}
               >
                 {option.icon && <div className="mr-1">{option.icon}</div>}
-                <div className="dropdown-option-text">{option.content}</div>
+                <div className="dropdown-option-text w-full">{option.content}</div>
               </Button>
             ))}
           </ReactSortable>
