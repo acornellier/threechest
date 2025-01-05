@@ -4,7 +4,7 @@ import { useCallback, useMemo, useState } from 'react'
 import type { Route } from '../../../util/types.ts'
 import { sampleRoutes } from '../../../data/sampleRoutes/sampleRoutes.ts'
 import { setPreviewRouteAsync } from '../../../store/reducers/importReducer.ts'
-import { MagnifyingGlassIcon } from '@heroicons/react/24/outline'
+import { ArrowTopRightOnSquareIcon, MagnifyingGlassIcon } from '@heroicons/react/24/outline'
 import { setRouteFromSample } from '../../../store/routes/routesReducer.ts'
 import { addToast } from '../../../store/reducers/toastReducer.ts'
 import { useDungeon } from '../../../store/routes/routeHooks.ts'
@@ -59,12 +59,30 @@ export function SampleRoutes({ hidden }: Props) {
         id: route.uid,
         route: route,
         content: (
-          <div className="flex flex-col gap-0.5">
-            <div className="flex items-center gap-1">
+          <div className="flex flex-col gap-0.5 overflow-hidden">
+            <div className="flex justify-between">
+              <div className="flex items-center gap-1">
+                {wclRanking && (
+                  <div className="rounded-sm px-1 bg-cyan-800 text-xs">Rank {wclRanking.rank}</div>
+                )}
+                {route.name}
+              </div>
               {wclRanking && (
-                <div className="rounded-sm px-1 bg-cyan-800 text-xs">Rank {wclRanking.rank}</div>
+                <div
+                  className="justify-self-end"
+                  onClick={() => {
+                    window.open(
+                      `https://www.warcraftlogs.com/reports/${wclRanking.report.code}?fight=${wclRanking.report.fightID}`,
+                      '_blank',
+                      'noopener',
+                    )
+                  }}
+                >
+                  <div className="rounded-sm bg-cyan-800 p-0.5">
+                    <ArrowTopRightOnSquareIcon height={16} width={16} />
+                  </div>
+                </div>
               )}
-              {route.name}
             </div>
             <div className="flex gap-1 flex-wrap">
               {wclRanking &&
