@@ -1,1 +1,2086 @@
-{"dungeonIndex":119,"totalCount":470,"enemies":[{"id":230740,"enemyIndex":1,"name":"Shreddinator 3000","count":10,"health":57223802,"creatureType":"Mechanical","scale":1.6,"isBoss":false,"characteristics":[],"spawns":[{"id":"1-2","idx":2,"group":null,"pos":[-44.94,130.43]},{"id":"1-3","idx":3,"group":12,"pos":[-79.66,78.38]},{"id":"1-4","idx":4,"group":7,"pos":[-74.88,154.93]},{"id":"1-5","idx":5,"group":42,"pos":[-142.36,192.25]},{"id":"1-6","idx":6,"group":42,"pos":[-147.03,197.36]}]},{"id":228144,"enemyIndex":2,"name":"Darkfuse Soldier","count":3,"health":28611901,"creatureType":"Humanoid","scale":1.5,"isBoss":false,"characteristics":["Disorient","Stun"],"spawns":[{"id":"2-2","idx":2,"group":3,"pos":[-26.23,133.61]},{"id":"2-3","idx":3,"group":3,"pos":[-30.36,138.51]},{"id":"2-4","idx":4,"group":1,"pos":[-6.7,139.91]},{"id":"2-5","idx":5,"group":1,"pos":[-11.28,144.81]},{"id":"2-6","idx":6,"group":2,"pos":[-17.61,151.87]},{"id":"2-7","idx":7,"group":2,"pos":[-21.37,157.21]},{"id":"2-8","idx":8,"group":4,"pos":[-41.18,150.81]},{"id":"2-9","idx":9,"group":4,"pos":[-35.1,153.84]},{"id":"2-10","idx":10,"group":15,"pos":[-97.74,42.1]},{"id":"2-11","idx":11,"group":15,"pos":[-97.5,56.98]},{"id":"2-12","idx":12,"group":29,"pos":[-162.97,21.64]},{"id":"2-13","idx":13,"group":29,"pos":[-167.98,26.05]},{"id":"2-14","idx":14,"group":10,"pos":[-79.62,106.77]},{"id":"2-15","idx":15,"group":10,"pos":[-79.67,112.78]},{"id":"2-16","idx":16,"group":17,"pos":[-98.23,81.68]},{"id":"2-17","idx":17,"group":17,"pos":[-102.88,86.13]},{"id":"2-18","idx":18,"group":17,"pos":[-107.43,90.88]},{"id":"2-19","idx":19,"group":25,"pos":[-144.77,61.16]},{"id":"2-20","idx":20,"group":25,"pos":[-138.3,61.27]},{"id":"2-21","idx":21,"group":31,"pos":[-161.04,71.2]},{"id":"2-22","idx":22,"group":31,"pos":[-160.91,77.4]},{"id":"2-23","idx":23,"group":34,"pos":[-212.83,95.37]},{"id":"2-24","idx":24,"group":34,"pos":[-222.61,84.28]},{"id":"2-25","idx":25,"group":28,"pos":[-151.52,12.81]},{"id":"2-26","idx":26,"group":28,"pos":[-144.95,13.15]}]},{"id":229069,"enemyIndex":3,"name":"Mechadrone Sniper","count":5,"health":28611901,"creatureType":"Mechanical","scale":1.5,"isBoss":false,"characteristics":["Stun"],"spawns":[{"id":"3-2","idx":2,"group":3,"pos":[-20.91,137.36]},{"id":"3-3","idx":3,"group":3,"pos":[-25.13,142.39]},{"id":"3-4","idx":4,"group":1,"pos":[-5.05,146.08]},{"id":"3-5","idx":5,"group":2,"pos":[-14.86,157.78]},{"id":"3-6","idx":6,"group":12,"pos":[-85.82,75.21]},{"id":"3-7","idx":7,"group":12,"pos":[-85.58,81.67]},{"id":"3-8","idx":8,"group":40,"pos":[-103.44,167.98]},{"id":"3-9","idx":9,"group":40,"pos":[-103.11,174.53]},{"id":"3-10","idx":10,"group":40,"pos":[-109.56,171.26]},{"id":"3-11","idx":11,"group":9,"pos":[-56.61,112.88]},{"id":"3-12","idx":12,"group":9,"pos":[-61.94,109.1]},{"id":"3-13","idx":13,"group":9,"pos":[-62.76,115.11]},{"id":"3-14","idx":14,"group":23,"pos":[-126.91,88.31]},{"id":"3-15","idx":15,"group":23,"pos":[-127.03,82.13]},{"id":"3-16","idx":16,"group":23,"pos":[-120.2,81.97]},{"id":"3-17","idx":17,"group":30,"pos":[-160.74,57.91]},{"id":"3-18","idx":18,"group":30,"pos":[-154.19,58.2]},{"id":"3-19","idx":19,"group":33,"pos":[-193.58,61.35]},{"id":"3-20","idx":20,"group":33,"pos":[-197.6,66.56]}]},{"id":231014,"enemyIndex":4,"name":"Loaderbot","count":2,"health":22889521,"creatureType":"Mechanical","scale":1.5,"isBoss":false,"characteristics":["Stun"],"spawns":[{"id":"4-2","idx":2,"group":22,"pos":[-132.39,125.42]},{"id":"4-3","idx":3,"group":22,"pos":[-136.23,120.31]},{"id":"4-4","idx":4,"group":22,"pos":[-136.55,113.91]},{"id":"4-5","idx":5,"group":5,"pos":[-52.4,139.67]},{"id":"4-6","idx":6,"group":5,"pos":[-57.1,135.21]},{"id":"4-7","idx":7,"group":8,"pos":[-82.05,137.78]},{"id":"4-8","idx":8,"group":8,"pos":[-85.87,143.06]},{"id":"4-9","idx":9,"group":8,"pos":[-79.14,143.69]},{"id":"4-10","idx":10,"group":32,"pos":[-185.93,71.6]},{"id":"4-11","idx":11,"group":32,"pos":[-182.24,76.13]},{"id":"4-12","idx":12,"group":32,"pos":[-178.52,81.4]},{"id":"4-13","idx":13,"group":32,"pos":[-179.57,70.5]},{"id":"4-14","idx":14,"group":32,"pos":[-176.29,75.85]}]},{"id":229250,"enemyIndex":5,"name":"Venture Co. Contractor","count":2,"health":28611901,"creatureType":"Humanoid","scale":1.5,"isBoss":false,"characteristics":["Disorient","Stun"],"spawns":[{"id":"5-2","idx":2,"group":52,"pos":[-116.82,275.8]},{"id":"5-3","idx":3,"group":52,"pos":[-123.43,275.98]},{"id":"5-4","idx":4,"group":52,"pos":[-130.15,275.82]},{"id":"5-5","idx":5,"group":47,"pos":[-42.54,322.88]},{"id":"5-6","idx":6,"group":47,"pos":[-49.45,322.57]},{"id":"5-7","idx":7,"group":4,"pos":[-35.11,160.79]},{"id":"5-8","idx":8,"group":4,"pos":[-40.75,157.32]},{"id":"5-9","idx":9,"group":4,"pos":[-45.99,153.33]},{"id":"5-10","idx":10,"group":16,"pos":[-106.3,40.14]},{"id":"5-11","idx":11,"group":16,"pos":[-112.97,40.13]},{"id":"5-12","idx":12,"group":16,"pos":[-109.76,34.78]},{"id":"5-13","idx":13,"group":35,"pos":[-233.41,101.31]},{"id":"5-14","idx":14,"group":35,"pos":[-227.08,100.07]},{"id":"5-15","idx":15,"group":35,"pos":[-229.07,106.01]},{"id":"5-16","idx":16,"group":21,"pos":[-123.52,108.25]},{"id":"5-17","idx":17,"group":21,"pos":[-128.17,112.89]},{"id":"5-18","idx":18,"group":7,"pos":[-76.43,161.42]},{"id":"5-19","idx":19,"group":7,"pos":[-81.37,157.21]},{"id":"5-20","idx":20,"group":18,"pos":[-107.72,118.74]},{"id":"5-21","idx":21,"group":18,"pos":[-110.47,124.62]},{"id":"5-22","idx":22,"group":41,"pos":[-139.81,180.14]},{"id":"5-23","idx":23,"group":41,"pos":[-146.2,179.69]},{"id":"5-24","idx":24,"group":44,"pos":[-173.22,183.37]},{"id":"5-25","idx":25,"group":44,"pos":[-173.44,177.58]},{"id":"5-26","idx":26,"group":43,"pos":[-129.68,197.55]},{"id":"5-27","idx":27,"group":43,"pos":[-129.35,203.85]},{"id":"5-28","idx":28,"group":46,"pos":[-147.89,221.16]},{"id":"5-29","idx":29,"group":46,"pos":[-154.28,221.21]},{"id":"5-30","idx":30,"group":49,"pos":[-83.24,297.53]},{"id":"5-31","idx":31,"group":49,"pos":[-83.36,291.47]}]},{"id":229252,"enemyIndex":6,"name":"Darkfuse Hyena","count":5,"health":22889521,"creatureType":"Humanoid","scale":1.5,"isBoss":false,"characteristics":["Disorient","Stun"],"spawns":[{"id":"6-2","idx":2,"group":11,"pos":[-51.15,68.56]},{"id":"6-3","idx":3,"group":11,"pos":[-51.01,74.65]},{"id":"6-4","idx":4,"group":13,"pos":[-78.93,55.05]},{"id":"6-5","idx":5,"group":13,"pos":[-85.46,55.09]},{"id":"6-6","idx":6,"group":13,"pos":[-78.89,48.54]},{"id":"6-7","idx":7,"group":13,"pos":[-85.4,48.51]},{"id":"6-8","idx":8,"group":14,"pos":[-84.44,24.11]},{"id":"6-9","idx":9,"group":14,"pos":[-78.47,27.13]},{"id":"6-10","idx":10,"group":14,"pos":[-84.29,30.51]},{"id":"6-11","idx":11,"group":19,"pos":[-106.38,105.13]},{"id":"6-12","idx":12,"group":19,"pos":[-111.05,101.21]},{"id":"6-13","idx":13,"group":10,"pos":[-86.07,106.53]},{"id":"6-14","idx":14,"group":10,"pos":[-85.78,112.73]},{"id":"6-15","idx":15,"group":31,"pos":[-167.18,71.16]},{"id":"6-16","idx":16,"group":31,"pos":[-167.23,77.24]}]},{"id":229212,"enemyIndex":7,"name":"Darkfuse Demolitionist","count":7,"health":28611901,"creatureType":"Humanoid","scale":1.5,"isBoss":false,"characteristics":["Incapacitate","Disorient","Stun"],"spawns":[{"id":"7-2","idx":2,"group":11,"pos":[-45.3,71.39]},{"id":"7-3","idx":3,"group":17,"pos":[-96.54,87.68]},{"id":"7-4","idx":4,"group":17,"pos":[-100.97,92.22]},{"id":"7-5","idx":5,"group":23,"pos":[-120.39,88.45]},{"id":"7-6","idx":6,"group":34,"pos":[-212.13,85.07]}]},{"id":230748,"enemyIndex":8,"name":"Darkfuse Bloodwarper","count":12,"health":45779042,"creatureType":"Humanoid","scale":2,"isBoss":false,"characteristics":[],"spawns":[{"id":"8-2","idx":2,"group":15,"pos":[-97.48,49.54]},{"id":"8-3","idx":3,"group":25,"pos":[-141.95,67.92]},{"id":"8-4","idx":4,"group":34,"pos":[-217.68,89.85]},{"id":"8-5","idx":5,"group":27,"pos":[-130.26,20.36]}]},{"id":231385,"enemyIndex":9,"name":"Darkfuse Inspector","count":5,"health":28611901,"creatureType":"Humanoid","scale":1.5,"isBoss":false,"characteristics":["Incapacitate","Disorient","Stun"],"spawns":[{"id":"9-2","idx":2,"group":47,"pos":[-45.78,317.05]},{"id":"9-3","idx":3,"group":24,"pos":[-117.71,70.71]},{"id":"9-4","idx":4,"group":24,"pos":[-122.11,65.95]},{"id":"9-5","idx":5,"group":27,"pos":[-124.81,15.24]},{"id":"9-6","idx":6,"group":27,"pos":[-134.31,14.05]},{"id":"9-7","idx":7,"group":49,"pos":[-77.67,294.47]},{"id":"9-8","idx":8,"group":51,"pos":[-96.79,291.06]},{"id":"9-9","idx":9,"group":51,"pos":[-96.63,297.27]},{"id":"9-10","idx":10,"group":55,"pos":[-114.99,326.09]},{"id":"9-11","idx":11,"group":55,"pos":[-129.03,325.95]}]},{"id":229686,"enemyIndex":10,"name":"Venture Co. Surveyor","count":7,"health":28611901,"creatureType":"Humanoid","scale":1.5,"isBoss":false,"characteristics":["Disorient","Stun"],"spawns":[{"id":"10-2","idx":2,"group":6,"pos":[-55.3,155.44]},{"id":"10-3","idx":3,"group":6,"pos":[-59.89,160.21]},{"id":"10-4","idx":4,"group":21,"pos":[-122.15,114.23]},{"id":"10-5","idx":5,"group":18,"pos":[-114.09,119.34]},{"id":"10-6","idx":6,"group":44,"pos":[-179.43,175.75]},{"id":"10-7","idx":7,"group":44,"pos":[-173.5,171.72]},{"id":"10-8","idx":8,"group":43,"pos":[-135.07,200.64]},{"id":"10-9","idx":9,"group":46,"pos":[-151.02,226.93]}]},{"id":231312,"enemyIndex":11,"name":"Venture Co. Electrician","count":7,"health":28611901,"creatureType":"Humanoid","scale":1.5,"isBoss":false,"characteristics":["Disorient","Stun"],"spawns":[{"id":"11-2","idx":2,"group":52,"pos":[-120.54,270.21]},{"id":"11-3","idx":3,"group":52,"pos":[-126.91,270.12]},{"id":"11-4","idx":4,"group":49,"pos":[-83.88,282.96]},{"id":"11-5","idx":5,"group":53,"pos":[-132.21,291.54]},{"id":"11-6","idx":6,"group":53,"pos":[-131.98,297.86]},{"id":"11-7","idx":7,"group":54,"pos":[-120.41,314.8]},{"id":"11-8","idx":8,"group":54,"pos":[-127.09,314.84]},{"id":"11-9","idx":9,"group":56,"pos":[-125.06,351.05]},{"id":"11-10","idx":10,"group":56,"pos":[-129.2,345.26]}]},{"id":231497,"enemyIndex":12,"name":"Bombshell Crab","count":3,"health":28611901,"creatureType":"Beast","scale":1.2,"isBoss":false,"characteristics":["Stun"],"spawns":[{"id":"12-2","idx":2,"group":null,"pos":[-96.86,147.17]},{"id":"12-3","idx":3,"group":null,"pos":[-105.75,150.11]},{"id":"12-4","idx":4,"group":null,"pos":[-153.95,111.91]},{"id":"12-5","idx":5,"group":null,"pos":[-151.65,120.16]},{"id":"12-6","idx":6,"group":null,"pos":[-111.91,143.89]},{"id":"12-7","idx":7,"group":null,"pos":[-171.3,160.92]},{"id":"12-8","idx":8,"group":null,"pos":[-180.36,159.25]},{"id":"12-9","idx":9,"group":null,"pos":[-178.1,166.15]},{"id":"12-10","idx":10,"group":null,"pos":[-186.6,164.33]},{"id":"12-11","idx":11,"group":null,"pos":[-198.59,175.3]},{"id":"12-12","idx":12,"group":null,"pos":[-189.01,176.35]},{"id":"12-13","idx":13,"group":null,"pos":[-184.69,171.5]},{"id":"12-14","idx":14,"group":null,"pos":[-193.13,170.01]},{"id":"12-15","idx":15,"group":null,"pos":[-158.57,105.83]},{"id":"12-16","idx":16,"group":null,"pos":[-166.02,102.72]},{"id":"12-17","idx":17,"group":null,"pos":[-174.75,101.14]}]},{"id":231496,"enemyIndex":13,"name":"Venture Co. Diver","count":5,"health":28611901,"creatureType":"Humanoid","scale":1.6,"isBoss":false,"characteristics":["Incapacitate"],"spawns":[{"id":"13-2","idx":2,"group":39,"pos":[-124.21,149.17]},{"id":"13-3","idx":3,"group":39,"pos":[-124.76,155.92]},{"id":"13-4","idx":4,"group":38,"pos":[-157.6,150.9]},{"id":"13-5","idx":5,"group":38,"pos":[-151.48,154.66]},{"id":"13-6","idx":6,"group":38,"pos":[-151.6,147.59]},{"id":"13-7","idx":7,"group":37,"pos":[-160.19,133.14]},{"id":"13-8","idx":8,"group":37,"pos":[-154.19,137.19]},{"id":"13-9","idx":9,"group":37,"pos":[-153.89,130.31]}]},{"id":229251,"enemyIndex":14,"name":"Venture Co. Architect","count":10,"health":37195472,"creatureType":"Humanoid","scale":2,"isBoss":false,"characteristics":[],"spawns":[{"id":"14-2","idx":2,"group":52,"pos":[-123.39,284.07]},{"id":"14-3","idx":3,"group":47,"pos":[-40.83,307.25]},{"id":"14-4","idx":4,"group":47,"pos":[-50.09,307.12]},{"id":"14-5","idx":5,"group":20,"pos":[-120.32,131.34]},{"id":"14-6","idx":6,"group":41,"pos":[-151.44,173.11]},{"id":"14-7","idx":7,"group":44,"pos":[-180.92,182.8]},{"id":"14-8","idx":8,"group":null,"pos":[-197.62,184.14]}]},{"id":231223,"enemyIndex":15,"name":"Disturbed Kelp","count":7,"health":28611901,"creatureType":"Elemental","scale":1.5,"isBoss":false,"characteristics":["Disorient","Stun"],"spawns":[{"id":"15-2","idx":2,"group":36,"pos":[-179.91,126.32]},{"id":"15-3","idx":3,"group":36,"pos":[-180.05,137.93]},{"id":"15-4","idx":4,"group":36,"pos":[-180.42,150.19]},{"id":"15-5","idx":5,"group":36,"pos":[-190.74,119.51]},{"id":"15-6","idx":6,"group":36,"pos":[-190,131.62]},{"id":"15-7","idx":7,"group":36,"pos":[-190.26,144.27]}]},{"id":231197,"enemyIndex":16,"name":"Bubbles","count":20,"health":85835704,"creatureType":"Beast","scale":2,"isBoss":false,"characteristics":[],"spawns":[{"id":"16-1","idx":1,"group":48,"pos":[-66.05,295.03]}]},{"id":231325,"enemyIndex":17,"name":"Darkfuse Jumpstarter","count":12,"health":45779042,"creatureType":"Humanoid","scale":1.7,"isBoss":false,"characteristics":[],"spawns":[{"id":"17-2","idx":2,"group":57,"pos":[-153.17,349.14]},{"id":"17-3","idx":3,"group":57,"pos":[-152.92,356.27]},{"id":"17-4","idx":4,"group":50,"pos":[-90.16,302.79]},{"id":"17-5","idx":5,"group":56,"pos":[-132.55,351.58]}]},{"id":226398,"enemyIndex":18,"name":"Big M.O.M.M.A.","count":0,"health":314508650,"creatureType":"Humanoid","scale":1.5,"isBoss":true,"characteristics":[],"spawns":[{"id":"18-1","idx":1,"group":26,"pos":[-146.78,41.25]}]},{"id":226402,"enemyIndex":19,"name":"Bront","count":0,"health":128662630,"creatureType":"Humanoid","scale":2,"isBoss":true,"characteristics":[],"spawns":[{"id":"19-1","idx":1,"group":45,"pos":[-172.41,214.8]}]},{"id":226403,"enemyIndex":20,"name":"Keeza Quickfuse","count":0,"health":100070935,"creatureType":"Humanoid","scale":2,"isBoss":true,"characteristics":[],"spawns":[{"id":"20-1","idx":1,"group":45,"pos":[-186.6,202.47]}]},{"id":226396,"enemyIndex":21,"name":"Swampface","count":0,"health":200141868,"creatureType":"Humanoid","scale":2,"isBoss":true,"characteristics":[],"spawns":[{"id":"21-1","idx":1,"group":null,"pos":[-208.79,138.53]}]},{"id":226404,"enemyIndex":22,"name":"Geezle Gigazap","count":0,"health":228733564,"creatureType":"Humanoid","scale":2,"isBoss":true,"characteristics":[],"spawns":[{"id":"22-1","idx":1,"group":null,"pos":[-188.59,353.22]}]},{"id":228424,"enemyIndex":23,"name":"Darkfuse Mechadrone","count":0,"health":7092636,"creatureType":"Mechanical","scale":1.5,"isBoss":false,"characteristics":[],"spawns":[{"id":"23-1","idx":1,"group":26,"pos":[-154.22,34.92]},{"id":"23-2","idx":2,"group":26,"pos":[-153.71,47.66]},{"id":"23-3","idx":3,"group":26,"pos":[-139.38,46.83]},{"id":"23-4","idx":4,"group":26,"pos":[-139.58,35.03]}]}],"pois":[]}
+{
+  "dungeonIndex": 119,
+  "totalCount": 470,
+  "enemies": [
+    {
+      "id": 230740,
+      "enemyIndex": 1,
+      "name": "Shreddinator 3000",
+      "count": 10,
+      "health": 57223802,
+      "creatureType": "Mechanical",
+      "scale": 1.6,
+      "isBoss": false,
+      "characteristics": [],
+      "spawns": [
+        {
+          "id": "1-2",
+          "idx": 2,
+          "group": null,
+          "pos": [
+            -44.94,
+            130.43
+          ]
+        },
+        {
+          "id": "1-3",
+          "idx": 3,
+          "group": 12,
+          "pos": [
+            -79.66,
+            78.38
+          ]
+        },
+        {
+          "id": "1-4",
+          "idx": 4,
+          "group": 7,
+          "pos": [
+            -74.88,
+            154.93
+          ]
+        },
+        {
+          "id": "1-5",
+          "idx": 5,
+          "group": 42,
+          "pos": [
+            -142.36,
+            192.25
+          ]
+        },
+        {
+          "id": "1-6",
+          "idx": 6,
+          "group": 42,
+          "pos": [
+            -147.03,
+            197.36
+          ]
+        }
+      ]
+    },
+    {
+      "id": 228144,
+      "enemyIndex": 2,
+      "name": "Darkfuse Soldier",
+      "count": 3,
+      "health": 28611901,
+      "creatureType": "Humanoid",
+      "scale": 1.5,
+      "isBoss": false,
+      "characteristics": [
+        "Disorient",
+        "Stun"
+      ],
+      "spawns": [
+        {
+          "id": "2-2",
+          "idx": 2,
+          "group": 3,
+          "pos": [
+            -26.23,
+            133.61
+          ]
+        },
+        {
+          "id": "2-3",
+          "idx": 3,
+          "group": 3,
+          "pos": [
+            -30.36,
+            138.51
+          ]
+        },
+        {
+          "id": "2-4",
+          "idx": 4,
+          "group": 1,
+          "pos": [
+            -6.7,
+            139.91
+          ]
+        },
+        {
+          "id": "2-5",
+          "idx": 5,
+          "group": 1,
+          "pos": [
+            -11.28,
+            144.81
+          ]
+        },
+        {
+          "id": "2-6",
+          "idx": 6,
+          "group": 2,
+          "pos": [
+            -17.61,
+            151.87
+          ]
+        },
+        {
+          "id": "2-7",
+          "idx": 7,
+          "group": 2,
+          "pos": [
+            -21.37,
+            157.21
+          ]
+        },
+        {
+          "id": "2-8",
+          "idx": 8,
+          "group": 4,
+          "pos": [
+            -41.18,
+            150.81
+          ]
+        },
+        {
+          "id": "2-9",
+          "idx": 9,
+          "group": 4,
+          "pos": [
+            -35.1,
+            153.84
+          ]
+        },
+        {
+          "id": "2-10",
+          "idx": 10,
+          "group": 15,
+          "pos": [
+            -97.74,
+            42.1
+          ]
+        },
+        {
+          "id": "2-11",
+          "idx": 11,
+          "group": 15,
+          "pos": [
+            -97.5,
+            56.98
+          ]
+        },
+        {
+          "id": "2-12",
+          "idx": 12,
+          "group": 29,
+          "pos": [
+            -162.97,
+            21.64
+          ]
+        },
+        {
+          "id": "2-13",
+          "idx": 13,
+          "group": 29,
+          "pos": [
+            -167.98,
+            26.05
+          ]
+        },
+        {
+          "id": "2-14",
+          "idx": 14,
+          "group": 10,
+          "pos": [
+            -79.62,
+            106.77
+          ]
+        },
+        {
+          "id": "2-15",
+          "idx": 15,
+          "group": 10,
+          "pos": [
+            -79.67,
+            112.78
+          ]
+        },
+        {
+          "id": "2-16",
+          "idx": 16,
+          "group": 17,
+          "pos": [
+            -98.23,
+            81.68
+          ]
+        },
+        {
+          "id": "2-17",
+          "idx": 17,
+          "group": 17,
+          "pos": [
+            -102.88,
+            86.13
+          ]
+        },
+        {
+          "id": "2-18",
+          "idx": 18,
+          "group": 17,
+          "pos": [
+            -107.43,
+            90.88
+          ]
+        },
+        {
+          "id": "2-19",
+          "idx": 19,
+          "group": 25,
+          "pos": [
+            -144.77,
+            61.16
+          ]
+        },
+        {
+          "id": "2-20",
+          "idx": 20,
+          "group": 25,
+          "pos": [
+            -138.3,
+            61.27
+          ]
+        },
+        {
+          "id": "2-21",
+          "idx": 21,
+          "group": 31,
+          "pos": [
+            -161.04,
+            71.2
+          ]
+        },
+        {
+          "id": "2-22",
+          "idx": 22,
+          "group": 31,
+          "pos": [
+            -160.91,
+            77.4
+          ]
+        },
+        {
+          "id": "2-23",
+          "idx": 23,
+          "group": 34,
+          "pos": [
+            -212.83,
+            95.37
+          ]
+        },
+        {
+          "id": "2-24",
+          "idx": 24,
+          "group": 34,
+          "pos": [
+            -222.61,
+            84.28
+          ]
+        },
+        {
+          "id": "2-25",
+          "idx": 25,
+          "group": 28,
+          "pos": [
+            -151.52,
+            12.81
+          ]
+        },
+        {
+          "id": "2-26",
+          "idx": 26,
+          "group": 28,
+          "pos": [
+            -144.95,
+            13.15
+          ]
+        }
+      ]
+    },
+    {
+      "id": 229069,
+      "enemyIndex": 3,
+      "name": "Mechadrone Sniper",
+      "count": 5,
+      "health": 28611901,
+      "creatureType": "Mechanical",
+      "scale": 1.5,
+      "isBoss": false,
+      "characteristics": [
+        "Stun"
+      ],
+      "spawns": [
+        {
+          "id": "3-2",
+          "idx": 2,
+          "group": 3,
+          "pos": [
+            -20.91,
+            137.36
+          ]
+        },
+        {
+          "id": "3-3",
+          "idx": 3,
+          "group": 3,
+          "pos": [
+            -25.13,
+            142.39
+          ]
+        },
+        {
+          "id": "3-4",
+          "idx": 4,
+          "group": 1,
+          "pos": [
+            -5.05,
+            146.08
+          ]
+        },
+        {
+          "id": "3-5",
+          "idx": 5,
+          "group": 2,
+          "pos": [
+            -14.86,
+            157.78
+          ]
+        },
+        {
+          "id": "3-6",
+          "idx": 6,
+          "group": 12,
+          "pos": [
+            -85.82,
+            75.21
+          ]
+        },
+        {
+          "id": "3-7",
+          "idx": 7,
+          "group": 12,
+          "pos": [
+            -85.58,
+            81.67
+          ]
+        },
+        {
+          "id": "3-8",
+          "idx": 8,
+          "group": 40,
+          "pos": [
+            -103.44,
+            167.98
+          ]
+        },
+        {
+          "id": "3-9",
+          "idx": 9,
+          "group": 40,
+          "pos": [
+            -103.11,
+            174.53
+          ]
+        },
+        {
+          "id": "3-10",
+          "idx": 10,
+          "group": 40,
+          "pos": [
+            -109.56,
+            171.26
+          ]
+        },
+        {
+          "id": "3-11",
+          "idx": 11,
+          "group": 9,
+          "pos": [
+            -56.61,
+            112.88
+          ]
+        },
+        {
+          "id": "3-12",
+          "idx": 12,
+          "group": 9,
+          "pos": [
+            -61.94,
+            109.1
+          ]
+        },
+        {
+          "id": "3-13",
+          "idx": 13,
+          "group": 9,
+          "pos": [
+            -62.76,
+            115.11
+          ]
+        },
+        {
+          "id": "3-14",
+          "idx": 14,
+          "group": 23,
+          "pos": [
+            -126.91,
+            88.31
+          ]
+        },
+        {
+          "id": "3-15",
+          "idx": 15,
+          "group": 23,
+          "pos": [
+            -127.03,
+            82.13
+          ]
+        },
+        {
+          "id": "3-16",
+          "idx": 16,
+          "group": 23,
+          "pos": [
+            -120.2,
+            81.97
+          ]
+        },
+        {
+          "id": "3-17",
+          "idx": 17,
+          "group": 30,
+          "pos": [
+            -160.74,
+            57.91
+          ]
+        },
+        {
+          "id": "3-18",
+          "idx": 18,
+          "group": 30,
+          "pos": [
+            -154.19,
+            58.2
+          ]
+        },
+        {
+          "id": "3-19",
+          "idx": 19,
+          "group": 33,
+          "pos": [
+            -193.58,
+            61.35
+          ]
+        },
+        {
+          "id": "3-20",
+          "idx": 20,
+          "group": 33,
+          "pos": [
+            -197.6,
+            66.56
+          ]
+        }
+      ]
+    },
+    {
+      "id": 231014,
+      "enemyIndex": 4,
+      "name": "Loaderbot",
+      "count": 2,
+      "health": 22889521,
+      "creatureType": "Mechanical",
+      "scale": 1.5,
+      "isBoss": false,
+      "characteristics": [
+        "Stun"
+      ],
+      "spawns": [
+        {
+          "id": "4-2",
+          "idx": 2,
+          "group": 22,
+          "pos": [
+            -132.39,
+            125.42
+          ]
+        },
+        {
+          "id": "4-3",
+          "idx": 3,
+          "group": 22,
+          "pos": [
+            -136.23,
+            120.31
+          ]
+        },
+        {
+          "id": "4-4",
+          "idx": 4,
+          "group": 22,
+          "pos": [
+            -136.55,
+            113.91
+          ]
+        },
+        {
+          "id": "4-5",
+          "idx": 5,
+          "group": 5,
+          "pos": [
+            -52.4,
+            139.67
+          ]
+        },
+        {
+          "id": "4-6",
+          "idx": 6,
+          "group": 5,
+          "pos": [
+            -57.1,
+            135.21
+          ]
+        },
+        {
+          "id": "4-7",
+          "idx": 7,
+          "group": 8,
+          "pos": [
+            -82.05,
+            137.78
+          ]
+        },
+        {
+          "id": "4-8",
+          "idx": 8,
+          "group": 8,
+          "pos": [
+            -85.87,
+            143.06
+          ]
+        },
+        {
+          "id": "4-9",
+          "idx": 9,
+          "group": 8,
+          "pos": [
+            -79.14,
+            143.69
+          ]
+        },
+        {
+          "id": "4-10",
+          "idx": 10,
+          "group": 32,
+          "pos": [
+            -185.93,
+            71.6
+          ]
+        },
+        {
+          "id": "4-11",
+          "idx": 11,
+          "group": 32,
+          "pos": [
+            -182.24,
+            76.13
+          ]
+        },
+        {
+          "id": "4-12",
+          "idx": 12,
+          "group": 32,
+          "pos": [
+            -178.52,
+            81.4
+          ]
+        },
+        {
+          "id": "4-13",
+          "idx": 13,
+          "group": 32,
+          "pos": [
+            -179.57,
+            70.5
+          ]
+        },
+        {
+          "id": "4-14",
+          "idx": 14,
+          "group": 32,
+          "pos": [
+            -176.29,
+            75.85
+          ]
+        }
+      ]
+    },
+    {
+      "id": 229250,
+      "enemyIndex": 5,
+      "name": "Venture Co. Contractor",
+      "count": 2,
+      "health": 28611901,
+      "creatureType": "Humanoid",
+      "scale": 1.5,
+      "isBoss": false,
+      "characteristics": [
+        "Disorient",
+        "Stun"
+      ],
+      "spawns": [
+        {
+          "id": "5-2",
+          "idx": 2,
+          "group": 52,
+          "pos": [
+            -116.82,
+            275.8
+          ]
+        },
+        {
+          "id": "5-3",
+          "idx": 3,
+          "group": 52,
+          "pos": [
+            -123.43,
+            275.98
+          ]
+        },
+        {
+          "id": "5-4",
+          "idx": 4,
+          "group": 52,
+          "pos": [
+            -130.15,
+            275.82
+          ]
+        },
+        {
+          "id": "5-5",
+          "idx": 5,
+          "group": 47,
+          "pos": [
+            -42.54,
+            322.88
+          ]
+        },
+        {
+          "id": "5-6",
+          "idx": 6,
+          "group": 47,
+          "pos": [
+            -49.45,
+            322.57
+          ]
+        },
+        {
+          "id": "5-7",
+          "idx": 7,
+          "group": 4,
+          "pos": [
+            -35.11,
+            160.79
+          ]
+        },
+        {
+          "id": "5-8",
+          "idx": 8,
+          "group": 4,
+          "pos": [
+            -40.75,
+            157.32
+          ]
+        },
+        {
+          "id": "5-9",
+          "idx": 9,
+          "group": 4,
+          "pos": [
+            -45.99,
+            153.33
+          ]
+        },
+        {
+          "id": "5-10",
+          "idx": 10,
+          "group": 16,
+          "pos": [
+            -106.3,
+            40.14
+          ]
+        },
+        {
+          "id": "5-11",
+          "idx": 11,
+          "group": 16,
+          "pos": [
+            -112.97,
+            40.13
+          ]
+        },
+        {
+          "id": "5-12",
+          "idx": 12,
+          "group": 16,
+          "pos": [
+            -109.76,
+            34.78
+          ]
+        },
+        {
+          "id": "5-13",
+          "idx": 13,
+          "group": 35,
+          "pos": [
+            -233.41,
+            101.31
+          ]
+        },
+        {
+          "id": "5-14",
+          "idx": 14,
+          "group": 35,
+          "pos": [
+            -227.08,
+            100.07
+          ]
+        },
+        {
+          "id": "5-15",
+          "idx": 15,
+          "group": 35,
+          "pos": [
+            -229.07,
+            106.01
+          ]
+        },
+        {
+          "id": "5-16",
+          "idx": 16,
+          "group": 21,
+          "pos": [
+            -123.52,
+            108.25
+          ]
+        },
+        {
+          "id": "5-17",
+          "idx": 17,
+          "group": 21,
+          "pos": [
+            -128.17,
+            112.89
+          ]
+        },
+        {
+          "id": "5-18",
+          "idx": 18,
+          "group": 7,
+          "pos": [
+            -76.43,
+            161.42
+          ]
+        },
+        {
+          "id": "5-19",
+          "idx": 19,
+          "group": 7,
+          "pos": [
+            -81.37,
+            157.21
+          ]
+        },
+        {
+          "id": "5-20",
+          "idx": 20,
+          "group": 18,
+          "pos": [
+            -107.72,
+            118.74
+          ]
+        },
+        {
+          "id": "5-21",
+          "idx": 21,
+          "group": 18,
+          "pos": [
+            -110.47,
+            124.62
+          ]
+        },
+        {
+          "id": "5-22",
+          "idx": 22,
+          "group": 41,
+          "pos": [
+            -139.81,
+            180.14
+          ]
+        },
+        {
+          "id": "5-23",
+          "idx": 23,
+          "group": 41,
+          "pos": [
+            -146.2,
+            179.69
+          ]
+        },
+        {
+          "id": "5-24",
+          "idx": 24,
+          "group": 44,
+          "pos": [
+            -173.22,
+            183.37
+          ]
+        },
+        {
+          "id": "5-25",
+          "idx": 25,
+          "group": 44,
+          "pos": [
+            -173.44,
+            177.58
+          ]
+        },
+        {
+          "id": "5-26",
+          "idx": 26,
+          "group": 43,
+          "pos": [
+            -129.68,
+            197.55
+          ]
+        },
+        {
+          "id": "5-27",
+          "idx": 27,
+          "group": 43,
+          "pos": [
+            -129.35,
+            203.85
+          ]
+        },
+        {
+          "id": "5-28",
+          "idx": 28,
+          "group": 46,
+          "pos": [
+            -147.89,
+            221.16
+          ]
+        },
+        {
+          "id": "5-29",
+          "idx": 29,
+          "group": 46,
+          "pos": [
+            -154.28,
+            221.21
+          ]
+        },
+        {
+          "id": "5-30",
+          "idx": 30,
+          "group": 49,
+          "pos": [
+            -83.24,
+            297.53
+          ]
+        },
+        {
+          "id": "5-31",
+          "idx": 31,
+          "group": 49,
+          "pos": [
+            -83.36,
+            291.47
+          ]
+        }
+      ]
+    },
+    {
+      "id": 229252,
+      "enemyIndex": 6,
+      "name": "Darkfuse Hyena",
+      "count": 5,
+      "health": 22889521,
+      "creatureType": "Humanoid",
+      "scale": 1.5,
+      "isBoss": false,
+      "characteristics": [
+        "Disorient",
+        "Stun"
+      ],
+      "spawns": [
+        {
+          "id": "6-2",
+          "idx": 2,
+          "group": 11,
+          "pos": [
+            -51.15,
+            68.56
+          ]
+        },
+        {
+          "id": "6-3",
+          "idx": 3,
+          "group": 11,
+          "pos": [
+            -51.01,
+            74.65
+          ]
+        },
+        {
+          "id": "6-4",
+          "idx": 4,
+          "group": 13,
+          "pos": [
+            -78.93,
+            55.05
+          ]
+        },
+        {
+          "id": "6-5",
+          "idx": 5,
+          "group": 13,
+          "pos": [
+            -85.46,
+            55.09
+          ]
+        },
+        {
+          "id": "6-6",
+          "idx": 6,
+          "group": 13,
+          "pos": [
+            -78.89,
+            48.54
+          ]
+        },
+        {
+          "id": "6-7",
+          "idx": 7,
+          "group": 13,
+          "pos": [
+            -85.4,
+            48.51
+          ]
+        },
+        {
+          "id": "6-8",
+          "idx": 8,
+          "group": 14,
+          "pos": [
+            -84.44,
+            24.11
+          ]
+        },
+        {
+          "id": "6-9",
+          "idx": 9,
+          "group": 14,
+          "pos": [
+            -78.47,
+            27.13
+          ]
+        },
+        {
+          "id": "6-10",
+          "idx": 10,
+          "group": 14,
+          "pos": [
+            -84.29,
+            30.51
+          ]
+        },
+        {
+          "id": "6-11",
+          "idx": 11,
+          "group": 19,
+          "pos": [
+            -106.38,
+            105.13
+          ]
+        },
+        {
+          "id": "6-12",
+          "idx": 12,
+          "group": 19,
+          "pos": [
+            -111.05,
+            101.21
+          ]
+        },
+        {
+          "id": "6-13",
+          "idx": 13,
+          "group": 10,
+          "pos": [
+            -86.07,
+            106.53
+          ]
+        },
+        {
+          "id": "6-14",
+          "idx": 14,
+          "group": 10,
+          "pos": [
+            -85.78,
+            112.73
+          ]
+        },
+        {
+          "id": "6-15",
+          "idx": 15,
+          "group": 31,
+          "pos": [
+            -167.18,
+            71.16
+          ]
+        },
+        {
+          "id": "6-16",
+          "idx": 16,
+          "group": 31,
+          "pos": [
+            -167.23,
+            77.24
+          ]
+        }
+      ]
+    },
+    {
+      "id": 229212,
+      "enemyIndex": 7,
+      "name": "Darkfuse Demolitionist",
+      "count": 7,
+      "health": 28611901,
+      "creatureType": "Humanoid",
+      "scale": 1.5,
+      "isBoss": false,
+      "characteristics": [
+        "Incapacitate",
+        "Disorient",
+        "Stun"
+      ],
+      "spawns": [
+        {
+          "id": "7-2",
+          "idx": 2,
+          "group": 11,
+          "pos": [
+            -45.3,
+            71.39
+          ]
+        },
+        {
+          "id": "7-3",
+          "idx": 3,
+          "group": 17,
+          "pos": [
+            -96.54,
+            87.68
+          ]
+        },
+        {
+          "id": "7-4",
+          "idx": 4,
+          "group": 17,
+          "pos": [
+            -100.97,
+            92.22
+          ]
+        },
+        {
+          "id": "7-5",
+          "idx": 5,
+          "group": 23,
+          "pos": [
+            -120.39,
+            88.45
+          ]
+        },
+        {
+          "id": "7-6",
+          "idx": 6,
+          "group": 34,
+          "pos": [
+            -212.13,
+            85.07
+          ]
+        }
+      ]
+    },
+    {
+      "id": 230748,
+      "enemyIndex": 8,
+      "name": "Darkfuse Bloodwarper",
+      "count": 12,
+      "health": 45779042,
+      "creatureType": "Humanoid",
+      "scale": 2,
+      "isBoss": false,
+      "characteristics": [],
+      "spawns": [
+        {
+          "id": "8-2",
+          "idx": 2,
+          "group": 15,
+          "pos": [
+            -97.48,
+            49.54
+          ]
+        },
+        {
+          "id": "8-3",
+          "idx": 3,
+          "group": 25,
+          "pos": [
+            -141.95,
+            67.92
+          ]
+        },
+        {
+          "id": "8-4",
+          "idx": 4,
+          "group": 34,
+          "pos": [
+            -217.68,
+            89.85
+          ]
+        },
+        {
+          "id": "8-5",
+          "idx": 5,
+          "group": 27,
+          "pos": [
+            -130.26,
+            20.36
+          ]
+        }
+      ]
+    },
+    {
+      "id": 231385,
+      "enemyIndex": 9,
+      "name": "Darkfuse Inspector",
+      "count": 5,
+      "health": 28611901,
+      "creatureType": "Humanoid",
+      "scale": 1.5,
+      "isBoss": false,
+      "characteristics": [
+        "Incapacitate",
+        "Disorient",
+        "Stun"
+      ],
+      "spawns": [
+        {
+          "id": "9-2",
+          "idx": 2,
+          "group": 47,
+          "pos": [
+            -45.78,
+            317.05
+          ]
+        },
+        {
+          "id": "9-3",
+          "idx": 3,
+          "group": 24,
+          "pos": [
+            -117.71,
+            70.71
+          ]
+        },
+        {
+          "id": "9-4",
+          "idx": 4,
+          "group": 24,
+          "pos": [
+            -122.11,
+            65.95
+          ]
+        },
+        {
+          "id": "9-5",
+          "idx": 5,
+          "group": 27,
+          "pos": [
+            -124.81,
+            15.24
+          ]
+        },
+        {
+          "id": "9-6",
+          "idx": 6,
+          "group": 27,
+          "pos": [
+            -134.31,
+            14.05
+          ]
+        },
+        {
+          "id": "9-7",
+          "idx": 7,
+          "group": 49,
+          "pos": [
+            -77.67,
+            294.47
+          ]
+        },
+        {
+          "id": "9-8",
+          "idx": 8,
+          "group": 51,
+          "pos": [
+            -96.79,
+            291.06
+          ]
+        },
+        {
+          "id": "9-9",
+          "idx": 9,
+          "group": 51,
+          "pos": [
+            -96.63,
+            297.27
+          ]
+        },
+        {
+          "id": "9-10",
+          "idx": 10,
+          "group": 55,
+          "pos": [
+            -114.99,
+            326.09
+          ]
+        },
+        {
+          "id": "9-11",
+          "idx": 11,
+          "group": 55,
+          "pos": [
+            -129.03,
+            325.95
+          ]
+        }
+      ]
+    },
+    {
+      "id": 229686,
+      "enemyIndex": 10,
+      "name": "Venture Co. Surveyor",
+      "count": 7,
+      "health": 28611901,
+      "creatureType": "Humanoid",
+      "scale": 1.5,
+      "isBoss": false,
+      "characteristics": [
+        "Disorient",
+        "Stun"
+      ],
+      "spawns": [
+        {
+          "id": "10-2",
+          "idx": 2,
+          "group": 6,
+          "pos": [
+            -55.3,
+            155.44
+          ]
+        },
+        {
+          "id": "10-3",
+          "idx": 3,
+          "group": 6,
+          "pos": [
+            -59.89,
+            160.21
+          ]
+        },
+        {
+          "id": "10-4",
+          "idx": 4,
+          "group": 21,
+          "pos": [
+            -122.15,
+            114.23
+          ]
+        },
+        {
+          "id": "10-5",
+          "idx": 5,
+          "group": 18,
+          "pos": [
+            -114.09,
+            119.34
+          ]
+        },
+        {
+          "id": "10-6",
+          "idx": 6,
+          "group": 44,
+          "pos": [
+            -179.43,
+            175.75
+          ]
+        },
+        {
+          "id": "10-7",
+          "idx": 7,
+          "group": 44,
+          "pos": [
+            -173.5,
+            171.72
+          ]
+        },
+        {
+          "id": "10-8",
+          "idx": 8,
+          "group": 43,
+          "pos": [
+            -135.07,
+            200.64
+          ]
+        },
+        {
+          "id": "10-9",
+          "idx": 9,
+          "group": 46,
+          "pos": [
+            -151.02,
+            226.93
+          ]
+        }
+      ]
+    },
+    {
+      "id": 231312,
+      "enemyIndex": 11,
+      "name": "Venture Co. Electrician",
+      "count": 7,
+      "health": 28611901,
+      "creatureType": "Humanoid",
+      "scale": 1.5,
+      "isBoss": false,
+      "characteristics": [
+        "Disorient",
+        "Stun"
+      ],
+      "spawns": [
+        {
+          "id": "11-2",
+          "idx": 2,
+          "group": 52,
+          "pos": [
+            -120.54,
+            270.21
+          ]
+        },
+        {
+          "id": "11-3",
+          "idx": 3,
+          "group": 52,
+          "pos": [
+            -126.91,
+            270.12
+          ]
+        },
+        {
+          "id": "11-4",
+          "idx": 4,
+          "group": 49,
+          "pos": [
+            -83.88,
+            282.96
+          ]
+        },
+        {
+          "id": "11-5",
+          "idx": 5,
+          "group": 53,
+          "pos": [
+            -132.21,
+            291.54
+          ]
+        },
+        {
+          "id": "11-6",
+          "idx": 6,
+          "group": 53,
+          "pos": [
+            -131.98,
+            297.86
+          ]
+        },
+        {
+          "id": "11-7",
+          "idx": 7,
+          "group": 54,
+          "pos": [
+            -120.41,
+            314.8
+          ]
+        },
+        {
+          "id": "11-8",
+          "idx": 8,
+          "group": 54,
+          "pos": [
+            -127.09,
+            314.84
+          ]
+        },
+        {
+          "id": "11-9",
+          "idx": 9,
+          "group": 56,
+          "pos": [
+            -125.06,
+            351.05
+          ]
+        },
+        {
+          "id": "11-10",
+          "idx": 10,
+          "group": 56,
+          "pos": [
+            -129.2,
+            345.26
+          ]
+        }
+      ]
+    },
+    {
+      "id": 231497,
+      "enemyIndex": 12,
+      "name": "Bombshell Crab",
+      "count": 3,
+      "health": 28611901,
+      "creatureType": "Beast",
+      "scale": 1.2,
+      "isBoss": false,
+      "characteristics": [
+        "Stun"
+      ],
+      "spawns": [
+        {
+          "id": "12-2",
+          "idx": 2,
+          "group": null,
+          "pos": [
+            -96.86,
+            147.17
+          ]
+        },
+        {
+          "id": "12-3",
+          "idx": 3,
+          "group": null,
+          "pos": [
+            -105.75,
+            150.11
+          ]
+        },
+        {
+          "id": "12-4",
+          "idx": 4,
+          "group": null,
+          "pos": [
+            -153.95,
+            111.91
+          ]
+        },
+        {
+          "id": "12-5",
+          "idx": 5,
+          "group": null,
+          "pos": [
+            -151.65,
+            120.16
+          ]
+        },
+        {
+          "id": "12-6",
+          "idx": 6,
+          "group": null,
+          "pos": [
+            -111.91,
+            143.89
+          ]
+        },
+        {
+          "id": "12-7",
+          "idx": 7,
+          "group": null,
+          "pos": [
+            -171.3,
+            160.92
+          ]
+        },
+        {
+          "id": "12-8",
+          "idx": 8,
+          "group": null,
+          "pos": [
+            -180.36,
+            159.25
+          ]
+        },
+        {
+          "id": "12-9",
+          "idx": 9,
+          "group": null,
+          "pos": [
+            -178.1,
+            166.15
+          ]
+        },
+        {
+          "id": "12-10",
+          "idx": 10,
+          "group": null,
+          "pos": [
+            -186.6,
+            164.33
+          ]
+        },
+        {
+          "id": "12-11",
+          "idx": 11,
+          "group": null,
+          "pos": [
+            -198.59,
+            175.3
+          ]
+        },
+        {
+          "id": "12-12",
+          "idx": 12,
+          "group": null,
+          "pos": [
+            -189.01,
+            176.35
+          ]
+        },
+        {
+          "id": "12-13",
+          "idx": 13,
+          "group": null,
+          "pos": [
+            -184.69,
+            171.5
+          ]
+        },
+        {
+          "id": "12-14",
+          "idx": 14,
+          "group": null,
+          "pos": [
+            -193.13,
+            170.01
+          ]
+        },
+        {
+          "id": "12-15",
+          "idx": 15,
+          "group": null,
+          "pos": [
+            -158.57,
+            105.83
+          ]
+        },
+        {
+          "id": "12-16",
+          "idx": 16,
+          "group": null,
+          "pos": [
+            -166.02,
+            102.72
+          ]
+        },
+        {
+          "id": "12-17",
+          "idx": 17,
+          "group": null,
+          "pos": [
+            -174.75,
+            101.14
+          ]
+        }
+      ]
+    },
+    {
+      "id": 231496,
+      "enemyIndex": 13,
+      "name": "Venture Co. Diver",
+      "count": 5,
+      "health": 28611901,
+      "creatureType": "Humanoid",
+      "scale": 1.6,
+      "isBoss": false,
+      "characteristics": [
+        "Incapacitate"
+      ],
+      "spawns": [
+        {
+          "id": "13-2",
+          "idx": 2,
+          "group": 39,
+          "pos": [
+            -124.21,
+            149.17
+          ]
+        },
+        {
+          "id": "13-3",
+          "idx": 3,
+          "group": 39,
+          "pos": [
+            -124.76,
+            155.92
+          ]
+        },
+        {
+          "id": "13-4",
+          "idx": 4,
+          "group": 38,
+          "pos": [
+            -157.6,
+            150.9
+          ]
+        },
+        {
+          "id": "13-5",
+          "idx": 5,
+          "group": 38,
+          "pos": [
+            -151.48,
+            154.66
+          ]
+        },
+        {
+          "id": "13-6",
+          "idx": 6,
+          "group": 38,
+          "pos": [
+            -151.6,
+            147.59
+          ]
+        },
+        {
+          "id": "13-7",
+          "idx": 7,
+          "group": 37,
+          "pos": [
+            -160.19,
+            133.14
+          ]
+        },
+        {
+          "id": "13-8",
+          "idx": 8,
+          "group": 37,
+          "pos": [
+            -154.19,
+            137.19
+          ]
+        },
+        {
+          "id": "13-9",
+          "idx": 9,
+          "group": 37,
+          "pos": [
+            -153.89,
+            130.31
+          ]
+        }
+      ]
+    },
+    {
+      "id": 229251,
+      "enemyIndex": 14,
+      "name": "Venture Co. Architect",
+      "count": 10,
+      "health": 37195472,
+      "creatureType": "Humanoid",
+      "scale": 2,
+      "isBoss": false,
+      "characteristics": [],
+      "spawns": [
+        {
+          "id": "14-2",
+          "idx": 2,
+          "group": 52,
+          "pos": [
+            -123.39,
+            284.07
+          ]
+        },
+        {
+          "id": "14-3",
+          "idx": 3,
+          "group": 47,
+          "pos": [
+            -40.83,
+            307.25
+          ]
+        },
+        {
+          "id": "14-4",
+          "idx": 4,
+          "group": 47,
+          "pos": [
+            -50.09,
+            307.12
+          ]
+        },
+        {
+          "id": "14-5",
+          "idx": 5,
+          "group": 20,
+          "pos": [
+            -120.32,
+            131.34
+          ]
+        },
+        {
+          "id": "14-6",
+          "idx": 6,
+          "group": 41,
+          "pos": [
+            -151.44,
+            173.11
+          ]
+        },
+        {
+          "id": "14-7",
+          "idx": 7,
+          "group": 44,
+          "pos": [
+            -180.92,
+            182.8
+          ]
+        },
+        {
+          "id": "14-8",
+          "idx": 8,
+          "group": null,
+          "pos": [
+            -197.62,
+            184.14
+          ]
+        }
+      ]
+    },
+    {
+      "id": 231223,
+      "enemyIndex": 15,
+      "name": "Disturbed Kelp",
+      "count": 7,
+      "health": 28611901,
+      "creatureType": "Elemental",
+      "scale": 1.5,
+      "isBoss": false,
+      "characteristics": [
+        "Disorient",
+        "Stun"
+      ],
+      "spawns": [
+        {
+          "id": "15-2",
+          "idx": 2,
+          "group": 36,
+          "pos": [
+            -179.91,
+            126.32
+          ]
+        },
+        {
+          "id": "15-3",
+          "idx": 3,
+          "group": 36,
+          "pos": [
+            -180.05,
+            137.93
+          ]
+        },
+        {
+          "id": "15-4",
+          "idx": 4,
+          "group": 36,
+          "pos": [
+            -180.42,
+            150.19
+          ]
+        },
+        {
+          "id": "15-5",
+          "idx": 5,
+          "group": 36,
+          "pos": [
+            -190.74,
+            119.51
+          ]
+        },
+        {
+          "id": "15-6",
+          "idx": 6,
+          "group": 36,
+          "pos": [
+            -190,
+            131.62
+          ]
+        },
+        {
+          "id": "15-7",
+          "idx": 7,
+          "group": 36,
+          "pos": [
+            -190.26,
+            144.27
+          ]
+        }
+      ]
+    },
+    {
+      "id": 231197,
+      "enemyIndex": 16,
+      "name": "Bubbles",
+      "count": 20,
+      "health": 85835704,
+      "creatureType": "Beast",
+      "scale": 2,
+      "isBoss": false,
+      "characteristics": [],
+      "spawns": [
+        {
+          "id": "16-1",
+          "idx": 1,
+          "group": 48,
+          "pos": [
+            -66.05,
+            295.03
+          ]
+        }
+      ]
+    },
+    {
+      "id": 231325,
+      "enemyIndex": 17,
+      "name": "Darkfuse Jumpstarter",
+      "count": 12,
+      "health": 45779042,
+      "creatureType": "Humanoid",
+      "scale": 1.7,
+      "isBoss": false,
+      "characteristics": [],
+      "spawns": [
+        {
+          "id": "17-2",
+          "idx": 2,
+          "group": 57,
+          "pos": [
+            -153.17,
+            349.14
+          ]
+        },
+        {
+          "id": "17-3",
+          "idx": 3,
+          "group": 57,
+          "pos": [
+            -152.92,
+            356.27
+          ]
+        },
+        {
+          "id": "17-4",
+          "idx": 4,
+          "group": 50,
+          "pos": [
+            -90.16,
+            302.79
+          ]
+        },
+        {
+          "id": "17-5",
+          "idx": 5,
+          "group": 56,
+          "pos": [
+            -132.55,
+            351.58
+          ]
+        }
+      ]
+    },
+    {
+      "id": 226398,
+      "enemyIndex": 18,
+      "name": "Big M.O.M.M.A.",
+      "count": 0,
+      "health": 314508650,
+      "creatureType": "Humanoid",
+      "scale": 1.5,
+      "isBoss": true,
+      "characteristics": [],
+      "spawns": [
+        {
+          "id": "18-1",
+          "idx": 1,
+          "group": 26,
+          "pos": [
+            -146.78,
+            41.25
+          ]
+        }
+      ]
+    },
+    {
+      "id": 226402,
+      "enemyIndex": 19,
+      "name": "Bront",
+      "count": 0,
+      "health": 128662630,
+      "creatureType": "Humanoid",
+      "scale": 2,
+      "isBoss": true,
+      "characteristics": [],
+      "spawns": [
+        {
+          "id": "19-1",
+          "idx": 1,
+          "group": 45,
+          "pos": [
+            -172.41,
+            214.8
+          ]
+        }
+      ]
+    },
+    {
+      "id": 226403,
+      "enemyIndex": 20,
+      "name": "Keeza Quickfuse",
+      "count": 0,
+      "health": 100070935,
+      "creatureType": "Humanoid",
+      "scale": 2,
+      "isBoss": true,
+      "characteristics": [],
+      "spawns": [
+        {
+          "id": "20-1",
+          "idx": 1,
+          "group": 45,
+          "pos": [
+            -186.6,
+            202.47
+          ]
+        }
+      ]
+    },
+    {
+      "id": 226396,
+      "enemyIndex": 21,
+      "name": "Swampface",
+      "count": 0,
+      "health": 200141868,
+      "creatureType": "Humanoid",
+      "scale": 2,
+      "isBoss": true,
+      "characteristics": [],
+      "spawns": [
+        {
+          "id": "21-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -208.79,
+            138.53
+          ]
+        }
+      ]
+    },
+    {
+      "id": 226404,
+      "enemyIndex": 22,
+      "name": "Geezle Gigazap",
+      "count": 0,
+      "health": 228733564,
+      "creatureType": "Humanoid",
+      "scale": 2,
+      "isBoss": true,
+      "characteristics": [],
+      "spawns": [
+        {
+          "id": "22-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -188.59,
+            353.22
+          ]
+        }
+      ]
+    },
+    {
+      "id": 228424,
+      "enemyIndex": 23,
+      "name": "Darkfuse Mechadrone",
+      "count": 0,
+      "health": 7092636,
+      "creatureType": "Mechanical",
+      "scale": 1.5,
+      "isBoss": false,
+      "characteristics": [],
+      "spawns": [
+        {
+          "id": "23-1",
+          "idx": 1,
+          "group": 26,
+          "pos": [
+            -154.22,
+            34.92
+          ]
+        },
+        {
+          "id": "23-2",
+          "idx": 2,
+          "group": 26,
+          "pos": [
+            -153.71,
+            47.66
+          ]
+        },
+        {
+          "id": "23-3",
+          "idx": 3,
+          "group": 26,
+          "pos": [
+            -139.38,
+            46.83
+          ]
+        },
+        {
+          "id": "23-4",
+          "idx": 4,
+          "group": 26,
+          "pos": [
+            -139.58,
+            35.03
+          ]
+        }
+      ]
+    }
+  ],
+  "pois": []
+}

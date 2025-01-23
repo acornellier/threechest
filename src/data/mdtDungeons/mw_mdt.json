@@ -1,1 +1,1210 @@
-{"dungeonIndex":122,"totalCount":374,"enemies":[{"id":151476,"enemyIndex":1,"name":"Blastatron X-80","count":20,"health":532625,"creatureType":"Mechanical","scale":2.5,"isBoss":false,"characteristics":["Taunt"],"spawns":[{"id":"1-1","idx":1,"group":21,"pos":[-107.95,111.08]}]},{"id":151649,"enemyIndex":2,"name":"Defense Bot Mk I","count":5,"health":223703,"creatureType":"Mechanical","scale":2,"isBoss":false,"characteristics":["Taunt","Silence","Stun","Slow"],"spawns":[{"id":"2-1","idx":1,"group":20,"pos":[-130.86,108.7]},{"id":"2-2","idx":2,"group":20,"pos":[-122.74,105.22]},{"id":"2-3","idx":3,"group":22,"pos":[-47.26,156.01]},{"id":"2-4","idx":4,"group":22,"pos":[-52,163.17]}]},{"id":144294,"enemyIndex":3,"name":"Mechagon Tinkerer","count":6,"health":213050,"creatureType":"Humanoid","scale":2,"isBoss":false,"characteristics":["Taunt","Incapacitate","Silence","Mind Control","Polymorph","Fear","Disorient","Imprison","Stun","Slow"],"spawns":[{"id":"3-1","idx":1,"group":19,"pos":[-122.41,121.26]},{"id":"3-2","idx":2,"group":19,"pos":[-114.93,125.69]},{"id":"3-4","idx":4,"group":23,"pos":[-131.92,59.08]},{"id":"3-5","idx":5,"group":24,"pos":[-77.23,68.63]},{"id":"3-6","idx":6,"group":22,"pos":[-59,157.62]}]},{"id":144299,"enemyIndex":4,"name":"Workshop Defender","count":4,"health":213050,"creatureType":"Humanoid","scale":2,"isBoss":false,"characteristics":["Taunt","Incapacitate","Silence","Mind Control","Polymorph","Fear","Disorient","Stun","Slow"],"spawns":[{"id":"4-1","idx":1,"group":22,"pos":[-54.54,149.94]},{"id":"4-2","idx":2,"group":23,"pos":[-134.63,51.15]},{"id":"4-3","idx":3,"group":23,"pos":[-140.15,56.78]},{"id":"4-4","idx":4,"group":24,"pos":[-82.71,62.22]}]},{"id":144295,"enemyIndex":5,"name":"Mechagon Mechanic","count":4,"health":213050,"creatureType":"Humanoid","scale":2,"isBoss":false,"characteristics":["Taunt","Incapacitate","Silence","Polymorph","Fear","Disorient","Stun","Slow"],"spawns":[{"id":"5-1","idx":1,"group":22,"pos":[-39.68,160.71]},{"id":"5-2","idx":2,"group":24,"pos":[-75.99,57.68]},{"id":"5-3","idx":3,"group":24,"pos":[-87.62,55.7]},{"id":"5-6","idx":6,"group":22,"pos":[-45.21,168.11]}]},{"id":144248,"enemyIndex":6,"name":"Head Machinist Sparkflux","count":0,"health":1489665,"creatureType":"Mechanical","scale":2,"isBoss":true,"characteristics":["Taunt"],"spawns":[{"id":"6-1","idx":1,"group":null,"pos":[-72.59,145.03]}]},{"id":144296,"enemyIndex":7,"name":"Spider Tank","count":12,"health":340880,"creatureType":"Mechanical","scale":2.5,"isBoss":false,"characteristics":["Taunt"],"spawns":[{"id":"7-1","idx":1,"group":null,"pos":[-54.79,116.91]},{"id":"7-2","idx":2,"group":null,"pos":[-42.52,98.83]}]},{"id":144298,"enemyIndex":8,"name":"Defense Bot Mk III","count":10,"health":340880,"creatureType":"Mechanical","scale":2,"isBoss":false,"characteristics":["Taunt"],"spawns":[{"id":"8-1","idx":1,"group":20,"pos":[-130.04,101.03]},{"id":"8-2","idx":2,"group":null,"pos":[-118.28,61.23]},{"id":"8-3","idx":3,"group":null,"pos":[-105.94,69.22]},{"id":"8-4","idx":4,"group":24,"pos":[-80.6,50.59]},{"id":"8-5","idx":5,"group":24,"pos":[-70.33,64.18]}]},{"id":150396,"enemyIndex":9,"name":"Aerial Unit R-21/X","count":0,"health":1021484,"creatureType":"Mechanical","scale":2,"isBoss":true,"characteristics":["Taunt"],"spawns":[{"id":"9-1","idx":1,"group":25,"pos":[-103.27,25.14]}]},{"id":151773,"enemyIndex":10,"name":"Junkyard D.0.G.","count":7,"health":213050,"creatureType":"Mechanical","scale":1.5,"isBoss":false,"characteristics":["Taunt","Disorient","Stun","Slow"],"spawns":[{"id":"10-1","idx":1,"group":15,"pos":[-162.73,335.47]},{"id":"10-2","idx":2,"group":15,"pos":[-158.03,330.5]},{"id":"10-3","idx":3,"group":15,"pos":[-164.17,329.24]},{"id":"10-4","idx":4,"group":17,"pos":[-144.88,302.89]},{"id":"10-5","idx":5,"group":17,"pos":[-150.36,306.72]},{"id":"10-6","idx":6,"group":18,"pos":[-164.7,271.2]},{"id":"10-7","idx":7,"group":18,"pos":[-170.75,273.97]},{"id":"10-8","idx":8,"group":18,"pos":[-165.13,277.65]},{"id":"10-9","idx":9,"group":16,"pos":[-176.76,301.48]},{"id":"10-10","idx":10,"group":16,"pos":[-173.18,295.91]}]},{"id":144293,"enemyIndex":11,"name":"Waste Processing Unit","count":10,"health":392012,"creatureType":"Mechanical","scale":2,"isBoss":false,"characteristics":["Taunt","Stun"],"spawns":[{"id":"11-1","idx":1,"group":5,"pos":[-220.07,266.83]},{"id":"11-2","idx":2,"group":8,"pos":[-211.29,299.42]},{"id":"11-3","idx":3,"group":13,"pos":[-201.98,350.33]}]},{"id":144301,"enemyIndex":12,"name":"Living Waste","count":1,"health":21305,"creatureType":"Elemental","scale":1.3,"isBoss":false,"characteristics":["Taunt","Silence","Disorient","Stun","Slow"],"spawns":[{"id":"12-1","idx":1,"group":7,"pos":[-205.92,284.9]},{"id":"12-2","idx":2,"group":14,"pos":[-177.8,334.37]},{"id":"12-3","idx":3,"group":7,"pos":[-208.5,289.96]},{"id":"12-4","idx":4,"group":7,"pos":[-214.6,290.53]},{"id":"12-5","idx":5,"group":7,"pos":[-217.98,285.7]},{"id":"12-6","idx":6,"group":9,"pos":[-204.84,308.89]},{"id":"12-7","idx":7,"group":9,"pos":[-216.25,310.95]},{"id":"12-8","idx":8,"group":9,"pos":[-204.5,314.09]},{"id":"12-9","idx":9,"group":9,"pos":[-215.38,316.14]},{"id":"12-10","idx":10,"group":11,"pos":[-202.82,339.72]},{"id":"12-11","idx":11,"group":11,"pos":[-205.91,335.43]},{"id":"12-12","idx":12,"group":11,"pos":[-195.49,329.68]},{"id":"12-13","idx":13,"group":11,"pos":[-193.6,334.59]},{"id":"12-14","idx":14,"group":11,"pos":[-198.49,337.48]},{"id":"12-15","idx":15,"group":9,"pos":[-210.03,315.06]},{"id":"12-16","idx":16,"group":14,"pos":[-177.39,339.87]},{"id":"12-17","idx":17,"group":14,"pos":[-176.93,345.56]},{"id":"12-18","idx":18,"group":14,"pos":[-182.57,345.86]},{"id":"12-19","idx":19,"group":14,"pos":[-183.57,334.85]}]},{"id":144249,"enemyIndex":13,"name":"Omega Buster","count":0,"health":1276856,"creatureType":"Mechanical","scale":2,"isBoss":true,"characteristics":["Taunt"],"spawns":[{"id":"13-1","idx":1,"group":25,"pos":[-78.55,26.2]}]},{"id":151657,"enemyIndex":14,"name":"Bomb Tonk","count":4,"health":127830,"creatureType":"Mechanical","scale":1.5,"isBoss":false,"characteristics":["Silence","Stun","Slow"],"spawns":[{"id":"14-1","idx":1,"group":1,"pos":[-215.63,61.86]},{"id":"14-2","idx":2,"group":1,"pos":[-218.74,56.21]},{"id":"14-3","idx":3,"group":3,"pos":[-203.87,87.59]},{"id":"14-4","idx":4,"group":2,"pos":[-228.87,79.03]},{"id":"14-5","idx":5,"group":2,"pos":[-225.08,83.89]},{"id":"14-6","idx":6,"group":2,"pos":[-221.3,89.36]}]},{"id":151659,"enemyIndex":15,"name":"Rocket Tonk","count":4,"health":213050,"creatureType":"Mechanical","scale":1.5,"isBoss":false,"characteristics":["Taunt","Silence","Stun","Slow"],"spawns":[{"id":"15-1","idx":1,"group":1,"pos":[-212.83,52.95]},{"id":"15-2","idx":2,"group":1,"pos":[-209.95,58.6]},{"id":"15-3","idx":3,"group":3,"pos":[-198.23,84.37]},{"id":"15-4","idx":4,"group":4,"pos":[-200.76,62.07]},{"id":"15-5","idx":5,"group":4,"pos":[-197.99,67.71]},{"id":"15-6","idx":6,"group":4,"pos":[-195.17,73.34]}]},{"id":151658,"enemyIndex":16,"name":"Strider Tonk","count":4,"health":281758,"creatureType":"Mechanical","scale":1.5,"isBoss":false,"characteristics":["Taunt","Silence","Stun","Slow"],"spawns":[{"id":"16-1","idx":1,"group":1,"pos":[-221.03,65.02]},{"id":"16-2","idx":2,"group":1,"pos":[-224.38,59.36]},{"id":"16-3","idx":3,"group":3,"pos":[-198.07,90.39]},{"id":"16-4","idx":4,"group":4,"pos":[-195.05,58.85]},{"id":"16-5","idx":5,"group":4,"pos":[-191.97,64.91]},{"id":"16-6","idx":6,"group":4,"pos":[-188.93,70.4]},{"id":"16-7","idx":7,"group":2,"pos":[-215.75,86.47]},{"id":"16-8","idx":8,"group":2,"pos":[-219.38,80.95]},{"id":"16-9","idx":9,"group":2,"pos":[-222.57,75.76]}]},{"id":144244,"enemyIndex":17,"name":"The Platinum Pummeler","count":0,"health":510742,"creatureType":"Mechanical","scale":2,"isBoss":true,"characteristics":["Taunt"],"spawns":[{"id":"17-1","idx":1,"group":26,"pos":[-234.71,44.62]}]},{"id":145185,"enemyIndex":18,"name":"Gnomercy 4.U.","count":0,"health":1021484,"creatureType":"Mechanical","scale":2,"isBoss":true,"characteristics":["Taunt"],"spawns":[{"id":"18-1","idx":1,"group":26,"pos":[-213.84,37.98]}]},{"id":144246,"enemyIndex":19,"name":"K.U.-J.0.","count":0,"health":1361979,"creatureType":"Mechanical","scale":2,"isBoss":true,"characteristics":["Taunt"],"spawns":[{"id":"19-1","idx":1,"group":null,"pos":[-149.48,286.72]}]},{"id":144303,"enemyIndex":20,"name":"G.U.A.R.D.","count":5,"health":281758,"creatureType":"Mechanical","scale":2,"isBoss":false,"characteristics":["Taunt","Fear","Disorient","Stun","Slow"],"spawns":[{"id":"20-1","idx":1,"group":19,"pos":[-119.13,132.86]},{"id":"20-2","idx":2,"group":19,"pos":[-127.06,128.42]}]},{"id":236033,"enemyIndex":21,"name":"Metal Gunk","count":7,"health":281758,"creatureType":"Elemental","scale":1.5,"isBoss":false,"characteristics":["Taunt","Fear","Disorient","Stun","Slow"],"spawns":[{"id":"21-1","idx":1,"group":6,"pos":[-210.29,271.69]},{"id":"21-2","idx":2,"group":7,"pos":[-211.73,285.02]},{"id":"21-3","idx":3,"group":9,"pos":[-210.69,309.76]},{"id":"21-4","idx":4,"group":10,"pos":[-205.62,323.46]},{"id":"21-5","idx":5,"group":11,"pos":[-200.96,332.53]},{"id":"21-6","idx":6,"group":12,"pos":[-194.45,345.43]},{"id":"21-7","idx":7,"group":14,"pos":[-183.8,340.55]}]}],"pois":[]}
+{
+  "dungeonIndex": 122,
+  "totalCount": 374,
+  "enemies": [
+    {
+      "id": 151476,
+      "enemyIndex": 1,
+      "name": "Blastatron X-80",
+      "count": 20,
+      "health": 532625,
+      "creatureType": "Mechanical",
+      "scale": 2.5,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt"
+      ],
+      "spawns": [
+        {
+          "id": "1-1",
+          "idx": 1,
+          "group": 21,
+          "pos": [
+            -107.95,
+            111.08
+          ]
+        }
+      ]
+    },
+    {
+      "id": 151649,
+      "enemyIndex": 2,
+      "name": "Defense Bot Mk I",
+      "count": 5,
+      "health": 223703,
+      "creatureType": "Mechanical",
+      "scale": 2,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt",
+        "Silence",
+        "Stun",
+        "Slow"
+      ],
+      "spawns": [
+        {
+          "id": "2-1",
+          "idx": 1,
+          "group": 20,
+          "pos": [
+            -130.86,
+            108.7
+          ]
+        },
+        {
+          "id": "2-2",
+          "idx": 2,
+          "group": 20,
+          "pos": [
+            -122.74,
+            105.22
+          ]
+        },
+        {
+          "id": "2-3",
+          "idx": 3,
+          "group": 22,
+          "pos": [
+            -47.26,
+            156.01
+          ]
+        },
+        {
+          "id": "2-4",
+          "idx": 4,
+          "group": 22,
+          "pos": [
+            -52,
+            163.17
+          ]
+        }
+      ]
+    },
+    {
+      "id": 144294,
+      "enemyIndex": 3,
+      "name": "Mechagon Tinkerer",
+      "count": 6,
+      "health": 213050,
+      "creatureType": "Humanoid",
+      "scale": 2,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Mind Control",
+        "Polymorph",
+        "Fear",
+        "Disorient",
+        "Imprison",
+        "Stun",
+        "Slow"
+      ],
+      "spawns": [
+        {
+          "id": "3-1",
+          "idx": 1,
+          "group": 19,
+          "pos": [
+            -122.41,
+            121.26
+          ]
+        },
+        {
+          "id": "3-2",
+          "idx": 2,
+          "group": 19,
+          "pos": [
+            -114.93,
+            125.69
+          ]
+        },
+        {
+          "id": "3-4",
+          "idx": 4,
+          "group": 23,
+          "pos": [
+            -131.92,
+            59.08
+          ]
+        },
+        {
+          "id": "3-5",
+          "idx": 5,
+          "group": 24,
+          "pos": [
+            -77.23,
+            68.63
+          ]
+        },
+        {
+          "id": "3-6",
+          "idx": 6,
+          "group": 22,
+          "pos": [
+            -59,
+            157.62
+          ]
+        }
+      ]
+    },
+    {
+      "id": 144299,
+      "enemyIndex": 4,
+      "name": "Workshop Defender",
+      "count": 4,
+      "health": 213050,
+      "creatureType": "Humanoid",
+      "scale": 2,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Mind Control",
+        "Polymorph",
+        "Fear",
+        "Disorient",
+        "Stun",
+        "Slow"
+      ],
+      "spawns": [
+        {
+          "id": "4-1",
+          "idx": 1,
+          "group": 22,
+          "pos": [
+            -54.54,
+            149.94
+          ]
+        },
+        {
+          "id": "4-2",
+          "idx": 2,
+          "group": 23,
+          "pos": [
+            -134.63,
+            51.15
+          ]
+        },
+        {
+          "id": "4-3",
+          "idx": 3,
+          "group": 23,
+          "pos": [
+            -140.15,
+            56.78
+          ]
+        },
+        {
+          "id": "4-4",
+          "idx": 4,
+          "group": 24,
+          "pos": [
+            -82.71,
+            62.22
+          ]
+        }
+      ]
+    },
+    {
+      "id": 144295,
+      "enemyIndex": 5,
+      "name": "Mechagon Mechanic",
+      "count": 4,
+      "health": 213050,
+      "creatureType": "Humanoid",
+      "scale": 2,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Polymorph",
+        "Fear",
+        "Disorient",
+        "Stun",
+        "Slow"
+      ],
+      "spawns": [
+        {
+          "id": "5-1",
+          "idx": 1,
+          "group": 22,
+          "pos": [
+            -39.68,
+            160.71
+          ]
+        },
+        {
+          "id": "5-2",
+          "idx": 2,
+          "group": 24,
+          "pos": [
+            -75.99,
+            57.68
+          ]
+        },
+        {
+          "id": "5-3",
+          "idx": 3,
+          "group": 24,
+          "pos": [
+            -87.62,
+            55.7
+          ]
+        },
+        {
+          "id": "5-6",
+          "idx": 6,
+          "group": 22,
+          "pos": [
+            -45.21,
+            168.11
+          ]
+        }
+      ]
+    },
+    {
+      "id": 144248,
+      "enemyIndex": 6,
+      "name": "Head Machinist Sparkflux",
+      "count": 0,
+      "health": 1489665,
+      "creatureType": "Mechanical",
+      "scale": 2,
+      "isBoss": true,
+      "characteristics": [
+        "Taunt"
+      ],
+      "spawns": [
+        {
+          "id": "6-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -72.59,
+            145.03
+          ]
+        }
+      ]
+    },
+    {
+      "id": 144296,
+      "enemyIndex": 7,
+      "name": "Spider Tank",
+      "count": 12,
+      "health": 340880,
+      "creatureType": "Mechanical",
+      "scale": 2.5,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt"
+      ],
+      "spawns": [
+        {
+          "id": "7-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -54.79,
+            116.91
+          ]
+        },
+        {
+          "id": "7-2",
+          "idx": 2,
+          "group": null,
+          "pos": [
+            -42.52,
+            98.83
+          ]
+        }
+      ]
+    },
+    {
+      "id": 144298,
+      "enemyIndex": 8,
+      "name": "Defense Bot Mk III",
+      "count": 10,
+      "health": 340880,
+      "creatureType": "Mechanical",
+      "scale": 2,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt"
+      ],
+      "spawns": [
+        {
+          "id": "8-1",
+          "idx": 1,
+          "group": 20,
+          "pos": [
+            -130.04,
+            101.03
+          ]
+        },
+        {
+          "id": "8-2",
+          "idx": 2,
+          "group": null,
+          "pos": [
+            -118.28,
+            61.23
+          ]
+        },
+        {
+          "id": "8-3",
+          "idx": 3,
+          "group": null,
+          "pos": [
+            -105.94,
+            69.22
+          ]
+        },
+        {
+          "id": "8-4",
+          "idx": 4,
+          "group": 24,
+          "pos": [
+            -80.6,
+            50.59
+          ]
+        },
+        {
+          "id": "8-5",
+          "idx": 5,
+          "group": 24,
+          "pos": [
+            -70.33,
+            64.18
+          ]
+        }
+      ]
+    },
+    {
+      "id": 150396,
+      "enemyIndex": 9,
+      "name": "Aerial Unit R-21/X",
+      "count": 0,
+      "health": 1021484,
+      "creatureType": "Mechanical",
+      "scale": 2,
+      "isBoss": true,
+      "characteristics": [
+        "Taunt"
+      ],
+      "spawns": [
+        {
+          "id": "9-1",
+          "idx": 1,
+          "group": 25,
+          "pos": [
+            -103.27,
+            25.14
+          ]
+        }
+      ]
+    },
+    {
+      "id": 151773,
+      "enemyIndex": 10,
+      "name": "Junkyard D.0.G.",
+      "count": 7,
+      "health": 213050,
+      "creatureType": "Mechanical",
+      "scale": 1.5,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt",
+        "Disorient",
+        "Stun",
+        "Slow"
+      ],
+      "spawns": [
+        {
+          "id": "10-1",
+          "idx": 1,
+          "group": 15,
+          "pos": [
+            -162.73,
+            335.47
+          ]
+        },
+        {
+          "id": "10-2",
+          "idx": 2,
+          "group": 15,
+          "pos": [
+            -158.03,
+            330.5
+          ]
+        },
+        {
+          "id": "10-3",
+          "idx": 3,
+          "group": 15,
+          "pos": [
+            -164.17,
+            329.24
+          ]
+        },
+        {
+          "id": "10-4",
+          "idx": 4,
+          "group": 17,
+          "pos": [
+            -144.88,
+            302.89
+          ]
+        },
+        {
+          "id": "10-5",
+          "idx": 5,
+          "group": 17,
+          "pos": [
+            -150.36,
+            306.72
+          ]
+        },
+        {
+          "id": "10-6",
+          "idx": 6,
+          "group": 18,
+          "pos": [
+            -164.7,
+            271.2
+          ]
+        },
+        {
+          "id": "10-7",
+          "idx": 7,
+          "group": 18,
+          "pos": [
+            -170.75,
+            273.97
+          ]
+        },
+        {
+          "id": "10-8",
+          "idx": 8,
+          "group": 18,
+          "pos": [
+            -165.13,
+            277.65
+          ]
+        },
+        {
+          "id": "10-9",
+          "idx": 9,
+          "group": 16,
+          "pos": [
+            -176.76,
+            301.48
+          ]
+        },
+        {
+          "id": "10-10",
+          "idx": 10,
+          "group": 16,
+          "pos": [
+            -173.18,
+            295.91
+          ]
+        }
+      ]
+    },
+    {
+      "id": 144293,
+      "enemyIndex": 11,
+      "name": "Waste Processing Unit",
+      "count": 10,
+      "health": 392012,
+      "creatureType": "Mechanical",
+      "scale": 2,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt",
+        "Stun"
+      ],
+      "spawns": [
+        {
+          "id": "11-1",
+          "idx": 1,
+          "group": 5,
+          "pos": [
+            -220.07,
+            266.83
+          ]
+        },
+        {
+          "id": "11-2",
+          "idx": 2,
+          "group": 8,
+          "pos": [
+            -211.29,
+            299.42
+          ]
+        },
+        {
+          "id": "11-3",
+          "idx": 3,
+          "group": 13,
+          "pos": [
+            -201.98,
+            350.33
+          ]
+        }
+      ]
+    },
+    {
+      "id": 144301,
+      "enemyIndex": 12,
+      "name": "Living Waste",
+      "count": 1,
+      "health": 21305,
+      "creatureType": "Elemental",
+      "scale": 1.3,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt",
+        "Silence",
+        "Disorient",
+        "Stun",
+        "Slow"
+      ],
+      "spawns": [
+        {
+          "id": "12-1",
+          "idx": 1,
+          "group": 7,
+          "pos": [
+            -205.92,
+            284.9
+          ]
+        },
+        {
+          "id": "12-2",
+          "idx": 2,
+          "group": 14,
+          "pos": [
+            -177.8,
+            334.37
+          ]
+        },
+        {
+          "id": "12-3",
+          "idx": 3,
+          "group": 7,
+          "pos": [
+            -208.5,
+            289.96
+          ]
+        },
+        {
+          "id": "12-4",
+          "idx": 4,
+          "group": 7,
+          "pos": [
+            -214.6,
+            290.53
+          ]
+        },
+        {
+          "id": "12-5",
+          "idx": 5,
+          "group": 7,
+          "pos": [
+            -217.98,
+            285.7
+          ]
+        },
+        {
+          "id": "12-6",
+          "idx": 6,
+          "group": 9,
+          "pos": [
+            -204.84,
+            308.89
+          ]
+        },
+        {
+          "id": "12-7",
+          "idx": 7,
+          "group": 9,
+          "pos": [
+            -216.25,
+            310.95
+          ]
+        },
+        {
+          "id": "12-8",
+          "idx": 8,
+          "group": 9,
+          "pos": [
+            -204.5,
+            314.09
+          ]
+        },
+        {
+          "id": "12-9",
+          "idx": 9,
+          "group": 9,
+          "pos": [
+            -215.38,
+            316.14
+          ]
+        },
+        {
+          "id": "12-10",
+          "idx": 10,
+          "group": 11,
+          "pos": [
+            -202.82,
+            339.72
+          ]
+        },
+        {
+          "id": "12-11",
+          "idx": 11,
+          "group": 11,
+          "pos": [
+            -205.91,
+            335.43
+          ]
+        },
+        {
+          "id": "12-12",
+          "idx": 12,
+          "group": 11,
+          "pos": [
+            -195.49,
+            329.68
+          ]
+        },
+        {
+          "id": "12-13",
+          "idx": 13,
+          "group": 11,
+          "pos": [
+            -193.6,
+            334.59
+          ]
+        },
+        {
+          "id": "12-14",
+          "idx": 14,
+          "group": 11,
+          "pos": [
+            -198.49,
+            337.48
+          ]
+        },
+        {
+          "id": "12-15",
+          "idx": 15,
+          "group": 9,
+          "pos": [
+            -210.03,
+            315.06
+          ]
+        },
+        {
+          "id": "12-16",
+          "idx": 16,
+          "group": 14,
+          "pos": [
+            -177.39,
+            339.87
+          ]
+        },
+        {
+          "id": "12-17",
+          "idx": 17,
+          "group": 14,
+          "pos": [
+            -176.93,
+            345.56
+          ]
+        },
+        {
+          "id": "12-18",
+          "idx": 18,
+          "group": 14,
+          "pos": [
+            -182.57,
+            345.86
+          ]
+        },
+        {
+          "id": "12-19",
+          "idx": 19,
+          "group": 14,
+          "pos": [
+            -183.57,
+            334.85
+          ]
+        }
+      ]
+    },
+    {
+      "id": 144249,
+      "enemyIndex": 13,
+      "name": "Omega Buster",
+      "count": 0,
+      "health": 1276856,
+      "creatureType": "Mechanical",
+      "scale": 2,
+      "isBoss": true,
+      "characteristics": [
+        "Taunt"
+      ],
+      "spawns": [
+        {
+          "id": "13-1",
+          "idx": 1,
+          "group": 25,
+          "pos": [
+            -78.55,
+            26.2
+          ]
+        }
+      ]
+    },
+    {
+      "id": 151657,
+      "enemyIndex": 14,
+      "name": "Bomb Tonk",
+      "count": 4,
+      "health": 127830,
+      "creatureType": "Mechanical",
+      "scale": 1.5,
+      "isBoss": false,
+      "characteristics": [
+        "Silence",
+        "Stun",
+        "Slow"
+      ],
+      "spawns": [
+        {
+          "id": "14-1",
+          "idx": 1,
+          "group": 1,
+          "pos": [
+            -215.63,
+            61.86
+          ]
+        },
+        {
+          "id": "14-2",
+          "idx": 2,
+          "group": 1,
+          "pos": [
+            -218.74,
+            56.21
+          ]
+        },
+        {
+          "id": "14-3",
+          "idx": 3,
+          "group": 3,
+          "pos": [
+            -203.87,
+            87.59
+          ]
+        },
+        {
+          "id": "14-4",
+          "idx": 4,
+          "group": 2,
+          "pos": [
+            -228.87,
+            79.03
+          ]
+        },
+        {
+          "id": "14-5",
+          "idx": 5,
+          "group": 2,
+          "pos": [
+            -225.08,
+            83.89
+          ]
+        },
+        {
+          "id": "14-6",
+          "idx": 6,
+          "group": 2,
+          "pos": [
+            -221.3,
+            89.36
+          ]
+        }
+      ]
+    },
+    {
+      "id": 151659,
+      "enemyIndex": 15,
+      "name": "Rocket Tonk",
+      "count": 4,
+      "health": 213050,
+      "creatureType": "Mechanical",
+      "scale": 1.5,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt",
+        "Silence",
+        "Stun",
+        "Slow"
+      ],
+      "spawns": [
+        {
+          "id": "15-1",
+          "idx": 1,
+          "group": 1,
+          "pos": [
+            -212.83,
+            52.95
+          ]
+        },
+        {
+          "id": "15-2",
+          "idx": 2,
+          "group": 1,
+          "pos": [
+            -209.95,
+            58.6
+          ]
+        },
+        {
+          "id": "15-3",
+          "idx": 3,
+          "group": 3,
+          "pos": [
+            -198.23,
+            84.37
+          ]
+        },
+        {
+          "id": "15-4",
+          "idx": 4,
+          "group": 4,
+          "pos": [
+            -200.76,
+            62.07
+          ]
+        },
+        {
+          "id": "15-5",
+          "idx": 5,
+          "group": 4,
+          "pos": [
+            -197.99,
+            67.71
+          ]
+        },
+        {
+          "id": "15-6",
+          "idx": 6,
+          "group": 4,
+          "pos": [
+            -195.17,
+            73.34
+          ]
+        }
+      ]
+    },
+    {
+      "id": 151658,
+      "enemyIndex": 16,
+      "name": "Strider Tonk",
+      "count": 4,
+      "health": 281758,
+      "creatureType": "Mechanical",
+      "scale": 1.5,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt",
+        "Silence",
+        "Stun",
+        "Slow"
+      ],
+      "spawns": [
+        {
+          "id": "16-1",
+          "idx": 1,
+          "group": 1,
+          "pos": [
+            -221.03,
+            65.02
+          ]
+        },
+        {
+          "id": "16-2",
+          "idx": 2,
+          "group": 1,
+          "pos": [
+            -224.38,
+            59.36
+          ]
+        },
+        {
+          "id": "16-3",
+          "idx": 3,
+          "group": 3,
+          "pos": [
+            -198.07,
+            90.39
+          ]
+        },
+        {
+          "id": "16-4",
+          "idx": 4,
+          "group": 4,
+          "pos": [
+            -195.05,
+            58.85
+          ]
+        },
+        {
+          "id": "16-5",
+          "idx": 5,
+          "group": 4,
+          "pos": [
+            -191.97,
+            64.91
+          ]
+        },
+        {
+          "id": "16-6",
+          "idx": 6,
+          "group": 4,
+          "pos": [
+            -188.93,
+            70.4
+          ]
+        },
+        {
+          "id": "16-7",
+          "idx": 7,
+          "group": 2,
+          "pos": [
+            -215.75,
+            86.47
+          ]
+        },
+        {
+          "id": "16-8",
+          "idx": 8,
+          "group": 2,
+          "pos": [
+            -219.38,
+            80.95
+          ]
+        },
+        {
+          "id": "16-9",
+          "idx": 9,
+          "group": 2,
+          "pos": [
+            -222.57,
+            75.76
+          ]
+        }
+      ]
+    },
+    {
+      "id": 144244,
+      "enemyIndex": 17,
+      "name": "The Platinum Pummeler",
+      "count": 0,
+      "health": 510742,
+      "creatureType": "Mechanical",
+      "scale": 2,
+      "isBoss": true,
+      "characteristics": [
+        "Taunt"
+      ],
+      "spawns": [
+        {
+          "id": "17-1",
+          "idx": 1,
+          "group": 26,
+          "pos": [
+            -234.71,
+            44.62
+          ]
+        }
+      ]
+    },
+    {
+      "id": 145185,
+      "enemyIndex": 18,
+      "name": "Gnomercy 4.U.",
+      "count": 0,
+      "health": 1021484,
+      "creatureType": "Mechanical",
+      "scale": 2,
+      "isBoss": true,
+      "characteristics": [
+        "Taunt"
+      ],
+      "spawns": [
+        {
+          "id": "18-1",
+          "idx": 1,
+          "group": 26,
+          "pos": [
+            -213.84,
+            37.98
+          ]
+        }
+      ]
+    },
+    {
+      "id": 144246,
+      "enemyIndex": 19,
+      "name": "K.U.-J.0.",
+      "count": 0,
+      "health": 1361979,
+      "creatureType": "Mechanical",
+      "scale": 2,
+      "isBoss": true,
+      "characteristics": [
+        "Taunt"
+      ],
+      "spawns": [
+        {
+          "id": "19-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -149.48,
+            286.72
+          ]
+        }
+      ]
+    },
+    {
+      "id": 144303,
+      "enemyIndex": 20,
+      "name": "G.U.A.R.D.",
+      "count": 5,
+      "health": 281758,
+      "creatureType": "Mechanical",
+      "scale": 2,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt",
+        "Fear",
+        "Disorient",
+        "Stun",
+        "Slow"
+      ],
+      "spawns": [
+        {
+          "id": "20-1",
+          "idx": 1,
+          "group": 19,
+          "pos": [
+            -119.13,
+            132.86
+          ]
+        },
+        {
+          "id": "20-2",
+          "idx": 2,
+          "group": 19,
+          "pos": [
+            -127.06,
+            128.42
+          ]
+        }
+      ]
+    },
+    {
+      "id": 236033,
+      "enemyIndex": 21,
+      "name": "Metal Gunk",
+      "count": 7,
+      "health": 281758,
+      "creatureType": "Elemental",
+      "scale": 1.5,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt",
+        "Fear",
+        "Disorient",
+        "Stun",
+        "Slow"
+      ],
+      "spawns": [
+        {
+          "id": "21-1",
+          "idx": 1,
+          "group": 6,
+          "pos": [
+            -210.29,
+            271.69
+          ]
+        },
+        {
+          "id": "21-2",
+          "idx": 2,
+          "group": 7,
+          "pos": [
+            -211.73,
+            285.02
+          ]
+        },
+        {
+          "id": "21-3",
+          "idx": 3,
+          "group": 9,
+          "pos": [
+            -210.69,
+            309.76
+          ]
+        },
+        {
+          "id": "21-4",
+          "idx": 4,
+          "group": 10,
+          "pos": [
+            -205.62,
+            323.46
+          ]
+        },
+        {
+          "id": "21-5",
+          "idx": 5,
+          "group": 11,
+          "pos": [
+            -200.96,
+            332.53
+          ]
+        },
+        {
+          "id": "21-6",
+          "idx": 6,
+          "group": 12,
+          "pos": [
+            -194.45,
+            345.43
+          ]
+        },
+        {
+          "id": "21-7",
+          "idx": 7,
+          "group": 14,
+          "pos": [
+            -183.8,
+            340.55
+          ]
+        }
+      ]
+    }
+  ],
+  "pois": []
+}

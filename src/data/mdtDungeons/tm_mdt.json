@@ -1,1 +1,5109 @@
-{"dungeonIndex":120,"totalCount":457,"enemies":[{"id":137713,"enemyIndex":1,"name":"Big Money Crab","count":1,"health":153699,"creatureType":"Beast","scale":0.7,"isBoss":false,"characteristics":["Taunt","Incapacitate","Root","Sap","Stun","Slow"],"spawns":[{"id":"1-1","idx":1,"group":null,"pos":[-218.87,194.69]},{"id":"1-2","idx":2,"group":null,"pos":[-219.16,204.84]},{"id":"1-3","idx":3,"group":null,"pos":[-213.67,207.77]},{"id":"1-4","idx":4,"group":null,"pos":[-221.09,216.65]},{"id":"1-5","idx":5,"group":null,"pos":[-223.45,223.14]},{"id":"1-6","idx":6,"group":null,"pos":[-221.97,227.84]}]},{"id":137716,"enemyIndex":2,"name":"Bottom Feeder","count":0,"health":153699,"creatureType":"Beast","scale":0.7,"isBoss":false,"characteristics":[],"spawns":[{"id":"2-1","idx":1,"group":null,"pos":[-232.91,194.54]},{"id":"2-2","idx":2,"group":null,"pos":[-227.36,206.38]},{"id":"2-3","idx":3,"group":null,"pos":[-222.7,188.74]},{"id":"2-4","idx":4,"group":null,"pos":[-226.99,183.23]},{"id":"2-5","idx":5,"group":null,"pos":[-232.92,177.17]}]},{"id":138061,"enemyIndex":3,"name":"Venture Co. Longshoreman","count":0,"health":307398,"creatureType":"Humanoid","scale":0.7,"isBoss":false,"characteristics":["Taunt","Root","Stun","Slow"],"spawns":[{"id":"3-1","idx":1,"group":null,"pos":[-250.81,189.28]},{"id":"3-2","idx":2,"group":null,"pos":[-251.98,194.17]},{"id":"3-3","idx":3,"group":null,"pos":[-239.46,191.43]},{"id":"3-4","idx":4,"group":null,"pos":[-240.93,197.15]},{"id":"3-5","idx":5,"group":null,"pos":[-232.44,198.95]},{"id":"3-6","idx":6,"group":null,"pos":[-210.43,181.13]},{"id":"3-7","idx":7,"group":null,"pos":[-205.57,185.36]},{"id":"3-8","idx":8,"group":null,"pos":[-204.92,194.51]},{"id":"3-9","idx":9,"group":null,"pos":[-212.48,222.26]},{"id":"3-10","idx":10,"group":null,"pos":[-208.87,216.73]},{"id":"3-11","idx":11,"group":null,"pos":[-208.91,213.15]},{"id":"3-12","idx":12,"group":null,"pos":[-208.38,208.79]},{"id":"3-13","idx":13,"group":null,"pos":[-216.83,210.64]},{"id":"3-14","idx":14,"group":null,"pos":[-220.27,210.64]}]},{"id":138064,"enemyIndex":4,"name":"Posh Vacationer","count":0,"health":153699,"creatureType":"Humanoid","scale":0.7,"isBoss":false,"characteristics":[],"spawns":[{"id":"4-1","idx":1,"group":null,"pos":[-230.14,174.61]},{"id":"4-2","idx":2,"group":null,"pos":[-227.86,176.36]},{"id":"4-3","idx":3,"group":null,"pos":[-221.68,230.13]},{"id":"4-4","idx":4,"group":null,"pos":[-222.04,232.13]},{"id":"4-5","idx":5,"group":null,"pos":[-223.23,231.42]},{"id":"4-6","idx":6,"group":null,"pos":[-224.25,229.69]},{"id":"4-7","idx":7,"group":null,"pos":[-224.57,227.95]},{"id":"4-8","idx":8,"group":null,"pos":[-228.05,231.9]},{"id":"4-9","idx":9,"group":null,"pos":[-227.86,234.29]}]},{"id":130436,"enemyIndex":5,"name":"Off-Duty Laborer","count":1,"health":307398,"creatureType":"Humanoid","scale":0.8,"isBoss":false,"characteristics":["Taunt","Incapacitate","Silence","Root","Fear","Disorient","Sap","Stun","Slow"],"spawns":[{"id":"5-1","idx":1,"group":1,"pos":[-198.69,205.5]},{"id":"5-2","idx":2,"group":1,"pos":[-201.08,206.64]},{"id":"5-3","idx":3,"group":1,"pos":[-199.3,207.11]},{"id":"5-4","idx":4,"group":2,"pos":[-196.85,220.42]},{"id":"5-5","idx":5,"group":3,"pos":[-192.3,211.26]},{"id":"5-6","idx":6,"group":3,"pos":[-193.59,213.73]},{"id":"5-7","idx":7,"group":4,"pos":[-190.66,199.25]},{"id":"5-8","idx":8,"group":5,"pos":[-183.18,214.22]},{"id":"5-9","idx":9,"group":5,"pos":[-184.52,215.62]},{"id":"5-10","idx":10,"group":19,"pos":[-164.17,209.69]},{"id":"5-11","idx":11,"group":19,"pos":[-164.5,206.22]},{"id":"5-12","idx":12,"group":19,"pos":[-162.41,205.23]},{"id":"5-13","idx":13,"group":20,"pos":[-155.11,211.09]},{"id":"5-14","idx":14,"group":20,"pos":[-156.7,209.41]},{"id":"5-15","idx":15,"group":20,"pos":[-158.76,209.97]},{"id":"5-16","idx":16,"group":27,"pos":[-133.78,212.29]},{"id":"5-17","idx":17,"group":27,"pos":[-132.49,208.36]},{"id":"5-18","idx":18,"group":31,"pos":[-141.36,186.76]},{"id":"5-19","idx":19,"group":31,"pos":[-143.59,186.37]},{"id":"5-20","idx":20,"group":32,"pos":[-149.54,197.97]},{"id":"5-21","idx":21,"group":32,"pos":[-151.45,196.81]},{"id":"5-22","idx":22,"group":38,"pos":[-165.42,197.18]},{"id":"5-23","idx":23,"group":38,"pos":[-166.86,199.51]},{"id":"5-24","idx":24,"group":38,"pos":[-169.11,198.93]},{"id":"5-25","idx":25,"group":39,"pos":[-156.93,199.6]},{"id":"5-26","idx":26,"group":39,"pos":[-159.09,202.67]},{"id":"5-27","idx":27,"group":39,"pos":[-160.92,201.56]},{"id":"5-28","idx":28,"group":39,"pos":[-160.85,199.53]},{"id":"5-29","idx":29,"group":39,"pos":[-157.8,201.64]}]},{"id":136470,"enemyIndex":6,"name":"Refreshment Vendor","count":4,"health":768495,"creatureType":"Humanoid","scale":1,"isBoss":false,"characteristics":["Taunt","Incapacitate","Silence","Polymorph","Root","Fear","Disorient","Imprison","Sap","Stun","Slow"],"spawns":[{"id":"6-1","idx":1,"group":2,"pos":[-199.08,220.45]},{"id":"6-2","idx":2,"group":2,"pos":[-195.68,218.59]},{"id":"6-3","idx":3,"group":4,"pos":[-189.72,201.09]},{"id":"6-4","idx":4,"group":4,"pos":[-192.17,197.54]},{"id":"6-5","idx":5,"group":5,"pos":[-185.28,213.55]},{"id":"6-6","idx":6,"group":6,"pos":[-180.87,211.09]},{"id":"6-7","idx":7,"group":40,"pos":[-170.74,213.86]},{"id":"6-8","idx":8,"group":22,"pos":[-152.65,230.69]},{"id":"6-9","idx":9,"group":27,"pos":[-133.94,210.13]},{"id":"6-10","idx":10,"group":28,"pos":[-136.67,206.45]},{"id":"6-11","idx":11,"group":29,"pos":[-142.68,196.79]},{"id":"6-12","idx":12,"group":30,"pos":[-130.9,190.45]},{"id":"6-13","idx":13,"group":31,"pos":[-142.31,189.19]},{"id":"6-14","idx":14,"group":32,"pos":[-148.44,196.06]},{"id":"6-15","idx":15,"group":33,"pos":[-151.45,180.26]},{"id":"6-16","idx":16,"group":35,"pos":[-164.76,187.93]}]},{"id":130488,"enemyIndex":7,"name":"Mech Jockey","count":4,"health":768495,"creatureType":"Humanoid","scale":1,"isBoss":false,"characteristics":["Taunt","Incapacitate","Silence","Polymorph","Root","Fear","Disorient","Imprison","Sap","Stun","Slow"],"spawns":[{"id":"7-1","idx":1,"group":3,"pos":[-192.01,212.98]},{"id":"7-2","idx":2,"group":19,"pos":[-162.52,207.8]},{"id":"7-3","idx":3,"group":21,"pos":[-162.8,217.93]},{"id":"7-4","idx":4,"group":22,"pos":[-152.2,233.3]},{"id":"7-5","idx":5,"group":22,"pos":[-149.98,231.34]},{"id":"7-6","idx":6,"group":23,"pos":[-148.21,228.67]},{"id":"7-7","idx":7,"group":26,"pos":[-142.75,214.61]},{"id":"7-8","idx":8,"group":26,"pos":[-140.72,212.69]},{"id":"7-9","idx":9,"group":25,"pos":[-152.06,218.86]},{"id":"7-10","idx":10,"group":25,"pos":[-152.09,215.55]},{"id":"7-11","idx":11,"group":28,"pos":[-139.4,205.95]},{"id":"7-12","idx":12,"group":28,"pos":[-142.02,205.8]},{"id":"7-13","idx":13,"group":29,"pos":[-141.74,201.62]},{"id":"7-14","idx":14,"group":31,"pos":[-144.58,188.44]},{"id":"7-15","idx":15,"group":32,"pos":[-150.24,194.96]},{"id":"7-16","idx":16,"group":33,"pos":[-153.38,181.95]},{"id":"7-17","idx":17,"group":34,"pos":[-153.31,189.14]},{"id":"7-18","idx":18,"group":35,"pos":[-161.29,187.77]},{"id":"7-19","idx":19,"group":39,"pos":[-158.78,198.73]},{"id":"7-21","idx":21,"group":30,"pos":[-129.32,184.89]},{"id":"7-22","idx":22,"group":89,"pos":[-163.01,192.6]}]},{"id":130435,"enemyIndex":8,"name":"Addled Thug","count":5,"health":999044,"creatureType":"Humanoid","scale":1.2,"isBoss":false,"characteristics":["Taunt","Incapacitate","Silence","Polymorph","Root","Fear","Disorient","Imprison","Stun","Slow"],"spawns":[{"id":"8-1","idx":1,"group":6,"pos":[-180.54,208.21]},{"id":"8-2","idx":2,"group":7,"pos":[-174.16,203.91]},{"id":"8-3","idx":3,"group":7,"pos":[-176.5,202.21]},{"id":"8-4","idx":4,"group":9,"pos":[-184.98,197.41]},{"id":"8-5","idx":5,"group":21,"pos":[-161.44,220.9]},{"id":"8-6","idx":6,"group":23,"pos":[-146.2,229.74]},{"id":"8-7","idx":7,"group":24,"pos":[-145.2,221.78]},{"id":"8-8","idx":8,"group":24,"pos":[-142.89,220.26]},{"id":"8-9","idx":9,"group":41,"pos":[-150.35,207.98]},{"id":"8-10","idx":10,"group":26,"pos":[-139.92,215.69]},{"id":"8-11","idx":11,"group":27,"pos":[-131.09,210.78]},{"id":"8-12","idx":12,"group":29,"pos":[-139.39,199.33]},{"id":"8-13","idx":13,"group":34,"pos":[-153.8,186.12]},{"id":"8-14","idx":14,"group":35,"pos":[-162.8,185.65]},{"id":"8-15","idx":15,"group":38,"pos":[-168.21,196.78]}]},{"id":134232,"enemyIndex":9,"name":"Hired Assassin","count":4,"health":768495,"creatureType":"Humanoid","scale":1,"isBoss":false,"characteristics":["Taunt","Incapacitate","Silence","Polymorph","Root","Fear","Disorient","Imprison","Sap","Stun","Slow"],"spawns":[{"id":"9-1","idx":1,"group":40,"pos":[-170.86,211.04]},{"id":"9-2","idx":2,"group":9,"pos":[-187.35,198.51]},{"id":"9-3","idx":3,"group":20,"pos":[-158.96,212.31]},{"id":"9-4","idx":4,"group":41,"pos":[-149.55,210.71]},{"id":"9-5","idx":5,"group":41,"pos":[-147.6,207.78]},{"id":"9-6","idx":6,"group":25,"pos":[-154.14,217.22],"patrol":[[-154.14,217.22],[-159.57,214.6],[-154.14,217.22],[-148.43,215.89]]},{"id":"9-7","idx":7,"group":30,"pos":[-134.78,186.15]},{"id":"9-8","idx":8,"group":33,"pos":[-149.92,182.48]},{"id":"9-9","idx":9,"group":34,"pos":[-151.03,186.87]}]},{"id":136006,"enemyIndex":10,"name":"Rowdy Reveler","count":0,"health":153699,"creatureType":"Humanoid","scale":0.7,"isBoss":false,"characteristics":["Taunt","Silence","Root","Fear","Disorient","Stun","Slow"],"spawns":[{"id":"10-1","idx":1,"group":8,"pos":[-184.59,204.04]},{"id":"10-2","idx":2,"group":8,"pos":[-185.94,203.02]},{"id":"10-3","idx":3,"group":8,"pos":[-187.48,203.24]},{"id":"10-4","idx":4,"group":10,"pos":[-180.68,204.26]},{"id":"10-5","idx":5,"group":10,"pos":[-180.75,202.95]},{"id":"10-6","idx":6,"group":11,"pos":[-175.35,207]},{"id":"10-7","idx":7,"group":11,"pos":[-176.68,205.67]},{"id":"10-8","idx":8,"group":11,"pos":[-178.1,204.34]},{"id":"10-9","idx":9,"group":12,"pos":[-178.87,198.72]},{"id":"10-10","idx":10,"group":12,"pos":[-180.5,198.7]},{"id":"10-11","idx":11,"group":12,"pos":[-179.84,200.03]},{"id":"10-12","idx":12,"group":13,"pos":[-179.49,214.09]},{"id":"10-13","idx":13,"group":13,"pos":[-179.05,215.06]},{"id":"10-14","idx":14,"group":13,"pos":[-179.2,216.08]},{"id":"10-15","idx":15,"group":14,"pos":[-174.12,212.54]},{"id":"10-16","idx":16,"group":14,"pos":[-174.14,213.94]},{"id":"10-17","idx":17,"group":14,"pos":[-175.59,213.69]},{"id":"10-18","idx":18,"group":14,"pos":[-176.51,213.54]},{"id":"10-19","idx":19,"group":14,"pos":[-175.94,214.8]},{"id":"10-20","idx":20,"group":15,"pos":[-175.88,217.53]},{"id":"10-21","idx":21,"group":15,"pos":[-176.33,218.38]},{"id":"10-22","idx":22,"group":15,"pos":[-174.63,217.53]},{"id":"10-23","idx":23,"group":15,"pos":[-175.09,218.43]},{"id":"10-24","idx":24,"group":16,"pos":[-172.39,222.35]},{"id":"10-25","idx":25,"group":16,"pos":[-172.54,223.62]},{"id":"10-26","idx":26,"group":17,"pos":[-169.67,217.09]},{"id":"10-27","idx":27,"group":17,"pos":[-169.48,218.33]},{"id":"10-28","idx":28,"group":18,"pos":[-166.47,216.57]},{"id":"10-29","idx":29,"group":18,"pos":[-165.82,217.88]},{"id":"10-30","idx":30,"group":36,"pos":[-165.25,183.15]},{"id":"10-31","idx":31,"group":36,"pos":[-166.14,182.42]},{"id":"10-32","idx":32,"group":36,"pos":[-166.14,184.04]},{"id":"10-33","idx":33,"group":null,"pos":[-164.83,180.06]},{"id":"10-34","idx":34,"group":37,"pos":[-161.78,181.29]},{"id":"10-35","idx":35,"group":37,"pos":[-160.06,181.06]},{"id":"10-36","idx":36,"group":37,"pos":[-160.88,179.56]},{"id":"10-37","idx":37,"group":37,"pos":[-162.46,179.49]},{"id":"10-38","idx":38,"group":37,"pos":[-162.23,182.49]},{"id":"10-39","idx":39,"group":37,"pos":[-160.73,182.49]},{"id":"10-40","idx":40,"group":37,"pos":[-159.46,178.59]},{"id":"10-41","idx":41,"group":37,"pos":[-161.11,177.91]},{"id":"10-42","idx":42,"group":37,"pos":[-162.83,178.29]}]},{"id":136139,"enemyIndex":11,"name":"Mechanized Peacekeeper","count":12,"health":1229592,"creatureType":"Mechanical","scale":1.6,"isBoss":false,"characteristics":["Taunt"],"spawns":[{"id":"11-1","idx":1,"group":30,"pos":[-131.79,187.53]},{"id":"11-2","idx":2,"group":89,"pos":[-159.32,193.02],"patrol":[[-160.79,194.62],[-156.58,191.07],[-160.79,194.62],[-162.66,200.04]]}]},{"id":129214,"enemyIndex":12,"name":"Coin-Operated Crowd Pummeler","count":0,"health":8914542,"creatureType":"Mechanical","scale":1,"isBoss":true,"characteristics":["Taunt"],"spawns":[{"id":"12-1","idx":1,"group":null,"pos":[-123.27,175.52]}]},{"id":130661,"enemyIndex":13,"name":"Venture Co. Earthshaper","count":4,"health":768495,"creatureType":"Humanoid","scale":1,"isBoss":false,"characteristics":["Taunt","Incapacitate","Silence","Polymorph","Root","Fear","Disorient","Sap","Stun","Slow"],"spawns":[{"id":"13-1","idx":1,"group":42,"pos":[-113.86,156.24]},{"id":"13-2","idx":2,"group":44,"pos":[-113.8,147.45]},{"id":"13-3","idx":3,"group":45,"pos":[-123.24,147.56]},{"id":"13-4","idx":4,"group":45,"pos":[-121.26,145.41]},{"id":"13-5","idx":5,"group":46,"pos":[-118.05,141.62],"patrol":[[-118.05,141.62],[-118.04,136.45],[-118.05,141.62],[-117.85,149.41]]},{"id":"13-6","idx":6,"group":48,"pos":[-120.48,133.35]},{"id":"13-7","idx":7,"group":50,"pos":[-117.26,123.83]},{"id":"13-8","idx":8,"group":51,"pos":[-122.18,118.19]},{"id":"13-9","idx":9,"group":53,"pos":[-109.95,136.12]},{"id":"13-10","idx":10,"group":53,"pos":[-112.64,138.76]},{"id":"13-11","idx":11,"group":54,"pos":[-108.07,128.74]},{"id":"13-12","idx":12,"group":78,"pos":[-83.87,111.87]},{"id":"13-13","idx":13,"group":78,"pos":[-83.06,115.35]}]},{"id":130437,"enemyIndex":14,"name":"Mine Rat","count":2,"health":461097,"creatureType":"Humanoid","scale":0.8,"isBoss":false,"characteristics":["Taunt","Silence","Polymorph","Root","Fear","Disorient","Sap","Stun","Slow"],"spawns":[{"id":"14-1","idx":1,"group":42,"pos":[-113.74,154.07]},{"id":"14-2","idx":2,"group":42,"pos":[-111.61,155.86]},{"id":"14-3","idx":3,"group":43,"pos":[-123.4,152.46]},{"id":"14-4","idx":4,"group":43,"pos":[-123.93,154.8]},{"id":"14-5","idx":5,"group":44,"pos":[-111.67,147.08]},{"id":"14-6","idx":6,"group":44,"pos":[-115.34,144.03]},{"id":"14-7","idx":7,"group":48,"pos":[-120.55,130.77]},{"id":"14-8","idx":8,"group":50,"pos":[-114.57,124.03]},{"id":"14-9","idx":9,"group":50,"pos":[-115.77,122.13]},{"id":"14-10","idx":10,"group":88,"pos":[-117.76,111.91]},{"id":"14-11","idx":11,"group":51,"pos":[-122.95,112.79]}]},{"id":130653,"enemyIndex":15,"name":"Wanton Sapper","count":4,"health":768495,"creatureType":"Humanoid","scale":1,"isBoss":false,"characteristics":["Taunt","Incapacitate","Silence","Polymorph","Root","Fear","Disorient","Sap","Stun","Slow"],"spawns":[{"id":"15-1","idx":1,"group":43,"pos":[-121.55,154.05]},{"id":"15-2","idx":2,"group":44,"pos":[-115.33,145.96]},{"id":"15-3","idx":3,"group":45,"pos":[-121.11,147.33]},{"id":"15-4","idx":4,"group":46,"pos":[-116.83,139.76]},{"id":"15-5","idx":5,"group":46,"pos":[-119.55,139.76]},{"id":"15-6","idx":6,"group":49,"pos":[-125.1,125.99]},{"id":"15-7","idx":7,"group":49,"pos":[-124.07,123.44]},{"id":"15-8","idx":8,"group":53,"pos":[-108.72,138.64]},{"id":"15-9","idx":9,"group":53,"pos":[-110.19,140.96]},{"id":"15-10","idx":10,"group":54,"pos":[-112.13,126.03]},{"id":"15-11","idx":11,"group":78,"pos":[-79.07,117.49]},{"id":"15-12","idx":12,"group":78,"pos":[-80.98,107.93]}]},{"id":136643,"enemyIndex":16,"name":"Azerite Extractor","count":12,"health":1229592,"creatureType":"Mechanical","scale":1.2,"isBoss":false,"characteristics":["Taunt"],"spawns":[{"id":"16-1","idx":1,"group":48,"pos":[-122.86,132.86]},{"id":"16-2","idx":2,"group":88,"pos":[-116.87,114.57]},{"id":"16-3","idx":3,"group":51,"pos":[-124.27,116.05]},{"id":"16-4","idx":4,"group":54,"pos":[-110.56,127.8]}]},{"id":137940,"enemyIndex":17,"name":"Safety Shark","count":4,"health":3073980,"creatureType":"Beast","scale":1.2,"isBoss":false,"characteristics":[],"spawns":[{"id":"17-1","idx":1,"group":null,"pos":[-85.61,136.11],"patrol":[]},{"id":"17-2","idx":2,"group":null,"pos":[-90.78,142.75],"patrol":[]},{"id":"17-3","idx":3,"group":null,"pos":[-88.12,152.2],"patrol":[]},{"id":"17-4","idx":4,"group":null,"pos":[-77.61,139.95],"patrol":[]},{"id":"17-5","idx":5,"group":null,"pos":[-78.37,147.77],"patrol":[]},{"id":"17-6","idx":6,"group":null,"pos":[-84,144.62],"patrol":[]}],"stealthDetect":true},{"id":134005,"enemyIndex":18,"name":"Shalebiter","count":1,"health":153699,"creatureType":"Elemental","scale":0.7,"isBoss":false,"characteristics":["Taunt","Silence","Root","Fear","Stun","Slow"],"spawns":[{"id":"18-1","idx":1,"group":55,"pos":[-101.48,129.28]},{"id":"18-2","idx":2,"group":55,"pos":[-102.93,127.35]},{"id":"18-3","idx":3,"group":55,"pos":[-102.81,128.86]},{"id":"18-4","idx":4,"group":57,"pos":[-88.99,118.02]},{"id":"18-5","idx":5,"group":57,"pos":[-90.95,115.62]},{"id":"18-6","idx":6,"group":57,"pos":[-90.91,117.64]}]},{"id":130635,"enemyIndex":19,"name":"Stonefury","count":4,"health":768495,"creatureType":"Elemental","scale":1,"isBoss":false,"characteristics":["Taunt","Incapacitate","Silence","Root","Fear","Banish","Disorient","Stun","Slow"],"spawns":[{"id":"19-1","idx":1,"group":null,"pos":[-99.26,125.25],"patrol":[[-99.26,125.25],[-96.55,122.66],[-99.26,125.25],[-101.85,128.02]]},{"id":"19-2","idx":2,"group":57,"pos":[-92.97,119.13]},{"id":"19-3","idx":3,"group":57,"pos":[-88.26,115.65]}]},{"id":134012,"enemyIndex":20,"name":"Taskmaster Askari","count":6,"health":1229592,"creatureType":"Humanoid","scale":1.4,"isBoss":false,"characteristics":["Taunt"],"spawns":[{"id":"20-1","idx":1,"group":78,"pos":[-80.67,113.18]}]},{"id":129227,"enemyIndex":21,"name":"Azerokk","count":0,"health":4733929,"creatureType":"Elemental","scale":1,"isBoss":true,"characteristics":["Taunt"],"spawns":[{"id":"21-1","idx":1,"group":58,"pos":[-68.44,115.4]}]},{"id":129802,"enemyIndex":22,"name":"Earthrager","count":0,"health":768495,"creatureType":"Elemental","scale":1,"isBoss":false,"characteristics":["Taunt","Incapacitate","Silence","Root","Fear","Banish","Disorient","Stun","Slow"],"spawns":[{"id":"22-1","idx":1,"group":58,"pos":[-66.62,119.55]},{"id":"22-2","idx":2,"group":58,"pos":[-72.42,117.91]},{"id":"22-3","idx":3,"group":58,"pos":[-70.03,110.67]},{"id":"22-4","idx":4,"group":58,"pos":[-64.09,112.85]}]},{"id":138369,"enemyIndex":23,"name":"Footbomb Hooligan","count":0,"health":153699,"creatureType":"Humanoid","scale":0.6,"isBoss":false,"characteristics":[],"spawns":[{"id":"23-1","idx":1,"group":59,"pos":[-47.94,141.37]},{"id":"23-2","idx":2,"group":59,"pos":[-51.44,148.32]},{"id":"23-3","idx":3,"group":59,"pos":[-48.17,149.62]},{"id":"23-4","idx":4,"group":59,"pos":[-46.37,149.95]},{"id":"23-5","idx":5,"group":59,"pos":[-45.23,150.28]},{"id":"23-6","idx":6,"group":59,"pos":[-44.29,144.09]},{"id":"23-7","idx":7,"group":59,"pos":[-43.14,145.42]},{"id":"23-8","idx":8,"group":59,"pos":[-43.62,147.22]},{"id":"23-9","idx":9,"group":59,"pos":[-44.65,145.36]},{"id":"23-10","idx":10,"group":59,"pos":[-45.67,143.97]},{"id":"23-11","idx":11,"group":59,"pos":[-45.31,146.86]},{"id":"23-12","idx":12,"group":59,"pos":[-46.64,141.74]},{"id":"23-13","idx":13,"group":59,"pos":[-49.17,142.04]},{"id":"23-14","idx":14,"group":59,"pos":[-49.83,143.13]},{"id":"23-15","idx":15,"group":59,"pos":[-45.79,145.3]},{"id":"23-16","idx":16,"group":59,"pos":[-46.58,147.64]},{"id":"23-17","idx":17,"group":59,"pos":[-48.2,147.34]}]},{"id":133430,"enemyIndex":24,"name":"Venture Co. Mastermind","count":8,"health":1229592,"creatureType":"Humanoid","scale":1.2,"isBoss":false,"characteristics":["Taunt"],"spawns":[{"id":"24-1","idx":1,"group":66,"pos":[-52.57,195.16]},{"id":"24-2","idx":2,"group":66,"pos":[-55.26,194.84]},{"id":"24-3","idx":3,"group":null,"pos":[-68.05,165.61],"patrol":[[-68.05,165.61],[-65.86,162.03],[-68.05,165.61],[-68.59,170.77]]},{"id":"24-4","idx":4,"group":null,"pos":[-51.23,166.69],"patrol":[[-51.23,166.69],[-53.52,163.62],[-51.23,166.69],[-49.58,170.48]]},{"id":"24-5","idx":5,"group":null,"pos":[-48.92,177.17],"patrol":[[-48.92,177.17],[-46.84,172.43],[-48.92,177.17],[-53.25,181.08]]},{"id":"24-6","idx":6,"group":null,"pos":[-58.56,179.08],"patrol":[[-58.56,179.08],[-61.64,176.16],[-58.56,179.08],[-55.48,181.36]]},{"id":"24-7","idx":7,"group":null,"pos":[-62.16,170.18],"patrol":[[-61.54,168.23],[-64.41,172.8],[-61.54,168.23],[-58.87,163.86]]}],"stealthDetect":true},{"id":133345,"enemyIndex":25,"name":"Feckless Assistant","count":5,"health":768495,"creatureType":"Humanoid","scale":0.8,"isBoss":false,"characteristics":["Taunt","Silence","Polymorph","Root","Fear","Disorient","Sap","Stun","Slow"],"spawns":[{"id":"25-1","idx":1,"group":60,"pos":[-43.99,156.75]},{"id":"25-2","idx":2,"group":60,"pos":[-44.7,155.17]},{"id":"25-3","idx":3,"group":61,"pos":[-50.65,161.5]},{"id":"25-4","idx":4,"group":63,"pos":[-40.49,170.12]},{"id":"25-5","idx":5,"group":64,"pos":[-42.02,175.05]},{"id":"25-6","idx":6,"group":66,"pos":[-49.89,193.98]},{"id":"25-7","idx":7,"group":67,"pos":[-58.08,187.09]},{"id":"25-8","idx":8,"group":73,"pos":[-71.49,172.11]},{"id":"25-9","idx":9,"group":74,"pos":[-71.89,162.18]},{"id":"25-10","idx":10,"group":75,"pos":[-54.76,166.85]},{"id":"25-11","idx":11,"group":75,"pos":[-54.26,169.24]}]},{"id":136934,"enemyIndex":26,"name":"Weapons Tester","count":4,"health":768495,"creatureType":"Humanoid","scale":0.8,"isBoss":false,"characteristics":["Taunt","Root","Fear","Disorient","Sap","Stun","Slow"],"spawns":[{"id":"26-1","idx":1,"group":60,"pos":[-42.56,155.01]},{"id":"26-2","idx":2,"group":64,"pos":[-43.21,176.68]},{"id":"26-3","idx":3,"group":65,"pos":[-48.62,183.42]},{"id":"26-4","idx":4,"group":65,"pos":[-50.9,184.69]},{"id":"26-5","idx":5,"group":68,"pos":[-70.88,181.91]},{"id":"26-6","idx":6,"group":72,"pos":[-76.92,171.85]},{"id":"26-7","idx":7,"group":74,"pos":[-72.13,159.73]},{"id":"26-8","idx":8,"group":75,"pos":[-56.33,167.79]}]},{"id":133432,"enemyIndex":27,"name":"Venture Co. Alchemist","count":5,"health":768495,"creatureType":"Humanoid","scale":1,"isBoss":false,"characteristics":["Taunt","Silence","Root","Fear","Disorient","Imprison","Sap","Stun","Slow"],"spawns":[{"id":"27-1","idx":1,"group":61,"pos":[-49.44,163.23]},{"id":"27-2","idx":2,"group":63,"pos":[-42.42,167.36]},{"id":"27-3","idx":3,"group":null,"pos":[-43.84,175.12],"patrol":[[-43.84,175.12],[-43.21,169.1],[-43.84,175.12]]},{"id":"27-4","idx":4,"group":65,"pos":[-48.14,185.79]},{"id":"27-5","idx":5,"group":66,"pos":[-58.54,194.84]},{"id":"27-6","idx":6,"group":67,"pos":[-59.8,186.67]},{"id":"27-7","idx":7,"group":67,"pos":[-60.69,185.66]},{"id":"27-8","idx":8,"group":67,"pos":[-61.95,184.18]},{"id":"27-9","idx":9,"group":68,"pos":[-65.85,183.11]},{"id":"27-10","idx":10,"group":71,"pos":[-78.32,178.94]},{"id":"27-11","idx":11,"group":71,"pos":[-73.14,176.25]},{"id":"27-12","idx":12,"group":72,"pos":[-75.35,170.07]},{"id":"27-13","idx":13,"group":72,"pos":[-77.92,170.07]},{"id":"27-14","idx":14,"group":73,"pos":[-71.03,170.29]},{"id":"27-15","idx":15,"group":73,"pos":[-69.11,171.59]},{"id":"27-16","idx":16,"group":74,"pos":[-69.73,160.33]},{"id":"27-17","idx":17,"group":75,"pos":[-56.39,170.87]},{"id":"27-18","idx":18,"group":77,"pos":[-64.98,167.17]}]},{"id":133963,"enemyIndex":28,"name":"Test Subject","count":1,"health":153699,"creatureType":"Humanoid","scale":0.5,"isBoss":false,"characteristics":["Taunt","Fear","Disorient","Stun","Slow"],"spawns":[{"id":"28-1","idx":1,"group":61,"pos":[-49.17,160.13]},{"id":"28-2","idx":2,"group":61,"pos":[-52.21,162.21]},{"id":"28-3","idx":3,"group":61,"pos":[-52.51,161.07]},{"id":"28-4","idx":4,"group":62,"pos":[-42.03,162.15]},{"id":"28-5","idx":5,"group":62,"pos":[-41.23,163.09]},{"id":"28-6","idx":6,"group":62,"pos":[-41.17,164.28]},{"id":"28-7","idx":7,"group":62,"pos":[-42.11,163.78]},{"id":"28-8","idx":8,"group":62,"pos":[-42.73,163.09]},{"id":"28-9","idx":9,"group":62,"pos":[-42.73,162.03]},{"id":"28-10","idx":10,"group":68,"pos":[-67.43,184.54]},{"id":"28-11","idx":11,"group":68,"pos":[-67.2,181.08]},{"id":"28-12","idx":12,"group":68,"pos":[-68.55,181.61]},{"id":"28-13","idx":13,"group":68,"pos":[-69.15,183.11]},{"id":"28-14","idx":14,"group":68,"pos":[-67.73,183.26]},{"id":"28-15","idx":15,"group":69,"pos":[-54.63,176.72]},{"id":"28-16","idx":16,"group":69,"pos":[-53.68,177.8]},{"id":"28-17","idx":17,"group":69,"pos":[-53.68,175.84]},{"id":"28-18","idx":18,"group":69,"pos":[-54.68,178.25]},{"id":"28-19","idx":19,"group":69,"pos":[-52.84,176.6]},{"id":"28-20","idx":20,"group":71,"pos":[-74.54,177.54]},{"id":"28-21","idx":21,"group":71,"pos":[-75.11,175.82]},{"id":"28-22","idx":22,"group":71,"pos":[-76.19,175.97]},{"id":"28-23","idx":23,"group":71,"pos":[-76.97,177.47]},{"id":"28-24","idx":24,"group":71,"pos":[-75.68,178.33]},{"id":"28-25","idx":25,"group":77,"pos":[-64.21,168.84]},{"id":"28-26","idx":26,"group":77,"pos":[-65.83,168.78]},{"id":"28-27","idx":27,"group":77,"pos":[-66.56,167.89]},{"id":"28-28","idx":28,"group":77,"pos":[-64.88,165.38]},{"id":"28-29","idx":29,"group":77,"pos":[-63.37,165.99]}]},{"id":129231,"enemyIndex":29,"name":"Rixxa Fluxflame","count":0,"health":5379465,"creatureType":"Humanoid","scale":1,"isBoss":true,"characteristics":["Taunt"],"spawns":[{"id":"29-1","idx":1,"group":null,"pos":[-51.36,213.64]}]},{"id":133593,"enemyIndex":30,"name":"Expert Technician","count":5,"health":768495,"creatureType":"Humanoid","scale":1,"isBoss":false,"characteristics":["Taunt","Incapacitate","Silence","Disorient","Imprison","Stun","Slow"],"spawns":[{"id":"30-1","idx":1,"group":79,"pos":[-49.28,230.06]},{"id":"30-2","idx":2,"group":80,"pos":[-57.58,226.69]},{"id":"30-3","idx":3,"group":82,"pos":[-51.99,255.55]},{"id":"30-4","idx":4,"group":86,"pos":[-63.6,275.74]},{"id":"30-5","idx":5,"group":85,"pos":[-73.23,277.65]},{"id":"30-6","idx":6,"group":90,"pos":[-55.64,251.85]}]},{"id":133463,"enemyIndex":31,"name":"Venture Co. War Machine","count":12,"health":1229592,"creatureType":"Mechanical","scale":1.3,"isBoss":false,"characteristics":["Taunt"],"spawns":[{"id":"31-1","idx":1,"group":79,"pos":[-47.78,232.05]},{"id":"31-2","idx":2,"group":80,"pos":[-59.04,229.65]},{"id":"31-3","idx":3,"group":null,"pos":[-53.13,270.77],"patrol":[[-53.13,270.77],[-49.72,268.31],[-53.13,270.77],[-57.44,273.78]]},{"id":"31-4","idx":4,"group":null,"pos":[-54.49,262.8],"patrol":[[-57.9,263.66],[-52.05,260.93],[-57.9,263.66],[-66.47,267.35]]},{"id":"31-5","idx":5,"group":null,"pos":[-68.51,258.41],"patrol":[[-68.51,258.41],[-64.2,255.25],[-68.51,258.41],[-71.94,261.17]]},{"id":"31-6","idx":6,"group":85,"pos":[-75.66,279.5]}],"stealthDetect":true},{"id":137029,"enemyIndex":32,"name":"Ordnance Specialist","count":5,"health":768495,"creatureType":"Humanoid","scale":1,"isBoss":false,"characteristics":["Taunt","Incapacitate","Disorient","Stun","Slow"],"spawns":[{"id":"32-1","idx":1,"group":80,"pos":[-56.23,231.43]},{"id":"32-2","idx":2,"group":81,"pos":[-48.42,237.88]},{"id":"32-3","idx":3,"group":81,"pos":[-51.41,237.84]},{"id":"32-4","idx":4,"group":null,"pos":[-49.8,250.6]},{"id":"32-5","idx":5,"group":82,"pos":[-54.08,256.64]},{"id":"32-6","idx":6,"group":84,"pos":[-67.48,268.41]}]},{"id":133436,"enemyIndex":33,"name":"Venture Co. Skyscorcher","count":5,"health":768495,"creatureType":"Humanoid","scale":1,"isBoss":false,"characteristics":["Taunt"],"spawns":[{"id":"33-1","idx":1,"group":null,"pos":[-52.59,246.58]},{"id":"33-2","idx":2,"group":null,"pos":[-45.37,246.44]},{"id":"33-3","idx":3,"group":null,"pos":[-58.13,253.97]},{"id":"33-4","idx":4,"group":83,"pos":[-48.98,260.36]},{"id":"33-5","idx":5,"group":83,"pos":[-51.12,259.43]},{"id":"33-6","idx":6,"group":84,"pos":[-70.17,265.4]},{"id":"33-7","idx":7,"group":null,"pos":[-59.79,275.56]},{"id":"33-8","idx":8,"group":85,"pos":[-72.75,280.52]},{"id":"33-9","idx":9,"group":85,"pos":[-76.17,276.28]}]},{"id":129232,"enemyIndex":34,"name":"Mogul Razdunk","count":0,"health":5994261,"creatureType":"Mechanical","scale":1,"isBoss":true,"characteristics":["Taunt"],"spawns":[{"id":"34-1","idx":1,"group":null,"pos":[-96.53,264.64]}]},{"id":133482,"enemyIndex":35,"name":"Crawler Mine","count":1,"health":19707,"creatureType":"Mechanical","scale":0.7,"isBoss":false,"characteristics":["Root","Slow"],"spawns":[{"id":"35-1","idx":1,"group":81,"pos":[-50.28,239.41]},{"id":"35-2","idx":2,"group":null,"pos":[-54.44,240.37]},{"id":"35-3","idx":3,"group":null,"pos":[-44.16,237.08]},{"id":"35-4","idx":4,"group":null,"pos":[-48.9,242.07]},{"id":"35-5","idx":5,"group":null,"pos":[-41.93,242.12]},{"id":"35-6","idx":6,"group":null,"pos":[-46,251.37]},{"id":"35-7","idx":7,"group":null,"pos":[-58.15,251.54]},{"id":"35-8","idx":8,"group":null,"pos":[-64.49,254.75]},{"id":"35-9","idx":9,"group":null,"pos":[-72.14,260.89]},{"id":"35-10","idx":10,"group":83,"pos":[-48.54,257.93]},{"id":"35-11","idx":11,"group":null,"pos":[-57.28,272.11]},{"id":"35-12","idx":12,"group":86,"pos":[-61.79,276.83]},{"id":"35-13","idx":13,"group":null,"pos":[-57.69,278.64]},{"id":"35-14","idx":14,"group":84,"pos":[-69.52,267.38]},{"id":"35-15","idx":15,"group":null,"pos":[-63.09,265.97]},{"id":"35-16","idx":16,"group":null,"pos":[-67.14,277.75]},{"id":"35-17","idx":17,"group":null,"pos":[-72.03,270.67]},{"id":"35-18","idx":18,"group":null,"pos":[-48.65,266.44]},{"id":"35-19","idx":19,"group":null,"pos":[-50.12,273.01]}]},{"id":130485,"enemyIndex":36,"name":"Mechanized Peacekeeper","count":12,"health":1229592,"creatureType":"Mechanical","scale":1.2,"isBoss":false,"characteristics":["Taunt"],"spawns":[{"id":"36-1","idx":1,"group":null,"pos":[-159.73,207.21]},{"id":"36-2","idx":2,"group":null,"pos":[-152.03,212.12]},{"id":"36-3","idx":3,"group":null,"pos":[-156.71,221.87]},{"id":"36-4","idx":4,"group":null,"pos":[-145.36,224.24]},{"id":"36-5","idx":5,"group":null,"pos":[-140.4,219.83]},{"id":"36-6","idx":6,"group":null,"pos":[-137.32,212.56]},{"id":"36-7","idx":7,"group":null,"pos":[-139.12,208.85]},{"id":"36-8","idx":8,"group":null,"pos":[-148.89,190.24]},{"id":"36-9","idx":9,"group":null,"pos":[-155.11,194.17]},{"id":"36-10","idx":10,"group":null,"pos":[-154.56,201.52]},{"id":"36-11","idx":11,"group":null,"pos":[-189.5,217.6]},{"id":"36-12","idx":12,"group":null,"pos":[-154.68,206.5]}]},{"id":144286,"enemyIndex":37,"name":"Asset Manager","count":0,"health":153699,"creatureType":"Humanoid","scale":1,"isBoss":false,"characteristics":[],"spawns":[{"id":"37-1","idx":1,"group":87,"pos":[-119.42,271.1]},{"id":"37-2","idx":2,"group":87,"pos":[-117.65,273.29]},{"id":"37-3","idx":3,"group":87,"pos":[-116.07,275.54]},{"id":"37-4","idx":4,"group":87,"pos":[-119.76,273.56]},{"id":"37-5","idx":5,"group":87,"pos":[-118.26,275.61]}]},{"id":135975,"enemyIndex":38,"name":"Off-Duty Laborer","count":0,"health":307398,"creatureType":"Humanoid","scale":1,"isBoss":false,"characteristics":[],"spawns":[{"id":"38-1","idx":1,"group":23,"pos":[-146.34,226.97]}]},{"id":155433,"enemyIndex":39,"name":"Void-Touched Emissary","count":4,"health":999042,"creatureType":"Humanoid","scale":1,"isBoss":false,"characteristics":["Taunt"],"spawns":[{"id":"39-1","idx":1,"group":1,"pos":[-201.59,208.8]},{"id":"39-2","idx":2,"group":6,"pos":[-182.64,209.58]},{"id":"39-3","idx":3,"group":38,"pos":[-166.53,195.04]},{"id":"39-4","idx":4,"group":43,"pos":[-122.18,155.78]},{"id":"39-5","idx":5,"group":48,"pos":[-123.01,130.62]},{"id":"39-6","idx":6,"group":92,"pos":[-52.39,156.92]},{"id":"39-7","idx":7,"group":67,"pos":[-61.86,187.4]},{"id":"39-8","idx":8,"group":90,"pos":[-57.59,249.26]},{"id":"39-9","idx":9,"group":93,"pos":[-74.52,269.52]},{"id":"39-10","idx":10,"group":94,"pos":[-47.18,268.1]},{"id":"39-11","idx":11,"group":95,"pos":[-45.89,164.32]},{"id":"39-12","idx":12,"group":21,"pos":[-159.99,218.45]},{"id":"39-13","idx":13,"group":20,"pos":[-156.48,212.8]},{"id":"39-14","idx":14,"group":73,"pos":[-70.2,173.41]},{"id":"39-15","idx":15,"group":50,"pos":[-116.38,125.63]},{"id":"39-16","idx":16,"group":39,"pos":[-161.3,197.59]},{"id":"39-17","idx":17,"group":43,"pos":[-119.15,154.42]},{"id":"39-18","idx":18,"group":72,"pos":[-74.4,172.25]},{"id":"39-19","idx":19,"group":null,"pos":[-44.32,248.04]}],"stealthDetect":true},{"id":155434,"enemyIndex":40,"name":"Emissary of the Tides","count":4,"health":614795,"creatureType":"Humanoid","scale":1,"isBoss":false,"characteristics":["Taunt"],"spawns":[{"id":"40-1","idx":1,"group":3,"pos":[-191.9,214.71]},{"id":"40-2","idx":2,"group":39,"pos":[-160.68,197.51]},{"id":"40-3","idx":3,"group":53,"pos":[-112.54,136.41]},{"id":"40-4","idx":4,"group":80,"pos":[-55.63,228.69]},{"id":"40-5","idx":5,"group":1,"pos":[-200.26,204.96]},{"id":"40-6","idx":6,"group":5,"pos":[-186.56,214.93]},{"id":"40-7","idx":7,"group":19,"pos":[-164.68,207.74]},{"id":"40-8","idx":8,"group":79,"pos":[-50.72,231.8]},{"id":"40-9","idx":9,"group":85,"pos":[-70.26,278.23]},{"id":"40-11","idx":11,"group":71,"pos":[-78.24,176.27]},{"id":"40-12","idx":12,"group":null,"pos":[-52.45,273.68]},{"id":"40-13","idx":13,"group":32,"pos":[-151.41,198.61]},{"id":"40-14","idx":14,"group":42,"pos":[-114.04,152.15]},{"id":"40-15","idx":15,"group":45,"pos":[-125.19,146.5]},{"id":"40-16","idx":16,"group":78,"pos":[-85.24,114.18]},{"id":"40-17","idx":17,"group":40,"pos":[-168.89,212.02]},{"id":"40-18","idx":18,"group":29,"pos":[-140.99,197.67]},{"id":"40-19","idx":19,"group":50,"pos":[-115.93,125.73]},{"id":"40-20","idx":20,"group":74,"pos":[-69.92,162.23]},{"id":"40-21","idx":21,"group":67,"pos":[-63.45,186.72]}]},{"id":155432,"enemyIndex":41,"name":"Enchanted Emissary","count":4,"health":15369884,"creatureType":"Humanoid","scale":1,"isBoss":false,"characteristics":["Taunt"],"spawns":[{"id":"41-1","idx":1,"group":9,"pos":[-185.05,199.42]},{"id":"41-2","idx":2,"group":31,"pos":[-142.2,184.83]},{"id":"41-3","idx":3,"group":91,"pos":[-96.2,121.25]},{"id":"41-4","idx":4,"group":64,"pos":[-42.77,173.12]},{"id":"41-5","idx":5,"group":7,"pos":[-173.82,201.14]},{"id":"41-6","idx":6,"group":38,"pos":[-165.1,198.69]},{"id":"41-8","idx":8,"group":26,"pos":[-143.1,212.14]},{"id":"41-9","idx":9,"group":24,"pos":[-145.74,219.01]},{"id":"41-10","idx":10,"group":49,"pos":[-127.92,126.35]},{"id":"41-11","idx":11,"group":1,"pos":[-200.48,203.71]},{"id":"41-12","idx":12,"group":5,"pos":[-186.17,215.82]},{"id":"41-13","idx":13,"group":21,"pos":[-160.02,218.52]},{"id":"41-14","idx":14,"group":34,"pos":[-155.47,188.29]},{"id":"41-15","idx":15,"group":30,"pos":[-137.07,187.96]},{"id":"41-16","idx":16,"group":53,"pos":[-112.74,141.35]},{"id":"41-17","idx":17,"group":61,"pos":[-51.31,159.46]},{"id":"41-18","idx":18,"group":71,"pos":[-74.25,179.55]},{"id":"41-19","idx":19,"group":80,"pos":[-55.54,228.74]},{"id":"41-20","idx":20,"group":null,"pos":[-72.15,257.51]}]},{"id":161243,"enemyIndex":42,"name":"Samh'rek, Beckoner of Chaos","count":4,"health":2151786,"creatureType":"Aberration","scale":1.4,"isBoss":false,"characteristics":["Taunt"],"spawns":[{"id":"42-1","idx":1,"group":null,"pos":[-49,244.96]}],"stealthDetect":true},{"id":161124,"enemyIndex":43,"name":"Urg'roth, Breaker of Heroes","count":4,"health":2151786,"creatureType":"Aberration","scale":1.4,"isBoss":false,"characteristics":["Taunt"],"spawns":[{"id":"43-1","idx":1,"group":null,"pos":[-190.17,205.92]}],"stealthDetect":true},{"id":161241,"enemyIndex":44,"name":"Voidweaver Mal'thir","count":4,"health":2151786,"creatureType":"Beast","scale":1.4,"isBoss":false,"characteristics":["Taunt"],"spawns":[{"id":"44-1","idx":1,"group":null,"pos":[-124.82,139.44]},{"id":"44-2","idx":2,"group":null,"pos":[-53.47,152.2]}],"stealthDetect":true},{"id":161244,"enemyIndex":45,"name":"Blood of the Corruptor","count":4,"health":2151786,"creatureType":"Aberration","scale":1.4,"isBoss":false,"characteristics":["Taunt"],"spawns":[{"id":"45-1","idx":1,"group":null,"pos":[-53.88,152.61]},{"id":"45-2","idx":2,"group":null,"pos":[-125.77,138.51]}],"stealthDetect":true}],"pois":[]}
+{
+  "dungeonIndex": 120,
+  "totalCount": 457,
+  "enemies": [
+    {
+      "id": 137713,
+      "enemyIndex": 1,
+      "name": "Big Money Crab",
+      "count": 1,
+      "health": 153699,
+      "creatureType": "Beast",
+      "scale": 0.7,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Root",
+        "Sap",
+        "Stun",
+        "Slow"
+      ],
+      "spawns": [
+        {
+          "id": "1-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -218.87,
+            194.69
+          ]
+        },
+        {
+          "id": "1-2",
+          "idx": 2,
+          "group": null,
+          "pos": [
+            -219.16,
+            204.84
+          ]
+        },
+        {
+          "id": "1-3",
+          "idx": 3,
+          "group": null,
+          "pos": [
+            -213.67,
+            207.77
+          ]
+        },
+        {
+          "id": "1-4",
+          "idx": 4,
+          "group": null,
+          "pos": [
+            -221.09,
+            216.65
+          ]
+        },
+        {
+          "id": "1-5",
+          "idx": 5,
+          "group": null,
+          "pos": [
+            -223.45,
+            223.14
+          ]
+        },
+        {
+          "id": "1-6",
+          "idx": 6,
+          "group": null,
+          "pos": [
+            -221.97,
+            227.84
+          ]
+        }
+      ]
+    },
+    {
+      "id": 137716,
+      "enemyIndex": 2,
+      "name": "Bottom Feeder",
+      "count": 0,
+      "health": 153699,
+      "creatureType": "Beast",
+      "scale": 0.7,
+      "isBoss": false,
+      "characteristics": [],
+      "spawns": [
+        {
+          "id": "2-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -232.91,
+            194.54
+          ]
+        },
+        {
+          "id": "2-2",
+          "idx": 2,
+          "group": null,
+          "pos": [
+            -227.36,
+            206.38
+          ]
+        },
+        {
+          "id": "2-3",
+          "idx": 3,
+          "group": null,
+          "pos": [
+            -222.7,
+            188.74
+          ]
+        },
+        {
+          "id": "2-4",
+          "idx": 4,
+          "group": null,
+          "pos": [
+            -226.99,
+            183.23
+          ]
+        },
+        {
+          "id": "2-5",
+          "idx": 5,
+          "group": null,
+          "pos": [
+            -232.92,
+            177.17
+          ]
+        }
+      ]
+    },
+    {
+      "id": 138061,
+      "enemyIndex": 3,
+      "name": "Venture Co. Longshoreman",
+      "count": 0,
+      "health": 307398,
+      "creatureType": "Humanoid",
+      "scale": 0.7,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt",
+        "Root",
+        "Stun",
+        "Slow"
+      ],
+      "spawns": [
+        {
+          "id": "3-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -250.81,
+            189.28
+          ]
+        },
+        {
+          "id": "3-2",
+          "idx": 2,
+          "group": null,
+          "pos": [
+            -251.98,
+            194.17
+          ]
+        },
+        {
+          "id": "3-3",
+          "idx": 3,
+          "group": null,
+          "pos": [
+            -239.46,
+            191.43
+          ]
+        },
+        {
+          "id": "3-4",
+          "idx": 4,
+          "group": null,
+          "pos": [
+            -240.93,
+            197.15
+          ]
+        },
+        {
+          "id": "3-5",
+          "idx": 5,
+          "group": null,
+          "pos": [
+            -232.44,
+            198.95
+          ]
+        },
+        {
+          "id": "3-6",
+          "idx": 6,
+          "group": null,
+          "pos": [
+            -210.43,
+            181.13
+          ]
+        },
+        {
+          "id": "3-7",
+          "idx": 7,
+          "group": null,
+          "pos": [
+            -205.57,
+            185.36
+          ]
+        },
+        {
+          "id": "3-8",
+          "idx": 8,
+          "group": null,
+          "pos": [
+            -204.92,
+            194.51
+          ]
+        },
+        {
+          "id": "3-9",
+          "idx": 9,
+          "group": null,
+          "pos": [
+            -212.48,
+            222.26
+          ]
+        },
+        {
+          "id": "3-10",
+          "idx": 10,
+          "group": null,
+          "pos": [
+            -208.87,
+            216.73
+          ]
+        },
+        {
+          "id": "3-11",
+          "idx": 11,
+          "group": null,
+          "pos": [
+            -208.91,
+            213.15
+          ]
+        },
+        {
+          "id": "3-12",
+          "idx": 12,
+          "group": null,
+          "pos": [
+            -208.38,
+            208.79
+          ]
+        },
+        {
+          "id": "3-13",
+          "idx": 13,
+          "group": null,
+          "pos": [
+            -216.83,
+            210.64
+          ]
+        },
+        {
+          "id": "3-14",
+          "idx": 14,
+          "group": null,
+          "pos": [
+            -220.27,
+            210.64
+          ]
+        }
+      ]
+    },
+    {
+      "id": 138064,
+      "enemyIndex": 4,
+      "name": "Posh Vacationer",
+      "count": 0,
+      "health": 153699,
+      "creatureType": "Humanoid",
+      "scale": 0.7,
+      "isBoss": false,
+      "characteristics": [],
+      "spawns": [
+        {
+          "id": "4-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -230.14,
+            174.61
+          ]
+        },
+        {
+          "id": "4-2",
+          "idx": 2,
+          "group": null,
+          "pos": [
+            -227.86,
+            176.36
+          ]
+        },
+        {
+          "id": "4-3",
+          "idx": 3,
+          "group": null,
+          "pos": [
+            -221.68,
+            230.13
+          ]
+        },
+        {
+          "id": "4-4",
+          "idx": 4,
+          "group": null,
+          "pos": [
+            -222.04,
+            232.13
+          ]
+        },
+        {
+          "id": "4-5",
+          "idx": 5,
+          "group": null,
+          "pos": [
+            -223.23,
+            231.42
+          ]
+        },
+        {
+          "id": "4-6",
+          "idx": 6,
+          "group": null,
+          "pos": [
+            -224.25,
+            229.69
+          ]
+        },
+        {
+          "id": "4-7",
+          "idx": 7,
+          "group": null,
+          "pos": [
+            -224.57,
+            227.95
+          ]
+        },
+        {
+          "id": "4-8",
+          "idx": 8,
+          "group": null,
+          "pos": [
+            -228.05,
+            231.9
+          ]
+        },
+        {
+          "id": "4-9",
+          "idx": 9,
+          "group": null,
+          "pos": [
+            -227.86,
+            234.29
+          ]
+        }
+      ]
+    },
+    {
+      "id": 130436,
+      "enemyIndex": 5,
+      "name": "Off-Duty Laborer",
+      "count": 1,
+      "health": 307398,
+      "creatureType": "Humanoid",
+      "scale": 0.8,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Root",
+        "Fear",
+        "Disorient",
+        "Sap",
+        "Stun",
+        "Slow"
+      ],
+      "spawns": [
+        {
+          "id": "5-1",
+          "idx": 1,
+          "group": 1,
+          "pos": [
+            -198.69,
+            205.5
+          ]
+        },
+        {
+          "id": "5-2",
+          "idx": 2,
+          "group": 1,
+          "pos": [
+            -201.08,
+            206.64
+          ]
+        },
+        {
+          "id": "5-3",
+          "idx": 3,
+          "group": 1,
+          "pos": [
+            -199.3,
+            207.11
+          ]
+        },
+        {
+          "id": "5-4",
+          "idx": 4,
+          "group": 2,
+          "pos": [
+            -196.85,
+            220.42
+          ]
+        },
+        {
+          "id": "5-5",
+          "idx": 5,
+          "group": 3,
+          "pos": [
+            -192.3,
+            211.26
+          ]
+        },
+        {
+          "id": "5-6",
+          "idx": 6,
+          "group": 3,
+          "pos": [
+            -193.59,
+            213.73
+          ]
+        },
+        {
+          "id": "5-7",
+          "idx": 7,
+          "group": 4,
+          "pos": [
+            -190.66,
+            199.25
+          ]
+        },
+        {
+          "id": "5-8",
+          "idx": 8,
+          "group": 5,
+          "pos": [
+            -183.18,
+            214.22
+          ]
+        },
+        {
+          "id": "5-9",
+          "idx": 9,
+          "group": 5,
+          "pos": [
+            -184.52,
+            215.62
+          ]
+        },
+        {
+          "id": "5-10",
+          "idx": 10,
+          "group": 19,
+          "pos": [
+            -164.17,
+            209.69
+          ]
+        },
+        {
+          "id": "5-11",
+          "idx": 11,
+          "group": 19,
+          "pos": [
+            -164.5,
+            206.22
+          ]
+        },
+        {
+          "id": "5-12",
+          "idx": 12,
+          "group": 19,
+          "pos": [
+            -162.41,
+            205.23
+          ]
+        },
+        {
+          "id": "5-13",
+          "idx": 13,
+          "group": 20,
+          "pos": [
+            -155.11,
+            211.09
+          ]
+        },
+        {
+          "id": "5-14",
+          "idx": 14,
+          "group": 20,
+          "pos": [
+            -156.7,
+            209.41
+          ]
+        },
+        {
+          "id": "5-15",
+          "idx": 15,
+          "group": 20,
+          "pos": [
+            -158.76,
+            209.97
+          ]
+        },
+        {
+          "id": "5-16",
+          "idx": 16,
+          "group": 27,
+          "pos": [
+            -133.78,
+            212.29
+          ]
+        },
+        {
+          "id": "5-17",
+          "idx": 17,
+          "group": 27,
+          "pos": [
+            -132.49,
+            208.36
+          ]
+        },
+        {
+          "id": "5-18",
+          "idx": 18,
+          "group": 31,
+          "pos": [
+            -141.36,
+            186.76
+          ]
+        },
+        {
+          "id": "5-19",
+          "idx": 19,
+          "group": 31,
+          "pos": [
+            -143.59,
+            186.37
+          ]
+        },
+        {
+          "id": "5-20",
+          "idx": 20,
+          "group": 32,
+          "pos": [
+            -149.54,
+            197.97
+          ]
+        },
+        {
+          "id": "5-21",
+          "idx": 21,
+          "group": 32,
+          "pos": [
+            -151.45,
+            196.81
+          ]
+        },
+        {
+          "id": "5-22",
+          "idx": 22,
+          "group": 38,
+          "pos": [
+            -165.42,
+            197.18
+          ]
+        },
+        {
+          "id": "5-23",
+          "idx": 23,
+          "group": 38,
+          "pos": [
+            -166.86,
+            199.51
+          ]
+        },
+        {
+          "id": "5-24",
+          "idx": 24,
+          "group": 38,
+          "pos": [
+            -169.11,
+            198.93
+          ]
+        },
+        {
+          "id": "5-25",
+          "idx": 25,
+          "group": 39,
+          "pos": [
+            -156.93,
+            199.6
+          ]
+        },
+        {
+          "id": "5-26",
+          "idx": 26,
+          "group": 39,
+          "pos": [
+            -159.09,
+            202.67
+          ]
+        },
+        {
+          "id": "5-27",
+          "idx": 27,
+          "group": 39,
+          "pos": [
+            -160.92,
+            201.56
+          ]
+        },
+        {
+          "id": "5-28",
+          "idx": 28,
+          "group": 39,
+          "pos": [
+            -160.85,
+            199.53
+          ]
+        },
+        {
+          "id": "5-29",
+          "idx": 29,
+          "group": 39,
+          "pos": [
+            -157.8,
+            201.64
+          ]
+        }
+      ]
+    },
+    {
+      "id": 136470,
+      "enemyIndex": 6,
+      "name": "Refreshment Vendor",
+      "count": 4,
+      "health": 768495,
+      "creatureType": "Humanoid",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Polymorph",
+        "Root",
+        "Fear",
+        "Disorient",
+        "Imprison",
+        "Sap",
+        "Stun",
+        "Slow"
+      ],
+      "spawns": [
+        {
+          "id": "6-1",
+          "idx": 1,
+          "group": 2,
+          "pos": [
+            -199.08,
+            220.45
+          ]
+        },
+        {
+          "id": "6-2",
+          "idx": 2,
+          "group": 2,
+          "pos": [
+            -195.68,
+            218.59
+          ]
+        },
+        {
+          "id": "6-3",
+          "idx": 3,
+          "group": 4,
+          "pos": [
+            -189.72,
+            201.09
+          ]
+        },
+        {
+          "id": "6-4",
+          "idx": 4,
+          "group": 4,
+          "pos": [
+            -192.17,
+            197.54
+          ]
+        },
+        {
+          "id": "6-5",
+          "idx": 5,
+          "group": 5,
+          "pos": [
+            -185.28,
+            213.55
+          ]
+        },
+        {
+          "id": "6-6",
+          "idx": 6,
+          "group": 6,
+          "pos": [
+            -180.87,
+            211.09
+          ]
+        },
+        {
+          "id": "6-7",
+          "idx": 7,
+          "group": 40,
+          "pos": [
+            -170.74,
+            213.86
+          ]
+        },
+        {
+          "id": "6-8",
+          "idx": 8,
+          "group": 22,
+          "pos": [
+            -152.65,
+            230.69
+          ]
+        },
+        {
+          "id": "6-9",
+          "idx": 9,
+          "group": 27,
+          "pos": [
+            -133.94,
+            210.13
+          ]
+        },
+        {
+          "id": "6-10",
+          "idx": 10,
+          "group": 28,
+          "pos": [
+            -136.67,
+            206.45
+          ]
+        },
+        {
+          "id": "6-11",
+          "idx": 11,
+          "group": 29,
+          "pos": [
+            -142.68,
+            196.79
+          ]
+        },
+        {
+          "id": "6-12",
+          "idx": 12,
+          "group": 30,
+          "pos": [
+            -130.9,
+            190.45
+          ]
+        },
+        {
+          "id": "6-13",
+          "idx": 13,
+          "group": 31,
+          "pos": [
+            -142.31,
+            189.19
+          ]
+        },
+        {
+          "id": "6-14",
+          "idx": 14,
+          "group": 32,
+          "pos": [
+            -148.44,
+            196.06
+          ]
+        },
+        {
+          "id": "6-15",
+          "idx": 15,
+          "group": 33,
+          "pos": [
+            -151.45,
+            180.26
+          ]
+        },
+        {
+          "id": "6-16",
+          "idx": 16,
+          "group": 35,
+          "pos": [
+            -164.76,
+            187.93
+          ]
+        }
+      ]
+    },
+    {
+      "id": 130488,
+      "enemyIndex": 7,
+      "name": "Mech Jockey",
+      "count": 4,
+      "health": 768495,
+      "creatureType": "Humanoid",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Polymorph",
+        "Root",
+        "Fear",
+        "Disorient",
+        "Imprison",
+        "Sap",
+        "Stun",
+        "Slow"
+      ],
+      "spawns": [
+        {
+          "id": "7-1",
+          "idx": 1,
+          "group": 3,
+          "pos": [
+            -192.01,
+            212.98
+          ]
+        },
+        {
+          "id": "7-2",
+          "idx": 2,
+          "group": 19,
+          "pos": [
+            -162.52,
+            207.8
+          ]
+        },
+        {
+          "id": "7-3",
+          "idx": 3,
+          "group": 21,
+          "pos": [
+            -162.8,
+            217.93
+          ]
+        },
+        {
+          "id": "7-4",
+          "idx": 4,
+          "group": 22,
+          "pos": [
+            -152.2,
+            233.3
+          ]
+        },
+        {
+          "id": "7-5",
+          "idx": 5,
+          "group": 22,
+          "pos": [
+            -149.98,
+            231.34
+          ]
+        },
+        {
+          "id": "7-6",
+          "idx": 6,
+          "group": 23,
+          "pos": [
+            -148.21,
+            228.67
+          ]
+        },
+        {
+          "id": "7-7",
+          "idx": 7,
+          "group": 26,
+          "pos": [
+            -142.75,
+            214.61
+          ]
+        },
+        {
+          "id": "7-8",
+          "idx": 8,
+          "group": 26,
+          "pos": [
+            -140.72,
+            212.69
+          ]
+        },
+        {
+          "id": "7-9",
+          "idx": 9,
+          "group": 25,
+          "pos": [
+            -152.06,
+            218.86
+          ]
+        },
+        {
+          "id": "7-10",
+          "idx": 10,
+          "group": 25,
+          "pos": [
+            -152.09,
+            215.55
+          ]
+        },
+        {
+          "id": "7-11",
+          "idx": 11,
+          "group": 28,
+          "pos": [
+            -139.4,
+            205.95
+          ]
+        },
+        {
+          "id": "7-12",
+          "idx": 12,
+          "group": 28,
+          "pos": [
+            -142.02,
+            205.8
+          ]
+        },
+        {
+          "id": "7-13",
+          "idx": 13,
+          "group": 29,
+          "pos": [
+            -141.74,
+            201.62
+          ]
+        },
+        {
+          "id": "7-14",
+          "idx": 14,
+          "group": 31,
+          "pos": [
+            -144.58,
+            188.44
+          ]
+        },
+        {
+          "id": "7-15",
+          "idx": 15,
+          "group": 32,
+          "pos": [
+            -150.24,
+            194.96
+          ]
+        },
+        {
+          "id": "7-16",
+          "idx": 16,
+          "group": 33,
+          "pos": [
+            -153.38,
+            181.95
+          ]
+        },
+        {
+          "id": "7-17",
+          "idx": 17,
+          "group": 34,
+          "pos": [
+            -153.31,
+            189.14
+          ]
+        },
+        {
+          "id": "7-18",
+          "idx": 18,
+          "group": 35,
+          "pos": [
+            -161.29,
+            187.77
+          ]
+        },
+        {
+          "id": "7-19",
+          "idx": 19,
+          "group": 39,
+          "pos": [
+            -158.78,
+            198.73
+          ]
+        },
+        {
+          "id": "7-21",
+          "idx": 21,
+          "group": 30,
+          "pos": [
+            -129.32,
+            184.89
+          ]
+        },
+        {
+          "id": "7-22",
+          "idx": 22,
+          "group": 89,
+          "pos": [
+            -163.01,
+            192.6
+          ]
+        }
+      ]
+    },
+    {
+      "id": 130435,
+      "enemyIndex": 8,
+      "name": "Addled Thug",
+      "count": 5,
+      "health": 999044,
+      "creatureType": "Humanoid",
+      "scale": 1.2,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Polymorph",
+        "Root",
+        "Fear",
+        "Disorient",
+        "Imprison",
+        "Stun",
+        "Slow"
+      ],
+      "spawns": [
+        {
+          "id": "8-1",
+          "idx": 1,
+          "group": 6,
+          "pos": [
+            -180.54,
+            208.21
+          ]
+        },
+        {
+          "id": "8-2",
+          "idx": 2,
+          "group": 7,
+          "pos": [
+            -174.16,
+            203.91
+          ]
+        },
+        {
+          "id": "8-3",
+          "idx": 3,
+          "group": 7,
+          "pos": [
+            -176.5,
+            202.21
+          ]
+        },
+        {
+          "id": "8-4",
+          "idx": 4,
+          "group": 9,
+          "pos": [
+            -184.98,
+            197.41
+          ]
+        },
+        {
+          "id": "8-5",
+          "idx": 5,
+          "group": 21,
+          "pos": [
+            -161.44,
+            220.9
+          ]
+        },
+        {
+          "id": "8-6",
+          "idx": 6,
+          "group": 23,
+          "pos": [
+            -146.2,
+            229.74
+          ]
+        },
+        {
+          "id": "8-7",
+          "idx": 7,
+          "group": 24,
+          "pos": [
+            -145.2,
+            221.78
+          ]
+        },
+        {
+          "id": "8-8",
+          "idx": 8,
+          "group": 24,
+          "pos": [
+            -142.89,
+            220.26
+          ]
+        },
+        {
+          "id": "8-9",
+          "idx": 9,
+          "group": 41,
+          "pos": [
+            -150.35,
+            207.98
+          ]
+        },
+        {
+          "id": "8-10",
+          "idx": 10,
+          "group": 26,
+          "pos": [
+            -139.92,
+            215.69
+          ]
+        },
+        {
+          "id": "8-11",
+          "idx": 11,
+          "group": 27,
+          "pos": [
+            -131.09,
+            210.78
+          ]
+        },
+        {
+          "id": "8-12",
+          "idx": 12,
+          "group": 29,
+          "pos": [
+            -139.39,
+            199.33
+          ]
+        },
+        {
+          "id": "8-13",
+          "idx": 13,
+          "group": 34,
+          "pos": [
+            -153.8,
+            186.12
+          ]
+        },
+        {
+          "id": "8-14",
+          "idx": 14,
+          "group": 35,
+          "pos": [
+            -162.8,
+            185.65
+          ]
+        },
+        {
+          "id": "8-15",
+          "idx": 15,
+          "group": 38,
+          "pos": [
+            -168.21,
+            196.78
+          ]
+        }
+      ]
+    },
+    {
+      "id": 134232,
+      "enemyIndex": 9,
+      "name": "Hired Assassin",
+      "count": 4,
+      "health": 768495,
+      "creatureType": "Humanoid",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Polymorph",
+        "Root",
+        "Fear",
+        "Disorient",
+        "Imprison",
+        "Sap",
+        "Stun",
+        "Slow"
+      ],
+      "spawns": [
+        {
+          "id": "9-1",
+          "idx": 1,
+          "group": 40,
+          "pos": [
+            -170.86,
+            211.04
+          ]
+        },
+        {
+          "id": "9-2",
+          "idx": 2,
+          "group": 9,
+          "pos": [
+            -187.35,
+            198.51
+          ]
+        },
+        {
+          "id": "9-3",
+          "idx": 3,
+          "group": 20,
+          "pos": [
+            -158.96,
+            212.31
+          ]
+        },
+        {
+          "id": "9-4",
+          "idx": 4,
+          "group": 41,
+          "pos": [
+            -149.55,
+            210.71
+          ]
+        },
+        {
+          "id": "9-5",
+          "idx": 5,
+          "group": 41,
+          "pos": [
+            -147.6,
+            207.78
+          ]
+        },
+        {
+          "id": "9-6",
+          "idx": 6,
+          "group": 25,
+          "pos": [
+            -154.14,
+            217.22
+          ],
+          "patrol": [
+            [
+              -154.14,
+              217.22
+            ],
+            [
+              -159.57,
+              214.6
+            ],
+            [
+              -154.14,
+              217.22
+            ],
+            [
+              -148.43,
+              215.89
+            ]
+          ]
+        },
+        {
+          "id": "9-7",
+          "idx": 7,
+          "group": 30,
+          "pos": [
+            -134.78,
+            186.15
+          ]
+        },
+        {
+          "id": "9-8",
+          "idx": 8,
+          "group": 33,
+          "pos": [
+            -149.92,
+            182.48
+          ]
+        },
+        {
+          "id": "9-9",
+          "idx": 9,
+          "group": 34,
+          "pos": [
+            -151.03,
+            186.87
+          ]
+        }
+      ]
+    },
+    {
+      "id": 136006,
+      "enemyIndex": 10,
+      "name": "Rowdy Reveler",
+      "count": 0,
+      "health": 153699,
+      "creatureType": "Humanoid",
+      "scale": 0.7,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt",
+        "Silence",
+        "Root",
+        "Fear",
+        "Disorient",
+        "Stun",
+        "Slow"
+      ],
+      "spawns": [
+        {
+          "id": "10-1",
+          "idx": 1,
+          "group": 8,
+          "pos": [
+            -184.59,
+            204.04
+          ]
+        },
+        {
+          "id": "10-2",
+          "idx": 2,
+          "group": 8,
+          "pos": [
+            -185.94,
+            203.02
+          ]
+        },
+        {
+          "id": "10-3",
+          "idx": 3,
+          "group": 8,
+          "pos": [
+            -187.48,
+            203.24
+          ]
+        },
+        {
+          "id": "10-4",
+          "idx": 4,
+          "group": 10,
+          "pos": [
+            -180.68,
+            204.26
+          ]
+        },
+        {
+          "id": "10-5",
+          "idx": 5,
+          "group": 10,
+          "pos": [
+            -180.75,
+            202.95
+          ]
+        },
+        {
+          "id": "10-6",
+          "idx": 6,
+          "group": 11,
+          "pos": [
+            -175.35,
+            207
+          ]
+        },
+        {
+          "id": "10-7",
+          "idx": 7,
+          "group": 11,
+          "pos": [
+            -176.68,
+            205.67
+          ]
+        },
+        {
+          "id": "10-8",
+          "idx": 8,
+          "group": 11,
+          "pos": [
+            -178.1,
+            204.34
+          ]
+        },
+        {
+          "id": "10-9",
+          "idx": 9,
+          "group": 12,
+          "pos": [
+            -178.87,
+            198.72
+          ]
+        },
+        {
+          "id": "10-10",
+          "idx": 10,
+          "group": 12,
+          "pos": [
+            -180.5,
+            198.7
+          ]
+        },
+        {
+          "id": "10-11",
+          "idx": 11,
+          "group": 12,
+          "pos": [
+            -179.84,
+            200.03
+          ]
+        },
+        {
+          "id": "10-12",
+          "idx": 12,
+          "group": 13,
+          "pos": [
+            -179.49,
+            214.09
+          ]
+        },
+        {
+          "id": "10-13",
+          "idx": 13,
+          "group": 13,
+          "pos": [
+            -179.05,
+            215.06
+          ]
+        },
+        {
+          "id": "10-14",
+          "idx": 14,
+          "group": 13,
+          "pos": [
+            -179.2,
+            216.08
+          ]
+        },
+        {
+          "id": "10-15",
+          "idx": 15,
+          "group": 14,
+          "pos": [
+            -174.12,
+            212.54
+          ]
+        },
+        {
+          "id": "10-16",
+          "idx": 16,
+          "group": 14,
+          "pos": [
+            -174.14,
+            213.94
+          ]
+        },
+        {
+          "id": "10-17",
+          "idx": 17,
+          "group": 14,
+          "pos": [
+            -175.59,
+            213.69
+          ]
+        },
+        {
+          "id": "10-18",
+          "idx": 18,
+          "group": 14,
+          "pos": [
+            -176.51,
+            213.54
+          ]
+        },
+        {
+          "id": "10-19",
+          "idx": 19,
+          "group": 14,
+          "pos": [
+            -175.94,
+            214.8
+          ]
+        },
+        {
+          "id": "10-20",
+          "idx": 20,
+          "group": 15,
+          "pos": [
+            -175.88,
+            217.53
+          ]
+        },
+        {
+          "id": "10-21",
+          "idx": 21,
+          "group": 15,
+          "pos": [
+            -176.33,
+            218.38
+          ]
+        },
+        {
+          "id": "10-22",
+          "idx": 22,
+          "group": 15,
+          "pos": [
+            -174.63,
+            217.53
+          ]
+        },
+        {
+          "id": "10-23",
+          "idx": 23,
+          "group": 15,
+          "pos": [
+            -175.09,
+            218.43
+          ]
+        },
+        {
+          "id": "10-24",
+          "idx": 24,
+          "group": 16,
+          "pos": [
+            -172.39,
+            222.35
+          ]
+        },
+        {
+          "id": "10-25",
+          "idx": 25,
+          "group": 16,
+          "pos": [
+            -172.54,
+            223.62
+          ]
+        },
+        {
+          "id": "10-26",
+          "idx": 26,
+          "group": 17,
+          "pos": [
+            -169.67,
+            217.09
+          ]
+        },
+        {
+          "id": "10-27",
+          "idx": 27,
+          "group": 17,
+          "pos": [
+            -169.48,
+            218.33
+          ]
+        },
+        {
+          "id": "10-28",
+          "idx": 28,
+          "group": 18,
+          "pos": [
+            -166.47,
+            216.57
+          ]
+        },
+        {
+          "id": "10-29",
+          "idx": 29,
+          "group": 18,
+          "pos": [
+            -165.82,
+            217.88
+          ]
+        },
+        {
+          "id": "10-30",
+          "idx": 30,
+          "group": 36,
+          "pos": [
+            -165.25,
+            183.15
+          ]
+        },
+        {
+          "id": "10-31",
+          "idx": 31,
+          "group": 36,
+          "pos": [
+            -166.14,
+            182.42
+          ]
+        },
+        {
+          "id": "10-32",
+          "idx": 32,
+          "group": 36,
+          "pos": [
+            -166.14,
+            184.04
+          ]
+        },
+        {
+          "id": "10-33",
+          "idx": 33,
+          "group": null,
+          "pos": [
+            -164.83,
+            180.06
+          ]
+        },
+        {
+          "id": "10-34",
+          "idx": 34,
+          "group": 37,
+          "pos": [
+            -161.78,
+            181.29
+          ]
+        },
+        {
+          "id": "10-35",
+          "idx": 35,
+          "group": 37,
+          "pos": [
+            -160.06,
+            181.06
+          ]
+        },
+        {
+          "id": "10-36",
+          "idx": 36,
+          "group": 37,
+          "pos": [
+            -160.88,
+            179.56
+          ]
+        },
+        {
+          "id": "10-37",
+          "idx": 37,
+          "group": 37,
+          "pos": [
+            -162.46,
+            179.49
+          ]
+        },
+        {
+          "id": "10-38",
+          "idx": 38,
+          "group": 37,
+          "pos": [
+            -162.23,
+            182.49
+          ]
+        },
+        {
+          "id": "10-39",
+          "idx": 39,
+          "group": 37,
+          "pos": [
+            -160.73,
+            182.49
+          ]
+        },
+        {
+          "id": "10-40",
+          "idx": 40,
+          "group": 37,
+          "pos": [
+            -159.46,
+            178.59
+          ]
+        },
+        {
+          "id": "10-41",
+          "idx": 41,
+          "group": 37,
+          "pos": [
+            -161.11,
+            177.91
+          ]
+        },
+        {
+          "id": "10-42",
+          "idx": 42,
+          "group": 37,
+          "pos": [
+            -162.83,
+            178.29
+          ]
+        }
+      ]
+    },
+    {
+      "id": 136139,
+      "enemyIndex": 11,
+      "name": "Mechanized Peacekeeper",
+      "count": 12,
+      "health": 1229592,
+      "creatureType": "Mechanical",
+      "scale": 1.6,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt"
+      ],
+      "spawns": [
+        {
+          "id": "11-1",
+          "idx": 1,
+          "group": 30,
+          "pos": [
+            -131.79,
+            187.53
+          ]
+        },
+        {
+          "id": "11-2",
+          "idx": 2,
+          "group": 89,
+          "pos": [
+            -159.32,
+            193.02
+          ],
+          "patrol": [
+            [
+              -160.79,
+              194.62
+            ],
+            [
+              -156.58,
+              191.07
+            ],
+            [
+              -160.79,
+              194.62
+            ],
+            [
+              -162.66,
+              200.04
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": 129214,
+      "enemyIndex": 12,
+      "name": "Coin-Operated Crowd Pummeler",
+      "count": 0,
+      "health": 8914542,
+      "creatureType": "Mechanical",
+      "scale": 1,
+      "isBoss": true,
+      "characteristics": [
+        "Taunt"
+      ],
+      "spawns": [
+        {
+          "id": "12-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -123.27,
+            175.52
+          ]
+        }
+      ]
+    },
+    {
+      "id": 130661,
+      "enemyIndex": 13,
+      "name": "Venture Co. Earthshaper",
+      "count": 4,
+      "health": 768495,
+      "creatureType": "Humanoid",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Polymorph",
+        "Root",
+        "Fear",
+        "Disorient",
+        "Sap",
+        "Stun",
+        "Slow"
+      ],
+      "spawns": [
+        {
+          "id": "13-1",
+          "idx": 1,
+          "group": 42,
+          "pos": [
+            -113.86,
+            156.24
+          ]
+        },
+        {
+          "id": "13-2",
+          "idx": 2,
+          "group": 44,
+          "pos": [
+            -113.8,
+            147.45
+          ]
+        },
+        {
+          "id": "13-3",
+          "idx": 3,
+          "group": 45,
+          "pos": [
+            -123.24,
+            147.56
+          ]
+        },
+        {
+          "id": "13-4",
+          "idx": 4,
+          "group": 45,
+          "pos": [
+            -121.26,
+            145.41
+          ]
+        },
+        {
+          "id": "13-5",
+          "idx": 5,
+          "group": 46,
+          "pos": [
+            -118.05,
+            141.62
+          ],
+          "patrol": [
+            [
+              -118.05,
+              141.62
+            ],
+            [
+              -118.04,
+              136.45
+            ],
+            [
+              -118.05,
+              141.62
+            ],
+            [
+              -117.85,
+              149.41
+            ]
+          ]
+        },
+        {
+          "id": "13-6",
+          "idx": 6,
+          "group": 48,
+          "pos": [
+            -120.48,
+            133.35
+          ]
+        },
+        {
+          "id": "13-7",
+          "idx": 7,
+          "group": 50,
+          "pos": [
+            -117.26,
+            123.83
+          ]
+        },
+        {
+          "id": "13-8",
+          "idx": 8,
+          "group": 51,
+          "pos": [
+            -122.18,
+            118.19
+          ]
+        },
+        {
+          "id": "13-9",
+          "idx": 9,
+          "group": 53,
+          "pos": [
+            -109.95,
+            136.12
+          ]
+        },
+        {
+          "id": "13-10",
+          "idx": 10,
+          "group": 53,
+          "pos": [
+            -112.64,
+            138.76
+          ]
+        },
+        {
+          "id": "13-11",
+          "idx": 11,
+          "group": 54,
+          "pos": [
+            -108.07,
+            128.74
+          ]
+        },
+        {
+          "id": "13-12",
+          "idx": 12,
+          "group": 78,
+          "pos": [
+            -83.87,
+            111.87
+          ]
+        },
+        {
+          "id": "13-13",
+          "idx": 13,
+          "group": 78,
+          "pos": [
+            -83.06,
+            115.35
+          ]
+        }
+      ]
+    },
+    {
+      "id": 130437,
+      "enemyIndex": 14,
+      "name": "Mine Rat",
+      "count": 2,
+      "health": 461097,
+      "creatureType": "Humanoid",
+      "scale": 0.8,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt",
+        "Silence",
+        "Polymorph",
+        "Root",
+        "Fear",
+        "Disorient",
+        "Sap",
+        "Stun",
+        "Slow"
+      ],
+      "spawns": [
+        {
+          "id": "14-1",
+          "idx": 1,
+          "group": 42,
+          "pos": [
+            -113.74,
+            154.07
+          ]
+        },
+        {
+          "id": "14-2",
+          "idx": 2,
+          "group": 42,
+          "pos": [
+            -111.61,
+            155.86
+          ]
+        },
+        {
+          "id": "14-3",
+          "idx": 3,
+          "group": 43,
+          "pos": [
+            -123.4,
+            152.46
+          ]
+        },
+        {
+          "id": "14-4",
+          "idx": 4,
+          "group": 43,
+          "pos": [
+            -123.93,
+            154.8
+          ]
+        },
+        {
+          "id": "14-5",
+          "idx": 5,
+          "group": 44,
+          "pos": [
+            -111.67,
+            147.08
+          ]
+        },
+        {
+          "id": "14-6",
+          "idx": 6,
+          "group": 44,
+          "pos": [
+            -115.34,
+            144.03
+          ]
+        },
+        {
+          "id": "14-7",
+          "idx": 7,
+          "group": 48,
+          "pos": [
+            -120.55,
+            130.77
+          ]
+        },
+        {
+          "id": "14-8",
+          "idx": 8,
+          "group": 50,
+          "pos": [
+            -114.57,
+            124.03
+          ]
+        },
+        {
+          "id": "14-9",
+          "idx": 9,
+          "group": 50,
+          "pos": [
+            -115.77,
+            122.13
+          ]
+        },
+        {
+          "id": "14-10",
+          "idx": 10,
+          "group": 88,
+          "pos": [
+            -117.76,
+            111.91
+          ]
+        },
+        {
+          "id": "14-11",
+          "idx": 11,
+          "group": 51,
+          "pos": [
+            -122.95,
+            112.79
+          ]
+        }
+      ]
+    },
+    {
+      "id": 130653,
+      "enemyIndex": 15,
+      "name": "Wanton Sapper",
+      "count": 4,
+      "health": 768495,
+      "creatureType": "Humanoid",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Polymorph",
+        "Root",
+        "Fear",
+        "Disorient",
+        "Sap",
+        "Stun",
+        "Slow"
+      ],
+      "spawns": [
+        {
+          "id": "15-1",
+          "idx": 1,
+          "group": 43,
+          "pos": [
+            -121.55,
+            154.05
+          ]
+        },
+        {
+          "id": "15-2",
+          "idx": 2,
+          "group": 44,
+          "pos": [
+            -115.33,
+            145.96
+          ]
+        },
+        {
+          "id": "15-3",
+          "idx": 3,
+          "group": 45,
+          "pos": [
+            -121.11,
+            147.33
+          ]
+        },
+        {
+          "id": "15-4",
+          "idx": 4,
+          "group": 46,
+          "pos": [
+            -116.83,
+            139.76
+          ]
+        },
+        {
+          "id": "15-5",
+          "idx": 5,
+          "group": 46,
+          "pos": [
+            -119.55,
+            139.76
+          ]
+        },
+        {
+          "id": "15-6",
+          "idx": 6,
+          "group": 49,
+          "pos": [
+            -125.1,
+            125.99
+          ]
+        },
+        {
+          "id": "15-7",
+          "idx": 7,
+          "group": 49,
+          "pos": [
+            -124.07,
+            123.44
+          ]
+        },
+        {
+          "id": "15-8",
+          "idx": 8,
+          "group": 53,
+          "pos": [
+            -108.72,
+            138.64
+          ]
+        },
+        {
+          "id": "15-9",
+          "idx": 9,
+          "group": 53,
+          "pos": [
+            -110.19,
+            140.96
+          ]
+        },
+        {
+          "id": "15-10",
+          "idx": 10,
+          "group": 54,
+          "pos": [
+            -112.13,
+            126.03
+          ]
+        },
+        {
+          "id": "15-11",
+          "idx": 11,
+          "group": 78,
+          "pos": [
+            -79.07,
+            117.49
+          ]
+        },
+        {
+          "id": "15-12",
+          "idx": 12,
+          "group": 78,
+          "pos": [
+            -80.98,
+            107.93
+          ]
+        }
+      ]
+    },
+    {
+      "id": 136643,
+      "enemyIndex": 16,
+      "name": "Azerite Extractor",
+      "count": 12,
+      "health": 1229592,
+      "creatureType": "Mechanical",
+      "scale": 1.2,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt"
+      ],
+      "spawns": [
+        {
+          "id": "16-1",
+          "idx": 1,
+          "group": 48,
+          "pos": [
+            -122.86,
+            132.86
+          ]
+        },
+        {
+          "id": "16-2",
+          "idx": 2,
+          "group": 88,
+          "pos": [
+            -116.87,
+            114.57
+          ]
+        },
+        {
+          "id": "16-3",
+          "idx": 3,
+          "group": 51,
+          "pos": [
+            -124.27,
+            116.05
+          ]
+        },
+        {
+          "id": "16-4",
+          "idx": 4,
+          "group": 54,
+          "pos": [
+            -110.56,
+            127.8
+          ]
+        }
+      ]
+    },
+    {
+      "id": 137940,
+      "enemyIndex": 17,
+      "name": "Safety Shark",
+      "count": 4,
+      "health": 3073980,
+      "creatureType": "Beast",
+      "scale": 1.2,
+      "isBoss": false,
+      "characteristics": [],
+      "spawns": [
+        {
+          "id": "17-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -85.61,
+            136.11
+          ],
+          "patrol": []
+        },
+        {
+          "id": "17-2",
+          "idx": 2,
+          "group": null,
+          "pos": [
+            -90.78,
+            142.75
+          ],
+          "patrol": []
+        },
+        {
+          "id": "17-3",
+          "idx": 3,
+          "group": null,
+          "pos": [
+            -88.12,
+            152.2
+          ],
+          "patrol": []
+        },
+        {
+          "id": "17-4",
+          "idx": 4,
+          "group": null,
+          "pos": [
+            -77.61,
+            139.95
+          ],
+          "patrol": []
+        },
+        {
+          "id": "17-5",
+          "idx": 5,
+          "group": null,
+          "pos": [
+            -78.37,
+            147.77
+          ],
+          "patrol": []
+        },
+        {
+          "id": "17-6",
+          "idx": 6,
+          "group": null,
+          "pos": [
+            -84,
+            144.62
+          ],
+          "patrol": []
+        }
+      ],
+      "stealthDetect": true
+    },
+    {
+      "id": 134005,
+      "enemyIndex": 18,
+      "name": "Shalebiter",
+      "count": 1,
+      "health": 153699,
+      "creatureType": "Elemental",
+      "scale": 0.7,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt",
+        "Silence",
+        "Root",
+        "Fear",
+        "Stun",
+        "Slow"
+      ],
+      "spawns": [
+        {
+          "id": "18-1",
+          "idx": 1,
+          "group": 55,
+          "pos": [
+            -101.48,
+            129.28
+          ]
+        },
+        {
+          "id": "18-2",
+          "idx": 2,
+          "group": 55,
+          "pos": [
+            -102.93,
+            127.35
+          ]
+        },
+        {
+          "id": "18-3",
+          "idx": 3,
+          "group": 55,
+          "pos": [
+            -102.81,
+            128.86
+          ]
+        },
+        {
+          "id": "18-4",
+          "idx": 4,
+          "group": 57,
+          "pos": [
+            -88.99,
+            118.02
+          ]
+        },
+        {
+          "id": "18-5",
+          "idx": 5,
+          "group": 57,
+          "pos": [
+            -90.95,
+            115.62
+          ]
+        },
+        {
+          "id": "18-6",
+          "idx": 6,
+          "group": 57,
+          "pos": [
+            -90.91,
+            117.64
+          ]
+        }
+      ]
+    },
+    {
+      "id": 130635,
+      "enemyIndex": 19,
+      "name": "Stonefury",
+      "count": 4,
+      "health": 768495,
+      "creatureType": "Elemental",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Root",
+        "Fear",
+        "Banish",
+        "Disorient",
+        "Stun",
+        "Slow"
+      ],
+      "spawns": [
+        {
+          "id": "19-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -99.26,
+            125.25
+          ],
+          "patrol": [
+            [
+              -99.26,
+              125.25
+            ],
+            [
+              -96.55,
+              122.66
+            ],
+            [
+              -99.26,
+              125.25
+            ],
+            [
+              -101.85,
+              128.02
+            ]
+          ]
+        },
+        {
+          "id": "19-2",
+          "idx": 2,
+          "group": 57,
+          "pos": [
+            -92.97,
+            119.13
+          ]
+        },
+        {
+          "id": "19-3",
+          "idx": 3,
+          "group": 57,
+          "pos": [
+            -88.26,
+            115.65
+          ]
+        }
+      ]
+    },
+    {
+      "id": 134012,
+      "enemyIndex": 20,
+      "name": "Taskmaster Askari",
+      "count": 6,
+      "health": 1229592,
+      "creatureType": "Humanoid",
+      "scale": 1.4,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt"
+      ],
+      "spawns": [
+        {
+          "id": "20-1",
+          "idx": 1,
+          "group": 78,
+          "pos": [
+            -80.67,
+            113.18
+          ]
+        }
+      ]
+    },
+    {
+      "id": 129227,
+      "enemyIndex": 21,
+      "name": "Azerokk",
+      "count": 0,
+      "health": 4733929,
+      "creatureType": "Elemental",
+      "scale": 1,
+      "isBoss": true,
+      "characteristics": [
+        "Taunt"
+      ],
+      "spawns": [
+        {
+          "id": "21-1",
+          "idx": 1,
+          "group": 58,
+          "pos": [
+            -68.44,
+            115.4
+          ]
+        }
+      ]
+    },
+    {
+      "id": 129802,
+      "enemyIndex": 22,
+      "name": "Earthrager",
+      "count": 0,
+      "health": 768495,
+      "creatureType": "Elemental",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Root",
+        "Fear",
+        "Banish",
+        "Disorient",
+        "Stun",
+        "Slow"
+      ],
+      "spawns": [
+        {
+          "id": "22-1",
+          "idx": 1,
+          "group": 58,
+          "pos": [
+            -66.62,
+            119.55
+          ]
+        },
+        {
+          "id": "22-2",
+          "idx": 2,
+          "group": 58,
+          "pos": [
+            -72.42,
+            117.91
+          ]
+        },
+        {
+          "id": "22-3",
+          "idx": 3,
+          "group": 58,
+          "pos": [
+            -70.03,
+            110.67
+          ]
+        },
+        {
+          "id": "22-4",
+          "idx": 4,
+          "group": 58,
+          "pos": [
+            -64.09,
+            112.85
+          ]
+        }
+      ]
+    },
+    {
+      "id": 138369,
+      "enemyIndex": 23,
+      "name": "Footbomb Hooligan",
+      "count": 0,
+      "health": 153699,
+      "creatureType": "Humanoid",
+      "scale": 0.6,
+      "isBoss": false,
+      "characteristics": [],
+      "spawns": [
+        {
+          "id": "23-1",
+          "idx": 1,
+          "group": 59,
+          "pos": [
+            -47.94,
+            141.37
+          ]
+        },
+        {
+          "id": "23-2",
+          "idx": 2,
+          "group": 59,
+          "pos": [
+            -51.44,
+            148.32
+          ]
+        },
+        {
+          "id": "23-3",
+          "idx": 3,
+          "group": 59,
+          "pos": [
+            -48.17,
+            149.62
+          ]
+        },
+        {
+          "id": "23-4",
+          "idx": 4,
+          "group": 59,
+          "pos": [
+            -46.37,
+            149.95
+          ]
+        },
+        {
+          "id": "23-5",
+          "idx": 5,
+          "group": 59,
+          "pos": [
+            -45.23,
+            150.28
+          ]
+        },
+        {
+          "id": "23-6",
+          "idx": 6,
+          "group": 59,
+          "pos": [
+            -44.29,
+            144.09
+          ]
+        },
+        {
+          "id": "23-7",
+          "idx": 7,
+          "group": 59,
+          "pos": [
+            -43.14,
+            145.42
+          ]
+        },
+        {
+          "id": "23-8",
+          "idx": 8,
+          "group": 59,
+          "pos": [
+            -43.62,
+            147.22
+          ]
+        },
+        {
+          "id": "23-9",
+          "idx": 9,
+          "group": 59,
+          "pos": [
+            -44.65,
+            145.36
+          ]
+        },
+        {
+          "id": "23-10",
+          "idx": 10,
+          "group": 59,
+          "pos": [
+            -45.67,
+            143.97
+          ]
+        },
+        {
+          "id": "23-11",
+          "idx": 11,
+          "group": 59,
+          "pos": [
+            -45.31,
+            146.86
+          ]
+        },
+        {
+          "id": "23-12",
+          "idx": 12,
+          "group": 59,
+          "pos": [
+            -46.64,
+            141.74
+          ]
+        },
+        {
+          "id": "23-13",
+          "idx": 13,
+          "group": 59,
+          "pos": [
+            -49.17,
+            142.04
+          ]
+        },
+        {
+          "id": "23-14",
+          "idx": 14,
+          "group": 59,
+          "pos": [
+            -49.83,
+            143.13
+          ]
+        },
+        {
+          "id": "23-15",
+          "idx": 15,
+          "group": 59,
+          "pos": [
+            -45.79,
+            145.3
+          ]
+        },
+        {
+          "id": "23-16",
+          "idx": 16,
+          "group": 59,
+          "pos": [
+            -46.58,
+            147.64
+          ]
+        },
+        {
+          "id": "23-17",
+          "idx": 17,
+          "group": 59,
+          "pos": [
+            -48.2,
+            147.34
+          ]
+        }
+      ]
+    },
+    {
+      "id": 133430,
+      "enemyIndex": 24,
+      "name": "Venture Co. Mastermind",
+      "count": 8,
+      "health": 1229592,
+      "creatureType": "Humanoid",
+      "scale": 1.2,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt"
+      ],
+      "spawns": [
+        {
+          "id": "24-1",
+          "idx": 1,
+          "group": 66,
+          "pos": [
+            -52.57,
+            195.16
+          ]
+        },
+        {
+          "id": "24-2",
+          "idx": 2,
+          "group": 66,
+          "pos": [
+            -55.26,
+            194.84
+          ]
+        },
+        {
+          "id": "24-3",
+          "idx": 3,
+          "group": null,
+          "pos": [
+            -68.05,
+            165.61
+          ],
+          "patrol": [
+            [
+              -68.05,
+              165.61
+            ],
+            [
+              -65.86,
+              162.03
+            ],
+            [
+              -68.05,
+              165.61
+            ],
+            [
+              -68.59,
+              170.77
+            ]
+          ]
+        },
+        {
+          "id": "24-4",
+          "idx": 4,
+          "group": null,
+          "pos": [
+            -51.23,
+            166.69
+          ],
+          "patrol": [
+            [
+              -51.23,
+              166.69
+            ],
+            [
+              -53.52,
+              163.62
+            ],
+            [
+              -51.23,
+              166.69
+            ],
+            [
+              -49.58,
+              170.48
+            ]
+          ]
+        },
+        {
+          "id": "24-5",
+          "idx": 5,
+          "group": null,
+          "pos": [
+            -48.92,
+            177.17
+          ],
+          "patrol": [
+            [
+              -48.92,
+              177.17
+            ],
+            [
+              -46.84,
+              172.43
+            ],
+            [
+              -48.92,
+              177.17
+            ],
+            [
+              -53.25,
+              181.08
+            ]
+          ]
+        },
+        {
+          "id": "24-6",
+          "idx": 6,
+          "group": null,
+          "pos": [
+            -58.56,
+            179.08
+          ],
+          "patrol": [
+            [
+              -58.56,
+              179.08
+            ],
+            [
+              -61.64,
+              176.16
+            ],
+            [
+              -58.56,
+              179.08
+            ],
+            [
+              -55.48,
+              181.36
+            ]
+          ]
+        },
+        {
+          "id": "24-7",
+          "idx": 7,
+          "group": null,
+          "pos": [
+            -62.16,
+            170.18
+          ],
+          "patrol": [
+            [
+              -61.54,
+              168.23
+            ],
+            [
+              -64.41,
+              172.8
+            ],
+            [
+              -61.54,
+              168.23
+            ],
+            [
+              -58.87,
+              163.86
+            ]
+          ]
+        }
+      ],
+      "stealthDetect": true
+    },
+    {
+      "id": 133345,
+      "enemyIndex": 25,
+      "name": "Feckless Assistant",
+      "count": 5,
+      "health": 768495,
+      "creatureType": "Humanoid",
+      "scale": 0.8,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt",
+        "Silence",
+        "Polymorph",
+        "Root",
+        "Fear",
+        "Disorient",
+        "Sap",
+        "Stun",
+        "Slow"
+      ],
+      "spawns": [
+        {
+          "id": "25-1",
+          "idx": 1,
+          "group": 60,
+          "pos": [
+            -43.99,
+            156.75
+          ]
+        },
+        {
+          "id": "25-2",
+          "idx": 2,
+          "group": 60,
+          "pos": [
+            -44.7,
+            155.17
+          ]
+        },
+        {
+          "id": "25-3",
+          "idx": 3,
+          "group": 61,
+          "pos": [
+            -50.65,
+            161.5
+          ]
+        },
+        {
+          "id": "25-4",
+          "idx": 4,
+          "group": 63,
+          "pos": [
+            -40.49,
+            170.12
+          ]
+        },
+        {
+          "id": "25-5",
+          "idx": 5,
+          "group": 64,
+          "pos": [
+            -42.02,
+            175.05
+          ]
+        },
+        {
+          "id": "25-6",
+          "idx": 6,
+          "group": 66,
+          "pos": [
+            -49.89,
+            193.98
+          ]
+        },
+        {
+          "id": "25-7",
+          "idx": 7,
+          "group": 67,
+          "pos": [
+            -58.08,
+            187.09
+          ]
+        },
+        {
+          "id": "25-8",
+          "idx": 8,
+          "group": 73,
+          "pos": [
+            -71.49,
+            172.11
+          ]
+        },
+        {
+          "id": "25-9",
+          "idx": 9,
+          "group": 74,
+          "pos": [
+            -71.89,
+            162.18
+          ]
+        },
+        {
+          "id": "25-10",
+          "idx": 10,
+          "group": 75,
+          "pos": [
+            -54.76,
+            166.85
+          ]
+        },
+        {
+          "id": "25-11",
+          "idx": 11,
+          "group": 75,
+          "pos": [
+            -54.26,
+            169.24
+          ]
+        }
+      ]
+    },
+    {
+      "id": 136934,
+      "enemyIndex": 26,
+      "name": "Weapons Tester",
+      "count": 4,
+      "health": 768495,
+      "creatureType": "Humanoid",
+      "scale": 0.8,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt",
+        "Root",
+        "Fear",
+        "Disorient",
+        "Sap",
+        "Stun",
+        "Slow"
+      ],
+      "spawns": [
+        {
+          "id": "26-1",
+          "idx": 1,
+          "group": 60,
+          "pos": [
+            -42.56,
+            155.01
+          ]
+        },
+        {
+          "id": "26-2",
+          "idx": 2,
+          "group": 64,
+          "pos": [
+            -43.21,
+            176.68
+          ]
+        },
+        {
+          "id": "26-3",
+          "idx": 3,
+          "group": 65,
+          "pos": [
+            -48.62,
+            183.42
+          ]
+        },
+        {
+          "id": "26-4",
+          "idx": 4,
+          "group": 65,
+          "pos": [
+            -50.9,
+            184.69
+          ]
+        },
+        {
+          "id": "26-5",
+          "idx": 5,
+          "group": 68,
+          "pos": [
+            -70.88,
+            181.91
+          ]
+        },
+        {
+          "id": "26-6",
+          "idx": 6,
+          "group": 72,
+          "pos": [
+            -76.92,
+            171.85
+          ]
+        },
+        {
+          "id": "26-7",
+          "idx": 7,
+          "group": 74,
+          "pos": [
+            -72.13,
+            159.73
+          ]
+        },
+        {
+          "id": "26-8",
+          "idx": 8,
+          "group": 75,
+          "pos": [
+            -56.33,
+            167.79
+          ]
+        }
+      ]
+    },
+    {
+      "id": 133432,
+      "enemyIndex": 27,
+      "name": "Venture Co. Alchemist",
+      "count": 5,
+      "health": 768495,
+      "creatureType": "Humanoid",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt",
+        "Silence",
+        "Root",
+        "Fear",
+        "Disorient",
+        "Imprison",
+        "Sap",
+        "Stun",
+        "Slow"
+      ],
+      "spawns": [
+        {
+          "id": "27-1",
+          "idx": 1,
+          "group": 61,
+          "pos": [
+            -49.44,
+            163.23
+          ]
+        },
+        {
+          "id": "27-2",
+          "idx": 2,
+          "group": 63,
+          "pos": [
+            -42.42,
+            167.36
+          ]
+        },
+        {
+          "id": "27-3",
+          "idx": 3,
+          "group": null,
+          "pos": [
+            -43.84,
+            175.12
+          ],
+          "patrol": [
+            [
+              -43.84,
+              175.12
+            ],
+            [
+              -43.21,
+              169.1
+            ],
+            [
+              -43.84,
+              175.12
+            ]
+          ]
+        },
+        {
+          "id": "27-4",
+          "idx": 4,
+          "group": 65,
+          "pos": [
+            -48.14,
+            185.79
+          ]
+        },
+        {
+          "id": "27-5",
+          "idx": 5,
+          "group": 66,
+          "pos": [
+            -58.54,
+            194.84
+          ]
+        },
+        {
+          "id": "27-6",
+          "idx": 6,
+          "group": 67,
+          "pos": [
+            -59.8,
+            186.67
+          ]
+        },
+        {
+          "id": "27-7",
+          "idx": 7,
+          "group": 67,
+          "pos": [
+            -60.69,
+            185.66
+          ]
+        },
+        {
+          "id": "27-8",
+          "idx": 8,
+          "group": 67,
+          "pos": [
+            -61.95,
+            184.18
+          ]
+        },
+        {
+          "id": "27-9",
+          "idx": 9,
+          "group": 68,
+          "pos": [
+            -65.85,
+            183.11
+          ]
+        },
+        {
+          "id": "27-10",
+          "idx": 10,
+          "group": 71,
+          "pos": [
+            -78.32,
+            178.94
+          ]
+        },
+        {
+          "id": "27-11",
+          "idx": 11,
+          "group": 71,
+          "pos": [
+            -73.14,
+            176.25
+          ]
+        },
+        {
+          "id": "27-12",
+          "idx": 12,
+          "group": 72,
+          "pos": [
+            -75.35,
+            170.07
+          ]
+        },
+        {
+          "id": "27-13",
+          "idx": 13,
+          "group": 72,
+          "pos": [
+            -77.92,
+            170.07
+          ]
+        },
+        {
+          "id": "27-14",
+          "idx": 14,
+          "group": 73,
+          "pos": [
+            -71.03,
+            170.29
+          ]
+        },
+        {
+          "id": "27-15",
+          "idx": 15,
+          "group": 73,
+          "pos": [
+            -69.11,
+            171.59
+          ]
+        },
+        {
+          "id": "27-16",
+          "idx": 16,
+          "group": 74,
+          "pos": [
+            -69.73,
+            160.33
+          ]
+        },
+        {
+          "id": "27-17",
+          "idx": 17,
+          "group": 75,
+          "pos": [
+            -56.39,
+            170.87
+          ]
+        },
+        {
+          "id": "27-18",
+          "idx": 18,
+          "group": 77,
+          "pos": [
+            -64.98,
+            167.17
+          ]
+        }
+      ]
+    },
+    {
+      "id": 133963,
+      "enemyIndex": 28,
+      "name": "Test Subject",
+      "count": 1,
+      "health": 153699,
+      "creatureType": "Humanoid",
+      "scale": 0.5,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt",
+        "Fear",
+        "Disorient",
+        "Stun",
+        "Slow"
+      ],
+      "spawns": [
+        {
+          "id": "28-1",
+          "idx": 1,
+          "group": 61,
+          "pos": [
+            -49.17,
+            160.13
+          ]
+        },
+        {
+          "id": "28-2",
+          "idx": 2,
+          "group": 61,
+          "pos": [
+            -52.21,
+            162.21
+          ]
+        },
+        {
+          "id": "28-3",
+          "idx": 3,
+          "group": 61,
+          "pos": [
+            -52.51,
+            161.07
+          ]
+        },
+        {
+          "id": "28-4",
+          "idx": 4,
+          "group": 62,
+          "pos": [
+            -42.03,
+            162.15
+          ]
+        },
+        {
+          "id": "28-5",
+          "idx": 5,
+          "group": 62,
+          "pos": [
+            -41.23,
+            163.09
+          ]
+        },
+        {
+          "id": "28-6",
+          "idx": 6,
+          "group": 62,
+          "pos": [
+            -41.17,
+            164.28
+          ]
+        },
+        {
+          "id": "28-7",
+          "idx": 7,
+          "group": 62,
+          "pos": [
+            -42.11,
+            163.78
+          ]
+        },
+        {
+          "id": "28-8",
+          "idx": 8,
+          "group": 62,
+          "pos": [
+            -42.73,
+            163.09
+          ]
+        },
+        {
+          "id": "28-9",
+          "idx": 9,
+          "group": 62,
+          "pos": [
+            -42.73,
+            162.03
+          ]
+        },
+        {
+          "id": "28-10",
+          "idx": 10,
+          "group": 68,
+          "pos": [
+            -67.43,
+            184.54
+          ]
+        },
+        {
+          "id": "28-11",
+          "idx": 11,
+          "group": 68,
+          "pos": [
+            -67.2,
+            181.08
+          ]
+        },
+        {
+          "id": "28-12",
+          "idx": 12,
+          "group": 68,
+          "pos": [
+            -68.55,
+            181.61
+          ]
+        },
+        {
+          "id": "28-13",
+          "idx": 13,
+          "group": 68,
+          "pos": [
+            -69.15,
+            183.11
+          ]
+        },
+        {
+          "id": "28-14",
+          "idx": 14,
+          "group": 68,
+          "pos": [
+            -67.73,
+            183.26
+          ]
+        },
+        {
+          "id": "28-15",
+          "idx": 15,
+          "group": 69,
+          "pos": [
+            -54.63,
+            176.72
+          ]
+        },
+        {
+          "id": "28-16",
+          "idx": 16,
+          "group": 69,
+          "pos": [
+            -53.68,
+            177.8
+          ]
+        },
+        {
+          "id": "28-17",
+          "idx": 17,
+          "group": 69,
+          "pos": [
+            -53.68,
+            175.84
+          ]
+        },
+        {
+          "id": "28-18",
+          "idx": 18,
+          "group": 69,
+          "pos": [
+            -54.68,
+            178.25
+          ]
+        },
+        {
+          "id": "28-19",
+          "idx": 19,
+          "group": 69,
+          "pos": [
+            -52.84,
+            176.6
+          ]
+        },
+        {
+          "id": "28-20",
+          "idx": 20,
+          "group": 71,
+          "pos": [
+            -74.54,
+            177.54
+          ]
+        },
+        {
+          "id": "28-21",
+          "idx": 21,
+          "group": 71,
+          "pos": [
+            -75.11,
+            175.82
+          ]
+        },
+        {
+          "id": "28-22",
+          "idx": 22,
+          "group": 71,
+          "pos": [
+            -76.19,
+            175.97
+          ]
+        },
+        {
+          "id": "28-23",
+          "idx": 23,
+          "group": 71,
+          "pos": [
+            -76.97,
+            177.47
+          ]
+        },
+        {
+          "id": "28-24",
+          "idx": 24,
+          "group": 71,
+          "pos": [
+            -75.68,
+            178.33
+          ]
+        },
+        {
+          "id": "28-25",
+          "idx": 25,
+          "group": 77,
+          "pos": [
+            -64.21,
+            168.84
+          ]
+        },
+        {
+          "id": "28-26",
+          "idx": 26,
+          "group": 77,
+          "pos": [
+            -65.83,
+            168.78
+          ]
+        },
+        {
+          "id": "28-27",
+          "idx": 27,
+          "group": 77,
+          "pos": [
+            -66.56,
+            167.89
+          ]
+        },
+        {
+          "id": "28-28",
+          "idx": 28,
+          "group": 77,
+          "pos": [
+            -64.88,
+            165.38
+          ]
+        },
+        {
+          "id": "28-29",
+          "idx": 29,
+          "group": 77,
+          "pos": [
+            -63.37,
+            165.99
+          ]
+        }
+      ]
+    },
+    {
+      "id": 129231,
+      "enemyIndex": 29,
+      "name": "Rixxa Fluxflame",
+      "count": 0,
+      "health": 5379465,
+      "creatureType": "Humanoid",
+      "scale": 1,
+      "isBoss": true,
+      "characteristics": [
+        "Taunt"
+      ],
+      "spawns": [
+        {
+          "id": "29-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -51.36,
+            213.64
+          ]
+        }
+      ]
+    },
+    {
+      "id": 133593,
+      "enemyIndex": 30,
+      "name": "Expert Technician",
+      "count": 5,
+      "health": 768495,
+      "creatureType": "Humanoid",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Disorient",
+        "Imprison",
+        "Stun",
+        "Slow"
+      ],
+      "spawns": [
+        {
+          "id": "30-1",
+          "idx": 1,
+          "group": 79,
+          "pos": [
+            -49.28,
+            230.06
+          ]
+        },
+        {
+          "id": "30-2",
+          "idx": 2,
+          "group": 80,
+          "pos": [
+            -57.58,
+            226.69
+          ]
+        },
+        {
+          "id": "30-3",
+          "idx": 3,
+          "group": 82,
+          "pos": [
+            -51.99,
+            255.55
+          ]
+        },
+        {
+          "id": "30-4",
+          "idx": 4,
+          "group": 86,
+          "pos": [
+            -63.6,
+            275.74
+          ]
+        },
+        {
+          "id": "30-5",
+          "idx": 5,
+          "group": 85,
+          "pos": [
+            -73.23,
+            277.65
+          ]
+        },
+        {
+          "id": "30-6",
+          "idx": 6,
+          "group": 90,
+          "pos": [
+            -55.64,
+            251.85
+          ]
+        }
+      ]
+    },
+    {
+      "id": 133463,
+      "enemyIndex": 31,
+      "name": "Venture Co. War Machine",
+      "count": 12,
+      "health": 1229592,
+      "creatureType": "Mechanical",
+      "scale": 1.3,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt"
+      ],
+      "spawns": [
+        {
+          "id": "31-1",
+          "idx": 1,
+          "group": 79,
+          "pos": [
+            -47.78,
+            232.05
+          ]
+        },
+        {
+          "id": "31-2",
+          "idx": 2,
+          "group": 80,
+          "pos": [
+            -59.04,
+            229.65
+          ]
+        },
+        {
+          "id": "31-3",
+          "idx": 3,
+          "group": null,
+          "pos": [
+            -53.13,
+            270.77
+          ],
+          "patrol": [
+            [
+              -53.13,
+              270.77
+            ],
+            [
+              -49.72,
+              268.31
+            ],
+            [
+              -53.13,
+              270.77
+            ],
+            [
+              -57.44,
+              273.78
+            ]
+          ]
+        },
+        {
+          "id": "31-4",
+          "idx": 4,
+          "group": null,
+          "pos": [
+            -54.49,
+            262.8
+          ],
+          "patrol": [
+            [
+              -57.9,
+              263.66
+            ],
+            [
+              -52.05,
+              260.93
+            ],
+            [
+              -57.9,
+              263.66
+            ],
+            [
+              -66.47,
+              267.35
+            ]
+          ]
+        },
+        {
+          "id": "31-5",
+          "idx": 5,
+          "group": null,
+          "pos": [
+            -68.51,
+            258.41
+          ],
+          "patrol": [
+            [
+              -68.51,
+              258.41
+            ],
+            [
+              -64.2,
+              255.25
+            ],
+            [
+              -68.51,
+              258.41
+            ],
+            [
+              -71.94,
+              261.17
+            ]
+          ]
+        },
+        {
+          "id": "31-6",
+          "idx": 6,
+          "group": 85,
+          "pos": [
+            -75.66,
+            279.5
+          ]
+        }
+      ],
+      "stealthDetect": true
+    },
+    {
+      "id": 137029,
+      "enemyIndex": 32,
+      "name": "Ordnance Specialist",
+      "count": 5,
+      "health": 768495,
+      "creatureType": "Humanoid",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Disorient",
+        "Stun",
+        "Slow"
+      ],
+      "spawns": [
+        {
+          "id": "32-1",
+          "idx": 1,
+          "group": 80,
+          "pos": [
+            -56.23,
+            231.43
+          ]
+        },
+        {
+          "id": "32-2",
+          "idx": 2,
+          "group": 81,
+          "pos": [
+            -48.42,
+            237.88
+          ]
+        },
+        {
+          "id": "32-3",
+          "idx": 3,
+          "group": 81,
+          "pos": [
+            -51.41,
+            237.84
+          ]
+        },
+        {
+          "id": "32-4",
+          "idx": 4,
+          "group": null,
+          "pos": [
+            -49.8,
+            250.6
+          ]
+        },
+        {
+          "id": "32-5",
+          "idx": 5,
+          "group": 82,
+          "pos": [
+            -54.08,
+            256.64
+          ]
+        },
+        {
+          "id": "32-6",
+          "idx": 6,
+          "group": 84,
+          "pos": [
+            -67.48,
+            268.41
+          ]
+        }
+      ]
+    },
+    {
+      "id": 133436,
+      "enemyIndex": 33,
+      "name": "Venture Co. Skyscorcher",
+      "count": 5,
+      "health": 768495,
+      "creatureType": "Humanoid",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt"
+      ],
+      "spawns": [
+        {
+          "id": "33-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -52.59,
+            246.58
+          ]
+        },
+        {
+          "id": "33-2",
+          "idx": 2,
+          "group": null,
+          "pos": [
+            -45.37,
+            246.44
+          ]
+        },
+        {
+          "id": "33-3",
+          "idx": 3,
+          "group": null,
+          "pos": [
+            -58.13,
+            253.97
+          ]
+        },
+        {
+          "id": "33-4",
+          "idx": 4,
+          "group": 83,
+          "pos": [
+            -48.98,
+            260.36
+          ]
+        },
+        {
+          "id": "33-5",
+          "idx": 5,
+          "group": 83,
+          "pos": [
+            -51.12,
+            259.43
+          ]
+        },
+        {
+          "id": "33-6",
+          "idx": 6,
+          "group": 84,
+          "pos": [
+            -70.17,
+            265.4
+          ]
+        },
+        {
+          "id": "33-7",
+          "idx": 7,
+          "group": null,
+          "pos": [
+            -59.79,
+            275.56
+          ]
+        },
+        {
+          "id": "33-8",
+          "idx": 8,
+          "group": 85,
+          "pos": [
+            -72.75,
+            280.52
+          ]
+        },
+        {
+          "id": "33-9",
+          "idx": 9,
+          "group": 85,
+          "pos": [
+            -76.17,
+            276.28
+          ]
+        }
+      ]
+    },
+    {
+      "id": 129232,
+      "enemyIndex": 34,
+      "name": "Mogul Razdunk",
+      "count": 0,
+      "health": 5994261,
+      "creatureType": "Mechanical",
+      "scale": 1,
+      "isBoss": true,
+      "characteristics": [
+        "Taunt"
+      ],
+      "spawns": [
+        {
+          "id": "34-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -96.53,
+            264.64
+          ]
+        }
+      ]
+    },
+    {
+      "id": 133482,
+      "enemyIndex": 35,
+      "name": "Crawler Mine",
+      "count": 1,
+      "health": 19707,
+      "creatureType": "Mechanical",
+      "scale": 0.7,
+      "isBoss": false,
+      "characteristics": [
+        "Root",
+        "Slow"
+      ],
+      "spawns": [
+        {
+          "id": "35-1",
+          "idx": 1,
+          "group": 81,
+          "pos": [
+            -50.28,
+            239.41
+          ]
+        },
+        {
+          "id": "35-2",
+          "idx": 2,
+          "group": null,
+          "pos": [
+            -54.44,
+            240.37
+          ]
+        },
+        {
+          "id": "35-3",
+          "idx": 3,
+          "group": null,
+          "pos": [
+            -44.16,
+            237.08
+          ]
+        },
+        {
+          "id": "35-4",
+          "idx": 4,
+          "group": null,
+          "pos": [
+            -48.9,
+            242.07
+          ]
+        },
+        {
+          "id": "35-5",
+          "idx": 5,
+          "group": null,
+          "pos": [
+            -41.93,
+            242.12
+          ]
+        },
+        {
+          "id": "35-6",
+          "idx": 6,
+          "group": null,
+          "pos": [
+            -46,
+            251.37
+          ]
+        },
+        {
+          "id": "35-7",
+          "idx": 7,
+          "group": null,
+          "pos": [
+            -58.15,
+            251.54
+          ]
+        },
+        {
+          "id": "35-8",
+          "idx": 8,
+          "group": null,
+          "pos": [
+            -64.49,
+            254.75
+          ]
+        },
+        {
+          "id": "35-9",
+          "idx": 9,
+          "group": null,
+          "pos": [
+            -72.14,
+            260.89
+          ]
+        },
+        {
+          "id": "35-10",
+          "idx": 10,
+          "group": 83,
+          "pos": [
+            -48.54,
+            257.93
+          ]
+        },
+        {
+          "id": "35-11",
+          "idx": 11,
+          "group": null,
+          "pos": [
+            -57.28,
+            272.11
+          ]
+        },
+        {
+          "id": "35-12",
+          "idx": 12,
+          "group": 86,
+          "pos": [
+            -61.79,
+            276.83
+          ]
+        },
+        {
+          "id": "35-13",
+          "idx": 13,
+          "group": null,
+          "pos": [
+            -57.69,
+            278.64
+          ]
+        },
+        {
+          "id": "35-14",
+          "idx": 14,
+          "group": 84,
+          "pos": [
+            -69.52,
+            267.38
+          ]
+        },
+        {
+          "id": "35-15",
+          "idx": 15,
+          "group": null,
+          "pos": [
+            -63.09,
+            265.97
+          ]
+        },
+        {
+          "id": "35-16",
+          "idx": 16,
+          "group": null,
+          "pos": [
+            -67.14,
+            277.75
+          ]
+        },
+        {
+          "id": "35-17",
+          "idx": 17,
+          "group": null,
+          "pos": [
+            -72.03,
+            270.67
+          ]
+        },
+        {
+          "id": "35-18",
+          "idx": 18,
+          "group": null,
+          "pos": [
+            -48.65,
+            266.44
+          ]
+        },
+        {
+          "id": "35-19",
+          "idx": 19,
+          "group": null,
+          "pos": [
+            -50.12,
+            273.01
+          ]
+        }
+      ]
+    },
+    {
+      "id": 130485,
+      "enemyIndex": 36,
+      "name": "Mechanized Peacekeeper",
+      "count": 12,
+      "health": 1229592,
+      "creatureType": "Mechanical",
+      "scale": 1.2,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt"
+      ],
+      "spawns": [
+        {
+          "id": "36-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -159.73,
+            207.21
+          ]
+        },
+        {
+          "id": "36-2",
+          "idx": 2,
+          "group": null,
+          "pos": [
+            -152.03,
+            212.12
+          ]
+        },
+        {
+          "id": "36-3",
+          "idx": 3,
+          "group": null,
+          "pos": [
+            -156.71,
+            221.87
+          ]
+        },
+        {
+          "id": "36-4",
+          "idx": 4,
+          "group": null,
+          "pos": [
+            -145.36,
+            224.24
+          ]
+        },
+        {
+          "id": "36-5",
+          "idx": 5,
+          "group": null,
+          "pos": [
+            -140.4,
+            219.83
+          ]
+        },
+        {
+          "id": "36-6",
+          "idx": 6,
+          "group": null,
+          "pos": [
+            -137.32,
+            212.56
+          ]
+        },
+        {
+          "id": "36-7",
+          "idx": 7,
+          "group": null,
+          "pos": [
+            -139.12,
+            208.85
+          ]
+        },
+        {
+          "id": "36-8",
+          "idx": 8,
+          "group": null,
+          "pos": [
+            -148.89,
+            190.24
+          ]
+        },
+        {
+          "id": "36-9",
+          "idx": 9,
+          "group": null,
+          "pos": [
+            -155.11,
+            194.17
+          ]
+        },
+        {
+          "id": "36-10",
+          "idx": 10,
+          "group": null,
+          "pos": [
+            -154.56,
+            201.52
+          ]
+        },
+        {
+          "id": "36-11",
+          "idx": 11,
+          "group": null,
+          "pos": [
+            -189.5,
+            217.6
+          ]
+        },
+        {
+          "id": "36-12",
+          "idx": 12,
+          "group": null,
+          "pos": [
+            -154.68,
+            206.5
+          ]
+        }
+      ]
+    },
+    {
+      "id": 144286,
+      "enemyIndex": 37,
+      "name": "Asset Manager",
+      "count": 0,
+      "health": 153699,
+      "creatureType": "Humanoid",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [],
+      "spawns": [
+        {
+          "id": "37-1",
+          "idx": 1,
+          "group": 87,
+          "pos": [
+            -119.42,
+            271.1
+          ]
+        },
+        {
+          "id": "37-2",
+          "idx": 2,
+          "group": 87,
+          "pos": [
+            -117.65,
+            273.29
+          ]
+        },
+        {
+          "id": "37-3",
+          "idx": 3,
+          "group": 87,
+          "pos": [
+            -116.07,
+            275.54
+          ]
+        },
+        {
+          "id": "37-4",
+          "idx": 4,
+          "group": 87,
+          "pos": [
+            -119.76,
+            273.56
+          ]
+        },
+        {
+          "id": "37-5",
+          "idx": 5,
+          "group": 87,
+          "pos": [
+            -118.26,
+            275.61
+          ]
+        }
+      ]
+    },
+    {
+      "id": 135975,
+      "enemyIndex": 38,
+      "name": "Off-Duty Laborer",
+      "count": 0,
+      "health": 307398,
+      "creatureType": "Humanoid",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [],
+      "spawns": [
+        {
+          "id": "38-1",
+          "idx": 1,
+          "group": 23,
+          "pos": [
+            -146.34,
+            226.97
+          ]
+        }
+      ]
+    },
+    {
+      "id": 155433,
+      "enemyIndex": 39,
+      "name": "Void-Touched Emissary",
+      "count": 4,
+      "health": 999042,
+      "creatureType": "Humanoid",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt"
+      ],
+      "spawns": [
+        {
+          "id": "39-1",
+          "idx": 1,
+          "group": 1,
+          "pos": [
+            -201.59,
+            208.8
+          ]
+        },
+        {
+          "id": "39-2",
+          "idx": 2,
+          "group": 6,
+          "pos": [
+            -182.64,
+            209.58
+          ]
+        },
+        {
+          "id": "39-3",
+          "idx": 3,
+          "group": 38,
+          "pos": [
+            -166.53,
+            195.04
+          ]
+        },
+        {
+          "id": "39-4",
+          "idx": 4,
+          "group": 43,
+          "pos": [
+            -122.18,
+            155.78
+          ]
+        },
+        {
+          "id": "39-5",
+          "idx": 5,
+          "group": 48,
+          "pos": [
+            -123.01,
+            130.62
+          ]
+        },
+        {
+          "id": "39-6",
+          "idx": 6,
+          "group": 92,
+          "pos": [
+            -52.39,
+            156.92
+          ]
+        },
+        {
+          "id": "39-7",
+          "idx": 7,
+          "group": 67,
+          "pos": [
+            -61.86,
+            187.4
+          ]
+        },
+        {
+          "id": "39-8",
+          "idx": 8,
+          "group": 90,
+          "pos": [
+            -57.59,
+            249.26
+          ]
+        },
+        {
+          "id": "39-9",
+          "idx": 9,
+          "group": 93,
+          "pos": [
+            -74.52,
+            269.52
+          ]
+        },
+        {
+          "id": "39-10",
+          "idx": 10,
+          "group": 94,
+          "pos": [
+            -47.18,
+            268.1
+          ]
+        },
+        {
+          "id": "39-11",
+          "idx": 11,
+          "group": 95,
+          "pos": [
+            -45.89,
+            164.32
+          ]
+        },
+        {
+          "id": "39-12",
+          "idx": 12,
+          "group": 21,
+          "pos": [
+            -159.99,
+            218.45
+          ]
+        },
+        {
+          "id": "39-13",
+          "idx": 13,
+          "group": 20,
+          "pos": [
+            -156.48,
+            212.8
+          ]
+        },
+        {
+          "id": "39-14",
+          "idx": 14,
+          "group": 73,
+          "pos": [
+            -70.2,
+            173.41
+          ]
+        },
+        {
+          "id": "39-15",
+          "idx": 15,
+          "group": 50,
+          "pos": [
+            -116.38,
+            125.63
+          ]
+        },
+        {
+          "id": "39-16",
+          "idx": 16,
+          "group": 39,
+          "pos": [
+            -161.3,
+            197.59
+          ]
+        },
+        {
+          "id": "39-17",
+          "idx": 17,
+          "group": 43,
+          "pos": [
+            -119.15,
+            154.42
+          ]
+        },
+        {
+          "id": "39-18",
+          "idx": 18,
+          "group": 72,
+          "pos": [
+            -74.4,
+            172.25
+          ]
+        },
+        {
+          "id": "39-19",
+          "idx": 19,
+          "group": null,
+          "pos": [
+            -44.32,
+            248.04
+          ]
+        }
+      ],
+      "stealthDetect": true
+    },
+    {
+      "id": 155434,
+      "enemyIndex": 40,
+      "name": "Emissary of the Tides",
+      "count": 4,
+      "health": 614795,
+      "creatureType": "Humanoid",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt"
+      ],
+      "spawns": [
+        {
+          "id": "40-1",
+          "idx": 1,
+          "group": 3,
+          "pos": [
+            -191.9,
+            214.71
+          ]
+        },
+        {
+          "id": "40-2",
+          "idx": 2,
+          "group": 39,
+          "pos": [
+            -160.68,
+            197.51
+          ]
+        },
+        {
+          "id": "40-3",
+          "idx": 3,
+          "group": 53,
+          "pos": [
+            -112.54,
+            136.41
+          ]
+        },
+        {
+          "id": "40-4",
+          "idx": 4,
+          "group": 80,
+          "pos": [
+            -55.63,
+            228.69
+          ]
+        },
+        {
+          "id": "40-5",
+          "idx": 5,
+          "group": 1,
+          "pos": [
+            -200.26,
+            204.96
+          ]
+        },
+        {
+          "id": "40-6",
+          "idx": 6,
+          "group": 5,
+          "pos": [
+            -186.56,
+            214.93
+          ]
+        },
+        {
+          "id": "40-7",
+          "idx": 7,
+          "group": 19,
+          "pos": [
+            -164.68,
+            207.74
+          ]
+        },
+        {
+          "id": "40-8",
+          "idx": 8,
+          "group": 79,
+          "pos": [
+            -50.72,
+            231.8
+          ]
+        },
+        {
+          "id": "40-9",
+          "idx": 9,
+          "group": 85,
+          "pos": [
+            -70.26,
+            278.23
+          ]
+        },
+        {
+          "id": "40-11",
+          "idx": 11,
+          "group": 71,
+          "pos": [
+            -78.24,
+            176.27
+          ]
+        },
+        {
+          "id": "40-12",
+          "idx": 12,
+          "group": null,
+          "pos": [
+            -52.45,
+            273.68
+          ]
+        },
+        {
+          "id": "40-13",
+          "idx": 13,
+          "group": 32,
+          "pos": [
+            -151.41,
+            198.61
+          ]
+        },
+        {
+          "id": "40-14",
+          "idx": 14,
+          "group": 42,
+          "pos": [
+            -114.04,
+            152.15
+          ]
+        },
+        {
+          "id": "40-15",
+          "idx": 15,
+          "group": 45,
+          "pos": [
+            -125.19,
+            146.5
+          ]
+        },
+        {
+          "id": "40-16",
+          "idx": 16,
+          "group": 78,
+          "pos": [
+            -85.24,
+            114.18
+          ]
+        },
+        {
+          "id": "40-17",
+          "idx": 17,
+          "group": 40,
+          "pos": [
+            -168.89,
+            212.02
+          ]
+        },
+        {
+          "id": "40-18",
+          "idx": 18,
+          "group": 29,
+          "pos": [
+            -140.99,
+            197.67
+          ]
+        },
+        {
+          "id": "40-19",
+          "idx": 19,
+          "group": 50,
+          "pos": [
+            -115.93,
+            125.73
+          ]
+        },
+        {
+          "id": "40-20",
+          "idx": 20,
+          "group": 74,
+          "pos": [
+            -69.92,
+            162.23
+          ]
+        },
+        {
+          "id": "40-21",
+          "idx": 21,
+          "group": 67,
+          "pos": [
+            -63.45,
+            186.72
+          ]
+        }
+      ]
+    },
+    {
+      "id": 155432,
+      "enemyIndex": 41,
+      "name": "Enchanted Emissary",
+      "count": 4,
+      "health": 15369884,
+      "creatureType": "Humanoid",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt"
+      ],
+      "spawns": [
+        {
+          "id": "41-1",
+          "idx": 1,
+          "group": 9,
+          "pos": [
+            -185.05,
+            199.42
+          ]
+        },
+        {
+          "id": "41-2",
+          "idx": 2,
+          "group": 31,
+          "pos": [
+            -142.2,
+            184.83
+          ]
+        },
+        {
+          "id": "41-3",
+          "idx": 3,
+          "group": 91,
+          "pos": [
+            -96.2,
+            121.25
+          ]
+        },
+        {
+          "id": "41-4",
+          "idx": 4,
+          "group": 64,
+          "pos": [
+            -42.77,
+            173.12
+          ]
+        },
+        {
+          "id": "41-5",
+          "idx": 5,
+          "group": 7,
+          "pos": [
+            -173.82,
+            201.14
+          ]
+        },
+        {
+          "id": "41-6",
+          "idx": 6,
+          "group": 38,
+          "pos": [
+            -165.1,
+            198.69
+          ]
+        },
+        {
+          "id": "41-8",
+          "idx": 8,
+          "group": 26,
+          "pos": [
+            -143.1,
+            212.14
+          ]
+        },
+        {
+          "id": "41-9",
+          "idx": 9,
+          "group": 24,
+          "pos": [
+            -145.74,
+            219.01
+          ]
+        },
+        {
+          "id": "41-10",
+          "idx": 10,
+          "group": 49,
+          "pos": [
+            -127.92,
+            126.35
+          ]
+        },
+        {
+          "id": "41-11",
+          "idx": 11,
+          "group": 1,
+          "pos": [
+            -200.48,
+            203.71
+          ]
+        },
+        {
+          "id": "41-12",
+          "idx": 12,
+          "group": 5,
+          "pos": [
+            -186.17,
+            215.82
+          ]
+        },
+        {
+          "id": "41-13",
+          "idx": 13,
+          "group": 21,
+          "pos": [
+            -160.02,
+            218.52
+          ]
+        },
+        {
+          "id": "41-14",
+          "idx": 14,
+          "group": 34,
+          "pos": [
+            -155.47,
+            188.29
+          ]
+        },
+        {
+          "id": "41-15",
+          "idx": 15,
+          "group": 30,
+          "pos": [
+            -137.07,
+            187.96
+          ]
+        },
+        {
+          "id": "41-16",
+          "idx": 16,
+          "group": 53,
+          "pos": [
+            -112.74,
+            141.35
+          ]
+        },
+        {
+          "id": "41-17",
+          "idx": 17,
+          "group": 61,
+          "pos": [
+            -51.31,
+            159.46
+          ]
+        },
+        {
+          "id": "41-18",
+          "idx": 18,
+          "group": 71,
+          "pos": [
+            -74.25,
+            179.55
+          ]
+        },
+        {
+          "id": "41-19",
+          "idx": 19,
+          "group": 80,
+          "pos": [
+            -55.54,
+            228.74
+          ]
+        },
+        {
+          "id": "41-20",
+          "idx": 20,
+          "group": null,
+          "pos": [
+            -72.15,
+            257.51
+          ]
+        }
+      ]
+    },
+    {
+      "id": 161243,
+      "enemyIndex": 42,
+      "name": "Samh'rek, Beckoner of Chaos",
+      "count": 4,
+      "health": 2151786,
+      "creatureType": "Aberration",
+      "scale": 1.4,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt"
+      ],
+      "spawns": [
+        {
+          "id": "42-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -49,
+            244.96
+          ]
+        }
+      ],
+      "stealthDetect": true
+    },
+    {
+      "id": 161124,
+      "enemyIndex": 43,
+      "name": "Urg'roth, Breaker of Heroes",
+      "count": 4,
+      "health": 2151786,
+      "creatureType": "Aberration",
+      "scale": 1.4,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt"
+      ],
+      "spawns": [
+        {
+          "id": "43-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -190.17,
+            205.92
+          ]
+        }
+      ],
+      "stealthDetect": true
+    },
+    {
+      "id": 161241,
+      "enemyIndex": 44,
+      "name": "Voidweaver Mal'thir",
+      "count": 4,
+      "health": 2151786,
+      "creatureType": "Beast",
+      "scale": 1.4,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt"
+      ],
+      "spawns": [
+        {
+          "id": "44-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -124.82,
+            139.44
+          ]
+        },
+        {
+          "id": "44-2",
+          "idx": 2,
+          "group": null,
+          "pos": [
+            -53.47,
+            152.2
+          ]
+        }
+      ],
+      "stealthDetect": true
+    },
+    {
+      "id": 161244,
+      "enemyIndex": 45,
+      "name": "Blood of the Corruptor",
+      "count": 4,
+      "health": 2151786,
+      "creatureType": "Aberration",
+      "scale": 1.4,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt"
+      ],
+      "spawns": [
+        {
+          "id": "45-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -53.88,
+            152.61
+          ]
+        },
+        {
+          "id": "45-2",
+          "idx": 2,
+          "group": null,
+          "pos": [
+            -125.77,
+            138.51
+          ]
+        }
+      ],
+      "stealthDetect": true
+    }
+  ],
+  "pois": []
+}

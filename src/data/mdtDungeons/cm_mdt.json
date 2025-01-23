@@ -1,1 +1,2000 @@
-{"dungeonIndex":116,"totalCount":587,"enemies":[{"id":214920,"enemyIndex":1,"name":"Tasting Room Attendant","count":3,"health":10000,"creatureType":"Humanoid","scale":1.5,"isBoss":false,"characteristics":[],"spawns":[{"id":"1-2","idx":2,"group":4,"pos":[-152.9,146.07]},{"id":"1-3","idx":3,"group":2,"pos":[-167.27,145.08]},{"id":"1-4","idx":4,"group":12,"pos":[-107.96,123.12]},{"id":"1-5","idx":5,"group":6,"pos":[-134.66,134.37]}]},{"id":218671,"enemyIndex":2,"name":"Venture Co. Pyromaniac","count":5,"health":10001,"creatureType":"Humanoid","scale":1.5,"isBoss":false,"characteristics":[],"spawns":[{"id":"2-2","idx":2,"group":1,"pos":[-160.43,123.17]},{"id":"2-3","idx":3,"group":1,"pos":[-160.58,129.36]},{"id":"2-4","idx":4,"group":3,"pos":[-144.95,132.45]},{"id":"2-5","idx":5,"group":2,"pos":[-161.81,145.04]},{"id":"2-6","idx":6,"group":11,"pos":[-104.18,114.71]},{"id":"2-7","idx":7,"group":7,"pos":[-128.06,150.55]},{"id":"2-8","idx":8,"group":13,"pos":[-108.61,140.07]},{"id":"2-9","idx":9,"group":10,"pos":[-126.18,126.94]},{"id":"2-10","idx":10,"group":15,"pos":[-90.04,123.89]},{"id":"2-11","idx":11,"group":15,"pos":[-89.92,130.19]},{"id":"2-12","idx":12,"group":18,"pos":[-29.62,129.24]},{"id":"2-13","idx":13,"group":20,"pos":[-30.23,182.74]},{"id":"2-14","idx":14,"group":20,"pos":[-30.24,188.86]},{"id":"2-15","idx":15,"group":25,"pos":[-76.48,204.38]},{"id":"2-16","idx":16,"group":25,"pos":[-83.07,204.3]},{"id":"2-17","idx":17,"group":28,"pos":[-104.82,192.45]},{"id":"2-18","idx":18,"group":29,"pos":[-95.87,169.77]},{"id":"2-19","idx":19,"group":29,"pos":[-95.61,175.79]}]},{"id":214668,"enemyIndex":3,"name":"Venture Co. Patron","count":3,"health":10002,"creatureType":"Humanoid","scale":1.5,"isBoss":false,"characteristics":[],"spawns":[{"id":"3-2","idx":2,"group":1,"pos":[-166.83,123.2]},{"id":"3-3","idx":3,"group":1,"pos":[-166.66,129.5]},{"id":"3-4","idx":4,"group":3,"pos":[-150.59,126.67]},{"id":"3-5","idx":5,"group":3,"pos":[-150.33,132.29]},{"id":"3-6","idx":6,"group":3,"pos":[-144.89,126.78]},{"id":"3-7","idx":7,"group":2,"pos":[-164.32,149.91]},{"id":"3-8","idx":8,"group":5,"pos":[-135.75,145.11]},{"id":"3-9","idx":9,"group":5,"pos":[-141.82,145.1]},{"id":"3-10","idx":10,"group":11,"pos":[-109.82,114.79]},{"id":"3-11","idx":11,"group":11,"pos":[-115.61,114.72]},{"id":"3-12","idx":12,"group":7,"pos":[-122,150.07]},{"id":"3-13","idx":13,"group":7,"pos":[-125.39,145.71]},{"id":"3-14","idx":14,"group":13,"pos":[-103.59,136.99]},{"id":"3-15","idx":15,"group":13,"pos":[-103.58,142.51]},{"id":"3-16","idx":16,"group":9,"pos":[-117.14,134.53]},{"id":"3-17","idx":17,"group":9,"pos":[-117.27,140.06]},{"id":"3-18","idx":18,"group":9,"pos":[-121.85,137.58]},{"id":"3-19","idx":19,"group":10,"pos":[-121.22,123.95]}]},{"id":210269,"enemyIndex":4,"name":"Hired Muscle","count":10,"health":10003,"creatureType":"Humanoid","scale":1.5,"isBoss":false,"characteristics":[],"spawns":[{"id":"4-2","idx":2,"group":5,"pos":[-138.87,150.28]},{"id":"4-3","idx":3,"group":10,"pos":[-126.56,121.05]},{"id":"4-4","idx":4,"group":8,"pos":[-106.12,152.21]},{"id":"4-5","idx":5,"group":8,"pos":[-111.6,152.03]}]},{"id":214697,"enemyIndex":5,"name":"Chef Chewie","count":15,"health":10004,"creatureType":"Humanoid","scale":2,"isBoss":false,"characteristics":[],"spawns":[{"id":"5-1","idx":1,"group":14,"pos":[-134.1,158.86]}]},{"id":210265,"enemyIndex":6,"name":"Worker Bee","count":5,"health":10005,"creatureType":"Beast","scale":1.5,"isBoss":false,"characteristics":[],"spawns":[{"id":"6-2","idx":2,"group":30,"pos":[-184.6,148.64]},{"id":"6-3","idx":3,"group":30,"pos":[-184.31,155.42]},{"id":"6-4","idx":4,"group":31,"pos":[-194.1,161.23]},{"id":"6-5","idx":5,"group":31,"pos":[-200.64,161.23]},{"id":"6-6","idx":6,"group":31,"pos":[-196.83,156.27]},{"id":"6-7","idx":7,"group":33,"pos":[-216.65,158.81]},{"id":"6-8","idx":8,"group":33,"pos":[-216.43,146.03]},{"id":"6-9","idx":9,"group":35,"pos":[-221.47,171.93]},{"id":"6-10","idx":10,"group":35,"pos":[-228.07,171.97]},{"id":"6-11","idx":11,"group":35,"pos":[-234.53,172]},{"id":"6-12","idx":12,"group":37,"pos":[-221.96,203.9]},{"id":"6-13","idx":13,"group":37,"pos":[-234.22,204.17]},{"id":"6-14","idx":14,"group":40,"pos":[-207.43,255.39]},{"id":"6-15","idx":15,"group":40,"pos":[-201,255.59]}]},{"id":220141,"enemyIndex":7,"name":"Royal Jelly Purveyor","count":7,"health":10006,"creatureType":"Humanoid","scale":1.5,"isBoss":false,"characteristics":[],"spawns":[{"id":"7-2","idx":2,"group":33,"pos":[-216.72,152.42]},{"id":"7-3","idx":3,"group":35,"pos":[-224.25,166.51]},{"id":"7-4","idx":4,"group":36,"pos":[-227.19,186.11]},{"id":"7-5","idx":5,"group":38,"pos":[-222.2,233.62]},{"id":"7-6","idx":6,"group":40,"pos":[-203.93,250.1]},{"id":"7-7","idx":7,"group":41,"pos":[-176.47,250.87]},{"id":"7-8","idx":8,"group":41,"pos":[-176.38,256.85]},{"id":"7-9","idx":9,"group":44,"pos":[-190.62,218.69]},{"id":"7-10","idx":10,"group":45,"pos":[-188.8,267.99]}]},{"id":220946,"enemyIndex":8,"name":"Venture Co. Honey Harvester","count":10,"health":10007,"creatureType":"Humanoid","scale":1.8,"isBoss":false,"characteristics":[],"spawns":[{"id":"8-2","idx":2,"group":32,"pos":[-202.48,147.56]},{"id":"8-3","idx":3,"group":39,"pos":[-221.25,246.15]},{"id":"8-4","idx":4,"group":42,"pos":[-190.56,233.3]},{"id":"8-5","idx":5,"group":45,"pos":[-188.38,274.72]},{"id":"8-6","idx":6,"group":45,"pos":[-195.73,274.72]}]},{"id":210264,"enemyIndex":9,"name":"Bee Wrangler","count":5,"health":10008,"creatureType":"Humanoid","scale":1.5,"isBoss":false,"characteristics":[],"spawns":[{"id":"9-2","idx":2,"group":30,"pos":[-178.74,151.64]},{"id":"9-3","idx":3,"group":35,"pos":[-230.89,166.76]},{"id":"9-4","idx":4,"group":37,"pos":[-227.72,203.98]},{"id":"9-5","idx":5,"group":38,"pos":[-228.92,234.62]},{"id":"9-6","idx":6,"group":39,"pos":[-215.57,242.31]},{"id":"9-7","idx":7,"group":41,"pos":[-182.98,250.62]},{"id":"9-8","idx":8,"group":41,"pos":[-182.99,256.78]},{"id":"9-9","idx":9,"group":43,"pos":[-206.21,226.06]},{"id":"9-10","idx":10,"group":45,"pos":[-194.93,267.96]}]},{"id":218865,"enemyIndex":10,"name":"Bee-let","count":1,"health":10009,"creatureType":"Beast","scale":1,"isBoss":false,"characteristics":[],"spawns":[{"id":"10-2","idx":2,"group":34,"pos":[-234.37,145.36]},{"id":"10-3","idx":3,"group":34,"pos":[-234.36,149.62]},{"id":"10-4","idx":4,"group":34,"pos":[-229.71,145.26]},{"id":"10-5","idx":5,"group":34,"pos":[-229.8,149.58]},{"id":"10-6","idx":6,"group":36,"pos":[-222.66,183.39]},{"id":"10-7","idx":7,"group":36,"pos":[-227.21,191.18]},{"id":"10-8","idx":8,"group":36,"pos":[-222.33,188.71]},{"id":"10-9","idx":9,"group":36,"pos":[-227.11,180.99]},{"id":"10-10","idx":10,"group":36,"pos":[-231.91,183.55]},{"id":"10-11","idx":11,"group":36,"pos":[-231.91,189.12]},{"id":"10-12","idx":12,"group":43,"pos":[-210.68,223.03]},{"id":"10-13","idx":13,"group":43,"pos":[-201.26,225.8]},{"id":"10-14","idx":14,"group":43,"pos":[-210.58,229.58]},{"id":"10-15","idx":15,"group":43,"pos":[-205.13,221.58]},{"id":"10-16","idx":16,"group":43,"pos":[-204.74,231.03]},{"id":"10-17","idx":17,"group":45,"pos":[-183.25,279.74]},{"id":"10-18","idx":18,"group":45,"pos":[-187.61,279.73]},{"id":"10-19","idx":19,"group":45,"pos":[-192.07,279.68]},{"id":"10-20","idx":20,"group":45,"pos":[-196.04,279.82]},{"id":"10-21","idx":21,"group":45,"pos":[-200.65,279.86]},{"id":"10-22","idx":22,"group":45,"pos":[-183.1,284.07]},{"id":"10-23","idx":23,"group":45,"pos":[-187.58,283.85]},{"id":"10-24","idx":24,"group":45,"pos":[-200.54,284.02]},{"id":"10-25","idx":25,"group":45,"pos":[-192.17,283.95]},{"id":"10-26","idx":26,"group":45,"pos":[-196.18,284.01]},{"id":"10-27","idx":27,"group":46,"pos":[-173.02,226.61]},{"id":"10-28","idx":28,"group":46,"pos":[-172.98,230.78]},{"id":"10-29","idx":29,"group":46,"pos":[-172.83,235.05]},{"id":"10-30","idx":30,"group":46,"pos":[-176.75,232.98]},{"id":"10-31","idx":31,"group":46,"pos":[-176.97,228.73]},{"id":"10-32","idx":32,"group":47,"pos":[-173.13,205.58]},{"id":"10-33","idx":33,"group":47,"pos":[-173,209.77]},{"id":"10-34","idx":34,"group":47,"pos":[-173.02,213.8]},{"id":"10-35","idx":35,"group":47,"pos":[-176.88,207.57]},{"id":"10-36","idx":36,"group":47,"pos":[-176.75,211.77]},{"id":"10-37","idx":37,"group":48,"pos":[-182.63,173.04]},{"id":"10-38","idx":38,"group":48,"pos":[-187.19,173.06]},{"id":"10-39","idx":39,"group":48,"pos":[-191.75,172.97]},{"id":"10-40","idx":40,"group":48,"pos":[-184.86,176.67]},{"id":"10-41","idx":41,"group":48,"pos":[-189.6,176.83]},{"id":"10-42","idx":42,"group":49,"pos":[-170.31,185.38]},{"id":"10-43","idx":43,"group":49,"pos":[-172.38,189.3]},{"id":"10-44","idx":44,"group":49,"pos":[-178.77,185.27]},{"id":"10-45","idx":45,"group":49,"pos":[-174.65,185.4]},{"id":"10-46","idx":46,"group":49,"pos":[-176.96,189.16]}]},{"id":214673,"enemyIndex":11,"name":"Flavor Scientist","count":7,"health":10010,"creatureType":"Humanoid","scale":1.5,"isBoss":false,"characteristics":[],"spawns":[{"id":"11-2","idx":2,"group":15,"pos":[-84.16,127.13]},{"id":"11-3","idx":3,"group":17,"pos":[-54.6,126.04]},{"id":"11-4","idx":4,"group":18,"pos":[-23.75,123.23]},{"id":"11-5","idx":5,"group":18,"pos":[-23.65,129.41]},{"id":"11-6","idx":6,"group":19,"pos":[-28.89,146.07]},{"id":"11-7","idx":7,"group":21,"pos":[-58.63,185.67]},{"id":"11-8","idx":8,"group":22,"pos":[-47.05,167]},{"id":"11-9","idx":9,"group":23,"pos":[-59.52,151.04]},{"id":"11-10","idx":10,"group":24,"pos":[-68.19,158.71]},{"id":"11-11","idx":11,"group":28,"pos":[-104.91,198.54]}]},{"id":220060,"enemyIndex":12,"name":"Taste Tester","count":5,"health":10011,"creatureType":"Humanoid","scale":1.5,"isBoss":false,"characteristics":[],"spawns":[{"id":"12-2","idx":2,"group":17,"pos":[-58.22,131.33]},{"id":"12-3","idx":3,"group":17,"pos":[-50.92,131.21]},{"id":"12-4","idx":4,"group":18,"pos":[-29.86,123.01]},{"id":"12-5","idx":5,"group":20,"pos":[-23.98,182.76]},{"id":"12-6","idx":6,"group":20,"pos":[-23.89,188.78]},{"id":"12-7","idx":7,"group":21,"pos":[-53.01,194.73]},{"id":"12-8","idx":8,"group":21,"pos":[-52.79,188.69]},{"id":"12-9","idx":9,"group":21,"pos":[-52.9,182.54]},{"id":"12-10","idx":10,"group":21,"pos":[-58.58,191.42]},{"id":"12-11","idx":11,"group":22,"pos":[-47.09,160.52]},{"id":"12-12","idx":12,"group":25,"pos":[-82.73,198.34]},{"id":"12-13","idx":13,"group":28,"pos":[-98.12,192.42]},{"id":"12-14","idx":14,"group":28,"pos":[-98.21,198.62]},{"id":"12-15","idx":15,"group":29,"pos":[-89.29,170.07]},{"id":"12-16","idx":16,"group":29,"pos":[-89.39,175.95]}]},{"id":223423,"enemyIndex":13,"name":"Careless Hopgoblin","count":10,"health":10014,"creatureType":"Humanoid","scale":1.8,"isBoss":false,"characteristics":[],"spawns":[{"id":"13-2","idx":2,"group":16,"pos":[-71.8,126.26]},{"id":"13-3","idx":3,"group":19,"pos":[-33.06,152.86]},{"id":"13-4","idx":4,"group":19,"pos":[-24.57,152.39]},{"id":"13-5","idx":5,"group":26,"pos":[-75.45,170.82]},{"id":"13-6","idx":6,"group":27,"pos":[-69.39,190.81]}]},{"id":210270,"enemyIndex":14,"name":"Brew Drop","count":1,"health":10015,"creatureType":"Elemental","scale":1.2,"isBoss":false,"characteristics":[],"spawns":[{"id":"14-2","idx":2,"group":22,"pos":[-42.16,163.7]},{"id":"14-3","idx":3,"group":23,"pos":[-64.55,145.24]},{"id":"14-4","idx":4,"group":23,"pos":[-54.46,145.11]},{"id":"14-5","idx":5,"group":23,"pos":[-59.74,145.3]},{"id":"14-6","idx":6,"group":24,"pos":[-73.52,155.66]},{"id":"14-7","idx":7,"group":24,"pos":[-73.62,161.68]},{"id":"14-8","idx":8,"group":25,"pos":[-76.49,197.99]}]},{"id":219588,"enemyIndex":15,"name":"Yes Man","count":3,"health":10016,"creatureType":"Humanoid","scale":2,"isBoss":false,"characteristics":[],"spawns":[{"id":"15-2","idx":2,"group":50,"pos":[-120.65,195.87]},{"id":"15-3","idx":3,"group":50,"pos":[-129.69,195.97]},{"id":"15-4","idx":4,"group":50,"pos":[-138.72,196.11]},{"id":"15-5","idx":5,"group":50,"pos":[-147.78,195.97]}]},{"id":210271,"enemyIndex":16,"name":"Brewmaster Aldryr","count":0,"health":10017,"creatureType":"Humanoid","scale":2,"isBoss":true,"characteristics":[],"spawns":[{"id":"16-1","idx":1,"group":null,"pos":[-133.82,176.05]}]},{"id":210267,"enemyIndex":17,"name":"I'pa","count":0,"health":10018,"creatureType":"Humanoid","scale":1.5,"isBoss":true,"characteristics":[],"spawns":[{"id":"17-1","idx":1,"group":null,"pos":[-60.69,171.44]}]},{"id":218002,"enemyIndex":18,"name":"Benk Buzzbee","count":0,"health":10019,"creatureType":"Humanoid","scale":2,"isBoss":true,"characteristics":[],"spawns":[{"id":"18-1","idx":1,"group":null,"pos":[-193.66,198.76]}]},{"id":214661,"enemyIndex":19,"name":"Goldie Baronbottom","count":0,"health":10020,"creatureType":"Humanoid","scale":2,"isBoss":true,"characteristics":[],"spawns":[{"id":"19-1","idx":1,"group":null,"pos":[-135.39,216.99]}]},{"id":219667,"enemyIndex":20,"name":"Flamethrower","count":0,"health":1182106,"creatureType":"Uncategorized","scale":2.1,"isBoss":false,"characteristics":[],"spawns":[{"id":"20-1","idx":1,"group":null,"pos":[-87.76,160.02]}]},{"id":219415,"enemyIndex":21,"name":"Cooking Pot","count":0,"health":1182106,"creatureType":"Uncategorized","scale":1.6,"isBoss":false,"characteristics":[],"spawns":[{"id":"21-1","idx":1,"group":null,"pos":[-100.28,128.2]}]}],"pois":[]}
+{
+  "dungeonIndex": 116,
+  "totalCount": 587,
+  "enemies": [
+    {
+      "id": 214920,
+      "enemyIndex": 1,
+      "name": "Tasting Room Attendant",
+      "count": 3,
+      "health": 25750712,
+      "creatureType": "Humanoid",
+      "scale": 1.5,
+      "isBoss": false,
+      "characteristics": [
+        "Silence",
+        "Fear",
+        "Stun"
+      ],
+      "spawns": [
+        {
+          "id": "1-2",
+          "idx": 2,
+          "group": 4,
+          "pos": [
+            -152.9,
+            146.07
+          ]
+        },
+        {
+          "id": "1-3",
+          "idx": 3,
+          "group": 2,
+          "pos": [
+            -167.27,
+            145.08
+          ]
+        },
+        {
+          "id": "1-4",
+          "idx": 4,
+          "group": 12,
+          "pos": [
+            -107.96,
+            123.12
+          ]
+        },
+        {
+          "id": "1-5",
+          "idx": 5,
+          "group": 6,
+          "pos": [
+            -134.66,
+            134.37
+          ]
+        }
+      ]
+    },
+    {
+      "id": 218671,
+      "enemyIndex": 2,
+      "name": "Venture Co. Pyromaniac",
+      "count": 5,
+      "health": 25750712,
+      "creatureType": "Humanoid",
+      "scale": 1.5,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt",
+        "Silence",
+        "Fear",
+        "Stun"
+      ],
+      "spawns": [
+        {
+          "id": "2-2",
+          "idx": 2,
+          "group": 1,
+          "pos": [
+            -160.43,
+            123.17
+          ]
+        },
+        {
+          "id": "2-3",
+          "idx": 3,
+          "group": 1,
+          "pos": [
+            -160.58,
+            129.36
+          ]
+        },
+        {
+          "id": "2-4",
+          "idx": 4,
+          "group": 3,
+          "pos": [
+            -144.95,
+            132.45
+          ]
+        },
+        {
+          "id": "2-5",
+          "idx": 5,
+          "group": 2,
+          "pos": [
+            -161.81,
+            145.04
+          ]
+        },
+        {
+          "id": "2-6",
+          "idx": 6,
+          "group": 11,
+          "pos": [
+            -104.18,
+            114.71
+          ]
+        },
+        {
+          "id": "2-7",
+          "idx": 7,
+          "group": 7,
+          "pos": [
+            -128.06,
+            150.55
+          ]
+        },
+        {
+          "id": "2-8",
+          "idx": 8,
+          "group": 13,
+          "pos": [
+            -108.61,
+            140.07
+          ]
+        },
+        {
+          "id": "2-9",
+          "idx": 9,
+          "group": 10,
+          "pos": [
+            -126.18,
+            126.94
+          ]
+        },
+        {
+          "id": "2-10",
+          "idx": 10,
+          "group": 15,
+          "pos": [
+            -90.04,
+            123.89
+          ]
+        },
+        {
+          "id": "2-11",
+          "idx": 11,
+          "group": 15,
+          "pos": [
+            -89.92,
+            130.19
+          ]
+        },
+        {
+          "id": "2-12",
+          "idx": 12,
+          "group": 18,
+          "pos": [
+            -29.62,
+            129.24
+          ]
+        },
+        {
+          "id": "2-13",
+          "idx": 13,
+          "group": 20,
+          "pos": [
+            -30.23,
+            182.74
+          ]
+        },
+        {
+          "id": "2-14",
+          "idx": 14,
+          "group": 20,
+          "pos": [
+            -30.24,
+            188.86
+          ]
+        },
+        {
+          "id": "2-15",
+          "idx": 15,
+          "group": 25,
+          "pos": [
+            -76.48,
+            204.38
+          ]
+        },
+        {
+          "id": "2-16",
+          "idx": 16,
+          "group": 25,
+          "pos": [
+            -83.07,
+            204.3
+          ]
+        },
+        {
+          "id": "2-17",
+          "idx": 17,
+          "group": 28,
+          "pos": [
+            -104.82,
+            192.45
+          ]
+        },
+        {
+          "id": "2-18",
+          "idx": 18,
+          "group": 29,
+          "pos": [
+            -95.87,
+            169.77
+          ]
+        },
+        {
+          "id": "2-19",
+          "idx": 19,
+          "group": 29,
+          "pos": [
+            -95.61,
+            175.79
+          ]
+        }
+      ]
+    },
+    {
+      "id": 214668,
+      "enemyIndex": 3,
+      "name": "Venture Co. Patron",
+      "count": 3,
+      "health": 25750712,
+      "creatureType": "Humanoid",
+      "scale": 1.5,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt",
+        "Silence",
+        "Fear",
+        "Stun"
+      ],
+      "spawns": [
+        {
+          "id": "3-2",
+          "idx": 2,
+          "group": 1,
+          "pos": [
+            -166.83,
+            123.2
+          ]
+        },
+        {
+          "id": "3-3",
+          "idx": 3,
+          "group": 1,
+          "pos": [
+            -166.66,
+            129.5
+          ]
+        },
+        {
+          "id": "3-4",
+          "idx": 4,
+          "group": 3,
+          "pos": [
+            -150.59,
+            126.67
+          ]
+        },
+        {
+          "id": "3-5",
+          "idx": 5,
+          "group": 3,
+          "pos": [
+            -150.33,
+            132.29
+          ]
+        },
+        {
+          "id": "3-6",
+          "idx": 6,
+          "group": 3,
+          "pos": [
+            -144.89,
+            126.78
+          ]
+        },
+        {
+          "id": "3-7",
+          "idx": 7,
+          "group": 2,
+          "pos": [
+            -164.32,
+            149.91
+          ]
+        },
+        {
+          "id": "3-8",
+          "idx": 8,
+          "group": 5,
+          "pos": [
+            -135.75,
+            145.11
+          ]
+        },
+        {
+          "id": "3-9",
+          "idx": 9,
+          "group": 5,
+          "pos": [
+            -141.82,
+            145.1
+          ]
+        },
+        {
+          "id": "3-10",
+          "idx": 10,
+          "group": 11,
+          "pos": [
+            -109.82,
+            114.79
+          ]
+        },
+        {
+          "id": "3-11",
+          "idx": 11,
+          "group": 11,
+          "pos": [
+            -115.61,
+            114.72
+          ]
+        },
+        {
+          "id": "3-12",
+          "idx": 12,
+          "group": 7,
+          "pos": [
+            -122,
+            150.07
+          ]
+        },
+        {
+          "id": "3-13",
+          "idx": 13,
+          "group": 7,
+          "pos": [
+            -125.39,
+            145.71
+          ]
+        },
+        {
+          "id": "3-14",
+          "idx": 14,
+          "group": 13,
+          "pos": [
+            -103.59,
+            136.99
+          ]
+        },
+        {
+          "id": "3-15",
+          "idx": 15,
+          "group": 13,
+          "pos": [
+            -103.58,
+            142.51
+          ]
+        },
+        {
+          "id": "3-16",
+          "idx": 16,
+          "group": 9,
+          "pos": [
+            -117.14,
+            134.53
+          ]
+        },
+        {
+          "id": "3-17",
+          "idx": 17,
+          "group": 9,
+          "pos": [
+            -117.27,
+            140.06
+          ]
+        },
+        {
+          "id": "3-18",
+          "idx": 18,
+          "group": 9,
+          "pos": [
+            -121.85,
+            137.58
+          ]
+        },
+        {
+          "id": "3-19",
+          "idx": 19,
+          "group": 10,
+          "pos": [
+            -121.22,
+            123.95
+          ]
+        }
+      ]
+    },
+    {
+      "id": 210269,
+      "enemyIndex": 4,
+      "name": "Hired Muscle",
+      "count": 10,
+      "health": 45779042,
+      "creatureType": "Humanoid",
+      "scale": 1.5,
+      "isBoss": false,
+      "characteristics": [],
+      "spawns": [
+        {
+          "id": "4-2",
+          "idx": 2,
+          "group": 5,
+          "pos": [
+            -138.87,
+            150.28
+          ]
+        },
+        {
+          "id": "4-3",
+          "idx": 3,
+          "group": 10,
+          "pos": [
+            -126.56,
+            121.05
+          ]
+        },
+        {
+          "id": "4-4",
+          "idx": 4,
+          "group": 8,
+          "pos": [
+            -106.12,
+            152.21
+          ]
+        },
+        {
+          "id": "4-5",
+          "idx": 5,
+          "group": 8,
+          "pos": [
+            -111.6,
+            152.03
+          ]
+        }
+      ]
+    },
+    {
+      "id": 214697,
+      "enemyIndex": 5,
+      "name": "Chef Chewie",
+      "count": 15,
+      "health": 85835704,
+      "creatureType": "Humanoid",
+      "scale": 2,
+      "isBoss": false,
+      "characteristics": [],
+      "spawns": [
+        {
+          "id": "5-1",
+          "idx": 1,
+          "group": 14,
+          "pos": [
+            -134.1,
+            158.86
+          ]
+        }
+      ]
+    },
+    {
+      "id": 210265,
+      "enemyIndex": 6,
+      "name": "Worker Bee",
+      "count": 5,
+      "health": 25750712,
+      "creatureType": "Beast",
+      "scale": 1.5,
+      "isBoss": false,
+      "characteristics": [
+        "Fear",
+        "Stun"
+      ],
+      "spawns": [
+        {
+          "id": "6-2",
+          "idx": 2,
+          "group": 30,
+          "pos": [
+            -184.6,
+            148.64
+          ]
+        },
+        {
+          "id": "6-3",
+          "idx": 3,
+          "group": 30,
+          "pos": [
+            -184.31,
+            155.42
+          ]
+        },
+        {
+          "id": "6-4",
+          "idx": 4,
+          "group": 31,
+          "pos": [
+            -194.1,
+            161.23
+          ]
+        },
+        {
+          "id": "6-5",
+          "idx": 5,
+          "group": 31,
+          "pos": [
+            -200.64,
+            161.23
+          ]
+        },
+        {
+          "id": "6-6",
+          "idx": 6,
+          "group": 31,
+          "pos": [
+            -196.83,
+            156.27
+          ]
+        },
+        {
+          "id": "6-7",
+          "idx": 7,
+          "group": 33,
+          "pos": [
+            -216.65,
+            158.81
+          ]
+        },
+        {
+          "id": "6-8",
+          "idx": 8,
+          "group": 33,
+          "pos": [
+            -216.43,
+            146.03
+          ]
+        },
+        {
+          "id": "6-9",
+          "idx": 9,
+          "group": 35,
+          "pos": [
+            -221.47,
+            171.93
+          ]
+        },
+        {
+          "id": "6-10",
+          "idx": 10,
+          "group": 35,
+          "pos": [
+            -228.07,
+            171.97
+          ]
+        },
+        {
+          "id": "6-11",
+          "idx": 11,
+          "group": 35,
+          "pos": [
+            -234.53,
+            172
+          ]
+        },
+        {
+          "id": "6-12",
+          "idx": 12,
+          "group": 37,
+          "pos": [
+            -221.42,
+            205.84
+          ]
+        },
+        {
+          "id": "6-13",
+          "idx": 13,
+          "group": 37,
+          "pos": [
+            -233.57,
+            205.89
+          ]
+        },
+        {
+          "id": "6-14",
+          "idx": 14,
+          "group": 40,
+          "pos": [
+            -207.43,
+            255.39
+          ]
+        },
+        {
+          "id": "6-15",
+          "idx": 15,
+          "group": 40,
+          "pos": [
+            -201,
+            255.59
+          ]
+        }
+      ]
+    },
+    {
+      "id": 220141,
+      "enemyIndex": 7,
+      "name": "Royal Jelly Purveyor",
+      "count": 7,
+      "health": 28611901,
+      "creatureType": "Humanoid",
+      "scale": 1.5,
+      "isBoss": false,
+      "characteristics": [],
+      "spawns": [
+        {
+          "id": "7-2",
+          "idx": 2,
+          "group": 33,
+          "pos": [
+            -216.72,
+            152.42
+          ]
+        },
+        {
+          "id": "7-3",
+          "idx": 3,
+          "group": 35,
+          "pos": [
+            -224.25,
+            166.51
+          ]
+        },
+        {
+          "id": "7-4",
+          "idx": 4,
+          "group": 36,
+          "pos": [
+            -228.59,
+            192.8
+          ]
+        },
+        {
+          "id": "7-5",
+          "idx": 5,
+          "group": 38,
+          "pos": [
+            -222.2,
+            233.62
+          ]
+        },
+        {
+          "id": "7-6",
+          "idx": 6,
+          "group": 40,
+          "pos": [
+            -203.93,
+            250.1
+          ]
+        },
+        {
+          "id": "7-7",
+          "idx": 7,
+          "group": 41,
+          "pos": [
+            -176.47,
+            250.87
+          ]
+        },
+        {
+          "id": "7-8",
+          "idx": 8,
+          "group": 41,
+          "pos": [
+            -176.38,
+            256.85
+          ]
+        },
+        {
+          "id": "7-9",
+          "idx": 9,
+          "group": 44,
+          "pos": [
+            -191.03,
+            220.94
+          ]
+        },
+        {
+          "id": "7-10",
+          "idx": 10,
+          "group": 45,
+          "pos": [
+            -188.8,
+            267.99
+          ]
+        }
+      ]
+    },
+    {
+      "id": 220946,
+      "enemyIndex": 8,
+      "name": "Venture Co. Honey Harvester",
+      "count": 10,
+      "health": 45779042,
+      "creatureType": "Humanoid",
+      "scale": 1.8,
+      "isBoss": false,
+      "characteristics": [],
+      "spawns": [
+        {
+          "id": "8-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -227.75,
+            180.47
+          ]
+        },
+        {
+          "id": "8-2",
+          "idx": 2,
+          "group": null,
+          "pos": [
+            -207.44,
+            151.77
+          ]
+        },
+        {
+          "id": "8-3",
+          "idx": 3,
+          "group": 39,
+          "pos": [
+            -221.25,
+            246.15
+          ]
+        },
+        {
+          "id": "8-4",
+          "idx": 4,
+          "group": 42,
+          "pos": [
+            -190.56,
+            233.3
+          ]
+        },
+        {
+          "id": "8-5",
+          "idx": 5,
+          "group": 45,
+          "pos": [
+            -188.38,
+            274.72
+          ]
+        },
+        {
+          "id": "8-6",
+          "idx": 6,
+          "group": 45,
+          "pos": [
+            -195.73,
+            274.72
+          ]
+        }
+      ]
+    },
+    {
+      "id": 210264,
+      "enemyIndex": 9,
+      "name": "Bee Wrangler",
+      "count": 5,
+      "health": 27181306,
+      "creatureType": "Humanoid",
+      "scale": 1.5,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt",
+        "Fear",
+        "Stun"
+      ],
+      "spawns": [
+        {
+          "id": "9-2",
+          "idx": 2,
+          "group": 30,
+          "pos": [
+            -178.74,
+            151.64
+          ]
+        },
+        {
+          "id": "9-3",
+          "idx": 3,
+          "group": 35,
+          "pos": [
+            -230.89,
+            166.76
+          ]
+        },
+        {
+          "id": "9-4",
+          "idx": 4,
+          "group": 37,
+          "pos": [
+            -227.29,
+            208.72
+          ]
+        },
+        {
+          "id": "9-5",
+          "idx": 5,
+          "group": 38,
+          "pos": [
+            -228.92,
+            234.62
+          ]
+        },
+        {
+          "id": "9-6",
+          "idx": 6,
+          "group": 39,
+          "pos": [
+            -215.57,
+            242.31
+          ]
+        },
+        {
+          "id": "9-7",
+          "idx": 7,
+          "group": 41,
+          "pos": [
+            -182.98,
+            250.62
+          ]
+        },
+        {
+          "id": "9-8",
+          "idx": 8,
+          "group": 41,
+          "pos": [
+            -182.99,
+            256.78
+          ]
+        },
+        {
+          "id": "9-9",
+          "idx": 9,
+          "group": 43,
+          "pos": [
+            -206.21,
+            226.06
+          ]
+        },
+        {
+          "id": "9-10",
+          "idx": 10,
+          "group": 45,
+          "pos": [
+            -194.93,
+            267.96
+          ]
+        }
+      ]
+    },
+    {
+      "id": 218865,
+      "enemyIndex": 10,
+      "name": "Bee-let",
+      "count": 1,
+      "health": 5722380,
+      "creatureType": "Beast",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [],
+      "spawns": [
+        {
+          "id": "10-2",
+          "idx": 2,
+          "group": 34,
+          "pos": [
+            -234.37,
+            145.36
+          ]
+        },
+        {
+          "id": "10-3",
+          "idx": 3,
+          "group": 34,
+          "pos": [
+            -234.36,
+            149.62
+          ]
+        },
+        {
+          "id": "10-4",
+          "idx": 4,
+          "group": 34,
+          "pos": [
+            -229.71,
+            145.26
+          ]
+        },
+        {
+          "id": "10-5",
+          "idx": 5,
+          "group": 34,
+          "pos": [
+            -229.8,
+            149.58
+          ]
+        },
+        {
+          "id": "10-6",
+          "idx": 6,
+          "group": 36,
+          "pos": [
+            -224.06,
+            190.08
+          ]
+        },
+        {
+          "id": "10-7",
+          "idx": 7,
+          "group": 36,
+          "pos": [
+            -228.61,
+            197.87
+          ]
+        },
+        {
+          "id": "10-8",
+          "idx": 8,
+          "group": 36,
+          "pos": [
+            -223.73,
+            195.4
+          ]
+        },
+        {
+          "id": "10-9",
+          "idx": 9,
+          "group": 36,
+          "pos": [
+            -228.51,
+            187.68
+          ]
+        },
+        {
+          "id": "10-10",
+          "idx": 10,
+          "group": 36,
+          "pos": [
+            -233.32,
+            190.24
+          ]
+        },
+        {
+          "id": "10-11",
+          "idx": 11,
+          "group": 36,
+          "pos": [
+            -233.32,
+            195.81
+          ]
+        },
+        {
+          "id": "10-12",
+          "idx": 12,
+          "group": 43,
+          "pos": [
+            -210.68,
+            223.03
+          ]
+        },
+        {
+          "id": "10-13",
+          "idx": 13,
+          "group": 43,
+          "pos": [
+            -201.26,
+            225.8
+          ]
+        },
+        {
+          "id": "10-14",
+          "idx": 14,
+          "group": 43,
+          "pos": [
+            -210.58,
+            229.58
+          ]
+        },
+        {
+          "id": "10-15",
+          "idx": 15,
+          "group": 43,
+          "pos": [
+            -205.13,
+            221.58
+          ]
+        },
+        {
+          "id": "10-16",
+          "idx": 16,
+          "group": 43,
+          "pos": [
+            -204.74,
+            231.03
+          ]
+        },
+        {
+          "id": "10-17",
+          "idx": 17,
+          "group": 45,
+          "pos": [
+            -183.25,
+            279.74
+          ]
+        },
+        {
+          "id": "10-18",
+          "idx": 18,
+          "group": 45,
+          "pos": [
+            -187.61,
+            279.73
+          ]
+        },
+        {
+          "id": "10-19",
+          "idx": 19,
+          "group": 45,
+          "pos": [
+            -192.07,
+            279.68
+          ]
+        },
+        {
+          "id": "10-20",
+          "idx": 20,
+          "group": 45,
+          "pos": [
+            -196.04,
+            279.82
+          ]
+        },
+        {
+          "id": "10-21",
+          "idx": 21,
+          "group": 45,
+          "pos": [
+            -200.65,
+            279.86
+          ]
+        },
+        {
+          "id": "10-22",
+          "idx": 22,
+          "group": 45,
+          "pos": [
+            -183.1,
+            284.07
+          ]
+        },
+        {
+          "id": "10-23",
+          "idx": 23,
+          "group": 45,
+          "pos": [
+            -187.58,
+            283.85
+          ]
+        },
+        {
+          "id": "10-24",
+          "idx": 24,
+          "group": 45,
+          "pos": [
+            -200.54,
+            284.02
+          ]
+        },
+        {
+          "id": "10-25",
+          "idx": 25,
+          "group": 45,
+          "pos": [
+            -192.17,
+            283.95
+          ]
+        },
+        {
+          "id": "10-26",
+          "idx": 26,
+          "group": 45,
+          "pos": [
+            -196.18,
+            284.01
+          ]
+        },
+        {
+          "id": "10-27",
+          "idx": 27,
+          "group": 46,
+          "pos": [
+            -173.02,
+            226.61
+          ]
+        },
+        {
+          "id": "10-28",
+          "idx": 28,
+          "group": 46,
+          "pos": [
+            -172.98,
+            230.78
+          ]
+        },
+        {
+          "id": "10-29",
+          "idx": 29,
+          "group": 46,
+          "pos": [
+            -172.83,
+            235.05
+          ]
+        },
+        {
+          "id": "10-30",
+          "idx": 30,
+          "group": 46,
+          "pos": [
+            -176.75,
+            232.98
+          ]
+        },
+        {
+          "id": "10-31",
+          "idx": 31,
+          "group": 46,
+          "pos": [
+            -176.97,
+            228.73
+          ]
+        },
+        {
+          "id": "10-32",
+          "idx": 32,
+          "group": 47,
+          "pos": [
+            -173.13,
+            205.58
+          ]
+        },
+        {
+          "id": "10-33",
+          "idx": 33,
+          "group": 47,
+          "pos": [
+            -173,
+            209.77
+          ]
+        },
+        {
+          "id": "10-34",
+          "idx": 34,
+          "group": 47,
+          "pos": [
+            -173.02,
+            213.8
+          ]
+        },
+        {
+          "id": "10-35",
+          "idx": 35,
+          "group": 47,
+          "pos": [
+            -176.88,
+            207.57
+          ]
+        },
+        {
+          "id": "10-36",
+          "idx": 36,
+          "group": 47,
+          "pos": [
+            -176.75,
+            211.77
+          ]
+        },
+        {
+          "id": "10-37",
+          "idx": 37,
+          "group": 48,
+          "pos": [
+            -182.63,
+            173.04
+          ]
+        },
+        {
+          "id": "10-38",
+          "idx": 38,
+          "group": 48,
+          "pos": [
+            -187.19,
+            173.06
+          ]
+        },
+        {
+          "id": "10-39",
+          "idx": 39,
+          "group": 48,
+          "pos": [
+            -191.75,
+            172.97
+          ]
+        },
+        {
+          "id": "10-40",
+          "idx": 40,
+          "group": 48,
+          "pos": [
+            -184.86,
+            176.67
+          ]
+        },
+        {
+          "id": "10-41",
+          "idx": 41,
+          "group": 48,
+          "pos": [
+            -189.6,
+            176.83
+          ]
+        },
+        {
+          "id": "10-42",
+          "idx": 42,
+          "group": 49,
+          "pos": [
+            -170.31,
+            185.38
+          ]
+        },
+        {
+          "id": "10-43",
+          "idx": 43,
+          "group": 49,
+          "pos": [
+            -172.38,
+            189.3
+          ]
+        },
+        {
+          "id": "10-44",
+          "idx": 44,
+          "group": 49,
+          "pos": [
+            -178.77,
+            185.27
+          ]
+        },
+        {
+          "id": "10-45",
+          "idx": 45,
+          "group": 49,
+          "pos": [
+            -174.65,
+            185.4
+          ]
+        },
+        {
+          "id": "10-46",
+          "idx": 46,
+          "group": 49,
+          "pos": [
+            -176.96,
+            189.16
+          ]
+        }
+      ]
+    },
+    {
+      "id": 214673,
+      "enemyIndex": 11,
+      "name": "Flavor Scientist",
+      "count": 7,
+      "health": 25750712,
+      "creatureType": "Humanoid",
+      "scale": 1.5,
+      "isBoss": false,
+      "characteristics": [
+        "Silence",
+        "Fear",
+        "Stun"
+      ],
+      "spawns": [
+        {
+          "id": "11-2",
+          "idx": 2,
+          "group": 15,
+          "pos": [
+            -84.16,
+            127.13
+          ]
+        },
+        {
+          "id": "11-3",
+          "idx": 3,
+          "group": 17,
+          "pos": [
+            -54.6,
+            126.04
+          ]
+        },
+        {
+          "id": "11-4",
+          "idx": 4,
+          "group": 18,
+          "pos": [
+            -23.75,
+            123.23
+          ]
+        },
+        {
+          "id": "11-5",
+          "idx": 5,
+          "group": 18,
+          "pos": [
+            -23.65,
+            129.41
+          ]
+        },
+        {
+          "id": "11-6",
+          "idx": 6,
+          "group": 19,
+          "pos": [
+            -28.89,
+            146.07
+          ]
+        },
+        {
+          "id": "11-7",
+          "idx": 7,
+          "group": 21,
+          "pos": [
+            -58.63,
+            185.67
+          ]
+        },
+        {
+          "id": "11-11",
+          "idx": 11,
+          "group": 28,
+          "pos": [
+            -104.91,
+            198.54
+          ]
+        }
+      ]
+    },
+    {
+      "id": 220060,
+      "enemyIndex": 12,
+      "name": "Taste Tester",
+      "count": 5,
+      "health": 28611901,
+      "creatureType": "Humanoid",
+      "scale": 1.5,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Fear",
+        "Stun"
+      ],
+      "spawns": [
+        {
+          "id": "12-2",
+          "idx": 2,
+          "group": 17,
+          "pos": [
+            -58.22,
+            131.33
+          ]
+        },
+        {
+          "id": "12-3",
+          "idx": 3,
+          "group": 17,
+          "pos": [
+            -50.92,
+            131.21
+          ]
+        },
+        {
+          "id": "12-4",
+          "idx": 4,
+          "group": 18,
+          "pos": [
+            -29.86,
+            123.01
+          ]
+        },
+        {
+          "id": "12-5",
+          "idx": 5,
+          "group": 20,
+          "pos": [
+            -23.98,
+            182.76
+          ]
+        },
+        {
+          "id": "12-6",
+          "idx": 6,
+          "group": 20,
+          "pos": [
+            -23.89,
+            188.78
+          ]
+        },
+        {
+          "id": "12-7",
+          "idx": 7,
+          "group": 21,
+          "pos": [
+            -53.01,
+            194.73
+          ]
+        },
+        {
+          "id": "12-8",
+          "idx": 8,
+          "group": 21,
+          "pos": [
+            -52.79,
+            188.69
+          ]
+        },
+        {
+          "id": "12-9",
+          "idx": 9,
+          "group": 21,
+          "pos": [
+            -52.9,
+            182.54
+          ]
+        },
+        {
+          "id": "12-10",
+          "idx": 10,
+          "group": 21,
+          "pos": [
+            -58.58,
+            191.42
+          ]
+        },
+        {
+          "id": "12-11",
+          "idx": 11,
+          "group": 22,
+          "pos": [
+            -47.09,
+            160.52
+          ]
+        },
+        {
+          "id": "12-12",
+          "idx": 12,
+          "group": 25,
+          "pos": [
+            -82.73,
+            198.34
+          ]
+        },
+        {
+          "id": "12-13",
+          "idx": 13,
+          "group": 28,
+          "pos": [
+            -98.12,
+            192.42
+          ]
+        },
+        {
+          "id": "12-14",
+          "idx": 14,
+          "group": 28,
+          "pos": [
+            -98.21,
+            198.62
+          ]
+        },
+        {
+          "id": "12-15",
+          "idx": 15,
+          "group": 29,
+          "pos": [
+            -89.29,
+            170.07
+          ]
+        },
+        {
+          "id": "12-16",
+          "idx": 16,
+          "group": 29,
+          "pos": [
+            -89.39,
+            175.95
+          ]
+        }
+      ]
+    },
+    {
+      "id": 223423,
+      "enemyIndex": 13,
+      "name": "Careless Hopgoblin",
+      "count": 10,
+      "health": 54362613,
+      "creatureType": "Humanoid",
+      "scale": 1.8,
+      "isBoss": false,
+      "characteristics": [],
+      "spawns": [
+        {
+          "id": "13-2",
+          "idx": 2,
+          "group": 16,
+          "pos": [
+            -71.8,
+            126.26
+          ]
+        },
+        {
+          "id": "13-3",
+          "idx": 3,
+          "group": 19,
+          "pos": [
+            -33.06,
+            152.86
+          ]
+        },
+        {
+          "id": "13-4",
+          "idx": 4,
+          "group": 19,
+          "pos": [
+            -24.57,
+            152.39
+          ]
+        },
+        {
+          "id": "13-5",
+          "idx": 5,
+          "group": 26,
+          "pos": [
+            -75.45,
+            170.82
+          ]
+        },
+        {
+          "id": "13-6",
+          "idx": 6,
+          "group": 27,
+          "pos": [
+            -69.39,
+            190.81
+          ]
+        }
+      ]
+    },
+    {
+      "id": 210270,
+      "enemyIndex": 14,
+      "name": "Brew Drop",
+      "count": 1,
+      "health": 9728047,
+      "creatureType": "Elemental",
+      "scale": 1.2,
+      "isBoss": false,
+      "characteristics": [
+        "Silence",
+        "Stun"
+      ],
+      "spawns": [
+        {
+          "id": "14-2",
+          "idx": 2,
+          "group": 22,
+          "pos": [
+            -42.16,
+            163.7
+          ]
+        },
+        {
+          "id": "14-3",
+          "idx": 3,
+          "group": 23,
+          "pos": [
+            -64.55,
+            145.24
+          ]
+        },
+        {
+          "id": "14-4",
+          "idx": 4,
+          "group": 23,
+          "pos": [
+            -54.46,
+            145.11
+          ]
+        },
+        {
+          "id": "14-5",
+          "idx": 5,
+          "group": 23,
+          "pos": [
+            -59.74,
+            145.3
+          ]
+        },
+        {
+          "id": "14-6",
+          "idx": 6,
+          "group": 24,
+          "pos": [
+            -73.52,
+            155.66
+          ]
+        },
+        {
+          "id": "14-7",
+          "idx": 7,
+          "group": 24,
+          "pos": [
+            -73.62,
+            161.68
+          ]
+        },
+        {
+          "id": "14-8",
+          "idx": 8,
+          "group": 25,
+          "pos": [
+            -76.49,
+            197.99
+          ]
+        }
+      ]
+    },
+    {
+      "id": 219588,
+      "enemyIndex": 15,
+      "name": "Yes Man",
+      "count": 3,
+      "health": 28611901,
+      "creatureType": "Humanoid",
+      "scale": 2,
+      "isBoss": false,
+      "characteristics": [],
+      "spawns": [
+        {
+          "id": "15-2",
+          "idx": 2,
+          "group": 50,
+          "pos": [
+            -120.65,
+            195.87
+          ]
+        },
+        {
+          "id": "15-3",
+          "idx": 3,
+          "group": 50,
+          "pos": [
+            -129.69,
+            195.97
+          ]
+        },
+        {
+          "id": "15-4",
+          "idx": 4,
+          "group": 50,
+          "pos": [
+            -138.72,
+            196.11
+          ]
+        },
+        {
+          "id": "15-5",
+          "idx": 5,
+          "group": 50,
+          "pos": [
+            -147.78,
+            195.97
+          ]
+        }
+      ]
+    },
+    {
+      "id": 210271,
+      "enemyIndex": 16,
+      "name": "Brewmaster Aldryr",
+      "count": 0,
+      "health": 171550173,
+      "creatureType": "Humanoid",
+      "scale": 2,
+      "isBoss": true,
+      "characteristics": [
+        "Taunt"
+      ],
+      "spawns": [
+        {
+          "id": "16-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -133.82,
+            176.05
+          ]
+        }
+      ]
+    },
+    {
+      "id": 210267,
+      "enemyIndex": 17,
+      "name": "I'pa",
+      "count": 0,
+      "health": 171550173,
+      "creatureType": "Humanoid",
+      "scale": 1.5,
+      "isBoss": true,
+      "characteristics": [
+        "Taunt"
+      ],
+      "spawns": [
+        {
+          "id": "17-1",
+          "idx": 1,
+          "group": 55,
+          "pos": [
+            -60.17,
+            172.32
+          ]
+        }
+      ]
+    },
+    {
+      "id": 218002,
+      "enemyIndex": 18,
+      "name": "Benk Buzzbee",
+      "count": 0,
+      "health": 180127682,
+      "creatureType": "Humanoid",
+      "scale": 1.9,
+      "isBoss": true,
+      "characteristics": [
+        "Taunt"
+      ],
+      "spawns": [
+        {
+          "id": "18-1",
+          "idx": 1,
+          "group": 52,
+          "pos": [
+            -193.05,
+            207.78
+          ]
+        }
+      ]
+    },
+    {
+      "id": 214661,
+      "enemyIndex": 19,
+      "name": "Goldie Baronbottom",
+      "count": 0,
+      "health": 228733564,
+      "creatureType": "Humanoid",
+      "scale": 2,
+      "isBoss": true,
+      "characteristics": [
+        "Taunt"
+      ],
+      "spawns": [
+        {
+          "id": "19-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -135.39,
+            216.99
+          ]
+        }
+      ]
+    },
+    {
+      "id": 219667,
+      "enemyIndex": 20,
+      "name": "Flamethrower",
+      "count": 0,
+      "health": 5722380,
+      "creatureType": "Uncategorized",
+      "scale": 2.1,
+      "isBoss": false,
+      "characteristics": [],
+      "spawns": [
+        {
+          "id": "20-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -87.76,
+            160.02
+          ]
+        },
+        {
+          "id": "20-2",
+          "idx": 2,
+          "group": null,
+          "pos": [
+            -241.26,
+            157.27
+          ]
+        }
+      ]
+    },
+    {
+      "id": 219415,
+      "enemyIndex": 21,
+      "name": "Cooking Pot",
+      "count": 0,
+      "health": 5722380,
+      "creatureType": "Uncategorized",
+      "scale": 1.6,
+      "isBoss": false,
+      "characteristics": [],
+      "spawns": [
+        {
+          "id": "21-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -100.28,
+            128.2
+          ]
+        }
+      ]
+    },
+    {
+      "id": 222964,
+      "enemyIndex": 22,
+      "name": "Flavor Scientist",
+      "count": 0,
+      "health": 25750712,
+      "creatureType": "Humanoid",
+      "scale": 1.5,
+      "isBoss": false,
+      "characteristics": [
+        "Silence",
+        "Fear",
+        "Stun"
+      ],
+      "spawns": [
+        {
+          "id": "22-1",
+          "idx": 1,
+          "group": 24,
+          "pos": [
+            -68.77,
+            158.74
+          ]
+        },
+        {
+          "id": "22-2",
+          "idx": 2,
+          "group": 22,
+          "pos": [
+            -46.93,
+            166.55
+          ]
+        },
+        {
+          "id": "22-3",
+          "idx": 3,
+          "group": 23,
+          "pos": [
+            -59.84,
+            150.93
+          ]
+        }
+      ]
+    },
+    {
+      "id": 210267,
+      "enemyIndex": 23,
+      "name": "Brew Drop",
+      "count": 0,
+      "health": 9728047,
+      "creatureType": "Elemental",
+      "scale": 1.5,
+      "isBoss": false,
+      "characteristics": [
+        "Silence",
+        "Stun"
+      ],
+      "spawns": [
+        {
+          "id": "23-1",
+          "idx": 1,
+          "group": 55,
+          "pos": [
+            -56.82,
+            164.37
+          ]
+        },
+        {
+          "id": "23-2",
+          "idx": 2,
+          "group": 55,
+          "pos": [
+            -63.13,
+            164.2
+          ]
+        }
+      ]
+    },
+    {
+      "id": 218016,
+      "enemyIndex": 24,
+      "name": "Ravenous Cinderbee",
+      "count": 0,
+      "health": 9728047,
+      "creatureType": "Beast",
+      "scale": 2,
+      "isBoss": false,
+      "characteristics": [
+        "Silence",
+        "Stun"
+      ],
+      "spawns": [
+        {
+          "id": "24-1",
+          "idx": 1,
+          "group": 52,
+          "pos": [
+            -202.55,
+            199.61
+          ]
+        },
+        {
+          "id": "24-2",
+          "idx": 2,
+          "group": 52,
+          "pos": [
+            -193.51,
+            194.98
+          ]
+        },
+        {
+          "id": "24-3",
+          "idx": 3,
+          "group": 52,
+          "pos": [
+            -183.87,
+            198.47
+          ]
+        }
+      ]
+    }
+  ],
+  "pois": []
+}

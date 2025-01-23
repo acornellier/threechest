@@ -1,1 +1,1680 @@
-{"dungeonIndex":118,"totalCount":992,"enemies":[{"id":209801,"enemyIndex":1,"name":"Quartermaster Koratite","count":20,"health":10000,"creatureType":"Humanoid","scale":2,"isBoss":false,"characteristics":[],"spawns":[{"id":"1-1","idx":1,"group":null,"pos":[-74.65,53.83]}]},{"id":207198,"enemyIndex":2,"name":"Cursed Thunderer","count":10,"health":10001,"creatureType":"Humanoid","scale":1.5,"isBoss":false,"characteristics":[],"spawns":[{"id":"2-2","idx":2,"group":2,"pos":[-89.23,72.91]},{"id":"2-3","idx":3,"group":2,"pos":[-92.37,67.27]},{"id":"2-4","idx":4,"group":3,"pos":[-70.47,73.02]},{"id":"2-5","idx":5,"group":3,"pos":[-67.48,67.1]},{"id":"2-6","idx":6,"group":4,"pos":[-56.52,59.86]},{"id":"2-7","idx":7,"group":10,"pos":[-106.12,191.87]},{"id":"2-8","idx":8,"group":11,"pos":[-110.23,169.84]},{"id":"2-9","idx":9,"group":7,"pos":[-53.52,217.13]},{"id":"2-10","idx":10,"group":12,"pos":[-55.68,318.83]},{"id":"2-11","idx":11,"group":14,"pos":[-66.92,307.79]},{"id":"2-12","idx":12,"group":16,"pos":[-91.39,297.48]},{"id":"2-13","idx":13,"group":18,"pos":[-120.57,302.55]},{"id":"2-14","idx":14,"group":19,"pos":[-121.07,317.79]},{"id":"2-15","idx":15,"group":19,"pos":[-127.69,317.57]},{"id":"2-16","idx":16,"group":20,"pos":[-107.33,328.27]},{"id":"2-17","idx":17,"group":20,"pos":[-107.23,334.4]},{"id":"2-18","idx":18,"group":21,"pos":[-91.06,314.77]},{"id":"2-19","idx":19,"group":21,"pos":[-93.78,319.96]}]},{"id":207197,"enemyIndex":3,"name":"Cursed Rookguard","count":10,"health":10002,"creatureType":"Humanoid","scale":1.5,"isBoss":false,"characteristics":[],"spawns":[{"id":"3-2","idx":2,"group":1,"pos":[-91.72,50.92]},{"id":"3-3","idx":3,"group":1,"pos":[-98.14,51.03]},{"id":"3-4","idx":4,"group":1,"pos":[-98.29,57]},{"id":"3-5","idx":5,"group":1,"pos":[-91.87,56.77]},{"id":"3-6","idx":6,"group":2,"pos":[-85.93,67.47]},{"id":"3-7","idx":7,"group":3,"pos":[-73.08,67.09]},{"id":"3-8","idx":8,"group":11,"pos":[-110.19,163.31]},{"id":"3-9","idx":9,"group":5,"pos":[-83.45,162.56]},{"id":"3-10","idx":10,"group":6,"pos":[-54.26,168.23]},{"id":"3-11","idx":11,"group":7,"pos":[-60.2,217.69]},{"id":"3-12","idx":12,"group":8,"pos":[-83.49,221.79]},{"id":"3-13","idx":13,"group":12,"pos":[-51.62,313.61]},{"id":"3-14","idx":14,"group":13,"pos":[-49.45,300.9]},{"id":"3-15","idx":15,"group":13,"pos":[-54.07,296.16]},{"id":"3-16","idx":16,"group":14,"pos":[-66.06,301.67]},{"id":"3-17","idx":17,"group":16,"pos":[-91.52,303.73]},{"id":"3-18","idx":18,"group":16,"pos":[-91.39,291.53]},{"id":"3-19","idx":19,"group":18,"pos":[-120.82,296.29]},{"id":"3-20","idx":20,"group":18,"pos":[-121.15,290.13]},{"id":"3-21","idx":21,"group":19,"pos":[-121.13,324.18]},{"id":"3-22","idx":22,"group":19,"pos":[-127.6,324.12]},{"id":"3-23","idx":23,"group":21,"pos":[-103.31,314.91]},{"id":"3-24","idx":24,"group":21,"pos":[-97.07,314.69]}]},{"id":212786,"enemyIndex":4,"name":"Voidrider","count":25,"health":10003,"creatureType":"Elemental","scale":1.5,"isBoss":false,"characteristics":[],"spawns":[{"id":"4-2","idx":2,"group":4,"pos":[-55.06,67.88]},{"id":"4-3","idx":3,"group":11,"pos":[-104.66,166.32]},{"id":"4-4","idx":4,"group":7,"pos":[-56.55,223.22]},{"id":"4-5","idx":5,"group":8,"pos":[-80.07,227.58]}]},{"id":207186,"enemyIndex":5,"name":"Unruly Stormrook","count":12,"health":10004,"creatureType":"Elemental","scale":1.5,"isBoss":false,"characteristics":[],"spawns":[{"id":"5-2","idx":2,"group":10,"pos":[-100.57,188.62]},{"id":"5-3","idx":3,"group":9,"pos":[-110.97,224.1]},{"id":"5-4","idx":4,"group":5,"pos":[-79.9,156.81]},{"id":"5-5","idx":5,"group":6,"pos":[-51.02,162.24]}]},{"id":207199,"enemyIndex":6,"name":"Cursed Rooktender","count":10,"health":10005,"creatureType":"Humanoid","scale":1.5,"isBoss":false,"characteristics":[],"spawns":[{"id":"6-2","idx":2,"group":10,"pos":[-106.2,185.42]},{"id":"6-3","idx":3,"group":9,"pos":[-113.95,218.23]},{"id":"6-4","idx":4,"group":9,"pos":[-107.3,218.13]},{"id":"6-5","idx":5,"group":5,"pos":[-76.88,162.71]},{"id":"6-6","idx":6,"group":6,"pos":[-47.52,167.64]},{"id":"6-7","idx":7,"group":8,"pos":[-76.53,221.89]}]},{"id":214419,"enemyIndex":7,"name":"Void-Cursed Crusher","count":15,"health":10006,"creatureType":"Aberration","scale":1.5,"isBoss":false,"characteristics":[],"spawns":[{"id":"7-2","idx":2,"group":15,"pos":[-76.19,301.37]},{"id":"7-3","idx":3,"group":17,"pos":[-110.12,300.42]},{"id":"7-4","idx":4,"group":22,"pos":[-82.41,321.91]}]},{"id":214439,"enemyIndex":8,"name":"Corrupted Oracle","count":12,"health":10007,"creatureType":"Humanoid","scale":1.5,"isBoss":false,"characteristics":[],"spawns":[{"id":"8-2","idx":2,"group":13,"pos":[-47.86,294.56]},{"id":"8-3","idx":3,"group":14,"pos":[-61.09,305.77]},{"id":"8-4","idx":4,"group":16,"pos":[-97.23,294.7]},{"id":"8-5","idx":5,"group":18,"pos":[-126.65,300.38]},{"id":"8-6","idx":6,"group":20,"pos":[-113.67,328.27]},{"id":"8-7","idx":7,"group":21,"pos":[-99.62,320.36]},{"id":"8-8","idx":8,"group":22,"pos":[-76.25,324.69]},{"id":"8-9","idx":9,"group":26,"pos":[-141.32,258.6]},{"id":"8-10","idx":10,"group":26,"pos":[-141.3,265.48]},{"id":"8-11","idx":11,"group":31,"pos":[-173.67,269.73]},{"id":"8-12","idx":12,"group":32,"pos":[-200.76,282.58]},{"id":"8-13","idx":13,"group":33,"pos":[-216.94,268.35]}]},{"id":214421,"enemyIndex":9,"name":"Coalescing Void Diffuser","count":25,"health":10008,"creatureType":"Humanoid","scale":1.5,"isBoss":false,"characteristics":[],"spawns":[{"id":"9-2","idx":2,"group":12,"pos":[-57.56,312.95]},{"id":"9-3","idx":3,"group":16,"pos":[-97.17,300.49]},{"id":"9-4","idx":4,"group":18,"pos":[-126.64,293.6]},{"id":"9-5","idx":5,"group":20,"pos":[-113.42,334.21]},{"id":"9-6","idx":6,"group":22,"pos":[-81.72,328.31]}]},{"id":219066,"enemyIndex":10,"name":"Afflicted Civilian","count":1,"health":10009,"creatureType":"Humanoid","scale":1.5,"isBoss":false,"characteristics":[],"spawns":[{"id":"10-2","idx":2,"group":23,"pos":[-228.48,140.59]},{"id":"10-3","idx":3,"group":23,"pos":[-235.41,140.94]},{"id":"10-4","idx":4,"group":23,"pos":[-228.43,146.88]},{"id":"10-5","idx":5,"group":23,"pos":[-235.04,147.16]},{"id":"10-6","idx":6,"group":24,"pos":[-228.36,100.96]},{"id":"10-7","idx":7,"group":24,"pos":[-234.73,101.07]},{"id":"10-8","idx":8,"group":24,"pos":[-228.42,107.27]},{"id":"10-9","idx":9,"group":24,"pos":[-234.62,107.43]}]},{"id":212793,"enemyIndex":11,"name":"Void Ascendant","count":22,"health":10010,"creatureType":"Humanoid","scale":1.5,"isBoss":false,"characteristics":[],"spawns":[{"id":"11-2","idx":2,"group":25,"pos":[-162.24,110.31]},{"id":"11-3","idx":3,"group":27,"pos":[-141.17,282.41]},{"id":"11-4","idx":4,"group":31,"pos":[-186.02,269.97]},{"id":"11-5","idx":5,"group":32,"pos":[-201.28,288.86]},{"id":"11-6","idx":6,"group":33,"pos":[-203.41,268.1]}]},{"id":212739,"enemyIndex":12,"name":"Radiating Voidstone","count":25,"health":10011,"creatureType":"Aberration","scale":1.5,"isBoss":false,"characteristics":[],"spawns":[{"id":"12-2","idx":2,"group":29,"pos":[-151.63,270.45]},{"id":"12-3","idx":3,"group":30,"pos":[-168.24,283.46]},{"id":"12-4","idx":4,"group":30,"pos":[-168.42,289.89]},{"id":"12-5","idx":5,"group":31,"pos":[-179.62,270.11]},{"id":"12-6","idx":6,"group":32,"pos":[-194.59,288.64]},{"id":"12-7","idx":7,"group":33,"pos":[-210.1,268.3]}]},{"id":209230,"enemyIndex":13,"name":"Kyrioss","count":0,"health":10014,"creatureType":"Elemental","scale":2,"isBoss":true,"characteristics":[],"spawns":[{"id":"13-1","idx":1,"group":null,"pos":[-83.1,191.77]}]},{"id":207205,"enemyIndex":14,"name":"Stormguard Gorren","count":0,"health":10015,"creatureType":"Humanoid","scale":2,"isBoss":true,"characteristics":[],"spawns":[{"id":"14-1","idx":1,"group":null,"pos":[-209.31,124.07]}]},{"id":207207,"enemyIndex":15,"name":"Skardyn Monstrosity","count":0,"health":10016,"creatureType":"Humanoid","scale":2,"isBoss":true,"characteristics":[],"spawns":[{"id":"15-1","idx":1,"group":null,"pos":[-196.45,250.67]}]},{"id":207202,"enemyIndex":16,"name":"Void Fragment","count":0,"health":3546318,"creatureType":"Aberration","scale":1.2,"isBoss":false,"characteristics":[],"spawns":[{"id":"16-1","idx":1,"group":25,"pos":[-168.33,110.71]},{"id":"16-2","idx":2,"group":25,"pos":[-156.2,110.56]},{"id":"16-3","idx":3,"group":27,"pos":[-143.86,277.44]},{"id":"16-4","idx":4,"group":27,"pos":[-137.59,278.14]},{"id":"16-5","idx":5,"group":27,"pos":[-137.55,287.42]},{"id":"16-6","idx":6,"group":27,"pos":[-143.09,287.65]},{"id":"16-7","idx":7,"group":28,"pos":[-151.43,282.05]},{"id":"16-8","idx":8,"group":28,"pos":[-151.34,289.62]},{"id":"16-9","idx":9,"group":28,"pos":[-154.92,285.69]},{"id":"16-10","idx":10,"group":28,"pos":[-158.61,282.16]},{"id":"16-11","idx":11,"group":28,"pos":[-158.83,289.82]},{"id":"16-12","idx":12,"group":31,"pos":[-183.23,275.32]},{"id":"16-13","idx":13,"group":31,"pos":[-176.47,275.13]},{"id":"16-14","idx":14,"group":32,"pos":[-194.56,282.66]},{"id":"16-15","idx":15,"group":33,"pos":[-213.42,273.32]},{"id":"16-16","idx":16,"group":33,"pos":[-206.6,273.28]}]},{"id":211260,"enemyIndex":17,"name":"Stormrider Vokmar","count":0,"health":11821060,"creatureType":"Humanoid","scale":4,"isBoss":false,"characteristics":[],"spawns":[{"id":"17-1","idx":1,"group":null,"pos":[-170.76,248.77]}]}],"pois":[]}
+{
+  "dungeonIndex": 118,
+  "totalCount": 992,
+  "enemies": [
+    {
+      "id": 209801,
+      "enemyIndex": 1,
+      "name": "Quartermaster Koratite",
+      "count": 20,
+      "health": 45779042,
+      "creatureType": "Humanoid",
+      "scale": 2,
+      "isBoss": false,
+      "characteristics": [
+        "Slow"
+      ],
+      "spawns": [
+        {
+          "id": "1-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -74.65,
+            53.83
+          ]
+        }
+      ]
+    },
+    {
+      "id": 207198,
+      "enemyIndex": 2,
+      "name": "Cursed Thunderer",
+      "count": 10,
+      "health": 25750712,
+      "creatureType": "Humanoid",
+      "scale": 1.5,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Fear",
+        "Disorient",
+        "Stun",
+        "Slow"
+      ],
+      "spawns": [
+        {
+          "id": "2-1",
+          "idx": 1,
+          "group": 11,
+          "pos": [
+            -106.63,
+            161.28
+          ]
+        },
+        {
+          "id": "2-2",
+          "idx": 2,
+          "group": 2,
+          "pos": [
+            -89.23,
+            72.91
+          ]
+        },
+        {
+          "id": "2-3",
+          "idx": 3,
+          "group": 2,
+          "pos": [
+            -92.37,
+            67.27
+          ]
+        },
+        {
+          "id": "2-4",
+          "idx": 4,
+          "group": 3,
+          "pos": [
+            -70.47,
+            73.02
+          ]
+        },
+        {
+          "id": "2-5",
+          "idx": 5,
+          "group": 3,
+          "pos": [
+            -67.48,
+            67.1
+          ]
+        },
+        {
+          "id": "2-6",
+          "idx": 6,
+          "group": 4,
+          "pos": [
+            -56.52,
+            59.86
+          ]
+        },
+        {
+          "id": "2-7",
+          "idx": 7,
+          "group": 10,
+          "pos": [
+            -103.23,
+            185.06
+          ]
+        },
+        {
+          "id": "2-8",
+          "idx": 8,
+          "group": 11,
+          "pos": [
+            -109.72,
+            166.4
+          ]
+        },
+        {
+          "id": "2-9",
+          "idx": 9,
+          "group": 7,
+          "pos": [
+            -49.81,
+            217.55
+          ]
+        },
+        {
+          "id": "2-20",
+          "idx": 20,
+          "group": 11,
+          "pos": [
+            -103.36,
+            166.5
+          ]
+        },
+        {
+          "id": "2-21",
+          "idx": 21,
+          "group": 12,
+          "pos": [
+            -97.49,
+            210.93
+          ]
+        },
+        {
+          "id": "2-22",
+          "idx": 22,
+          "group": 7,
+          "pos": [
+            -49.58,
+            224.06
+          ]
+        },
+        {
+          "id": "2-23",
+          "idx": 23,
+          "group": 7,
+          "pos": [
+            -56.23,
+            217.37
+          ]
+        },
+        {
+          "id": "2-24",
+          "idx": 24,
+          "group": 7,
+          "pos": [
+            -56.34,
+            223.82
+          ]
+        }
+      ]
+    },
+    {
+      "id": 207197,
+      "enemyIndex": 3,
+      "name": "Cursed Rookguard",
+      "count": 10,
+      "health": 30042496,
+      "creatureType": "Humanoid",
+      "scale": 1.5,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt",
+        "Silence",
+        "Fear",
+        "Disorient",
+        "Stun",
+        "Slow"
+      ],
+      "spawns": [
+        {
+          "id": "3-1",
+          "idx": 1,
+          "group": 9,
+          "pos": [
+            -104.83,
+            218.21
+          ]
+        },
+        {
+          "id": "3-2",
+          "idx": 2,
+          "group": 1,
+          "pos": [
+            -91.72,
+            50.92
+          ]
+        },
+        {
+          "id": "3-3",
+          "idx": 3,
+          "group": 1,
+          "pos": [
+            -98.14,
+            51.03
+          ]
+        },
+        {
+          "id": "3-4",
+          "idx": 4,
+          "group": 1,
+          "pos": [
+            -98.29,
+            57
+          ]
+        },
+        {
+          "id": "3-5",
+          "idx": 5,
+          "group": 1,
+          "pos": [
+            -91.87,
+            56.77
+          ]
+        },
+        {
+          "id": "3-6",
+          "idx": 6,
+          "group": 2,
+          "pos": [
+            -85.93,
+            67.47
+          ]
+        },
+        {
+          "id": "3-7",
+          "idx": 7,
+          "group": 3,
+          "pos": [
+            -73.08,
+            67.09
+          ]
+        },
+        {
+          "id": "3-8",
+          "idx": 8,
+          "group": 10,
+          "pos": [
+            -103.05,
+            178.68
+          ]
+        },
+        {
+          "id": "3-9",
+          "idx": 9,
+          "group": 5,
+          "pos": [
+            -83.45,
+            162.56
+          ]
+        },
+        {
+          "id": "3-10",
+          "idx": 10,
+          "group": 6,
+          "pos": [
+            -50.74,
+            169.68
+          ]
+        },
+        {
+          "id": "3-12",
+          "idx": 12,
+          "group": 8,
+          "pos": [
+            -82.07,
+            221.36
+          ]
+        },
+        {
+          "id": "3-13",
+          "idx": 13,
+          "group": 13,
+          "pos": [
+            -49.61,
+            315.88
+          ]
+        },
+        {
+          "id": "3-16",
+          "idx": 16,
+          "group": 15,
+          "pos": [
+            -64.96,
+            304.68
+          ]
+        },
+        {
+          "id": "3-17",
+          "idx": 17,
+          "group": 16,
+          "pos": [
+            -91.21,
+            302.85
+          ]
+        },
+        {
+          "id": "3-24",
+          "idx": 24,
+          "group": 18,
+          "pos": [
+            -96.36,
+            325.24
+          ]
+        },
+        {
+          "id": "3-25",
+          "idx": 25,
+          "group": 12,
+          "pos": [
+            -97.66,
+            204.82
+          ]
+        },
+        {
+          "id": "3-26",
+          "idx": 26,
+          "group": 8,
+          "pos": [
+            -81.97,
+            227.72
+          ]
+        },
+        {
+          "id": "3-27",
+          "idx": 27,
+          "group": 13,
+          "pos": [
+            -49.72,
+            322.03
+          ]
+        },
+        {
+          "id": "3-28",
+          "idx": 28,
+          "group": 15,
+          "pos": [
+            -64.95,
+            298.23
+          ]
+        },
+        {
+          "id": "3-29",
+          "idx": 29,
+          "group": 14,
+          "pos": [
+            -43.53,
+            297.08
+          ]
+        }
+      ]
+    },
+    {
+      "id": 212786,
+      "enemyIndex": 4,
+      "name": "Voidrider",
+      "count": 25,
+      "health": 51501422,
+      "creatureType": "Elemental",
+      "scale": 1.5,
+      "isBoss": false,
+      "characteristics": [
+        "Slow"
+      ],
+      "spawns": [
+        {
+          "id": "4-1",
+          "idx": 1,
+          "group": 10,
+          "pos": [
+            -97.01,
+            182.24
+          ]
+        },
+        {
+          "id": "4-2",
+          "idx": 2,
+          "group": 4,
+          "pos": [
+            -55.06,
+            67.88
+          ]
+        },
+        {
+          "id": "4-6",
+          "idx": 6,
+          "group": 12,
+          "pos": [
+            -91.71,
+            208.05
+          ]
+        }
+      ]
+    },
+    {
+      "id": 207186,
+      "enemyIndex": 5,
+      "name": "Unruly Stormrook",
+      "count": 12,
+      "health": 31473092,
+      "creatureType": "Elemental",
+      "scale": 1.5,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt",
+        "Silence",
+        "Fear",
+        "Disorient",
+        "Stun",
+        "Slow"
+      ],
+      "spawns": [
+        {
+          "id": "5-1",
+          "idx": 1,
+          "group": 8,
+          "pos": [
+            -75.22,
+            227.58
+          ]
+        },
+        {
+          "id": "5-3",
+          "idx": 3,
+          "group": 9,
+          "pos": [
+            -107.9,
+            223.67
+          ]
+        },
+        {
+          "id": "5-4",
+          "idx": 4,
+          "group": 5,
+          "pos": [
+            -79.9,
+            156.81
+          ]
+        },
+        {
+          "id": "5-5",
+          "idx": 5,
+          "group": 6,
+          "pos": [
+            -50.76,
+            161.68
+          ]
+        }
+      ]
+    },
+    {
+      "id": 207199,
+      "enemyIndex": 6,
+      "name": "Cursed Rooktender",
+      "count": 10,
+      "health": 21458926,
+      "creatureType": "Humanoid",
+      "scale": 1.5,
+      "isBoss": false,
+      "characteristics": [
+        "Silence",
+        "Fear",
+        "Disorient",
+        "Stun",
+        "Slow"
+      ],
+      "spawns": [
+        {
+          "id": "6-1",
+          "idx": 1,
+          "group": 6,
+          "pos": [
+            -56.25,
+            166.13
+          ]
+        },
+        {
+          "id": "6-3",
+          "idx": 3,
+          "group": 9,
+          "pos": [
+            -111.6,
+            218.44
+          ]
+        },
+        {
+          "id": "6-5",
+          "idx": 5,
+          "group": 5,
+          "pos": [
+            -76.88,
+            162.71
+          ]
+        },
+        {
+          "id": "6-6",
+          "idx": 6,
+          "group": 6,
+          "pos": [
+            -45.28,
+            165.99
+          ]
+        },
+        {
+          "id": "6-7",
+          "idx": 7,
+          "group": 8,
+          "pos": [
+            -75.39,
+            221.53
+          ]
+        }
+      ]
+    },
+    {
+      "id": 214419,
+      "enemyIndex": 7,
+      "name": "Void-Cursed Crusher",
+      "count": 15,
+      "health": 34334282,
+      "creatureType": "Aberration",
+      "scale": 1.5,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt",
+        "Silence",
+        "Fear",
+        "Disorient",
+        "Stun",
+        "Slow"
+      ],
+      "spawns": [
+        {
+          "id": "7-1",
+          "idx": 1,
+          "group": 14,
+          "pos": [
+            -49.07,
+            293.5
+          ]
+        },
+        {
+          "id": "7-3",
+          "idx": 3,
+          "group": null,
+          "pos": [
+            -119.55,
+            324.71
+          ]
+        },
+        {
+          "id": "7-4",
+          "idx": 4,
+          "group": 18,
+          "pos": [
+            -101.47,
+            322.54
+          ]
+        },
+        {
+          "id": "7-5",
+          "idx": 5,
+          "group": 16,
+          "pos": [
+            -91.18,
+            297.14
+          ]
+        },
+        {
+          "id": "7-6",
+          "idx": 6,
+          "group": 17,
+          "pos": [
+            -114.58,
+            300.28
+          ]
+        },
+        {
+          "id": "7-7",
+          "idx": 7,
+          "group": 17,
+          "pos": [
+            -120.6,
+            303.3
+          ]
+        },
+        {
+          "id": "7-8",
+          "idx": 8,
+          "group": 18,
+          "pos": [
+            -101.8,
+            328.71
+          ]
+        },
+        {
+          "id": "7-9",
+          "idx": 9,
+          "group": null,
+          "pos": [
+            -88.79,
+            314.2
+          ]
+        },
+        {
+          "id": "7-10",
+          "idx": 10,
+          "group": null,
+          "pos": [
+            -88.59,
+            338.06
+          ]
+        },
+        {
+          "id": "7-11",
+          "idx": 11,
+          "group": null,
+          "pos": [
+            -107.78,
+            337.52
+          ]
+        },
+        {
+          "id": "7-12",
+          "idx": 12,
+          "group": 23,
+          "pos": [
+            -140.83,
+            250.87
+          ]
+        },
+        {
+          "id": "7-13",
+          "idx": 13,
+          "group": 23,
+          "pos": [
+            -136.56,
+            255.59
+          ]
+        },
+        {
+          "id": "7-14",
+          "idx": 14,
+          "group": 26,
+          "pos": [
+            -151.73,
+            286.24
+          ]
+        },
+        {
+          "id": "7-15",
+          "idx": 15,
+          "group": 26,
+          "pos": [
+            -156.47,
+            290.97
+          ]
+        },
+        {
+          "id": "7-16",
+          "idx": 16,
+          "group": 30,
+          "pos": [
+            -186.55,
+            265.91
+          ]
+        },
+        {
+          "id": "7-17",
+          "idx": 17,
+          "group": 30,
+          "pos": [
+            -173.29,
+            266.29
+          ]
+        },
+        {
+          "id": "7-18",
+          "idx": 18,
+          "group": 31,
+          "pos": [
+            -206.9,
+            284.46
+          ]
+        },
+        {
+          "id": "7-19",
+          "idx": 19,
+          "group": 31,
+          "pos": [
+            -216.5,
+            284.54
+          ]
+        },
+        {
+          "id": "7-20",
+          "idx": 20,
+          "group": 31,
+          "pos": [
+            -216.44,
+            293.57
+          ]
+        },
+        {
+          "id": "7-21",
+          "idx": 21,
+          "group": 31,
+          "pos": [
+            -206.69,
+            293.54
+          ]
+        }
+      ]
+    },
+    {
+      "id": 214439,
+      "enemyIndex": 8,
+      "name": "Corrupted Oracle",
+      "count": 12,
+      "health": 27181306,
+      "creatureType": "Humanoid",
+      "scale": 1.5,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt",
+        "Silence",
+        "Fear",
+        "Disorient",
+        "Stun",
+        "Slow"
+      ],
+      "spawns": [
+        {
+          "id": "8-1",
+          "idx": 1,
+          "group": 18,
+          "pos": [
+            -96.22,
+            319.12
+          ]
+        },
+        {
+          "id": "8-2",
+          "idx": 2,
+          "group": 14,
+          "pos": [
+            -49.17,
+            299.78
+          ]
+        },
+        {
+          "id": "8-3",
+          "idx": 3,
+          "group": 15,
+          "pos": [
+            -59.46,
+            301.67
+          ]
+        },
+        {
+          "id": "8-4",
+          "idx": 4,
+          "group": 16,
+          "pos": [
+            -97.59,
+            296.81
+          ]
+        },
+        {
+          "id": "8-5",
+          "idx": 5,
+          "group": 19,
+          "pos": [
+            -74.86,
+            324.64
+          ]
+        },
+        {
+          "id": "8-7",
+          "idx": 7,
+          "group": 18,
+          "pos": [
+            -96.24,
+            331.01
+          ]
+        }
+      ]
+    },
+    {
+      "id": 214421,
+      "enemyIndex": 9,
+      "name": "Coalescing Void Diffuser",
+      "count": 25,
+      "health": 42917853,
+      "creatureType": "Humanoid",
+      "scale": 1.5,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt",
+        "Slow"
+      ],
+      "spawns": [
+        {
+          "id": "9-1",
+          "idx": 1,
+          "group": 19,
+          "pos": [
+            -80.4,
+            321.47
+          ]
+        },
+        {
+          "id": "9-2",
+          "idx": 2,
+          "group": 13,
+          "pos": [
+            -55.24,
+            318.72
+          ]
+        },
+        {
+          "id": "9-3",
+          "idx": 3,
+          "group": 16,
+          "pos": [
+            -97.89,
+            302.73
+          ]
+        },
+        {
+          "id": "9-4",
+          "idx": 4,
+          "group": 17,
+          "pos": [
+            -120.48,
+            297
+          ]
+        },
+        {
+          "id": "9-6",
+          "idx": 6,
+          "group": 19,
+          "pos": [
+            -80.24,
+            327.82
+          ]
+        }
+      ]
+    },
+    {
+      "id": 219066,
+      "enemyIndex": 10,
+      "name": "Afflicted Civilian",
+      "count": 1,
+      "health": 5722380,
+      "creatureType": "Humanoid",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt",
+        "Silence",
+        "Fear",
+        "Disorient",
+        "Stun",
+        "Slow"
+      ],
+      "spawns": [
+        {
+          "id": "10-1",
+          "idx": 1,
+          "group": 22,
+          "pos": [
+            -156.69,
+            252.19
+          ]
+        },
+        {
+          "id": "10-2",
+          "idx": 2,
+          "group": 20,
+          "pos": [
+            -228.75,
+            137.65
+          ]
+        },
+        {
+          "id": "10-3",
+          "idx": 3,
+          "group": 20,
+          "pos": [
+            -233.64,
+            137.53
+          ]
+        },
+        {
+          "id": "10-4",
+          "idx": 4,
+          "group": 20,
+          "pos": [
+            -228.82,
+            141.97
+          ]
+        },
+        {
+          "id": "10-5",
+          "idx": 5,
+          "group": 20,
+          "pos": [
+            -233.47,
+            141.99
+          ]
+        },
+        {
+          "id": "10-6",
+          "idx": 6,
+          "group": 21,
+          "pos": [
+            -229.99,
+            103.25
+          ]
+        },
+        {
+          "id": "10-7",
+          "idx": 7,
+          "group": 21,
+          "pos": [
+            -234.21,
+            103.16
+          ]
+        },
+        {
+          "id": "10-8",
+          "idx": 8,
+          "group": 21,
+          "pos": [
+            -229.86,
+            107.67
+          ]
+        },
+        {
+          "id": "10-9",
+          "idx": 9,
+          "group": 21,
+          "pos": [
+            -234.09,
+            107.56
+          ]
+        },
+        {
+          "id": "10-10",
+          "idx": 10,
+          "group": 22,
+          "pos": [
+            -152.63,
+            254.13
+          ]
+        },
+        {
+          "id": "10-11",
+          "idx": 11,
+          "group": 22,
+          "pos": [
+            -152.62,
+            258.19
+          ]
+        },
+        {
+          "id": "10-12",
+          "idx": 12,
+          "group": 22,
+          "pos": [
+            -152.92,
+            250
+          ]
+        },
+        {
+          "id": "10-13",
+          "idx": 13,
+          "group": 22,
+          "pos": [
+            -156.41,
+            256.35
+          ]
+        },
+        {
+          "id": "10-14",
+          "idx": 14,
+          "group": 24,
+          "pos": [
+            -152.2,
+            268.97
+          ]
+        },
+        {
+          "id": "10-15",
+          "idx": 15,
+          "group": 24,
+          "pos": [
+            -155.28,
+            270.69
+          ]
+        },
+        {
+          "id": "10-16",
+          "idx": 16,
+          "group": 24,
+          "pos": [
+            -151.92,
+            276.54
+          ]
+        },
+        {
+          "id": "10-17",
+          "idx": 17,
+          "group": 24,
+          "pos": [
+            -151.8,
+            272.81
+          ]
+        },
+        {
+          "id": "10-18",
+          "idx": 18,
+          "group": 24,
+          "pos": [
+            -155.04,
+            274.66
+          ]
+        },
+        {
+          "id": "10-21",
+          "idx": 21,
+          "group": 25,
+          "pos": [
+            -144.81,
+            272.47
+          ]
+        },
+        {
+          "id": "10-29",
+          "idx": 29,
+          "group": 25,
+          "pos": [
+            -144.83,
+            285.21
+          ]
+        },
+        {
+          "id": "10-34",
+          "idx": 34,
+          "group": 27,
+          "pos": [
+            -164.34,
+            286.8
+          ]
+        },
+        {
+          "id": "10-35",
+          "idx": 35,
+          "group": 27,
+          "pos": [
+            -175.27,
+            286.75
+          ]
+        },
+        {
+          "id": "10-36",
+          "idx": 36,
+          "group": 27,
+          "pos": [
+            -169.79,
+            281.58
+          ]
+        },
+        {
+          "id": "10-37",
+          "idx": 37,
+          "group": 27,
+          "pos": [
+            -169.8,
+            292.05
+          ]
+        },
+        {
+          "id": "10-38",
+          "idx": 38,
+          "group": 27,
+          "pos": [
+            -165.9,
+            290.32
+          ]
+        },
+        {
+          "id": "10-39",
+          "idx": 39,
+          "group": 27,
+          "pos": [
+            -173.62,
+            282.91
+          ]
+        },
+        {
+          "id": "10-40",
+          "idx": 40,
+          "group": 27,
+          "pos": [
+            -173.76,
+            290.63
+          ]
+        },
+        {
+          "id": "10-41",
+          "idx": 41,
+          "group": 27,
+          "pos": [
+            -166.26,
+            283.23
+          ]
+        },
+        {
+          "id": "10-42",
+          "idx": 42,
+          "group": 28,
+          "pos": [
+            -180.94,
+            292.03
+          ]
+        },
+        {
+          "id": "10-43",
+          "idx": 43,
+          "group": 28,
+          "pos": [
+            -180.87,
+            287.61
+          ]
+        },
+        {
+          "id": "10-44",
+          "idx": 44,
+          "group": 28,
+          "pos": [
+            -180.84,
+            283.35
+          ]
+        },
+        {
+          "id": "10-45",
+          "idx": 45,
+          "group": 28,
+          "pos": [
+            -184.47,
+            285.55
+          ]
+        },
+        {
+          "id": "10-46",
+          "idx": 46,
+          "group": 28,
+          "pos": [
+            -184.21,
+            289.84
+          ]
+        },
+        {
+          "id": "10-47",
+          "idx": 47,
+          "group": 30,
+          "pos": [
+            -176.28,
+            271.31
+          ]
+        },
+        {
+          "id": "10-48",
+          "idx": 48,
+          "group": 30,
+          "pos": [
+            -179.96,
+            271.33
+          ]
+        },
+        {
+          "id": "10-49",
+          "idx": 49,
+          "group": 30,
+          "pos": [
+            -183.59,
+            271.36
+          ]
+        },
+        {
+          "id": "10-50",
+          "idx": 50,
+          "group": 30,
+          "pos": [
+            -187.59,
+            271.36
+          ]
+        },
+        {
+          "id": "10-51",
+          "idx": 51,
+          "group": 30,
+          "pos": [
+            -172.44,
+            271.48
+          ]
+        },
+        {
+          "id": "10-58",
+          "idx": 58,
+          "group": 29,
+          "pos": [
+            -199.09,
+            284.36
+          ]
+        },
+        {
+          "id": "10-61",
+          "idx": 61,
+          "group": 32,
+          "pos": [
+            -202.96,
+            271.54
+          ]
+        },
+        {
+          "id": "10-62",
+          "idx": 62,
+          "group": 32,
+          "pos": [
+            -206.06,
+            271.64
+          ]
+        },
+        {
+          "id": "10-63",
+          "idx": 63,
+          "group": 32,
+          "pos": [
+            -209.97,
+            271.51
+          ]
+        },
+        {
+          "id": "10-64",
+          "idx": 64,
+          "group": 32,
+          "pos": [
+            -213.94,
+            271.43
+          ]
+        },
+        {
+          "id": "10-65",
+          "idx": 65,
+          "group": 32,
+          "pos": [
+            -217.77,
+            271.48
+          ]
+        },
+        {
+          "id": "10-66",
+          "idx": 66,
+          "group": 29,
+          "pos": [
+            -198.92,
+            288.17
+          ]
+        },
+        {
+          "id": "10-67",
+          "idx": 67,
+          "group": 29,
+          "pos": [
+            -189.62,
+            287.81
+          ]
+        },
+        {
+          "id": "10-68",
+          "idx": 68,
+          "group": 29,
+          "pos": [
+            -199.15,
+            292.31
+          ]
+        },
+        {
+          "id": "10-69",
+          "idx": 69,
+          "group": 29,
+          "pos": [
+            -199.42,
+            280.4
+          ]
+        },
+        {
+          "id": "10-70",
+          "idx": 70,
+          "group": 29,
+          "pos": [
+            -190.05,
+            279.63
+          ]
+        },
+        {
+          "id": "10-71",
+          "idx": 71,
+          "group": 29,
+          "pos": [
+            -194.08,
+            291.65
+          ]
+        },
+        {
+          "id": "10-72",
+          "idx": 72,
+          "group": 29,
+          "pos": [
+            -189.76,
+            283.64
+          ]
+        },
+        {
+          "id": "10-73",
+          "idx": 73,
+          "group": 29,
+          "pos": [
+            -189.65,
+            292.02
+          ]
+        },
+        {
+          "id": "10-74",
+          "idx": 74,
+          "group": 25,
+          "pos": [
+            -140.47,
+            272.44
+          ]
+        },
+        {
+          "id": "10-75",
+          "idx": 75,
+          "group": 25,
+          "pos": [
+            -136.37,
+            272.26
+          ]
+        },
+        {
+          "id": "10-76",
+          "idx": 76,
+          "group": 25,
+          "pos": [
+            -144.87,
+            276.31
+          ]
+        },
+        {
+          "id": "10-77",
+          "idx": 77,
+          "group": 25,
+          "pos": [
+            -140.63,
+            276.45
+          ]
+        },
+        {
+          "id": "10-78",
+          "idx": 78,
+          "group": 25,
+          "pos": [
+            -136.16,
+            276.48
+          ]
+        },
+        {
+          "id": "10-79",
+          "idx": 79,
+          "group": 25,
+          "pos": [
+            -144.7,
+            280.88
+          ]
+        },
+        {
+          "id": "10-80",
+          "idx": 80,
+          "group": 25,
+          "pos": [
+            -145,
+            289.49
+          ]
+        },
+        {
+          "id": "10-81",
+          "idx": 81,
+          "group": 25,
+          "pos": [
+            -140.48,
+            285.23
+          ]
+        },
+        {
+          "id": "10-82",
+          "idx": 82,
+          "group": 25,
+          "pos": [
+            -140.66,
+            289.44
+          ]
+        },
+        {
+          "id": "10-83",
+          "idx": 83,
+          "group": 25,
+          "pos": [
+            -136.28,
+            289.43
+          ]
+        },
+        {
+          "id": "10-84",
+          "idx": 84,
+          "group": 25,
+          "pos": [
+            -136.28,
+            285.04
+          ]
+        },
+        {
+          "id": "10-85",
+          "idx": 85,
+          "group": 25,
+          "pos": [
+            -136.39,
+            280.71
+          ]
+        },
+        {
+          "id": "10-86",
+          "idx": 86,
+          "group": 25,
+          "pos": [
+            -140.43,
+            280.9
+          ]
+        }
+      ]
+    },
+    {
+      "id": 212793,
+      "enemyIndex": 11,
+      "name": "Void Ascendant",
+      "count": 22,
+      "health": 48640233,
+      "creatureType": "Humanoid",
+      "scale": 1.5,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt",
+        "Slow"
+      ],
+      "spawns": [
+        {
+          "id": "11-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -141.97,
+            262.95
+          ]
+        },
+        {
+          "id": "11-2",
+          "idx": 2,
+          "group": null,
+          "pos": [
+            -162.24,
+            110.31
+          ]
+        },
+        {
+          "id": "11-4",
+          "idx": 4,
+          "group": 30,
+          "pos": [
+            -179.73,
+            265.94
+          ]
+        },
+        {
+          "id": "11-6",
+          "idx": 6,
+          "group": 32,
+          "pos": [
+            -207.5,
+            266.26
+          ]
+        },
+        {
+          "id": "11-7",
+          "idx": 7,
+          "group": 29,
+          "pos": [
+            -193.98,
+            285.94
+          ]
+        }
+      ]
+    },
+    {
+      "id": 212739,
+      "enemyIndex": 12,
+      "name": "Radiating Voidstone",
+      "count": 25,
+      "health": 62946183,
+      "creatureType": "Aberration",
+      "scale": 1.5,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt",
+        "Slow"
+      ],
+      "spawns": [
+        {
+          "id": "12-1",
+          "idx": 1,
+          "group": 31,
+          "pos": [
+            -211.48,
+            288.99
+          ]
+        },
+        {
+          "id": "12-3",
+          "idx": 3,
+          "group": 27,
+          "pos": [
+            -169.74,
+            286.81
+          ]
+        },
+        {
+          "id": "12-7",
+          "idx": 7,
+          "group": 32,
+          "pos": [
+            -214.11,
+            266.16
+          ]
+        }
+      ]
+    },
+    {
+      "id": 209230,
+      "enemyIndex": 13,
+      "name": "Kyrioss",
+      "count": 0,
+      "health": 228733564,
+      "creatureType": "Elemental",
+      "scale": 2,
+      "isBoss": true,
+      "characteristics": [
+        "Slow"
+      ],
+      "spawns": [
+        {
+          "id": "13-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -83.1,
+            191.77
+          ]
+        }
+      ]
+    },
+    {
+      "id": 207205,
+      "enemyIndex": 14,
+      "name": "Stormguard Gorren",
+      "count": 0,
+      "health": 200141868,
+      "creatureType": "Humanoid",
+      "scale": 2,
+      "isBoss": true,
+      "characteristics": [
+        "Taunt",
+        "Slow"
+      ],
+      "spawns": [
+        {
+          "id": "14-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -209.31,
+            124.07
+          ]
+        }
+      ]
+    },
+    {
+      "id": 207207,
+      "enemyIndex": 15,
+      "name": "Skardyn Monstrosity",
+      "count": 0,
+      "health": 228733564,
+      "creatureType": "Humanoid",
+      "scale": 2,
+      "isBoss": true,
+      "characteristics": [
+        "Taunt",
+        "Slow"
+      ],
+      "spawns": [
+        {
+          "id": "15-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -195.7,
+            251.6
+          ]
+        }
+      ]
+    },
+    {
+      "id": 211260,
+      "enemyIndex": 16,
+      "name": "Stormrider Vokmar",
+      "count": 0,
+      "health": 59608128,
+      "creatureType": "Humanoid",
+      "scale": 4,
+      "isBoss": false,
+      "characteristics": [],
+      "spawns": [
+        {
+          "id": "16-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -174.8,
+            239
+          ]
+        }
+      ]
+    }
+  ],
+  "pois": []
+}
