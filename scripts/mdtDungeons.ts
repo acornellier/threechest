@@ -170,5 +170,8 @@ export function importMdtDungeon(key: DungeonKey, dungeonPath: string) {
     pois,
   }
 
-  fs.writeFileSync(`${dirname}/../src/data/mdtDungeons/${key}_mdt.json`, JSON.stringify(mdtData))
+  fs.writeFileSync(
+    `${dirname}/../src/data/mdtDungeons/${key}_mdt.json`,
+    JSON.stringify(mdtData, null, 2),
+  )
 }
