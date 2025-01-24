@@ -14,7 +14,7 @@ const cm: Dungeon = {
   name: 'Cinderbrew Meadery',
   key: 'cm',
   icon: 'inv_achievement_dungeon_cinderbrewmeadery',
-  // wclEncounterId: TODO,
+  wclEncounterId: 12661,
   ...dungeonData('cm'),
 }
 
@@ -22,15 +22,23 @@ const dc: Dungeon = {
   name: 'Darkflame Crest',
   key: 'dc',
   icon: 'inv_achievement_dungeon_darkflamecleft',
-  // wclEncounterId: TODO,
+  wclEncounterId: 12651,
   ...dungeonData('dc'),
+}
+
+const tm: Dungeon = {
+  name: 'The Motherlode',
+  key: 'tm',
+  icon: 'achievement_dungeon_kezan',
+  wclEncounterId: 61594,
+  ...dungeonData('tm'),
 }
 
 const mw: Dungeon = {
   name: 'Mechagon: Workshop',
   key: 'mw',
   icon: 'achievement_boss_mechagon',
-  // wclEncounterId: TODO,
+  wclEncounterId: 112098,
   ...dungeonData('mw'),
 }
 
@@ -38,7 +46,7 @@ const of: Dungeon = {
   name: 'Operation: Floodgate',
   key: 'of',
   icon: 'inv_achievement_dungeon_waterworks',
-  // wclEncounterId: TODO,
+  wclEncounterId: 12773,
   ...dungeonData('of'),
 }
 
@@ -46,23 +54,15 @@ const psf: Dungeon = {
   name: 'Priory of the Sacred Flame',
   key: 'psf',
   icon: 'inv_achievement_dungeon_prioryofthesacredflame',
-  // wclEncounterId: TODO,
+  wclEncounterId: 12649,
   ...dungeonData('psf'),
-}
-
-const tm: Dungeon = {
-  name: 'The Motherlode',
-  key: 'tm',
-  icon: 'achievement_dungeon_kezan',
-  // wclEncounterId: TODO,
-  ...dungeonData('tm'),
 }
 
 const tr: Dungeon = {
   name: 'The Rookery',
   key: 'tr',
   icon: 'inv_achievement_dungeon_rookery',
-  // wclEncounterId: TODO,
+  wclEncounterId: 12648,
   ...dungeonData('tr'),
 }
 
@@ -70,11 +70,11 @@ const top: Dungeon = {
   name: 'Theater of Pain',
   key: 'top',
   icon: 'achievement_dungeon_theatreofpain',
-  wclEncounterId: 12293,
+  wclEncounterId: 62293,
   ...dungeonData('top'),
 }
 
-export const dungeons = [cm, dc, mw, of, psf, tm, tr, top]
+export const dungeons = [cm, dc, tm, mw, of, psf, tr, top]
 
 export const dungeonsByKey = dungeons.reduce(
   (acc, dungeon) => {
