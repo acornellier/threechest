@@ -26,14 +26,6 @@ const dc: Dungeon = {
   ...dungeonData('dc'),
 }
 
-const tm: Dungeon = {
-  name: 'The Motherlode',
-  key: 'tm',
-  icon: 'achievement_dungeon_kezan',
-  wclEncounterId: 61594,
-  ...dungeonData('tm'),
-}
-
 const mw: Dungeon = {
   name: 'Mechagon: Workshop',
   key: 'mw',
@@ -58,6 +50,14 @@ const psf: Dungeon = {
   ...dungeonData('psf'),
 }
 
+const tm: Dungeon = {
+  name: 'The Motherlode',
+  key: 'tm',
+  icon: 'achievement_dungeon_kezan',
+  wclEncounterId: 61594,
+  ...dungeonData('tm'),
+}
+
 const tr: Dungeon = {
   name: 'The Rookery',
   key: 'tr',
@@ -74,7 +74,7 @@ const top: Dungeon = {
   ...dungeonData('top'),
 }
 
-export const dungeons = [cm, dc, tm, mw, of, psf, tr, top]
+export const dungeons = [cm, dc, mw, of, psf, tm, tr, top]
 
 export const dungeonsByKey = dungeons.reduce(
   (acc, dungeon) => {
