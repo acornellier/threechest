@@ -7,7 +7,7 @@
       "enemyIndex": 1,
       "name": "Battlefield Ritualist",
       "count": 4,
-      "health": 148676,
+      "health": 26183974,
       "creatureType": "Humanoid",
       "scale": 1.5,
       "isBoss": false,
@@ -26,13 +26,28 @@
         "Stun",
         "Slow"
       ],
+      "spells": [
+        {
+          "id": 330784,
+          "attributes": [
+            "interruptible"
+          ]
+        },
+        {
+          "id": 341902,
+          "attributes": [
+            "interruptible",
+            "magic"
+          ]
+        }
+      ],
       "spawns": [
         {
           "id": "1-1",
           "idx": 1,
           "group": 1,
           "pos": [
-            -102.32,
+            -103.93,
             66.44
           ]
         }
@@ -43,7 +58,7 @@
       "enemyIndex": 2,
       "name": "Unyielding Contender",
       "count": 4,
-      "health": 189974,
+      "health": 33457299,
       "creatureType": "Humanoid",
       "scale": 1.5,
       "isBoss": false,
@@ -62,14 +77,26 @@
         "Stun",
         "Slow"
       ],
+      "spells": [
+        {
+          "id": 320679,
+          "attributes": []
+        },
+        {
+          "id": 331510,
+          "attributes": [
+            "enrage"
+          ]
+        }
+      ],
       "spawns": [
         {
           "id": "2-1",
           "idx": 1,
           "group": 1,
           "pos": [
-            -105.98,
-            72
+            -107.52,
+            72.06
           ]
         },
         {
@@ -77,8 +104,8 @@
           "idx": 2,
           "group": 1,
           "pos": [
-            -106.03,
-            61.06
+            -107.91,
+            60.79
           ]
         }
       ]
@@ -88,18 +115,30 @@
       "enemyIndex": 3,
       "name": "Raging Bloodhorn",
       "count": 7,
-      "health": 297351,
+      "health": 52367947,
       "creatureType": "Beast",
       "scale": 1.8,
       "isBoss": false,
       "characteristics": [
         "Taunt"
       ],
+      "spells": [
+        {
+          "id": 333241,
+          "attributes": [
+            "enrage"
+          ]
+        },
+        {
+          "id": 333242,
+          "attributes": []
+        }
+      ],
       "spawns": [
         {
           "id": "3-1",
           "idx": 1,
-          "group": 1,
+          "group": null,
           "pos": [
             -94.55,
             66.27
@@ -113,12 +152,26 @@
       "enemyIndex": 4,
       "name": "Dessia the Decapitator",
       "count": 0,
-      "health": 595013,
+      "health": 104515860,
       "creatureType": "Humanoid",
       "scale": 2,
       "isBoss": true,
       "characteristics": [
         "Taunt"
+      ],
+      "spells": [
+        {
+          "id": 320069,
+          "attributes": []
+        },
+        {
+          "id": 1215741,
+          "attributes": []
+        },
+        {
+          "id": 1215747,
+          "attributes": []
+        }
       ],
       "spawns": [
         {
@@ -126,8 +179,8 @@
           "idx": 1,
           "group": 2,
           "pos": [
-            -80.23,
-            67.48
+            -80.84,
+            67.03
           ]
         }
       ]
@@ -137,12 +190,40 @@
       "enemyIndex": 5,
       "name": "Paceran the Virulent",
       "count": 0,
-      "health": 528901,
+      "health": 92902987,
       "creatureType": "Humanoid",
       "scale": 2,
       "isBoss": true,
       "characteristics": [
         "Taunt"
+      ],
+      "spells": [
+        {
+          "id": 320120,
+          "attributes": [
+            "interruptible"
+          ]
+        },
+        {
+          "id": 320180,
+          "attributes": []
+        },
+        {
+          "id": 320182,
+          "attributes": []
+        },
+        {
+          "id": 1215636,
+          "attributes": []
+        },
+        {
+          "id": 1215738,
+          "attributes": []
+        },
+        {
+          "id": 1215747,
+          "attributes": []
+        }
       ],
       "spawns": [
         {
@@ -150,8 +231,8 @@
           "idx": 1,
           "group": 2,
           "pos": [
-            -73.59,
-            52.39
+            -68.53,
+            52.04
           ]
         }
       ]
@@ -161,12 +242,38 @@
       "enemyIndex": 6,
       "name": "Sathel the Accursed",
       "count": 0,
-      "health": 462788,
+      "health": 81290113,
       "creatureType": "Humanoid",
       "scale": 2,
       "isBoss": true,
       "characteristics": [
         "Taunt"
+      ],
+      "spells": [
+        {
+          "id": 333231,
+          "attributes": []
+        },
+        {
+          "id": 333292,
+          "attributes": []
+        },
+        {
+          "id": 1215600,
+          "attributes": [
+            "magic"
+          ]
+        },
+        {
+          "id": 1215747,
+          "attributes": []
+        },
+        {
+          "id": 1217138,
+          "attributes": [
+            "interruptible"
+          ]
+        }
       ],
       "spawns": [
         {
@@ -174,8 +281,8 @@
           "idx": 1,
           "group": 2,
           "pos": [
-            -72.41,
-            83.6
+            -67.85,
+            83.52
           ]
         }
       ]
@@ -187,7 +294,7 @@
       "count": 0,
       "health": 67427,
       "creatureType": "Humanoid",
-      "scale": 2,
+      "scale": 5,
       "isBoss": false,
       "characteristics": [
         "Incapacitate",
@@ -201,14 +308,15 @@
         "Stun",
         "Slow"
       ],
+      "spells": [],
       "spawns": [
         {
           "id": "7-1",
           "idx": 1,
-          "group": 2,
+          "group": null,
           "pos": [
-            -64.73,
-            66.96
+            -156.54,
+            85.24
           ]
         }
       ]
@@ -218,7 +326,7 @@
       "enemyIndex": 8,
       "name": "Shambling Arbalest",
       "count": 4,
-      "health": 140416,
+      "health": 24729308,
       "creatureType": "Undead",
       "scale": 1.5,
       "isBoss": false,
@@ -234,6 +342,20 @@
         "Repentance",
         "Stun",
         "Slow"
+      ],
+      "spells": [
+        {
+          "id": 319997,
+          "attributes": []
+        },
+        {
+          "id": 327029,
+          "attributes": []
+        },
+        {
+          "id": 330532,
+          "attributes": []
+        }
       ],
       "spawns": [
         {
@@ -270,7 +392,7 @@
       "enemyIndex": 9,
       "name": "Ossified Conscript",
       "count": 4,
-      "health": 165195,
+      "health": 29093304,
       "creatureType": "Undead",
       "scale": 1.5,
       "isBoss": false,
@@ -287,6 +409,7 @@
         "Stun",
         "Slow"
       ],
+      "spells": [],
       "spawns": [
         {
           "id": "9-1",
@@ -331,12 +454,38 @@
       "enemyIndex": 10,
       "name": "Dokigg the Brutalizer",
       "count": 20,
-      "health": 528624,
+      "health": 93098572,
       "creatureType": "Humanoid",
       "scale": 2,
       "isBoss": false,
       "characteristics": [
         "Taunt"
+      ],
+      "spells": [
+        {
+          "id": 317605,
+          "attributes": []
+        },
+        {
+          "id": 331316,
+          "attributes": []
+        },
+        {
+          "id": 331319,
+          "attributes": []
+        },
+        {
+          "id": 331320,
+          "attributes": []
+        },
+        {
+          "id": 1213695,
+          "attributes": []
+        },
+        {
+          "id": 1215850,
+          "attributes": []
+        }
       ],
       "spawns": [
         {
@@ -355,12 +504,18 @@
       "enemyIndex": 11,
       "name": "Harugia the Bloodthirsty",
       "count": 20,
-      "health": 528624,
+      "health": 91558084,
       "creatureType": "Humanoid",
       "scale": 2,
       "isBoss": false,
       "characteristics": [
         "Taunt"
+      ],
+      "spells": [
+        {
+          "id": 333861,
+          "attributes": []
+        }
       ],
       "spawns": [
         {
@@ -379,22 +534,30 @@
       "enemyIndex": 12,
       "name": "Ancient Captain",
       "count": 5,
-      "health": 198234,
+      "health": 34911965,
       "creatureType": "Undead",
       "scale": 1.5,
       "isBoss": false,
-      "characteristics": [
-        "Taunt",
-        "Incapacitate",
-        "Control Undead",
-        "Silence",
-        "Shackle Undead",
-        "Polymorph",
-        "Root",
-        "Disorient",
-        "Repentance",
-        "Stun",
-        "Slow"
+      "characteristics": [],
+      "spells": [
+        {
+          "id": 330545,
+          "attributes": []
+        },
+        {
+          "id": 330546,
+          "attributes": []
+        },
+        {
+          "id": 330562,
+          "attributes": [
+            "interruptible"
+          ]
+        },
+        {
+          "id": 330565,
+          "attributes": []
+        }
       ],
       "spawns": [
         {
@@ -413,12 +576,22 @@
       "enemyIndex": 13,
       "name": "Advent Nevermore",
       "count": 20,
-      "health": 528624,
+      "health": 91558084,
       "creatureType": "Humanoid",
       "scale": 2,
       "isBoss": false,
       "characteristics": [
         "Taunt"
+      ],
+      "spells": [
+        {
+          "id": 333827,
+          "attributes": []
+        },
+        {
+          "id": 333861,
+          "attributes": []
+        }
       ],
       "spawns": [
         {
@@ -437,12 +610,58 @@
       "enemyIndex": 14,
       "name": "Xav the Unfallen",
       "count": 0,
-      "health": 1041274,
+      "health": 182902755,
       "creatureType": "Humanoid",
-      "scale": 1.6,
+      "scale": 2,
       "isBoss": true,
       "characteristics": [
         "Taunt"
+      ],
+      "spells": [
+        {
+          "id": 316981,
+          "attributes": []
+        },
+        {
+          "id": 316995,
+          "attributes": []
+        },
+        {
+          "id": 317231,
+          "attributes": []
+        },
+        {
+          "id": 318102,
+          "attributes": []
+        },
+        {
+          "id": 320050,
+          "attributes": []
+        },
+        {
+          "id": 320114,
+          "attributes": []
+        },
+        {
+          "id": 320644,
+          "attributes": []
+        },
+        {
+          "id": 320729,
+          "attributes": []
+        },
+        {
+          "id": 320789,
+          "attributes": []
+        },
+        {
+          "id": 331618,
+          "attributes": []
+        },
+        {
+          "id": 339415,
+          "attributes": []
+        }
       ],
       "spawns": [
         {
@@ -451,7 +670,7 @@
           "group": null,
           "pos": [
             -239.62,
-            326.72
+            327.76
           ]
         }
       ]
@@ -461,7 +680,7 @@
       "enemyIndex": 15,
       "name": "Shackled Soul",
       "count": 2,
-      "health": 99117,
+      "health": 17455982,
       "creatureType": "Undead",
       "scale": 1,
       "isBoss": false,
@@ -477,6 +696,14 @@
         "Repentance",
         "Stun",
         "Slow"
+      ],
+      "spells": [
+        {
+          "id": 330810,
+          "attributes": [
+            "interruptible"
+          ]
+        }
       ],
       "spawns": [
         {
@@ -702,12 +929,36 @@
       "enemyIndex": 16,
       "name": "Portal Guardian",
       "count": 8,
-      "health": 247793,
+      "health": 43639956,
       "creatureType": "Elemental",
       "scale": 1.6,
       "isBoss": false,
       "characteristics": [
         "Taunt"
+      ],
+      "spells": [
+        {
+          "id": 326494,
+          "attributes": []
+        },
+        {
+          "id": 326497,
+          "attributes": []
+        },
+        {
+          "id": 330716,
+          "attributes": []
+        },
+        {
+          "id": 330720,
+          "attributes": []
+        },
+        {
+          "id": 330725,
+          "attributes": [
+            "curse"
+          ]
+        }
       ],
       "spawns": [
         {
@@ -735,7 +986,7 @@
       "enemyIndex": 17,
       "name": "Bone Magus",
       "count": 4,
-      "health": 82598,
+      "health": 14546652,
       "creatureType": "Undead",
       "scale": 1,
       "isBoss": false,
@@ -751,6 +1002,26 @@
         "Repentance",
         "Stun",
         "Slow"
+      ],
+      "spells": [
+        {
+          "id": 333293,
+          "attributes": [
+            "magic"
+          ]
+        },
+        {
+          "id": 341771,
+          "attributes": [
+            "interruptible"
+          ]
+        },
+        {
+          "id": 342675,
+          "attributes": [
+            "interruptible"
+          ]
+        }
       ],
       "spawns": [
         {
@@ -868,7 +1139,7 @@
       "enemyIndex": 18,
       "name": "Maniacal Soulbinder",
       "count": 4,
-      "health": 148676,
+      "health": 26183974,
       "creatureType": "Humanoid",
       "scale": 1.3,
       "isBoss": false,
@@ -886,6 +1157,20 @@
         "Sap",
         "Stun",
         "Slow"
+      ],
+      "spells": [
+        {
+          "id": 330784,
+          "attributes": [
+            "interruptible"
+          ]
+        },
+        {
+          "id": 330868,
+          "attributes": [
+            "interruptible"
+          ]
+        }
       ],
       "spawns": [
         {
@@ -949,12 +1234,30 @@
       "enemyIndex": 19,
       "name": "Soulforged Bonereaver",
       "count": 8,
-      "health": 330390,
+      "health": 58186608,
       "creatureType": "Undead",
       "scale": 1.6,
       "isBoss": false,
       "characteristics": [
         "Taunt"
+      ],
+      "spells": [
+        {
+          "id": 331223,
+          "attributes": []
+        },
+        {
+          "id": 331224,
+          "attributes": []
+        },
+        {
+          "id": 331237,
+          "attributes": []
+        },
+        {
+          "id": 331243,
+          "attributes": []
+        }
       ],
       "spawns": [
         {
@@ -973,12 +1276,34 @@
       "enemyIndex": 20,
       "name": "Nefarious Darkspeaker",
       "count": 6,
-      "health": 231273,
+      "health": 40730625,
       "creatureType": "Undead",
       "scale": 1.6,
       "isBoss": false,
       "characteristics": [
         "Taunt"
+      ],
+      "spells": [
+        {
+          "id": 330875,
+          "attributes": [
+            "interruptible"
+          ]
+        },
+        {
+          "id": 333294,
+          "attributes": []
+        },
+        {
+          "id": 333297,
+          "attributes": []
+        },
+        {
+          "id": 333299,
+          "attributes": [
+            "curse"
+          ]
+        }
       ],
       "spawns": [
         {
@@ -1015,12 +1340,72 @@
       "enemyIndex": 21,
       "name": "Kul'tharok",
       "count": 0,
-      "health": 1388364,
+      "health": 185805973,
       "creatureType": "Undead",
-      "scale": 1.3,
+      "scale": 1.6,
       "isBoss": true,
       "characteristics": [
         "Taunt"
+      ],
+      "spells": [
+        {
+          "id": 317367,
+          "attributes": []
+        },
+        {
+          "id": 473519,
+          "attributes": []
+        },
+        {
+          "id": 473540,
+          "attributes": []
+        },
+        {
+          "id": 473576,
+          "attributes": []
+        },
+        {
+          "id": 474009,
+          "attributes": []
+        },
+        {
+          "id": 474084,
+          "attributes": []
+        },
+        {
+          "id": 474298,
+          "attributes": []
+        },
+        {
+          "id": 1215787,
+          "attributes": []
+        },
+        {
+          "id": 1216475,
+          "attributes": [
+            "interruptible"
+          ]
+        },
+        {
+          "id": 1216745,
+          "attributes": []
+        },
+        {
+          "id": 1222949,
+          "attributes": []
+        },
+        {
+          "id": 1223240,
+          "attributes": []
+        },
+        {
+          "id": 1223803,
+          "attributes": []
+        },
+        {
+          "id": 1223804,
+          "attributes": []
+        }
       ],
       "spawns": [
         {
@@ -1028,97 +1413,18 @@
           "idx": 1,
           "group": null,
           "pos": [
-            -98.51,
-            283.09
-          ]
-        }
-      ]
-    },
-    {
-      "id": 174210,
-      "enemyIndex": 22,
-      "name": "Blighted Sludge-Spewer",
-      "count": 4,
-      "health": 132156,
-      "creatureType": "Undead",
-      "scale": 1.3,
-      "isBoss": false,
-      "characteristics": [
-        "Taunt",
-        "Incapacitate",
-        "Control Undead",
-        "Silence",
-        "Shackle Undead",
-        "Polymorph",
-        "Root",
-        "Disorient",
-        "Repentance",
-        "Stun",
-        "Slow"
-      ],
-      "spawns": [
-        {
-          "id": "22-1",
-          "idx": 1,
-          "group": 21,
-          "pos": [
-            -161.66,
-            217.89
-          ]
-        },
-        {
-          "id": "22-2",
-          "idx": 2,
-          "group": 22,
-          "pos": [
-            -163.22,
-            199.9
-          ]
-        },
-        {
-          "id": "22-3",
-          "idx": 3,
-          "group": 23,
-          "pos": [
-            -158.77,
-            173.81
-          ]
-        },
-        {
-          "id": "22-4",
-          "idx": 4,
-          "group": 23,
-          "pos": [
-            -149.59,
-            175.48
-          ]
-        },
-        {
-          "id": "22-5",
-          "idx": 5,
-          "group": 24,
-          "pos": [
-            -185.04,
-            34.33
-          ]
-        },
-        {
-          "id": "22-6",
-          "idx": 6,
-          "group": 25,
-          "pos": [
-            -197.95,
-            65.2
+            -99.04,
+            283.06
           ]
         }
       ]
     },
     {
       "id": 163089,
-      "enemyIndex": 23,
+      "enemyIndex": 22,
       "name": "Disgusting Refuse",
       "count": 1,
-      "health": 41299,
+      "health": 7273326,
       "creatureType": "Undead",
       "scale": 1,
       "isBoss": false,
@@ -1135,9 +1441,23 @@
         "Stun",
         "Slow"
       ],
+      "spells": [
+        {
+          "id": 321041,
+          "attributes": []
+        },
+        {
+          "id": 330693,
+          "attributes": []
+        },
+        {
+          "id": 330694,
+          "attributes": []
+        }
+      ],
       "spawns": [
         {
-          "id": "23-1",
+          "id": "22-1",
           "idx": 1,
           "group": 21,
           "pos": [
@@ -1146,7 +1466,7 @@
           ]
         },
         {
-          "id": "23-2",
+          "id": "22-2",
           "idx": 2,
           "group": 21,
           "pos": [
@@ -1155,7 +1475,7 @@
           ]
         },
         {
-          "id": "23-3",
+          "id": "22-3",
           "idx": 3,
           "group": 21,
           "pos": [
@@ -1164,7 +1484,7 @@
           ]
         },
         {
-          "id": "23-4",
+          "id": "22-4",
           "idx": 4,
           "group": 21,
           "pos": [
@@ -1173,7 +1493,7 @@
           ]
         },
         {
-          "id": "23-5",
+          "id": "22-5",
           "idx": 5,
           "group": 22,
           "pos": [
@@ -1182,7 +1502,7 @@
           ]
         },
         {
-          "id": "23-6",
+          "id": "22-6",
           "idx": 6,
           "group": 22,
           "pos": [
@@ -1191,7 +1511,7 @@
           ]
         },
         {
-          "id": "23-7",
+          "id": "22-7",
           "idx": 7,
           "group": 22,
           "pos": [
@@ -1200,16 +1520,7 @@
           ]
         },
         {
-          "id": "23-8",
-          "idx": 8,
-          "group": 22,
-          "pos": [
-            -165.11,
-            203.82
-          ]
-        },
-        {
-          "id": "23-9",
+          "id": "22-9",
           "idx": 9,
           "group": 24,
           "pos": [
@@ -1218,7 +1529,7 @@
           ]
         },
         {
-          "id": "23-10",
+          "id": "22-10",
           "idx": 10,
           "group": 24,
           "pos": [
@@ -1227,7 +1538,7 @@
           ]
         },
         {
-          "id": "23-11",
+          "id": "22-11",
           "idx": 11,
           "group": 25,
           "pos": [
@@ -1236,7 +1547,7 @@
           ]
         },
         {
-          "id": "23-12",
+          "id": "22-12",
           "idx": 12,
           "group": 25,
           "pos": [
@@ -1245,16 +1556,7 @@
           ]
         },
         {
-          "id": "23-13",
-          "idx": 13,
-          "group": 25,
-          "pos": [
-            -195.91,
-            60.76
-          ]
-        },
-        {
-          "id": "23-14",
+          "id": "22-14",
           "idx": 14,
           "group": 25,
           "pos": [
@@ -1263,22 +1565,40 @@
           ]
         },
         {
-          "id": "23-15",
+          "id": "22-15",
           "idx": 15,
           "group": 25,
           "pos": [
             -195.79,
             71.65
           ]
+        },
+        {
+          "id": "22-17",
+          "idx": 17,
+          "group": 22,
+          "pos": [
+            -163.8,
+            199.08
+          ]
+        },
+        {
+          "id": "22-21",
+          "idx": 21,
+          "group": 25,
+          "pos": [
+            -197.89,
+            65.08
+          ]
         }
       ]
     },
     {
       "id": 170690,
-      "enemyIndex": 24,
+      "enemyIndex": 23,
       "name": "Diseased Horror",
       "count": 4,
-      "health": 165195,
+      "health": 29093304,
       "creatureType": "Undead",
       "scale": 1.7,
       "isBoss": false,
@@ -1295,9 +1615,29 @@
         "Stun",
         "Slow"
       ],
+      "spells": [
+        {
+          "id": 319290,
+          "attributes": []
+        },
+        {
+          "id": 330697,
+          "attributes": []
+        },
+        {
+          "id": 330700,
+          "attributes": [
+            "disease"
+          ]
+        },
+        {
+          "id": 341977,
+          "attributes": []
+        }
+      ],
       "spawns": [
         {
-          "id": "24-1",
+          "id": "23-1",
           "idx": 1,
           "group": null,
           "pos": [
@@ -1306,7 +1646,7 @@
           ]
         },
         {
-          "id": "24-2",
+          "id": "23-2",
           "idx": 2,
           "group": 24,
           "pos": [
@@ -1315,7 +1655,7 @@
           ]
         },
         {
-          "id": "24-3",
+          "id": "23-3",
           "idx": 3,
           "group": 26,
           "pos": [
@@ -1327,10 +1667,10 @@
     },
     {
       "id": 169927,
-      "enemyIndex": 25,
+      "enemyIndex": 24,
       "name": "Putrid Butcher",
       "count": 5,
-      "health": 198234,
+      "health": 34911965,
       "creatureType": "Undead",
       "scale": 1.7,
       "isBoss": false,
@@ -1347,9 +1687,15 @@
         "Stun",
         "Slow"
       ],
+      "spells": [
+        {
+          "id": 330586,
+          "attributes": []
+        }
+      ],
       "spawns": [
         {
-          "id": "25-1",
+          "id": "24-1",
           "idx": 1,
           "group": null,
           "pos": [
@@ -1358,7 +1704,7 @@
           ]
         },
         {
-          "id": "25-2",
+          "id": "24-2",
           "idx": 2,
           "group": 23,
           "pos": [
@@ -1367,7 +1713,7 @@
           ]
         },
         {
-          "id": "25-3",
+          "id": "24-3",
           "idx": 3,
           "group": 24,
           "pos": [
@@ -1376,7 +1722,7 @@
           ]
         },
         {
-          "id": "25-4",
+          "id": "24-4",
           "idx": 4,
           "group": 26,
           "pos": [
@@ -1388,19 +1734,33 @@
     },
     {
       "id": 163086,
-      "enemyIndex": 26,
+      "enemyIndex": 25,
       "name": "Rancid Gasbag",
       "count": 8,
-      "health": 313871,
+      "health": 55277278,
       "creatureType": "Undead",
       "scale": 2,
       "isBoss": false,
       "characteristics": [
         "Taunt"
       ],
+      "spells": [
+        {
+          "id": 330614,
+          "attributes": []
+        },
+        {
+          "id": 330973,
+          "attributes": []
+        },
+        {
+          "id": 345245,
+          "attributes": []
+        }
+      ],
       "spawns": [
         {
-          "id": "26-1",
+          "id": "25-1",
           "idx": 1,
           "group": null,
           "pos": [
@@ -1409,7 +1769,7 @@
           ]
         },
         {
-          "id": "26-2",
+          "id": "25-2",
           "idx": 2,
           "group": null,
           "pos": [
@@ -1418,7 +1778,7 @@
           ]
         },
         {
-          "id": "26-3",
+          "id": "25-3",
           "idx": 3,
           "group": null,
           "pos": [
@@ -1430,15 +1790,79 @@
     },
     {
       "id": 162317,
-      "enemyIndex": 27,
+      "enemyIndex": 26,
       "name": "Gorechop",
       "count": 0,
-      "health": 1156970,
+      "health": 203225283,
       "creatureType": "Undead",
-      "scale": 1.7,
+      "scale": 2,
       "isBoss": true,
       "characteristics": [
         "Taunt"
+      ],
+      "spells": [
+        {
+          "id": 318406,
+          "attributes": []
+        },
+        {
+          "id": 323515,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "26-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -210.4,
+            114.49
+          ]
+        }
+      ]
+    },
+    {
+      "id": 165946,
+      "enemyIndex": 27,
+      "name": "Mordretha, the Endless Empress",
+      "count": 0,
+      "health": 232257466,
+      "creatureType": "Humanoid",
+      "scale": 2,
+      "isBoss": true,
+      "characteristics": [
+        "Taunt"
+      ],
+      "spells": [
+        {
+          "id": 323608,
+          "attributes": []
+        },
+        {
+          "id": 323683,
+          "attributes": []
+        },
+        {
+          "id": 324079,
+          "attributes": []
+        },
+        {
+          "id": 324424,
+          "attributes": []
+        },
+        {
+          "id": 324449,
+          "attributes": []
+        },
+        {
+          "id": 339573,
+          "attributes": []
+        },
+        {
+          "id": 339759,
+          "attributes": []
+        }
       ],
       "spawns": [
         {
@@ -1446,51 +1870,41 @@
           "idx": 1,
           "group": null,
           "pos": [
-            -213.1,
-            118.02
-          ]
-        }
-      ]
-    },
-    {
-      "id": 165946,
-      "enemyIndex": 28,
-      "name": "Mordretha, the Endless Empress",
-      "count": 0,
-      "health": 1322252,
-      "creatureType": "Humanoid",
-      "scale": 2,
-      "isBoss": true,
-      "characteristics": [
-        "Taunt"
-      ],
-      "spawns": [
-        {
-          "id": "28-1",
-          "idx": 1,
-          "group": null,
-          "pos": [
-            -47.59,
-            67.46
+            -38.05,
+            68.31
           ]
         }
       ]
     },
     {
       "id": 162744,
-      "enemyIndex": 29,
+      "enemyIndex": 28,
       "name": "Nekthara the Mangler",
       "count": 20,
-      "health": 528624,
+      "health": 93098572,
       "creatureType": "Humanoid",
       "scale": 2,
       "isBoss": false,
       "characteristics": [
         "Taunt"
       ],
+      "spells": [
+        {
+          "id": 317605,
+          "attributes": []
+        },
+        {
+          "id": 337037,
+          "attributes": []
+        },
+        {
+          "id": 342135,
+          "attributes": []
+        }
+      ],
       "spawns": [
         {
-          "id": "29-1",
+          "id": "28-1",
           "idx": 1,
           "group": null,
           "pos": [
@@ -1502,19 +1916,33 @@
     },
     {
       "id": 167532,
-      "enemyIndex": 30,
+      "enemyIndex": 29,
       "name": "Heavin the Breaker",
       "count": 20,
-      "health": 528624,
+      "health": 93098572,
       "creatureType": "Humanoid",
       "scale": 2,
       "isBoss": false,
       "characteristics": [
         "Taunt"
       ],
+      "spells": [
+        {
+          "id": 331288,
+          "attributes": []
+        },
+        {
+          "id": 332708,
+          "attributes": []
+        },
+        {
+          "id": 342135,
+          "attributes": []
+        }
+      ],
       "spawns": [
         {
-          "id": "30-1",
+          "id": "29-1",
           "idx": 1,
           "group": null,
           "pos": [
@@ -1526,19 +1954,37 @@
     },
     {
       "id": 167534,
-      "enemyIndex": 31,
+      "enemyIndex": 30,
       "name": "Rek the Hardened",
       "count": 20,
-      "health": 528624,
+      "health": 93098572,
       "creatureType": "Humanoid",
       "scale": 2,
       "isBoss": false,
       "characteristics": [
         "Taunt"
       ],
+      "spells": [
+        {
+          "id": 317605,
+          "attributes": []
+        },
+        {
+          "id": 333839,
+          "attributes": []
+        },
+        {
+          "id": 333841,
+          "attributes": []
+        },
+        {
+          "id": 333845,
+          "attributes": []
+        }
+      ],
       "spawns": [
         {
-          "id": "31-1",
+          "id": "30-1",
           "idx": 1,
           "group": null,
           "pos": [
@@ -1549,125 +1995,114 @@
       ]
     },
     {
-      "id": 179446,
-      "enemyIndex": 32,
-      "name": "Incinerator Arkolath",
-      "count": 0,
-      "health": 336131,
-      "creatureType": "Humanoid",
-      "scale": 1.5,
+      "id": 174210,
+      "enemyIndex": 31,
+      "name": "Blighted Sludge-Spewer",
+      "count": 4,
+      "health": 23274643,
+      "creatureType": "Undead",
+      "scale": 1.3,
       "isBoss": false,
-      "characteristics": [],
-      "spawns": [
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Control Undead",
+        "Silence",
+        "Shackle Undead",
+        "Polymorph",
+        "Root",
+        "Disorient",
+        "Repentance",
+        "Stun",
+        "Slow"
+      ],
+      "spells": [
         {
-          "id": "32-1",
-          "idx": 1,
-          "group": null,
-          "pos": [
-            -182.41,
-            197.07
+          "id": 321041,
+          "attributes": []
+        },
+        {
+          "id": 330693,
+          "attributes": []
+        },
+        {
+          "id": 330694,
+          "attributes": []
+        },
+        {
+          "id": 330700,
+          "attributes": [
+            "disease"
           ]
         },
         {
-          "id": "32-2",
-          "idx": 2,
-          "group": null,
-          "pos": [
-            -202.58,
-            127.84
+          "id": 330703,
+          "attributes": [
+            "interruptible",
+            "disease"
+          ]
+        },
+        {
+          "id": 341969,
+          "attributes": [
+            "interruptible",
+            "disease"
           ]
         }
-      ]
-    },
-    {
-      "id": 179892,
-      "enemyIndex": 33,
-      "name": "Oros Coldheart",
-      "count": 0,
-      "health": 336131,
-      "creatureType": "Humanoid",
-      "scale": 1.5,
-      "isBoss": false,
-      "characteristics": [],
+      ],
       "spawns": [
         {
-          "id": "33-1",
+          "id": "31-1",
           "idx": 1,
-          "group": null,
+          "group": 21,
           "pos": [
-            -202.58,
-            127.84
+            -161.61,
+            217.86
           ]
         },
         {
-          "id": "33-2",
+          "id": "31-2",
           "idx": 2,
-          "group": null,
+          "group": 22,
           "pos": [
-            -182.41,
-            197.07
-          ]
-        }
-      ]
-    },
-    {
-      "id": 179891,
-      "enemyIndex": 34,
-      "name": "Soggodon the Breaker",
-      "count": 0,
-      "health": 358540,
-      "creatureType": "Humanoid",
-      "scale": 1.5,
-      "isBoss": false,
-      "characteristics": [],
-      "spawns": [
-        {
-          "id": "34-1",
-          "idx": 1,
-          "group": null,
-          "pos": [
-            -174.65,
-            165.77
+            -164.99,
+            203.58
           ]
         },
         {
-          "id": "34-2",
-          "idx": 2,
-          "group": null,
+          "id": "31-3",
+          "idx": 3,
+          "group": 23,
           "pos": [
-            -72.26,
-            135.02
-          ]
-        }
-      ]
-    },
-    {
-      "id": 179890,
-      "enemyIndex": 35,
-      "name": "Executioner Varruth",
-      "count": 0,
-      "health": 336131,
-      "creatureType": "Humanoid",
-      "scale": 1.5,
-      "isBoss": false,
-      "characteristics": [],
-      "spawns": [
-        {
-          "id": "35-1",
-          "idx": 1,
-          "group": null,
-          "pos": [
-            -72.26,
-            135.02
+            -150.68,
+            175.22
           ]
         },
         {
-          "id": "35-2",
-          "idx": 2,
-          "group": null,
+          "id": "31-4",
+          "idx": 4,
+          "group": 23,
           "pos": [
-            -174.65,
-            165.77
+            -156.77,
+            173.54
+          ]
+        },
+        {
+          "id": "31-5",
+          "idx": 5,
+          "group": 25,
+          "pos": [
+            -196.04,
+            60.88
+          ]
+        },
+        {
+          "id": "31-6",
+          "idx": 6,
+          "group": 24,
+          "pos": [
+            -184.8,
+            34.35
           ]
         }
       ]

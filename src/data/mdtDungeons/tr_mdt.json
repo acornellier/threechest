@@ -14,6 +14,24 @@
       "characteristics": [
         "Slow"
       ],
+      "spells": [
+        {
+          "id": 426893,
+          "attributes": []
+        },
+        {
+          "id": 426968,
+          "attributes": []
+        },
+        {
+          "id": 430125,
+          "attributes": []
+        },
+        {
+          "id": 450628,
+          "attributes": []
+        }
+      ],
       "spawns": [
         {
           "id": "1-1",
@@ -43,6 +61,20 @@
         "Disorient",
         "Stun",
         "Slow"
+      ],
+      "spells": [
+        {
+          "id": 430109,
+          "attributes": [
+            "interruptible"
+          ]
+        },
+        {
+          "id": 469956,
+          "attributes": [
+            "magic"
+          ]
+        }
       ],
       "spawns": [
         {
@@ -189,6 +221,16 @@
         "Disorient",
         "Stun",
         "Slow"
+      ],
+      "spells": [
+        {
+          "id": 427402,
+          "attributes": []
+        },
+        {
+          "id": 430758,
+          "attributes": []
+        }
       ],
       "spawns": [
         {
@@ -385,6 +427,24 @@
       "characteristics": [
         "Slow"
       ],
+      "spells": [
+        {
+          "id": 427404,
+          "attributes": []
+        },
+        {
+          "id": 427439,
+          "attributes": []
+        },
+        {
+          "id": 474017,
+          "attributes": []
+        },
+        {
+          "id": 474018,
+          "attributes": []
+        }
+      ],
       "spawns": [
         {
           "id": "4-1",
@@ -431,6 +491,14 @@
         "Disorient",
         "Stun",
         "Slow"
+      ],
+      "spells": [
+        {
+          "id": 427616,
+          "attributes": [
+            "interruptible"
+          ]
+        }
       ],
       "spawns": [
         {
@@ -486,6 +554,15 @@
         "Disorient",
         "Stun",
         "Slow"
+      ],
+      "spells": [
+        {
+          "id": 427260,
+          "attributes": [
+            "interruptible",
+            "enrage"
+          ]
+        }
       ],
       "spawns": [
         {
@@ -551,6 +628,32 @@
         "Disorient",
         "Stun",
         "Slow"
+      ],
+      "spells": [
+        {
+          "id": 430758,
+          "attributes": []
+        },
+        {
+          "id": 467907,
+          "attributes": []
+        },
+        {
+          "id": 472765,
+          "attributes": []
+        },
+        {
+          "id": 474031,
+          "attributes": []
+        },
+        {
+          "id": 474032,
+          "attributes": []
+        },
+        {
+          "id": 474044,
+          "attributes": []
+        }
       ],
       "spawns": [
         {
@@ -752,6 +855,24 @@
         "Stun",
         "Slow"
       ],
+      "spells": [
+        {
+          "id": 430179,
+          "attributes": [
+            "curse"
+          ]
+        },
+        {
+          "id": 430754,
+          "attributes": [
+            "magic"
+          ]
+        },
+        {
+          "id": 430758,
+          "attributes": []
+        }
+      ],
       "spawns": [
         {
           "id": "8-1",
@@ -822,6 +943,32 @@
         "Taunt",
         "Slow"
       ],
+      "spells": [
+        {
+          "id": 132466,
+          "attributes": []
+        },
+        {
+          "id": 430758,
+          "attributes": []
+        },
+        {
+          "id": 430805,
+          "attributes": []
+        },
+        {
+          "id": 430812,
+          "attributes": []
+        },
+        {
+          "id": 430814,
+          "attributes": []
+        },
+        {
+          "id": 452932,
+          "attributes": []
+        }
+      ],
       "spawns": [
         {
           "id": "9-1",
@@ -886,6 +1033,20 @@
         "Disorient",
         "Stun",
         "Slow"
+      ],
+      "spells": [
+        {
+          "id": 443847,
+          "attributes": []
+        },
+        {
+          "id": 443854,
+          "attributes": []
+        },
+        {
+          "id": 472765,
+          "attributes": []
+        }
       ],
       "spawns": [
         {
@@ -1488,6 +1649,32 @@
         "Taunt",
         "Slow"
       ],
+      "spells": [
+        {
+          "id": 430238,
+          "attributes": [
+            "interruptible"
+          ]
+        },
+        {
+          "id": 472765,
+          "attributes": []
+        },
+        {
+          "id": 1214523,
+          "attributes": [
+            "magic"
+          ]
+        },
+        {
+          "id": 1214546,
+          "attributes": []
+        },
+        {
+          "id": 1214550,
+          "attributes": []
+        }
+      ],
       "spawns": [
         {
           "id": "11-1",
@@ -1549,6 +1736,32 @@
         "Taunt",
         "Slow"
       ],
+      "spells": [
+        {
+          "id": 472547,
+          "attributes": []
+        },
+        {
+          "id": 472549,
+          "attributes": []
+        },
+        {
+          "id": 472764,
+          "attributes": []
+        },
+        {
+          "id": 1214628,
+          "attributes": []
+        },
+        {
+          "id": 1214631,
+          "attributes": []
+        },
+        {
+          "id": 1214645,
+          "attributes": []
+        }
+      ],
       "spawns": [
         {
           "id": "12-1",
@@ -1591,6 +1804,52 @@
       "characteristics": [
         "Slow"
       ],
+      "spells": [
+        {
+          "id": 419870,
+          "attributes": []
+        },
+        {
+          "id": 419871,
+          "attributes": []
+        },
+        {
+          "id": 444034,
+          "attributes": []
+        },
+        {
+          "id": 474018,
+          "attributes": []
+        },
+        {
+          "id": 1214315,
+          "attributes": []
+        },
+        {
+          "id": 1214318,
+          "attributes": []
+        },
+        {
+          "id": 1214320,
+          "attributes": []
+        },
+        {
+          "id": 1214323,
+          "attributes": []
+        },
+        {
+          "id": 1214324,
+          "attributes": []
+        },
+        {
+          "id": 1214325,
+          "attributes": []
+        },
+        {
+          "id": 1214326,
+          "attributes": []
+        }
+      ],
       "spawns": [
         {
           "id": "13-1",
@@ -1615,6 +1874,52 @@
       "characteristics": [
         "Taunt",
         "Slow"
+      ],
+      "spells": [
+        {
+          "id": 424737,
+          "attributes": []
+        },
+        {
+          "id": 424739,
+          "attributes": []
+        },
+        {
+          "id": 424958,
+          "attributes": []
+        },
+        {
+          "id": 424966,
+          "attributes": []
+        },
+        {
+          "id": 425048,
+          "attributes": []
+        },
+        {
+          "id": 425052,
+          "attributes": []
+        },
+        {
+          "id": 425113,
+          "attributes": []
+        },
+        {
+          "id": 426136,
+          "attributes": []
+        },
+        {
+          "id": 426160,
+          "attributes": []
+        },
+        {
+          "id": 426171,
+          "attributes": []
+        },
+        {
+          "id": 451843,
+          "attributes": []
+        }
       ],
       "spawns": [
         {
@@ -1641,6 +1946,70 @@
         "Taunt",
         "Slow"
       ],
+      "spells": [
+        {
+          "id": 181089,
+          "attributes": []
+        },
+        {
+          "id": 423305,
+          "attributes": []
+        },
+        {
+          "id": 423356,
+          "attributes": []
+        },
+        {
+          "id": 423393,
+          "attributes": []
+        },
+        {
+          "id": 423839,
+          "attributes": []
+        },
+        {
+          "id": 428126,
+          "attributes": []
+        },
+        {
+          "id": 429487,
+          "attributes": []
+        },
+        {
+          "id": 429493,
+          "attributes": [
+            "magic"
+          ]
+        },
+        {
+          "id": 433067,
+          "attributes": []
+        },
+        {
+          "id": 440207,
+          "attributes": []
+        },
+        {
+          "id": 445262,
+          "attributes": []
+        },
+        {
+          "id": 445457,
+          "attributes": []
+        },
+        {
+          "id": 445537,
+          "attributes": []
+        },
+        {
+          "id": 455219,
+          "attributes": []
+        },
+        {
+          "id": 455220,
+          "attributes": []
+        }
+      ],
       "spawns": [
         {
           "id": "15-1",
@@ -1663,6 +2032,32 @@
       "scale": 4,
       "isBoss": false,
       "characteristics": [],
+      "spells": [
+        {
+          "id": 424371,
+          "attributes": []
+        },
+        {
+          "id": 431371,
+          "attributes": []
+        },
+        {
+          "id": 442355,
+          "attributes": []
+        },
+        {
+          "id": 442456,
+          "attributes": []
+        },
+        {
+          "id": 458082,
+          "attributes": []
+        },
+        {
+          "id": 460190,
+          "attributes": []
+        }
+      ],
       "spawns": [
         {
           "id": "16-1",

@@ -7,11 +7,35 @@
       "enemyIndex": 1,
       "name": "Shreddinator 3000",
       "count": 10,
-      "health": 57223802,
+      "health": 40480612,
       "creatureType": "Mechanical",
       "scale": 1.6,
       "isBoss": false,
-      "characteristics": [],
+      "characteristics": [
+        "Taunt"
+      ],
+      "spells": [
+        {
+          "id": 465754,
+          "attributes": []
+        },
+        {
+          "id": 474337,
+          "attributes": []
+        },
+        {
+          "id": 474350,
+          "attributes": []
+        },
+        {
+          "id": 474351,
+          "attributes": []
+        },
+        {
+          "id": 474388,
+          "attributes": []
+        }
+      ],
       "spawns": [
         {
           "id": "1-2",
@@ -65,13 +89,23 @@
       "enemyIndex": 2,
       "name": "Darkfuse Soldier",
       "count": 3,
-      "health": 28611901,
+      "health": 20240306,
       "creatureType": "Humanoid",
       "scale": 1.5,
       "isBoss": false,
       "characteristics": [
+        "Silence",
+        "Fear",
         "Disorient",
         "Stun"
+      ],
+      "spells": [
+        {
+          "id": 462737,
+          "attributes": [
+            "magic"
+          ]
+        }
       ],
       "spawns": [
         {
@@ -306,12 +340,26 @@
       "enemyIndex": 3,
       "name": "Mechadrone Sniper",
       "count": 5,
-      "health": 28611901,
+      "health": 20240306,
       "creatureType": "Mechanical",
       "scale": 1.5,
       "isBoss": false,
       "characteristics": [
+        "Taunt",
+        "Silence",
         "Stun"
+      ],
+      "spells": [
+        {
+          "id": 464655,
+          "attributes": []
+        },
+        {
+          "id": 1214468,
+          "attributes": [
+            "interruptible"
+          ]
+        }
       ],
       "spawns": [
         {
@@ -492,12 +540,27 @@
       "enemyIndex": 4,
       "name": "Loaderbot",
       "count": 2,
-      "health": 22889521,
+      "health": 16192245,
       "creatureType": "Mechanical",
       "scale": 1.5,
       "isBoss": false,
       "characteristics": [
+        "Silence",
         "Stun"
+      ],
+      "spells": [
+        {
+          "id": 465120,
+          "attributes": []
+        },
+        {
+          "id": 465127,
+          "attributes": []
+        },
+        {
+          "id": 465128,
+          "attributes": []
+        }
       ],
       "spawns": [
         {
@@ -624,13 +687,22 @@
       "enemyIndex": 5,
       "name": "Venture Co. Contractor",
       "count": 2,
-      "health": 28611901,
+      "health": 20240306,
       "creatureType": "Humanoid",
       "scale": 1.5,
       "isBoss": false,
       "characteristics": [
+        "Taunt",
+        "Silence",
+        "Fear",
         "Disorient",
         "Stun"
+      ],
+      "spells": [
+        {
+          "id": 468932,
+          "attributes": []
+        }
       ],
       "spawns": [
         {
@@ -910,13 +982,33 @@
       "enemyIndex": 6,
       "name": "Darkfuse Hyena",
       "count": 5,
-      "health": 22889521,
+      "health": 16192245,
       "creatureType": "Humanoid",
       "scale": 1.5,
       "isBoss": false,
       "characteristics": [
+        "Silence",
+        "Fear",
         "Disorient",
         "Stun"
+      ],
+      "spells": [
+        {
+          "id": 463058,
+          "attributes": [
+            "interruptible"
+          ]
+        },
+        {
+          "id": 463061,
+          "attributes": [
+            "enrage"
+          ]
+        },
+        {
+          "id": 469771,
+          "attributes": []
+        }
       ],
       "spawns": [
         {
@@ -1061,14 +1153,34 @@
       "enemyIndex": 7,
       "name": "Darkfuse Demolitionist",
       "count": 7,
-      "health": 28611901,
+      "health": 20240306,
       "creatureType": "Humanoid",
       "scale": 1.5,
       "isBoss": false,
       "characteristics": [
         "Incapacitate",
+        "Silence",
+        "Fear",
         "Disorient",
         "Stun"
+      ],
+      "spells": [
+        {
+          "id": 461793,
+          "attributes": []
+        },
+        {
+          "id": 461796,
+          "attributes": []
+        },
+        {
+          "id": 461805,
+          "attributes": []
+        },
+        {
+          "id": 1216039,
+          "attributes": []
+        }
       ],
       "spawns": [
         {
@@ -1123,11 +1235,27 @@
       "enemyIndex": 8,
       "name": "Darkfuse Bloodwarper",
       "count": 12,
-      "health": 45779042,
+      "health": 32384489,
       "creatureType": "Humanoid",
       "scale": 2,
       "isBoss": false,
       "characteristics": [],
+      "spells": [
+        {
+          "id": 465827,
+          "attributes": []
+        },
+        {
+          "id": 465830,
+          "attributes": []
+        },
+        {
+          "id": 465871,
+          "attributes": [
+            "interruptible"
+          ]
+        }
+      ],
       "spawns": [
         {
           "id": "8-2",
@@ -1172,14 +1300,22 @@
       "enemyIndex": 9,
       "name": "Darkfuse Inspector",
       "count": 5,
-      "health": 28611901,
+      "health": 20240306,
       "creatureType": "Humanoid",
       "scale": 1.5,
       "isBoss": false,
       "characteristics": [
         "Incapacitate",
+        "Silence",
+        "Fear",
         "Disorient",
         "Stun"
+      ],
+      "spells": [
+        {
+          "id": 465682,
+          "attributes": []
+        }
       ],
       "spawns": [
         {
@@ -1279,13 +1415,39 @@
       "enemyIndex": 10,
       "name": "Venture Co. Surveyor",
       "count": 7,
-      "health": 28611901,
+      "health": 20240306,
       "creatureType": "Humanoid",
       "scale": 1.5,
       "isBoss": false,
       "characteristics": [
+        "Silence",
+        "Fear",
         "Disorient",
         "Stun"
+      ],
+      "spells": [
+        {
+          "id": 462771,
+          "attributes": [
+            "interruptible"
+          ]
+        },
+        {
+          "id": 462776,
+          "attributes": []
+        },
+        {
+          "id": 463169,
+          "attributes": []
+        },
+        {
+          "id": 469796,
+          "attributes": []
+        },
+        {
+          "id": 472338,
+          "attributes": []
+        }
       ],
       "spawns": [
         {
@@ -1367,13 +1529,35 @@
       "enemyIndex": 11,
       "name": "Venture Co. Electrician",
       "count": 7,
-      "health": 28611901,
+      "health": 20240306,
       "creatureType": "Humanoid",
       "scale": 1.5,
       "isBoss": false,
       "characteristics": [
+        "Incapacitate",
+        "Silence",
+        "Polymorph",
+        "Fear",
         "Disorient",
         "Stun"
+      ],
+      "spells": [
+        {
+          "id": 465595,
+          "attributes": [
+            "interruptible"
+          ]
+        },
+        {
+          "id": 469799,
+          "attributes": [
+            "magic"
+          ]
+        },
+        {
+          "id": 469800,
+          "attributes": []
+        }
       ],
       "spawns": [
         {
@@ -1464,12 +1648,24 @@
       "enemyIndex": 12,
       "name": "Bombshell Crab",
       "count": 3,
-      "health": 28611901,
+      "health": 20240306,
       "creatureType": "Beast",
       "scale": 1.2,
       "isBoss": false,
       "characteristics": [
+        "Taunt",
+        "Silence",
         "Stun"
+      ],
+      "spells": [
+        {
+          "id": 468672,
+          "attributes": []
+        },
+        {
+          "id": 468680,
+          "attributes": []
+        }
       ],
       "spawns": [
         {
@@ -1623,12 +1819,31 @@
       "enemyIndex": 13,
       "name": "Venture Co. Diver",
       "count": 5,
-      "health": 28611901,
+      "health": 20240306,
       "creatureType": "Humanoid",
       "scale": 1.6,
       "isBoss": false,
       "characteristics": [
-        "Incapacitate"
+        "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Fear",
+        "Disorient",
+        "Stun"
+      ],
+      "spells": [
+        {
+          "id": 468631,
+          "attributes": []
+        },
+        {
+          "id": 468726,
+          "attributes": []
+        },
+        {
+          "id": 468727,
+          "attributes": []
+        }
       ],
       "spawns": [
         {
@@ -1710,11 +1925,25 @@
       "enemyIndex": 14,
       "name": "Venture Co. Architect",
       "count": 10,
-      "health": 37195472,
+      "health": 26312398,
       "creatureType": "Humanoid",
       "scale": 2,
       "isBoss": false,
       "characteristics": [],
+      "spells": [
+        {
+          "id": 465408,
+          "attributes": []
+        },
+        {
+          "id": 1213803,
+          "attributes": []
+        },
+        {
+          "id": 1213805,
+          "attributes": []
+        }
+      ],
       "spawns": [
         {
           "id": "14-2",
@@ -1786,13 +2015,34 @@
       "enemyIndex": 15,
       "name": "Disturbed Kelp",
       "count": 7,
-      "health": 28611901,
+      "health": 20240306,
       "creatureType": "Elemental",
       "scale": 1.5,
       "isBoss": false,
       "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Fear",
         "Disorient",
         "Stun"
+      ],
+      "spells": [
+        {
+          "id": 471733,
+          "attributes": [
+            "interruptible",
+            "magic"
+          ]
+        },
+        {
+          "id": 471736,
+          "attributes": []
+        },
+        {
+          "id": 1217456,
+          "attributes": []
+        }
       ],
       "spawns": [
         {
@@ -1856,11 +2106,39 @@
       "enemyIndex": 16,
       "name": "Bubbles",
       "count": 20,
-      "health": 85835704,
+      "health": 60720918,
       "creatureType": "Beast",
       "scale": 2,
       "isBoss": false,
-      "characteristics": [],
+      "characteristics": [
+        "Taunt"
+      ],
+      "spells": [
+        {
+          "id": 465487,
+          "attributes": []
+        },
+        {
+          "id": 469721,
+          "attributes": []
+        },
+        {
+          "id": 469811,
+          "attributes": []
+        },
+        {
+          "id": 469816,
+          "attributes": []
+        },
+        {
+          "id": 469818,
+          "attributes": []
+        },
+        {
+          "id": 1217496,
+          "attributes": []
+        }
+      ],
       "spawns": [
         {
           "id": "16-1",
@@ -1878,11 +2156,31 @@
       "enemyIndex": 17,
       "name": "Darkfuse Jumpstarter",
       "count": 12,
-      "health": 45779042,
+      "health": 32384489,
       "creatureType": "Humanoid",
       "scale": 1.7,
       "isBoss": false,
       "characteristics": [],
+      "spells": [
+        {
+          "id": 465604,
+          "attributes": [
+            "magic"
+          ]
+        },
+        {
+          "id": 465666,
+          "attributes": []
+        },
+        {
+          "id": 1216610,
+          "attributes": []
+        },
+        {
+          "id": 1216611,
+          "attributes": []
+        }
+      ],
       "spawns": [
         {
           "id": "17-2",
@@ -1927,11 +2225,61 @@
       "enemyIndex": 18,
       "name": "Big M.O.M.M.A.",
       "count": 0,
-      "health": 314508650,
+      "health": 222175625,
       "creatureType": "Humanoid",
       "scale": 1.5,
       "isBoss": true,
       "characteristics": [],
+      "spells": [
+        {
+          "id": 460156,
+          "attributes": []
+        },
+        {
+          "id": 460158,
+          "attributes": []
+        },
+        {
+          "id": 469981,
+          "attributes": []
+        },
+        {
+          "id": 471585,
+          "attributes": []
+        },
+        {
+          "id": 471652,
+          "attributes": []
+        },
+        {
+          "id": 473220,
+          "attributes": []
+        },
+        {
+          "id": 473224,
+          "attributes": []
+        },
+        {
+          "id": 473240,
+          "attributes": []
+        },
+        {
+          "id": 473287,
+          "attributes": []
+        },
+        {
+          "id": 473351,
+          "attributes": []
+        },
+        {
+          "id": 473836,
+          "attributes": []
+        },
+        {
+          "id": 1215504,
+          "attributes": []
+        }
+      ],
       "spawns": [
         {
           "id": "18-1",
@@ -1949,11 +2297,35 @@
       "enemyIndex": 19,
       "name": "Bront",
       "count": 0,
-      "health": 128662630,
+      "health": 90890029,
       "creatureType": "Humanoid",
       "scale": 2,
       "isBoss": true,
-      "characteristics": [],
+      "characteristics": [
+        "Taunt"
+      ],
+      "spells": [
+        {
+          "id": 459779,
+          "attributes": []
+        },
+        {
+          "id": 459799,
+          "attributes": []
+        },
+        {
+          "id": 460965,
+          "attributes": []
+        },
+        {
+          "id": 470022,
+          "attributes": []
+        },
+        {
+          "id": 470090,
+          "attributes": []
+        }
+      ],
       "spawns": [
         {
           "id": "19-1",
@@ -1971,11 +2343,61 @@
       "enemyIndex": 20,
       "name": "Keeza Quickfuse",
       "count": 0,
-      "health": 100070935,
+      "health": 70692245,
       "creatureType": "Humanoid",
       "scale": 2,
       "isBoss": true,
-      "characteristics": [],
+      "characteristics": [
+        "Taunt"
+      ],
+      "spells": [
+        {
+          "id": 460602,
+          "attributes": []
+        },
+        {
+          "id": 460814,
+          "attributes": []
+        },
+        {
+          "id": 460867,
+          "attributes": []
+        },
+        {
+          "id": 461994,
+          "attributes": []
+        },
+        {
+          "id": 472755,
+          "attributes": []
+        },
+        {
+          "id": 473526,
+          "attributes": []
+        },
+        {
+          "id": 473690,
+          "attributes": []
+        },
+        {
+          "id": 473713,
+          "attributes": [
+            "magic"
+          ]
+        },
+        {
+          "id": 473719,
+          "attributes": []
+        },
+        {
+          "id": 1217653,
+          "attributes": []
+        },
+        {
+          "id": 1217751,
+          "attributes": []
+        }
+      ],
       "spawns": [
         {
           "id": "20-1",
@@ -1993,11 +2415,63 @@
       "enemyIndex": 21,
       "name": "Swampface",
       "count": 0,
-      "health": 200141868,
+      "health": 141384489,
       "creatureType": "Humanoid",
       "scale": 2,
       "isBoss": true,
-      "characteristics": [],
+      "characteristics": [
+        "Taunt"
+      ],
+      "spells": [
+        {
+          "id": 469478,
+          "attributes": []
+        },
+        {
+          "id": 469479,
+          "attributes": []
+        },
+        {
+          "id": 469480,
+          "attributes": []
+        },
+        {
+          "id": 470038,
+          "attributes": []
+        },
+        {
+          "id": 472794,
+          "attributes": []
+        },
+        {
+          "id": 472819,
+          "attributes": []
+        },
+        {
+          "id": 472878,
+          "attributes": []
+        },
+        {
+          "id": 473046,
+          "attributes": []
+        },
+        {
+          "id": 473070,
+          "attributes": []
+        },
+        {
+          "id": 473081,
+          "attributes": []
+        },
+        {
+          "id": 473114,
+          "attributes": []
+        },
+        {
+          "id": 473126,
+          "attributes": []
+        }
+      ],
       "spawns": [
         {
           "id": "21-1",
@@ -2015,11 +2489,65 @@
       "enemyIndex": 22,
       "name": "Geezle Gigazap",
       "count": 0,
-      "health": 228733564,
+      "health": 161582273,
       "creatureType": "Humanoid",
       "scale": 2,
       "isBoss": true,
       "characteristics": [],
+      "spells": [
+        {
+          "id": 465462,
+          "attributes": []
+        },
+        {
+          "id": 465463,
+          "attributes": []
+        },
+        {
+          "id": 465982,
+          "attributes": []
+        },
+        {
+          "id": 466124,
+          "attributes": []
+        },
+        {
+          "id": 466188,
+          "attributes": []
+        },
+        {
+          "id": 466189,
+          "attributes": []
+        },
+        {
+          "id": 466190,
+          "attributes": []
+        },
+        {
+          "id": 466197,
+          "attributes": []
+        },
+        {
+          "id": 468604,
+          "attributes": []
+        },
+        {
+          "id": 468813,
+          "attributes": []
+        },
+        {
+          "id": 468815,
+          "attributes": []
+        },
+        {
+          "id": 468841,
+          "attributes": []
+        },
+        {
+          "id": 468846,
+          "attributes": []
+        }
+      ],
       "spawns": [
         {
           "id": "22-1",
@@ -2037,11 +2565,35 @@
       "enemyIndex": 23,
       "name": "Darkfuse Mechadrone",
       "count": 0,
-      "health": 7092636,
+      "health": 20240305,
       "creatureType": "Mechanical",
       "scale": 1.5,
       "isBoss": false,
-      "characteristics": [],
+      "characteristics": [
+        "Taunt"
+      ],
+      "spells": [
+        {
+          "id": 460393,
+          "attributes": []
+        },
+        {
+          "id": 472452,
+          "attributes": []
+        },
+        {
+          "id": 472454,
+          "attributes": []
+        },
+        {
+          "id": 1214780,
+          "attributes": []
+        },
+        {
+          "id": 1214801,
+          "attributes": []
+        }
+      ],
       "spawns": [
         {
           "id": "23-1",

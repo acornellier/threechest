@@ -16,6 +16,16 @@
         "Fear",
         "Stun"
       ],
+      "spells": [
+        {
+          "id": 434706,
+          "attributes": []
+        },
+        {
+          "id": 434707,
+          "attributes": []
+        }
+      ],
       "spawns": [
         {
           "id": "1-2",
@@ -69,6 +79,54 @@
         "Silence",
         "Fear",
         "Stun"
+      ],
+      "spells": [
+        {
+          "id": 434505,
+          "attributes": []
+        },
+        {
+          "id": 437721,
+          "attributes": [
+            "interruptible"
+          ]
+        },
+        {
+          "id": 437733,
+          "attributes": []
+        },
+        {
+          "id": 437956,
+          "attributes": [
+            "magic"
+          ]
+        },
+        {
+          "id": 441408,
+          "attributes": [
+            "enrage"
+          ]
+        },
+        {
+          "id": 453909,
+          "attributes": [
+            "interruptible"
+          ]
+        },
+        {
+          "id": 453989,
+          "attributes": [
+            "interruptible"
+          ]
+        },
+        {
+          "id": 454318,
+          "attributes": []
+        },
+        {
+          "id": 454319,
+          "attributes": []
+        }
       ],
       "spawns": [
         {
@@ -250,6 +308,24 @@
         "Fear",
         "Stun"
       ],
+      "spells": [
+        {
+          "id": 434505,
+          "attributes": []
+        },
+        {
+          "id": 434773,
+          "attributes": [
+            "bleed"
+          ]
+        },
+        {
+          "id": 441408,
+          "attributes": [
+            "enrage"
+          ]
+        }
+      ],
       "spawns": [
         {
           "id": "3-2",
@@ -425,6 +501,34 @@
       "scale": 1.5,
       "isBoss": false,
       "characteristics": [],
+      "spells": [
+        {
+          "id": 434505,
+          "attributes": []
+        },
+        {
+          "id": 434756,
+          "attributes": []
+        },
+        {
+          "id": 434758,
+          "attributes": []
+        },
+        {
+          "id": 441408,
+          "attributes": [
+            "enrage"
+          ]
+        },
+        {
+          "id": 463218,
+          "attributes": []
+        },
+        {
+          "id": 463220,
+          "attributes": []
+        }
+      ],
       "spawns": [
         {
           "id": "4-2",
@@ -474,6 +578,32 @@
       "scale": 2,
       "isBoss": false,
       "characteristics": [],
+      "spells": [
+        {
+          "id": 434743,
+          "attributes": []
+        },
+        {
+          "id": 434745,
+          "attributes": []
+        },
+        {
+          "id": 434998,
+          "attributes": []
+        },
+        {
+          "id": 435000,
+          "attributes": []
+        },
+        {
+          "id": 435004,
+          "attributes": []
+        },
+        {
+          "id": 463206,
+          "attributes": []
+        }
+      ],
       "spawns": [
         {
           "id": "5-1",
@@ -498,6 +628,24 @@
       "characteristics": [
         "Fear",
         "Stun"
+      ],
+      "spells": [
+        {
+          "id": 441410,
+          "attributes": []
+        },
+        {
+          "id": 441413,
+          "attributes": []
+        },
+        {
+          "id": 443487,
+          "attributes": []
+        },
+        {
+          "id": 443491,
+          "attributes": []
+        }
       ],
       "spawns": [
         {
@@ -638,6 +786,20 @@
       "scale": 1.5,
       "isBoss": false,
       "characteristics": [],
+      "spells": [
+        {
+          "id": 440687,
+          "attributes": []
+        },
+        {
+          "id": 440876,
+          "attributes": []
+        },
+        {
+          "id": 440887,
+          "attributes": []
+        }
+      ],
       "spawns": [
         {
           "id": "7-2",
@@ -732,6 +894,16 @@
       "scale": 1.8,
       "isBoss": false,
       "characteristics": [],
+      "spells": [
+        {
+          "id": 442589,
+          "attributes": []
+        },
+        {
+          "id": 442995,
+          "attributes": []
+        }
+      ],
       "spawns": [
         {
           "id": "8-1",
@@ -802,6 +974,30 @@
         "Taunt",
         "Fear",
         "Stun"
+      ],
+      "spells": [
+        {
+          "id": 441119,
+          "attributes": []
+        },
+        {
+          "id": 441344,
+          "attributes": []
+        },
+        {
+          "id": 441351,
+          "attributes": []
+        },
+        {
+          "id": 441353,
+          "attributes": [
+            "enrage"
+          ]
+        },
+        {
+          "id": 456891,
+          "attributes": []
+        }
       ],
       "spawns": [
         {
@@ -897,6 +1093,12 @@
       "scale": 1,
       "isBoss": false,
       "characteristics": [],
+      "spells": [
+        {
+          "id": 441397,
+          "attributes": []
+        }
+      ],
       "spawns": [
         {
           "id": "10-2",
@@ -1319,6 +1521,19 @@
         "Fear",
         "Stun"
       ],
+      "spells": [
+        {
+          "id": 441434,
+          "attributes": []
+        },
+        {
+          "id": 441627,
+          "attributes": [
+            "interruptible",
+            "magic"
+          ]
+        }
+      ],
       "spawns": [
         {
           "id": "11-2",
@@ -1400,6 +1615,18 @@
         "Silence",
         "Fear",
         "Stun"
+      ],
+      "spells": [
+        {
+          "id": 441214,
+          "attributes": [
+            "enrage"
+          ]
+        },
+        {
+          "id": 441242,
+          "attributes": []
+        }
       ],
       "spawns": [
         {
@@ -1549,6 +1776,32 @@
       "scale": 1.8,
       "isBoss": false,
       "characteristics": [],
+      "spells": [
+        {
+          "id": 448619,
+          "attributes": []
+        },
+        {
+          "id": 448920,
+          "attributes": []
+        },
+        {
+          "id": 448935,
+          "attributes": []
+        },
+        {
+          "id": 448977,
+          "attributes": []
+        },
+        {
+          "id": 449090,
+          "attributes": []
+        },
+        {
+          "id": 449106,
+          "attributes": []
+        }
+      ],
       "spawns": [
         {
           "id": "13-2",
@@ -1609,6 +1862,16 @@
       "characteristics": [
         "Silence",
         "Stun"
+      ],
+      "spells": [
+        {
+          "id": 441179,
+          "attributes": []
+        },
+        {
+          "id": 449702,
+          "attributes": []
+        }
       ],
       "spawns": [
         {
@@ -1686,6 +1949,22 @@
       "scale": 2,
       "isBoss": false,
       "characteristics": [],
+      "spells": [
+        {
+          "id": 439403,
+          "attributes": []
+        },
+        {
+          "id": 439467,
+          "attributes": []
+        },
+        {
+          "id": 439468,
+          "attributes": [
+            "bleed"
+          ]
+        }
+      ],
       "spawns": [
         {
           "id": "15-2",
@@ -1737,6 +2016,36 @@
       "characteristics": [
         "Taunt"
       ],
+      "spells": [
+        {
+          "id": 432179,
+          "attributes": []
+        },
+        {
+          "id": 432182,
+          "attributes": []
+        },
+        {
+          "id": 432196,
+          "attributes": []
+        },
+        {
+          "id": 432198,
+          "attributes": []
+        },
+        {
+          "id": 432229,
+          "attributes": []
+        },
+        {
+          "id": 442525,
+          "attributes": []
+        },
+        {
+          "id": 442611,
+          "attributes": []
+        }
+      ],
       "spawns": [
         {
           "id": "16-1",
@@ -1760,6 +2069,38 @@
       "isBoss": true,
       "characteristics": [
         "Taunt"
+      ],
+      "spells": [
+        {
+          "id": 439031,
+          "attributes": []
+        },
+        {
+          "id": 439202,
+          "attributes": []
+        },
+        {
+          "id": 439325,
+          "attributes": [
+            "magic"
+          ]
+        },
+        {
+          "id": 439365,
+          "attributes": []
+        },
+        {
+          "id": 439645,
+          "attributes": []
+        },
+        {
+          "id": 439991,
+          "attributes": []
+        },
+        {
+          "id": 440147,
+          "attributes": []
+        }
       ],
       "spawns": [
         {
@@ -1785,6 +2126,36 @@
       "characteristics": [
         "Taunt"
       ],
+      "spells": [
+        {
+          "id": 438025,
+          "attributes": []
+        },
+        {
+          "id": 438651,
+          "attributes": []
+        },
+        {
+          "id": 439524,
+          "attributes": []
+        },
+        {
+          "id": 439586,
+          "attributes": []
+        },
+        {
+          "id": 440134,
+          "attributes": []
+        },
+        {
+          "id": 440138,
+          "attributes": []
+        },
+        {
+          "id": 440141,
+          "attributes": []
+        }
+      ],
       "spawns": [
         {
           "id": "18-1",
@@ -1809,6 +2180,50 @@
       "characteristics": [
         "Taunt"
       ],
+      "spells": [
+        {
+          "id": 435560,
+          "attributes": []
+        },
+        {
+          "id": 435622,
+          "attributes": []
+        },
+        {
+          "id": 435788,
+          "attributes": []
+        },
+        {
+          "id": 435789,
+          "attributes": []
+        },
+        {
+          "id": 436592,
+          "attributes": []
+        },
+        {
+          "id": 436624,
+          "attributes": []
+        },
+        {
+          "id": 436637,
+          "attributes": []
+        },
+        {
+          "id": 436640,
+          "attributes": [
+            "magic"
+          ]
+        },
+        {
+          "id": 436644,
+          "attributes": []
+        },
+        {
+          "id": 442484,
+          "attributes": []
+        }
+      ],
       "spawns": [
         {
           "id": "19-1",
@@ -1831,6 +2246,20 @@
       "scale": 2.1,
       "isBoss": false,
       "characteristics": [],
+      "spells": [
+        {
+          "id": 439596,
+          "attributes": []
+        },
+        {
+          "id": 439616,
+          "attributes": []
+        },
+        {
+          "id": 439698,
+          "attributes": []
+        }
+      ],
       "spawns": [
         {
           "id": "20-1",
@@ -1862,6 +2291,26 @@
       "scale": 1.6,
       "isBoss": false,
       "characteristics": [],
+      "spells": [
+        {
+          "id": 438979,
+          "attributes": []
+        },
+        {
+          "id": 438980,
+          "attributes": []
+        },
+        {
+          "id": 438997,
+          "attributes": []
+        },
+        {
+          "id": 439005,
+          "attributes": [
+            "magic"
+          ]
+        }
+      ],
       "spawns": [
         {
           "id": "21-1",
@@ -1887,6 +2336,19 @@
         "Silence",
         "Fear",
         "Stun"
+      ],
+      "spells": [
+        {
+          "id": 441434,
+          "attributes": []
+        },
+        {
+          "id": 441627,
+          "attributes": [
+            "interruptible",
+            "magic"
+          ]
+        }
       ],
       "spawns": [
         {
@@ -1919,7 +2381,7 @@
       ]
     },
     {
-      "id": 210267,
+      "id": 219301,
       "enemyIndex": 23,
       "name": "Brew Drop",
       "count": 0,
@@ -1931,6 +2393,7 @@
         "Silence",
         "Stun"
       ],
+      "spells": [],
       "spawns": [
         {
           "id": "23-1",
@@ -1964,6 +2427,20 @@
       "characteristics": [
         "Silence",
         "Stun"
+      ],
+      "spells": [
+        {
+          "id": 438971,
+          "attributes": []
+        },
+        {
+          "id": 438975,
+          "attributes": []
+        },
+        {
+          "id": 439418,
+          "attributes": []
+        }
       ],
       "spawns": [
         {

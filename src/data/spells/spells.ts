@@ -1,18 +1,6 @@
-import type { Spells } from '../types.ts'
-import type { DungeonKey } from '../dungeonKeys.ts'
+import type { DungeonSpells } from './dungeonSpells.ts'
 
-const top = import.meta.compileTime<Spells>('./topSpells.ts')
-
-export const dungeonSpells: Record<DungeonKey, Spells> = {
-  cm: {},
-  dc: {},
-  mw: {},
-  of: {},
-  psf: {},
-  tm: {},
-  tr: {},
-  top,
-}
+export const dungeonSpells = import.meta.compileTime<DungeonSpells>('./dungeonSpells.ts')
 
 export function getIconLink(icon: string) {
   if (!icon.endsWith('.jpg')) icon += '.jpg'

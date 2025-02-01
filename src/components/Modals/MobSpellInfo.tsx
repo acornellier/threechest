@@ -1,13 +1,11 @@
 import { TooltipStyled } from '../Common/TooltipStyled.tsx'
 import { type DungeonKey } from '../../data/dungeonKeys.ts'
-import type { DispelType, Mob, Spell } from '../../data/types.ts'
-import { BoltIcon, HandRaisedIcon, SparklesIcon } from '@heroicons/react/24/outline'
+import type { Mob, Spell, SpellAttribute } from '../../data/types.ts'
+import { BoltIcon, SparklesIcon } from '@heroicons/react/24/outline'
 import { SootheIcon } from '../Common/Icons/SootheIcon.tsx'
 import { DiseaseIcon } from '../Common/Icons/DiseaseIcon.tsx'
 import { BleedIcon } from '../Common/Icons/BleedIcon.tsx'
 import { CurseIcon } from '../Common/Icons/CurseIcon.tsx'
-import { ChainIcon } from '../Common/Icons/ChainIcon.tsx'
-import { PurgeIcon } from '../Common/Icons/PurgeIcon.tsx'
 import { PoisonIcon } from '../Common/Icons/PoisonIcon.tsx'
 import type { FC, SVGProps } from 'react'
 import { dungeonSpells, getIconLink } from '../../data/spells/spells.ts'
@@ -18,21 +16,22 @@ interface Props {
   mob: Mob
 }
 
-interface DispelIcon {
-  name: DispelType
+interface AttributeIcon {
+  name: SpellAttribute
   Icon: FC<SVGProps<SVGSVGElement>>
   label?: string
 }
 
-const dispelTypes: DispelIcon[] = [
-  { name: 'Bleed', Icon: BleedIcon },
-  { name: 'Curse', Icon: CurseIcon },
-  { name: 'Disease', Icon: DiseaseIcon },
-  { name: 'Poison', Icon: PoisonIcon },
-  { name: 'Magic', Icon: SparklesIcon, label: 'Magic dispel' },
-  { name: 'Soothe', Icon: SootheIcon },
-  { name: 'Purge', Icon: PurgeIcon },
-  { name: 'Movement', Icon: ChainIcon, label: 'Movement dispel' },
+const attributeIcons: AttributeIcon[] = [
+  { name: 'interruptible', Icon: BoltIcon },
+  { name: 'bleed', Icon: BleedIcon },
+  { name: 'curse', Icon: CurseIcon },
+  { name: 'disease', Icon: DiseaseIcon },
+  { name: 'poison', Icon: PoisonIcon },
+  { name: 'magic', Icon: SparklesIcon },
+  { name: 'enrage', Icon: SootheIcon },
+  // { name: 'Purge', Icon: PurgeIcon },
+  // { name: 'Movement', Icon: ChainIcon, label: 'Movement dispel' },
 ]
 
 export function MobSpellInfo({ spell, mob, dungeonKey }: Props) {
@@ -49,7 +48,7 @@ export function MobSpellInfo({ spell, mob, dungeonKey }: Props) {
   return (
     <div className="h-8 flex items-center border border-gray-500 rounded-md">
       <a
-        href={`https://www.wowhead.com/spell=${id}?dd=23&ddsize=5`}
+        href={`https://www.wowhead.com/ptr-2/spell=${id}?dd=23&ddsize=5`}
         target="_blank"
         rel="noreferrer"
       >
@@ -82,30 +81,16 @@ export function MobSpellInfo({ spell, mob, dungeonKey }: Props) {
           </span>
         </div>
         <div className={`flex items-center gap-1 ${damage ? '' : 'pr-1'}`}>
-          {dispelTypes.map(
+          {attributeIcons.map(
             ({ name, Icon, label }) =>
-              spell.dispel?.includes(name) && (
+              spell.attributes?.includes(name) && (
                 <Icon
                   key={name}
                   height={20}
                   data-tooltip-id={spellDetailsTooltipId}
-                  data-tooltip-content={label ?? name}
+                  data-tooltip-content={label ?? name[0]?.toUpperCase() + name.substring(1)}
                 />
               ),
-          )}
-          {spell.stop && !spell.interrupt && (
-            <HandRaisedIcon
-              height={20}
-              data-tooltip-id={spellDetailsTooltipId}
-              data-tooltip-content="Stop"
-            />
-          )}
-          {spell.interrupt && (
-            <BoltIcon
-              height={20}
-              data-tooltip-id={spellDetailsTooltipId}
-              data-tooltip-content="Interrupt"
-            />
           )}
           <TooltipStyled id={spellDetailsTooltipId} place="top" />
           {damageText && (

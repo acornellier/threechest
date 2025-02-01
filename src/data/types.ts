@@ -31,6 +31,11 @@ export type Spawn = {
   patrol?: Array<Point>
 }
 
+export type MdtSpell = {
+  id: number
+  attributes: SpellAttribute[]
+}
+
 export type Mob = {
   id: number
   enemyIndex: number
@@ -42,6 +47,7 @@ export type Mob = {
   isBoss: boolean
   stealthDetect?: boolean
   characteristics: string[]
+  spells: MdtSpell[]
   spawns: Spawn[]
 }
 
@@ -69,25 +75,23 @@ export type Spell = {
   damage?: number
   aoe?: boolean
   physical?: boolean
-  variance?: number
   castTime?: number
-  dispel?: DispelType[]
-  interrupt?: boolean
-  stop?: boolean
+  attributes?: SpellAttribute[]
 }
 
 export type Spells = Record<number, Spell[]>
 export type SpellIdMap = Record<number, number[]>
 
-export type DispelType =
-  | 'Soothe'
-  | 'Purge'
-  | 'Bleed'
-  | 'Magic'
-  | 'Curse'
-  | 'Poison'
-  | 'Disease'
-  | 'Movement'
+export type SpellAttribute =
+  | 'interruptible'
+  | 'enrage'
+  | 'bleed'
+  | 'magic'
+  | 'curse'
+  | 'poison'
+  | 'disease'
+// | 'Purge'
+// | 'Movement'
 
 // Change [number, number] to number[] to type-check JSON
 export type SpawnFake = Omit<Spawn, 'pos' | 'patrol'> & {
