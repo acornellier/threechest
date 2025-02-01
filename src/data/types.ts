@@ -99,8 +99,14 @@ export type SpawnFake = Omit<Spawn, 'pos' | 'patrol'> & {
   patrol?: Array<number[]>
 }
 
-export type MobFake = Omit<Mob, 'spawns'> & {
+export type SpellFake = {
+  id: number
+  attributes: string[]
+}
+
+export type MobFake = Omit<Mob, 'spawns' | 'spells'> & {
   spawns: SpawnFake[]
+  spells: SpellFake[]
 }
 
 export type PoiFake = Omit<PointOfInterest, 'type' | 'pos'> & {
