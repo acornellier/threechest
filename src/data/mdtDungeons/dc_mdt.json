@@ -7,7 +7,7 @@
       "enemyIndex": 1,
       "name": "Menial Laborer",
       "count": 1,
-      "health": 5722380,
+      "health": 10697790,
       "creatureType": "Humanoid",
       "scale": 0.8,
       "isBoss": false,
@@ -15,7 +15,9 @@
         "Taunt",
         "Silence",
         "Fear",
-        "Stun"
+        "Disorient",
+        "Stun",
+        "Mind Soothe"
       ],
       "spells": [
         {
@@ -36,10 +38,10 @@
         {
           "id": "1-2",
           "idx": 2,
-          "group": null,
+          "group": 1,
           "pos": [
-            -180.58,
-            86.75
+            -174.04,
+            87.65
           ]
         },
         {
@@ -47,8 +49,8 @@
           "idx": 3,
           "group": 1,
           "pos": [
-            -169.7,
-            84.42
+            -167.52,
+            87.37
           ]
         },
         {
@@ -56,8 +58,8 @@
           "idx": 4,
           "group": 1,
           "pos": [
-            -172.84,
-            82.57
+            -170.67,
+            85.52
           ]
         },
         {
@@ -65,8 +67,8 @@
           "idx": 5,
           "group": 1,
           "pos": [
-            -172.69,
-            86.16
+            -170.52,
+            89.11
           ]
         },
         {
@@ -74,8 +76,8 @@
           "idx": 6,
           "group": 2,
           "pos": [
-            -166.08,
-            95.78
+            -163.65,
+            94.12
           ]
         },
         {
@@ -83,8 +85,8 @@
           "idx": 7,
           "group": 2,
           "pos": [
-            -169.56,
-            93.94
+            -167.13,
+            92.27
           ]
         },
         {
@@ -92,8 +94,8 @@
           "idx": 8,
           "group": 2,
           "pos": [
-            -169.73,
-            97.46
+            -167.29,
+            95.79
           ]
         },
         {
@@ -101,8 +103,8 @@
           "idx": 9,
           "group": 3,
           "pos": [
-            -157.1,
-            90.23
+            -156.34,
+            88.82
           ]
         },
         {
@@ -110,8 +112,8 @@
           "idx": 10,
           "group": 3,
           "pos": [
-            -157.19,
-            93.82
+            -156.42,
+            92.41
           ]
         },
         {
@@ -119,8 +121,8 @@
           "idx": 11,
           "group": 3,
           "pos": [
-            -160.47,
-            91.95
+            -159.7,
+            90.54
           ]
         },
         {
@@ -241,21 +243,12 @@
           ]
         },
         {
-          "id": "1-25",
-          "idx": 25,
-          "group": 12,
-          "pos": [
-            -91.56,
-            100.58
-          ]
-        },
-        {
           "id": "1-26",
           "idx": 26,
           "group": 12,
           "pos": [
-            -91.73,
-            91.61
+            -89.03,
+            96.69
           ]
         },
         {
@@ -263,8 +256,8 @@
           "idx": 27,
           "group": 12,
           "pos": [
-            -89.13,
-            94.17
+            -89.02,
+            90.07
           ]
         },
         {
@@ -272,8 +265,8 @@
           "idx": 28,
           "group": 12,
           "pos": [
-            -88.91,
-            97.77
+            -89.07,
+            93.45
           ]
         },
         {
@@ -391,7 +384,7 @@
       "enemyIndex": 2,
       "name": "Rank Overseer",
       "count": 10,
-      "health": 45779042,
+      "health": 85582321,
       "creatureType": "Humanoid",
       "scale": 1.5,
       "isBoss": false,
@@ -454,13 +447,14 @@
       "enemyIndex": 3,
       "name": "Lowly Moleherd",
       "count": 5,
-      "health": 27181306,
+      "health": 50814503,
       "creatureType": "Humanoid",
       "scale": 1.5,
       "isBoss": false,
       "characteristics": [
         "Taunt",
         "Incapacitate",
+        "Silence",
         "Fear",
         "Stun"
       ],
@@ -526,7 +520,7 @@
       "enemyIndex": 4,
       "name": "Pack Mole",
       "count": 3,
-      "health": 30042496,
+      "health": 56163397,
       "creatureType": "Beast",
       "scale": 1.5,
       "isBoss": false,
@@ -538,19 +532,9 @@
       ],
       "spells": [
         {
-          "id": 425561,
-          "attributes": []
-        },
-        {
           "id": 425704,
           "attributes": [
             "enrage"
-          ]
-        },
-        {
-          "id": 427929,
-          "attributes": [
-            "disease"
           ]
         }
       ],
@@ -661,7 +645,7 @@
       "enemyIndex": 5,
       "name": "Royal Wicklighter",
       "count": 6,
-      "health": 25750712,
+      "health": 48140056,
       "creatureType": "Humanoid",
       "scale": 1.5,
       "isBoss": false,
@@ -669,6 +653,7 @@
         "Taunt",
         "Silence",
         "Fear",
+        "Imprison",
         "Stun"
       ],
       "spells": [
@@ -687,6 +672,15 @@
         }
       ],
       "spawns": [
+        {
+          "id": "5-1",
+          "idx": 1,
+          "group": 12,
+          "pos": [
+            -93.65,
+            90.19
+          ]
+        },
         {
           "id": "5-2",
           "idx": 2,
@@ -728,8 +722,8 @@
           "idx": 6,
           "group": 21,
           "pos": [
-            -68.95,
-            140.52
+            -31.77,
+            172.83
           ]
         }
       ]
@@ -739,12 +733,13 @@
       "enemyIndex": 6,
       "name": "Kobold Taskworker",
       "count": 4,
-      "health": 28611901,
+      "health": 53488950,
       "creatureType": "Humanoid",
       "scale": 1.5,
       "isBoss": false,
       "characteristics": [
-        "Stun"
+        "Stun",
+        "Mind Soothe"
       ],
       "spells": [
         {
@@ -803,8 +798,8 @@
           "idx": 9,
           "group": 18,
           "pos": [
-            -47.81,
-            157.72
+            -49.37,
+            157.64
           ]
         },
         {
@@ -812,7 +807,7 @@
           "idx": 10,
           "group": 18,
           "pos": [
-            -54.45,
+            -55.6,
             157.81
           ]
         },
@@ -821,17 +816,8 @@
           "idx": 11,
           "group": 18,
           "pos": [
-            -54.59,
-            164.02
-          ]
-        },
-        {
-          "id": "6-12",
-          "idx": 12,
-          "group": 15,
-          "pos": [
-            -51.92,
-            144.47
+            -55.41,
+            163.28
           ]
         }
       ]
@@ -841,7 +827,7 @@
       "enemyIndex": 7,
       "name": "Blazing Fiend",
       "count": 7,
-      "health": 22889521,
+      "health": 42791160,
       "creatureType": "Elemental",
       "scale": 1.5,
       "isBoss": false,
@@ -864,8 +850,8 @@
           "idx": 1,
           "group": 21,
           "pos": [
-            -63.16,
-            143.31
+            -37.7,
+            169.34
           ]
         },
         {
@@ -882,26 +868,17 @@
           "idx": 3,
           "group": 21,
           "pos": [
-            -68.81,
-            146.96
+            -37.82,
+            175.86
           ]
         },
         {
-          "id": "7-5",
-          "idx": 5,
-          "group": 19,
+          "id": "7-4",
+          "idx": 4,
+          "group": 18,
           "pos": [
-            -71.25,
-            181.76
-          ]
-        },
-        {
-          "id": "7-6",
-          "idx": 6,
-          "group": 15,
-          "pos": [
-            -52.13,
-            138.15
+            -49.25,
+            163.31
           ]
         }
       ]
@@ -910,12 +887,14 @@
       "id": 208450,
       "enemyIndex": 8,
       "name": "Wandering Candle",
-      "count": 12,
-      "health": 45779042,
+      "count": 15,
+      "health": 85582321,
       "creatureType": "Elemental",
       "scale": 1.7,
       "isBoss": false,
-      "characteristics": [],
+      "characteristics": [
+        "Taunt"
+      ],
       "spells": [
         {
           "id": 430171,
@@ -937,16 +916,16 @@
           "group": 20,
           "pos": [
             -68.37,
-            156.18
+            160.48
           ]
         },
         {
           "id": "8-2",
           "idx": 2,
-          "group": 18,
+          "group": 19,
           "pos": [
-            -47.74,
-            163.99
+            -70.49,
+            181.63
           ]
         },
         {
@@ -954,8 +933,46 @@
           "idx": 3,
           "group": 17,
           "pos": [
-            -38.06,
-            167.99
+            -48.8,
+            147.82
+          ],
+          "patrol": [
+            [
+              -53.81,
+              147.58
+            ],
+            [
+              -59.33,
+              151.08
+            ],
+            [
+              -61.88,
+              159.93
+            ],
+            [
+              -59.33,
+              168.62
+            ],
+            [
+              -53.6,
+              169.28
+            ],
+            [
+              -45.81,
+              169.03
+            ],
+            [
+              -40.97,
+              162.39
+            ],
+            [
+              -41.05,
+              153.62
+            ],
+            [
+              -45.31,
+              150.09
+            ]
           ]
         },
         {
@@ -966,15 +983,6 @@
             -104.94,
             160.2
           ]
-        },
-        {
-          "id": "8-5",
-          "idx": 5,
-          "group": 20,
-          "pos": [
-            -68.19,
-            163.35
-          ]
         }
       ]
     },
@@ -983,14 +991,16 @@
       "enemyIndex": 9,
       "name": "Kobold Flametender",
       "count": 1,
-      "health": 5722380,
+      "health": 10697790,
       "creatureType": "Humanoid",
       "scale": 1.2,
       "isBoss": false,
       "characteristics": [
         "Silence",
         "Fear",
-        "Stun"
+        "Disorient",
+        "Stun",
+        "Mind Soothe"
       ],
       "spells": [
         {
@@ -1143,7 +1153,7 @@
       "enemyIndex": 10,
       "name": "Sootsnout",
       "count": 15,
-      "health": 85835704,
+      "health": 160466851,
       "creatureType": "Humanoid",
       "scale": 1.5,
       "isBoss": false,
@@ -1194,7 +1204,7 @@
       "enemyIndex": 11,
       "name": "Torchsnarl",
       "count": 15,
-      "health": 85835704,
+      "health": 160466851,
       "creatureType": "Humanoid",
       "scale": 2,
       "isBoss": false,
@@ -1242,7 +1252,7 @@
       "enemyIndex": 12,
       "name": "Skittering Darkness",
       "count": 1,
-      "health": 5722380,
+      "health": 10697790,
       "creatureType": "Aberration",
       "scale": 0.8,
       "isBoss": false,
@@ -1750,8 +1760,8 @@
       "id": 208456,
       "enemyIndex": 13,
       "name": "Shuffling Horror",
-      "count": 5,
-      "health": 28611901,
+      "count": 3,
+      "health": 48140056,
       "creatureType": "Aberration",
       "scale": 1.6,
       "isBoss": false,
@@ -1825,8 +1835,8 @@
       "id": 210539,
       "enemyIndex": 14,
       "name": "Corridor Creeper",
-      "count": 10,
-      "health": 42917853,
+      "count": 7,
+      "health": 72210083,
       "creatureType": "Beast",
       "scale": 1.7,
       "isBoss": false,
@@ -1926,15 +1936,6 @@
           ]
         },
         {
-          "id": "14-11",
-          "idx": 11,
-          "group": null,
-          "pos": [
-            -29.58,
-            65.26
-          ]
-        },
-        {
           "id": "14-12",
           "idx": 12,
           "group": null,
@@ -1950,13 +1951,15 @@
       "enemyIndex": 15,
       "name": "Blazing Fiend",
       "count": 7,
-      "health": 22889521,
+      "health": 42791160,
       "creatureType": "Elemental",
       "scale": 1.5,
       "isBoss": false,
       "characteristics": [
         "Taunt",
-        "Silence"
+        "Silence",
+        "Fear",
+        "Stun"
       ],
       "spells": [
         {
@@ -1983,13 +1986,14 @@
       "enemyIndex": 16,
       "name": "Blazing Fiend",
       "count": 7,
-      "health": 22889521,
+      "health": 42791160,
       "creatureType": "Elemental",
       "scale": 1.5,
       "isBoss": false,
       "characteristics": [
         "Silence",
-        "Fear"
+        "Fear",
+        "Stun"
       ],
       "spells": [
         {
@@ -2016,13 +2020,14 @@
       "enemyIndex": 17,
       "name": "Blazing Fiend",
       "count": 7,
-      "health": 22889521,
+      "health": 42791160,
       "creatureType": "Elemental",
       "scale": 1.5,
       "isBoss": false,
       "characteristics": [
         "Silence",
-        "Fear"
+        "Fear",
+        "Stun"
       ],
       "spells": [
         {
@@ -2049,11 +2054,15 @@
       "enemyIndex": 18,
       "name": "Blazing Fiend",
       "count": 7,
-      "health": 22889521,
+      "health": 42791160,
       "creatureType": "Elemental",
       "scale": 1.5,
       "isBoss": false,
-      "characteristics": [],
+      "characteristics": [
+        "Silence",
+        "Fear",
+        "Stun"
+      ],
       "spells": [
         {
           "id": 424322,
@@ -2079,13 +2088,14 @@
       "enemyIndex": 19,
       "name": "Blazing Fiend",
       "count": 7,
-      "health": 22889521,
+      "health": 42791160,
       "creatureType": "Elemental",
       "scale": 1.5,
       "isBoss": false,
       "characteristics": [
         "Silence",
-        "Fear"
+        "Fear",
+        "Stun"
       ],
       "spells": [
         {
@@ -2112,12 +2122,15 @@
       "enemyIndex": 20,
       "name": "Blazing Fiend",
       "count": 7,
-      "health": 22889521,
+      "health": 42791160,
       "creatureType": "Elemental",
       "scale": 1.5,
       "isBoss": false,
       "characteristics": [
-        "Taunt"
+        "Taunt",
+        "Silence",
+        "Fear",
+        "Stun"
       ],
       "spells": [
         {
@@ -2144,13 +2157,14 @@
       "enemyIndex": 21,
       "name": "Blazing Fiend",
       "count": 7,
-      "health": 22889521,
+      "health": 42791160,
       "creatureType": "Elemental",
       "scale": 1.5,
       "isBoss": false,
       "characteristics": [
         "Silence",
-        "Fear"
+        "Fear",
+        "Stun"
       ],
       "spells": [
         {
@@ -2177,13 +2191,14 @@
       "enemyIndex": 22,
       "name": "Blazing Fiend",
       "count": 7,
-      "health": 22889521,
+      "health": 42791160,
       "creatureType": "Elemental",
       "scale": 1.5,
       "isBoss": false,
       "characteristics": [
         "Silence",
-        "Fear"
+        "Fear",
+        "Stun"
       ],
       "spells": [
         {
@@ -2210,7 +2225,7 @@
       "enemyIndex": 23,
       "name": "Ol' Waxbeard",
       "count": 0,
-      "health": 142958477,
+      "health": 267565012,
       "creatureType": "Humanoid",
       "scale": 2,
       "isBoss": true,
@@ -2260,7 +2275,7 @@
       "enemyIndex": 24,
       "name": "Blazikon",
       "count": 0,
-      "health": 200141868,
+      "health": 374591017,
       "creatureType": "Elemental",
       "scale": 2,
       "isBoss": true,
@@ -2326,11 +2341,13 @@
       "enemyIndex": 25,
       "name": "The Candle King",
       "count": 0,
-      "health": 200141868,
+      "health": 374591017,
       "creatureType": "Humanoid",
       "scale": 2,
       "isBoss": true,
-      "characteristics": [],
+      "characteristics": [
+        "Taunt"
+      ],
       "spells": [
         {
           "id": 420659,
@@ -2342,6 +2359,10 @@
         },
         {
           "id": 421277,
+          "attributes": []
+        },
+        {
+          "id": 421282,
           "attributes": []
         },
         {
@@ -2376,7 +2397,7 @@
       "enemyIndex": 26,
       "name": "The Darkness",
       "count": 0,
-      "health": 643313148,
+      "health": 1083638299,
       "creatureType": "Humanoid",
       "scale": 2,
       "isBoss": true,
