@@ -34,11 +34,11 @@ export const mdtMapOffsets: Record<number, MapOffset> = {
   },
   // psf
   2308: {
-    x: 678 / 1920,
+    x: 692 / 1920,
     y: 145 / 1080,
-    scaleX: 1445 / 1920,
-    scaleY: 964 / 1080,
-    rotate: 3.3,
+    scaleX: 1430 / 1920,
+    scaleY: 955 / 1080,
+    rotate: 4,
   },
   2309: {
     x: -29 / 1920,
@@ -49,11 +49,11 @@ export const mdtMapOffsets: Record<number, MapOffset> = {
   },
   2330: {
     // copy of 2308, seems to be a dup?
-    x: 678 / 1920,
+    x: 692 / 1920,
     y: 145 / 1080,
-    scaleX: 1445 / 1920,
-    scaleY: 964 / 1080,
-    rotate: 3.3,
+    scaleX: 1430 / 1920,
+    scaleY: 955 / 1080,
+    rotate: 4,
   },
   // top
   1683: {
@@ -89,10 +89,10 @@ export const mdtMapOffsets: Record<number, MapOffset> = {
   },
   // tr
   2315: {
-    x: 85 / 1920,
-    y: 80 / 1080,
-    scaleX: 1002 / 1920,
-    scaleY: 668 / 1080,
+    x: 646 / 1920,
+    y: -5 / 1080,
+    scaleX: 1264 / 1920,
+    scaleY: 843 / 1080,
   },
   2316: {
     x: 504 / 1920,
@@ -101,10 +101,10 @@ export const mdtMapOffsets: Record<number, MapOffset> = {
     scaleY: 618 / 1080,
   },
   2318: {
-    x: 1154 / 1920,
-    y: 33 / 1080,
-    scaleX: 1002 / 1920,
-    scaleY: 668 / 1080,
+    x: -309 / 1920,
+    y: -32 / 1080,
+    scaleX: 1348 / 1920,
+    scaleY: 900 / 1080,
   },
   2319: {
     x: 126 / 1920,
