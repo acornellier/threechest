@@ -7,7 +7,7 @@
       "enemyIndex": 1,
       "name": "Shreddinator 3000",
       "count": 10,
-      "health": 106977901,
+      "health": 97495397,
       "creatureType": "Mechanical",
       "scale": 1.6,
       "isBoss": false,
@@ -38,6 +38,15 @@
       ],
       "spawns": [
         {
+          "id": "1-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -104.03,
+            26.03
+          ]
+        },
+        {
           "id": "1-2",
           "idx": 2,
           "group": null,
@@ -60,8 +69,8 @@
           "idx": 4,
           "group": 7,
           "pos": [
-            -74.88,
-            154.93
+            -76.2,
+            157.6
           ]
         },
         {
@@ -89,16 +98,19 @@
       "enemyIndex": 2,
       "name": "Darkfuse Soldier",
       "count": 3,
-      "health": 53488950,
+      "health": 48747699,
       "creatureType": "Humanoid",
-      "scale": 1.5,
+      "scale": 1.2,
       "isBoss": false,
       "characteristics": [
+        "Taunt",
         "Silence",
+        "Root",
         "Fear",
         "Disorient",
         "Imprison",
-        "Stun"
+        "Stun",
+        "Slow"
       ],
       "spells": [
         {
@@ -168,8 +180,8 @@
           "idx": 8,
           "group": 4,
           "pos": [
-            -41.18,
-            150.81
+            -40.45,
+            153.32
           ]
         },
         {
@@ -177,8 +189,8 @@
           "idx": 9,
           "group": 4,
           "pos": [
-            -35.1,
-            153.84
+            -38.86,
+            158.07
           ]
         },
         {
@@ -186,8 +198,8 @@
           "idx": 10,
           "group": 15,
           "pos": [
-            -97.74,
-            42.1
+            -100.06,
+            56.83
           ]
         },
         {
@@ -195,8 +207,8 @@
           "idx": 11,
           "group": 15,
           "pos": [
-            -97.5,
-            56.98
+            -94.87,
+            56.86
           ]
         },
         {
@@ -204,8 +216,8 @@
           "idx": 12,
           "group": 29,
           "pos": [
-            -162.97,
-            21.64
+            -163.5,
+            21.17
           ]
         },
         {
@@ -213,8 +225,8 @@
           "idx": 13,
           "group": 29,
           "pos": [
-            -167.98,
-            26.05
+            -167.12,
+            24.99
           ]
         },
         {
@@ -285,8 +297,8 @@
           "idx": 21,
           "group": 31,
           "pos": [
-            -161.04,
-            71.2
+            -162.82,
+            71.92
           ]
         },
         {
@@ -294,8 +306,8 @@
           "idx": 22,
           "group": 31,
           "pos": [
-            -160.91,
-            77.4
+            -162.96,
+            77.23
           ]
         },
         {
@@ -321,8 +333,8 @@
           "idx": 25,
           "group": 28,
           "pos": [
-            -151.52,
-            12.81
+            -153.06,
+            10.76
           ]
         },
         {
@@ -330,8 +342,8 @@
           "idx": 26,
           "group": 28,
           "pos": [
-            -144.95,
-            13.15
+            -147.37,
+            10.81
           ]
         }
       ]
@@ -341,12 +353,13 @@
       "enemyIndex": 3,
       "name": "Mechadrone Sniper",
       "count": 5,
-      "health": 53488950,
+      "health": 48747699,
       "creatureType": "Mechanical",
       "scale": 1.5,
       "isBoss": false,
       "characteristics": [
         "Taunt",
+        "Incapacitate",
         "Silence",
         "Stun"
       ],
@@ -541,13 +554,15 @@
       "enemyIndex": 4,
       "name": "Loaderbot",
       "count": 2,
-      "health": 42791160,
+      "health": 38998159,
       "creatureType": "Mechanical",
-      "scale": 1.5,
+      "scale": 1.1,
       "isBoss": false,
       "characteristics": [
+        "Taunt",
         "Silence",
-        "Stun"
+        "Stun",
+        "Slow"
       ],
       "spells": [
         {
@@ -569,8 +584,8 @@
           "idx": 2,
           "group": 22,
           "pos": [
-            -132.39,
-            125.42
+            -134.9,
+            122.84
           ]
         },
         {
@@ -578,8 +593,8 @@
           "idx": 3,
           "group": 22,
           "pos": [
-            -136.23,
-            120.31
+            -139.34,
+            121.3
           ]
         },
         {
@@ -587,8 +602,8 @@
           "idx": 4,
           "group": 22,
           "pos": [
-            -136.55,
-            113.91
+            -136.35,
+            118.21
           ]
         },
         {
@@ -596,8 +611,8 @@
           "idx": 5,
           "group": 5,
           "pos": [
-            -52.4,
-            139.67
+            -55.04,
+            140.53
           ]
         },
         {
@@ -605,8 +620,8 @@
           "idx": 6,
           "group": 5,
           "pos": [
-            -57.1,
-            135.21
+            -58.02,
+            136.47
           ]
         },
         {
@@ -614,8 +629,8 @@
           "idx": 7,
           "group": 8,
           "pos": [
-            -82.05,
-            137.78
+            -85.46,
+            137.07
           ]
         },
         {
@@ -623,8 +638,8 @@
           "idx": 8,
           "group": 8,
           "pos": [
-            -85.87,
-            143.06
+            -85.37,
+            141.76
           ]
         },
         {
@@ -632,8 +647,8 @@
           "idx": 9,
           "group": 8,
           "pos": [
-            -79.14,
-            143.69
+            -81.14,
+            139.17
           ]
         },
         {
@@ -688,9 +703,9 @@
       "enemyIndex": 5,
       "name": "Venture Co. Contractor",
       "count": 2,
-      "health": 53488950,
+      "health": 48747699,
       "creatureType": "Humanoid",
-      "scale": 1.5,
+      "scale": 1.2,
       "isBoss": false,
       "characteristics": [
         "Taunt",
@@ -698,14 +713,11 @@
         "Fear",
         "Disorient",
         "Imprison",
-        "Stun"
+        "Stun",
+        "Slow",
+        "Mind Soothe"
       ],
-      "spells": [
-        {
-          "id": 468932,
-          "attributes": []
-        }
-      ],
+      "spells": [],
       "spawns": [
         {
           "id": "5-2",
@@ -757,8 +769,8 @@
           "idx": 7,
           "group": 4,
           "pos": [
-            -35.11,
-            160.79
+            -42.58,
+            161.78
           ]
         },
         {
@@ -766,8 +778,8 @@
           "idx": 8,
           "group": 4,
           "pos": [
-            -40.75,
-            157.32
+            -44.25,
+            156.86
           ]
         },
         {
@@ -775,8 +787,8 @@
           "idx": 9,
           "group": 4,
           "pos": [
-            -45.99,
-            153.33
+            -45.39,
+            151.81
           ]
         },
         {
@@ -795,15 +807,6 @@
           "pos": [
             -112.97,
             40.13
-          ]
-        },
-        {
-          "id": "5-12",
-          "idx": 12,
-          "group": 16,
-          "pos": [
-            -109.76,
-            34.78
           ]
         },
         {
@@ -838,8 +841,8 @@
           "idx": 16,
           "group": 21,
           "pos": [
-            -123.52,
-            108.25
+            -126.17,
+            107.26
           ]
         },
         {
@@ -847,8 +850,8 @@
           "idx": 17,
           "group": 21,
           "pos": [
-            -128.17,
-            112.89
+            -130.02,
+            110.9
           ]
         },
         {
@@ -856,8 +859,8 @@
           "idx": 18,
           "group": 7,
           "pos": [
-            -76.43,
-            161.42
+            -78.17,
+            163.26
           ]
         },
         {
@@ -865,8 +868,8 @@
           "idx": 19,
           "group": 7,
           "pos": [
-            -81.37,
-            157.21
+            -82.3,
+            158.03
           ]
         },
         {
@@ -874,8 +877,8 @@
           "idx": 20,
           "group": 18,
           "pos": [
-            -107.72,
-            118.74
+            -106.4,
+            120.13
           ]
         },
         {
@@ -883,8 +886,8 @@
           "idx": 21,
           "group": 18,
           "pos": [
-            -110.47,
-            124.62
+            -109.55,
+            126.67
           ]
         },
         {
@@ -983,16 +986,19 @@
       "id": 229252,
       "enemyIndex": 6,
       "name": "Darkfuse Hyena",
-      "count": 5,
-      "health": 42791160,
-      "creatureType": "Humanoid",
-      "scale": 1.5,
+      "count": 3,
+      "health": 38998159,
+      "creatureType": "Beast",
+      "scale": 1.2,
       "isBoss": false,
       "characteristics": [
+        "Taunt",
+        "Incapacitate",
         "Silence",
         "Fear",
         "Disorient",
-        "Stun"
+        "Stun",
+        "Slow"
       ],
       "spells": [
         {
@@ -1144,8 +1150,8 @@
           "idx": 15,
           "group": 31,
           "pos": [
-            -167.18,
-            71.16
+            -168.01,
+            71.94
           ]
         },
         {
@@ -1153,8 +1159,8 @@
           "idx": 16,
           "group": 31,
           "pos": [
-            -167.23,
-            77.24
+            -168.06,
+            76.91
           ]
         },
         {
@@ -1191,7 +1197,7 @@
       "enemyIndex": 7,
       "name": "Darkfuse Demolitionist",
       "count": 7,
-      "health": 53488950,
+      "health": 48747699,
       "creatureType": "Humanoid",
       "scale": 1.5,
       "isBoss": false,
@@ -1201,7 +1207,8 @@
         "Fear",
         "Disorient",
         "Imprison",
-        "Stun"
+        "Stun",
+        "Slow"
       ],
       "spells": [
         {
@@ -1274,7 +1281,7 @@
       "enemyIndex": 8,
       "name": "Darkfuse Bloodwarper",
       "count": 12,
-      "health": 85582321,
+      "health": 77996318,
       "creatureType": "Humanoid",
       "scale": 2,
       "isBoss": false,
@@ -1293,16 +1300,20 @@
           "attributes": [
             "interruptible"
           ]
+        },
+        {
+          "id": 1216826,
+          "attributes": []
         }
       ],
       "spawns": [
         {
           "id": "8-2",
           "idx": 2,
-          "group": 15,
+          "group": null,
           "pos": [
-            -97.48,
-            49.54
+            -97.97,
+            46.91
           ]
         },
         {
@@ -1328,8 +1339,8 @@
           "idx": 5,
           "group": 27,
           "pos": [
-            -130.26,
-            20.36
+            -130.85,
+            21.81
           ]
         }
       ]
@@ -1339,16 +1350,21 @@
       "enemyIndex": 9,
       "name": "Darkfuse Inspector",
       "count": 5,
-      "health": 53488950,
+      "health": 48747699,
       "creatureType": "Humanoid",
       "scale": 1.5,
       "isBoss": false,
       "characteristics": [
+        "Taunt",
         "Incapacitate",
         "Silence",
+        "Polymorph",
+        "Root",
         "Fear",
         "Disorient",
-        "Stun"
+        "Imprison",
+        "Stun",
+        "Sleep Walk"
       ],
       "spells": [
         {
@@ -1393,8 +1409,8 @@
           "idx": 5,
           "group": 27,
           "pos": [
-            -124.81,
-            15.24
+            -125.67,
+            15.76
           ]
         },
         {
@@ -1402,8 +1418,8 @@
           "idx": 6,
           "group": 27,
           "pos": [
-            -134.31,
-            14.05
+            -133.98,
+            14.97
           ]
         },
         {
@@ -1458,16 +1474,20 @@
       "enemyIndex": 10,
       "name": "Venture Co. Surveyor",
       "count": 7,
-      "health": 53488950,
+      "health": 48747699,
       "creatureType": "Humanoid",
       "scale": 1.5,
       "isBoss": false,
       "characteristics": [
         "Taunt",
+        "Incapacitate",
         "Silence",
         "Fear",
         "Disorient",
-        "Stun"
+        "Imprison",
+        "Stun",
+        "Slow",
+        "Mind Soothe"
       ],
       "spells": [
         {
@@ -1499,8 +1519,8 @@
           "idx": 2,
           "group": 6,
           "pos": [
-            -55.3,
-            155.44
+            -55.57,
+            154.64
           ]
         },
         {
@@ -1508,8 +1528,8 @@
           "idx": 3,
           "group": 6,
           "pos": [
-            -59.89,
-            160.21
+            -58.63,
+            160.47
           ]
         },
         {
@@ -1517,8 +1537,8 @@
           "idx": 4,
           "group": 21,
           "pos": [
-            -122.15,
-            114.23
+            -124.66,
+            112.38
           ]
         },
         {
@@ -1526,8 +1546,8 @@
           "idx": 5,
           "group": 18,
           "pos": [
-            -114.09,
-            119.34
+            -112.11,
+            121.26
           ]
         },
         {
@@ -1573,7 +1593,7 @@
       "enemyIndex": 11,
       "name": "Venture Co. Electrician",
       "count": 7,
-      "health": 53488950,
+      "health": 48747699,
       "creatureType": "Humanoid",
       "scale": 1.5,
       "isBoss": false,
@@ -1593,6 +1613,10 @@
           "attributes": [
             "interruptible"
           ]
+        },
+        {
+          "id": 465966,
+          "attributes": []
         },
         {
           "id": 469799,
@@ -1694,14 +1718,16 @@
       "enemyIndex": 12,
       "name": "Bombshell Crab",
       "count": 3,
-      "health": 53488950,
+      "health": 48747699,
       "creatureType": "Beast",
-      "scale": 1.2,
+      "scale": 1.1,
       "isBoss": false,
       "characteristics": [
         "Taunt",
+        "Incapacitate",
         "Silence",
         "Fear",
+        "Disorient",
         "Imprison",
         "Stun"
       ],
@@ -1867,7 +1893,7 @@
       "enemyIndex": 13,
       "name": "Venture Co. Diver",
       "count": 5,
-      "health": 53488950,
+      "health": 48747699,
       "creatureType": "Humanoid",
       "scale": 1.6,
       "isBoss": false,
@@ -1875,10 +1901,12 @@
         "Taunt",
         "Incapacitate",
         "Silence",
+        "Root",
         "Fear",
         "Disorient",
         "Imprison",
-        "Stun"
+        "Stun",
+        "Mind Soothe"
       ],
       "spells": [
         {
@@ -1976,7 +2004,7 @@
       "enemyIndex": 14,
       "name": "Venture Co. Architect",
       "count": 10,
-      "health": 69535636,
+      "health": 63372008,
       "creatureType": "Humanoid",
       "scale": 2,
       "isBoss": false,
@@ -2034,8 +2062,8 @@
           "idx": 5,
           "group": 20,
           "pos": [
-            -120.32,
-            131.34
+            -119.92,
+            132
           ]
         },
         {
@@ -2072,7 +2100,7 @@
       "enemyIndex": 15,
       "name": "Disturbed Kelp",
       "count": 7,
-      "health": 53488950,
+      "health": 48747699,
       "creatureType": "Elemental",
       "scale": 1.5,
       "isBoss": false,
@@ -2163,7 +2191,7 @@
       "enemyIndex": 16,
       "name": "Bubbles",
       "count": 20,
-      "health": 160466851,
+      "health": 146243096,
       "creatureType": "Beast",
       "scale": 2,
       "isBoss": false,
@@ -2210,14 +2238,15 @@
             295.03
           ]
         }
-      ]
+      ],
+      "stealthDetect": true
     },
     {
       "id": 231325,
       "enemyIndex": 17,
       "name": "Darkfuse Jumpstarter",
       "count": 12,
-      "health": 85582321,
+      "health": 77996318,
       "creatureType": "Humanoid",
       "scale": 1.7,
       "isBoss": false,
@@ -2285,15 +2314,16 @@
             351.58
           ]
         }
-      ]
+      ],
+      "stealthDetect": true
     },
     {
       "id": 226398,
       "enemyIndex": 18,
       "name": "Big M.O.M.M.A.",
       "count": 0,
-      "health": 588643027,
-      "creatureType": "Humanoid",
+      "health": 535922722,
+      "creatureType": "Mechanical",
       "scale": 1.5,
       "isBoss": true,
       "characteristics": [],
@@ -2364,9 +2394,9 @@
       "enemyIndex": 19,
       "name": "Bront",
       "count": 0,
-      "health": 240808512,
+      "health": 219241114,
       "creatureType": "Humanoid",
-      "scale": 2,
+      "scale": 1.7,
       "isBoss": true,
       "characteristics": [
         "Taunt"
@@ -2399,8 +2429,8 @@
           "idx": 1,
           "group": 45,
           "pos": [
-            -172.41,
-            214.8
+            -173.67,
+            210.54
           ]
         }
       ]
@@ -2410,9 +2440,9 @@
       "enemyIndex": 20,
       "name": "Keeza Quickfuse",
       "count": 0,
-      "health": 187295509,
+      "health": 170520866,
       "creatureType": "Humanoid",
-      "scale": 2,
+      "scale": 1.7,
       "isBoss": true,
       "characteristics": [
         "Taunt"
@@ -2475,8 +2505,8 @@
           "idx": 1,
           "group": 45,
           "pos": [
-            -186.6,
-            202.47
+            -184.86,
+            199.47
           ]
         }
       ]
@@ -2486,8 +2516,8 @@
       "enemyIndex": 21,
       "name": "Swampface",
       "count": 0,
-      "health": 374591017,
-      "creatureType": "Humanoid",
+      "health": 341041732,
+      "creatureType": "Elemental",
       "scale": 2,
       "isBoss": true,
       "characteristics": [
@@ -2560,7 +2590,7 @@
       "enemyIndex": 22,
       "name": "Geezle Gigazap",
       "count": 0,
-      "health": 428104019,
+      "health": 389761980,
       "creatureType": "Humanoid",
       "scale": 2,
       "isBoss": true,
@@ -2638,7 +2668,7 @@
       "enemyIndex": 23,
       "name": "Darkfuse Mechadrone",
       "count": 0,
-      "health": 53488955,
+      "health": 48747699,
       "creatureType": "Mechanical",
       "scale": 1.5,
       "isBoss": false,
@@ -2660,7 +2690,9 @@
         },
         {
           "id": 1214780,
-          "attributes": []
+          "attributes": [
+            "interruptible"
+          ]
         },
         {
           "id": 1214801,
@@ -2710,19 +2742,24 @@
       "id": 231380,
       "enemyIndex": 24,
       "name": "Undercrawler",
-      "count": 0,
-      "health": 53488950,
+      "count": 1,
+      "health": 48747699,
       "creatureType": "Beast",
       "scale": 1.3,
       "isBoss": false,
       "characteristics": [
         "Taunt",
-        "Stun"
+        "Silence",
+        "Fear",
+        "Disorient",
+        "Stun",
+        "Slow"
       ],
       "spells": [
         {
           "id": 465813,
           "attributes": [
+            "interruptible",
             "poison"
           ]
         }
@@ -2816,11 +2853,14 @@
       "enemyIndex": 25,
       "name": "Waterworks Crocolisk",
       "count": 1,
-      "health": 53488950,
+      "health": 48747699,
       "creatureType": "Beast",
       "scale": 1.3,
       "isBoss": false,
-      "characteristics": [],
+      "characteristics": [
+        "Taunt",
+        "Stun"
+      ],
       "spells": [
         {
           "id": 465820,
@@ -2957,5 +2997,54 @@
       ]
     }
   ],
-  "pois": []
+  "pois": [
+    {
+      "type": "dungeonEntrance",
+      "itemType": null,
+      "pos": [
+        -10.83,
+        108.23
+      ]
+    },
+    {
+      "type": "floodgateItem",
+      "itemType": null,
+      "pos": [
+        -141.78,
+        21.15
+      ]
+    },
+    {
+      "type": "floodgateItem",
+      "itemType": null,
+      "pos": [
+        -190.41,
+        213.19
+      ]
+    },
+    {
+      "type": "floodgateItem",
+      "itemType": null,
+      "pos": [
+        -129.85,
+        131.81
+      ]
+    },
+    {
+      "type": "floodgateItem",
+      "itemType": null,
+      "pos": [
+        -155.62,
+        66.53
+      ]
+    },
+    {
+      "type": "floodgateItem",
+      "itemType": null,
+      "pos": [
+        -84.08,
+        149.74
+      ]
+    }
+  ]
 }

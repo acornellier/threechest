@@ -7,7 +7,7 @@
       "enemyIndex": 1,
       "name": "Quartermaster Koratite",
       "count": 20,
-      "health": 85582321,
+      "health": 77996318,
       "creatureType": "Humanoid",
       "scale": 2,
       "isBoss": false,
@@ -49,7 +49,7 @@
       "enemyIndex": 2,
       "name": "Cursed Thunderer",
       "count": 10,
-      "health": 48140056,
+      "health": 43872929,
       "creatureType": "Humanoid",
       "scale": 1.5,
       "isBoss": false,
@@ -57,6 +57,7 @@
         "Taunt",
         "Incapacitate",
         "Silence",
+        "Root",
         "Fear",
         "Disorient",
         "Imprison",
@@ -175,17 +176,20 @@
       "enemyIndex": 3,
       "name": "Cursed Rookguard",
       "count": 10,
-      "health": 56163397,
+      "health": 51185084,
       "creatureType": "Humanoid",
       "scale": 1.5,
       "isBoss": false,
       "characteristics": [
         "Taunt",
         "Silence",
+        "Root",
         "Fear",
         "Disorient",
+        "Imprison",
         "Stun",
-        "Slow"
+        "Slow",
+        "Mind Soothe"
       ],
       "spells": [
         {
@@ -401,7 +405,7 @@
       "enemyIndex": 4,
       "name": "Voidrider",
       "count": 25,
-      "health": 96280110,
+      "health": 87745857,
       "creatureType": "Elemental",
       "scale": 1.5,
       "isBoss": false,
@@ -522,7 +526,7 @@
       "enemyIndex": 5,
       "name": "Unruly Stormrook",
       "count": 12,
-      "health": 58837846,
+      "health": 53622468,
       "creatureType": "Elemental",
       "scale": 1.5,
       "isBoss": false,
@@ -586,11 +590,12 @@
       "enemyIndex": 6,
       "name": "Cursed Rooktender",
       "count": 10,
-      "health": 40116713,
+      "health": 36560774,
       "creatureType": "Humanoid",
       "scale": 1.5,
       "isBoss": false,
       "characteristics": [
+        "Taunt",
         "Silence",
         "Fear",
         "Disorient",
@@ -659,13 +664,14 @@
       "enemyIndex": 7,
       "name": "Void-Cursed Crusher",
       "count": 15,
-      "health": 64186740,
+      "health": 58497238,
       "creatureType": "Aberration",
       "scale": 1.5,
       "isBoss": false,
       "characteristics": [
         "Taunt",
         "Silence",
+        "Root",
         "Fear",
         "Disorient",
         "Stun",
@@ -855,7 +861,7 @@
       "enemyIndex": 8,
       "name": "Corrupted Oracle",
       "count": 12,
-      "health": 42791160,
+      "health": 38998159,
       "creatureType": "Humanoid",
       "scale": 1.5,
       "isBoss": false,
@@ -864,8 +870,10 @@
         "Silence",
         "Fear",
         "Disorient",
+        "Imprison",
         "Stun",
-        "Slow"
+        "Slow",
+        "Mind Soothe"
       ],
       "spells": [
         {
@@ -943,8 +951,8 @@
       "enemyIndex": 9,
       "name": "Coalescing Void Diffuser",
       "count": 25,
-      "health": 80233426,
-      "creatureType": "Humanoid",
+      "health": 73121548,
+      "creatureType": "Aberration",
       "scale": 1.5,
       "isBoss": false,
       "characteristics": [
@@ -962,6 +970,10 @@
         },
         {
           "id": 430814,
+          "attributes": []
+        },
+        {
+          "id": 452932,
           "attributes": []
         }
       ],
@@ -1018,7 +1030,7 @@
       "enemyIndex": 10,
       "name": "Afflicted Civilian",
       "count": 1,
-      "health": 10697790,
+      "health": 9749540,
       "creatureType": "Humanoid",
       "scale": 1,
       "isBoss": false,
@@ -1227,7 +1239,7 @@
           "group": 25,
           "pos": [
             -143.11,
-            287.2
+            286.79
           ]
         },
         {
@@ -1678,7 +1690,7 @@
       "enemyIndex": 11,
       "name": "Void Ascendant",
       "count": 22,
-      "health": 90931216,
+      "health": 82871088,
       "creatureType": "Humanoid",
       "scale": 2,
       "isBoss": false,
@@ -1761,7 +1773,7 @@
       "enemyIndex": 12,
       "name": "Radiating Voidstone",
       "count": 25,
-      "health": 117675691,
+      "health": 107244937,
       "creatureType": "Aberration",
       "scale": 2,
       "isBoss": false,
@@ -1830,7 +1842,7 @@
       "enemyIndex": 13,
       "name": "Kyrioss",
       "count": 0,
-      "health": 428104019,
+      "health": 341041732,
       "creatureType": "Elemental",
       "scale": 2,
       "isBoss": true,
@@ -1856,6 +1868,10 @@
         },
         {
           "id": 1214315,
+          "attributes": []
+        },
+        {
+          "id": 1214318,
           "attributes": []
         },
         {
@@ -1892,13 +1908,14 @@
       "enemyIndex": 14,
       "name": "Stormguard Gorren",
       "count": 0,
-      "health": 374591017,
+      "health": 341041732,
       "creatureType": "Humanoid",
       "scale": 2,
       "isBoss": true,
       "characteristics": [
         "Taunt",
-        "Slow"
+        "Slow",
+        "Mind Soothe"
       ],
       "spells": [
         {
@@ -1922,7 +1939,15 @@
           "attributes": []
         },
         {
+          "id": 425052,
+          "attributes": []
+        },
+        {
           "id": 425113,
+          "attributes": []
+        },
+        {
+          "id": 426136,
           "attributes": []
         },
         {
@@ -1955,8 +1980,8 @@
       "enemyIndex": 15,
       "name": "Skardyn Monstrosity",
       "count": 0,
-      "health": 428104019,
-      "creatureType": "Humanoid",
+      "health": 389761980,
+      "creatureType": "Aberration",
       "scale": 2,
       "isBoss": true,
       "characteristics": [
@@ -2013,13 +2038,17 @@
         {
           "id": 455219,
           "attributes": []
+        },
+        {
+          "id": 455220,
+          "attributes": []
         }
       ],
       "spawns": [
         {
           "id": "15-1",
           "idx": 1,
-          "group": null,
+          "group": 33,
           "pos": [
             -214.68,
             259.15
@@ -2032,9 +2061,9 @@
       "enemyIndex": 16,
       "name": "Stormrider Vokmar",
       "count": 0,
-      "health": 111435316,
+      "health": 101557699,
       "creatureType": "Humanoid",
-      "scale": 4,
+      "scale": 3.3,
       "isBoss": false,
       "characteristics": [],
       "spells": [
@@ -2059,6 +2088,10 @@
           "attributes": []
         },
         {
+          "id": 458130,
+          "attributes": []
+        },
+        {
           "id": 460190,
           "attributes": []
         }
@@ -2069,12 +2102,71 @@
           "idx": 1,
           "group": null,
           "pos": [
-            -188.79,
-            247.96
+            -185.47,
+            246.51
+          ]
+        }
+      ]
+    },
+    {
+      "id": 213741,
+      "enemyIndex": 17,
+      "name": "Voidstone Awakened",
+      "count": 0,
+      "health": 24345042,
+      "creatureType": "Humanoid",
+      "scale": 2,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [
+        {
+          "id": 429028,
+          "attributes": []
+        },
+        {
+          "id": 429029,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "17-1",
+          "idx": 1,
+          "group": 33,
+          "pos": [
+            -227.03,
+            250.86
+          ]
+        },
+        {
+          "id": "17-2",
+          "idx": 2,
+          "group": 33,
+          "pos": [
+            -216.79,
+            246.31
+          ]
+        },
+        {
+          "id": "17-3",
+          "idx": 3,
+          "group": 33,
+          "pos": [
+            -205.99,
+            248.18
           ]
         }
       ]
     }
   ],
-  "pois": []
+  "pois": [
+    {
+      "type": "dungeonEntrance",
+      "itemType": null,
+      "pos": [
+        -79.29,
+        353.58
+      ]
+    }
+  ]
 }

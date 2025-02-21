@@ -7,7 +7,7 @@
       "enemyIndex": 1,
       "name": "Battlefield Ritualist",
       "count": 4,
-      "health": 26183974,
+      "health": 43872929,
       "creatureType": "Humanoid",
       "scale": 1.5,
       "isBoss": false,
@@ -24,7 +24,8 @@
         "Imprison",
         "Sap",
         "Stun",
-        "Slow"
+        "Slow",
+        "Mind Soothe"
       ],
       "spells": [
         {
@@ -47,8 +48,8 @@
           "idx": 1,
           "group": 1,
           "pos": [
-            -103.93,
-            66.44
+            -105.57,
+            66.85
           ]
         }
       ]
@@ -58,7 +59,7 @@
       "enemyIndex": 2,
       "name": "Unyielding Contender",
       "count": 4,
-      "health": 33457299,
+      "health": 56059854,
       "creatureType": "Humanoid",
       "scale": 1.5,
       "isBoss": false,
@@ -75,7 +76,8 @@
         "Imprison",
         "Sap",
         "Stun",
-        "Slow"
+        "Slow",
+        "Mind Soothe"
       ],
       "spells": [
         {
@@ -95,8 +97,8 @@
           "idx": 1,
           "group": 1,
           "pos": [
-            -107.52,
-            72.06
+            -109.16,
+            72.47
           ]
         },
         {
@@ -104,8 +106,8 @@
           "idx": 2,
           "group": 1,
           "pos": [
-            -107.91,
-            60.79
+            -109.55,
+            61.2
           ]
         }
       ]
@@ -115,7 +117,7 @@
       "enemyIndex": 3,
       "name": "Raging Bloodhorn",
       "count": 7,
-      "health": 52367947,
+      "health": 87745857,
       "creatureType": "Beast",
       "scale": 1.8,
       "isBoss": false,
@@ -140,8 +142,8 @@
           "idx": 1,
           "group": null,
           "pos": [
-            -94.55,
-            66.27
+            -96.6,
+            66.68
           ]
         }
       ],
@@ -152,7 +154,7 @@
       "enemyIndex": 4,
       "name": "Dessia the Decapitator",
       "count": 0,
-      "health": 104515860,
+      "health": 175392891,
       "creatureType": "Humanoid",
       "scale": 2,
       "isBoss": true,
@@ -190,7 +192,7 @@
       "enemyIndex": 5,
       "name": "Paceran the Virulent",
       "count": 0,
-      "health": 92902987,
+      "health": 155904792,
       "creatureType": "Humanoid",
       "scale": 2,
       "isBoss": true,
@@ -198,12 +200,6 @@
         "Taunt"
       ],
       "spells": [
-        {
-          "id": 320120,
-          "attributes": [
-            "interruptible"
-          ]
-        },
         {
           "id": 320180,
           "attributes": []
@@ -242,7 +238,7 @@
       "enemyIndex": 6,
       "name": "Sathel the Accursed",
       "count": 0,
-      "health": 81290113,
+      "health": 136416693,
       "creatureType": "Humanoid",
       "scale": 2,
       "isBoss": true,
@@ -288,45 +284,11 @@
       ]
     },
     {
-      "id": 164464,
-      "enemyIndex": 7,
-      "name": "Xira the Underhanded",
-      "count": 0,
-      "health": 67427,
-      "creatureType": "Humanoid",
-      "scale": 5,
-      "isBoss": false,
-      "characteristics": [
-        "Incapacitate",
-        "Silence",
-        "Polymorph",
-        "Root",
-        "Fear",
-        "Disorient",
-        "Repentance",
-        "Imprison",
-        "Stun",
-        "Slow"
-      ],
-      "spells": [],
-      "spawns": [
-        {
-          "id": "7-1",
-          "idx": 1,
-          "group": null,
-          "pos": [
-            -156.54,
-            85.24
-          ]
-        }
-      ]
-    },
-    {
       "id": 164510,
-      "enemyIndex": 8,
+      "enemyIndex": 7,
       "name": "Shambling Arbalest",
       "count": 4,
-      "health": 24729308,
+      "health": 41435544,
       "creatureType": "Undead",
       "scale": 1.5,
       "isBoss": false,
@@ -359,7 +321,7 @@
       ],
       "spawns": [
         {
-          "id": "8-1",
+          "id": "7-1",
           "idx": 1,
           "group": 3,
           "pos": [
@@ -368,7 +330,7 @@
           ]
         },
         {
-          "id": "8-2",
+          "id": "7-2",
           "idx": 2,
           "group": 4,
           "pos": [
@@ -377,7 +339,7 @@
           ]
         },
         {
-          "id": "8-3",
+          "id": "7-3",
           "idx": 3,
           "group": 4,
           "pos": [
@@ -389,10 +351,10 @@
     },
     {
       "id": 167994,
-      "enemyIndex": 9,
+      "enemyIndex": 8,
       "name": "Ossified Conscript",
       "count": 4,
-      "health": 29093304,
+      "health": 48747699,
       "creatureType": "Undead",
       "scale": 1.5,
       "isBoss": false,
@@ -412,7 +374,7 @@
       "spells": [],
       "spawns": [
         {
-          "id": "9-1",
+          "id": "8-1",
           "idx": 1,
           "group": 3,
           "pos": [
@@ -421,7 +383,7 @@
           ]
         },
         {
-          "id": "9-2",
+          "id": "8-2",
           "idx": 2,
           "group": 3,
           "pos": [
@@ -430,7 +392,7 @@
           ]
         },
         {
-          "id": "9-3",
+          "id": "8-3",
           "idx": 3,
           "group": 4,
           "pos": [
@@ -439,7 +401,7 @@
           ]
         },
         {
-          "id": "9-4",
+          "id": "8-4",
           "idx": 4,
           "group": 4,
           "pos": [
@@ -451,10 +413,10 @@
     },
     {
       "id": 167538,
-      "enemyIndex": 10,
+      "enemyIndex": 9,
       "name": "Dokigg the Brutalizer",
       "count": 20,
-      "health": 93098572,
+      "health": 155992636,
       "creatureType": "Humanoid",
       "scale": 2,
       "isBoss": false,
@@ -489,7 +451,7 @@
       ],
       "spawns": [
         {
-          "id": "10-1",
+          "id": "9-1",
           "idx": 1,
           "group": null,
           "pos": [
@@ -501,10 +463,10 @@
     },
     {
       "id": 167536,
-      "enemyIndex": 11,
+      "enemyIndex": 10,
       "name": "Harugia the Bloodthirsty",
       "count": 20,
-      "health": 91558084,
+      "health": 155992636,
       "creatureType": "Humanoid",
       "scale": 2,
       "isBoss": false,
@@ -515,11 +477,23 @@
         {
           "id": 333861,
           "attributes": []
+        },
+        {
+          "id": 334023,
+          "attributes": []
+        },
+        {
+          "id": 334025,
+          "attributes": []
+        },
+        {
+          "id": 337037,
+          "attributes": []
         }
       ],
       "spawns": [
         {
-          "id": "11-1",
+          "id": "10-1",
           "idx": 1,
           "group": null,
           "pos": [
@@ -531,14 +505,16 @@
     },
     {
       "id": 164506,
-      "enemyIndex": 12,
+      "enemyIndex": 11,
       "name": "Ancient Captain",
       "count": 5,
-      "health": 34911965,
+      "health": 58497238,
       "creatureType": "Undead",
       "scale": 1.5,
       "isBoss": false,
-      "characteristics": [],
+      "characteristics": [
+        "Taunt"
+      ],
       "spells": [
         {
           "id": 330545,
@@ -561,22 +537,40 @@
       ],
       "spawns": [
         {
-          "id": "12-1",
+          "id": "11-1",
           "idx": 1,
           "group": 4,
           "pos": [
             -218.2,
             348.96
+          ],
+          "patrol": [
+            [
+              -218.2,
+              348.96
+            ],
+            [
+              -210.19,
+              343.38
+            ],
+            [
+              -218.2,
+              348.96
+            ],
+            [
+              -225.49,
+              354.88
+            ]
           ]
         }
       ]
     },
     {
       "id": 167533,
-      "enemyIndex": 13,
+      "enemyIndex": 12,
       "name": "Advent Nevermore",
       "count": 20,
-      "health": 91558084,
+      "health": 155808250,
       "creatureType": "Humanoid",
       "scale": 2,
       "isBoss": false,
@@ -595,7 +589,7 @@
       ],
       "spawns": [
         {
-          "id": "13-1",
+          "id": "12-1",
           "idx": 1,
           "group": null,
           "pos": [
@@ -607,10 +601,10 @@
     },
     {
       "id": 162329,
-      "enemyIndex": 14,
+      "enemyIndex": 13,
       "name": "Xav the Unfallen",
       "count": 0,
-      "health": 182902755,
+      "health": 306937559,
       "creatureType": "Humanoid",
       "scale": 2,
       "isBoss": true,
@@ -665,9 +659,9 @@
       ],
       "spawns": [
         {
-          "id": "14-1",
+          "id": "13-1",
           "idx": 1,
-          "group": null,
+          "group": 31,
           "pos": [
             -239.62,
             327.76
@@ -677,10 +671,10 @@
     },
     {
       "id": 169875,
-      "enemyIndex": 15,
+      "enemyIndex": 14,
       "name": "Shackled Soul",
       "count": 2,
-      "health": 17455982,
+      "health": 29248619,
       "creatureType": "Undead",
       "scale": 1,
       "isBoss": false,
@@ -707,7 +701,7 @@
       ],
       "spawns": [
         {
-          "id": "15-1",
+          "id": "14-1",
           "idx": 1,
           "group": 5,
           "pos": [
@@ -716,7 +710,7 @@
           ]
         },
         {
-          "id": "15-2",
+          "id": "14-2",
           "idx": 2,
           "group": 5,
           "pos": [
@@ -725,7 +719,7 @@
           ]
         },
         {
-          "id": "15-3",
+          "id": "14-3",
           "idx": 3,
           "group": 5,
           "pos": [
@@ -734,7 +728,7 @@
           ]
         },
         {
-          "id": "15-4",
+          "id": "14-4",
           "idx": 4,
           "group": 6,
           "pos": [
@@ -743,7 +737,7 @@
           ]
         },
         {
-          "id": "15-5",
+          "id": "14-5",
           "idx": 5,
           "group": 6,
           "pos": [
@@ -752,7 +746,7 @@
           ]
         },
         {
-          "id": "15-6",
+          "id": "14-6",
           "idx": 6,
           "group": 7,
           "pos": [
@@ -761,7 +755,7 @@
           ]
         },
         {
-          "id": "15-7",
+          "id": "14-7",
           "idx": 7,
           "group": 6,
           "pos": [
@@ -770,7 +764,7 @@
           ]
         },
         {
-          "id": "15-8",
+          "id": "14-8",
           "idx": 8,
           "group": 7,
           "pos": [
@@ -779,7 +773,7 @@
           ]
         },
         {
-          "id": "15-9",
+          "id": "14-9",
           "idx": 9,
           "group": 7,
           "pos": [
@@ -788,7 +782,7 @@
           ]
         },
         {
-          "id": "15-10",
+          "id": "14-10",
           "idx": 10,
           "group": 8,
           "pos": [
@@ -797,7 +791,7 @@
           ]
         },
         {
-          "id": "15-11",
+          "id": "14-11",
           "idx": 11,
           "group": 8,
           "pos": [
@@ -806,7 +800,7 @@
           ]
         },
         {
-          "id": "15-12",
+          "id": "14-12",
           "idx": 12,
           "group": 8,
           "pos": [
@@ -815,7 +809,7 @@
           ]
         },
         {
-          "id": "15-13",
+          "id": "14-13",
           "idx": 13,
           "group": 12,
           "pos": [
@@ -824,7 +818,7 @@
           ]
         },
         {
-          "id": "15-14",
+          "id": "14-14",
           "idx": 14,
           "group": 12,
           "pos": [
@@ -833,7 +827,7 @@
           ]
         },
         {
-          "id": "15-15",
+          "id": "14-15",
           "idx": 15,
           "group": 12,
           "pos": [
@@ -842,7 +836,7 @@
           ]
         },
         {
-          "id": "15-16",
+          "id": "14-16",
           "idx": 16,
           "group": 14,
           "pos": [
@@ -851,7 +845,7 @@
           ]
         },
         {
-          "id": "15-17",
+          "id": "14-17",
           "idx": 17,
           "group": 14,
           "pos": [
@@ -860,7 +854,7 @@
           ]
         },
         {
-          "id": "15-18",
+          "id": "14-18",
           "idx": 18,
           "group": 14,
           "pos": [
@@ -869,7 +863,7 @@
           ]
         },
         {
-          "id": "15-19",
+          "id": "14-19",
           "idx": 19,
           "group": 16,
           "pos": [
@@ -878,7 +872,7 @@
           ]
         },
         {
-          "id": "15-20",
+          "id": "14-20",
           "idx": 20,
           "group": 16,
           "pos": [
@@ -887,7 +881,7 @@
           ]
         },
         {
-          "id": "15-21",
+          "id": "14-21",
           "idx": 21,
           "group": 16,
           "pos": [
@@ -896,7 +890,7 @@
           ]
         },
         {
-          "id": "15-22",
+          "id": "14-22",
           "idx": 22,
           "group": 10,
           "pos": [
@@ -905,7 +899,7 @@
           ]
         },
         {
-          "id": "15-23",
+          "id": "14-23",
           "idx": 23,
           "group": 10,
           "pos": [
@@ -914,7 +908,7 @@
           ]
         },
         {
-          "id": "15-24",
+          "id": "14-24",
           "idx": 24,
           "group": 10,
           "pos": [
@@ -926,10 +920,10 @@
     },
     {
       "id": 167998,
-      "enemyIndex": 16,
+      "enemyIndex": 15,
       "name": "Portal Guardian",
       "count": 8,
-      "health": 43639956,
+      "health": 73121548,
       "creatureType": "Elemental",
       "scale": 1.6,
       "isBoss": false,
@@ -962,7 +956,7 @@
       ],
       "spawns": [
         {
-          "id": "16-1",
+          "id": "15-1",
           "idx": 1,
           "group": null,
           "pos": [
@@ -971,7 +965,7 @@
           ]
         },
         {
-          "id": "16-2",
+          "id": "15-2",
           "idx": 2,
           "group": 11,
           "pos": [
@@ -983,10 +977,10 @@
     },
     {
       "id": 170882,
-      "enemyIndex": 17,
+      "enemyIndex": 16,
       "name": "Bone Magus",
       "count": 4,
-      "health": 14546652,
+      "health": 24373849,
       "creatureType": "Undead",
       "scale": 1,
       "isBoss": false,
@@ -1025,7 +1019,7 @@
       ],
       "spawns": [
         {
-          "id": "17-1",
+          "id": "16-1",
           "idx": 1,
           "group": 9,
           "pos": [
@@ -1034,7 +1028,7 @@
           ]
         },
         {
-          "id": "17-2",
+          "id": "16-2",
           "idx": 2,
           "group": 9,
           "pos": [
@@ -1043,7 +1037,7 @@
           ]
         },
         {
-          "id": "17-3",
+          "id": "16-3",
           "idx": 3,
           "group": 11,
           "pos": [
@@ -1052,7 +1046,7 @@
           ]
         },
         {
-          "id": "17-4",
+          "id": "16-4",
           "idx": 4,
           "group": 13,
           "pos": [
@@ -1061,7 +1055,7 @@
           ]
         },
         {
-          "id": "17-5",
+          "id": "16-5",
           "idx": 5,
           "group": 13,
           "pos": [
@@ -1070,7 +1064,7 @@
           ]
         },
         {
-          "id": "17-6",
+          "id": "16-6",
           "idx": 6,
           "group": 17,
           "pos": [
@@ -1079,7 +1073,7 @@
           ]
         },
         {
-          "id": "17-7",
+          "id": "16-7",
           "idx": 7,
           "group": 17,
           "pos": [
@@ -1088,7 +1082,7 @@
           ]
         },
         {
-          "id": "17-8",
+          "id": "16-8",
           "idx": 8,
           "group": 19,
           "pos": [
@@ -1097,7 +1091,7 @@
           ]
         },
         {
-          "id": "17-9",
+          "id": "16-9",
           "idx": 9,
           "group": 19,
           "pos": [
@@ -1106,7 +1100,7 @@
           ]
         },
         {
-          "id": "17-10",
+          "id": "16-10",
           "idx": 10,
           "group": 18,
           "pos": [
@@ -1115,7 +1109,7 @@
           ]
         },
         {
-          "id": "17-11",
+          "id": "16-11",
           "idx": 11,
           "group": 18,
           "pos": [
@@ -1124,7 +1118,7 @@
           ]
         },
         {
-          "id": "17-12",
+          "id": "16-12",
           "idx": 12,
           "group": 20,
           "pos": [
@@ -1136,10 +1130,10 @@
     },
     {
       "id": 160495,
-      "enemyIndex": 18,
+      "enemyIndex": 17,
       "name": "Maniacal Soulbinder",
       "count": 4,
-      "health": 26183974,
+      "health": 43872929,
       "creatureType": "Humanoid",
       "scale": 1.3,
       "isBoss": false,
@@ -1174,7 +1168,7 @@
       ],
       "spawns": [
         {
-          "id": "18-1",
+          "id": "17-1",
           "idx": 1,
           "group": 11,
           "pos": [
@@ -1183,7 +1177,7 @@
           ]
         },
         {
-          "id": "18-2",
+          "id": "17-2",
           "idx": 2,
           "group": 12,
           "pos": [
@@ -1192,7 +1186,7 @@
           ]
         },
         {
-          "id": "18-3",
+          "id": "17-3",
           "idx": 3,
           "group": 20,
           "pos": [
@@ -1201,7 +1195,7 @@
           ]
         },
         {
-          "id": "18-4",
+          "id": "17-4",
           "idx": 4,
           "group": 14,
           "pos": [
@@ -1210,7 +1204,7 @@
           ]
         },
         {
-          "id": "18-5",
+          "id": "17-5",
           "idx": 5,
           "group": 16,
           "pos": [
@@ -1219,7 +1213,7 @@
           ]
         },
         {
-          "id": "18-6",
+          "id": "17-6",
           "idx": 6,
           "group": 10,
           "pos": [
@@ -1231,10 +1225,10 @@
     },
     {
       "id": 162763,
-      "enemyIndex": 19,
+      "enemyIndex": 18,
       "name": "Soulforged Bonereaver",
       "count": 8,
-      "health": 58186608,
+      "health": 97495397,
       "creatureType": "Undead",
       "scale": 1.6,
       "isBoss": false,
@@ -1261,7 +1255,7 @@
       ],
       "spawns": [
         {
-          "id": "19-1",
+          "id": "18-1",
           "idx": 1,
           "group": 17,
           "pos": [
@@ -1273,10 +1267,10 @@
     },
     {
       "id": 169893,
-      "enemyIndex": 20,
+      "enemyIndex": 19,
       "name": "Nefarious Darkspeaker",
       "count": 6,
-      "health": 40730625,
+      "health": 68246778,
       "creatureType": "Undead",
       "scale": 1.6,
       "isBoss": false,
@@ -1307,7 +1301,7 @@
       ],
       "spawns": [
         {
-          "id": "20-1",
+          "id": "19-1",
           "idx": 1,
           "group": 20,
           "pos": [
@@ -1316,7 +1310,7 @@
           ]
         },
         {
-          "id": "20-2",
+          "id": "19-2",
           "idx": 2,
           "group": 15,
           "pos": [
@@ -1325,7 +1319,7 @@
           ]
         },
         {
-          "id": "20-3",
+          "id": "19-3",
           "idx": 3,
           "group": 15,
           "pos": [
@@ -1337,10 +1331,10 @@
     },
     {
       "id": 162309,
-      "enemyIndex": 21,
+      "enemyIndex": 20,
       "name": "Kul'tharok",
       "count": 0,
-      "health": 185805973,
+      "health": 311809584,
       "creatureType": "Undead",
       "scale": 1.6,
       "isBoss": true,
@@ -1370,6 +1364,10 @@
         },
         {
           "id": 474084,
+          "attributes": []
+        },
+        {
+          "id": 474087,
           "attributes": []
         },
         {
@@ -1405,13 +1403,17 @@
         {
           "id": 1223804,
           "attributes": []
+        },
+        {
+          "id": 1225377,
+          "attributes": []
         }
       ],
       "spawns": [
         {
-          "id": "21-1",
+          "id": "20-1",
           "idx": 1,
-          "group": null,
+          "group": 30,
           "pos": [
             -99.04,
             283.06
@@ -1421,10 +1423,10 @@
     },
     {
       "id": 163089,
-      "enemyIndex": 22,
+      "enemyIndex": 21,
       "name": "Disgusting Refuse",
       "count": 1,
-      "health": 7273326,
+      "health": 12186925,
       "creatureType": "Undead",
       "scale": 1,
       "isBoss": false,
@@ -1457,7 +1459,7 @@
       ],
       "spawns": [
         {
-          "id": "22-1",
+          "id": "21-1",
           "idx": 1,
           "group": 21,
           "pos": [
@@ -1466,7 +1468,7 @@
           ]
         },
         {
-          "id": "22-2",
+          "id": "21-2",
           "idx": 2,
           "group": 21,
           "pos": [
@@ -1475,7 +1477,7 @@
           ]
         },
         {
-          "id": "22-3",
+          "id": "21-3",
           "idx": 3,
           "group": 21,
           "pos": [
@@ -1484,7 +1486,7 @@
           ]
         },
         {
-          "id": "22-4",
+          "id": "21-4",
           "idx": 4,
           "group": 21,
           "pos": [
@@ -1493,7 +1495,7 @@
           ]
         },
         {
-          "id": "22-5",
+          "id": "21-5",
           "idx": 5,
           "group": 22,
           "pos": [
@@ -1502,7 +1504,7 @@
           ]
         },
         {
-          "id": "22-6",
+          "id": "21-6",
           "idx": 6,
           "group": 22,
           "pos": [
@@ -1511,7 +1513,7 @@
           ]
         },
         {
-          "id": "22-7",
+          "id": "21-7",
           "idx": 7,
           "group": 22,
           "pos": [
@@ -1520,7 +1522,7 @@
           ]
         },
         {
-          "id": "22-9",
+          "id": "21-9",
           "idx": 9,
           "group": 24,
           "pos": [
@@ -1529,7 +1531,7 @@
           ]
         },
         {
-          "id": "22-10",
+          "id": "21-10",
           "idx": 10,
           "group": 24,
           "pos": [
@@ -1538,7 +1540,7 @@
           ]
         },
         {
-          "id": "22-11",
+          "id": "21-11",
           "idx": 11,
           "group": 25,
           "pos": [
@@ -1547,7 +1549,7 @@
           ]
         },
         {
-          "id": "22-12",
+          "id": "21-12",
           "idx": 12,
           "group": 25,
           "pos": [
@@ -1556,7 +1558,7 @@
           ]
         },
         {
-          "id": "22-14",
+          "id": "21-14",
           "idx": 14,
           "group": 25,
           "pos": [
@@ -1565,7 +1567,7 @@
           ]
         },
         {
-          "id": "22-15",
+          "id": "21-15",
           "idx": 15,
           "group": 25,
           "pos": [
@@ -1574,7 +1576,7 @@
           ]
         },
         {
-          "id": "22-17",
+          "id": "21-17",
           "idx": 17,
           "group": 22,
           "pos": [
@@ -1583,7 +1585,7 @@
           ]
         },
         {
-          "id": "22-21",
+          "id": "21-21",
           "idx": 21,
           "group": 25,
           "pos": [
@@ -1595,10 +1597,10 @@
     },
     {
       "id": 170690,
-      "enemyIndex": 23,
+      "enemyIndex": 22,
       "name": "Diseased Horror",
       "count": 4,
-      "health": 29093304,
+      "health": 48747699,
       "creatureType": "Undead",
       "scale": 1.7,
       "isBoss": false,
@@ -1637,16 +1639,16 @@
       ],
       "spawns": [
         {
-          "id": "23-1",
+          "id": "22-1",
           "idx": 1,
-          "group": null,
+          "group": 21,
           "pos": [
-            -171.6,
-            232.6
+            -168.32,
+            229.73
           ]
         },
         {
-          "id": "23-2",
+          "id": "22-2",
           "idx": 2,
           "group": 24,
           "pos": [
@@ -1655,7 +1657,7 @@
           ]
         },
         {
-          "id": "23-3",
+          "id": "22-3",
           "idx": 3,
           "group": 26,
           "pos": [
@@ -1667,10 +1669,10 @@
     },
     {
       "id": 169927,
-      "enemyIndex": 24,
+      "enemyIndex": 23,
       "name": "Putrid Butcher",
       "count": 5,
-      "health": 34911965,
+      "health": 58497238,
       "creatureType": "Undead",
       "scale": 1.7,
       "isBoss": false,
@@ -1695,25 +1697,43 @@
       ],
       "spawns": [
         {
-          "id": "24-1",
+          "id": "23-1",
           "idx": 1,
-          "group": null,
+          "group": 22,
           "pos": [
-            -156.34,
-            208.84
+            -159.47,
+            209.49
           ]
         },
         {
-          "id": "24-2",
+          "id": "23-2",
           "idx": 2,
           "group": 23,
           "pos": [
-            -153.07,
-            170.28
+            -153.3,
+            172.86
+          ],
+          "patrol": [
+            [
+              -154.51,
+              177.05
+            ],
+            [
+              -155.99,
+              188.7
+            ],
+            [
+              -154.51,
+              177.05
+            ],
+            [
+              -151.9,
+              163.89
+            ]
           ]
         },
         {
-          "id": "24-3",
+          "id": "23-3",
           "idx": 3,
           "group": 24,
           "pos": [
@@ -1722,7 +1742,7 @@
           ]
         },
         {
-          "id": "24-4",
+          "id": "23-4",
           "idx": 4,
           "group": 26,
           "pos": [
@@ -1734,10 +1754,10 @@
     },
     {
       "id": 163086,
-      "enemyIndex": 25,
+      "enemyIndex": 24,
       "name": "Rancid Gasbag",
       "count": 8,
-      "health": 55277278,
+      "health": 92620627,
       "creatureType": "Undead",
       "scale": 2,
       "isBoss": false,
@@ -1745,6 +1765,12 @@
         "Taunt"
       ],
       "spells": [
+        {
+          "id": 330608,
+          "attributes": [
+            "disease"
+          ]
+        },
         {
           "id": 330614,
           "attributes": []
@@ -1760,40 +1786,131 @@
       ],
       "spawns": [
         {
-          "id": "25-1",
+          "id": "24-1",
           "idx": 1,
           "group": null,
           "pos": [
-            -169.84,
-            154.19
+            -170.5,
+            150.39
+          ],
+          "patrol": [
+            [
+              -170.61,
+              155.47
+            ],
+            [
+              -171.15,
+              148.98
+            ],
+            [
+              -176.33,
+              144.62
+            ],
+            [
+              -183.35,
+              144.88
+            ],
+            [
+              -187.31,
+              149.65
+            ],
+            [
+              -183.35,
+              144.88
+            ],
+            [
+              -176.33,
+              144.62
+            ],
+            [
+              -171.15,
+              148.98
+            ],
+            [
+              -170.61,
+              155.47
+            ]
           ]
         },
         {
-          "id": "25-2",
+          "id": "24-2",
           "idx": 2,
           "group": null,
           "pos": [
-            -130.44,
-            164.55
+            -126.45,
+            158.56
+          ],
+          "patrol": [
+            [
+              -126.29,
+              157.68
+            ],
+            [
+              -127.09,
+              157.75
+            ],
+            [
+              -119.91,
+              157.55
+            ],
+            [
+              -114.38,
+              161.65
+            ],
+            [
+              -113.56,
+              166.97
+            ],
+            [
+              -114.38,
+              161.65
+            ],
+            [
+              -119.91,
+              157.55
+            ],
+            [
+              -127.09,
+              157.75
+            ],
+            [
+              -130.44,
+              164.55
+            ]
           ]
         },
         {
-          "id": "25-3",
+          "id": "24-3",
           "idx": 3,
           "group": null,
           "pos": [
-            -189.77,
-            49.35
+            -190.79,
+            55.09
+          ],
+          "patrol": [
+            [
+              -190.79,
+              55.09
+            ],
+            [
+              -199.03,
+              76.59
+            ],
+            [
+              -187.55,
+              43.18
+            ]
           ]
         }
-      ]
+      ],
+      "stealthDetect": true
     },
     {
       "id": 162317,
-      "enemyIndex": 26,
+      "enemyIndex": 25,
       "name": "Gorechop",
       "count": 0,
-      "health": 203225283,
+      "health": 341041732,
       "creatureType": "Undead",
       "scale": 2,
       "isBoss": true,
@@ -1812,22 +1929,22 @@
       ],
       "spawns": [
         {
-          "id": "26-1",
+          "id": "25-1",
           "idx": 1,
-          "group": null,
+          "group": 28,
           "pos": [
-            -210.4,
-            114.49
+            -209.99,
+            114.08
           ]
         }
       ]
     },
     {
       "id": 165946,
-      "enemyIndex": 27,
+      "enemyIndex": 26,
       "name": "Mordretha, the Endless Empress",
       "count": 0,
-      "health": 232257466,
+      "health": 389761980,
       "creatureType": "Humanoid",
       "scale": 2,
       "isBoss": true,
@@ -1844,6 +1961,10 @@
           "attributes": []
         },
         {
+          "id": 323825,
+          "attributes": []
+        },
+        {
           "id": 324079,
           "attributes": []
         },
@@ -1856,7 +1977,15 @@
           "attributes": []
         },
         {
+          "id": 339550,
+          "attributes": []
+        },
+        {
           "id": 339573,
+          "attributes": []
+        },
+        {
+          "id": 339706,
           "attributes": []
         },
         {
@@ -1866,22 +1995,22 @@
       ],
       "spawns": [
         {
-          "id": "27-1",
+          "id": "26-1",
           "idx": 1,
-          "group": null,
+          "group": 29,
           "pos": [
-            -38.05,
-            68.31
+            -31.08,
+            66.26
           ]
         }
       ]
     },
     {
       "id": 162744,
-      "enemyIndex": 28,
+      "enemyIndex": 27,
       "name": "Nekthara the Mangler",
       "count": 20,
-      "health": 93098572,
+      "health": 155992636,
       "creatureType": "Humanoid",
       "scale": 2,
       "isBoss": false,
@@ -1904,7 +2033,7 @@
       ],
       "spawns": [
         {
-          "id": "28-1",
+          "id": "27-1",
           "idx": 1,
           "group": null,
           "pos": [
@@ -1916,10 +2045,10 @@
     },
     {
       "id": 167532,
-      "enemyIndex": 29,
+      "enemyIndex": 28,
       "name": "Heavin the Breaker",
       "count": 20,
-      "health": 93098572,
+      "health": 155992636,
       "creatureType": "Humanoid",
       "scale": 2,
       "isBoss": false,
@@ -1942,7 +2071,7 @@
       ],
       "spawns": [
         {
-          "id": "29-1",
+          "id": "28-1",
           "idx": 1,
           "group": null,
           "pos": [
@@ -1954,10 +2083,10 @@
     },
     {
       "id": 167534,
-      "enemyIndex": 30,
+      "enemyIndex": 29,
       "name": "Rek the Hardened",
       "count": 20,
-      "health": 93098572,
+      "health": 155992636,
       "creatureType": "Humanoid",
       "scale": 2,
       "isBoss": false,
@@ -1984,7 +2113,7 @@
       ],
       "spawns": [
         {
-          "id": "30-1",
+          "id": "29-1",
           "idx": 1,
           "group": null,
           "pos": [
@@ -1996,10 +2125,10 @@
     },
     {
       "id": 174210,
-      "enemyIndex": 31,
+      "enemyIndex": 30,
       "name": "Blighted Sludge-Spewer",
       "count": 4,
-      "health": 23274643,
+      "health": 38998159,
       "creatureType": "Undead",
       "scale": 1.3,
       "isBoss": false,
@@ -2052,7 +2181,7 @@
       ],
       "spawns": [
         {
-          "id": "31-1",
+          "id": "30-1",
           "idx": 1,
           "group": 21,
           "pos": [
@@ -2061,7 +2190,7 @@
           ]
         },
         {
-          "id": "31-2",
+          "id": "30-2",
           "idx": 2,
           "group": 22,
           "pos": [
@@ -2070,25 +2199,25 @@
           ]
         },
         {
-          "id": "31-3",
+          "id": "30-3",
           "idx": 3,
           "group": 23,
           "pos": [
-            -150.68,
-            175.22
+            -150.81,
+            178.63
           ]
         },
         {
-          "id": "31-4",
+          "id": "30-4",
           "idx": 4,
           "group": 23,
           "pos": [
-            -156.77,
-            173.54
+            -158.21,
+            177.05
           ]
         },
         {
-          "id": "31-5",
+          "id": "30-5",
           "idx": 5,
           "group": 25,
           "pos": [
@@ -2097,7 +2226,7 @@
           ]
         },
         {
-          "id": "31-6",
+          "id": "30-6",
           "idx": 6,
           "group": 24,
           "pos": [
@@ -2106,7 +2235,233 @@
           ]
         }
       ]
+    },
+    {
+      "id": 165260,
+      "enemyIndex": 31,
+      "name": "Oozing Leftovers",
+      "count": 0,
+      "health": 36560774,
+      "creatureType": "Undead",
+      "scale": 1.6,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt",
+        "Stun"
+      ],
+      "spells": [
+        {
+          "id": 323107,
+          "attributes": []
+        },
+        {
+          "id": 323110,
+          "attributes": []
+        },
+        {
+          "id": 323542,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "31-1",
+          "idx": 1,
+          "group": 28,
+          "pos": [
+            -198.12,
+            106
+          ]
+        },
+        {
+          "id": "31-2",
+          "idx": 2,
+          "group": 28,
+          "pos": [
+            -214.77,
+            98.92
+          ]
+        },
+        {
+          "id": "31-3",
+          "idx": 3,
+          "group": 28,
+          "pos": [
+            -204.93,
+            127.2
+          ]
+        },
+        {
+          "id": "31-4",
+          "idx": 4,
+          "group": 28,
+          "pos": [
+            -223.17,
+            121.46
+          ]
+        }
+      ]
+    },
+    {
+      "id": 170234,
+      "enemyIndex": 32,
+      "name": "Oppressive Banner",
+      "count": 0,
+      "health": 14218079,
+      "creatureType": "Undead",
+      "scale": 2,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [
+        {
+          "id": 331606,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "32-1",
+          "idx": 1,
+          "group": 31,
+          "pos": [
+            -244.64,
+            315.77
+          ]
+        },
+        {
+          "id": "32-2",
+          "idx": 2,
+          "group": 31,
+          "pos": [
+            -240.18,
+            339.84
+          ]
+        }
+      ]
+    },
+    {
+      "id": 234443,
+      "enemyIndex": 33,
+      "name": "Lost Soul",
+      "count": 0,
+      "health": 8124616,
+      "creatureType": "Undead",
+      "scale": 1.6,
+      "isBoss": false,
+      "characteristics": [
+        "Stun"
+      ],
+      "spells": [
+        {
+          "id": 474013,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "33-1",
+          "idx": 1,
+          "group": 30,
+          "pos": [
+            -92.22,
+            289.63
+          ]
+        },
+        {
+          "id": "33-2",
+          "idx": 2,
+          "group": 30,
+          "pos": [
+            -99.51,
+            292.24
+          ]
+        },
+        {
+          "id": "33-3",
+          "idx": 3,
+          "group": 30,
+          "pos": [
+            -106.99,
+            289.42
+          ]
+        }
+      ]
+    },
+    {
+      "id": 166524,
+      "enemyIndex": 34,
+      "name": "Deathwalker",
+      "count": 0,
+      "health": 3249846,
+      "creatureType": "Elemental",
+      "scale": 1.6,
+      "isBoss": false,
+      "characteristics": [
+        "Silence"
+      ],
+      "spells": [
+        {
+          "id": 324589,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "34-1",
+          "idx": 1,
+          "group": 29,
+          "pos": [
+            -33.73,
+            76.78
+          ]
+        },
+        {
+          "id": "34-2",
+          "idx": 2,
+          "group": 29,
+          "pos": [
+            -40.34,
+            72.77
+          ]
+        },
+        {
+          "id": "34-3",
+          "idx": 3,
+          "group": 29,
+          "pos": [
+            -34.6,
+            55.56
+          ]
+        },
+        {
+          "id": "34-4",
+          "idx": 4,
+          "group": 29,
+          "pos": [
+            -42.19,
+            66.21
+          ]
+        },
+        {
+          "id": "34-5",
+          "idx": 5,
+          "group": 29,
+          "pos": [
+            -40.34,
+            59.25
+          ]
+        }
+      ]
     }
   ],
-  "pois": []
+  "pois": [
+    {
+      "type": "dungeonEntrance",
+      "itemType": null,
+      "pos": [
+        -129.3,
+        66.83
+      ]
+    }
+  ]
 }
