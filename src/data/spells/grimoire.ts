@@ -30,7 +30,11 @@ export function mergeSpells(dungeonKey: DungeonKey, spellsToRemove?: number[]) {
       if (spellsToRemove?.includes(mdtSpell.id)) continue
 
       res[enemy.id] ??= []
-      res[enemy.id]!.push(mdtSpellToSpell(mdtSpell))
+      try {
+        res[enemy.id]!.push(mdtSpellToSpell(mdtSpell))
+      } catch (e) {
+        console.error(e)
+      }
     }
   }
 
