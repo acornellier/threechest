@@ -1766,6 +1766,10 @@
       ],
       "spells": [
         {
+          "id": 330592,
+          "attributes": []
+        },
+        {
           "id": 330608,
           "attributes": [
             "disease"
@@ -1923,7 +1927,15 @@
           "attributes": []
         },
         {
+          "id": 322795,
+          "attributes": []
+        },
+        {
           "id": 323515,
+          "attributes": []
+        },
+        {
+          "id": 332859,
           "attributes": []
         }
       ],
@@ -2020,6 +2032,10 @@
       "spells": [
         {
           "id": 317605,
+          "attributes": []
+        },
+        {
+          "id": 336995,
           "attributes": []
         },
         {
@@ -2392,12 +2408,14 @@
       "enemyIndex": 34,
       "name": "Deathwalker",
       "count": 0,
-      "health": 3249846,
+      "health": 4874770,
       "creatureType": "Elemental",
       "scale": 1.6,
       "isBoss": false,
       "characteristics": [
-        "Silence"
+        "Silence",
+        "Disorient",
+        "Stun"
       ],
       "spells": [
         {

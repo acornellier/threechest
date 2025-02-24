@@ -7,16 +7,21 @@
       "enemyIndex": 1,
       "name": "Tasting Room Attendant",
       "count": 3,
-      "health": 43821070,
+      "health": 43749686,
       "creatureType": "Humanoid",
       "scale": 1.5,
       "isBoss": false,
       "characteristics": [
+        "Taunt",
         "Silence",
         "Fear",
         "Stun"
       ],
       "spells": [
+        {
+          "id": 434695,
+          "attributes": []
+        },
         {
           "id": 434706,
           "attributes": []
@@ -148,13 +153,14 @@
       "enemyIndex": 2,
       "name": "Venture Co. Pyromaniac",
       "count": 5,
-      "health": 43821070,
+      "health": 43749686,
       "creatureType": "Humanoid",
       "scale": 1.5,
       "isBoss": false,
       "characteristics": [
         "Taunt",
         "Silence",
+        "Root",
         "Fear",
         "Disorient",
         "Imprison",
@@ -374,7 +380,7 @@
       "enemyIndex": 3,
       "name": "Venture Co. Patron",
       "count": 3,
-      "health": 43821070,
+      "health": 43749686,
       "creatureType": "Humanoid",
       "scale": 1.5,
       "isBoss": false,
@@ -572,11 +578,13 @@
       "enemyIndex": 4,
       "name": "Hired Muscle",
       "count": 10,
-      "health": 77904125,
+      "health": 77777220,
       "creatureType": "Humanoid",
       "scale": 1.5,
       "isBoss": false,
-      "characteristics": [],
+      "characteristics": [
+        "Taunt"
+      ],
       "spells": [
         {
           "id": 434505,
@@ -602,6 +610,10 @@
         },
         {
           "id": 463220,
+          "attributes": []
+        },
+        {
+          "id": 463223,
           "attributes": []
         }
       ],
@@ -640,7 +652,7 @@
       "enemyIndex": 5,
       "name": "Chef Chewie",
       "count": 15,
-      "health": 146070234,
+      "health": 145832288,
       "creatureType": "Humanoid",
       "scale": 2,
       "isBoss": false,
@@ -690,11 +702,12 @@
       "enemyIndex": 6,
       "name": "Worker Bee",
       "count": 5,
-      "health": 43821070,
+      "health": 43749686,
       "creatureType": "Beast",
       "scale": 1.5,
       "isBoss": false,
       "characteristics": [
+        "Taunt",
         "Silence",
         "Root",
         "Fear",
@@ -853,7 +866,7 @@
       "enemyIndex": 7,
       "name": "Royal Jelly Purveyor",
       "count": 7,
-      "health": 48690078,
+      "health": 48610763,
       "creatureType": "Humanoid",
       "scale": 1.5,
       "isBoss": false,
@@ -968,7 +981,7 @@
       "enemyIndex": 8,
       "name": "Venture Co. Honey Harvester",
       "count": 10,
-      "health": 77904125,
+      "health": 77777220,
       "creatureType": "Humanoid",
       "scale": 1.8,
       "isBoss": false,
@@ -1099,7 +1112,7 @@
       "enemyIndex": 9,
       "name": "Bee Wrangler",
       "count": 5,
-      "health": 46255575,
+      "health": 46180225,
       "creatureType": "Humanoid",
       "scale": 1.5,
       "isBoss": false,
@@ -1225,7 +1238,7 @@
       "enemyIndex": 10,
       "name": "Bee-let",
       "count": 1,
-      "health": 9738015,
+      "health": 9722152,
       "creatureType": "Beast",
       "scale": 1,
       "isBoss": false,
@@ -1691,7 +1704,7 @@
       "enemyIndex": 11,
       "name": "Flavor Scientist",
       "count": 7,
-      "health": 43821070,
+      "health": 43749686,
       "creatureType": "Humanoid",
       "scale": 1.5,
       "isBoss": false,
@@ -1701,6 +1714,7 @@
         "Root",
         "Fear",
         "Disorient",
+        "Imprison",
         "Stun",
         "Mind Soothe"
       ],
@@ -1814,7 +1828,7 @@
       "enemyIndex": 12,
       "name": "Taste Tester",
       "count": 5,
-      "health": 48690078,
+      "health": 48610763,
       "creatureType": "Humanoid",
       "scale": 1.5,
       "isBoss": false,
@@ -1823,6 +1837,7 @@
         "Incapacitate",
         "Silence",
         "Polymorph",
+        "Root",
         "Fear",
         "Disorient",
         "Imprison",
@@ -1986,7 +2001,7 @@
       "enemyIndex": 13,
       "name": "Careless Hopgoblin",
       "count": 10,
-      "health": 92511148,
+      "health": 92360449,
       "creatureType": "Humanoid",
       "scale": 1.8,
       "isBoss": false,
@@ -2134,12 +2149,13 @@
       "enemyIndex": 14,
       "name": "Brew Drop",
       "count": 1,
-      "health": 16554627,
+      "health": 16527659,
       "creatureType": "Elemental",
       "scale": 1.2,
       "isBoss": false,
       "characteristics": [
         "Silence",
+        "Fear",
         "Stun"
       ],
       "spells": [
@@ -2223,11 +2239,13 @@
       "enemyIndex": 15,
       "name": "Yes Man",
       "count": 3,
-      "health": 48690078,
+      "health": 48610763,
       "creatureType": "Humanoid",
       "scale": 2,
       "isBoss": false,
-      "characteristics": [],
+      "characteristics": [
+        "Incapacitate"
+      ],
       "spells": [
         {
           "id": 439403,
@@ -2288,7 +2306,7 @@
       "enemyIndex": 16,
       "name": "Brewmaster Aldryr",
       "count": 0,
-      "health": 292538997,
+      "health": 291795727,
       "creatureType": "Humanoid",
       "scale": 2,
       "isBoss": true,
@@ -2342,7 +2360,7 @@
       "enemyIndex": 17,
       "name": "I'pa",
       "count": 0,
-      "health": 292538997,
+      "health": 291795727,
       "creatureType": "Elemental",
       "scale": 1.5,
       "isBoss": true,
@@ -2375,6 +2393,14 @@
         {
           "id": 439991,
           "attributes": []
+        },
+        {
+          "id": 440147,
+          "attributes": []
+        },
+        {
+          "id": 442108,
+          "attributes": []
         }
       ],
       "spawns": [
@@ -2394,7 +2420,7 @@
       "enemyIndex": 18,
       "name": "Benk Buzzbee",
       "count": 0,
-      "health": 307165947,
+      "health": 306385513,
       "creatureType": "Humanoid",
       "scale": 1.9,
       "isBoss": true,
@@ -2427,6 +2453,10 @@
           "attributes": []
         },
         {
+          "id": 440140,
+          "attributes": []
+        },
+        {
           "id": 440141,
           "attributes": []
         }
@@ -2448,7 +2478,7 @@
       "enemyIndex": 19,
       "name": "Goldie Baronbottom",
       "count": 0,
-      "health": 390051996,
+      "health": 389060969,
       "creatureType": "Humanoid",
       "scale": 2,
       "isBoss": true,
@@ -2516,12 +2546,13 @@
       "enemyIndex": 20,
       "name": "Flavor Scientist",
       "count": 7,
-      "health": 43821070,
+      "health": 43749686,
       "creatureType": "Humanoid",
       "scale": 1.5,
       "isBoss": false,
       "characteristics": [
         "Silence",
+        "Root",
         "Fear",
         "Imprison",
         "Stun"
@@ -2590,7 +2621,7 @@
       "enemyIndex": 21,
       "name": "Brew Drop",
       "count": 0,
-      "health": 8926515,
+      "health": 8911974,
       "creatureType": "Elemental",
       "scale": 1.5,
       "isBoss": false,
@@ -2654,7 +2685,7 @@
       "enemyIndex": 22,
       "name": "Ravenous Cinderbee",
       "count": 0,
-      "health": 10143768,
+      "health": 10127243,
       "creatureType": "Beast",
       "scale": 2,
       "isBoss": false,
@@ -2717,7 +2748,7 @@
       "enemyIndex": 23,
       "name": "Worker Bee",
       "count": 5,
-      "health": 48690078,
+      "health": 48610763,
       "creatureType": "Beast",
       "scale": 1.5,
       "isBoss": false,
@@ -2771,7 +2802,7 @@
       "enemyIndex": 24,
       "name": "Bee-let",
       "count": 1,
-      "health": 9738015,
+      "health": 9722152,
       "creatureType": "Beast",
       "scale": 1,
       "isBoss": false,
