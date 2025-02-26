@@ -1,16 +1,12 @@
 ﻿import { getGrimoireSpell } from 'grimoire-wow'
-import type { DispelType, Spell, SpellIdMap, Spells } from '../types.ts'
-import spellBankJson from './spellBank.json'
-import { mapBy } from '../../util/nodash.ts'
+import type { MdtSpell, Spell, Spells } from '../types.ts'
+import type { DungeonKey } from '../dungeonKeys.ts'
+import { mdtDungeons } from '../mdtDungeons.ts'
 
-const extraSpellsData = spellBankJson.result.data.allContentfulPatternItem.nodes
-const extraSpellDataById = mapBy(extraSpellsData, 'spellId')
-
-function spellIdToSpell(spellId: number): Spell {
-  const spell = getGrimoireSpell(spellId)
+function mdtSpellToSpell(mdtSpell: MdtSpell): Spell {
+  const spell = getGrimoireSpell(mdtSpell.id)
   const effect = spell.effects?.[0]
 
-  const extraSpellData = extraSpellDataById[spellId]
   return {
     name: spell.name,
     id: spell.id,
@@ -19,43 +15,28 @@ function spellIdToSpell(spellId: number): Spell {
     aoe: effect?.aoe,
     physical: spell.schools && spell.schools[0] === 'physical',
     castTime: spell.castTime,
-    interrupt: !!extraSpellData?.interruptible,
-    stop: !!extraSpellData?.ccable,
-    dispel: (extraSpellData?.dispell as DispelType[]) ?? [],
+    attributes: mdtSpell.attributes,
   }
 }
 
-export function mergeSpells(
-  spellBankDungeon: string,
-  extraSpells: SpellIdMap,
-  spellsToRemove?: number[],
-) {
+// const dungeonKeyToSpellBankName: Partial<Record<DungeonKey, string>> = {}
+
+export function mergeSpells(dungeonKey: DungeonKey, spellsToRemove?: number[]) {
   const res: Spells = {}
 
-  for (const spell of extraSpellsData) {
-    if (!spell.enemies) continue
+  const mdtDungeon = mdtDungeons[dungeonKey]
+  for (const enemy of mdtDungeon.enemies) {
+    for (const mdtSpell of enemy.spells) {
+      if (spellsToRemove?.includes(mdtSpell.id)) continue
 
-    const spellId = Number(spell.spellId)
-    if (res[spellId]) continue
-
-    if (spellsToRemove?.includes(spellId)) continue
-
-    if (!spell.metadata.tags.some((tag) => tag.name == spellBankDungeon)) continue
-
-    for (const enemy of spell.enemies) {
-      res[Number(enemy.npcId)] ??= []
+      res[enemy.id] ??= []
       try {
-        res[Number(enemy.npcId)]!.push(spellIdToSpell(spellId))
+        res[enemy.id]!.push(mdtSpellToSpell(mdtSpell))
       } catch (e) {
-        console.log(`failed to fetch spell ${spellId}`)
+        console.error(e)
       }
     }
   }
-
-  Object.entries(extraSpells).forEach(([enemyId, spells]) => {
-    res[Number(enemyId)] ??= []
-    res[Number(enemyId)]!.push(...spells.map(spellIdToSpell))
-  })
 
   return res
 }

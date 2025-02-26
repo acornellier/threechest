@@ -67,7 +67,7 @@ export function mobEfficiency(
   dungeon: Dungeon,
 ) {
   const efficiencyScore = roundTo(
-    (2.5 * (count / dungeon.mdt.totalCount) * 5_000) / (health / 500_000),
+    (2.5 * (count / dungeon.mdt.totalCount) * 12_000) / (health / 500_000),
     1,
   )
   const efficiencyColor = rgbToHex(

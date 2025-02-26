@@ -9,81 +9,113 @@ export interface MapOffset {
 }
 
 // 1. In GIMP, open the MDT map
-// 2. Add a layer overlaying it with the original wow map, set its alpha to 50%
-// 3. Rotate if needed. Then scale and translate the original map to match the MDT map
-// 4. If rotated, revert the rotation before entering translation and scale values
+// 2. Find an original wow map in https://wago.tools/maps/worldmap, its id is the key
+// 3. Add a layer overlaying it with the original wow map, set its alpha to 50%
+// 4. Rotate if needed. Then scale and translate the original map to match the MDT map
+// 5. If rotated, revert the rotation before entering translation and scale values
 // x: offsetX / mdtWidth
 // y: offsetY / mdtWidth
 // scaleX: originalWidth / mdtWidth
 // scaleY: originalHeight / mdtHeight
 // rotation: negative rotation
 export const mdtMapOffsets: Record<number, MapOffset> = {
-  // ak
-  2357: {
-    x: -175 / 1920,
-    y: -80 / 1280,
-    scaleX: 2268 / 1920,
-    scaleY: 1512 / 1280,
+  // mw
+  1573: {
+    x: -154 / 1920,
+    y: -64 / 1080,
+    scaleX: 1336 / 1920,
+    scaleY: 892 / 1080,
   },
-  2358: {
-    x: -115 / 1920,
-    y: 548 / 1280,
-    scaleX: 1435 / 1920,
-    scaleY: 957 / 1280,
+  1574: {
+    x: 813 / 1920,
+    y: 424 / 1080,
+    scaleX: 1370 / 1920,
+    scaleY: 915 / 1080,
   },
-  // cot
-  2343: {
-    x: -672 / 1920,
-    y: -25 / 1280,
-    scaleX: 2990 / 1920,
-    scaleY: 1993 / 1280,
+  // psf
+  2308: {
+    x: 692 / 1920,
+    y: 145 / 1080,
+    scaleX: 1430 / 1920,
+    scaleY: 955 / 1080,
+    rotate: 4,
   },
-  2344: {
-    x: -161 / 1920,
-    y: 604 / 1280,
+  2309: {
+    x: -29 / 1920,
+    y: 230 / 1080,
+    scaleX: 1202 / 1920,
+    scaleY: 802 / 1080,
+    rotate: 5.5,
+  },
+  2330: {
+    // copy of 2308, seems to be a dup?
+    x: 692 / 1920,
+    y: 145 / 1080,
+    scaleX: 1430 / 1920,
+    scaleY: 955 / 1080,
+    rotate: 4,
+  },
+  // top
+  1683: {
+    x: -338 / 1920,
+    y: -63 / 1080,
+    scaleX: 1334 / 1920,
+    scaleY: 889 / 1080,
+  },
+  1684: {
+    x: 1094 / 1920,
+    y: 674 / 1080,
     scaleX: 1002 / 1920,
-    scaleY: 668 / 1280,
+    scaleY: 668 / 1080,
   },
-  // gb
-  293: {
-    x: -143 / 1920,
-    y: -29 / 1280,
-    scaleX: 2164 / 1920,
-    scaleY: 1443 / 1280,
+  1685: {
+    x: 599 / 1920,
+    y: -34 / 1080,
+    scaleX: 1136 / 1920,
+    scaleY: 758 / 1080,
   },
-  // mot
-  1669: {
-    x: -160 / 1920,
-    y: 0 / 1280,
-    scaleX: 2191 / 1920,
-    scaleY: 1461 / 1280,
+  1686: {
+    x: 433 / 1920,
+    y: 436 / 1080,
+    scaleX: 920 / 1920,
+    scaleY: 614 / 1080,
+    rotate: -3.83,
   },
-  // nw
-  1666: {
-    x: 25 / 1920,
-    y: -69 / 1280,
-    scaleX: 2030 / 1920,
-    scaleY: 1354 / 1280,
+  1687: {
+    x: -85 / 1920,
+    y: 646 / 1080,
+    scaleX: 944 / 1920,
+    scaleY: 632 / 1080,
   },
-  1667: {
-    x: 940 / 1920,
-    y: 514 / 1280,
-    scaleX: 1355 / 1920,
-    scaleY: 904 / 1280,
+  // tr
+  2315: {
+    x: 646 / 1920,
+    y: -5 / 1080,
+    scaleX: 1264 / 1920,
+    scaleY: 843 / 1080,
   },
-  // sob
-  1162: {
-    x: -640 / 1920,
-    y: -754 / 1280,
-    scaleX: 3261 / 1920,
-    scaleY: 2174 / 1280,
-    rotate: -90,
+  2316: {
+    x: 504 / 1920,
+    y: 87 / 1080,
+    scaleX: 926 / 1920,
+    scaleY: 618 / 1080,
   },
-  // sv
-  2341: {
-    x: -208 / 1920,
-    y: -21 / 1280,
-    scaleX: 2183 / 1920,
-    scaleY: 1457 / 1280,
+  2318: {
+    x: -309 / 1920,
+    y: -32 / 1080,
+    scaleX: 1348 / 1920,
+    scaleY: 900 / 1080,
+  },
+  2319: {
+    x: 126 / 1920,
+    y: 607 / 1080,
+    scaleX: 988 / 1920,
+    scaleY: 658 / 1080,
+  },
+  2320: {
+    x: 777 / 1920,
+    y: 602 / 1080,
+    scaleX: 1018 / 1920,
+    scaleY: 678 / 1080,
   },
 }

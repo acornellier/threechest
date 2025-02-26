@@ -1,0 +1,3151 @@
+{
+  "dungeonIndex": 119,
+  "totalCount": 470,
+  "enemies": [
+    {
+      "id": 230740,
+      "enemyIndex": 1,
+      "name": "Shreddinator 3000",
+      "count": 10,
+      "health": 97221525,
+      "creatureType": "Mechanical",
+      "scale": 1.6,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt"
+      ],
+      "spells": [
+        {
+          "id": 465754,
+          "attributes": []
+        },
+        {
+          "id": 474337,
+          "attributes": []
+        },
+        {
+          "id": 474350,
+          "attributes": []
+        },
+        {
+          "id": 474351,
+          "attributes": []
+        },
+        {
+          "id": 474388,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "1-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -104.03,
+            26.03
+          ]
+        },
+        {
+          "id": "1-2",
+          "idx": 2,
+          "group": null,
+          "pos": [
+            -44.94,
+            130.43
+          ]
+        },
+        {
+          "id": "1-4",
+          "idx": 4,
+          "group": 7,
+          "pos": [
+            -77.67,
+            158.49
+          ]
+        },
+        {
+          "id": "1-5",
+          "idx": 5,
+          "group": 42,
+          "pos": [
+            -142.36,
+            192.25
+          ]
+        },
+        {
+          "id": "1-6",
+          "idx": 6,
+          "group": 42,
+          "pos": [
+            -147.03,
+            197.36
+          ]
+        },
+        {
+          "id": "1-7",
+          "idx": 7,
+          "group": null,
+          "pos": [
+            -96.21,
+            65.36
+          ]
+        }
+      ],
+      "stealthDetect": true
+    },
+    {
+      "id": 228144,
+      "enemyIndex": 2,
+      "name": "Darkfuse Soldier",
+      "count": 3,
+      "health": 48610763,
+      "creatureType": "Humanoid",
+      "scale": 1.2,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt",
+        "Silence",
+        "Root",
+        "Fear",
+        "Disorient",
+        "Imprison",
+        "Stun",
+        "Slow",
+        "Mind Soothe"
+      ],
+      "spells": [
+        {
+          "id": 462737,
+          "attributes": [
+            "magic"
+          ]
+        }
+      ],
+      "spawns": [
+        {
+          "id": "2-2",
+          "idx": 2,
+          "group": 3,
+          "pos": [
+            -26.23,
+            133.61
+          ]
+        },
+        {
+          "id": "2-3",
+          "idx": 3,
+          "group": 3,
+          "pos": [
+            -30.36,
+            138.51
+          ]
+        },
+        {
+          "id": "2-4",
+          "idx": 4,
+          "group": 1,
+          "pos": [
+            -6.7,
+            139.91
+          ]
+        },
+        {
+          "id": "2-5",
+          "idx": 5,
+          "group": 1,
+          "pos": [
+            -11.28,
+            144.81
+          ]
+        },
+        {
+          "id": "2-6",
+          "idx": 6,
+          "group": 2,
+          "pos": [
+            -17.61,
+            151.87
+          ]
+        },
+        {
+          "id": "2-7",
+          "idx": 7,
+          "group": 2,
+          "pos": [
+            -21.37,
+            157.21
+          ]
+        },
+        {
+          "id": "2-8",
+          "idx": 8,
+          "group": 4,
+          "pos": [
+            -40.45,
+            153.32
+          ]
+        },
+        {
+          "id": "2-9",
+          "idx": 9,
+          "group": 4,
+          "pos": [
+            -38.86,
+            158.07
+          ]
+        },
+        {
+          "id": "2-10",
+          "idx": 10,
+          "group": 15,
+          "pos": [
+            -100.22,
+            54.43
+          ]
+        },
+        {
+          "id": "2-11",
+          "idx": 11,
+          "group": 15,
+          "pos": [
+            -94.39,
+            54.46
+          ]
+        },
+        {
+          "id": "2-12",
+          "idx": 12,
+          "group": 29,
+          "pos": [
+            -163.5,
+            21.17
+          ]
+        },
+        {
+          "id": "2-13",
+          "idx": 13,
+          "group": 29,
+          "pos": [
+            -167.12,
+            24.99
+          ]
+        },
+        {
+          "id": "2-14",
+          "idx": 14,
+          "group": 10,
+          "pos": [
+            -80.74,
+            106.59
+          ]
+        },
+        {
+          "id": "2-15",
+          "idx": 15,
+          "group": 10,
+          "pos": [
+            -80.88,
+            111.57
+          ]
+        },
+        {
+          "id": "2-16",
+          "idx": 16,
+          "group": 17,
+          "pos": [
+            -99.72,
+            84.29
+          ]
+        },
+        {
+          "id": "2-17",
+          "idx": 17,
+          "group": 17,
+          "pos": [
+            -103.16,
+            88.37
+          ]
+        },
+        {
+          "id": "2-18",
+          "idx": 18,
+          "group": 17,
+          "pos": [
+            -107.06,
+            92
+          ]
+        },
+        {
+          "id": "2-19",
+          "idx": 19,
+          "group": 25,
+          "pos": [
+            -144.77,
+            61.16
+          ]
+        },
+        {
+          "id": "2-20",
+          "idx": 20,
+          "group": 25,
+          "pos": [
+            -138.3,
+            61.27
+          ]
+        },
+        {
+          "id": "2-21",
+          "idx": 21,
+          "group": 31,
+          "pos": [
+            -162.82,
+            71.92
+          ]
+        },
+        {
+          "id": "2-22",
+          "idx": 22,
+          "group": 31,
+          "pos": [
+            -162.96,
+            77.23
+          ]
+        },
+        {
+          "id": "2-23",
+          "idx": 23,
+          "group": 33,
+          "pos": [
+            -197.65,
+            64.06
+          ]
+        },
+        {
+          "id": "2-24",
+          "idx": 24,
+          "group": 33,
+          "pos": [
+            -193.79,
+            68.17
+          ]
+        },
+        {
+          "id": "2-25",
+          "idx": 25,
+          "group": 28,
+          "pos": [
+            -153.06,
+            10.76
+          ]
+        },
+        {
+          "id": "2-26",
+          "idx": 26,
+          "group": 28,
+          "pos": [
+            -147.37,
+            10.81
+          ]
+        }
+      ]
+    },
+    {
+      "id": 229069,
+      "enemyIndex": 3,
+      "name": "Mechadrone Sniper",
+      "count": 5,
+      "health": 48610763,
+      "creatureType": "Mechanical",
+      "scale": 1.5,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Stun"
+      ],
+      "spells": [
+        {
+          "id": 464655,
+          "attributes": []
+        },
+        {
+          "id": 1214468,
+          "attributes": [
+            "interruptible"
+          ]
+        }
+      ],
+      "spawns": [
+        {
+          "id": "3-1",
+          "idx": 1,
+          "group": 61,
+          "pos": [
+            -107.56,
+            59.97
+          ]
+        },
+        {
+          "id": "3-2",
+          "idx": 2,
+          "group": 3,
+          "pos": [
+            -20.91,
+            137.36
+          ]
+        },
+        {
+          "id": "3-3",
+          "idx": 3,
+          "group": 3,
+          "pos": [
+            -25.13,
+            142.39
+          ]
+        },
+        {
+          "id": "3-4",
+          "idx": 4,
+          "group": 1,
+          "pos": [
+            -5.05,
+            146.08
+          ]
+        },
+        {
+          "id": "3-5",
+          "idx": 5,
+          "group": 2,
+          "pos": [
+            -14.86,
+            157.78
+          ]
+        },
+        {
+          "id": "3-8",
+          "idx": 8,
+          "group": 40,
+          "pos": [
+            -103.44,
+            167.98
+          ]
+        },
+        {
+          "id": "3-9",
+          "idx": 9,
+          "group": 40,
+          "pos": [
+            -103.11,
+            174.53
+          ]
+        },
+        {
+          "id": "3-10",
+          "idx": 10,
+          "group": 40,
+          "pos": [
+            -109.56,
+            171.26
+          ]
+        },
+        {
+          "id": "3-11",
+          "idx": 11,
+          "group": 9,
+          "pos": [
+            -50.74,
+            110.27
+          ]
+        },
+        {
+          "id": "3-12",
+          "idx": 12,
+          "group": 9,
+          "pos": [
+            -56.07,
+            106.49
+          ],
+          "patrol": [
+            [
+              -56.07,
+              106.49
+            ],
+            [
+              -65.53,
+              102.84
+            ],
+            [
+              -72.51,
+              105.45
+            ],
+            [
+              -74.84,
+              111.6
+            ],
+            [
+              -74.1,
+              121.1
+            ],
+            [
+              -68.6,
+              125.48
+            ],
+            [
+              -61.33,
+              125.67
+            ],
+            [
+              -57.98,
+              119.05
+            ],
+            [
+              -55.46,
+              116.44
+            ]
+          ]
+        },
+        {
+          "id": "3-13",
+          "idx": 13,
+          "group": 9,
+          "pos": [
+            -56.89,
+            112.5
+          ]
+        },
+        {
+          "id": "3-14",
+          "idx": 14,
+          "group": 23,
+          "pos": [
+            -126.91,
+            88.31
+          ]
+        },
+        {
+          "id": "3-15",
+          "idx": 15,
+          "group": 23,
+          "pos": [
+            -127.03,
+            82.13
+          ]
+        },
+        {
+          "id": "3-16",
+          "idx": 16,
+          "group": 23,
+          "pos": [
+            -120.2,
+            81.97
+          ]
+        },
+        {
+          "id": "3-17",
+          "idx": 17,
+          "group": 30,
+          "pos": [
+            -160.74,
+            57.91
+          ]
+        },
+        {
+          "id": "3-18",
+          "idx": 18,
+          "group": 30,
+          "pos": [
+            -154.19,
+            58.2
+          ]
+        },
+        {
+          "id": "3-19",
+          "idx": 19,
+          "group": 34,
+          "pos": [
+            -223.14,
+            83.55
+          ]
+        },
+        {
+          "id": "3-20",
+          "idx": 20,
+          "group": 34,
+          "pos": [
+            -212.46,
+            95.96
+          ]
+        },
+        {
+          "id": "3-21",
+          "idx": 21,
+          "group": 61,
+          "pos": [
+            -107.4,
+            66.04
+          ]
+        }
+      ]
+    },
+    {
+      "id": 231014,
+      "enemyIndex": 4,
+      "name": "Loaderbot",
+      "count": 2,
+      "health": 38888610,
+      "creatureType": "Mechanical",
+      "scale": 1.1,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt",
+        "Silence",
+        "Stun",
+        "Slow"
+      ],
+      "spells": [
+        {
+          "id": 465120,
+          "attributes": []
+        },
+        {
+          "id": 465127,
+          "attributes": []
+        },
+        {
+          "id": 465128,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "4-1",
+          "idx": 1,
+          "group": 5,
+          "pos": [
+            -58.28,
+            139.99
+          ]
+        },
+        {
+          "id": "4-2",
+          "idx": 2,
+          "group": 22,
+          "pos": [
+            -134.9,
+            122.84
+          ]
+        },
+        {
+          "id": "4-3",
+          "idx": 3,
+          "group": 22,
+          "pos": [
+            -139.34,
+            121.3
+          ]
+        },
+        {
+          "id": "4-4",
+          "idx": 4,
+          "group": 22,
+          "pos": [
+            -136.35,
+            118.21
+          ]
+        },
+        {
+          "id": "4-5",
+          "idx": 5,
+          "group": 5,
+          "pos": [
+            -54.32,
+            142.13
+          ]
+        },
+        {
+          "id": "4-6",
+          "idx": 6,
+          "group": 5,
+          "pos": [
+            -54.37,
+            137.58
+          ]
+        },
+        {
+          "id": "4-10",
+          "idx": 10,
+          "group": 32,
+          "pos": [
+            -185.16,
+            72.68
+          ]
+        },
+        {
+          "id": "4-11",
+          "idx": 11,
+          "group": 32,
+          "pos": [
+            -182.24,
+            76.13
+          ]
+        },
+        {
+          "id": "4-12",
+          "idx": 12,
+          "group": 32,
+          "pos": [
+            -178.83,
+            79.81
+          ]
+        },
+        {
+          "id": "4-13",
+          "idx": 13,
+          "group": 32,
+          "pos": [
+            -180.54,
+            71.83
+          ]
+        },
+        {
+          "id": "4-14",
+          "idx": 14,
+          "group": 32,
+          "pos": [
+            -177.78,
+            75.39
+          ]
+        }
+      ]
+    },
+    {
+      "id": 229250,
+      "enemyIndex": 5,
+      "name": "Venture Co. Contractor",
+      "count": 2,
+      "health": 48610763,
+      "creatureType": "Humanoid",
+      "scale": 1.2,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt",
+        "Silence",
+        "Fear",
+        "Disorient",
+        "Imprison",
+        "Stun",
+        "Slow",
+        "Mind Soothe"
+      ],
+      "spells": [],
+      "spawns": [
+        {
+          "id": "5-1",
+          "idx": 1,
+          "group": 63,
+          "pos": [
+            -56.79,
+            156.29
+          ]
+        },
+        {
+          "id": "5-2",
+          "idx": 2,
+          "group": 52,
+          "pos": [
+            -116.82,
+            275.8
+          ]
+        },
+        {
+          "id": "5-3",
+          "idx": 3,
+          "group": 52,
+          "pos": [
+            -123.43,
+            275.98
+          ]
+        },
+        {
+          "id": "5-4",
+          "idx": 4,
+          "group": 52,
+          "pos": [
+            -130.15,
+            275.82
+          ]
+        },
+        {
+          "id": "5-5",
+          "idx": 5,
+          "group": 47,
+          "pos": [
+            -42.54,
+            322.88
+          ]
+        },
+        {
+          "id": "5-6",
+          "idx": 6,
+          "group": 47,
+          "pos": [
+            -49.45,
+            322.57
+          ]
+        },
+        {
+          "id": "5-7",
+          "idx": 7,
+          "group": 4,
+          "pos": [
+            -42.58,
+            161.78
+          ]
+        },
+        {
+          "id": "5-8",
+          "idx": 8,
+          "group": 4,
+          "pos": [
+            -44.25,
+            156.86
+          ]
+        },
+        {
+          "id": "5-9",
+          "idx": 9,
+          "group": 4,
+          "pos": [
+            -45.39,
+            151.81
+          ]
+        },
+        {
+          "id": "5-10",
+          "idx": 10,
+          "group": 16,
+          "pos": [
+            -106.3,
+            40.14
+          ]
+        },
+        {
+          "id": "5-11",
+          "idx": 11,
+          "group": 16,
+          "pos": [
+            -112.97,
+            40.13
+          ]
+        },
+        {
+          "id": "5-13",
+          "idx": 13,
+          "group": 35,
+          "pos": [
+            -233.41,
+            101.31
+          ]
+        },
+        {
+          "id": "5-14",
+          "idx": 14,
+          "group": 35,
+          "pos": [
+            -227.08,
+            100.07
+          ]
+        },
+        {
+          "id": "5-15",
+          "idx": 15,
+          "group": 35,
+          "pos": [
+            -229.07,
+            106.01
+          ]
+        },
+        {
+          "id": "5-16",
+          "idx": 16,
+          "group": 21,
+          "pos": [
+            -126.17,
+            107.26
+          ]
+        },
+        {
+          "id": "5-17",
+          "idx": 17,
+          "group": 21,
+          "pos": [
+            -130.02,
+            110.9
+          ]
+        },
+        {
+          "id": "5-18",
+          "idx": 18,
+          "group": 6,
+          "pos": [
+            -84.93,
+            141.61
+          ]
+        },
+        {
+          "id": "5-19",
+          "idx": 19,
+          "group": 6,
+          "pos": [
+            -82.3,
+            136.76
+          ]
+        },
+        {
+          "id": "5-20",
+          "idx": 20,
+          "group": 18,
+          "pos": [
+            -106.4,
+            120.13
+          ]
+        },
+        {
+          "id": "5-21",
+          "idx": 21,
+          "group": 18,
+          "pos": [
+            -109.55,
+            126.67
+          ]
+        },
+        {
+          "id": "5-22",
+          "idx": 22,
+          "group": 41,
+          "pos": [
+            -139.81,
+            180.14
+          ]
+        },
+        {
+          "id": "5-23",
+          "idx": 23,
+          "group": 41,
+          "pos": [
+            -146.2,
+            179.69
+          ]
+        },
+        {
+          "id": "5-24",
+          "idx": 24,
+          "group": 44,
+          "pos": [
+            -173.22,
+            183.37
+          ]
+        },
+        {
+          "id": "5-25",
+          "idx": 25,
+          "group": 44,
+          "pos": [
+            -173.44,
+            177.58
+          ]
+        },
+        {
+          "id": "5-26",
+          "idx": 26,
+          "group": 43,
+          "pos": [
+            -129.68,
+            197.55
+          ]
+        },
+        {
+          "id": "5-27",
+          "idx": 27,
+          "group": 43,
+          "pos": [
+            -129.35,
+            203.85
+          ]
+        },
+        {
+          "id": "5-28",
+          "idx": 28,
+          "group": 46,
+          "pos": [
+            -147.89,
+            221.16
+          ]
+        },
+        {
+          "id": "5-29",
+          "idx": 29,
+          "group": 46,
+          "pos": [
+            -154.28,
+            221.21
+          ]
+        },
+        {
+          "id": "5-30",
+          "idx": 30,
+          "group": 49,
+          "pos": [
+            -83.24,
+            297.53
+          ]
+        },
+        {
+          "id": "5-31",
+          "idx": 31,
+          "group": 49,
+          "pos": [
+            -83.36,
+            291.47
+          ]
+        },
+        {
+          "id": "5-32",
+          "idx": 32,
+          "group": 63,
+          "pos": [
+            -59.72,
+            160.98
+          ]
+        }
+      ]
+    },
+    {
+      "id": 229252,
+      "enemyIndex": 6,
+      "name": "Darkfuse Hyena",
+      "count": 3,
+      "health": 38888610,
+      "creatureType": "Beast",
+      "scale": 1.2,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Root",
+        "Fear",
+        "Disorient",
+        "Stun",
+        "Slow"
+      ],
+      "spells": [
+        {
+          "id": 463058,
+          "attributes": [
+            "interruptible"
+          ]
+        },
+        {
+          "id": 463061,
+          "attributes": [
+            "enrage"
+          ]
+        },
+        {
+          "id": 469771,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "6-1",
+          "idx": 1,
+          "group": 59,
+          "pos": [
+            -16.27,
+            77.44
+          ]
+        },
+        {
+          "id": "6-2",
+          "idx": 2,
+          "group": 11,
+          "pos": [
+            -51.15,
+            68.56
+          ]
+        },
+        {
+          "id": "6-3",
+          "idx": 3,
+          "group": 11,
+          "pos": [
+            -51.01,
+            74.65
+          ]
+        },
+        {
+          "id": "6-4",
+          "idx": 4,
+          "group": 13,
+          "pos": [
+            -78.93,
+            55.05
+          ]
+        },
+        {
+          "id": "6-5",
+          "idx": 5,
+          "group": 13,
+          "pos": [
+            -85.46,
+            55.09
+          ]
+        },
+        {
+          "id": "6-6",
+          "idx": 6,
+          "group": 13,
+          "pos": [
+            -78.89,
+            48.54
+          ]
+        },
+        {
+          "id": "6-7",
+          "idx": 7,
+          "group": 13,
+          "pos": [
+            -85.4,
+            48.51
+          ]
+        },
+        {
+          "id": "6-8",
+          "idx": 8,
+          "group": 14,
+          "pos": [
+            -84.44,
+            24.11
+          ]
+        },
+        {
+          "id": "6-9",
+          "idx": 9,
+          "group": 14,
+          "pos": [
+            -78.47,
+            27.13
+          ]
+        },
+        {
+          "id": "6-10",
+          "idx": 10,
+          "group": 14,
+          "pos": [
+            -84.29,
+            30.51
+          ]
+        },
+        {
+          "id": "6-11",
+          "idx": 11,
+          "group": 19,
+          "pos": [
+            -106.38,
+            105.13
+          ]
+        },
+        {
+          "id": "6-12",
+          "idx": 12,
+          "group": 19,
+          "pos": [
+            -111.05,
+            101.21
+          ]
+        },
+        {
+          "id": "6-13",
+          "idx": 13,
+          "group": 10,
+          "pos": [
+            -86.07,
+            106.53
+          ]
+        },
+        {
+          "id": "6-14",
+          "idx": 14,
+          "group": 10,
+          "pos": [
+            -86.24,
+            111.43
+          ]
+        },
+        {
+          "id": "6-15",
+          "idx": 15,
+          "group": 31,
+          "pos": [
+            -168.01,
+            71.94
+          ]
+        },
+        {
+          "id": "6-16",
+          "idx": 16,
+          "group": 31,
+          "pos": [
+            -168.06,
+            76.91
+          ]
+        },
+        {
+          "id": "6-17",
+          "idx": 17,
+          "group": 59,
+          "pos": [
+            -20.62,
+            72.06
+          ]
+        },
+        {
+          "id": "6-18",
+          "idx": 18,
+          "group": 59,
+          "pos": [
+            -21.45,
+            80.97
+          ]
+        },
+        {
+          "id": "6-19",
+          "idx": 19,
+          "group": 59,
+          "pos": [
+            -24.98,
+            75.16
+          ]
+        }
+      ]
+    },
+    {
+      "id": 229212,
+      "enemyIndex": 7,
+      "name": "Darkfuse Demolitionist",
+      "count": 7,
+      "health": 48610763,
+      "creatureType": "Humanoid",
+      "scale": 1.5,
+      "isBoss": false,
+      "characteristics": [
+        "Incapacitate",
+        "Silence",
+        "Polymorph",
+        "Root",
+        "Fear",
+        "Disorient",
+        "Imprison",
+        "Stun",
+        "Slow",
+        "Mind Soothe"
+      ],
+      "spells": [
+        {
+          "id": 461793,
+          "attributes": []
+        },
+        {
+          "id": 461796,
+          "attributes": []
+        },
+        {
+          "id": 461805,
+          "attributes": []
+        },
+        {
+          "id": 1216039,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "7-2",
+          "idx": 2,
+          "group": 11,
+          "pos": [
+            -45.3,
+            71.39
+          ]
+        },
+        {
+          "id": "7-3",
+          "idx": 3,
+          "group": 17,
+          "pos": [
+            -95.23,
+            88.43
+          ]
+        },
+        {
+          "id": "7-4",
+          "idx": 4,
+          "group": 17,
+          "pos": [
+            -102.27,
+            95.2
+          ]
+        },
+        {
+          "id": "7-5",
+          "idx": 5,
+          "group": 23,
+          "pos": [
+            -120.39,
+            88.45
+          ]
+        },
+        {
+          "id": "7-6",
+          "idx": 6,
+          "group": 34,
+          "pos": [
+            -212.13,
+            85.07
+          ]
+        }
+      ]
+    },
+    {
+      "id": 230748,
+      "enemyIndex": 8,
+      "name": "Darkfuse Bloodwarper",
+      "count": 12,
+      "health": 77777220,
+      "creatureType": "Humanoid",
+      "scale": 2,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [
+        {
+          "id": 465827,
+          "attributes": []
+        },
+        {
+          "id": 465830,
+          "attributes": []
+        },
+        {
+          "id": 465871,
+          "attributes": [
+            "interruptible"
+          ]
+        },
+        {
+          "id": 1216826,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "8-2",
+          "idx": 2,
+          "group": null,
+          "pos": [
+            -97.97,
+            46.91
+          ]
+        },
+        {
+          "id": "8-3",
+          "idx": 3,
+          "group": 25,
+          "pos": [
+            -141.95,
+            67.92
+          ]
+        },
+        {
+          "id": "8-4",
+          "idx": 4,
+          "group": 34,
+          "pos": [
+            -217.68,
+            89.85
+          ]
+        },
+        {
+          "id": "8-5",
+          "idx": 5,
+          "group": 27,
+          "pos": [
+            -130.85,
+            21.81
+          ]
+        }
+      ]
+    },
+    {
+      "id": 231385,
+      "enemyIndex": 9,
+      "name": "Darkfuse Inspector",
+      "count": 5,
+      "health": 48610763,
+      "creatureType": "Humanoid",
+      "scale": 1.5,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Polymorph",
+        "Root",
+        "Fear",
+        "Disorient",
+        "Imprison",
+        "Stun",
+        "Sleep Walk",
+        "Mind Soothe"
+      ],
+      "spells": [
+        {
+          "id": 465681,
+          "attributes": []
+        },
+        {
+          "id": 465682,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "9-2",
+          "idx": 2,
+          "group": 47,
+          "pos": [
+            -45.78,
+            317.05
+          ]
+        },
+        {
+          "id": "9-3",
+          "idx": 3,
+          "group": 24,
+          "pos": [
+            -117.71,
+            70.71
+          ]
+        },
+        {
+          "id": "9-4",
+          "idx": 4,
+          "group": 24,
+          "pos": [
+            -122.11,
+            65.95
+          ]
+        },
+        {
+          "id": "9-5",
+          "idx": 5,
+          "group": 27,
+          "pos": [
+            -125.67,
+            15.76
+          ]
+        },
+        {
+          "id": "9-6",
+          "idx": 6,
+          "group": 27,
+          "pos": [
+            -133.98,
+            14.97
+          ]
+        },
+        {
+          "id": "9-7",
+          "idx": 7,
+          "group": 49,
+          "pos": [
+            -77.67,
+            294.47
+          ]
+        },
+        {
+          "id": "9-8",
+          "idx": 8,
+          "group": 51,
+          "pos": [
+            -96.79,
+            291.06
+          ]
+        },
+        {
+          "id": "9-9",
+          "idx": 9,
+          "group": 51,
+          "pos": [
+            -96.63,
+            297.27
+          ]
+        },
+        {
+          "id": "9-10",
+          "idx": 10,
+          "group": 55,
+          "pos": [
+            -114.99,
+            326.09
+          ]
+        },
+        {
+          "id": "9-11",
+          "idx": 11,
+          "group": 55,
+          "pos": [
+            -129.03,
+            325.95
+          ]
+        }
+      ]
+    },
+    {
+      "id": 229686,
+      "enemyIndex": 10,
+      "name": "Venture Co. Surveyor",
+      "count": 7,
+      "health": 48610763,
+      "creatureType": "Humanoid",
+      "scale": 1.5,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Fear",
+        "Disorient",
+        "Imprison",
+        "Stun",
+        "Slow",
+        "Mind Soothe"
+      ],
+      "spells": [
+        {
+          "id": 462771,
+          "attributes": [
+            "interruptible"
+          ]
+        },
+        {
+          "id": 462776,
+          "attributes": []
+        },
+        {
+          "id": 463169,
+          "attributes": []
+        },
+        {
+          "id": 469796,
+          "attributes": []
+        },
+        {
+          "id": 472338,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "10-2",
+          "idx": 2,
+          "group": 7,
+          "pos": [
+            -79.67,
+            164.18
+          ]
+        },
+        {
+          "id": "10-3",
+          "idx": 3,
+          "group": 7,
+          "pos": [
+            -83.91,
+            158.85
+          ]
+        },
+        {
+          "id": "10-4",
+          "idx": 4,
+          "group": 21,
+          "pos": [
+            -124.66,
+            112.38
+          ]
+        },
+        {
+          "id": "10-5",
+          "idx": 5,
+          "group": 18,
+          "pos": [
+            -112.11,
+            121.26
+          ]
+        },
+        {
+          "id": "10-6",
+          "idx": 6,
+          "group": 44,
+          "pos": [
+            -179.43,
+            175.75
+          ]
+        },
+        {
+          "id": "10-7",
+          "idx": 7,
+          "group": 44,
+          "pos": [
+            -173.5,
+            171.72
+          ]
+        },
+        {
+          "id": "10-8",
+          "idx": 8,
+          "group": 43,
+          "pos": [
+            -135.07,
+            200.64
+          ]
+        },
+        {
+          "id": "10-9",
+          "idx": 9,
+          "group": 46,
+          "pos": [
+            -151.02,
+            226.93
+          ]
+        }
+      ]
+    },
+    {
+      "id": 231312,
+      "enemyIndex": 11,
+      "name": "Venture Co. Electrician",
+      "count": 7,
+      "health": 48610763,
+      "creatureType": "Humanoid",
+      "scale": 1.5,
+      "isBoss": false,
+      "characteristics": [
+        "Incapacitate",
+        "Silence",
+        "Polymorph",
+        "Fear",
+        "Disorient",
+        "Imprison",
+        "Stun",
+        "Mind Soothe"
+      ],
+      "spells": [
+        {
+          "id": 465595,
+          "attributes": [
+            "interruptible"
+          ]
+        },
+        {
+          "id": 465966,
+          "attributes": []
+        },
+        {
+          "id": 469799,
+          "attributes": [
+            "magic"
+          ]
+        },
+        {
+          "id": 469800,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "11-2",
+          "idx": 2,
+          "group": 52,
+          "pos": [
+            -120.54,
+            270.21
+          ]
+        },
+        {
+          "id": "11-3",
+          "idx": 3,
+          "group": 52,
+          "pos": [
+            -126.91,
+            270.12
+          ]
+        },
+        {
+          "id": "11-4",
+          "idx": 4,
+          "group": 49,
+          "pos": [
+            -83.88,
+            282.96
+          ]
+        },
+        {
+          "id": "11-5",
+          "idx": 5,
+          "group": 53,
+          "pos": [
+            -132.21,
+            291.54
+          ]
+        },
+        {
+          "id": "11-6",
+          "idx": 6,
+          "group": 53,
+          "pos": [
+            -131.98,
+            297.86
+          ]
+        },
+        {
+          "id": "11-7",
+          "idx": 7,
+          "group": 54,
+          "pos": [
+            -120.41,
+            314.8
+          ]
+        },
+        {
+          "id": "11-8",
+          "idx": 8,
+          "group": 54,
+          "pos": [
+            -127.09,
+            314.84
+          ]
+        },
+        {
+          "id": "11-9",
+          "idx": 9,
+          "group": 56,
+          "pos": [
+            -125.06,
+            351.05
+          ]
+        },
+        {
+          "id": "11-10",
+          "idx": 10,
+          "group": 56,
+          "pos": [
+            -129.2,
+            345.26
+          ]
+        }
+      ]
+    },
+    {
+      "id": 231497,
+      "enemyIndex": 12,
+      "name": "Bombshell Crab",
+      "count": 3,
+      "health": 48610763,
+      "creatureType": "Beast",
+      "scale": 1.1,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Fear",
+        "Disorient",
+        "Imprison",
+        "Stun"
+      ],
+      "spells": [
+        {
+          "id": 468672,
+          "attributes": []
+        },
+        {
+          "id": 468680,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "12-2",
+          "idx": 2,
+          "group": null,
+          "pos": [
+            -96.86,
+            147.17
+          ]
+        },
+        {
+          "id": "12-3",
+          "idx": 3,
+          "group": null,
+          "pos": [
+            -105.75,
+            150.11
+          ]
+        },
+        {
+          "id": "12-4",
+          "idx": 4,
+          "group": null,
+          "pos": [
+            -153.95,
+            111.91
+          ]
+        },
+        {
+          "id": "12-5",
+          "idx": 5,
+          "group": null,
+          "pos": [
+            -151.65,
+            120.16
+          ]
+        },
+        {
+          "id": "12-6",
+          "idx": 6,
+          "group": null,
+          "pos": [
+            -111.91,
+            143.89
+          ]
+        },
+        {
+          "id": "12-7",
+          "idx": 7,
+          "group": null,
+          "pos": [
+            -171.3,
+            160.92
+          ]
+        },
+        {
+          "id": "12-8",
+          "idx": 8,
+          "group": null,
+          "pos": [
+            -180.36,
+            159.25
+          ]
+        },
+        {
+          "id": "12-9",
+          "idx": 9,
+          "group": null,
+          "pos": [
+            -178.1,
+            166.15
+          ]
+        },
+        {
+          "id": "12-10",
+          "idx": 10,
+          "group": null,
+          "pos": [
+            -186.6,
+            164.33
+          ]
+        },
+        {
+          "id": "12-11",
+          "idx": 11,
+          "group": null,
+          "pos": [
+            -198.59,
+            175.3
+          ]
+        },
+        {
+          "id": "12-12",
+          "idx": 12,
+          "group": null,
+          "pos": [
+            -189.01,
+            176.35
+          ]
+        },
+        {
+          "id": "12-13",
+          "idx": 13,
+          "group": null,
+          "pos": [
+            -184.69,
+            171.5
+          ]
+        },
+        {
+          "id": "12-14",
+          "idx": 14,
+          "group": null,
+          "pos": [
+            -193.13,
+            170.01
+          ]
+        },
+        {
+          "id": "12-15",
+          "idx": 15,
+          "group": null,
+          "pos": [
+            -158.57,
+            105.83
+          ]
+        },
+        {
+          "id": "12-16",
+          "idx": 16,
+          "group": null,
+          "pos": [
+            -166.02,
+            102.72
+          ]
+        },
+        {
+          "id": "12-17",
+          "idx": 17,
+          "group": null,
+          "pos": [
+            -174.75,
+            101.14
+          ]
+        }
+      ]
+    },
+    {
+      "id": 231496,
+      "enemyIndex": 13,
+      "name": "Venture Co. Diver",
+      "count": 5,
+      "health": 48610763,
+      "creatureType": "Humanoid",
+      "scale": 1.6,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Root",
+        "Fear",
+        "Disorient",
+        "Imprison",
+        "Stun",
+        "Mind Soothe"
+      ],
+      "spells": [
+        {
+          "id": 468631,
+          "attributes": [
+            "interruptible"
+          ]
+        },
+        {
+          "id": 468726,
+          "attributes": []
+        },
+        {
+          "id": 468727,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "13-2",
+          "idx": 2,
+          "group": 39,
+          "pos": [
+            -126.99,
+            154.08
+          ]
+        },
+        {
+          "id": "13-3",
+          "idx": 3,
+          "group": 39,
+          "pos": [
+            -121.48,
+            156.98
+          ],
+          "patrol": [
+            [
+              -124.76,
+              155.92
+            ],
+            [
+              -125.39,
+              165.05
+            ],
+            [
+              -124.76,
+              155.92
+            ],
+            [
+              -115.47,
+              141.93
+            ]
+          ]
+        },
+        {
+          "id": "13-4",
+          "idx": 4,
+          "group": 38,
+          "pos": [
+            -157.6,
+            150.9
+          ]
+        },
+        {
+          "id": "13-5",
+          "idx": 5,
+          "group": 38,
+          "pos": [
+            -151.73,
+            154.01
+          ]
+        },
+        {
+          "id": "13-6",
+          "idx": 6,
+          "group": 38,
+          "pos": [
+            -151.6,
+            147.59
+          ],
+          "patrol": [
+            [
+              -151.6,
+              147.59
+            ],
+            [
+              -142.53,
+              152.35
+            ],
+            [
+              -151.6,
+              147.59
+            ],
+            [
+              -169.58,
+              143.24
+            ]
+          ]
+        },
+        {
+          "id": "13-7",
+          "idx": 7,
+          "group": 37,
+          "pos": [
+            -158.39,
+            125.01
+          ]
+        },
+        {
+          "id": "13-8",
+          "idx": 8,
+          "group": 37,
+          "pos": [
+            -160.58,
+            131.12
+          ]
+        },
+        {
+          "id": "13-9",
+          "idx": 9,
+          "group": 37,
+          "pos": [
+            -153.89,
+            130.31
+          ],
+          "patrol": [
+            [
+              -153.89,
+              130.31
+            ],
+            [
+              -143.41,
+              136.33
+            ],
+            [
+              -165.48,
+              124.19
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": 229251,
+      "enemyIndex": 14,
+      "name": "Venture Co. Architect",
+      "count": 10,
+      "health": 63193991,
+      "creatureType": "Humanoid",
+      "scale": 2,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt"
+      ],
+      "spells": [
+        {
+          "id": 465408,
+          "attributes": []
+        },
+        {
+          "id": 1213803,
+          "attributes": []
+        },
+        {
+          "id": 1213805,
+          "attributes": []
+        },
+        {
+          "id": 1216894,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "14-2",
+          "idx": 2,
+          "group": 52,
+          "pos": [
+            -123.39,
+            284.07
+          ]
+        },
+        {
+          "id": "14-3",
+          "idx": 3,
+          "group": 47,
+          "pos": [
+            -40.83,
+            307.25
+          ]
+        },
+        {
+          "id": "14-4",
+          "idx": 4,
+          "group": 47,
+          "pos": [
+            -50.09,
+            307.12
+          ]
+        },
+        {
+          "id": "14-5",
+          "idx": 5,
+          "group": 20,
+          "pos": [
+            -119.92,
+            132
+          ]
+        },
+        {
+          "id": "14-6",
+          "idx": 6,
+          "group": 41,
+          "pos": [
+            -151.44,
+            173.11
+          ]
+        },
+        {
+          "id": "14-7",
+          "idx": 7,
+          "group": 44,
+          "pos": [
+            -180.92,
+            182.8
+          ]
+        },
+        {
+          "id": "14-8",
+          "idx": 8,
+          "group": null,
+          "pos": [
+            -197.62,
+            184.14
+          ]
+        }
+      ]
+    },
+    {
+      "id": 231223,
+      "enemyIndex": 15,
+      "name": "Disturbed Kelp",
+      "count": 7,
+      "health": 48610763,
+      "creatureType": "Elemental",
+      "scale": 1.5,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Fear",
+        "Disorient",
+        "Stun"
+      ],
+      "spells": [
+        {
+          "id": 471733,
+          "attributes": [
+            "interruptible",
+            "magic"
+          ]
+        },
+        {
+          "id": 471736,
+          "attributes": []
+        },
+        {
+          "id": 1217456,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "15-2",
+          "idx": 2,
+          "group": 36,
+          "pos": [
+            -179.91,
+            126.32
+          ]
+        },
+        {
+          "id": "15-3",
+          "idx": 3,
+          "group": 36,
+          "pos": [
+            -180.05,
+            137.93
+          ]
+        },
+        {
+          "id": "15-4",
+          "idx": 4,
+          "group": 36,
+          "pos": [
+            -180.42,
+            150.19
+          ]
+        },
+        {
+          "id": "15-5",
+          "idx": 5,
+          "group": 36,
+          "pos": [
+            -190.74,
+            119.51
+          ]
+        },
+        {
+          "id": "15-6",
+          "idx": 6,
+          "group": 36,
+          "pos": [
+            -190,
+            131.62
+          ]
+        },
+        {
+          "id": "15-7",
+          "idx": 7,
+          "group": 36,
+          "pos": [
+            -190.26,
+            144.27
+          ]
+        }
+      ]
+    },
+    {
+      "id": 231197,
+      "enemyIndex": 16,
+      "name": "Bubbles",
+      "count": 20,
+      "health": 145832288,
+      "creatureType": "Beast",
+      "scale": 2,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt"
+      ],
+      "spells": [
+        {
+          "id": 465487,
+          "attributes": []
+        },
+        {
+          "id": 469721,
+          "attributes": []
+        },
+        {
+          "id": 469811,
+          "attributes": []
+        },
+        {
+          "id": 469816,
+          "attributes": []
+        },
+        {
+          "id": 469818,
+          "attributes": []
+        },
+        {
+          "id": 469819,
+          "attributes": []
+        },
+        {
+          "id": 1217496,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "16-1",
+          "idx": 1,
+          "group": 48,
+          "pos": [
+            -66.05,
+            295.03
+          ]
+        }
+      ],
+      "stealthDetect": true
+    },
+    {
+      "id": 231325,
+      "enemyIndex": 17,
+      "name": "Darkfuse Jumpstarter",
+      "count": 12,
+      "health": 77777220,
+      "creatureType": "Humanoid",
+      "scale": 1.7,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt"
+      ],
+      "spells": [
+        {
+          "id": 465604,
+          "attributes": [
+            "magic"
+          ]
+        },
+        {
+          "id": 465666,
+          "attributes": []
+        },
+        {
+          "id": 1216607,
+          "attributes": []
+        },
+        {
+          "id": 1216610,
+          "attributes": []
+        },
+        {
+          "id": 1216611,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "17-2",
+          "idx": 2,
+          "group": 57,
+          "pos": [
+            -153.17,
+            349.14
+          ]
+        },
+        {
+          "id": "17-3",
+          "idx": 3,
+          "group": 57,
+          "pos": [
+            -152.92,
+            356.27
+          ]
+        },
+        {
+          "id": "17-4",
+          "idx": 4,
+          "group": 50,
+          "pos": [
+            -90.16,
+            302.79
+          ]
+        },
+        {
+          "id": "17-5",
+          "idx": 5,
+          "group": 56,
+          "pos": [
+            -132.55,
+            351.58
+          ]
+        }
+      ],
+      "stealthDetect": true
+    },
+    {
+      "id": 226398,
+      "enemyIndex": 18,
+      "name": "Big M.O.M.M.A.",
+      "count": 0,
+      "health": 534958833,
+      "creatureType": "Mechanical",
+      "scale": 1.5,
+      "isBoss": true,
+      "characteristics": [
+        "Taunt"
+      ],
+      "spells": [
+        {
+          "id": 460156,
+          "attributes": []
+        },
+        {
+          "id": 460158,
+          "attributes": []
+        },
+        {
+          "id": 469981,
+          "attributes": []
+        },
+        {
+          "id": 471585,
+          "attributes": []
+        },
+        {
+          "id": 471652,
+          "attributes": []
+        },
+        {
+          "id": 473220,
+          "attributes": []
+        },
+        {
+          "id": 473224,
+          "attributes": []
+        },
+        {
+          "id": 473240,
+          "attributes": []
+        },
+        {
+          "id": 473287,
+          "attributes": []
+        },
+        {
+          "id": 473351,
+          "attributes": []
+        },
+        {
+          "id": 473836,
+          "attributes": []
+        },
+        {
+          "id": 1215504,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "18-1",
+          "idx": 1,
+          "group": 26,
+          "pos": [
+            -146.78,
+            41.25
+          ]
+        }
+      ]
+    },
+    {
+      "id": 226402,
+      "enemyIndex": 19,
+      "name": "Bront",
+      "count": 0,
+      "health": 218846795,
+      "creatureType": "Humanoid",
+      "scale": 1.7,
+      "isBoss": true,
+      "characteristics": [
+        "Taunt"
+      ],
+      "spells": [
+        {
+          "id": 459779,
+          "attributes": []
+        },
+        {
+          "id": 459799,
+          "attributes": []
+        },
+        {
+          "id": 460965,
+          "attributes": []
+        },
+        {
+          "id": 470022,
+          "attributes": []
+        },
+        {
+          "id": 470090,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "19-1",
+          "idx": 1,
+          "group": 45,
+          "pos": [
+            -173.67,
+            210.54
+          ]
+        }
+      ]
+    },
+    {
+      "id": 226403,
+      "enemyIndex": 20,
+      "name": "Keeza Quickfuse",
+      "count": 0,
+      "health": 170214174,
+      "creatureType": "Humanoid",
+      "scale": 1.7,
+      "isBoss": true,
+      "characteristics": [
+        "Taunt"
+      ],
+      "spells": [
+        {
+          "id": 460602,
+          "attributes": []
+        },
+        {
+          "id": 460814,
+          "attributes": []
+        },
+        {
+          "id": 460867,
+          "attributes": []
+        },
+        {
+          "id": 461994,
+          "attributes": []
+        },
+        {
+          "id": 470090,
+          "attributes": []
+        },
+        {
+          "id": 472755,
+          "attributes": []
+        },
+        {
+          "id": 473526,
+          "attributes": []
+        },
+        {
+          "id": 473690,
+          "attributes": []
+        },
+        {
+          "id": 473713,
+          "attributes": [
+            "magic"
+          ]
+        },
+        {
+          "id": 473719,
+          "attributes": []
+        },
+        {
+          "id": 1217653,
+          "attributes": []
+        },
+        {
+          "id": 1217751,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "20-1",
+          "idx": 1,
+          "group": 45,
+          "pos": [
+            -184.86,
+            199.47
+          ]
+        }
+      ]
+    },
+    {
+      "id": 226396,
+      "enemyIndex": 21,
+      "name": "Swampface",
+      "count": 0,
+      "health": 340428348,
+      "creatureType": "Elemental",
+      "scale": 2,
+      "isBoss": true,
+      "characteristics": [
+        "Taunt"
+      ],
+      "spells": [
+        {
+          "id": 469478,
+          "attributes": []
+        },
+        {
+          "id": 469479,
+          "attributes": []
+        },
+        {
+          "id": 469480,
+          "attributes": []
+        },
+        {
+          "id": 470038,
+          "attributes": []
+        },
+        {
+          "id": 470039,
+          "attributes": []
+        },
+        {
+          "id": 472794,
+          "attributes": []
+        },
+        {
+          "id": 472819,
+          "attributes": []
+        },
+        {
+          "id": 472878,
+          "attributes": []
+        },
+        {
+          "id": 473046,
+          "attributes": []
+        },
+        {
+          "id": 473070,
+          "attributes": []
+        },
+        {
+          "id": 473081,
+          "attributes": []
+        },
+        {
+          "id": 473114,
+          "attributes": []
+        },
+        {
+          "id": 473126,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "21-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -208.79,
+            138.53
+          ]
+        }
+      ]
+    },
+    {
+      "id": 226404,
+      "enemyIndex": 22,
+      "name": "Geezle Gigazap",
+      "count": 0,
+      "health": 389060969,
+      "creatureType": "Humanoid",
+      "scale": 2,
+      "isBoss": true,
+      "characteristics": [
+        "Taunt"
+      ],
+      "spells": [
+        {
+          "id": 465462,
+          "attributes": []
+        },
+        {
+          "id": 465463,
+          "attributes": []
+        },
+        {
+          "id": 465982,
+          "attributes": []
+        },
+        {
+          "id": 466124,
+          "attributes": []
+        },
+        {
+          "id": 466188,
+          "attributes": []
+        },
+        {
+          "id": 466189,
+          "attributes": []
+        },
+        {
+          "id": 466190,
+          "attributes": []
+        },
+        {
+          "id": 466197,
+          "attributes": []
+        },
+        {
+          "id": 468604,
+          "attributes": []
+        },
+        {
+          "id": 468813,
+          "attributes": []
+        },
+        {
+          "id": 468815,
+          "attributes": []
+        },
+        {
+          "id": 468841,
+          "attributes": []
+        },
+        {
+          "id": 468846,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "22-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -188.59,
+            353.22
+          ]
+        }
+      ]
+    },
+    {
+      "id": 228424,
+      "enemyIndex": 23,
+      "name": "Darkfuse Mechadrone",
+      "count": 0,
+      "health": 48610767,
+      "creatureType": "Mechanical",
+      "scale": 1.5,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt"
+      ],
+      "spells": [
+        {
+          "id": 460393,
+          "attributes": []
+        },
+        {
+          "id": 472452,
+          "attributes": []
+        },
+        {
+          "id": 472454,
+          "attributes": []
+        },
+        {
+          "id": 1214780,
+          "attributes": [
+            "interruptible"
+          ]
+        },
+        {
+          "id": 1214801,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "23-1",
+          "idx": 1,
+          "group": 26,
+          "pos": [
+            -154.22,
+            34.92
+          ]
+        },
+        {
+          "id": "23-2",
+          "idx": 2,
+          "group": 26,
+          "pos": [
+            -153.71,
+            47.66
+          ]
+        },
+        {
+          "id": "23-3",
+          "idx": 3,
+          "group": 26,
+          "pos": [
+            -139.38,
+            46.83
+          ]
+        },
+        {
+          "id": "23-4",
+          "idx": 4,
+          "group": 26,
+          "pos": [
+            -139.58,
+            35.03
+          ]
+        }
+      ]
+    },
+    {
+      "id": 231380,
+      "enemyIndex": 24,
+      "name": "Undercrawler",
+      "count": 1,
+      "health": 48610763,
+      "creatureType": "Beast",
+      "scale": 1.3,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt",
+        "Silence",
+        "Fear",
+        "Disorient",
+        "Stun",
+        "Slow"
+      ],
+      "spells": [
+        {
+          "id": 465813,
+          "attributes": [
+            "interruptible",
+            "poison"
+          ]
+        }
+      ],
+      "spawns": [
+        {
+          "id": "24-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -4.73,
+            133.65
+          ]
+        },
+        {
+          "id": "24-2",
+          "idx": 2,
+          "group": null,
+          "pos": [
+            -14.34,
+            137.73
+          ]
+        },
+        {
+          "id": "24-3",
+          "idx": 3,
+          "group": null,
+          "pos": [
+            -51.29,
+            60.24
+          ]
+        },
+        {
+          "id": "24-4",
+          "idx": 4,
+          "group": null,
+          "pos": [
+            -41.14,
+            53.61
+          ]
+        },
+        {
+          "id": "24-5",
+          "idx": 5,
+          "group": null,
+          "pos": [
+            -26.22,
+            165.1
+          ]
+        },
+        {
+          "id": "24-6",
+          "idx": 6,
+          "group": null,
+          "pos": [
+            -57.3,
+            178.36
+          ]
+        },
+        {
+          "id": "24-7",
+          "idx": 7,
+          "group": null,
+          "pos": [
+            -46.94,
+            186.65
+          ]
+        },
+        {
+          "id": "24-8",
+          "idx": 8,
+          "group": null,
+          "pos": [
+            -89.63,
+            189.96
+          ]
+        },
+        {
+          "id": "24-9",
+          "idx": 9,
+          "group": null,
+          "pos": [
+            -78.23,
+            192.86
+          ]
+        }
+      ]
+    },
+    {
+      "id": 227145,
+      "enemyIndex": 25,
+      "name": "Waterworks Crocolisk",
+      "count": 1,
+      "health": 48610763,
+      "creatureType": "Beast",
+      "scale": 1.3,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt",
+        "Stun"
+      ],
+      "spells": [
+        {
+          "id": 465820,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "25-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -10.5,
+            133.12
+          ]
+        },
+        {
+          "id": "25-2",
+          "idx": 2,
+          "group": null,
+          "pos": [
+            -16.63,
+            132.06
+          ]
+        },
+        {
+          "id": "25-3",
+          "idx": 3,
+          "group": null,
+          "pos": [
+            -37.41,
+            169.86
+          ]
+        },
+        {
+          "id": "25-4",
+          "idx": 4,
+          "group": null,
+          "pos": [
+            -25.39,
+            173.8
+          ]
+        },
+        {
+          "id": "25-5",
+          "idx": 5,
+          "group": null,
+          "pos": [
+            -45.08,
+            175.87
+          ]
+        },
+        {
+          "id": "25-6",
+          "idx": 6,
+          "group": null,
+          "pos": [
+            -36.17,
+            180.84
+          ]
+        },
+        {
+          "id": "25-7",
+          "idx": 7,
+          "group": null,
+          "pos": [
+            -70.98,
+            180.22
+          ]
+        },
+        {
+          "id": "25-8",
+          "idx": 8,
+          "group": null,
+          "pos": [
+            -65.18,
+            188.93
+          ]
+        },
+        {
+          "id": "25-9",
+          "idx": 9,
+          "group": null,
+          "pos": [
+            -91.7,
+            170.07
+          ]
+        },
+        {
+          "id": "25-10",
+          "idx": 10,
+          "group": null,
+          "pos": [
+            -95.43,
+            181.88
+          ]
+        },
+        {
+          "id": "25-11",
+          "idx": 11,
+          "group": null,
+          "pos": [
+            -108.69,
+            186.03
+          ]
+        },
+        {
+          "id": "25-12",
+          "idx": 12,
+          "group": null,
+          "pos": [
+            -111.59,
+            192.66
+          ]
+        },
+        {
+          "id": "25-13",
+          "idx": 13,
+          "group": null,
+          "pos": [
+            -116.57,
+            180.22
+          ]
+        },
+        {
+          "id": "25-14",
+          "idx": 14,
+          "group": null,
+          "pos": [
+            -119.26,
+            188.3
+          ]
+        }
+      ]
+    }
+  ],
+  "pois": [
+    {
+      "type": "dungeonEntrance",
+      "itemType": null,
+      "pos": [
+        -10.83,
+        108.23
+      ]
+    },
+    {
+      "type": "floodgateItem",
+      "itemType": null,
+      "pos": [
+        -141.78,
+        21.15
+      ]
+    },
+    {
+      "type": "floodgateItem",
+      "itemType": null,
+      "pos": [
+        -190.41,
+        213.19
+      ]
+    },
+    {
+      "type": "floodgateItem",
+      "itemType": null,
+      "pos": [
+        -129.85,
+        131.81
+      ]
+    },
+    {
+      "type": "floodgateItem",
+      "itemType": null,
+      "pos": [
+        -230.91,
+        75.75
+      ]
+    },
+    {
+      "type": "floodgateItem",
+      "itemType": null,
+      "pos": [
+        -84.08,
+        149.74
+      ]
+    }
+  ]
+}

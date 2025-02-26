@@ -1,7 +1,7 @@
 import type { Expression, NumericLiteral, TableConstructorExpression, TableKey } from 'luaparse'
 import parser from 'luaparse'
 import * as fs from 'fs'
-import type { MdtDungeon, Mob, Point, PointOfInterest, Spawn } from '../src/data/types.ts'
+import type { MdtDungeon, MdtSpell, Mob, Point, PointOfInterest, Spawn } from '../src/data/types.ts'
 import type { StringLiteral } from 'luaparse/lib/ast'
 import { roundTo } from '../src/util/numbers.ts'
 import { getDirname } from '../server/files.ts'
@@ -10,14 +10,14 @@ import type { DungeonKey } from '../src/data/dungeonKeys.ts'
 const dirname = getDirname(import.meta.url)
 
 export const dungeonPaths = new Map<DungeonKey, string>([
-  ['ak', 'TheWarWithin/AraKara'],
-  ['cot', 'TheWarWithin/CityOfThreads'],
-  ['db', 'TheWarWithin/TheDawnbreaker'],
-  ['gb', 'TheWarWithin/GrimBatol'],
-  ['mot', 'TheWarWithin/MistsOfTirnaScithe'],
-  ['nw', 'TheWarWithin/TheNecroticWake'],
-  ['sob', 'TheWarWithin/SiegeofBoralus'],
-  ['sv', 'TheWarWithin/TheStonevault'],
+  ['cm', 'TheWarWithin/CinderbrewMeadery'],
+  ['dc', 'TheWarWithin/DarkflameCleft'],
+  ['of', 'TheWarWithin/OperationFloodgate'],
+  ['mw', 'TheWarWithin/MechagonWorkshop'],
+  ['psf', 'TheWarWithin/PrioryOfTheSacredFlame'],
+  ['tm', 'TheWarWithin/TheMotherlode'],
+  ['tr', 'TheWarWithin/TheRookery'],
+  ['top', 'TheWarWithin/TheaterOfPain'],
 ])
 
 const filterDungeonKey = process.argv[2]
@@ -79,19 +79,21 @@ export function importMdtDungeon(key: DungeonKey, dungeonPath: string) {
     item.variables?.some((variable: any) => variable?.base?.identifier?.name === 'mapPOIs'),
   )
 
-  const poiItems: TableConstructorExpression[] =
-    mapPoisItem.init[0].fields[0]?.value?.fields?.map((field: any) => field.value) ?? []
-
   const pois: PointOfInterest[] = []
-  for (let poiIndex = 0; poiIndex < poiItems.length; poiIndex++) {
-    const fields = poiItems[poiIndex]!.fields as TableKey[]
-    const x = getFieldValue(fields, 'x')
-    const y = getFieldValue(fields, 'y')
-    pois.push({
-      type: getFieldValue(fields, 'type'),
-      itemType: getFieldValue(fields, 'itemType'),
-      pos: convertCoords(x, y),
-    })
+  if (mapPoisItem) {
+    const poiItems: TableConstructorExpression[] =
+      mapPoisItem.init[0].fields[0]?.value?.fields?.map((field: any) => field.value) ?? []
+
+    for (let poiIndex = 0; poiIndex < poiItems.length; poiIndex++) {
+      const fields = poiItems[poiIndex]!.fields as TableKey[]
+      const x = getFieldValue(fields, 'x')
+      const y = getFieldValue(fields, 'y')
+      pois.push({
+        type: getFieldValue(fields, 'type'),
+        itemType: getFieldValue(fields, 'itemType'),
+        pos: convertCoords(x, y),
+      })
+    }
   }
 
   const dungeonEnemiesItem: any = body.find((item: any) =>
@@ -116,6 +118,7 @@ export function importMdtDungeon(key: DungeonKey, dungeonPath: string) {
       scale: getFieldValue(fields, 'scale'),
       isBoss: !!getFieldValue(fields, 'isBoss'),
       characteristics: [],
+      spells: [],
       spawns: [],
     }
 
@@ -125,7 +128,18 @@ export function importMdtDungeon(key: DungeonKey, dungeonPath: string) {
     if (characteristicFields)
       enemy.characteristics = characteristicFields.map((field) => parseExpression(field.key))
 
-    const spawns: Spawn[] = []
+    const spellsField = getFieldValue(fields, 'spells')
+    if (spellsField) {
+      for (const spellField of spellsField) {
+        const spell: MdtSpell = {
+          id: spellField.key.value,
+          attributes: spellField.value.fields.map((field: TableKey) => parseExpression(field.key)),
+        }
+
+        enemy.spells.push(spell)
+      }
+    }
+
     const clones = getFieldValue(fields, 'clones')
     for (const clone of clones) {
       const cloneFields = clone.value.fields
@@ -156,10 +170,9 @@ export function importMdtDungeon(key: DungeonKey, dungeonPath: string) {
         })
       }
 
-      spawns.push(spawn)
+      enemy.spawns.push(spawn)
     }
 
-    enemy.spawns = spawns
     enemies.push(enemy)
   }
 
@@ -170,5 +183,8 @@ export function importMdtDungeon(key: DungeonKey, dungeonPath: string) {
     pois,
   }
 
-  fs.writeFileSync(`${dirname}/../src/data/mdtDungeons/${key}_mdt.json`, JSON.stringify(mdtData))
+  fs.writeFileSync(
+    `${dirname}/../src/data/mdtDungeons/${key}_mdt.json`,
+    JSON.stringify(mdtData, null, 2),
+  )
 }

@@ -43,9 +43,11 @@ export function MobSpawnTooltip({ mob, spawn, hidden }: Props) {
         <div>
           Forces: {mob.count} | {mobCountPercentStr(mob.count, dungeon.mdt.totalCount)}
         </div>
-        <div>
-          Efficiency: <span style={{ color: efficiencyColor }}>{efficiencyScore}</span>
-        </div>
+        {efficiencyScore > 0 && (
+          <div>
+            Efficiency: <span style={{ color: efficiencyColor }}>{efficiencyScore}</span>
+          </div>
+        )}
         <div style={{ fontSize: 10 }}>[Right click for more]</div>
       </div>
     </Tooltip>
