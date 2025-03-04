@@ -212,6 +212,7 @@
         "Polymorph",
         "Fear",
         "Disorient",
+        "Imprison",
         "Stun",
         "Slow",
         "Mind Soothe"
@@ -620,10 +621,6 @@
           "attributes": []
         },
         {
-          "id": 296331,
-          "attributes": []
-        },
-        {
           "id": 291865,
           "attributes": []
         },
@@ -637,6 +634,10 @@
         },
         {
           "id": 291928,
+          "attributes": []
+        },
+        {
+          "id": 296331,
           "attributes": []
         },
         {
@@ -1723,6 +1724,7 @@
       "scale": 2,
       "isBoss": false,
       "characteristics": [
+        "Taunt",
         "Stun"
       ],
       "spells": [

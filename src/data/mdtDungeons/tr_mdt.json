@@ -62,7 +62,8 @@
         "Disorient",
         "Imprison",
         "Stun",
-        "Slow"
+        "Slow",
+        "Mind Soothe"
       ],
       "spells": [
         {
@@ -182,6 +183,7 @@
       "isBoss": false,
       "characteristics": [
         "Taunt",
+        "Incapacitate",
         "Silence",
         "Root",
         "Fear",
@@ -1051,7 +1053,8 @@
         "Fear",
         "Disorient",
         "Stun",
-        "Slow"
+        "Slow",
+        "Mind Soothe"
       ],
       "spells": [
         {
@@ -1707,7 +1710,8 @@
       "isBoss": false,
       "characteristics": [
         "Taunt",
-        "Slow"
+        "Slow",
+        "Mind Soothe"
       ],
       "spells": [
         {
@@ -2018,6 +2022,10 @@
           "attributes": []
         },
         {
+          "id": 423356,
+          "attributes": []
+        },
+        {
           "id": 423393,
           "attributes": []
         },
@@ -2137,7 +2145,7 @@
       "enemyIndex": 17,
       "name": "Voidstone Awakened",
       "count": 0,
-      "health": 24345042,
+      "health": 24360126,
       "creatureType": "Humanoid",
       "scale": 2,
       "isBoss": false,

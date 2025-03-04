@@ -1465,6 +1465,8 @@
       "characteristics": [
         "Silence",
         "Root",
+        "Fear",
+        "Disorient",
         "Stun"
       ],
       "spells": [
@@ -1577,6 +1579,7 @@
       "isBoss": false,
       "characteristics": [
         "Taunt",
+        "Incapacitate",
         "Silence",
         "Root",
         "Fear",
@@ -1919,6 +1922,7 @@
       "characteristics": [
         "Silence",
         "Fear",
+        "Disorient",
         "Stun"
       ],
       "spells": [
@@ -3310,8 +3314,10 @@
       "isBoss": false,
       "characteristics": [
         "Taunt",
+        "Polymorph",
         "Root",
         "Fear",
+        "Disorient",
         "Imprison",
         "Stun"
       ],
@@ -3739,7 +3745,7 @@
       "enemyIndex": 29,
       "name": "Mechanized Peacekeeper",
       "count": 8,
-      "health": 87642140,
+      "health": 87745857,
       "creatureType": "Mechanical",
       "scale": 0.7,
       "isBoss": false,
@@ -3940,7 +3946,7 @@
       "enemyIndex": 32,
       "name": "Azerite Footbomb",
       "count": 0,
-      "health": 9749540,
+      "health": 9744049,
       "creatureType": "Not specified",
       "scale": 1,
       "isBoss": false,

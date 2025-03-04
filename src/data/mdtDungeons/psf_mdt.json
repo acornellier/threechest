@@ -7,7 +7,7 @@
       "enemyIndex": 1,
       "name": "Arathi Footman",
       "count": 3,
-      "health": 63336321,
+      "health": 63297101,
       "creatureType": "Humanoid",
       "scale": 1,
       "isBoss": false,
@@ -30,15 +30,7 @@
           "attributes": []
         },
         {
-          "id": 427359,
-          "attributes": []
-        },
-        {
           "id": 427360,
-          "attributes": []
-        },
-        {
-          "id": 429099,
           "attributes": []
         }
       ],
@@ -89,15 +81,6 @@
           ]
         },
         {
-          "id": "1-6",
-          "idx": 6,
-          "group": 4,
-          "pos": [
-            -135.66,
-            311.69
-          ]
-        },
-        {
           "id": "1-7",
           "idx": 7,
           "group": 4,
@@ -122,15 +105,6 @@
           "pos": [
             -129.6,
             302.9
-          ]
-        },
-        {
-          "id": "1-10",
-          "idx": 10,
-          "group": 8,
-          "pos": [
-            -125.17,
-            311.76
           ]
         },
         {
@@ -165,8 +139,8 @@
           "idx": 14,
           "group": 9,
           "pos": [
-            -122.88,
-            295.26
+            -122.03,
+            295.5
           ]
         },
         {
@@ -174,8 +148,8 @@
           "idx": 15,
           "group": 9,
           "pos": [
-            -122.15,
-            299.13
+            -122.33,
+            299.49
           ]
         },
         {
@@ -473,7 +447,7 @@
       "enemyIndex": 2,
       "name": "Arathi Knight",
       "count": 18,
-      "health": 77952395,
+      "health": 77904125,
       "creatureType": "Humanoid",
       "scale": 1,
       "isBoss": false,
@@ -481,10 +455,6 @@
         "Taunt"
       ],
       "spells": [
-        {
-          "id": 427359,
-          "attributes": []
-        },
         {
           "id": 427609,
           "attributes": []
@@ -639,26 +609,18 @@
       "enemyIndex": 3,
       "name": "Arathi Neophyte",
       "count": 1,
-      "health": 24360123,
+      "health": 24345039,
       "creatureType": "Humanoid",
       "scale": 0.8,
       "isBoss": false,
       "characteristics": [
+        "Taunt",
         "Silence",
         "Fear",
         "Disorient",
         "Stun"
       ],
-      "spells": [
-        {
-          "id": 427359,
-          "attributes": []
-        },
-        {
-          "id": 429099,
-          "attributes": []
-        }
-      ],
+      "spells": [],
       "spawns": [
         {
           "id": "3-2",
@@ -775,7 +737,7 @@
       "enemyIndex": 4,
       "name": "Arathi Neophyte",
       "count": 1,
-      "health": 24360123,
+      "health": 24345039,
       "creatureType": "Humanoid",
       "scale": 0.8,
       "isBoss": false,
@@ -784,12 +746,7 @@
         "Fear",
         "Stun"
       ],
-      "spells": [
-        {
-          "id": 429099,
-          "attributes": []
-        }
-      ],
+      "spells": [],
       "spawns": [
         {
           "id": "4-2",
@@ -893,7 +850,7 @@
       "enemyIndex": 6,
       "name": "Ardent Paladin",
       "count": 14,
-      "health": 82824420,
+      "health": 82773133,
       "creatureType": "Humanoid",
       "scale": 1,
       "isBoss": false,
@@ -1039,7 +996,7 @@
       "enemyIndex": 7,
       "name": "Devout Priest",
       "count": 6,
-      "health": 41412211,
+      "health": 41386567,
       "creatureType": "Humanoid",
       "scale": 1,
       "isBoss": false,
@@ -1057,18 +1014,10 @@
       "spells": [
         {
           "id": 427356,
-          "attributes": [
-            "interruptible"
-          ]
+          "attributes": []
         },
         {
           "id": 427357,
-          "attributes": [
-            "interruptible"
-          ]
-        },
-        {
-          "id": 427359,
           "attributes": []
         },
         {
@@ -1330,15 +1279,6 @@
           ]
         },
         {
-          "id": "7-26",
-          "idx": 26,
-          "group": 57,
-          "pos": [
-            -147.03,
-            91.39
-          ]
-        },
-        {
           "id": "7-27",
           "idx": 27,
           "group": 59,
@@ -1359,10 +1299,10 @@
         {
           "id": "7-29",
           "idx": 29,
-          "group": 58,
+          "group": 57,
           "pos": [
-            -116.37,
-            95.33
+            -146.81,
+            91.13
           ]
         },
         {
@@ -1473,12 +1413,13 @@
       "enemyIndex": 9,
       "name": "Fanatical Conjuror",
       "count": 6,
-      "health": 43848222,
+      "health": 43821070,
       "creatureType": "Humanoid",
       "scale": 1,
       "isBoss": false,
       "characteristics": [
         "Taunt",
+        "Incapacitate",
         "Silence",
         "Mind Control",
         "Polymorph",
@@ -1490,14 +1431,8 @@
       ],
       "spells": [
         {
-          "id": 427359,
-          "attributes": []
-        },
-        {
           "id": 427469,
-          "attributes": [
-            "interruptible"
-          ]
+          "attributes": []
         },
         {
           "id": 427472,
@@ -1691,7 +1626,7 @@
       "enemyIndex": 10,
       "name": "Fervent Sharpshooter",
       "count": 5,
-      "health": 48720247,
+      "health": 48690078,
       "creatureType": "Humanoid",
       "scale": 1,
       "isBoss": false,
@@ -1710,19 +1645,7 @@
       ],
       "spells": [
         {
-          "id": 224729,
-          "attributes": []
-        },
-        {
-          "id": 427359,
-          "attributes": []
-        },
-        {
           "id": 427629,
-          "attributes": []
-        },
-        {
-          "id": 429099,
           "attributes": []
         },
         {
@@ -1806,8 +1729,8 @@
           "idx": 3,
           "group": 6,
           "pos": [
-            -137.42,
-            297.22
+            -136.64,
+            297.59
           ]
         },
         {
@@ -1815,8 +1738,8 @@
           "idx": 4,
           "group": 9,
           "pos": [
-            -119.13,
-            296.73
+            -118.65,
+            297.57
           ]
         },
         {
@@ -2081,6 +2004,15 @@
           ]
         },
         {
+          "id": "10-36",
+          "idx": 36,
+          "group": 8,
+          "pos": [
+            -124.94,
+            311.31
+          ]
+        },
+        {
           "id": "10-37",
           "idx": 37,
           "group": 64,
@@ -2096,6 +2028,15 @@
           "pos": [
             -155.32,
             251.71
+          ]
+        },
+        {
+          "id": "10-39",
+          "idx": 39,
+          "group": 4,
+          "pos": [
+            -135.54,
+            311.29
           ]
         }
       ]
@@ -2138,10 +2079,6 @@
         {
           "id": 427951,
           "attributes": []
-        },
-        {
-          "id": 427952,
-          "attributes": []
         }
       ],
       "spawns": [
@@ -2161,7 +2098,7 @@
       "enemyIndex": 12,
       "name": "Guard Captain Suleyman",
       "count": 50,
-      "health": 194880988,
+      "health": 194760312,
       "creatureType": "Humanoid",
       "scale": 2,
       "isBoss": false,
@@ -2169,10 +2106,6 @@
         "Taunt"
       ],
       "spells": [
-        {
-          "id": 427359,
-          "attributes": []
-        },
         {
           "id": 448485,
           "attributes": []
@@ -2199,7 +2132,7 @@
       "enemyIndex": 13,
       "name": "High Priest Aemya",
       "count": 50,
-      "health": 121800617,
+      "health": 121725195,
       "creatureType": "Humanoid",
       "scale": 2,
       "isBoss": false,
@@ -2207,12 +2140,6 @@
       "spells": [
         {
           "id": 427357,
-          "attributes": [
-            "interruptible"
-          ]
-        },
-        {
-          "id": 427359,
           "attributes": []
         },
         {
@@ -2225,7 +2152,9 @@
         },
         {
           "id": 429091,
-          "attributes": []
+          "attributes": [
+            "magic"
+          ]
         },
         {
           "id": 464240,
@@ -2249,16 +2178,14 @@
       "enemyIndex": 14,
       "name": "Lightspawn",
       "count": 18,
-      "health": 77952395,
+      "health": 77904125,
       "creatureType": "Elemental",
       "scale": 1,
       "isBoss": false,
-      "characteristics": [],
+      "characteristics": [
+        "Taunt"
+      ],
       "spells": [
-        {
-          "id": 427359,
-          "attributes": []
-        },
         {
           "id": 427601,
           "attributes": []
@@ -2346,8 +2273,8 @@
           "idx": 9,
           "group": 58,
           "pos": [
-            -112.3,
-            95.51
+            -116.31,
+            94.73
           ]
         }
       ],
@@ -2358,7 +2285,7 @@
       "enemyIndex": 15,
       "name": "Risen Footman",
       "count": 4,
-      "health": 58464296,
+      "health": 58428093,
       "creatureType": "Undead",
       "scale": 1,
       "isBoss": false,
@@ -2395,8 +2322,8 @@
           "idx": 2,
           "group": 58,
           "pos": [
-            -112.18,
-            91.22
+            -116.19,
+            90.06
           ]
         },
         {
@@ -2404,8 +2331,8 @@
           "idx": 3,
           "group": 57,
           "pos": [
-            -151.19,
-            95.68
+            -150.57,
+            93.2
           ]
         },
         {
@@ -2580,7 +2507,7 @@
       "enemyIndex": 16,
       "name": "Risen Mage",
       "count": 6,
-      "health": 43848222,
+      "health": 43821070,
       "creatureType": "Undead",
       "scale": 1,
       "isBoss": false,
@@ -2596,9 +2523,7 @@
       "spells": [
         {
           "id": 427469,
-          "attributes": [
-            "interruptible"
-          ]
+          "attributes": []
         },
         {
           "id": 435156,
@@ -2606,9 +2531,7 @@
         },
         {
           "id": 444743,
-          "attributes": [
-            "interruptible"
-          ]
+          "attributes": []
         },
         {
           "id": 1217938,
@@ -2646,19 +2569,10 @@
         {
           "id": "16-4",
           "idx": 4,
-          "group": 57,
-          "pos": [
-            -151.23,
-            91.21
-          ]
-        },
-        {
-          "id": "16-5",
-          "idx": 5,
           "group": 58,
           "pos": [
-            -116.38,
-            91.13
+            -112.22,
+            92.64
           ]
         },
         {
@@ -2677,7 +2591,7 @@
       "enemyIndex": 17,
       "name": "Sergeant Shaynemail",
       "count": 50,
-      "health": 146160741,
+      "health": 146070234,
       "creatureType": "Humanoid",
       "scale": 1.7,
       "isBoss": false,
@@ -2697,10 +2611,6 @@
         },
         {
           "id": 424621,
-          "attributes": []
-        },
-        {
-          "id": 427359,
           "attributes": []
         },
         {
@@ -2725,7 +2635,7 @@
       "enemyIndex": 18,
       "name": "Sir Braunpyke",
       "count": 50,
-      "health": 146160741,
+      "health": 146070234,
       "creatureType": "Undead",
       "scale": 1.4,
       "isBoss": false,
@@ -2765,7 +2675,7 @@
       "enemyIndex": 19,
       "name": "Taener Duelmal",
       "count": 50,
-      "health": 146160741,
+      "health": 146070234,
       "creatureType": "Humanoid",
       "scale": 1.7,
       "isBoss": false,
@@ -2776,14 +2686,12 @@
         {
           "id": 424420,
           "attributes": [
-            "interruptible"
+            "magic"
           ]
         },
         {
           "id": 424421,
-          "attributes": [
-            "interruptible"
-          ]
+          "attributes": []
         },
         {
           "id": 424460,
@@ -2791,14 +2699,6 @@
         },
         {
           "id": 424462,
-          "attributes": []
-        },
-        {
-          "id": 424466,
-          "attributes": []
-        },
-        {
-          "id": 424467,
           "attributes": []
         },
         {
@@ -2823,7 +2723,7 @@
       "enemyIndex": 20,
       "name": "War Lynx",
       "count": 6,
-      "health": 48720247,
+      "health": 48690078,
       "creatureType": "Beast",
       "scale": 1,
       "isBoss": false,
@@ -2989,17 +2889,19 @@
       "enemyIndex": 21,
       "name": "Zealous Templar",
       "count": 10,
-      "health": 63336321,
+      "health": 63297101,
       "creatureType": "Humanoid",
       "scale": 1,
       "isBoss": false,
       "characteristics": [
         "Taunt",
+        "Incapacitate",
         "Silence",
         "Root",
         "Fear",
         "Disorient",
-        "Stun"
+        "Stun",
+        "Mind Soothe"
       ],
       "spells": [
         {
@@ -3097,7 +2999,7 @@
       "enemyIndex": 22,
       "name": "Captain Dailcry",
       "count": 0,
-      "health": 546112606,
+      "health": 546072794,
       "creatureType": "Humanoid",
       "scale": 1.5,
       "isBoss": true,
@@ -3114,7 +3016,6 @@
         {
           "id": 424419,
           "attributes": [
-            "interruptible",
             "enrage"
           ]
         },
@@ -3162,7 +3063,7 @@
       "enemyIndex": 23,
       "name": "Baron Braunpyke",
       "count": 0,
-      "health": 341320379,
+      "health": 341295496,
       "creatureType": "Humanoid",
       "scale": 2,
       "isBoss": true,
@@ -3184,16 +3085,10 @@
         },
         {
           "id": 423051,
-          "attributes": [
-            "interruptible"
-          ]
-        },
-        {
-          "id": 423062,
           "attributes": []
         },
         {
-          "id": 423072,
+          "id": 423062,
           "attributes": []
         },
         {
@@ -3218,9 +3113,7 @@
         },
         {
           "id": 446657,
-          "attributes": [
-            "interruptible"
-          ]
+          "attributes": []
         }
       ],
       "spawns": [
@@ -3240,7 +3133,7 @@
       "enemyIndex": 24,
       "name": "Prioress Murrpray",
       "count": 0,
-      "health": 390080433,
+      "health": 390051996,
       "creatureType": "Humanoid",
       "scale": 2,
       "isBoss": true,
@@ -3250,9 +3143,7 @@
       "spells": [
         {
           "id": 423536,
-          "attributes": [
-            "interruptible"
-          ]
+          "attributes": []
         },
         {
           "id": 423547,
@@ -3264,9 +3155,7 @@
         },
         {
           "id": 423664,
-          "attributes": [
-            "interruptible"
-          ]
+          "attributes": []
         },
         {
           "id": 423665,
@@ -3274,10 +3163,6 @@
         },
         {
           "id": 423682,
-          "attributes": []
-        },
-        {
-          "id": 425538,
           "attributes": []
         },
         {
@@ -3319,6 +3204,12 @@
         {
           "id": 451605,
           "attributes": []
+        },
+        {
+          "id": 451606,
+          "attributes": [
+            "magic"
+          ]
         }
       ],
       "spawns": [
@@ -3338,11 +3229,12 @@
       "enemyIndex": 25,
       "name": "Arathi Neophyte",
       "count": 0,
-      "health": 64960335,
+      "health": 64920111,
       "creatureType": "Humanoid",
       "scale": 2,
       "isBoss": false,
       "characteristics": [
+        "Root",
         "Fear",
         "Disorient",
         "Imprison",
@@ -3466,7 +3358,7 @@
       "enemyIndex": 27,
       "name": "Elaena Emberlanz",
       "count": 0,
-      "health": 1339806913,
+      "health": 1338977280,
       "creatureType": "Humanoid",
       "scale": 2.5,
       "isBoss": false,

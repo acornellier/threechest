@@ -7,7 +7,7 @@
       "enemyIndex": 1,
       "name": "Battlefield Ritualist",
       "count": 4,
-      "health": 43872929,
+      "health": 43848222,
       "creatureType": "Humanoid",
       "scale": 1.5,
       "isBoss": false,
@@ -59,7 +59,7 @@
       "enemyIndex": 2,
       "name": "Unyielding Contender",
       "count": 4,
-      "health": 56059854,
+      "health": 56028285,
       "creatureType": "Humanoid",
       "scale": 1.5,
       "isBoss": false,
@@ -117,7 +117,7 @@
       "enemyIndex": 3,
       "name": "Raging Bloodhorn",
       "count": 7,
-      "health": 87745857,
+      "health": 87696445,
       "creatureType": "Beast",
       "scale": 1.8,
       "isBoss": false,
@@ -154,7 +154,7 @@
       "enemyIndex": 4,
       "name": "Dessia the Decapitator",
       "count": 0,
-      "health": 175392891,
+      "health": 214544238,
       "creatureType": "Humanoid",
       "scale": 2,
       "isBoss": true,
@@ -192,7 +192,7 @@
       "enemyIndex": 5,
       "name": "Paceran the Virulent",
       "count": 0,
-      "health": 155904792,
+      "health": 195040217,
       "creatureType": "Humanoid",
       "scale": 2,
       "isBoss": true,
@@ -238,7 +238,7 @@
       "enemyIndex": 6,
       "name": "Sathel the Accursed",
       "count": 0,
-      "health": 136416693,
+      "health": 195040217,
       "creatureType": "Humanoid",
       "scale": 2,
       "isBoss": true,
@@ -288,7 +288,7 @@
       "enemyIndex": 7,
       "name": "Shambling Arbalest",
       "count": 4,
-      "health": 41435544,
+      "health": 41412211,
       "creatureType": "Undead",
       "scale": 1.5,
       "isBoss": false,
@@ -354,7 +354,7 @@
       "enemyIndex": 8,
       "name": "Ossified Conscript",
       "count": 4,
-      "health": 48747699,
+      "health": 48720247,
       "creatureType": "Undead",
       "scale": 1.5,
       "isBoss": false,
@@ -416,7 +416,7 @@
       "enemyIndex": 9,
       "name": "Dokigg the Brutalizer",
       "count": 20,
-      "health": 155992636,
+      "health": 155904790,
       "creatureType": "Humanoid",
       "scale": 2,
       "isBoss": false,
@@ -466,7 +466,7 @@
       "enemyIndex": 10,
       "name": "Harugia the Bloodthirsty",
       "count": 20,
-      "health": 155992636,
+      "health": 155904790,
       "creatureType": "Humanoid",
       "scale": 2,
       "isBoss": false,
@@ -474,6 +474,10 @@
         "Taunt"
       ],
       "spells": [
+        {
+          "id": 333845,
+          "attributes": []
+        },
         {
           "id": 333861,
           "attributes": []
@@ -508,7 +512,7 @@
       "enemyIndex": 11,
       "name": "Ancient Captain",
       "count": 5,
-      "health": 58497238,
+      "health": 58464296,
       "creatureType": "Undead",
       "scale": 1.5,
       "isBoss": false,
@@ -570,7 +574,7 @@
       "enemyIndex": 12,
       "name": "Advent Nevermore",
       "count": 20,
-      "health": 155808250,
+      "health": 155554440,
       "creatureType": "Humanoid",
       "scale": 2,
       "isBoss": false,
@@ -578,6 +582,10 @@
         "Taunt"
       ],
       "spells": [
+        {
+          "id": 331288,
+          "attributes": []
+        },
         {
           "id": 333827,
           "attributes": []
@@ -604,7 +612,7 @@
       "enemyIndex": 13,
       "name": "Xav the Unfallen",
       "count": 0,
-      "health": 306937559,
+      "health": 307188341,
       "creatureType": "Humanoid",
       "scale": 2,
       "isBoss": true,
@@ -655,6 +663,12 @@
         {
           "id": 339415,
           "attributes": []
+        },
+        {
+          "id": 391891,
+          "attributes": [
+            "magic"
+          ]
         }
       ],
       "spawns": [
@@ -674,7 +688,7 @@
       "enemyIndex": 14,
       "name": "Shackled Soul",
       "count": 2,
-      "health": 29248619,
+      "health": 29232148,
       "creatureType": "Undead",
       "scale": 1,
       "isBoss": false,
@@ -923,7 +937,7 @@
       "enemyIndex": 15,
       "name": "Portal Guardian",
       "count": 8,
-      "health": 73121548,
+      "health": 73080370,
       "creatureType": "Elemental",
       "scale": 1.6,
       "isBoss": false,
@@ -980,7 +994,7 @@
       "enemyIndex": 16,
       "name": "Bone Magus",
       "count": 4,
-      "health": 24373849,
+      "health": 43848222,
       "creatureType": "Undead",
       "scale": 1,
       "isBoss": false,
@@ -1133,7 +1147,7 @@
       "enemyIndex": 17,
       "name": "Maniacal Soulbinder",
       "count": 4,
-      "health": 43872929,
+      "health": 43848222,
       "creatureType": "Humanoid",
       "scale": 1.3,
       "isBoss": false,
@@ -1228,7 +1242,7 @@
       "enemyIndex": 18,
       "name": "Soulforged Bonereaver",
       "count": 8,
-      "health": 97495397,
+      "health": 97440494,
       "creatureType": "Undead",
       "scale": 1.6,
       "isBoss": false,
@@ -1270,7 +1284,7 @@
       "enemyIndex": 19,
       "name": "Nefarious Darkspeaker",
       "count": 6,
-      "health": 68246778,
+      "health": 68208346,
       "creatureType": "Undead",
       "scale": 1.6,
       "isBoss": false,
@@ -1334,7 +1348,7 @@
       "enemyIndex": 20,
       "name": "Kul'tharok",
       "count": 0,
-      "health": 311809584,
+      "health": 312064346,
       "creatureType": "Undead",
       "scale": 1.6,
       "isBoss": true,
@@ -1426,7 +1440,7 @@
       "enemyIndex": 21,
       "name": "Disgusting Refuse",
       "count": 1,
-      "health": 12186925,
+      "health": 12180062,
       "creatureType": "Undead",
       "scale": 1,
       "isBoss": false,
@@ -1600,7 +1614,7 @@
       "enemyIndex": 22,
       "name": "Diseased Horror",
       "count": 4,
-      "health": 48747699,
+      "health": 48720247,
       "creatureType": "Undead",
       "scale": 1.7,
       "isBoss": false,
@@ -1672,7 +1686,7 @@
       "enemyIndex": 23,
       "name": "Putrid Butcher",
       "count": 5,
-      "health": 58497238,
+      "health": 58464296,
       "creatureType": "Undead",
       "scale": 1.7,
       "isBoss": false,
@@ -1757,7 +1771,7 @@
       "enemyIndex": 24,
       "name": "Rancid Gasbag",
       "count": 8,
-      "health": 92620627,
+      "health": 92568469,
       "creatureType": "Undead",
       "scale": 2,
       "isBoss": false,
@@ -1767,7 +1781,9 @@
       "spells": [
         {
           "id": 330592,
-          "attributes": []
+          "attributes": [
+            "disease"
+          ]
         },
         {
           "id": 330608,
@@ -1914,7 +1930,7 @@
       "enemyIndex": 25,
       "name": "Gorechop",
       "count": 0,
-      "health": 341041732,
+      "health": 341320379,
       "creatureType": "Undead",
       "scale": 2,
       "isBoss": true,
@@ -1956,7 +1972,7 @@
       "enemyIndex": 26,
       "name": "Mordretha, the Endless Empress",
       "count": 0,
-      "health": 389761980,
+      "health": 390080433,
       "creatureType": "Humanoid",
       "scale": 2,
       "isBoss": true,
@@ -2022,7 +2038,7 @@
       "enemyIndex": 27,
       "name": "Nekthara the Mangler",
       "count": 20,
-      "health": 155992636,
+      "health": 155904790,
       "creatureType": "Humanoid",
       "scale": 2,
       "isBoss": false,
@@ -2032,6 +2048,10 @@
       "spells": [
         {
           "id": 317605,
+          "attributes": []
+        },
+        {
+          "id": 331288,
           "attributes": []
         },
         {
@@ -2064,7 +2084,7 @@
       "enemyIndex": 28,
       "name": "Heavin the Breaker",
       "count": 20,
-      "health": 155992636,
+      "health": 155904790,
       "creatureType": "Humanoid",
       "scale": 2,
       "isBoss": false,
@@ -2072,6 +2092,10 @@
         "Taunt"
       ],
       "spells": [
+        {
+          "id": 317605,
+          "attributes": []
+        },
         {
           "id": 331288,
           "attributes": []
@@ -2102,7 +2126,7 @@
       "enemyIndex": 29,
       "name": "Rek the Hardened",
       "count": 20,
-      "health": 155992636,
+      "health": 155904790,
       "creatureType": "Humanoid",
       "scale": 2,
       "isBoss": false,
@@ -2144,7 +2168,7 @@
       "enemyIndex": 30,
       "name": "Blighted Sludge-Spewer",
       "count": 4,
-      "health": 38998159,
+      "health": 38976198,
       "creatureType": "Undead",
       "scale": 1.3,
       "isBoss": false,
@@ -2257,13 +2281,16 @@
       "enemyIndex": 31,
       "name": "Oozing Leftovers",
       "count": 0,
-      "health": 36560774,
+      "health": 36540188,
       "creatureType": "Undead",
       "scale": 1.6,
       "isBoss": false,
       "characteristics": [
         "Taunt",
-        "Stun"
+        "Root",
+        "Disorient",
+        "Stun",
+        "Slow"
       ],
       "spells": [
         {
@@ -2323,7 +2350,7 @@
       "enemyIndex": 32,
       "name": "Oppressive Banner",
       "count": 0,
-      "health": 14218079,
+      "health": 14210073,
       "creatureType": "Undead",
       "scale": 2,
       "isBoss": false,
@@ -2360,12 +2387,13 @@
       "enemyIndex": 33,
       "name": "Lost Soul",
       "count": 0,
-      "health": 8124616,
+      "health": 8120042,
       "creatureType": "Undead",
       "scale": 1.6,
       "isBoss": false,
       "characteristics": [
-        "Stun"
+        "Stun",
+        "Slow"
       ],
       "spells": [
         {
@@ -2408,14 +2436,17 @@
       "enemyIndex": 34,
       "name": "Deathwalker",
       "count": 0,
-      "health": 4874770,
+      "health": 4872025,
       "creatureType": "Elemental",
       "scale": 1.6,
       "isBoss": false,
       "characteristics": [
+        "Incapacitate",
         "Silence",
+        "Fear",
         "Disorient",
-        "Stun"
+        "Stun",
+        "Slow"
       ],
       "spells": [
         {

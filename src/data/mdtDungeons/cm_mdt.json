@@ -15,7 +15,10 @@
         "Taunt",
         "Silence",
         "Fear",
-        "Stun"
+        "Disorient",
+        "Stun",
+        "Slow",
+        "Mind Soothe"
       ],
       "spells": [
         {
@@ -159,12 +162,14 @@
       "isBoss": false,
       "characteristics": [
         "Taunt",
+        "Incapacitate",
         "Silence",
         "Root",
         "Fear",
         "Disorient",
         "Imprison",
         "Stun",
+        "Slow",
         "Mind Soothe"
       ],
       "spells": [
@@ -388,7 +393,10 @@
         "Taunt",
         "Silence",
         "Fear",
-        "Stun"
+        "Disorient",
+        "Stun",
+        "Slow",
+        "Mind Soothe"
       ],
       "spells": [
         {
@@ -711,8 +719,10 @@
         "Silence",
         "Root",
         "Fear",
+        "Disorient",
         "Imprison",
-        "Stun"
+        "Stun",
+        "Slow"
       ],
       "spells": [
         {
@@ -871,9 +881,12 @@
       "scale": 1.5,
       "isBoss": false,
       "characteristics": [
+        "Taunt",
         "Silence",
         "Fear",
+        "Disorient",
         "Stun",
+        "Slow",
         "Mind Soothe"
       ],
       "spells": [
@@ -1120,8 +1133,11 @@
         "Taunt",
         "Silence",
         "Fear",
+        "Disorient",
         "Imprison",
-        "Stun"
+        "Stun",
+        "Slow",
+        "Mind Soothe"
       ],
       "spells": [
         {
@@ -1243,9 +1259,12 @@
       "scale": 1,
       "isBoss": false,
       "characteristics": [
+        "Taunt",
         "Silence",
         "Fear",
-        "Stun"
+        "Disorient",
+        "Stun",
+        "Slow"
       ],
       "spells": [
         {
@@ -1716,6 +1735,7 @@
         "Disorient",
         "Imprison",
         "Stun",
+        "Slow",
         "Mind Soothe"
       ],
       "spells": [
@@ -1842,6 +1862,7 @@
         "Disorient",
         "Imprison",
         "Stun",
+        "Slow",
         "Mind Soothe"
       ],
       "spells": [
@@ -2154,9 +2175,11 @@
       "scale": 1.2,
       "isBoss": false,
       "characteristics": [
+        "Taunt",
         "Silence",
         "Fear",
-        "Stun"
+        "Stun",
+        "Slow"
       ],
       "spells": [
         {
@@ -2244,7 +2267,8 @@
       "scale": 2,
       "isBoss": false,
       "characteristics": [
-        "Incapacitate"
+        "Incapacitate",
+        "Slow"
       ],
       "spells": [
         {
@@ -2555,7 +2579,8 @@
         "Root",
         "Fear",
         "Imprison",
-        "Stun"
+        "Stun",
+        "Slow"
       ],
       "spells": [
         {
@@ -2631,7 +2656,8 @@
         "Root",
         "Fear",
         "Disorient",
-        "Stun"
+        "Stun",
+        "Slow"
       ],
       "spells": [
         {
@@ -2693,7 +2719,8 @@
         "Taunt",
         "Silence",
         "Fear",
-        "Stun"
+        "Stun",
+        "Slow"
       ],
       "spells": [
         {
@@ -2756,7 +2783,9 @@
         "Silence",
         "Root",
         "Fear",
-        "Stun"
+        "Imprison",
+        "Stun",
+        "Slow"
       ],
       "spells": [
         {
@@ -2809,7 +2838,8 @@
       "characteristics": [
         "Silence",
         "Fear",
-        "Stun"
+        "Stun",
+        "Slow"
       ],
       "spells": [
         {
