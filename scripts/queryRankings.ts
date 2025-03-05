@@ -88,7 +88,12 @@ for (const { dungeonFolder, rankings, dungeonKey } of dungeonRankings) {
       }
     }
 
-    const { route, errors } = wclResultToRoute(result!)
+    if (!result) {
+      console.error(`Null result: ${code} ${fightID}`)
+      continue
+    }
+
+    const { route, errors } = wclResultToRoute(result)
     const tank = ranking.team.find((member) => member.role === 'Tank') ?? ranking.team[0]!
     route.name = `${tank.name}${tank.name.endsWith('s') ? "'" : "'s"} +${ranking.bracketData}`
 
