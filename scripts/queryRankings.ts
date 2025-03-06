@@ -23,6 +23,7 @@ interface DungeonRankings {
 
 const arg = process.argv.slice(2)
 const resetDungeon: DungeonKey | null = arg.length ? (arg[0] as DungeonKey) : null
+if (resetDungeon) console.log(`Resetting data for ${resetDungeon}`)
 
 const dungeonRankings: DungeonRankings[] = []
 for (const dungeon of shuffle(dungeons)) {

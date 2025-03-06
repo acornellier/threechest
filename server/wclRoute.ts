@@ -76,9 +76,14 @@ query {
 }
 
 type WclEnemy = { gameId: number; actorId: number; instanceId: number }
-type EnemyRequest = { actorId: number; instanceId: number }
 
-async function getFirstEvents(code: string, fight: WclRoute, enemies: EnemyRequest[]) {
+// Bone Magus is cringe
+// There are 2 ways to detect when mobs get pulled and they both fail
+// enemy casts - they're casting before they get pulled on the environment for some reason
+// player damage on the enemy - they have an absorb shield, and so their x/y coordinates aren't recorded
+const boneMagusGameId = 170882
+
+async function getFirstEvents(code: string, fight: WclRoute, enemies: WclEnemy[]) {
   const events: WclEvent[] = []
   const eventStart = fight.startTime + 10_000 // ignore first 10 seconds, mobs do random casts
 
@@ -88,7 +93,7 @@ async function getFirstEvents(code: string, fight: WclRoute, enemies: EnemyReque
     const enemyBatch = enemies.slice(start, end)
 
     const subQueries = enemyBatch
-      .map(({ actorId, instanceId }, idx) => {
+      .map(({ actorId, instanceId, gameId }, idx) => {
         return `
       c${idx}: events(
         fightIDs: ${fight.id}
@@ -109,7 +114,7 @@ async function getFirstEvents(code: string, fight: WclRoute, enemies: EnemyReque
         fightIDs: ${fight.id}
         targetID: ${actorId}
         targetInstanceID: ${instanceId}
-        limit: 3
+        limit: ${gameId === boneMagusGameId ? 100 : 3}
         dataType: DamageDone
         startTime: ${eventStart}
         endTime: 9999999999
