@@ -11,6 +11,7 @@ export type MdtDungeon = {
 
 export type Dungeon = {
   key: DungeonKey
+  displayKey?: string
   name: string
   defaultBounds?: [Point, Point]
   mdt: MdtDungeon

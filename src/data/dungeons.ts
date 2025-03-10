@@ -51,8 +51,9 @@ const psf: Dungeon = {
 }
 
 const tm: Dungeon = {
-  name: 'The Motherlode',
+  name: 'The MOTHERLODE!!',
   key: 'tm',
+  displayKey: 'ml',
   icon: 'achievement_dungeon_kezan',
   wclEncounterId: 61594,
   ...dungeonData('tm'),
@@ -61,6 +62,7 @@ const tm: Dungeon = {
 const tr: Dungeon = {
   name: 'The Rookery',
   key: 'tr',
+  displayKey: 'rook',
   icon: 'inv_achievement_dungeon_rookery',
   wclEncounterId: 12648,
   ...dungeonData('tr'),
@@ -74,7 +76,9 @@ const top: Dungeon = {
   ...dungeonData('top'),
 }
 
-export const dungeons = [cm, dc, mw, of, psf, tm, tr, top]
+export const dungeons = [cm, dc, mw, of, psf, tm, tr, top].sort((a, b) =>
+  (a.displayKey ?? a.key).localeCompare(b.displayKey ?? b.key),
+)
 
 export const dungeonsByKey = dungeons.reduce(
   (acc, dungeon) => {
