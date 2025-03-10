@@ -13,6 +13,7 @@
       "isBoss": false,
       "characteristics": [
         "Taunt",
+        "Incapacitate",
         "Silence",
         "Fear",
         "Disorient",
@@ -391,6 +392,7 @@
       "isBoss": false,
       "characteristics": [
         "Taunt",
+        "Incapacitate",
         "Silence",
         "Fear",
         "Disorient",
@@ -716,6 +718,7 @@
       "isBoss": false,
       "characteristics": [
         "Taunt",
+        "Incapacitate",
         "Silence",
         "Root",
         "Fear",
@@ -882,7 +885,9 @@
       "isBoss": false,
       "characteristics": [
         "Taunt",
+        "Incapacitate",
         "Silence",
+        "Root",
         "Fear",
         "Disorient",
         "Stun",
@@ -1131,7 +1136,9 @@
       "isBoss": false,
       "characteristics": [
         "Taunt",
+        "Incapacitate",
         "Silence",
+        "Root",
         "Fear",
         "Disorient",
         "Imprison",
@@ -1728,6 +1735,7 @@
       "scale": 1.5,
       "isBoss": false,
       "characteristics": [
+        "Taunt",
         "Incapacitate",
         "Silence",
         "Root",
@@ -2178,6 +2186,7 @@
         "Taunt",
         "Silence",
         "Fear",
+        "Disorient",
         "Stun",
         "Slow"
       ],
@@ -2267,6 +2276,7 @@
       "scale": 2,
       "isBoss": false,
       "characteristics": [
+        "Taunt",
         "Incapacitate",
         "Slow"
       ],
@@ -2284,6 +2294,10 @@
           "attributes": [
             "bleed"
           ]
+        },
+        {
+          "id": 439474,
+          "attributes": []
         }
       ],
       "spawns": [
@@ -2449,7 +2463,8 @@
       "scale": 1.9,
       "isBoss": true,
       "characteristics": [
-        "Taunt"
+        "Taunt",
+        "Mind Soothe"
       ],
       "spells": [
         {
@@ -2575,9 +2590,12 @@
       "scale": 1.5,
       "isBoss": false,
       "characteristics": [
+        "Taunt",
+        "Incapacitate",
         "Silence",
         "Root",
         "Fear",
+        "Disorient",
         "Imprison",
         "Stun",
         "Slow"
@@ -2651,6 +2669,7 @@
       "scale": 1.5,
       "isBoss": false,
       "characteristics": [
+        "Taunt",
         "Incapacitate",
         "Silence",
         "Root",
@@ -2717,8 +2736,10 @@
       "isBoss": false,
       "characteristics": [
         "Taunt",
+        "Incapacitate",
         "Silence",
         "Fear",
+        "Disorient",
         "Stun",
         "Slow"
       ],
@@ -2783,6 +2804,7 @@
         "Silence",
         "Root",
         "Fear",
+        "Disorient",
         "Imprison",
         "Stun",
         "Slow"
