@@ -19,7 +19,7 @@ const cm: Dungeon = {
 }
 
 const dc: Dungeon = {
-  name: 'Darkflame Crest',
+  name: 'Darkflame Cleft',
   key: 'dc',
   icon: 'inv_achievement_dungeon_darkflamecleft',
   wclEncounterId: 12651,
