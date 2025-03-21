@@ -3,30 +3,11 @@ import { uniqBy } from '../src/util/nodash.ts'
 import { dungeons } from '../src/data/dungeons.ts'
 import fs from 'fs'
 import { cacheFolder } from './files.ts'
-import { fetchWcl } from './wcl.ts'
+import { fetchWcl, getFight, type WclFight } from './wcl.ts'
 import * as path from 'path'
 
 const wclRouteCacheFolder = path.join(cacheFolder, 'wclRoute')
 const batchSize = 82
-
-type WclEnemyNpc = {
-  id: number
-  gameID: number
-  minimumInstanceID: number
-  maximumInstanceID: number
-}
-
-type WclPull = {
-  enemyNPCs: Array<WclEnemyNpc>
-}
-
-type WclRoute = {
-  id: number
-  startTime: number
-  encounterID: number
-  keystoneLevel: number
-  dungeonPulls: WclPull[]
-}
 
 type WclEvent = {
   timestamp: number
@@ -43,38 +24,6 @@ type WclEvent = {
   amount?: number
 }
 
-async function getRoute(code: string, fightId: 'last' | string | number): Promise<WclRoute> {
-  const query = `
-query {
-  reportData {
-    report(code:"${code}") {
-      fights {
-        id
-        startTime
-        encounterID
-        keystoneLevel
-        dungeonPulls {
-          enemyNPCs {
-            id
-            gameID
-            minimumInstanceID
-            maximumInstanceID
-          }
-        } 
-      }
-    }
-  }
-}
-`
-
-  const json = await fetchWcl<{ reportData: { report: { fights: WclRoute[] } } }>(query)
-  const fights = json.reportData.report.fights
-  fights.reverse()
-  return fights.find(
-    ({ id, encounterID }) => !!encounterID && (fightId === 'last' || id === Number(fightId)),
-  )!
-}
-
 type WclEnemy = { gameId: number; actorId: number; instanceId: number }
 
 // Bone Magus is cringe
@@ -83,7 +32,7 @@ type WclEnemy = { gameId: number; actorId: number; instanceId: number }
 // player damage on the enemy - they have an absorb shield, and so their x/y coordinates aren't recorded
 const boneMagusGameId = 170882
 
-async function getFirstEvents(code: string, fight: WclRoute, enemies: WclEnemy[]) {
+async function getFirstEvents(code: string, fight: WclFight, enemies: WclEnemy[]) {
   const events: WclEvent[] = []
   const eventStart = fight.startTime + 10_000 // ignore first 10 seconds, mobs do random casts
 
@@ -182,7 +131,7 @@ query {
   return events
 }
 
-async function getLustEvents(code: string, fight: WclRoute) {
+async function getLustEvents(code: string, fight: WclFight) {
   const query = `query {
   reportData {
     report(code:"${code}") {
@@ -219,7 +168,7 @@ export async function getWclRoute(
     return { result, cached: true }
   }
 
-  const fight = await getRoute(code, fightId)
+  const fight = await getFight(code, fightId)
 
   const dungeon = dungeons.find((dungeon) => dungeon.wclEncounterId === fight.encounterID)
   if (!dungeon) throw new Error(`Dungeon not supported, WCL encounter ID ${fight.encounterID}`)
