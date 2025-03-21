@@ -3,7 +3,6 @@ import cors from 'cors'
 import { decodeRoute } from './decodeRoute.js'
 import { encodeRoute } from './encodeRoute.js'
 import { getWclRoute } from './wclRoute.ts'
-import { getDungeonPulls } from './dungeonPulls.js'
 
 const app = express()
 
@@ -33,16 +32,6 @@ app.post('/api/encodeRoute', async (req, res) => {
 app.post('/api/wclRoute', async (req, res) => {
   try {
     const route = await getWclRoute(req.body.code, req.body.fightId)
-    res.json(route)
-  } catch (e) {
-    console.error(e)
-    res.status(422).send(e.message)
-  }
-})
-
-app.post('/api/dungeonPulls', async (req, res) => {
-  try {
-    const route = await getDungeonPulls(req.body.code, req.body.fightId)
     res.json(route)
   } catch (e) {
     console.error(e)

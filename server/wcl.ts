@@ -1,4 +1,5 @@
 import { getWclToken } from './wclToken.ts'
+import type { WclDeathEvent } from '../src/util/wclCalc.ts'
 
 interface WclJson<T> {
   error?: string
@@ -105,4 +106,22 @@ query {
   return fights.find(
     ({ id, encounterID }) => !!encounterID && (fightId === 'last' || id === Number(fightId)),
   )!
+}
+
+export async function getDeathEvents(code: string, fight: WclFight) {
+  const query = `
+query {
+  reportData {
+    report(code: "${code}") {
+      events(fightIDs: [${fight.id}], dataType: Deaths, hostilityType: Enemies) {
+        data
+      }
+    }
+  }
+}`
+
+  const json = await fetchWcl<{ reportData: { report: { events: { data: WclDeathEvent[] } } } }>(
+    query,
+  )
+  return json.reportData.report.events.data
 }

@@ -1,27 +1,5 @@
 import { dungeons } from '../src/data/dungeons.ts'
-import { fetchWcl, getFight, type WclFight } from './wcl.ts'
-
-interface DeathEvent {
-  timestamp: number
-  targetID: number
-  targetInstance?: number
-}
-
-async function getDeathEvents(code: string, fight: WclFight) {
-  const query = `
-query {
-  reportData {
-    report(code: "${code}") {
-      events(fightIDs: [${fight.id}], dataType: Deaths, hostilityType: Enemies) {
-        data
-      }
-    }
-  }
-}`
-
-  const json = await fetchWcl<{ reportData: { report: { events: { data: DeathEvent[] } } } }>(query)
-  return json.reportData.report.events.data
-}
+import { getDeathEvents, getFight } from './wcl.ts'
 
 export async function getDungeonPulls(
   code: string,

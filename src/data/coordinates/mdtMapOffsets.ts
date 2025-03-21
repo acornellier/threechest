@@ -20,32 +20,51 @@ export interface MapOffset {
 // rotation: negative rotation
 export const mdtMapOffsets: Record<number, MapOffset> = {
   // mw
-  1573: {
-    x: -154 / 1920,
-    y: -64 / 1080,
+  1491: {
+    x: -100 / 1920,
+    y: 350 / 1080,
     scaleX: 1336 / 1920,
-    scaleY: 892 / 1080,
+    scaleY: 852 / 1080,
   },
-  1574: {
+  1494: {
     x: 813 / 1920,
-    y: 424 / 1080,
+    y: 274 / 1080,
     scaleX: 1370 / 1920,
     scaleY: 915 / 1080,
   },
+  1497: {
+    x: -100 / 1920,
+    y: -50 / 1080,
+    scaleX: 1170 / 1920,
+    scaleY: 815 / 1080,
+  },
+  //of
+  2387: {
+    x: -0.25,
+    y: 0,
+    scaleX: 1.2,
+    scaleY: 1,
+  },
+  2388: {
+    x: 0.35,
+    y: 0.05,
+    scaleX: 0.88,
+    scaleY: 0.8,
+  },
   // psf
   2308: {
-    x: 692 / 1920,
-    y: 145 / 1080,
+    x: 672 / 1920,
+    y: 20 / 1080,
     scaleX: 1430 / 1920,
     scaleY: 955 / 1080,
     rotate: 4,
   },
   2309: {
     x: -29 / 1920,
-    y: 230 / 1080,
+    y: 120 / 1080,
     scaleX: 1202 / 1920,
     scaleY: 802 / 1080,
-    rotate: 5.5,
+    rotate: -5,
   },
   2330: {
     // copy of 2308, seems to be a dup?
@@ -64,30 +83,30 @@ export const mdtMapOffsets: Record<number, MapOffset> = {
   },
   1684: {
     x: 1094 / 1920,
-    y: 674 / 1080,
+    y: 524 / 1080,
     scaleX: 1002 / 1920,
     scaleY: 668 / 1080,
   },
   1685: {
     x: 599 / 1920,
-    y: -34 / 1080,
+    y: -104 / 1080,
     scaleX: 1136 / 1920,
     scaleY: 758 / 1080,
   },
   1686: {
     x: 433 / 1920,
-    y: 436 / 1080,
+    y: 306 / 1080,
     scaleX: 920 / 1920,
     scaleY: 614 / 1080,
     rotate: -3.83,
   },
   1687: {
     x: -85 / 1920,
-    y: 646 / 1080,
+    y: 506 / 1080,
     scaleX: 944 / 1920,
     scaleY: 632 / 1080,
   },
-  // tr
+  // rook
   2315: {
     x: 646 / 1920,
     y: -5 / 1080,
@@ -96,26 +115,26 @@ export const mdtMapOffsets: Record<number, MapOffset> = {
   },
   2316: {
     x: 504 / 1920,
-    y: 87 / 1080,
+    y: 10 / 1080,
     scaleX: 926 / 1920,
     scaleY: 618 / 1080,
   },
   2318: {
     x: -309 / 1920,
-    y: -32 / 1080,
+    y: -150 / 1080,
     scaleX: 1348 / 1920,
     scaleY: 900 / 1080,
   },
   2319: {
-    x: 126 / 1920,
-    y: 607 / 1080,
+    x: 186 / 1920,
+    y: 457 / 1080,
     scaleX: 988 / 1920,
     scaleY: 658 / 1080,
   },
   2320: {
-    x: 777 / 1920,
-    y: 602 / 1080,
-    scaleX: 1018 / 1920,
-    scaleY: 678 / 1080,
+    x: 577 / 1920,
+    y: 470 / 1080,
+    scaleX: 1418 / 1920,
+    scaleY: 778 / 1080,
   },
 }

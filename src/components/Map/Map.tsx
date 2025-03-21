@@ -20,6 +20,7 @@ import { Mobs } from './Mobs/Mobs.tsx'
 import { PullOutlines } from './PullOutlines/PullOutlines.tsx'
 import { isDev } from '../../util/isDev.ts'
 import { PointsOfInterest } from './PointsOfInterest/PointsOfInterest.tsx'
+import { WclCoordinateTest } from './WclCoordinateTest.tsx'
 
 const renderer = svg({ padding: 100 })
 
@@ -61,7 +62,7 @@ export function Map() {
           maxNativeZoom={2}
           url={`/maps/${dungeon.key}/{x}_{y}.jpg`}
         />
-        {/*<WclCoordinateTest />*/}
+        <WclCoordinateTest />
         <Mobs />
         <PullOutlines />
         <Drawings />

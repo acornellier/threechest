@@ -21,11 +21,23 @@ export type WclEventSimplified = WclEventBase & {
   id?: number
 }
 
+export type WclDeathEvent = {
+  timestamp: number
+  targetID: number
+  targetInstance?: number
+}
+
+export type DeathEvent = {
+  timestamp: number
+  gameId: number
+}
+
 export type WclResult = WclUrlInfo & {
   encounterID: number
   keystoneLevel: number
   events: WclEventSimplified[]
   lustEvents: WclEventBase[]
+  deathEvents: DeathEvent[]
 }
 
 export type WclUrlInfo = {
@@ -122,7 +134,7 @@ export function wclResultToRoute(wclResult: WclResult) {
   if (!dungeon) throw new Error(`This WCL dungeon is not yet supported by Threechest.`)
 
   const errors: string[] = []
-  const pulls = wclEventsToPulls(wclResult.events, dungeon, errors)
+  const pulls = wclEventsToPulls(wclResult, dungeon, errors)
   const route: Route = {
     uid: `${wclResult.code}-${wclResult.fightId}`,
     name: `WCL ${dungeon.key.toUpperCase()} +${wclResult.keystoneLevel}`,
@@ -159,13 +171,13 @@ type MobEvent = { timestamp: number; mobId: number; pos?: Point }
 const spawnGroup = (spawn: Spawn) => (spawn.group ? String(spawn.group) : spawn.id)
 
 function wclEventsToPulls(
-  events: WclEventSimplified[],
+  { events, deathEvents }: WclResult,
   dungeon: Dungeon,
   errors: string[],
 ): Pull[] {
   if (!events.length) return []
 
-  const pullMobIds = getPullMobIds(events, dungeon)
+  const pullMobIds = getPullMobIds(events, deathEvents, dungeon)
 
   const groupMobSpawns = groupBy(dungeon.mobSpawnsList, ({ spawn }) => spawnGroup(spawn))
 
@@ -222,7 +234,7 @@ function wclEventsToPulls(
     }))
 }
 
-function getPullMobIds(events: WclEventSimplified[], dungeon: Dungeon) {
+function getPullMobIds(events: WclEventSimplified[], deathEvents: DeathEvent[], dungeon: Dungeon) {
   const filteredEvents = events.filter((event) =>
     dungeon.mobSpawnsList.some(({ mob }) => mob.id === event.gameId),
   )
@@ -238,6 +250,15 @@ function getPullMobIds(events: WclEventSimplified[], dungeon: Dungeon) {
     if (event.timestamp - currentTimestamp > 20_000) {
       pullMobIds.push(currentPull)
       currentPull = newPull()
+    }
+
+    if (
+      !deathEvents.some(
+        (deathEvent) =>
+          deathEvent.gameId === event.gameId && deathEvent.timestamp >= event.timestamp,
+      )
+    ) {
+      continue
     }
 
     if (event.mapID && !mapBounds[event.mapID]) {

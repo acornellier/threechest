@@ -1,9 +1,9 @@
-import type { WclEventSimplified, WclResult } from '../src/util/wclCalc.ts'
+import type { DeathEvent, WclEventSimplified, WclResult } from '../src/util/wclCalc.ts'
 import { uniqBy } from '../src/util/nodash.ts'
 import { dungeons } from '../src/data/dungeons.ts'
 import fs from 'fs'
 import { cacheFolder } from './files.ts'
-import { fetchWcl, getFight, type WclFight } from './wcl.ts'
+import { fetchWcl, getDeathEvents, getFight, type WclFight } from './wcl.ts'
 import * as path from 'path'
 
 const wclRouteCacheFolder = path.join(cacheFolder, 'wclRoute')
@@ -227,6 +227,20 @@ export async function getWclRoute(
 
   const lustEvents = await getLustEvents(code, fight)
 
+  const wclDeathEvents = await getDeathEvents(code, fight)
+  const deathEvents = wclDeathEvents
+    .map<DeathEvent | null>((event) => {
+      const matchingEnemy = enemies.find((enemy) => enemy.actorId === event.targetID)
+
+      if (!matchingEnemy) return null
+
+      return {
+        timestamp: event.timestamp - fight.startTime,
+        gameId: matchingEnemy.gameId,
+      }
+    })
+    .filter(Boolean)
+
   const result: WclResult = {
     code,
     fightId: fight.id,
@@ -234,6 +248,7 @@ export async function getWclRoute(
     keystoneLevel: fight.keystoneLevel,
     events: firstPositions,
     lustEvents,
+    deathEvents,
   }
 
   fs.mkdirSync(path.dirname(file), { recursive: true })
