@@ -13,6 +13,7 @@ export const dungeonData = (
 const cm: Dungeon = {
   name: 'Cinderbrew Meadery',
   key: 'cm',
+  displayKey: 'mead',
   icon: 'inv_achievement_dungeon_cinderbrewmeadery',
   wclEncounterId: 12661,
   ...dungeonData('cm'),
@@ -21,6 +22,7 @@ const cm: Dungeon = {
 const dc: Dungeon = {
   name: 'Darkflame Cleft',
   key: 'dc',
+  displayKey: 'dfc',
   icon: 'inv_achievement_dungeon_darkflamecleft',
   wclEncounterId: 12651,
   ...dungeonData('dc'),
@@ -29,6 +31,7 @@ const dc: Dungeon = {
 const mw: Dungeon = {
   name: 'Mechagon: Workshop',
   key: 'mw',
+  displayKey: 'work',
   icon: 'achievement_boss_mechagon',
   wclEncounterId: 112098,
   ...dungeonData('mw'),
@@ -37,6 +40,7 @@ const mw: Dungeon = {
 const of: Dungeon = {
   name: 'Operation: Floodgate',
   key: 'of',
+  displayKey: 'flood',
   icon: 'inv_achievement_dungeon_waterworks',
   wclEncounterId: 12773,
   ...dungeonData('of'),
@@ -45,6 +49,7 @@ const of: Dungeon = {
 const psf: Dungeon = {
   name: 'Priory of the Sacred Flame',
   key: 'psf',
+  displayKey: 'prio',
   icon: 'inv_achievement_dungeon_prioryofthesacredflame',
   wclEncounterId: 12649,
   ...dungeonData('psf'),
