@@ -48,7 +48,7 @@ export function MobSpellInfo({ spell, mob, dungeonKey }: Props) {
   return (
     <div className="h-8 flex items-center border border-gray-500 rounded-md">
       <a
-        href={`https://www.wowhead.com/ptr-2/spell=${id}?dd=23&ddsize=5`}
+        href={`https://www.wowhead.com/spell=${id}?dd=23&ddsize=5`}
         target="_blank"
         rel="noreferrer"
       >
