@@ -5,6 +5,7 @@ import { UndoRedo } from './UndoRedo.tsx'
 import { DrawToolbar } from '../Map/Draw/DrawToolbar.tsx'
 import { useRootSelector } from '../../store/storeUtil.ts'
 import { selectIsLive } from '../../store/reducers/mapReducer.ts'
+import { MobileDungeonDropdown } from './MobileDungeonDropdown.tsx'
 
 export function Header() {
   const isLive = useRootSelector(selectIsLive)
@@ -37,6 +38,9 @@ export function Header() {
         <div
           className={`items-start gap-6 h-full pointer-events-auto ${sidebarCollapsed ? 'flex' : 'hidden sm:flex'}`}
         >
+          <div className="sm:hidden">
+            <MobileDungeonDropdown />
+          </div>
           <UndoRedo />
           {!isLive && <DrawToolbar />}
         </div>
