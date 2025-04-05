@@ -3,7 +3,6 @@ import { Sidebar } from './Sidebar/Sidebar.tsx'
 import { Toasts } from './Modals/Toasts.tsx'
 import { ConfirmImportModal } from './Modals/ConfirmImportModal.tsx'
 import { RouteSaver } from '../store/routes/RouteSaver.tsx'
-import { MobInfo } from './Modals/MobInfo.tsx'
 import { Header } from './Header/Header.tsx'
 import { useEffect } from 'react'
 import { defaultDungeonKey, setDungeon } from '../store/routes/routesReducer.ts'
@@ -14,6 +13,7 @@ import { CollabSyncWrapper } from './Collab/CollabSync.tsx'
 import { BackgroundImage } from './Common/BackgroundImage.tsx'
 import { Footer } from './Header/Footer.tsx'
 import { isDev } from '../util/isDev.ts'
+import { BottomLeft } from './Modals/BottomLeft/BottomLeft.tsx'
 
 export function Page() {
   const dispatch = useAppDispatch()
@@ -32,7 +32,7 @@ export function Page() {
       <Header />
       <Sidebar />
       <Footer />
-      <MobInfo />
+      <BottomLeft />
       <Toasts />
       <ConfirmImportModal />
       <RouteSaver />
