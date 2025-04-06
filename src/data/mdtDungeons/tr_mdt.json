@@ -12,6 +12,7 @@
       "scale": 2,
       "isBoss": false,
       "characteristics": [
+        "Taunt",
         "Slow"
       ],
       "spells": [
@@ -922,6 +923,8 @@
       "characteristics": [
         "Taunt",
         "Silence",
+        "Polymorph",
+        "Root",
         "Fear",
         "Disorient",
         "Imprison",
@@ -1953,8 +1956,8 @@
           "idx": 1,
           "group": null,
           "pos": [
-            -78.23,
-            181.31
+            -79.46,
+            169.42
           ]
         }
       ]
@@ -2185,7 +2188,9 @@
       "creatureType": "Humanoid",
       "scale": 2,
       "isBoss": false,
-      "characteristics": [],
+      "characteristics": [
+        "Taunt"
+      ],
       "spells": [
         {
           "id": 429028,
@@ -2234,6 +2239,14 @@
       "pos": [
         -79.29,
         353.58
+      ]
+    },
+    {
+      "type": "rookItem",
+      "itemType": null,
+      "pos": [
+        -79.03,
+        192.5
       ]
     }
   ]

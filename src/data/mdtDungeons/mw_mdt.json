@@ -131,7 +131,9 @@
       "spells": [
         {
           "id": 293827,
-          "attributes": []
+          "attributes": [
+            "interruptible"
+          ]
         },
         {
           "id": 293854,
@@ -299,7 +301,9 @@
       "spells": [
         {
           "id": 293729,
-          "attributes": []
+          "attributes": [
+            "interruptible"
+          ]
         },
         {
           "id": 293930,
@@ -708,10 +712,10 @@
         {
           "id": "10-3",
           "idx": 3,
-          "group": 15,
+          "group": null,
           "pos": [
-            -164.17,
-            328.21
+            -156.06,
+            314.58
           ],
           "patrol": [
             [
@@ -882,7 +886,8 @@
             ]
           ]
         }
-      ]
+      ],
+      "stealthDetect": true
     },
     {
       "id": 144301,
@@ -1146,7 +1151,9 @@
       "spells": [
         {
           "id": 301088,
-          "attributes": []
+          "attributes": [
+            "interruptible"
+          ]
         }
       ],
       "spawns": [
