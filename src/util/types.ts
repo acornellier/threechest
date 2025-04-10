@@ -41,7 +41,9 @@ export type Route = {
 export type PullDetailed = Pull & {
   index: number
   count: number
+  health: number
   countCumulative: number
+  healthCumulative: number
 }
 
 export type MdtPull = {

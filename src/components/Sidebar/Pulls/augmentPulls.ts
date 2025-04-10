@@ -5,25 +5,34 @@ export function augmentPulls(pulls: Pull[], dungeon: Dungeon): PullDetailed[] {
   const pullsDetailed: PullDetailed[] = []
 
   let countCumulative = 0
+  let healthCumulative = 0
   let pullIndex = 0
   for (const pull of pulls) {
-    const count = pull.spawns.reduce((acc, spawnId) => {
+    let count = 0
+    let health = 0
+    for (const spawnId of pull.spawns) {
       const mobSpawn = dungeon.mobSpawns[spawnId]
       if (!mobSpawn) {
         console.error(`Could not find spawnId ${spawnId} in dungeon ${dungeon.key}`)
-        return acc
+        continue
       }
 
-      return acc + mobSpawn.mob.count
-    }, 0)
+      if (mobSpawn.mob.isBoss) continue
+
+      count += mobSpawn.mob.count
+      health += mobSpawn.mob.health
+    }
 
     countCumulative += count
+    healthCumulative += health
 
     pullsDetailed.push({
       ...pull,
       index: pullIndex,
       count,
+      health,
       countCumulative,
+      healthCumulative,
     })
 
     ++pullIndex
