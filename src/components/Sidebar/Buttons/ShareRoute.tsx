@@ -24,7 +24,7 @@ export function ShareRoute({ hidden }: Props) {
       const routeId = await shareRouteApi(route.uid, str)
       const url = window.location.origin + `?id=${routeId}`
       await copyText(url)
-      dispatch(addToast({ message: 'URL copied to clipboard! URL is valid for 1 week.' }))
+      dispatch(addToast({ message: 'URL copied to clipboard! URL is valid for 6 months.' }))
     } catch (err) {
       dispatch(addToast({ message: `Failed to share route: ${err}`, type: 'error' }))
     }
