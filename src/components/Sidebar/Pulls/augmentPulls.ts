@@ -10,6 +10,17 @@ export function augmentPulls(pulls: Pull[], dungeon: Dungeon): PullDetailed[] {
   for (const pull of pulls) {
     let count = 0
     let health = 0
+
+    const pullGroupsWithBoss = pull.spawns
+      .filter((spawnId) => {
+        const mobSpawn = dungeon.mobSpawns[spawnId]
+        return mobSpawn?.mob.isBoss
+      })
+      .map((spawnId) => {
+        return dungeon.mobSpawns[spawnId]?.spawn.group
+      })
+      .filter(Boolean)
+
     for (const spawnId of pull.spawns) {
       const mobSpawn = dungeon.mobSpawns[spawnId]
       if (!mobSpawn) {
@@ -17,7 +28,14 @@ export function augmentPulls(pulls: Pull[], dungeon: Dungeon): PullDetailed[] {
         continue
       }
 
-      if (mobSpawn.mob.isBoss) continue
+      if (
+        mobSpawn.mob.isBoss ||
+        (mobSpawn.mob.count === 0 &&
+          mobSpawn.spawn.group &&
+          pullGroupsWithBoss.includes(mobSpawn.spawn.group))
+      ) {
+        continue
+      }
 
       count += mobSpawn.mob.count
       health += mobSpawn.mob.health
