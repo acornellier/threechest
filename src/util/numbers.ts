@@ -8,3 +8,14 @@ export function mobCountPercentStr(count: number, totalCount: number) {
 }
 
 export const distance = (a: Point, b: Point) => Math.sqrt((a[0] - b[0]) ** 2 + (a[1] - b[1]) ** 2)
+
+export function formatNumber(number: number) {
+  return number.toLocaleString('en-US')
+}
+
+export function shortRoundedNumber(number: number) {
+  const absNumber = Math.abs(number)
+  if (absNumber <= 9_999) return formatNumber(Math.round(number))
+  if (absNumber <= 999_999) return `${formatNumber(Math.round(number / 1_000))}K`
+  return `${formatNumber(roundTo(number / 1_000_000, 2))}M`
+}

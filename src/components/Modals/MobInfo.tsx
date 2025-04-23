@@ -6,6 +6,7 @@ import { useAppDispatch, useRootSelector } from '../../store/storeUtil.ts'
 import { mobCcTypes } from '../../util/mobSpawns.ts'
 import { MobSpellInfo } from './MobSpellInfo.tsx'
 import { dungeonSpells, getIconLink } from '../../data/spells/spells.ts'
+import { shortRoundedNumber } from '../../util/numbers.ts'
 
 export function MobInfo() {
   const dispatch = useAppDispatch()
@@ -39,6 +40,7 @@ export function MobInfo() {
           <div>{mob.creatureType}</div>
           <div>ID: {mob.id}</div>
         </div>
+        <div>Base HP: {shortRoundedNumber(mob.health)}</div>
         {mobCcTypes(mob).map((ccType) => (
           <div key={ccType}>{ccType}</div>
         ))}
