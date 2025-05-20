@@ -1,17 +1,18 @@
-import type { ITooltip, TooltipRefProps } from 'react-tooltip';
+import type { ITooltip, TooltipRefProps } from 'react-tooltip'
 import { Tooltip } from 'react-tooltip'
 import { forwardRef } from 'react'
 import { isMobile } from '../../util/dev.ts'
 
 interface Props extends ITooltip {
   padding?: number
+  enabledOnMobile?: boolean
 }
 
 export const TooltipStyled = forwardRef<TooltipRefProps, Props>(function TooltipStyled(
-  { className, padding, ...props },
+  { className, padding, enabledOnMobile, ...props },
   ref,
 ) {
-  if (isMobile) return null
+  if (isMobile && !enabledOnMobile) return null
 
   return (
     <Tooltip

@@ -4,11 +4,9 @@
   LayerOptions,
   LeafletEvent,
   LeafletMouseEvent,
-  Map} from 'leaflet';
-import {
-  FeatureGroup,
-  Point,
+  Map,
 } from 'leaflet'
+import { FeatureGroup, Point } from 'leaflet'
 import { curveMonotoneX, line } from 'd3-shape'
 import { select } from 'd3-selection'
 import type { DrawMode } from '../../../store/reducers/mapReducer.ts'
@@ -29,6 +27,13 @@ export const defaultOptions: PatherOptions = {
 
 export interface CreatedEvent extends LeafletEvent {
   latLngs: LatLngLiteral[]
+}
+
+interface LeafletTouchEvent {
+  latlng: LatLng
+  layerPoint: Point
+  containerPoint: Point
+  originalEvent: TouchEvent
 }
 
 export class Pather extends FeatureGroup {
@@ -119,6 +124,7 @@ export class Pather extends FeatureGroup {
     map.dragging.enable()
 
     map.off('mousedown', this.mouseDownCallback)
+    map.off('touchstart', this.mouseDownCallback)
 
     return this
   }
@@ -150,16 +156,16 @@ export class Pather extends FeatureGroup {
   attachEvents(map: Map) {
     this.mouseDownCallback = this.mouseDown.bind(this)
     map.on('mousedown', this.mouseDownCallback)
-    // map.getContainer().addEventListener('touchstart', this.fire.bind(map, 'mousedown'))
+    map.on('touchstart', this.mouseDownCallback)
   }
 
-  mouseDown(untypedEvent: LeafletEvent) {
-    const event = untypedEvent as LeafletMouseEvent
+  mouseDown(event: LeafletMouseEvent | LeafletTouchEvent) {
+    event.originalEvent.preventDefault()
 
     if (this.dragging) return
 
     // On middle mouse button
-    if (event.originalEvent.button === 1) {
+    if ('button' in event.originalEvent && event.originalEvent.button === 1) {
       this.dragging = true
       this.map!.dragging.enable()
       // Re-send the cloned event so that the map receives it with dragging enabled
@@ -172,6 +178,7 @@ export class Pather extends FeatureGroup {
       }
 
       this.map!.on('mouseup', mouseUp)
+      this.map!.on('touchend', mouseUp)
       return
     }
 
@@ -189,10 +196,10 @@ export class Pather extends FeatureGroup {
     const lineIterator = this.createPathTemp(this.map!.latLngToContainerPoint(event.latlng))
 
     const mouseMove = (event: LeafletMouseEvent) => {
-      const point: Point = this.map!.mouseEventToContainerPoint(event.originalEvent)
+      const point = event.containerPoint
 
       // Push each lat/lng value into the points set.
-      latLngs.add(this.map!.containerPointToLatLng(point))
+      latLngs.add(event.latlng)
 
       // Invoke the generator by passing in the starting point for the path.
       lineIterator(new Point(point.x, point.y))
@@ -200,13 +207,17 @@ export class Pather extends FeatureGroup {
 
     const mouseUp = () => {
       this.map!.off('mousemove', mouseMove)
+      this.map!.off('touchmove', mouseMove as any)
       this.map!.off('mouseup', mouseUp)
+      this.map!.off('touchend', mouseUp)
 
       this.createPath(Array.from(latLngs))
     }
 
     this.map!.on('mousemove', mouseMove)
+    this.map!.on('touchmove', mouseMove as any)
     this.map!.on('mouseup', mouseUp)
+    this.map!.on('touchend', mouseUp)
   }
 }
 

@@ -50,8 +50,6 @@ export function DrawToolbar() {
     [dispatch],
   )
 
-  if (isTouch) return null
-
   const isDeleting = drawMode === 'deleting'
   const isErasing = drawMode === 'erasing'
 
@@ -95,19 +93,22 @@ export function DrawToolbar() {
               clickable
               place="bottom-start"
               padding={8}
+              enabledOnMobile
             >
               <ColorGrid onSelectColor={onChangeColor} />
             </TooltipStyled>
           </div>
           <div className="flex items-start gap-2 h-full">
-            <Button
-              twoDimensional={isErasing}
-              color={isErasing ? 'green' : 'red'}
-              Icon={ClearIcon}
-              onClick={() => dispatch(setDrawMode(isErasing ? 'drawing' : 'erasing'))}
-              tooltip={`Erase parts of drawings`}
-              tooltipId="erase-drawings-tooltip"
-            />
+            {!isTouch && (
+              <Button
+                twoDimensional={isErasing}
+                color={isErasing ? 'green' : 'red'}
+                Icon={ClearIcon}
+                onClick={() => dispatch(setDrawMode(isErasing ? 'drawing' : 'erasing'))}
+                tooltip={`Erase parts of drawings`}
+                tooltipId="erase-drawings-tooltip"
+              />
+            )}
             <Button
               twoDimensional={isDeleting}
               color={isDeleting ? 'green' : 'red'}
