@@ -7,7 +7,7 @@
       "enemyIndex": 1,
       "name": "Menial Laborer",
       "count": 1,
-      "health": 9738015,
+      "health": 8859628,
       "creatureType": "Humanoid",
       "scale": 0.8,
       "isBoss": false,
@@ -386,7 +386,7 @@
       "enemyIndex": 2,
       "name": "Rank Overseer",
       "count": 10,
-      "health": 77904125,
+      "health": 70877027,
       "creatureType": "Humanoid",
       "scale": 1.5,
       "isBoss": false,
@@ -452,7 +452,7 @@
       "enemyIndex": 3,
       "name": "Lowly Moleherd",
       "count": 5,
-      "health": 46255575,
+      "health": 42083234,
       "creatureType": "Humanoid",
       "scale": 1.2,
       "isBoss": false,
@@ -531,13 +531,15 @@
       "enemyIndex": 4,
       "name": "Pack Mole",
       "count": 3,
-      "health": 51124582,
+      "health": 46513049,
       "creatureType": "Beast",
       "scale": 1.2,
       "isBoss": false,
       "characteristics": [
         "Taunt",
+        "Incapacitate",
         "Silence",
+        "Polymorph",
         "Root",
         "Fear",
         "Disorient",
@@ -677,7 +679,7 @@
       "enemyIndex": 5,
       "name": "Royal Wicklighter",
       "count": 6,
-      "health": 43821070,
+      "health": 39868328,
       "creatureType": "Humanoid",
       "scale": 1.2,
       "isBoss": false,
@@ -770,7 +772,7 @@
       "enemyIndex": 6,
       "name": "Kobold Taskworker",
       "count": 4,
-      "health": 48690078,
+      "health": 44298142,
       "creatureType": "Humanoid",
       "scale": 1.5,
       "isBoss": false,
@@ -871,12 +873,13 @@
       "enemyIndex": 7,
       "name": "Blazing Fiend",
       "count": 7,
-      "health": 38952062,
+      "health": 35438513,
       "creatureType": "Elemental",
       "scale": 1.5,
       "isBoss": false,
       "characteristics": [
         "Taunt",
+        "Incapacitate",
         "Silence",
         "Root",
         "Fear",
@@ -936,7 +939,7 @@
       "enemyIndex": 8,
       "name": "Wandering Candle",
       "count": 15,
-      "health": 77904125,
+      "health": 70877027,
       "creatureType": "Elemental",
       "scale": 1.7,
       "isBoss": false,
@@ -1039,12 +1042,13 @@
       "enemyIndex": 9,
       "name": "Kobold Flametender",
       "count": 1,
-      "health": 9738015,
+      "health": 8859628,
       "creatureType": "Humanoid",
       "scale": 1.2,
       "isBoss": false,
       "characteristics": [
         "Taunt",
+        "Incapacitate",
         "Silence",
         "Fear",
         "Disorient",
@@ -1204,7 +1208,7 @@
       "enemyIndex": 10,
       "name": "Sootsnout",
       "count": 20,
-      "health": 146070234,
+      "health": 132894425,
       "creatureType": "Humanoid",
       "scale": 1.5,
       "isBoss": false,
@@ -1257,7 +1261,7 @@
       "enemyIndex": 11,
       "name": "Torchsnarl",
       "count": 20,
-      "health": 146070234,
+      "health": 132894425,
       "creatureType": "Humanoid",
       "scale": 2,
       "isBoss": false,
@@ -1265,6 +1269,10 @@
         "Taunt"
       ],
       "spells": [
+        {
+          "id": 426260,
+          "attributes": []
+        },
         {
           "id": 426275,
           "attributes": []
@@ -1279,10 +1287,6 @@
         },
         {
           "id": 1218117,
-          "attributes": []
-        },
-        {
-          "id": 426260,
           "attributes": []
         }
       ],
@@ -1304,7 +1308,7 @@
       "enemyIndex": 12,
       "name": "Skittering Darkness",
       "count": 1,
-      "health": 9738015,
+      "health": 8859628,
       "creatureType": "Aberration",
       "scale": 0.8,
       "isBoss": false,
@@ -1329,8 +1333,8 @@
           "idx": 1,
           "group": 28,
           "pos": [
-            -194.97,
-            239.02
+            -194.02,
+            231.41
           ]
         },
         {
@@ -1338,8 +1342,8 @@
           "idx": 2,
           "group": 25,
           "pos": [
-            -186.78,
-            196.96
+            -187.22,
+            190.81
           ]
         },
         {
@@ -1347,8 +1351,8 @@
           "idx": 3,
           "group": 25,
           "pos": [
-            -190.21,
-            197.08
+            -190.64,
+            190.93
           ]
         },
         {
@@ -1356,8 +1360,8 @@
           "idx": 4,
           "group": 25,
           "pos": [
-            -193.56,
-            197.19
+            -193.99,
+            191.04
           ]
         },
         {
@@ -1365,8 +1369,8 @@
           "idx": 5,
           "group": 25,
           "pos": [
-            -197.09,
-            197.43
+            -197.52,
+            191.28
           ]
         },
         {
@@ -1374,8 +1378,8 @@
           "idx": 6,
           "group": 25,
           "pos": [
-            -186.91,
-            200.29
+            -187.49,
+            194.41
           ]
         },
         {
@@ -1383,8 +1387,8 @@
           "idx": 7,
           "group": 25,
           "pos": [
-            -190.24,
-            200.6
+            -190.67,
+            194.45
           ]
         },
         {
@@ -1392,8 +1396,8 @@
           "idx": 8,
           "group": 25,
           "pos": [
-            -193.33,
-            200.5
+            -193.76,
+            194.35
           ]
         },
         {
@@ -1401,8 +1405,8 @@
           "idx": 9,
           "group": 25,
           "pos": [
-            -196.87,
-            200.68
+            -197.11,
+            194.61
           ]
         },
         {
@@ -1410,8 +1414,8 @@
           "idx": 10,
           "group": 26,
           "pos": [
-            -188.39,
-            221.06
+            -188.97,
+            220.18
           ]
         },
         {
@@ -1419,8 +1423,8 @@
           "idx": 11,
           "group": 26,
           "pos": [
-            -192.02,
-            223.07
+            -192.75,
+            221.46
           ]
         },
         {
@@ -1428,8 +1432,8 @@
           "idx": 12,
           "group": 26,
           "pos": [
-            -196.31,
-            221.48
+            -196.38,
+            219.72
           ]
         },
         {
@@ -1437,8 +1441,8 @@
           "idx": 13,
           "group": 27,
           "pos": [
-            -183.96,
-            242.24
+            -183.01,
+            240.02
           ]
         },
         {
@@ -1446,7 +1450,7 @@
           "idx": 14,
           "group": 27,
           "pos": [
-            -175.47,
+            -175.72,
             238.31
           ]
         },
@@ -1455,8 +1459,8 @@
           "idx": 15,
           "group": 27,
           "pos": [
-            -179.21,
-            243.9
+            -179.13,
+            240.54
           ]
         },
         {
@@ -1464,8 +1468,8 @@
           "idx": 16,
           "group": 28,
           "pos": [
-            -197.85,
-            236.24
+            -196.97,
+            230.31
           ]
         },
         {
@@ -1473,8 +1477,8 @@
           "idx": 17,
           "group": 28,
           "pos": [
-            -187.95,
-            236.43
+            -190.51,
+            231.09
           ]
         },
         {
@@ -1482,8 +1486,8 @@
           "idx": 18,
           "group": 28,
           "pos": [
-            -191.27,
-            238.73
+            -188.13,
+            229.07
           ]
         },
         {
@@ -1500,8 +1504,8 @@
           "idx": 20,
           "group": 29,
           "pos": [
-            -210.11,
-            252.87
+            -207.19,
+            252.71
           ]
         },
         {
@@ -1509,8 +1513,8 @@
           "idx": 21,
           "group": 29,
           "pos": [
-            -199.86,
-            254.37
+            -202.37,
+            253.45
           ]
         },
         {
@@ -1518,8 +1522,8 @@
           "idx": 22,
           "group": 30,
           "pos": [
-            -187.52,
-            261.58
+            -188.51,
+            261.53
           ]
         },
         {
@@ -1527,8 +1531,8 @@
           "idx": 23,
           "group": 30,
           "pos": [
-            -192,
-            259.59
+            -192.11,
+            260.09
           ]
         },
         {
@@ -1536,8 +1540,8 @@
           "idx": 24,
           "group": 30,
           "pos": [
-            -196.36,
-            261.58
+            -195.31,
+            262.3
           ]
         },
         {
@@ -1545,8 +1549,8 @@
           "idx": 25,
           "group": 31,
           "pos": [
-            -185.31,
-            277.6
+            -186.31,
+            285.88
           ]
         },
         {
@@ -1554,8 +1558,8 @@
           "idx": 26,
           "group": 31,
           "pos": [
-            -189.75,
-            277.64
+            -189.87,
+            285.99
           ]
         },
         {
@@ -1563,8 +1567,8 @@
           "idx": 27,
           "group": 31,
           "pos": [
-            -194.27,
-            277.64
+            -193.95,
+            285.92
           ]
         },
         {
@@ -1572,8 +1576,8 @@
           "idx": 28,
           "group": 31,
           "pos": [
-            -198.47,
-            277.89
+            -197.64,
+            285.8
           ]
         },
         {
@@ -1581,8 +1585,8 @@
           "idx": 29,
           "group": 31,
           "pos": [
-            -198.53,
-            273.75
+            -198.06,
+            282.32
           ]
         },
         {
@@ -1590,8 +1594,8 @@
           "idx": 30,
           "group": 31,
           "pos": [
-            -194.17,
-            273.61
+            -194.07,
+            282.26
           ]
         },
         {
@@ -1599,8 +1603,8 @@
           "idx": 31,
           "group": 31,
           "pos": [
-            -189.88,
-            273.61
+            -190.01,
+            282.4
           ]
         },
         {
@@ -1608,8 +1612,8 @@
           "idx": 32,
           "group": 31,
           "pos": [
-            -185.37,
-            273.46
+            -186.22,
+            282.4
           ]
         },
         {
@@ -1817,13 +1821,15 @@
       "enemyIndex": 13,
       "name": "Shuffling Horror",
       "count": 2,
-      "health": 43821070,
+      "health": 39868328,
       "creatureType": "Aberration",
       "scale": 1.4,
       "isBoss": false,
       "characteristics": [
         "Taunt",
+        "Incapacitate",
         "Silence",
+        "Root",
         "Fear",
         "Disorient",
         "Stun",
@@ -1849,8 +1855,8 @@
           "idx": 1,
           "group": null,
           "pos": [
-            -208.05,
-            237.97
+            -206.19,
+            237.32
           ],
           "patrol": [
             [
@@ -1892,8 +1898,8 @@
           "idx": 2,
           "group": 26,
           "pos": [
-            -192.42,
-            218.19
+            -192.62,
+            216.52
           ]
         },
         {
@@ -1901,8 +1907,8 @@
           "idx": 3,
           "group": 27,
           "pos": [
-            -180.27,
-            239.03
+            -180.29,
+            235.99
           ]
         },
         {
@@ -1930,7 +1936,7 @@
       "enemyIndex": 14,
       "name": "Corridor Creeper",
       "count": 4,
-      "health": 65731606,
+      "health": 59802491,
       "creatureType": "Beast",
       "scale": 1.7,
       "isBoss": false,
@@ -1944,7 +1950,9 @@
         },
         {
           "id": 469620,
-          "attributes": []
+          "attributes": [
+            "magic"
+          ]
         }
       ],
       "spawns": [
@@ -1953,8 +1961,8 @@
           "idx": 1,
           "group": 28,
           "pos": [
-            -192.91,
-            233.98
+            -192.99,
+            227.17
           ]
         },
         {
@@ -1962,8 +1970,8 @@
           "idx": 3,
           "group": 31,
           "pos": [
-            -187.93,
-            282.86
+            -188,
+            277.01
           ]
         },
         {
@@ -1971,8 +1979,8 @@
           "idx": 4,
           "group": 31,
           "pos": [
-            -196.31,
-            282.99
+            -195.73,
+            276.94
           ]
         },
         {
@@ -2027,13 +2035,15 @@
       "enemyIndex": 15,
       "name": "Blazing Fiend",
       "count": 7,
-      "health": 38952062,
+      "health": 35438513,
       "creatureType": "Elemental",
       "scale": 1.5,
       "isBoss": false,
       "characteristics": [
         "Taunt",
+        "Incapacitate",
         "Silence",
+        "Root",
         "Fear",
         "Disorient",
         "Stun",
@@ -2064,12 +2074,14 @@
       "enemyIndex": 16,
       "name": "Blazing Fiend",
       "count": 7,
-      "health": 38952062,
+      "health": 35438513,
       "creatureType": "Elemental",
       "scale": 1.5,
       "isBoss": false,
       "characteristics": [
+        "Incapacitate",
         "Silence",
+        "Root",
         "Fear",
         "Disorient",
         "Stun",
@@ -2100,12 +2112,15 @@
       "enemyIndex": 17,
       "name": "Blazing Fiend",
       "count": 7,
-      "health": 38952062,
+      "health": 35438513,
       "creatureType": "Elemental",
       "scale": 1.5,
       "isBoss": false,
       "characteristics": [
+        "Taunt",
+        "Incapacitate",
         "Silence",
+        "Root",
         "Fear",
         "Disorient",
         "Stun",
@@ -2136,7 +2151,7 @@
       "enemyIndex": 18,
       "name": "Blazing Fiend",
       "count": 7,
-      "health": 38952062,
+      "health": 35438513,
       "creatureType": "Elemental",
       "scale": 1.5,
       "isBoss": false,
@@ -2144,6 +2159,7 @@
         "Taunt",
         "Incapacitate",
         "Silence",
+        "Root",
         "Fear",
         "Disorient",
         "Stun",
@@ -2174,12 +2190,15 @@
       "enemyIndex": 19,
       "name": "Blazing Fiend",
       "count": 7,
-      "health": 38952062,
+      "health": 35438513,
       "creatureType": "Elemental",
       "scale": 1.5,
       "isBoss": false,
       "characteristics": [
+        "Taunt",
+        "Incapacitate",
         "Silence",
+        "Root",
         "Fear",
         "Disorient",
         "Stun",
@@ -2210,13 +2229,15 @@
       "enemyIndex": 20,
       "name": "Blazing Fiend",
       "count": 7,
-      "health": 38952062,
+      "health": 35438513,
       "creatureType": "Elemental",
       "scale": 1.5,
       "isBoss": false,
       "characteristics": [
         "Taunt",
+        "Incapacitate",
         "Silence",
+        "Root",
         "Fear",
         "Disorient",
         "Stun",
@@ -2247,13 +2268,15 @@
       "enemyIndex": 21,
       "name": "Blazing Fiend",
       "count": 7,
-      "health": 38952062,
+      "health": 35438513,
       "creatureType": "Elemental",
       "scale": 1.5,
       "isBoss": false,
       "characteristics": [
+        "Taunt",
         "Incapacitate",
         "Silence",
+        "Root",
         "Fear",
         "Disorient",
         "Stun",
@@ -2284,12 +2307,15 @@
       "enemyIndex": 22,
       "name": "Blazing Fiend",
       "count": 7,
-      "health": 38952062,
+      "health": 35438513,
       "creatureType": "Elemental",
       "scale": 1.5,
       "isBoss": false,
       "characteristics": [
+        "Taunt",
+        "Incapacitate",
         "Silence",
+        "Root",
         "Fear",
         "Disorient",
         "Stun",
@@ -2320,7 +2346,7 @@
       "enemyIndex": 23,
       "name": "Ol' Waxbeard",
       "count": 0,
-      "health": 243782498,
+      "health": 221649427,
       "creatureType": "Beast",
       "scale": 2,
       "isBoss": true,
@@ -2363,8 +2389,8 @@
           "idx": 1,
           "group": 41,
           "pos": [
-            -51.46,
-            52.27
+            -52.07,
+            51.65
           ]
         }
       ]
@@ -2374,7 +2400,7 @@
       "enemyIndex": 24,
       "name": "Blazikon",
       "count": 0,
-      "health": 341295496,
+      "health": 310309198,
       "creatureType": "Elemental",
       "scale": 2,
       "isBoss": true,
@@ -2444,7 +2470,7 @@
       "enemyIndex": 25,
       "name": "The Candle King",
       "count": 0,
-      "health": 341295496,
+      "health": 310309198,
       "creatureType": "Humanoid",
       "scale": 2,
       "isBoss": true,
@@ -2513,7 +2539,7 @@
       "enemyIndex": 26,
       "name": "The Darkness",
       "count": 0,
-      "health": 987319115,
+      "health": 897680180,
       "creatureType": "Aberration",
       "scale": 2,
       "isBoss": true,
@@ -2581,7 +2607,7 @@
       "enemyIndex": 27,
       "name": "Corridor Sleeper",
       "count": 4,
-      "health": 65731606,
+      "health": 59802491,
       "creatureType": "Beast",
       "scale": 1.7,
       "isBoss": false,
@@ -2633,12 +2659,13 @@
       "enemyIndex": 28,
       "name": "Menial Laborer",
       "count": 0,
-      "health": 8115014,
+      "health": 7383024,
       "creatureType": "Humanoid",
       "scale": 2,
       "isBoss": false,
       "characteristics": [
         "Taunt",
+        "Silence",
         "Root",
         "Fear",
         "Disorient",
@@ -2700,7 +2727,7 @@
       "enemyIndex": 29,
       "name": "Dynamite Mine Cart",
       "count": 0,
-      "health": 12172521,
+      "health": 11074536,
       "creatureType": "Mechanical",
       "scale": 2,
       "isBoss": false,
@@ -2739,7 +2766,7 @@
       "enemyIndex": 30,
       "name": "Wriggling Darkspawn",
       "count": 0,
-      "health": 2434504,
+      "health": 2214907,
       "creatureType": "Aberration",
       "scale": 2,
       "isBoss": false,
@@ -2845,6 +2872,142 @@
       "pos": [
         -49.61,
         86.83
+      ]
+    },
+    {
+      "type": "dfcItem",
+      "itemType": null,
+      "pos": [
+        -193.04,
+        271.81
+      ]
+    },
+    {
+      "type": "dfcItem",
+      "itemType": null,
+      "pos": [
+        -183.56,
+        259.9
+      ]
+    },
+    {
+      "type": "dfcItem",
+      "itemType": null,
+      "pos": [
+        -200.73,
+        259.76
+      ]
+    },
+    {
+      "type": "dfcItem",
+      "itemType": null,
+      "pos": [
+        -183.47,
+        244.82
+      ]
+    },
+    {
+      "type": "dfcItem",
+      "itemType": null,
+      "pos": [
+        -200.91,
+        244.88
+      ]
+    },
+    {
+      "type": "dfcItem",
+      "itemType": null,
+      "pos": [
+        -192.48,
+        235.19
+      ]
+    },
+    {
+      "type": "dfcItem",
+      "itemType": null,
+      "pos": [
+        -183.74,
+        226.87
+      ]
+    },
+    {
+      "type": "dfcItem",
+      "itemType": null,
+      "pos": [
+        -200.6,
+        227.06
+      ]
+    },
+    {
+      "type": "dfcItem",
+      "itemType": null,
+      "pos": [
+        -183.83,
+        211.76
+      ]
+    },
+    {
+      "type": "dfcItem",
+      "itemType": null,
+      "pos": [
+        -200.66,
+        212.35
+      ]
+    },
+    {
+      "type": "dfcItem",
+      "itemType": null,
+      "pos": [
+        -192.22,
+        203.86
+      ]
+    },
+    {
+      "type": "dfcItem",
+      "itemType": null,
+      "pos": [
+        -200.62,
+        197.76
+      ]
+    },
+    {
+      "type": "dfcItem",
+      "itemType": null,
+      "pos": [
+        -183.39,
+        197.75
+      ]
+    },
+    {
+      "type": "dfcItem",
+      "itemType": null,
+      "pos": [
+        -202.24,
+        276.31
+      ]
+    },
+    {
+      "type": "dfcItem",
+      "itemType": null,
+      "pos": [
+        -200.86,
+        295.25
+      ]
+    },
+    {
+      "type": "dfcItem",
+      "itemType": null,
+      "pos": [
+        -182.61,
+        276.2
+      ]
+    },
+    {
+      "type": "dfcItem",
+      "itemType": null,
+      "pos": [
+        -183.19,
+        294.58
       ]
     }
   ]
