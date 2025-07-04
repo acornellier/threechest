@@ -10,80 +10,59 @@ export const dungeonData = (
   mobSpawnsList: Object.values(mdtMobSpawns[key]),
 })
 
-const cm: Dungeon = {
-  name: 'Cinderbrew Meadery',
-  key: 'cm',
-  displayKey: 'mead',
-  icon: 'inv_achievement_dungeon_cinderbrewmeadery',
-  wclEncounterId: 12661,
-  ...dungeonData('cm'),
-}
-
-const dc: Dungeon = {
-  name: 'Darkflame Cleft',
-  key: 'dc',
-  displayKey: 'dfc',
-  icon: 'inv_achievement_dungeon_darkflamecleft',
-  wclEncounterId: 12651,
-  ...dungeonData('dc'),
-}
-
-const mw: Dungeon = {
-  name: 'Mechagon: Workshop',
-  key: 'mw',
-  displayKey: 'work',
-  icon: 'achievement_boss_mechagon',
-  wclEncounterId: 112098,
-  ...dungeonData('mw'),
-}
-
-const of: Dungeon = {
-  name: 'Operation: Floodgate',
-  key: 'of',
-  displayKey: 'flood',
-  icon: 'inv_achievement_dungeon_waterworks',
-  wclEncounterId: 12773,
-  ...dungeonData('of'),
-}
-
-const psf: Dungeon = {
-  name: 'Priory of the Sacred Flame',
-  key: 'psf',
-  displayKey: 'prio',
-  icon: 'inv_achievement_dungeon_prioryofthesacredflame',
-  wclEncounterId: 12649,
-  ...dungeonData('psf'),
-}
-
-const tm: Dungeon = {
-  name: 'The MOTHERLODE!!',
-  key: 'tm',
-  displayKey: 'ml',
-  icon: 'achievement_dungeon_kezan',
-  wclEncounterId: 61594,
-  ...dungeonData('tm'),
-}
-
-const tr: Dungeon = {
-  name: 'The Rookery',
-  key: 'tr',
-  displayKey: 'rook',
-  icon: 'inv_achievement_dungeon_rookery',
-  wclEncounterId: 12648,
-  ...dungeonData('tr'),
-}
-
-const top: Dungeon = {
-  name: 'Theater of Pain',
-  key: 'top',
-  icon: 'achievement_dungeon_theatreofpain',
-  wclEncounterId: 62293,
-  ...dungeonData('top'),
-}
-
-export const dungeons = [cm, dc, mw, of, psf, tm, tr, top].sort((a, b) =>
-  (a.displayKey ?? a.key).localeCompare(b.displayKey ?? b.key),
-)
+export const dungeons: Dungeon[] = [
+  {
+    key: 'ak' as DungeonKey,
+    name: 'Ara-Kara',
+    icon: 'inv_achievement_dungeon_arak-ara',
+    wclEncounterId: 12660,
+  },
+  {
+    key: 'db' as DungeonKey,
+    name: 'Dawnbreaker',
+    icon: 'inv_achievement_dungeon_dawnbreaker',
+    // wclEncounterId: 12662,
+  },
+  {
+    key: 'eda' as DungeonKey,
+    name: "Eco-Dome Al'dani",
+    icon: 'inv_112_achievement_dungeon_ecodome',
+  },
+  {
+    key: 'gmbt' as DungeonKey,
+    name: "So'leah's Gambit",
+    icon: 'achievement_dungeon_brokerdungeon',
+  },
+  {
+    key: 'hoa' as DungeonKey,
+    name: 'Halls of Atonement',
+    icon: 'achievement_dungeon_hallsofattonement',
+  },
+  {
+    name: 'Operation: Floodgate',
+    key: 'of' as DungeonKey,
+    displayKey: 'flood',
+    icon: 'inv_achievement_dungeon_waterworks',
+    wclEncounterId: 12773,
+  },
+  {
+    name: 'Priory',
+    key: 'psf' as DungeonKey,
+    displayKey: 'prio',
+    icon: 'inv_achievement_dungeon_prioryofthesacredflame',
+    wclEncounterId: 12649,
+  },
+  {
+    name: 'Streets of Wonder',
+    key: 'strt' as DungeonKey,
+    icon: 'ability_brokerjazzband_trumpet',
+  },
+]
+  .map((dungeon) => ({
+    ...dungeon,
+    ...dungeonData(dungeon.key),
+  }))
+  .sort((a, b) => (a.displayKey ?? a.key).localeCompare(b.displayKey ?? b.key))
 
 export const dungeonsByKey = dungeons.reduce(
   (acc, dungeon) => {

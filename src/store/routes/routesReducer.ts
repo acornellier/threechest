@@ -114,7 +114,7 @@ export const deleteRoute = createAsyncThunk('routes/deleteRoute', async (_, thun
   return { deletedRouteId: routeId, route }
 })
 
-export const defaultDungeonKey: DungeonKey = 'top'
+export const defaultDungeonKey: DungeonKey = 'eda'
 
 export const initialState: RouteState = {
   route: makeEmptyRoute(defaultDungeonKey, []),
