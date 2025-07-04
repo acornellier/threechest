@@ -1,0 +1,2111 @@
+{
+  "dungeonIndex": 37,
+  "totalCount": 290,
+  "enemies": [
+    {
+      "id": 177807,
+      "enemyIndex": 1,
+      "name": "Customs Security",
+      "count": 4,
+      "health": 234643,
+      "creatureType": "Humanoid",
+      "scale": 1.3,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt",
+        "Silence",
+        "Root",
+        "Fear",
+        "Disorient",
+        "Stun",
+        "Slow"
+      ],
+      "spells": [
+        {
+          "id": 355888,
+          "attributes": []
+        },
+        {
+          "id": 355889,
+          "attributes": []
+        },
+        {
+          "id": 355891,
+          "attributes": []
+        },
+        {
+          "id": 355900,
+          "attributes": []
+        },
+        {
+          "id": 355903,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "1-1",
+          "idx": 1,
+          "group": 1,
+          "pos": [
+            -162.55,
+            373.16
+          ]
+        },
+        {
+          "id": "1-2",
+          "idx": 2,
+          "group": 1,
+          "pos": [
+            -168.47,
+            373.54
+          ]
+        },
+        {
+          "id": "1-3",
+          "idx": 3,
+          "group": 2,
+          "pos": [
+            -156.55,
+            344.04
+          ]
+        },
+        {
+          "id": "1-4",
+          "idx": 4,
+          "group": 3,
+          "pos": [
+            -170.16,
+            335.93
+          ]
+        },
+        {
+          "id": "1-5",
+          "idx": 5,
+          "group": 6,
+          "pos": [
+            -150.33,
+            311.13
+          ]
+        },
+        {
+          "id": "1-6",
+          "idx": 6,
+          "group": 7,
+          "pos": [
+            -156.74,
+            304.43
+          ]
+        },
+        {
+          "id": "1-7",
+          "idx": 7,
+          "group": 8,
+          "pos": [
+            -167.54,
+            313
+          ]
+        },
+        {
+          "id": "1-8",
+          "idx": 8,
+          "group": 5,
+          "pos": [
+            -143.66,
+            331.21
+          ]
+        },
+        {
+          "id": "1-9",
+          "idx": 9,
+          "group": 4,
+          "pos": [
+            -159.05,
+            325.14
+          ]
+        }
+      ]
+    },
+    {
+      "id": 178392,
+      "enemyIndex": 2,
+      "name": "Gatewarden Zo'mazz",
+      "count": 18,
+      "health": 341298,
+      "creatureType": "Humanoid",
+      "scale": 1.3,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt"
+      ],
+      "spells": [
+        {
+          "id": 351047,
+          "attributes": []
+        },
+        {
+          "id": 352796,
+          "attributes": []
+        },
+        {
+          "id": 356548,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "2-1",
+          "idx": 1,
+          "group": 1,
+          "pos": [
+            -165.11,
+            368.58
+          ]
+        }
+      ]
+    },
+    {
+      "id": 177817,
+      "enemyIndex": 3,
+      "name": "Support Officer",
+      "count": 4,
+      "health": 191980,
+      "creatureType": "Humanoid",
+      "scale": 1.2,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Root",
+        "Fear",
+        "Disorient",
+        "Stun",
+        "Slow"
+      ],
+      "spells": [
+        {
+          "id": 354297,
+          "attributes": [
+            "interruptible"
+          ]
+        },
+        {
+          "id": 355934,
+          "attributes": [
+            "interruptible"
+          ]
+        },
+        {
+          "id": 355980,
+          "attributes": []
+        },
+        {
+          "id": 356549,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "3-1",
+          "idx": 1,
+          "group": 2,
+          "pos": [
+            -156.66,
+            338.86
+          ]
+        },
+        {
+          "id": "3-2",
+          "idx": 2,
+          "group": 5,
+          "pos": [
+            -146.34,
+            326.73
+          ]
+        },
+        {
+          "id": "3-3",
+          "idx": 3,
+          "group": 4,
+          "pos": [
+            -154.29,
+            322.38
+          ]
+        },
+        {
+          "id": "3-4",
+          "idx": 4,
+          "group": 6,
+          "pos": [
+            -147.46,
+            315.6
+          ]
+        },
+        {
+          "id": "3-5",
+          "idx": 5,
+          "group": 8,
+          "pos": [
+            -172.39,
+            310.39
+          ]
+        }
+      ]
+    },
+    {
+      "id": 177816,
+      "enemyIndex": 4,
+      "name": "Interrogation Specialist",
+      "count": 4,
+      "health": 191980,
+      "creatureType": "Humanoid",
+      "scale": 1.3,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Root",
+        "Fear",
+        "Disorient",
+        "Stun",
+        "Slow"
+      ],
+      "spells": [
+        {
+          "id": 355915,
+          "attributes": []
+        },
+        {
+          "id": 355930,
+          "attributes": [
+            "interruptible"
+          ]
+        },
+        {
+          "id": 356031,
+          "attributes": [
+            "interruptible"
+          ]
+        }
+      ],
+      "spawns": [
+        {
+          "id": "4-1",
+          "idx": 1,
+          "group": 3,
+          "pos": [
+            -165.6,
+            332.55
+          ]
+        },
+        {
+          "id": "4-2",
+          "idx": 2,
+          "group": 5,
+          "pos": [
+            -149.14,
+            331.13
+          ]
+        },
+        {
+          "id": "4-3",
+          "idx": 3,
+          "group": 6,
+          "pos": [
+            -144.67,
+            311.39
+          ]
+        },
+        {
+          "id": "4-4",
+          "idx": 4,
+          "group": 7,
+          "pos": [
+            -156.8,
+            299.17
+          ]
+        }
+      ]
+    },
+    {
+      "id": 177808,
+      "enemyIndex": 5,
+      "name": "Armored Overseer",
+      "count": 8,
+      "health": 277305,
+      "creatureType": "Humanoid",
+      "scale": 1.3,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt"
+      ],
+      "spells": [
+        {
+          "id": 351047,
+          "attributes": []
+        },
+        {
+          "id": 352796,
+          "attributes": []
+        },
+        {
+          "id": 356001,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "5-1",
+          "idx": 1,
+          "group": 4,
+          "pos": [
+            -159.06,
+            319.62
+          ],
+          "patrol": [
+            [
+              -122.54,
+              287.49
+            ],
+            [
+              -122.46,
+              285.8
+            ],
+            [
+              -116.54,
+              285.8
+            ],
+            [
+              -116.54,
+              293.15
+            ],
+            [
+              -122.19,
+              293.15
+            ]
+          ]
+        },
+        {
+          "id": "5-2",
+          "idx": 2,
+          "group": 9,
+          "pos": [
+            -167.59,
+            283.99
+          ]
+        },
+        {
+          "id": "5-3",
+          "idx": 3,
+          "group": 9,
+          "pos": [
+            -161.32,
+            284.09
+          ]
+        }
+      ]
+    },
+    {
+      "id": 179334,
+      "enemyIndex": 6,
+      "name": "Portalmancer Zo'honn",
+      "count": 24,
+      "health": 426623,
+      "creatureType": "Humanoid",
+      "scale": 2.2,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt"
+      ],
+      "spells": [
+        {
+          "id": 352390,
+          "attributes": []
+        },
+        {
+          "id": 354297,
+          "attributes": [
+            "interruptible"
+          ]
+        },
+        {
+          "id": 356537,
+          "attributes": [
+            "interruptible"
+          ]
+        },
+        {
+          "id": 356548,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "6-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -120.42,
+            321.44
+          ]
+        }
+      ]
+    },
+    {
+      "id": 175616,
+      "enemyIndex": 7,
+      "name": "Zo'phex",
+      "count": 0,
+      "health": 1278300,
+      "creatureType": "Humanoid",
+      "scale": 2,
+      "isBoss": true,
+      "characteristics": [
+        "Taunt"
+      ],
+      "spells": [
+        {
+          "id": 345770,
+          "attributes": []
+        },
+        {
+          "id": 345990,
+          "attributes": []
+        },
+        {
+          "id": 346204,
+          "attributes": []
+        },
+        {
+          "id": 347949,
+          "attributes": []
+        },
+        {
+          "id": 347992,
+          "attributes": []
+        },
+        {
+          "id": 348128,
+          "attributes": []
+        },
+        {
+          "id": 348350,
+          "attributes": []
+        },
+        {
+          "id": 353411,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "7-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -99.82,
+            324.67
+          ]
+        }
+      ]
+    },
+    {
+      "id": 179837,
+      "enemyIndex": 8,
+      "name": "Tracker Zo'korss",
+      "count": 18,
+      "health": 426623,
+      "creatureType": "Humanoid",
+      "scale": 2,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt"
+      ],
+      "spells": [
+        {
+          "id": 356001,
+          "attributes": []
+        },
+        {
+          "id": 356929,
+          "attributes": []
+        },
+        {
+          "id": 356942,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "8-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -186.46,
+            225.6
+          ]
+        }
+      ],
+      "stealthDetect": true
+    },
+    {
+      "id": 180091,
+      "enemyIndex": 9,
+      "name": "Ancient Core Hound",
+      "count": 12,
+      "health": 307168,
+      "creatureType": "Beast",
+      "scale": 2,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt"
+      ],
+      "spells": [
+        {
+          "id": 356404,
+          "attributes": [
+            "interruptible"
+          ]
+        },
+        {
+          "id": 356407,
+          "attributes": [
+            "interruptible"
+          ]
+        },
+        {
+          "id": 356408,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "9-1",
+          "idx": 1,
+          "group": 29,
+          "pos": [
+            -207.36,
+            208.83
+          ]
+        },
+        {
+          "id": "9-2",
+          "idx": 2,
+          "group": 29,
+          "pos": [
+            -210.98,
+            200.3
+          ]
+        }
+      ]
+    },
+    {
+      "id": 180495,
+      "enemyIndex": 10,
+      "name": "Enraged Direhorn",
+      "count": 10,
+      "health": 341298,
+      "creatureType": "Beast",
+      "scale": 2,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt"
+      ],
+      "spells": [
+        {
+          "id": 357508,
+          "attributes": []
+        },
+        {
+          "id": 357512,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "10-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -226.6,
+            183.03
+          ]
+        }
+      ]
+    },
+    {
+      "id": 180567,
+      "enemyIndex": 11,
+      "name": "Frenzied Nightclaw",
+      "count": 4,
+      "health": 170649,
+      "creatureType": "Beast",
+      "scale": 1.3,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt",
+        "Root",
+        "Disorient",
+        "Stun",
+        "Slow"
+      ],
+      "spells": [
+        {
+          "id": 357827,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "11-1",
+          "idx": 1,
+          "group": 28,
+          "pos": [
+            -209.92,
+            153.9
+          ]
+        },
+        {
+          "id": "11-2",
+          "idx": 2,
+          "group": 28,
+          "pos": [
+            -204.99,
+            156.69
+          ]
+        },
+        {
+          "id": "11-3",
+          "idx": 3,
+          "group": 28,
+          "pos": [
+            -207.63,
+            148.92
+          ]
+        },
+        {
+          "id": "11-4",
+          "idx": 4,
+          "group": 28,
+          "pos": [
+            -202.46,
+            151.54
+          ]
+        }
+      ]
+    },
+    {
+      "id": 179840,
+      "enemyIndex": 12,
+      "name": "Market Peacekeeper",
+      "count": 4,
+      "health": 255974,
+      "creatureType": "Humanoid",
+      "scale": 1.3,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Root",
+        "Fear",
+        "Disorient",
+        "Imprison",
+        "Sap",
+        "Stun",
+        "Slow"
+      ],
+      "spells": [
+        {
+          "id": 355637,
+          "attributes": []
+        },
+        {
+          "id": 355640,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "12-1",
+          "idx": 1,
+          "group": 22,
+          "pos": [
+            -196.38,
+            122.28
+          ]
+        },
+        {
+          "id": "12-2",
+          "idx": 2,
+          "group": 22,
+          "pos": [
+            -201.18,
+            119.6
+          ]
+        },
+        {
+          "id": "12-3",
+          "idx": 3,
+          "group": 21,
+          "pos": [
+            -189.37,
+            110.76
+          ]
+        },
+        {
+          "id": "12-4",
+          "idx": 4,
+          "group": 21,
+          "pos": [
+            -183.87,
+            110.99
+          ]
+        },
+        {
+          "id": "12-5",
+          "idx": 5,
+          "group": 23,
+          "pos": [
+            -200.07,
+            92.57
+          ]
+        },
+        {
+          "id": "12-6",
+          "idx": 6,
+          "group": 20,
+          "pos": [
+            -168.26,
+            111.12
+          ]
+        },
+        {
+          "id": "12-7",
+          "idx": 7,
+          "group": 20,
+          "pos": [
+            -171,
+            115.56
+          ]
+        },
+        {
+          "id": "12-8",
+          "idx": 8,
+          "group": 24,
+          "pos": [
+            -215.08,
+            94.07
+          ]
+        },
+        {
+          "id": "12-9",
+          "idx": 9,
+          "group": 25,
+          "pos": [
+            -213.84,
+            76.05
+          ]
+        },
+        {
+          "id": "12-10",
+          "idx": 10,
+          "group": 25,
+          "pos": [
+            -216.92,
+            80.51
+          ]
+        },
+        {
+          "id": "12-11",
+          "idx": 11,
+          "group": 18,
+          "pos": [
+            -155.3,
+            97.71
+          ]
+        },
+        {
+          "id": "12-12",
+          "idx": 12,
+          "group": 18,
+          "pos": [
+            -159.09,
+            101.96
+          ]
+        },
+        {
+          "id": "12-13",
+          "idx": 13,
+          "group": null,
+          "pos": [
+            -159.91,
+            82.68
+          ]
+        }
+      ]
+    },
+    {
+      "id": 179841,
+      "enemyIndex": 13,
+      "name": "Veteran Sparkcaster",
+      "count": 4,
+      "health": 191980,
+      "creatureType": "Humanoid",
+      "scale": 1.3,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Disorient",
+        "Stun",
+        "Slow"
+      ],
+      "spells": [
+        {
+          "id": 355641,
+          "attributes": [
+            "interruptible"
+          ]
+        },
+        {
+          "id": 355642,
+          "attributes": [
+            "interruptible"
+          ]
+        }
+      ],
+      "spawns": [
+        {
+          "id": "13-1",
+          "idx": 1,
+          "group": 21,
+          "pos": [
+            -192.7,
+            106.36
+          ]
+        },
+        {
+          "id": "13-2",
+          "idx": 2,
+          "group": 21,
+          "pos": [
+            -181.29,
+            106.42
+          ]
+        },
+        {
+          "id": "13-3",
+          "idx": 3,
+          "group": 23,
+          "pos": [
+            -195.1,
+            95.25
+          ]
+        },
+        {
+          "id": "13-4",
+          "idx": 4,
+          "group": 19,
+          "pos": [
+            -171.45,
+            92.23
+          ]
+        },
+        {
+          "id": "13-5",
+          "idx": 5,
+          "group": 19,
+          "pos": [
+            -176.81,
+            94.93
+          ]
+        },
+        {
+          "id": "13-6",
+          "idx": 6,
+          "group": 24,
+          "pos": [
+            -211.27,
+            98.13
+          ]
+        },
+        {
+          "id": "13-7",
+          "idx": 7,
+          "group": 18,
+          "pos": [
+            -160.68,
+            96.84
+          ]
+        }
+      ]
+    },
+    {
+      "id": 179842,
+      "enemyIndex": 14,
+      "name": "Commerce Enforcer",
+      "count": 8,
+      "health": 324233,
+      "creatureType": "Humanoid",
+      "scale": 1.5,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt"
+      ],
+      "spells": [
+        {
+          "id": 355477,
+          "attributes": []
+        },
+        {
+          "id": 355782,
+          "attributes": []
+        },
+        {
+          "id": 355783,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "14-1",
+          "idx": 1,
+          "group": 21,
+          "pos": [
+            -186.83,
+            106.34
+          ]
+        },
+        {
+          "id": "14-2",
+          "idx": 2,
+          "group": 23,
+          "pos": [
+            -200.19,
+            97.85
+          ]
+        },
+        {
+          "id": "14-3",
+          "idx": 3,
+          "group": 19,
+          "pos": [
+            -172.13,
+            97.66
+          ]
+        }
+      ]
+    },
+    {
+      "id": 179821,
+      "enemyIndex": 15,
+      "name": "Commander Zo'far",
+      "count": 24,
+      "health": 511947,
+      "creatureType": "Humanoid",
+      "scale": 2,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt"
+      ],
+      "spells": [
+        {
+          "id": 355473,
+          "attributes": []
+        },
+        {
+          "id": 355477,
+          "attributes": []
+        },
+        {
+          "id": 355479,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "15-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -186.75,
+            81.97
+          ]
+        }
+      ]
+    },
+    {
+      "id": 180348,
+      "enemyIndex": 16,
+      "name": "Cartel Muscle",
+      "count": 8,
+      "health": 319575,
+      "creatureType": "Humanoid",
+      "scale": 1.3,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [
+        {
+          "id": 356967,
+          "attributes": []
+        },
+        {
+          "id": 357229,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "16-1",
+          "idx": 1,
+          "group": 16,
+          "pos": [
+            -149.97,
+            133.87
+          ]
+        },
+        {
+          "id": "16-2",
+          "idx": 2,
+          "group": 15,
+          "pos": [
+            -158.86,
+            155.11
+          ]
+        },
+        {
+          "id": "16-3",
+          "idx": 3,
+          "group": 14,
+          "pos": [
+            -141.9,
+            166.55
+          ]
+        },
+        {
+          "id": "16-4",
+          "idx": 4,
+          "group": 13,
+          "pos": [
+            -140.6,
+            196.67
+          ]
+        },
+        {
+          "id": "16-5",
+          "idx": 5,
+          "group": 12,
+          "pos": [
+            -117.29,
+            182.86
+          ]
+        },
+        {
+          "id": "16-6",
+          "idx": 6,
+          "group": 15,
+          "pos": [
+            -158.94,
+            149.62
+          ]
+        }
+      ]
+    },
+    {
+      "id": 180335,
+      "enemyIndex": 17,
+      "name": "Cartel Smuggler",
+      "count": 5,
+      "health": 191745,
+      "creatureType": "Humanoid",
+      "scale": 1.3,
+      "isBoss": false,
+      "characteristics": [
+        "Fear",
+        "Imprison",
+        "Stun",
+        "Slow"
+      ],
+      "spells": [
+        {
+          "id": 357029,
+          "attributes": [
+            "interruptible"
+          ]
+        }
+      ],
+      "spawns": [
+        {
+          "id": "17-1",
+          "idx": 1,
+          "group": 16,
+          "pos": [
+            -145.27,
+            131.14
+          ]
+        },
+        {
+          "id": "17-2",
+          "idx": 2,
+          "group": 15,
+          "pos": [
+            -153.27,
+            155.57
+          ]
+        },
+        {
+          "id": "17-3",
+          "idx": 3,
+          "group": 14,
+          "pos": [
+            -136.53,
+            166.91
+          ]
+        },
+        {
+          "id": "17-4",
+          "idx": 4,
+          "group": 13,
+          "pos": [
+            -135.74,
+            194.05
+          ]
+        },
+        {
+          "id": "17-5",
+          "idx": 5,
+          "group": 12,
+          "pos": [
+            -120.6,
+            178.7
+          ]
+        },
+        {
+          "id": "17-6",
+          "idx": 6,
+          "group": 12,
+          "pos": [
+            -124.31,
+            182.95
+          ]
+        },
+        {
+          "id": "17-7",
+          "idx": 7,
+          "group": 11,
+          "pos": [
+            -102.38,
+            184.97
+          ]
+        },
+        {
+          "id": "17-8",
+          "idx": 8,
+          "group": 11,
+          "pos": [
+            -97.61,
+            182.62
+          ]
+        },
+        {
+          "id": "17-9",
+          "idx": 9,
+          "group": 10,
+          "pos": [
+            -107.09,
+            215.66
+          ]
+        }
+      ]
+    },
+    {
+      "id": 180336,
+      "enemyIndex": 18,
+      "name": "Cartel Wiseguy",
+      "count": 5,
+      "health": 170440,
+      "creatureType": "Humanoid",
+      "scale": 1.3,
+      "isBoss": false,
+      "characteristics": [
+        "Silence",
+        "Stun",
+        "Slow"
+      ],
+      "spells": [
+        {
+          "id": 357196,
+          "attributes": [
+            "interruptible"
+          ]
+        },
+        {
+          "id": 357197,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "18-1",
+          "idx": 1,
+          "group": 16,
+          "pos": [
+            -150.01,
+            128.58
+          ]
+        },
+        {
+          "id": "18-2",
+          "idx": 2,
+          "group": 15,
+          "pos": [
+            -153.24,
+            149.94
+          ]
+        },
+        {
+          "id": "18-3",
+          "idx": 3,
+          "group": 14,
+          "pos": [
+            -138.85,
+            162.17
+          ]
+        },
+        {
+          "id": "18-4",
+          "idx": 4,
+          "group": 13,
+          "pos": [
+            -140.69,
+            191.21
+          ]
+        },
+        {
+          "id": "18-5",
+          "idx": 5,
+          "group": 12,
+          "pos": [
+            -120.68,
+            186.1
+          ]
+        },
+        {
+          "id": "18-6",
+          "idx": 6,
+          "group": 11,
+          "pos": [
+            -97.71,
+            187.93
+          ]
+        },
+        {
+          "id": "18-7",
+          "idx": 7,
+          "group": 10,
+          "pos": [
+            -107.24,
+            210.13
+          ]
+        }
+      ]
+    },
+    {
+      "id": 179893,
+      "enemyIndex": 19,
+      "name": "Cartel Skulker",
+      "count": 4,
+      "health": 213050,
+      "creatureType": "Humanoid",
+      "scale": 1.3,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt",
+        "Stun",
+        "Slow"
+      ],
+      "spells": [
+        {
+          "id": 30831,
+          "attributes": []
+        },
+        {
+          "id": 355830,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "19-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -142.17,
+            151.73
+          ]
+        },
+        {
+          "id": "19-2",
+          "idx": 2,
+          "group": null,
+          "pos": [
+            -134.82,
+            178.52
+          ]
+        },
+        {
+          "id": "19-3",
+          "idx": 3,
+          "group": null,
+          "pos": [
+            -101.82,
+            196.73
+          ]
+        },
+        {
+          "id": "19-4",
+          "idx": 4,
+          "group": null,
+          "pos": [
+            -103.48,
+            227.16
+          ]
+        },
+        {
+          "id": "19-5",
+          "idx": 5,
+          "group": null,
+          "pos": [
+            -114.24,
+            209.82
+          ]
+        },
+        {
+          "id": "19-6",
+          "idx": 6,
+          "group": null,
+          "pos": [
+            -161.94,
+            131.48
+          ],
+          "patrol": [
+            [
+              -90.62,
+              239.77
+            ],
+            [
+              -91.68,
+              237.78
+            ],
+            [
+              -96.29,
+              237.78
+            ],
+            [
+              -91.68,
+              237.78
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": 179269,
+      "enemyIndex": 20,
+      "name": "Oasis Security",
+      "count": 0,
+      "health": 341298,
+      "creatureType": "Humanoid",
+      "scale": 2,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt"
+      ],
+      "spells": [
+        {
+          "id": 350916,
+          "attributes": []
+        },
+        {
+          "id": 350922,
+          "attributes": [
+            "interruptible"
+          ]
+        },
+        {
+          "id": 353706,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "20-1",
+          "idx": 1,
+          "group": 33,
+          "pos": [
+            -49.41,
+            61.94
+          ]
+        },
+        {
+          "id": "20-2",
+          "idx": 2,
+          "group": 33,
+          "pos": [
+            -41.36,
+            58.66
+          ]
+        }
+      ]
+    },
+    {
+      "id": 176565,
+      "enemyIndex": 21,
+      "name": "Disruptive Patron",
+      "count": 0,
+      "health": 255974,
+      "creatureType": "Humanoid",
+      "scale": 2,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Fear",
+        "Disorient",
+        "Imprison",
+        "Stun",
+        "Slow"
+      ],
+      "spells": [
+        {
+          "id": 353706,
+          "attributes": []
+        },
+        {
+          "id": 353783,
+          "attributes": []
+        },
+        {
+          "id": 353836,
+          "attributes": [
+            "interruptible"
+          ]
+        }
+      ],
+      "spawns": [
+        {
+          "id": "21-1",
+          "idx": 1,
+          "group": 33,
+          "pos": [
+            -52.88,
+            54.14
+          ]
+        },
+        {
+          "id": "21-2",
+          "idx": 2,
+          "group": 33,
+          "pos": [
+            -44.94,
+            51.09
+          ]
+        }
+      ]
+    },
+    {
+      "id": 180159,
+      "enemyIndex": 22,
+      "name": "Brawling Patron",
+      "count": 0,
+      "health": 170649,
+      "creatureType": "Humanoid",
+      "scale": 2,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Disorient",
+        "Stun",
+        "Slow"
+      ],
+      "spells": [
+        {
+          "id": 348566,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "22-1",
+          "idx": 1,
+          "group": 33,
+          "pos": [
+            -26.01,
+            85.31
+          ]
+        },
+        {
+          "id": "22-2",
+          "idx": 2,
+          "group": 33,
+          "pos": [
+            -32.77,
+            89.91
+          ]
+        }
+      ]
+    },
+    {
+      "id": 176562,
+      "enemyIndex": 23,
+      "name": "Brawling Patron",
+      "count": 0,
+      "health": 170649,
+      "creatureType": "Humanoid",
+      "scale": 2,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Root",
+        "Disorient",
+        "Stun",
+        "Slow"
+      ],
+      "spells": [
+        {
+          "id": 348566,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "23-1",
+          "idx": 1,
+          "group": 33,
+          "pos": [
+            -29.24,
+            97.22
+          ]
+        },
+        {
+          "id": "23-2",
+          "idx": 2,
+          "group": 33,
+          "pos": [
+            -21.85,
+            92.52
+          ]
+        }
+      ]
+    },
+    {
+      "id": 176563,
+      "enemyIndex": 24,
+      "name": "Zo'gron",
+      "count": 0,
+      "health": 958725,
+      "creatureType": "Humanoid",
+      "scale": 2,
+      "isBoss": true,
+      "characteristics": [
+        "Taunt"
+      ],
+      "spells": [
+        {
+          "id": 350919,
+          "attributes": []
+        },
+        {
+          "id": 350922,
+          "attributes": [
+            "interruptible"
+          ]
+        },
+        {
+          "id": 355438,
+          "attributes": []
+        },
+        {
+          "id": 359028,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "24-1",
+          "idx": 1,
+          "group": 33,
+          "pos": [
+            -38.86,
+            75.59
+          ]
+        }
+      ]
+    },
+    {
+      "id": 176556,
+      "enemyIndex": 25,
+      "name": "Alcruux",
+      "count": 0,
+      "health": 511320,
+      "creatureType": "Aberration",
+      "scale": 1.6,
+      "isBoss": true,
+      "characteristics": [
+        "Taunt"
+      ],
+      "spells": [
+        {
+          "id": 349498,
+          "attributes": []
+        },
+        {
+          "id": 349663,
+          "attributes": []
+        },
+        {
+          "id": 349797,
+          "attributes": []
+        },
+        {
+          "id": 355938,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "25-1",
+          "idx": 1,
+          "group": 34,
+          "pos": [
+            -244.44,
+            118.82
+          ]
+        }
+      ]
+    },
+    {
+      "id": 176555,
+      "enemyIndex": 26,
+      "name": "Achillite",
+      "count": 0,
+      "health": 639150,
+      "creatureType": "Mechanical",
+      "scale": 1.6,
+      "isBoss": true,
+      "characteristics": [
+        "Taunt"
+      ],
+      "spells": [
+        {
+          "id": 349933,
+          "attributes": [
+            "interruptible"
+          ]
+        },
+        {
+          "id": 349934,
+          "attributes": []
+        },
+        {
+          "id": 349954,
+          "attributes": []
+        },
+        {
+          "id": 349987,
+          "attributes": []
+        },
+        {
+          "id": 349999,
+          "attributes": []
+        },
+        {
+          "id": 350037,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "26-1",
+          "idx": 1,
+          "group": 34,
+          "pos": [
+            -245.94,
+            104.44
+          ]
+        }
+      ]
+    },
+    {
+      "id": 176705,
+      "enemyIndex": 27,
+      "name": "Venza Goldfuse",
+      "count": 0,
+      "health": 766980,
+      "creatureType": "Humanoid",
+      "scale": 1.6,
+      "isBoss": true,
+      "characteristics": [
+        "Taunt"
+      ],
+      "spells": [
+        {
+          "id": 350086,
+          "attributes": []
+        },
+        {
+          "id": 350101,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "27-1",
+          "idx": 1,
+          "group": 34,
+          "pos": [
+            -234.73,
+            112.41
+          ]
+        }
+      ]
+    },
+    {
+      "id": 176396,
+      "enemyIndex": 28,
+      "name": "Defective Sorter",
+      "count": 3,
+      "health": 85325,
+      "creatureType": "Mechanical",
+      "scale": 1.3,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Root",
+        "Fear",
+        "Disorient",
+        "Stun",
+        "Slow"
+      ],
+      "spells": [
+        {
+          "id": 347721,
+          "attributes": []
+        },
+        {
+          "id": 347814,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "28-1",
+          "idx": 1,
+          "group": 30,
+          "pos": [
+            -131.42,
+            70.22
+          ]
+        },
+        {
+          "id": "28-2",
+          "idx": 2,
+          "group": 30,
+          "pos": [
+            -131.21,
+            78.03
+          ]
+        },
+        {
+          "id": "28-3",
+          "idx": 3,
+          "group": 30,
+          "pos": [
+            -122.96,
+            78.22
+          ]
+        },
+        {
+          "id": "28-4",
+          "idx": 4,
+          "group": 31,
+          "pos": [
+            -136.17,
+            35.77
+          ]
+        },
+        {
+          "id": "28-5",
+          "idx": 5,
+          "group": 31,
+          "pos": [
+            -136.54,
+            40.85
+          ]
+        },
+        {
+          "id": "28-6",
+          "idx": 6,
+          "group": 31,
+          "pos": [
+            -136.72,
+            46.34
+          ]
+        },
+        {
+          "id": "28-7",
+          "idx": 7,
+          "group": 32,
+          "pos": [
+            -111.68,
+            28.73
+          ]
+        }
+      ]
+    },
+    {
+      "id": 176394,
+      "enemyIndex": 29,
+      "name": "P.O.S.T. Worker",
+      "count": 5,
+      "health": 213311,
+      "creatureType": "Mechanical",
+      "scale": 1.3,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Root",
+        "Fear",
+        "Disorient",
+        "Stun",
+        "Slow"
+      ],
+      "spells": [
+        {
+          "id": 347716,
+          "attributes": []
+        },
+        {
+          "id": 348008,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "29-1",
+          "idx": 1,
+          "group": 30,
+          "pos": [
+            -135.64,
+            74.21
+          ]
+        },
+        {
+          "id": "29-2",
+          "idx": 2,
+          "group": 30,
+          "pos": [
+            -127.13,
+            82.21
+          ]
+        },
+        {
+          "id": "29-3",
+          "idx": 3,
+          "group": 31,
+          "pos": [
+            -131.46,
+            38.55
+          ]
+        },
+        {
+          "id": "29-4",
+          "idx": 4,
+          "group": 32,
+          "pos": [
+            -114.09,
+            23.57
+          ]
+        }
+      ]
+    },
+    {
+      "id": 176395,
+      "enemyIndex": 30,
+      "name": "Overloaded Mailemental",
+      "count": 5,
+      "health": 159984,
+      "creatureType": "Elemental",
+      "scale": 1.3,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt",
+        "Silence",
+        "Root",
+        "Fear",
+        "Banish",
+        "Disorient",
+        "Stun",
+        "Slow"
+      ],
+      "spells": [
+        {
+          "id": 347775,
+          "attributes": [
+            "interruptible"
+          ]
+        },
+        {
+          "id": 347903,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "30-1",
+          "idx": 1,
+          "group": 30,
+          "pos": [
+            -127.14,
+            74.14
+          ]
+        },
+        {
+          "id": "30-2",
+          "idx": 2,
+          "group": 31,
+          "pos": [
+            -131.61,
+            43.68
+          ]
+        },
+        {
+          "id": "30-3",
+          "idx": 3,
+          "group": 32,
+          "pos": [
+            -117.15,
+            27.97
+          ]
+        }
+      ]
+    },
+    {
+      "id": 175646,
+      "enemyIndex": 31,
+      "name": "P.O.S.T. Master",
+      "count": 0,
+      "health": 1342215,
+      "creatureType": "Humanoid",
+      "scale": 2,
+      "isBoss": true,
+      "characteristics": [
+        "Taunt"
+      ],
+      "spells": [
+        {
+          "id": 346286,
+          "attributes": []
+        },
+        {
+          "id": 346742,
+          "attributes": []
+        },
+        {
+          "id": 346947,
+          "attributes": []
+        },
+        {
+          "id": 346962,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "31-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -113.93,
+            53.88
+          ]
+        }
+      ]
+    },
+    {
+      "id": 175806,
+      "enemyIndex": 32,
+      "name": "So'azmi",
+      "count": 0,
+      "health": 1342215,
+      "creatureType": "Humanoid",
+      "scale": 2,
+      "isBoss": true,
+      "characteristics": [
+        "Taunt"
+      ],
+      "spells": [
+        {
+          "id": 347249,
+          "attributes": []
+        },
+        {
+          "id": 347610,
+          "attributes": []
+        },
+        {
+          "id": 347623,
+          "attributes": []
+        },
+        {
+          "id": 347632,
+          "attributes": []
+        },
+        {
+          "id": 347636,
+          "attributes": []
+        },
+        {
+          "id": 354264,
+          "attributes": []
+        },
+        {
+          "id": 357188,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "32-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -186.65,
+            46.65
+          ]
+        }
+      ]
+    }
+  ],
+  "pois": [
+    {
+      "type": "graveyard",
+      "itemType": null,
+      "pos": [
+        -124.19,
+        327.1
+      ]
+    }
+  ]
+}

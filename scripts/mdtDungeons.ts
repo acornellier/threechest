@@ -22,6 +22,11 @@ export const dungeonPaths = new Map<DungeonKey, string>([
 
 const filterDungeonKey = process.argv[2]
 
+if (!filterDungeonKey) {
+  fs.rmSync(`${dirname}/../src/data/mdtDungeons/`, { force: true, recursive: true })
+  fs.mkdirSync(`${dirname}/../src/data/mdtDungeons/`)
+}
+
 for (const [key, path] of dungeonPaths) {
   if (!filterDungeonKey || key === filterDungeonKey) {
     importMdtDungeon(key, path)

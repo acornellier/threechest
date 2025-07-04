@@ -72,6 +72,7 @@ function sortSampleRoutes(route1: SampleRoute, route2: SampleRoute) {
 const dirname = getDirname(import.meta.url)
 
 for (const dungeonKey of dungeonKeys) {
+  console.log(dungeonKey)
   for (const routeDefinition of sampleRouteDefinitions[dungeonKey]) {
     const sampleRoute = await convertRouteDefinition(routeDefinition)
     sampleRoutes[dungeonKey].push(sampleRoute)

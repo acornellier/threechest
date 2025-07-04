@@ -1,0 +1,2327 @@
+{
+  "dungeonIndex": 111,
+  "totalCount": 460,
+  "enemies": [
+    {
+      "id": 213894,
+      "enemyIndex": 1,
+      "name": "Nightfall Curseblade",
+      "count": 5,
+      "health": 20885902,
+      "creatureType": "Humanoid",
+      "scale": 1.3,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
+        "Polymorph",
+        "Root",
+        "Fear",
+        "Disorient",
+        "Repentance",
+        "Imprison",
+        "Sap",
+        "Stun",
+        "Slow",
+        "Sleep Walk",
+        "Mind Soothe"
+      ],
+      "spells": [
+        {
+          "id": 431493,
+          "attributes": [
+            "magic"
+          ]
+        }
+      ],
+      "spawns": [
+        {
+          "id": "1-1",
+          "idx": 1,
+          "group": 1,
+          "pos": [
+            -203.93,
+            294.64
+          ]
+        },
+        {
+          "id": "1-2",
+          "idx": 2,
+          "group": 1,
+          "pos": [
+            -193.67,
+            301.39
+          ]
+        },
+        {
+          "id": "1-3",
+          "idx": 3,
+          "group": 1,
+          "pos": [
+            -201.59,
+            310.58
+          ]
+        },
+        {
+          "id": "1-4",
+          "idx": 4,
+          "group": 3,
+          "pos": [
+            -90.32,
+            300.79
+          ]
+        },
+        {
+          "id": "1-5",
+          "idx": 5,
+          "group": 4,
+          "pos": [
+            -79.76,
+            278.46
+          ]
+        },
+        {
+          "id": "1-6",
+          "idx": 6,
+          "group": 4,
+          "pos": [
+            -71.72,
+            286.96
+          ]
+        },
+        {
+          "id": "1-7",
+          "idx": 7,
+          "group": 5,
+          "pos": [
+            -42.47,
+            327.78
+          ]
+        },
+        {
+          "id": "1-8",
+          "idx": 8,
+          "group": 5,
+          "pos": [
+            -49.64,
+            337.23
+          ]
+        },
+        {
+          "id": "1-9",
+          "idx": 9,
+          "group": 6,
+          "pos": [
+            -122.94,
+            264.31
+          ]
+        },
+        {
+          "id": "1-10",
+          "idx": 10,
+          "group": 32,
+          "pos": [
+            -69.45,
+            7.74
+          ]
+        },
+        {
+          "id": "1-11",
+          "idx": 11,
+          "group": 17,
+          "pos": [
+            -99.23,
+            26.61
+          ]
+        },
+        {
+          "id": "1-12",
+          "idx": 12,
+          "group": 36,
+          "pos": [
+            -164.48,
+            111.98
+          ]
+        },
+        {
+          "id": "1-13",
+          "idx": 13,
+          "group": 46,
+          "pos": [
+            -181.7,
+            126.9
+          ]
+        }
+      ]
+    },
+    {
+      "id": 213892,
+      "enemyIndex": 2,
+      "name": "Nightfall Shadowmage",
+      "count": 5,
+      "health": 17902202,
+      "creatureType": "Humanoid",
+      "scale": 1.3,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
+        "Polymorph",
+        "Root",
+        "Fear",
+        "Disorient",
+        "Repentance",
+        "Imprison",
+        "Sap",
+        "Stun",
+        "Slow",
+        "Sleep Walk",
+        "Mind Soothe"
+      ],
+      "spells": [
+        {
+          "id": 431303,
+          "attributes": [
+            "interruptible"
+          ]
+        },
+        {
+          "id": 431309,
+          "attributes": [
+            "interruptible",
+            "curse"
+          ]
+        }
+      ],
+      "spawns": [
+        {
+          "id": "2-1",
+          "idx": 1,
+          "group": 1,
+          "pos": [
+            -210.16,
+            302.29
+          ]
+        },
+        {
+          "id": "2-2",
+          "idx": 2,
+          "group": 1,
+          "pos": [
+            -197.9,
+            305.7
+          ]
+        },
+        {
+          "id": "2-3",
+          "idx": 3,
+          "group": 3,
+          "pos": [
+            -82.75,
+            291.69
+          ]
+        },
+        {
+          "id": "2-4",
+          "idx": 4,
+          "group": 5,
+          "pos": [
+            -51.31,
+            328.77
+          ]
+        },
+        {
+          "id": "2-5",
+          "idx": 5,
+          "group": 35,
+          "pos": [
+            -160.95,
+            95.51
+          ]
+        },
+        {
+          "id": "2-6",
+          "idx": 6,
+          "group": 36,
+          "pos": [
+            -159.8,
+            109.27
+          ]
+        },
+        {
+          "id": "2-7",
+          "idx": 7,
+          "group": 17,
+          "pos": [
+            -94.38,
+            24.37
+          ]
+        },
+        {
+          "id": "2-8",
+          "idx": 8,
+          "group": 42,
+          "pos": [
+            -199.46,
+            112.69
+          ]
+        }
+      ]
+    },
+    {
+      "id": 214761,
+      "enemyIndex": 3,
+      "name": "Nightfall Ritualist",
+      "count": 12,
+      "health": 33815270,
+      "creatureType": "Humanoid",
+      "scale": 1.4,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt",
+        "Slow",
+        "Mind Soothe"
+      ],
+      "spells": [
+        {
+          "id": 431364,
+          "attributes": []
+        },
+        {
+          "id": 431365,
+          "attributes": []
+        },
+        {
+          "id": 432448,
+          "attributes": [
+            "magic"
+          ]
+        },
+        {
+          "id": 432454,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "3-1",
+          "idx": 1,
+          "group": 1,
+          "pos": [
+            -203.01,
+            301.36
+          ]
+        },
+        {
+          "id": "3-2",
+          "idx": 2,
+          "group": 4,
+          "pos": [
+            -75.88,
+            282.87
+          ]
+        }
+      ],
+      "stealthDetect": true
+    },
+    {
+      "id": 214762,
+      "enemyIndex": 4,
+      "name": "Nightfall Commander",
+      "count": 12,
+      "health": 33815270,
+      "creatureType": "Humanoid",
+      "scale": 1.4,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt",
+        "Slow",
+        "Mind Soothe"
+      ],
+      "spells": [
+        {
+          "id": 431491,
+          "attributes": [
+            "bleed"
+          ]
+        },
+        {
+          "id": 450756,
+          "attributes": [
+            "interruptible",
+            "magic"
+          ]
+        }
+      ],
+      "spawns": [
+        {
+          "id": "4-1",
+          "idx": 1,
+          "group": 3,
+          "pos": [
+            -86.86,
+            296.46
+          ]
+        },
+        {
+          "id": "4-2",
+          "idx": 2,
+          "group": 6,
+          "pos": [
+            -124.27,
+            258.76
+          ]
+        }
+      ],
+      "stealthDetect": true
+    },
+    {
+      "id": 210966,
+      "enemyIndex": 5,
+      "name": "Sureki Webmage",
+      "count": 12,
+      "health": 39782670,
+      "creatureType": "Humanoid",
+      "scale": 1.4,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt",
+        "Slow",
+        "Mind Soothe"
+      ],
+      "spells": [
+        {
+          "id": 451104,
+          "attributes": []
+        },
+        {
+          "id": 451107,
+          "attributes": []
+        },
+        {
+          "id": 451113,
+          "attributes": [
+            "interruptible"
+          ]
+        }
+      ],
+      "spawns": [
+        {
+          "id": "5-1",
+          "idx": 1,
+          "group": 5,
+          "pos": [
+            -46.16,
+            332.32
+          ]
+        },
+        {
+          "id": "5-2",
+          "idx": 2,
+          "group": 6,
+          "pos": [
+            -129.13,
+            263.5
+          ]
+        },
+        {
+          "id": "5-3",
+          "idx": 3,
+          "group": null,
+          "pos": [
+            -55.72,
+            178.69
+          ]
+        },
+        {
+          "id": "5-4",
+          "idx": 4,
+          "group": null,
+          "pos": [
+            -89.38,
+            197.24
+          ]
+        },
+        {
+          "id": "5-5",
+          "idx": 5,
+          "group": null,
+          "pos": [
+            -115.32,
+            109.57
+          ]
+        }
+      ],
+      "stealthDetect": true
+    },
+    {
+      "id": 213893,
+      "enemyIndex": 6,
+      "name": "Nightfall Darkcaster",
+      "count": 5,
+      "health": 18896768,
+      "creatureType": "Humanoid",
+      "scale": 1.3,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
+        "Polymorph",
+        "Root",
+        "Fear",
+        "Disorient",
+        "Repentance",
+        "Imprison",
+        "Sap",
+        "Stun",
+        "Slow",
+        "Sleep Walk",
+        "Mind Soothe"
+      ],
+      "spells": [
+        {
+          "id": 431333,
+          "attributes": [
+            "interruptible"
+          ]
+        },
+        {
+          "id": 432520,
+          "attributes": [
+            "interruptible"
+          ]
+        }
+      ],
+      "spawns": [
+        {
+          "id": "6-2",
+          "idx": 2,
+          "group": 49,
+          "pos": [
+            -79.49,
+            168.07
+          ]
+        },
+        {
+          "id": "6-3",
+          "idx": 3,
+          "group": 49,
+          "pos": [
+            -84.85,
+            168.04
+          ]
+        },
+        {
+          "id": "6-4",
+          "idx": 4,
+          "group": 26,
+          "pos": [
+            -90.67,
+            97.9
+          ]
+        },
+        {
+          "id": "6-5",
+          "idx": 5,
+          "group": 33,
+          "pos": [
+            -146.99,
+            69.69
+          ]
+        },
+        {
+          "id": "6-6",
+          "idx": 6,
+          "group": 33,
+          "pos": [
+            -143.29,
+            65.88
+          ]
+        },
+        {
+          "id": "6-7",
+          "idx": 7,
+          "group": 15,
+          "pos": [
+            -53.1,
+            25.03
+          ]
+        },
+        {
+          "id": "6-8",
+          "idx": 8,
+          "group": 25,
+          "pos": [
+            -72.98,
+            86.56
+          ]
+        },
+        {
+          "id": "6-9",
+          "idx": 9,
+          "group": 22,
+          "pos": [
+            -89.14,
+            72.93
+          ]
+        },
+        {
+          "id": "6-10",
+          "idx": 10,
+          "group": 20,
+          "pos": [
+            -98.24,
+            65.68
+          ]
+        },
+        {
+          "id": "6-11",
+          "idx": 11,
+          "group": 21,
+          "pos": [
+            -88.77,
+            55.16
+          ]
+        },
+        {
+          "id": "6-12",
+          "idx": 12,
+          "group": 21,
+          "pos": [
+            -94.07,
+            57.61
+          ]
+        },
+        {
+          "id": "6-13",
+          "idx": 13,
+          "group": 18,
+          "pos": [
+            -91.32,
+            44.53
+          ]
+        },
+        {
+          "id": "6-14",
+          "idx": 14,
+          "group": 16,
+          "pos": [
+            -71.99,
+            28.39
+          ]
+        },
+        {
+          "id": "6-17",
+          "idx": 17,
+          "group": 32,
+          "pos": [
+            -75.37,
+            7.9
+          ]
+        },
+        {
+          "id": "6-18",
+          "idx": 18,
+          "group": 11,
+          "pos": [
+            -60.54,
+            111.47
+          ]
+        },
+        {
+          "id": "6-19",
+          "idx": 19,
+          "group": 11,
+          "pos": [
+            -49.86,
+            111.41
+          ]
+        },
+        {
+          "id": "6-20",
+          "idx": 20,
+          "group": 10,
+          "pos": [
+            -43.33,
+            141.67
+          ]
+        },
+        {
+          "id": "6-21",
+          "idx": 21,
+          "group": 10,
+          "pos": [
+            -48.9,
+            136.37
+          ]
+        },
+        {
+          "id": "6-22",
+          "idx": 22,
+          "group": 10,
+          "pos": [
+            -43.59,
+            136.46
+          ]
+        },
+        {
+          "id": "6-23",
+          "idx": 23,
+          "group": 9,
+          "pos": [
+            -50.86,
+            160.34
+          ]
+        },
+        {
+          "id": "6-24",
+          "idx": 24,
+          "group": 31,
+          "pos": [
+            -122.98,
+            127.27
+          ]
+        },
+        {
+          "id": "6-25",
+          "idx": 25,
+          "group": 30,
+          "pos": [
+            -125.86,
+            73.69
+          ]
+        },
+        {
+          "id": "6-26",
+          "idx": 26,
+          "group": 34,
+          "pos": [
+            -150.54,
+            91.04
+          ]
+        },
+        {
+          "id": "6-28",
+          "idx": 28,
+          "group": 35,
+          "pos": [
+            -159.72,
+            100.38
+          ]
+        },
+        {
+          "id": "6-30",
+          "idx": 30,
+          "group": 36,
+          "pos": [
+            -159.92,
+            114.58
+          ]
+        },
+        {
+          "id": "6-31",
+          "idx": 31,
+          "group": 38,
+          "pos": [
+            -163.88,
+            144.98
+          ]
+        },
+        {
+          "id": "6-32",
+          "idx": 32,
+          "group": 38,
+          "pos": [
+            -163.75,
+            149.78
+          ]
+        },
+        {
+          "id": "6-33",
+          "idx": 33,
+          "group": 38,
+          "pos": [
+            -168.27,
+            147.53
+          ]
+        },
+        {
+          "id": "6-34",
+          "idx": 34,
+          "group": 39,
+          "pos": [
+            -179.09,
+            153.85
+          ]
+        },
+        {
+          "id": "6-35",
+          "idx": 35,
+          "group": 43,
+          "pos": [
+            -192.52,
+            98.8
+          ]
+        },
+        {
+          "id": "6-36",
+          "idx": 36,
+          "group": 12,
+          "pos": [
+            -43.59,
+            64.71
+          ]
+        },
+        {
+          "id": "6-37",
+          "idx": 37,
+          "group": 44,
+          "pos": [
+            -181.93,
+            103.62
+          ]
+        },
+        {
+          "id": "6-38",
+          "idx": 38,
+          "group": 44,
+          "pos": [
+            -176.29,
+            103.59
+          ]
+        },
+        {
+          "id": "6-39",
+          "idx": 39,
+          "group": 45,
+          "pos": [
+            -179.78,
+            114.21
+          ]
+        },
+        {
+          "id": "6-40",
+          "idx": 40,
+          "group": 45,
+          "pos": [
+            -176.2,
+            115.89
+          ]
+        }
+      ]
+    },
+    {
+      "id": 213895,
+      "enemyIndex": 7,
+      "name": "Nightfall Shadowalker",
+      "count": 5,
+      "health": 19891335,
+      "creatureType": "Humanoid",
+      "scale": 1.2,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
+        "Polymorph",
+        "Root",
+        "Fear",
+        "Disorient",
+        "Repentance",
+        "Imprison",
+        "Sap",
+        "Stun",
+        "Slow",
+        "Sleep Walk",
+        "Mind Soothe"
+      ],
+      "spells": [
+        {
+          "id": 431637,
+          "attributes": []
+        },
+        {
+          "id": 431638,
+          "attributes": []
+        },
+        {
+          "id": 431660,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "7-1",
+          "idx": 1,
+          "group": 24,
+          "pos": [
+            -63.54,
+            74.4
+          ]
+        },
+        {
+          "id": "7-2",
+          "idx": 2,
+          "group": 24,
+          "pos": [
+            -59.93,
+            70.88
+          ]
+        },
+        {
+          "id": "7-3",
+          "idx": 3,
+          "group": 8,
+          "pos": [
+            -64.33,
+            168.7
+          ]
+        },
+        {
+          "id": "7-4",
+          "idx": 4,
+          "group": 8,
+          "pos": [
+            -69.53,
+            168.74
+          ]
+        },
+        {
+          "id": "7-5",
+          "idx": 5,
+          "group": 42,
+          "pos": [
+            -201.34,
+            108.69
+          ]
+        },
+        {
+          "id": "7-6",
+          "idx": 6,
+          "group": 28,
+          "pos": [
+            -91.03,
+            111.43
+          ]
+        },
+        {
+          "id": "7-7",
+          "idx": 7,
+          "group": 28,
+          "pos": [
+            -85.43,
+            111.55
+          ]
+        },
+        {
+          "id": "7-8",
+          "idx": 8,
+          "group": 28,
+          "pos": [
+            -96.57,
+            111.41
+          ]
+        },
+        {
+          "id": "7-9",
+          "idx": 9,
+          "group": 26,
+          "pos": [
+            -87.54,
+            93.3
+          ]
+        },
+        {
+          "id": "7-10",
+          "idx": 10,
+          "group": 26,
+          "pos": [
+            -93.25,
+            93.05
+          ]
+        },
+        {
+          "id": "7-11",
+          "idx": 11,
+          "group": 14,
+          "pos": [
+            -38.43,
+            44.06
+          ]
+        },
+        {
+          "id": "7-12",
+          "idx": 12,
+          "group": 15,
+          "pos": [
+            -52.96,
+            30.23
+          ]
+        },
+        {
+          "id": "7-13",
+          "idx": 13,
+          "group": 22,
+          "pos": [
+            -85.34,
+            69.38
+          ]
+        },
+        {
+          "id": "7-14",
+          "idx": 14,
+          "group": 20,
+          "pos": [
+            -101.65,
+            61.94
+          ]
+        },
+        {
+          "id": "7-15",
+          "idx": 15,
+          "group": 21,
+          "pos": [
+            -89.71,
+            60.39
+          ],
+          "patrol": [
+            [
+              -89.71,
+              60.39
+            ],
+            [
+              -86.48,
+              63.02
+            ],
+            [
+              -83.56,
+              65.94
+            ],
+            [
+              -86.48,
+              63.02
+            ],
+            [
+              -89.71,
+              60.39
+            ],
+            [
+              -90.89,
+              55.51
+            ],
+            [
+              -92.19,
+              52.24
+            ],
+            [
+              -95.71,
+              47.26
+            ],
+            [
+              -98.69,
+              43.75
+            ],
+            [
+              -101.62,
+              39.91
+            ],
+            [
+              -98.69,
+              43.75
+            ],
+            [
+              -95.71,
+              47.26
+            ],
+            [
+              -92.19,
+              52.24
+            ],
+            [
+              -90.89,
+              55.51
+            ]
+          ]
+        },
+        {
+          "id": "7-16",
+          "idx": 16,
+          "group": 23,
+          "pos": [
+            -69.8,
+            67.62
+          ]
+        },
+        {
+          "id": "7-18",
+          "idx": 18,
+          "group": 19,
+          "pos": [
+            -110.92,
+            48.89
+          ]
+        },
+        {
+          "id": "7-20",
+          "idx": 20,
+          "group": 11,
+          "pos": [
+            -55.29,
+            111.54
+          ]
+        },
+        {
+          "id": "7-21",
+          "idx": 21,
+          "group": 9,
+          "pos": [
+            -45.53,
+            160.5
+          ]
+        },
+        {
+          "id": "7-22",
+          "idx": 22,
+          "group": 9,
+          "pos": [
+            -51.03,
+            165.57
+          ]
+        },
+        {
+          "id": "7-23",
+          "idx": 23,
+          "group": 31,
+          "pos": [
+            -119.01,
+            123.76
+          ]
+        },
+        {
+          "id": "7-24",
+          "idx": 24,
+          "group": 31,
+          "pos": [
+            -126.49,
+            131.1
+          ]
+        },
+        {
+          "id": "7-25",
+          "idx": 25,
+          "group": 29,
+          "pos": [
+            -117.92,
+            94.67
+          ]
+        },
+        {
+          "id": "7-28",
+          "idx": 28,
+          "group": 46,
+          "pos": [
+            -177.07,
+            129.68
+          ]
+        },
+        {
+          "id": "7-29",
+          "idx": 29,
+          "group": 46,
+          "pos": [
+            -177.03,
+            124.5
+          ]
+        },
+        {
+          "id": "7-30",
+          "idx": 30,
+          "group": 37,
+          "pos": [
+            -165.02,
+            133.24
+          ]
+        },
+        {
+          "id": "7-31",
+          "idx": 31,
+          "group": 39,
+          "pos": [
+            -179.02,
+            149.09
+          ]
+        },
+        {
+          "id": "7-32",
+          "idx": 32,
+          "group": 40,
+          "pos": [
+            -185.32,
+            163.09
+          ]
+        },
+        {
+          "id": "7-33",
+          "idx": 33,
+          "group": 40,
+          "pos": [
+            -185.26,
+            168.6
+          ]
+        },
+        {
+          "id": "7-34",
+          "idx": 34,
+          "group": 41,
+          "pos": [
+            -202.66,
+            162.25
+          ]
+        },
+        {
+          "id": "7-35",
+          "idx": 35,
+          "group": 41,
+          "pos": [
+            -202.43,
+            167.36
+          ]
+        },
+        {
+          "id": "7-36",
+          "idx": 36,
+          "group": 43,
+          "pos": [
+            -188.85,
+            95.83
+          ]
+        },
+        {
+          "id": "7-37",
+          "idx": 37,
+          "group": 44,
+          "pos": [
+            -178.94,
+            99.4
+          ],
+          "patrol": [
+            [
+              -180.28,
+              100.85
+            ],
+            [
+              -178.12,
+              97.43
+            ],
+            [
+              -175.22,
+              95.25
+            ],
+            [
+              -173.36,
+              95.04
+            ],
+            [
+              -175.22,
+              95.25
+            ],
+            [
+              -178.12,
+              97.43
+            ],
+            [
+              -180.28,
+              100.85
+            ],
+            [
+              -181.12,
+              105.5
+            ],
+            [
+              -179.47,
+              109.85
+            ],
+            [
+              -176.26,
+              112.85
+            ],
+            [
+              -172.74,
+              116.16
+            ],
+            [
+              -167.56,
+              116.16
+            ],
+            [
+              -172.74,
+              116.16
+            ],
+            [
+              -176.26,
+              112.85
+            ],
+            [
+              -179.47,
+              109.85
+            ],
+            [
+              -181.12,
+              105.5
+            ]
+          ]
+        },
+        {
+          "id": "7-38",
+          "idx": 38,
+          "group": 16,
+          "pos": [
+            -77.3,
+            28.39
+          ]
+        },
+        {
+          "id": "7-39",
+          "idx": 39,
+          "group": 16,
+          "pos": [
+            -66.47,
+            28.64
+          ]
+        },
+        {
+          "id": "7-40",
+          "idx": 40,
+          "group": 23,
+          "pos": [
+            -75.12,
+            67.69
+          ]
+        }
+      ]
+    },
+    {
+      "id": 211341,
+      "enemyIndex": 8,
+      "name": "Manifested Shadow",
+      "count": 16,
+      "health": 27847869,
+      "creatureType": "Elemental",
+      "scale": 1.4,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt",
+        "Slow"
+      ],
+      "spells": [
+        {
+          "id": 431304,
+          "attributes": []
+        },
+        {
+          "id": 431305,
+          "attributes": []
+        },
+        {
+          "id": 432565,
+          "attributes": []
+        },
+        {
+          "id": 432606,
+          "attributes": []
+        },
+        {
+          "id": 453345,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "8-1",
+          "idx": 1,
+          "group": 23,
+          "pos": [
+            -69.54,
+            62.38
+          ]
+        },
+        {
+          "id": "8-2",
+          "idx": 2,
+          "group": 23,
+          "pos": [
+            -76.21,
+            62.21
+          ]
+        },
+        {
+          "id": "8-4",
+          "idx": 4,
+          "group": 33,
+          "pos": [
+            -148.68,
+            64.63
+          ]
+        },
+        {
+          "id": "8-5",
+          "idx": 5,
+          "group": 15,
+          "pos": [
+            -47.6,
+            27.8
+          ]
+        },
+        {
+          "id": "8-6",
+          "idx": 6,
+          "group": 25,
+          "pos": [
+            -69.89,
+            82.01
+          ]
+        },
+        {
+          "id": "8-8",
+          "idx": 8,
+          "group": 17,
+          "pos": [
+            -94.94,
+            29.69
+          ]
+        },
+        {
+          "id": "8-9",
+          "idx": 9,
+          "group": 19,
+          "pos": [
+            -109.52,
+            43.95
+          ]
+        },
+        {
+          "id": "8-10",
+          "idx": 10,
+          "group": 16,
+          "pos": [
+            -69.27,
+            33.17
+          ]
+        },
+        {
+          "id": "8-11",
+          "idx": 11,
+          "group": 32,
+          "pos": [
+            -72.08,
+            12.59
+          ]
+        },
+        {
+          "id": "8-13",
+          "idx": 13,
+          "group": 27,
+          "pos": [
+            -101.13,
+            105.47
+          ]
+        },
+        {
+          "id": "8-14",
+          "idx": 14,
+          "group": 29,
+          "pos": [
+            -119.7,
+            89.65
+          ]
+        },
+        {
+          "id": "8-15",
+          "idx": 15,
+          "group": 29,
+          "pos": [
+            -123.5,
+            94.02
+          ]
+        },
+        {
+          "id": "8-16",
+          "idx": 16,
+          "group": 34,
+          "pos": [
+            -150.51,
+            86
+          ]
+        },
+        {
+          "id": "8-17",
+          "idx": 17,
+          "group": 41,
+          "pos": [
+            -207.64,
+            165.04
+          ]
+        },
+        {
+          "id": "8-18",
+          "idx": 18,
+          "group": 12,
+          "pos": [
+            -38.57,
+            66.49
+          ]
+        }
+      ],
+      "stealthDetect": true
+    },
+    {
+      "id": 213932,
+      "enemyIndex": 9,
+      "name": "Sureki Militant",
+      "count": 12,
+      "health": 35835879,
+      "creatureType": "Humanoid",
+      "scale": 1.8,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt",
+        "Mind Soothe"
+      ],
+      "spells": [
+        {
+          "id": 451097,
+          "attributes": [
+            "magic"
+          ]
+        },
+        {
+          "id": 451098,
+          "attributes": []
+        },
+        {
+          "id": 451099,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "9-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -246.62,
+            110.74
+          ]
+        },
+        {
+          "id": "9-2",
+          "idx": 2,
+          "group": null,
+          "pos": [
+            -94.76,
+            175.34
+          ]
+        },
+        {
+          "id": "9-3",
+          "idx": 3,
+          "group": null,
+          "pos": [
+            -106.81,
+            91.96
+          ]
+        },
+        {
+          "id": "9-4",
+          "idx": 4,
+          "group": null,
+          "pos": [
+            -140.47,
+            97.63
+          ]
+        },
+        {
+          "id": "9-5",
+          "idx": 5,
+          "group": null,
+          "pos": [
+            -167.93,
+            60.29
+          ]
+        },
+        {
+          "id": "9-6",
+          "idx": 6,
+          "group": null,
+          "pos": [
+            -156.64,
+            141.45
+          ]
+        }
+      ],
+      "stealthDetect": true
+    },
+    {
+      "id": 213934,
+      "enemyIndex": 10,
+      "name": "Nightfall Tactician",
+      "count": 10,
+      "health": 33815270,
+      "creatureType": "Humanoid",
+      "scale": 1.3,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt",
+        "Slow",
+        "Mind Soothe"
+      ],
+      "spells": [
+        {
+          "id": 431494,
+          "attributes": [
+            "magic"
+          ]
+        },
+        {
+          "id": 451112,
+          "attributes": [
+            "enrage"
+          ]
+        }
+      ],
+      "spawns": [
+        {
+          "id": "10-1",
+          "idx": 1,
+          "group": 7,
+          "pos": [
+            -73.23,
+            177.13
+          ]
+        },
+        {
+          "id": "10-2",
+          "idx": 2,
+          "group": 7,
+          "pos": [
+            -78.63,
+            177.11
+          ]
+        },
+        {
+          "id": "10-3",
+          "idx": 3,
+          "group": 42,
+          "pos": [
+            -204.43,
+            112.44
+          ]
+        },
+        {
+          "id": "10-4",
+          "idx": 4,
+          "group": 28,
+          "pos": [
+            -88.59,
+            116.29
+          ]
+        },
+        {
+          "id": "10-5",
+          "idx": 5,
+          "group": 28,
+          "pos": [
+            -94.59,
+            116.69
+          ]
+        },
+        {
+          "id": "10-6",
+          "idx": 6,
+          "group": 14,
+          "pos": [
+            -33.42,
+            45.61
+          ]
+        },
+        {
+          "id": "10-7",
+          "idx": 7,
+          "group": 14,
+          "pos": [
+            -37.42,
+            49.27
+          ]
+        },
+        {
+          "id": "10-9",
+          "idx": 9,
+          "group": 25,
+          "pos": [
+            -75.49,
+            82.06
+          ]
+        },
+        {
+          "id": "10-10",
+          "idx": 10,
+          "group": 18,
+          "pos": [
+            -94.89,
+            40.43
+          ]
+        },
+        {
+          "id": "10-11",
+          "idx": 11,
+          "group": 19,
+          "pos": [
+            -114.79,
+            45.15
+          ]
+        },
+        {
+          "id": "10-13",
+          "idx": 13,
+          "group": 11,
+          "pos": [
+            -52.33,
+            116.04
+          ]
+        },
+        {
+          "id": "10-14",
+          "idx": 14,
+          "group": 11,
+          "pos": [
+            -57.94,
+            116.11
+          ]
+        },
+        {
+          "id": "10-15",
+          "idx": 15,
+          "group": 10,
+          "pos": [
+            -48.77,
+            141.56
+          ]
+        },
+        {
+          "id": "10-16",
+          "idx": 16,
+          "group": 9,
+          "pos": [
+            -45.68,
+            165.55
+          ]
+        },
+        {
+          "id": "10-17",
+          "idx": 17,
+          "group": 31,
+          "pos": [
+            -117.71,
+            128.68
+          ]
+        },
+        {
+          "id": "10-18",
+          "idx": 18,
+          "group": 31,
+          "pos": [
+            -121.16,
+            132.27
+          ]
+        },
+        {
+          "id": "10-19",
+          "idx": 19,
+          "group": 27,
+          "pos": [
+            -101.26,
+            100.26
+          ]
+        },
+        {
+          "id": "10-20",
+          "idx": 20,
+          "group": 30,
+          "pos": [
+            -121.06,
+            70.59
+          ]
+        },
+        {
+          "id": "10-21",
+          "idx": 21,
+          "group": 30,
+          "pos": [
+            -120.79,
+            76.41
+          ]
+        },
+        {
+          "id": "10-22",
+          "idx": 22,
+          "group": 35,
+          "pos": [
+            -164.35,
+            99.04
+          ]
+        },
+        {
+          "id": "10-23",
+          "idx": 23,
+          "group": 37,
+          "pos": [
+            -160.47,
+            130.49
+          ]
+        },
+        {
+          "id": "10-24",
+          "idx": 24,
+          "group": 39,
+          "pos": [
+            -184.27,
+            151.66
+          ]
+        },
+        {
+          "id": "10-25",
+          "idx": 25,
+          "group": 40,
+          "pos": [
+            -190.08,
+            165.96
+          ]
+        },
+        {
+          "id": "10-26",
+          "idx": 26,
+          "group": 12,
+          "pos": [
+            -39.75,
+            61.18
+          ]
+        },
+        {
+          "id": "10-27",
+          "idx": 27,
+          "group": 13,
+          "pos": [
+            -51.19,
+            53.65
+          ]
+        },
+        {
+          "id": "10-28",
+          "idx": 28,
+          "group": 13,
+          "pos": [
+            -54.66,
+            49.74
+          ]
+        },
+        {
+          "id": "10-29",
+          "idx": 29,
+          "group": 16,
+          "pos": [
+            -74.66,
+            33.24
+          ]
+        }
+      ],
+      "stealthDetect": true
+    },
+    {
+      "id": 211261,
+      "enemyIndex": 11,
+      "name": "Ascendant Viscoxria",
+      "count": 25,
+      "health": 37826761,
+      "creatureType": "Humanoid",
+      "scale": 2.5,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt",
+        "Slow",
+        "Mind Soothe"
+      ],
+      "spells": [
+        {
+          "id": 427192,
+          "attributes": []
+        },
+        {
+          "id": 451101,
+          "attributes": []
+        },
+        {
+          "id": 451102,
+          "attributes": []
+        },
+        {
+          "id": 451119,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "11-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -72.26,
+            189.36
+          ]
+        }
+      ],
+      "stealthDetect": true
+    },
+    {
+      "id": 211263,
+      "enemyIndex": 12,
+      "name": "Deathscreamer Ikentak",
+      "count": 25,
+      "health": 53706605,
+      "creatureType": "Humanoid",
+      "scale": 2.5,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt",
+        "Slow",
+        "Mind Soothe"
+      ],
+      "spells": [
+        {
+          "id": 427192,
+          "attributes": []
+        },
+        {
+          "id": 450854,
+          "attributes": []
+        },
+        {
+          "id": 450855,
+          "attributes": []
+        },
+        {
+          "id": 450860,
+          "attributes": []
+        },
+        {
+          "id": 451119,
+          "attributes": []
+        },
+        {
+          "id": 460135,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "12-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -188.9,
+            113.47
+          ]
+        }
+      ],
+      "stealthDetect": true
+    },
+    {
+      "id": 211262,
+      "enemyIndex": 13,
+      "name": "Ixkreten The Unbreakable",
+      "count": 25,
+      "health": 65641406,
+      "creatureType": "Humanoid",
+      "scale": 2.5,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt",
+        "Slow",
+        "Mind Soothe"
+      ],
+      "spells": [
+        {
+          "id": 427192,
+          "attributes": []
+        },
+        {
+          "id": 451115,
+          "attributes": []
+        },
+        {
+          "id": 451116,
+          "attributes": []
+        },
+        {
+          "id": 451117,
+          "attributes": []
+        },
+        {
+          "id": 451119,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "13-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -72.35,
+            45.32
+          ]
+        }
+      ],
+      "stealthDetect": true
+    },
+    {
+      "id": 213885,
+      "enemyIndex": 14,
+      "name": "Nightfall Dark Architect",
+      "count": 30,
+      "health": 55695738,
+      "creatureType": "Humanoid",
+      "scale": 2.5,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt",
+        "Slow",
+        "Mind Soothe"
+      ],
+      "spells": [
+        {
+          "id": 431303,
+          "attributes": []
+        },
+        {
+          "id": 431349,
+          "attributes": []
+        },
+        {
+          "id": 431350,
+          "attributes": []
+        },
+        {
+          "id": 431352,
+          "attributes": []
+        },
+        {
+          "id": 446615,
+          "attributes": []
+        },
+        {
+          "id": 452502,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "14-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -215.55,
+            34.22
+          ]
+        }
+      ],
+      "stealthDetect": true
+    },
+    {
+      "id": 211087,
+      "enemyIndex": 15,
+      "name": "Speaker Shadowcrown",
+      "count": 0,
+      "health": 139239345,
+      "creatureType": "Humanoid",
+      "scale": 2,
+      "isBoss": true,
+      "characteristics": [
+        "Taunt",
+        "Slow",
+        "Mind Soothe"
+      ],
+      "spells": [
+        {
+          "id": 426734,
+          "attributes": []
+        },
+        {
+          "id": 426735,
+          "attributes": [
+            "magic"
+          ]
+        },
+        {
+          "id": 426736,
+          "attributes": []
+        },
+        {
+          "id": 428086,
+          "attributes": []
+        },
+        {
+          "id": 451026,
+          "attributes": []
+        },
+        {
+          "id": 451032,
+          "attributes": []
+        },
+        {
+          "id": 453140,
+          "attributes": []
+        },
+        {
+          "id": 453141,
+          "attributes": []
+        },
+        {
+          "id": 453173,
+          "attributes": []
+        },
+        {
+          "id": 453212,
+          "attributes": []
+        },
+        {
+          "id": 453214,
+          "attributes": []
+        },
+        {
+          "id": 453310,
+          "attributes": []
+        },
+        {
+          "id": 453859,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "15-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -106.39,
+            323.1
+          ]
+        }
+      ]
+    },
+    {
+      "id": 211089,
+      "enemyIndex": 16,
+      "name": "Anubikkaj",
+      "count": 0,
+      "health": 139349505,
+      "creatureType": "Humanoid",
+      "scale": 1.7,
+      "isBoss": true,
+      "characteristics": [
+        "Taunt",
+        "Slow",
+        "Mind Soothe"
+      ],
+      "spells": [
+        {
+          "id": 426787,
+          "attributes": []
+        },
+        {
+          "id": 426793,
+          "attributes": []
+        },
+        {
+          "id": 426826,
+          "attributes": []
+        },
+        {
+          "id": 426860,
+          "attributes": []
+        },
+        {
+          "id": 426865,
+          "attributes": []
+        },
+        {
+          "id": 427001,
+          "attributes": []
+        },
+        {
+          "id": 427002,
+          "attributes": []
+        },
+        {
+          "id": 427007,
+          "attributes": []
+        },
+        {
+          "id": 427192,
+          "attributes": []
+        },
+        {
+          "id": 427378,
+          "attributes": []
+        },
+        {
+          "id": 452127,
+          "attributes": []
+        },
+        {
+          "id": 452145,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "16-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -169.23,
+            79.32
+          ]
+        }
+      ]
+    },
+    {
+      "id": 213937,
+      "enemyIndex": 17,
+      "name": "Rashanan",
+      "count": 0,
+      "health": 3580440300,
+      "creatureType": "Humanoid",
+      "scale": 2,
+      "isBoss": true,
+      "characteristics": [
+        "Taunt",
+        "Slow",
+        "Mind Soothe"
+      ],
+      "spells": [
+        {
+          "id": 434089,
+          "attributes": []
+        },
+        {
+          "id": 434093,
+          "attributes": []
+        },
+        {
+          "id": 434096,
+          "attributes": []
+        },
+        {
+          "id": 434119,
+          "attributes": []
+        },
+        {
+          "id": 434407,
+          "attributes": []
+        },
+        {
+          "id": 434441,
+          "attributes": []
+        },
+        {
+          "id": 434576,
+          "attributes": []
+        },
+        {
+          "id": 434579,
+          "attributes": []
+        },
+        {
+          "id": 434655,
+          "attributes": []
+        },
+        {
+          "id": 435793,
+          "attributes": []
+        },
+        {
+          "id": 438956,
+          "attributes": []
+        },
+        {
+          "id": 438957,
+          "attributes": []
+        },
+        {
+          "id": 448213,
+          "attributes": []
+        },
+        {
+          "id": 448215,
+          "attributes": []
+        },
+        {
+          "id": 448887,
+          "attributes": []
+        },
+        {
+          "id": 448888,
+          "attributes": []
+        },
+        {
+          "id": 449734,
+          "attributes": []
+        },
+        {
+          "id": 463369,
+          "attributes": []
+        },
+        {
+          "id": 463428,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "17-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -221.08,
+            59.39
+          ]
+        }
+      ]
+    }
+  ],
+  "pois": [
+    {
+      "type": "dungeonEntrance",
+      "itemType": null,
+      "pos": [
+        -237.27,
+        272.01
+      ]
+    }
+  ]
+}
