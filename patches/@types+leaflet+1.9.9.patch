@@ -1,19 +1,32 @@
 diff --git a/node_modules/@types/leaflet/index.d.ts b/node_modules/@types/leaflet/index.d.ts
-index b6eb7e5..af5a416 100644
+index b6eb7e5..f5478fc 100644
 --- a/node_modules/@types/leaflet/index.d.ts
 +++ b/node_modules/@types/leaflet/index.d.ts
-@@ -368,6 +368,10 @@ export interface LeafletEventHandlerFnMap {
+@@ -292,6 +292,8 @@ export type LocationEventHandlerFn = (event: LocationEvent) => void;
+ 
+ export type LeafletMouseEventHandlerFn = (event: LeafletMouseEvent) => void;
+ 
++export type LeafletTouchEventHandlerFn = (event: LeafletTouchEvent) => void;
++
+ export type LeafletKeyboardEventHandlerFn = (event: LeafletKeyboardEvent) => void;
+ 
+ export type ZoomAnimEventHandlerFn = (event: ZoomAnimEvent) => void;
+@@ -368,6 +370,14 @@ export interface LeafletEventHandlerFnMap {
  
      tileerror?: TileErrorEventHandlerFn | undefined;
  
 +    boxselectstart?: (() => void) | undefined;
 +    boxselectmove?: ((event: { bounds: LatLngBounds, inverse: boolean }) => void) | undefined;
 +    boxselectend?: ((event: { bounds: LatLngBounds, inverse: boolean }) => void) | undefined;
++    
++    touchstart?: LeafletTouchEventHandlerFn | undefined
++    touchmove?: LeafletTouchEventHandlerFn | undefined
++    touchend?: LeafletEventHandlerFn | undefined
 +
      // [name: string]: any;
      // You are able add additional properties, but it makes this interface uncheckable.
  }
-@@ -2489,6 +2493,13 @@ export interface MapOptions {
+@@ -2489,6 +2499,13 @@ export interface MapOptions {
      tapTolerance?: number | undefined;
      touchZoom?: Zoom | undefined;
      bounceAtZoomLimits?: boolean | undefined;
@@ -27,3 +40,17 @@ index b6eb7e5..af5a416 100644
  }
  
  export type ControlPosition = "topleft" | "topright" | "bottomleft" | "bottomright";
+@@ -2742,6 +2759,13 @@ export interface LeafletMouseEvent extends LeafletEvent {
+     originalEvent: MouseEvent;
+ }
+ 
++export interface LeafletTouchEvent {
++    latlng: LatLng;
++    layerPoint: Point;
++    containerPoint: Point;
++    originalEvent: TouchEvent;
++}
++
+ export interface LeafletKeyboardEvent extends LeafletEvent {
+     originalEvent: KeyboardEvent;
+ }
