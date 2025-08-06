@@ -7,7 +7,7 @@
       "enemyIndex": 1,
       "name": "Ravenous Crawler",
       "count": 1,
-      "health": 20509244,
+      "health": 20532450,
       "creatureType": "Beast",
       "scale": 0.9,
       "isBoss": false,
@@ -368,7 +368,7 @@
       "enemyIndex": 2,
       "name": "Jabbing Flyer",
       "count": 2,
-      "health": 24034271,
+      "health": 24061465,
       "creatureType": "Beast",
       "scale": 0.9,
       "isBoss": false,
@@ -952,6 +952,60 @@
             -98.69,
             341.88
           ]
+        },
+        {
+          "id": "2-62",
+          "idx": 62,
+          "group": 32,
+          "pos": [
+            -30.76,
+            344.42
+          ]
+        },
+        {
+          "id": "2-63",
+          "idx": 63,
+          "group": 32,
+          "pos": [
+            -34.28,
+            338.84
+          ]
+        },
+        {
+          "id": "2-64",
+          "idx": 64,
+          "group": 32,
+          "pos": [
+            -43.44,
+            338.79
+          ]
+        },
+        {
+          "id": "2-65",
+          "idx": 65,
+          "group": 32,
+          "pos": [
+            -34.45,
+            350.98
+          ]
+        },
+        {
+          "id": "2-66",
+          "idx": 66,
+          "group": 32,
+          "pos": [
+            -42.55,
+            351.33
+          ]
+        },
+        {
+          "id": "2-67",
+          "idx": 67,
+          "group": 32,
+          "pos": [
+            -46.58,
+            344.9
+          ]
         }
       ]
     },
@@ -960,7 +1014,7 @@
       "enemyIndex": 3,
       "name": "Trilling Attendant",
       "count": 7,
-      "health": 72102812,
+      "health": 72184395,
       "creatureType": "Humanoid",
       "scale": 1.4,
       "isBoss": false,
@@ -1123,7 +1177,7 @@
       "enemyIndex": 4,
       "name": "Engorged Crawler",
       "count": 5,
-      "health": 88125659,
+      "health": 88225372,
       "creatureType": "Beast",
       "scale": 1.2,
       "isBoss": false,
@@ -1439,7 +1493,7 @@
       "enemyIndex": 5,
       "name": "Atik",
       "count": 40,
-      "health": 192274164,
+      "health": 192491720,
       "creatureType": "Humanoid",
       "scale": 2.5,
       "isBoss": false,
@@ -1494,7 +1548,7 @@
       "enemyIndex": 6,
       "name": "Nakt",
       "count": 40,
-      "health": 160228470,
+      "health": 160409767,
       "creatureType": "Humanoid",
       "scale": 2.5,
       "isBoss": false,
@@ -1544,7 +1598,7 @@
       "enemyIndex": 7,
       "name": "Ixin",
       "count": 40,
-      "health": 192274164,
+      "health": 192491720,
       "creatureType": "Humanoid",
       "scale": 2.5,
       "isBoss": false,
@@ -1588,7 +1642,7 @@
       "enemyIndex": 8,
       "name": "Bloodworker",
       "count": 3,
-      "health": 48068541,
+      "health": 48122930,
       "creatureType": "Humanoid",
       "scale": 0.8,
       "isBoss": false,
@@ -1980,7 +2034,7 @@
       "enemyIndex": 9,
       "name": "Bloodstained Assistant",
       "count": 6,
-      "health": 88125659,
+      "health": 88225372,
       "creatureType": "Humanoid",
       "scale": 1.2,
       "isBoss": false,
@@ -2183,7 +2237,7 @@
       "enemyIndex": 10,
       "name": "Bloodstained Webmage",
       "count": 7,
-      "health": 72102812,
+      "health": 72184395,
       "creatureType": "Humanoid",
       "scale": 1.2,
       "isBoss": false,
@@ -2370,9 +2424,9 @@
       "enemyIndex": 11,
       "name": "Hulking Bloodguard",
       "count": 30,
-      "health": 128182776,
+      "health": 128327813,
       "creatureType": "Humanoid",
-      "scale": 1.5,
+      "scale": 1.8,
       "isBoss": false,
       "characteristics": [
         "Taunt",
@@ -2505,8 +2559,8 @@
           "idx": 6,
           "group": 63,
           "pos": [
-            -196.6,
-            135.81
+            -195.35,
+            136.95
           ],
           "patrol": [
             [
@@ -2547,7 +2601,7 @@
       "enemyIndex": 12,
       "name": "Sentry Stagshell",
       "count": 5,
-      "health": 32045694,
+      "health": 32081953,
       "creatureType": "Beast",
       "scale": 1.2,
       "isBoss": false,
@@ -2648,7 +2702,7 @@
       "enemyIndex": 13,
       "name": "Blood Overseer",
       "count": 20,
-      "health": 144205623,
+      "health": 144368790,
       "creatureType": "Humanoid",
       "scale": 1.3,
       "isBoss": false,
@@ -2663,6 +2717,10 @@
             "interruptible",
             "poison"
           ]
+        },
+        {
+          "id": 433843,
+          "attributes": []
         },
         {
           "id": 433845,
@@ -2764,7 +2822,7 @@
       "enemyIndex": 14,
       "name": "Winged Carrier",
       "count": 4,
-      "health": 56079965,
+      "health": 56143418,
       "creatureType": "Beast",
       "scale": 1,
       "isBoss": false,
@@ -2964,51 +3022,11 @@
       ]
     },
     {
-      "id": 217039,
-      "enemyIndex": 15,
-      "name": "Nerubian Hauler",
-      "count": 60,
-      "health": 63652272,
-      "creatureType": "Humanoid",
-      "scale": 5,
-      "isBoss": false,
-      "characteristics": [
-        "Taunt",
-        "Mind Soothe"
-      ],
-      "spells": [
-        {
-          "id": 453161,
-          "attributes": []
-        },
-        {
-          "id": 1241693,
-          "attributes": []
-        },
-        {
-          "id": 1241694,
-          "attributes": []
-        }
-      ],
-      "spawns": [
-        {
-          "id": "15-1",
-          "idx": 1,
-          "group": null,
-          "pos": [
-            -221.44,
-            221.21
-          ]
-        }
-      ],
-      "stealthDetect": true
-    },
-    {
       "id": 216363,
-      "enemyIndex": 16,
+      "enemyIndex": 15,
       "name": "Reinforced Drone",
       "count": 5,
-      "health": 80114235,
+      "health": 80204883,
       "creatureType": "Humanoid",
       "scale": 0.8,
       "isBoss": false,
@@ -3045,7 +3063,7 @@
       ],
       "spawns": [
         {
-          "id": "16-1",
+          "id": "15-1",
           "idx": 1,
           "group": 55,
           "pos": [
@@ -3054,7 +3072,7 @@
           ]
         },
         {
-          "id": "16-2",
+          "id": "15-2",
           "idx": 2,
           "group": 55,
           "pos": [
@@ -3063,7 +3081,7 @@
           ]
         },
         {
-          "id": "16-3",
+          "id": "15-3",
           "idx": 3,
           "group": 54,
           "pos": [
@@ -3072,7 +3090,7 @@
           ]
         },
         {
-          "id": "16-4",
+          "id": "15-4",
           "idx": 4,
           "group": 54,
           "pos": [
@@ -3081,7 +3099,7 @@
           ]
         },
         {
-          "id": "16-5",
+          "id": "15-5",
           "idx": 5,
           "group": 56,
           "pos": [
@@ -3090,7 +3108,7 @@
           ]
         },
         {
-          "id": "16-6",
+          "id": "15-6",
           "idx": 6,
           "group": 56,
           "pos": [
@@ -3099,7 +3117,7 @@
           ]
         },
         {
-          "id": "16-7",
+          "id": "15-7",
           "idx": 7,
           "group": 57,
           "pos": [
@@ -3108,7 +3126,7 @@
           ]
         },
         {
-          "id": "16-8",
+          "id": "15-8",
           "idx": 8,
           "group": 57,
           "pos": [
@@ -3117,7 +3135,7 @@
           ]
         },
         {
-          "id": "16-9",
+          "id": "15-9",
           "idx": 9,
           "group": 57,
           "pos": [
@@ -3126,7 +3144,7 @@
           ]
         },
         {
-          "id": "16-10",
+          "id": "15-10",
           "idx": 10,
           "group": 58,
           "pos": [
@@ -3135,7 +3153,7 @@
           ]
         },
         {
-          "id": "16-11",
+          "id": "15-11",
           "idx": 11,
           "group": 58,
           "pos": [
@@ -3144,7 +3162,7 @@
           ]
         },
         {
-          "id": "16-12",
+          "id": "15-12",
           "idx": 12,
           "group": 64,
           "pos": [
@@ -3153,7 +3171,7 @@
           ]
         },
         {
-          "id": "16-13",
+          "id": "15-13",
           "idx": 13,
           "group": 64,
           "pos": [
@@ -3162,7 +3180,7 @@
           ]
         },
         {
-          "id": "16-14",
+          "id": "15-14",
           "idx": 14,
           "group": 64,
           "pos": [
@@ -3171,7 +3189,7 @@
           ]
         },
         {
-          "id": "16-15",
+          "id": "15-15",
           "idx": 15,
           "group": 64,
           "pos": [
@@ -3180,7 +3198,7 @@
           ]
         },
         {
-          "id": "16-16",
+          "id": "15-16",
           "idx": 16,
           "group": 81,
           "pos": [
@@ -3189,7 +3207,7 @@
           ]
         },
         {
-          "id": "16-17",
+          "id": "15-17",
           "idx": 17,
           "group": 81,
           "pos": [
@@ -3198,7 +3216,7 @@
           ]
         },
         {
-          "id": "16-18",
+          "id": "15-18",
           "idx": 18,
           "group": 61,
           "pos": [
@@ -3207,7 +3225,7 @@
           ]
         },
         {
-          "id": "16-19",
+          "id": "15-19",
           "idx": 19,
           "group": 61,
           "pos": [
@@ -3216,7 +3234,7 @@
           ]
         },
         {
-          "id": "16-20",
+          "id": "15-20",
           "idx": 20,
           "group": 61,
           "pos": [
@@ -3225,7 +3243,7 @@
           ]
         },
         {
-          "id": "16-21",
+          "id": "15-21",
           "idx": 21,
           "group": 62,
           "pos": [
@@ -3234,7 +3252,7 @@
           ]
         },
         {
-          "id": "16-22",
+          "id": "15-22",
           "idx": 22,
           "group": 62,
           "pos": [
@@ -3246,10 +3264,10 @@
     },
     {
       "id": 213179,
-      "enemyIndex": 17,
+      "enemyIndex": 16,
       "name": "Avanoxx",
       "count": 0,
-      "health": 481341148,
+      "health": 481574146,
       "creatureType": "Beast",
       "scale": 2,
       "isBoss": true,
@@ -3292,11 +3310,15 @@
         {
           "id": 439200,
           "attributes": []
+        },
+        {
+          "id": 446794,
+          "attributes": []
         }
       ],
       "spawns": [
         {
-          "id": "17-1",
+          "id": "16-1",
           "idx": 1,
           "group": 82,
           "pos": [
@@ -3308,10 +3330,10 @@
     },
     {
       "id": 215405,
-      "enemyIndex": 18,
+      "enemyIndex": 17,
       "name": "Anubzekt",
       "count": 0,
-      "health": 561564672,
+      "health": 561836504,
       "creatureType": "Humanoid",
       "scale": 1.8,
       "isBoss": true,
@@ -3320,6 +3342,10 @@
         "Mind Soothe"
       ],
       "spells": [
+        {
+          "id": 433443,
+          "attributes": []
+        },
         {
           "id": 433731,
           "attributes": []
@@ -3355,7 +3381,7 @@
       ],
       "spawns": [
         {
-          "id": "18-1",
+          "id": "17-1",
           "idx": 1,
           "group": 71,
           "pos": [
@@ -3367,10 +3393,10 @@
     },
     {
       "id": 220599,
-      "enemyIndex": 19,
+      "enemyIndex": 18,
       "name": "Bloodstained Webmage",
       "count": 0,
-      "health": 23104375,
+      "health": 23115559,
       "creatureType": "Humanoid",
       "scale": 1.1,
       "isBoss": true,
@@ -3407,7 +3433,7 @@
       ],
       "spawns": [
         {
-          "id": "19-1",
+          "id": "18-1",
           "idx": 1,
           "group": 71,
           "pos": [
@@ -3419,10 +3445,10 @@
     },
     {
       "id": 215407,
-      "enemyIndex": 20,
+      "enemyIndex": 19,
       "name": "Kikatal The Harvester",
       "count": 0,
-      "health": 641788197,
+      "health": 642098861,
       "creatureType": "Humanoid",
       "scale": 1.8,
       "isBoss": true,
@@ -3436,6 +3462,10 @@
           "attributes": []
         },
         {
+          "id": 432119,
+          "attributes": []
+        },
+        {
           "id": 432130,
           "attributes": []
         },
@@ -3444,15 +3474,23 @@
           "attributes": []
         },
         {
+          "id": 439680,
+          "attributes": []
+        },
+        {
           "id": 461487,
           "attributes": [
             "poison"
           ]
+        },
+        {
+          "id": 461507,
+          "attributes": []
         }
       ],
       "spawns": [
         {
-          "id": "20-1",
+          "id": "19-1",
           "idx": 1,
           "group": 83,
           "pos": [
@@ -3464,14 +3502,17 @@
     },
     {
       "id": 215826,
-      "enemyIndex": 21,
+      "enemyIndex": 20,
       "name": "Bloodworker",
       "count": 0,
-      "health": 13352374,
+      "health": 13367481,
       "creatureType": "Humanoid",
       "scale": 1.4,
       "isBoss": false,
-      "characteristics": [],
+      "characteristics": [
+        "Taunt",
+        "Fear"
+      ],
       "spells": [
         {
           "id": 431985,
@@ -3480,7 +3521,7 @@
       ],
       "spawns": [
         {
-          "id": "21-1",
+          "id": "20-1",
           "idx": 1,
           "group": 83,
           "pos": [
@@ -3489,7 +3530,7 @@
           ]
         },
         {
-          "id": "21-2",
+          "id": "20-2",
           "idx": 2,
           "group": 83,
           "pos": [
@@ -3501,14 +3542,21 @@
     },
     {
       "id": 215968,
-      "enemyIndex": 22,
+      "enemyIndex": 21,
       "name": "Black Blood",
       "count": 0,
-      "health": 8011425,
+      "health": 8020489,
       "creatureType": "Aberration",
       "scale": 1.4,
       "isBoss": false,
-      "characteristics": [],
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Fear",
+        "Disorient",
+        "Stun"
+      ],
       "spells": [
         {
           "id": 432031,
@@ -3519,7 +3567,7 @@
       ],
       "spawns": [
         {
-          "id": "22-1",
+          "id": "21-1",
           "idx": 1,
           "group": 83,
           "pos": [
@@ -3528,7 +3576,7 @@
           ]
         },
         {
-          "id": "22-2",
+          "id": "21-2",
           "idx": 2,
           "group": 83,
           "pos": [
@@ -3540,14 +3588,16 @@
     },
     {
       "id": 218961,
-      "enemyIndex": 23,
+      "enemyIndex": 22,
       "name": "Starved Crawler",
       "count": 0,
-      "health": 16690467,
+      "health": 16709351,
       "creatureType": "Beast",
       "scale": 1.2,
       "isBoss": false,
-      "characteristics": [],
+      "characteristics": [
+        "Stun"
+      ],
       "spells": [
         {
           "id": 439333,
@@ -3556,7 +3606,7 @@
       ],
       "spawns": [
         {
-          "id": "23-1",
+          "id": "22-1",
           "idx": 1,
           "group": 82,
           "pos": [
@@ -3565,7 +3615,7 @@
           ]
         },
         {
-          "id": "23-2",
+          "id": "22-2",
           "idx": 2,
           "group": 82,
           "pos": [
@@ -3574,7 +3624,7 @@
           ]
         },
         {
-          "id": "23-3",
+          "id": "22-3",
           "idx": 3,
           "group": 82,
           "pos": [
@@ -3583,7 +3633,7 @@
           ]
         },
         {
-          "id": "23-4",
+          "id": "22-4",
           "idx": 4,
           "group": 82,
           "pos": [

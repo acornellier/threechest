@@ -1,13 +1,13 @@
 {
   "dungeonIndex": 30,
-  "totalCount": 273,
+  "totalCount": 575,
   "enemies": [
     {
       "id": 165515,
       "enemyIndex": 1,
       "name": "Depraved Darkblade",
       "count": 4,
-      "health": 165195,
+      "health": 80204883,
       "creatureType": "Humanoid",
       "scale": 1.4,
       "isBoss": false,
@@ -24,9 +24,17 @@
         "Imprison",
         "Sap",
         "Stun",
-        "Slow"
+        "Slow",
+        "Mind Soothe"
       ],
-      "spells": [],
+      "spells": [
+        {
+          "id": 1235060,
+          "attributes": [
+            "magic"
+          ]
+        }
+      ],
       "spawns": [
         {
           "id": "1-1",
@@ -171,24 +179,6 @@
             -171.67,
             323.82
           ]
-        },
-        {
-          "id": "1-17",
-          "idx": 17,
-          "group": 69,
-          "pos": [
-            -185.58,
-            53.11
-          ]
-        },
-        {
-          "id": "1-18",
-          "idx": 18,
-          "group": 69,
-          "pos": [
-            -185.72,
-            43.37
-          ]
         }
       ]
     },
@@ -196,8 +186,8 @@
       "id": 164562,
       "enemyIndex": 2,
       "name": "Depraved Houndmaster",
-      "count": 4,
-      "health": 148676,
+      "count": 5,
+      "health": 72184395,
       "creatureType": "Humanoid",
       "scale": 1.4,
       "isBoss": false,
@@ -214,9 +204,26 @@
         "Imprison",
         "Sap",
         "Stun",
-        "Slow"
+        "Slow",
+        "Mind Soothe"
       ],
-      "spells": [],
+      "spells": [
+        {
+          "id": 325535,
+          "attributes": []
+        },
+        {
+          "id": 326450,
+          "attributes": [
+            "interruptible",
+            "enrage"
+          ]
+        },
+        {
+          "id": 329299,
+          "attributes": []
+        }
+      ],
       "spawns": [
         {
           "id": "2-1",
@@ -225,6 +232,24 @@
           "pos": [
             -143.87,
             342.75
+          ],
+          "patrol": [
+            [
+              -143.87,
+              342.75
+            ],
+            [
+              -108.3,
+              321.63
+            ],
+            [
+              -143.87,
+              342.75
+            ],
+            [
+              -168.02,
+              327.58
+            ]
           ]
         },
         {
@@ -252,6 +277,28 @@
           "pos": [
             -77.17,
             299.58
+          ],
+          "patrol": [
+            [
+              -77.17,
+              299.58
+            ],
+            [
+              -90.68,
+              311.56
+            ],
+            [
+              -77.17,
+              299.58
+            ],
+            [
+              -67.12,
+              290.51
+            ],
+            [
+              -77.17,
+              299.58
+            ]
           ]
         },
         {
@@ -261,6 +308,28 @@
           "pos": [
             -106.22,
             268.57
+          ],
+          "patrol": [
+            [
+              -106.22,
+              268.57
+            ],
+            [
+              -115.39,
+              249.56
+            ],
+            [
+              -106.22,
+              268.57
+            ],
+            [
+              -112.65,
+              294.4
+            ],
+            [
+              -106.22,
+              268.57
+            ]
           ]
         },
         {
@@ -270,6 +339,36 @@
           "pos": [
             -170.42,
             262.69
+          ],
+          "patrol": [
+            [
+              -170.42,
+              262.69
+            ],
+            [
+              -175.11,
+              276.56
+            ],
+            [
+              -170.08,
+              292.12
+            ],
+            [
+              -175.11,
+              276.56
+            ],
+            [
+              -170.42,
+              262.69
+            ],
+            [
+              -164.82,
+              250.93
+            ],
+            [
+              -170.42,
+              262.69
+            ]
           ]
         },
         {
@@ -279,6 +378,28 @@
           "pos": [
             -188.21,
             289.51
+          ],
+          "patrol": [
+            [
+              -188.21,
+              289.51
+            ],
+            [
+              -184.49,
+              296.01
+            ],
+            [
+              -188.21,
+              289.51
+            ],
+            [
+              -198.22,
+              275.18
+            ],
+            [
+              -188.21,
+              289.51
+            ]
           ]
         },
         {
@@ -324,7 +445,7 @@
       "enemyIndex": 3,
       "name": "Vicious Gargon",
       "count": 4,
-      "health": 181715,
+      "health": 88225372,
       "creatureType": "Beast",
       "scale": 1.4,
       "isBoss": false,
@@ -342,7 +463,18 @@
         "Stun",
         "Slow"
       ],
-      "spells": [],
+      "spells": [
+        {
+          "id": 1235070,
+          "attributes": []
+        },
+        {
+          "id": 1237602,
+          "attributes": [
+            "bleed"
+          ]
+        }
+      ],
       "spawns": [
         {
           "id": "3-1",
@@ -539,8 +671,8 @@
       "id": 165414,
       "enemyIndex": 4,
       "name": "Depraved Obliterator",
-      "count": 4,
-      "health": 148676,
+      "count": 5,
+      "health": 76194639,
       "creatureType": "Humanoid",
       "scale": 1.4,
       "isBoss": false,
@@ -557,9 +689,27 @@
         "Imprison",
         "Sap",
         "Stun",
-        "Slow"
+        "Slow",
+        "Mind Soothe"
       ],
-      "spells": [],
+      "spells": [
+        {
+          "id": 325876,
+          "attributes": [
+            "magic"
+          ]
+        },
+        {
+          "id": 325879,
+          "attributes": []
+        },
+        {
+          "id": 338003,
+          "attributes": [
+            "interruptible"
+          ]
+        }
+      ],
       "spawns": [
         {
           "id": "4-1",
@@ -773,8 +923,8 @@
           "idx": 24,
           "group": 69,
           "pos": [
-            -176.69,
-            52.96
+            -176.86,
+            53.44
           ]
         }
       ]
@@ -784,7 +934,7 @@
       "enemyIndex": 5,
       "name": "Toiling Groundskeeper",
       "count": 2,
-      "health": 99117,
+      "health": 48122930,
       "creatureType": "Humanoid",
       "scale": 1,
       "isBoss": false,
@@ -801,9 +951,15 @@
         "Imprison",
         "Sap",
         "Stun",
-        "Slow"
+        "Slow",
+        "Mind Soothe"
       ],
-      "spells": [],
+      "spells": [
+        {
+          "id": 1235121,
+          "attributes": []
+        }
+      ],
       "spawns": [
         {
           "id": "5-1",
@@ -1198,8 +1354,8 @@
       "id": 165529,
       "enemyIndex": 6,
       "name": "Depraved Collector",
-      "count": 4,
-      "health": 165195,
+      "count": 5,
+      "health": 80204883,
       "creatureType": "Humanoid",
       "scale": 1.4,
       "isBoss": false,
@@ -1216,9 +1372,23 @@
         "Imprison",
         "Sap",
         "Stun",
-        "Slow"
+        "Slow",
+        "Mind Soothe"
       ],
-      "spells": [],
+      "spells": [
+        {
+          "id": 325700,
+          "attributes": [
+            "interruptible"
+          ]
+        },
+        {
+          "id": 325701,
+          "attributes": [
+            "magic"
+          ]
+        }
+      ],
       "spawns": [
         {
           "id": "6-1",
@@ -1252,8 +1422,35 @@
           "idx": 4,
           "group": 69,
           "pos": [
-            -177.01,
-            44.24
+            -177.18,
+            43.81
+          ]
+        },
+        {
+          "id": "6-5",
+          "idx": 5,
+          "group": 75,
+          "pos": [
+            -137.3,
+            250.56
+          ]
+        },
+        {
+          "id": "6-6",
+          "idx": 6,
+          "group": 75,
+          "pos": [
+            -143.13,
+            252.53
+          ]
+        },
+        {
+          "id": "6-7",
+          "idx": 7,
+          "group": 75,
+          "pos": [
+            -148.64,
+            249.52
           ]
         }
       ]
@@ -1262,15 +1459,40 @@
       "id": 164557,
       "enemyIndex": 7,
       "name": "Shard of Halkias",
-      "count": 10,
-      "health": 396468,
+      "count": 15,
+      "health": 192491720,
       "creatureType": "Elemental",
       "scale": 2,
       "isBoss": false,
       "characteristics": [
         "Taunt"
       ],
-      "spells": [],
+      "spells": [
+        {
+          "id": 325509,
+          "attributes": []
+        },
+        {
+          "id": 326409,
+          "attributes": []
+        },
+        {
+          "id": 326426,
+          "attributes": []
+        },
+        {
+          "id": 326438,
+          "attributes": []
+        },
+        {
+          "id": 326440,
+          "attributes": []
+        },
+        {
+          "id": 326441,
+          "attributes": []
+        }
+      ],
       "spawns": [
         {
           "id": "7-1",
@@ -1306,14 +1528,55 @@
       "enemyIndex": 8,
       "name": "Halkias",
       "count": 0,
-      "health": 1152735,
+      "health": 561836504,
       "creatureType": "Elemental",
       "scale": 1.6,
       "isBoss": true,
       "characteristics": [
         "Taunt"
       ],
-      "spells": [],
+      "spells": [
+        {
+          "id": 322711,
+          "attributes": []
+        },
+        {
+          "id": 322936,
+          "attributes": []
+        },
+        {
+          "id": 322943,
+          "attributes": []
+        },
+        {
+          "id": 322945,
+          "attributes": []
+        },
+        {
+          "id": 322977,
+          "attributes": [
+            "magic"
+          ]
+        },
+        {
+          "id": 323001,
+          "attributes": []
+        },
+        {
+          "id": 324044,
+          "attributes": []
+        },
+        {
+          "id": 339235,
+          "attributes": []
+        },
+        {
+          "id": 339237,
+          "attributes": [
+            "magic"
+          ]
+        }
+      ],
       "spawns": [
         {
           "id": "8-1",
@@ -1330,15 +1593,26 @@
       "id": 167612,
       "enemyIndex": 9,
       "name": "Stoneborn Reaver",
-      "count": 6,
-      "health": 264312,
+      "count": 8,
+      "health": 128327813,
       "creatureType": "Humanoid",
       "scale": 1.4,
       "isBoss": false,
       "characteristics": [
         "Taunt"
       ],
-      "spells": [],
+      "spells": [
+        {
+          "id": 1235762,
+          "attributes": [
+            "magic"
+          ]
+        },
+        {
+          "id": 1235766,
+          "attributes": []
+        }
+      ],
       "spawns": [
         {
           "id": "9-1",
@@ -1446,7 +1720,7 @@
       "enemyIndex": 10,
       "name": "Stonefiend Anklebiter",
       "count": 1,
-      "health": 49559,
+      "health": 24061465,
       "creatureType": "Humanoid",
       "scale": 0.8,
       "isBoss": false,
@@ -1464,7 +1738,18 @@
         "Stun",
         "Slow"
       ],
-      "spells": [],
+      "spells": [
+        {
+          "id": 326879,
+          "attributes": []
+        },
+        {
+          "id": 1235245,
+          "attributes": [
+            "bleed"
+          ]
+        }
+      ],
       "spawns": [
         {
           "id": "10-1",
@@ -1805,8 +2090,8 @@
       "id": 167611,
       "enemyIndex": 11,
       "name": "Stoneborn Eviscerator",
-      "count": 4,
-      "health": 165195,
+      "count": 6,
+      "health": 80204883,
       "creatureType": "Humanoid",
       "scale": 1.4,
       "isBoss": false,
@@ -1823,9 +2108,19 @@
         "Imprison",
         "Sap",
         "Stun",
-        "Slow"
+        "Slow",
+        "Mind Soothe"
       ],
-      "spells": [],
+      "spells": [
+        {
+          "id": 326638,
+          "attributes": []
+        },
+        {
+          "id": 1235257,
+          "attributes": []
+        }
+      ],
       "spawns": [
         {
           "id": "11-1",
@@ -1959,15 +2254,36 @@
       "id": 167607,
       "enemyIndex": 12,
       "name": "Stoneborn Slasher",
-      "count": 7,
-      "health": 330390,
+      "count": 10,
+      "health": 160409767,
       "creatureType": "Humanoid",
       "scale": 1.7,
       "isBoss": false,
       "characteristics": [
         "Taunt"
       ],
-      "spells": [],
+      "spells": [
+        {
+          "id": 326997,
+          "attributes": []
+        },
+        {
+          "id": 1235326,
+          "attributes": []
+        },
+        {
+          "id": 1235808,
+          "attributes": []
+        },
+        {
+          "id": 1235809,
+          "attributes": []
+        },
+        {
+          "id": 1237071,
+          "attributes": []
+        }
+      ],
       "spawns": [
         {
           "id": "12-1",
@@ -2171,22 +2487,59 @@
       "enemyIndex": 13,
       "name": "Echelon",
       "count": 0,
-      "health": 1152735,
+      "health": 481574146,
       "creatureType": "Humanoid",
       "scale": 1.8,
       "isBoss": true,
       "characteristics": [
         "Taunt"
       ],
-      "spells": [],
+      "spells": [
+        {
+          "id": 319592,
+          "attributes": []
+        },
+        {
+          "id": 319603,
+          "attributes": []
+        },
+        {
+          "id": 319702,
+          "attributes": []
+        },
+        {
+          "id": 319703,
+          "attributes": []
+        },
+        {
+          "id": 319733,
+          "attributes": []
+        },
+        {
+          "id": 319941,
+          "attributes": []
+        },
+        {
+          "id": 326389,
+          "attributes": []
+        },
+        {
+          "id": 328206,
+          "attributes": []
+        },
+        {
+          "id": 344874,
+          "attributes": []
+        }
+      ],
       "spawns": [
         {
           "id": "13-1",
           "idx": 1,
-          "group": null,
+          "group": 71,
           "pos": [
             -142.17,
-            138.35
+            129.32
           ]
         }
       ]
@@ -2196,22 +2549,49 @@
       "enemyIndex": 14,
       "name": "High Adjudicator Aleez",
       "count": 0,
-      "health": 1152735,
+      "health": 561836504,
       "creatureType": "Humanoid",
-      "scale": 1.8,
+      "scale": 1.5,
       "isBoss": true,
       "characteristics": [
         "Taunt"
       ],
-      "spells": [],
+      "spells": [
+        {
+          "id": 323538,
+          "attributes": [
+            "interruptible"
+          ]
+        },
+        {
+          "id": 329340,
+          "attributes": []
+        },
+        {
+          "id": 1236512,
+          "attributes": []
+        },
+        {
+          "id": 1236513,
+          "attributes": [
+            "magic"
+          ]
+        },
+        {
+          "id": 1236514,
+          "attributes": [
+            "magic"
+          ]
+        }
+      ],
       "spawns": [
         {
           "id": "14-1",
           "idx": 1,
-          "group": null,
+          "group": 73,
           "pos": [
-            -140.09,
-            48.44
+            -140.66,
+            49.25
           ]
         }
       ]
@@ -2221,7 +2601,7 @@
       "enemyIndex": 15,
       "name": "Tormented Soul",
       "count": 0,
-      "health": 33039,
+      "health": 24061465,
       "creatureType": "Undead",
       "scale": 1,
       "isBoss": false,
@@ -2462,23 +2842,50 @@
       "id": 167876,
       "enemyIndex": 16,
       "name": "Inquisitor Sigar",
-      "count": 20,
-      "health": 495585,
+      "count": 35,
+      "health": 240614650,
       "creatureType": "Humanoid",
-      "scale": 2,
+      "scale": 1.7,
       "isBoss": false,
       "characteristics": [
         "Taunt"
       ],
-      "spells": [],
+      "spells": [
+        {
+          "id": 326794,
+          "attributes": []
+        },
+        {
+          "id": 326806,
+          "attributes": []
+        },
+        {
+          "id": 326829,
+          "attributes": [
+            "interruptible"
+          ]
+        },
+        {
+          "id": 326847,
+          "attributes": []
+        },
+        {
+          "id": 1236614,
+          "attributes": []
+        },
+        {
+          "id": 1236615,
+          "attributes": []
+        }
+      ],
       "spawns": [
         {
           "id": "16-1",
           "idx": 1,
-          "group": null,
+          "group": 74,
           "pos": [
-            -51.03,
-            48.92
+            -53.73,
+            49.52
           ]
         }
       ]
@@ -2488,26 +2895,498 @@
       "enemyIndex": 17,
       "name": "Lord Chamberlain",
       "count": 0,
-      "health": 1317412,
+      "health": 642098861,
       "creatureType": "Humanoid",
-      "scale": 1.8,
+      "scale": 1.5,
       "isBoss": true,
       "characteristics": [
         "Taunt"
       ],
-      "spells": [],
+      "spells": [
+        {
+          "id": 323142,
+          "attributes": []
+        },
+        {
+          "id": 323143,
+          "attributes": []
+        },
+        {
+          "id": 323236,
+          "attributes": []
+        },
+        {
+          "id": 323392,
+          "attributes": []
+        },
+        {
+          "id": 323393,
+          "attributes": []
+        },
+        {
+          "id": 323414,
+          "attributes": []
+        },
+        {
+          "id": 323437,
+          "attributes": []
+        },
+        {
+          "id": 328791,
+          "attributes": []
+        },
+        {
+          "id": 329104,
+          "attributes": []
+        },
+        {
+          "id": 329113,
+          "attributes": []
+        },
+        {
+          "id": 329262,
+          "attributes": []
+        },
+        {
+          "id": 335338,
+          "attributes": []
+        },
+        {
+          "id": 335345,
+          "attributes": []
+        },
+        {
+          "id": 1236964,
+          "attributes": []
+        },
+        {
+          "id": 1236973,
+          "attributes": []
+        },
+        {
+          "id": 1237634,
+          "attributes": []
+        },
+        {
+          "id": 1237642,
+          "attributes": []
+        }
+      ],
       "spawns": [
         {
           "id": "17-1",
           "idx": 1,
-          "group": null,
+          "group": 72,
           "pos": [
-            -34.48,
-            48.91
+            -35,
+            50.29
+          ]
+        }
+      ]
+    },
+    {
+      "id": 164363,
+      "enemyIndex": 18,
+      "name": "Undying Stonefiend",
+      "count": 0,
+      "health": 13367481,
+      "creatureType": "Humanoid",
+      "scale": 1.3,
+      "isBoss": false,
+      "characteristics": [
+        "Silence",
+        "Fear",
+        "Disorient",
+        "Stun",
+        "Slow"
+      ],
+      "spells": [
+        {
+          "id": 319724,
+          "attributes": []
+        },
+        {
+          "id": 328124,
+          "attributes": []
+        },
+        {
+          "id": 328125,
+          "attributes": []
+        },
+        {
+          "id": 328322,
+          "attributes": [
+            "interruptible"
+          ]
+        }
+      ],
+      "spawns": [
+        {
+          "id": "18-1",
+          "idx": 1,
+          "group": 71,
+          "pos": [
+            -157.2,
+            120.13
+          ]
+        },
+        {
+          "id": "18-2",
+          "idx": 2,
+          "group": 71,
+          "pos": [
+            -156.98,
+            128.14
+          ]
+        },
+        {
+          "id": "18-3",
+          "idx": 3,
+          "group": 71,
+          "pos": [
+            -156.98,
+            136.38
+          ]
+        },
+        {
+          "id": "18-4",
+          "idx": 4,
+          "group": 71,
+          "pos": [
+            -126.32,
+            128.37
+          ]
+        },
+        {
+          "id": "18-5",
+          "idx": 5,
+          "group": 71,
+          "pos": [
+            -126.32,
+            136.38
+          ]
+        },
+        {
+          "id": "18-6",
+          "idx": 6,
+          "group": 71,
+          "pos": [
+            -126.32,
+            120.59
+          ]
+        }
+      ]
+    },
+    {
+      "id": 165737,
+      "enemyIndex": 19,
+      "name": "Sinstone Statue",
+      "count": 0,
+      "health": 13367481,
+      "creatureType": "Not specified",
+      "scale": 1.3,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [
+        {
+          "id": 323126,
+          "attributes": []
+        },
+        {
+          "id": 329258,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "19-1",
+          "idx": 1,
+          "group": 72,
+          "pos": [
+            -26.71,
+            59.19
+          ]
+        },
+        {
+          "id": "19-2",
+          "idx": 2,
+          "group": 72,
+          "pos": [
+            -23.64,
+            53.41
+          ]
+        },
+        {
+          "id": "19-3",
+          "idx": 3,
+          "group": 72,
+          "pos": [
+            -23.67,
+            46.81
+          ]
+        },
+        {
+          "id": "19-4",
+          "idx": 4,
+          "group": 72,
+          "pos": [
+            -27.21,
+            40.2
+          ]
+        }
+      ]
+    },
+    {
+      "id": 165913,
+      "enemyIndex": 20,
+      "name": "Ghastly Parishioner",
+      "count": 0,
+      "health": 1336748072,
+      "creatureType": "Undead",
+      "scale": 1.3,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt"
+      ],
+      "spells": [
+        {
+          "id": 323650,
+          "attributes": []
+        },
+        {
+          "id": 323852,
+          "attributes": []
+        },
+        {
+          "id": 323853,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "20-1",
+          "idx": 1,
+          "group": 73,
+          "pos": [
+            -152.26,
+            48.57
+          ]
+        }
+      ]
+    },
+    {
+      "id": 166034,
+      "enemyIndex": 21,
+      "name": "Empty Anima Vessel",
+      "count": 0,
+      "health": 10000,
+      "creatureType": "Not specified",
+      "scale": 1.3,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [
+        {
+          "id": 323749,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "21-1",
+          "idx": 1,
+          "group": 73,
+          "pos": [
+            -132.14,
+            56.78
+          ]
+        },
+        {
+          "id": "21-2",
+          "idx": 2,
+          "group": 73,
+          "pos": [
+            -147.58,
+            56.3
+          ]
+        },
+        {
+          "id": "21-3",
+          "idx": 3,
+          "group": 73,
+          "pos": [
+            -146.24,
+            41.52
+          ]
+        },
+        {
+          "id": "21-4",
+          "idx": 4,
+          "group": 73,
+          "pos": [
+            -132.47,
+            40.94
+          ]
+        }
+      ]
+    },
+    {
+      "id": 166497,
+      "enemyIndex": 22,
+      "name": "Anima Fountain",
+      "count": 0,
+      "health": 10000,
+      "creatureType": "Not specified",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [
+        {
+          "id": 338012,
+          "attributes": []
+        },
+        {
+          "id": 338013,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "22-1",
+          "idx": 1,
+          "group": 73,
+          "pos": [
+            -126.33,
+            48.56
+          ]
+        }
+      ]
+    },
+    {
+      "id": 167615,
+      "enemyIndex": 23,
+      "name": "Depraved Darkblade",
+      "count": 4,
+      "health": 80204883,
+      "creatureType": "Humanoid",
+      "scale": 1.4,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt",
+        "Silence",
+        "Mind Control",
+        "Fear",
+        "Stun",
+        "Mind Soothe"
+      ],
+      "spells": [
+        {
+          "id": 1235060,
+          "attributes": [
+            "magic"
+          ]
+        }
+      ],
+      "spawns": [
+        {
+          "id": "23-1",
+          "idx": 1,
+          "group": 69,
+          "pos": [
+            -187.92,
+            53.47
+          ]
+        },
+        {
+          "id": "23-2",
+          "idx": 2,
+          "group": 69,
+          "pos": [
+            -188.14,
+            43.61
+          ]
+        }
+      ]
+    },
+    {
+      "id": 167898,
+      "enemyIndex": 24,
+      "name": "Manifestation of Envy",
+      "count": 0,
+      "health": 32081953,
+      "creatureType": "Aberration",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Root",
+        "Fear",
+        "Disorient",
+        "Stun",
+        "Slow"
+      ],
+      "spells": [
+        {
+          "id": 326849,
+          "attributes": []
+        },
+        {
+          "id": 326891,
+          "attributes": []
+        },
+        {
+          "id": 340446,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "24-1",
+          "idx": 1,
+          "group": 74,
+          "pos": [
+            -48.53,
+            51.27
+          ]
+        },
+        {
+          "id": "24-2",
+          "idx": 2,
+          "group": 74,
+          "pos": [
+            -51.57,
+            54.66
+          ]
+        },
+        {
+          "id": "24-3",
+          "idx": 3,
+          "group": 74,
+          "pos": [
+            -48.53,
+            47.36
+          ]
+        },
+        {
+          "id": "24-4",
+          "idx": 4,
+          "group": 74,
+          "pos": [
+            -51.51,
+            44.4
           ]
         }
       ]
     }
   ],
-  "pois": []
+  "pois": [
+    {
+      "type": "textFrame",
+      "itemType": null,
+      "pos": [
+        -115.88,
+        163.7
+      ]
+    }
+  ]
 }

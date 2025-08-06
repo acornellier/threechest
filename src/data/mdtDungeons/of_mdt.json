@@ -807,6 +807,7 @@
         "Taunt",
         "Incapacitate",
         "Silence",
+        "Polymorph",
         "Fear",
         "Disorient",
         "Imprison",
@@ -3133,11 +3134,13 @@
       "enemyIndex": 25,
       "name": "Scaffolding",
       "count": 0,
-      "health": 10000,
+      "health": 12031357,
       "creatureType": "Not specified",
       "scale": 1,
       "isBoss": false,
-      "characteristics": [],
+      "characteristics": [
+        "Stun"
+      ],
       "spells": [
         {
           "id": 465420,
@@ -3260,6 +3263,14 @@
       "spells": [
         {
           "id": 460781,
+          "attributes": []
+        },
+        {
+          "id": 460814,
+          "attributes": []
+        },
+        {
+          "id": 461994,
           "attributes": []
         }
       ],
