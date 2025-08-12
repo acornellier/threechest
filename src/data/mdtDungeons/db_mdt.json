@@ -154,10 +154,10 @@
         {
           "id": "1-13",
           "idx": 13,
-          "group": 46,
+          "group": 69,
           "pos": [
-            -181.7,
-            126.9
+            -180.01,
+            128.25
           ]
         },
         {
@@ -327,8 +327,8 @@
           "idx": 8,
           "group": 42,
           "pos": [
-            -199.46,
-            112.69
+            -198.78,
+            108.3
           ]
         },
         {
@@ -362,7 +362,21 @@
       "isBoss": false,
       "characteristics": [
         "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
+        "Polymorph",
+        "Root",
+        "Fear",
+        "Disorient",
+        "Repentance",
+        "Imprison",
+        "Sap",
+        "Stun",
         "Slow",
+        "Sleep Walk",
         "Mind Soothe"
       ],
       "spells": [
@@ -418,8 +432,8 @@
           "idx": 4,
           "group": 44,
           "pos": [
-            -179.29,
-            98.75
+            -174.46,
+            97.39
           ],
           "patrol": [
             [
@@ -498,7 +512,21 @@
       "isBoss": false,
       "characteristics": [
         "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
+        "Polymorph",
+        "Root",
+        "Fear",
+        "Disorient",
+        "Repentance",
+        "Imprison",
+        "Sap",
+        "Stun",
         "Slow",
+        "Sleep Walk",
         "Mind Soothe"
       ],
       "spells": [
@@ -674,7 +702,21 @@
       "isBoss": false,
       "characteristics": [
         "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
+        "Polymorph",
+        "Root",
+        "Fear",
+        "Disorient",
+        "Repentance",
+        "Imprison",
+        "Sap",
+        "Stun",
         "Slow",
+        "Sleep Walk",
         "Mind Soothe"
       ],
       "spells": [
@@ -717,8 +759,8 @@
           "idx": 3,
           "group": null,
           "pos": [
-            -55.72,
-            178.69
+            -59.46,
+            165.97
           ]
         },
         {
@@ -735,8 +777,8 @@
           "idx": 5,
           "group": null,
           "pos": [
-            -115.32,
-            109.57
+            -115.13,
+            109.38
           ]
         },
         {
@@ -744,8 +786,8 @@
           "idx": 6,
           "group": null,
           "pos": [
-            -92.9,
-            174.13
+            -92.71,
+            173.94
           ],
           "patrol": [
             [
@@ -771,8 +813,8 @@
           "idx": 7,
           "group": null,
           "pos": [
-            -155.16,
-            140.29
+            -154.97,
+            140.11
           ]
         },
         {
@@ -780,8 +822,8 @@
           "idx": 8,
           "group": null,
           "pos": [
-            -76.79,
-            197.79
+            -76.6,
+            197.6
           ]
         }
       ],
@@ -835,8 +877,8 @@
           "idx": 1,
           "group": 49,
           "pos": [
-            -79.49,
-            168.07
+            -78.62,
+            170.05
           ]
         },
         {
@@ -844,8 +886,8 @@
           "idx": 2,
           "group": 49,
           "pos": [
-            -84.85,
-            168.04
+            -83.99,
+            170.02
           ]
         },
         {
@@ -1096,8 +1138,8 @@
           "idx": 30,
           "group": 44,
           "pos": [
-            -181.93,
-            103.62
+            -177.1,
+            102.26
           ]
         },
         {
@@ -1105,8 +1147,8 @@
           "idx": 31,
           "group": 44,
           "pos": [
-            -176.29,
-            103.59
+            -171.47,
+            102.23
           ]
         },
         {
@@ -1114,8 +1156,8 @@
           "idx": 32,
           "group": 45,
           "pos": [
-            -179.78,
-            114.21
+            -178.19,
+            113.15
           ]
         },
         {
@@ -1123,8 +1165,26 @@
           "idx": 33,
           "group": 45,
           "pos": [
-            -176.2,
-            115.89
+            -174.7,
+            117.2
+          ]
+        },
+        {
+          "id": "6-34",
+          "idx": 34,
+          "group": 70,
+          "pos": [
+            -198.79,
+            118.36
+          ]
+        },
+        {
+          "id": "6-35",
+          "idx": 35,
+          "group": 70,
+          "pos": [
+            -194.42,
+            118.64
           ]
         }
       ]
@@ -1195,8 +1255,8 @@
           "idx": 3,
           "group": 8,
           "pos": [
-            -64.33,
-            168.7
+            -64.7,
+            170
           ]
         },
         {
@@ -1204,8 +1264,8 @@
           "idx": 4,
           "group": 8,
           "pos": [
-            -69.53,
-            168.74
+            -69.9,
+            170.04
           ]
         },
         {
@@ -1213,7 +1273,7 @@
           "idx": 5,
           "group": 42,
           "pos": [
-            -201.34,
+            -203.69,
             108.69
           ]
         },
@@ -1364,19 +1424,19 @@
         {
           "id": "7-22",
           "idx": 22,
-          "group": 46,
+          "group": 69,
           "pos": [
-            -177.07,
-            129.68
+            -175.75,
+            129.99
           ]
         },
         {
           "id": "7-23",
           "idx": 23,
-          "group": 46,
+          "group": 69,
           "pos": [
-            -177.03,
-            124.5
+            -175.84,
+            125.53
           ]
         },
         {
@@ -1468,6 +1528,69 @@
             -75.12,
             67.69
           ]
+        },
+        {
+          "id": "7-34",
+          "idx": 34,
+          "group": 66,
+          "pos": [
+            -189.56,
+            79.09
+          ]
+        },
+        {
+          "id": "7-35",
+          "idx": 35,
+          "group": 66,
+          "pos": [
+            -190.67,
+            83.54
+          ]
+        },
+        {
+          "id": "7-36",
+          "idx": 36,
+          "group": 66,
+          "pos": [
+            -186.84,
+            86.2
+          ]
+        },
+        {
+          "id": "7-37",
+          "idx": 37,
+          "group": 70,
+          "pos": [
+            -199,
+            123.6
+          ]
+        },
+        {
+          "id": "7-38",
+          "idx": 38,
+          "group": 68,
+          "pos": [
+            -182.07,
+            120.9
+          ]
+        },
+        {
+          "id": "7-39",
+          "idx": 39,
+          "group": 68,
+          "pos": [
+            -186.23,
+            118.49
+          ]
+        },
+        {
+          "id": "7-40",
+          "idx": 40,
+          "group": 68,
+          "pos": [
+            -186.23,
+            123.25
+          ]
         }
       ]
     },
@@ -1482,7 +1605,18 @@
       "isBoss": false,
       "characteristics": [
         "Taunt",
-        "Slow"
+        "Incapacitate",
+        "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
+        "Root",
+        "Fear",
+        "Banish",
+        "Disorient",
+        "Stun",
+        "Slow",
+        "Sleep Walk"
       ],
       "spells": [
         {
@@ -1630,7 +1764,21 @@
       "isBoss": false,
       "characteristics": [
         "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
+        "Polymorph",
+        "Root",
+        "Fear",
+        "Disorient",
+        "Repentance",
+        "Imprison",
+        "Sap",
+        "Stun",
         "Slow",
+        "Sleep Walk",
         "Mind Soothe"
       ],
       "spells": [
@@ -1671,8 +1819,8 @@
           "idx": 3,
           "group": 42,
           "pos": [
-            -204.43,
-            112.44
+            -200.66,
+            112.81
           ]
         },
         {
@@ -1845,6 +1993,24 @@
             -74.66,
             33.24
           ]
+        },
+        {
+          "id": "9-23",
+          "idx": 23,
+          "group": 66,
+          "pos": [
+            -185.91,
+            82.24
+          ]
+        },
+        {
+          "id": "9-24",
+          "idx": 24,
+          "group": 70,
+          "pos": [
+            -194.19,
+            123.37
+          ]
         }
       ],
       "stealthDetect": true
@@ -1860,7 +2026,21 @@
       "isBoss": false,
       "characteristics": [
         "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
+        "Polymorph",
+        "Root",
+        "Fear",
+        "Disorient",
+        "Repentance",
+        "Imprison",
+        "Sap",
+        "Stun",
         "Slow",
+        "Sleep Walk",
         "Mind Soothe"
       ],
       "spells": [
@@ -1887,8 +2067,8 @@
           "idx": 1,
           "group": null,
           "pos": [
-            -75.6,
-            186.44
+            -75.42,
+            186.25
           ]
         }
       ],
@@ -1905,7 +2085,21 @@
       "isBoss": false,
       "characteristics": [
         "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
+        "Polymorph",
+        "Root",
+        "Fear",
+        "Disorient",
+        "Repentance",
+        "Imprison",
+        "Sap",
+        "Stun",
         "Slow",
+        "Sleep Walk",
         "Mind Soothe"
       ],
       "spells": [
@@ -1936,8 +2130,8 @@
           "idx": 1,
           "group": null,
           "pos": [
-            -188.9,
-            113.47
+            -190.34,
+            107.85
           ]
         }
       ],
@@ -1954,7 +2148,21 @@
       "isBoss": false,
       "characteristics": [
         "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
+        "Polymorph",
+        "Root",
+        "Fear",
+        "Disorient",
+        "Repentance",
+        "Imprison",
+        "Sap",
+        "Stun",
         "Slow",
+        "Sleep Walk",
         "Mind Soothe"
       ],
       "spells": [
@@ -1985,8 +2193,8 @@
           "idx": 1,
           "group": null,
           "pos": [
-            -72.35,
-            45.32
+            -72.16,
+            45.13
           ]
         }
       ],
@@ -2003,7 +2211,21 @@
       "isBoss": false,
       "characteristics": [
         "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
+        "Polymorph",
+        "Root",
+        "Fear",
+        "Disorient",
+        "Repentance",
+        "Imprison",
+        "Sap",
+        "Stun",
         "Slow",
+        "Sleep Walk",
         "Mind Soothe"
       ],
       "spells": [
@@ -2034,8 +2256,8 @@
           "idx": 1,
           "group": null,
           "pos": [
-            -215.55,
-            34.22
+            -215.36,
+            34.03
           ]
         }
       ],
@@ -2052,7 +2274,21 @@
       "isBoss": true,
       "characteristics": [
         "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
+        "Polymorph",
+        "Root",
+        "Fear",
+        "Disorient",
+        "Repentance",
+        "Imprison",
+        "Sap",
+        "Stun",
         "Slow",
+        "Sleep Walk",
         "Mind Soothe"
       ],
       "spells": [
@@ -2119,8 +2355,8 @@
           "idx": 1,
           "group": null,
           "pos": [
-            -106.39,
-            323.1
+            -106.2,
+            322.91
           ]
         }
       ]
@@ -2136,7 +2372,21 @@
       "isBoss": true,
       "characteristics": [
         "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
+        "Polymorph",
+        "Root",
+        "Fear",
+        "Disorient",
+        "Repentance",
+        "Imprison",
+        "Sap",
+        "Stun",
         "Slow",
+        "Sleep Walk",
         "Mind Soothe"
       ],
       "spells": [
@@ -2204,7 +2454,22 @@
       "isBoss": true,
       "characteristics": [
         "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
+        "Polymorph",
+        "Root",
+        "Fear",
+        "Disorient",
+        "Imprison",
+        "Sap",
+        "Stun",
         "Slow",
+        "Sleep Walk",
+        "Scare Beast",
+        "Hibernate",
         "Mind Soothe"
       ],
       "spells": [
@@ -2281,8 +2546,8 @@
           "idx": 1,
           "group": null,
           "pos": [
-            -221.08,
-            59.39
+            -220.89,
+            59.2
           ]
         }
       ]
@@ -2300,8 +2565,15 @@
         "Taunt",
         "Incapacitate",
         "Silence",
+        "Knock",
+        "Grip",
+        "Root",
+        "Fear",
+        "Banish",
+        "Disorient",
         "Stun",
         "Slow",
+        "Sleep Walk",
         "Mind Soothe"
       ],
       "spells": [
@@ -2320,35 +2592,35 @@
           "idx": 1,
           "group": null,
           "pos": [
-            -213.59,
-            131.12
+            -213.4,
+            130.93
           ]
         },
         {
           "id": "17-2",
           "idx": 2,
-          "group": 53,
+          "group": null,
           "pos": [
-            -190.87,
-            128.09
+            -186.35,
+            129.95
           ]
         },
         {
           "id": "17-3",
           "idx": 3,
-          "group": 53,
+          "group": null,
           "pos": [
-            -191.04,
-            131.99
+            -186.32,
+            132.58
           ]
         },
         {
           "id": "17-4",
           "idx": 4,
-          "group": 53,
+          "group": null,
           "pos": [
-            -190.95,
-            136.06
+            -186.22,
+            135.55
           ]
         },
         {
@@ -2356,8 +2628,8 @@
           "idx": 5,
           "group": 53,
           "pos": [
-            -195.61,
-            135.81
+            -196.84,
+            136.24
           ]
         },
         {
@@ -2365,8 +2637,8 @@
           "idx": 6,
           "group": 53,
           "pos": [
-            -195.11,
-            131.91
+            -194,
+            134.63
           ]
         },
         {
@@ -2374,8 +2646,8 @@
           "idx": 7,
           "group": 53,
           "pos": [
-            -195.36,
-            127.84
+            -194.25,
+            131.44
           ]
         },
         {
@@ -2383,8 +2655,8 @@
           "idx": 8,
           "group": 53,
           "pos": [
-            -199.6,
-            127.92
+            -197.17,
+            129.8
           ]
         },
         {
@@ -2392,17 +2664,17 @@
           "idx": 9,
           "group": 53,
           "pos": [
-            -199.35,
-            131.91
+            -197.08,
+            132.99
           ]
         },
         {
           "id": "17-10",
           "idx": 10,
-          "group": 53,
+          "group": 67,
           "pos": [
-            -199.35,
-            135.89
+            -196.91,
+            142.04
           ]
         },
         {
@@ -2410,17 +2682,17 @@
           "idx": 11,
           "group": 54,
           "pos": [
-            -191.29,
-            142.42
+            -193.75,
+            142.08
           ]
         },
         {
           "id": "17-12",
           "idx": 12,
-          "group": 54,
+          "group": 67,
           "pos": [
-            -195.87,
-            141.24
+            -197.14,
+            145.64
           ]
         },
         {
@@ -2428,8 +2700,8 @@
           "idx": 13,
           "group": 54,
           "pos": [
-            -194.6,
-            144.46
+            -193.79,
+            145.45
           ]
         },
         {
@@ -2710,6 +2982,60 @@
             -65.03,
             186.24
           ]
+        },
+        {
+          "id": "17-45",
+          "idx": 45,
+          "group": null,
+          "pos": [
+            -191.77,
+            92.5
+          ]
+        },
+        {
+          "id": "17-46",
+          "idx": 46,
+          "group": null,
+          "pos": [
+            -186.63,
+            92.44
+          ]
+        },
+        {
+          "id": "17-47",
+          "idx": 47,
+          "group": null,
+          "pos": [
+            -199.5,
+            83.72
+          ]
+        },
+        {
+          "id": "17-48",
+          "idx": 48,
+          "group": null,
+          "pos": [
+            -198.88,
+            88.67
+          ]
+        },
+        {
+          "id": "17-49",
+          "idx": 49,
+          "group": null,
+          "pos": [
+            -202.71,
+            89.1
+          ]
+        },
+        {
+          "id": "17-50",
+          "idx": 50,
+          "group": null,
+          "pos": [
+            -203.33,
+            84.59
+          ]
         }
       ]
     },
@@ -2723,9 +3049,18 @@
       "scale": 0.9,
       "isBoss": false,
       "characteristics": [
+        "Taunt",
+        "Incapacitate",
         "Silence",
+        "Knock",
+        "Grip",
+        "Root",
         "Fear",
-        "Stun"
+        "Banish",
+        "Disorient",
+        "Stun",
+        "Slow",
+        "Sleep Walk"
       ],
       "spells": [
         {

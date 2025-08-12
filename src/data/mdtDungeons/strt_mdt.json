@@ -1,13 +1,13 @@
 {
   "dungeonIndex": 37,
-  "totalCount": 328,
+  "totalCount": 360,
   "enemies": [
     {
       "id": 177807,
       "enemyIndex": 1,
       "name": "Customs Security",
       "count": 4,
-      "health": 88225372,
+      "health": 97423014,
       "creatureType": "Humanoid",
       "scale": 1.3,
       "isBoss": false,
@@ -15,11 +15,19 @@
         "Taunt",
         "Incapacitate",
         "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
+        "Polymorph",
         "Root",
         "Fear",
         "Disorient",
+        "Repentance",
+        "Imprison",
+        "Sap",
         "Stun",
         "Slow",
+        "Sleep Walk",
         "Mind Soothe"
       ],
       "spells": [
@@ -39,10 +47,6 @@
         },
         {
           "id": 355900,
-          "attributes": []
-        },
-        {
-          "id": 355903,
           "attributes": []
         }
       ],
@@ -135,18 +139,15 @@
       "enemyIndex": 2,
       "name": "Gatewarden Zo'mazz",
       "count": 18,
-      "health": 128327813,
+      "health": 141706202,
       "creatureType": "Humanoid",
       "scale": 1.8,
       "isBoss": false,
       "characteristics": [
-        "Taunt"
+        "Taunt",
+        "Mind Soothe"
       ],
       "spells": [
-        {
-          "id": 351047,
-          "attributes": []
-        },
         {
           "id": 352796,
           "attributes": []
@@ -173,7 +174,7 @@
       "enemyIndex": 3,
       "name": "Support Officer",
       "count": 4,
-      "health": 72184395,
+      "health": 79709738,
       "creatureType": "Humanoid",
       "scale": 1.2,
       "isBoss": false,
@@ -181,12 +182,20 @@
         "Taunt",
         "Incapacitate",
         "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
+        "Polymorph",
         "Root",
         "Fear",
         "Disorient",
+        "Repentance",
         "Imprison",
+        "Sap",
         "Stun",
-        "Slow"
+        "Slow",
+        "Sleep Walk",
+        "Mind Soothe"
       ],
       "spells": [
         {
@@ -248,7 +257,7 @@
       "enemyIndex": 4,
       "name": "Interrogation Specialist",
       "count": 4,
-      "health": 72184395,
+      "health": 79709738,
       "creatureType": "Humanoid",
       "scale": 1.3,
       "isBoss": false,
@@ -256,11 +265,19 @@
         "Taunt",
         "Incapacitate",
         "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
+        "Polymorph",
         "Root",
         "Fear",
         "Disorient",
+        "Repentance",
+        "Imprison",
+        "Sap",
         "Stun",
         "Slow",
+        "Sleep Walk",
         "Mind Soothe"
       ],
       "spells": [
@@ -315,18 +332,15 @@
       "enemyIndex": 5,
       "name": "Armored Overseer",
       "count": 8,
-      "health": 104266348,
+      "health": 123992927,
       "creatureType": "Humanoid",
       "scale": 1.6,
       "isBoss": false,
       "characteristics": [
-        "Taunt"
+        "Taunt",
+        "Mind Soothe"
       ],
       "spells": [
-        {
-          "id": 351047,
-          "attributes": []
-        },
         {
           "id": 352796,
           "attributes": []
@@ -393,12 +407,13 @@
       "enemyIndex": 6,
       "name": "Portalmancer Zo'honn",
       "count": 24,
-      "health": 160409767,
+      "health": 177132752,
       "creatureType": "Humanoid",
       "scale": 2.2,
       "isBoss": false,
       "characteristics": [
-        "Taunt"
+        "Taunt",
+        "Mind Soothe"
       ],
       "spells": [
         {
@@ -407,18 +422,6 @@
         },
         {
           "id": 352393,
-          "attributes": []
-        },
-        {
-          "id": 355306,
-          "attributes": []
-        },
-        {
-          "id": 355331,
-          "attributes": []
-        },
-        {
-          "id": 356324,
           "attributes": []
         },
         {
@@ -449,20 +452,17 @@
       "enemyIndex": 7,
       "name": "Zo'phex",
       "count": 0,
-      "health": 481574146,
+      "health": 531299398,
       "creatureType": "Humanoid",
       "scale": 2,
       "isBoss": true,
       "characteristics": [
-        "Taunt"
+        "Taunt",
+        "Mind Soothe"
       ],
       "spells": [
         {
           "id": 345770,
-          "attributes": []
-        },
-        {
-          "id": 345989,
           "attributes": []
         },
         {
@@ -471,10 +471,6 @@
         },
         {
           "id": 346006,
-          "attributes": []
-        },
-        {
-          "id": 346028,
           "attributes": []
         },
         {
@@ -487,10 +483,6 @@
         },
         {
           "id": 348128,
-          "attributes": []
-        },
-        {
-          "id": 348276,
           "attributes": []
         },
         {
@@ -527,20 +519,17 @@
       "enemyIndex": 8,
       "name": "Tracker Zo'korss",
       "count": 18,
-      "health": 160409767,
+      "health": 177132752,
       "creatureType": "Humanoid",
       "scale": 2,
       "isBoss": false,
       "characteristics": [
-        "Taunt"
+        "Taunt",
+        "Mind Soothe"
       ],
       "spells": [
         {
           "id": 356001,
-          "attributes": []
-        },
-        {
-          "id": 356011,
           "attributes": []
         },
         {
@@ -580,7 +569,7 @@
       "enemyIndex": 9,
       "name": "Ancient Core Hound",
       "count": 12,
-      "health": 104266348,
+      "health": 115136289,
       "creatureType": "Beast",
       "scale": 2,
       "isBoss": false,
@@ -626,7 +615,7 @@
       "enemyIndex": 10,
       "name": "Enraged Direhorn",
       "count": 10,
-      "health": 128327813,
+      "health": 141706202,
       "creatureType": "Beast",
       "scale": 2,
       "isBoss": false,
@@ -664,16 +653,28 @@
       "enemyIndex": 11,
       "name": "Frenzied Nightclaw",
       "count": 4,
-      "health": 64163907,
+      "health": 70853101,
       "creatureType": "Beast",
       "scale": 1.3,
       "isBoss": false,
       "characteristics": [
         "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
+        "Polymorph",
         "Root",
+        "Fear",
         "Disorient",
+        "Imprison",
+        "Sap",
         "Stun",
-        "Slow"
+        "Slow",
+        "Sleep Walk",
+        "Scare Beast",
+        "Hibernate"
       ],
       "spells": [
         {
@@ -725,7 +726,7 @@
       "enemyIndex": 12,
       "name": "Market Peacekeeper",
       "count": 4,
-      "health": 96245860,
+      "health": 106279651,
       "creatureType": "Humanoid",
       "scale": 1.3,
       "isBoss": false,
@@ -733,14 +734,19 @@
         "Taunt",
         "Incapacitate",
         "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
         "Polymorph",
         "Root",
         "Fear",
         "Disorient",
+        "Repentance",
         "Imprison",
         "Sap",
         "Stun",
         "Slow",
+        "Sleep Walk",
         "Mind Soothe"
       ],
       "spells": [
@@ -882,7 +888,7 @@
       "enemyIndex": 13,
       "name": "Veteran Sparkcaster",
       "count": 4,
-      "health": 72184395,
+      "health": 79709738,
       "creatureType": "Humanoid",
       "scale": 1.3,
       "isBoss": false,
@@ -890,11 +896,19 @@
         "Taunt",
         "Incapacitate",
         "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
+        "Polymorph",
+        "Root",
         "Fear",
         "Disorient",
+        "Repentance",
         "Imprison",
+        "Sap",
         "Stun",
         "Slow",
+        "Sleep Walk",
         "Mind Soothe"
       ],
       "spells": [
@@ -987,12 +1001,13 @@
       "enemyIndex": 14,
       "name": "Commerce Enforcer",
       "count": 8,
-      "health": 121911421,
+      "health": 134620890,
       "creatureType": "Humanoid",
       "scale": 1.6,
       "isBoss": false,
       "characteristics": [
-        "Taunt"
+        "Taunt",
+        "Mind Soothe"
       ],
       "spells": [
         {
@@ -1105,12 +1120,13 @@
       "enemyIndex": 15,
       "name": "Commander Zo'far",
       "count": 24,
-      "health": 192491720,
+      "health": 212559303,
       "creatureType": "Humanoid",
       "scale": 2,
       "isBoss": false,
       "characteristics": [
-        "Taunt"
+        "Taunt",
+        "Mind Soothe"
       ],
       "spells": [
         {
@@ -1123,10 +1139,6 @@
         },
         {
           "id": 355477,
-          "attributes": []
-        },
-        {
-          "id": 355479,
           "attributes": []
         }
       ],
@@ -1147,12 +1159,13 @@
       "enemyIndex": 16,
       "name": "Cartel Muscle",
       "count": 8,
-      "health": 120307325,
+      "health": 132849564,
       "creatureType": "Humanoid",
       "scale": 1.7,
       "isBoss": false,
       "characteristics": [
-        "Taunt"
+        "Taunt",
+        "Mind Soothe"
       ],
       "spells": [
         {
@@ -1292,17 +1305,27 @@
       "enemyIndex": 17,
       "name": "Cartel Smuggler",
       "count": 5,
-      "health": 72184395,
+      "health": 79709738,
       "creatureType": "Humanoid",
       "scale": 1.3,
       "isBoss": false,
       "characteristics": [
         "Taunt",
+        "Incapacitate",
         "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
+        "Polymorph",
+        "Root",
         "Fear",
+        "Disorient",
+        "Repentance",
         "Imprison",
+        "Sap",
         "Stun",
         "Slow",
+        "Sleep Walk",
         "Mind Soothe"
       ],
       "spells": [
@@ -1406,23 +1429,30 @@
       "enemyIndex": 18,
       "name": "Cartel Wiseguy",
       "count": 5,
-      "health": 64163907,
+      "health": 70853101,
       "creatureType": "Humanoid",
       "scale": 1.3,
       "isBoss": false,
       "characteristics": [
         "Taunt",
+        "Incapacitate",
         "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
+        "Polymorph",
+        "Root",
         "Fear",
+        "Disorient",
+        "Repentance",
+        "Imprison",
+        "Sap",
         "Stun",
         "Slow",
+        "Sleep Walk",
         "Mind Soothe"
       ],
       "spells": [
-        {
-          "id": 357019,
-          "attributes": []
-        },
         {
           "id": 357196,
           "attributes": [
@@ -1509,7 +1539,7 @@
       "enemyIndex": 19,
       "name": "Cartel Skulker",
       "count": 4,
-      "health": 80204883,
+      "health": 88566376,
       "creatureType": "Humanoid",
       "scale": 1.3,
       "isBoss": false,
@@ -1517,9 +1547,20 @@
         "Taunt",
         "Incapacitate",
         "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
+        "Polymorph",
+        "Root",
         "Fear",
+        "Disorient",
+        "Repentance",
+        "Imprison",
+        "Sap",
         "Stun",
-        "Slow"
+        "Slow",
+        "Sleep Walk",
+        "Mind Soothe"
       ],
       "spells": [
         {
@@ -1687,12 +1728,13 @@
       "enemyIndex": 20,
       "name": "Oasis Security",
       "count": 0,
-      "health": 102662250,
+      "health": 113364956,
       "creatureType": "Humanoid",
       "scale": 2,
       "isBoss": false,
       "characteristics": [
-        "Taunt"
+        "Taunt",
+        "Mind Soothe"
       ],
       "spells": [
         {
@@ -1703,12 +1745,6 @@
           "id": 350922,
           "attributes": [
             "interruptible"
-          ]
-        },
-        {
-          "id": 353706,
-          "attributes": [
-            "enrage"
           ]
         }
       ],
@@ -1747,7 +1783,7 @@
       "enemyIndex": 21,
       "name": "Disruptive Patron",
       "count": 0,
-      "health": 76863014,
+      "health": 84876109,
       "creatureType": "Humanoid",
       "scale": 2,
       "isBoss": false,
@@ -1755,16 +1791,27 @@
         "Taunt",
         "Incapacitate",
         "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
+        "Polymorph",
+        "Root",
         "Fear",
         "Disorient",
+        "Repentance",
         "Imprison",
+        "Sap",
         "Stun",
-        "Slow"
+        "Slow",
+        "Sleep Walk",
+        "Mind Soothe"
       ],
       "spells": [
         {
           "id": 353706,
-          "attributes": []
+          "attributes": [
+            "enrage"
+          ]
         },
         {
           "id": 353783,
@@ -1803,7 +1850,7 @@
       "enemyIndex": 22,
       "name": "Brawling Patron",
       "count": 0,
-      "health": 51464799,
+      "health": 56830089,
       "creatureType": "Humanoid",
       "scale": 2,
       "isBoss": false,
@@ -1811,18 +1858,24 @@
         "Taunt",
         "Incapacitate",
         "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
+        "Polymorph",
+        "Root",
         "Fear",
         "Disorient",
+        "Repentance",
+        "Imprison",
+        "Sap",
         "Stun",
-        "Slow"
+        "Slow",
+        "Sleep Walk",
+        "Mind Soothe"
       ],
       "spells": [
         {
           "id": 348566,
-          "attributes": []
-        },
-        {
-          "id": 353706,
           "attributes": []
         }
       ],
@@ -1852,12 +1905,13 @@
       "enemyIndex": 23,
       "name": "Zo'gron",
       "count": 0,
-      "health": 321049431,
+      "health": 354199599,
       "creatureType": "Humanoid",
       "scale": 2,
       "isBoss": true,
       "characteristics": [
-        "Taunt"
+        "Taunt",
+        "Mind Soothe"
       ],
       "spells": [
         {
@@ -1866,10 +1920,6 @@
         },
         {
           "id": 350919,
-          "attributes": []
-        },
-        {
-          "id": 350921,
           "attributes": []
         },
         {
@@ -1896,7 +1946,9 @@
         },
         {
           "id": 1241032,
-          "attributes": []
+          "attributes": [
+            "interruptible"
+          ]
         }
       ],
       "spawns": [
@@ -1916,7 +1968,7 @@
       "enemyIndex": 24,
       "name": "Alcruux",
       "count": 0,
-      "health": 240787073,
+      "health": 265649699,
       "creatureType": "Aberration",
       "scale": 1.6,
       "isBoss": true,
@@ -1970,7 +2022,7 @@
       "enemyIndex": 25,
       "name": "Achillite",
       "count": 0,
-      "health": 240787073,
+      "health": 265649699,
       "creatureType": "Mechanical",
       "scale": 1.6,
       "isBoss": true,
@@ -2038,12 +2090,13 @@
       "enemyIndex": 26,
       "name": "Venza Goldfuse",
       "count": 0,
-      "health": 288944488,
+      "health": 318779639,
       "creatureType": "Humanoid",
       "scale": 1.6,
       "isBoss": true,
       "characteristics": [
-        "Taunt"
+        "Taunt",
+        "Mind Soothe"
       ],
       "spells": [
         {
@@ -2092,7 +2145,7 @@
       "enemyIndex": 27,
       "name": "Defective Sorter",
       "count": 3,
-      "health": 32081953,
+      "health": 35426550,
       "creatureType": "Mechanical",
       "scale": 1.3,
       "isBoss": false,
@@ -2100,11 +2153,14 @@
         "Taunt",
         "Incapacitate",
         "Silence",
+        "Knock",
+        "Grip",
         "Root",
         "Fear",
         "Disorient",
         "Stun",
-        "Slow"
+        "Slow",
+        "Sleep Walk"
       ],
       "spells": [
         {
@@ -2191,7 +2247,7 @@
       "enemyIndex": 28,
       "name": "P.O.S.T. Worker",
       "count": 5,
-      "health": 80204883,
+      "health": 88566376,
       "creatureType": "Mechanical",
       "scale": 1.3,
       "isBoss": false,
@@ -2199,11 +2255,14 @@
         "Taunt",
         "Incapacitate",
         "Silence",
+        "Knock",
+        "Grip",
         "Root",
         "Fear",
         "Disorient",
         "Stun",
-        "Slow"
+        "Slow",
+        "Sleep Walk"
       ],
       "spells": [
         {
@@ -2255,7 +2314,7 @@
       "enemyIndex": 29,
       "name": "Overloaded Mailemental",
       "count": 5,
-      "health": 60153662,
+      "health": 66424782,
       "creatureType": "Elemental",
       "scale": 1.3,
       "isBoss": false,
@@ -2263,12 +2322,16 @@
         "Taunt",
         "Incapacitate",
         "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
         "Root",
         "Fear",
         "Banish",
         "Disorient",
         "Stun",
-        "Slow"
+        "Slow",
+        "Sleep Walk"
       ],
       "spells": [
         {
@@ -2318,7 +2381,7 @@
       "enemyIndex": 30,
       "name": "P.O.S.T. Master",
       "count": 0,
-      "health": 505652853,
+      "health": 557864368,
       "creatureType": "Mechanical",
       "scale": 2,
       "isBoss": true,
@@ -2331,38 +2394,12 @@
           "attributes": []
         },
         {
-          "id": 346291,
-          "attributes": []
-        },
-        {
-          "id": 346296,
-          "attributes": []
-        },
-        {
-          "id": 346297,
-          "attributes": []
-        },
-        {
-          "id": 346329,
-          "attributes": []
-        },
-        {
-          "id": 346381,
-          "attributes": []
-        },
-        {
           "id": 346741,
           "attributes": []
         },
         {
           "id": 346742,
           "attributes": []
-        },
-        {
-          "id": 346844,
-          "attributes": [
-            "magic"
-          ]
         },
         {
           "id": 346947,
@@ -2374,14 +2411,6 @@
         },
         {
           "id": 346967,
-          "attributes": []
-        },
-        {
-          "id": 354939,
-          "attributes": []
-        },
-        {
-          "id": 369133,
           "attributes": []
         }
       ],
@@ -2402,12 +2431,13 @@
       "enemyIndex": 31,
       "name": "So'azmi",
       "count": 0,
-      "health": 505652853,
+      "health": 557864368,
       "creatureType": "Humanoid",
       "scale": 2,
       "isBoss": true,
       "characteristics": [
-        "Taunt"
+        "Taunt",
+        "Mind Soothe"
       ],
       "spells": [
         {
@@ -2474,7 +2504,7 @@
       "enemyIndex": 32,
       "name": "Smuggled Creature",
       "count": 0,
-      "health": 64163907,
+      "health": 70853101,
       "creatureType": "Beast",
       "scale": 1,
       "isBoss": false,
@@ -2482,10 +2512,20 @@
         "Taunt",
         "Incapacitate",
         "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
+        "Polymorph",
+        "Root",
         "Fear",
         "Disorient",
+        "Imprison",
+        "Sap",
         "Stun",
-        "Slow"
+        "Slow",
+        "Sleep Walk",
+        "Scare Beast",
+        "Hibernate"
       ],
       "spells": [
         {
@@ -2514,11 +2554,14 @@
       "enemyIndex": 33,
       "name": "Unruly Patron",
       "count": 0,
-      "health": 16040977,
+      "health": 17713275,
       "creatureType": "Humanoid",
       "scale": 1.2,
       "isBoss": false,
-      "characteristics": [],
+      "characteristics": [
+        "Taunt",
+        "Mind Soothe"
+      ],
       "spells": [
         {
           "id": 356482,
@@ -2546,14 +2589,28 @@
       "enemyIndex": 34,
       "name": "Bazaar Strongarm",
       "count": 3,
-      "health": 56143418,
+      "health": 61996463,
       "creatureType": "Humanoid",
       "scale": 1.3,
       "isBoss": false,
       "characteristics": [
         "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
+        "Polymorph",
+        "Root",
+        "Fear",
+        "Disorient",
+        "Repentance",
+        "Imprison",
+        "Sap",
         "Stun",
-        "Slow"
+        "Slow",
+        "Sleep Walk",
+        "Mind Soothe"
       ],
       "spells": [
         {
@@ -2610,16 +2667,28 @@
       "enemyIndex": 35,
       "name": "Cartel Lackey",
       "count": 1,
-      "health": 16040977,
+      "health": 17713275,
       "creatureType": "Humanoid",
       "scale": 1,
       "isBoss": false,
       "characteristics": [
         "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
+        "Polymorph",
+        "Root",
         "Fear",
         "Disorient",
+        "Repentance",
+        "Imprison",
+        "Sap",
         "Stun",
-        "Slow"
+        "Slow",
+        "Sleep Walk",
+        "Mind Soothe"
       ],
       "spells": [
         {
@@ -2752,11 +2821,14 @@
       "enemyIndex": 36,
       "name": "Unruly Patron",
       "count": 0,
-      "health": 16040977,
+      "health": 17713275,
       "creatureType": "Humanoid",
       "scale": 1.2,
       "isBoss": false,
-      "characteristics": [],
+      "characteristics": [
+        "Taunt",
+        "Mind Soothe"
+      ],
       "spells": [
         {
           "id": 356482,
@@ -2784,12 +2856,13 @@
       "enemyIndex": 37,
       "name": "Bazaar Overseer",
       "count": 12,
-      "health": 136348302,
+      "health": 150562839,
       "creatureType": "Humanoid",
       "scale": 1.8,
       "isBoss": false,
       "characteristics": [
-        "Taunt"
+        "Taunt",
+        "Mind Soothe"
       ],
       "spells": [
         {
@@ -2898,8 +2971,8 @@
       "type": "textFrame",
       "itemType": null,
       "pos": [
-        -114.42,
-        196.8
+        -140.55,
+        214.62
       ]
     },
     {

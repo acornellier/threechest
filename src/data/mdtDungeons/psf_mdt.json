@@ -15,13 +15,19 @@
         "Taunt",
         "Incapacitate",
         "Silence",
+        "Knock",
+        "Grip",
         "Mind Control",
         "Polymorph",
         "Root",
         "Fear",
         "Disorient",
+        "Repentance",
         "Imprison",
+        "Sap",
         "Stun",
+        "Slow",
+        "Sleep Walk",
         "Mind Soothe"
       ],
       "spells": [
@@ -30,15 +36,7 @@
           "attributes": []
         },
         {
-          "id": 427359,
-          "attributes": []
-        },
-        {
           "id": 427360,
-          "attributes": []
-        },
-        {
-          "id": 429099,
           "attributes": []
         }
       ],
@@ -48,8 +46,8 @@
           "idx": 1,
           "group": 63,
           "pos": [
-            -103.65,
-            263.98
+            -103.46,
+            262.87
           ]
         },
         {
@@ -300,8 +298,8 @@
           "idx": 29,
           "group": 22,
           "pos": [
-            -82.68,
-            268.23
+            -81.69,
+            269.15
           ]
         },
         {
@@ -327,8 +325,8 @@
           "idx": 32,
           "group": 25,
           "pos": [
-            -94.94,
-            244.58
+            -95.68,
+            244.83
           ]
         },
         {
@@ -336,8 +334,8 @@
           "idx": 33,
           "group": 26,
           "pos": [
-            -100.54,
-            239.4
+            -105.61,
+            246.02
           ]
         },
         {
@@ -345,8 +343,8 @@
           "idx": 34,
           "group": 26,
           "pos": [
-            -103.48,
-            236.47
+            -107.68,
+            242.34
           ]
         },
         {
@@ -426,8 +424,8 @@
           "idx": 43,
           "group": 63,
           "pos": [
-            -99.9,
-            259.98
+            -103.79,
+            258.56
           ]
         },
         {
@@ -435,8 +433,8 @@
           "idx": 44,
           "group": 64,
           "pos": [
-            -152.56,
-            254.47
+            -152.14,
+            260.09
           ]
         },
         {
@@ -444,8 +442,8 @@
           "idx": 45,
           "group": 64,
           "pos": [
-            -152.92,
-            249.1
+            -156.77,
+            254.09
           ]
         }
       ]
@@ -457,16 +455,13 @@
       "count": 25,
       "health": 128334470,
       "creatureType": "Humanoid",
-      "scale": 1,
+      "scale": 1.1,
       "isBoss": false,
       "characteristics": [
-        "Taunt"
+        "Taunt",
+        "Mind Soothe"
       ],
       "spells": [
-        {
-          "id": 427359,
-          "attributes": []
-        },
         {
           "id": 427609,
           "attributes": []
@@ -488,8 +483,50 @@
           "idx": 1,
           "group": 63,
           "pos": [
-            -104.3,
-            256.46
+            -100.59,
+            260.05
+          ],
+          "patrol": [
+            [
+              -100.59,
+              260.05
+            ],
+            [
+              -102.35,
+              265.66
+            ],
+            [
+              -105.55,
+              268.48
+            ],
+            [
+              -102.35,
+              265.66
+            ],
+            [
+              -100.59,
+              260.05
+            ],
+            [
+              -105.87,
+              254.59
+            ],
+            [
+              -109.83,
+              251.68
+            ],
+            [
+              -117.87,
+              243.4
+            ],
+            [
+              -109.83,
+              251.68
+            ],
+            [
+              -105.87,
+              254.59
+            ]
           ]
         },
         {
@@ -583,8 +620,42 @@
           "idx": 4,
           "group": 1,
           "pos": [
-            -154.43,
-            298.83
+            -153.08,
+            297.48
+          ],
+          "patrol": [
+            [
+              -153.08,
+              297.48
+            ],
+            [
+              -151.1,
+              292.11
+            ],
+            [
+              -153.08,
+              297.48
+            ],
+            [
+              -151.51,
+              305
+            ],
+            [
+              -147.25,
+              307.19
+            ],
+            [
+              -141.63,
+              313.32
+            ],
+            [
+              -147.25,
+              307.19
+            ],
+            [
+              -151.51,
+              305
+            ]
           ]
         },
         {
@@ -592,8 +663,42 @@
           "idx": 5,
           "group": 26,
           "pos": [
-            -104.71,
-            240.71
+            -103.54,
+            242.25
+          ],
+          "patrol": [
+            [
+              -104.59,
+              242.13
+            ],
+            [
+              -100.68,
+              247.3
+            ],
+            [
+              -105.38,
+              252.93
+            ],
+            [
+              -100.68,
+              247.3
+            ],
+            [
+              -104.59,
+              242.13
+            ],
+            [
+              -109.58,
+              235.92
+            ],
+            [
+              -114.84,
+              241.98
+            ],
+            [
+              -109.58,
+              235.92
+            ]
           ]
         },
         {
@@ -610,8 +715,38 @@
           "idx": 7,
           "group": 64,
           "pos": [
-            -147.77,
-            248.92
+            -154.63,
+            257.03
+          ],
+          "patrol": [
+            [
+              -154.63,
+              257.03
+            ],
+            [
+              -158.27,
+              263.51
+            ],
+            [
+              -154.63,
+              257.03
+            ],
+            [
+              -147.87,
+              249.16
+            ],
+            [
+              -143.4,
+              244.16
+            ],
+            [
+              -147.87,
+              249.16
+            ],
+            [
+              -154.63,
+              257.03
+            ]
           ]
         }
       ],
@@ -628,10 +763,22 @@
       "isBoss": false,
       "characteristics": [
         "Taunt",
+        "Incapacitate",
         "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
+        "Polymorph",
+        "Root",
         "Fear",
         "Disorient",
-        "Stun"
+        "Repentance",
+        "Imprison",
+        "Sap",
+        "Stun",
+        "Slow",
+        "Sleep Walk",
+        "Mind Soothe"
       ],
       "spells": [],
       "spawns": [
@@ -755,16 +902,25 @@
       "scale": 0.8,
       "isBoss": false,
       "characteristics": [
+        "Taunt",
+        "Incapacitate",
         "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
+        "Polymorph",
+        "Root",
         "Fear",
-        "Stun"
+        "Disorient",
+        "Repentance",
+        "Imprison",
+        "Sap",
+        "Stun",
+        "Slow",
+        "Sleep Walk",
+        "Mind Soothe"
       ],
-      "spells": [
-        {
-          "id": 429099,
-          "attributes": []
-        }
-      ],
+      "spells": [],
       "spawns": [
         {
           "id": "4-1",
@@ -850,7 +1006,8 @@
       "scale": 1,
       "isBoss": false,
       "characteristics": [
-        "Taunt"
+        "Taunt",
+        "Mind Soothe"
       ],
       "spells": [
         {
@@ -999,11 +1156,19 @@
         "Taunt",
         "Incapacitate",
         "Silence",
+        "Knock",
+        "Grip",
         "Mind Control",
+        "Polymorph",
+        "Root",
         "Fear",
         "Disorient",
+        "Repentance",
         "Imprison",
+        "Sap",
         "Stun",
+        "Slow",
+        "Sleep Walk",
         "Mind Soothe"
       ],
       "spells": [
@@ -1020,24 +1185,13 @@
           ]
         },
         {
-          "id": 427359,
-          "attributes": []
-        },
-        {
           "id": 428916,
-          "attributes": []
+          "attributes": [
+            "magic"
+          ]
         }
       ],
       "spawns": [
-        {
-          "id": "6-1",
-          "idx": 1,
-          "group": 63,
-          "pos": [
-            -103.98,
-            260.1
-          ]
-        },
         {
           "id": "6-2",
           "idx": 2,
@@ -1088,8 +1242,8 @@
           "idx": 7,
           "group": 17,
           "pos": [
-            -87.05,
-            263.58
+            -86.23,
+            264.3
           ],
           "patrol": [
             [
@@ -1262,15 +1416,6 @@
           ]
         },
         {
-          "id": "6-23",
-          "idx": 23,
-          "group": 56,
-          "pos": [
-            -125.41,
-            97.06
-          ]
-        },
-        {
           "id": "6-24",
           "idx": 24,
           "group": 55,
@@ -1323,45 +1468,6 @@
             -144.88,
             64.75
           ]
-        },
-        {
-          "id": "6-30",
-          "idx": 30,
-          "group": 64,
-          "pos": [
-            -150.22,
-            251.66
-          ],
-          "patrol": [
-            [
-              -150.22,
-              251.66
-            ],
-            [
-              -144.62,
-              246.27
-            ],
-            [
-              -142.67,
-              245.62
-            ],
-            [
-              -144.62,
-              246.27
-            ],
-            [
-              -154.12,
-              256.97
-            ],
-            [
-              -156.1,
-              264.87
-            ],
-            [
-              -154.12,
-              256.97
-            ]
-          ]
         }
       ]
     },
@@ -1375,7 +1481,8 @@
       "scale": 1.7,
       "isBoss": false,
       "characteristics": [
-        "Taunt"
+        "Taunt",
+        "Mind Soothe"
       ],
       "spells": [
         {
@@ -1384,10 +1491,6 @@
         },
         {
           "id": 424432,
-          "attributes": []
-        },
-        {
-          "id": 427359,
           "attributes": []
         },
         {
@@ -1427,19 +1530,22 @@
         "Taunt",
         "Incapacitate",
         "Silence",
+        "Knock",
+        "Grip",
         "Mind Control",
         "Polymorph",
+        "Root",
         "Fear",
         "Disorient",
+        "Repentance",
         "Imprison",
+        "Sap",
         "Stun",
+        "Slow",
+        "Sleep Walk",
         "Mind Soothe"
       ],
       "spells": [
-        {
-          "id": 427359,
-          "attributes": []
-        },
         {
           "id": 427469,
           "attributes": [
@@ -1501,8 +1607,8 @@
           "idx": 5,
           "group": 17,
           "pos": [
-            -87.09,
-            259.46
+            -86.21,
+            260.3
           ]
         },
         {
@@ -1510,8 +1616,8 @@
           "idx": 6,
           "group": 22,
           "pos": [
-            -82.9,
-            272.13
+            -81.92,
+            273.06
           ]
         },
         {
@@ -1646,20 +1752,22 @@
         "Taunt",
         "Incapacitate",
         "Silence",
+        "Knock",
+        "Grip",
         "Mind Control",
         "Polymorph",
         "Root",
         "Fear",
         "Disorient",
+        "Repentance",
         "Imprison",
+        "Sap",
         "Stun",
+        "Slow",
+        "Sleep Walk",
         "Mind Soothe"
       ],
       "spells": [
-        {
-          "id": 427359,
-          "attributes": []
-        },
         {
           "id": 427629,
           "attributes": []
@@ -1685,50 +1793,8 @@
           "idx": 1,
           "group": 63,
           "pos": [
-            -99.62,
-            263.5
-          ],
-          "patrol": [
-            [
-              -101.19,
-              263.12
-            ],
-            [
-              -105.55,
-              268.48
-            ],
-            [
-              -101.19,
-              263.12
-            ],
-            [
-              -97.41,
-              261.49
-            ],
-            [
-              -93.55,
-              261.45
-            ],
-            [
-              -84.23,
-              261.83
-            ],
-            [
-              -93.55,
-              261.45
-            ],
-            [
-              -97.41,
-              261.49
-            ],
-            [
-              -101.19,
-              263.12
-            ],
-            [
-              -105.55,
-              268.48
-            ]
+            -99.87,
+            263.75
           ]
         },
         {
@@ -1781,8 +1847,8 @@
           "idx": 7,
           "group": 1,
           "pos": [
-            -158.4,
-            298.95
+            -157.04,
+            297.59
           ]
         },
         {
@@ -1790,8 +1856,8 @@
           "idx": 8,
           "group": 1,
           "pos": [
-            -150.58,
-            298.8
+            -149.23,
+            297.45
           ]
         },
         {
@@ -1860,8 +1926,8 @@
           "idx": 12,
           "group": 17,
           "pos": [
-            -91.08,
-            263.75
+            -89.85,
+            264.24
           ]
         },
         {
@@ -1896,8 +1962,8 @@
           "idx": 16,
           "group": 22,
           "pos": [
-            -78.95,
-            268.19
+            -77.96,
+            269.12
           ]
         },
         {
@@ -2083,8 +2149,8 @@
           "idx": 33,
           "group": 63,
           "pos": [
-            -100.38,
-            256.14
+            -101,
+            256.38
           ]
         },
         {
@@ -2101,8 +2167,8 @@
           "idx": 35,
           "group": 64,
           "pos": [
-            -150.55,
-            246.08
+            -153.05,
+            252.94
           ]
         },
         {
@@ -2110,8 +2176,8 @@
           "idx": 36,
           "group": 64,
           "pos": [
-            -155.32,
-            251.71
+            -150.85,
+            256.18
           ]
         },
         {
@@ -2135,13 +2201,10 @@
       "scale": 1.7,
       "isBoss": false,
       "characteristics": [
-        "Taunt"
+        "Taunt",
+        "Mind Soothe"
       ],
       "spells": [
-        {
-          "id": 427359,
-          "attributes": []
-        },
         {
           "id": 427894,
           "attributes": []
@@ -2192,13 +2255,10 @@
       "scale": 1.7,
       "isBoss": false,
       "characteristics": [
-        "Taunt"
+        "Taunt",
+        "Mind Soothe"
       ],
       "spells": [
-        {
-          "id": 427359,
-          "attributes": []
-        },
         {
           "id": 448485,
           "attributes": []
@@ -2376,7 +2436,10 @@
       "creatureType": "Humanoid",
       "scale": 1.7,
       "isBoss": false,
-      "characteristics": [],
+      "characteristics": [
+        "Taunt",
+        "Mind Soothe"
+      ],
       "spells": [
         {
           "id": 427357,
@@ -2394,7 +2457,9 @@
         },
         {
           "id": 429091,
-          "attributes": []
+          "attributes": [
+            "magic"
+          ]
         },
         {
           "id": 464240,
@@ -2451,8 +2516,8 @@
           "idx": 2,
           "group": 22,
           "pos": [
-            -78.75,
-            271.92
+            -78.13,
+            272.78
           ]
         },
         {
@@ -2533,11 +2598,20 @@
       "characteristics": [
         "Taunt",
         "Incapacitate",
+        "Control Undead",
         "Silence",
+        "Knock",
+        "Grip",
+        "Shackle Undead",
         "Root",
         "Fear",
+        "Banish",
         "Disorient",
-        "Stun"
+        "Repentance",
+        "Stun",
+        "Slow",
+        "Sleep Walk",
+        "Turn Evil"
       ],
       "spells": [
         {
@@ -2564,8 +2638,8 @@
           "idx": 2,
           "group": 58,
           "pos": [
-            -116.19,
-            90.06
+            -116.25,
+            90.93
           ]
         },
         {
@@ -2756,11 +2830,20 @@
       "characteristics": [
         "Taunt",
         "Incapacitate",
+        "Control Undead",
         "Silence",
+        "Knock",
+        "Grip",
+        "Shackle Undead",
         "Root",
         "Fear",
+        "Banish",
         "Disorient",
-        "Stun"
+        "Repentance",
+        "Stun",
+        "Slow",
+        "Sleep Walk",
+        "Turn Evil"
       ],
       "spells": [
         {
@@ -2804,21 +2887,12 @@
           ]
         },
         {
-          "id": "15-3",
-          "idx": 3,
-          "group": 55,
-          "pos": [
-            -139.82,
-            100.28
-          ]
-        },
-        {
           "id": "15-4",
           "idx": 4,
           "group": 58,
           "pos": [
-            -112.22,
-            92.64
+            -112.77,
+            93.01
           ]
         },
         {
@@ -2842,7 +2916,8 @@
       "scale": 1.7,
       "isBoss": false,
       "characteristics": [
-        "Taunt"
+        "Taunt",
+        "Mind Soothe"
       ],
       "spells": [
         {
@@ -2886,7 +2961,9 @@
       "creatureType": "Undead",
       "scale": 1.4,
       "isBoss": false,
-      "characteristics": [],
+      "characteristics": [
+        "Taunt"
+      ],
       "spells": [
         {
           "id": 435156,
@@ -2927,7 +3004,8 @@
       "scale": 1.7,
       "isBoss": false,
       "characteristics": [
-        "Taunt"
+        "Taunt",
+        "Mind Soothe"
       ],
       "spells": [
         {
@@ -2973,16 +3051,24 @@
       "isBoss": false,
       "characteristics": [
         "Taunt",
+        "Incapacitate",
         "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
+        "Polymorph",
+        "Root",
         "Fear",
         "Disorient",
-        "Stun"
+        "Imprison",
+        "Sap",
+        "Stun",
+        "Slow",
+        "Sleep Walk",
+        "Scare Beast",
+        "Hibernate"
       ],
       "spells": [
-        {
-          "id": 427359,
-          "attributes": []
-        },
         {
           "id": 427635,
           "attributes": [
@@ -3000,8 +3086,8 @@
           "idx": 1,
           "group": 1,
           "pos": [
-            -156.72,
-            301.9
+            -155.37,
+            300.55
           ]
         },
         {
@@ -3009,8 +3095,8 @@
           "idx": 2,
           "group": 1,
           "pos": [
-            -152.96,
-            302.11
+            -151.61,
+            300.76
           ]
         },
         {
@@ -3036,8 +3122,8 @@
           "idx": 5,
           "group": 17,
           "pos": [
-            -91.27,
-            259.57
+            -90.04,
+            260.26
           ]
         },
         {
@@ -3145,10 +3231,19 @@
         "Taunt",
         "Incapacitate",
         "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
+        "Polymorph",
         "Root",
         "Fear",
         "Disorient",
+        "Repentance",
+        "Imprison",
+        "Sap",
         "Stun",
+        "Slow",
+        "Sleep Walk",
         "Mind Soothe"
       ],
       "spells": [
@@ -3239,6 +3334,24 @@
             -135.8,
             165.62
           ]
+        },
+        {
+          "id": "20-9",
+          "idx": 9,
+          "group": 56,
+          "pos": [
+            -125.08,
+            96.62
+          ]
+        },
+        {
+          "id": "20-10",
+          "idx": 10,
+          "group": 55,
+          "pos": [
+            -139.79,
+            100.21
+          ]
         }
       ]
     },
@@ -3252,7 +3365,8 @@
       "scale": 1.5,
       "isBoss": true,
       "characteristics": [
-        "Taunt"
+        "Taunt",
+        "Mind Soothe"
       ],
       "spells": [
         {
@@ -3318,7 +3432,8 @@
       "scale": 2,
       "isBoss": true,
       "characteristics": [
-        "Taunt"
+        "Taunt",
+        "Mind Soothe"
       ],
       "spells": [
         {
@@ -3392,7 +3507,8 @@
       "scale": 2,
       "isBoss": true,
       "characteristics": [
-        "Taunt"
+        "Taunt",
+        "Mind Soothe"
       ],
       "spells": [
         {
@@ -3441,7 +3557,9 @@
         },
         {
           "id": 429091,
-          "attributes": []
+          "attributes": [
+            "magic"
+          ]
         },
         {
           "id": 444546,
@@ -3492,11 +3610,23 @@
       "scale": 1.5,
       "isBoss": false,
       "characteristics": [
+        "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
+        "Polymorph",
         "Root",
         "Fear",
         "Disorient",
+        "Repentance",
         "Imprison",
-        "Stun"
+        "Sap",
+        "Stun",
+        "Slow",
+        "Sleep Walk",
+        "Mind Soothe"
       ],
       "spells": [
         {

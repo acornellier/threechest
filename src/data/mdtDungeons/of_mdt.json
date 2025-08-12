@@ -107,12 +107,19 @@
         "Taunt",
         "Incapacitate",
         "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
+        "Polymorph",
         "Root",
         "Fear",
         "Disorient",
+        "Repentance",
         "Imprison",
+        "Sap",
         "Stun",
         "Slow",
+        "Sleep Walk",
         "Mind Soothe"
       ],
       "spells": [
@@ -427,8 +434,14 @@
         "Taunt",
         "Incapacitate",
         "Silence",
+        "Knock",
+        "Grip",
+        "Root",
+        "Fear",
+        "Disorient",
         "Stun",
-        "Slow"
+        "Slow",
+        "Sleep Walk"
       ],
       "spells": [
         {
@@ -674,9 +687,16 @@
       "isBoss": false,
       "characteristics": [
         "Taunt",
+        "Incapacitate",
         "Silence",
+        "Knock",
+        "Grip",
+        "Root",
+        "Fear",
+        "Disorient",
         "Stun",
-        "Slow"
+        "Slow",
+        "Sleep Walk"
       ],
       "spells": [
         {
@@ -807,12 +827,19 @@
         "Taunt",
         "Incapacitate",
         "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
         "Polymorph",
+        "Root",
         "Fear",
         "Disorient",
+        "Repentance",
         "Imprison",
+        "Sap",
         "Stun",
         "Slow",
+        "Sleep Walk",
         "Mind Soothe"
       ],
       "spells": [],
@@ -1159,11 +1186,20 @@
         "Taunt",
         "Incapacitate",
         "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
+        "Polymorph",
         "Root",
         "Fear",
         "Disorient",
+        "Imprison",
+        "Sap",
         "Stun",
-        "Slow"
+        "Slow",
+        "Sleep Walk",
+        "Scare Beast",
+        "Hibernate"
       ],
       "spells": [
         {
@@ -1367,15 +1403,22 @@
       "scale": 1.5,
       "isBoss": false,
       "characteristics": [
+        "Taunt",
         "Incapacitate",
         "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
         "Polymorph",
         "Root",
         "Fear",
         "Disorient",
+        "Repentance",
         "Imprison",
+        "Sap",
         "Stun",
         "Slow",
+        "Sleep Walk",
         "Mind Soothe"
       ],
       "spells": [
@@ -1453,7 +1496,10 @@
       "creatureType": "Humanoid",
       "scale": 2,
       "isBoss": false,
-      "characteristics": [],
+      "characteristics": [
+        "Taunt",
+        "Mind Soothe"
+      ],
       "spells": [
         {
           "id": 465827,
@@ -1517,11 +1563,16 @@
         "Taunt",
         "Incapacitate",
         "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
         "Polymorph",
         "Root",
         "Fear",
         "Disorient",
+        "Repentance",
         "Imprison",
+        "Sap",
         "Stun",
         "Slow",
         "Sleep Walk",
@@ -1616,11 +1667,19 @@
         "Taunt",
         "Incapacitate",
         "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
+        "Polymorph",
+        "Root",
         "Fear",
         "Disorient",
+        "Repentance",
         "Imprison",
+        "Sap",
         "Stun",
         "Slow",
+        "Sleep Walk",
         "Mind Soothe"
       ],
       "spells": [
@@ -1735,12 +1794,19 @@
         "Taunt",
         "Incapacitate",
         "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
         "Polymorph",
+        "Root",
         "Fear",
         "Disorient",
+        "Repentance",
         "Imprison",
+        "Sap",
         "Stun",
         "Slow",
+        "Sleep Walk",
         "Mind Soothe"
       ],
       "spells": [
@@ -1853,11 +1919,20 @@
         "Taunt",
         "Incapacitate",
         "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
+        "Polymorph",
+        "Root",
         "Fear",
         "Disorient",
         "Imprison",
+        "Sap",
         "Stun",
-        "Slow"
+        "Slow",
+        "Sleep Walk",
+        "Scare Beast",
+        "Hibernate"
       ],
       "spells": [
         {
@@ -2029,12 +2104,19 @@
         "Taunt",
         "Incapacitate",
         "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
+        "Polymorph",
         "Root",
         "Fear",
         "Disorient",
+        "Repentance",
         "Imprison",
+        "Sap",
         "Stun",
         "Slow",
+        "Sleep Walk",
         "Mind Soothe"
       ],
       "spells": [
@@ -2188,7 +2270,8 @@
       "scale": 2,
       "isBoss": false,
       "characteristics": [
-        "Taunt"
+        "Taunt",
+        "Mind Soothe"
       ],
       "spells": [
         {
@@ -2288,10 +2371,16 @@
         "Taunt",
         "Incapacitate",
         "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
+        "Root",
         "Fear",
+        "Banish",
         "Disorient",
         "Stun",
-        "Slow"
+        "Slow",
+        "Sleep Walk"
       ],
       "spells": [
         {
@@ -2377,7 +2466,8 @@
       "scale": 1.7,
       "isBoss": false,
       "characteristics": [
-        "Taunt"
+        "Taunt",
+        "Mind Soothe"
       ],
       "spells": [
         {
@@ -2527,7 +2617,8 @@
       "scale": 1.7,
       "isBoss": true,
       "characteristics": [
-        "Taunt"
+        "Taunt",
+        "Mind Soothe"
       ],
       "spells": [
         {
@@ -2573,7 +2664,8 @@
       "scale": 1.7,
       "isBoss": true,
       "characteristics": [
-        "Taunt"
+        "Taunt",
+        "Mind Soothe"
       ],
       "spells": [
         {
@@ -2727,7 +2819,8 @@
       "scale": 2,
       "isBoss": true,
       "characteristics": [
-        "Taunt"
+        "Taunt",
+        "Mind Soothe"
       ],
       "spells": [
         {
@@ -2881,12 +2974,22 @@
       "isBoss": false,
       "characteristics": [
         "Taunt",
+        "Incapacitate",
         "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
+        "Polymorph",
+        "Root",
         "Fear",
         "Disorient",
         "Imprison",
+        "Sap",
         "Stun",
-        "Slow"
+        "Slow",
+        "Sleep Walk",
+        "Scare Beast",
+        "Hibernate"
       ],
       "spells": [
         {
@@ -2992,7 +3095,22 @@
       "isBoss": false,
       "characteristics": [
         "Taunt",
-        "Stun"
+        "Incapacitate",
+        "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
+        "Polymorph",
+        "Root",
+        "Fear",
+        "Disorient",
+        "Imprison",
+        "Sap",
+        "Stun",
+        "Slow",
+        "Sleep Walk",
+        "Scare Beast",
+        "Hibernate"
       ],
       "spells": [
         {
@@ -3139,7 +3257,17 @@
       "scale": 1,
       "isBoss": false,
       "characteristics": [
-        "Stun"
+        "Taunt",
+        "Incapacitate",
+        "Silence",
+        "Knock",
+        "Grip",
+        "Root",
+        "Fear",
+        "Disorient",
+        "Stun",
+        "Slow",
+        "Sleep Walk"
       ],
       "spells": [
         {
@@ -3213,7 +3341,9 @@
       "creatureType": "Not specified",
       "scale": 1.5,
       "isBoss": false,
-      "characteristics": [],
+      "characteristics": [
+        "Taunt"
+      ],
       "spells": [
         {
           "id": 468616,
@@ -3259,7 +3389,9 @@
       "creatureType": "Not specified",
       "scale": 1.5,
       "isBoss": false,
-      "characteristics": [],
+      "characteristics": [
+        "Taunt"
+      ],
       "spells": [
         {
           "id": 460781,

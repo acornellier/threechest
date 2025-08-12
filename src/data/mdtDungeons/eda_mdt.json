@@ -1,13 +1,13 @@
 {
   "dungeonIndex": 123,
-  "totalCount": 540,
+  "totalCount": 555,
   "enemies": [
     {
       "id": 234912,
       "enemyIndex": 1,
       "name": "Ravaging Scavenger",
       "count": 5,
-      "health": 80204883,
+      "health": 88694183,
       "creatureType": "Aberration",
       "scale": 1.1,
       "isBoss": false,
@@ -15,10 +15,15 @@
         "Taunt",
         "Incapacitate",
         "Silence",
+        "Knock",
+        "Grip",
+        "Root",
         "Fear",
+        "Banish",
         "Disorient",
         "Stun",
-        "Slow"
+        "Slow",
+        "Sleep Walk"
       ],
       "spells": [
         {
@@ -92,8 +97,8 @@
           "idx": 7,
           "group": 10,
           "pos": [
-            -181.67,
-            264.95
+            -180.86,
+            263.18
           ]
         },
         {
@@ -101,8 +106,8 @@
           "idx": 8,
           "group": 10,
           "pos": [
-            -177.05,
-            268.27
+            -177.45,
+            266.09
           ]
         },
         {
@@ -113,6 +118,24 @@
             -164.66,
             257.28
           ]
+        },
+        {
+          "id": "1-10",
+          "idx": 10,
+          "group": 67,
+          "pos": [
+            -188.02,
+            269.5
+          ]
+        },
+        {
+          "id": "1-11",
+          "idx": 11,
+          "group": 67,
+          "pos": [
+            -187.94,
+            273.77
+          ]
         }
       ]
     },
@@ -121,7 +144,7 @@
       "enemyIndex": 2,
       "name": "Overgorged Mite",
       "count": 5,
-      "health": 64163907,
+      "health": 70955347,
       "creatureType": "Aberration",
       "scale": 1.1,
       "isBoss": false,
@@ -129,10 +152,15 @@
         "Taunt",
         "Incapacitate",
         "Silence",
+        "Knock",
+        "Grip",
+        "Root",
         "Fear",
+        "Banish",
         "Disorient",
         "Stun",
-        "Slow"
+        "Slow",
+        "Sleep Walk"
       ],
       "spells": [
         {
@@ -220,7 +248,7 @@
       "enemyIndex": 3,
       "name": "Invading Mite",
       "count": 1,
-      "health": 16040977,
+      "health": 17738837,
       "creatureType": "Aberration",
       "scale": 0.8,
       "isBoss": false,
@@ -228,10 +256,15 @@
         "Taunt",
         "Incapacitate",
         "Silence",
+        "Knock",
+        "Grip",
+        "Root",
         "Fear",
+        "Banish",
         "Disorient",
         "Stun",
-        "Slow"
+        "Slow",
+        "Sleep Walk"
       ],
       "spells": [
         {
@@ -348,8 +381,8 @@
           "idx": 12,
           "group": 9,
           "pos": [
-            -181.64,
-            276.91
+            -178.5,
+            278.85
           ]
         },
         {
@@ -357,8 +390,8 @@
           "idx": 13,
           "group": 9,
           "pos": [
-            -181.6,
-            273.88
+            -178.45,
+            275.81
           ]
         },
         {
@@ -366,8 +399,8 @@
           "idx": 14,
           "group": 9,
           "pos": [
-            -181.56,
-            280.1
+            -178.41,
+            282.03
           ]
         },
         {
@@ -375,8 +408,8 @@
           "idx": 15,
           "group": 9,
           "pos": [
-            -184.24,
-            275.24
+            -181.1,
+            277.17
           ]
         },
         {
@@ -384,8 +417,8 @@
           "idx": 16,
           "group": 9,
           "pos": [
-            -184.36,
-            278.52
+            -181.22,
+            280.46
           ]
         }
       ]
@@ -395,7 +428,7 @@
       "enemyIndex": 4,
       "name": "Voracious Gorger",
       "count": 5,
-      "health": 96245860,
+      "health": 106433020,
       "creatureType": "Aberration",
       "scale": 1.1,
       "isBoss": false,
@@ -403,10 +436,15 @@
         "Taunt",
         "Incapacitate",
         "Silence",
+        "Knock",
+        "Grip",
+        "Root",
         "Fear",
+        "Banish",
         "Disorient",
         "Stun",
-        "Slow"
+        "Slow",
+        "Sleep Walk"
       ],
       "spells": [
         {
@@ -415,10 +453,6 @@
         },
         {
           "id": 1221152,
-          "attributes": []
-        },
-        {
-          "id": 1221174,
           "attributes": []
         }
       ],
@@ -467,6 +501,15 @@
             -160,
             272.74
           ]
+        },
+        {
+          "id": "4-6",
+          "idx": 6,
+          "group": 67,
+          "pos": [
+            -184.47,
+            272
+          ]
         }
       ]
     },
@@ -475,7 +518,7 @@
       "enemyIndex": 5,
       "name": "Ravenous Destroyer",
       "count": 10,
-      "health": 128327813,
+      "health": 141910693,
       "creatureType": "Aberration",
       "scale": 1.4,
       "isBoss": false,
@@ -549,8 +592,8 @@
           "idx": 2,
           "group": 8,
           "pos": [
-            -192.6,
-            268.21
+            -197.2,
+            268.29
           ]
         },
         {
@@ -558,8 +601,8 @@
           "idx": 3,
           "group": 8,
           "pos": [
-            -192.82,
-            275.18
+            -197.42,
+            274.46
           ]
         }
       ]
@@ -569,7 +612,7 @@
       "enemyIndex": 6,
       "name": "Overcharged Sentinel",
       "count": 12,
-      "health": 128327813,
+      "health": 141910693,
       "creatureType": "Mechanical",
       "scale": 1.4,
       "isBoss": false,
@@ -703,7 +746,7 @@
       "enemyIndex": 7,
       "name": "Tamed Ruinstalker",
       "count": 5,
-      "health": 80204883,
+      "health": 88694183,
       "creatureType": "Beast",
       "scale": 1.1,
       "isBoss": false,
@@ -711,13 +754,26 @@
         "Taunt",
         "Incapacitate",
         "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
+        "Polymorph",
+        "Root",
         "Fear",
         "Disorient",
         "Imprison",
+        "Sap",
         "Stun",
-        "Slow"
+        "Slow",
+        "Sleep Walk",
+        "Scare Beast",
+        "Hibernate"
       ],
       "spells": [
+        {
+          "id": 317898,
+          "attributes": []
+        },
         {
           "id": 1222356,
           "attributes": []
@@ -875,7 +931,7 @@
       "enemyIndex": 8,
       "name": "Wastelander Farstalker",
       "count": 5,
-      "health": 80204883,
+      "health": 88694183,
       "creatureType": "Humanoid",
       "scale": 1.1,
       "isBoss": false,
@@ -883,13 +939,26 @@
         "Taunt",
         "Incapacitate",
         "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
+        "Polymorph",
+        "Root",
         "Fear",
         "Disorient",
+        "Repentance",
         "Imprison",
+        "Sap",
         "Stun",
-        "Slow"
+        "Slow",
+        "Sleep Walk",
+        "Mind Soothe"
       ],
       "spells": [
+        {
+          "id": 317898,
+          "attributes": []
+        },
         {
           "id": 1221679,
           "attributes": []
@@ -1156,7 +1225,7 @@
       "enemyIndex": 9,
       "name": "Wastelander Phaseblade",
       "count": 4,
-      "health": 80204883,
+      "health": 88694183,
       "creatureType": "Humanoid",
       "scale": 1.1,
       "isBoss": false,
@@ -1164,11 +1233,20 @@
         "Taunt",
         "Incapacitate",
         "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
+        "Polymorph",
+        "Root",
         "Fear",
         "Disorient",
+        "Repentance",
         "Imprison",
+        "Sap",
         "Stun",
-        "Slow"
+        "Slow",
+        "Sleep Walk",
+        "Mind Soothe"
       ],
       "spells": [
         {
@@ -1539,7 +1617,7 @@
       "enemyIndex": 10,
       "name": "Wastelander Ritualist",
       "count": 7,
-      "health": 64163907,
+      "health": 70955347,
       "creatureType": "Humanoid",
       "scale": 1.3,
       "isBoss": false,
@@ -1547,11 +1625,20 @@
         "Taunt",
         "Incapacitate",
         "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
+        "Polymorph",
+        "Root",
         "Fear",
         "Disorient",
+        "Repentance",
         "Imprison",
+        "Sap",
         "Stun",
-        "Slow"
+        "Slow",
+        "Sleep Walk",
+        "Mind Soothe"
       ],
       "spells": [
         {
@@ -1732,12 +1819,13 @@
       "enemyIndex": 11,
       "name": "Wastelander Pactspeaker",
       "count": 18,
-      "health": 128142894,
+      "health": 141910693,
       "creatureType": "Humanoid",
       "scale": 1.2,
       "isBoss": false,
       "characteristics": [
-        "Taunt"
+        "Taunt",
+        "Mind Soothe"
       ],
       "spells": [
         {
@@ -1753,18 +1841,6 @@
           "attributes": [
             "interruptible"
           ]
-        },
-        {
-          "id": 1226306,
-          "attributes": []
-        },
-        {
-          "id": 1226355,
-          "attributes": []
-        },
-        {
-          "id": 1226436,
-          "attributes": []
         },
         {
           "id": 1226492,
@@ -1879,7 +1955,7 @@
       "enemyIndex": 12,
       "name": " K'aresh Elemental",
       "count": 6,
-      "health": 72080378,
+      "health": 79824765,
       "creatureType": "Elemental",
       "scale": 1.1,
       "isBoss": false,
@@ -1887,16 +1963,21 @@
         "Taunt",
         "Incapacitate",
         "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
+        "Root",
         "Fear",
+        "Banish",
         "Disorient",
         "Stun",
-        "Slow"
+        "Slow",
+        "Sleep Walk"
       ],
       "spells": [
         {
           "id": 1223000,
           "attributes": [
-            "interruptible",
             "magic"
           ]
         }
@@ -1981,7 +2062,7 @@
       "enemyIndex": 13,
       "name": "Wastes Creeper",
       "count": 9,
-      "health": 104116102,
+      "health": 115302438,
       "creatureType": "Aberration",
       "scale": 1,
       "isBoss": false,
@@ -2095,29 +2176,10 @@
       "creatureType": "Beast",
       "scale": 1.5,
       "isBoss": false,
-      "characteristics": [],
-      "spells": [
-        {
-          "id": 1215850,
-          "attributes": []
-        },
-        {
-          "id": 1237195,
-          "attributes": []
-        },
-        {
-          "id": 1237199,
-          "attributes": []
-        },
-        {
-          "id": 1237220,
-          "attributes": []
-        },
-        {
-          "id": 1237224,
-          "attributes": []
-        }
+      "characteristics": [
+        "Taunt"
       ],
+      "spells": [],
       "spawns": [
         {
           "id": "14-1",
@@ -2303,7 +2365,7 @@
       "enemyIndex": 15,
       "name": "Azhiccar",
       "count": 0,
-      "health": 505652853,
+      "health": 559173769,
       "creatureType": "Aberration",
       "scale": 2,
       "isBoss": true,
@@ -2313,10 +2375,6 @@
       "spells": [
         {
           "id": 1217232,
-          "attributes": []
-        },
-        {
-          "id": 1217241,
           "attributes": []
         },
         {
@@ -2373,11 +2431,14 @@
       "enemyIndex": 16,
       "name": "Taah'bat",
       "count": 0,
-      "health": 561836504,
+      "health": 621304187,
       "creatureType": "Humanoid",
       "scale": 1.5,
       "isBoss": true,
-      "characteristics": [],
+      "characteristics": [
+        "Taunt",
+        "Mind Soothe"
+      ],
       "spells": [
         {
           "id": 1219417,
@@ -2413,12 +2474,13 @@
       "enemyIndex": 17,
       "name": "Soul-Scribe",
       "count": 0,
-      "health": 672625041,
+      "health": 745565025,
       "creatureType": "Humanoid",
       "scale": 2,
       "isBoss": true,
       "characteristics": [
-        "Taunt"
+        "Taunt",
+        "Mind Soothe"
       ],
       "spells": [
         {
@@ -2495,16 +2557,23 @@
       "enemyIndex": 18,
       "name": "Frenzied Mite",
       "count": 0,
-      "health": 6683740,
+      "health": 7391182,
       "creatureType": "Aberration",
       "scale": 1.5,
       "isBoss": false,
       "characteristics": [
+        "Taunt",
         "Incapacitate",
+        "Silence",
+        "Knock",
+        "Grip",
+        "Root",
         "Fear",
+        "Banish",
         "Disorient",
         "Stun",
-        "Slow"
+        "Slow",
+        "Sleep Walk"
       ],
       "spells": [
         {
@@ -2560,7 +2629,7 @@
       "enemyIndex": 19,
       "name": "A'wazj",
       "count": 0,
-      "health": 561836504,
+      "health": 621304187,
       "creatureType": "Beast",
       "scale": 1.5,
       "isBoss": true,
@@ -2640,11 +2709,13 @@
       "enemyIndex": 20,
       "name": "Binding Javelin",
       "count": 0,
-      "health": 13367481,
+      "health": 14782364,
       "creatureType": "Not specified",
       "scale": 1.2,
       "isBoss": false,
-      "characteristics": [],
+      "characteristics": [
+        "Taunt"
+      ],
       "spells": [
         {
           "id": 1220671,

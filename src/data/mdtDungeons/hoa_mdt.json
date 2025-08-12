@@ -1,13 +1,13 @@
 {
   "dungeonIndex": 30,
-  "totalCount": 575,
+  "totalCount": 518,
   "enemies": [
     {
       "id": 165515,
       "enemyIndex": 1,
       "name": "Depraved Darkblade",
       "count": 4,
-      "health": 80204883,
+      "health": 93035873,
       "creatureType": "Humanoid",
       "scale": 1.4,
       "isBoss": false,
@@ -15,6 +15,8 @@
         "Taunt",
         "Incapacitate",
         "Silence",
+        "Knock",
+        "Grip",
         "Mind Control",
         "Polymorph",
         "Root",
@@ -25,9 +27,14 @@
         "Sap",
         "Stun",
         "Slow",
+        "Sleep Walk",
         "Mind Soothe"
       ],
       "spells": [
+        {
+          "id": 317898,
+          "attributes": []
+        },
         {
           "id": 1235060,
           "attributes": [
@@ -52,15 +59,6 @@
           "pos": [
             -144.53,
             355.81
-          ]
-        },
-        {
-          "id": "1-3",
-          "idx": 3,
-          "group": 7,
-          "pos": [
-            -138.64,
-            318.75
           ]
         },
         {
@@ -95,8 +93,8 @@
           "idx": 7,
           "group": 17,
           "pos": [
-            -105.63,
-            236.17
+            -95.33,
+            247.31
           ]
         },
         {
@@ -131,8 +129,8 @@
           "idx": 11,
           "group": 32,
           "pos": [
-            -169.48,
-            182.57
+            -174.55,
+            183.24
           ]
         },
         {
@@ -149,8 +147,8 @@
           "idx": 13,
           "group": 34,
           "pos": [
-            -159.11,
-            159.2
+            -157.21,
+            154.42
           ]
         },
         {
@@ -187,7 +185,7 @@
       "enemyIndex": 2,
       "name": "Depraved Houndmaster",
       "count": 5,
-      "health": 72184395,
+      "health": 83732286,
       "creatureType": "Humanoid",
       "scale": 1.4,
       "isBoss": false,
@@ -195,6 +193,8 @@
         "Taunt",
         "Incapacitate",
         "Silence",
+        "Knock",
+        "Grip",
         "Mind Control",
         "Polymorph",
         "Root",
@@ -205,6 +205,7 @@
         "Sap",
         "Stun",
         "Slow",
+        "Sleep Walk",
         "Mind Soothe"
       ],
       "spells": [
@@ -215,8 +216,8 @@
         {
           "id": 326450,
           "attributes": [
-            "interruptible",
-            "enrage"
+            "enrage",
+            "interruptible"
           ]
         },
         {
@@ -403,15 +404,6 @@
           ]
         },
         {
-          "id": "2-8",
-          "idx": 8,
-          "group": 23,
-          "pos": [
-            -199.46,
-            303.96
-          ]
-        },
-        {
           "id": "2-9",
           "idx": 9,
           "group": 56,
@@ -445,7 +437,7 @@
       "enemyIndex": 3,
       "name": "Vicious Gargon",
       "count": 4,
-      "health": 88225372,
+      "health": 102339460,
       "creatureType": "Beast",
       "scale": 1.4,
       "isBoss": false,
@@ -453,6 +445,8 @@
         "Taunt",
         "Incapacitate",
         "Silence",
+        "Knock",
+        "Grip",
         "Mind Control",
         "Polymorph",
         "Root",
@@ -461,18 +455,19 @@
         "Imprison",
         "Sap",
         "Stun",
-        "Slow"
+        "Slow",
+        "Sleep Walk",
+        "Scare Beast",
+        "Hibernate"
       ],
       "spells": [
         {
-          "id": 1235070,
+          "id": 317898,
           "attributes": []
         },
         {
-          "id": 1237602,
-          "attributes": [
-            "bleed"
-          ]
+          "id": 1235070,
+          "attributes": []
         }
       ],
       "spawns": [
@@ -603,24 +598,6 @@
           ]
         },
         {
-          "id": "3-15",
-          "idx": 15,
-          "group": 23,
-          "pos": [
-            -194.3,
-            305.46
-          ]
-        },
-        {
-          "id": "3-16",
-          "idx": 16,
-          "group": 23,
-          "pos": [
-            -199.13,
-            309.35
-          ]
-        },
-        {
           "id": "3-17",
           "idx": 17,
           "group": 56,
@@ -672,7 +649,7 @@
       "enemyIndex": 4,
       "name": "Depraved Obliterator",
       "count": 5,
-      "health": 76194639,
+      "health": 88384080,
       "creatureType": "Humanoid",
       "scale": 1.4,
       "isBoss": false,
@@ -680,6 +657,8 @@
         "Taunt",
         "Incapacitate",
         "Silence",
+        "Knock",
+        "Grip",
         "Mind Control",
         "Polymorph",
         "Root",
@@ -690,9 +669,14 @@
         "Sap",
         "Stun",
         "Slow",
+        "Sleep Walk",
         "Mind Soothe"
       ],
       "spells": [
+        {
+          "id": 317898,
+          "attributes": []
+        },
         {
           "id": 325876,
           "attributes": [
@@ -757,21 +741,12 @@
           ]
         },
         {
-          "id": "4-6",
-          "idx": 6,
-          "group": 12,
-          "pos": [
-            -60.28,
-            290.08
-          ]
-        },
-        {
           "id": "4-7",
           "idx": 7,
           "group": 17,
           "pos": [
-            -111.62,
-            234.22
+            -98.64,
+            242.83
           ]
         },
         {
@@ -788,8 +763,8 @@
           "idx": 9,
           "group": 25,
           "pos": [
-            -210.24,
-            283.65
+            -210.42,
+            282.56
           ]
         },
         {
@@ -797,8 +772,8 @@
           "idx": 10,
           "group": 25,
           "pos": [
-            -213.93,
-            287.22
+            -214.29,
+            286.68
           ]
         },
         {
@@ -834,7 +809,7 @@
           "group": 32,
           "pos": [
             -174.78,
-            185.65
+            188.39
           ]
         },
         {
@@ -851,8 +826,8 @@
           "idx": 16,
           "group": 34,
           "pos": [
-            -155.34,
-            154.34
+            -152.54,
+            154.43
           ]
         },
         {
@@ -869,17 +844,8 @@
           "idx": 18,
           "group": 32,
           "pos": [
-            -174.82,
-            179.74
-          ]
-        },
-        {
-          "id": "4-19",
-          "idx": 19,
-          "group": 57,
-          "pos": [
-            -160.6,
-            194.1
+            -174.7,
+            178.27
           ]
         },
         {
@@ -887,8 +853,8 @@
           "idx": 20,
           "group": 36,
           "pos": [
-            -147.35,
-            182.2
+            -147.52,
+            179.66
           ]
         },
         {
@@ -896,8 +862,8 @@
           "idx": 21,
           "group": 36,
           "pos": [
-            -135.51,
-            181.96
+            -135.68,
+            179.42
           ]
         },
         {
@@ -926,6 +892,42 @@
             -176.86,
             53.44
           ]
+        },
+        {
+          "id": "4-25",
+          "idx": 25,
+          "group": 7,
+          "pos": [
+            -139.37,
+            318.61
+          ]
+        },
+        {
+          "id": "4-26",
+          "idx": 26,
+          "group": 65,
+          "pos": [
+            -119.92,
+            200.1
+          ]
+        },
+        {
+          "id": "4-27",
+          "idx": 27,
+          "group": 60,
+          "pos": [
+            -118.27,
+            228.25
+          ]
+        },
+        {
+          "id": "4-28",
+          "idx": 28,
+          "group": 60,
+          "pos": [
+            -123.44,
+            230.19
+          ]
         }
       ]
     },
@@ -934,14 +936,16 @@
       "enemyIndex": 5,
       "name": "Toiling Groundskeeper",
       "count": 2,
-      "health": 48122930,
+      "health": 55821524,
       "creatureType": "Humanoid",
-      "scale": 1,
+      "scale": 0.9,
       "isBoss": false,
       "characteristics": [
         "Taunt",
         "Incapacitate",
         "Silence",
+        "Knock",
+        "Grip",
         "Mind Control",
         "Polymorph",
         "Root",
@@ -952,9 +956,14 @@
         "Sap",
         "Stun",
         "Slow",
+        "Sleep Walk",
         "Mind Soothe"
       ],
       "spells": [
+        {
+          "id": 317898,
+          "attributes": []
+        },
         {
           "id": 1235121,
           "attributes": []
@@ -1002,8 +1011,74 @@
           "idx": 5,
           "group": null,
           "pos": [
-            -90.51,
-            304.64
+            -84.02,
+            310.14
+          ],
+          "patrol": [
+            [
+              -84.02,
+              310.14
+            ],
+            [
+              -92.34,
+              316.44
+            ],
+            [
+              -87.11,
+              327.3
+            ],
+            [
+              -92.34,
+              316.44
+            ],
+            [
+              -84.02,
+              310.14
+            ],
+            [
+              -79.49,
+              303.32
+            ],
+            [
+              -68.35,
+              294
+            ],
+            [
+              -64.54,
+              290.05
+            ],
+            [
+              -53.67,
+              280.17
+            ],
+            [
+              -43.09,
+              278.06
+            ],
+            [
+              -36.6,
+              275.09
+            ],
+            [
+              -43.09,
+              278.06
+            ],
+            [
+              -53.67,
+              280.17
+            ],
+            [
+              -64.54,
+              290.05
+            ],
+            [
+              -68.35,
+              294
+            ],
+            [
+              -79.49,
+              303.32
+            ]
           ]
         },
         {
@@ -1094,6 +1169,60 @@
           "pos": [
             -206.18,
             295.14
+          ],
+          "patrol": [
+            [
+              -206.18,
+              295.14
+            ],
+            [
+              -196.59,
+              290.54
+            ],
+            [
+              -183.18,
+              284.19
+            ],
+            [
+              -175.28,
+              280.38
+            ],
+            [
+              -177.96,
+              271.06
+            ],
+            [
+              -183.89,
+              263.87
+            ],
+            [
+              -188.69,
+              258.36
+            ],
+            [
+              -183.89,
+              263.87
+            ],
+            [
+              -177.96,
+              271.06
+            ],
+            [
+              -175.28,
+              280.38
+            ],
+            [
+              -183.04,
+              284.05
+            ],
+            [
+              -196.59,
+              290.54
+            ],
+            [
+              -206.18,
+              295.14
+            ]
           ]
         },
         {
@@ -1281,8 +1410,8 @@
           "idx": 36,
           "group": 31,
           "pos": [
-            -181.27,
-            188.85
+            -181.72,
+            190.36
           ]
         },
         {
@@ -1290,8 +1419,8 @@
           "idx": 37,
           "group": 31,
           "pos": [
-            -181.45,
-            192.36
+            -181.52,
+            193.75
           ]
         },
         {
@@ -1299,8 +1428,8 @@
           "idx": 38,
           "group": 31,
           "pos": [
-            -181.15,
-            195.85
+            -181.28,
+            196.88
           ]
         },
         {
@@ -1308,8 +1437,8 @@
           "idx": 39,
           "group": 31,
           "pos": [
-            -181.01,
-            199.65
+            -181.13,
+            200.14
           ]
         },
         {
@@ -1317,8 +1446,8 @@
           "idx": 40,
           "group": 33,
           "pos": [
-            -180.88,
-            165.98
+            -181.18,
+            165.62
           ]
         },
         {
@@ -1326,8 +1455,8 @@
           "idx": 41,
           "group": 33,
           "pos": [
-            -180.96,
-            169.56
+            -181.2,
+            168.89
           ]
         },
         {
@@ -1335,8 +1464,8 @@
           "idx": 42,
           "group": 33,
           "pos": [
-            -180.95,
-            172.84
+            -181.13,
+            172.23
           ]
         },
         {
@@ -1345,7 +1474,7 @@
           "group": 33,
           "pos": [
             -181.07,
-            176.65
+            175.37
           ]
         }
       ]
@@ -1355,7 +1484,7 @@
       "enemyIndex": 6,
       "name": "Depraved Collector",
       "count": 5,
-      "health": 80204883,
+      "health": 93035873,
       "creatureType": "Humanoid",
       "scale": 1.4,
       "isBoss": false,
@@ -1363,6 +1492,8 @@
         "Taunt",
         "Incapacitate",
         "Silence",
+        "Knock",
+        "Grip",
         "Mind Control",
         "Polymorph",
         "Root",
@@ -1373,19 +1504,18 @@
         "Sap",
         "Stun",
         "Slow",
+        "Sleep Walk",
         "Mind Soothe"
       ],
       "spells": [
         {
-          "id": 325700,
-          "attributes": [
-            "interruptible"
-          ]
+          "id": 317898,
+          "attributes": []
         },
         {
           "id": 325701,
           "attributes": [
-            "magic"
+            "interruptible"
           ]
         }
       ],
@@ -1452,6 +1582,24 @@
             -148.64,
             249.52
           ]
+        },
+        {
+          "id": "6-8",
+          "idx": 8,
+          "group": 25,
+          "pos": [
+            -209.24,
+            287.55
+          ]
+        },
+        {
+          "id": "6-9",
+          "idx": 9,
+          "group": 12,
+          "pos": [
+            -61.15,
+            290.76
+          ]
         }
       ]
     },
@@ -1460,7 +1608,7 @@
       "enemyIndex": 7,
       "name": "Shard of Halkias",
       "count": 15,
-      "health": 192491720,
+      "health": 223286095,
       "creatureType": "Elemental",
       "scale": 2,
       "isBoss": false,
@@ -1482,10 +1630,6 @@
         },
         {
           "id": 326438,
-          "attributes": []
-        },
-        {
-          "id": 326440,
           "attributes": []
         },
         {
@@ -1528,7 +1672,7 @@
       "enemyIndex": 8,
       "name": "Halkias",
       "count": 0,
-      "health": 561836504,
+      "health": 651717793,
       "creatureType": "Elemental",
       "scale": 1.6,
       "isBoss": true,
@@ -1553,28 +1697,12 @@
           "attributes": []
         },
         {
-          "id": 322977,
-          "attributes": [
-            "magic"
-          ]
-        },
-        {
           "id": 323001,
-          "attributes": []
-        },
-        {
-          "id": 324044,
           "attributes": []
         },
         {
           "id": 339235,
           "attributes": []
-        },
-        {
-          "id": 339237,
-          "attributes": [
-            "magic"
-          ]
         }
       ],
       "spawns": [
@@ -1594,12 +1722,13 @@
       "enemyIndex": 9,
       "name": "Stoneborn Reaver",
       "count": 8,
-      "health": 128327813,
+      "health": 148857397,
       "creatureType": "Humanoid",
       "scale": 1.4,
       "isBoss": false,
       "characteristics": [
-        "Taunt"
+        "Taunt",
+        "Mind Soothe"
       ],
       "spells": [
         {
@@ -1615,15 +1744,6 @@
       ],
       "spawns": [
         {
-          "id": "9-1",
-          "idx": 1,
-          "group": 60,
-          "pos": [
-            -121.2,
-            228.1
-          ]
-        },
-        {
           "id": "9-2",
           "idx": 2,
           "group": 61,
@@ -1637,17 +1757,17 @@
           "idx": 3,
           "group": 36,
           "pos": [
-            -141.5,
-            182.35
+            -141.67,
+            179.81
           ]
         },
         {
           "id": "9-4",
           "idx": 4,
-          "group": 37,
+          "group": 76,
           "pos": [
-            -158.96,
-            229.43
+            -158.86,
+            227.16
           ]
         },
         {
@@ -1657,15 +1777,52 @@
           "pos": [
             -160.35,
             173.1
-          ]
-        },
-        {
-          "id": "9-6",
-          "idx": 6,
-          "group": 35,
-          "pos": [
-            -141.45,
-            204.68
+          ],
+          "patrol": [
+            [
+              -160.35,
+              173.1
+            ],
+            [
+              -156.76,
+              166.78
+            ],
+            [
+              -155.5,
+              157.74
+            ],
+            [
+              -156.76,
+              166.78
+            ],
+            [
+              -160.35,
+              173.1
+            ],
+            [
+              -163.81,
+              180.14
+            ],
+            [
+              -165.8,
+              182.13
+            ],
+            [
+              -169.95,
+              182.58
+            ],
+            [
+              -165.8,
+              182.13
+            ],
+            [
+              -163.81,
+              180.14
+            ],
+            [
+              -160.35,
+              173.1
+            ]
           ]
         },
         {
@@ -1696,15 +1853,6 @@
           ]
         },
         {
-          "id": "9-10",
-          "idx": 10,
-          "group": 65,
-          "pos": [
-            -119.75,
-            199.97
-          ]
-        },
-        {
           "id": "9-11",
           "idx": 11,
           "group": 67,
@@ -1720,7 +1868,7 @@
       "enemyIndex": 10,
       "name": "Stonefiend Anklebiter",
       "count": 1,
-      "health": 24061465,
+      "health": 27910762,
       "creatureType": "Humanoid",
       "scale": 0.8,
       "isBoss": false,
@@ -1728,15 +1876,20 @@
         "Taunt",
         "Incapacitate",
         "Silence",
+        "Knock",
+        "Grip",
         "Mind Control",
         "Polymorph",
         "Root",
         "Fear",
         "Disorient",
+        "Repentance",
         "Imprison",
         "Sap",
         "Stun",
-        "Slow"
+        "Slow",
+        "Sleep Walk",
+        "Mind Soothe"
       ],
       "spells": [
         {
@@ -1751,51 +1904,6 @@
         }
       ],
       "spawns": [
-        {
-          "id": "10-1",
-          "idx": 1,
-          "group": 35,
-          "pos": [
-            -144.32,
-            208.12
-          ]
-        },
-        {
-          "id": "10-2",
-          "idx": 2,
-          "group": 35,
-          "pos": [
-            -146.04,
-            205.47
-          ]
-        },
-        {
-          "id": "10-3",
-          "idx": 3,
-          "group": 35,
-          "pos": [
-            -138.18,
-            208.33
-          ]
-        },
-        {
-          "id": "10-4",
-          "idx": 4,
-          "group": 35,
-          "pos": [
-            -136.85,
-            205.26
-          ]
-        },
-        {
-          "id": "10-5",
-          "idx": 5,
-          "group": 35,
-          "pos": [
-            -141.45,
-            209.91
-          ]
-        },
         {
           "id": "10-6",
           "idx": 6,
@@ -1837,8 +1945,8 @@
           "idx": 10,
           "group": 58,
           "pos": [
-            -153.21,
-            213.19
+            -156.05,
+            210.46
           ]
         },
         {
@@ -1846,8 +1954,8 @@
           "idx": 11,
           "group": 58,
           "pos": [
-            -156.01,
-            213.37
+            -159.28,
+            213.59
           ]
         },
         {
@@ -1855,8 +1963,8 @@
           "idx": 12,
           "group": 58,
           "pos": [
-            -159.39,
-            213.65
+            -161.56,
+            212.68
           ]
         },
         {
@@ -1864,8 +1972,8 @@
           "idx": 13,
           "group": 58,
           "pos": [
-            -159.67,
-            210.65
+            -162.41,
+            210.3
           ]
         },
         {
@@ -1873,8 +1981,70 @@
           "idx": 14,
           "group": 58,
           "pos": [
-            -156.32,
-            210.36
+            -159.29,
+            210.45
+          ],
+          "patrol": [
+            [
+              -158.58,
+              209.93
+            ],
+            [
+              -155.62,
+              207.56
+            ],
+            [
+              -152.65,
+              203.75
+            ],
+            [
+              -149.27,
+              198.67
+            ],
+            [
+              -149.13,
+              194.15
+            ],
+            [
+              -152.94,
+              185.4
+            ],
+            [
+              -158.44,
+              182.72
+            ],
+            [
+              -162.81,
+              183.15
+            ],
+            [
+              -158.44,
+              182.72
+            ],
+            [
+              -152.94,
+              185.4
+            ],
+            [
+              -149.13,
+              194.15
+            ],
+            [
+              -149.27,
+              198.67
+            ],
+            [
+              -152.65,
+              203.75
+            ],
+            [
+              -155.62,
+              207.56
+            ],
+            [
+              -158.58,
+              209.93
+            ]
           ]
         },
         {
@@ -1882,8 +2052,8 @@
           "idx": 15,
           "group": 58,
           "pos": [
-            -153.4,
-            210.11
+            -156.91,
+            212.71
           ]
         },
         {
@@ -1891,8 +2061,8 @@
           "idx": 16,
           "group": 58,
           "pos": [
-            -153.64,
-            207.47
+            -157.05,
+            208.35
           ]
         },
         {
@@ -1900,8 +2070,8 @@
           "idx": 17,
           "group": 58,
           "pos": [
-            -156.63,
-            207.62
+            -159.16,
+            207.31
           ]
         },
         {
@@ -1909,8 +2079,8 @@
           "idx": 18,
           "group": 58,
           "pos": [
-            -159.84,
-            207.74
+            -161.31,
+            208
           ]
         },
         {
@@ -2044,8 +2214,8 @@
           "idx": 33,
           "group": 63,
           "pos": [
-            -120.8,
-            208.76
+            -112.93,
+            184.26
           ]
         },
         {
@@ -2053,8 +2223,74 @@
           "idx": 34,
           "group": 63,
           "pos": [
-            -120.79,
-            212.05
+            -115.22,
+            184.07
+          ],
+          "patrol": [
+            [
+              -115.22,
+              184.07
+            ],
+            [
+              -118.69,
+              181.86
+            ],
+            [
+              -121.91,
+              181.18
+            ],
+            [
+              -125.8,
+              181.24
+            ],
+            [
+              -129.47,
+              182.14
+            ],
+            [
+              -132.41,
+              185.7
+            ],
+            [
+              -134.38,
+              191.51
+            ],
+            [
+              -134.95,
+              197.32
+            ],
+            [
+              -132.35,
+              201.78
+            ],
+            [
+              -128.01,
+              204.55
+            ],
+            [
+              -122.19,
+              206.13
+            ],
+            [
+              -117.17,
+              204.15
+            ],
+            [
+              -113.22,
+              200.48
+            ],
+            [
+              -111.86,
+              195.52
+            ],
+            [
+              -112.54,
+              188.01
+            ],
+            [
+              -115.22,
+              184.07
+            ]
           ]
         },
         {
@@ -2062,8 +2298,8 @@
           "idx": 35,
           "group": 63,
           "pos": [
-            -124.07,
-            207.78
+            -115.21,
+            181.56
           ]
         },
         {
@@ -2071,8 +2307,8 @@
           "idx": 36,
           "group": 63,
           "pos": [
-            -125.86,
-            210.3
+            -117.67,
+            184.07
           ]
         },
         {
@@ -2080,8 +2316,71 @@
           "idx": 37,
           "group": 63,
           "pos": [
-            -124.05,
-            212.88
+            -115.34,
+            186.99
+          ]
+        },
+        {
+          "id": "10-38",
+          "idx": 38,
+          "group": 76,
+          "pos": [
+            -155.19,
+            224.25
+          ]
+        },
+        {
+          "id": "10-39",
+          "idx": 39,
+          "group": 76,
+          "pos": [
+            -158.02,
+            222.64
+          ]
+        },
+        {
+          "id": "10-40",
+          "idx": 40,
+          "group": 76,
+          "pos": [
+            -161.34,
+            223.15
+          ]
+        },
+        {
+          "id": "10-41",
+          "idx": 41,
+          "group": 76,
+          "pos": [
+            -163.41,
+            225.5
+          ]
+        },
+        {
+          "id": "10-42",
+          "idx": 42,
+          "group": 76,
+          "pos": [
+            -163.19,
+            228.83
+          ]
+        },
+        {
+          "id": "10-43",
+          "idx": 43,
+          "group": 76,
+          "pos": [
+            -154.26,
+            227.43
+          ]
+        },
+        {
+          "id": "10-44",
+          "idx": 44,
+          "group": 76,
+          "pos": [
+            -155.45,
+            230.26
           ]
         }
       ]
@@ -2091,7 +2390,7 @@
       "enemyIndex": 11,
       "name": "Stoneborn Eviscerator",
       "count": 6,
-      "health": 80204883,
+      "health": 93035873,
       "creatureType": "Humanoid",
       "scale": 1.4,
       "isBoss": false,
@@ -2099,6 +2398,8 @@
         "Taunt",
         "Incapacitate",
         "Silence",
+        "Knock",
+        "Grip",
         "Mind Control",
         "Polymorph",
         "Root",
@@ -2109,15 +2410,16 @@
         "Sap",
         "Stun",
         "Slow",
+        "Sleep Walk",
         "Mind Soothe"
       ],
       "spells": [
         {
-          "id": 326638,
+          "id": 317898,
           "attributes": []
         },
         {
-          "id": 1235257,
+          "id": 326638,
           "attributes": []
         }
       ],
@@ -2141,30 +2443,12 @@
           ]
         },
         {
-          "id": "11-3",
-          "idx": 3,
-          "group": 37,
-          "pos": [
-            -154.45,
-            226.27
-          ]
-        },
-        {
-          "id": "11-4",
-          "idx": 4,
-          "group": 37,
-          "pos": [
-            -160.33,
-            224.27
-          ]
-        },
-        {
           "id": "11-5",
           "idx": 5,
           "group": 36,
           "pos": [
-            -144.25,
-            187.12
+            -144.42,
+            184.58
           ]
         },
         {
@@ -2172,8 +2456,8 @@
           "idx": 6,
           "group": 36,
           "pos": [
-            -138.12,
-            186.99
+            -138.29,
+            184.45
           ]
         },
         {
@@ -2190,8 +2474,8 @@
           "idx": 8,
           "group": 60,
           "pos": [
-            -119.98,
-            222.72
+            -119.85,
+            223.5
           ]
         },
         {
@@ -2199,8 +2483,8 @@
           "idx": 9,
           "group": 60,
           "pos": [
-            -125.83,
-            224.55
+            -125.35,
+            225.07
           ]
         },
         {
@@ -2210,6 +2494,40 @@
           "pos": [
             -107.69,
             203.98
+          ],
+          "patrol": [
+            [
+              -107.69,
+              203.98
+            ],
+            [
+              -104.78,
+              213.88
+            ],
+            [
+              -100.42,
+              218.96
+            ],
+            [
+              -104.78,
+              213.88
+            ],
+            [
+              -107.69,
+              203.98
+            ],
+            [
+              -109.53,
+              192.75
+            ],
+            [
+              -107.84,
+              184.61
+            ],
+            [
+              -109.53,
+              192.75
+            ]
           ]
         },
         {
@@ -2255,12 +2573,13 @@
       "enemyIndex": 12,
       "name": "Stoneborn Slasher",
       "count": 10,
-      "health": 160409767,
+      "health": 186071746,
       "creatureType": "Humanoid",
       "scale": 1.7,
       "isBoss": false,
       "characteristics": [
-        "Taunt"
+        "Taunt",
+        "Mind Soothe"
       ],
       "spells": [
         {
@@ -2487,12 +2806,13 @@
       "enemyIndex": 13,
       "name": "Echelon",
       "count": 0,
-      "health": 481574146,
+      "health": 558615251,
       "creatureType": "Humanoid",
       "scale": 1.8,
       "isBoss": true,
       "characteristics": [
-        "Taunt"
+        "Taunt",
+        "Mind Soothe"
       ],
       "spells": [
         {
@@ -2501,10 +2821,6 @@
         },
         {
           "id": 319603,
-          "attributes": []
-        },
-        {
-          "id": 319702,
           "attributes": []
         },
         {
@@ -2549,12 +2865,13 @@
       "enemyIndex": 14,
       "name": "High Adjudicator Aleez",
       "count": 0,
-      "health": 561836504,
+      "health": 651717793,
       "creatureType": "Humanoid",
       "scale": 1.5,
       "isBoss": true,
       "characteristics": [
-        "Taunt"
+        "Taunt",
+        "Mind Soothe"
       ],
       "spells": [
         {
@@ -2562,6 +2879,10 @@
           "attributes": [
             "interruptible"
           ]
+        },
+        {
+          "id": 323743,
+          "attributes": []
         },
         {
           "id": 329340,
@@ -2601,7 +2922,7 @@
       "enemyIndex": 15,
       "name": "Tormented Soul",
       "count": 0,
-      "health": 24061465,
+      "health": 27910762,
       "creatureType": "Undead",
       "scale": 1,
       "isBoss": false,
@@ -2610,13 +2931,19 @@
         "Incapacitate",
         "Control Undead",
         "Silence",
+        "Knock",
+        "Grip",
         "Shackle Undead",
         "Polymorph",
         "Root",
         "Fear",
+        "Banish",
         "Disorient",
+        "Repentance",
         "Stun",
-        "Slow"
+        "Slow",
+        "Sleep Walk",
+        "Turn Evil"
       ],
       "spells": [],
       "spawns": [
@@ -2843,12 +3170,13 @@
       "enemyIndex": 16,
       "name": "Inquisitor Sigar",
       "count": 35,
-      "health": 240614650,
+      "health": 279107619,
       "creatureType": "Humanoid",
       "scale": 1.7,
       "isBoss": false,
       "characteristics": [
-        "Taunt"
+        "Taunt",
+        "Mind Soothe"
       ],
       "spells": [
         {
@@ -2864,6 +3192,10 @@
           "attributes": [
             "interruptible"
           ]
+        },
+        {
+          "id": 326846,
+          "attributes": []
         },
         {
           "id": 326847,
@@ -2895,12 +3227,13 @@
       "enemyIndex": 17,
       "name": "Lord Chamberlain",
       "count": 0,
-      "health": 642098861,
+      "health": 744820335,
       "creatureType": "Humanoid",
       "scale": 1.5,
       "isBoss": true,
       "characteristics": [
-        "Taunt"
+        "Taunt",
+        "Mind Soothe"
       ],
       "spells": [
         {
@@ -2913,14 +3246,6 @@
         },
         {
           "id": 323236,
-          "attributes": []
-        },
-        {
-          "id": 323392,
-          "attributes": []
-        },
-        {
-          "id": 323393,
           "attributes": []
         },
         {
@@ -2989,18 +3314,34 @@
       "enemyIndex": 18,
       "name": "Undying Stonefiend",
       "count": 0,
-      "health": 13367481,
+      "health": 15505979,
       "creatureType": "Humanoid",
       "scale": 1.3,
       "isBoss": false,
       "characteristics": [
+        "Taunt",
+        "Incapacitate",
         "Silence",
+        "Knock",
+        "Grip",
+        "Mind Control",
+        "Polymorph",
+        "Root",
         "Fear",
         "Disorient",
+        "Repentance",
+        "Imprison",
+        "Sap",
         "Stun",
-        "Slow"
+        "Slow",
+        "Sleep Walk",
+        "Mind Soothe"
       ],
       "spells": [
+        {
+          "id": 317898,
+          "attributes": []
+        },
         {
           "id": 319724,
           "attributes": []
@@ -3082,11 +3423,13 @@
       "enemyIndex": 19,
       "name": "Sinstone Statue",
       "count": 0,
-      "health": 13367481,
+      "health": 15505979,
       "creatureType": "Not specified",
       "scale": 1.3,
       "isBoss": false,
-      "characteristics": [],
+      "characteristics": [
+        "Taunt"
+      ],
       "spells": [
         {
           "id": 323126,
@@ -3141,7 +3484,7 @@
       "enemyIndex": 20,
       "name": "Ghastly Parishioner",
       "count": 0,
-      "health": 1336748072,
+      "health": 1550597901,
       "creatureType": "Undead",
       "scale": 1.3,
       "isBoss": false,
@@ -3183,7 +3526,9 @@
       "creatureType": "Not specified",
       "scale": 1.3,
       "isBoss": false,
-      "characteristics": [],
+      "characteristics": [
+        "Taunt"
+      ],
       "spells": [
         {
           "id": 323749,
@@ -3238,7 +3583,9 @@
       "creatureType": "Not specified",
       "scale": 1,
       "isBoss": false,
-      "characteristics": [],
+      "characteristics": [
+        "Taunt"
+      ],
       "spells": [
         {
           "id": 338012,
@@ -3266,16 +3613,27 @@
       "enemyIndex": 23,
       "name": "Depraved Darkblade",
       "count": 4,
-      "health": 80204883,
+      "health": 93035873,
       "creatureType": "Humanoid",
       "scale": 1.4,
       "isBoss": false,
       "characteristics": [
         "Taunt",
+        "Incapacitate",
         "Silence",
+        "Knock",
+        "Grip",
         "Mind Control",
+        "Polymorph",
+        "Root",
         "Fear",
+        "Disorient",
+        "Repentance",
+        "Imprison",
+        "Sap",
         "Stun",
+        "Slow",
+        "Sleep Walk",
         "Mind Soothe"
       ],
       "spells": [
@@ -3312,18 +3670,23 @@
       "enemyIndex": 24,
       "name": "Manifestation of Envy",
       "count": 0,
-      "health": 32081953,
+      "health": 37214349,
       "creatureType": "Aberration",
       "scale": 1,
       "isBoss": false,
       "characteristics": [
         "Taunt",
         "Incapacitate",
+        "Silence",
+        "Knock",
+        "Grip",
         "Root",
         "Fear",
+        "Banish",
         "Disorient",
         "Stun",
-        "Slow"
+        "Slow",
+        "Sleep Walk"
       ],
       "spells": [
         {
