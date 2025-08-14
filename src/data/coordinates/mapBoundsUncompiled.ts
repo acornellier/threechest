@@ -41,6 +41,8 @@ export const mapBoundsUncompiled = (uimapassignment as UiMapAssignment[]).reduce
   (acc, assignment) => {
     if (!mapIds.includes(assignment.MapID)) return acc
 
+    if (assignment.MapID == 2830) console.warn(assignment.UiMapID)
+
     acc[assignment.UiMapID] = {
       yMin: assignment['Region_0'],
       yMax: assignment['Region_3'],

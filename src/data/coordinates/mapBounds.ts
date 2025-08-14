@@ -29,4 +29,5 @@ export const mapBounds: MapBoundsByUiMapId = {
   '2359': { yMin: 977.0830078125, yMax: 2800, xMin: -1929.1669921875, xMax: 806.25 },
   '2387': { yMin: 1445.8330078125, yMax: 1993.75, xMin: 2325, xMax: 3145.833984375 },
   '2388': { yMin: 1125, yMax: 1600, xMin: 2443.75, xMax: 3156.25 },
+  '2449': { yMin: 262.5, yMax: 1343.75, xMin: -245.833984375, xMax: 1375 },
 }
