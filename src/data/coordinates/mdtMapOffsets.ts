@@ -120,4 +120,10 @@ export const mdtMapOffsets: Record<number, MapOffset> = {
     scaleX: 6805 / 3840,
     scaleY: 4537 / 2560,
   },
+  1990: {
+    x: 739 / 3840,
+    y: 2259 / 2560,
+    scaleX: 1152 / 3840,
+    scaleY: 768 / 2560,
+  },
 }
