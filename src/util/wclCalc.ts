@@ -248,7 +248,7 @@ function getPullMobIds(events: WclEventSimplified[], deathEvents: DeathEvent[], 
 
   for (const event of filteredEvents) {
     if (event.timestamp - currentTimestamp > 20_000) {
-      pullMobIds.push(currentPull)
+      pullMobIds.push(sanitizePull(currentPull, dungeon))
       currentPull = newPull()
     }
 
@@ -276,9 +276,20 @@ function getPullMobIds(events: WclEventSimplified[], deathEvents: DeathEvent[], 
     })
   }
 
-  if (currentPull.length > 0) pullMobIds.push(currentPull)
+  if (currentPull.length > 0) pullMobIds.push(sanitizePull(currentPull, dungeon))
 
   return pullMobIds
+}
+
+function sanitizePull(pull: MobEvent[], dungeon: Dungeon): MobEvent[] {
+  if (!pull.some((event) => event.mobId === 246285)) return pull
+
+  return dungeon.mobSpawnsList
+    .filter((mobSpawn) => [246285, 178394, 178388].includes(mobSpawn.mob.id))
+    .map((mobSpawn) => ({
+      mobId: mobSpawn.mob.id,
+      timestamp: pull[0]!.timestamp,
+    }))
 }
 
 function calculatePull(
@@ -411,7 +422,7 @@ function getPulledGroups(
   remainingMobs: Record<number, number>,
   groups: Group[],
   groupIdx: number = 0,
-): SpawnId[] | null {
+): string[] | null {
   if (Object.values(remainingMobs).every((n) => n === 0)) {
     // no mobs left, solved!
     return []
