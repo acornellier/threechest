@@ -311,7 +311,14 @@ function calculatePull(
       pass,
     )
   } else if (pass <= 4) {
-    return calculateExactPull(mobEvents, groupsRemaining, groupMobSpawns, spawnIdsTaken, pass, 80)
+    return calculateExactPull(
+      mobEvents,
+      groupsRemaining,
+      groupMobSpawns,
+      spawnIdsTaken,
+      pass,
+      pass * 25,
+    )
   } else {
     return findExactSpawns(mobEvents, groupsRemaining, spawnIdsTaken, dungeon, errors, idx)
   }
@@ -369,11 +376,9 @@ function calculateExactPull(
     .filter(({ id }) => !groupMobSpawns[id]!.some(({ spawn }) => spawnIdsTaken.has(spawn.id)))
     .filter(({ mobCounts }) => pull.some(({ mobId }) => (mobCounts[mobId] ?? 0) > 0))
 
-  if (pass < 4 && pullCenter !== null) {
+  if (pullCenter !== null) {
     groups = groups
-      .filter(
-        ({ averagePos }) => pass >= 4 || distance(averagePos, pullCenter!) < maxDistanceToGroup,
-      )
+      .filter(({ averagePos }) => distance(averagePos, pullCenter!) < maxDistanceToGroup)
       .sort((a, b) => distance(a.averagePos, pullCenter) - distance(b.averagePos, pullCenter))
   }
 
