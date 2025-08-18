@@ -20,7 +20,7 @@ const TouchExtend = Handler.extend({
     DomEvent.on(this._container, 'touchend', this._onTouchEnd, this)
     DomEvent.on(this._container, 'touchmove', this._onTouchMove, this)
     DomEvent.on(this._container, 'touchcancel', this._onTouchCancel, this)
-    DomEvent.on(this._container, 'touchleave', this._onTouchLeave, this)
+    // DomEvent.on(this._container, 'touchleave', this._onTouchLeave, this)
   },
 
   // @method removeHooks(): void
