@@ -5,6 +5,7 @@ import { divIcon } from 'leaflet'
 import { renderToString } from 'react-dom/server'
 import { useMapObjectsHidden } from '../../../store/reducers/mapReducer.ts'
 import type { PointOfInterest as PointOfInterestType } from '../../../data/types.ts'
+import { getIconLink } from '../../../data/spells/spells.ts'
 
 interface Props {
   poi: PointOfInterestType
@@ -31,50 +32,34 @@ const configs: PoiConfig[] = [
     src: '/images/graveyard.png',
   },
   {
-    type: 'nwItem',
-    itemType: 1,
-    label: 'Bloody Javelin',
-    src: '/images/bloody_javelin.jpg',
+    type: 'araKaraItem',
+    label: 'Silk Thread: stuns mobs, requires 25 Tailoring',
+    src: 'inv_misc_web_02',
   },
   {
-    type: 'nwItem',
-    itemType: 2,
-    label: 'Discharged Anima',
-    src: '/images/discharged_anima.jpg',
+    type: 'EDAItem3',
+    label: 'Arcane Conduit: 10% haste, requires 25 Enchanting',
+    src: 'inv_112_arcane_buff',
   },
   {
-    type: 'nwItem',
-    itemType: 3,
-    label: 'Discarded Shield',
-    src: '/images/discarded_shield.jpg',
+    type: 'EDAItem2',
+    label: 'Disruption Grenade',
+    src: 'spell_broker_nova',
   },
   {
-    type: 'cityOfThreadsItem',
-    label: 'Stolen Power: 15% damage and healing',
-    src: '/images/stolen_power.jpg',
+    type: 'EDAItem1',
+    label: 'Shatter conduit: stuns mobs, requires 25 Enchanting',
+    src: 'inv_112_arcane_beam',
   },
   {
-    type: 'stonevaultItem',
-    label: 'Imbued Iron Energy',
-    src: '/images/imbued_iron_energy.jpg',
+    type: 'floodgateItem',
+    label: 'Weapons',
+    src: 'inv_eng_crate',
   },
   {
-    type: 'mistsItem',
-    itemType: 1,
-    label: 'Overgrown Roots: usable by Night Elves, Tauren, Druids, and Herbalists',
-    src: '/images/overgrown_roots.jpg',
-  },
-  {
-    type: 'mistsItem',
-    itemType: 2,
-    label: 'Depleted Anima Seed: updates graveyard location',
-    src: '/images/anima_seed.jpg',
-  },
-  {
-    type: 'mistsItem',
-    itemType: 5,
-    label: 'Depleted Anima Seed: updates graveyard location',
-    src: '/images/anima_seed.jpg',
+    type: 'prioryItem',
+    label: 'Usable by Priests or Paladins',
+    src: 'spell_holy_rebuke',
   },
 ]
 
@@ -84,6 +69,11 @@ function getConfig(poi: PointOfInterestType): PoiConfig | null {
       (config) => config.type === poi.type && (!config.itemType || config.itemType == poi.itemType),
     ) ?? null
   )
+}
+
+function getIconSrc(src: string) {
+  if (src.startsWith('/images/')) return src
+  return getIconLink(src)
 }
 
 function PointOfInterestComponent({ poi, iconScaling }: Props) {
@@ -107,7 +97,7 @@ function PointOfInterestComponent({ poi, iconScaling }: Props) {
             <div className="poi w-full h-full flex items-center justify-center text-black border-none">
               <img
                 alt={config.label}
-                src={config.src}
+                src={getIconSrc(config.src)}
                 style={{ height: iconSize, width: iconSize }}
               />
             </div>,

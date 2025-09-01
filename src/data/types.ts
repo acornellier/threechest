@@ -65,6 +65,12 @@ export type PointOfInterest = {
     | 'cityOfThreadsItem'
     | 'stonevaultItem'
     | 'mistsItem'
+    | 'araKaraItem'
+    | 'EDAItem1'
+    | 'EDAItem2'
+    | 'EDAItem3'
+    | 'floodgateItem'
+    | 'prioryItem'
   itemType: null | number
   pos: Point
 }

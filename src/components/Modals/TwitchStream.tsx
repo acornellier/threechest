@@ -45,7 +45,6 @@ function TwitchStreamComponent({ setBlockTwitch }: Props) {
     player.addEventListener(Twitch.Player.READY, initiate)
 
     function initiate() {
-      console.log('init')
       player.addEventListener(Twitch.Player.ONLINE, handleOnline)
       player.addEventListener(Twitch.Player.OFFLINE, handleOffline)
       player.removeEventListener(Twitch.Player.READY, initiate)
