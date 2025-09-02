@@ -58,7 +58,7 @@ export const dungeons: Dungeon[] = [
   {
     name: 'Streets of Wonder',
     key: 'strt' as DungeonKey,
-    icon: 'ability_brokerjazzband_trumpet',
+    icon: 'achievement_dungeon_brokerdungeon',
     wclEncounterId: 112441,
   },
 ]
