@@ -7,7 +7,7 @@
       "enemyIndex": 1,
       "name": "Murkbrine Shorerunner",
       "count": 1,
-      "health": 14170621,
+      "health": 14868916,
       "creatureType": "Humanoid",
       "scale": 0.8,
       "isBoss": false,
@@ -31,10 +31,6 @@
         "Mind Soothe"
       ],
       "spells": [
-        {
-          "id": 317898,
-          "attributes": []
-        },
         {
           "id": 355147,
           "attributes": []
@@ -1054,7 +1050,7 @@
       "enemyIndex": 2,
       "name": "Murkbrine Shellcrusher",
       "count": 3,
-      "health": 79709738,
+      "health": 83637651,
       "creatureType": "Humanoid",
       "scale": 1.5,
       "isBoss": false,
@@ -1079,18 +1075,14 @@
       ],
       "spells": [
         {
-          "id": 317898,
-          "attributes": []
-        },
-        {
           "id": 355048,
           "attributes": []
         },
         {
           "id": 355057,
           "attributes": [
-            "enrage",
-            "interruptible"
+            "interruptible",
+            "enrage"
           ]
         },
         {
@@ -1250,7 +1242,7 @@
       "enemyIndex": 3,
       "name": "Murkbrine Fishmancer",
       "count": 2,
-      "health": 61996463,
+      "health": 65051506,
       "creatureType": "Humanoid",
       "scale": 1.4,
       "isBoss": false,
@@ -1274,10 +1266,6 @@
         "Mind Soothe"
       ],
       "spells": [
-        {
-          "id": 317898,
-          "attributes": []
-        },
         {
           "id": 355147,
           "attributes": []
@@ -1503,7 +1491,7 @@
       "enemyIndex": 4,
       "name": "Coastwalker Goliath",
       "count": 18,
-      "health": 177132752,
+      "health": 185861446,
       "creatureType": "Giant",
       "scale": 3,
       "isBoss": false,
@@ -1672,7 +1660,7 @@
       "enemyIndex": 5,
       "name": "Murkbrine Scalebinder",
       "count": 2,
-      "health": 61996463,
+      "health": 65051506,
       "creatureType": "Humanoid",
       "scale": 1.4,
       "isBoss": false,
@@ -1696,10 +1684,6 @@
         "Mind Soothe"
       ],
       "spells": [
-        {
-          "id": 317898,
-          "attributes": []
-        },
         {
           "id": 355132,
           "attributes": []
@@ -1843,7 +1827,7 @@
       "enemyIndex": 6,
       "name": "Stormforged Guardian",
       "count": 10,
-      "health": 127535578,
+      "health": 133820238,
       "creatureType": "Elemental",
       "scale": 2,
       "isBoss": false,
@@ -1912,7 +1896,7 @@
       "enemyIndex": 7,
       "name": "Hylbrande",
       "count": 0,
-      "health": 531299398,
+      "health": 558344979,
       "creatureType": "Mechanical",
       "scale": 1.8,
       "isBoss": true,
@@ -1926,6 +1910,10 @@
         },
         {
           "id": 346766,
+          "attributes": []
+        },
+        {
+          "id": 346828,
           "attributes": []
         },
         {
@@ -1955,6 +1943,10 @@
         {
           "id": 353312,
           "attributes": []
+        },
+        {
+          "id": 356796,
+          "attributes": []
         }
       ],
       "spawns": [
@@ -1975,7 +1967,7 @@
       "enemyIndex": 8,
       "name": "Burly Deckhand",
       "count": 5,
-      "health": 106279651,
+      "health": 111516868,
       "creatureType": "Humanoid",
       "scale": 1.5,
       "isBoss": false,
@@ -1999,10 +1991,6 @@
         "Mind Soothe"
       ],
       "spells": [
-        {
-          "id": 317898,
-          "attributes": []
-        },
         {
           "id": 356133,
           "attributes": [
@@ -2088,7 +2076,7 @@
       "enemyIndex": 9,
       "name": "Hourglass Tidesage",
       "count": 4,
-      "health": 79709738,
+      "health": 83637651,
       "creatureType": "Humanoid",
       "scale": 1.5,
       "isBoss": false,
@@ -2112,10 +2100,6 @@
         "Mind Soothe"
       ],
       "spells": [
-        {
-          "id": 317898,
-          "attributes": []
-        },
         {
           "id": 356260,
           "attributes": []
@@ -2205,7 +2189,7 @@
       "enemyIndex": 10,
       "name": "Drunk Pirate",
       "count": 0,
-      "health": 17713275,
+      "health": 18586145,
       "creatureType": "Humanoid",
       "scale": 1,
       "isBoss": false,
@@ -2242,7 +2226,7 @@
       "enemyIndex": 11,
       "name": "Corsair Officer",
       "count": 5,
-      "health": 88566376,
+      "health": 92930723,
       "creatureType": "Humanoid",
       "scale": 1.5,
       "isBoss": false,
@@ -2266,10 +2250,6 @@
         "Mind Soothe"
       ],
       "spells": [
-        {
-          "id": 317898,
-          "attributes": []
-        },
         {
           "id": 368661,
           "attributes": []
@@ -2323,7 +2303,7 @@
       "enemyIndex": 12,
       "name": "Timecap'n Hooktail",
       "count": 0,
-      "health": 619849298,
+      "health": 651402475,
       "creatureType": "Dragonkin",
       "scale": 1.5,
       "isBoss": true,
@@ -2379,7 +2359,7 @@
       "enemyIndex": 13,
       "name": "Adorned Starseer",
       "count": 12,
-      "health": 132849564,
+      "health": 139396085,
       "creatureType": "Humanoid",
       "scale": 2.5,
       "isBoss": false,
@@ -2445,7 +2425,7 @@
       "enemyIndex": 14,
       "name": "Devoted Accomplice",
       "count": 5,
-      "health": 97423014,
+      "health": 102223795,
       "creatureType": "Humanoid",
       "scale": 2,
       "isBoss": false,
@@ -2545,7 +2525,7 @@
       "enemyIndex": 15,
       "name": "Focused Ritualist",
       "count": 4,
-      "health": 88566376,
+      "health": 92930723,
       "creatureType": "Humanoid",
       "scale": 2,
       "isBoss": false,
@@ -2626,7 +2606,7 @@
       "enemyIndex": 16,
       "name": "So'leah",
       "count": 0,
-      "health": 526871903,
+      "health": 553692104,
       "creatureType": "Humanoid",
       "scale": 2,
       "isBoss": true,
@@ -2777,7 +2757,7 @@
       "enemyIndex": 19,
       "name": "Vault Purifier",
       "count": 0,
-      "health": 17713275,
+      "health": 18586147,
       "creatureType": "Humanoid",
       "scale": 2,
       "isBoss": false,
@@ -2806,10 +2786,6 @@
           "attributes": []
         },
         {
-          "id": 317898,
-          "attributes": []
-        },
-        {
           "id": 346980,
           "attributes": []
         },
@@ -2818,10 +2794,18 @@
           "attributes": []
         },
         {
+          "id": 347958,
+          "attributes": []
+        },
+        {
           "id": 352347,
           "attributes": [
             "interruptible"
           ]
+        },
+        {
+          "id": 355071,
+          "attributes": []
         }
       ],
       "spawns": [
@@ -2850,7 +2834,7 @@
       "enemyIndex": 20,
       "name": "Corsair Brute",
       "count": 0,
-      "health": 16606195,
+      "health": 17424513,
       "creatureType": "Humanoid",
       "scale": 2,
       "isBoss": false,
@@ -2907,7 +2891,7 @@
       "enemyIndex": 21,
       "name": "So' Cartel Assassin",
       "count": 0,
-      "health": 25831859,
+      "health": 27104798,
       "creatureType": "Humanoid",
       "scale": 2,
       "isBoss": false,
@@ -3002,7 +2986,7 @@
       "enemyIndex": 23,
       "name": "Wandering Pulsar",
       "count": 0,
-      "health": 12753558,
+      "health": 13382024,
       "creatureType": "Elemental",
       "scale": 1.3,
       "isBoss": false,
@@ -3059,7 +3043,7 @@
       "enemyIndex": 24,
       "name": "Invigorating Fish Stick",
       "count": 0,
-      "health": 8856638,
+      "health": 9293072,
       "creatureType": "Totem",
       "scale": 1,
       "isBoss": false,

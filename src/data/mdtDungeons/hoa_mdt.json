@@ -7,7 +7,7 @@
       "enemyIndex": 1,
       "name": "Depraved Darkblade",
       "count": 4,
-      "health": 93035873,
+      "health": 92758701,
       "creatureType": "Humanoid",
       "scale": 1.4,
       "isBoss": false,
@@ -31,10 +31,6 @@
         "Mind Soothe"
       ],
       "spells": [
-        {
-          "id": 317898,
-          "attributes": []
-        },
         {
           "id": 1235060,
           "attributes": [
@@ -185,7 +181,7 @@
       "enemyIndex": 2,
       "name": "Depraved Houndmaster",
       "count": 5,
-      "health": 83732286,
+      "health": 83482831,
       "creatureType": "Humanoid",
       "scale": 1.4,
       "isBoss": false,
@@ -216,8 +212,8 @@
         {
           "id": 326450,
           "attributes": [
-            "enrage",
-            "interruptible"
+            "interruptible",
+            "enrage"
           ]
         },
         {
@@ -437,7 +433,7 @@
       "enemyIndex": 3,
       "name": "Vicious Gargon",
       "count": 4,
-      "health": 102339460,
+      "health": 102034571,
       "creatureType": "Beast",
       "scale": 1.4,
       "isBoss": false,
@@ -461,10 +457,6 @@
         "Hibernate"
       ],
       "spells": [
-        {
-          "id": 317898,
-          "attributes": []
-        },
         {
           "id": 1235070,
           "attributes": []
@@ -649,7 +641,7 @@
       "enemyIndex": 4,
       "name": "Depraved Obliterator",
       "count": 5,
-      "health": 88384080,
+      "health": 88120767,
       "creatureType": "Humanoid",
       "scale": 1.4,
       "isBoss": false,
@@ -673,10 +665,6 @@
         "Mind Soothe"
       ],
       "spells": [
-        {
-          "id": 317898,
-          "attributes": []
-        },
         {
           "id": 325876,
           "attributes": [
@@ -936,7 +924,7 @@
       "enemyIndex": 5,
       "name": "Toiling Groundskeeper",
       "count": 2,
-      "health": 55821524,
+      "health": 55655221,
       "creatureType": "Humanoid",
       "scale": 0.9,
       "isBoss": false,
@@ -960,10 +948,6 @@
         "Mind Soothe"
       ],
       "spells": [
-        {
-          "id": 317898,
-          "attributes": []
-        },
         {
           "id": 1235121,
           "attributes": []
@@ -1484,7 +1468,7 @@
       "enemyIndex": 6,
       "name": "Depraved Collector",
       "count": 5,
-      "health": 93035873,
+      "health": 92758701,
       "creatureType": "Humanoid",
       "scale": 1.4,
       "isBoss": false,
@@ -1508,10 +1492,6 @@
         "Mind Soothe"
       ],
       "spells": [
-        {
-          "id": 317898,
-          "attributes": []
-        },
         {
           "id": 325701,
           "attributes": [
@@ -1608,7 +1588,7 @@
       "enemyIndex": 7,
       "name": "Shard of Halkias",
       "count": 15,
-      "health": 223286095,
+      "health": 222620883,
       "creatureType": "Elemental",
       "scale": 2,
       "isBoss": false,
@@ -1630,6 +1610,10 @@
         },
         {
           "id": 326438,
+          "attributes": []
+        },
+        {
+          "id": 326440,
           "attributes": []
         },
         {
@@ -1672,7 +1656,7 @@
       "enemyIndex": 8,
       "name": "Halkias",
       "count": 0,
-      "health": 651717793,
+      "health": 649631734,
       "creatureType": "Elemental",
       "scale": 1.6,
       "isBoss": true,
@@ -1703,6 +1687,10 @@
         {
           "id": 339235,
           "attributes": []
+        },
+        {
+          "id": 339237,
+          "attributes": []
         }
       ],
       "spawns": [
@@ -1722,7 +1710,7 @@
       "enemyIndex": 9,
       "name": "Stoneborn Reaver",
       "count": 8,
-      "health": 148857397,
+      "health": 148413922,
       "creatureType": "Humanoid",
       "scale": 1.4,
       "isBoss": false,
@@ -1868,7 +1856,7 @@
       "enemyIndex": 10,
       "name": "Stonefiend Anklebiter",
       "count": 1,
-      "health": 27910762,
+      "health": 27827610,
       "creatureType": "Humanoid",
       "scale": 0.8,
       "isBoss": false,
@@ -2390,7 +2378,7 @@
       "enemyIndex": 11,
       "name": "Stoneborn Eviscerator",
       "count": 6,
-      "health": 93035873,
+      "health": 92758701,
       "creatureType": "Humanoid",
       "scale": 1.4,
       "isBoss": false,
@@ -2414,10 +2402,6 @@
         "Mind Soothe"
       ],
       "spells": [
-        {
-          "id": 317898,
-          "attributes": []
-        },
         {
           "id": 326638,
           "attributes": []
@@ -2573,7 +2557,7 @@
       "enemyIndex": 12,
       "name": "Stoneborn Slasher",
       "count": 10,
-      "health": 186071746,
+      "health": 185517402,
       "creatureType": "Humanoid",
       "scale": 1.7,
       "isBoss": false,
@@ -2806,7 +2790,7 @@
       "enemyIndex": 13,
       "name": "Echelon",
       "count": 0,
-      "health": 558615251,
+      "health": 556827200,
       "creatureType": "Humanoid",
       "scale": 1.8,
       "isBoss": true,
@@ -2821,6 +2805,10 @@
         },
         {
           "id": 319603,
+          "attributes": []
+        },
+        {
+          "id": 319702,
           "attributes": []
         },
         {
@@ -2865,7 +2853,7 @@
       "enemyIndex": 14,
       "name": "High Adjudicator Aleez",
       "count": 0,
-      "health": 651717793,
+      "health": 649631734,
       "creatureType": "Humanoid",
       "scale": 1.5,
       "isBoss": true,
@@ -2922,7 +2910,7 @@
       "enemyIndex": 15,
       "name": "Tormented Soul",
       "count": 0,
-      "health": 27910762,
+      "health": 27827610,
       "creatureType": "Undead",
       "scale": 1,
       "isBoss": false,
@@ -3170,7 +3158,7 @@
       "enemyIndex": 16,
       "name": "Inquisitor Sigar",
       "count": 35,
-      "health": 279107619,
+      "health": 278276103,
       "creatureType": "Humanoid",
       "scale": 1.7,
       "isBoss": false,
@@ -3227,7 +3215,7 @@
       "enemyIndex": 17,
       "name": "Lord Chamberlain",
       "count": 0,
-      "health": 744820335,
+      "health": 742436267,
       "creatureType": "Humanoid",
       "scale": 1.5,
       "isBoss": true,
@@ -3314,7 +3302,7 @@
       "enemyIndex": 18,
       "name": "Undying Stonefiend",
       "count": 0,
-      "health": 15505979,
+      "health": 15459785,
       "creatureType": "Humanoid",
       "scale": 1.3,
       "isBoss": false,
@@ -3338,10 +3326,6 @@
         "Mind Soothe"
       ],
       "spells": [
-        {
-          "id": 317898,
-          "attributes": []
-        },
         {
           "id": 319724,
           "attributes": []
@@ -3423,7 +3407,7 @@
       "enemyIndex": 19,
       "name": "Sinstone Statue",
       "count": 0,
-      "health": 15505979,
+      "health": 15459785,
       "creatureType": "Not specified",
       "scale": 1.3,
       "isBoss": false,
@@ -3484,7 +3468,7 @@
       "enemyIndex": 20,
       "name": "Ghastly Parishioner",
       "count": 0,
-      "health": 1550597901,
+      "health": 1545978473,
       "creatureType": "Undead",
       "scale": 1.3,
       "isBoss": false,
@@ -3613,7 +3597,7 @@
       "enemyIndex": 23,
       "name": "Depraved Darkblade",
       "count": 4,
-      "health": 93035873,
+      "health": 92758701,
       "creatureType": "Humanoid",
       "scale": 1.4,
       "isBoss": false,
@@ -3670,7 +3654,7 @@
       "enemyIndex": 24,
       "name": "Manifestation of Envy",
       "count": 0,
-      "health": 37214349,
+      "health": 37103480,
       "creatureType": "Aberration",
       "scale": 1,
       "isBoss": false,

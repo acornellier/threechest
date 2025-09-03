@@ -7,7 +7,7 @@
       "enemyIndex": 1,
       "name": "Customs Security",
       "count": 4,
-      "health": 97423014,
+      "health": 102034571,
       "creatureType": "Humanoid",
       "scale": 1.3,
       "isBoss": false,
@@ -139,7 +139,7 @@
       "enemyIndex": 2,
       "name": "Gatewarden Zo'mazz",
       "count": 18,
-      "health": 141706202,
+      "health": 148413922,
       "creatureType": "Humanoid",
       "scale": 1.8,
       "isBoss": false,
@@ -174,7 +174,7 @@
       "enemyIndex": 3,
       "name": "Support Officer",
       "count": 4,
-      "health": 79709738,
+      "health": 83482831,
       "creatureType": "Humanoid",
       "scale": 1.2,
       "isBoss": false,
@@ -257,7 +257,7 @@
       "enemyIndex": 4,
       "name": "Interrogation Specialist",
       "count": 4,
-      "health": 79709738,
+      "health": 83482831,
       "creatureType": "Humanoid",
       "scale": 1.3,
       "isBoss": false,
@@ -332,7 +332,7 @@
       "enemyIndex": 5,
       "name": "Armored Overseer",
       "count": 8,
-      "health": 123992927,
+      "health": 129862181,
       "creatureType": "Humanoid",
       "scale": 1.6,
       "isBoss": false,
@@ -407,7 +407,7 @@
       "enemyIndex": 6,
       "name": "Portalmancer Zo'honn",
       "count": 24,
-      "health": 177132752,
+      "health": 185517402,
       "creatureType": "Humanoid",
       "scale": 2.2,
       "isBoss": false,
@@ -422,6 +422,10 @@
         },
         {
           "id": 352393,
+          "attributes": []
+        },
+        {
+          "id": 356324,
           "attributes": []
         },
         {
@@ -452,7 +456,7 @@
       "enemyIndex": 7,
       "name": "Zo'phex",
       "count": 0,
-      "health": 531299398,
+      "health": 556827200,
       "creatureType": "Humanoid",
       "scale": 2,
       "isBoss": true,
@@ -466,11 +470,19 @@
           "attributes": []
         },
         {
+          "id": 345989,
+          "attributes": []
+        },
+        {
           "id": 345990,
           "attributes": []
         },
         {
           "id": 346006,
+          "attributes": []
+        },
+        {
+          "id": 346028,
           "attributes": []
         },
         {
@@ -519,7 +531,7 @@
       "enemyIndex": 8,
       "name": "Tracker Zo'korss",
       "count": 18,
-      "health": 177132752,
+      "health": 185517402,
       "creatureType": "Humanoid",
       "scale": 2,
       "isBoss": false,
@@ -569,7 +581,7 @@
       "enemyIndex": 9,
       "name": "Ancient Core Hound",
       "count": 12,
-      "health": 115136289,
+      "health": 120586312,
       "creatureType": "Beast",
       "scale": 2,
       "isBoss": false,
@@ -615,7 +627,7 @@
       "enemyIndex": 10,
       "name": "Enraged Direhorn",
       "count": 10,
-      "health": 141706202,
+      "health": 148413922,
       "creatureType": "Beast",
       "scale": 2,
       "isBoss": false,
@@ -653,7 +665,7 @@
       "enemyIndex": 11,
       "name": "Frenzied Nightclaw",
       "count": 4,
-      "health": 70853101,
+      "health": 74206961,
       "creatureType": "Beast",
       "scale": 1.3,
       "isBoss": false,
@@ -726,7 +738,7 @@
       "enemyIndex": 12,
       "name": "Market Peacekeeper",
       "count": 4,
-      "health": 106279651,
+      "health": 111310441,
       "creatureType": "Humanoid",
       "scale": 1.3,
       "isBoss": false,
@@ -888,7 +900,7 @@
       "enemyIndex": 13,
       "name": "Veteran Sparkcaster",
       "count": 4,
-      "health": 79709738,
+      "health": 83482831,
       "creatureType": "Humanoid",
       "scale": 1.3,
       "isBoss": false,
@@ -1001,7 +1013,7 @@
       "enemyIndex": 14,
       "name": "Commerce Enforcer",
       "count": 8,
-      "health": 134620890,
+      "health": 140993223,
       "creatureType": "Humanoid",
       "scale": 1.6,
       "isBoss": false,
@@ -1120,7 +1132,7 @@
       "enemyIndex": 15,
       "name": "Commander Zo'far",
       "count": 30,
-      "health": 212559303,
+      "health": 185517402,
       "creatureType": "Humanoid",
       "scale": 2,
       "isBoss": false,
@@ -1139,6 +1151,10 @@
         },
         {
           "id": 355477,
+          "attributes": []
+        },
+        {
+          "id": 355479,
           "attributes": []
         }
       ],
@@ -1159,7 +1175,7 @@
       "enemyIndex": 16,
       "name": "Cartel Muscle",
       "count": 8,
-      "health": 132849564,
+      "health": 139482458,
       "creatureType": "Humanoid",
       "scale": 1.7,
       "isBoss": false,
@@ -1305,7 +1321,7 @@
       "enemyIndex": 17,
       "name": "Cartel Smuggler",
       "count": 5,
-      "health": 79709738,
+      "health": 83482831,
       "creatureType": "Humanoid",
       "scale": 1.3,
       "isBoss": false,
@@ -1429,7 +1445,7 @@
       "enemyIndex": 18,
       "name": "Cartel Wiseguy",
       "count": 5,
-      "health": 70853101,
+      "health": 74206961,
       "creatureType": "Humanoid",
       "scale": 1.3,
       "isBoss": false,
@@ -1453,6 +1469,10 @@
         "Mind Soothe"
       ],
       "spells": [
+        {
+          "id": 357019,
+          "attributes": []
+        },
         {
           "id": 357196,
           "attributes": [
@@ -1539,7 +1559,7 @@
       "enemyIndex": 19,
       "name": "Cartel Skulker",
       "count": 4,
-      "health": 88566376,
+      "health": 92988305,
       "creatureType": "Humanoid",
       "scale": 1.3,
       "isBoss": false,
@@ -1728,7 +1748,7 @@
       "enemyIndex": 20,
       "name": "Oasis Security",
       "count": 0,
-      "health": 113364956,
+      "health": 118731144,
       "creatureType": "Humanoid",
       "scale": 2,
       "isBoss": false,
@@ -1746,34 +1766,20 @@
           "attributes": [
             "interruptible"
           ]
+        },
+        {
+          "id": 353706,
+          "attributes": []
         }
       ],
       "spawns": [
-        {
-          "id": "20-1",
-          "idx": 1,
-          "group": 33,
-          "pos": [
-            -29.33,
-            93.88
-          ]
-        },
         {
           "id": "20-2",
           "idx": 2,
           "group": 33,
           "pos": [
-            -50.82,
-            57.26
-          ]
-        },
-        {
-          "id": "20-3",
-          "idx": 3,
-          "group": 33,
-          "pos": [
-            -36.83,
-            98.33
+            -46.31,
+            74.89
           ]
         }
       ]
@@ -1783,7 +1789,7 @@
       "enemyIndex": 21,
       "name": "Disruptive Patron",
       "count": 0,
-      "health": 84876109,
+      "health": 88893763,
       "creatureType": "Humanoid",
       "scale": 2,
       "isBoss": false,
@@ -1826,21 +1832,12 @@
       ],
       "spawns": [
         {
-          "id": "21-1",
-          "idx": 1,
-          "group": 33,
-          "pos": [
-            -37.3,
-            89.93
-          ]
-        },
-        {
           "id": "21-2",
           "idx": 2,
           "group": 33,
           "pos": [
-            -58.78,
-            61.14
+            -54.27,
+            78.76
           ]
         }
       ]
@@ -1850,7 +1847,7 @@
       "enemyIndex": 22,
       "name": "Brawling Patron",
       "count": 0,
-      "health": 56830089,
+      "health": 59520170,
       "creatureType": "Humanoid",
       "scale": 2,
       "isBoss": false,
@@ -1885,8 +1882,8 @@
           "idx": 1,
           "group": 33,
           "pos": [
-            -54.2,
-            68.66
+            -49.69,
+            86.29
           ]
         },
         {
@@ -1894,8 +1891,8 @@
           "idx": 2,
           "group": 33,
           "pos": [
-            -46.5,
-            64.5
+            -41.99,
+            82.13
           ]
         }
       ]
@@ -1905,7 +1902,7 @@
       "enemyIndex": 23,
       "name": "Zo'gron",
       "count": 0,
-      "health": 354199599,
+      "health": 371218134,
       "creatureType": "Humanoid",
       "scale": 2,
       "isBoss": true,
@@ -1957,8 +1954,8 @@
           "idx": 1,
           "group": 33,
           "pos": [
-            -25.47,
-            68.59
+            -27.32,
+            67.36
           ]
         }
       ]
@@ -1968,7 +1965,7 @@
       "enemyIndex": 24,
       "name": "Alcruux",
       "count": 0,
-      "health": 265649699,
+      "health": 232011334,
       "creatureType": "Aberration",
       "scale": 1.6,
       "isBoss": true,
@@ -2022,7 +2019,7 @@
       "enemyIndex": 25,
       "name": "Achillite",
       "count": 0,
-      "health": 265649699,
+      "health": 232011334,
       "creatureType": "Mechanical",
       "scale": 1.6,
       "isBoss": true,
@@ -2090,7 +2087,7 @@
       "enemyIndex": 26,
       "name": "Venza Goldfuse",
       "count": 0,
-      "health": 318779639,
+      "health": 278413600,
       "creatureType": "Humanoid",
       "scale": 1.6,
       "isBoss": true,
@@ -2145,7 +2142,7 @@
       "enemyIndex": 27,
       "name": "Defective Sorter",
       "count": 3,
-      "health": 35426550,
+      "health": 37103480,
       "creatureType": "Mechanical",
       "scale": 1.3,
       "isBoss": false,
@@ -2247,7 +2244,7 @@
       "enemyIndex": 28,
       "name": "P.O.S.T. Worker",
       "count": 5,
-      "health": 88566376,
+      "health": 92758701,
       "creatureType": "Mechanical",
       "scale": 1.3,
       "isBoss": false,
@@ -2314,7 +2311,7 @@
       "enemyIndex": 29,
       "name": "Overloaded Mailemental",
       "count": 5,
-      "health": 66424782,
+      "health": 69569026,
       "creatureType": "Elemental",
       "scale": 1.3,
       "isBoss": false,
@@ -2381,7 +2378,7 @@
       "enemyIndex": 30,
       "name": "P.O.S.T. Master",
       "count": 0,
-      "health": 557864368,
+      "health": 584668560,
       "creatureType": "Mechanical",
       "scale": 2,
       "isBoss": true,
@@ -2431,7 +2428,7 @@
       "enemyIndex": 31,
       "name": "So'azmi",
       "count": 0,
-      "health": 557864368,
+      "health": 584668560,
       "creatureType": "Humanoid",
       "scale": 2,
       "isBoss": true,
@@ -2504,7 +2501,7 @@
       "enemyIndex": 32,
       "name": "Smuggled Creature",
       "count": 0,
-      "health": 70853101,
+      "health": 74206961,
       "creatureType": "Beast",
       "scale": 1,
       "isBoss": false,
@@ -2554,7 +2551,7 @@
       "enemyIndex": 33,
       "name": "Unruly Patron",
       "count": 0,
-      "health": 17713275,
+      "health": 18551740,
       "creatureType": "Humanoid",
       "scale": 1.2,
       "isBoss": false,
@@ -2578,8 +2575,8 @@
           "idx": 1,
           "group": null,
           "pos": [
-            -36.17,
-            38.44
+            -59.33,
+            52.17
           ]
         }
       ]
@@ -2589,7 +2586,7 @@
       "enemyIndex": 34,
       "name": "Bazaar Strongarm",
       "count": 3,
-      "health": 61996463,
+      "health": 64931091,
       "creatureType": "Humanoid",
       "scale": 1.3,
       "isBoss": false,
@@ -2667,7 +2664,7 @@
       "enemyIndex": 35,
       "name": "Cartel Lackey",
       "count": 1,
-      "health": 17713275,
+      "health": 18551740,
       "creatureType": "Humanoid",
       "scale": 1,
       "isBoss": false,
@@ -2821,7 +2818,7 @@
       "enemyIndex": 36,
       "name": "Unruly Patron",
       "count": 0,
-      "health": 17713275,
+      "health": 18597661,
       "creatureType": "Humanoid",
       "scale": 1.2,
       "isBoss": false,
@@ -2845,8 +2842,8 @@
           "idx": 1,
           "group": null,
           "pos": [
-            -31.16,
-            36.01
+            -53.5,
+            49.95
           ]
         }
       ]
@@ -2856,7 +2853,7 @@
       "enemyIndex": 37,
       "name": "Bazaar Overseer",
       "count": 12,
-      "health": 150562839,
+      "health": 157689792,
       "creatureType": "Humanoid",
       "scale": 1.8,
       "isBoss": false,
@@ -2997,22 +2994,6 @@
       "pos": [
         -110.97,
         159.82
-      ]
-    },
-    {
-      "type": "generalNote",
-      "itemType": null,
-      "pos": [
-        -56.16,
-        74.51
-      ]
-    },
-    {
-      "type": "generalNote",
-      "itemType": null,
-      "pos": [
-        -42.4,
-        94.92
       ]
     }
   ]

@@ -7,7 +7,7 @@
       "enemyIndex": 1,
       "name": "Ravenous Crawler",
       "count": 1,
-      "health": 20532450,
+      "health": 23751511,
       "creatureType": "Beast",
       "scale": 0.9,
       "isBoss": false,
@@ -368,7 +368,7 @@
       "enemyIndex": 2,
       "name": "Jabbing Flyer",
       "count": 2,
-      "health": 24061465,
+      "health": 27833802,
       "creatureType": "Beast",
       "scale": 0.9,
       "isBoss": false,
@@ -668,7 +668,7 @@
         {
           "id": "2-30",
           "idx": 30,
-          "group": 13,
+          "group": 84,
           "pos": [
             -118.12,
             281.82
@@ -677,16 +677,16 @@
         {
           "id": "2-31",
           "idx": 31,
-          "group": 13,
+          "group": 84,
           "pos": [
-            -121.81,
-            283.2
+            -122.06,
+            281.42
           ]
         },
         {
           "id": "2-32",
           "idx": 32,
-          "group": 13,
+          "group": 84,
           "pos": [
             -126.14,
             282.93
@@ -884,7 +884,7 @@
         {
           "id": "2-54",
           "idx": 54,
-          "group": 13,
+          "group": 84,
           "pos": [
             -119.32,
             284.39
@@ -893,7 +893,7 @@
         {
           "id": "2-55",
           "idx": 55,
-          "group": 13,
+          "group": 84,
           "pos": [
             -123.38,
             285.01
@@ -1014,7 +1014,7 @@
       "enemyIndex": 3,
       "name": "Trilling Attendant",
       "count": 7,
-      "health": 72184395,
+      "health": 83501406,
       "creatureType": "Humanoid",
       "scale": 1.4,
       "isBoss": false,
@@ -1177,7 +1177,7 @@
       "enemyIndex": 4,
       "name": "Engorged Crawler",
       "count": 5,
-      "health": 88225372,
+      "health": 102057275,
       "creatureType": "Beast",
       "scale": 1.2,
       "isBoss": false,
@@ -1408,8 +1408,8 @@
           "idx": 17,
           "group": 13,
           "pos": [
-            -120.31,
-            277.69
+            -118.14,
+            270.31
           ],
           "patrol": [
             [
@@ -1455,8 +1455,8 @@
           "idx": 18,
           "group": 13,
           "pos": [
-            -124.08,
-            279.09
+            -118.86,
+            274.51
           ]
         },
         {
@@ -1493,7 +1493,7 @@
       "enemyIndex": 5,
       "name": "Atik",
       "count": 40,
-      "health": 192491720,
+      "health": 222670417,
       "creatureType": "Humanoid",
       "scale": 2.5,
       "isBoss": false,
@@ -1548,7 +1548,7 @@
       "enemyIndex": 6,
       "name": "Nakt",
       "count": 40,
-      "health": 160409767,
+      "health": 185558681,
       "creatureType": "Humanoid",
       "scale": 2.5,
       "isBoss": false,
@@ -1598,7 +1598,7 @@
       "enemyIndex": 7,
       "name": "Ixin",
       "count": 40,
-      "health": 192491720,
+      "health": 222670417,
       "creatureType": "Humanoid",
       "scale": 2.5,
       "isBoss": false,
@@ -1642,7 +1642,7 @@
       "enemyIndex": 8,
       "name": "Bloodworker",
       "count": 3,
-      "health": 48122930,
+      "health": 55667604,
       "creatureType": "Humanoid",
       "scale": 0.8,
       "isBoss": false,
@@ -2034,7 +2034,7 @@
       "enemyIndex": 9,
       "name": "Bloodstained Assistant",
       "count": 6,
-      "health": 88225372,
+      "health": 102057275,
       "creatureType": "Humanoid",
       "scale": 1.2,
       "isBoss": false,
@@ -2237,7 +2237,7 @@
       "enemyIndex": 10,
       "name": "Bloodstained Webmage",
       "count": 7,
-      "health": 72184395,
+      "health": 83501406,
       "creatureType": "Humanoid",
       "scale": 1.2,
       "isBoss": false,
@@ -2424,7 +2424,7 @@
       "enemyIndex": 11,
       "name": "Hulking Bloodguard",
       "count": 30,
-      "health": 128327813,
+      "health": 148446945,
       "creatureType": "Humanoid",
       "scale": 1.8,
       "isBoss": false,
@@ -2601,7 +2601,7 @@
       "enemyIndex": 12,
       "name": "Sentry Stagshell",
       "count": 5,
-      "health": 32081953,
+      "health": 37111736,
       "creatureType": "Beast",
       "scale": 1.2,
       "isBoss": false,
@@ -2702,7 +2702,7 @@
       "enemyIndex": 13,
       "name": "Blood Overseer",
       "count": 20,
-      "health": 144368790,
+      "health": 167002813,
       "creatureType": "Humanoid",
       "scale": 1.3,
       "isBoss": false,
@@ -2822,7 +2822,7 @@
       "enemyIndex": 14,
       "name": "Winged Carrier",
       "count": 4,
-      "health": 56143418,
+      "health": 64945538,
       "creatureType": "Beast",
       "scale": 1,
       "isBoss": false,
@@ -3026,7 +3026,7 @@
       "enemyIndex": 15,
       "name": "Reinforced Drone",
       "count": 5,
-      "health": 80204883,
+      "health": 92779340,
       "creatureType": "Humanoid",
       "scale": 0.8,
       "isBoss": false,
@@ -3267,7 +3267,7 @@
       "enemyIndex": 16,
       "name": "Avanoxx",
       "count": 0,
-      "health": 481574146,
+      "health": 556926360,
       "creatureType": "Beast",
       "scale": 2,
       "isBoss": true,
@@ -3333,7 +3333,7 @@
       "enemyIndex": 17,
       "name": "Anubzekt",
       "count": 0,
-      "health": 561836504,
+      "health": 649747421,
       "creatureType": "Humanoid",
       "scale": 1.8,
       "isBoss": true,
@@ -3396,7 +3396,7 @@
       "enemyIndex": 18,
       "name": "Bloodstained Webmage",
       "count": 0,
-      "health": 23115559,
+      "health": 26732467,
       "creatureType": "Humanoid",
       "scale": 1.1,
       "isBoss": true,
@@ -3448,7 +3448,7 @@
       "enemyIndex": 19,
       "name": "Kikatal The Harvester",
       "count": 0,
-      "health": 642098861,
+      "health": 742568481,
       "creatureType": "Humanoid",
       "scale": 1.8,
       "isBoss": true,
@@ -3471,6 +3471,10 @@
         },
         {
           "id": 432132,
+          "attributes": []
+        },
+        {
+          "id": 432227,
           "attributes": []
         },
         {
@@ -3505,7 +3509,7 @@
       "enemyIndex": 20,
       "name": "Bloodworker",
       "count": 0,
-      "health": 13367481,
+      "health": 15463225,
       "creatureType": "Humanoid",
       "scale": 1.4,
       "isBoss": false,
@@ -3560,7 +3564,7 @@
       "enemyIndex": 21,
       "name": "Black Blood",
       "count": 0,
-      "health": 8020489,
+      "health": 9277936,
       "creatureType": "Aberration",
       "scale": 1.4,
       "isBoss": false,
@@ -3612,7 +3616,7 @@
       "enemyIndex": 22,
       "name": "Starved Crawler",
       "count": 0,
-      "health": 16709351,
+      "health": 19329031,
       "creatureType": "Beast",
       "scale": 1.2,
       "isBoss": false,

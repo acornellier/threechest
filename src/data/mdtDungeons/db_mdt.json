@@ -7,7 +7,7 @@
       "enemyIndex": 1,
       "name": "Nightfall Curseblade",
       "count": 5,
-      "health": 84215128,
+      "health": 97396637,
       "creatureType": "Humanoid",
       "scale": 1.3,
       "isBoss": false,
@@ -174,8 +174,8 @@
           "idx": 15,
           "group": 14,
           "pos": [
-            -31.89,
-            44.78
+            -31.24,
+            46.27
           ]
         },
         {
@@ -221,7 +221,7 @@
       "enemyIndex": 2,
       "name": "Nightfall Shadowmage",
       "count": 5,
-      "health": 72184395,
+      "health": 83482831,
       "creatureType": "Humanoid",
       "scale": 1.3,
       "isBoss": false,
@@ -356,7 +356,7 @@
       "enemyIndex": 3,
       "name": "Nightfall Ritualist",
       "count": 12,
-      "health": 136348302,
+      "health": 157689792,
       "creatureType": "Humanoid",
       "scale": 1.4,
       "isBoss": false,
@@ -506,7 +506,7 @@
       "enemyIndex": 4,
       "name": "Nightfall Commander",
       "count": 12,
-      "health": 136348302,
+      "health": 157689792,
       "creatureType": "Humanoid",
       "scale": 1.4,
       "isBoss": false,
@@ -567,8 +567,8 @@
           "idx": 3,
           "group": 14,
           "pos": [
-            -36.4,
-            49.76
+            -35.75,
+            50.32
           ]
         },
         {
@@ -696,7 +696,7 @@
       "enemyIndex": 5,
       "name": "Sureki Webmage",
       "count": 12,
-      "health": 160409767,
+      "health": 185517402,
       "creatureType": "Humanoid",
       "scale": 1.4,
       "isBoss": false,
@@ -834,7 +834,7 @@
       "enemyIndex": 6,
       "name": "Nightfall Darkcaster",
       "count": 5,
-      "health": 76194639,
+      "health": 88120767,
       "creatureType": "Humanoid",
       "scale": 1.3,
       "isBoss": false,
@@ -1194,7 +1194,7 @@
       "enemyIndex": 7,
       "name": "Nightfall Shadowalker",
       "count": 5,
-      "health": 84215128,
+      "health": 97396637,
       "creatureType": "Humanoid",
       "scale": 1.2,
       "isBoss": false,
@@ -1318,8 +1318,8 @@
           "idx": 10,
           "group": 14,
           "pos": [
-            -38.43,
-            44.06
+            -34.98,
+            42.29
           ]
         },
         {
@@ -1599,7 +1599,7 @@
       "enemyIndex": 8,
       "name": "Manifested Shadow",
       "count": 8,
-      "health": 112286837,
+      "health": 129862181,
       "creatureType": "Elemental",
       "scale": 1.4,
       "isBoss": false,
@@ -1758,7 +1758,7 @@
       "enemyIndex": 9,
       "name": "Nightfall Tactician",
       "count": 10,
-      "health": 136348302,
+      "health": 157689792,
       "creatureType": "Humanoid",
       "scale": 1.3,
       "isBoss": false,
@@ -2011,6 +2011,15 @@
             -194.19,
             123.37
           ]
+        },
+        {
+          "id": "9-25",
+          "idx": 25,
+          "group": 14,
+          "pos": [
+            -39.23,
+            46.18
+          ]
         }
       ],
       "stealthDetect": true
@@ -2020,7 +2029,7 @@
       "enemyIndex": 10,
       "name": "Ascendant Viscoxria",
       "count": 25,
-      "health": 264676120,
+      "health": 306103714,
       "creatureType": "Humanoid",
       "scale": 2.5,
       "isBoss": false,
@@ -2079,7 +2088,7 @@
       "enemyIndex": 11,
       "name": "Deathscreamer Ikentak",
       "count": 25,
-      "health": 264676120,
+      "health": 306103714,
       "creatureType": "Humanoid",
       "scale": 2.5,
       "isBoss": false,
@@ -2142,7 +2151,7 @@
       "enemyIndex": 12,
       "name": "Ixkreten The Unbreakable",
       "count": 25,
-      "health": 264676120,
+      "health": 306103714,
       "creatureType": "Humanoid",
       "scale": 2.5,
       "isBoss": false,
@@ -2205,7 +2214,7 @@
       "enemyIndex": 13,
       "name": "Nightfall Dark Architect",
       "count": 30,
-      "health": 224573673,
+      "health": 259724363,
       "creatureType": "Humanoid",
       "scale": 2.5,
       "isBoss": false,
@@ -2268,7 +2277,7 @@
       "enemyIndex": 14,
       "name": "Speaker Shadowcrown",
       "count": 0,
-      "health": 561836504,
+      "health": 649631734,
       "creatureType": "Humanoid",
       "scale": 2,
       "isBoss": true,
@@ -2366,7 +2375,7 @@
       "enemyIndex": 15,
       "name": "Anubikkaj",
       "count": 0,
-      "health": 561836504,
+      "health": 649631734,
       "creatureType": "Humanoid",
       "scale": 1.2,
       "isBoss": true,
@@ -2448,7 +2457,7 @@
       "enemyIndex": 16,
       "name": "Rashanan",
       "count": 0,
-      "health": 14447224380,
+      "health": 16704816008,
       "creatureType": "Beast",
       "scale": 2,
       "isBoss": true,
@@ -2522,6 +2531,10 @@
           "attributes": []
         },
         {
+          "id": 448215,
+          "attributes": []
+        },
+        {
           "id": 448887,
           "attributes": []
         },
@@ -2557,7 +2570,7 @@
       "enemyIndex": 17,
       "name": "Unstable Darkness",
       "count": 1,
-      "health": 30877153,
+      "health": 35710102,
       "creatureType": "Aberration",
       "scale": 0.8,
       "isBoss": false,
@@ -3044,7 +3057,7 @@
       "enemyIndex": 18,
       "name": "Animated Shadow",
       "count": 0,
-      "health": 16040977,
+      "health": 18551742,
       "creatureType": "Aberration",
       "scale": 0.9,
       "isBoss": false,
