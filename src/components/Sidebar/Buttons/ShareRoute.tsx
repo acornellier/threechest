@@ -22,7 +22,7 @@ export function ShareRoute({ hidden }: Props) {
       setLoading(true)
       const str = await exportRouteApi(route)
       const routeId = await shareRouteApi(route.uid, str)
-      const url = window.location.origin + `?id=${routeId}`
+      const url = window.location.origin + `?id=${encodeURIComponent(routeId)}`
       await copyText(url)
       dispatch(addToast({ message: 'URL copied to clipboard! URL is valid for 6 months.' }))
     } catch (err) {
