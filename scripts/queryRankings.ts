@@ -90,7 +90,6 @@ for (const { dungeonFolder, rankings, dungeonKey } of dungeonRankings) {
     }
 
     if (!result) {
-      console.error(`Null result: ${code} ${fightID}`)
       continue
     }
 
