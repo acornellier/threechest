@@ -180,7 +180,7 @@ export function MobSpawnWrapper({ mobSpawn, isCtrlKeyDown, isAltKeyDown }: MobSp
 
   const isSelected = matchingPullIndex !== null && selectedPull === matchingPullIndex
   const faded = isLive && matchingPullIndex !== null && matchingPullIndex < selectedPull
-  const assignment = route.assignments[mobSpawn.spawn.id] ?? null
+  const assignment = route.assignments?.[mobSpawn.spawn.id] ?? null
 
   return (
     <MobSpawnMemo

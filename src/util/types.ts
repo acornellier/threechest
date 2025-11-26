@@ -41,7 +41,7 @@ export type Route = {
   pulls: Pull[]
   notes: Note[]
   drawings: Drawing[]
-  assignments: Assignments
+  assignments?: Assignments
 }
 
 export type PullDetailed = Pull & {
