@@ -1,8 +1,18 @@
-﻿import type { Drawing, MdtArrow, MdtNote, MdtPolygon, MdtRoute, Note, Route } from './types.ts'
+﻿import type {
+  Drawing,
+  MdtArrow,
+  MdtAssignments,
+  MdtNote,
+  MdtPolygon,
+  MdtRoute,
+  Note,
+  Route,
+} from './types.ts'
 import type { Dungeon, Point, SpawnId } from '../data/types.ts'
 import { dungeonsByKey, dungeonsByMdtIdx } from '../data/dungeons.ts'
 import { getPullColor } from './colors.ts'
 import { equalPoints } from './map.ts'
+import { type WowMarker, markers } from './markers.ts'
 
 const coordinateRatio = 2.185
 
@@ -86,6 +96,12 @@ function drawingToMdtPolygon(drawing: Drawing): MdtPolygon | MdtArrow {
   }
 }
 
+function markerIndexToEnum(markerIndex: number): WowMarker {
+  const marker = markers[markerIndex - 1]
+  if (!marker) throw new Error(`Invalid marker index ${markerIndex}`)
+  return marker
+}
+
 export function mdtRouteToRoute(mdtRoute: MdtRoute): Route {
   const dungeon = dungeonsByMdtIdx[mdtRoute.value.currentDungeonIdx]
   if (!dungeon)
@@ -127,6 +143,31 @@ export function mdtRouteToRoute(mdtRoute: MdtRoute): Route {
     drawings: mdtObjects
       .filter((object): object is MdtPolygon | MdtArrow => 'l' in object)
       .map(mdtPolygonToDrawing),
+    assignments: Object.fromEntries(
+      Object.entries(mdtRoute.value.enemyAssignments ?? {}).flatMap(
+        ([enemyIndex, spawnArrayOrMap]) => {
+          const isArray = Array.isArray(spawnArrayOrMap)
+          return Object.entries(spawnArrayOrMap)
+            .map(([spawnIndex, markerIndex]) => {
+              const adjustedSpawnIndex = isArray ? Number(spawnIndex) + 1 : Number(spawnIndex)
+              const mobSpawn = dungeon.mobSpawnsList.find(
+                ({ mob, spawn }) =>
+                  mob.enemyIndex == Number(enemyIndex) && spawn.idx == adjustedSpawnIndex,
+              )
+
+              if (!mobSpawn) {
+                console.error(
+                  `Could not find enemy index ${enemyIndex} and spawn index ${spawnIndex} from assignments`,
+                )
+                return null
+              }
+
+              return [mobSpawn.spawn.id, markerIndexToEnum(markerIndex)]
+            })
+            .filter(Boolean)
+        },
+      ),
+    ),
   }
 }
 
@@ -142,6 +183,10 @@ function mobSpawnsToMdtEnemies(spawns: SpawnId[], dungeon: Dungeon) {
     acc[mobSpawn.mob.enemyIndex]!.push(mobSpawn.spawn.idx)
     return acc
   }, {})
+}
+
+function markerEnumToIndex(marker: WowMarker): number {
+  return markers.findIndex((other) => marker === other) + 1
 }
 
 export function routeToMdtRoute(route: Route): MdtRoute {
@@ -160,6 +205,20 @@ export function routeToMdtRoute(route: Route): MdtRoute {
         color: getPullColor(index),
         ...mobSpawnsToMdtEnemies(pull.spawns, dungeon),
       })),
+      enemyAssignments: Object.entries(route.assignments ?? {}).reduce<MdtAssignments>(
+        (acc, [spawnId, marker]) => {
+          const mobSpawn = dungeon.mobSpawns[spawnId]
+          if (!mobSpawn) {
+            console.error(`Could not find spawnId ${spawnId} in dungeon ${dungeon.key}`)
+            return acc
+          }
+
+          acc[mobSpawn.mob.enemyIndex] ??= {}
+          acc[mobSpawn.mob.enemyIndex]![mobSpawn.spawn.idx] = markerEnumToIndex(marker)
+          return acc
+        },
+        {},
+      ),
     },
     objects: [...route.notes.map(noteToMdt), ...route.drawings.map(drawingToMdtPolygon)],
   }

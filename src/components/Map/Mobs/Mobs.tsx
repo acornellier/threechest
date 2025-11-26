@@ -51,6 +51,11 @@ export function Mobs() {
       updateIconZoom(bossMarker, tempIconScaling.current, newIconScaling)
     }
 
+    const assignments = document.querySelectorAll<HTMLDivElement>('.assignment-marker')
+    for (const assignment of assignments) {
+      updateIconZoom(assignment, tempIconScaling.current, newIconScaling)
+    }
+
     tempIconScaling.current = newIconScaling
   }, [map, tempIconScaling])
 

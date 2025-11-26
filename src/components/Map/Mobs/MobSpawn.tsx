@@ -21,6 +21,8 @@ import { Patrol } from './Patrol.tsx'
 import { mapIconScaling } from '../../../util/map.ts'
 import { BossMarker } from './BossMarker.tsx'
 import { useIconScaling } from '../../../util/hooks/useIconScaling.ts'
+import type { WowMarker } from '../../../util/markers.ts'
+import { AssignmentMarker } from './AssignmentMarker.tsx'
 
 interface MobSpawnProps {
   mobSpawn: MobSpawn
@@ -35,6 +37,7 @@ interface MobSpawnMemoProps extends MobSpawnProps {
   matchingPullIndex: number | null
   hidden: boolean
   faded: boolean
+  assignment: WowMarker | null
   isCtrlKeyDown: boolean
   isAltKeyDown: boolean
 }
@@ -47,6 +50,7 @@ function MobSpawnComponent({
   matchingPullIndex,
   hidden,
   faded,
+  assignment,
   isCtrlKeyDown,
   isAltKeyDown,
 }: MobSpawnMemoProps) {
@@ -145,6 +149,7 @@ function MobSpawnComponent({
           hidden={hidden}
         />
       )}
+      {assignment && <AssignmentMarker spawn={spawn} iconSize={iconSize} assignment={assignment} />}
       <Patrol spawn={spawn} isGroupHovered={isGroupHovered} hidden={hidden} />
     </>
   )
@@ -175,6 +180,7 @@ export function MobSpawnWrapper({ mobSpawn, isCtrlKeyDown, isAltKeyDown }: MobSp
 
   const isSelected = matchingPullIndex !== null && selectedPull === matchingPullIndex
   const faded = isLive && matchingPullIndex !== null && matchingPullIndex < selectedPull
+  const assignment = route.assignments[mobSpawn.spawn.id] ?? null
 
   return (
     <MobSpawnMemo
@@ -185,6 +191,7 @@ export function MobSpawnWrapper({ mobSpawn, isCtrlKeyDown, isAltKeyDown }: MobSp
       matchingPullIndex={matchingPullIndex}
       hidden={hidden}
       faded={faded}
+      assignment={assignment}
       isCtrlKeyDown={isCtrlKeyDown}
       isAltKeyDown={isAltKeyDown}
     />

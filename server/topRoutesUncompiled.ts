@@ -31,7 +31,6 @@ for (const dungeonKey of dungeonKeys) {
       fs.readFileSync(path.join(dungeonFolder, file)).toString(),
     ) as SampleRoute
 
-    console.log(sampleRoute)
     if (sampleRoute.wclRanking === undefined) continue
 
     const mdtRoute = routeToMdtRoute(sampleRoute.route)

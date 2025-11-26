@@ -142,6 +142,7 @@ export function wclResultToRoute(wclResult: WclResult) {
     pulls,
     notes: wclResultToNotes(wclResult),
     drawings: [],
+    assignments: {},
   }
 
   return {

@@ -49,6 +49,7 @@ export function MobSpawnTooltip({ mob, spawn, hidden }: Props) {
           </div>
         )}
         <div style={{ fontSize: 10 }}>[Right click for more]</div>
+        {/*<div style={{ fontSize: 10 }}>[Alt click to assign]</div>*/}
       </div>
     </Tooltip>
   )

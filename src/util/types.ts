@@ -2,6 +2,7 @@
 import type { ForwardRefExoticComponent, PropsWithoutRef, SVGProps } from 'react'
 import type { DungeonKey } from '../data/dungeonKeys.ts'
 import type { WclRanking } from './wclRankings.ts'
+import type { WowMarker } from './markers.ts'
 
 export type Pull = {
   id: number
@@ -29,6 +30,10 @@ export type Drawing = {
   arrowRotation?: number
 }
 
+export type Assignments = {
+  [spawnId: SpawnId]: WowMarker
+}
+
 export type Route = {
   name: string
   uid: string
@@ -36,6 +41,7 @@ export type Route = {
   pulls: Pull[]
   notes: Note[]
   drawings: Drawing[]
+  assignments: Assignments
 }
 
 export type PullDetailed = Pull & {
@@ -78,6 +84,14 @@ export type MdtArrow = {
 
 export type MdtObject = MdtNote | MdtPolygon | MdtArrow
 
+export type MdtAssignment = {
+  [spawnIndex: number]: number
+}
+
+export type MdtAssignments = {
+  [enemyIndex: number]: MdtAssignment | number[]
+}
+
 export type MdtRoute = {
   text: string
   week: number
@@ -89,6 +103,7 @@ export type MdtRoute = {
     currentDungeonIdx: number
     selection: number[]
     pulls: MdtPull[]
+    enemyAssignments?: MdtAssignments
   }
   objects: MdtObject[] | Record<number, MdtObject>
 }
