@@ -44,7 +44,7 @@ export function MapContextMenu() {
       minWidth={minWidth}
       buttons={[
         {
-          text: 'Add note',
+          contents: 'Add note',
           onClick: () =>
             dispatch(addNote({ position: [leafletPos.lat, leafletPos.lng], text: '' })),
         },

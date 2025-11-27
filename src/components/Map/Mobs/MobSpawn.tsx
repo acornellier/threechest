@@ -9,20 +9,28 @@ import { MobSpawnTooltip } from './MobSpawnTooltip.tsx'
 import {
   hoverSpawn,
   selectIsBoxHovering,
+  selectMarkingSpawn,
   selectSpawn,
+  setMarkingSpawn,
   useHoveredMobSpawn,
 } from '../../../store/reducers/hoverReducer.ts'
 import type { MobSpawn } from '../../../data/types.ts'
 import { useRoute, useSelectedPull } from '../../../store/routes/routeHooks.ts'
 import { useAppDispatch, useRootSelector } from '../../../store/storeUtil.ts'
 import { selectIsLive, useMapObjectsHidden } from '../../../store/reducers/mapReducer.ts'
-import { Delayed } from '../../Common/Delayed.tsx'
 import { Patrol } from './Patrol.tsx'
 import { mapIconScaling } from '../../../util/map.ts'
 import { BossMarker } from './BossMarker.tsx'
 import { useIconScaling } from '../../../util/hooks/useIconScaling.ts'
 import type { WowMarker } from '../../../util/markers.ts'
 import { AssignmentMarker } from './AssignmentMarker.tsx'
+import {
+  MarkerAssignmentContextMenu,
+  markerPopupMinHeight,
+  markerPopupMinWidth,
+} from './MarkerAssignmentContextMenu.tsx'
+import { Delayed } from '../../Common/Delayed.tsx'
+import { useContextMenu } from '../../Common/useContextMenu.ts'
 
 interface MobSpawnProps {
   mobSpawn: MobSpawn
@@ -34,6 +42,7 @@ interface MobSpawnMemoProps extends MobSpawnProps {
   isSelected: boolean
   isHovered: boolean
   isGroupHovered: boolean
+  isMarking: boolean
   matchingPullIndex: number | null
   hidden: boolean
   faded: boolean
@@ -47,6 +56,7 @@ function MobSpawnComponent({
   isSelected,
   isHovered,
   isGroupHovered,
+  isMarking,
   matchingPullIndex,
   hidden,
   faded,
@@ -60,6 +70,11 @@ function MobSpawnComponent({
   const isBoxHovering = useRootSelector(selectIsBoxHovering)
   const disableHover = isDrawing || isBoxHovering
   const isActuallyHovered = isHovered && !disableHover
+  const {
+    contextMenuPosition: markingMenuPosition,
+    onRightClick: onOpenMarking,
+    onClose: onCloseMarking,
+  } = useContextMenu({ minHeight: markerPopupMinHeight, minWidth: markerPopupMinWidth })
 
   // Call useIconScaling() to trigger render when it changes
   // Ignore returned value, and calculate ourselves instead, because it only changes on zoomend
@@ -81,7 +96,14 @@ function MobSpawnComponent({
           }),
         )
       },
-      contextmenu: () => dispatch(selectSpawn(spawn.id)),
+      contextmenu: (e) => {
+        if (e.originalEvent.ctrlKey) {
+          onOpenMarking(e.originalEvent)
+          dispatch(setMarkingSpawn(spawn.id))
+        } else {
+          dispatch(selectSpawn(spawn.id))
+        }
+      },
       mouseover: () => dispatch(hoverSpawn(spawn.id)),
       mouseout: (e) => {
         const target = e.originalEvent.target as HTMLElement
@@ -89,7 +111,7 @@ function MobSpawnComponent({
         dispatch(hoverSpawn(null))
       },
     }),
-    [dispatch, spawn],
+    [dispatch, onOpenMarking, spawn.id],
   )
 
   const mobIcon = useMemo(
@@ -141,6 +163,13 @@ function MobSpawnComponent({
           <MobSpawnTooltip mob={mob} spawn={spawn} hidden={disableHover} />
         </Delayed>
       </Marker>
+      {isMarking && markingMenuPosition && (
+        <MarkerAssignmentContextMenu
+          spawnId={spawn.id}
+          contextMenuPosition={markingMenuPosition}
+          onClose={onCloseMarking}
+        />
+      )}
       {mob.isBoss && (
         <BossMarker
           spawn={spawn}
@@ -166,12 +195,15 @@ export function MobSpawnWrapper({ mobSpawn, isCtrlKeyDown, isAltKeyDown }: MobSp
 
   const selectedPull = useSelectedPull()
   const hoveredMobSpawn = useHoveredMobSpawn()
+  const markingSpawn = useRootSelector(selectMarkingSpawn)
+
   const isHovered = !!hoveredMobSpawn && hoveredMobSpawn.spawn.id === mobSpawn.spawn.id
   const isGroupHovered =
     isHovered ||
     (!!hoveredMobSpawn &&
       hoveredMobSpawn.spawn.group !== null &&
       hoveredMobSpawn.spawn.group === mobSpawn.spawn.group)
+  const isMarking = markingSpawn !== null && markingSpawn === mobSpawn.spawn.id
 
   const matchingPullIndex = useMemo(() => {
     const index = route.pulls.findIndex((pull) => pull.spawns.includes(mobSpawn.spawn.id))
@@ -188,6 +220,7 @@ export function MobSpawnWrapper({ mobSpawn, isCtrlKeyDown, isAltKeyDown }: MobSp
       isSelected={isSelected}
       isHovered={isHovered}
       isGroupHovered={isGroupHovered}
+      isMarking={isMarking}
       matchingPullIndex={matchingPullIndex}
       hidden={hidden}
       faded={faded}

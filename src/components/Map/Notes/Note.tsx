@@ -143,15 +143,15 @@ function NoteComponent({ poi, index, iconScaling }: Props) {
           minWidth={contextMenuMinWidth}
           buttons={[
             {
-              text: 'Delete note',
+              contents: 'Delete note',
               onClick: () => dispatch(deleteNote(index)),
             },
             {
-              text: 'Move up',
+              contents: 'Move up',
               onClick: () => dispatch(moveNote({ index: index, indexChange: -1 })),
             },
             {
-              text: 'Move down',
+              contents: 'Move down',
               onClick: () => dispatch(moveNote({ index: index, indexChange: +1 })),
             },
           ]}

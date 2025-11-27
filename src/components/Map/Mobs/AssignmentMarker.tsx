@@ -14,7 +14,7 @@ export function AssignmentMarker({ spawn, iconSize, assignment }: Props) {
     <Marker
       position={spawn.pos}
       interactive={false}
-      zIndexOffset={500}
+      zIndexOffset={1100}
       icon={divIcon({
         iconSize: [iconSize, iconSize],
         className: `assignment-marker fade-in-map-object`,
@@ -25,10 +25,10 @@ export function AssignmentMarker({ spawn, iconSize, assignment }: Props) {
               backgroundImage: `url(/images/markers/${assignment}.png)`,
               backgroundSize: 'contain',
               zIndex: -1,
-              width: '90%',
-              height: '90%',
-              top: '5%',
-              left: '5%',
+              width: '80%',
+              height: '80%',
+              top: '10%',
+              left: '10%',
             }}
           />,
         ),

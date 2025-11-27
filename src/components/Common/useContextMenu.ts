@@ -9,6 +9,8 @@ interface Props {
   minWidth: number
 }
 
+const topOffset = -10
+
 export function useContextMenu({ minHeight, minWidth }: Props) {
   const [position, setPosition] = useExclusiveState()
 
@@ -24,6 +26,8 @@ export function useContextMenu({ minHeight, minWidth }: Props) {
         top: e.pageY + minHeight < windowHeight ? e.pageY : windowHeight - minHeight,
         left: e.pageX + minWidth < windowWidth ? e.pageX : windowWidth - minWidth,
       }
+
+      newPos.top += topOffset
 
       setPosition((pos) => {
         if (!pos) return newPos
@@ -42,5 +46,5 @@ export function useContextMenu({ minHeight, minWidth }: Props) {
     }
   }, [onClose])
 
-  return { contextMenuPosition: position, onRightClick, onClose }
+  return { contextMenuPosition: position, onRightClick, onClose: onClose }
 }

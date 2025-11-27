@@ -1,19 +1,15 @@
-import type { MouseEventHandler } from 'react'
+import type { ReactNode } from 'react'
 import { Panel } from './Panel.tsx'
-import type { Shortcut } from '../../data/shortcuts.ts'
-import { Button } from './Button.tsx'
-import type { IconComponent } from '../../util/types.ts'
+import { Button, type ButtonProps } from './Button.tsx'
 
 export type ContextMenuPosition = {
   left: number
   top: number
 }
 
-export interface ContextMenuButton {
-  Icon?: IconComponent
-  text: string
-  onClick: MouseEventHandler
-  shortcut?: Shortcut
+export interface ContextMenuButton extends Omit<ButtonProps, 'children' | 'tooltip' | 'tooltipId'> {
+  contents: ReactNode
+  onClick: NonNullable<ButtonProps['onClick']>
 }
 
 export interface ContextMenuProps {
@@ -22,9 +18,17 @@ export interface ContextMenuProps {
   onClose: () => void
   minHeight: number
   minWidth: number
+  gap?: number
 }
 
-export function ContextMenu({ position, buttons, onClose, minHeight, minWidth }: ContextMenuProps) {
+export function ContextMenu({
+  position,
+  buttons,
+  onClose,
+  minHeight,
+  minWidth,
+  gap,
+}: ContextMenuProps) {
   return (
     <div
       className="fixed z-[10000]"
@@ -36,21 +40,25 @@ export function ContextMenu({ position, buttons, onClose, minHeight, minWidth }:
       }}
     >
       <Panel blue>
-        <div className="flex flex-col gap-2">
-          {buttons.map(({ Icon, text, onClick, shortcut }, idx) => (
+        <div
+          className="flex flex-col gap-2"
+          style={{
+            gap,
+          }}
+        >
+          {buttons.map(({ contents, onClick, ...rest }, idx) => (
             <Button
               key={idx}
               justifyStart
               short
-              Icon={Icon}
-              shortcut={shortcut}
+              {...rest}
               onClick={(e) => {
                 onClick(e)
                 onClose()
                 e.stopPropagation()
               }}
             >
-              {text}
+              {contents}
             </Button>
           ))}
         </div>
