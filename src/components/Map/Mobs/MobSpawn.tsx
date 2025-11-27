@@ -9,9 +9,7 @@ import { MobSpawnTooltip } from './MobSpawnTooltip.tsx'
 import {
   hoverSpawn,
   selectIsBoxHovering,
-  selectMarkingSpawn,
   selectSpawn,
-  setMarkingSpawn,
   useHoveredMobSpawn,
 } from '../../../store/reducers/hoverReducer.ts'
 import type { MobSpawn } from '../../../data/types.ts'
@@ -38,7 +36,6 @@ interface MobSpawnMemoProps extends MobSpawnProps {
   isSelected: boolean
   isHovered: boolean
   isGroupHovered: boolean
-  isMarking: boolean
   matchingPullIndex: number | null
   hidden: boolean
   faded: boolean
@@ -52,7 +49,6 @@ function MobSpawnComponent({
   isSelected,
   isHovered,
   isGroupHovered,
-  isMarking,
   matchingPullIndex,
   hidden,
   faded,
@@ -95,7 +91,6 @@ function MobSpawnComponent({
       contextmenu: (e) => {
         if (e.originalEvent.ctrlKey) {
           onOpenMarking(e.originalEvent)
-          dispatch(setMarkingSpawn(spawn.id))
         } else {
           dispatch(selectSpawn(spawn.id))
         }
@@ -159,7 +154,7 @@ function MobSpawnComponent({
           <MobSpawnTooltip mob={mob} spawn={spawn} hidden={disableHover} />
         </Delayed>
       </Marker>
-      {isMarking && markingMenuPosition && (
+      {markingMenuPosition && (
         <MarkContextMenu
           spawnId={spawn.id}
           contextMenuPosition={markingMenuPosition}
@@ -191,7 +186,6 @@ export function MobSpawnWrapper({ mobSpawn, isCtrlKeyDown, isAltKeyDown }: MobSp
 
   const selectedPull = useSelectedPull()
   const hoveredMobSpawn = useHoveredMobSpawn()
-  const markingSpawn = useRootSelector(selectMarkingSpawn)
 
   const isHovered = !!hoveredMobSpawn && hoveredMobSpawn.spawn.id === mobSpawn.spawn.id
   const isGroupHovered =
@@ -199,7 +193,6 @@ export function MobSpawnWrapper({ mobSpawn, isCtrlKeyDown, isAltKeyDown }: MobSp
     (!!hoveredMobSpawn &&
       hoveredMobSpawn.spawn.group !== null &&
       hoveredMobSpawn.spawn.group === mobSpawn.spawn.group)
-  const isMarking = markingSpawn !== null && markingSpawn === mobSpawn.spawn.id
 
   const matchingPullIndex = useMemo(() => {
     const index = route.pulls.findIndex((pull) => pull.spawns.includes(mobSpawn.spawn.id))
@@ -216,7 +209,6 @@ export function MobSpawnWrapper({ mobSpawn, isCtrlKeyDown, isAltKeyDown }: MobSp
       isSelected={isSelected}
       isHovered={isHovered}
       isGroupHovered={isGroupHovered}
-      isMarking={isMarking}
       matchingPullIndex={matchingPullIndex}
       hidden={hidden}
       faded={faded}

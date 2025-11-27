@@ -8,7 +8,6 @@ import {
 import { marks } from '../../../util/marks.ts'
 import { useMemo } from 'react'
 import { useAppDispatch } from '../../../store/storeUtil.ts'
-import { setMarkingSpawn } from '../../../store/reducers/hoverReducer.ts'
 
 interface Props {
   spawnId: SpawnId
@@ -27,7 +26,6 @@ export function MarkContextMenu({ spawnId, contextMenuPosition, onClose }: Props
       contents: <img height={16} width={16} src={`images/markers/${mark}.png`} alt={mark} />,
       onClick: () => {
         dispatch(setAssignment({ spawnId, assignment: mark }))
-        dispatch(setMarkingSpawn(null))
       },
       twoDimensional: true,
     }))
