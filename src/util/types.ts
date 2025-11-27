@@ -2,7 +2,7 @@
 import type { ForwardRefExoticComponent, PropsWithoutRef, SVGProps } from 'react'
 import type { DungeonKey } from '../data/dungeonKeys.ts'
 import type { WclRanking } from './wclRankings.ts'
-import type { WowMarker } from './markers.ts'
+import type { WowMark } from './marks.ts'
 
 export type Pull = {
   id: number
@@ -31,7 +31,7 @@ export type Drawing = {
 }
 
 export type Assignments = {
-  [spawnId: SpawnId]: WowMarker
+  [spawnId: SpawnId]: WowMark
 }
 
 export type Route = {

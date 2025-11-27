@@ -14,7 +14,7 @@ import { addToast } from '../reducers/toastReducer.ts'
 import { createAppSlice } from '../storeUtil.ts'
 import type { DungeonKey } from '../../data/dungeonKeys.ts'
 import { setMapMode } from '../reducers/mapReducer.ts'
-import type { WowMarker } from '../../util/markers.ts'
+import type { WowMark } from '../../util/marks.ts'
 
 export interface RouteState {
   route: Route
@@ -291,7 +291,7 @@ const baseReducer = createAppSlice({
       state,
       {
         payload: { spawnId, assignment },
-      }: PayloadAction<{ spawnId: SpawnId; assignment: WowMarker | null }>,
+      }: PayloadAction<{ spawnId: SpawnId; assignment: WowMark | null }>,
     ) {
       state.route.assignments ??= {}
       if (assignment === null || assignment === state.route.assignments[spawnId]) {

@@ -22,13 +22,9 @@ import { Patrol } from './Patrol.tsx'
 import { mapIconScaling } from '../../../util/map.ts'
 import { BossMarker } from './BossMarker.tsx'
 import { useIconScaling } from '../../../util/hooks/useIconScaling.ts'
-import type { WowMarker } from '../../../util/markers.ts'
-import { AssignmentMarker } from './AssignmentMarker.tsx'
-import {
-  MarkerAssignmentContextMenu,
-  markerPopupMinHeight,
-  markerPopupMinWidth,
-} from './MarkerAssignmentContextMenu.tsx'
+import type { WowMark } from '../../../util/marks.ts'
+import { MarkMarker } from './MarkMarker.tsx'
+import { MarkContextMenu, markerPopupMinHeight, markerPopupMinWidth } from './MarkContextMenu.tsx'
 import { Delayed } from '../../Common/Delayed.tsx'
 import { useContextMenu } from '../../Common/useContextMenu.ts'
 
@@ -46,7 +42,7 @@ interface MobSpawnMemoProps extends MobSpawnProps {
   matchingPullIndex: number | null
   hidden: boolean
   faded: boolean
-  assignment: WowMarker | null
+  mark: WowMark | null
   isCtrlKeyDown: boolean
   isAltKeyDown: boolean
 }
@@ -60,7 +56,7 @@ function MobSpawnComponent({
   matchingPullIndex,
   hidden,
   faded,
-  assignment,
+  mark,
   isCtrlKeyDown,
   isAltKeyDown,
 }: MobSpawnMemoProps) {
@@ -164,7 +160,7 @@ function MobSpawnComponent({
         </Delayed>
       </Marker>
       {isMarking && markingMenuPosition && (
-        <MarkerAssignmentContextMenu
+        <MarkContextMenu
           spawnId={spawn.id}
           contextMenuPosition={markingMenuPosition}
           onClose={onCloseMarking}
@@ -178,7 +174,7 @@ function MobSpawnComponent({
           hidden={hidden}
         />
       )}
-      {assignment && <AssignmentMarker spawn={spawn} iconSize={iconSize} assignment={assignment} />}
+      {mark && <MarkMarker spawn={spawn} iconSize={iconSize} mark={mark} />}
       <Patrol spawn={spawn} isGroupHovered={isGroupHovered} hidden={hidden} />
     </>
   )
@@ -212,7 +208,7 @@ export function MobSpawnWrapper({ mobSpawn, isCtrlKeyDown, isAltKeyDown }: MobSp
 
   const isSelected = matchingPullIndex !== null && selectedPull === matchingPullIndex
   const faded = isLive && matchingPullIndex !== null && matchingPullIndex < selectedPull
-  const assignment = route.assignments?.[mobSpawn.spawn.id] ?? null
+  const mark = route.assignments?.[mobSpawn.spawn.id] ?? null
 
   return (
     <MobSpawnMemo
@@ -224,7 +220,7 @@ export function MobSpawnWrapper({ mobSpawn, isCtrlKeyDown, isAltKeyDown }: MobSp
       matchingPullIndex={matchingPullIndex}
       hidden={hidden}
       faded={faded}
-      assignment={assignment}
+      mark={mark}
       isCtrlKeyDown={isCtrlKeyDown}
       isAltKeyDown={isAltKeyDown}
     />

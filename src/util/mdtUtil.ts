@@ -12,7 +12,7 @@ import type { Dungeon, Point, SpawnId } from '../data/types.ts'
 import { dungeonsByKey, dungeonsByMdtIdx } from '../data/dungeons.ts'
 import { getPullColor } from './colors.ts'
 import { equalPoints } from './map.ts'
-import { type WowMarker, markers } from './markers.ts'
+import { marks, type WowMark } from './marks.ts'
 
 const coordinateRatio = 2.185
 
@@ -96,10 +96,10 @@ function drawingToMdtPolygon(drawing: Drawing): MdtPolygon | MdtArrow {
   }
 }
 
-function markerIndexToEnum(markerIndex: number): WowMarker {
-  const marker = markers[markerIndex - 1]
-  if (!marker) throw new Error(`Invalid marker index ${markerIndex}`)
-  return marker
+function markIndexToEnum(markIndex: number): WowMark {
+  const mark = marks[markIndex - 1]
+  if (!mark) throw new Error(`Invalid mark index ${markIndex}`)
+  return mark
 }
 
 export function mdtRouteToRoute(mdtRoute: MdtRoute): Route {
@@ -148,7 +148,7 @@ export function mdtRouteToRoute(mdtRoute: MdtRoute): Route {
         ([enemyIndex, spawnArrayOrMap]) => {
           const isArray = Array.isArray(spawnArrayOrMap)
           return Object.entries(spawnArrayOrMap)
-            .map(([spawnIndex, markerIndex]) => {
+            .map(([spawnIndex, markIndex]) => {
               const adjustedSpawnIndex = isArray ? Number(spawnIndex) + 1 : Number(spawnIndex)
               const mobSpawn = dungeon.mobSpawnsList.find(
                 ({ mob, spawn }) =>
@@ -162,7 +162,7 @@ export function mdtRouteToRoute(mdtRoute: MdtRoute): Route {
                 return null
               }
 
-              return [mobSpawn.spawn.id, markerIndexToEnum(markerIndex)]
+              return [mobSpawn.spawn.id, markIndexToEnum(markIndex)]
             })
             .filter(Boolean)
         },
@@ -185,8 +185,8 @@ function mobSpawnsToMdtEnemies(spawns: SpawnId[], dungeon: Dungeon) {
   }, {})
 }
 
-function markerEnumToIndex(marker: WowMarker): number {
-  return markers.findIndex((other) => marker === other) + 1
+function markEnumToIndex(mark: WowMark): number {
+  return marks.findIndex((other) => mark === other) + 1
 }
 
 export function routeToMdtRoute(route: Route): MdtRoute {
@@ -206,7 +206,7 @@ export function routeToMdtRoute(route: Route): MdtRoute {
         ...mobSpawnsToMdtEnemies(pull.spawns, dungeon),
       })),
       enemyAssignments: Object.entries(route.assignments ?? {}).reduce<MdtAssignments>(
-        (acc, [spawnId, marker]) => {
+        (acc, [spawnId, mark]) => {
           const mobSpawn = dungeon.mobSpawns[spawnId]
           if (!mobSpawn) {
             console.error(`Could not find spawnId ${spawnId} in dungeon ${dungeon.key}`)
@@ -214,7 +214,7 @@ export function routeToMdtRoute(route: Route): MdtRoute {
           }
 
           acc[mobSpawn.mob.enemyIndex] ??= {}
-          acc[mobSpawn.mob.enemyIndex]![mobSpawn.spawn.idx] = markerEnumToIndex(marker)
+          acc[mobSpawn.mob.enemyIndex]![mobSpawn.spawn.idx] = markEnumToIndex(mark)
           return acc
         },
         {},

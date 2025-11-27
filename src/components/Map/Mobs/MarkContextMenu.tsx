@@ -5,7 +5,7 @@ import {
   type ContextMenuButton,
   type ContextMenuPosition,
 } from '../../Common/ContextMenu.tsx'
-import { markers } from '../../../util/markers.ts'
+import { marks } from '../../../util/marks.ts'
 import { useMemo } from 'react'
 import { useAppDispatch } from '../../../store/storeUtil.ts'
 import { setMarkingSpawn } from '../../../store/reducers/hoverReducer.ts'
@@ -19,14 +19,14 @@ interface Props {
 export const markerPopupMinHeight = 50
 export const markerPopupMinWidth = 40
 
-export function MarkerAssignmentContextMenu({ spawnId, contextMenuPosition, onClose }: Props) {
+export function MarkContextMenu({ spawnId, contextMenuPosition, onClose }: Props) {
   const dispatch = useAppDispatch()
 
   const buttons = useMemo<ContextMenuButton[]>(() => {
-    return markers.map((marker) => ({
-      contents: <img height={16} width={16} src={`images/markers/${marker}.png`} alt={marker} />,
+    return marks.map((mark) => ({
+      contents: <img height={16} width={16} src={`images/markers/${mark}.png`} alt={mark} />,
       onClick: () => {
-        dispatch(setAssignment({ spawnId, assignment: marker }))
+        dispatch(setAssignment({ spawnId, assignment: mark }))
         dispatch(setMarkingSpawn(null))
       },
       twoDimensional: true,
