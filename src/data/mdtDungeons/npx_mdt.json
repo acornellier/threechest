@@ -1,0 +1,1932 @@
+{
+  "dungeonIndex": 155,
+  "totalCount": 525,
+  "enemies": [
+    {
+      "id": 241643,
+      "enemyIndex": 1,
+      "name": "Shadowguard Defender",
+      "count": 5,
+      "health": 1408385,
+      "creatureType": "Humanoid",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [],
+      "spawns": [
+        {
+          "id": "1-1",
+          "idx": 1,
+          "group": 3,
+          "pos": [
+            -171.27,
+            182.2
+          ]
+        },
+        {
+          "id": "1-2",
+          "idx": 2,
+          "group": 3,
+          "pos": [
+            -169.15,
+            186.34
+          ]
+        },
+        {
+          "id": "1-3",
+          "idx": 3,
+          "group": 4,
+          "pos": [
+            -162.03,
+            218.26
+          ]
+        },
+        {
+          "id": "1-4",
+          "idx": 4,
+          "group": 4,
+          "pos": [
+            -166.7,
+            218.42
+          ]
+        },
+        {
+          "id": "1-5",
+          "idx": 5,
+          "group": 1,
+          "pos": [
+            -166.08,
+            203.2
+          ]
+        },
+        {
+          "id": "1-6",
+          "idx": 6,
+          "group": 24,
+          "pos": [
+            -167.44,
+            153.56
+          ]
+        },
+        {
+          "id": "1-7",
+          "idx": 7,
+          "group": 24,
+          "pos": [
+            -172.22,
+            154.7
+          ]
+        },
+        {
+          "id": "1-8",
+          "idx": 8,
+          "group": 27,
+          "pos": [
+            -154.69,
+            133.07
+          ]
+        },
+        {
+          "id": "1-9",
+          "idx": 9,
+          "group": 27,
+          "pos": [
+            -158.79,
+            135.12
+          ]
+        },
+        {
+          "id": "1-10",
+          "idx": 10,
+          "group": 32,
+          "pos": [
+            -148.09,
+            128.06
+          ]
+        },
+        {
+          "id": "1-11",
+          "idx": 11,
+          "group": 30,
+          "pos": [
+            -155.37,
+            107.57
+          ]
+        },
+        {
+          "id": "1-12",
+          "idx": 12,
+          "group": 31,
+          "pos": [
+            -145.58,
+            110.98
+          ]
+        },
+        {
+          "id": "1-13",
+          "idx": 13,
+          "group": 31,
+          "pos": [
+            -148.09,
+            107.79
+          ]
+        },
+        {
+          "id": "1-14",
+          "idx": 14,
+          "group": 34,
+          "pos": [
+            -134.88,
+            120.09
+          ]
+        }
+      ]
+    },
+    {
+      "id": 248501,
+      "enemyIndex": 2,
+      "name": "Reformed Voidling",
+      "count": 1,
+      "health": 579923,
+      "creatureType": "Aberration",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [],
+      "spawns": [
+        {
+          "id": "2-1",
+          "idx": 1,
+          "group": 5,
+          "pos": [
+            -170.31,
+            241.4
+          ]
+        },
+        {
+          "id": "2-2",
+          "idx": 2,
+          "group": 5,
+          "pos": [
+            -174.73,
+            241.22
+          ]
+        },
+        {
+          "id": "2-3",
+          "idx": 3,
+          "group": 6,
+          "pos": [
+            -184.75,
+            254.88
+          ]
+        },
+        {
+          "id": "2-4",
+          "idx": 4,
+          "group": 6,
+          "pos": [
+            -180.65,
+            253.29
+          ]
+        },
+        {
+          "id": "2-5",
+          "idx": 5,
+          "group": 9,
+          "pos": [
+            -156.63,
+            258.13
+          ]
+        },
+        {
+          "id": "2-6",
+          "idx": 6,
+          "group": 9,
+          "pos": [
+            -153.55,
+            261.26
+          ]
+        },
+        {
+          "id": "2-7",
+          "idx": 7,
+          "group": 11,
+          "pos": [
+            -156.06,
+            289.95
+          ]
+        },
+        {
+          "id": "2-8",
+          "idx": 8,
+          "group": 11,
+          "pos": [
+            -160.47,
+            289.13
+          ]
+        },
+        {
+          "id": "2-9",
+          "idx": 9,
+          "group": 13,
+          "pos": [
+            -131.69,
+            273.55
+          ]
+        },
+        {
+          "id": "2-10",
+          "idx": 10,
+          "group": 13,
+          "pos": [
+            -127.14,
+            274.01
+          ]
+        },
+        {
+          "id": "2-11",
+          "idx": 11,
+          "group": 13,
+          "pos": [
+            -133.97,
+            277.2
+          ]
+        },
+        {
+          "id": "2-12",
+          "idx": 12,
+          "group": 14,
+          "pos": [
+            -129.34,
+            286.27
+          ]
+        },
+        {
+          "id": "2-13",
+          "idx": 13,
+          "group": 14,
+          "pos": [
+            -132.85,
+            289.34
+          ]
+        },
+        {
+          "id": "2-14",
+          "idx": 14,
+          "group": 18,
+          "pos": [
+            -99.36,
+            303.83
+          ]
+        },
+        {
+          "id": "2-15",
+          "idx": 15,
+          "group": 18,
+          "pos": [
+            -101.87,
+            307.48
+          ]
+        },
+        {
+          "id": "2-16",
+          "idx": 16,
+          "group": 21,
+          "pos": [
+            -86.9,
+            321.17
+          ]
+        },
+        {
+          "id": "2-17",
+          "idx": 17,
+          "group": 21,
+          "pos": [
+            -80.16,
+            325.79
+          ]
+        },
+        {
+          "id": "2-18",
+          "idx": 18,
+          "group": 22,
+          "pos": [
+            -69.73,
+            334.18
+          ]
+        }
+      ]
+    },
+    {
+      "id": 241644,
+      "enemyIndex": 3,
+      "name": "Corewright Arcanist",
+      "count": 5,
+      "health": 1325539,
+      "creatureType": "Humanoid",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [],
+      "spawns": [
+        {
+          "id": "3-1",
+          "idx": 1,
+          "group": 2,
+          "pos": [
+            -153.43,
+            191.21
+          ]
+        },
+        {
+          "id": "3-2",
+          "idx": 2,
+          "group": 1,
+          "pos": [
+            -165.62,
+            206.84
+          ]
+        },
+        {
+          "id": "3-3",
+          "idx": 3,
+          "group": 26,
+          "pos": [
+            -172.91,
+            124.41
+          ]
+        },
+        {
+          "id": "3-4",
+          "idx": 4,
+          "group": 28,
+          "pos": [
+            -165.39,
+            114.85
+          ]
+        },
+        {
+          "id": "3-5",
+          "idx": 5,
+          "group": 32,
+          "pos": [
+            -149.91,
+            123.96
+          ]
+        },
+        {
+          "id": "3-6",
+          "idx": 6,
+          "group": 35,
+          "pos": [
+            -149.68,
+            100.28
+          ]
+        },
+        {
+          "id": "3-7",
+          "idx": 7,
+          "group": 34,
+          "pos": [
+            -138.07,
+            117.36
+          ]
+        },
+        {
+          "id": "3-8",
+          "idx": 8,
+          "group": 40,
+          "pos": [
+            -112.57,
+            95.73
+          ]
+        },
+        {
+          "id": "3-9",
+          "idx": 9,
+          "group": 41,
+          "pos": [
+            -101.41,
+            96.18
+          ]
+        },
+        {
+          "id": "3-10",
+          "idx": 10,
+          "group": 41,
+          "pos": [
+            -106.19,
+            84.34
+          ]
+        }
+      ]
+    },
+    {
+      "id": 241645,
+      "enemyIndex": 4,
+      "name": "Hollowsoul Scrounger",
+      "count": 3,
+      "health": 1104616,
+      "creatureType": "Aberration",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [],
+      "spawns": [
+        {
+          "id": "4-1",
+          "idx": 1,
+          "group": 2,
+          "pos": [
+            -157.5,
+            189.57
+          ]
+        },
+        {
+          "id": "4-2",
+          "idx": 2,
+          "group": 1,
+          "pos": [
+            -162.66,
+            208.43
+          ]
+        },
+        {
+          "id": "4-3",
+          "idx": 3,
+          "group": 10,
+          "pos": [
+            -144.9,
+            265.36
+          ]
+        },
+        {
+          "id": "4-4",
+          "idx": 4,
+          "group": 10,
+          "pos": [
+            -148.54,
+            269.68
+          ]
+        },
+        {
+          "id": "4-5",
+          "idx": 5,
+          "group": null,
+          "pos": [
+            -163.12,
+            276.06
+          ]
+        },
+        {
+          "id": "4-6",
+          "idx": 6,
+          "group": 12,
+          "pos": [
+            -147.41,
+            294.27
+          ]
+        },
+        {
+          "id": "4-7",
+          "idx": 7,
+          "group": 12,
+          "pos": [
+            -144.66,
+            298.63
+          ]
+        },
+        {
+          "id": "4-8",
+          "idx": 8,
+          "group": 15,
+          "pos": [
+            -113.46,
+            293.93
+          ]
+        },
+        {
+          "id": "4-9",
+          "idx": 9,
+          "group": 15,
+          "pos": [
+            -119.85,
+            302.01
+          ]
+        },
+        {
+          "id": "4-10",
+          "idx": 10,
+          "group": 16,
+          "pos": [
+            -121.22,
+            316.81
+          ]
+        },
+        {
+          "id": "4-11",
+          "idx": 11,
+          "group": 16,
+          "pos": [
+            -125.55,
+            314.08
+          ]
+        },
+        {
+          "id": "4-12",
+          "idx": 12,
+          "group": 17,
+          "pos": [
+            -103.69,
+            283.34
+          ]
+        },
+        {
+          "id": "4-13",
+          "idx": 13,
+          "group": 17,
+          "pos": [
+            -110.97,
+            282.89
+          ]
+        },
+        {
+          "id": "4-14",
+          "idx": 14,
+          "group": 16,
+          "pos": [
+            -124.64,
+            317.27
+          ]
+        },
+        {
+          "id": "4-15",
+          "idx": 15,
+          "group": 17,
+          "pos": [
+            -106.65,
+            279.7
+          ]
+        },
+        {
+          "id": "4-16",
+          "idx": 16,
+          "group": 21,
+          "pos": [
+            -80.64,
+            321.37
+          ]
+        },
+        {
+          "id": "4-17",
+          "idx": 17,
+          "group": 21,
+          "pos": [
+            -83,
+            319.25
+          ]
+        },
+        {
+          "id": "4-18",
+          "idx": 18,
+          "group": 22,
+          "pos": [
+            -66.1,
+            332.3
+          ]
+        }
+      ]
+    },
+    {
+      "id": 241647,
+      "enemyIndex": 5,
+      "name": "Flux Engineer",
+      "count": 7,
+      "health": 1380770,
+      "creatureType": "Humanoid",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [],
+      "spawns": [
+        {
+          "id": "5-1",
+          "idx": 1,
+          "group": 25,
+          "pos": [
+            -181.33,
+            134.89
+          ]
+        },
+        {
+          "id": "5-2",
+          "idx": 2,
+          "group": 25,
+          "pos": [
+            -184.29,
+            133.75
+          ]
+        },
+        {
+          "id": "5-3",
+          "idx": 3,
+          "group": 26,
+          "pos": [
+            -176.52,
+            122.56
+          ]
+        },
+        {
+          "id": "5-4",
+          "idx": 4,
+          "group": 38,
+          "pos": [
+            -128.05,
+            115.31
+          ]
+        },
+        {
+          "id": "5-5",
+          "idx": 5,
+          "group": 36,
+          "pos": [
+            -141.71,
+            96.18
+          ]
+        },
+        {
+          "id": "5-6",
+          "idx": 6,
+          "group": 36,
+          "pos": [
+            -142.62,
+            92.54
+          ]
+        },
+        {
+          "id": "5-7",
+          "idx": 7,
+          "group": 39,
+          "pos": [
+            -126.23,
+            94.81
+          ]
+        },
+        {
+          "id": "5-8",
+          "idx": 8,
+          "group": 39,
+          "pos": [
+            -128.96,
+            91.63
+          ]
+        }
+      ]
+    },
+    {
+      "id": 248708,
+      "enemyIndex": 6,
+      "name": "Nexus Adept",
+      "count": 7,
+      "health": 690385,
+      "creatureType": "Humanoid",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [],
+      "spawns": [
+        {
+          "id": "6-1",
+          "idx": 1,
+          "group": 40,
+          "pos": [
+            -111.11,
+            99.28
+          ]
+        },
+        {
+          "id": "6-2",
+          "idx": 2,
+          "group": 26,
+          "pos": [
+            -173.36,
+            120.09
+          ]
+        },
+        {
+          "id": "6-3",
+          "idx": 3,
+          "group": 27,
+          "pos": [
+            -154.92,
+            137.39
+          ]
+        },
+        {
+          "id": "6-4",
+          "idx": 4,
+          "group": 34,
+          "pos": [
+            -134.2,
+            117.13
+          ]
+        }
+      ]
+    },
+    {
+      "id": 248373,
+      "enemyIndex": 7,
+      "name": "Circuit Seer",
+      "count": 15,
+      "health": 1988307,
+      "creatureType": "Humanoid",
+      "scale": 1.5,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [],
+      "spawns": [
+        {
+          "id": "7-1",
+          "idx": 1,
+          "group": 29,
+          "pos": [
+            -158.1,
+            115.56
+          ]
+        },
+        {
+          "id": "7-2",
+          "idx": 2,
+          "group": 33,
+          "pos": [
+            -143.31,
+            123.5
+          ]
+        },
+        {
+          "id": "7-3",
+          "idx": 3,
+          "group": 37,
+          "pos": [
+            -135.11,
+            102.56
+          ]
+        },
+        {
+          "id": "7-4",
+          "idx": 4,
+          "group": 41,
+          "pos": [
+            -100.05,
+            88.44
+          ]
+        }
+      ]
+    },
+    {
+      "id": 248706,
+      "enemyIndex": 8,
+      "name": "Cursed Voidcaller",
+      "count": 3,
+      "health": 552308,
+      "creatureType": "Aberration",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [],
+      "spawns": [
+        {
+          "id": "8-1",
+          "idx": 1,
+          "group": 5,
+          "pos": [
+            -173.49,
+            243.91
+          ]
+        },
+        {
+          "id": "8-2",
+          "idx": 2,
+          "group": 8,
+          "pos": [
+            -165,
+            268.9
+          ]
+        },
+        {
+          "id": "8-3",
+          "idx": 3,
+          "group": 8,
+          "pos": [
+            -165.02,
+            264.49
+          ]
+        },
+        {
+          "id": "8-4",
+          "idx": 4,
+          "group": 14,
+          "pos": [
+            -131.55,
+            292.99
+          ]
+        },
+        {
+          "id": "8-5",
+          "idx": 5,
+          "group": 14,
+          "pos": [
+            -125.09,
+            286.76
+          ]
+        },
+        {
+          "id": "8-6",
+          "idx": 6,
+          "group": 22,
+          "pos": [
+            -65.79,
+            328.2
+          ]
+        }
+      ]
+    },
+    {
+      "id": 248506,
+      "enemyIndex": 9,
+      "name": "Dreadflail",
+      "count": 8,
+      "health": 2347309,
+      "creatureType": "Aberration",
+      "scale": 1.5,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [],
+      "spawns": [
+        {
+          "id": "9-1",
+          "idx": 1,
+          "group": 15,
+          "pos": [
+            -117.03,
+            297.28
+          ]
+        }
+      ]
+    },
+    {
+      "id": 241660,
+      "enemyIndex": 10,
+      "name": "Duskfright Herald",
+      "count": 15,
+      "health": 1767384,
+      "creatureType": "Aberration",
+      "scale": 1.5,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [],
+      "spawns": [
+        {
+          "id": "10-1",
+          "idx": 1,
+          "group": 7,
+          "pos": [
+            -171.45,
+            259.75
+          ]
+        },
+        {
+          "id": "10-2",
+          "idx": 2,
+          "group": 13,
+          "pos": [
+            -129.42,
+            277.65
+          ]
+        },
+        {
+          "id": "10-3",
+          "idx": 3,
+          "group": 12,
+          "pos": [
+            -142.62,
+            294.5
+          ]
+        },
+        {
+          "id": "10-4",
+          "idx": 4,
+          "group": 21,
+          "pos": [
+            -84.79,
+            324.33
+          ]
+        }
+      ]
+    },
+    {
+      "id": 251853,
+      "enemyIndex": 11,
+      "name": "Grand Nullifier",
+      "count": 7,
+      "health": 1380770,
+      "creatureType": "Aberration",
+      "scale": 1.5,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [],
+      "spawns": [
+        {
+          "id": "11-1",
+          "idx": 1,
+          "group": 14,
+          "pos": [
+            -127.31,
+            290.32
+          ]
+        },
+        {
+          "id": "11-2",
+          "idx": 2,
+          "group": 19,
+          "pos": [
+            -103.92,
+            316.81
+          ]
+        },
+        {
+          "id": "11-3",
+          "idx": 3,
+          "group": 20,
+          "pos": [
+            -93.44,
+            297.69
+          ]
+        }
+      ]
+    },
+    {
+      "id": 248502,
+      "enemyIndex": 12,
+      "name": "Null Sentinel",
+      "count": 15,
+      "health": 2209232,
+      "creatureType": "Aberration",
+      "scale": 1.5,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [],
+      "spawns": [
+        {
+          "id": "12-1",
+          "idx": 1,
+          "group": 8,
+          "pos": [
+            -161.02,
+            267.08
+          ]
+        },
+        {
+          "id": "12-2",
+          "idx": 2,
+          "group": 10,
+          "pos": [
+            -143.52,
+            269.94
+          ]
+        },
+        {
+          "id": "12-3",
+          "idx": 3,
+          "group": 22,
+          "pos": [
+            -70.25,
+            329.74
+          ]
+        }
+      ]
+    },
+    {
+      "id": 241642,
+      "enemyIndex": 13,
+      "name": "Lingering Image",
+      "count": 15,
+      "health": 2015924,
+      "creatureType": "Humanoid",
+      "scale": 1.5,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [],
+      "spawns": [
+        {
+          "id": "13-1",
+          "idx": 1,
+          "group": 2,
+          "pos": [
+            -153.53,
+            185.77
+          ]
+        },
+        {
+          "id": "13-2",
+          "idx": 2,
+          "group": 1,
+          "pos": [
+            -161.07,
+            204.33
+          ]
+        },
+        {
+          "id": "13-3",
+          "idx": 3,
+          "group": 18,
+          "pos": [
+            -97.31,
+            307.48
+          ]
+        },
+        {
+          "id": "13-4",
+          "idx": 4,
+          "group": 42,
+          "pos": [
+            -127.19,
+            195.77
+          ]
+        },
+        {
+          "id": "13-5",
+          "idx": 5,
+          "group": 51,
+          "pos": [
+            -77.96,
+            183.16
+          ]
+        },
+        {
+          "id": "13-6",
+          "idx": 6,
+          "group": 47,
+          "pos": [
+            -80.92,
+            212.3
+          ]
+        }
+      ]
+    },
+    {
+      "id": 254932,
+      "enemyIndex": 14,
+      "name": "Radiant Swarm",
+      "count": 2,
+      "health": 483270,
+      "creatureType": "Not specified",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [],
+      "spawns": [
+        {
+          "id": "14-1",
+          "idx": 1,
+          "group": 53,
+          "pos": [
+            -91.05,
+            162.5
+          ]
+        },
+        {
+          "id": "14-2",
+          "idx": 2,
+          "group": 44,
+          "pos": [
+            -124.64,
+            187.26
+          ]
+        },
+        {
+          "id": "14-3",
+          "idx": 3,
+          "group": 44,
+          "pos": [
+            -129.65,
+            186.35
+          ]
+        },
+        {
+          "id": "14-4",
+          "idx": 4,
+          "group": 43,
+          "pos": [
+            -124.18,
+            205.93
+          ]
+        },
+        {
+          "id": "14-5",
+          "idx": 5,
+          "group": 43,
+          "pos": [
+            -130.33,
+            205.7
+          ]
+        },
+        {
+          "id": "14-6",
+          "idx": 6,
+          "group": 53,
+          "pos": [
+            -87.46,
+            160.08
+          ]
+        },
+        {
+          "id": "14-7",
+          "idx": 7,
+          "group": 53,
+          "pos": [
+            -87.98,
+            156.52
+          ]
+        },
+        {
+          "id": "14-8",
+          "idx": 8,
+          "group": 53,
+          "pos": [
+            -91.53,
+            158.46
+          ]
+        },
+        {
+          "id": "14-9",
+          "idx": 9,
+          "group": 53,
+          "pos": [
+            -94.64,
+            161.08
+          ]
+        },
+        {
+          "id": "14-10",
+          "idx": 10,
+          "group": 54,
+          "pos": [
+            -65.59,
+            160.45
+          ]
+        },
+        {
+          "id": "14-11",
+          "idx": 11,
+          "group": 54,
+          "pos": [
+            -66.22,
+            164.04
+          ]
+        },
+        {
+          "id": "14-12",
+          "idx": 12,
+          "group": 54,
+          "pos": [
+            -69.06,
+            159.02
+          ]
+        },
+        {
+          "id": "14-13",
+          "idx": 13,
+          "group": 54,
+          "pos": [
+            -70.22,
+            162.67
+          ]
+        },
+        {
+          "id": "14-14",
+          "idx": 14,
+          "group": 52,
+          "pos": [
+            -76.27,
+            174.92
+          ]
+        },
+        {
+          "id": "14-15",
+          "idx": 15,
+          "group": 52,
+          "pos": [
+            -80.01,
+            174.96
+          ]
+        },
+        {
+          "id": "14-16",
+          "idx": 16,
+          "group": 46,
+          "pos": [
+            -99.71,
+            228.49
+          ]
+        },
+        {
+          "id": "14-17",
+          "idx": 17,
+          "group": 46,
+          "pos": [
+            -95.95,
+            230.97
+          ]
+        },
+        {
+          "id": "14-18",
+          "idx": 18,
+          "group": 46,
+          "pos": [
+            -92.17,
+            233.21
+          ]
+        },
+        {
+          "id": "14-19",
+          "idx": 19,
+          "group": 46,
+          "pos": [
+            -100,
+            232.75
+          ]
+        },
+        {
+          "id": "14-20",
+          "idx": 20,
+          "group": 46,
+          "pos": [
+            -95.84,
+            234.96
+          ]
+        },
+        {
+          "id": "14-21",
+          "idx": 21,
+          "group": 48,
+          "pos": [
+            -76.14,
+            227.33
+          ]
+        },
+        {
+          "id": "14-22",
+          "idx": 22,
+          "group": 48,
+          "pos": [
+            -80.24,
+            227.1
+          ]
+        },
+        {
+          "id": "14-23",
+          "idx": 23,
+          "group": 49,
+          "pos": [
+            -72.49,
+            217.31
+          ]
+        },
+        {
+          "id": "14-24",
+          "idx": 24,
+          "group": 49,
+          "pos": [
+            -72.04,
+            213.9
+          ]
+        },
+        {
+          "id": "14-25",
+          "idx": 25,
+          "group": 55,
+          "pos": [
+            -61.11,
+            172.68
+          ]
+        },
+        {
+          "id": "14-26",
+          "idx": 26,
+          "group": 55,
+          "pos": [
+            -60.66,
+            168.81
+          ]
+        }
+      ]
+    },
+    {
+      "id": 254926,
+      "enemyIndex": 15,
+      "name": "Lightwrought",
+      "count": 7,
+      "health": 1173655,
+      "creatureType": "Elemental",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [],
+      "spawns": [
+        {
+          "id": "15-1",
+          "idx": 1,
+          "group": 45,
+          "pos": [
+            -100.96,
+            190.22
+          ]
+        },
+        {
+          "id": "15-2",
+          "idx": 2,
+          "group": 45,
+          "pos": [
+            -101.41,
+            201.37
+          ]
+        },
+        {
+          "id": "15-3",
+          "idx": 3,
+          "group": null,
+          "pos": [
+            -79.1,
+            164.72
+          ]
+        },
+        {
+          "id": "15-4",
+          "idx": 4,
+          "group": null,
+          "pos": [
+            -84.56,
+            170.18
+          ]
+        },
+        {
+          "id": "15-5",
+          "idx": 5,
+          "group": 51,
+          "pos": [
+            -82.06,
+            181.56
+          ]
+        },
+        {
+          "id": "15-6",
+          "idx": 6,
+          "group": 47,
+          "pos": [
+            -85.7,
+            211.85
+          ]
+        },
+        {
+          "id": "15-7",
+          "idx": 7,
+          "group": 47,
+          "pos": [
+            -83.65,
+            215.95
+          ]
+        }
+      ]
+    },
+    {
+      "id": 254928,
+      "enemyIndex": 16,
+      "name": "Flarebat",
+      "count": 3,
+      "health": 2015924,
+      "creatureType": "Beast",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [],
+      "spawns": [
+        {
+          "id": "16-1",
+          "idx": 1,
+          "group": 44,
+          "pos": [
+            -126.91,
+            182.93
+          ]
+        },
+        {
+          "id": "16-2",
+          "idx": 2,
+          "group": 43,
+          "pos": [
+            -127.37,
+            203.65
+          ]
+        },
+        {
+          "id": "16-3",
+          "idx": 3,
+          "group": 56,
+          "pos": [
+            -69.76,
+            170.64
+          ]
+        },
+        {
+          "id": "16-4",
+          "idx": 4,
+          "group": 45,
+          "pos": [
+            -95.72,
+            196.59
+          ]
+        }
+      ]
+    },
+    {
+      "id": 241539,
+      "enemyIndex": 17,
+      "name": "Kasreth",
+      "count": 0,
+      "health": 9061303,
+      "creatureType": "Humanoid",
+      "scale": 1.5,
+      "isBoss": true,
+      "characteristics": [],
+      "spells": [],
+      "spawns": [
+        {
+          "id": "17-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -81.97,
+            81.29
+          ]
+        }
+      ]
+    },
+    {
+      "id": 241542,
+      "enemyIndex": 18,
+      "name": "Corewarden Nysarra",
+      "count": 0,
+      "health": 28766040,
+      "creatureType": "Aberration",
+      "scale": 1.5,
+      "isBoss": true,
+      "characteristics": [],
+      "spells": [],
+      "spawns": [
+        {
+          "id": "18-1",
+          "idx": 1,
+          "group": 23,
+          "pos": [
+            -55.75,
+            340.69
+          ]
+        }
+      ]
+    },
+    {
+      "id": 241546,
+      "enemyIndex": 19,
+      "name": "Lothraxion",
+      "count": 0,
+      "health": 11506416,
+      "creatureType": "Humanoid",
+      "scale": 1.5,
+      "isBoss": true,
+      "characteristics": [],
+      "spells": [],
+      "spawns": [
+        {
+          "id": "19-1",
+          "idx": 1,
+          "group": 50,
+          "pos": [
+            -63.53,
+            197.96
+          ]
+        }
+      ]
+    },
+    {
+      "id": 248769,
+      "enemyIndex": 20,
+      "name": "Smudge",
+      "count": 0,
+      "health": 164385,
+      "creatureType": "Elemental",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [],
+      "spawns": [
+        {
+          "id": "20-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -33.92,
+            129.12
+          ]
+        }
+      ]
+    },
+    {
+      "id": 250299,
+      "enemyIndex": 21,
+      "name": "[DNT] Conduit Stalker",
+      "count": 0,
+      "health": 230128,
+      "creatureType": "Not specified",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [],
+      "spawns": [
+        {
+          "id": "21-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -41.91,
+            148.35
+          ]
+        }
+      ]
+    },
+    {
+      "id": 251024,
+      "enemyIndex": 22,
+      "name": "Null Guardian",
+      "count": 0,
+      "health": 460257,
+      "creatureType": "Aberration",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [],
+      "spawns": [
+        {
+          "id": "22-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -34.21,
+            147.85
+          ]
+        }
+      ]
+    },
+    {
+      "id": 251031,
+      "enemyIndex": 23,
+      "name": "Wretched Supplicant",
+      "count": 0,
+      "health": 276154,
+      "creatureType": "Aberration",
+      "scale": 1.5,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [],
+      "spawns": [
+        {
+          "id": "23-1",
+          "idx": 1,
+          "group": 6,
+          "pos": [
+            -181.73,
+            257.34
+          ]
+        },
+        {
+          "id": "23-2",
+          "idx": 2,
+          "group": 9,
+          "pos": [
+            -151.62,
+            256.7
+          ]
+        },
+        {
+          "id": "23-3",
+          "idx": 3,
+          "group": 11,
+          "pos": [
+            -156.97,
+            285.16
+          ]
+        }
+      ]
+    },
+    {
+      "id": 251568,
+      "enemyIndex": 24,
+      "name": "Fractured Image",
+      "count": 0,
+      "health": 164385,
+      "creatureType": "Humanoid",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [],
+      "spawns": [
+        {
+          "id": "24-1",
+          "idx": 1,
+          "group": 50,
+          "pos": [
+            -56.25,
+            193.51
+          ]
+        },
+        {
+          "id": "24-2",
+          "idx": 2,
+          "group": 50,
+          "pos": [
+            -56.78,
+            198.87
+          ]
+        }
+      ]
+    },
+    {
+      "id": 251852,
+      "enemyIndex": 25,
+      "name": "Nullifier",
+      "count": 0,
+      "health": 552308,
+      "creatureType": "Aberration",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [],
+      "spawns": [
+        {
+          "id": "25-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -34.24,
+            134.6
+          ]
+        }
+      ]
+    },
+    {
+      "id": 251878,
+      "enemyIndex": 26,
+      "name": "Voidcaller",
+      "count": 0,
+      "health": 1380770,
+      "creatureType": "Aberration",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [],
+      "spawns": [
+        {
+          "id": "26-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -34.26,
+            140.87
+          ]
+        }
+      ]
+    },
+    {
+      "id": 252825,
+      "enemyIndex": 27,
+      "name": "Mana Battery",
+      "count": 0,
+      "health": 207116,
+      "creatureType": "Not specified",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [],
+      "spawns": [
+        {
+          "id": "27-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -40.3,
+            129.1
+          ]
+        }
+      ]
+    },
+    {
+      "id": 252852,
+      "enemyIndex": 28,
+      "name": "Corespark Conduit",
+      "count": 0,
+      "health": 662769,
+      "creatureType": "Not specified",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [],
+      "spawns": [
+        {
+          "id": "28-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -41.26,
+            141.4
+          ]
+        }
+      ]
+    },
+    {
+      "id": 254227,
+      "enemyIndex": 29,
+      "name": "Corewarden Nysarra",
+      "count": 0,
+      "health": 66276960,
+      "creatureType": "Aberration",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [],
+      "spawns": [
+        {
+          "id": "29-1",
+          "idx": 1,
+          "group": 23,
+          "pos": [
+            -52.91,
+            347.8
+          ]
+        },
+        {
+          "id": "29-2",
+          "idx": 2,
+          "group": 23,
+          "pos": [
+            -57.24,
+            348.1
+          ]
+        },
+        {
+          "id": "29-3",
+          "idx": 3,
+          "group": 23,
+          "pos": [
+            -61.8,
+            346.23
+          ]
+        }
+      ]
+    },
+    {
+      "id": 254459,
+      "enemyIndex": 30,
+      "name": "Broken Pipe",
+      "count": 0,
+      "health": 108920,
+      "creatureType": "Not specified",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [],
+      "spawns": [
+        {
+          "id": "30-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -41.5,
+            155.34
+          ]
+        }
+      ]
+    },
+    {
+      "id": 254485,
+      "enemyIndex": 31,
+      "name": "Corespark Pylon",
+      "count": 0,
+      "health": 109963,
+      "creatureType": "Not specified",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [],
+      "spawns": [
+        {
+          "id": "31-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -41.08,
+            161.06
+          ]
+        }
+      ]
+    },
+    {
+      "id": 255179,
+      "enemyIndex": 32,
+      "name": "Fractured Image",
+      "count": 0,
+      "health": 1610898,
+      "creatureType": "Humanoid",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [],
+      "spawns": [
+        {
+          "id": "32-1",
+          "idx": 1,
+          "group": 50,
+          "pos": [
+            -62.13,
+            205.74
+          ]
+        },
+        {
+          "id": "32-2",
+          "idx": 2,
+          "group": 50,
+          "pos": [
+            -59.06,
+            203.42
+          ]
+        }
+      ]
+    },
+    {
+      "id": 259569,
+      "enemyIndex": 33,
+      "name": "Mana Battery",
+      "count": 0,
+      "health": 207116,
+      "creatureType": "Humanoid",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [],
+      "spawns": [
+        {
+          "id": "33-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -40.12,
+            134.52
+          ]
+        }
+      ]
+    },
+    {
+      "id": 249711,
+      "enemyIndex": 34,
+      "name": "Core Technician",
+      "count": 1,
+      "health": 579923,
+      "creatureType": "Humanoid",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [],
+      "spawns": [
+        {
+          "id": "34-1",
+          "idx": 1,
+          "group": 2,
+          "pos": [
+            -158.13,
+            185.57
+          ]
+        }
+      ]
+    }
+  ],
+  "pois": [
+    {
+      "type": "dungeonEntrance",
+      "itemType": null,
+      "pos": [
+        -236.66,
+        197.28
+      ]
+    }
+  ]
+}

@@ -1,24 +1,24 @@
-import ak from './mdtDungeons/ak_mdt.json'
-import db from './mdtDungeons/db_mdt.json'
-import eda from './mdtDungeons/eda_mdt.json'
-import gmbt from './mdtDungeons/gmbt_mdt.json'
-import hoa from './mdtDungeons/hoa_mdt.json'
-import of from './mdtDungeons/of_mdt.json'
-import psf from './mdtDungeons/psf_mdt.json'
-import strt from './mdtDungeons/strt_mdt.json'
+import mt from './mdtDungeons/mt_mdt.json'
+import mc from './mdtDungeons/mc_mdt.json'
+import npx from './mdtDungeons/npx_mdt.json'
+import ws from './mdtDungeons/ws_mdt.json'
+import aa from './mdtDungeons/aa_mdt.json'
+import pos from './mdtDungeons/pos_mdt.json'
+import sott from './mdtDungeons/sott_mdt.json'
+import sr from './mdtDungeons/sr_mdt.json'
 import type { MdtDungeon, MdtDungeonFake, MobSpawn, SpawnId } from './types.ts'
 import { mdtEnemiesToMobSpawns } from '../util/mobSpawns.ts'
 import type { DungeonKey } from './dungeonKeys.ts'
 
 const mdtDungeonsFake: Record<DungeonKey, MdtDungeonFake> = {
-  ak,
-  db,
-  eda,
-  gmbt,
-  hoa,
-  of,
-  psf,
-  strt,
+  mt,
+  mc,
+  npx,
+  ws,
+  aa,
+  pos,
+  sott,
+  sr,
 }
 
 export const mdtDungeons = mdtDungeonsFake as Record<DungeonKey, MdtDungeon>
