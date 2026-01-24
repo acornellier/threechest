@@ -1,5 +1,6 @@
 ﻿import { DungeonDropdown } from './DungeonDropdown.tsx'
 import { Button } from '../Common/Button.tsx'
+import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline'
 import { sidebarWidth } from '../Sidebar/Sidebar.tsx'
 import { UndoRedo } from './UndoRedo.tsx'
 import { DrawToolbar } from '../Map/Draw/DrawToolbar.tsx'
@@ -19,7 +20,7 @@ export function Header() {
       <div className={`pointer-events-none flex flex-col items-start gap-4`}>
         {!isLive && (
           <div
-            className={`flex gap-4 flex-nowrap items-start pointer-events-auto ${xsHiddenDungeons}`}
+            className={`flex gap-4 flex-nowrap items-center pointer-events-auto ${xsHiddenDungeons}`}
             style={{
               maxWidth: `calc(100% - ${actualSidebarWidth}px)`,
             }}
@@ -32,6 +33,21 @@ export function Header() {
               <img src="/images/logo_64x64.png" alt="logo" width={36} className="min-w-[36] mr-1" />
               <div>Threechest</div>
             </Button>
+            <a
+              href="https://threechest-ptr.vercel.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden lg:flex"
+            >
+              <Button
+                twoDimensional
+                className="min-w-fit"
+                innerClass="text-sm gap-1"
+                Icon={ArrowTopRightOnSquareIcon}
+              >
+                PTR
+              </Button>
+            </a>
             <DungeonDropdown />
           </div>
         )}
