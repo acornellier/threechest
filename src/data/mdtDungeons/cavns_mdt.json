@@ -4120,7 +4120,6 @@
   "pois": [
     {
       "type": "dungeonEntrance",
-      "itemType": null,
       "pos": [
         -59.52,
         110.75
@@ -4128,11 +4127,16 @@
     },
     {
       "type": "genericItem",
-      "itemType": null,
       "pos": [
         -141.94,
         65.67
-      ]
+      ],
+      "info": {
+        "description": "exampleItemDescriptionWithSpellId",
+        "texture": 4659336,
+        "spellId": 1269056,
+        "size": 20
+      }
     }
   ]
 }

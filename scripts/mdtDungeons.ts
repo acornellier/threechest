@@ -93,11 +93,23 @@ export function importMdtDungeon(key: DungeonKey, dungeonPath: string) {
       const fields = poiItems[poiIndex]!.fields as TableKey[]
       const x = getFieldValue(fields, 'x')
       const y = getFieldValue(fields, 'y')
-      pois.push({
+
+      const poi: PointOfInterest = {
         type: getFieldValue(fields, 'type'),
-        itemType: getFieldValue(fields, 'itemType'),
         pos: convertCoords(x, y),
-      })
+      }
+
+      const infoFields = getFieldValue(fields, 'info') as TableKey[]
+      if (infoFields) {
+        poi.info = {
+          description: getFieldValue(infoFields, 'description'),
+          texture: getFieldValue(infoFields, 'texture'),
+          spellId: getFieldValue(infoFields, 'spellId'),
+          size: getFieldValue(infoFields, 'size'),
+        }
+      }
+
+      pois.push(poi)
     }
   }
 

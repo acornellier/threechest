@@ -58,9 +58,15 @@ export type MobSpawn = {
 }
 
 export type PointOfInterest = {
-  type: 'dungeonEntrance' | 'graveyard' | 'nwItem' | ''
-  itemType: null | number
+  type: 'dungeonEntrance' | 'graveyard' | 'genericItem'
   pos: Point
+  sizeMult?: number
+  info?: {
+    description: string
+    texture: number
+    spellId: number
+    size: number
+  }
 }
 
 export type Spell = {

@@ -2187,7 +2187,6 @@
   "pois": [
     {
       "type": "dungeonEntrance",
-      "itemType": null,
       "pos": [
         -236.89,
         72.96
@@ -2195,11 +2194,16 @@
     },
     {
       "type": "genericItem",
-      "itemType": null,
       "pos": [
         -140.12,
         173.37
-      ]
+      ],
+      "info": {
+        "description": "seatItemA",
+        "texture": 6891020,
+        "spellId": 244300,
+        "size": 12
+      }
     }
   ]
 }
