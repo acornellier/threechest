@@ -58,19 +58,7 @@ export type MobSpawn = {
 }
 
 export type PointOfInterest = {
-  type:
-    | 'dungeonEntrance'
-    | 'graveyard'
-    | 'nwItem'
-    | 'cityOfThreadsItem'
-    | 'stonevaultItem'
-    | 'mistsItem'
-    | 'araKaraItem'
-    | 'EDAItem1'
-    | 'EDAItem2'
-    | 'EDAItem3'
-    | 'floodgateItem'
-    | 'prioryItem'
+  type: 'dungeonEntrance' | 'graveyard' | 'nwItem' | ''
   itemType: null | number
   pos: Point
 }

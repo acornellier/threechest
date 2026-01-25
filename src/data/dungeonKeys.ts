@@ -1,3 +1,3 @@
-export const dungeonKeys = ['mt', 'mc', 'npx', 'ws', 'aa', 'pos', 'sott', 'sr'] as const
+export const dungeonKeys = ['magi', 'cavns', 'xenas', 'wind', 'aa', 'pit', 'seat', 'sky'] as const
 
 export type DungeonKey = (typeof dungeonKeys)[number]

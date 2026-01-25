@@ -10,14 +10,14 @@ import type { DungeonKey } from '../src/data/dungeonKeys.ts'
 const dirname = getDirname(import.meta.url)
 
 export const dungeonPaths = new Map<DungeonKey, string>([
-  ['mt', 'Midnight/MagistersTerrace'],
-  ['mc', 'Midnight/MaisaraCaverns'],
-  ['npx', 'Midnight/NexusPointXenas'],
-  ['ws', 'Midnight/WindrunnerSpire'],
+  ['magi', 'Midnight/MagistersTerrace'],
+  ['cavns', 'Midnight/MaisaraCaverns'],
+  ['xenas', 'Midnight/NexusPointXenas'],
+  ['wind', 'Midnight/WindrunnerSpire'],
   ['aa', 'Midnight/AlgetharAcademy'],
-  ['pos', 'Midnight/PitOfSaron'],
-  ['sott', 'Midnight/SeatOfTheTriumvirate'],
-  ['sr', 'Midnight/Skyreach'],
+  ['pit', 'Midnight/PitOfSaron'],
+  ['seat', 'Midnight/SeatOfTheTriumvirate'],
+  ['sky', 'Midnight/Skyreach'],
 ])
 
 const filterDungeonKey = process.argv[2]

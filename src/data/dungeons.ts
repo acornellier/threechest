@@ -12,22 +12,22 @@ export const dungeonData = (
 
 export const dungeons: Dungeon[] = [
   {
-    key: 'mt' as DungeonKey,
+    key: 'magi' as DungeonKey,
     name: "Magister's Terrace",
     icon: 'inv_achievement_dungeon_magistersterrace',
   },
   {
-    key: 'mc' as DungeonKey,
+    key: 'cavns' as DungeonKey,
     name: 'Maisara Caverns',
     icon: 'inv_achievement_dungeon_maisarahills',
   },
   {
-    key: 'npx' as DungeonKey,
+    key: 'xenas' as DungeonKey,
     name: 'Nexus-Point Xenas',
     icon: 'inv_achievement_dungeon_nexuspointxenas',
   },
   {
-    key: 'ws' as DungeonKey,
+    key: 'wind' as DungeonKey,
     name: 'Windrunner Spire',
     icon: 'inv_achievement_dungeon_windrunnerspire',
   },
@@ -37,17 +37,17 @@ export const dungeons: Dungeon[] = [
     icon: 'achievement_dungeon_dragonacademy',
   },
   {
-    key: 'pos' as DungeonKey,
+    key: 'pit' as DungeonKey,
     name: 'Pit of Saron',
     icon: 'achievement_dungeon_icecrown_pitofsaron',
   },
   {
-    key: 'sott' as DungeonKey,
+    key: 'seat' as DungeonKey,
     name: 'Seat of the Triumvirate',
     icon: 'achievement_dungeon_argusdungeon',
   },
   {
-    key: 'sr' as DungeonKey,
+    key: 'sky' as DungeonKey,
     name: 'Skyreach',
     icon: 'achievement_dungeon_arakkoaspires',
   },

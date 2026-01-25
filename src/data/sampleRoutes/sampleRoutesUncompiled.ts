@@ -13,13 +13,13 @@ type SampleRouteDefinition = Omit<SampleRoute, 'route'> & {
 
 const sampleRouteDefinitions: Record<DungeonKey, SampleRouteDefinition[]> = {
   aa: [],
-  mc: [],
-  mt: [],
-  npx: [],
-  pos: [],
-  sott: [],
-  sr: [],
-  ws: [],
+  cavns: [],
+  magi: [],
+  xenas: [],
+  pit: [],
+  seat: [],
+  sky: [],
+  wind: [],
 }
 
 async function convertRouteDefinition({

@@ -1,24 +1,24 @@
-import mt from './mdtDungeons/mt_mdt.json'
-import mc from './mdtDungeons/mc_mdt.json'
-import npx from './mdtDungeons/npx_mdt.json'
-import ws from './mdtDungeons/ws_mdt.json'
-import aa from './mdtDungeons/aa_mdt.json'
-import pos from './mdtDungeons/pos_mdt.json'
-import sott from './mdtDungeons/sott_mdt.json'
-import sr from './mdtDungeons/sr_mdt.json'
 import type { MdtDungeon, MdtDungeonFake, MobSpawn, SpawnId } from './types.ts'
 import { mdtEnemiesToMobSpawns } from '../util/mobSpawns.ts'
 import type { DungeonKey } from './dungeonKeys.ts'
+import aa from './mdtDungeons/aa_mdt.json'
+import magi from './mdtDungeons/magi_mdt.json'
+import cavns from './mdtDungeons/cavns_mdt.json'
+import xenas from './mdtDungeons/xenas_mdt.json'
+import wind from './mdtDungeons/wind_mdt.json'
+import pit from './mdtDungeons/pit_mdt.json'
+import seat from './mdtDungeons/seat_mdt.json'
+import sky from './mdtDungeons/sky_mdt.json'
 
 const mdtDungeonsFake: Record<DungeonKey, MdtDungeonFake> = {
-  mt,
-  mc,
-  npx,
-  ws,
   aa,
-  pos,
-  sott,
-  sr,
+  magi,
+  cavns,
+  xenas,
+  wind,
+  pit,
+  seat,
+  sky,
 }
 
 export const mdtDungeons = mdtDungeonsFake as Record<DungeonKey, MdtDungeon>

@@ -31,36 +31,6 @@ const configs: PoiConfig[] = [
     label: 'Graveyard',
     src: '/images/graveyard.png',
   },
-  {
-    type: 'araKaraItem',
-    label: 'Silk Thread: stuns mobs, requires 25 Tailoring',
-    src: 'inv_misc_web_02',
-  },
-  {
-    type: 'EDAItem3',
-    label: 'Arcane Conduit: 10% haste, requires 25 Enchanting',
-    src: 'inv_112_arcane_buff',
-  },
-  {
-    type: 'EDAItem2',
-    label: 'Disruption Grenade',
-    src: 'spell_broker_nova',
-  },
-  {
-    type: 'EDAItem1',
-    label: 'Shatter conduit: stuns mobs, requires 25 Enchanting',
-    src: 'inv_112_arcane_beam',
-  },
-  {
-    type: 'floodgateItem',
-    label: 'Weapons',
-    src: 'inv_eng_crate',
-  },
-  {
-    type: 'prioryItem',
-    label: 'Usable by Priests or Paladins',
-    src: 'spell_holy_rebuke',
-  },
 ]
 
 function getConfig(poi: PointOfInterestType): PoiConfig | null {
