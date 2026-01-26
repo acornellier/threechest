@@ -128,7 +128,7 @@ function NoteComponent({ poi, index, iconScaling }: Props) {
             autoFocus
             className="fancy w-full [&]:min-h-24 [&]:text-xs resize-none"
             onKeyDown={(e) => {
-              if (e.key === 'Enter') markerRef.current?.closePopup()
+              if (e.key === 'Enter' && !e.shiftKey) markerRef.current?.closePopup()
             }}
             onChange={(e) => setInput(e.target.value)}
             value={input}
