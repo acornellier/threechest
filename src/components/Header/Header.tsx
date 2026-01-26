@@ -34,7 +34,7 @@ export function Header() {
               <div>Threechest</div>
             </Button>
             <a
-              href="https://threechest-ptr.vercel.app"
+              href="https://ptr.threechest.io"
               target="_blank"
               rel="noopener noreferrer"
               className="hidden lg:flex"
