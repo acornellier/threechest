@@ -36,6 +36,6 @@ export function Notes() {
   useMapEvent('zoom', zoomEvent)
 
   return route.notes.map((note, index) => (
-    <Note key={index} poi={note} index={index} iconScaling={iconScaling} />
+    <Note key={index} note={note} index={index} iconScaling={iconScaling} />
   ))
 }
