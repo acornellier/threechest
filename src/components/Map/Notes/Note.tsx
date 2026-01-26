@@ -12,7 +12,7 @@ import { useMapObjectsHidden } from '../../../store/reducers/mapReducer.ts'
 import { useAppDispatch } from '../../../store/storeUtil.ts'
 
 interface Props {
-  poi: NoteType
+  note: NoteType
   index: number
   iconScaling: number
 }
@@ -20,7 +20,7 @@ interface Props {
 const contextMenuMinHeight = 150
 const contextMenuMinWidth = 180
 
-function NoteComponent({ poi, index, iconScaling }: Props) {
+function NoteComponent({ note, index, iconScaling }: Props) {
   const dispatch = useAppDispatch()
   const iconSize = iconScaling
   const hidden = useMapObjectsHidden()
@@ -28,21 +28,21 @@ function NoteComponent({ poi, index, iconScaling }: Props) {
     minHeight: contextMenuMinHeight,
     minWidth: contextMenuMinWidth,
   })
-  const [input, setInput] = useState(poi.text)
+  const [input, setInput] = useState(note.text)
   const [popupOpen, setPopupOpen] = useState(false)
   const markerRef = useRef<LeafletMarker>(null)
   const inputRef = useRef<HTMLTextAreaElement>(null)
 
   useEffect(() => {
-    if (input !== poi.text && !popupOpen) setInput(poi.text)
-  }, [input, poi.text, popupOpen])
+    if (input !== note.text && !popupOpen) setInput(note.text)
+  }, [input, note.text, popupOpen])
 
   useEffect(() => {
-    if (poi.justAdded) {
+    if (note.justAdded) {
       setTimeout(() => markerRef.current?.openPopup(), 0)
       dispatch(editNote({ changes: { justAdded: false }, index }))
     }
-  }, [dispatch, index, poi.justAdded])
+  }, [dispatch, index, note.justAdded])
 
   const markerEventHandlers: LeafletEventHandlerFnMap = useMemo(
     () => ({
@@ -79,7 +79,7 @@ function NoteComponent({ poi, index, iconScaling }: Props) {
     <>
       <Marker
         ref={markerRef}
-        position={poi.position}
+        position={note.position}
         draggable
         zIndexOffset={1100}
         eventHandlers={markerEventHandlers}
@@ -112,7 +112,7 @@ function NoteComponent({ poi, index, iconScaling }: Props) {
           >
             <div className="relative min-w-14 w-fit border border-gray-400 rounded-md">
               <div className="absolute w-full h-full bg-slate-800 opacity-85 -z-10 rounded-md" />
-              <div className="p-2 whitespace-normal text-white text-xs">{poi.text}</div>
+              <div className="p-2 whitespace-pre-wrap text-white text-xs">{note.text}</div>
             </div>
           </Tooltip>
         )}
