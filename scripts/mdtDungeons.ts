@@ -16,7 +16,7 @@ export const dungeonPaths = new Map<DungeonKey, string>([
   ['wind', 'Midnight/WindrunnerSpire'],
   ['aa', 'Midnight/AlgetharAcademy'],
   ['pit', 'Midnight/PitOfSaron'],
-  ['seat', 'Midnight/SeatOfTheTriumvirate'],
+  ['seat', 'Midnight/SeatoftheTriumvirate'],
   ['sky', 'Midnight/Skyreach'],
 ])
 
