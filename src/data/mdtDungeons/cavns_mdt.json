@@ -1957,15 +1957,6 @@
           ]
         },
         {
-          "id": "11-5",
-          "idx": 5,
-          "group": 9,
-          "pos": [
-            -93.96,
-            147.99
-          ]
-        },
-        {
           "id": "11-6",
           "idx": 6,
           "group": 25,
@@ -3688,7 +3679,7 @@
       "enemyIndex": 24,
       "name": "Soulbind Totem",
       "count": 0,
-      "health": 235790,
+      "health": 230128,
       "creatureType": "Not specified",
       "scale": 1,
       "isBoss": false,
@@ -3720,7 +3711,7 @@
       "enemyIndex": 25,
       "name": "Lost Soul",
       "count": 0,
-      "health": 131830,
+      "health": 190011,
       "creatureType": "Undead",
       "scale": 1,
       "isBoss": false,
@@ -3807,7 +3798,7 @@
       "id": 253458,
       "enemyIndex": 28,
       "name": "Zil'jan",
-      "count": 5,
+      "count": 7,
       "health": 552308,
       "creatureType": "Humanoid",
       "scale": 1,
@@ -4029,7 +4020,7 @@
       "enemyIndex": 30,
       "name": "Lost Soul",
       "count": 0,
-      "health": 146295,
+      "health": 190011,
       "creatureType": "Undead",
       "scale": 1,
       "isBoss": false,

@@ -2124,6 +2124,71 @@
         -243.04,
         169.04
       ]
+    },
+    {
+      "type": "genericItem",
+      "pos": [
+        -231.5,
+        189.53
+      ],
+      "info": {
+        "description": null,
+        "texture": 132533,
+        "spellId": 389516,
+        "size": 20
+      }
+    },
+    {
+      "type": "genericItem",
+      "pos": [
+        -197.12,
+        200.91
+      ],
+      "info": {
+        "description": null,
+        "texture": 132532,
+        "spellId": 389501,
+        "size": 20
+      }
+    },
+    {
+      "type": "genericItem",
+      "pos": [
+        -187.55,
+        189.76
+      ],
+      "info": {
+        "description": null,
+        "texture": 132529,
+        "spellId": 389536,
+        "size": 20
+      }
+    },
+    {
+      "type": "genericItem",
+      "pos": [
+        -201.21,
+        171.08
+      ],
+      "info": {
+        "description": null,
+        "texture": 132526,
+        "spellId": 389521,
+        "size": 20
+      }
+    },
+    {
+      "type": "genericItem",
+      "pos": [
+        -222.62,
+        172.45
+      ],
+      "info": {
+        "description": null,
+        "texture": 132530,
+        "spellId": 389512,
+        "size": 20
+      }
     }
   ]
 }
