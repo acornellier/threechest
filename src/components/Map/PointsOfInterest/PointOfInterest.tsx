@@ -59,7 +59,7 @@ function PointOfInterestComponent({ poi, iconScaling }: Props) {
   if (isGenericItem && !spellIcon) return null
   if (!isGenericItem && !config) return null
 
-  const label = isGenericItem ? poi.info!.description : config!.label
+  const label = (isGenericItem ? poi.info!.description : config!.label) ?? ''
   const iconSrc = isGenericItem ? getIconLink(spellIcon!) : getIconSrc(config!.src)
 
   const img = <img alt={label} src={iconSrc} style={{ height: iconSize, width: iconSize }} />
