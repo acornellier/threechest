@@ -1,13 +1,13 @@
 {
   "dungeonIndex": 150,
-  "totalCount": 627,
+  "totalCount": 637,
   "enemies": [
     {
       "id": 252551,
       "enemyIndex": 1,
       "name": "Deathwhisper Necrolyte",
       "count": 15,
-      "health": 1242693,
+      "health": 1366961,
       "creatureType": "Undead",
       "scale": 0.8,
       "isBoss": false,
@@ -42,8 +42,8 @@
           "idx": 3,
           "group": 38,
           "pos": [
-            -190.27,
-            192.56
+            -192.43,
+            194.12
           ]
         },
         {
@@ -98,7 +98,7 @@
       "enemyIndex": 2,
       "name": "Risen Soldier",
       "count": 0,
-      "health": 313014,
+      "health": 334146,
       "creatureType": "Undead",
       "scale": 0.5,
       "isBoss": false,
@@ -160,8 +160,8 @@
           "idx": 6,
           "group": 38,
           "pos": [
-            -187.62,
-            192.8
+            -189.78,
+            194.35
           ]
         },
         {
@@ -169,8 +169,8 @@
           "idx": 7,
           "group": 38,
           "pos": [
-            -188.45,
-            194.74
+            -190.61,
+            196.3
           ]
         },
         {
@@ -306,7 +306,7 @@
       "enemyIndex": 3,
       "name": "Arcanist Cadaver",
       "count": 0,
-      "health": 1242693,
+      "health": 1366961,
       "creatureType": "Undead",
       "scale": 0.5,
       "isBoss": false,
@@ -345,8 +345,8 @@
           "idx": 3,
           "group": 38,
           "pos": [
-            -188.55,
-            190.61
+            -190.71,
+            192.16
           ]
         },
         {
@@ -401,7 +401,7 @@
       "enemyIndex": 4,
       "name": "Gloombound Shadebringer",
       "count": 7,
-      "health": 1242693,
+      "health": 1366961,
       "creatureType": "Undead",
       "scale": 0.8,
       "isBoss": false,
@@ -414,30 +414,12 @@
       ],
       "spawns": [
         {
-          "id": "4-1",
-          "idx": 1,
-          "group": 42,
-          "pos": [
-            -171.14,
-            226.02
-          ]
-        },
-        {
           "id": "4-2",
           "idx": 2,
           "group": 77,
           "pos": [
-            -163.11,
-            210.19
-          ]
-        },
-        {
-          "id": "4-3",
-          "idx": 3,
-          "group": 36,
-          "pos": [
-            -199.32,
-            190.56
+            -163.83,
+            212.46
           ]
         },
         {
@@ -450,39 +432,12 @@
           ]
         },
         {
-          "id": "4-5",
-          "idx": 5,
-          "group": 33,
-          "pos": [
-            -189.4,
-            153.24
-          ]
-        },
-        {
           "id": "4-6",
           "idx": 6,
           "group": 32,
           "pos": [
             -178.24,
             151.16
-          ]
-        },
-        {
-          "id": "4-7",
-          "idx": 7,
-          "group": 7,
-          "pos": [
-            -210.49,
-            146.26
-          ]
-        },
-        {
-          "id": "4-8",
-          "idx": 8,
-          "group": 2,
-          "pos": [
-            -206.77,
-            122.72
           ]
         },
         {
@@ -562,8 +517,8 @@
           "idx": 17,
           "group": 23,
           "pos": [
-            -199.41,
-            82
+            -196.77,
+            87.03
           ]
         },
         {
@@ -589,8 +544,8 @@
           "idx": 20,
           "group": 81,
           "pos": [
-            -218.97,
-            119.39
+            -214.3,
+            120.83
           ]
         }
       ]
@@ -600,7 +555,7 @@
       "enemyIndex": 5,
       "name": "Quarry Tormentor",
       "count": 5,
-      "health": 1518847,
+      "health": 1670730,
       "creatureType": "Undead",
       "scale": 0.8,
       "isBoss": false,
@@ -635,21 +590,12 @@
           ]
         },
         {
-          "id": "5-3",
-          "idx": 3,
-          "group": 42,
-          "pos": [
-            -174.27,
-            224.6
-          ]
-        },
-        {
           "id": "5-4",
           "idx": 4,
-          "group": 36,
+          "group": 38,
           "pos": [
-            -202.28,
-            188.62
+            -194.01,
+            197.49
           ]
         },
         {
@@ -792,8 +738,8 @@
           "idx": 20,
           "group": 23,
           "pos": [
-            -201.09,
-            84.75
+            -198.45,
+            89.78
           ]
         },
         {
@@ -837,17 +783,35 @@
           "idx": 25,
           "group": 81,
           "pos": [
-            -216.14,
-            118.65
+            -214.83,
+            117.69
           ]
         },
         {
           "id": "5-26",
           "idx": 26,
-          "group": 82,
+          "group": 39,
           "pos": [
-            -216.14,
-            128.56
+            -184.26,
+            176.3
+          ]
+        },
+        {
+          "id": "5-27",
+          "idx": 27,
+          "group": 85,
+          "pos": [
+            -141.82,
+            206.59
+          ]
+        },
+        {
+          "id": "5-28",
+          "idx": 28,
+          "group": 70,
+          "pos": [
+            -92.92,
+            164.21
           ]
         }
       ]
@@ -857,7 +821,7 @@
       "enemyIndex": 6,
       "name": "Dreadpulse Lich",
       "count": 15,
-      "health": 2071155,
+      "health": 2278268,
       "creatureType": "Undead",
       "scale": 1.3,
       "isBoss": false,
@@ -917,8 +881,8 @@
           "idx": 4,
           "group": 55,
           "pos": [
-            -205.87,
-            95.69
+            -208.87,
+            94.13
           ]
         },
         {
@@ -973,7 +937,7 @@
       "enemyIndex": 7,
       "name": "Rotting Ghoul",
       "count": 5,
-      "health": 1380770,
+      "health": 1518845,
       "creatureType": "Undead",
       "scale": 0.8,
       "isBoss": false,
@@ -1152,21 +1116,12 @@
           ]
         },
         {
-          "id": "7-20",
-          "idx": 20,
-          "group": 5,
-          "pos": [
-            -225.32,
-            130.5
-          ]
-        },
-        {
           "id": "7-21",
           "idx": 21,
           "group": 23,
           "pos": [
-            -202.99,
-            87.77
+            -200.35,
+            92.8
           ]
         },
         {
@@ -1237,8 +1192,8 @@
           "idx": 29,
           "group": 81,
           "pos": [
-            -217,
-            121.48
+            -217.24,
+            122.2
           ]
         },
         {
@@ -1246,8 +1201,17 @@
           "idx": 30,
           "group": 81,
           "pos": [
-            -217.93,
-            116.5
+            -217.81,
+            115.3
+          ]
+        },
+        {
+          "id": "7-31",
+          "idx": 31,
+          "group": 42,
+          "pos": [
+            -175.15,
+            224.59
           ]
         }
       ]
@@ -1257,9 +1221,9 @@
       "enemyIndex": 8,
       "name": "Ymirjar Graveblade",
       "count": 11,
-      "health": 2485386,
+      "health": 2733921,
       "creatureType": "Humanoid",
-      "scale": 1.3,
+      "scale": 1.1,
       "isBoss": false,
       "characteristics": [],
       "spells": [
@@ -1362,8 +1326,35 @@
           "idx": 9,
           "group": 70,
           "pos": [
-            -88.4,
-            167.62
+            -88.7,
+            168.5
+          ]
+        },
+        {
+          "id": "8-10",
+          "idx": 10,
+          "group": 81,
+          "pos": [
+            -218.66,
+            119.08
+          ]
+        },
+        {
+          "id": "8-11",
+          "idx": 11,
+          "group": 87,
+          "pos": [
+            -209.85,
+            144.44
+          ]
+        },
+        {
+          "id": "8-12",
+          "idx": 12,
+          "group": 70,
+          "pos": [
+            -88.8,
+            163.76
           ]
         }
       ]
@@ -1373,9 +1364,9 @@
       "enemyIndex": 9,
       "name": "Leaping Geist",
       "count": 2,
-      "health": 690385,
+      "health": 759423,
       "creatureType": "Undead",
-      "scale": 0.5,
+      "scale": 0.7,
       "isBoss": false,
       "characteristics": [],
       "spells": [
@@ -1435,8 +1426,8 @@
           "idx": 6,
           "group": 77,
           "pos": [
-            -163.49,
-            207.93
+            -163.13,
+            209
           ]
         },
         {
@@ -1489,8 +1480,8 @@
           "idx": 12,
           "group": 37,
           "pos": [
-            -191.38,
-            185.17
+            -190.9,
+            186.25
           ]
         },
         {
@@ -1570,8 +1561,8 @@
           "idx": 21,
           "group": 23,
           "pos": [
-            -198.26,
-            84.5
+            -195.63,
+            89.53
           ]
         },
         {
@@ -1681,6 +1672,69 @@
             -79.67,
             215.72
           ]
+        },
+        {
+          "id": "9-34",
+          "idx": 34,
+          "group": 2,
+          "pos": [
+            -205.07,
+            122.83
+          ]
+        },
+        {
+          "id": "9-35",
+          "idx": 35,
+          "group": 2,
+          "pos": [
+            -207.75,
+            123.76
+          ]
+        },
+        {
+          "id": "9-36",
+          "idx": 36,
+          "group": 33,
+          "pos": [
+            -189.89,
+            153.17
+          ]
+        },
+        {
+          "id": "9-37",
+          "idx": 37,
+          "group": 33,
+          "pos": [
+            -190.49,
+            156.4
+          ]
+        },
+        {
+          "id": "9-38",
+          "idx": 38,
+          "group": 33,
+          "pos": [
+            -189.89,
+            150.29
+          ]
+        },
+        {
+          "id": "9-39",
+          "idx": 39,
+          "group": 37,
+          "pos": [
+            -188.21,
+            185.88
+          ]
+        },
+        {
+          "id": "9-40",
+          "idx": 40,
+          "group": 37,
+          "pos": [
+            -193.37,
+            184.68
+          ]
         }
       ]
     },
@@ -1689,7 +1743,7 @@
       "enemyIndex": 10,
       "name": "Plungetalon Gargoyle",
       "count": 6,
-      "health": 1104616,
+      "health": 1215076,
       "creatureType": "Undead",
       "scale": 0.8,
       "isBoss": false,
@@ -1755,8 +1809,8 @@
           "idx": 6,
           "group": 23,
           "pos": [
-            -199.64,
-            87.75
+            -197,
+            92.78
           ]
         },
         {
@@ -1784,7 +1838,7 @@
       "enemyIndex": 11,
       "name": "Lumbering Plaguehorror",
       "count": 6,
-      "health": 1656924,
+      "health": 1822614,
       "creatureType": "Undead",
       "scale": 0.8,
       "isBoss": false,
@@ -1861,7 +1915,7 @@
       "enemyIndex": 12,
       "name": "Iceborn Proto-Drake",
       "count": 9,
-      "health": 1656924,
+      "health": 1822614,
       "creatureType": "Dragonkin",
       "scale": 1.3,
       "isBoss": false,
@@ -1903,15 +1957,6 @@
             -181.74,
             161.52
           ]
-        },
-        {
-          "id": "12-4",
-          "idx": 4,
-          "group": 70,
-          "pos": [
-            -88.62,
-            162.51
-          ]
         }
       ]
     },
@@ -1920,7 +1965,7 @@
       "enemyIndex": 13,
       "name": "Wrathbone Enforcer",
       "count": 5,
-      "health": 1518847,
+      "health": 1670730,
       "creatureType": "Undead",
       "scale": 0.8,
       "isBoss": false,
@@ -1939,24 +1984,6 @@
           "pos": [
             -132.36,
             201.42
-          ]
-        },
-        {
-          "id": "13-2",
-          "idx": 2,
-          "group": 43,
-          "pos": [
-            -161.33,
-            224.68
-          ]
-        },
-        {
-          "id": "13-3",
-          "idx": 3,
-          "group": 39,
-          "pos": [
-            -184.75,
-            175.87
           ]
         },
         {
@@ -2095,15 +2122,6 @@
           ]
         },
         {
-          "id": "13-19",
-          "idx": 19,
-          "group": 70,
-          "pos": [
-            -92.67,
-            163.75
-          ]
-        },
-        {
           "id": "13-20",
           "idx": 20,
           "group": 82,
@@ -2113,12 +2131,30 @@
           ]
         },
         {
-          "id": "13-21",
-          "idx": 21,
-          "group": 85,
+          "id": "13-22",
+          "idx": 22,
+          "group": 82,
           "pos": [
-            -141.73,
-            206.71
+            -216.12,
+            127.74
+          ]
+        },
+        {
+          "id": "13-23",
+          "idx": 23,
+          "group": 38,
+          "pos": [
+            -196.12,
+            194.99
+          ]
+        },
+        {
+          "id": "13-24",
+          "idx": 24,
+          "group": 42,
+          "pos": [
+            -172.27,
+            225.55
           ]
         }
       ]
@@ -2128,7 +2164,7 @@
       "enemyIndex": 14,
       "name": "Rimebone Coldwraith",
       "count": 7,
-      "health": 1242693,
+      "health": 1366961,
       "creatureType": "Undead",
       "scale": 0.8,
       "isBoss": false,
@@ -2194,8 +2230,8 @@
           "idx": 6,
           "group": 70,
           "pos": [
-            -92.81,
-            166.86
+            -92.74,
+            168.18
           ]
         },
         {
@@ -2206,6 +2242,15 @@
             -145.21,
             207.78
           ]
+        },
+        {
+          "id": "14-8",
+          "idx": 8,
+          "group": 43,
+          "pos": [
+            -161.01,
+            224.47
+          ]
         }
       ]
     },
@@ -2214,7 +2259,7 @@
       "enemyIndex": 15,
       "name": "Glacieth",
       "count": 20,
-      "health": 4970772,
+      "health": 5467842,
       "creatureType": "Elemental",
       "scale": 2,
       "isBoss": false,
@@ -2258,7 +2303,7 @@
       "enemyIndex": 16,
       "name": "Krick",
       "count": 0,
-      "health": 12657057,
+      "health": 13922745,
       "creatureType": "Undead",
       "scale": 1.5,
       "isBoss": true,
@@ -2310,7 +2355,7 @@
       "enemyIndex": 17,
       "name": "Ick",
       "count": 0,
-      "health": 12657057,
+      "health": 13922745,
       "creatureType": "Undead",
       "scale": 1.5,
       "isBoss": true,
@@ -2358,7 +2403,7 @@
       "enemyIndex": 18,
       "name": "Forgemaster Garfrost",
       "count": 0,
-      "health": 11506416,
+      "health": 12657041,
       "creatureType": "Undead",
       "scale": 2,
       "isBoss": true,
@@ -2430,7 +2475,7 @@
       "enemyIndex": 19,
       "name": "Scourgelord Tyrannus",
       "count": 0,
-      "health": 10643435,
+      "health": 11707763,
       "creatureType": "Humanoid",
       "scale": 1.5,
       "isBoss": true,
@@ -2486,7 +2531,7 @@
       "enemyIndex": 20,
       "name": "Rimefang",
       "count": 0,
-      "health": 11506416,
+      "health": 12657041,
       "creatureType": "Undead",
       "scale": 1.5,
       "isBoss": true,
@@ -2534,7 +2579,7 @@
       "enemyIndex": 21,
       "name": "Rotling",
       "count": 0,
-      "health": 306859,
+      "health": 201958,
       "creatureType": "Undead",
       "scale": 1.5,
       "isBoss": false,
@@ -2566,7 +2611,7 @@
       "enemyIndex": 22,
       "name": "Scourge Plaguespreader",
       "count": 0,
-      "health": 805449,
+      "health": 974593,
       "creatureType": "Undead",
       "scale": 1.5,
       "isBoss": false,
@@ -2616,7 +2661,7 @@
       "enemyIndex": 23,
       "name": "Shade of Krick",
       "count": 0,
-      "health": 310673,
+      "health": 341740,
       "creatureType": "Undead",
       "scale": 1.5,
       "isBoss": true,

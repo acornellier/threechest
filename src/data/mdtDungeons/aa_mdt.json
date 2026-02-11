@@ -163,7 +163,7 @@
       "name": "Spellbound Battleaxe",
       "count": 5,
       "health": 1518847,
-      "creatureType": "Not specified",
+      "creatureType": "Elemental",
       "scale": 1,
       "isBoss": false,
       "characteristics": [
@@ -674,7 +674,7 @@
       "name": "Unruly Textbook",
       "count": 4,
       "health": 1104616,
-      "creatureType": "Not specified",
+      "creatureType": "Elemental",
       "scale": 1,
       "isBoss": false,
       "characteristics": [
@@ -1182,7 +1182,7 @@
       "name": "Aggravated Skitterfly",
       "count": 4,
       "health": 1104616,
-      "creatureType": "Elemental",
+      "creatureType": "Beast",
       "scale": 1,
       "isBoss": false,
       "characteristics": [

@@ -601,7 +601,7 @@
       "name": "Herald of Sunrise",
       "count": 15,
       "health": 2140194,
-      "creatureType": "Humanoid",
+      "creatureType": "Elemental",
       "scale": 1.5,
       "isBoss": false,
       "characteristics": [],
