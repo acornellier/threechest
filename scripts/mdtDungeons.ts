@@ -10,14 +10,14 @@ import type { DungeonKey } from '../src/data/dungeonKeys.ts'
 const dirname = getDirname(import.meta.url)
 
 export const dungeonPaths = new Map<DungeonKey, string>([
-  ['ak', 'TheWarWithin/AraKara'],
-  ['db', 'TheWarWithin/TheDawnbreaker'],
-  ['eda', 'TheWarWithin/EcoDomeAldani'],
-  ['gmbt', 'TheWarWithin/TazaveshUpper'],
-  ['hoa', 'TheWarWithin/HallsOfAtonement'],
-  ['of', 'TheWarWithin/OperationFloodgate'],
-  ['psf', 'TheWarWithin/PrioryOfTheSacredFlame'],
-  ['strt', 'TheWarWithin/TazaveshLower'],
+  ['magi', 'Midnight/MagistersTerrace'],
+  ['cavns', 'Midnight/MaisaraCaverns'],
+  ['xenas', 'Midnight/NexusPointXenas'],
+  ['wind', 'Midnight/WindrunnerSpire'],
+  ['aa', 'Midnight/AlgetharAcademy'],
+  ['pit', 'Midnight/PitOfSaron'],
+  ['seat', 'Midnight/SeatoftheTriumvirate'],
+  ['sky', 'Midnight/Skyreach'],
 ])
 
 const filterDungeonKey = process.argv[2]
@@ -93,11 +93,23 @@ export function importMdtDungeon(key: DungeonKey, dungeonPath: string) {
       const fields = poiItems[poiIndex]!.fields as TableKey[]
       const x = getFieldValue(fields, 'x')
       const y = getFieldValue(fields, 'y')
-      pois.push({
+
+      const poi: PointOfInterest = {
         type: getFieldValue(fields, 'type'),
-        itemType: getFieldValue(fields, 'itemType'),
         pos: convertCoords(x, y),
-      })
+      }
+
+      const infoFields = getFieldValue(fields, 'info') as TableKey[]
+      if (infoFields) {
+        poi.info = {
+          description: getFieldValue(infoFields, 'description'),
+          texture: getFieldValue(infoFields, 'texture'),
+          spellId: getFieldValue(infoFields, 'spellId'),
+          size: getFieldValue(infoFields, 'size'),
+        }
+      }
+
+      pois.push(poi)
     }
   }
 

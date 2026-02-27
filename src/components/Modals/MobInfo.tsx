@@ -57,7 +57,7 @@ export function MobInfo() {
           </div>
         )}
       </div>
-      {spells?.length && (
+      {!!spells?.length && (
         <div className="flex flex-col gap-2">
           {spells.map((spell) => (
             <MobSpellInfo key={spell.id} spell={spell} dungeonKey={dungeon.key} mob={mob} />

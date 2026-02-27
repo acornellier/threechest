@@ -15,7 +15,6 @@ interface Props {
 
 interface PoiConfig {
   type: PointOfInterestType['type']
-  itemType?: PointOfInterestType['itemType']
   label: string
   src: string
 }
@@ -31,44 +30,15 @@ const configs: PoiConfig[] = [
     label: 'Graveyard',
     src: '/images/graveyard.png',
   },
-  {
-    type: 'araKaraItem',
-    label: 'Silk Thread: stuns mobs, requires 25 Tailoring',
-    src: 'inv_misc_web_02',
-  },
-  {
-    type: 'EDAItem3',
-    label: 'Arcane Conduit: 10% haste, requires 25 Enchanting',
-    src: 'inv_112_arcane_buff',
-  },
-  {
-    type: 'EDAItem2',
-    label: 'Disruption Grenade',
-    src: 'spell_broker_nova',
-  },
-  {
-    type: 'EDAItem1',
-    label: 'Shatter conduit: stuns mobs, requires 25 Enchanting',
-    src: 'inv_112_arcane_beam',
-  },
-  {
-    type: 'floodgateItem',
-    label: 'Weapons',
-    src: 'inv_eng_crate',
-  },
-  {
-    type: 'prioryItem',
-    label: 'Usable by Priests or Paladins',
-    src: 'spell_holy_rebuke',
-  },
 ]
 
+const spellIcons: Record<number, string> = {
+  244300: 'inv_enchant_voidsphere',
+  1269056: 'inv_cooking_10_heartystew',
+}
+
 function getConfig(poi: PointOfInterestType): PoiConfig | null {
-  return (
-    configs.find(
-      (config) => config.type === poi.type && (!config.itemType || config.itemType == poi.itemType),
-    ) ?? null
-  )
+  return configs.find((config) => config.type === poi.type) ?? null
 }
 
 function getIconSrc(src: string) {
@@ -82,28 +52,44 @@ function PointOfInterestComponent({ poi, iconScaling }: Props) {
   const markerRef = useRef<LeafletMarker>(null)
 
   const config = getConfig(poi)
-  if (!config) return null
+  const isGenericItem = poi.type === 'genericItem' && poi.info
+  const spellId = poi.info?.spellId
+  const spellIcon = spellId ? spellIcons[spellId] : null
+
+  if (isGenericItem && !spellIcon) return null
+  if (!isGenericItem && !config) return null
+
+  const label = (isGenericItem ? poi.info!.description : config!.label) ?? ''
+  const iconSrc = isGenericItem ? getIconLink(spellIcon!) : getIconSrc(config!.src)
+
+  const img = <img alt={label} src={iconSrc} style={{ height: iconSize, width: iconSize }} />
+
+  const divClass = 'poi-icon w-full h-full flex items-center justify-center text-black border-none'
+  const content = isGenericItem ? (
+    <a
+      className={divClass}
+      href={`https://www.wowhead.com/spell=${spellId}?dd=23&ddsize=5`}
+      target="_blank"
+      rel="noreferrer"
+    >
+      {img}
+    </a>
+  ) : (
+    <div className={divClass}>{img}</div>
+  )
 
   return (
-    <>
-      <Marker
-        ref={markerRef}
-        position={poi.pos}
-        icon={divIcon({
-          className: `poi-icon fade-in-map-object ${hidden ? 'opacity-0' : 'opacity-1'}`,
-          tooltipAnchor: [20 + (iconScaling - 40) / 2, 0],
-          iconSize: [iconSize, iconSize],
-          html: renderToString(
-            <div className="poi w-full h-full flex items-center justify-center text-black border-none">
-              <img
-                alt={config.label}
-                src={getIconSrc(config.src)}
-                style={{ height: iconSize, width: iconSize }}
-              />
-            </div>,
-          ),
-        })}
-      >
+    <Marker
+      ref={markerRef}
+      position={poi.pos}
+      icon={divIcon({
+        className: `poi-icon fade-in-map-object ${hidden ? 'opacity-0' : 'opacity-1'}`,
+        tooltipAnchor: [20 + (iconSize - 40) / 2, 0],
+        iconSize: [iconSize, iconSize],
+        html: renderToString(content),
+      })}
+    >
+      {!isGenericItem && (
         <Tooltip
           key={iconScaling}
           direction="right"
@@ -111,11 +97,11 @@ function PointOfInterestComponent({ poi, iconScaling }: Props) {
         >
           <div className="relative w-fit border border-gray-400 rounded-md">
             <div className="absolute w-full h-full bg-slate-800 opacity-85 -z-10 rounded-md" />
-            <div className="p-2 whitespace-normal text-white text-xs">{config.label}</div>
+            <div className="p-2 whitespace-normal text-white text-xs">{label}</div>
           </div>
         </Tooltip>
-      </Marker>
-    </>
+      )}
+    </Marker>
   )
 }
 

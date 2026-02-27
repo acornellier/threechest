@@ -58,21 +58,15 @@ export type MobSpawn = {
 }
 
 export type PointOfInterest = {
-  type:
-    | 'dungeonEntrance'
-    | 'graveyard'
-    | 'nwItem'
-    | 'cityOfThreadsItem'
-    | 'stonevaultItem'
-    | 'mistsItem'
-    | 'araKaraItem'
-    | 'EDAItem1'
-    | 'EDAItem2'
-    | 'EDAItem3'
-    | 'floodgateItem'
-    | 'prioryItem'
-  itemType: null | number
+  type: 'dungeonEntrance' | 'graveyard' | 'genericItem'
   pos: Point
+  sizeMult?: number
+  info?: {
+    description: string | null
+    texture: number
+    spellId: number
+    size: number
+  }
 }
 
 export type Spell = {
