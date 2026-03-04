@@ -33,21 +33,21 @@ export function Header() {
               <img src="/images/logo_64x64.png" alt="logo" width={36} className="min-w-[36] mr-1" />
               <div>Threechest</div>
             </Button>
-            <a
-              href="https://ptr.threechest.io"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hidden lg:flex"
-            >
-              <Button
-                twoDimensional
-                className="min-w-fit"
-                innerClass="text-sm gap-1"
-                Icon={ArrowTopRightOnSquareIcon}
-              >
-                PTR
-              </Button>
-            </a>
+            {/*<a*/}
+            {/*  href="https://ptr.threechest.io"*/}
+            {/*  target="_blank"*/}
+            {/*  rel="noopener noreferrer"*/}
+            {/*  className="hidden lg:flex"*/}
+            {/*>*/}
+            {/*  <Button*/}
+            {/*    twoDimensional*/}
+            {/*    className="min-w-fit"*/}
+            {/*    innerClass="text-sm gap-1"*/}
+            {/*    Icon={ArrowTopRightOnSquareIcon}*/}
+            {/*  >*/}
+            {/*    PTR*/}
+            {/*  </Button>*/}
+            {/*</a>*/}
             <DungeonDropdown />
           </div>
         )}
