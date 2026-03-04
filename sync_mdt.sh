@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/bash
 
 git submodule update --remote
 if [[ `git status --porcelain` ]]; then
