@@ -28,13 +28,14 @@ export type MapBoundsByUiMapId = Record<number, MapBounds>
 // 2. Go to https://wago.tools/db2/Map, search for dungeon names and add the ID to the list
 // 3. Run yarn tsx ./scripts/buildMapBounds.ts
 const mapIds: number[] = [
-  2660, // ak
-  2662, // db
-  2830, // eda
-  2287, // hoa
-  2773, // of
-  2649, // psf
-  2441, // taza
+  2526, // aa
+  2874, // cavns
+  2811, // magi
+  658, // pit
+  1753, // seat
+  1209, // skyreach
+  2805, // wind
+  2915, // xenas
 ]
 
 export const mapBoundsUncompiled = (uimapassignment as UiMapAssignment[]).reduce(

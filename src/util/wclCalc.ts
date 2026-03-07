@@ -17,6 +17,7 @@ export type WclEventBase = {
 
 export type WclEventSimplified = WclEventBase & {
   gameId: number
+  instanceId?: number
   name: string
   id?: number
 }
@@ -30,6 +31,7 @@ export type WclDeathEvent = {
 export type DeathEvent = {
   timestamp: number
   gameId: number
+  instanceId?: number
 }
 
 export type WclResult = WclUrlInfo & {
@@ -68,6 +70,7 @@ type Pass = 1 | 2 | 3 | 4 | 5
 export type WclPoint = {
   x: number
   y: number
+  timestamp: number
   mapID: number
 }
 
@@ -78,14 +81,29 @@ const defaultMapOffsets: MapOffset = {
   scaleY: 1,
 }
 
-export const wclPointToLeafletPoint = (wclPoint: WclPoint): Point => {
+const mapTransitions: Array<{ mapId: number; newMapId: number; triggerGameId: number }> = [
+  { mapId: 2511, newMapId: 25112511, triggerGameId: 231863 },
+  { mapId: 2516, newMapId: 25162516, triggerGameId: 231863 },
+]
+
+function resolveMapOffsetId(wclPoint: WclPoint, deathEvents: DeathEvent[]): number {
+  const transition = mapTransitions.find((t) => t.mapId === wclPoint.mapID)
+  if (!transition) return wclPoint.mapID
+  const triggered = deathEvents.some(
+    (d) => d.gameId === transition.triggerGameId && d.timestamp <= wclPoint.timestamp,
+  )
+  return triggered ? transition.newMapId : wclPoint.mapID
+}
+
+export const wclPointToLeafletPoint = (wclPoint: WclPoint, deathEvents: DeathEvent[]): Point => {
   const { mapID } = wclPoint
   let { x, y } = wclPoint
   const bounds = mapBounds[mapID]
   if (!bounds) throw new Error(`Map ID ${mapID} bounds not defined.`)
 
   const { yMin, yMax, xMin, xMax } = bounds
-  const mdtMapOffset = mdtMapOffsets[mapID] ?? defaultMapOffsets
+  const mapOffsetMapId = resolveMapOffsetId(wclPoint, deathEvents)
+  const mdtMapOffset = mdtMapOffsets[mapOffsetMapId] ?? defaultMapOffsets
 
   x /= 100
   y /= 100
@@ -161,7 +179,7 @@ function wclResultToNotes(wclResult: WclResult): Note[] {
       lastLustTimestamp = event.timestamp
       acc.push({
         text: 'Lust',
-        position: wclPointToLeafletPoint({ x: event.x!, y: event.y!, mapID: event.mapID! }),
+        position: wclPointToLeafletPoint(event as WclPoint, wclResult.deathEvents),
       })
       return acc
     }, [])
@@ -256,7 +274,9 @@ function getPullMobIds(events: WclEventSimplified[], deathEvents: DeathEvent[], 
     if (
       !deathEvents.some(
         (deathEvent) =>
-          deathEvent.gameId === event.gameId && deathEvent.timestamp >= event.timestamp,
+          deathEvent.gameId === event.gameId &&
+          deathEvent.instanceId === event.instanceId &&
+          deathEvent.timestamp >= event.timestamp,
       )
     ) {
       continue
@@ -272,7 +292,7 @@ function getPullMobIds(events: WclEventSimplified[], deathEvents: DeathEvent[], 
       mobId: event.gameId,
       pos:
         event.x && event.y && event.mapID && mapBounds[event.mapID]
-          ? wclPointToLeafletPoint({ x: event.x, y: event.y, mapID: event.mapID })
+          ? wclPointToLeafletPoint(event as WclPoint, deathEvents)
           : undefined,
     })
   }

@@ -15,46 +15,55 @@ export const dungeons: Dungeon[] = [
     key: 'magi' as DungeonKey,
     name: "Magister's Terrace",
     icon: 'inv_achievement_dungeon_magistersterrace',
+    wclEncounterId: 12811,
   },
   {
     key: 'cavns' as DungeonKey,
     name: 'Maisara Caverns',
     icon: 'inv_achievement_dungeon_maisarahills',
+    wclEncounterId: 12874,
   },
   {
     key: 'xenas' as DungeonKey,
     name: 'Nexus-Point Xenas',
     icon: 'inv_achievement_dungeon_nexuspointxenas',
+    wclEncounterId: 12915,
   },
   {
     key: 'wind' as DungeonKey,
     name: 'Windrunner Spire',
     icon: 'inv_achievement_dungeon_windrunnerspire',
+    wclEncounterId: 12805,
   },
   {
     key: 'aa' as DungeonKey,
     name: "Algeth'ar Academy",
     icon: 'achievement_dungeon_dragonacademy',
+    wclEncounterId: 112526,
   },
   {
     key: 'pit' as DungeonKey,
     name: 'Pit of Saron',
     icon: 'achievement_dungeon_icecrown_pitofsaron',
+    wclEncounterId: 10658,
   },
   {
     key: 'seat' as DungeonKey,
     name: 'Seat of the Triumvirate',
     icon: 'achievement_dungeon_argusdungeon',
+    wclEncounterId: 361753,
   },
   {
     key: 'sky' as DungeonKey,
     name: 'Skyreach',
     icon: 'achievement_dungeon_arakkoaspires',
+    wclEncounterId: 61209,
   },
 ]
   .map<Dungeon>((dungeon) => ({
     ...dungeon,
     ...dungeonData(dungeon.key),
+    wclEncounterId: dungeon.wclEncounterId + 50_000, // TODO: remove on release
   }))
   .sort((a, b) => (a.displayKey ?? a.key).localeCompare(b.displayKey ?? b.key))
 

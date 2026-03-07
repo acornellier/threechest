@@ -213,6 +213,7 @@ export async function getWclRoute(
       return {
         timestamp: timestamp - fight.startTime,
         gameId: matchingEnemy.gameId,
+        instanceId: instanceId,
         x,
         y,
         mapID,
@@ -240,6 +241,7 @@ export async function getWclRoute(
       return {
         timestamp: event.timestamp - fight.startTime,
         gameId: matchingEnemy.gameId,
+        instanceId: event.targetInstance,
       }
     })
     .filter(Boolean)

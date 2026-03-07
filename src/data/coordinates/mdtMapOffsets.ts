@@ -8,122 +8,189 @@ export interface MapOffset {
   rotate?: number
 }
 
-// 1. In GIMP, open the MDT map
+const mdtWidth = 3840
+const mdtHeight = 2560
+
+// 1. In Photopea, open the MDT map
 // 2. Find an original wow map in https://wago.tools/maps/worldmap, its id is the key
-// 3. Add a layer overlaying it with the original wow map, set its alpha to 50%
+// 3. Add a layer overlaying it with the original wow map, set its opacity to 50%
 // 4. Rotate if needed. Then scale and translate the original map to match the MDT map
 // 5. If rotated, revert the rotation before entering translation and scale values
-// x: offsetX / mdtWidth
-// y: offsetY / mdtWidth
-// scaleX: originalWidth / mdtWidth
-// scaleY: originalHeight / mdtHeight
+// 6. Retrieve W/H/X/Y from layer properties (select layer and click the (i))
 // rotation: negative rotation
-export const mdtMapOffsets: Record<number, MapOffset> = {
-  //ak
-  2357: {
-    x: -175 / 1920,
-    y: -80 / 1280,
-    scaleX: 2268 / 1920,
-    scaleY: 1512 / 1280,
+const rawMdtMapOffsets: Record<
+  number,
+  { x: number; y: number; w: number; h: number; rotate?: number }
+> = {
+  // aa
+  2097: {
+    w: 4175,
+    h: 2783,
+    x: -59,
+    y: 316,
   },
-  2358: {
-    x: -115 / 1920,
-    y: 548 / 1280,
-    scaleX: 1435 / 1920,
-    scaleY: 957 / 1280,
+  2098: {
+    w: 1632,
+    h: 1088,
+    x: 1579,
+    y: -161,
   },
-  //of
-  2387: {
-    x: -0.25,
+  // cavns
+  2501: {
+    w: 4768,
+    h: 3180,
+    x: -643,
+    y: -478,
+  },
+  // magi
+  2511: {
+    w: 2740,
+    h: 1828,
+    x: 673,
+    y: -188,
+    rotate: 60,
+  },
+  25112511: {
+    // void version
+    w: 2740,
+    h: 1828,
+    x: 1485,
+    y: 966,
+    rotate: 60,
+  },
+  2515: {
+    w: 1844,
+    h: 1232,
+    x: -270,
+    y: 223,
+    rotate: -120,
+  },
+  2516: {
+    w: 1652,
+    h: 1104,
+    x: 2364,
+    y: 131,
+    rotate: 75,
+  },
+  25162516: {
+    // void version
+    w: 1652,
+    h: 1104,
+    x: 2639,
+    y: 318,
+    rotate: -60,
+  },
+  2517: {
+    w: 1560,
+    h: 1040,
+    x: 505,
+    y: 1783,
+    rotate: 155,
+  },
+  2518: {
+    w: 1002,
+    h: 668,
+    x: 841,
+    y: 1318,
+  },
+  2519: {
+    w: 968,
+    h: 644,
+    x: 167,
+    y: 1196,
+  },
+  // pit
+  184: {
+    w: 4612,
+    h: 3076,
+    x: -648,
+    y: -93,
+  },
+  // seat
+  903: {
+    w: 4328,
+    h: 2888,
+    x: -207,
+    y: -208,
+  },
+  // sky
+  601: {
+    w: 4532,
+    h: 3024,
+    x: -1353,
+    y: -188,
+  },
+  602: {
+    w: 3104,
+    h: 2068,
+    x: 1396,
+    y: 401,
+  },
+  // wind
+  2492: {
+    w: 2012,
+    h: 1340,
+    x: -418,
+    y: 59,
+  },
+  2493: {
+    // should be mirrored vertically
+    w: 2032,
+    h: 1356,
+    x: -459,
+    y: 1206,
+    rotate: 180,
+  },
+  2494: {
+    w: 1952,
+    h: 1304,
+    x: 1396,
+    y: 18,
+  },
+  2496: {
+    // should be mirrored vertically
+    w: 1828,
+    h: 1220,
+    x: 526,
+    y: 142,
+    rotate: 180,
+  },
+  2497: {
+    w: 1984,
+    h: 1324,
+    x: 339,
+    y: 1173,
+  },
+  2498: {
+    w: 1408,
+    h: 940,
+    x: 1662,
+    y: 1557,
+  },
+  2499: {
+    w: 1996,
+    h: 1332,
+    x: 2026,
+    y: 688,
+  },
+  // xenas
+  2556: {
+    w: 3816,
+    h: 2544,
+    x: 0,
     y: 0,
-    scaleX: 1.2,
-    scaleY: 1,
-  },
-  2388: {
-    x: 0.35,
-    y: 0.05,
-    scaleX: 0.88,
-    scaleY: 0.8,
-  },
-  // psf
-  2308: {
-    x: 672 / 1920,
-    y: 20 / 1080,
-    scaleX: 1430 / 1920,
-    scaleY: 955 / 1080,
-    rotate: 4,
-  },
-  2309: {
-    x: -29 / 1920,
-    y: 120 / 1080,
-    scaleX: 1202 / 1920,
-    scaleY: 802 / 1080,
-    rotate: -5,
-  },
-  2330: {
-    // copy of 2308, seems to be a dup?
-    x: 692 / 1920,
-    y: 145 / 1080,
-    scaleX: 1430 / 1920,
-    scaleY: 955 / 1080,
-    rotate: 4,
-  },
-  // eda
-  2449: {
-    x: -481 / 3840,
-    y: -445 / 2560,
-    scaleX: 5162 / 3840,
-    scaleY: 3442 / 2560,
-  },
-  // gmbt
-  1993: {
-    x: -252 / 3840,
-    y: 1252 / 2560,
-    scaleX: 2260 / 3840,
-    scaleY: 1508 / 2560,
-  },
-  1995: {
-    x: -9 / 3840,
-    y: -86 / 2560,
-    scaleX: 4019 / 3840,
-    scaleY: 2680 / 2560,
-  },
-  1996: {
-    x: 603 / 3840,
-    y: 750 / 2560,
-    scaleX: 3629 / 3840,
-    scaleY: 2419 / 2560,
-  },
-  1997: {
-    x: 1997 / 3840,
-    y: 1997 / 2560,
-    scaleX: 1369 / 3840,
-    scaleY: 912 / 2560,
-  },
-  // hoa
-  1663: {
-    x: 88 / 3840,
-    y: -152 / 2560,
-    scaleX: 4373 / 3840,
-    scaleY: 2916 / 2560,
-  },
-  1664: {
-    x: -314 / 3840,
-    y: 1415 / 2560,
-    scaleX: 2093 / 3840,
-    scaleY: 1677 / 2560,
-  },
-  // strt
-  1989: {
-    x: -1910 / 3840,
-    y: -582 / 2560,
-    scaleX: 6805 / 3840,
-    scaleY: 4537 / 2560,
-  },
-  1990: {
-    x: 739 / 3840,
-    y: 2259 / 2560,
-    scaleX: 1152 / 3840,
-    scaleY: 768 / 2560,
   },
 }
+
+export const mdtMapOffsets: Record<number, MapOffset> = Object.fromEntries(
+  Object.entries(rawMdtMapOffsets).map(([k, { x, y, w, h, rotate }]) => [
+    Number(k),
+    {
+      x: x / mdtWidth,
+      y: y / mdtHeight,
+      scaleX: w / mdtWidth,
+      scaleY: h / mdtHeight,
+      rotate: rotate ? -rotate : undefined,
+    },
+  ]),
+)
