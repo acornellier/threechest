@@ -7,12 +7,30 @@
       "enemyIndex": 1,
       "name": "Arcane Magister",
       "count": 7,
-      "health": 1242693,
+      "health": 1366961,
       "creatureType": "Humanoid",
       "scale": 0.8,
       "isBoss": false,
       "characteristics": [],
-      "spells": [],
+      "spells": [
+        {
+          "id": 468962,
+          "attributes": [
+            "interruptible"
+          ]
+        },
+        {
+          "id": 468966,
+          "attributes": [
+            "interruptible",
+            "magic"
+          ]
+        },
+        {
+          "id": 1245046,
+          "attributes": []
+        }
+      ],
       "spawns": [
         {
           "id": "1-1",
@@ -116,10 +134,10 @@
       ]
     },
     {
-      "id": 251917,
+      "id": 234089,
       "enemyIndex": 2,
       "name": "Animated Codex",
-      "count": 2,
+      "count": 0,
       "health": 10000,
       "creatureType": "Elemental",
       "scale": 0.7,
@@ -269,12 +287,31 @@
       "enemyIndex": 3,
       "name": "Blazing Pyromancer",
       "count": 12,
-      "health": 2209232,
+      "health": 2430152,
       "creatureType": "Humanoid",
       "scale": 1.1,
       "isBoss": false,
       "characteristics": [],
-      "spells": [],
+      "spells": [
+        {
+          "id": 1254294,
+          "attributes": [
+            "interruptible"
+          ]
+        },
+        {
+          "id": 1254301,
+          "attributes": []
+        },
+        {
+          "id": 1254336,
+          "attributes": []
+        },
+        {
+          "id": 1254338,
+          "attributes": []
+        }
+      ],
       "spawns": [
         {
           "id": "3-1",
@@ -328,12 +365,25 @@
       "enemyIndex": 4,
       "name": "Runed Spellbreaker",
       "count": 12,
-      "health": 2485386,
+      "health": 2733921,
       "creatureType": "Humanoid",
       "scale": 1.1,
       "isBoss": false,
       "characteristics": [],
-      "spells": [],
+      "spells": [
+        {
+          "id": 1244907,
+          "attributes": []
+        },
+        {
+          "id": 1283901,
+          "attributes": []
+        },
+        {
+          "id": 1283905,
+          "attributes": []
+        }
+      ],
       "spawns": [
         {
           "id": "4-1",
@@ -378,12 +428,23 @@
       "enemyIndex": 5,
       "name": "Voidling",
       "count": 1,
-      "health": 552308,
+      "health": 607538,
       "creatureType": "Aberration",
       "scale": 0.5,
       "isBoss": false,
       "characteristics": [],
-      "spells": [],
+      "spells": [
+        {
+          "id": 1248229,
+          "attributes": []
+        },
+        {
+          "id": 1255434,
+          "attributes": [
+            "magic"
+          ]
+        }
+      ],
       "spawns": [
         {
           "id": "5-1",
@@ -915,6 +976,33 @@
             -181.82,
             120.23
           ]
+        },
+        {
+          "id": "5-60",
+          "idx": 60,
+          "group": 49,
+          "pos": [
+            -229.79,
+            157.14
+          ]
+        },
+        {
+          "id": "5-61",
+          "idx": 61,
+          "group": 49,
+          "pos": [
+            -227.36,
+            156.91
+          ]
+        },
+        {
+          "id": "5-62",
+          "idx": 62,
+          "group": 49,
+          "pos": [
+            -225.16,
+            157.14
+          ]
         }
       ]
     },
@@ -923,12 +1011,21 @@
       "enemyIndex": 6,
       "name": "Hollowsoul Shredder",
       "count": 5,
-      "health": 1311732,
+      "health": 1442903,
       "creatureType": "Aberration",
       "scale": 0.8,
       "isBoss": false,
       "characteristics": [],
-      "spells": [],
+      "spells": [
+        {
+          "id": 1227020,
+          "attributes": []
+        },
+        {
+          "id": 1248229,
+          "attributes": []
+        }
+      ],
       "spawns": [
         {
           "id": "6-1",
@@ -1135,12 +1232,23 @@
       "enemyIndex": 7,
       "name": "Dreaded Voidwalker",
       "count": 7,
-      "health": 1518847,
+      "health": 1670730,
       "creatureType": "Aberration",
       "scale": 0.8,
       "isBoss": false,
       "characteristics": [],
-      "spells": [],
+      "spells": [
+        {
+          "id": 1248229,
+          "attributes": []
+        },
+        {
+          "id": 1248327,
+          "attributes": [
+            "interruptible"
+          ]
+        }
+      ],
       "spawns": [
         {
           "id": "7-1",
@@ -1275,12 +1383,25 @@
       "enemyIndex": 8,
       "name": "Shadowrift Voidcaller",
       "count": 12,
-      "health": 2209232,
+      "health": 2430152,
       "creatureType": "Aberration",
       "scale": 1.1,
       "isBoss": false,
       "characteristics": [],
-      "spells": [],
+      "spells": [
+        {
+          "id": 1217087,
+          "attributes": []
+        },
+        {
+          "id": 1255462,
+          "attributes": []
+        },
+        {
+          "id": 1265977,
+          "attributes": []
+        }
+      ],
       "spawns": [
         {
           "id": "8-1",
@@ -1325,12 +1446,29 @@
       "enemyIndex": 9,
       "name": "Devouring Tyrant",
       "count": 12,
-      "health": 2485386,
+      "health": 2733921,
       "creatureType": "Aberration",
       "scale": 1.1,
       "isBoss": false,
       "characteristics": [],
-      "spells": [],
+      "spells": [
+        {
+          "id": 1248138,
+          "attributes": []
+        },
+        {
+          "id": 1248219,
+          "attributes": []
+        },
+        {
+          "id": 1248229,
+          "attributes": []
+        },
+        {
+          "id": 1264687,
+          "attributes": []
+        }
+      ],
       "spawns": [
         {
           "id": "9-1",
@@ -1384,12 +1522,29 @@
       "enemyIndex": 10,
       "name": "Void Infuser",
       "count": 7,
-      "health": 1242693,
+      "health": 1366961,
       "creatureType": "Aberration",
       "scale": 0.8,
       "isBoss": false,
       "characteristics": [],
-      "spells": [],
+      "spells": [
+        {
+          "id": 1245068,
+          "attributes": [
+            "magic"
+          ]
+        },
+        {
+          "id": 1248229,
+          "attributes": []
+        },
+        {
+          "id": 1264693,
+          "attributes": [
+            "interruptible"
+          ]
+        }
+      ],
       "spawns": [
         {
           "id": "10-1",
@@ -1551,12 +1706,35 @@
       "enemyIndex": 11,
       "name": "Arcanotron Custos",
       "count": 0,
-      "health": 11506416,
+      "health": 12657041,
       "creatureType": "Mechanical",
       "scale": 1,
       "isBoss": true,
       "characteristics": [],
-      "spells": [],
+      "spells": [
+        {
+          "id": 474345,
+          "attributes": []
+        },
+        {
+          "id": 474496,
+          "attributes": []
+        },
+        {
+          "id": 1214038,
+          "attributes": [
+            "magic"
+          ]
+        },
+        {
+          "id": 1214081,
+          "attributes": []
+        },
+        {
+          "id": 1243905,
+          "attributes": []
+        }
+      ],
       "spawns": [
         {
           "id": "11-1",
@@ -1574,12 +1752,59 @@
       "enemyIndex": 12,
       "name": "Seranel Sunlash",
       "count": 0,
-      "health": 10068114,
+      "health": 11074911,
       "creatureType": "Not specified",
       "scale": 2,
       "isBoss": true,
       "characteristics": [],
-      "spells": [],
+      "spells": [
+        {
+          "id": 1224903,
+          "attributes": []
+        },
+        {
+          "id": 1225015,
+          "attributes": []
+        },
+        {
+          "id": 1225135,
+          "attributes": []
+        },
+        {
+          "id": 1225193,
+          "attributes": []
+        },
+        {
+          "id": 1225201,
+          "attributes": []
+        },
+        {
+          "id": 1225205,
+          "attributes": []
+        },
+        {
+          "id": 1225792,
+          "attributes": []
+        },
+        {
+          "id": 1225796,
+          "attributes": []
+        },
+        {
+          "id": 1246446,
+          "attributes": []
+        },
+        {
+          "id": 1248689,
+          "attributes": [
+            "magic"
+          ]
+        },
+        {
+          "id": 1271317,
+          "attributes": []
+        }
+      ],
       "spawns": [
         {
           "id": "12-1",
@@ -1597,12 +1822,49 @@
       "enemyIndex": 13,
       "name": "Gemellus",
       "count": 0,
-      "health": 15821322,
+      "health": 17403431,
       "creatureType": "Not specified",
       "scale": 1.5,
       "isBoss": true,
       "characteristics": [],
-      "spells": [],
+      "spells": [
+        {
+          "id": 1223847,
+          "attributes": []
+        },
+        {
+          "id": 1223936,
+          "attributes": []
+        },
+        {
+          "id": 1224104,
+          "attributes": []
+        },
+        {
+          "id": 1224299,
+          "attributes": []
+        },
+        {
+          "id": 1224401,
+          "attributes": []
+        },
+        {
+          "id": 1253707,
+          "attributes": []
+        },
+        {
+          "id": 1253709,
+          "attributes": []
+        },
+        {
+          "id": 1284954,
+          "attributes": []
+        },
+        {
+          "id": 1284958,
+          "attributes": []
+        }
+      ],
       "spawns": [
         {
           "id": "13-1",
@@ -1620,12 +1882,47 @@
       "enemyIndex": 14,
       "name": "Degentrius",
       "count": 0,
-      "health": 11506416,
+      "health": 12657041,
       "creatureType": "Aberration",
       "scale": 2,
       "isBoss": true,
       "characteristics": [],
-      "spells": [],
+      "spells": [
+        {
+          "id": 1215087,
+          "attributes": []
+        },
+        {
+          "id": 1215897,
+          "attributes": []
+        },
+        {
+          "id": 1269631,
+          "attributes": []
+        },
+        {
+          "id": 1271066,
+          "attributes": []
+        },
+        {
+          "id": 1280113,
+          "attributes": []
+        },
+        {
+          "id": 1280119,
+          "attributes": []
+        },
+        {
+          "id": 1284627,
+          "attributes": [
+            "magic"
+          ]
+        },
+        {
+          "id": 1284633,
+          "attributes": []
+        }
+      ],
       "spawns": [
         {
           "id": "14-1",
@@ -1643,12 +1940,21 @@
       "enemyIndex": 15,
       "name": "Brightscale Wyrm",
       "count": 1,
-      "health": 276154,
+      "health": 303769,
       "creatureType": "Beast",
       "scale": 0.4,
       "isBoss": false,
       "characteristics": [],
-      "spells": [],
+      "spells": [
+        {
+          "id": 467068,
+          "attributes": []
+        },
+        {
+          "id": 1254595,
+          "attributes": []
+        }
+      ],
       "spawns": [
         {
           "id": "15-1",
@@ -2089,12 +2395,35 @@
       "enemyIndex": 16,
       "name": "Arcane Sentry",
       "count": 16,
-      "health": 3313848,
+      "health": 3645228,
       "creatureType": "Mechanical",
       "scale": 1.1,
       "isBoss": false,
       "characteristics": [],
-      "spells": [],
+      "spells": [
+        {
+          "id": 473258,
+          "attributes": []
+        },
+        {
+          "id": 1282050,
+          "attributes": []
+        },
+        {
+          "id": 1282051,
+          "attributes": []
+        },
+        {
+          "id": 1282053,
+          "attributes": []
+        },
+        {
+          "id": 1282055,
+          "attributes": [
+            "magic"
+          ]
+        }
+      ],
       "spawns": [
         {
           "id": "16-1",
@@ -2130,7 +2459,7 @@
       "enemyIndex": 17,
       "name": "Vigilant Librarian",
       "count": 0,
-      "health": 1380770,
+      "health": 1518845,
       "creatureType": "Humanoid",
       "scale": 1,
       "isBoss": false,
@@ -2153,12 +2482,27 @@
       "enemyIndex": 18,
       "name": "Sunblade Enforcer",
       "count": 5,
-      "health": 1380770,
+      "health": 1518845,
       "creatureType": "Humanoid",
       "scale": 0.8,
       "isBoss": false,
       "characteristics": [],
-      "spells": [],
+      "spells": [
+        {
+          "id": 1252910,
+          "attributes": []
+        },
+        {
+          "id": 1253224,
+          "attributes": []
+        },
+        {
+          "id": 1265561,
+          "attributes": [
+            "magic"
+          ]
+        }
+      ],
       "spawns": [
         {
           "id": "18-1",
@@ -2320,12 +2664,26 @@
       "enemyIndex": 19,
       "name": "Lightward Healer",
       "count": 5,
-      "health": 1173655,
+      "health": 1291018,
       "creatureType": "Humanoid",
       "scale": 0.8,
       "isBoss": false,
       "characteristics": [],
-      "spells": [],
+      "spells": [
+        {
+          "id": 1254306,
+          "attributes": [
+            "magic"
+          ]
+        },
+        {
+          "id": 1255187,
+          "attributes": [
+            "interruptible",
+            "magic"
+          ]
+        }
+      ],
       "spawns": [
         {
           "id": "19-1",
@@ -2442,12 +2800,45 @@
       "enemyIndex": 20,
       "name": "Gemellus",
       "count": 0,
-      "health": 15821322,
+      "health": 17403431,
       "creatureType": "Not specified",
       "scale": 1.5,
       "isBoss": true,
       "characteristics": [],
-      "spells": [],
+      "spells": [
+        {
+          "id": 1223936,
+          "attributes": []
+        },
+        {
+          "id": 1224104,
+          "attributes": []
+        },
+        {
+          "id": 1224299,
+          "attributes": []
+        },
+        {
+          "id": 1224401,
+          "attributes": []
+        },
+        {
+          "id": 1253707,
+          "attributes": []
+        },
+        {
+          "id": 1253709,
+          "attributes": []
+        },
+        {
+          "id": 1284954,
+          "attributes": []
+        },
+        {
+          "id": 1284958,
+          "attributes": []
+        }
+      ],
       "spawns": [
         {
           "id": "20-1",
@@ -2569,12 +2960,17 @@
       "enemyIndex": 22,
       "name": "Celestial Drifter",
       "count": 0,
-      "health": 1656924,
+      "health": 1822614,
       "creatureType": "Not specified",
       "scale": 1.5,
       "isBoss": true,
       "characteristics": [],
-      "spells": [],
+      "spells": [
+        {
+          "id": 1248015,
+          "attributes": []
+        }
+      ],
       "spawns": [
         {
           "id": "22-1",
@@ -2592,12 +2988,21 @@
       "enemyIndex": 23,
       "name": "Unstable Voidling",
       "count": 0,
-      "health": 207116,
+      "health": 227827,
       "creatureType": "Aberration",
       "scale": 0.4,
       "isBoss": false,
       "characteristics": [],
-      "spells": [],
+      "spells": [
+        {
+          "id": 1248229,
+          "attributes": []
+        },
+        {
+          "id": 1264951,
+          "attributes": []
+        }
+      ],
       "spawns": [
         {
           "id": "23-1",
@@ -2660,12 +3065,21 @@
       "enemyIndex": 24,
       "name": "Hollowsoul Shredder",
       "count": 5,
-      "health": 1311732,
+      "health": 1442903,
       "creatureType": "Aberration",
       "scale": 1,
       "isBoss": false,
       "characteristics": [],
-      "spells": [],
+      "spells": [
+        {
+          "id": 1227020,
+          "attributes": []
+        },
+        {
+          "id": 1248229,
+          "attributes": []
+        }
+      ],
       "spawns": [
         {
           "id": "24-1",
@@ -2692,12 +3106,21 @@
       "enemyIndex": 25,
       "name": "Spellwoven Familiar",
       "count": 0,
-      "health": 966539,
+      "health": 1063192,
       "creatureType": "Elemental",
       "scale": 0.8,
       "isBoss": false,
       "characteristics": [],
-      "spells": [],
+      "spells": [
+        {
+          "id": 1279994,
+          "attributes": []
+        },
+        {
+          "id": 1279995,
+          "attributes": []
+        }
+      ],
       "spawns": [
         {
           "id": "25-1",

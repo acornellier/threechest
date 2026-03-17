@@ -7,7 +7,7 @@
       "enemyIndex": 1,
       "name": "Corrupted Manafiend",
       "count": 5,
-      "health": 1380770,
+      "health": 1518845,
       "creatureType": "Elemental",
       "scale": 1,
       "isBoss": false,
@@ -33,7 +33,9 @@
         },
         {
           "id": 388862,
-          "attributes": []
+          "attributes": [
+            "interruptible"
+          ]
         },
         {
           "id": 388863,
@@ -162,7 +164,7 @@
       "enemyIndex": 2,
       "name": "Spellbound Battleaxe",
       "count": 5,
-      "health": 1518847,
+      "health": 1670730,
       "creatureType": "Elemental",
       "scale": 1,
       "isBoss": false,
@@ -321,7 +323,7 @@
       "enemyIndex": 3,
       "name": "Arcane Ravager",
       "count": 15,
-      "health": 3313848,
+      "health": 3645228,
       "creatureType": "Beast",
       "scale": 1,
       "isBoss": false,
@@ -476,7 +478,7 @@
       "enemyIndex": 4,
       "name": "Arcane Forager",
       "count": 4,
-      "health": 1104616,
+      "health": 1215076,
       "creatureType": "Elemental",
       "scale": 1,
       "isBoss": false,
@@ -673,7 +675,7 @@
       "enemyIndex": 5,
       "name": "Unruly Textbook",
       "count": 4,
-      "health": 1104616,
+      "health": 1215076,
       "creatureType": "Elemental",
       "scale": 1,
       "isBoss": false,
@@ -697,7 +699,10 @@
         },
         {
           "id": 388392,
-          "attributes": []
+          "attributes": [
+            "interruptible",
+            "magic"
+          ]
         }
       ],
       "spawns": [
@@ -748,7 +753,7 @@
       "enemyIndex": 6,
       "name": "Vexamus",
       "count": 0,
-      "health": 10068114,
+      "health": 11074911,
       "creatureType": "Elemental",
       "scale": 1,
       "isBoss": true,
@@ -756,10 +761,6 @@
         "Taunt"
       ],
       "spells": [
-        {
-          "id": 132466,
-          "attributes": []
-        },
         {
           "id": 385958,
           "attributes": []
@@ -815,7 +816,7 @@
       "enemyIndex": 7,
       "name": "Guardian Sentry",
       "count": 18,
-      "health": 4142310,
+      "health": 4556535,
       "creatureType": "Elemental",
       "scale": 1,
       "isBoss": false,
@@ -823,10 +824,6 @@
         "Taunt"
       ],
       "spells": [
-        {
-          "id": 132466,
-          "attributes": []
-        },
         {
           "id": 377912,
           "attributes": []
@@ -862,7 +859,7 @@
       "enemyIndex": 8,
       "name": "Territorial Eagle",
       "count": 2,
-      "health": 690385,
+      "health": 759423,
       "creatureType": "Beast",
       "scale": 1,
       "isBoss": false,
@@ -888,11 +885,15 @@
       "spells": [
         {
           "id": 377344,
-          "attributes": []
+          "attributes": [
+            "bleed"
+          ]
         },
         {
           "id": 377389,
-          "attributes": []
+          "attributes": [
+            "enrage"
+          ]
         }
       ],
       "spawns": [
@@ -1063,7 +1064,7 @@
       "enemyIndex": 9,
       "name": "Alpha Eagle",
       "count": 15,
-      "health": 2071155,
+      "health": 2278268,
       "creatureType": "Beast",
       "scale": 1,
       "isBoss": false,
@@ -1077,7 +1078,10 @@
         },
         {
           "id": 377389,
-          "attributes": []
+          "attributes": [
+            "interruptible",
+            "enrage"
+          ]
         },
         {
           "id": 1276632,
@@ -1122,7 +1126,7 @@
       "enemyIndex": 10,
       "name": "Crawth",
       "count": 0,
-      "health": 14383020,
+      "health": 15821301,
       "creatureType": "Beast",
       "scale": 1,
       "isBoss": true,
@@ -1181,7 +1185,7 @@
       "enemyIndex": 11,
       "name": "Aggravated Skitterfly",
       "count": 4,
-      "health": 1104616,
+      "health": 1215076,
       "creatureType": "Beast",
       "scale": 1,
       "isBoss": false,
@@ -1206,7 +1210,9 @@
       "spells": [
         {
           "id": 390938,
-          "attributes": []
+          "attributes": [
+            "enrage"
+          ]
         },
         {
           "id": 390942,
@@ -1401,7 +1407,7 @@
       "enemyIndex": 12,
       "name": "Vile Lasher",
       "count": 9,
-      "health": 2485386,
+      "health": 2733921,
       "creatureType": "Elemental",
       "scale": 1,
       "isBoss": false,
@@ -1464,7 +1470,7 @@
       "enemyIndex": 13,
       "name": "Hungry Lasher",
       "count": 2,
-      "health": 690385,
+      "health": 759423,
       "creatureType": "Elemental",
       "scale": 1,
       "isBoss": false,
@@ -1732,7 +1738,7 @@
       "enemyIndex": 14,
       "name": "Overgrown Ancient",
       "count": 0,
-      "health": 8629812,
+      "health": 9492781,
       "creatureType": "Elemental",
       "scale": 1,
       "isBoss": true,
@@ -1766,7 +1772,9 @@
         },
         {
           "id": 396716,
-          "attributes": []
+          "attributes": [
+            "bleed"
+          ]
         }
       ],
       "spawns": [
@@ -1787,7 +1795,7 @@
       "enemyIndex": 15,
       "name": "Algeth'ar Echoknight",
       "count": 15,
-      "health": 2485386,
+      "health": 2733921,
       "creatureType": "Dragonkin",
       "scale": 1,
       "isBoss": false,
@@ -1811,6 +1819,10 @@
       ],
       "spells": [
         {
+          "id": 1270349,
+          "attributes": []
+        },
+        {
           "id": 1270356,
           "attributes": []
         }
@@ -1821,8 +1833,8 @@
           "idx": 1,
           "group": 29,
           "pos": [
-            -215.69,
-            245.42
+            -218.71,
+            246.93
           ],
           "scale": 2.1
         },
@@ -1831,8 +1843,8 @@
           "idx": 2,
           "group": 34,
           "pos": [
-            -228.13,
-            234.41
+            -231.89,
+            238.68
           ],
           "scale": 2.1
         },
@@ -1841,8 +1853,8 @@
           "idx": 3,
           "group": 34,
           "pos": [
-            -235.07,
-            229.69
+            -238.59,
+            235.47
           ],
           "scale": 2.1
         },
@@ -1851,8 +1863,8 @@
           "idx": 4,
           "group": 28,
           "pos": [
-            -204.83,
-            233.07
+            -207.09,
+            233.32
           ],
           "scale": 2.1
         },
@@ -1861,8 +1873,28 @@
           "idx": 5,
           "group": 33,
           "pos": [
-            -251.85,
-            221.94
+            -243.82,
+            220.94
+          ],
+          "scale": 2.1
+        },
+        {
+          "id": "15-6",
+          "idx": 6,
+          "group": 38,
+          "pos": [
+            -188.16,
+            256.11
+          ],
+          "scale": 2.1
+        },
+        {
+          "id": "15-7",
+          "idx": 7,
+          "group": 38,
+          "pos": [
+            -194.63,
+            263.77
           ],
           "scale": 2.1
         }
@@ -1873,7 +1905,7 @@
       "enemyIndex": 16,
       "name": "Spectral Invoker",
       "count": 5,
-      "health": 1518847,
+      "health": 1670730,
       "creatureType": "Dragonkin",
       "scale": 1,
       "isBoss": false,
@@ -1898,7 +1930,9 @@
       "spells": [
         {
           "id": 1279627,
-          "attributes": []
+          "attributes": [
+            "interruptible"
+          ]
         }
       ],
       "spawns": [
@@ -1917,8 +1951,8 @@
           "idx": 2,
           "group": 31,
           "pos": [
-            -211.09,
-            219.13
+            -204,
+            217.11
           ],
           "scale": 2.1
         },
@@ -1927,8 +1961,8 @@
           "idx": 3,
           "group": 29,
           "pos": [
-            -215.61,
-            237.44
+            -217.62,
+            239.2
           ],
           "scale": 2.1
         },
@@ -1995,8 +2029,8 @@
           "idx": 6,
           "group": 31,
           "pos": [
-            -207.52,
-            213.16
+            -210.3,
+            210.39
           ],
           "scale": 2.1
         },
@@ -2005,8 +2039,8 @@
           "idx": 7,
           "group": 32,
           "pos": [
-            -239.98,
-            206.16
+            -241.17,
+            203.12
           ],
           "scale": 2.1
         },
@@ -2015,8 +2049,8 @@
           "idx": 8,
           "group": 32,
           "pos": [
-            -233.83,
-            210.47
+            -234.76,
+            206.37
           ],
           "scale": 2.1
         },
@@ -2025,8 +2059,8 @@
           "idx": 9,
           "group": 33,
           "pos": [
-            -245.75,
-            215.81
+            -250.53,
+            218.32
           ],
           "scale": 2.1
         },
@@ -2035,8 +2069,8 @@
           "idx": 10,
           "group": 33,
           "pos": [
-            -244.1,
-            224.63
+            -249.37,
+            226.14
           ],
           "scale": 2.1
         },
@@ -2045,8 +2079,18 @@
           "idx": 11,
           "group": 27,
           "pos": [
-            -194.99,
-            241.22
+            -195.52,
+            240.43
+          ],
+          "scale": 2.1
+        },
+        {
+          "id": "16-12",
+          "idx": 12,
+          "group": 32,
+          "pos": [
+            -235.58,
+            199.1
           ],
           "scale": 2.1
         }
@@ -2057,7 +2101,7 @@
       "enemyIndex": 17,
       "name": "Echo of Doragosa",
       "count": 0,
-      "health": 12944718,
+      "health": 14239171,
       "creatureType": "Dragonkin",
       "scale": 1,
       "isBoss": true,
@@ -2076,7 +2120,9 @@
         },
         {
           "id": 374350,
-          "attributes": []
+          "attributes": [
+            "magic"
+          ]
         },
         {
           "id": 374352,

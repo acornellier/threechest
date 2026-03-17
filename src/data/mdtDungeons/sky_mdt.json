@@ -7,9 +7,9 @@
       "enemyIndex": 1,
       "name": "Soaring Chakram Master",
       "count": 5,
-      "health": 1380770,
+      "health": 1518845,
       "creatureType": "Humanoid",
-      "scale": 1,
+      "scale": 1.8,
       "isBoss": false,
       "characteristics": [],
       "spells": [
@@ -24,8 +24,8 @@
           "idx": 1,
           "group": 1,
           "pos": [
-            -39.2,
-            132.94
+            -42.64,
+            135.98
           ]
         },
         {
@@ -42,8 +42,8 @@
           "idx": 3,
           "group": 10,
           "pos": [
-            -80.61,
-            146.64
+            -80.88,
+            144.66
           ]
         },
         {
@@ -51,8 +51,8 @@
           "idx": 4,
           "group": 26,
           "pos": [
-            -171.12,
-            297.9
+            -169.05,
+            298.88
           ]
         },
         {
@@ -60,8 +60,8 @@
           "idx": 5,
           "group": 26,
           "pos": [
-            -174.43,
-            303.84
+            -172.54,
+            306.17
           ]
         },
         {
@@ -69,8 +69,8 @@
           "idx": 6,
           "group": 32,
           "pos": [
-            -120.32,
-            312.9
+            -118.88,
+            312.09
           ]
         },
         {
@@ -78,8 +78,8 @@
           "idx": 7,
           "group": 27,
           "pos": [
-            -127.73,
-            273.77
+            -125.57,
+            273.32
           ]
         }
       ]
@@ -89,15 +89,17 @@
       "enemyIndex": 2,
       "name": "Driving Gale-Caller",
       "count": 7,
-      "health": 1242693,
+      "health": 1366961,
       "creatureType": "Humanoid",
-      "scale": 1,
+      "scale": 1.8,
       "isBoss": false,
       "characteristics": [],
       "spells": [
         {
           "id": 1255377,
-          "attributes": []
+          "attributes": [
+            "interruptible"
+          ]
         }
       ],
       "spawns": [
@@ -106,8 +108,8 @@
           "idx": 1,
           "group": 4,
           "pos": [
-            -30.72,
-            144.89
+            -26.1,
+            149.78
           ]
         },
         {
@@ -115,8 +117,8 @@
           "idx": 2,
           "group": 11,
           "pos": [
-            -85.28,
-            162.82
+            -84.36,
+            164.27
           ]
         },
         {
@@ -124,8 +126,8 @@
           "idx": 3,
           "group": 11,
           "pos": [
-            -88.85,
-            165.32
+            -90.3,
+            168.76
           ]
         },
         {
@@ -134,7 +136,7 @@
           "group": 13,
           "pos": [
             -102.51,
-            147.92
+            147.26
           ]
         },
         {
@@ -142,8 +144,8 @@
           "idx": 5,
           "group": 25,
           "pos": [
-            -194.62,
-            277.43
+            -193.01,
+            280.66
           ]
         },
         {
@@ -151,8 +153,8 @@
           "idx": 6,
           "group": 31,
           "pos": [
-            -104.38,
-            297.19
+            -105.82,
+            297.55
           ]
         },
         {
@@ -160,8 +162,8 @@
           "idx": 7,
           "group": 31,
           "pos": [
-            -100.74,
-            292.64
+            -101.37,
+            290.94
           ]
         }
       ]
@@ -171,9 +173,9 @@
       "enemyIndex": 3,
       "name": "Raging Squall",
       "count": 1,
-      "health": 828462,
+      "health": 911307,
       "creatureType": "Elemental",
-      "scale": 1,
+      "scale": 1.8,
       "isBoss": false,
       "characteristics": [],
       "spells": [
@@ -187,7 +189,9 @@
         },
         {
           "id": 1254678,
-          "attributes": []
+          "attributes": [
+            "enrage"
+          ]
         },
         {
           "id": 1254679,
@@ -204,8 +208,8 @@
           "idx": 1,
           "group": 4,
           "pos": [
-            -29.1,
-            141.01
+            -32.14,
+            151.59
           ]
         },
         {
@@ -213,8 +217,8 @@
           "idx": 2,
           "group": 4,
           "pos": [
-            -26.3,
-            144.68
+            -31.59,
+            145.21
           ]
         },
         {
@@ -222,8 +226,8 @@
           "idx": 3,
           "group": 7,
           "pos": [
-            -43.66,
-            166.75
+            -40.09,
+            166.35
           ]
         },
         {
@@ -231,8 +235,8 @@
           "idx": 4,
           "group": 7,
           "pos": [
-            -46.59,
-            172.52
+            -50.29,
+            175.16
           ]
         },
         {
@@ -240,8 +244,8 @@
           "idx": 5,
           "group": 13,
           "pos": [
-            -103.98,
-            143.89
+            -104.91,
+            140.32
           ]
         },
         {
@@ -249,8 +253,8 @@
           "idx": 6,
           "group": 6,
           "pos": [
-            -37.13,
-            166.89
+            -34.48,
+            171.12
           ]
         },
         {
@@ -258,8 +262,8 @@
           "idx": 7,
           "group": 13,
           "pos": [
-            -106.88,
-            147.3
+            -110.32,
+            146.11
           ]
         },
         {
@@ -267,8 +271,8 @@
           "idx": 8,
           "group": 25,
           "pos": [
-            -193.09,
-            273.27
+            -192.28,
+            273.45
           ]
         },
         {
@@ -276,8 +280,8 @@
           "idx": 9,
           "group": 25,
           "pos": [
-            -197.89,
-            274.76
+            -198.7,
+            277.1
           ]
         }
       ]
@@ -287,9 +291,9 @@
       "enemyIndex": 4,
       "name": "Outcast Servant",
       "count": 1,
-      "health": 828462,
+      "health": 911307,
       "creatureType": "Humanoid",
-      "scale": 1,
+      "scale": 1.8,
       "isBoss": false,
       "characteristics": [],
       "spells": [],
@@ -299,8 +303,8 @@
           "idx": 1,
           "group": 9,
           "pos": [
-            -63.48,
-            170.69
+            -62.29,
+            172.01
           ]
         },
         {
@@ -317,8 +321,8 @@
           "idx": 3,
           "group": 17,
           "pos": [
-            -150.25,
-            110.48
+            -150.78,
+            102.55
           ]
         },
         {
@@ -326,8 +330,8 @@
           "idx": 4,
           "group": 17,
           "pos": [
-            -156.12,
-            105.5
+            -148.45,
+            108.54
           ]
         },
         {
@@ -335,8 +339,8 @@
           "idx": 5,
           "group": 17,
           "pos": [
-            -161.01,
-            110.72
+            -151.23,
+            115.08
           ]
         },
         {
@@ -344,8 +348,8 @@
           "idx": 6,
           "group": 17,
           "pos": [
-            -155.08,
-            115.52
+            -158.52,
+            116.84
           ]
         },
         {
@@ -353,8 +357,8 @@
           "idx": 7,
           "group": 18,
           "pos": [
-            -159.83,
-            88.82
+            -152.3,
+            85.79
           ]
         },
         {
@@ -362,8 +366,8 @@
           "idx": 8,
           "group": 18,
           "pos": [
-            -163.27,
-            86.06
+            -156.92,
+            80.24
           ]
         },
         {
@@ -371,8 +375,8 @@
           "idx": 9,
           "group": 19,
           "pos": [
-            -179.65,
-            114.14
+            -183.88,
+            120.62
           ]
         },
         {
@@ -380,8 +384,8 @@
           "idx": 10,
           "group": 19,
           "pos": [
-            -180.87,
-            109.8
+            -185.76,
+            114.3
           ]
         }
       ]
@@ -391,19 +395,23 @@
       "enemyIndex": 5,
       "name": "Blinding Sun Priestess",
       "count": 5,
-      "health": 1242693,
+      "health": 1366961,
       "creatureType": "Humanoid",
-      "scale": 1,
+      "scale": 1.8,
       "isBoss": false,
       "characteristics": [],
       "spells": [
         {
           "id": 152953,
-          "attributes": []
+          "attributes": [
+            "interruptible"
+          ]
         },
         {
           "id": 1273356,
-          "attributes": []
+          "attributes": [
+            "magic"
+          ]
         }
       ],
       "spawns": [
@@ -412,8 +420,8 @@
           "idx": 1,
           "group": 14,
           "pos": [
-            -121.84,
-            134.21
+            -117.61,
+            137.25
           ]
         },
         {
@@ -421,8 +429,8 @@
           "idx": 2,
           "group": 15,
           "pos": [
-            -125.65,
-            116.61
+            -128.56,
+            114.23
           ]
         },
         {
@@ -430,8 +438,8 @@
           "idx": 3,
           "group": 19,
           "pos": [
-            -175.18,
-            115.72
+            -176.9,
+            123.65
           ]
         },
         {
@@ -439,8 +447,8 @@
           "idx": 4,
           "group": 29,
           "pos": [
-            -150.44,
-            215.75
+            -146.32,
+            215.48
           ]
         },
         {
@@ -448,8 +456,8 @@
           "idx": 5,
           "group": 27,
           "pos": [
-            -132.55,
-            270.52
+            -132.1,
+            268.73
           ]
         }
       ]
@@ -459,15 +467,22 @@
       "enemyIndex": 6,
       "name": "Initiate of the Rising Sun",
       "count": 7,
-      "health": 1104616,
+      "health": 1215076,
       "creatureType": "Humanoid",
-      "scale": 1,
+      "scale": 1.8,
       "isBoss": false,
       "characteristics": [],
       "spells": [
         {
           "id": 1254669,
-          "attributes": []
+          "attributes": [
+            "interruptible",
+            "poison",
+            "disease",
+            "curse",
+            "bleed",
+            "enrage"
+          ]
         }
       ],
       "spawns": [
@@ -485,8 +500,8 @@
           "idx": 2,
           "group": 30,
           "pos": [
-            -99.17,
-            266.47
+            -97.38,
+            264.05
           ]
         },
         {
@@ -494,8 +509,8 @@
           "idx": 3,
           "group": 16,
           "pos": [
-            -144.82,
-            137.76
+            -147.72,
+            137.9
           ]
         }
       ]
@@ -505,9 +520,9 @@
       "enemyIndex": 7,
       "name": "Adept of the Dawn",
       "count": 7,
-      "health": 1380770,
+      "health": 1518845,
       "creatureType": "Humanoid",
-      "scale": 1,
+      "scale": 1.8,
       "isBoss": false,
       "characteristics": [],
       "spells": [
@@ -526,8 +541,8 @@
           "idx": 1,
           "group": 14,
           "pos": [
-            -124.58,
-            137.57
+            -125.24,
+            135.99
           ]
         },
         {
@@ -544,8 +559,8 @@
           "idx": 3,
           "group": 15,
           "pos": [
-            -123.38,
-            113.73
+            -124.04,
+            108.18
           ]
         },
         {
@@ -553,8 +568,8 @@
           "idx": 4,
           "group": 18,
           "pos": [
-            -167.67,
-            87.12
+            -164.5,
+            80.24
           ]
         },
         {
@@ -562,7 +577,7 @@
           "idx": 5,
           "group": 30,
           "pos": [
-            -101.51,
+            -99.63,
             270.85
           ]
         },
@@ -571,8 +586,8 @@
           "idx": 6,
           "group": 29,
           "pos": [
-            -154.02,
-            218.23
+            -152.95,
+            219.76
           ]
         },
         {
@@ -580,8 +595,8 @@
           "idx": 7,
           "group": 29,
           "pos": [
-            -154.15,
-            213.35
+            -153.07,
+            212.1
           ]
         },
         {
@@ -589,8 +604,8 @@
           "idx": 8,
           "group": 27,
           "pos": [
-            -130.66,
-            278.22
+            -129.77,
+            279.74
           ]
         }
       ]
@@ -600,9 +615,9 @@
       "enemyIndex": 8,
       "name": "Herald of Sunrise",
       "count": 15,
-      "health": 2140194,
+      "health": 2354210,
       "creatureType": "Elemental",
-      "scale": 1.5,
+      "scale": 2.2,
       "isBoss": false,
       "characteristics": [],
       "spells": [
@@ -625,8 +640,8 @@
           "idx": 1,
           "group": 15,
           "pos": [
-            -121.7,
-            116.97
+            -120.78,
+            114.59
           ]
         },
         {
@@ -643,8 +658,8 @@
           "idx": 3,
           "group": 30,
           "pos": [
-            -95.22,
-            270.75
+            -91.36,
+            269.94
           ]
         },
         {
@@ -652,8 +667,8 @@
           "idx": 4,
           "group": 28,
           "pos": [
-            -123.28,
-            229.14
+            -120.77,
+            228.51
           ]
         },
         {
@@ -662,7 +677,7 @@
           "group": 16,
           "pos": [
             -139.66,
-            135.59
+            138.37
           ]
         }
       ]
@@ -672,9 +687,9 @@
       "enemyIndex": 9,
       "name": "Solar Construct",
       "count": 12,
-      "health": 2071155,
+      "health": 2278268,
       "creatureType": "Mechanical",
-      "scale": 1.5,
+      "scale": 2.8,
       "isBoss": false,
       "characteristics": [],
       "spells": [
@@ -693,8 +708,8 @@
           "idx": 1,
           "group": 31,
           "pos": [
-            -98.73,
-            297.62
+            -96.04,
+            298.34
           ]
         },
         {
@@ -702,8 +717,8 @@
           "idx": 2,
           "group": 17,
           "pos": [
-            -155.75,
-            110.59
+            -158.27,
+            107.82
           ]
         },
         {
@@ -711,8 +726,8 @@
           "idx": 3,
           "group": 18,
           "pos": [
-            -164.22,
-            91.12
+            -161.18,
+            88.21
           ]
         },
         {
@@ -720,8 +735,8 @@
           "idx": 4,
           "group": 19,
           "pos": [
-            -175.13,
-            110.83
+            -176.32,
+            114.53
           ]
         }
       ]
@@ -731,9 +746,9 @@
       "enemyIndex": 10,
       "name": "Skyreach Sun Talon",
       "count": 2,
-      "health": 552308,
+      "health": 607538,
       "creatureType": "Beast",
-      "scale": 0.8,
+      "scale": 1,
       "isBoss": false,
       "characteristics": [],
       "spells": [
@@ -752,8 +767,8 @@
           "idx": 1,
           "group": 21,
           "pos": [
-            -231.45,
-            74.51
+            -231.98,
+            73.85
           ]
         },
         {
@@ -761,7 +776,7 @@
           "idx": 2,
           "group": 21,
           "pos": [
-            -234.08,
+            -238.17,
             73.34
           ]
         },
@@ -770,8 +785,8 @@
           "idx": 3,
           "group": 21,
           "pos": [
-            -237.19,
-            71.78
+            -240.49,
+            68.08
           ]
         },
         {
@@ -779,8 +794,8 @@
           "idx": 4,
           "group": 21,
           "pos": [
-            -233.24,
-            64.83
+            -237.07,
+            63.64
           ]
         },
         {
@@ -788,8 +803,8 @@
           "idx": 5,
           "group": 21,
           "pos": [
-            -230.84,
-            66.39
+            -232.03,
+            63.61
           ]
         },
         {
@@ -797,8 +812,8 @@
           "idx": 6,
           "group": 21,
           "pos": [
-            -228.69,
-            67.71
+            -229.35,
+            67.44
           ]
         },
         {
@@ -806,8 +821,8 @@
           "idx": 7,
           "group": 22,
           "pos": [
-            -216.59,
-            51.18
+            -215.66,
+            51.84
           ]
         },
         {
@@ -815,8 +830,8 @@
           "idx": 8,
           "group": 22,
           "pos": [
-            -218.02,
-            47.22
+            -216.17,
+            46.3
           ]
         },
         {
@@ -824,8 +839,8 @@
           "idx": 9,
           "group": 22,
           "pos": [
-            -222.46,
-            45.31
+            -222.59,
+            44.51
           ]
         },
         {
@@ -833,8 +848,8 @@
           "idx": 10,
           "group": 22,
           "pos": [
-            -225.45,
-            48.9
+            -227.04,
+            48.77
           ]
         },
         {
@@ -842,8 +857,8 @@
           "idx": 11,
           "group": 22,
           "pos": [
-            -224.13,
-            53.09
+            -225.59,
+            54.02
           ]
         },
         {
@@ -851,8 +866,8 @@
           "idx": 12,
           "group": 22,
           "pos": [
-            -220.78,
-            54.53
+            -219.59,
+            55.72
           ]
         }
       ]
@@ -862,9 +877,9 @@
       "enemyIndex": 11,
       "name": "Sun Talon Tamer",
       "count": 5,
-      "health": 1422193,
+      "health": 1564410,
       "creatureType": "Humanoid",
-      "scale": 1,
+      "scale": 1.8,
       "isBoss": false,
       "characteristics": [],
       "spells": [
@@ -883,8 +898,8 @@
           "idx": 1,
           "group": 21,
           "pos": [
-            -232.51,
-            69.97
+            -234.63,
+            68.64
           ]
         },
         {
@@ -903,9 +918,9 @@
       "enemyIndex": 12,
       "name": "Ranjit",
       "count": 0,
-      "health": 10068115,
+      "health": 11074911,
       "creatureType": "Humanoid",
-      "scale": 1,
+      "scale": 2,
       "isBoss": true,
       "characteristics": [],
       "spells": [
@@ -926,6 +941,10 @@
           "attributes": []
         },
         {
+          "id": 1252733,
+          "attributes": []
+        },
+        {
           "id": 1255472,
           "attributes": []
         },
@@ -942,7 +961,7 @@
           "attributes": []
         },
         {
-          "id": 1252733,
+          "id": 1281396,
           "attributes": []
         }
       ],
@@ -952,8 +971,8 @@
           "idx": 1,
           "group": null,
           "pos": [
-            -107.49,
-            166.92
+            -114.77,
+            170.94
           ]
         }
       ]
@@ -963,9 +982,9 @@
       "enemyIndex": 13,
       "name": "Araknath",
       "count": 0,
-      "health": 10068115,
+      "health": 11074911,
       "creatureType": "Mechanical",
-      "scale": 1,
+      "scale": 2,
       "isBoss": true,
       "characteristics": [],
       "spells": [
@@ -998,10 +1017,6 @@
           "attributes": []
         },
         {
-          "id": 1279002,
-          "attributes": []
-        },
-        {
           "id": 1283770,
           "attributes": []
         }
@@ -1012,8 +1027,8 @@
           "idx": 1,
           "group": 20,
           "pos": [
-            -167.94,
-            103.45
+            -191.05,
+            85.37
           ]
         }
       ]
@@ -1023,22 +1038,22 @@
       "enemyIndex": 14,
       "name": "Skyreach Sun Construct Prototype",
       "count": 0,
-      "health": 10068114,
+      "health": 11074911,
       "creatureType": "Mechanical",
-      "scale": 1,
+      "scale": 1.5,
       "isBoss": false,
       "characteristics": [],
       "spells": [
-        {
-          "id": 154150,
-          "attributes": []
-        },
         {
           "id": 154159,
           "attributes": []
         },
         {
           "id": 1281874,
+          "attributes": []
+        },
+        {
+          "id": 1287905,
           "attributes": []
         }
       ],
@@ -1048,8 +1063,26 @@
           "idx": 1,
           "group": 20,
           "pos": [
-            -167.55,
-            108.01
+            -188.17,
+            95.21
+          ]
+        },
+        {
+          "id": "14-2",
+          "idx": 2,
+          "group": 20,
+          "pos": [
+            -195.93,
+            94.87
+          ]
+        },
+        {
+          "id": "14-3",
+          "idx": 3,
+          "group": 20,
+          "pos": [
+            -200.56,
+            89.32
           ]
         }
       ]
@@ -1059,9 +1092,9 @@
       "enemyIndex": 15,
       "name": "Rukhran",
       "count": 0,
-      "health": 7766831,
+      "health": 8543503,
       "creatureType": "Beast",
-      "scale": 1,
+      "scale": 2,
       "isBoss": true,
       "characteristics": [],
       "spells": [
@@ -1092,8 +1125,8 @@
           "idx": 1,
           "group": 23,
           "pos": [
-            -221.1,
-            80.63
+            -222.86,
+            86.4
           ]
         }
       ]
@@ -1103,9 +1136,9 @@
       "enemyIndex": 16,
       "name": "Dread Raven",
       "count": 15,
-      "health": 2485386,
+      "health": 2733921,
       "creatureType": "Beast",
-      "scale": 1.5,
+      "scale": 2.2,
       "isBoss": false,
       "characteristics": [],
       "spells": [
@@ -1137,8 +1170,8 @@
           "idx": 2,
           "group": 9,
           "pos": [
-            -69.06,
-            169.47
+            -70.25,
+            171.85
           ]
         },
         {
@@ -1146,8 +1179,8 @@
           "idx": 3,
           "group": 8,
           "pos": [
-            -53.3,
-            188.33
+            -53.56,
+            190.18
           ]
         },
         {
@@ -1166,15 +1199,17 @@
       "enemyIndex": 17,
       "name": "Blooded Bladefeather",
       "count": 5,
-      "health": 1518847,
+      "health": 1670730,
       "creatureType": "Humanoid",
-      "scale": 1,
+      "scale": 1.8,
       "isBoss": false,
       "characteristics": [],
       "spells": [
         {
           "id": 1254670,
-          "attributes": []
+          "attributes": [
+            "magic"
+          ]
         }
       ],
       "spawns": [
@@ -1183,8 +1218,8 @@
           "idx": 1,
           "group": 1,
           "pos": [
-            -37.64,
-            128.26
+            -42.01,
+            128.79
           ]
         },
         {
@@ -1192,8 +1227,8 @@
           "idx": 2,
           "group": 5,
           "pos": [
-            -20,
-            161.26
+            -17.48,
+            162.71
           ]
         },
         {
@@ -1201,8 +1236,8 @@
           "idx": 3,
           "group": 5,
           "pos": [
-            -24.19,
-            159.82
+            -24.98,
+            161.14
           ]
         },
         {
@@ -1210,8 +1245,8 @@
           "idx": 4,
           "group": 25,
           "pos": [
-            -189.99,
-            276.4
+            -186.04,
+            277.83
           ]
         },
         {
@@ -1219,8 +1254,8 @@
           "idx": 5,
           "group": 25,
           "pos": [
-            -198.76,
-            278.74
+            -199.21,
+            284.03
           ]
         },
         {
@@ -1237,8 +1272,8 @@
           "idx": 7,
           "group": 27,
           "pos": [
-            -135.48,
-            275.47
+            -136.11,
+            275.2
           ]
         }
       ]
@@ -1248,9 +1283,9 @@
       "enemyIndex": 18,
       "name": "Sunwings",
       "count": 0,
-      "health": 920513,
+      "health": 1012563,
       "creatureType": "Elemental",
-      "scale": 1,
+      "scale": 1.5,
       "isBoss": false,
       "characteristics": [],
       "spells": [
@@ -1277,8 +1312,8 @@
           "idx": 1,
           "group": 23,
           "pos": [
-            -227.87,
-            84
+            -230.95,
+            94.8
           ]
         },
         {
@@ -1286,8 +1321,8 @@
           "idx": 2,
           "group": 23,
           "pos": [
-            -222.7,
-            86.44
+            -225.51,
+            96.32
           ]
         },
         {
@@ -1295,8 +1330,8 @@
           "idx": 3,
           "group": 23,
           "pos": [
-            -217.07,
-            85.37
+            -219.22,
+            95.9
           ]
         }
       ]
@@ -1306,9 +1341,9 @@
       "enemyIndex": 19,
       "name": "High Sage Viryx",
       "count": 0,
-      "health": 9348963,
+      "health": 10283846,
       "creatureType": "Humanoid",
-      "scale": 1.5,
+      "scale": 2,
       "isBoss": true,
       "characteristics": [],
       "spells": [
@@ -1318,7 +1353,9 @@
         },
         {
           "id": 154396,
-          "attributes": []
+          "attributes": [
+            "interruptible"
+          ]
         },
         {
           "id": 1253538,
@@ -1346,9 +1383,9 @@
       "enemyIndex": 20,
       "name": "Arakkoa Magnifying Glass",
       "count": 0,
-      "health": 276154,
+      "health": 303769,
       "creatureType": "Mechanical",
-      "scale": 1,
+      "scale": 1.5,
       "isBoss": false,
       "characteristics": [],
       "spells": [
@@ -1367,8 +1404,8 @@
           "idx": 1,
           "group": 34,
           "pos": [
-            -78.19,
-            328.59
+            -66.14,
+            330.6
           ]
         }
       ]
@@ -1378,9 +1415,9 @@
       "enemyIndex": 21,
       "name": "Adorned Bladetalon",
       "count": 12,
-      "health": 2347309,
+      "health": 2582037,
       "creatureType": "Humanoid",
-      "scale": 1.5,
+      "scale": 2.2,
       "isBoss": false,
       "characteristics": [],
       "spells": [
@@ -1403,8 +1440,8 @@
           "idx": 1,
           "group": 3,
           "pos": [
-            -30.54,
-            134.75
+            -27.24,
+            133.43
           ]
         },
         {
@@ -1412,8 +1449,8 @@
           "idx": 2,
           "group": 12,
           "pos": [
-            -91.51,
-            152.75
+            -94.16,
+            156.85
           ]
         },
         {
@@ -1421,8 +1458,8 @@
           "idx": 3,
           "group": 24,
           "pos": [
-            -201.3,
-            230.21
+            -203.06,
+            231.97
           ]
         },
         {
@@ -1430,8 +1467,8 @@
           "idx": 4,
           "group": 26,
           "pos": [
-            -176.58,
-            299.2
+            -176.94,
+            299.47
           ]
         },
         {
@@ -1439,8 +1476,8 @@
           "idx": 5,
           "group": 32,
           "pos": [
-            -117.94,
-            318.13
+            -115.34,
+            319.66
           ]
         }
       ]
@@ -1450,9 +1487,9 @@
       "enemyIndex": 22,
       "name": "Solar Orb",
       "count": 0,
-      "health": 2347309,
+      "health": 10283846,
       "creatureType": "Not specified",
-      "scale": 1,
+      "scale": 1.2,
       "isBoss": false,
       "characteristics": [],
       "spells": [
@@ -1471,8 +1508,8 @@
           "idx": 1,
           "group": 24,
           "pos": [
-            -196.17,
-            229.67
+            -195.41,
+            230.93
           ]
         },
         {
@@ -1489,8 +1526,8 @@
           "idx": 3,
           "group": 30,
           "pos": [
-            -98.65,
-            275.41
+            -102.6,
+            266.08
           ]
         },
         {
@@ -1498,8 +1535,8 @@
           "idx": 4,
           "group": 15,
           "pos": [
-            -123.73,
-            119.66
+            -129.81,
+            108.16
           ]
         }
       ]

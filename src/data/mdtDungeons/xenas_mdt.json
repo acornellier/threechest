@@ -358,7 +358,9 @@
       "spells": [
         {
           "id": 1249815,
-          "attributes": []
+          "attributes": [
+            "magic"
+          ]
         },
         {
           "id": 1249818,
@@ -373,8 +375,14 @@
           "attributes": []
         },
         {
-          "id": 1285445,
+          "id": 1278882,
           "attributes": []
+        },
+        {
+          "id": 1285445,
+          "attributes": [
+            "interruptible"
+          ]
         },
         {
           "id": 1285450,
@@ -680,7 +688,9 @@
         },
         {
           "id": 1269283,
-          "attributes": []
+          "attributes": [
+            "interruptible"
+          ]
         },
         {
           "id": 1282950,
@@ -775,7 +785,9 @@
       "spells": [
         {
           "id": 1271094,
-          "attributes": []
+          "attributes": [
+            "interruptible"
+          ]
         }
       ],
       "spawns": [
@@ -900,8 +912,14 @@
       "characteristics": [],
       "spells": [
         {
-          "id": 1281636,
+          "id": 1252218,
           "attributes": []
+        },
+        {
+          "id": 1281636,
+          "attributes": [
+            "curse"
+          ]
         }
       ],
       "spawns": [
@@ -1101,7 +1119,9 @@
         },
         {
           "id": 1258681,
-          "attributes": []
+          "attributes": [
+            "interruptible"
+          ]
         },
         {
           "id": 1258684,
@@ -1113,6 +1133,10 @@
         },
         {
           "id": 1281637,
+          "attributes": []
+        },
+        {
+          "id": 1264295,
           "attributes": []
         }
       ],
@@ -1350,8 +1374,8 @@
       ],
       "spawns": [
         {
-          "id": "14-2",
-          "idx": 2,
+          "id": "14-1",
+          "idx": 1,
           "group": 44,
           "pos": [
             -124.64,
@@ -1359,8 +1383,8 @@
           ]
         },
         {
-          "id": "14-3",
-          "idx": 3,
+          "id": "14-2",
+          "idx": 2,
           "group": 44,
           "pos": [
             -129.65,
@@ -1368,8 +1392,8 @@
           ]
         },
         {
-          "id": "14-4",
-          "idx": 4,
+          "id": "14-3",
+          "idx": 3,
           "group": 43,
           "pos": [
             -124.18,
@@ -1377,8 +1401,8 @@
           ]
         },
         {
-          "id": "14-5",
-          "idx": 5,
+          "id": "14-4",
+          "idx": 4,
           "group": 43,
           "pos": [
             -130.33,
@@ -1386,8 +1410,8 @@
           ]
         },
         {
-          "id": "14-10",
-          "idx": 10,
+          "id": "14-5",
+          "idx": 5,
           "group": 58,
           "pos": [
             -70,
@@ -1395,8 +1419,8 @@
           ]
         },
         {
-          "id": "14-11",
-          "idx": 11,
+          "id": "14-6",
+          "idx": 6,
           "group": 58,
           "pos": [
             -70.92,
@@ -1404,8 +1428,8 @@
           ]
         },
         {
-          "id": "14-12",
-          "idx": 12,
+          "id": "14-7",
+          "idx": 7,
           "group": 58,
           "pos": [
             -72.9,
@@ -1413,8 +1437,8 @@
           ]
         },
         {
-          "id": "14-13",
-          "idx": 13,
+          "id": "14-8",
+          "idx": 8,
           "group": 58,
           "pos": [
             -73.49,
@@ -1422,8 +1446,8 @@
           ]
         },
         {
-          "id": "14-14",
-          "idx": 14,
+          "id": "14-9",
+          "idx": 9,
           "group": 56,
           "pos": [
             -76.42,
@@ -1431,8 +1455,8 @@
           ]
         },
         {
-          "id": "14-15",
-          "idx": 15,
+          "id": "14-10",
+          "idx": 10,
           "group": 56,
           "pos": [
             -79.46,
@@ -1440,8 +1464,8 @@
           ]
         },
         {
-          "id": "14-21",
-          "idx": 21,
+          "id": "14-11",
+          "idx": 11,
           "group": 48,
           "pos": [
             -76.14,
@@ -1449,8 +1473,8 @@
           ]
         },
         {
-          "id": "14-22",
-          "idx": 22,
+          "id": "14-12",
+          "idx": 12,
           "group": 48,
           "pos": [
             -78.99,
@@ -1458,8 +1482,8 @@
           ]
         },
         {
-          "id": "14-23",
-          "idx": 23,
+          "id": "14-13",
+          "idx": 13,
           "group": 49,
           "pos": [
             -78.69,
@@ -1467,8 +1491,8 @@
           ]
         },
         {
-          "id": "14-24",
-          "idx": 24,
+          "id": "14-14",
+          "idx": 14,
           "group": 49,
           "pos": [
             -75.63,
@@ -1476,8 +1500,8 @@
           ]
         },
         {
-          "id": "14-25",
-          "idx": 25,
+          "id": "14-15",
+          "idx": 15,
           "group": 55,
           "pos": [
             -69.22,
@@ -1485,8 +1509,8 @@
           ]
         },
         {
-          "id": "14-26",
-          "idx": 26,
+          "id": "14-16",
+          "idx": 16,
           "group": 55,
           "pos": [
             -68.29,
@@ -1508,11 +1532,15 @@
       "spells": [
         {
           "id": 1263892,
-          "attributes": []
+          "attributes": [
+            "interruptible"
+          ]
         },
         {
           "id": 1277557,
-          "attributes": []
+          "attributes": [
+            "magic"
+          ]
         }
       ],
       "spawns": [
@@ -1585,7 +1613,9 @@
       "spells": [
         {
           "id": 1263783,
-          "attributes": []
+          "attributes": [
+            "magic"
+          ]
         },
         {
           "id": 1263785,
@@ -1820,6 +1850,10 @@
           "attributes": []
         },
         {
+          "id": 1271511,
+          "attributes": []
+        },
+        {
           "id": 1282791,
           "attributes": []
         }
@@ -1841,7 +1875,7 @@
       "enemyIndex": 20,
       "name": "Smudge",
       "count": 0,
-      "health": 197950,
+      "health": 151885,
       "creatureType": "Elemental",
       "scale": 1,
       "isBoss": false,
@@ -1852,17 +1886,7 @@
           "attributes": []
         }
       ],
-      "spawns": [
-        {
-          "id": "20-1",
-          "idx": 1,
-          "group": null,
-          "pos": [
-            -33.92,
-            129.12
-          ]
-        }
-      ]
+      "spawns": []
     },
     {
       "id": 250299,
@@ -1880,17 +1904,7 @@
           "attributes": []
         }
       ],
-      "spawns": [
-        {
-          "id": "21-1",
-          "idx": 1,
-          "group": null,
-          "pos": [
-            -41.91,
-            148.35
-          ]
-        }
-      ]
+      "spawns": []
     },
     {
       "id": 251024,
@@ -1914,26 +1928,24 @@
         {
           "id": 1282665,
           "attributes": []
+        },
+        {
+          "id": 1282678,
+          "attributes": []
+        },
+        {
+          "id": 1282679,
+          "attributes": []
         }
       ],
-      "spawns": [
-        {
-          "id": "22-1",
-          "idx": 1,
-          "group": null,
-          "pos": [
-            -34.21,
-            147.85
-          ]
-        }
-      ]
+      "spawns": []
     },
     {
       "id": 251031,
       "enemyIndex": 23,
       "name": "Wretched Supplicant",
       "count": 0,
-      "health": 303769,
+      "health": 326286,
       "creatureType": "Aberration",
       "scale": 1.2,
       "isBoss": false,
@@ -1941,39 +1953,41 @@
       "spells": [
         {
           "id": 1282722,
-          "attributes": []
+          "attributes": [
+            "interruptible"
+          ]
         },
         {
           "id": 1282723,
           "attributes": []
         }
       ],
-      "spawns": [
-        {
-          "id": "23-1",
-          "idx": 1,
-          "group": null,
-          "pos": [
-            -34.19,
-            156.93
-          ]
-        }
-      ]
+      "spawns": []
     },
     {
       "id": 251568,
       "enemyIndex": 24,
       "name": "Fractured Image",
       "count": 0,
-      "health": 142370,
+      "health": 120838,
       "creatureType": "Humanoid",
       "scale": 1,
       "isBoss": false,
       "characteristics": [],
       "spells": [
         {
-          "id": 1257601,
+          "id": 1255310,
           "attributes": []
+        },
+        {
+          "id": 1255533,
+          "attributes": []
+        },
+        {
+          "id": 1257601,
+          "attributes": [
+            "interruptible"
+          ]
         },
         {
           "id": 1269220,
@@ -2020,17 +2034,7 @@
       "isBoss": false,
       "characteristics": [],
       "spells": [],
-      "spawns": [
-        {
-          "id": "25-1",
-          "idx": 1,
-          "group": null,
-          "pos": [
-            -34.24,
-            134.6
-          ]
-        }
-      ]
+      "spawns": []
     },
     {
       "id": 251878,
@@ -2043,17 +2047,7 @@
       "isBoss": false,
       "characteristics": [],
       "spells": [],
-      "spawns": [
-        {
-          "id": "26-1",
-          "idx": 1,
-          "group": null,
-          "pos": [
-            -34.26,
-            140.87
-          ]
-        }
-      ]
+      "spawns": []
     },
     {
       "id": 252825,
@@ -2065,18 +2059,13 @@
       "scale": 1,
       "isBoss": false,
       "characteristics": [],
-      "spells": [],
-      "spawns": [
+      "spells": [
         {
-          "id": "27-1",
-          "idx": 1,
-          "group": null,
-          "pos": [
-            -40.3,
-            129.1
-          ]
+          "id": 1257126,
+          "attributes": []
         }
-      ]
+      ],
+      "spawns": []
     },
     {
       "id": 252852,
@@ -2089,17 +2078,7 @@
       "isBoss": false,
       "characteristics": [],
       "spells": [],
-      "spawns": [
-        {
-          "id": "28-1",
-          "idx": 1,
-          "group": null,
-          "pos": [
-            -41.26,
-            141.4
-          ]
-        }
-      ]
+      "spawns": []
     },
     {
       "id": 254227,
@@ -2152,7 +2131,7 @@
       "enemyIndex": 30,
       "name": "Broken Pipe",
       "count": 0,
-      "health": 132410,
+      "health": 150698,
       "creatureType": "Not specified",
       "scale": 1,
       "isBoss": false,
@@ -2167,29 +2146,23 @@
           "attributes": []
         }
       ],
-      "spawns": [
-        {
-          "id": "30-1",
-          "idx": 1,
-          "group": null,
-          "pos": [
-            -41.5,
-            155.34
-          ]
-        }
-      ]
+      "spawns": []
     },
     {
       "id": 254485,
       "enemyIndex": 31,
       "name": "Corespark Pylon",
       "count": 0,
-      "health": 145651,
+      "health": 268941,
       "creatureType": "Not specified",
       "scale": 1,
       "isBoss": false,
       "characteristics": [],
       "spells": [
+        {
+          "id": 1262084,
+          "attributes": []
+        },
         {
           "id": 1262088,
           "attributes": []
@@ -2199,24 +2172,14 @@
           "attributes": []
         }
       ],
-      "spawns": [
-        {
-          "id": "31-1",
-          "idx": 1,
-          "group": null,
-          "pos": [
-            -41.08,
-            161.06
-          ]
-        }
-      ]
+      "spawns": []
     },
     {
       "id": 255179,
       "enemyIndex": 32,
       "name": "Fractured Image",
       "count": 0,
-      "health": 1771986,
+      "health": 113415,
       "creatureType": "Humanoid",
       "scale": 1,
       "isBoss": false,
@@ -2224,6 +2187,10 @@
       "spells": [
         {
           "id": 1264429,
+          "attributes": []
+        },
+        {
+          "id": 1265984,
           "attributes": []
         }
       ],
@@ -2253,7 +2220,7 @@
       "enemyIndex": 33,
       "name": "Mana Battery",
       "count": 0,
-      "health": 227827,
+      "health": 268941,
       "creatureType": "Not specified",
       "scale": 1,
       "isBoss": false,
@@ -2264,17 +2231,7 @@
           "attributes": []
         }
       ],
-      "spawns": [
-        {
-          "id": "33-1",
-          "idx": 1,
-          "group": null,
-          "pos": [
-            -40.12,
-            134.52
-          ]
-        }
-      ]
+      "spawns": []
     },
     {
       "id": 249711,

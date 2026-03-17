@@ -7,7 +7,7 @@
       "enemyIndex": 1,
       "name": "Frenzied Berserker",
       "count": 5,
-      "health": 1587886,
+      "health": 1746672,
       "creatureType": "Humanoid",
       "scale": 0.8,
       "isBoss": false,
@@ -15,7 +15,9 @@
       "spells": [
         {
           "id": 1255765,
-          "attributes": []
+          "attributes": [
+            "enrage"
+          ]
         },
         {
           "id": 1255966,
@@ -300,7 +302,7 @@
       "enemyIndex": 2,
       "name": "Keen Headhunter",
       "count": 7,
-      "health": 1380770,
+      "health": 1518845,
       "creatureType": "Humanoid",
       "scale": 0.8,
       "isBoss": false,
@@ -316,7 +318,9 @@
         },
         {
           "id": 1266381,
-          "attributes": []
+          "attributes": [
+            "interruptible"
+          ]
         }
       ],
       "spawns": [
@@ -498,7 +502,7 @@
       "enemyIndex": 3,
       "name": "Dread Souleater",
       "count": 15,
-      "health": 2071155,
+      "health": 2278268,
       "creatureType": "Humanoid",
       "scale": 1,
       "isBoss": false,
@@ -564,8 +568,8 @@
           ]
         },
         {
-          "id": "3-7",
-          "idx": 7,
+          "id": "3-6",
+          "idx": 6,
           "group": 37,
           "pos": [
             -167.82,
@@ -573,8 +577,8 @@
           ]
         },
         {
-          "id": "3-8",
-          "idx": 8,
+          "id": "3-7",
+          "idx": 7,
           "group": 37,
           "pos": [
             -168.54,
@@ -582,8 +586,8 @@
           ]
         },
         {
-          "id": "3-9",
-          "idx": 9,
+          "id": "3-8",
+          "idx": 8,
           "group": null,
           "pos": [
             -148.24,
@@ -597,7 +601,7 @@
       "enemyIndex": 4,
       "name": "Ritual Hexxer",
       "count": 7,
-      "health": 1242693,
+      "health": 1366961,
       "creatureType": "Humanoid",
       "scale": 0.9,
       "isBoss": false,
@@ -605,11 +609,16 @@
       "spells": [
         {
           "id": 1256008,
-          "attributes": []
+          "attributes": [
+            "magic",
+            "interruptible"
+          ]
         },
         {
           "id": 1256015,
-          "attributes": []
+          "attributes": [
+            "interruptible"
+          ]
         }
       ],
       "spawns": [
@@ -782,7 +791,7 @@
       "enemyIndex": 5,
       "name": "Hexbound Eagle",
       "count": 3,
-      "health": 1311732,
+      "health": 1442903,
       "creatureType": "Beast",
       "scale": 0.8,
       "isBoss": false,
@@ -903,7 +912,7 @@
       "enemyIndex": 6,
       "name": "Hex Guardian",
       "count": 15,
-      "health": 2209232,
+      "health": 2430152,
       "creatureType": "Undead",
       "scale": 1,
       "isBoss": false,
@@ -919,11 +928,9 @@
         },
         {
           "id": 1258806,
-          "attributes": []
-        },
-        {
-          "id": 1258823,
-          "attributes": []
+          "attributes": [
+            "magic"
+          ]
         }
       ],
       "spawns": [
@@ -979,7 +986,7 @@
       "enemyIndex": 7,
       "name": "Warding Mask",
       "count": 2,
-      "health": 414231,
+      "health": 455654,
       "creatureType": "Undead",
       "scale": 0.7,
       "isBoss": false,
@@ -1331,7 +1338,7 @@
       "enemyIndex": 8,
       "name": "Bramblemaw Bear",
       "count": 5,
-      "health": 1449809,
+      "health": 1594787,
       "creatureType": "Beast",
       "scale": 0.8,
       "isBoss": false,
@@ -1530,7 +1537,7 @@
       "enemyIndex": 9,
       "name": "Mire Laborer",
       "count": 1,
-      "health": 897501,
+      "health": 987249,
       "creatureType": "Humanoid",
       "scale": 0.6,
       "isBoss": false,
@@ -1850,7 +1857,7 @@
       "enemyIndex": 10,
       "name": "Hulking Juggernaut",
       "count": 15,
-      "health": 2485386,
+      "health": 2733921,
       "creatureType": "Beast",
       "scale": 1,
       "isBoss": false,
@@ -1909,7 +1916,7 @@
       "enemyIndex": 11,
       "name": "Umbral Shadowbinder",
       "count": 5,
-      "health": 1242693,
+      "health": 1366961,
       "creatureType": "Humanoid",
       "scale": 0.9,
       "isBoss": false,
@@ -1917,7 +1924,9 @@
       "spells": [
         {
           "id": 1263292,
-          "attributes": []
+          "attributes": [
+            "interruptible"
+          ]
         },
         {
           "id": 1263336,
@@ -1966,8 +1975,8 @@
           ]
         },
         {
-          "id": "11-6",
-          "idx": 6,
+          "id": "11-5",
+          "idx": 5,
           "group": 25,
           "pos": [
             -152.88,
@@ -1975,8 +1984,8 @@
           ]
         },
         {
-          "id": "11-7",
-          "idx": 7,
+          "id": "11-6",
+          "idx": 6,
           "group": 31,
           "pos": [
             -159.29,
@@ -1984,8 +1993,8 @@
           ]
         },
         {
-          "id": "11-8",
-          "idx": 8,
+          "id": "11-7",
+          "idx": 7,
           "group": 31,
           "pos": [
             -161.09,
@@ -1993,8 +2002,8 @@
           ]
         },
         {
-          "id": "11-9",
-          "idx": 9,
+          "id": "11-8",
+          "idx": 8,
           "group": 31,
           "pos": [
             -162.89,
@@ -2002,8 +2011,8 @@
           ]
         },
         {
-          "id": "11-10",
-          "idx": 10,
+          "id": "11-9",
+          "idx": 9,
           "group": 39,
           "pos": [
             -152.73,
@@ -2011,8 +2020,8 @@
           ]
         },
         {
-          "id": "11-11",
-          "idx": 11,
+          "id": "11-10",
+          "idx": 10,
           "group": 40,
           "pos": [
             -142.64,
@@ -2020,8 +2029,8 @@
           ]
         },
         {
-          "id": "11-12",
-          "idx": 12,
+          "id": "11-11",
+          "idx": 11,
           "group": null,
           "pos": [
             -150.13,
@@ -2029,8 +2038,8 @@
           ]
         },
         {
-          "id": "11-13",
-          "idx": 13,
+          "id": "11-12",
+          "idx": 12,
           "group": 51,
           "pos": [
             -125.18,
@@ -2038,8 +2047,8 @@
           ]
         },
         {
-          "id": "11-14",
-          "idx": 14,
+          "id": "11-13",
+          "idx": 13,
           "group": 67,
           "pos": [
             -245.89,
@@ -2047,8 +2056,8 @@
           ]
         },
         {
-          "id": "11-15",
-          "idx": 15,
+          "id": "11-14",
+          "idx": 14,
           "group": 73,
           "pos": [
             -248.98,
@@ -2056,8 +2065,8 @@
           ]
         },
         {
-          "id": "11-16",
-          "idx": 16,
+          "id": "11-15",
+          "idx": 15,
           "group": null,
           "pos": [
             -220.95,
@@ -2065,8 +2074,8 @@
           ]
         },
         {
-          "id": "11-17",
-          "idx": 17,
+          "id": "11-16",
+          "idx": 16,
           "group": 82,
           "pos": [
             -140.07,
@@ -2080,7 +2089,7 @@
       "enemyIndex": 12,
       "name": "Restless Gnarldin",
       "count": 15,
-      "health": 2485386,
+      "health": 2733921,
       "creatureType": "Undead",
       "scale": 1.6,
       "isBoss": false,
@@ -2165,7 +2174,7 @@
       "enemyIndex": 13,
       "name": "Reanimated Warrior",
       "count": 2,
-      "health": 1449809,
+      "health": 1594787,
       "creatureType": "Undead",
       "scale": 1,
       "isBoss": false,
@@ -2173,7 +2182,9 @@
       "spells": [
         {
           "id": 1257716,
-          "attributes": []
+          "attributes": [
+            "interruptible"
+          ]
         },
         {
           "id": 1257914,
@@ -2534,7 +2545,7 @@
       "enemyIndex": 14,
       "name": "Grim Skirmisher",
       "count": 2,
-      "health": 828462,
+      "health": 911307,
       "creatureType": "Undead",
       "scale": 1,
       "isBoss": false,
@@ -2542,7 +2553,9 @@
       "spells": [
         {
           "id": 1270079,
-          "attributes": []
+          "attributes": [
+            "magic"
+          ]
         },
         {
           "id": 1270085,
@@ -2953,7 +2966,7 @@
       "enemyIndex": 15,
       "name": "Tormented Shade",
       "count": 7,
-      "health": 1242693,
+      "health": 1366961,
       "creatureType": "Undead",
       "scale": 1,
       "isBoss": false,
@@ -2961,7 +2974,10 @@
       "spells": [
         {
           "id": 1259255,
-          "attributes": []
+          "attributes": [
+            "magic",
+            "interruptible"
+          ]
         }
       ],
       "spawns": [
@@ -3197,7 +3213,7 @@
       "enemyIndex": 16,
       "name": "Rokh'zal",
       "count": 10,
-      "health": 3451925,
+      "health": 3797113,
       "creatureType": "Humanoid",
       "scale": 2,
       "isBoss": false,
@@ -3229,7 +3245,7 @@
       "enemyIndex": 17,
       "name": "Bound Defender",
       "count": 15,
-      "health": 2347309,
+      "health": 2582037,
       "creatureType": "Undead",
       "scale": 1.5,
       "isBoss": false,
@@ -3314,7 +3330,7 @@
       "enemyIndex": 18,
       "name": "Hollow Soulrender",
       "count": 15,
-      "health": 2071155,
+      "health": 2278268,
       "creatureType": "Undead",
       "scale": 1.6,
       "isBoss": false,
@@ -3326,11 +3342,15 @@
         },
         {
           "id": 1264327,
-          "attributes": []
+          "attributes": [
+            "interruptible"
+          ]
         },
         {
           "id": 1271623,
-          "attributes": []
+          "attributes": [
+            "magic"
+          ]
         }
       ],
       "spawns": [
@@ -3368,16 +3388,12 @@
       "enemyIndex": 19,
       "name": "Muro'jin",
       "count": 0,
-      "health": 7766831,
+      "health": 8543503,
       "creatureType": "Humanoid",
       "scale": 1,
       "isBoss": true,
       "characteristics": [],
       "spells": [
-        {
-          "id": 1243741,
-          "attributes": []
-        },
         {
           "id": 1243752,
           "attributes": []
@@ -3396,7 +3412,9 @@
         },
         {
           "id": 1260709,
-          "attributes": []
+          "attributes": [
+            "magic"
+          ]
         },
         {
           "id": 1260731,
@@ -3412,7 +3430,9 @@
         },
         {
           "id": 1266488,
-          "attributes": []
+          "attributes": [
+            "bleed"
+          ]
         }
       ],
       "spawns": [
@@ -3432,7 +3452,7 @@
       "enemyIndex": 20,
       "name": "Nekraxx",
       "count": 0,
-      "health": 7766831,
+      "health": 8543503,
       "creatureType": "Beast",
       "scale": 1,
       "isBoss": true,
@@ -3444,7 +3464,9 @@
         },
         {
           "id": 1246666,
-          "attributes": []
+          "attributes": [
+            "disease"
+          ]
         },
         {
           "id": 1249478,
@@ -3492,7 +3514,7 @@
       "enemyIndex": 21,
       "name": "Vordaza",
       "count": 0,
-      "health": 9205133,
+      "health": 9113070,
       "creatureType": "Humanoid",
       "scale": 1,
       "isBoss": true,
@@ -3500,7 +3522,9 @@
       "spells": [
         {
           "id": 1250708,
-          "attributes": []
+          "attributes": [
+            "interruptible"
+          ]
         },
         {
           "id": 1251204,
@@ -3512,10 +3536,6 @@
         },
         {
           "id": 1251567,
-          "attributes": []
-        },
-        {
-          "id": 1251568,
           "attributes": []
         },
         {
@@ -3584,7 +3604,7 @@
       "enemyIndex": 22,
       "name": "Rak'tul",
       "count": 0,
-      "health": 12225567,
+      "health": 13448107,
       "creatureType": "Undead",
       "scale": 1,
       "isBoss": true,
@@ -3604,6 +3624,10 @@
         },
         {
           "id": 1251024,
+          "attributes": []
+        },
+        {
+          "id": 1252675,
           "attributes": []
         },
         {
@@ -3639,6 +3663,10 @@
           "attributes": []
         },
         {
+          "id": 1266188,
+          "attributes": []
+        },
+        {
           "id": 1279517,
           "attributes": []
         }
@@ -3660,7 +3688,7 @@
       "enemyIndex": 23,
       "name": "Unstable Phantom",
       "count": 0,
-      "health": 1150642,
+      "health": 1265704,
       "creatureType": "Undead",
       "scale": 1,
       "isBoss": false,
@@ -3688,7 +3716,7 @@
       "enemyIndex": 24,
       "name": "Soulbind Totem",
       "count": 0,
-      "health": 230128,
+      "health": 253141,
       "creatureType": "Not specified",
       "scale": 1,
       "isBoss": false,
@@ -3720,7 +3748,7 @@
       "enemyIndex": 25,
       "name": "Lost Soul",
       "count": 0,
-      "health": 190011,
+      "health": 166685,
       "creatureType": "Undead",
       "scale": 1,
       "isBoss": false,
@@ -3728,27 +3756,19 @@
       "spells": [
         {
           "id": 1254175,
-          "attributes": []
-        }
-      ],
-      "spawns": [
-        {
-          "id": "25-1",
-          "idx": 1,
-          "group": null,
-          "pos": [
-            -18.02,
-            127.28
+          "attributes": [
+            "magic"
           ]
         }
-      ]
+      ],
+      "spawns": []
     },
     {
       "id": 251674,
       "enemyIndex": 26,
       "name": "Malignant Soul",
       "count": 0,
-      "health": 1150642,
+      "health": 1265704,
       "creatureType": "Undead",
       "scale": 1,
       "isBoss": false,
@@ -3756,31 +3776,23 @@
       "spells": [
         {
           "id": 1254010,
-          "attributes": []
+          "attributes": [
+            "interruptible"
+          ]
         },
         {
           "id": 1254043,
           "attributes": []
         }
       ],
-      "spawns": [
-        {
-          "id": "26-1",
-          "idx": 1,
-          "group": null,
-          "pos": [
-            -18.96,
-            104.38
-          ]
-        }
-      ]
+      "spawns": []
     },
     {
       "id": 252886,
       "enemyIndex": 27,
       "name": "Potatoad",
       "count": 0,
-      "health": 276154,
+      "health": 303769,
       "creatureType": "Humanoid",
       "scale": 1,
       "isBoss": false,
@@ -3791,24 +3803,14 @@
           "attributes": []
         }
       ],
-      "spawns": [
-        {
-          "id": "27-1",
-          "idx": 1,
-          "group": null,
-          "pos": [
-            -19.08,
-            119.06
-          ]
-        }
-      ]
+      "spawns": []
     },
     {
       "id": 253458,
       "enemyIndex": 28,
       "name": "Zil'jan",
       "count": 7,
-      "health": 552308,
+      "health": 607538,
       "creatureType": "Humanoid",
       "scale": 1,
       "isBoss": false,
@@ -3844,7 +3846,7 @@
       "enemyIndex": 29,
       "name": "Gloomwing Bat",
       "count": 5,
-      "health": 1242693,
+      "health": 1366961,
       "creatureType": "Beast",
       "scale": 1,
       "isBoss": false,
@@ -3852,7 +3854,9 @@
       "spells": [
         {
           "id": 1259182,
-          "attributes": []
+          "attributes": [
+            "interruptible"
+          ]
         },
         {
           "id": 1259183,
@@ -4029,39 +4033,31 @@
       "enemyIndex": 30,
       "name": "Lost Soul",
       "count": 0,
-      "health": 190011,
+      "health": 125892,
       "creatureType": "Undead",
       "scale": 1,
       "isBoss": false,
       "characteristics": [],
       "spells": [
         {
-          "id": 1259713,
-          "attributes": []
+          "id": 1259731,
+          "attributes": [
+            "magic"
+          ]
         },
         {
-          "id": 1259731,
+          "id": 1259713,
           "attributes": []
         }
       ],
-      "spawns": [
-        {
-          "id": "30-1",
-          "idx": 1,
-          "group": null,
-          "pos": [
-            -18.94,
-            98.33
-          ]
-        }
-      ]
+      "spawns": []
     },
     {
       "id": 253701,
       "enemyIndex": 31,
       "name": "Death's Grasp",
       "count": 0,
-      "health": 207116,
+      "health": 227827,
       "creatureType": "Not specified",
       "scale": 1,
       "isBoss": false,
@@ -4089,7 +4085,7 @@
       "enemyIndex": 32,
       "name": "Rokh'zal",
       "count": 0,
-      "health": 3590002,
+      "health": 3948997,
       "creatureType": "Humanoid",
       "scale": 1,
       "isBoss": false,
