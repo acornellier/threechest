@@ -13,7 +13,7 @@ export const dungeonData = (
 export const dungeons: Dungeon[] = [
   {
     key: 'magi' as DungeonKey,
-    name: "Magister's Terrace",
+    name: "Magisters' Terrace",
     icon: 'inv_achievement_dungeon_magistersterrace',
     wclEncounterId: 12811,
   },
