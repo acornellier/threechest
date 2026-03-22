@@ -1,5 +1,10 @@
 import { Rectangle, Tooltip } from 'react-leaflet'
-import { urlToWclInfo, type WclPoint, wclPointToLeafletPoint, type WclResult } from '../../util/wclCalc.ts'
+import {
+  urlToWclInfo,
+  type WclPoint,
+  wclPointToLeafletPoint,
+  type WclResult,
+} from '../../util/wclCalc.ts'
 import { useEffect, useState } from 'react'
 
 const url = ''
@@ -10,6 +15,10 @@ export function WclCoordinateTest() {
   const [wclResult, setWclResult] = useState<WclResult | null>(null)
 
   useEffect(() => {
+    if (!url) {
+      setWclResult(null)
+      return
+    }
     try {
       const { code, fightId } = urlToWclInfo(url)
       import(`../../../server/cache/wclRoute/${code}-${fightId}.json`)
