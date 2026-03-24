@@ -577,15 +577,6 @@
           ]
         },
         {
-          "id": "3-7",
-          "idx": 7,
-          "group": 37,
-          "pos": [
-            -168.54,
-            103.12
-          ]
-        },
-        {
           "id": "3-8",
           "idx": 8,
           "group": null,
@@ -610,8 +601,8 @@
         {
           "id": 1256008,
           "attributes": [
-            "magic",
-            "interruptible"
+            "interruptible",
+            "magic"
           ]
         },
         {
@@ -782,6 +773,15 @@
           "pos": [
             -138.63,
             342.34
+          ]
+        },
+        {
+          "id": "4-19",
+          "idx": 19,
+          "group": 37,
+          "pos": [
+            -167.5,
+            103.85
           ]
         }
       ]
@@ -2975,8 +2975,8 @@
         {
           "id": 1259255,
           "attributes": [
-            "magic",
-            "interruptible"
+            "interruptible",
+            "magic"
           ]
         }
       ],
@@ -3744,70 +3744,8 @@
       ]
     },
     {
-      "id": 251639,
-      "enemyIndex": 25,
-      "name": "Lost Soul",
-      "count": 0,
-      "health": 166685,
-      "creatureType": "Undead",
-      "scale": 1,
-      "isBoss": false,
-      "characteristics": [],
-      "spells": [
-        {
-          "id": 1254175,
-          "attributes": [
-            "magic"
-          ]
-        }
-      ],
-      "spawns": []
-    },
-    {
-      "id": 251674,
-      "enemyIndex": 26,
-      "name": "Malignant Soul",
-      "count": 0,
-      "health": 1265704,
-      "creatureType": "Undead",
-      "scale": 1,
-      "isBoss": false,
-      "characteristics": [],
-      "spells": [
-        {
-          "id": 1254010,
-          "attributes": [
-            "interruptible"
-          ]
-        },
-        {
-          "id": 1254043,
-          "attributes": []
-        }
-      ],
-      "spawns": []
-    },
-    {
-      "id": 252886,
-      "enemyIndex": 27,
-      "name": "Potatoad",
-      "count": 0,
-      "health": 303769,
-      "creatureType": "Humanoid",
-      "scale": 1,
-      "isBoss": false,
-      "characteristics": [],
-      "spells": [
-        {
-          "id": 1257164,
-          "attributes": []
-        }
-      ],
-      "spawns": []
-    },
-    {
       "id": 253458,
-      "enemyIndex": 28,
+      "enemyIndex": 25,
       "name": "Zil'jan",
       "count": 7,
       "health": 607538,
@@ -3831,7 +3769,7 @@
       ],
       "spawns": [
         {
-          "id": "28-1",
+          "id": "25-1",
           "idx": 1,
           "group": 103,
           "pos": [
@@ -3843,7 +3781,7 @@
     },
     {
       "id": 253473,
-      "enemyIndex": 29,
+      "enemyIndex": 26,
       "name": "Gloomwing Bat",
       "count": 5,
       "health": 1366961,
@@ -3865,7 +3803,7 @@
       ],
       "spawns": [
         {
-          "id": "29-1",
+          "id": "26-1",
           "idx": 1,
           "group": 79,
           "pos": [
@@ -3874,7 +3812,7 @@
           ]
         },
         {
-          "id": "29-2",
+          "id": "26-2",
           "idx": 2,
           "group": 79,
           "pos": [
@@ -3883,7 +3821,7 @@
           ]
         },
         {
-          "id": "29-3",
+          "id": "26-3",
           "idx": 3,
           "group": 79,
           "pos": [
@@ -3892,7 +3830,7 @@
           ]
         },
         {
-          "id": "29-4",
+          "id": "26-4",
           "idx": 4,
           "group": 80,
           "pos": [
@@ -3901,7 +3839,7 @@
           ]
         },
         {
-          "id": "29-5",
+          "id": "26-5",
           "idx": 5,
           "group": 80,
           "pos": [
@@ -3910,7 +3848,7 @@
           ]
         },
         {
-          "id": "29-6",
+          "id": "26-6",
           "idx": 6,
           "group": 80,
           "pos": [
@@ -3919,7 +3857,7 @@
           ]
         },
         {
-          "id": "29-7",
+          "id": "26-7",
           "idx": 7,
           "group": 96,
           "pos": [
@@ -3928,7 +3866,7 @@
           ]
         },
         {
-          "id": "29-8",
+          "id": "26-8",
           "idx": 8,
           "group": 96,
           "pos": [
@@ -3937,7 +3875,7 @@
           ]
         },
         {
-          "id": "29-9",
+          "id": "26-9",
           "idx": 9,
           "group": 95,
           "pos": [
@@ -3946,7 +3884,7 @@
           ]
         },
         {
-          "id": "29-10",
+          "id": "26-10",
           "idx": 10,
           "group": 95,
           "pos": [
@@ -3955,7 +3893,7 @@
           ]
         },
         {
-          "id": "29-11",
+          "id": "26-11",
           "idx": 11,
           "group": 94,
           "pos": [
@@ -3964,7 +3902,7 @@
           ]
         },
         {
-          "id": "29-12",
+          "id": "26-12",
           "idx": 12,
           "group": 94,
           "pos": [
@@ -3973,7 +3911,7 @@
           ]
         },
         {
-          "id": "29-13",
+          "id": "26-13",
           "idx": 13,
           "group": 97,
           "pos": [
@@ -3982,7 +3920,7 @@
           ]
         },
         {
-          "id": "29-14",
+          "id": "26-14",
           "idx": 14,
           "group": 97,
           "pos": [
@@ -3991,7 +3929,7 @@
           ]
         },
         {
-          "id": "29-15",
+          "id": "26-15",
           "idx": 15,
           "group": 106,
           "pos": [
@@ -4000,7 +3938,7 @@
           ]
         },
         {
-          "id": "29-16",
+          "id": "26-16",
           "idx": 16,
           "group": 106,
           "pos": [
@@ -4009,7 +3947,7 @@
           ]
         },
         {
-          "id": "29-17",
+          "id": "26-17",
           "idx": 17,
           "group": 83,
           "pos": [
@@ -4018,7 +3956,7 @@
           ]
         },
         {
-          "id": "29-18",
+          "id": "26-18",
           "idx": 18,
           "group": 83,
           "pos": [
@@ -4029,32 +3967,8 @@
       ]
     },
     {
-      "id": 253647,
-      "enemyIndex": 30,
-      "name": "Lost Soul",
-      "count": 0,
-      "health": 125892,
-      "creatureType": "Undead",
-      "scale": 1,
-      "isBoss": false,
-      "characteristics": [],
-      "spells": [
-        {
-          "id": 1259731,
-          "attributes": [
-            "magic"
-          ]
-        },
-        {
-          "id": 1259713,
-          "attributes": []
-        }
-      ],
-      "spawns": []
-    },
-    {
       "id": 253701,
-      "enemyIndex": 31,
+      "enemyIndex": 27,
       "name": "Death's Grasp",
       "count": 0,
       "health": 227827,
@@ -4070,7 +3984,7 @@
       ],
       "spawns": [
         {
-          "id": "31-1",
+          "id": "27-1",
           "idx": 1,
           "group": 62,
           "pos": [
@@ -4082,7 +3996,7 @@
     },
     {
       "id": 254233,
-      "enemyIndex": 32,
+      "enemyIndex": 28,
       "name": "Rokh'zal",
       "count": 0,
       "health": 3948997,
@@ -4102,7 +4016,7 @@
       ],
       "spawns": [
         {
-          "id": "32-1",
+          "id": "28-1",
           "idx": 1,
           "group": 62,
           "pos": [

@@ -2679,7 +2679,6 @@
         {
           "id": 1255187,
           "attributes": [
-            "interruptible",
             "magic"
           ]
         }
