@@ -63,7 +63,6 @@ export const dungeons: Dungeon[] = [
   .map<Dungeon>((dungeon) => ({
     ...dungeon,
     ...dungeonData(dungeon.key),
-    wclEncounterId: dungeon.wclEncounterId + 50_000, // TODO: remove on release
   }))
   .sort((a, b) => (a.displayKey ?? a.key).localeCompare(b.displayKey ?? b.key))
 
