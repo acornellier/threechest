@@ -324,21 +324,21 @@ function calculatePull(
   errors: string[],
 ): CalculatedPull | null {
   if (pass <= 2) {
-    return calculatePullFromSubPulls(
-      mobEvents,
-      groupsRemaining,
-      groupMobSpawns,
-      spawnIdsTaken,
-      pass,
-    )
-  } else if (pass <= 4) {
     return calculateExactPull(
       mobEvents,
       groupsRemaining,
       groupMobSpawns,
       spawnIdsTaken,
       pass,
-      pass * 25,
+      pass * 50,
+    )
+  } else if (pass <= 4) {
+    return calculatePullFromSubPulls(
+      mobEvents,
+      groupsRemaining,
+      groupMobSpawns,
+      spawnIdsTaken,
+      pass,
     )
   } else {
     return findExactSpawns(mobEvents, groupsRemaining, spawnIdsTaken, dungeon, errors, idx)
@@ -352,9 +352,9 @@ function calculatePullFromSubPulls(
   spawnIdsTaken: Set<SpawnId>,
   pass: Pass,
 ) {
-  const maxDistanceToGroup = pass * 10
-  const subPullTimestampRange = pass * 1_000
-  const subPullMaxDistance = pass * 10
+  const maxDistanceToGroup = (pass - 2) * 10
+  const subPullTimestampRange = (pass - 2) * 1_000
+  const subPullMaxDistance = (pass - 2) * 10
 
   const spawnIds: SpawnId[] = []
   const subPulls = getSubPulls(mobEvents, subPullTimestampRange, subPullMaxDistance)
@@ -388,7 +388,7 @@ function calculateExactPull(
   maxDistanceToGroup: number,
 ): CalculatedPull | null {
   const filteredPositions = pull.map(({ pos }) => pos).filter(Boolean)
-  if (filteredPositions.length === 0 && pass < 4) return null
+  if (filteredPositions.length === 0 && pass !== 2) return null
 
   const pullCenter = polygonCenter(filteredPositions)
   const pullMobCounts = tally(pull, ({ mobId }) => mobId)
