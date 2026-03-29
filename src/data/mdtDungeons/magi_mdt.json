@@ -1,6 +1,6 @@
 {
   "dungeonIndex": 153,
-  "totalCount": 597,
+  "totalCount": 585,
   "enemies": [
     {
       "id": 232369,
@@ -137,7 +137,7 @@
       "id": 234089,
       "enemyIndex": 2,
       "name": "Animated Codex",
-      "count": 0,
+      "count": 2,
       "health": 10000,
       "creatureType": "Elemental",
       "scale": 0.7,
@@ -3104,7 +3104,7 @@
       "id": 259387,
       "enemyIndex": 25,
       "name": "Spellwoven Familiar",
-      "count": 0,
+      "count": 1,
       "health": 1063192,
       "creatureType": "Elemental",
       "scale": 0.8,

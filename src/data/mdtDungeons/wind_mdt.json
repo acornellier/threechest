@@ -2737,10 +2737,10 @@
       "stealthDetect": true
     },
     {
-      "id": 232446,
+      "id": 258868,
       "enemyIndex": 30,
       "name": "Haunting Grunt",
-      "count": 0,
+      "count": 4,
       "health": 131251,
       "creatureType": "Humanoid",
       "scale": 1.2,
