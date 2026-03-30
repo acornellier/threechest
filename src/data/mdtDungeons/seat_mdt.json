@@ -767,8 +767,8 @@
         {
           "id": 1262526,
           "attributes": [
-            "magic",
-            "interruptible"
+            "interruptible",
+            "magic"
           ]
         },
         {
@@ -1569,7 +1569,7 @@
         {
           "id": "13-35",
           "idx": 35,
-          "group": 29,
+          "group": 30,
           "pos": [
             -112.23,
             90.66
