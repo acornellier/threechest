@@ -1,13 +1,14 @@
 import { dungeons } from '../src/data/dungeons.ts'
 import fs from 'fs'
 import { getWclRoute } from '../server/wclRoute.ts'
+import { fetchFightTeam } from '../server/wcl.ts'
 import { type WclResult, wclResultToRoute } from '../src/util/wclCalc.ts'
 import { getDirname } from '../server/files.ts'
 import { fetchTopRankings } from '../server/wclRankingsFetcher.ts'
 import type { SampleRoute } from '../src/util/types.ts'
 import * as path from 'path'
 import { shuffle } from '../src/util/nodash.ts'
-import type { WclRanking } from '../src/util/wclRankings.ts'
+import type { WclFightRanking, WclRanking, WclSpecRanking } from '../src/util/wclRankings.ts'
 import type { DungeonKey } from '../src/data/dungeonKeys.ts'
 
 const dirname = getDirname(import.meta.url)
@@ -18,16 +19,16 @@ const toFileName = (report: { code: string; fightID: number }) =>
 interface DungeonRankings {
   dungeonKey: DungeonKey
   dungeonFolder: string
-  rankings: WclRanking[]
+  rankings: Array<WclFightRanking | WclSpecRanking>
 }
 
 const arg = process.argv.slice(2)
-const resetDungeon: DungeonKey | null = arg.length ? (arg[0] as DungeonKey) : null
-if (resetDungeon) console.log(`Resetting data for ${resetDungeon}`)
+const specificDungeon: DungeonKey | null = arg.length ? (arg[0] as DungeonKey) : null
+const ignoreCache = arg.includes('--reset')
 
 const dungeonRankings: DungeonRankings[] = []
 for (const dungeon of shuffle(dungeons)) {
-  if (resetDungeon && dungeon.key !== resetDungeon) continue
+  if (specificDungeon && dungeon.key !== specificDungeon) continue
 
   if (!dungeon.wclEncounterId) continue
 
@@ -61,11 +62,19 @@ for (const { dungeonFolder, rankings, dungeonKey } of dungeonRankings) {
     if (!fs.existsSync(file)) continue
 
     const sampleRoute = JSON.parse(fs.readFileSync(file).toString()) as SampleRoute
-    const oldRank = sampleRoute.wclRanking?.rank
-    sampleRoute.wclRanking = ranking
+    if (!sampleRoute.wclRanking || !('rank' in sampleRoute.wclRanking)) {
+      continue
+    }
+
+    const oldRank = sampleRoute.wclRanking.rank
+    sampleRoute.wclRanking =
+      'rank' in ranking ? ranking : { ...ranking, team: sampleRoute.wclRanking.team }
     fs.writeFileSync(file, JSON.stringify(sampleRoute))
-    if (oldRank !== ranking.rank)
-      console.log(`Updated ${code}-${fightID} from rank ${oldRank} to ${ranking.rank}`)
+    if (oldRank !== sampleRoute.wclRanking.rank) {
+      console.log(
+        `Updated ${code}-${fightID} from rank ${oldRank} to ${sampleRoute.wclRanking.rank}`,
+      )
+    }
   }
 }
 
@@ -75,7 +84,6 @@ for (const { dungeonFolder, rankings, dungeonKey } of dungeonRankings) {
   // Add new rankings
   for (const ranking of rankings) {
     const { code, fightID } = ranking.report
-    const ignoreCache = resetDungeon === dungeonKey
     const file = `${dungeonFolder}/${toFileName(ranking.report)}`
     if (fs.existsSync(file) && !ignoreCache) continue
 
@@ -94,8 +102,9 @@ for (const { dungeonFolder, rankings, dungeonKey } of dungeonRankings) {
     }
 
     const { route, errors } = wclResultToRoute(result)
-    const tank = ranking.team.find((member) => member.role === 'Tank') ?? ranking.team[0]!
-    route.name = `${tank.name}${tank.name.endsWith('s') ? "'" : "'s"} +${ranking.bracketData}`
+    const wclRanking = await getWclRanking(ranking, code, fightID)
+    const tank = wclRanking.team.find((m) => m.role === 'Tank') ?? wclRanking.team[0]!
+    route.name = `${tank.name}${tank.name.endsWith('s') ? "'" : "'s"} +${wclRanking.bracketData}`
 
     if (errors.length) {
       console.error(`Errors parsing ${code}-${fightID}: ${errors.join('\n')}`)
@@ -103,9 +112,22 @@ for (const { dungeonFolder, rankings, dungeonKey } of dungeonRankings) {
 
     const sampleRoute: SampleRoute = {
       route,
-      wclRanking: ranking,
+      wclRanking,
     }
 
     fs.writeFileSync(file, JSON.stringify(sampleRoute))
   }
+}
+
+async function getWclRanking(
+  ranking: WclFightRanking | WclSpecRanking,
+  code: string,
+  fightID: number,
+): Promise<WclRanking> {
+  if ('team' in ranking) {
+    return ranking
+  }
+
+  const team = await fetchFightTeam(code, fightID)
+  return { ...ranking, team }
 }

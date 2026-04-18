@@ -1,6 +1,7 @@
-export interface WclRankingRaw {
-  bracketData: number
+export interface WclFightRankingRaw {
+  bracketData: number // key level
   score: number
+  rank: number
   report: {
     code: string | null
     fightID: number
@@ -16,20 +17,43 @@ export interface WclRankingTeamMember {
   spec: string
 }
 
-export interface WclRanking extends Omit<WclRankingRaw, 'report'> {
-  rank: number
+export interface WclFightRanking extends Omit<WclFightRankingRaw, 'report'> {
   report: {
     code: string
     fightID: number
   }
 }
 
-export function pickTopRankings(rankings: WclRanking[], count: number) {
-  return rankings.toSorted((a, b) => b.bracketData - a.bracketData).slice(0, count)
+export interface WclSpecRankingRaw {
+  bracketData: number
+  score: number
+  report: {
+    code: string | null
+    fightID: number
+  }
 }
 
-export function pickVariedComps(rankings: WclRanking[], count: number) {
-  const chosenRankings: WclRanking[] = []
+export interface WclSpecRanking extends Omit<WclSpecRankingRaw, 'report'> {
+  report: {
+    code: string
+    fightID: number
+  }
+  tankSpec: {
+    class: string
+    spec: string
+  }
+}
+
+export type WclRanking = Omit<WclFightRanking, 'rank'> & {
+  rank?: number
+}
+
+export function pickTopRankings(rankings: WclFightRanking[], count: number) {
+  return rankings.toSorted((a, b) => b.score - a.score).slice(0, count)
+}
+
+export function pickVariedComps<TRanking extends WclRanking>(rankings: TRanking[], count: number) {
+  const chosenRankings: TRanking[] = []
   const takenComps: string[][] = []
 
   const pushRankings = (minCompDifferences: number) => {

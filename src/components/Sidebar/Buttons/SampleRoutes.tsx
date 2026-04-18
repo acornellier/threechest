@@ -62,7 +62,7 @@ export function SampleRoutes({ hidden }: Props) {
           <div className="flex flex-col gap-0.5 overflow-hidden">
             <div className="flex justify-between">
               <div className="flex items-center gap-1">
-                {wclRanking && (
+                {wclRanking && 'rank' in wclRanking && (
                   <div className="rounded-sm px-1 bg-cyan-800 text-xs">Rank {wclRanking.rank}</div>
                 )}
                 {route.name}

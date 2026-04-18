@@ -1,5 +1,6 @@
 import { getWclToken } from './wclToken.ts'
 import type { WclDeathEvent } from '../src/util/wclCalc.ts'
+import type { WclRankingTeamMember } from '../src/util/wclRankings.ts'
 
 interface WclJson<T> {
   error?: string
@@ -106,6 +107,37 @@ query {
   return fights.find(
     ({ id, encounterID }) => !!encounterID && (fightId === 'last' || id === Number(fightId)),
   )!
+}
+
+export async function fetchFightTeam(
+  code: string,
+  fightID: number,
+): Promise<WclRankingTeamMember[]> {
+  type CompositionEntry = {
+    name: string
+    id: number
+    type: string
+    specs: { spec: string; role: 'tank' | 'healer' | 'dps' }[]
+  }
+  const data = await fetchWcl<{
+    reportData: { report: { table: { data: { composition: CompositionEntry[] } } } }
+  }>(`
+query {
+  reportData {
+    report(code: "${code}") {
+      table(fightIDs: [${fightID}], dataType: Summary)
+    }
+  }
+}
+`)
+
+  return data.reportData.report.table.data.composition.map(({ id, name, type, specs }) => ({
+    id,
+    name,
+    class: type,
+    spec: specs[0]?.spec ?? '',
+    role: specs[0]?.role === 'tank' ? 'Tank' : specs[0]?.role === 'healer' ? 'Healer' : 'DPS',
+  }))
 }
 
 export async function getDeathEvents(code: string, fight: WclFight) {
