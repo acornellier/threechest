@@ -2,20 +2,12 @@ import { fetchWcl } from './wcl.ts'
 import {
   pickTopRankings,
   pickVariedComps,
+  tankSpecs,
   type WclFightRanking,
   type WclFightRankingRaw,
   type WclSpecRanking,
   type WclSpecRankingRaw,
 } from '../src/util/wclRankings.ts'
-
-const tanks = [
-  { class: 'DeathKnight', spec: 'Blood' },
-  { class: 'DemonHunter', spec: 'Vengeance' },
-  { class: 'Druid', spec: 'Guardian' },
-  { class: 'Monk', spec: 'Brewmaster' },
-  { class: 'Paladin', spec: 'Protection' },
-  { class: 'Warrior', spec: 'Protection' },
-]
 
 async function fetchCharacterRankings(
   encounterId: number,
@@ -73,7 +65,7 @@ export async function fetchTopRankings(
   const existingIds = new Set(base.map((r) => `${r.report.code}-${r.report.fightID}`))
 
   const specRankings: WclSpecRanking[] = []
-  for (const tank of tanks) {
+  for (const tank of tankSpecs) {
     const countForSpec = base.filter((r) =>
       r.team.some((m) => m.class === tank.class && m.spec === tank.spec),
     ).length

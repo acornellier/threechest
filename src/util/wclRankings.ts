@@ -46,9 +46,21 @@ export interface WclSpecRanking extends Omit<WclSpecRankingRaw, 'report'> {
 
 export type WclRanking = Omit<WclFightRanking, 'rank'> & {
   rank?: number
+  tankSpec?: { class: string; spec: string }
 }
 
-export function pickTopRankings(rankings: WclFightRanking[], count: number) {
+export type Spec = { class: string; spec: string; icon: string }
+
+export const tankSpecs: Spec[] = [
+  { class: 'DeathKnight', spec: 'Blood', icon: 'spell_deathknight_bloodpresence' },
+  { class: 'DemonHunter', spec: 'Vengeance', icon: 'ability_demonhunter_spectank' },
+  { class: 'Druid', spec: 'Guardian', icon: 'ability_racial_bearform' },
+  { class: 'Monk', spec: 'Brewmaster', icon: 'spell_monk_brewmaster_spec' },
+  { class: 'Paladin', spec: 'Protection', icon: 'ability_paladin_shieldofthetemplar' },
+  { class: 'Warrior', spec: 'Protection', icon: 'ability_warrior_defensivestance' },
+]
+
+export function pickTopRankings<TRanking extends WclRanking>(rankings: TRanking[], count: number) {
   return rankings.toSorted((a, b) => b.score - a.score).slice(0, count)
 }
 
@@ -79,5 +91,18 @@ export function pickVariedComps<TRanking extends WclRanking>(rankings: TRanking[
     pushRankings(minCompDifferences)
   }
 
-  return chosenRankings
+  return chosenRankings.toSorted((a, b) => b.score - a.score)
+}
+
+export function pickSpecRankings<TRanking extends WclRanking>(
+  rankings: TRanking[],
+  spec: Spec,
+  count: number,
+) {
+  return rankings
+    .toSorted((a, b) => b.score - a.score)
+    .filter((ranking) =>
+      ranking.team.some((member) => member.class === spec.class && member.spec === spec.spec),
+    )
+    .slice(0, count)
 }

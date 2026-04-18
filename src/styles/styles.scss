@@ -399,6 +399,25 @@ textarea.fancy {
   }
 }
 
+.dropdown-header {
+  background-color: $fancy-red;
+  border: 1px solid #c2c2c2;
+  border-top: none;
+  padding: 0.375rem 0.5rem;
+
+  transition: max-height, padding-top, padding-bottom, opacity;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-out;
+
+  &:not(.options-visible) {
+    max-height: 0;
+    opacity: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    overflow: hidden;
+  }
+}
+
 .dropdown-option {
   min-height: unset;
   transition: max-height, padding-top, padding-bottom, opacity;

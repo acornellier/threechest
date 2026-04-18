@@ -164,7 +164,7 @@ export async function getWclRoute(
   const file = `${wclRouteCacheFolder}/${code}-${fightId}.json`
   const hasCache = !ignoreCache && fs.existsSync(file)
 
-  console.log('getWclRoute', code, fightId, hasCache)
+  console.log('getWclRoute', code, fightId, 'hasCache: ', hasCache)
 
   if (hasCache) {
     const result = JSON.parse(fs.readFileSync(file, 'utf8')) as WclResult

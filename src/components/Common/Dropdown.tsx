@@ -23,6 +23,7 @@ type Props<T extends DropdownOption> = {
   selected?: T
   buttonContent?: ReactNode
   MainButtonIcon?: IconComponent
+  header?: ReactNode
   className?: string
   disabled?: boolean
   hideArrow?: boolean
@@ -41,6 +42,7 @@ export function Dropdown<T extends DropdownOption>({
   onReorder,
   buttonContent,
   MainButtonIcon,
+  header,
   short,
   outline,
   twoDimensional,
@@ -142,6 +144,11 @@ export function Dropdown<T extends DropdownOption>({
         style={{ marginTop: twoDimensional ? 0 : -3 }}
       >
         <div className="flex flex-col">
+          {header && (
+            <div className={`dropdown-header ${optionsVisible ? 'options-visible' : ''}`}>
+              {header}
+            </div>
+          )}
           <ReactSortable
             className="flex flex-col relative overflow-auto h-fit"
             disabled={onReorder === undefined}

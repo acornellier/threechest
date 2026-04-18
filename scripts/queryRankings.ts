@@ -46,7 +46,7 @@ for (const dungeon of shuffle(dungeons)) {
 }
 
 for (const { dungeonFolder, rankings, dungeonKey } of dungeonRankings) {
-  console.log(`Updating and adding rankings for ${dungeonKey}`)
+  console.log(`Updating and removing rankings for ${dungeonKey}`)
 
   // Remove old rankings
   for (const file of fs.readdirSync(dungeonFolder)) {
@@ -79,7 +79,7 @@ for (const { dungeonFolder, rankings, dungeonKey } of dungeonRankings) {
 }
 
 for (const { dungeonFolder, rankings, dungeonKey } of dungeonRankings) {
-  console.log(`Adding new rankings for ${dungeonKey}`)
+  console.log(`=== Adding new rankings for ${dungeonKey} ===`)
 
   // Add new rankings
   for (const ranking of rankings) {

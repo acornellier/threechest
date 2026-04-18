@@ -10,16 +10,21 @@ import { addToast } from '../../../store/reducers/toastReducer.ts'
 import { useDungeon } from '../../../store/routes/routeHooks.ts'
 import { useAppDispatch } from '../../../store/storeUtil.ts'
 import { classColors } from '../../../util/colors.ts'
-import { pickVariedComps, type WclRankingTeamMember } from '../../../util/wclRankings.ts'
+import {
+  pickSpecRankings,
+  pickTopRankings,
+  pickVariedComps,
+  type Spec,
+  tankSpecs,
+  type WclRankingTeamMember,
+} from '../../../util/wclRankings.ts'
 
-type More = 'TOP'
-type Default = 'DEFAULT'
 interface SampleRouteOption extends DropdownOption {
-  route: Route | More | Default
+  route: Route
 }
 
-const showMoreOption: SampleRouteOption = { id: 'MORE', route: 'TOP', content: 'Show top 10' }
-const showLessOption: SampleRouteOption = { id: 'LESS', route: 'DEFAULT', content: 'Show default' }
+const filterModes = ['varied', 'top', 'easy', 'spec'] as const
+type FilterMode = (typeof filterModes)[number]
 
 interface Props {
   hidden?: boolean
@@ -43,17 +48,33 @@ function sortTeam(member1: WclRankingTeamMember, member2: WclRankingTeamMember) 
 export function SampleRoutes({ hidden }: Props) {
   const dispatch = useAppDispatch()
   const dungeon = useDungeon()
-  const [showTop, setShowTop] = useState(false)
+  const [mode, setMode] = useState<FilterMode>('varied')
+  const [selectedSpec, setSelectedSpec] = useState<Spec>(tankSpecs[0]!)
 
   const options: SampleRouteOption[] = useMemo(() => {
     const routes = sampleRoutes[dungeon.key]
-    const rankings = routes.filter((route) => route.wclRanking).map((route) => route.wclRanking!)
-    const topRankings = showTop ? rankings.slice(0, 10) : pickVariedComps(rankings, 5)
-    const options = routes
+
+    function pickRankingsFromFilterMode() {
+      const rankings = routes.filter((route) => route.wclRanking).map((route) => route.wclRanking!)
+
+      if (mode === 'spec') {
+        return pickSpecRankings(rankings, selectedSpec, 10)
+      } else if (mode === 'top') {
+        return pickTopRankings(rankings, 10)
+      } else if (mode === 'varied') {
+        return pickVariedComps(rankings, 10)
+      }
+
+      return []
+    }
+
+    const rankings = pickRankingsFromFilterMode()
+
+    return routes
       .filter(
         (route) =>
-          (!showTop && !route.wclRanking) ||
-          (route.wclRanking && topRankings.includes(route.wclRanking)),
+          (mode === 'easy' && !route.wclRanking) ||
+          (route.wclRanking && rankings.includes(route.wclRanking)),
       )
       .map<SampleRouteOption>(({ route, wclRanking }) => ({
         id: route.uid,
@@ -90,9 +111,7 @@ export function SampleRoutes({ hidden }: Props) {
                   <div
                     key={member.id}
                     className="text-xs whitespace-nowrap"
-                    style={{
-                      color: classColors[member.class],
-                    }}
+                    style={{ color: classColors[member.class] }}
                   >
                     {member.name}
                     {idx === wclRanking.team.length}
@@ -102,17 +121,10 @@ export function SampleRoutes({ hidden }: Props) {
           </div>
         ),
       }))
-    if (rankings.length >= 5) options.push(showTop ? showLessOption : showMoreOption)
-    return options
-  }, [dungeon.key, showTop])
+  }, [dungeon.key, mode, selectedSpec])
 
   const onSelect = useCallback(
     (option: SampleRouteOption) => {
-      if (option.route === 'TOP' || option.route === 'DEFAULT') {
-        setShowTop(option.route === 'TOP')
-        return false
-      }
-
       dispatch(setPreviewRouteAsync(null))
       dispatch(setRouteFromSample(option.route))
       dispatch(addToast({ message: `Imported ${option.route.name} as a copy` }))
@@ -122,13 +134,53 @@ export function SampleRoutes({ hidden }: Props) {
 
   const onHover = useCallback(
     (option: SampleRouteOption | null) => {
-      if (option?.route === 'TOP' || option?.route === 'DEFAULT') return
       dispatch(setPreviewRouteAsync(option ? { routeId: option.id, route: option.route } : null))
     },
     [dispatch],
   )
 
-  const onClose = useCallback(() => setShowTop(false), [])
+  const handleModeChange = useCallback((mode: FilterMode) => {
+    setMode(mode)
+    setSelectedSpec((prev) => prev ?? tankSpecs[0]!)
+  }, [])
+
+  const filterHeader = (
+    <div className="flex flex-col gap-1">
+      <div className="flex items-center gap-1 justify-between">
+        {filterModes.map((m) => (
+          <button
+            key={m}
+            onClick={() => handleModeChange(m)}
+            className={`text-sm px-1 py-0.5 rounded transition-colors ${
+              mode === m
+                ? 'bg-white/25 text-white'
+                : 'text-gray-300 hover:bg-white/15 hover:text-white'
+            }`}
+          >
+            {m === 'varied' ? 'Varied' : m === 'easy' ? 'Easy' : m === 'top' ? 'Top' : 'By Tank'}
+          </button>
+        ))}
+      </div>
+      {mode === 'spec' && (
+        <div className="flex items-center gap-1 justify-between">
+          {tankSpecs.map((spec) => (
+            <button
+              key={`${spec.class}-${spec.spec}`}
+              onClick={() => setSelectedSpec(spec)}
+              className={`rounded overflow-hidden border ${selectedSpec?.class === spec.class && selectedSpec?.spec === spec.spec ? 'border-white' : 'border-transparent'}`}
+            >
+              <img
+                src={`https://wow.zamimg.com/images/wow/icons/large/${spec.icon}.jpg`}
+                width={22}
+                height={22}
+                alt={`${spec.spec} ${spec.class}`}
+              />
+            </button>
+          ))}
+        </div>
+      )}
+    </div>
+  )
 
   return (
     <Dropdown
@@ -136,7 +188,7 @@ export function SampleRoutes({ hidden }: Props) {
       options={options}
       onSelect={onSelect}
       onHover={onHover}
-      onClose={onClose}
+      header={filterHeader}
       buttonContent="Sample routes"
       MainButtonIcon={MagnifyingGlassIcon}
       className={`${hidden ? '[&]:hidden' : ''}`}
