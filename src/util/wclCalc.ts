@@ -330,7 +330,7 @@ function calculatePull(
       groupMobSpawns,
       spawnIdsTaken,
       pass,
-      pass * 50,
+      pass * 10,
     )
   } else if (pass <= 4) {
     return calculatePullFromSubPulls(
@@ -507,6 +507,17 @@ function findExactSpawns(
     const nearest = sortedAvailable[0]!
     mobSpawns.push(nearest)
     spawnIdsTaken.add(nearest.spawn.id)
+
+    const groupId = spawnGroup(nearest.spawn)
+    const groupSiblings = dungeon.mobSpawnsList.filter(
+      ({ spawn }) => spawnGroup(spawn) === groupId && !spawnIdsTaken.has(spawn.id),
+    )
+    if (groupSiblings.every(({ mob }) => mob.count === 0)) {
+      for (const sibling of groupSiblings) {
+        mobSpawns.push(sibling)
+        spawnIdsTaken.add(sibling.spawn.id)
+      }
+    }
   }
 
   groupsRemaining = groupsRemaining.map((group) => ({
@@ -515,7 +526,9 @@ function findExactSpawns(
       const groupId = spawnGroup(spawn)
       if (groupId !== group.id) return acc
 
-      if (!acc[mob.id]) throw new Error(`Mob ${mob.id} not found in group ${group.id}`)
+      if (!acc[mob.id] && mob.count > 0) {
+        throw new Error(`Mob ${mob.id} not found in group ${group.id}`)
+      }
 
       acc[mob.id] = acc[mob.id]! - 1
       return acc
