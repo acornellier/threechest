@@ -7,7 +7,6 @@ import { fetchWcl, getDeathEvents, getFight, type WclFight } from './wcl.ts'
 import * as path from 'path'
 
 const wclRouteCacheFolder = path.join(cacheFolder, 'wclRoute')
-const batchSize = 82
 
 type WclEvent = {
   timestamp: number
@@ -26,110 +25,124 @@ type WclEvent = {
 
 type WclEnemy = { gameId: number; actorId: number; instanceId: number }
 
-// Bone Magus is cringe
-// There are 2 ways to detect when mobs get pulled and they both fail
-// enemy casts - they're casting before they get pulled on the environment for some reason
-// player damage on the enemy - they have an absorb shield, and so their x/y coordinates aren't recorded
-const boneMagusGameId = 170882
+type EventsByKey = Map<string, WclEvent[]>
 
-async function getFirstEvents(code: string, fight: WclFight, enemies: WclEnemy[]) {
-  const events: WclEvent[] = []
-  const eventStart = fight.startTime + 10_000 // ignore first 10 seconds, mobs do random casts
+function enemyKey(actorId: number, instanceId: number) {
+  return `${actorId}_${instanceId}`
+}
 
-  console.time('query time')
-  let totalQueries = 0
-  for (let start = 0; start < enemies.length; start += batchSize) {
-    const end = Math.min(start + batchSize, enemies.length)
-    const enemyBatch = enemies.slice(start, end)
+async function fetchEventsByActor(
+  code: string,
+  fight: WclFight,
+  eventStart: number,
+  dataType: 'Casts' | 'DamageDone',
+  enemies: WclEnemy[],
+): Promise<EventsByKey> {
+  const uniqueGameIds = [...new Set(enemies.map((e) => e.gameId))].join(',')
+  const isSource = dataType === 'Casts'
+  const actorRole = isSource ? 'source' : 'target'
+  const byKey: EventsByKey = new Map()
+  let startTime = eventStart
+  let allCovered = false
 
-    const subQueries = enemyBatch
-      .map(({ actorId, instanceId, gameId }, idx) => {
-        return `
-      c${idx}: events(
-        fightIDs: ${fight.id}
-        sourceID: ${actorId}
-        sourceInstanceID: ${instanceId}
-        dataType: Casts
-        hostilityType: Enemies
-        limit: 2
-        startTime: ${eventStart}
-        endTime: 9999999999
-        includeResources: true
-        useActorIDs: false
-      ) {
-        data
-      }
-
-      d${idx}: events(
-        fightIDs: ${fight.id}
-        targetID: ${actorId}
-        targetInstanceID: ${instanceId}
-        limit: ${gameId === boneMagusGameId ? 100 : 3}
-        dataType: DamageDone
-        startTime: ${eventStart}
-        endTime: 9999999999
-        includeResources: true
-        useActorIDs: false
-      ) {
-        data
-      }
-      `
-      })
-      .join('\n')
-
+  while (!allCovered) {
     const query = `
 query {
   reportData {
-    report(code:"${code}") {
-      ${subQueries}
+    report(code: "${code}") {
+      events(
+        fightIDs: ${fight.id}
+        dataType: ${dataType}
+        ${isSource ? 'hostilityType: Enemies' : ''}
+        startTime: ${startTime}
+        endTime: 9999999999
+        includeResources: true
+        useActorIDs: false
+        limit: 10000
+        filterExpression: "${actorRole}.id IN (${uniqueGameIds})"
+      ) {
+        data
+        nextPageTimestamp
+      }
     }
   }
 }`
 
-    totalQueries += enemyBatch.length
+    const json = await fetchWcl<{
+      reportData: { report: { events: { data: WclEvent[]; nextPageTimestamp?: number } } }
+    }>(query)
 
-    const json = await fetchWcl<{ reportData: { report: Record<string, { data: WclEvent[] }> } }>(
-      query,
+    const { data, nextPageTimestamp } = json.reportData.report.events
+
+    for (const event of data) {
+      const actorId = isSource
+        ? event.source?.id ?? event.sourceID
+        : event.target?.id ?? event.targetID
+      const instanceId = isSource ? event.sourceInstance ?? 1 : event.targetInstance ?? 1
+      const key = enemyKey(actorId, instanceId)
+      if (!byKey.has(key)) {
+        byKey.set(key, [])
+      }
+      byKey.get(key)!.push(event)
+    }
+
+    if (!nextPageTimestamp) break
+
+    allCovered = enemies.every(({ actorId, instanceId }) =>
+      (byKey.get(enemyKey(actorId, instanceId)) ?? []).some(({ x, y }) => x && y),
     )
 
-    const resultsMap = json.reportData.report
-
-    const newEvents = enemyBatch
-      .map((_, idx) => {
-        const castsData = resultsMap[`c${idx}`]!.data.filter(
-          ({ target }) => target?.id !== -1 && target?.type !== 'NPC',
-        ).map((event) => ({
-          ...event,
-          sourceID: event.source?.id ?? event.sourceID,
-          targetID: event.target?.id ?? event.targetID,
-        }))
-
-        const damageData = resultsMap[`d${idx}`]!.data.filter(
-          ({ source, amount }) => source?.name !== 'Bloodworm' && amount,
-        ).map((event) => ({
-          ...event,
-          sourceID: event.source?.id ?? event.sourceID,
-          targetID: event.target?.id ?? event.targetID,
-        }))
-
-        const firstCast = castsData.find(({ x, y }) => x && y)
-        const firstDamage = damageData.find(({ x, y }) => x && y)
-        if (firstCast && firstDamage) {
-          // Cast data is more useful, so take it over damage data even if it's 3 seconds later
-          return firstCast.timestamp - 3000 < firstDamage.timestamp ? firstCast : firstDamage
-        } else if (firstCast || firstDamage) {
-          return firstCast ?? firstDamage
-        } else {
-          // No events with coordinates found
-          return damageData[0] ?? castsData[0]
-        }
-      })
-      .filter(Boolean)
-
-    events.push(...newEvents)
+    startTime = nextPageTimestamp
   }
+
+  return byKey
+}
+
+async function getFirstEvents(code: string, fight: WclFight, enemies: WclEnemy[]) {
+  const eventStart = fight.startTime + 10_000 // ignore first 10 seconds, mobs do random casts
+
+  console.time('query time')
+
+  const [castsByKey, damageByKey] = await Promise.all([
+    fetchEventsByActor(code, fight, eventStart, 'Casts', enemies),
+    fetchEventsByActor(code, fight, eventStart, 'DamageDone', enemies),
+  ])
+
+  const events = enemies
+    .map(({ actorId, instanceId }) => {
+      const key = enemyKey(actorId, instanceId)
+
+      const castsData = (castsByKey.get(key) ?? [])
+        .filter(({ target }) => target?.id !== -1 && target?.type !== 'NPC')
+        .map((event) => ({
+          ...event,
+          sourceID: event.source?.id ?? event.sourceID,
+          targetID: event.target?.id ?? event.targetID,
+        }))
+
+      const damageData = (damageByKey.get(key) ?? [])
+        .filter(({ source, amount }) => source?.name !== 'Bloodworm' && amount)
+        .map((event) => ({
+          ...event,
+          sourceID: event.source?.id ?? event.sourceID,
+          targetID: event.target?.id ?? event.targetID,
+        }))
+
+      const firstCast = castsData.find(({ x, y }) => x && y)
+      const firstDamage = damageData.find(({ x, y }) => x && y)
+      if (firstCast && firstDamage) {
+        // Cast data is more useful, so take it over damage data even if it's 3 seconds later
+        return firstCast.timestamp - 3000 < firstDamage.timestamp ? firstCast : firstDamage
+      } else if (firstCast || firstDamage) {
+        return firstCast ?? firstDamage
+      } else {
+        // No events with coordinates found
+        return damageData[0] ?? castsData[0]
+      }
+    })
+    .filter(Boolean)
+
   console.timeEnd('query time')
-  console.log(`spent points: ${enemies.length * 2}, total queries: ${totalQueries}`)
 
   return events
 }
