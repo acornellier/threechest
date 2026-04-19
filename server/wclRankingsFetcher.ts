@@ -87,5 +87,5 @@ export async function fetchTopRankings(
     filtered.forEach((r) => existingIds.add(`${r.report.code}-${r.report.fightID}`))
   }
 
-  return [...base, ...specRankings]
+  return [...base, ...specRankings].filter((ranking) => !!ranking.report.code)
 }

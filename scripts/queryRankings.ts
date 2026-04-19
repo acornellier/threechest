@@ -9,7 +9,7 @@ import type { SampleRoute } from '../src/util/types.ts'
 import * as path from 'path'
 import { shuffle } from '../src/util/nodash.ts'
 import type { WclFightRanking, WclRanking, WclSpecRanking } from '../src/util/wclRankings.ts'
-import type { DungeonKey } from '../src/data/dungeonKeys.ts'
+import { type DungeonKey, dungeonKeys } from '../src/data/dungeonKeys.ts'
 
 const dirname = getDirname(import.meta.url)
 
@@ -23,8 +23,10 @@ interface DungeonRankings {
 }
 
 const arg = process.argv.slice(2)
-const specificDungeon: DungeonKey | null = arg.length ? (arg[0] as DungeonKey) : null
+const specificDungeon: DungeonKey | null =
+  arg.length && dungeonKeys.includes(arg[0]!) ? (arg[0] as DungeonKey) : null
 const ignoreCache = arg.includes('--reset')
+const recalcFromCache = arg.includes('--recalc')
 
 const dungeonRankings: DungeonRankings[] = []
 for (const dungeon of shuffle(dungeons)) {
@@ -81,11 +83,11 @@ for (const { dungeonFolder, rankings, dungeonKey } of dungeonRankings) {
 for (const { dungeonFolder, rankings, dungeonKey } of dungeonRankings) {
   console.log(`=== Adding new rankings for ${dungeonKey} ===`)
 
-  // Add new rankings
+  // Add new rankings and calculate routes
   for (const ranking of rankings) {
     const { code, fightID } = ranking.report
     const file = `${dungeonFolder}/${toFileName(ranking.report)}`
-    if (fs.existsSync(file) && !ignoreCache) continue
+    if (fs.existsSync(file) && !ignoreCache && !recalcFromCache) continue
 
     let result: WclResult | null = null
     try {
