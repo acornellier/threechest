@@ -725,8 +725,8 @@
           "idx": 21,
           "group": 25,
           "pos": [
-            -175.74,
-            108.37
+            -178.43,
+            107.67
           ]
         },
         {
@@ -743,8 +743,8 @@
           "idx": 23,
           "group": 51,
           "pos": [
-            -154.2,
-            149.45
+            -156.12,
+            150.79
           ]
         },
         {
@@ -1125,8 +1125,8 @@
           "idx": 23,
           "group": 25,
           "pos": [
-            -169.61,
-            111.13
+            -173.94,
+            113.82
           ]
         },
         {
@@ -1134,8 +1134,8 @@
           "idx": 24,
           "group": 51,
           "pos": [
-            -154.19,
-            145.49
+            -156.3,
+            146.26
           ]
         },
         {
@@ -1557,8 +1557,8 @@
           "idx": 22,
           "group": 25,
           "pos": [
-            -171.92,
-            108.45
+            -175.67,
+            109.89
           ]
         },
         {
@@ -1861,8 +1861,8 @@
           "idx": 8,
           "group": 51,
           "pos": [
-            -158.3,
-            149.63
+            -160.12,
+            150.5
           ]
         }
       ]
@@ -2117,8 +2117,8 @@
           "idx": 12,
           "group": 25,
           "pos": [
-            -177.61,
-            112.28
+            -180.01,
+            111.7
           ]
         },
         {
@@ -2126,8 +2126,8 @@
           "idx": 13,
           "group": 25,
           "pos": [
-            -173.73,
-            111.8
+            -177.29,
+            113.72
           ]
         },
         {
@@ -2153,8 +2153,8 @@
           "idx": 16,
           "group": 51,
           "pos": [
-            -158.49,
-            145.63
+            -160.12,
+            145.92
           ]
         },
         {
@@ -2738,6 +2738,84 @@
         -235.4,
         123.2
       ]
+    },
+    {
+      "type": "genericAssignablePOI",
+      "pos": [
+        -222,
+        119.35
+      ],
+      "info": {
+        "description": null,
+        "texture": null,
+        "spellId": null,
+        "size": 12
+      }
+    },
+    {
+      "type": "genericAssignablePOI",
+      "pos": [
+        -171.46,
+        109.76
+      ],
+      "info": {
+        "description": null,
+        "texture": null,
+        "spellId": null,
+        "size": 12
+      }
+    },
+    {
+      "type": "genericAssignablePOI",
+      "pos": [
+        -151.09,
+        148.31
+      ],
+      "info": {
+        "description": null,
+        "texture": null,
+        "spellId": null,
+        "size": 12
+      }
+    },
+    {
+      "type": "genericAssignablePOI",
+      "pos": [
+        -198.53,
+        194.26
+      ],
+      "info": {
+        "description": null,
+        "texture": null,
+        "spellId": null,
+        "size": 12
+      }
+    },
+    {
+      "type": "genericAssignablePOI",
+      "pos": [
+        -136.3,
+        208.21
+      ],
+      "info": {
+        "description": null,
+        "texture": null,
+        "spellId": null,
+        "size": 12
+      }
+    },
+    {
+      "type": "genericAssignablePOI",
+      "pos": [
+        -111.03,
+        195.54
+      ],
+      "info": {
+        "description": null,
+        "texture": null,
+        "spellId": null,
+        "size": 12
+      }
     }
   ]
 }
