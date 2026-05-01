@@ -14,6 +14,7 @@ export type SavedRoute = {
   name: string
   uid: string
   dungeonKey: DungeonKey
+  cloudSyncedAt?: string
 }
 
 export type Note = {

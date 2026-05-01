@@ -37,9 +37,11 @@ export function PullTooltip({ pull }: Props) {
           Pull efficiency: <span style={{ color: efficiencyColor }}>{efficiencyScore}</span>
         </div>
       )}
-      <div>
-        Total efficiency: <span style={{ color: totalEffiencyColor }}>{totalEffiency}</span>
-      </div>
+      {totalEffiency > 0 && (
+        <div>
+          Total efficiency: <span style={{ color: totalEffiencyColor }}>{totalEffiency}</span>
+        </div>
+      )}
       <div>
         {sortedCounts.map(({ mob, count }) => (
           <div key={mob.id}>

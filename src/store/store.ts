@@ -7,6 +7,7 @@ import { toastReducer } from './reducers/toastReducer.ts'
 import { listenerMiddleware } from './listener.ts'
 import { mapReducer } from './reducers/mapReducer.ts'
 import { collabReducer } from './collab/collabReducer.ts'
+import { cloudReducer } from './reducers/cloudReducer.ts'
 
 export const store = configureStore({
   reducer: {
@@ -16,6 +17,7 @@ export const store = configureStore({
     map: mapReducer,
     toast: toastReducer,
     collab: collabReducer,
+    cloud: cloudReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({ serializableCheck: false, immutableCheck: { warnAfter: 200 } }).prepend(
