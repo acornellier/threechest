@@ -1,6 +1,5 @@
 ﻿import { DungeonDropdown } from './DungeonDropdown.tsx'
 import { Button } from '../Common/Button.tsx'
-import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline'
 import { sidebarWidth } from '../Sidebar/Sidebar.tsx'
 import { UndoRedo } from './UndoRedo.tsx'
 import { DrawToolbar } from '../Map/Draw/DrawToolbar.tsx'

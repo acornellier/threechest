@@ -7,6 +7,7 @@ import undoable, { combineFilters, excludeAction, includeAction } from 'redux-un
 import { addPullFunc, boxSelectSpawnsAction, toggleSpawnAction } from './routeActions.ts'
 import * as localforage from 'localforage'
 import type { AppDispatch, RootState } from '../store.ts'
+import { getSavedRouteKey, saveRoute } from './routeStorage.ts'
 import { persistReducer } from 'redux-persist'
 import { indexedDbStorage } from '../storage.ts'
 import { routeMigrate, routePersistVersion } from './routeMigrations.ts'
@@ -15,6 +16,7 @@ import { createAppSlice } from '../storeUtil.ts'
 import type { DungeonKey } from '../../data/dungeonKeys.ts'
 import { setMapMode } from '../reducers/mapReducer.ts'
 import type { WowMark } from '../../util/marks.ts'
+import { pullChangedRoutes, pushChangedRoutes } from './routeCloudThunks.ts'
 
 export interface RouteState {
   route: Route
@@ -55,8 +57,8 @@ const makeEmptyRoute = (dungeonKey: DungeonKey, savedRoutes: SavedRoute[]): Rout
   uid: newRouteUid(),
 })
 
-const savedRouteKey = 'savedRoute'
-export const getSavedRouteKey = (routeId: string) => [savedRouteKey, routeId].join('-')
+export { getSavedRouteKey, saveRoute }
+
 export async function loadRouteFromStorage(routeId: string, dispatch: AppDispatch) {
   const route = await localforage.getItem<Route>(getSavedRouteKey(routeId))
   if (route !== null) return route
@@ -67,8 +69,6 @@ export async function loadRouteFromStorage(routeId: string, dispatch: AppDispatc
   dispatch(addToast({ message: errorMessage, type: 'error' }))
   throw new Error(`Failed to load route ${routeId}`)
 }
-
-export const saveRoute = (route: Route) => localforage.setItem(getSavedRouteKey(route.uid), route)
 
 export const loadRoute = createAsyncThunk('routes/loadRoute', (routeId: string, thunkAPI) => {
   return loadRouteFromStorage(routeId, thunkAPI.dispatch as AppDispatch)
@@ -315,6 +315,13 @@ const baseReducer = createAppSlice({
     deleteSavedRoute(state, { payload: routeId }: PayloadAction<string>) {
       state.savedRoutes = state.savedRoutes.filter((route) => route.uid !== routeId)
     },
+    setCloudSyncedAt(
+      state,
+      { payload: { routeId, syncedAt } }: PayloadAction<{ routeId: string; syncedAt: string }>,
+    ) {
+      const savedRoute = state.savedRoutes.find((r) => r.uid === routeId)
+      if (savedRoute) savedRoute.cloudSyncedAt = syncedAt
+    },
     setCurDungeonSavedRoutes(state, { payload: newSavedRoutes }: PayloadAction<SavedRoute[]>) {
       const otherSavedRoutes = state.savedRoutes.filter(
         (route) => route.dungeonKey !== state.route.dungeonKey,
@@ -329,6 +336,35 @@ const baseReducer = createAppSlice({
 
     builder.addCase(loadRoute.fulfilled, (state, { payload: route }) => {
       setRouteFresh(state, route)
+    })
+
+    builder.addCase(pushChangedRoutes.fulfilled, (state, { payload: pushed }) => {
+      for (const { routeId, syncedAt } of pushed) {
+        const savedRoute = state.savedRoutes.find((r) => r.uid === routeId)
+        if (savedRoute) savedRoute.cloudSyncedAt = syncedAt
+      }
+    })
+
+    builder.addCase(pullChangedRoutes.fulfilled, (state, { payload }) => {
+      for (const { route, syncedAt } of payload) {
+        const existing = state.savedRoutes.find((r) => r.uid === route.uid)
+        if (existing) {
+          existing.name = route.name
+          existing.dungeonKey = route.dungeonKey
+          existing.cloudSyncedAt = syncedAt
+        } else {
+          state.savedRoutes.push({
+            uid: route.uid,
+            name: route.name,
+            dungeonKey: route.dungeonKey,
+            cloudSyncedAt: syncedAt,
+          })
+        }
+
+        if (state.route.uid === route.uid) {
+          setRouteFresh(state, route)
+        }
+      }
     })
 
     builder.addCase(deleteRoute.fulfilled, (state, { payload: { deletedRouteId, route } }) => {
@@ -440,4 +476,5 @@ export const {
   updateSavedRoutes,
   deleteSavedRoute,
   setCurDungeonSavedRoutes,
+  setCloudSyncedAt,
 } = baseReducer.actions

@@ -6,6 +6,7 @@ import { REHYDRATE } from 'redux-persist/es/constants'
 import { ActionCreators } from 'redux-undo'
 import {
   backupCollabRoute,
+  deleteRoute,
   duplicateRoute,
   loadRoute,
   newRoute,
@@ -18,6 +19,7 @@ import {
   setRouteFromWcl,
   updateSavedRoutes,
 } from './routes/routesReducer.ts'
+import { deleteUserRoute } from '../api/deleteUserRouteApi.ts'
 import {
   endCollab,
   promoteSelfToHost,
@@ -156,6 +158,17 @@ listenerMiddleware.startListening({
     listenerApi.dispatch(
       addToast({ message: 'You have been promoted to the host of this collab.', type: 'info' }),
     )
+  },
+})
+
+// on route delete, remove from Firestore
+listenerMiddleware.startListening({
+  actionCreator: deleteRoute.fulfilled,
+  effect: async ({ payload: { deletedRouteId } }, listenerApi) => {
+    const state = listenerApi.getState() as RootState
+    const uid = state.cloud.user?.uid
+    if (!uid) return
+    await deleteUserRoute(uid, deletedRouteId)
   },
 })
 

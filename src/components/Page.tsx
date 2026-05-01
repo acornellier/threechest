@@ -10,6 +10,8 @@ import { useDungeon } from '../store/routes/routeHooks.ts'
 import { useAppDispatch } from '../store/storeUtil.ts'
 import { TailwindBreakpoint } from './Common/TailwindBreakpoint.tsx'
 import { CollabSyncWrapper } from './Collab/CollabSync.tsx'
+import { AuthSync } from './Auth/AuthSync.tsx'
+import { RouteCloudSync } from './Auth/RouteCloudSync.tsx'
 import { BackgroundImage } from './Common/BackgroundImage.tsx'
 import { Footer } from './Header/Footer.tsx'
 import { isDev } from '../util/isDev.ts'
@@ -37,6 +39,8 @@ export function Page() {
       <ConfirmImportModal />
       <RouteSaver />
       <CollabSyncWrapper />
+      <AuthSync />
+      <RouteCloudSync />
       {isDev && <TailwindBreakpoint />}
     </div>
   )

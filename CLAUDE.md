@@ -72,5 +72,17 @@ Deployed on Vercel. `vite.config.vercelServer.ts` bundles the Express server as 
 - **`Point` is `[y, x]`** (not `[x, y]`) — this matches Leaflet's coordinate system.
 - Game data types (`Dungeon`, `Mob`, etc.) live in `src/data/types.ts`; route/user-created types (`Route`, `Pull`, etc.) live in `src/util/types.ts`.
 - `MobFake` / `SpawnFake` / `MdtDungeonFake` types exist only to accept raw JSON (where tuples are typed as `number[]`); cast to the real types after loading.
-- ESLint is strict (`max-warnings 0`). Run `yarn lint` before committing.
 - No test suite — correctness is verified manually and via TypeScript.
+
+## Behavior
+- I am a senior dev
+- Don't hesitate to ask me to debug something
+- When we are debugging, don't delete my debug logs
+- When the solution is unclear, **discuss approaches before implementing**. It is better to ask questions than to make assumptions.
+- Exact specifications: When given exact values (like font sizes, dimensions), use them precisely
+- Component extraction: Prefer extracting functionality into separate components for better organization
+- Clean separation: Separate concerns between UI logic and business logic
+
+## Linting
+- Never run linters, tests, migrations, or builds unless explicitly asked.
+- In javascript, always use braces with single line if/for/while blocks
