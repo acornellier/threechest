@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react'
 import type { Route } from '../../util/types.ts'
 import { useAppDispatch, useRootSelector } from '../../store/storeUtil.ts'
-import { selectUser, setSyncState } from '../../store/reducers/cloudReducer.ts'
+import { selectSyncState, selectUser, setSyncState } from '../../store/reducers/cloudReducer.ts'
 import { useActualRoute } from '../../store/routes/routeHooks.ts'
 import { useIsGuestCollab } from '../../store/collab/collabReducer.ts'
 import { saveRouteToCloud } from '../../api/saveUserRouteApi.ts'
@@ -18,6 +18,7 @@ async function pushRoute(uid: string, route: Route, dispatch: AppDispatch) {
 export function RouteCloudSync() {
   const dispatch = useAppDispatch()
   const user = useRootSelector(selectUser)
+  const syncState = useRootSelector(selectSyncState)
   const route = useActualRoute()
   const isGuestCollab = useIsGuestCollab()
   const savedRoutes = useRootSelector((state) => state.routes.present.savedRoutes)
@@ -52,6 +53,17 @@ export function RouteCloudSync() {
       if (timerRef.current) clearTimeout(timerRef.current)
     }
   }, [dispatch, user, route, isGuestCollab])
+
+  useEffect(() => {
+    const handleBeforeUnload = (e: BeforeUnloadEvent) => {
+      if (syncState === 'dirty') {
+        e.preventDefault()
+      }
+    }
+
+    window.addEventListener('beforeunload', handleBeforeUnload)
+    return () => window.removeEventListener('beforeunload', handleBeforeUnload)
+  }, [syncState])
 
   return null
 }
