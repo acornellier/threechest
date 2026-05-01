@@ -63,8 +63,8 @@ export type PointOfInterest = {
   sizeMult?: number
   info?: {
     description: string | null
-    texture: number
-    spellId: number
+    texture: number | null
+    spellId: number | null
     size: number
   }
 }
