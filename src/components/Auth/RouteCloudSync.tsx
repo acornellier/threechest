@@ -8,7 +8,7 @@ import { saveRouteToCloud } from '../../api/saveUserRouteApi.ts'
 import { setCloudSyncedAt } from '../../store/routes/routesReducer.ts'
 import type { AppDispatch } from '../../store/store.ts'
 
-const DEBOUNCE_MS = 2_000
+const DEBOUNCE_MS = 5_000
 
 async function pushRoute(uid: string, route: Route, dispatch: AppDispatch) {
   const syncedAt = await saveRouteToCloud(uid, route)
