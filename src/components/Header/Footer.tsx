@@ -66,7 +66,6 @@ function UserMenu() {
   const [open, setOpen] = useState(false)
   const [pushing, setPushing] = useState(false)
   const [pulling, setPulling] = useState(false)
-  const isAltKeyDown = useKeyHeld('Alt')
   const isShiftKeyDown = useKeyHeld('Shift')
 
   const onSignIn = useCallback(() => {
@@ -99,10 +98,6 @@ function UserMenu() {
   }, [dispatch, user])
 
   if (!user) {
-    if (!isAltKeyDown || !isShiftKeyDown) {
-      return null
-    }
-
     return (
       <Button Icon={GoogleIcon} iconSize={18} onClick={onSignIn}>
         Sign in
