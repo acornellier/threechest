@@ -7,7 +7,7 @@ import {
 } from '../../util/wclCalc.ts'
 import { useEffect, useState } from 'react'
 
-const url = ''
+const url = 'https://www.warcraftlogs.com/reports/PaMTHx6Ar42tK7mc?fight=12'
 
 const rectSize = 2
 
