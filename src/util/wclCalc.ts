@@ -330,7 +330,7 @@ function calculatePull(
       groupMobSpawns,
       spawnIdsTaken,
       pass,
-      pass * 10,
+      pass * 12,
     )
   } else if (pass <= 4) {
     return calculatePullFromSubPulls(
