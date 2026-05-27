@@ -22,6 +22,7 @@ export interface RouteState {
   route: Route
   selectedPull: number
   savedRoutes: SavedRoute[]
+  lastSelectedRoutePerDungeon: Partial<Record<DungeonKey, string>>
   collabBackupRoute?: Route | null
   liveBackupRoute?: Route | null
 }
@@ -94,9 +95,16 @@ export const setDungeon = createAsyncThunk(
   'routes/setDungeon',
   async (dungeonKey: DungeonKey, thunkAPI) => {
     const state = thunkAPI.getState() as RootState
+    const routeState = state.routes.present
+    const preferredUid = routeState.lastSelectedRoutePerDungeon?.[dungeonKey]
+    const preferredExists =
+      preferredUid && routeState.savedRoutes.some((r) => r.uid === preferredUid)
+    if (preferredExists) {
+      return await loadRouteFromStorage(preferredUid, thunkAPI.dispatch as AppDispatch)
+    }
     return await getLastDungeonRoute(
       dungeonKey,
-      state.routes.present.savedRoutes,
+      routeState.savedRoutes,
       thunkAPI.dispatch as AppDispatch,
     )
   },
@@ -122,11 +130,14 @@ export const initialState: RouteState = {
   route: makeEmptyRoute(defaultDungeonKey, []),
   selectedPull: 0,
   savedRoutes: [],
+  lastSelectedRoutePerDungeon: {},
 }
 
 function setRouteFresh(state: RouteState, route: Route) {
   if (route.uid !== state.route.uid) state.selectedPull = 0
   state.route = route
+  state.lastSelectedRoutePerDungeon ??= {}
+  state.lastSelectedRoutePerDungeon[route.dungeonKey] = route.uid
 }
 
 function giveRouteNewNameUid(state: RouteState, route: Route) {
@@ -147,6 +158,8 @@ const baseReducer = createAppSlice({
     },
     duplicateRoute(state) {
       giveRouteNewNameUid(state, state.route)
+      state.lastSelectedRoutePerDungeon ??= {}
+      state.lastSelectedRoutePerDungeon[state.route.dungeonKey] = state.route.uid
     },
     setRouteFromMdt(
       state,
