@@ -1968,15 +1968,6 @@
             -31.71,
             155.29
           ]
-        },
-        {
-          "id": "14-32",
-          "idx": 32,
-          "group": null,
-          "pos": [
-            -205.2,
-            99.72
-          ]
         }
       ]
     },
@@ -2518,6 +2509,40 @@
           "pos": [
             -140.57,
             54.74
+          ]
+        }
+      ]
+    },
+    {
+      "id": 256574,
+      "enemyIndex": 23,
+      "name": "Shadowguard Champion",
+      "count": 0,
+      "health": 1670730,
+      "creatureType": "Humanoid",
+      "scale": 1.2,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [
+        {
+          "id": 1262517,
+          "attributes": []
+        },
+        {
+          "id": 1264036,
+          "attributes": [
+            "enrage"
+          ]
+        }
+      ],
+      "spawns": [
+        {
+          "id": "23-32",
+          "idx": 32,
+          "group": null,
+          "pos": [
+            -205.2,
+            99.72
           ]
         }
       ]

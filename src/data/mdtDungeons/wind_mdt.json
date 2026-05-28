@@ -1827,6 +1827,24 @@
             -67.33,
             242.87
           ]
+        },
+        {
+          "id": "14-41",
+          "idx": 41,
+          "group": 61,
+          "pos": [
+            -77.33,
+            239.77
+          ]
+        },
+        {
+          "id": "14-42",
+          "idx": 42,
+          "group": 61,
+          "pos": [
+            -80.81,
+            237.15
+          ]
         }
       ]
     },
@@ -2808,28 +2826,6 @@
           ]
         }
       ]
-    },
-    {
-      "id": 250883,
-      "enemyIndex": 31,
-      "name": "Scouting Trapper",
-      "count": 2,
-      "health": 1518845,
-      "creatureType": "Undead",
-      "scale": 1,
-      "isBoss": false,
-      "characteristics": [],
-      "spells": [
-        {
-          "id": 1219224,
-          "attributes": []
-        },
-        {
-          "id": 1219266,
-          "attributes": []
-        }
-      ],
-      "spawns": []
     }
   ],
   "pois": [
