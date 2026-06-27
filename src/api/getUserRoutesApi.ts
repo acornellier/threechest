@@ -1,6 +1,6 @@
 import { doc, getDoc } from 'firebase/firestore'
 import { firestore } from '../store/firestore.ts'
-import type { Route } from '../util/types.ts'
+import type { Drawing, Route } from '../util/types.ts'
 
 export type UserManifest = {
   routes: Record<string, string>
@@ -14,5 +14,11 @@ export async function getUserManifest(uid: string): Promise<UserManifest> {
 export async function getRouteFromCloud(uid: string, routeId: string): Promise<Route | null> {
   const snap = await getDoc(doc(firestore, 'users', uid, 'routes', routeId))
   if (!snap.exists()) return null
-  return snap.data() as Route
+
+  // Drawings are stored as a JSON string (Firestore can't hold nested arrays).
+  const { drawingsJson, drawings, ...rest } = snap.data() as Route & { drawingsJson?: string }
+  return {
+    ...rest,
+    drawings: drawingsJson ? (JSON.parse(drawingsJson) as Drawing[]) : (drawings ?? []),
+  }
 }
