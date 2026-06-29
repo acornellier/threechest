@@ -1,4 +1,4 @@
-import type { MdtDungeon, MdtDungeonFake, MobSpawn, SpawnId } from './types.ts'
+import type { MdtDungeon, MdtDungeonFake, MobSpawn, SpawnFake, SpawnId } from './types.ts'
 import { mdtEnemiesToMobSpawns } from '../util/mobSpawns.ts'
 import type { DungeonKey } from './dungeonKeys.ts'
 import aa from './mdtDungeons/aa_mdt.json'
@@ -19,6 +19,28 @@ const mdtDungeonsFake: Record<DungeonKey, MdtDungeonFake> = {
   pit,
   seat,
   sky,
+}
+
+// Patches for incorrect upstream MDT data
+const mdtPatches: Partial<
+  Record<DungeonKey, Array<{ spawnId: SpawnId; patch: Partial<SpawnFake> }>>
+> = {
+  wind: [
+    { spawnId: '6-3', patch: { group: null } }, // incorrectly assigned to group 36
+  ],
+}
+
+for (const [key, patches] of Object.entries(mdtPatches)) {
+  const dungeon = mdtDungeonsFake[key as DungeonKey]
+  for (const { spawnId, patch } of patches) {
+    for (const enemy of dungeon.enemies) {
+      const spawn = enemy.spawns.find((s) => s.id === spawnId)
+      if (spawn) {
+        Object.assign(spawn, patch)
+        break
+      }
+    }
+  }
 }
 
 export const mdtDungeons = mdtDungeonsFake as Record<DungeonKey, MdtDungeon>
