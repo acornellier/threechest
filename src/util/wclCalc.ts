@@ -303,11 +303,20 @@ function wclEventsToPulls(
 
   let passIdx = 0
   for (const pass of passes) {
-    if (maxPasses && ++passIdx > maxPasses) continue
+    ++passIdx
+    if (maxPasses && passIdx > maxPasses) continue
     for (let idx = 0; idx < pullStatuses.length; idx++) {
       const pullStatus = pullStatuses[idx]!
 
       if (pullStatus.complete) continue
+
+      if (idx + 1 === 11)
+        console.log({
+          pull: idx + 1,
+          passIdx,
+          mobEvents: structuredClone(pullStatus.mobEventsRemaining),
+          groupsRemaining: structuredClone(groupsRemaining),
+        })
 
       const calculatedPull = pass.run({
         mobEvents: pullStatus.mobEventsRemaining,
@@ -332,12 +341,14 @@ function wclEventsToPulls(
     }
   }
 
-  return pullStatuses
-    .filter((pullStatus) => pullStatus.spawnIds.length > 0)
-    .map<Pull>(({ spawnIds }, idx) => ({
-      id: idx,
-      spawns: spawnIds,
-    }))
+  return (
+    pullStatuses
+      // .filter((pullStatus) => pullStatus.spawnIds.length > 0)
+      .map<Pull>(({ spawnIds }, idx) => ({
+        id: idx,
+        spawns: spawnIds,
+      }))
+  )
 }
 
 function nearestSpawnDistance(pos: Point, spawnPositions: Point[] | undefined): number {

@@ -11,6 +11,7 @@ import { useLocalStorage } from '../../util/hooks/useLocalStorage.ts'
 import { useShortcut } from '../../util/hooks/useShortcut.ts'
 import { importWclRoute } from '../../store/reducers/importReducer.ts'
 import { useAppDispatch } from '../../store/storeUtil.ts'
+import { mapBounds } from '../../data/coordinates/mapBounds.ts'
 
 const rectSize = 2
 
@@ -74,7 +75,7 @@ export function WclCoordinateTest() {
   if (!shown || !wclResult) return null
 
   return wclResult.events
-    .filter((point) => point.x && point.y && point.mapID)
+    .filter((point) => point.x && point.y && point.mapID && mapBounds[point.mapID])
     .map((event, idx) => {
       // if (idx > 40) return null
       const point = wclPointToLeafletPoint(event as WclPoint, wclResult.deathEvents)
