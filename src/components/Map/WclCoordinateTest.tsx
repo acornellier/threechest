@@ -1,5 +1,10 @@
 import { Rectangle, Tooltip } from 'react-leaflet'
-import { type WclPoint, wclPointToLeafletPoint, type WclResult } from '../../util/wclCalc.ts'
+import {
+  passes,
+  type WclPoint,
+  wclPointToLeafletPoint,
+  type WclResult,
+} from '../../util/wclCalc.ts'
 import { useCallback, useEffect, useState } from 'react'
 import { useRoute } from '../../store/routes/routeHooks.ts'
 import { useLocalStorage } from '../../util/hooks/useLocalStorage.ts'
@@ -18,10 +23,36 @@ export function WclCoordinateTest() {
   const onShortcut = useCallback(() => setShown((prev) => !prev), [setShown])
   useShortcut('w', onShortcut)
 
+  const [maxPasses, setMaxPasses] = useState<number | undefined>(undefined)
+  const recalculate = useCallback(
+    (maxPasses?: number) => {
+      if (maxPasses !== undefined) {
+        console.log('pass', maxPasses, passes[maxPasses - 1]?.name)
+      }
+      if (route.wclUrlInfo) 
+        dispatch(importWclRoute({ wclUrlInfo: route.wclUrlInfo, maxPasses }))
+    },
+    [dispatch, route.wclUrlInfo],
+  )
+
   const onRecalculate = useCallback(() => {
-    if (route.wclUrlInfo) dispatch(importWclRoute({ wclUrlInfo: route.wclUrlInfo }))
-  }, [dispatch, route.wclUrlInfo])
+    setMaxPasses(undefined)
+    recalculate()
+  }, [recalculate])
   useShortcut('r', onRecalculate)
+
+  const nextPass = useCallback(() => {
+    const newMaxPasses = (maxPasses ?? 0) + 1
+    setMaxPasses(newMaxPasses)
+    recalculate(newMaxPasses)
+  }, [recalculate, maxPasses])
+  useShortcut('l', nextPass)
+
+  const resetPasses = useCallback(() => {
+    setMaxPasses(1)
+    recalculate(1)
+  }, [recalculate])
+  useShortcut('n', resetPasses)
 
   useEffect(() => {
     if (!route.wclUrlInfo) {

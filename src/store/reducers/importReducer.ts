@@ -67,7 +67,14 @@ export const importSlice = createAppSlice({
       thunkApi.dispatch(importMdtRoute({ text: firestoreRoute.mdtString }))
     }),
     importWclRoute: create.asyncThunk(
-      async ({ url, wclUrlInfo }: { url?: string; wclUrlInfo?: WclUrlInfo }, thunkApi) => {
+      async (
+        {
+          url,
+          wclUrlInfo,
+          maxPasses,
+        }: { url?: string; wclUrlInfo?: WclUrlInfo; maxPasses?: number },
+        thunkApi,
+      ) => {
         if (!url && !wclUrlInfo) throw new Error(`must specify url or wclUrlInfo`)
         wclUrlInfo ??= urlToWclInfo(url!)
 
@@ -93,7 +100,7 @@ export const importSlice = createAppSlice({
           const { result, cached } = await wclRouteApi(wclUrlInfo)
           if (!result || !result.events) throw new Error('Failed to parse WCL report.')
 
-          const { route, errors } = wclResultToRoute(result)
+          const { route, errors } = wclResultToRoute(result, maxPasses)
           thunkApi.dispatch(setRouteFromWcl(route))
 
           if (!cached) wclRateStatus.usesSinceReset++
@@ -103,7 +110,7 @@ export const importSlice = createAppSlice({
             thunkApi.dispatch(
               addToast({ message: wclErrorMessage, type: 'error', duration: 10_000 }),
             )
-          } else {
+          } else if (maxPasses == undefined) {
             thunkApi.dispatch(
               addToast({
                 message: `WCL route imported as ${route.name}. WCL conversions remaining this hour: ${maxUsesPerHour - wclRateStatus.usesSinceReset}/${maxUsesPerHour}`,
