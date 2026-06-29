@@ -309,12 +309,6 @@ function wclEventsToPulls(
 
       if (pullStatus.complete) continue
 
-      console.debug({
-        pull: idx + 1,
-        pass: pass.name,
-        mobEvents: pullStatus.mobEventsRemaining,
-      })
-
       const calculatedPull = pass.run({
         mobEvents: pullStatus.mobEventsRemaining,
         groupsRemaining,
