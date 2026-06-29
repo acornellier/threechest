@@ -133,13 +133,11 @@ const rawMdtMapOffsets: Record<
     x: -418,
     y: 59,
   },
-  2493: {
-    // should be mirrored vertically
+  2496: {
     w: 2032,
     h: 1356,
     x: -459,
     y: 1206,
-    rotate: 180,
   },
   2494: {
     w: 1952,
@@ -147,13 +145,11 @@ const rawMdtMapOffsets: Record<
     x: 1396,
     y: 18,
   },
-  2496: {
-    // should be mirrored vertically
+  2493: {
     w: 1828,
     h: 1220,
     x: 526,
     y: 142,
-    rotate: 180,
   },
   2497: {
     w: 1984,
