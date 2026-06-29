@@ -3,7 +3,7 @@ import { importRouteApi } from '../../api/importRouteApi.ts'
 import type { AppDispatch, RootState } from '../store.ts'
 import { loadRouteFromStorage, setRouteFromMdt, setRouteFromWcl } from '../routes/routesReducer.ts'
 import { createAppSlice } from '../storeUtil.ts'
-import { urlToWclInfo, wclResultToRoute } from '../../util/wclCalc.ts'
+import { urlToWclInfo, wclResultToRoute, type WclUrlInfo } from '../../util/wclCalc.ts'
 import { addToast } from './toastReducer.ts'
 import { wclRouteApi } from '../../api/wclRouteApi.ts'
 import { isAnyOf } from '@reduxjs/toolkit'
@@ -66,49 +66,56 @@ export const importSlice = createAppSlice({
       const firestoreRoute = await getFirestoreRouteApi(routeId)
       thunkApi.dispatch(importMdtRoute({ text: firestoreRoute.mdtString }))
     }),
-    importWclRoute: create.asyncThunk(async ({ url }: { url: string }, thunkApi) => {
-      const wclRateStatus: WclRateStatus = (await localForage.getItem<WclRateStatus>(
-        'wclRateStatus',
-      )) ?? { usesSinceReset: 0, resetsAtEpochSec: 0 }
+    importWclRoute: create.asyncThunk(
+      async ({ url, wclUrlInfo }: { url?: string; wclUrlInfo?: WclUrlInfo }, thunkApi) => {
+        if (!url && !wclUrlInfo) throw new Error(`must specify url or wclUrlInfo`)
+        wclUrlInfo ??= urlToWclInfo(url!)
 
-      if (Date.now() / 1000 > wclRateStatus.resetsAtEpochSec) {
-        wclRateStatus.usesSinceReset = 0
-        wclRateStatus.resetsAtEpochSec = Date.now() / 1000 + 3600
-      }
+        const wclRateStatus: WclRateStatus = (await localForage.getItem<WclRateStatus>(
+          'wclRateStatus',
+        )) ?? { usesSinceReset: 0, resetsAtEpochSec: 0 }
 
-      const maxUsesPerHour = 5
-      if (wclRateStatus.usesSinceReset >= maxUsesPerHour && !isDev) {
-        const comeBackAt = new Date(wclRateStatus.resetsAtEpochSec * 1000).toLocaleTimeString()
-        thunkApi.dispatch(
-          addToast({
-            message: `WCL rate limit reached. Please try again at ${comeBackAt}`,
-            type: 'error',
-          }),
-        )
-      } else {
-        const { result, cached } = await wclRouteApi(urlToWclInfo(url))
-        if (!result || !result.events) throw new Error('Failed to parse WCL report.')
+        if (Date.now() / 1000 > wclRateStatus.resetsAtEpochSec) {
+          wclRateStatus.usesSinceReset = 0
+          wclRateStatus.resetsAtEpochSec = Date.now() / 1000 + 3600
+        }
 
-        const { route, errors } = wclResultToRoute(result)
-        thunkApi.dispatch(setRouteFromWcl(route))
-
-        if (!cached) wclRateStatus.usesSinceReset++
-
-        if (errors.length) {
-          console.error(errors.join('\n'))
-          thunkApi.dispatch(addToast({ message: wclErrorMessage, type: 'error', duration: 10_000 }))
-        } else {
+        const maxUsesPerHour = 5
+        if (wclRateStatus.usesSinceReset >= maxUsesPerHour && !isDev) {
+          const comeBackAt = new Date(wclRateStatus.resetsAtEpochSec * 1000).toLocaleTimeString()
           thunkApi.dispatch(
             addToast({
-              message: `WCL route imported as ${route.name}. WCL conversions remaining this hour: ${maxUsesPerHour - wclRateStatus.usesSinceReset}/${maxUsesPerHour}`,
+              message: `WCL rate limit reached. Please try again at ${comeBackAt}`,
+              type: 'error',
             }),
           )
-        }
-      }
+        } else {
+          const { result, cached } = await wclRouteApi(wclUrlInfo)
+          if (!result || !result.events) throw new Error('Failed to parse WCL report.')
 
-      await localForage.setItem('wclRateStatus', wclRateStatus)
-      return
-    }),
+          const { route, errors } = wclResultToRoute(result)
+          thunkApi.dispatch(setRouteFromWcl(route))
+
+          if (!cached) wclRateStatus.usesSinceReset++
+
+          if (errors.length) {
+            console.error(errors.join('\n'))
+            thunkApi.dispatch(
+              addToast({ message: wclErrorMessage, type: 'error', duration: 10_000 }),
+            )
+          } else {
+            thunkApi.dispatch(
+              addToast({
+                message: `WCL route imported as ${route.name}. WCL conversions remaining this hour: ${maxUsesPerHour - wclRateStatus.usesSinceReset}/${maxUsesPerHour}`,
+              }),
+            )
+          }
+        }
+
+        await localForage.setItem('wclRateStatus', wclRateStatus)
+        return
+      },
+    ),
     setPreviewRouteAsync: create.asyncThunk(
       async (options: { routeId: string; route?: Route } | null, thunkApi) => {
         const state = thunkApi.getState() as RootState

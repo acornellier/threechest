@@ -1,7 +1,7 @@
 import type { DropdownOption } from '../../Common/Dropdown.tsx'
 import { Dropdown } from '../../Common/Dropdown.tsx'
 import { useCallback, useMemo, useState } from 'react'
-import type { Route } from '../../../util/types.ts'
+import type { SampleRoute } from '../../../util/types.ts'
 import { sampleRoutes } from '../../../data/sampleRoutes/sampleRoutes.ts'
 import { setPreviewRouteAsync } from '../../../store/reducers/importReducer.ts'
 import { ArrowTopRightOnSquareIcon, MagnifyingGlassIcon } from '@heroicons/react/24/outline'
@@ -19,9 +19,7 @@ import {
   type WclRankingTeamMember,
 } from '../../../util/wclRankings.ts'
 
-interface SampleRouteOption extends DropdownOption {
-  route: Route
-}
+type SampleRouteOption = SampleRoute & DropdownOption
 
 const filterModes = ['varied', 'top', 'easy', 'spec'] as const
 type FilterMode = (typeof filterModes)[number]
@@ -78,7 +76,8 @@ export function SampleRoutes({ hidden }: Props) {
       )
       .map<SampleRouteOption>(({ route, wclRanking }) => ({
         id: route.uid,
-        route: route,
+        route,
+        wclRanking,
         content: (
           <div className="flex flex-col gap-0.5 overflow-hidden">
             <div className="flex justify-between">
@@ -126,7 +125,7 @@ export function SampleRoutes({ hidden }: Props) {
   const onSelect = useCallback(
     (option: SampleRouteOption) => {
       dispatch(setPreviewRouteAsync(null))
-      dispatch(setRouteFromSample(option.route))
+      dispatch(setRouteFromSample(option))
       dispatch(addToast({ message: `Imported ${option.route.name} as a copy` }))
     },
     [dispatch],

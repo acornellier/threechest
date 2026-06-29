@@ -4,16 +4,24 @@ import { useCallback, useEffect, useState } from 'react'
 import { useRoute } from '../../store/routes/routeHooks.ts'
 import { useLocalStorage } from '../../util/hooks/useLocalStorage.ts'
 import { useShortcut } from '../../util/hooks/useShortcut.ts'
+import { importWclRoute } from '../../store/reducers/importReducer.ts'
+import { useAppDispatch } from '../../store/storeUtil.ts'
 
 const rectSize = 2
 
 export function WclCoordinateTest() {
   const route = useRoute()
   const [wclResult, setWclResult] = useState<WclResult | null>(null)
+  const dispatch = useAppDispatch()
 
   const [shown, setShown] = useLocalStorage('wcl-coordinate-test-shown', false)
   const onShortcut = useCallback(() => setShown((prev) => !prev), [setShown])
   useShortcut('w', onShortcut)
+
+  const onRecalculate = useCallback(() => {
+    if (route.wclUrlInfo) dispatch(importWclRoute({ wclUrlInfo: route.wclUrlInfo }))
+  }, [dispatch, route.wclUrlInfo])
+  useShortcut('r', onRecalculate)
 
   useEffect(() => {
     if (!route.wclUrlInfo) {

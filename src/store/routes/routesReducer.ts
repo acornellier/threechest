@@ -1,6 +1,14 @@
 import type { PayloadAction } from '@reduxjs/toolkit'
 import { createAsyncThunk } from '@reduxjs/toolkit'
-import type { Drawing, MdtRoute, Note, Pull, Route, SavedRoute } from '../../util/types.ts'
+import type {
+  Drawing,
+  MdtRoute,
+  Note,
+  Pull,
+  Route,
+  SampleRoute,
+  SavedRoute,
+} from '../../util/types.ts'
 import type { SpawnId } from '../../data/types.ts'
 import { mdtRouteToRoute } from '../../util/mdtUtil.ts'
 import undoable, { combineFilters, excludeAction, includeAction } from 'redux-undo'
@@ -172,8 +180,14 @@ const baseReducer = createAppSlice({
     setRouteFromWcl(state, { payload: route }: PayloadAction<Route>) {
       setRouteFresh(state, route)
     },
-    setRouteFromSample(state, { payload: route }: PayloadAction<Route>) {
-      const newRoute = { ...route }
+    setRouteFromSample(state, { payload: { route, wclRanking } }: PayloadAction<SampleRoute>) {
+      const newRoute: Route = { ...route }
+      if (wclRanking) {
+        newRoute.wclUrlInfo = {
+          code: wclRanking.report.code,
+          fightId: wclRanking.report.fightID,
+        }
+      }
       giveRouteNewNameUid(state, newRoute)
       setRouteFresh(state, newRoute)
     },

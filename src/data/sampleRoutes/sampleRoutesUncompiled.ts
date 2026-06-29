@@ -94,18 +94,13 @@ const sampleRouteDefinitions: Record<DungeonKey, SampleRouteDefinition[]> = {
   ],
 }
 
-async function convertRouteDefinition({
-  difficulty,
-  name,
-  mdt,
-}: SampleRouteDefinition): Promise<SampleRoute> {
+async function convertRouteDefinition({ name, mdt }: SampleRouteDefinition): Promise<SampleRoute> {
   const mdtRoute = await decodeRoute(mdt)
   const route = mdtRouteToRoute(mdtRoute)
 
   if (name) route.name = name
 
   return {
-    difficulty,
     route,
   }
 }
@@ -117,25 +112,12 @@ const sampleRoutes = dungeonKeys.reduce((acc, key) => {
   return acc
 }, {} as SampleRoutes)
 
-const difficultyToNum = (difficulty: SampleRoute['difficulty']) =>
-  difficulty === undefined
-    ? 0
-    : difficulty === 'beginner'
-      ? 1
-      : difficulty === 'intermediate'
-        ? 2
-        : 3
-
 const wclRankingToNum = (wclRanking: SampleRoute['wclRanking']): number =>
   wclRanking === undefined ? -Infinity : -wclRanking.score
 
 function sortSampleRoutes(route1: SampleRoute, route2: SampleRoute) {
   if (route1.wclRanking !== route2.wclRanking) {
     return wclRankingToNum(route1.wclRanking) - wclRankingToNum(route2.wclRanking)
-  }
-
-  if (route1.difficulty !== route2.difficulty) {
-    return difficultyToNum(route1.difficulty) - difficultyToNum(route2.difficulty)
   }
 
   return route1.route.name.localeCompare(route2.route.name)
