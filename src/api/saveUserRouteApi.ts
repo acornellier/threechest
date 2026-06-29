@@ -3,7 +3,6 @@ import { firestore } from '../store/firestore.ts'
 import type { Route } from '../util/types.ts'
 
 export async function saveRouteToCloud(uid: string, route: Route): Promise<string | null> {
-  console.log('saveRouteToCloude', route)
   if (route.pulls.every((route) => route.spawns.length === 0)) {
     return null
   }

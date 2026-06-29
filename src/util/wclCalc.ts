@@ -161,6 +161,10 @@ export function wclResultToRoute(wclResult: WclResult) {
     notes: wclResultToNotes(wclResult),
     drawings: [],
     assignments: {},
+    wclUrlInfo: {
+      code: wclResult.code,
+      fightId: wclResult.fightId,
+    },
   }
 
   return {

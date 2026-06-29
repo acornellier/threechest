@@ -4,7 +4,7 @@ import type { RootState } from '../store.ts'
 import type { Route } from '../../util/types.ts'
 import { getSavedRouteKey, saveRoute } from './routeStorage.ts'
 import { saveRouteToCloud } from '../../api/saveUserRouteApi.ts'
-import { getUserManifest, getRouteFromCloud } from '../../api/getUserRoutesApi.ts'
+import { getRouteFromCloud, getUserManifest } from '../../api/getUserRoutesApi.ts'
 import { setSyncState } from '../reducers/cloudReducer.ts'
 
 export const pushChangedRoutes = createAsyncThunk(
@@ -56,8 +56,6 @@ export const pullChangedRoutes = createAsyncThunk(
     )
 
     const results = pulled.filter((r): r is { route: Route; syncedAt: string } => r !== null)
-
-    console.log(`${results.length} routes pulled`, results)
 
     await Promise.all(results.map(({ route }) => saveRoute(route)))
 

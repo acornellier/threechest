@@ -1,26 +1,27 @@
 import { Rectangle, Tooltip } from 'react-leaflet'
-import {
-  urlToWclInfo,
-  type WclPoint,
-  wclPointToLeafletPoint,
-  type WclResult,
-} from '../../util/wclCalc.ts'
-import { useEffect, useState } from 'react'
-
-const url = ''
+import { type WclPoint, wclPointToLeafletPoint, type WclResult } from '../../util/wclCalc.ts'
+import { useCallback, useEffect, useState } from 'react'
+import { useRoute } from '../../store/routes/routeHooks.ts'
+import { useLocalStorage } from '../../util/hooks/useLocalStorage.ts'
+import { useShortcut } from '../../util/hooks/useShortcut.ts'
 
 const rectSize = 2
 
 export function WclCoordinateTest() {
+  const route = useRoute()
   const [wclResult, setWclResult] = useState<WclResult | null>(null)
 
+  const [shown, setShown] = useLocalStorage('wcl-coordinate-test-shown', false)
+  const onShortcut = useCallback(() => setShown((prev) => !prev), [setShown])
+  useShortcut('w', onShortcut)
+
   useEffect(() => {
-    if (!url) {
+    if (!route.wclUrlInfo) {
       setWclResult(null)
       return
     }
     try {
-      const { code, fightId } = urlToWclInfo(url)
+      const { code, fightId } = route.wclUrlInfo
       import(`../../../server/cache/wclRoute/${code}-${fightId}.json`)
         .then((res: WclResult) => {
           setWclResult(res)
@@ -29,9 +30,9 @@ export function WclCoordinateTest() {
     } catch (_) {
       setWclResult(null)
     }
-  }, [])
+  }, [route.wclUrlInfo])
 
-  if (!wclResult) return null
+  if (!shown || !wclResult) return null
 
   return wclResult.events
     .filter((point) => point.x && point.y && point.mapID)

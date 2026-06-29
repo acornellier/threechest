@@ -3,6 +3,7 @@ import type { ForwardRefExoticComponent, PropsWithoutRef, SVGProps } from 'react
 import type { DungeonKey } from '../data/dungeonKeys.ts'
 import type { WclRanking } from './wclRankings.ts'
 import type { WowMark } from './marks.ts'
+import type { WclUrlInfo } from './wclCalc.ts'
 
 export type Pull = {
   id: number
@@ -43,6 +44,7 @@ export type Route = {
   notes: Note[]
   drawings: Drawing[]
   assignments: Assignments
+  wclUrlInfo?: WclUrlInfo
 }
 
 export type PullDetailed = Pull & {
