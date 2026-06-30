@@ -310,14 +310,6 @@ function wclEventsToPulls(
 
       if (pullStatus.complete) continue
 
-      if (idx + 1 === 11)
-        console.log({
-          pull: idx + 1,
-          passIdx,
-          mobEvents: structuredClone(pullStatus.mobEventsRemaining),
-          groupsRemaining: structuredClone(groupsRemaining),
-        })
-
       const calculatedPull = pass.run({
         mobEvents: pullStatus.mobEventsRemaining,
         groupsRemaining,
