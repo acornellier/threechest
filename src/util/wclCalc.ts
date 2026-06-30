@@ -128,7 +128,7 @@ const PULL_OUTLIER_DISTANCE = 130
 // In a single-map dungeon there is no composite-map seam to mis-map across, so positions are always
 // reliable and byWholeGroup must not reach past this distance to complete a cover — otherwise a
 // dungeon full of free individual mobs lets a "perfect" group be assembled from spawns all over.
-const WHOLE_GROUP_MAX_DISTANCE = 40
+const WHOLE_GROUP_MAX_DISTANCE = 100
 
 const mobsThatDontDie = [231606]
 
