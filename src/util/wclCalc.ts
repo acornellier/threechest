@@ -333,14 +333,12 @@ function wclEventsToPulls(
     }
   }
 
-  return (
-    pullStatuses
-      // .filter((pullStatus) => pullStatus.spawnIds.length > 0)
-      .map<Pull>(({ spawnIds }, idx) => ({
-        id: idx,
-        spawns: spawnIds,
-      }))
-  )
+  return pullStatuses
+    .filter((pullStatus) => pullStatus.spawnIds.length > 0)
+    .map<Pull>(({ spawnIds }, idx) => ({
+      id: idx,
+      spawns: spawnIds.toSorted(),
+    }))
 }
 
 function nearestSpawnDistance(pos: Point, spawnPositions: Point[] | undefined): number {
