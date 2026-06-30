@@ -248,10 +248,6 @@ const spawnGroup = (spawn: Spawn) => (spawn.group ? String(spawn.group) : spawn.
 // The pull-matching passes, run in order. Each tries to assign some of a pull's remaining events to
 // MDT groups, returning null to defer to the next. Later passes are looser fallbacks.
 export const passes: WclPass[] = [
-  // Match the whole pull to nearby groups by position (tight, then loose; loose also allows
-  // matching by composition alone when no positions survived).
-  { name: 'byPositionTight', run: (args) => calculateExactPull(args, 18, false) },
-  { name: 'byPositionLoose', run: (args) => calculateExactPull(args, 36, true) },
   // Claim distinctive anchored groups by composition before the sub-pull passes can scatter their
   // members to individual spawns — this rescues a group mis-mapped across a map seam.
   { name: 'byAnchoredGroup', run: calculateAnchoredGroupPull },
