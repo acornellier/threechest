@@ -772,39 +772,81 @@ function getSubPulls(mobEvents: MobEvent[], maxTime: number, maxDistance: number
   return subPulls.filter((subPull) => subPull.length > 1)
 }
 
-function getPulledGroups(
+// Pre-processes groups into numeric-keyed entry arrays and builds a suffix-capacity
+// table so the inner search can prune branches that can never satisfy remainingMobs.
+function getPulledGroups(remainingMobs: Record<number, number>, groups: Group[]): string[] | null {
+  // Convert each group's mobCounts to [number, number][] once to avoid repeated
+  // Object.entries + Number() conversions inside the hot recursive loop.
+  const groupEntries: [number, number][][] = groups.map((g) =>
+    Object.entries(g.mobCounts).map(([k, v]) => [Number(k), v]),
+  )
+
+  // suffixCap[i][mobId] = total supply of mobId across groups[i..n-1].
+  // Allows O(mob-types) pruning at every node: if any required mob type can't
+  // be covered by all remaining groups combined, the branch is dead.
+  const suffixCap: Record<number, number>[] = new Array(groups.length + 1)
+  suffixCap[groups.length] = {}
+  for (let i = groups.length - 1; i >= 0; i--) {
+    suffixCap[i] = { ...suffixCap[i + 1] }
+    for (const [mobId, count] of groupEntries[i]!) {
+      suffixCap[i]![mobId] = (suffixCap[i]![mobId] ?? 0) + count
+    }
+  }
+
+  const remainingTotal = Object.values(remainingMobs).reduce((a, b) => a + b, 0)
+  return searchGroups(remainingMobs, groups, groupEntries, suffixCap, 0, remainingTotal)
+}
+
+function searchGroups(
   remainingMobs: Record<number, number>,
   groups: Group[],
-  groupIdx: number = 0,
+  groupEntries: [number, number][][],
+  suffixCap: Record<number, number>[],
+  groupIdx: number,
+  remainingTotal: number,
 ): string[] | null {
-  if (Object.values(remainingMobs).every((n) => n === 0)) {
+  if (remainingTotal === 0) {
     // no mobs left, solved!
     return []
   }
 
-  const group = groups[groupIdx]
-  if (group === undefined) return null
+  if (groupIdx >= groups.length) return null
 
-  const newRemainingMobs = { ...remainingMobs }
+  // Prune: if the remaining groups don't have enough supply to cover any still-needed mob, bail.
+  const cap = suffixCap[groupIdx]!
+  for (const [mobIdStr, need] of Object.entries(remainingMobs)) {
+    if (need > 0 && (cap[Number(mobIdStr)] ?? 0) < need) return null
+  }
 
+  const entries = groupEntries[groupIdx]!
   let isCompatible = true
-  for (const [mobId, count] of Object.entries(group.mobCounts)) {
-    const remainingCount = (newRemainingMobs[Number(mobId)] ?? 0) - count
-    if (remainingCount < 0) {
+  let groupTotal = 0
+  for (const [mobId, count] of entries) {
+    if ((remainingMobs[mobId] ?? 0) - count < 0) {
       isCompatible = false
       break
     }
-    newRemainingMobs[Number(mobId)] = remainingCount
+    groupTotal += count
   }
 
   if (isCompatible) {
-    const addedGroups = getPulledGroups(newRemainingMobs, groups, groupIdx + 1)
+    // Mutate in-place instead of cloning, then backtrack after the recursive call
+    for (const [mobId, count] of entries) remainingMobs[mobId] -= count
+    const addedGroups = searchGroups(
+      remainingMobs,
+      groups,
+      groupEntries,
+      suffixCap,
+      groupIdx + 1,
+      remainingTotal - groupTotal,
+    )
+    for (const [mobId, count] of entries) remainingMobs[mobId] += count
     if (addedGroups !== null) {
-      return [group.id, ...addedGroups]
+      return [groups[groupIdx]!.id, ...addedGroups]
     }
   }
 
-  return getPulledGroups(remainingMobs, groups, groupIdx + 1)
+  return searchGroups(remainingMobs, groups, groupEntries, suffixCap, groupIdx + 1, remainingTotal)
 }
 
 function findExactSpawns({

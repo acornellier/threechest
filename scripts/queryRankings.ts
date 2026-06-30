@@ -98,7 +98,6 @@ for (const { dungeonFolder, rankings, dungeonKey } of dungeonRankings) {
         continue
       }
     }
-
     if (!result) {
       continue
     }
