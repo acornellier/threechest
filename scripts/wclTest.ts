@@ -1,3 +1,3 @@
 ﻿import { getWclRoute } from '../server/wclRoute.ts'
 
-await getWclRoute('pb9VrwgQJDjtnRNA', 17, true)
+await getWclRoute('nhBHPa2p9X3vq4xV', 9, true)

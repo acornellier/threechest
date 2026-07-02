@@ -47,6 +47,32 @@ export type WclUrlInfo = {
   fightId: number | 'last'
 }
 
+// Per-event debug trace of what wclCalc did with each raw WCL event, keyed by wclEventKey. Only
+// populated when a trace map is passed to wclResultToRoute (used by the WclCoordinateTest overlay).
+// No status means the event was still unassigned when the passes ran out (or maxPasses cut off).
+export type WclEventTrace = {
+  status?: 'assigned' | 'duplicate' | 'alt' | 'no-death' | 'untracked'
+  pullIdx?: number
+  passName?: string
+  posDropped?: 'far-from-spawn' | 'pull-outlier'
+}
+
+export type WclTrace = Map<string, WclEventTrace>
+
+export const wclEventKey = (event: {
+  gameId: number
+  instanceId?: number
+  timestamp: number
+  mapID?: number
+}): string => `${event.gameId}-${event.instanceId ?? 0}-${event.timestamp}-${event.mapID ?? 0}`
+
+function traceMerge(trace: WclTrace | undefined, key: string | undefined, patch: WclEventTrace) {
+  if (!trace || !key) {
+    return
+  }
+  trace.set(key, { ...trace.get(key), ...patch })
+}
+
 type Group = {
   id: string
   mobCounts: Record<number, number>
@@ -80,9 +106,21 @@ type PassArgs = {
   errors: string[]
 }
 
+// Cross-pull passes see every pull at once, so they can reason about a group split across adjacent
+// pulls. They mutate pullStatuses in place and return the updated groupsRemaining.
+type CrossPullArgs = {
+  pullStatuses: PullStatus[]
+  groupsRemaining: Group[]
+  groupMobSpawns: Partial<Record<number | string, MobSpawn[]>>
+  spawnIdsTaken: Set<SpawnId>
+  trace?: WclTrace
+}
+
 type WclPass = {
   name: string
-  run: (args: PassArgs) => CalculatedPull | null
+  // run is called once per pull; runAll once with all pulls. Exactly one is set.
+  run?: (args: PassArgs) => CalculatedPull | null
+  runAll?: (args: CrossPullArgs) => Group[]
 }
 
 export type WclPoint = {
@@ -106,7 +144,7 @@ const defaultMapOffsets: MapOffset = {
 // composition). TODO: a within-pull outlier check would let us raise this without that risk.
 const MAX_PLAUSIBLE_SPAWN_DISTANCE = 60
 
-// Time window for segmenting a pull into sub-pulls (passes 3-4 and the whole-group pass). Fixed
+// Time window for segmenting a pull into sub-pulls (every pass except byWholeGroup). Fixed
 // rather than ramped with the pass: it must stay wide enough that one linked group's deaths —
 // which can span a couple of seconds — never split across sub-pulls, while still peeling off a
 // mob pulled several seconds later. Separating distinct same-time pulls is the distance knob's
@@ -129,6 +167,15 @@ const PULL_OUTLIER_DISTANCE = 130
 // reliable and byWholeGroup must not reach past this distance to complete a cover — otherwise a
 // dungeon full of free individual mobs lets a "perfect" group be assembled from spawns all over.
 const WHOLE_GROUP_MAX_DISTANCE = 100
+
+// A real split is two adjacent pulls at essentially the same spot, so bySplitGroup only claims a
+// group sitting right on the pooled leftovers. Tighter than WHOLE_GROUP_MAX_DISTANCE: a far group
+// that happens to complete the composition is a coincidence, not a split.
+const SPLIT_GROUP_MAX_DISTANCE = 50
+
+// A gap this large between consecutive events starts a new pull. Shared by the pull builder and the
+// map-candidate resolver so both segment events into the same pulls.
+const PULL_TIME_GAP = 20_000
 
 const mobsThatDontDie = [231606]
 
@@ -198,13 +245,13 @@ export function urlToWclInfo(url: string): WclUrlInfo {
   return { code, fightId: fightId === 'last' ? fightId : Number(fightId) }
 }
 
-export function wclResultToRoute(wclResult: WclResult, maxPasses?: number) {
+export function wclResultToRoute(wclResult: WclResult, maxPasses?: number, trace?: WclTrace) {
   const dungeon = dungeons.find((dungeon) => dungeon.wclEncounterId === wclResult.encounterID)
 
   if (!dungeon) throw new Error(`This WCL dungeon is not yet supported by Threechest.`)
 
   const errors: string[] = []
-  const pulls = wclEventsToPulls(wclResult, dungeon, errors, maxPasses)
+  const pulls = wclEventsToPulls(wclResult, dungeon, errors, maxPasses, trace)
   const route: Route = {
     uid: `${wclResult.code}-${wclResult.fightId}`,
     name: `WCL ${dungeon.key.toUpperCase()} +${wclResult.keystoneLevel}`,
@@ -241,7 +288,16 @@ function wclResultToNotes(wclResult: WclResult): Note[] {
     }, [])
 }
 
-type MobEvent = { timestamp: number; mobId: number; pos?: Point; mapID?: number }
+// altPos is a second plausible position for a seam-ambiguous instance (the mob's other-map
+// candidate). Only the group-proximity checks consult it; pull centers and segmentation use pos.
+type MobEvent = {
+  timestamp: number
+  mobId: number
+  pos?: Point
+  altPos?: Point
+  mapID?: number
+  key?: string
+}
 
 const spawnGroup = (spawn: Spawn) => (spawn.group ? String(spawn.group) : spawn.id)
 
@@ -250,13 +306,16 @@ const spawnGroup = (spawn: Spawn) => (spawn.group ? String(spawn.group) : spawn.
 export const passes: WclPass[] = [
   // Claim distinctive anchored groups by composition before the sub-pull passes can scatter their
   // members to individual spawns — this rescues a group mis-mapped across a map seam.
-  { name: 'byAnchoredGroup', run: calculateAnchoredGroupPull },
+  { name: 'byAnchoredGroup', run: calculateAnchoredGroupPullFromSubPulls },
   // Split the pull into sub-pulls and match each to nearby groups (tight, then loose).
   { name: 'bySubPullTight', run: (args) => calculatePullFromSubPulls(args, 10, 10) },
   { name: 'bySubPullLoose', run: (args) => calculatePullFromSubPulls(args, 20, 20) },
   // Cover the leftovers with whole groups by composition (pooled, then per sub-pull).
   { name: 'byWholeGroup', run: calculateWholeGroupPull },
   { name: 'byWholeGroupSubPull', run: calculateWholeGroupPullFromSubPulls },
+  // Reunite a group a real run split across two adjacent pulls, so its spawns split cleanly instead
+  // of scattering to nearer neighboring groups in byNearestSpawn.
+  { name: 'bySplitGroup', runAll: assignSplitGroups },
   // Last resort: assign each remaining mob to its nearest individual spawn.
   { name: 'byNearestSpawn', run: findExactSpawns },
 ]
@@ -266,10 +325,11 @@ function wclEventsToPulls(
   dungeon: Dungeon,
   errors: string[],
   maxPasses?: number,
+  trace?: WclTrace,
 ): Pull[] {
   if (!events.length) return []
 
-  const pullMobEvents = getPullMobEvents(events, deathEvents, dungeon)
+  const pullMobEvents = getPullMobEvents(events, deathEvents, dungeon, trace)
 
   const groupMobSpawns = groupBy(dungeon.mobSpawnsList, ({ spawn }) => spawnGroup(spawn))
 
@@ -293,20 +353,35 @@ function wclEventsToPulls(
     // survives as a "borrow location from teammates" hint even when leftovers are position-less.
     originalCenter: polygonCenter(mobEvents.map(({ pos }) => pos).filter(Boolean) as Point[]),
     // A pull confined to one WoW map id can't have crossed a composite-map seam, so its positions
-    // are reliable; spanning multiple map ids means a mob may have been mis-mapped across a seam.
-    singleMap: new Set(mobEvents.map(({ mapID }) => mapID).filter(Boolean)).size <= 1,
+    // are reliable; spanning multiple map ids — or holding a seam-ambiguous mob (one with a second
+    // candidate position) — means a mob may sit on a different map than the rest.
+    singleMap:
+      new Set(mobEvents.map(({ mapID }) => mapID).filter(Boolean)).size <= 1 &&
+      !mobEvents.some(({ altPos }) => altPos),
   }))
 
   let passIdx = 0
   for (const pass of passes) {
     ++passIdx
     if (maxPasses && passIdx > maxPasses) continue
+
+    if (pass.runAll) {
+      groupsRemaining = pass.runAll({
+        pullStatuses,
+        groupsRemaining,
+        groupMobSpawns,
+        spawnIdsTaken,
+        trace,
+      })
+      continue
+    }
+
     for (let idx = 0; idx < pullStatuses.length; idx++) {
       const pullStatus = pullStatuses[idx]!
 
       if (pullStatus.complete) continue
 
-      const calculatedPull = pass.run({
+      const calculatedPull = pass.run!({
         mobEvents: pullStatus.mobEventsRemaining,
         groupsRemaining,
         groupMobSpawns,
@@ -320,11 +395,40 @@ function wclEventsToPulls(
       })
 
       if (calculatedPull !== null) {
+        if (trace) {
+          // Whatever this pass consumed from the pull is what it assigned.
+          const remaining = new Set(calculatedPull.mobEventsRemaining)
+          for (const event of pullStatus.mobEventsRemaining) {
+            if (!remaining.has(event)) {
+              traceMerge(trace, event.key, {
+                status: 'assigned',
+                pullIdx: idx,
+                passName: pass.name,
+              })
+            }
+          }
+        }
+
         groupsRemaining = calculatedPull.groupsRemaining
         pullStatus.spawnIds.push(...calculatedPull.spawnIds)
         pullStatus.mobEventsRemaining = calculatedPull.mobEventsRemaining
 
         if (pullStatus.mobEventsRemaining.length === 0) pullStatus.complete = true
+      }
+    }
+  }
+
+  if (trace) {
+    // Traced pull indices refer to pullStatuses; remap them to the final ids of surviving pulls.
+    const finalPullIdx = new Map<number, number>()
+    pullStatuses.forEach((pullStatus, idx) => {
+      if (pullStatus.spawnIds.length > 0) {
+        finalPullIdx.set(idx, finalPullIdx.size)
+      }
+    })
+    for (const entry of trace.values()) {
+      if (entry.pullIdx !== undefined) {
+        entry.pullIdx = finalPullIdx.get(entry.pullIdx) ?? -1
       }
     }
   }
@@ -347,36 +451,12 @@ function nearestSpawnDistance(pos: Point, spawnPositions: Point[] | undefined): 
   return min
 }
 
-const median = (values: number[]): number => {
-  const sorted = [...values].sort((a, b) => a - b)
-  const mid = Math.floor(sorted.length / 2)
-  return sorted.length % 2 === 0 ? (sorted[mid - 1]! + sorted[mid]!) / 2 : sorted[mid]!
-}
+// mobId -> all of that mob's static spawn positions, used to sanity-check WCL event positions.
+const spawnPositionsCache = new WeakMap<Dungeon, Map<number, Point[]>>()
+function spawnPositionsByMob(dungeon: Dungeon): Map<number, Point[]> {
+  const cached = spawnPositionsCache.get(dungeon)
+  if (cached) return cached
 
-// Drop the position of any event that sits far from the rest of its pull: it was mis-mapped to a
-// distant map region but happened to land near a wrong same-type spawn, so the per-event distance
-// check kept it. The median center is robust to the outliers themselves. Needs a positioned
-// majority (>=3) to tell which event is the outlier.
-function dropSpatialOutliers(pull: MobEvent[]): MobEvent[] {
-  const positions = pull.map(({ pos }) => pos).filter(Boolean) as Point[]
-  if (positions.length < 3) return pull
-
-  const center: Point = [median(positions.map((p) => p[0])), median(positions.map((p) => p[1]))]
-
-  return pull.map((event) => {
-    if (event.pos && distance(event.pos, center) > PULL_OUTLIER_DISTANCE) {
-      return { ...event, pos: undefined }
-    }
-    return event
-  })
-}
-
-function getPullMobEvents(
-  events: WclEventSimplified[],
-  deathEvents: DeathEvent[],
-  dungeon: Dungeon,
-): MobEvent[][] {
-  // mobId -> all of that mob's static spawn positions, used to sanity-check WCL event positions.
   const spawnPositions = new Map<number, Point[]>()
   for (const { mob, spawn } of dungeon.mobSpawnsList) {
     const list = spawnPositions.get(mob.id)
@@ -387,9 +467,165 @@ function getPullMobEvents(
     }
   }
 
-  const filteredEvents = events.filter((event) =>
+  spawnPositionsCache.set(dungeon, spawnPositions)
+  return spawnPositions
+}
+
+// Leaflet position of a WCL event, or undefined if it has no usable coordinates.
+function eventPos(event: WclEventSimplified, deathEvents: DeathEvent[]): Point | undefined {
+  return event.x && event.y && event.mapID && mapBounds[event.mapID]
+    ? wclPointToLeafletPoint(event as WclPoint, deathEvents)
+    : undefined
+}
+
+// The chosen candidate for a mob instance, plus (for a genuinely seam-ambiguous instance) the other
+// plausible candidate. winner drives the pull's center/segmentation; alt is offered to the group-
+// proximity checks so composition can place the mob on either map, whichever forms a clean cover.
+export type ResolvedInstance = { winner: WclEventSimplified; alt?: WclEventSimplified }
+
+// Resolve one instance's candidates. A candidate is "plausible" if it lands near a real spawn of
+// that mob; a seam mislabel projects far from any spawn, so it's dropped. The winner is the
+// candidate nearest the pull's anchor center (its confidently-placed pull-mates), falling back to
+// nearest-spawn. When two candidates are both plausible (the mob type has spawns on both maps) the
+// choice is genuinely ambiguous, so we keep the runner-up as alt rather than commit to a map.
+function resolveCandidates(
+  candidates: WclEventSimplified[],
+  anchorCenter: Point | null,
+  posOf: (event: WclEventSimplified) => Point | undefined,
+  spawnDistOf: (event: WclEventSimplified) => number,
+): ResolvedInstance {
+  if (candidates.length === 1) return { winner: candidates[0]! }
+
+  const plausible = candidates.filter((c) => spawnDistOf(c) <= MAX_PLAUSIBLE_SPAWN_DISTANCE)
+  const pool = plausible.length > 0 ? plausible : candidates
+
+  const rank = anchorCenter
+    ? (event: WclEventSimplified) => {
+        const pos = posOf(event)
+        return pos ? distance(pos, anchorCenter) : Infinity
+      }
+    : spawnDistOf
+  const sorted = [...pool].sort((a, b) => rank(a) - rank(b))
+
+  // Only offer an alt when there's real ambiguity: 2+ candidates both near a spawn. Otherwise the
+  // runner-up is just a mislabel and must not be handed to the passes as a valid position.
+  return { winner: sorted[0]!, alt: plausible.length >= 2 ? sorted[1] : undefined }
+}
+
+// A mob instance near a composite-map seam can be reported on more than one map, so wclRoute emits
+// one candidate event per map (all sharing gameId + instanceId). Resolve each instance down to its
+// true candidate (plus an alt when ambiguous), using nearby spawns and the instance's pull-mates.
+export function resolveInstances(
+  events: WclEventSimplified[],
+  dungeon: Dungeon,
+  deathEvents: DeathEvent[],
+): ResolvedInstance[] {
+  const spawnPositions = spawnPositionsByMob(dungeon)
+  const posOf = (event: WclEventSimplified) => eventPos(event, deathEvents)
+  const spawnDistOf = (event: WclEventSimplified): number => {
+    const pos = posOf(event)
+    return pos ? nearestSpawnDistance(pos, spawnPositions.get(event.gameId)) : Infinity
+  }
+
+  // Group candidates by instance, each with a representative (earliest) timestamp.
+  const byInstance = groupBy(events, (event) => `${event.gameId}-${event.instanceId}`)
+  const instances = Object.values(byInstance).map((candidates) => ({
+    candidates: candidates!,
+    timestamp: Math.min(...candidates!.map(({ timestamp }) => timestamp)),
+  }))
+  instances.sort((a, b) => a.timestamp - b.timestamp)
+
+  // Segment instances into pulls by time (candidates of one instance share a timestamp, so they
+  // never split), then resolve each pull against the center of its confidently-placed members.
+  const resolved: ResolvedInstance[] = []
+  let pull: (typeof instances)[number][] = []
+  let currentTimestamp = instances[0]?.timestamp ?? 0
+
+  const flushPull = () => {
+    const anchorPositions = pull
+      .filter(({ candidates }) => candidates.length === 1)
+      .map(({ candidates }) => candidates[0]!)
+      .filter((event) => spawnDistOf(event) <= MAX_PLAUSIBLE_SPAWN_DISTANCE)
+      .map((event) => posOf(event)!)
+    const anchorCenter = polygonCenter(anchorPositions)
+
+    for (const { candidates } of pull) {
+      resolved.push(resolveCandidates(candidates, anchorCenter, posOf, spawnDistOf))
+    }
+  }
+
+  for (const instance of instances) {
+    if (instance.timestamp - currentTimestamp > PULL_TIME_GAP) {
+      flushPull()
+      pull = []
+    }
+    currentTimestamp = instance.timestamp
+    pull.push(instance)
+  }
+  if (pull.length > 0) flushPull()
+
+  return resolved
+}
+
+const median = (values: number[]): number => {
+  const sorted = [...values].sort((a, b) => a - b)
+  const mid = Math.floor(sorted.length / 2)
+  return sorted.length % 2 === 0 ? (sorted[mid - 1]! + sorted[mid]!) / 2 : sorted[mid]!
+}
+
+// Drop the position of any event that sits far from the rest of its pull: it was mis-mapped to a
+// distant map region but happened to land near a wrong same-type spawn, so the per-event distance
+// check kept it. The median center is robust to the outliers themselves. Needs a positioned
+// majority (>=3) to tell which event is the outlier.
+function dropSpatialOutliers(pull: MobEvent[], trace?: WclTrace): MobEvent[] {
+  const positions = pull.map(({ pos }) => pos).filter(Boolean) as Point[]
+  if (positions.length < 3) return pull
+
+  const center: Point = [median(positions.map((p) => p[0])), median(positions.map((p) => p[1]))]
+
+  return pull.map((event) => {
+    if (event.pos && distance(event.pos, center) > PULL_OUTLIER_DISTANCE) {
+      traceMerge(trace, event.key, { posDropped: 'pull-outlier' })
+      return { ...event, pos: undefined }
+    }
+    return event
+  })
+}
+
+function getPullMobEvents(
+  events: WclEventSimplified[],
+  deathEvents: DeathEvent[],
+  dungeon: Dungeon,
+  trace?: WclTrace,
+): MobEvent[][] {
+  const spawnPositions = spawnPositionsByMob(dungeon)
+
+  const trackedEvents = events.filter((event) =>
     dungeon.mobSpawnsList.some(({ mob }) => mob.id === event.gameId),
   )
+
+  const resolved = resolveInstances(trackedEvents, dungeon, deathEvents)
+  const altByWinner = new Map<WclEventSimplified, WclEventSimplified>()
+  const filteredEvents = resolved.map(({ winner, alt }) => {
+    if (alt) altByWinner.set(winner, alt)
+    return winner
+  })
+
+  if (trace) {
+    const tracked = new Set(trackedEvents)
+    const winners = new Set(filteredEvents)
+    const alts = new Set(altByWinner.values())
+    for (const event of events) {
+      if (!tracked.has(event)) {
+        traceMerge(trace, wclEventKey(event), { status: 'untracked' })
+      } else if (alts.has(event)) {
+        // Kept as the winner's other-map candidate, not discarded.
+        traceMerge(trace, wclEventKey(event), { status: 'alt' })
+      } else if (!winners.has(event)) {
+        traceMerge(trace, wclEventKey(event), { status: 'duplicate' })
+      }
+    }
+  }
 
   filteredEvents.sort((a, b) => a.timestamp - b.timestamp)
 
@@ -399,8 +635,8 @@ function getPullMobEvents(
   let currentTimestamp = filteredEvents[0]!.timestamp
 
   for (const event of filteredEvents) {
-    if (event.timestamp - currentTimestamp > 20_000) {
-      pullMobEvents.push(sanitizePull(dropSpatialOutliers(currentPull), dungeon))
+    if (event.timestamp - currentTimestamp > PULL_TIME_GAP) {
+      pullMobEvents.push(sanitizePull(dropSpatialOutliers(currentPull, trace), dungeon))
       currentPull = newPull()
     }
 
@@ -413,6 +649,7 @@ function getPullMobEvents(
           deathEvent.timestamp >= event.timestamp,
       )
     ) {
+      traceMerge(trace, wclEventKey(event), { status: 'no-death' })
       continue
     }
 
@@ -420,10 +657,7 @@ function getPullMobEvents(
       console.warn(`Map ID ${event.mapID} bounds missing from mapBounds`)
     }
 
-    const rawPos =
-      event.x && event.y && event.mapID && mapBounds[event.mapID]
-        ? wclPointToLeafletPoint(event as WclPoint, deathEvents)
-        : undefined
+    const rawPos = eventPos(event, deathEvents)
 
     // Discard positions that land implausibly far from any spawn of this mob's own type: the
     // event was reported on the wrong WoW map id (a seam between composite maps). Dropping it
@@ -432,18 +666,27 @@ function getPullMobEvents(
       ? nearestSpawnDistance(rawPos, spawnPositions.get(event.gameId))
       : Infinity
     const pos = nearestDist <= MAX_PLAUSIBLE_SPAWN_DISTANCE ? rawPos : undefined
+    if (rawPos && !pos) {
+      traceMerge(trace, wclEventKey(event), { posDropped: 'far-from-spawn' })
+    }
+
+    // A seam-ambiguous mob's other-map candidate, already vetted as plausible by resolveInstances.
+    const alt = altByWinner.get(event)
+    const altPos = alt ? eventPos(alt, deathEvents) : undefined
 
     currentTimestamp = event.timestamp
     currentPull.push({
       timestamp: event.timestamp,
       mobId: event.gameId,
       pos,
+      altPos,
       mapID: event.mapID,
+      key: wclEventKey(event),
     })
   }
 
   if (currentPull.length > 0)
-    pullMobEvents.push(sanitizePull(dropSpatialOutliers(currentPull), dungeon))
+    pullMobEvents.push(sanitizePull(dropSpatialOutliers(currentPull, trace), dungeon))
 
   return pullMobEvents
 }
@@ -521,9 +764,14 @@ function calculateExactPull(
 const groupSize = (group: Group) =>
   Object.values(group.mobCounts).reduce((total, count) => total + count, 0)
 
-// Distance from an event to a group; position-less events sort last (consumed only if needed).
-const distanceToGroup = (event: MobEvent, group: Group) =>
-  event.pos ? distance(event.pos, group.averagePos) : Infinity
+// Distance from an event to a group; position-less events sort last (consumed only if needed). A
+// seam-ambiguous mob uses whichever of its two candidate positions is nearer the group, so
+// composition can place it on either map.
+const distanceToGroup = (event: MobEvent, group: Group) => {
+  let min = event.pos ? distance(event.pos, group.averagePos) : Infinity
+  if (event.altPos) min = Math.min(min, distance(event.altPos, group.averagePos))
+  return min
+}
 
 // Groups still fully available (no spawn taken) that contain a mob present in the pull.
 const eligibleGroups = (
@@ -597,6 +845,45 @@ function getAnchoredGroups(remainingMobs: Record<number, number>, groups: Group[
   return claimed
 }
 
+// Run the anchored-group claim per time-based sub-pull, so a group can only be claimed from — and
+// consume — events that died together. Segmentation is time-only (distance ∞): mis-mapping across
+// a seam corrupts positions but not timestamps, so the seam-rescue behavior is preserved, while a
+// mob that died elsewhere seconds earlier can no longer complete a far group's composition.
+function calculateAnchoredGroupPullFromSubPulls({
+  mobEvents,
+  groupsRemaining,
+  groupMobSpawns,
+  spawnIdsTaken,
+  originalCenter,
+  anchorMobIds,
+}: PassArgs): CalculatedPull {
+  const spawnIds: SpawnId[] = []
+  const subPulls = getSubPulls(mobEvents, SUBPULL_TIME_RANGE, Infinity)
+
+  for (const subPull of subPulls) {
+    const calculatedPull = calculateAnchoredGroupPull({
+      mobEvents: subPull,
+      groupsRemaining,
+      groupMobSpawns,
+      spawnIdsTaken,
+      originalCenter,
+      anchorMobIds,
+    })
+
+    if (calculatedPull !== null) {
+      groupsRemaining = calculatedPull.groupsRemaining
+      spawnIds.push(...calculatedPull.spawnIds)
+      // The claim is partial: drop only the sub-pull events it consumed, keeping the rest of the
+      // sub-pull for later passes.
+      mobEvents = mobEvents.filter(
+        (event) => !subPull.includes(event) || calculatedPull.mobEventsRemaining.includes(event),
+      )
+    }
+  }
+
+  return { spawnIds, groupsRemaining, mobEventsRemaining: mobEvents }
+}
+
 // Claim multi-mob groups pinned by an anchor mob, by composition and ignoring position. Partial:
 // only confidently-anchored groups are taken, leaving loose individuals and the rest for later
 // passes. Position is only a soft tiebreaker between same-anchor groups.
@@ -607,7 +894,15 @@ function calculateAnchoredGroupPull({
   spawnIdsTaken,
   originalCenter,
   anchorMobIds,
-}: PassArgs): CalculatedPull | null {
+}: Pick<
+  PassArgs,
+  | 'mobEvents'
+  | 'groupsRemaining'
+  | 'groupMobSpawns'
+  | 'spawnIdsTaken'
+  | 'originalCenter'
+  | 'anchorMobIds'
+>): CalculatedPull | null {
   if (mobEvents.length === 0) return null
 
   const leftoverPositions = mobEvents.map(({ pos }) => pos).filter(Boolean) as Point[]
@@ -740,6 +1035,142 @@ function calculateWholeGroupPullFromSubPulls({
   return { spawnIds, groupsRemaining, mobEventsRemaining: mobEvents }
 }
 
+// Reconstruct a group a real run split across two adjacent pulls. No single pull covers it, so it
+// would otherwise fall to byNearestSpawn, which scatters each mob to its own nearest spawn and can
+// fragment two groups instead. We pool each adjacent pair's leftovers, claim whole groups the pool
+// fully covers (largest first, then nearest), and split each group's spawns back across the two
+// pulls by proximity. Only groups both pulls draw from are taken; the rest stay for byNearestSpawn.
+function assignSplitGroups({
+  pullStatuses,
+  groupsRemaining,
+  groupMobSpawns,
+  spawnIdsTaken,
+  trace,
+}: CrossPullArgs): Group[] {
+  for (let idx = 0; idx < pullStatuses.length - 1; idx++) {
+    const pullA = pullStatuses[idx]!
+    const pullB = pullStatuses[idx + 1]!
+
+    // A genuine split needs leftovers in both pulls; else the single-pull passes already had a shot.
+    if (pullA.mobEventsRemaining.length === 0 || pullB.mobEventsRemaining.length === 0) continue
+
+    const aEvents = new Set(pullA.mobEventsRemaining)
+    const pooled = [...pullA.mobEventsRemaining, ...pullB.mobEventsRemaining]
+    // Non-consumed pooled events per mob, kept in lockstep with `consumed` for each group's fits-check.
+    const remaining = tally(pooled, ({ mobId }) => mobId)
+
+    const pooledPositions = pooled.map(({ pos }) => pos).filter(Boolean) as Point[]
+    const center = pooledPositions.length ? polygonCenter(pooledPositions) : null
+
+    const groups = eligibleGroups(groupsRemaining, groupMobSpawns, spawnIdsTaken, pooled)
+      .filter((group) => groupSize(group) > 1)
+      .sort((a, b) => {
+        // Largest first (prefer one whole group over fragmenting several); proximity breaks ties.
+        const sizeDiff = groupSize(b) - groupSize(a)
+        if (sizeDiff !== 0) return sizeDiff
+        if (center === null) return 0
+        return distance(a.averagePos, center) - distance(b.averagePos, center)
+      })
+
+    const consumed = new Set<MobEvent>()
+    const claimedGroupIds: string[] = []
+
+    for (const group of groups) {
+      const entries = Object.entries(group.mobCounts)
+      // Only claim a group the pool can still fully cover.
+      if (!entries.every(([mobId, count]) => (remaining[Number(mobId)] ?? 0) >= count)) continue
+
+      // Tentatively match each count-bearing spawn to the nearest available pooled event of its mob,
+      // but only events sitting right on the group — a far event isn't part of this split.
+      const groupSpawns = groupMobSpawns[group.id]!
+      const usedSpawnIds = new Set<SpawnId>()
+      const eventToSpawnId = new Map<MobEvent, SpawnId>()
+      const groupConsumed: MobEvent[] = []
+
+      let complete = true
+      for (const [mobIdStr, count] of entries) {
+        const mobId = Number(mobIdStr)
+        const events = pooled
+          .filter((e) => e.mobId === mobId && !consumed.has(e) && !groupConsumed.includes(e))
+          .filter((e) => distanceToGroup(e, group) < SPLIT_GROUP_MAX_DISTANCE)
+          .sort((p, q) => distanceToGroup(p, group) - distanceToGroup(q, group))
+          .slice(0, count)
+
+        // Not enough near events to fill the group — this isn't its split, leave it.
+        if (events.length < count) {
+          complete = false
+          break
+        }
+
+        for (const event of events) {
+          const spawnsOfMob = groupSpawns.filter(
+            (ms) => ms.mob.id === mobId && !usedSpawnIds.has(ms.spawn.id),
+          )
+          const spawn = spawnsOfMob.reduce((best, ms) =>
+            distance(ms.spawn.pos, event.pos!) < distance(best.spawn.pos, event.pos!) ? ms : best,
+          )
+          usedSpawnIds.add(spawn.spawn.id)
+          eventToSpawnId.set(event, spawn.spawn.id)
+          groupConsumed.push(event)
+        }
+      }
+      if (!complete) continue
+
+      // Require both pulls to contribute; otherwise the group belongs to one pull — leave it.
+      const aContributes = groupConsumed.some((e) => aEvents.has(e))
+      const bContributes = groupConsumed.some((e) => !aEvents.has(e))
+      if (!aContributes || !bContributes) continue
+
+      // Commit: give each consumed event its matched spawn, under its owner pull.
+      const aConsumedPositions: Point[] = []
+      const bConsumedPositions: Point[] = []
+      for (const event of groupConsumed) {
+        const ownedByA = aEvents.has(event)
+        ;(ownedByA ? pullA : pullB).spawnIds.push(eventToSpawnId.get(event)!)
+        consumed.add(event)
+        remaining[event.mobId]! -= 1
+        if (event.pos) (ownedByA ? aConsumedPositions : bConsumedPositions).push(event.pos)
+        traceMerge(trace, event.key, {
+          status: 'assigned',
+          pullIdx: ownedByA ? idx : idx + 1,
+          passName: 'bySplitGroup',
+        })
+      }
+
+      // Send the group's leftover spawns (count-0 trash) to whichever pull's centroid is nearer.
+      const aCenter = aConsumedPositions.length
+        ? polygonCenter(aConsumedPositions)
+        : pullA.originalCenter
+      const bCenter = bConsumedPositions.length
+        ? polygonCenter(bConsumedPositions)
+        : pullB.originalCenter
+      for (const ms of groupSpawns) {
+        if (usedSpawnIds.has(ms.spawn.id)) continue
+        const toB =
+          aCenter === null
+            ? bCenter !== null
+            : bCenter !== null && distance(ms.spawn.pos, bCenter) < distance(ms.spawn.pos, aCenter)
+        ;(toB ? pullB : pullA).spawnIds.push(ms.spawn.id)
+        usedSpawnIds.add(ms.spawn.id)
+      }
+
+      usedSpawnIds.forEach(spawnIdsTaken.add, spawnIdsTaken)
+      claimedGroupIds.push(group.id)
+    }
+
+    if (claimedGroupIds.length > 0) {
+      pullA.mobEventsRemaining = pullA.mobEventsRemaining.filter((e) => !consumed.has(e))
+      pullB.mobEventsRemaining = pullB.mobEventsRemaining.filter((e) => !consumed.has(e))
+      if (pullA.mobEventsRemaining.length === 0) pullA.complete = true
+      if (pullB.mobEventsRemaining.length === 0) pullB.complete = true
+      const claimed = new Set(claimedGroupIds)
+      groupsRemaining = groupsRemaining.filter((group) => !claimed.has(group.id))
+    }
+  }
+
+  return groupsRemaining
+}
+
 function getSubPulls(mobEvents: MobEvent[], maxTime: number, maxDistance: number) {
   const firstEvent = mobEvents[0]
   if (!firstEvent) return []
@@ -854,7 +1285,7 @@ function findExactSpawns({
   idx,
 }: PassArgs): CalculatedPull | null {
   const mobSpawns: MobSpawn[] = []
-  for (const { mobId, pos } of mobEvents) {
+  for (const { mobId, pos, altPos } of mobEvents) {
     const matchingMobs = dungeon.mobSpawnsList.filter(({ mob }) => mob.id === mobId)
     const available = matchingMobs.filter(({ spawn }) => !spawnIdsTaken.has(spawn.id))
 
@@ -866,9 +1297,16 @@ function findExactSpawns({
       continue
     }
 
-    const sortedAvailable = !pos
-      ? available
-      : available.sort((a, b) => distance(a.spawn.pos, pos) - distance(b.spawn.pos, pos))
+    // Nearest spawn to either candidate position (a seam-ambiguous mob has two).
+    const positions = [pos, altPos].filter(Boolean) as Point[]
+    const sortedAvailable =
+      positions.length === 0
+        ? available
+        : available.sort(
+            (a, b) =>
+              nearestSpawnDistance(a.spawn.pos, positions) -
+              nearestSpawnDistance(b.spawn.pos, positions),
+          )
 
     const nearest = sortedAvailable[0]!
     mobSpawns.push(nearest)

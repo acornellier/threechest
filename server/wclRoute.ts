@@ -98,6 +98,23 @@ query {
   return byKey
 }
 
+// A mob's mapID near a composite-map seam is ambiguous: its first events can be reported on a
+// neighboring map before settling. Rather than guess the map here (we lack the spawn geometry to
+// know which is right), we emit one candidate per distinct map the mob appears on in a short window
+// from its first event, and let wclCalc pick whichever lands nearest a real spawn of that mob.
+const MAP_CANDIDATE_WINDOW = 10_000
+
+// Pick the representative event for a single map's candidates: cast data is more useful, so take it
+// over damage data even if it's up to 3 seconds later. Assumes events are sorted by timestamp.
+function pickRepresentative(events: WclEvent[]): WclEvent {
+  const firstCast = events.find(({ type }) => type === 'cast')
+  const firstDamage = events.find(({ type }) => type === 'damage')
+  if (firstCast && firstDamage) {
+    return firstCast.timestamp - 3000 < firstDamage.timestamp ? firstCast : firstDamage
+  }
+  return (firstCast ?? firstDamage)!
+}
+
 async function getFirstEvents(code: string, fight: WclFight, enemies: WclEnemy[]) {
   const eventStart = fight.startTime + 10_000 // ignore first 10 seconds, mobs do random casts
 
@@ -108,39 +125,48 @@ async function getFirstEvents(code: string, fight: WclFight, enemies: WclEnemy[]
     fetchEventsByActor(code, fight, eventStart, 'DamageDone', enemies),
   ])
 
-  const events = enemies
-    .map(({ actorId, instanceId }) => {
-      const key = enemyKey(actorId, instanceId)
+  const events = enemies.flatMap(({ actorId, instanceId }) => {
+    const key = enemyKey(actorId, instanceId)
 
-      const castsData = (castsByKey.get(key) ?? [])
-        .filter(({ target }) => target?.id !== -1 && target?.type !== 'NPC')
-        .map((event) => ({
-          ...event,
-          sourceID: event.source?.id ?? event.sourceID,
-          targetID: event.target?.id ?? event.targetID,
-        }))
+    const castsData = (castsByKey.get(key) ?? [])
+      .filter(({ target }) => target?.id !== -1 && target?.type !== 'NPC')
+      .map((event) => ({
+        ...event,
+        sourceID: event.source?.id ?? event.sourceID,
+        targetID: event.target?.id ?? event.targetID,
+      }))
 
-      const damageData = (damageByKey.get(key) ?? [])
-        .filter(({ source, amount }) => source?.name !== 'Bloodworm' && amount)
-        .map((event) => ({
-          ...event,
-          sourceID: event.source?.id ?? event.sourceID,
-          targetID: event.target?.id ?? event.targetID,
-        }))
+    const damageData = (damageByKey.get(key) ?? [])
+      .filter(({ source, amount }) => source?.name !== 'Bloodworm' && amount)
+      .map((event) => ({
+        ...event,
+        sourceID: event.source?.id ?? event.sourceID,
+        targetID: event.target?.id ?? event.targetID,
+      }))
 
-      const firstCast = castsData.find(({ x, y }) => x && y)
-      const firstDamage = damageData.find(({ x, y }) => x && y)
-      if (firstCast && firstDamage) {
-        // Cast data is more useful, so take it over damage data even if it's 3 seconds later
-        return firstCast.timestamp - 3000 < firstDamage.timestamp ? firstCast : firstDamage
-      } else if (firstCast || firstDamage) {
-        return firstCast ?? firstDamage
-      } else {
-        // No events with coordinates found
-        return damageData[0] ?? castsData[0]
-      }
-    })
-    .filter(Boolean)
+    const coordEvents = [...castsData, ...damageData]
+      .filter(({ x, y }) => x && y)
+      .sort((a, b) => a.timestamp - b.timestamp)
+
+    if (coordEvents.length === 0) {
+      // No events with coordinates found
+      const fallback = damageData[0] ?? castsData[0]
+      return fallback ? [fallback] : []
+    }
+
+    // Emit one candidate per distinct map the mob appears on within the window from its first
+    // event. wclCalc resolves the seam ambiguity by choosing the candidate nearest a real spawn.
+    const windowStart = coordEvents[0]!.timestamp
+    const eventsByMap = new Map<number, WclEvent[]>()
+    for (const event of coordEvents) {
+      if (event.timestamp > windowStart + MAP_CANDIDATE_WINDOW) break
+      const list = eventsByMap.get(event.mapID) ?? []
+      list.push(event)
+      eventsByMap.set(event.mapID, list)
+    }
+
+    return [...eventsByMap.values()].map(pickRepresentative)
+  })
 
   console.timeEnd('query time')
 
@@ -226,7 +252,8 @@ export async function getWclRoute(
       return {
         timestamp: timestamp - fight.startTime,
         gameId: matchingEnemy.gameId,
-        instanceId: instanceId,
+        actorId,
+        instanceId,
         x,
         y,
         mapID,
