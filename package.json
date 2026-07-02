@@ -9,6 +9,8 @@
     "rtc": "tsx rtc-server/rtc-server.ts",
     "build": "tsc && vite build && vite build -c vite.config.vercelServer.ts",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "test": "vitest run",
+    "test:watch": "vitest",
     "preview": "vite preview",
     "vercel-dev": "cross-env NODE_ENV=vercel_dev && vercel dev --listen 6173",
     "postinstall": "patch-package",
@@ -85,6 +87,7 @@
     "tsx": "4.7.2",
     "typescript": "5.4.5",
     "vite": "5.2.8",
-    "vite-plugin-compile-time": "0.2.1"
+    "vite-plugin-compile-time": "0.2.1",
+    "vitest": "4.1.9"
   }
 }

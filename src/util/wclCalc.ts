@@ -173,6 +173,14 @@ const WHOLE_GROUP_MAX_DISTANCE = 100
 // that happens to complete the composition is a coincidence, not a split.
 const SPLIT_GROUP_MAX_DISTANCE = 50
 
+// calculateWholeGroupPull's partial fallback (claimed when no single combination of groups covers
+// every remaining mob) runs over a whole, unsegmented pull that can span many seconds and — for a
+// pull crossing a composite-map seam — skips the singleMap proximity filter on candidate groups
+// entirely. Composition alone can then coincidentally match a group whose actual events are
+// scattered far away. Each matched event must sit this close to the group to be trusted; same
+// reasoning as SPLIT_GROUP_MAX_DISTANCE, a coincidental composition match isn't a real claim.
+const CONFIDENT_CLAIM_MAX_DISTANCE = 50
+
 // A gap this large between consecutive events starts a new pull. Shared by the pull builder and the
 // map-candidate resolver so both segment events into the same pulls.
 const PULL_TIME_GAP = 20_000
@@ -827,8 +835,10 @@ function getAnchorMobIds(dungeon: Dungeon): Set<number> {
 
 // Greedily claim whole groups whose full composition fits in the remaining mob counts, in the given
 // (size-desc, proximity) order. Unlike getPulledGroups this is partial: it never fails, it just
-// claims what it confidently can and leaves the rest of the mobs for later passes.
-function getAnchoredGroups(remainingMobs: Record<number, number>, groups: Group[]): Group[] {
+// claims what it confidently can and leaves the rest of the mobs for later passes. Shared by
+// calculateAnchoredGroupPull (pre-filtered to anchor-mob groups) and calculateWholeGroupPull's
+// fallback (any whole group) when no single combination covers every remaining mob.
+function getConfidentGroups(remainingMobs: Record<number, number>, groups: Group[]): Group[] {
   const claimed: Group[] = []
   const remaining = { ...remainingMobs }
 
@@ -921,15 +931,26 @@ function calculateAnchoredGroupPull({
       return groupSize(b) - groupSize(a)
     })
 
-  const claimedGroups = getAnchoredGroups(
+  const claimedGroups = getConfidentGroups(
     tally(mobEvents, ({ mobId }) => mobId),
     groups,
   )
   if (claimedGroups.length === 0) return null
 
-  // Consume, per mob type, the events nearest each claimed group — so a group takes the events that
-  // actually sit at its location and leaves events of the same mob elsewhere (with their correct
-  // positions) for later passes. Groups are processed nearest-first, matching the claim order.
+  const consumedEvents = consumeNearestPerGroup(claimedGroups, mobEvents)
+  return claimGroups(
+    claimedGroups.map((group) => group.id),
+    groupsRemaining,
+    groupMobSpawns,
+    spawnIdsTaken,
+    mobEvents.filter((event) => !consumedEvents.has(event)),
+  )
+}
+
+// Consume, per mob type, the events nearest each claimed group — so a group takes the events that
+// actually sit at its location and leaves events of the same mob elsewhere (with their correct
+// positions) for later passes. Groups are processed in the given order, matching the claim order.
+function consumeNearestPerGroup(claimedGroups: Group[], mobEvents: MobEvent[]): Set<MobEvent> {
   const consumedEvents = new Set<MobEvent>()
   for (const group of claimedGroups) {
     for (const [mobId, count] of Object.entries(group.mobCounts)) {
@@ -941,19 +962,63 @@ function calculateAnchoredGroupPull({
       }
     }
   }
+  return consumedEvents
+}
 
-  return claimGroups(
-    claimedGroups.map((group) => group.id),
-    groupsRemaining,
-    groupMobSpawns,
-    spawnIdsTaken,
-    mobEvents.filter((event) => !consumedEvents.has(event)),
-  )
+// Greedily claim whole groups whose composition fits the remaining mob counts AND whose actual
+// matching events sit within CONFIDENT_CLAIM_MAX_DISTANCE of the group. Used as
+// calculateWholeGroupPull's fallback, which — unlike calculateAnchoredGroupPull — runs over an
+// unsegmented pull, so composition alone isn't enough to rule out a scattered coincidence; a group
+// is only claimed once its events are confirmed to actually be near it.
+function claimConfidentWholeGroups(
+  mobCounts: Record<number, number>,
+  mobEvents: MobEvent[],
+  groups: Group[],
+): { claimedGroups: Group[]; consumedEvents: Set<MobEvent> } {
+  const claimedGroups: Group[] = []
+  const consumedEvents = new Set<MobEvent>()
+  const remaining = { ...mobCounts }
+
+  for (const group of groups) {
+    const entries = Object.entries(group.mobCounts)
+    if (!entries.every(([mobId, count]) => (remaining[Number(mobId)] ?? 0) >= count)) continue
+
+    const matched: MobEvent[] = []
+    let withinRange = true
+    for (const [mobId, count] of entries) {
+      const candidates = mobEvents
+        .filter(
+          (event) =>
+            event.mobId === Number(mobId) &&
+            !consumedEvents.has(event) &&
+            !matched.includes(event),
+        )
+        .sort((a, b) => distanceToGroup(a, group) - distanceToGroup(b, group))
+        .slice(0, count)
+
+      for (const event of candidates) {
+        if (event.pos && distanceToGroup(event, group) > CONFIDENT_CLAIM_MAX_DISTANCE) {
+          withinRange = false
+        }
+        matched.push(event)
+      }
+    }
+    if (!withinRange) continue
+
+    for (const [mobId, count] of entries) remaining[Number(mobId)] -= count
+    matched.forEach((event) => consumedEvents.add(event))
+    claimedGroups.push(group)
+  }
+
+  return { claimedGroups, consumedEvents }
 }
 
 // Cover the leftovers with whole groups by composition, preferring larger groups; position is only
-// a soft proximity tiebreaker. Reached after the position passes, so anything with no clean cover
-// falls through to findExactSpawns.
+// a soft proximity tiebreaker. Reached after the position passes. When one combination of whole
+// groups covers every remaining mob exactly, take it. Otherwise (e.g. a same-time singleton boss
+// with no matching group mixed in with a swarm that does compose cleanly) fall back to a partial
+// claim of whichever whole groups confidently fit, leaving the rest for later passes instead of
+// abandoning a clean composition match entirely.
 function calculateWholeGroupPull({
   mobEvents,
   groupsRemaining,
@@ -992,12 +1057,23 @@ function calculateWholeGroupPull({
       return distance(a.averagePos, center) - distance(b.averagePos, center)
     })
 
-  const pulledGroups = getPulledGroups(
-    tally(mobEvents, ({ mobId }) => mobId),
-    groups,
+  const mobCounts = tally(mobEvents, ({ mobId }) => mobId)
+
+  const pulledGroups = getPulledGroups(mobCounts, groups)
+  if (pulledGroups !== null) {
+    return claimGroups(pulledGroups, groupsRemaining, groupMobSpawns, spawnIdsTaken, [])
+  }
+
+  const { claimedGroups, consumedEvents } = claimConfidentWholeGroups(mobCounts, mobEvents, groups)
+  if (claimedGroups.length === 0) return null
+
+  return claimGroups(
+    claimedGroups.map((group) => group.id),
+    groupsRemaining,
+    groupMobSpawns,
+    spawnIdsTaken,
+    mobEvents.filter((event) => !consumedEvents.has(event)),
   )
-  if (pulledGroups === null) return null
-  return claimGroups(pulledGroups, groupsRemaining, groupMobSpawns, spawnIdsTaken, [])
 }
 
 // When the pooled leftovers have no clean whole-group cover (e.g. one MDT-misgrouped mob, or a
