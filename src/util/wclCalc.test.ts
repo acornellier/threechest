@@ -10,7 +10,7 @@ import rgpFixture from './__fixtures__/wclRoute-rGPCqaDyQmJbBLfX-9.json'
 import sixpmFixture from './__fixtures__/wclRoute-6pMc2dJHBh1Q8rGF-13.json'
 
 // Regression test: two lone Deathwhisper Necrolytes (raw events 20 and 33) each fell to
-// calculateWholeGroupPull's exact-cover search, which ranked the several identical necrolyte groups
+// calculateCompositionPull's exact-cover search, which ranked the several identical necrolyte groups
 // (same composition, different locations) by distance to the pooled pull centroid. In a pull whose
 // leftovers span two locations, that centroid sits between them, leaving two identical groups nearly
 // equidistant — so the search claimed the one a hair nearer the centroid (group 52, 35 units from
@@ -35,7 +35,7 @@ describe('wclResultToRoute — identical whole groups ranked by nearest covered 
 })
 
 // Regression test: two Tormented Shades (raw events 80 and 82) each sit 4-5 units from a separate
-// single-shade spawn group (15-2, 15-4), but calculateWholeGroupPull's exact-cover search claimed
+// single-shade spawn group (15-2, 15-4), but calculateCompositionPull's exact-cover search claimed
 // them both for group 92 — a two-shade group 41-50 units away — because getPulledGroups prefers the
 // largest group first and one 2-shade group covers both shades in a single claim. Validating that a
 // clean cover's groups actually sit on their events (rejecting it when an event belongs to a
@@ -114,7 +114,7 @@ describe('wclResultToRoute — full route pull snapshots', () => {
 // Regression test for a bug where a swarm of same-mob-type events (24x Brightscale Wyrm, raw
 // event ids 40-63) fell through every composition pass to the byNearestSpawn last resort, even
 // though two whole MDT groups (spawn groups 20 and 21, 12 wyrms each) cleanly cover them. The
-// cause: calculateWholeGroupPull required its ENTIRE remaining event pool to compose to zero,
+// cause: calculateCompositionPull required its ENTIRE remaining event pool to compose to zero,
 // including two unrelated singleton bosses (Arcane Magister, Lightward Healer) dying in the same
 // window that no group could also cover — so the whole match bailed instead of claiming the part
 // it could confidently solve.
@@ -143,7 +143,7 @@ describe('wclResultToRoute — Brightscale Wyrm swarm composition', () => {
   })
 })
 
-// Regression test for a bug introduced by the fix above: calculateWholeGroupPull's partial
+// Regression test for a bug introduced by the fix above: calculateCompositionPull's partial
 // fallback claimed groups by composition alone, with no check that the matched events were
 // actually near each other. Raw event ids 72, 73, 75, 77 (2x Sunblade Enforcer, Lightward Healer,
 // Spellwoven Familiar) happen to match MDT spawn group 14's composition exactly, but they're real
@@ -163,13 +163,13 @@ describe('wclResultToRoute — coincidental composition match across scattered k
     expect(events).toHaveLength(4)
 
     const passNames = events.map((event) => trace.get(wclEventKey(event))?.passName)
-    expect(passNames).not.toEqual(['byWholeGroup', 'byWholeGroup', 'byWholeGroup', 'byWholeGroup'])
+    expect(passNames).not.toEqual(['byComposition', 'byComposition', 'byComposition', 'byComposition'])
   })
 })
 
 // Regression test: a seam-ambiguous Arcane Magister (raw event 74 on map 2516, whose true position
 // is its other-map candidate event 69 — 6 units from spawn group 25's Magister + 2 Enforcers) was
-// being pulled into MDT group 27 (Magister + Spellbreaker + Familiar) by calculateWholeGroupPull's
+// being pulled into MDT group 27 (Magister + Spellbreaker + Familiar) by calculateCompositionPull's
 // composition fallback. The magister's event sits 37 units from group 27 but only ~6 from group 25,
 // so it should complete group 25 (with its two enforcers, events 70/71), not group 27. Grabbing it
 // for group 27 also scattered group 25's enforcers to byNearestSpawn and left the *later* real
