@@ -141,7 +141,7 @@ const defaultMapOffsets: MapOffset = {
 // seam between two maps in an MDT composite map. Such a position lands far from any spawn of the
 // mob's own type, so we discard it. This sits right at max patrol wander (~30 units), so it can
 // occasionally drop a legit patrol position; that fails safe (the mob still resolves by
-// composition). TODO: a within-pull outlier check would let us raise this without that risk.
+// composition).
 const MAX_PLAUSIBLE_SPAWN_DISTANCE = 60
 
 // Time window for segmenting a pull into sub-pulls (every pass except byWholeGroup). Fixed
@@ -166,7 +166,14 @@ const PULL_OUTLIER_DISTANCE = 130
 // In a single-map dungeon there is no composite-map seam to mis-map across, so positions are always
 // reliable and byWholeGroup must not reach past this distance to complete a cover — otherwise a
 // dungeon full of free individual mobs lets a "perfect" group be assembled from spawns all over.
-const WHOLE_GROUP_MAX_DISTANCE = 100
+const WHOLE_GROUP_MAX_DISTANCE = 50
+
+// byAnchoredGroup ignores position to reunite a group mis-mapped across a composite-map seam. A
+// single-map pull has no seam, so its positions are reliable and a far "perfect" anchored match is a
+// coincidence, not a mis-map — claiming it steals events that belong to nearer groups and locks the
+// far group's spawns away from its own real (later) kills. Cap how far an anchored group's location
+// may sit from the pull center in that case; same scale as WHOLE_GROUP_MAX_DISTANCE.
+const ANCHORED_GROUP_MAX_DISTANCE = 40
 
 // A real split is two adjacent pulls at essentially the same spot, so bySplitGroup only claims a
 // group sitting right on the pooled leftovers. Tighter than WHOLE_GROUP_MAX_DISTANCE: a far group
@@ -180,6 +187,14 @@ const SPLIT_GROUP_MAX_DISTANCE = 50
 // scattered far away. Each matched event must sit this close to the group to be trusted; same
 // reasoning as SPLIT_GROUP_MAX_DISTANCE, a coincidental composition match isn't a real claim.
 const CONFIDENT_CLAIM_MAX_DISTANCE = 50
+
+// Within claimConfidentWholeGroups, an event is refused for a group if another eligible group sits
+// at least this much nearer to it — the event physically belongs to that closer group, so matching
+// it here is a coincidental composition fit. The margin must exceed the spread of densely packed
+// same-type groups (adjacent mob packs put an event nearly equidistant from several groups, ~7
+// units apart) while still catching a seam-mislabeled mob whose true position is right on a
+// different group (tens of units nearer than the group it composed into).
+const CONFIDENT_CLAIM_NEARER_MARGIN = 20
 
 // A gap this large between consecutive events starts a new pull. Shared by the pull builder and the
 // map-candidate resolver so both segment events into the same pulls.
@@ -758,7 +773,16 @@ function calculateExactPull(
   if (pullCenter !== null) {
     groups = groups
       .filter(({ averagePos }) => distance(averagePos, pullCenter) < maxDistanceToGroup)
-      .sort((a, b) => distance(a.averagePos, pullCenter) - distance(b.averagePos, pullCenter))
+      // Rank by how close a group sits to the events it would actually claim, not to the pooled
+      // center. When a sub-pull spans two adjacent clusters the center sits between them, making a
+      // group next to one cluster look "nearest" even though another group sits right on the events;
+      // getPulledGroups takes the first composition-valid cover in this order, so a center-based rank
+      // lets it grab a coincidental cover (a group the events don't sit on) over the group they do.
+      .sort(
+        (a, b) =>
+          nearestCoveredEventDistance(a, pull, pullCenter) -
+          nearestCoveredEventDistance(b, pull, pullCenter),
+      )
   }
 
   const pulledGroups = getPulledGroups(
@@ -779,6 +803,58 @@ const distanceToGroup = (event: MobEvent, group: Group) => {
   let min = event.pos ? distance(event.pos, group.averagePos) : Infinity
   if (event.altPos) min = Math.min(min, distance(event.altPos, group.averagePos))
   return min
+}
+
+// A group is only a genuine competitor for an event if its full composition can be covered by the
+// remaining mob pool — otherwise it can never be claimed by a whole-group pass, so it will never
+// actually take the event. A group that merely *contains* the event's mob type but needs other mobs
+// the pull doesn't have (e.g. a Magister+Pyromancer+Enforcer+Healer group sitting on a lone
+// Magister+2 Healer leftover) is a phantom: it sits nearby but can't form, so it must not veto the
+// one group that does cover the pool.
+const groupFitsPool = (group: Group, poolCounts: Record<number, number>): boolean =>
+  Object.entries(group.mobCounts).every(
+    ([mobId, count]) => (poolCounts[Number(mobId)] ?? 0) >= count,
+  )
+
+// True when another formable group sits markedly nearer this event than `group` does — the event
+// physically belongs to that closer group, so `group` claiming it is a coincidental composition
+// fit. Only groups the remaining pool can actually cover count (see groupFitsPool): a nearer group
+// that can't be formed will never claim the event, so it isn't a real competitor. The margin keeps
+// this from misfiring on densely packed same-type groups (e.g. adjacent wyrm packs), where an event
+// legitimately sits nearly equidistant from several groups. Position-less events (no candidate
+// position at all) can't be judged this way, so they never trigger it.
+const hasNearerEligibleGroup = (
+  event: MobEvent,
+  group: Group,
+  groups: Group[],
+  poolCounts?: Record<number, number>,
+): boolean => {
+  if (!event.pos && !event.altPos) return false
+  const distToGroup = distanceToGroup(event, group)
+  return groups.some(
+    (other) =>
+      other !== group &&
+      (!poolCounts || groupFitsPool(other, poolCounts)) &&
+      distanceToGroup(event, other) < distToGroup - CONFIDENT_CLAIM_NEARER_MARGIN,
+  )
+}
+
+// Distance from a group to the nearest leftover event whose mob the group actually contains, used
+// to rank candidate whole groups by how well they sit on the events they'd claim. Falls back to the
+// pull center when no covered event is positioned (position-less leftovers borrowing a location).
+const nearestCoveredEventDistance = (
+  group: Group,
+  mobEvents: MobEvent[],
+  center: Point | null,
+): number => {
+  let min = Infinity
+  for (const event of mobEvents) {
+    if ((group.mobCounts[event.mobId] ?? 0) > 0) {
+      min = Math.min(min, distanceToGroup(event, group))
+    }
+  }
+  if (min !== Infinity) return min
+  return center ? distance(group.averagePos, center) : 0
 }
 
 // Groups still fully available (no spawn taken) that contain a mob present in the pull.
@@ -866,6 +942,7 @@ function calculateAnchoredGroupPullFromSubPulls({
   spawnIdsTaken,
   originalCenter,
   anchorMobIds,
+  singleMap,
 }: PassArgs): CalculatedPull {
   const spawnIds: SpawnId[] = []
   const subPulls = getSubPulls(mobEvents, SUBPULL_TIME_RANGE, Infinity)
@@ -878,6 +955,7 @@ function calculateAnchoredGroupPullFromSubPulls({
       spawnIdsTaken,
       originalCenter,
       anchorMobIds,
+      singleMap,
     })
 
     if (calculatedPull !== null) {
@@ -904,6 +982,7 @@ function calculateAnchoredGroupPull({
   spawnIdsTaken,
   originalCenter,
   anchorMobIds,
+  singleMap,
 }: Pick<
   PassArgs,
   | 'mobEvents'
@@ -912,6 +991,7 @@ function calculateAnchoredGroupPull({
   | 'spawnIdsTaken'
   | 'originalCenter'
   | 'anchorMobIds'
+  | 'singleMap'
 >): CalculatedPull | null {
   if (mobEvents.length === 0) return null
 
@@ -921,6 +1001,13 @@ function calculateAnchoredGroupPull({
   const groups = eligibleGroups(groupsRemaining, groupMobSpawns, spawnIdsTaken, mobEvents)
     .filter((group) => groupSize(group) > 1)
     .filter(({ mobCounts }) => Object.keys(mobCounts).some((id) => anchorMobIds.has(Number(id))))
+    // A single-map pull has reliable positions, so don't claim a far anchored group by composition.
+    .filter(
+      (group) =>
+        !singleMap ||
+        center === null ||
+        distance(group.averagePos, center) < ANCHORED_GROUP_MAX_DISTANCE,
+    )
     .sort((a, b) => {
       // Nearest first: a far "perfect" match is only taken when there's no nearer fit (i.e. the
       // events were genuinely mis-mapped). Size breaks ties when positions are unavailable.
@@ -989,15 +1076,20 @@ function claimConfidentWholeGroups(
       const candidates = mobEvents
         .filter(
           (event) =>
-            event.mobId === Number(mobId) &&
-            !consumedEvents.has(event) &&
-            !matched.includes(event),
+            event.mobId === Number(mobId) && !consumedEvents.has(event) && !matched.includes(event),
         )
         .sort((a, b) => distanceToGroup(a, group) - distanceToGroup(b, group))
         .slice(0, count)
 
       for (const event of candidates) {
-        if (event.pos && distanceToGroup(event, group) > CONFIDENT_CLAIM_MAX_DISTANCE) {
+        // Reject a claim whose event sits too far from the group, or that clearly belongs to a
+        // markedly nearer eligible group. A seam-mislabeled mob can compose into a far group while
+        // its true (other-map) position sits right on a different group; that group must win it.
+        if (
+          (event.pos || event.altPos) &&
+          (distanceToGroup(event, group) > CONFIDENT_CLAIM_MAX_DISTANCE ||
+            hasNearerEligibleGroup(event, group, groups))
+        ) {
           withinRange = false
         }
         matched.push(event)
@@ -1011,6 +1103,37 @@ function claimConfidentWholeGroups(
   }
 
   return { claimedGroups, consumedEvents }
+}
+
+// Whether an exact-cover combination actually sits on the events it would claim. getPulledGroups
+// picks the first composition-valid cover in (size-desc) order, so a large group can win the whole
+// cover — e.g. a 2-shade group claiming both shades — even when the events sit right on two nearer
+// single-shade groups. Assigning each claimed group its nearest covered events and rejecting the
+// cover if any event belongs to a markedly nearer eligible group sends that case to the partial
+// fallback, which claims the near groups instead. Only used where positions are reliable (singleMap).
+function exactCoverSitsOnGroups(
+  claimedGroupIds: string[],
+  groups: Group[],
+  mobEvents: MobEvent[],
+): boolean {
+  const poolCounts = tally(mobEvents, ({ mobId }) => mobId)
+  const groupsById = new Map(groups.map((group) => [group.id, group]))
+  const consumed = new Set<MobEvent>()
+  for (const id of claimedGroupIds) {
+    const group = groupsById.get(id)
+    if (!group) continue
+    for (const [mobId, count] of Object.entries(group.mobCounts)) {
+      const candidates = mobEvents
+        .filter((event) => event.mobId === Number(mobId) && !consumed.has(event))
+        .sort((a, b) => distanceToGroup(a, group) - distanceToGroup(b, group))
+        .slice(0, count)
+      for (const event of candidates) {
+        consumed.add(event)
+        if (hasNearerEligibleGroup(event, group, groups, poolCounts)) return false
+      }
+    }
+  }
+  return true
 }
 
 // Cover the leftovers with whole groups by composition, preferring larger groups; position is only
@@ -1050,17 +1173,31 @@ function calculateWholeGroupPull({
         distance(group.averagePos, center) < WHOLE_GROUP_MAX_DISTANCE,
     )
     .sort((a, b) => {
-      // Largest groups first (prefer whole linked groups); proximity breaks ties.
+      // Largest groups first (prefer whole linked groups); proximity breaks ties. Proximity is to
+      // the nearest leftover event the group can actually cover — not the pooled pull centroid,
+      // which for a multi-location pull sits between clusters and can't tell two identical groups
+      // apart, letting the exact-cover search claim the one slightly nearer the centroid even
+      // though a leftover event sits right on the other. Fall back to the centroid when no covered
+      // event has a position.
       const sizeDiff = groupSize(b) - groupSize(a)
       if (sizeDiff !== 0) return sizeDiff
-      if (center === null) return 0
-      return distance(a.averagePos, center) - distance(b.averagePos, center)
+      return (
+        nearestCoveredEventDistance(a, mobEvents, center) -
+        nearestCoveredEventDistance(b, mobEvents, center)
+      )
     })
 
   const mobCounts = tally(mobEvents, ({ mobId }) => mobId)
 
   const pulledGroups = getPulledGroups(mobCounts, groups)
-  if (pulledGroups !== null) {
+  // With reliable positions, reject a clean cover whose groups don't actually sit on their events
+  // (a far larger group swallowing events that belong to nearer groups); the fallback below then
+  // claims the near groups instead. Seam pulls keep the composition-only cover — positions there
+  // can be mislabeled, and the exact cover is what rescues a group split across the map seam.
+  if (
+    pulledGroups !== null &&
+    (!singleMap || exactCoverSitsOnGroups(pulledGroups, groups, mobEvents))
+  ) {
     return claimGroups(pulledGroups, groupsRemaining, groupMobSpawns, spawnIdsTaken, [])
   }
 
@@ -1104,7 +1241,12 @@ function calculateWholeGroupPullFromSubPulls({
     if (calculatedPull !== null) {
       groupsRemaining = calculatedPull.groupsRemaining
       spawnIds.push(...calculatedPull.spawnIds)
-      mobEvents = mobEvents.filter((event) => !subPull.includes(event))
+      // calculateWholeGroupPull's fallback is partial: it can claim a group and leave some of the
+      // sub-pull's events unconsumed (e.g. 3 masks over a 2-mask group). Keep those leftovers for
+      // later passes instead of dropping the whole sub-pull, which would silently lose a mob.
+      mobEvents = mobEvents.filter(
+        (event) => !subPull.includes(event) || calculatedPull.mobEventsRemaining.includes(event),
+      )
     }
   }
 
@@ -1359,8 +1501,23 @@ function findExactSpawns({
   dungeon,
   errors,
   idx,
+  originalCenter,
 }: PassArgs): CalculatedPull | null {
   const mobSpawns: MobSpawn[] = []
+
+  // When an event's own position was dropped (reported implausibly far from any spawn), borrow a
+  // location from its positioned clustermates of the same mob, falling back to the pull center. A
+  // tight cluster of same-mob deaths whose reported position straddles the far-from-spawn cutoff
+  // then lands together on one spawn cluster instead of scattering to arbitrary first-available
+  // spawns across the map.
+  const borrowedCenter = (mobId: number): Point[] => {
+    const positions = mobEvents
+      .filter((event) => event.mobId === mobId)
+      .flatMap(({ pos, altPos }) => [pos, altPos].filter(Boolean) as Point[])
+    const center = positions.length ? polygonCenter(positions) : originalCenter
+    return center ? [center] : []
+  }
+
   for (const { mobId, pos, altPos } of mobEvents) {
     const matchingMobs = dungeon.mobSpawnsList.filter(({ mob }) => mob.id === mobId)
     const available = matchingMobs.filter(({ spawn }) => !spawnIdsTaken.has(spawn.id))
@@ -1373,8 +1530,10 @@ function findExactSpawns({
       continue
     }
 
-    // Nearest spawn to either candidate position (a seam-ambiguous mob has two).
-    const positions = [pos, altPos].filter(Boolean) as Point[]
+    // Nearest spawn to either candidate position (a seam-ambiguous mob has two), or to the borrowed
+    // clustermate location when this event's own position was dropped.
+    const ownPositions = [pos, altPos].filter(Boolean) as Point[]
+    const positions = ownPositions.length ? ownPositions : borrowedCenter(mobId)
     const sortedAvailable =
       positions.length === 0
         ? available

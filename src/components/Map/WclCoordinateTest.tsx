@@ -1,4 +1,7 @@
-import { Popup, Rectangle, Tooltip } from 'react-leaflet'
+import { Popup, Rectangle, Tooltip, useMap } from 'react-leaflet'
+import { Portal } from 'react-portal'
+import { ArrowPathIcon } from '@heroicons/react/24/outline'
+import { Panel } from '../Common/Panel.tsx'
 import {
   passes,
   wclEventKey,
@@ -9,10 +12,11 @@ import {
   type WclResult,
   type WclTrace,
 } from '../../util/wclCalc.ts'
-import { useCallback, useEffect, useMemo, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { useRoute } from '../../store/routes/routeHooks.ts'
 import { useLocalStorage } from '../../util/hooks/useLocalStorage.ts'
 import { useShortcut } from '../../util/hooks/useShortcut.ts'
+import { useKeyHeld } from '../../util/hooks/useKeyHeld.ts'
 import { wclRouteApi } from '../../api/wclRouteApi.ts'
 import { setPulls } from '../../store/routes/routesReducer.ts'
 import { useAppDispatch } from '../../store/storeUtil.ts'
@@ -23,6 +27,12 @@ import { darkenColor, getPullColor } from '../../util/colors.ts'
 const rectSize = 2
 
 const recalcShortcut: Shortcut[] = [{ key: 'r' }]
+
+// Squares render in a dedicated pane so holding Shift can lift them above
+// markerPane (z-index 600), where they'd otherwise be unclickable under mobs.
+const eventPaneName = 'wcl-event-pane'
+const eventPaneZIndexDefault = '400'
+const eventPaneZIndexRaised = '601'
 
 type EventStyle = { color: string; fillColor: string; fillOpacity: number }
 
@@ -73,21 +83,44 @@ export function WclCoordinateTest() {
   const route = useRoute()
   const [wclResult, setWclResult] = useState<WclResult | null>(null)
   const dispatch = useAppDispatch()
+  const map = useMap()
 
   const [shown, setShown] = useLocalStorage('wcl-coordinate-test-shown', false)
   const onShortcut = useCallback(() => setShown((prev) => !prev), [setShown])
   useShortcut('w', onShortcut)
 
+  // Created synchronously during render (not in an effect) so the pane exists
+  // in the DOM before child <Rectangle> layers mount and try to add themselves to it.
+  const eventPane = useMemo(
+    () => map.getPane(eventPaneName) ?? map.createPane(eventPaneName),
+    [map],
+  )
+
+  const bringSquaresToFront = useKeyHeld('Shift')
+  useEffect(() => {
+    eventPane.style.zIndex = bringSquaresToFront ? eventPaneZIndexRaised : eventPaneZIndexDefault
+  }, [eventPane, bringSquaresToFront])
+
   const [maxPasses, setMaxPasses] = useState<number | undefined>(undefined)
+  const [loadingSince, setLoadingSince] = useState<number | null>(null)
+  const isLoadingRef = useRef(false)
   const recalculate = useCallback(
     async (maxPasses?: number) => {
+      if (isLoadingRef.current) return
       if (maxPasses !== undefined) {
         console.log('pass', maxPasses, passes[maxPasses - 1]?.name)
       }
       if (!route.wclUrlInfo) return
-      const { result } = await wclRouteApi(route.wclUrlInfo)
-      const { route: recalculatedRoute } = wclResultToRoute(result, maxPasses)
-      dispatch(setPulls(recalculatedRoute.pulls))
+      isLoadingRef.current = true
+      setLoadingSince(Date.now())
+      try {
+        const { result } = await wclRouteApi(route.wclUrlInfo)
+        const { route: recalculatedRoute } = wclResultToRoute(result, maxPasses)
+        dispatch(setPulls(recalculatedRoute.pulls))
+      } finally {
+        isLoadingRef.current = false
+        setLoadingSince(null)
+      }
     },
     [dispatch, route.wclUrlInfo],
   )
@@ -142,7 +175,32 @@ export function WclCoordinateTest() {
     return trace
   }, [wclResult, shown, maxPasses])
 
-  if (!shown || !wclResult) return null
+  const loadingIndicatorThreshold = 100
+  const [elapsedMs, setElapsedMs] = useState(0)
+  useEffect(() => {
+    if (loadingSince === null) {
+      setElapsedMs(0)
+      return
+    }
+
+    const interval = setInterval(() => setElapsedMs(Date.now() - loadingSince), 100)
+    return () => clearInterval(interval)
+  }, [loadingSince])
+
+  const loadingIndicator = loadingSince !== null && elapsedMs >= loadingIndicatorThreshold && (
+    <Portal>
+      <div className="fixed bottom-2 left-1/2 -translate-x-1/2 z-[9999]">
+        <Panel>
+          <div className="flex items-center gap-1.5 text-white text-sm min-w-[195px]">
+            <ArrowPathIcon width={16} height={16} className="animate-spin" />
+            Loading WCL data… {(elapsedMs / 1000).toFixed(1)}s
+          </div>
+        </Panel>
+      </div>
+    </Portal>
+  )
+
+  if (!shown || !wclResult) return loadingIndicator
 
   const visibleEvents = wclResult.events.filter(
     (point) => point.x && point.y && point.mapID && mapBounds[point.mapID],
@@ -150,54 +208,63 @@ export function WclCoordinateTest() {
 
   const startTime = visibleEvents[0]?.timestamp ?? 0
 
-  return visibleEvents.map((event, idx) => {
-    // if (idx > 40) return null
-    const point = wclPointToLeafletPoint(event as WclPoint, wclResult.deathEvents)
-    const entry = trace?.get(wclEventKey(event))
-    const style = eventStyle(entry)
-    return (
-      <Rectangle
-        key={`${wclEventKey(event)}-${idx}`}
-        bounds={[
-          [point[0] - rectSize, point[1] - rectSize],
-          [point[0] + rectSize, point[1] + rectSize],
-        ]}
-        pathOptions={{
-          ...style,
-          weight: 2,
-          // Dashed border: the event's position was ignored (mis-mapped or outlier).
-          dashArray: entry?.posDropped ? '3 3' : undefined,
-        }}
-      >
-        <Tooltip className={`pull-number-tooltip [&]:text-lg`} direction="center" permanent>
-          {idx + 1}
-          {/* <span className="-mr-9 text-xs">{event.timestamp}</span>*/}
-        </Tooltip>
-        <Popup className="plain-popup" closeButton={false}>
-          <div className="relative flex flex-col text-white rounded-sm">
-            <div className="absolute w-full h-full bg-slate-800 opacity-85 -z-10 rounded-sm" />
-            <div className="p-2 rounded-sm">
-              <div>
-                <span className="font-bold">{event.name}</span>
-                {` | Event ${idx + 1}`}
-              </div>
-              <div>
-                Id: {event.gameId} | Instance: {event.instanceId ?? '-'} | Map: {event.mapID}
-              </div>
-              <div>Time: +{((event.timestamp - startTime) / 1000).toFixed(1)}s</div>
-              <div>
-                <span style={{ color: style.fillColor }}>{statusText(entry, maxPasses)}</span>
-              </div>
-              {entry?.posDropped && (
-                <div style={{ fontSize: 10 }}>
-                  [Position ignored:{' '}
-                  {entry.posDropped === 'far-from-spawn' ? 'far from any spawn' : 'pull outlier'}]
+  return (
+    <>
+      {loadingIndicator}
+      {visibleEvents.map((event, idx) => {
+        // if (idx > 40) return null
+        const point = wclPointToLeafletPoint(event as WclPoint, wclResult.deathEvents)
+        const entry = trace?.get(wclEventKey(event))
+        const style = eventStyle(entry)
+        return (
+          <Rectangle
+            key={`${wclEventKey(event)}-${idx}`}
+            pane={eventPaneName}
+            bounds={[
+              [point[0] - rectSize, point[1] - rectSize],
+              [point[0] + rectSize, point[1] + rectSize],
+            ]}
+            pathOptions={{
+              ...style,
+              weight: 2,
+              // Dashed border: the event's position was ignored (mis-mapped or outlier).
+              dashArray: entry?.posDropped ? '3 3' : undefined,
+            }}
+          >
+            <Tooltip className={`pull-number-tooltip [&]:text-lg`} direction="center" permanent>
+              {idx + 1}
+              {/* <span className="-mr-9 text-xs">{event.timestamp}</span>*/}
+            </Tooltip>
+            <Popup className="plain-popup" closeButton={false}>
+              <div className="relative flex flex-col text-white rounded-sm">
+                <div className="absolute w-full h-full bg-slate-800 opacity-85 -z-10 rounded-sm" />
+                <div className="p-2 rounded-sm">
+                  <div>
+                    <span className="font-bold">{event.name}</span>
+                    {` | Event ${idx + 1}`}
+                  </div>
+                  <div>
+                    Id: {event.gameId} | Instance: {event.instanceId ?? '-'} | Map: {event.mapID}
+                  </div>
+                  <div>Time: +{((event.timestamp - startTime) / 1000).toFixed(1)}s</div>
+                  <div>
+                    <span style={{ color: style.fillColor }}>{statusText(entry, maxPasses)}</span>
+                  </div>
+                  {entry?.posDropped && (
+                    <div style={{ fontSize: 10 }}>
+                      [Position ignored:{' '}
+                      {entry.posDropped === 'far-from-spawn'
+                        ? 'far from any spawn'
+                        : 'pull outlier'}
+                      ]
+                    </div>
+                  )}
                 </div>
-              )}
-            </div>
-          </div>
-        </Popup>
-      </Rectangle>
-    )
-  })
+              </div>
+            </Popup>
+          </Rectangle>
+        )
+      })}
+    </>
+  )
 }
