@@ -18,8 +18,8 @@ type WclEvent = {
   x: number
   y: number
   mapID: number
-  source?: { id: number; name: string }
-  target?: { id: number; type: string | 'NPC' }
+  source?: { id: number; name: string; guid?: number }
+  target?: { id: number; type: string | 'NPC'; guid?: number }
   amount?: number
 }
 
@@ -31,17 +31,30 @@ function enemyKey(actorId: number, instanceId: number) {
   return `${actorId}_${instanceId}`
 }
 
+function eventEnemy(event: WclEvent, isSource: boolean) {
+  const role = isSource ? event.source : event.target
+  const actorId = role?.id ?? (isSource ? event.sourceID : event.targetID)
+  const instanceId = (isSource ? event.sourceInstance : event.targetInstance) ?? 1
+  return { actorId, instanceId, gameId: role?.guid, key: enemyKey(actorId, instanceId) }
+}
+
 async function fetchEventsByActor(
   code: string,
   fight: WclFight,
   eventStart: number,
   dataType: 'Casts' | 'DamageDone',
-  enemies: WclEnemy[],
+  countableGameIds: Set<number>,
+  knownEnemies: WclEnemy[],
 ): Promise<EventsByKey> {
-  const uniqueGameIds = [...new Set(enemies.map((e) => e.gameId))].join(',')
+  const uniqueGameIds = [...countableGameIds].join(',')
   const isSource = dataType === 'Casts'
   const actorRole = isSource ? 'source' : 'target'
   const byKey: EventsByKey = new Map()
+
+  const expectedKeys = new Set(
+    knownEnemies.map(({ actorId, instanceId }) => enemyKey(actorId, instanceId)),
+  )
+
   let startTime = eventStart
   let allCovered = false
 
@@ -58,6 +71,7 @@ query {
         endTime: 9999999999
         includeResources: true
         useActorIDs: false
+        viewOptions: ${dataType === 'Casts' ? 1 : 0}
         limit: 10000
         filterExpression: "${actorRole}.id IN (${uniqueGameIds})"
       ) {
@@ -75,22 +89,19 @@ query {
     const { data, nextPageTimestamp } = json.reportData.report.events
 
     for (const event of data) {
-      const actorId = isSource
-        ? event.source?.id ?? event.sourceID
-        : event.target?.id ?? event.targetID
-      const instanceId = isSource ? event.sourceInstance ?? 1 : event.targetInstance ?? 1
-      const key = enemyKey(actorId, instanceId)
+      const { gameId, key } = eventEnemy(event, isSource)
       if (!byKey.has(key)) {
         byKey.set(key, [])
       }
       byKey.get(key)!.push(event)
+      if (gameId !== undefined && countableGameIds.has(gameId)) {
+        expectedKeys.add(key)
+      }
     }
 
     if (!nextPageTimestamp) break
 
-    allCovered = enemies.every(({ actorId, instanceId }) =>
-      (byKey.get(enemyKey(actorId, instanceId)) ?? []).some(({ x, y }) => x && y),
-    )
+    allCovered = [...expectedKeys].every((key) => (byKey.get(key) ?? []).some(({ x, y }) => x && y))
 
     startTime = nextPageTimestamp
   }
@@ -115,15 +126,38 @@ function pickRepresentative(events: WclEvent[]): WclEvent {
   return (firstCast ?? firstDamage)!
 }
 
-async function getFirstEvents(code: string, fight: WclFight, enemies: WclEnemy[]) {
+async function getFirstEvents(
+  code: string,
+  fight: WclFight,
+  countableGameIds: Set<number>,
+  knownEnemies: WclEnemy[],
+) {
   const eventStart = fight.startTime + 10_000 // ignore first 10 seconds, mobs do random casts
 
   console.time('query time')
 
   const [castsByKey, damageByKey] = await Promise.all([
-    fetchEventsByActor(code, fight, eventStart, 'Casts', enemies),
-    fetchEventsByActor(code, fight, eventStart, 'DamageDone', enemies),
+    fetchEventsByActor(code, fight, eventStart, 'Casts', countableGameIds, knownEnemies),
+    fetchEventsByActor(code, fight, eventStart, 'DamageDone', countableGameIds, knownEnemies),
   ])
+
+  const enemyByKey = new Map<string, WclEnemy>(
+    knownEnemies.map((enemy) => [enemyKey(enemy.actorId, enemy.instanceId), enemy]),
+  )
+  for (const [byKey, isSource] of [
+    [castsByKey, true],
+    [damageByKey, false],
+  ] as const) {
+    for (const events of byKey.values()) {
+      for (const event of events) {
+        const { actorId, instanceId, gameId, key } = eventEnemy(event, isSource)
+        if (gameId !== undefined && countableGameIds.has(gameId) && !enemyByKey.has(key)) {
+          enemyByKey.set(key, { actorId, instanceId, gameId })
+        }
+      }
+    }
+  }
+  const enemies = [...enemyByKey.values()]
 
   const events = enemies.flatMap(({ actorId, instanceId }) => {
     const key = enemyKey(actorId, instanceId)
@@ -170,7 +204,7 @@ async function getFirstEvents(code: string, fight: WclFight, enemies: WclEnemy[]
 
   console.timeEnd('query time')
 
-  return events
+  return { events, enemies }
 }
 
 async function getLustEvents(code: string, fight: WclFight) {
@@ -215,26 +249,31 @@ export async function getWclRoute(
   const dungeon = dungeons.find((dungeon) => dungeon.wclEncounterId === fight.encounterID)
   if (!dungeon) throw new Error(`Dungeon not supported, WCL encounter ID ${fight.encounterID}`)
 
-  let enemies: WclEnemy[] = fight.dungeonPulls.flatMap(({ enemyNPCs }) =>
-    enemyNPCs.flatMap(({ id, gameID, minimumInstanceID, maximumInstanceID }) =>
-      Array.from({ length: maximumInstanceID - minimumInstanceID + 1 }, (_, i) => ({
-        actorId: id,
-        gameId: gameID,
-        instanceId: minimumInstanceID + i,
-      })),
-    ),
+  const countableGameIds = new Set(
+    dungeon.mobSpawnsList.filter(({ mob }) => mob.count > 0 || mob.isBoss).map(({ mob }) => mob.id),
   )
 
-  enemies = uniqBy(enemies, ['actorId', 'instanceId'])
-
-  // Filter out mobs that aren't in the route, or have no count (unless they're a boss)
-  enemies = enemies.filter((enemy) =>
-    dungeon.mobSpawnsList.some(
-      ({ mob }) => mob.id === enemy.gameId && (mob.count > 0 || mob.isBoss),
-    ),
+  const knownEnemies = uniqBy(
+    [
+      ...fight.dungeonPulls.flatMap(({ enemyNPCs }) =>
+        enemyNPCs.flatMap(({ id, gameID, minimumInstanceID, maximumInstanceID }) =>
+          Array.from({ length: maximumInstanceID - minimumInstanceID + 1 }, (_, i) => ({
+            actorId: id,
+            gameId: gameID,
+            instanceId: minimumInstanceID + i,
+          })),
+        ),
+      ),
+    ].filter((enemy) => countableGameIds.has(enemy.gameId)),
+    ['actorId', 'instanceId'],
   )
 
-  const firstEvents = await getFirstEvents(code, fight, enemies)
+  const { events: firstEvents, enemies } = await getFirstEvents(
+    code,
+    fight,
+    countableGameIds,
+    knownEnemies,
+  )
 
   const firstPositions = firstEvents
     .map<WclEventSimplified | null>((event) => {

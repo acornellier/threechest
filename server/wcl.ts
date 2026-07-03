@@ -94,7 +94,7 @@ query {
             minimumInstanceID
             maximumInstanceID
           }
-        } 
+        }
       }
     }
   }

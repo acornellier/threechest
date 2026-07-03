@@ -31,6 +31,7 @@ export type WclEventBase = {
 
 export type WclEventSimplified = WclEventBase & {
   gameId: number
+  actorId?: number
   instanceId?: number
   name: string
   id?: number
@@ -73,11 +74,12 @@ export type WclEventTrace = {
 export type WclTrace = Map<string, WclEventTrace>
 
 export const wclEventKey = (event: {
-  gameId: number
+  actorId?: number
   instanceId?: number
   timestamp: number
   mapID?: number
-}): string => `${event.gameId}-${event.instanceId ?? 0}-${event.timestamp}-${event.mapID ?? 0}`
+}): string =>
+  `${event.actorId ?? 0}-${event.instanceId ?? 0}-${event.timestamp}-${event.mapID ?? 0}`
 
 function traceMerge(trace: WclTrace | undefined, key: string | undefined, patch: WclEventTrace) {
   if (!trace || !key) {
@@ -552,7 +554,7 @@ export function resolveInstances(
   }
 
   // Group candidates by instance, each with a representative (earliest) timestamp.
-  const byInstance = groupBy(events, (event) => `${event.gameId}-${event.instanceId}`)
+  const byInstance = groupBy(events, (event) => `${event.actorId}-${event.instanceId}`)
   const instances = Object.values(byInstance).map((candidates) => ({
     candidates: candidates!,
     timestamp: Math.min(...candidates!.map(({ timestamp }) => timestamp)),
