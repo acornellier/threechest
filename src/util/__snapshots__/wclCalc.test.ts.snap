@@ -1015,6 +1015,14 @@ exports[`wclResultToRoute — full route pull snapshots > gqw4y97LcfAFnHBX-9 (Wi
   {
     "id": 2,
     "spawns": [
+      "11-1",
+      "11-2",
+      "11-3",
+    ],
+  },
+  {
+    "id": 3,
+    "spawns": [
       "1-5",
       "11-16",
       "11-17",
@@ -1024,6 +1032,12 @@ exports[`wclResultToRoute — full route pull snapshots > gqw4y97LcfAFnHBX-9 (Wi
       "11-26",
       "11-27",
       "11-28",
+      "11-29",
+      "11-30",
+      "11-31",
+      "11-33",
+      "11-34",
+      "11-35",
       "12-2",
       "12-3",
       "13-1",
@@ -1034,7 +1048,7 @@ exports[`wclResultToRoute — full route pull snapshots > gqw4y97LcfAFnHBX-9 (Wi
     ],
   },
   {
-    "id": 3,
+    "id": 4,
     "spawns": [
       "14-1",
       "14-10",
@@ -1086,7 +1100,7 @@ exports[`wclResultToRoute — full route pull snapshots > gqw4y97LcfAFnHBX-9 (Wi
     ],
   },
   {
-    "id": 4,
+    "id": 5,
     "spawns": [
       "1-6",
       "2-22",
@@ -1105,7 +1119,7 @@ exports[`wclResultToRoute — full route pull snapshots > gqw4y97LcfAFnHBX-9 (Wi
     ],
   },
   {
-    "id": 5,
+    "id": 6,
     "spawns": [
       "5-2",
       "5-3",
@@ -1118,7 +1132,7 @@ exports[`wclResultToRoute — full route pull snapshots > gqw4y97LcfAFnHBX-9 (Wi
     ],
   },
   {
-    "id": 6,
+    "id": 7,
     "spawns": [
       "24-1",
       "25-1",
@@ -1126,13 +1140,13 @@ exports[`wclResultToRoute — full route pull snapshots > gqw4y97LcfAFnHBX-9 (Wi
     ],
   },
   {
-    "id": 7,
+    "id": 8,
     "spawns": [
       "7-5",
     ],
   },
   {
-    "id": 8,
+    "id": 9,
     "spawns": [
       "17-1",
       "17-2",
@@ -1149,7 +1163,7 @@ exports[`wclResultToRoute — full route pull snapshots > gqw4y97LcfAFnHBX-9 (Wi
     ],
   },
   {
-    "id": 9,
+    "id": 10,
     "spawns": [
       "19-1",
       "19-2",
@@ -1168,7 +1182,7 @@ exports[`wclResultToRoute — full route pull snapshots > gqw4y97LcfAFnHBX-9 (Wi
     ],
   },
   {
-    "id": 10,
+    "id": 11,
     "spawns": [
       "19-5",
       "20-3",
@@ -1178,7 +1192,7 @@ exports[`wclResultToRoute — full route pull snapshots > gqw4y97LcfAFnHBX-9 (Wi
     ],
   },
   {
-    "id": 11,
+    "id": 12,
     "spawns": [
       "20-1",
       "26-1",
@@ -1186,7 +1200,7 @@ exports[`wclResultToRoute — full route pull snapshots > gqw4y97LcfAFnHBX-9 (Wi
     ],
   },
   {
-    "id": 12,
+    "id": 13,
     "spawns": [
       "27-1",
     ],

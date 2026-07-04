@@ -1,5 +1,12 @@
 import { describe, expect, it } from 'vitest'
-import { wclEventKey, wclResultToRoute, type WclResult, type WclTrace } from './wclCalc.ts'
+import {
+  resolveInstances,
+  wclEventKey,
+  wclResultToRoute,
+  type WclResult,
+  type WclTrace,
+} from './wclCalc.ts'
+import { dungeons } from '../data/dungeons.ts'
 import lvzFixture from './__fixtures__/wclRoute-LvZWMHBf3zrk9nFN-12.json'
 import gqwFixture from './__fixtures__/wclRoute-gqw4y97LcfAFnHBX-9.json'
 import kv3Fixture from './__fixtures__/wclRoute-kv3rTjxn2XLQpwKf-9.json'
@@ -54,6 +61,33 @@ describe('wclResultToRoute — exact cover rejected when a larger group is farth
     // ...and the far two-shade group 92 (15-14, 15-15) is not swept in by composition.
     expect(pullOf('15-14')).toBeUndefined()
     expect(pullOf('15-15')).toBeUndefined()
+  })
+})
+
+// Regression test: WCL split the Spindleweb Hatchlings (gameId 234673) across two actors (229 and
+// 232) that each number their instances from 1, so both have instances 1-6. resolveInstances keyed
+// candidates on (gameId, instanceId), collapsing each colliding pair into one mob and dropping the
+// other. Keying on (actorId, instanceId) keeps them distinct.
+describe('wclResultToRoute — mob split across actors with overlapping instance numbers', () => {
+  it('resolves each (actorId, instanceId) as its own mob instead of collapsing the collision', () => {
+    const wclResult = gqwFixture as unknown as WclResult
+    const dungeon = dungeons.find((d) => d.wclEncounterId === wclResult.encounterID)!
+
+    const hatchlings = wclResult.events.filter((event) => event.gameId === 234673)
+    // Sanity: the fixture really has the split — both actors, with overlapping instance numbers.
+    expect(new Set(hatchlings.map((event) => event.actorId))).toEqual(new Set([229, 232]))
+    const distinctMobs = new Set(hatchlings.map((event) => `${event.actorId}-${event.instanceId}`))
+
+    const resolved = resolveInstances(wclResult.events, dungeon, wclResult.deathEvents)
+    const resolvedMobs = new Set(
+      resolved
+        .filter(({ winner }) => winner.gameId === 234673)
+        .map(({ winner }) => `${winner.actorId}-${winner.instanceId}`),
+    )
+
+    // Every distinct hatchling survives resolution — a (gameId, instanceId) key would drop the
+    // instance-1..6 collisions between the two actors.
+    expect(resolvedMobs).toEqual(distinctMobs)
   })
 })
 
