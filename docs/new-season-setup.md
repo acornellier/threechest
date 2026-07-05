@@ -120,6 +120,14 @@ Remove data for dungeons no longer in the pool:
 - old entries in `mapIds` / `mdtMapOffsets` / spell data
 - any lingering references to old keys
 
+> **Don't break the wclCalc regression tests.** `src/util/wclCalc.test.ts` runs against real
+> past-season WCL fights (`__fixtures__/wclRoute-*.json`) whose dungeon data is no longer
+> shipped. That data is snapshotted in `src/util/__fixtures__/s1mdt/*.json` and injected via
+> `wclResultToRoute`'s optional `dungeon` param (`__fixtures__/s1Dungeons.ts`) — **keep these
+> fixtures**, they're decoupled from the active `dungeonKeys` on purpose. When you remove a
+> season whose dungeons those fixtures use, snapshot its `*_mdt.json` into `s1mdt/` first
+> (recover from git if already deleted), then re-run `yarn vitest run src/util/wclCalc.test.ts`.
+
 ## 8. Verify
 
 ```bash

@@ -1,0 +1,4 @@
+# Generated build artifacts (regenerated each run by generate.py)
+manifest.json
+run_ingame.lua
+__pycache__/
