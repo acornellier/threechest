@@ -1,0 +1,421 @@
+{
+  "dungeonIndex": 162,
+  "totalCount": 668,
+  "enemies": [
+    {
+      "id": 245345,
+      "enemyIndex": 1,
+      "name": "Lightgorged Lasher",
+      "count": 7,
+      "health": 10000,
+      "creatureType": "Elemental",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [],
+      "spawns": [
+        {
+          "id": "1-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -91.53,
+            91.53
+          ]
+        }
+      ]
+    },
+    {
+      "id": 245410,
+      "enemyIndex": 2,
+      "name": "Lasher",
+      "count": 1,
+      "health": 10000,
+      "creatureType": "Elemental",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [],
+      "spawns": [
+        {
+          "id": "2-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -91.53,
+            100.69
+          ]
+        }
+      ]
+    },
+    {
+      "id": 245339,
+      "enemyIndex": 3,
+      "name": "Underbrush Stalker",
+      "count": 6,
+      "health": 10000,
+      "creatureType": "Humanoid",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [],
+      "spawns": [
+        {
+          "id": "3-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -91.53,
+            109.84
+          ]
+        }
+      ]
+    },
+    {
+      "id": 245346,
+      "enemyIndex": 4,
+      "name": "Virid Grovekeeper",
+      "count": 20,
+      "health": 10000,
+      "creatureType": "Humanoid",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [],
+      "spawns": [
+        {
+          "id": "4-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -91.53,
+            118.99
+          ]
+        }
+      ]
+    },
+    {
+      "id": 254850,
+      "enemyIndex": 5,
+      "name": "Sporeblight Belcher",
+      "count": 25,
+      "health": 10000,
+      "creatureType": "Elemental",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [],
+      "spawns": [
+        {
+          "id": "5-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -91.53,
+            128.15
+          ]
+        }
+      ]
+    },
+    {
+      "id": 245336,
+      "enemyIndex": 6,
+      "name": "Radiant Spellsower",
+      "count": 7,
+      "health": 10000,
+      "creatureType": "Humanoid",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [],
+      "spawns": [
+        {
+          "id": "6-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -91.53,
+            137.3
+          ]
+        }
+      ]
+    },
+    {
+      "id": 245484,
+      "enemyIndex": 7,
+      "name": "Lightfeather Petalwing",
+      "count": 7,
+      "health": 10000,
+      "creatureType": "Elemental",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [],
+      "spawns": [
+        {
+          "id": "7-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -91.53,
+            146.45
+          ]
+        }
+      ]
+    },
+    {
+      "id": 245473,
+      "enemyIndex": 8,
+      "name": "Thorny Saptor",
+      "count": 5,
+      "health": 10000,
+      "creatureType": "Elemental",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [],
+      "spawns": [
+        {
+          "id": "8-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -91.53,
+            155.61
+          ]
+        }
+      ]
+    },
+    {
+      "id": 245527,
+      "enemyIndex": 9,
+      "name": "Spineshield Beetle",
+      "count": 1,
+      "health": 10000,
+      "creatureType": "Beast",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [],
+      "spawns": [
+        {
+          "id": "9-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -91.53,
+            164.76
+          ]
+        }
+      ]
+    },
+    {
+      "id": 245460,
+      "enemyIndex": 10,
+      "name": "Leafy Grovecrawler",
+      "count": 7,
+      "health": 10000,
+      "creatureType": "Elemental",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [],
+      "spawns": [
+        {
+          "id": "10-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -91.53,
+            173.91
+          ]
+        }
+      ]
+    },
+    {
+      "id": 245513,
+      "enemyIndex": 11,
+      "name": "Overgrown Hydra",
+      "count": 25,
+      "health": 10000,
+      "creatureType": "Elemental",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [],
+      "spawns": [
+        {
+          "id": "11-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -91.53,
+            183.07
+          ]
+        }
+      ]
+    },
+    {
+      "id": 246871,
+      "enemyIndex": 12,
+      "name": "Luminous Thornmaw",
+      "count": 22,
+      "health": 10000,
+      "creatureType": "Elemental",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [],
+      "spawns": [
+        {
+          "id": "12-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -100.69,
+            91.53
+          ]
+        }
+      ]
+    },
+    {
+      "id": 243028,
+      "enemyIndex": 13,
+      "name": "Meittik",
+      "count": 30,
+      "health": 10000,
+      "creatureType": "Humanoid",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [],
+      "spawns": [
+        {
+          "id": "13-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -117.65,
+            119.13
+          ]
+        }
+      ]
+    },
+    {
+      "id": 243029,
+      "enemyIndex": 14,
+      "name": "Kezkitt",
+      "count": 30,
+      "health": 10000,
+      "creatureType": "Humanoid",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [],
+      "spawns": [
+        {
+          "id": "14-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -125.77,
+            101.67
+          ]
+        }
+      ]
+    },
+    {
+      "id": 243030,
+      "enemyIndex": 15,
+      "name": "Lekshi",
+      "count": 30,
+      "health": 10000,
+      "creatureType": "Humanoid",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [],
+      "spawns": [
+        {
+          "id": "15-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -120.6,
+            131.42
+          ]
+        }
+      ]
+    },
+    {
+      "id": 245912,
+      "enemyIndex": 16,
+      "name": "Lightwarden Ruia",
+      "count": 30,
+      "health": 10000,
+      "creatureType": "Humanoid",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [],
+      "spawns": [
+        {
+          "id": "16-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -112.49,
+            107.08
+          ]
+        }
+      ]
+    },
+    {
+      "id": 247676,
+      "enemyIndex": 17,
+      "name": "Ziekket",
+      "count": 30,
+      "health": 10000,
+      "creatureType": "Elemental",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [],
+      "spawns": [
+        {
+          "id": "17-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -113.23,
+            93.56
+          ]
+        }
+      ]
+    },
+    {
+      "id": 244887,
+      "enemyIndex": 18,
+      "name": "Ikuzz the Light Hunter",
+      "count": 30,
+      "health": 10000,
+      "creatureType": "Elemental",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [],
+      "spawns": [
+        {
+          "id": "18-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -110.28,
+            132.65
+          ]
+        }
+      ]
+    }
+  ],
+  "pois": []
+}

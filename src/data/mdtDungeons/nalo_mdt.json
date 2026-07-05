@@ -1,0 +1,375 @@
+{
+  "dungeonIndex": 161,
+  "totalCount": 729,
+  "enemies": [
+    {
+      "id": 245752,
+      "enemyIndex": 1,
+      "name": "Keen-Eyed Screecher",
+      "count": 7,
+      "health": 10000,
+      "creatureType": "Beast",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [],
+      "spawns": [
+        {
+          "id": "1-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -91.53,
+            91.53
+          ]
+        }
+      ]
+    },
+    {
+      "id": 245855,
+      "enemyIndex": 2,
+      "name": "Spirit of Hunger",
+      "count": 25,
+      "health": 10000,
+      "creatureType": "Undead",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [],
+      "spawns": [
+        {
+          "id": "2-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -91.53,
+            100.69
+          ]
+        }
+      ]
+    },
+    {
+      "id": 241814,
+      "enemyIndex": 3,
+      "name": "Earthwhisper Tender",
+      "count": 7,
+      "health": 10000,
+      "creatureType": "Humanoid",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [],
+      "spawns": [
+        {
+          "id": "3-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -91.53,
+            109.84
+          ]
+        }
+      ]
+    },
+    {
+      "id": 241813,
+      "enemyIndex": 4,
+      "name": "Thornclaw Gatherer",
+      "count": 5,
+      "health": 10000,
+      "creatureType": "Humanoid",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [],
+      "spawns": [
+        {
+          "id": "4-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -91.53,
+            118.99
+          ]
+        }
+      ]
+    },
+    {
+      "id": 241808,
+      "enemyIndex": 5,
+      "name": "Territorial Matriarch",
+      "count": 8,
+      "health": 10000,
+      "creatureType": "Beast",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [],
+      "spawns": [
+        {
+          "id": "5-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -91.53,
+            128.15
+          ]
+        }
+      ]
+    },
+    {
+      "id": 250478,
+      "enemyIndex": 6,
+      "name": "The Looming Tempest",
+      "count": 50,
+      "health": 10000,
+      "creatureType": "Elemental",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [],
+      "spawns": [
+        {
+          "id": "6-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -91.53,
+            137.3
+          ]
+        }
+      ]
+    },
+    {
+      "id": 241874,
+      "enemyIndex": 7,
+      "name": "Frostfang",
+      "count": 5,
+      "health": 10000,
+      "creatureType": "Beast",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [],
+      "spawns": [
+        {
+          "id": "7-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -91.53,
+            146.45
+          ]
+        }
+      ]
+    },
+    {
+      "id": 241911,
+      "enemyIndex": 8,
+      "name": "Terra Rumbler",
+      "count": 7,
+      "health": 10000,
+      "creatureType": "Elemental",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [],
+      "spawns": [
+        {
+          "id": "8-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -91.53,
+            155.61
+          ]
+        }
+      ]
+    },
+    {
+      "id": 241872,
+      "enemyIndex": 9,
+      "name": "Frigid Mauler",
+      "count": 9,
+      "health": 10000,
+      "creatureType": "Beast",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [],
+      "spawns": [
+        {
+          "id": "9-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -91.53,
+            164.76
+          ]
+        }
+      ]
+    },
+    {
+      "id": 241876,
+      "enemyIndex": 10,
+      "name": "Glacial Revenant",
+      "count": 7,
+      "health": 10000,
+      "creatureType": "Elemental",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [],
+      "spawns": [
+        {
+          "id": "10-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -91.53,
+            173.91
+          ]
+        }
+      ]
+    },
+    {
+      "id": 241869,
+      "enemyIndex": 11,
+      "name": "Avatar of Determination",
+      "count": 28,
+      "health": 10000,
+      "creatureType": "Undead",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [],
+      "spawns": [
+        {
+          "id": "11-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -91.53,
+            183.07
+          ]
+        }
+      ]
+    },
+    {
+      "id": 245143,
+      "enemyIndex": 12,
+      "name": "Ruthless Totemcaller",
+      "count": 5,
+      "health": 10000,
+      "creatureType": "Humanoid",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [],
+      "spawns": [
+        {
+          "id": "12-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -100.69,
+            91.53
+          ]
+        }
+      ]
+    },
+    {
+      "id": 245139,
+      "enemyIndex": 13,
+      "name": "Stormbound Mystic",
+      "count": 7,
+      "health": 10000,
+      "creatureType": "Humanoid",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [],
+      "spawns": [
+        {
+          "id": "13-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -100.69,
+            100.69
+          ]
+        }
+      ]
+    },
+    {
+      "id": 245146,
+      "enemyIndex": 14,
+      "name": "Grizzled Warbringer",
+      "count": 25,
+      "health": 10000,
+      "creatureType": "Beast",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [],
+      "spawns": [
+        {
+          "id": "14-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -100.69,
+            109.84
+          ]
+        }
+      ]
+    },
+    {
+      "id": 245145,
+      "enemyIndex": 15,
+      "name": "Bonded Beasttamer",
+      "count": 6,
+      "health": 10000,
+      "creatureType": "Humanoid",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [],
+      "spawns": [
+        {
+          "id": "15-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -100.69,
+            118.99
+          ]
+        }
+      ]
+    },
+    {
+      "id": 104970,
+      "enemyIndex": 16,
+      "name": "Xorvasc",
+      "count": 35,
+      "health": 10000,
+      "creatureType": "Humanoid",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [],
+      "spawns": [
+        {
+          "id": "16-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -100.69,
+            128.15
+          ]
+        }
+      ]
+    }
+  ],
+  "pois": []
+}

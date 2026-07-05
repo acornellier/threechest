@@ -1,0 +1,2210 @@
+{
+  "dungeonIndex": 164,
+  "totalCount": 836,
+  "enemies": [
+    {
+      "id": 270306,
+      "enemyIndex": 1,
+      "name": "Ritual Chieftain",
+      "count": 25,
+      "health": 4664120,
+      "creatureType": "Humanoid",
+      "scale": 1.8,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [
+        {
+          "id": 1306517,
+          "attributes": []
+        },
+        {
+          "id": 1306550,
+          "attributes": []
+        },
+        {
+          "id": 1306641,
+          "attributes": []
+        },
+        {
+          "id": 1306844,
+          "attributes": []
+        },
+        {
+          "id": 1306893,
+          "attributes": []
+        },
+        {
+          "id": 1306911,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "1-1",
+          "idx": 1,
+          "group": 5,
+          "pos": [
+            -94.07,
+            27.21
+          ]
+        },
+        {
+          "id": "1-2",
+          "idx": 2,
+          "group": 7,
+          "pos": [
+            -93.62,
+            95.38
+          ]
+        },
+        {
+          "id": "1-3",
+          "idx": 3,
+          "group": 15,
+          "pos": [
+            -133.55,
+            45.22
+          ]
+        },
+        {
+          "id": "1-4",
+          "idx": 4,
+          "group": 14,
+          "pos": [
+            -132.5,
+            73.72
+          ]
+        },
+        {
+          "id": "1-5",
+          "idx": 5,
+          "group": 43,
+          "pos": [
+            -76.66,
+            290.18
+          ]
+        },
+        {
+          "id": "1-6",
+          "idx": 6,
+          "group": 43,
+          "pos": [
+            -76.49,
+            297.03
+          ]
+        }
+      ]
+    },
+    {
+      "id": 261552,
+      "enemyIndex": 2,
+      "name": "Bloodletter",
+      "count": 5,
+      "health": 2915075,
+      "creatureType": "Beast",
+      "scale": 1.2,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [
+        {
+          "id": 1307526,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "2-1",
+          "idx": 1,
+          "group": 22,
+          "pos": [
+            -125.31,
+            161.26
+          ]
+        },
+        {
+          "id": "2-2",
+          "idx": 2,
+          "group": 22,
+          "pos": [
+            -125.66,
+            157.09
+          ]
+        },
+        {
+          "id": "2-3",
+          "idx": 3,
+          "group": 18,
+          "pos": [
+            -122.3,
+            138.46
+          ]
+        },
+        {
+          "id": "2-4",
+          "idx": 4,
+          "group": 24,
+          "pos": [
+            -135.13,
+            147.61
+          ]
+        },
+        {
+          "id": "2-5",
+          "idx": 5,
+          "group": 24,
+          "pos": [
+            -138.72,
+            151.57
+          ]
+        },
+        {
+          "id": "2-6",
+          "idx": 6,
+          "group": 25,
+          "pos": [
+            -132.86,
+            178.4
+          ]
+        },
+        {
+          "id": "2-7",
+          "idx": 7,
+          "group": 25,
+          "pos": [
+            -139.61,
+            172.46
+          ]
+        },
+        {
+          "id": "2-8",
+          "idx": 8,
+          "group": 20,
+          "pos": [
+            -110.24,
+            168.82
+          ]
+        },
+        {
+          "id": "2-9",
+          "idx": 9,
+          "group": 21,
+          "pos": [
+            -117.38,
+            177.15
+          ]
+        },
+        {
+          "id": "2-10",
+          "idx": 10,
+          "group": 21,
+          "pos": [
+            -121.56,
+            179.99
+          ]
+        },
+        {
+          "id": "2-11",
+          "idx": 11,
+          "group": 26,
+          "pos": [
+            -170.24,
+            217.16
+          ]
+        },
+        {
+          "id": "2-12",
+          "idx": 12,
+          "group": 26,
+          "pos": [
+            -166.79,
+            220.06
+          ]
+        },
+        {
+          "id": "2-13",
+          "idx": 13,
+          "group": 26,
+          "pos": [
+            -173.68,
+            214.35
+          ]
+        },
+        {
+          "id": "2-14",
+          "idx": 14,
+          "group": 49,
+          "pos": [
+            -104.09,
+            133.84
+          ]
+        },
+        {
+          "id": "2-15",
+          "idx": 15,
+          "group": 49,
+          "pos": [
+            -102.73,
+            138.44
+          ]
+        },
+        {
+          "id": "2-16",
+          "idx": 16,
+          "group": 49,
+          "pos": [
+            -108.18,
+            137.08
+          ]
+        }
+      ]
+    },
+    {
+      "id": 261557,
+      "enemyIndex": 3,
+      "name": "High Evolutionist",
+      "count": 7,
+      "health": 2623568,
+      "creatureType": "Humanoid",
+      "scale": 1.2,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [
+        {
+          "id": 1287544,
+          "attributes": []
+        },
+        {
+          "id": 1289416,
+          "attributes": [
+            "interruptible",
+            "poison"
+          ]
+        },
+        {
+          "id": 1292904,
+          "attributes": []
+        },
+        {
+          "id": 1306385,
+          "attributes": []
+        },
+        {
+          "id": 1307567,
+          "attributes": [
+            "interruptible"
+          ]
+        },
+        {
+          "id": 1307571,
+          "attributes": [
+            "poison"
+          ]
+        },
+        {
+          "id": 1307602,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "3-1",
+          "idx": 1,
+          "group": 19,
+          "pos": [
+            -111.34,
+            153.31
+          ]
+        },
+        {
+          "id": "3-2",
+          "idx": 2,
+          "group": 19,
+          "pos": [
+            -111.07,
+            157.41
+          ]
+        },
+        {
+          "id": "3-3",
+          "idx": 3,
+          "group": 18,
+          "pos": [
+            -118.4,
+            136.24
+          ]
+        },
+        {
+          "id": "3-4",
+          "idx": 4,
+          "group": 24,
+          "pos": [
+            -133.57,
+            152.33
+          ]
+        },
+        {
+          "id": "3-8",
+          "idx": 8,
+          "group": 20,
+          "pos": [
+            -107.09,
+            165.89
+          ]
+        },
+        {
+          "id": "3-9",
+          "idx": 9,
+          "group": 21,
+          "pos": [
+            -116.74,
+            181.93
+          ]
+        },
+        {
+          "id": "3-10",
+          "idx": 10,
+          "group": 26,
+          "pos": [
+            -169.72,
+            213.07
+          ]
+        },
+        {
+          "id": "3-11",
+          "idx": 11,
+          "group": 26,
+          "pos": [
+            -165.4,
+            216.28
+          ]
+        },
+        {
+          "id": "3-12",
+          "idx": 12,
+          "group": 28,
+          "pos": [
+            -175.53,
+            355.66
+          ]
+        },
+        {
+          "id": "3-13",
+          "idx": 13,
+          "group": 30,
+          "pos": [
+            -193.74,
+            356.67
+          ]
+        },
+        {
+          "id": "3-14",
+          "idx": 14,
+          "group": 31,
+          "pos": [
+            -193.08,
+            338.14
+          ]
+        },
+        {
+          "id": "3-15",
+          "idx": 15,
+          "group": 32,
+          "pos": [
+            -175.37,
+            338.42
+          ]
+        }
+      ]
+    },
+    {
+      "id": 261556,
+      "enemyIndex": 4,
+      "name": "Hatchling",
+      "count": 0,
+      "health": 874523,
+      "creatureType": "Beast",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [
+        {
+          "id": 1306383,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "4-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -21.8,
+            184.81
+          ]
+        }
+      ]
+    },
+    {
+      "id": 263112,
+      "enemyIndex": 5,
+      "name": "Living Venom",
+      "count": 1,
+      "health": 1166030,
+      "creatureType": "Elemental",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [
+        {
+          "id": 1303366,
+          "attributes": []
+        },
+        {
+          "id": 1306230,
+          "attributes": [
+            "poison"
+          ]
+        }
+      ],
+      "spawns": [
+        {
+          "id": "5-1",
+          "idx": 1,
+          "group": 34,
+          "pos": [
+            -196.82,
+            292.28
+          ]
+        },
+        {
+          "id": "5-2",
+          "idx": 2,
+          "group": 34,
+          "pos": [
+            -206.95,
+            292.42
+          ]
+        },
+        {
+          "id": "5-3",
+          "idx": 3,
+          "group": 34,
+          "pos": [
+            -198.93,
+            296.25
+          ]
+        },
+        {
+          "id": "5-4",
+          "idx": 4,
+          "group": 34,
+          "pos": [
+            -204.68,
+            288.48
+          ]
+        },
+        {
+          "id": "5-5",
+          "idx": 5,
+          "group": 34,
+          "pos": [
+            -198.94,
+            288.28
+          ]
+        },
+        {
+          "id": "5-6",
+          "idx": 6,
+          "group": 34,
+          "pos": [
+            -204.53,
+            296.21
+          ]
+        },
+        {
+          "id": "5-7",
+          "idx": 7,
+          "group": 39,
+          "pos": [
+            -159.68,
+            281.16
+          ]
+        },
+        {
+          "id": "5-8",
+          "idx": 8,
+          "group": 39,
+          "pos": [
+            -169.86,
+            281.17
+          ]
+        },
+        {
+          "id": "5-9",
+          "idx": 9,
+          "group": 39,
+          "pos": [
+            -162.25,
+            285.46
+          ]
+        },
+        {
+          "id": "5-10",
+          "idx": 10,
+          "group": 39,
+          "pos": [
+            -167.76,
+            285.27
+          ]
+        },
+        {
+          "id": "5-11",
+          "idx": 11,
+          "group": 39,
+          "pos": [
+            -162.08,
+            276.96
+          ]
+        },
+        {
+          "id": "5-12",
+          "idx": 12,
+          "group": 39,
+          "pos": [
+            -167.89,
+            277.04
+          ]
+        },
+        {
+          "id": "5-13",
+          "idx": 13,
+          "group": 38,
+          "pos": [
+            -159.16,
+            301.97
+          ]
+        },
+        {
+          "id": "5-14",
+          "idx": 14,
+          "group": 38,
+          "pos": [
+            -169.46,
+            302.29
+          ]
+        },
+        {
+          "id": "5-15",
+          "idx": 15,
+          "group": 38,
+          "pos": [
+            -161.76,
+            306.28
+          ]
+        },
+        {
+          "id": "5-16",
+          "idx": 16,
+          "group": 38,
+          "pos": [
+            -167.01,
+            306.12
+          ]
+        },
+        {
+          "id": "5-17",
+          "idx": 17,
+          "group": 38,
+          "pos": [
+            -161.52,
+            297.75
+          ]
+        },
+        {
+          "id": "5-18",
+          "idx": 18,
+          "group": 38,
+          "pos": [
+            -167.31,
+            298
+          ]
+        }
+      ]
+    },
+    {
+      "id": 261560,
+      "enemyIndex": 6,
+      "name": "Primal Serpent",
+      "count": 7,
+      "health": 2623568,
+      "creatureType": "Beast",
+      "scale": 1.2,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [
+        {
+          "id": 1294557,
+          "attributes": [
+            "interruptible"
+          ]
+        },
+        {
+          "id": 1306381,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "6-1",
+          "idx": 1,
+          "group": 4,
+          "pos": [
+            -82.69,
+            45.61
+          ]
+        },
+        {
+          "id": "6-2",
+          "idx": 2,
+          "group": 4,
+          "pos": [
+            -82.46,
+            49.98
+          ]
+        },
+        {
+          "id": "6-3",
+          "idx": 3,
+          "group": 8,
+          "pos": [
+            -103.75,
+            76.33
+          ]
+        },
+        {
+          "id": "6-4",
+          "idx": 4,
+          "group": 8,
+          "pos": [
+            -103.71,
+            73.06
+          ]
+        },
+        {
+          "id": "6-5",
+          "idx": 5,
+          "group": 6,
+          "pos": [
+            -92.59,
+            54.62
+          ]
+        },
+        {
+          "id": "6-6",
+          "idx": 6,
+          "group": 6,
+          "pos": [
+            -92.57,
+            66.96
+          ]
+        },
+        {
+          "id": "6-7",
+          "idx": 7,
+          "group": 5,
+          "pos": [
+            -90.36,
+            22.23
+          ]
+        },
+        {
+          "id": "6-8",
+          "idx": 8,
+          "group": 5,
+          "pos": [
+            -98.06,
+            22.15
+          ]
+        },
+        {
+          "id": "6-9",
+          "idx": 9,
+          "group": 7,
+          "pos": [
+            -86.74,
+            95.9
+          ]
+        },
+        {
+          "id": "6-10",
+          "idx": 10,
+          "group": 7,
+          "pos": [
+            -100.53,
+            95.69
+          ]
+        },
+        {
+          "id": "6-11",
+          "idx": 11,
+          "group": 15,
+          "pos": [
+            -139.63,
+            42.42
+          ]
+        },
+        {
+          "id": "6-12",
+          "idx": 12,
+          "group": 15,
+          "pos": [
+            -139.62,
+            47.53
+          ]
+        },
+        {
+          "id": "6-13",
+          "idx": 13,
+          "group": 14,
+          "pos": [
+            -138.84,
+            72.03
+          ]
+        },
+        {
+          "id": "6-14",
+          "idx": 14,
+          "group": 14,
+          "pos": [
+            -138.75,
+            76.83
+          ]
+        },
+        {
+          "id": "6-15",
+          "idx": 15,
+          "group": 42,
+          "pos": [
+            -129.91,
+            287.51
+          ]
+        },
+        {
+          "id": "6-16",
+          "idx": 16,
+          "group": 42,
+          "pos": [
+            -129.96,
+            297.81
+          ]
+        }
+      ]
+    },
+    {
+      "id": 261553,
+      "enemyIndex": 7,
+      "name": "Ravenous Descendant",
+      "count": 5,
+      "health": 3206583,
+      "creatureType": "Humanoid",
+      "scale": 1.2,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [
+        {
+          "id": 1306308,
+          "attributes": [
+            "enrage"
+          ]
+        },
+        {
+          "id": 1306333,
+          "attributes": []
+        },
+        {
+          "id": 1306338,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "7-1",
+          "idx": 1,
+          "group": 10,
+          "pos": [
+            -108.99,
+            45.59
+          ]
+        },
+        {
+          "id": "7-2",
+          "idx": 2,
+          "group": 10,
+          "pos": [
+            -109.53,
+            49.27
+          ]
+        },
+        {
+          "id": "7-3",
+          "idx": 3,
+          "group": 10,
+          "pos": [
+            -109.46,
+            52.62
+          ]
+        },
+        {
+          "id": "7-4",
+          "idx": 4,
+          "group": 10,
+          "pos": [
+            -105.88,
+            51.52
+          ]
+        },
+        {
+          "id": "7-5",
+          "idx": 5,
+          "group": 10,
+          "pos": [
+            -105.99,
+            47.82
+          ]
+        },
+        {
+          "id": "7-6",
+          "idx": 6,
+          "group": 6,
+          "pos": [
+            -97.47,
+            57.65
+          ]
+        },
+        {
+          "id": "7-7",
+          "idx": 7,
+          "group": 6,
+          "pos": [
+            -97.69,
+            64.09
+          ]
+        },
+        {
+          "id": "7-8",
+          "idx": 8,
+          "group": 5,
+          "pos": [
+            -87.59,
+            27.51
+          ]
+        },
+        {
+          "id": "7-9",
+          "idx": 9,
+          "group": 5,
+          "pos": [
+            -100.43,
+            27.31
+          ]
+        },
+        {
+          "id": "7-10",
+          "idx": 10,
+          "group": 7,
+          "pos": [
+            -90.66,
+            100.74
+          ]
+        },
+        {
+          "id": "7-11",
+          "idx": 11,
+          "group": 7,
+          "pos": [
+            -97.28,
+            100.12
+          ]
+        },
+        {
+          "id": "7-12",
+          "idx": 12,
+          "group": 9,
+          "pos": [
+            -117.3,
+            58.58
+          ]
+        },
+        {
+          "id": "7-13",
+          "idx": 13,
+          "group": 9,
+          "pos": [
+            -117.28,
+            63.52
+          ]
+        },
+        {
+          "id": "7-14",
+          "idx": 14,
+          "group": 15,
+          "pos": [
+            -135.01,
+            39.73
+          ]
+        },
+        {
+          "id": "7-15",
+          "idx": 15,
+          "group": 15,
+          "pos": [
+            -135.67,
+            50.8
+          ]
+        },
+        {
+          "id": "7-16",
+          "idx": 16,
+          "group": 13,
+          "pos": [
+            -133.1,
+            60.99
+          ]
+        },
+        {
+          "id": "7-17",
+          "idx": 17,
+          "group": 13,
+          "pos": [
+            -128.5,
+            58.57
+          ]
+        },
+        {
+          "id": "7-18",
+          "idx": 18,
+          "group": 13,
+          "pos": [
+            -128.59,
+            63.17
+          ]
+        },
+        {
+          "id": "7-19",
+          "idx": 19,
+          "group": 14,
+          "pos": [
+            -134.44,
+            79.87
+          ]
+        },
+        {
+          "id": "7-20",
+          "idx": 20,
+          "group": 14,
+          "pos": [
+            -135.14,
+            68.19
+          ]
+        }
+      ]
+    },
+    {
+      "id": 263109,
+      "enemyIndex": 8,
+      "name": "Ula'tek's Chosen",
+      "count": 25,
+      "health": 4372613,
+      "creatureType": "Humanoid",
+      "scale": 1.8,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [
+        {
+          "id": 1289416,
+          "attributes": [
+            "interruptible",
+            "poison"
+          ]
+        },
+        {
+          "id": 1292892,
+          "attributes": []
+        },
+        {
+          "id": 1306852,
+          "attributes": []
+        },
+        {
+          "id": 1306853,
+          "attributes": []
+        },
+        {
+          "id": 1307567,
+          "attributes": [
+            "interruptible"
+          ]
+        },
+        {
+          "id": 1307571,
+          "attributes": [
+            "poison"
+          ]
+        }
+      ],
+      "spawns": [
+        {
+          "id": "8-1",
+          "idx": 1,
+          "group": 34,
+          "pos": [
+            -201.67,
+            292.36
+          ]
+        },
+        {
+          "id": "8-2",
+          "idx": 2,
+          "group": 38,
+          "pos": [
+            -164.31,
+            301.92
+          ]
+        },
+        {
+          "id": "8-3",
+          "idx": 3,
+          "group": 39,
+          "pos": [
+            -164.87,
+            281.16
+          ]
+        },
+        {
+          "id": "8-4",
+          "idx": 4,
+          "group": 43,
+          "pos": [
+            -82.28,
+            293.49
+          ]
+        }
+      ]
+    },
+    {
+      "id": 261573,
+      "enemyIndex": 9,
+      "name": "Ascendant Serpent",
+      "count": 30,
+      "health": 9328240,
+      "creatureType": "Beast",
+      "scale": 2,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [
+        {
+          "id": 1293420,
+          "attributes": []
+        },
+        {
+          "id": 1294934,
+          "attributes": []
+        },
+        {
+          "id": 1294958,
+          "attributes": []
+        },
+        {
+          "id": 1295055,
+          "attributes": []
+        },
+        {
+          "id": 1295073,
+          "attributes": []
+        },
+        {
+          "id": 1308864,
+          "attributes": []
+        },
+        {
+          "id": 1308865,
+          "attributes": []
+        },
+        {
+          "id": 1309382,
+          "attributes": []
+        },
+        {
+          "id": 1309398,
+          "attributes": []
+        },
+        {
+          "id": 1309415,
+          "attributes": []
+        },
+        {
+          "id": 1309416,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "9-1",
+          "idx": 1,
+          "group": 27,
+          "pos": [
+            -184.43,
+            347.17
+          ]
+        }
+      ]
+    },
+    {
+      "id": 261554,
+      "enemyIndex": 10,
+      "name": "Twinfang Harrower",
+      "count": 25,
+      "health": 4955628,
+      "creatureType": "Beast",
+      "scale": 1.8,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [
+        {
+          "id": 1294567,
+          "attributes": []
+        },
+        {
+          "id": 1294569,
+          "attributes": [
+            "magic"
+          ]
+        },
+        {
+          "id": 1294572,
+          "attributes": []
+        },
+        {
+          "id": 1306668,
+          "attributes": []
+        },
+        {
+          "id": 1306669,
+          "attributes": []
+        },
+        {
+          "id": 1307269,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "10-1",
+          "idx": 1,
+          "group": 6,
+          "pos": [
+            -91.9,
+            60.86
+          ]
+        },
+        {
+          "id": "10-2",
+          "idx": 2,
+          "group": 49,
+          "pos": [
+            -153.42,
+            57.89
+          ]
+        },
+        {
+          "id": "10-3",
+          "idx": 3,
+          "group": 50,
+          "pos": [
+            -153.61,
+            64.87
+          ]
+        },
+        {
+          "id": "10-4",
+          "idx": 4,
+          "group": 42,
+          "pos": [
+            -128.25,
+            293.09
+          ]
+        }
+      ]
+    },
+    {
+      "id": 261550,
+      "enemyIndex": 11,
+      "name": "Venom Leech",
+      "count": 1,
+      "health": 1749045,
+      "creatureType": "Beast",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [
+        {
+          "id": 1294432,
+          "attributes": []
+        },
+        {
+          "id": 1305637,
+          "attributes": []
+        },
+        {
+          "id": 1306232,
+          "attributes": []
+        },
+        {
+          "id": 1306235,
+          "attributes": []
+        },
+        {
+          "id": 1307098,
+          "attributes": []
+        },
+        {
+          "id": 1307144,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "11-1",
+          "idx": 1,
+          "group": 2,
+          "pos": [
+            -53.98,
+            36.56
+          ]
+        },
+        {
+          "id": "11-2",
+          "idx": 2,
+          "group": 2,
+          "pos": [
+            -53.84,
+            40.62
+          ]
+        },
+        {
+          "id": "11-3",
+          "idx": 3,
+          "group": 2,
+          "pos": [
+            -53.94,
+            44.87
+          ]
+        },
+        {
+          "id": "11-4",
+          "idx": 4,
+          "group": 2,
+          "pos": [
+            -57.66,
+            38.08
+          ]
+        },
+        {
+          "id": "11-5",
+          "idx": 5,
+          "group": 2,
+          "pos": [
+            -57.45,
+            42.51
+          ]
+        },
+        {
+          "id": "11-6",
+          "idx": 6,
+          "group": 1,
+          "pos": [
+            -54.61,
+            79.22
+          ]
+        },
+        {
+          "id": "11-7",
+          "idx": 7,
+          "group": 1,
+          "pos": [
+            -54.53,
+            83.23
+          ]
+        },
+        {
+          "id": "11-8",
+          "idx": 8,
+          "group": 1,
+          "pos": [
+            -54.64,
+            87.31
+          ]
+        },
+        {
+          "id": "11-9",
+          "idx": 9,
+          "group": 1,
+          "pos": [
+            -58.22,
+            85.58
+          ]
+        },
+        {
+          "id": "11-10",
+          "idx": 10,
+          "group": 1,
+          "pos": [
+            -58.69,
+            81.03
+          ]
+        },
+        {
+          "id": "11-11",
+          "idx": 11,
+          "group": 3,
+          "pos": [
+            -81.61,
+            71.03
+          ]
+        },
+        {
+          "id": "11-12",
+          "idx": 12,
+          "group": 3,
+          "pos": [
+            -81.85,
+            74.5
+          ]
+        },
+        {
+          "id": "11-13",
+          "idx": 13,
+          "group": 3,
+          "pos": [
+            -81.79,
+            77.79
+          ]
+        },
+        {
+          "id": "11-14",
+          "idx": 14,
+          "group": 3,
+          "pos": [
+            -84.75,
+            72.25
+          ]
+        },
+        {
+          "id": "11-15",
+          "idx": 15,
+          "group": 3,
+          "pos": [
+            -84.67,
+            76.23
+          ]
+        },
+        {
+          "id": "11-16",
+          "idx": 16,
+          "group": 10,
+          "pos": [
+            -105.65,
+            44.41
+          ]
+        },
+        {
+          "id": "11-17",
+          "idx": 17,
+          "group": 10,
+          "pos": [
+            -103.57,
+            49.59
+          ]
+        },
+        {
+          "id": "11-18",
+          "idx": 18,
+          "group": 10,
+          "pos": [
+            -106.34,
+            54.62
+          ]
+        },
+        {
+          "id": "11-19",
+          "idx": 19,
+          "group": 8,
+          "pos": [
+            -106.96,
+            78.16
+          ]
+        },
+        {
+          "id": "11-20",
+          "idx": 20,
+          "group": 8,
+          "pos": [
+            -107.05,
+            71.45
+          ]
+        },
+        {
+          "id": "11-21",
+          "idx": 21,
+          "group": 8,
+          "pos": [
+            -107.05,
+            74.68
+          ]
+        },
+        {
+          "id": "11-22",
+          "idx": 22,
+          "group": 12,
+          "pos": [
+            -119.55,
+            45.39
+          ]
+        },
+        {
+          "id": "11-23",
+          "idx": 23,
+          "group": 12,
+          "pos": [
+            -119.64,
+            48.81
+          ]
+        },
+        {
+          "id": "11-24",
+          "idx": 24,
+          "group": 12,
+          "pos": [
+            -122.45,
+            46.84
+          ]
+        },
+        {
+          "id": "11-25",
+          "idx": 25,
+          "group": 11,
+          "pos": [
+            -118.44,
+            73.26
+          ]
+        },
+        {
+          "id": "11-26",
+          "idx": 26,
+          "group": 11,
+          "pos": [
+            -118.11,
+            77.03
+          ]
+        },
+        {
+          "id": "11-27",
+          "idx": 27,
+          "group": 11,
+          "pos": [
+            -121.73,
+            73.32
+          ]
+        },
+        {
+          "id": "11-28",
+          "idx": 28,
+          "group": 11,
+          "pos": [
+            -121.48,
+            77.05
+          ]
+        }
+      ]
+    },
+    {
+      "id": 262011,
+      "enemyIndex": 12,
+      "name": "Rattling Writhe",
+      "count": 25,
+      "health": 4955628,
+      "creatureType": "Beast",
+      "scale": 1.8,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [
+        {
+          "id": 1294845,
+          "attributes": [
+            "poison"
+          ]
+        },
+        {
+          "id": 1294849,
+          "attributes": []
+        },
+        {
+          "id": 1294859,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "12-1",
+          "idx": 1,
+          "group": 23,
+          "pos": [
+            -119.12,
+            147.05
+          ]
+        },
+        {
+          "id": "12-2",
+          "idx": 2,
+          "group": 25,
+          "pos": [
+            -134.03,
+            173.23
+          ]
+        },
+        {
+          "id": "12-3",
+          "idx": 3,
+          "group": 26,
+          "pos": [
+            -164.5,
+            211.21
+          ]
+        }
+      ]
+    },
+    {
+      "id": 271453,
+      "enemyIndex": 13,
+      "name": "Blade of the Altar",
+      "count": 5,
+      "health": 2915075,
+      "creatureType": "Humanoid",
+      "scale": 1.2,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [
+        {
+          "id": 317898,
+          "attributes": []
+        },
+        {
+          "id": 1308518,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "13-1",
+          "idx": 1,
+          "group": 32,
+          "pos": [
+            -179.59,
+            336.54
+          ]
+        },
+        {
+          "id": "13-2",
+          "idx": 2,
+          "group": 29,
+          "pos": [
+            -182.83,
+            359.49
+          ]
+        },
+        {
+          "id": "13-3",
+          "idx": 3,
+          "group": 29,
+          "pos": [
+            -186.98,
+            359.5
+          ]
+        },
+        {
+          "id": "13-4",
+          "idx": 4,
+          "group": 33,
+          "pos": [
+            -199.01,
+            339.67
+          ]
+        },
+        {
+          "id": "13-5",
+          "idx": 5,
+          "group": 33,
+          "pos": [
+            -203.36,
+            339.69
+          ]
+        },
+        {
+          "id": "13-6",
+          "idx": 6,
+          "group": 35,
+          "pos": [
+            -178.52,
+            289.96
+          ]
+        },
+        {
+          "id": "13-7",
+          "idx": 7,
+          "group": 35,
+          "pos": [
+            -178.56,
+            294.19
+          ]
+        },
+        {
+          "id": "13-8",
+          "idx": 8,
+          "group": 35,
+          "pos": [
+            -183.18,
+            289.87
+          ]
+        },
+        {
+          "id": "13-9",
+          "idx": 9,
+          "group": 35,
+          "pos": [
+            -183.05,
+            294.1
+          ]
+        },
+        {
+          "id": "13-10",
+          "idx": 10,
+          "group": 36,
+          "pos": [
+            -177.67,
+            304.1
+          ]
+        },
+        {
+          "id": "13-11",
+          "idx": 11,
+          "group": 36,
+          "pos": [
+            -183.01,
+            304.4
+          ]
+        },
+        {
+          "id": "13-12",
+          "idx": 12,
+          "group": 37,
+          "pos": [
+            -177.39,
+            279.28
+          ]
+        },
+        {
+          "id": "13-13",
+          "idx": 13,
+          "group": 37,
+          "pos": [
+            -182.74,
+            279.94
+          ]
+        },
+        {
+          "id": "13-14",
+          "idx": 14,
+          "group": 41,
+          "pos": [
+            -143.34,
+            303.45
+          ]
+        },
+        {
+          "id": "13-15",
+          "idx": 15,
+          "group": 41,
+          "pos": [
+            -147.58,
+            303.61
+          ]
+        },
+        {
+          "id": "13-16",
+          "idx": 16,
+          "group": 40,
+          "pos": [
+            -144.71,
+            280.44
+          ]
+        },
+        {
+          "id": "13-17",
+          "idx": 17,
+          "group": 40,
+          "pos": [
+            -148.99,
+            280.28
+          ]
+        },
+        {
+          "id": "13-18",
+          "idx": 18,
+          "group": 42,
+          "pos": [
+            -134.08,
+            290.17
+          ]
+        },
+        {
+          "id": "13-19",
+          "idx": 19,
+          "group": 42,
+          "pos": [
+            -134.14,
+            296.05
+          ]
+        },
+        {
+          "id": "13-20",
+          "idx": 20,
+          "group": 43,
+          "pos": [
+            -82.04,
+            288.17
+          ]
+        },
+        {
+          "id": "13-21",
+          "idx": 21,
+          "group": 43,
+          "pos": [
+            -82.17,
+            298.75
+          ]
+        }
+      ]
+    },
+    {
+      "id": 259445,
+      "enemyIndex": 14,
+      "name": "Rav'i",
+      "count": 0,
+      "health": 10000,
+      "creatureType": "Beast",
+      "scale": 1.5,
+      "isBoss": true,
+      "characteristics": [],
+      "spells": [
+        {
+          "id": 1296058,
+          "attributes": []
+        },
+        {
+          "id": 1296069,
+          "attributes": [
+            "disease"
+          ]
+        },
+        {
+          "id": 1296220,
+          "attributes": []
+        },
+        {
+          "id": 1297876,
+          "attributes": []
+        },
+        {
+          "id": 1298221,
+          "attributes": []
+        },
+        {
+          "id": 1298223,
+          "attributes": []
+        },
+        {
+          "id": 1298683,
+          "attributes": []
+        },
+        {
+          "id": 1306345,
+          "attributes": []
+        },
+        {
+          "id": 1307573,
+          "attributes": []
+        },
+        {
+          "id": 1307700,
+          "attributes": []
+        },
+        {
+          "id": 1307765,
+          "attributes": []
+        },
+        {
+          "id": 1307768,
+          "attributes": []
+        },
+        {
+          "id": 1307894,
+          "attributes": []
+        },
+        {
+          "id": 1307915,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "14-1",
+          "idx": 1,
+          "group": 45,
+          "pos": [
+            -196.52,
+            61.67
+          ]
+        }
+      ]
+    },
+    {
+      "id": 259446,
+      "enemyIndex": 15,
+      "name": "The Writhing Coil",
+      "count": 0,
+      "health": 10000,
+      "creatureType": "Beast",
+      "scale": 1.3,
+      "isBoss": true,
+      "characteristics": [],
+      "spells": [
+        {
+          "id": 1287811,
+          "attributes": []
+        },
+        {
+          "id": 1298949,
+          "attributes": []
+        },
+        {
+          "id": 1299053,
+          "attributes": []
+        },
+        {
+          "id": 1299080,
+          "attributes": []
+        },
+        {
+          "id": 1299130,
+          "attributes": []
+        },
+        {
+          "id": 1299135,
+          "attributes": []
+        },
+        {
+          "id": 1299154,
+          "attributes": []
+        },
+        {
+          "id": 1299189,
+          "attributes": []
+        },
+        {
+          "id": 1299902,
+          "attributes": []
+        },
+        {
+          "id": 1299940,
+          "attributes": []
+        },
+        {
+          "id": 1300044,
+          "attributes": []
+        },
+        {
+          "id": 1300083,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "15-1",
+          "idx": 1,
+          "group": 46,
+          "pos": [
+            -178.27,
+            229.24
+          ]
+        }
+      ]
+    },
+    {
+      "id": 259447,
+      "enemyIndex": 16,
+      "name": "Zul'jan",
+      "count": 0,
+      "health": 10000,
+      "creatureType": "Humanoid",
+      "scale": 1.5,
+      "isBoss": true,
+      "characteristics": [],
+      "spells": [
+        {
+          "id": 1300876,
+          "attributes": []
+        },
+        {
+          "id": 1300886,
+          "attributes": []
+        },
+        {
+          "id": 1300888,
+          "attributes": []
+        },
+        {
+          "id": 1300892,
+          "attributes": []
+        },
+        {
+          "id": 1300894,
+          "attributes": []
+        },
+        {
+          "id": 1300901,
+          "attributes": []
+        },
+        {
+          "id": 1301111,
+          "attributes": []
+        },
+        {
+          "id": 1301114,
+          "attributes": []
+        },
+        {
+          "id": 1301350,
+          "attributes": []
+        },
+        {
+          "id": 1301353,
+          "attributes": []
+        },
+        {
+          "id": 1301413,
+          "attributes": []
+        },
+        {
+          "id": 1301508,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "16-1",
+          "idx": 1,
+          "group": 47,
+          "pos": [
+            -60.9,
+            292.67
+          ]
+        }
+      ]
+    },
+    {
+      "id": 262398,
+      "enemyIndex": 17,
+      "name": "Uncoiled Writhe",
+      "count": 0,
+      "health": 10000,
+      "creatureType": "Beast",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [
+        {
+          "id": 1300503,
+          "attributes": []
+        },
+        {
+          "id": 1300618,
+          "attributes": []
+        },
+        {
+          "id": 1300698,
+          "attributes": []
+        },
+        {
+          "id": 1305368,
+          "attributes": [
+            "poison"
+          ]
+        },
+        {
+          "id": 1305393,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "17-1",
+          "idx": 1,
+          "group": 46,
+          "pos": [
+            -186.1,
+            229.2
+          ]
+        },
+        {
+          "id": "17-2",
+          "idx": 2,
+          "group": 46,
+          "pos": [
+            -184.55,
+            233.74
+          ]
+        }
+      ]
+    },
+    {
+      "id": 264798,
+      "enemyIndex": 18,
+      "name": "Infused Eggs",
+      "count": 0,
+      "health": 10000,
+      "creatureType": "Not specified",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [
+        {
+          "id": 1293059,
+          "attributes": []
+        },
+        {
+          "id": 1293079,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "18-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -101.01,
+            158.18
+          ]
+        }
+      ]
+    },
+    {
+      "id": 268358,
+      "enemyIndex": 19,
+      "name": "Ritual Snake",
+      "count": 0,
+      "health": 10000,
+      "creatureType": "Beast",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [
+        {
+          "id": 1300885,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "19-1",
+          "idx": 1,
+          "group": 47,
+          "pos": [
+            -50.86,
+            292.72
+          ]
+        }
+      ]
+    },
+    {
+      "id": 270378,
+      "enemyIndex": 20,
+      "name": "Ritual Spirit",
+      "count": 0,
+      "health": 10000,
+      "creatureType": "Humanoid",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [
+        {
+          "id": 1306657,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "20-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -21.34,
+            190.76
+          ]
+        }
+      ]
+    },
+    {
+      "id": 270417,
+      "enemyIndex": 21,
+      "name": "Uncoiled Writhe",
+      "count": 0,
+      "health": 10000,
+      "creatureType": "Beast",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [
+        {
+          "id": 1300618,
+          "attributes": []
+        },
+        {
+          "id": 1300698,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "21-1",
+          "idx": 1,
+          "group": 46,
+          "pos": [
+            -175.91,
+            236.56
+          ]
+        },
+        {
+          "id": "21-2",
+          "idx": 2,
+          "group": 46,
+          "pos": [
+            -180.32,
+            236.48
+          ]
+        }
+      ]
+    }
+  ],
+  "pois": []
+}

@@ -1,34 +1,31 @@
 import type { MdtDungeon, MdtDungeonFake, MobSpawn, SpawnFake, SpawnId } from './types.ts'
 import { mdtEnemiesToMobSpawns } from '../util/mobSpawns.ts'
 import type { DungeonKey } from './dungeonKeys.ts'
-import aa from './mdtDungeons/aa_mdt.json'
-import magi from './mdtDungeons/magi_mdt.json'
-import cavns from './mdtDungeons/cavns_mdt.json'
-import xenas from './mdtDungeons/xenas_mdt.json'
-import wind from './mdtDungeons/wind_mdt.json'
-import pit from './mdtDungeons/pit_mdt.json'
-import seat from './mdtDungeons/seat_mdt.json'
-import sky from './mdtDungeons/sky_mdt.json'
+import murd from './mdtDungeons/murd_mdt.json'
+import nalo from './mdtDungeons/nalo_mdt.json'
+import vale from './mdtDungeons/vale_mdt.json'
+// `void` is a reserved word, so the import is aliased.
+import voidDungeon from './mdtDungeons/void_mdt.json'
+import fang from './mdtDungeons/fang_mdt.json'
+import rlp from './mdtDungeons/rlp_mdt.json'
+import tos from './mdtDungeons/tos_mdt.json'
+import kr from './mdtDungeons/kr_mdt.json'
 
 const mdtDungeonsFake: Record<DungeonKey, MdtDungeonFake> = {
-  aa,
-  magi,
-  cavns,
-  xenas,
-  wind,
-  pit,
-  seat,
-  sky,
+  murd,
+  nalo,
+  vale,
+  void: voidDungeon,
+  fang,
+  rlp,
+  tos,
+  kr,
 }
 
 // Patches for incorrect upstream MDT data
 const mdtPatches: Partial<
   Record<DungeonKey, Array<{ spawnId: SpawnId; patch: Partial<SpawnFake> }>>
-> = {
-  wind: [
-    { spawnId: '6-3', patch: { group: null } }, // incorrectly assigned to group 36
-  ],
-}
+> = {}
 
 for (const [key, patches] of Object.entries(mdtPatches)) {
   const dungeon = mdtDungeonsFake[key as DungeonKey]
