@@ -28,6 +28,8 @@ jobs:
 
       - run: yarn install
 
+      - run: git submodule foreach 'git fetch origin "+refs/heads/*:refs/remotes/origin/*"'
+
       - run: git submodule update --remote
 
       - name: Commit and push if changed
