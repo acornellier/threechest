@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        branch: [main]
+        branch: [main, ptr]
     steps:
       - uses: actions/checkout@v4
         with:
