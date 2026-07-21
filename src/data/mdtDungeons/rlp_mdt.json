@@ -1,12 +1,12 @@
 {
   "dungeonIndex": 42,
-  "totalCount": 660,
+  "totalCount": 531,
   "enemies": [
     {
       "id": 188244,
       "enemyIndex": 1,
       "name": "Primal Juggernaut",
-      "count": 18,
+      "count": 25,
       "health": 13426021,
       "creatureType": "Elemental",
       "scale": 1,
@@ -14,32 +14,15 @@
       "characteristics": [
         "Taunt"
       ],
-      "spells": [
-        {
-          "id": 372696,
-          "attributes": []
-        },
-        {
-          "id": 372697,
-          "attributes": []
-        },
-        {
-          "id": 372730,
-          "attributes": []
-        },
-        {
-          "id": 372793,
-          "attributes": []
-        }
-      ],
+      "spells": [],
       "spawns": [
         {
           "id": "1-1",
           "idx": 1,
-          "group": null,
+          "group": 32,
           "pos": [
-            -214.91,
-            46.35
+            -211.78,
+            46.13
           ],
           "scale": 2.2
         },
@@ -59,7 +42,7 @@
       "id": 187969,
       "enemyIndex": 2,
       "name": "Deepstone Earthshaper",
-      "count": 10,
+      "count": 5,
       "health": 6713011,
       "creatureType": "Humanoid",
       "scale": 1,
@@ -83,16 +66,7 @@
         "Sleep Walk",
         "Mind Soothe"
       ],
-      "spells": [
-        {
-          "id": 371471,
-          "attributes": []
-        },
-        {
-          "id": 372735,
-          "attributes": []
-        }
-      ],
+      "spells": [],
       "spawns": [
         {
           "id": "2-1",
@@ -135,42 +109,42 @@
           "scale": 1.6
         },
         {
-          "id": "2-5",
-          "idx": 5,
-          "group": 9,
-          "pos": [
-            -110.91,
-            57.42
-          ],
-          "scale": 1.6
-        },
-        {
           "id": "2-6",
           "idx": 6,
           "group": 12,
           "pos": [
-            -67.41,
-            62.47
+            -66.07,
+            56.87
           ],
           "scale": 1.6
         },
         {
           "id": "2-7",
           "idx": 7,
-          "group": null,
+          "group": 34,
           "pos": [
-            -55.94,
-            76.95
+            -58.9,
+            68.53
           ],
           "scale": 1.6
         },
         {
           "id": "2-8",
           "idx": 8,
-          "group": null,
+          "group": 33,
           "pos": [
-            -63.45,
-            91.24
+            -60.7,
+            91.81
+          ],
+          "scale": 1.6
+        },
+        {
+          "id": "2-9",
+          "idx": 9,
+          "group": 32,
+          "pos": [
+            -218.8,
+            42.66
           ],
           "scale": 1.6
         }
@@ -180,7 +154,7 @@
       "id": 188011,
       "enemyIndex": 3,
       "name": "Earthbound Guardian",
-      "count": 10,
+      "count": 5,
       "health": 6713011,
       "creatureType": "Elemental",
       "scale": 1,
@@ -200,16 +174,7 @@
         "Slow",
         "Sleep Walk"
       ],
-      "spells": [
-        {
-          "id": 371956,
-          "attributes": []
-        },
-        {
-          "id": 373458,
-          "attributes": []
-        }
-      ],
+      "spells": [],
       "spawns": [
         {
           "id": "3-1",
@@ -226,8 +191,8 @@
           "idx": 2,
           "group": 3,
           "pos": [
-            -138.14,
-            38.48
+            -138.7,
+            36.8
           ],
           "scale": 1.6
         },
@@ -236,8 +201,8 @@
           "idx": 3,
           "group": 3,
           "pos": [
-            -135.56,
-            43.7
+            -134.33,
+            32.73
           ],
           "scale": 1.6
         },
@@ -266,8 +231,8 @@
           "idx": 6,
           "group": 7,
           "pos": [
-            -123.68,
-            48.93
+            -123.9,
+            52.4
           ],
           "scale": 1.6
         },
@@ -276,8 +241,28 @@
           "idx": 7,
           "group": 12,
           "pos": [
-            -73.08,
-            61.86
+            -68.93,
+            53.69
+          ],
+          "scale": 1.6
+        },
+        {
+          "id": "3-8",
+          "idx": 8,
+          "group": 32,
+          "pos": [
+            -218.63,
+            50.36
+          ],
+          "scale": 1.6
+        },
+        {
+          "id": "3-9",
+          "idx": 9,
+          "group": 34,
+          "pos": [
+            -55.88,
+            73
           ],
           "scale": 1.6
         }
@@ -287,7 +272,7 @@
       "id": 188067,
       "enemyIndex": 4,
       "name": "Flashfrost Chillweaver",
-      "count": 10,
+      "count": 7,
       "health": 6713011,
       "creatureType": "Humanoid",
       "scale": 1,
@@ -311,48 +296,7 @@
         "Sleep Walk",
         "Mind Soothe"
       ],
-      "spells": [
-        {
-          "id": 371489,
-          "attributes": []
-        },
-        {
-          "id": 371887,
-          "attributes": []
-        },
-        {
-          "id": 371984,
-          "attributes": [
-            "interruptible"
-          ]
-        },
-        {
-          "id": 372565,
-          "attributes": []
-        },
-        {
-          "id": 372568,
-          "attributes": []
-        },
-        {
-          "id": 372743,
-          "attributes": [
-            "interruptible"
-          ]
-        },
-        {
-          "id": 372749,
-          "attributes": [
-            "magic"
-          ]
-        },
-        {
-          "id": 384933,
-          "attributes": [
-            "interruptible"
-          ]
-        }
-      ],
+      "spells": [],
       "spawns": [
         {
           "id": "4-1",
@@ -365,42 +309,12 @@
           "scale": 1.6
         },
         {
-          "id": "4-2",
-          "idx": 2,
-          "group": 3,
-          "pos": [
-            -134.39,
-            34.51
-          ],
-          "scale": 1.6
-        },
-        {
           "id": "4-3",
           "idx": 3,
           "group": 7,
           "pos": [
-            -118.97,
-            45.65
-          ],
-          "scale": 1.6
-        },
-        {
-          "id": "4-4",
-          "idx": 4,
-          "group": 8,
-          "pos": [
-            -111.62,
-            30.2
-          ],
-          "scale": 1.6
-        },
-        {
-          "id": "4-5",
-          "idx": 5,
-          "group": 9,
-          "pos": [
-            -109.13,
-            51.54
+            -122.1,
+            46.77
           ],
           "scale": 1.6
         },
@@ -409,8 +323,8 @@
           "idx": 6,
           "group": null,
           "pos": [
-            -89.42,
-            51.16
+            -90.38,
+            51.74
           ],
           "scale": 1.6
         },
@@ -419,8 +333,8 @@
           "idx": 7,
           "group": null,
           "pos": [
-            -95.71,
-            58.68
+            -95.85,
+            60.4
           ],
           "scale": 1.6
         },
@@ -429,18 +343,18 @@
           "idx": 8,
           "group": 12,
           "pos": [
-            -71.88,
-            67.26
+            -71.1,
+            58.64
           ],
           "scale": 1.6
         },
         {
           "id": "4-9",
           "idx": 9,
-          "group": null,
+          "group": 33,
           "pos": [
-            -65.01,
-            80.89
+            -59.08,
+            85.48
           ],
           "scale": 1.6,
           "patrol": []
@@ -451,7 +365,7 @@
       "id": 187894,
       "enemyIndex": 5,
       "name": "Infused Whelp",
-      "count": 1,
+      "count": 0,
       "health": 2315989,
       "creatureType": "Dragonkin",
       "scale": 1,
@@ -474,22 +388,15 @@
         "Hibernate",
         "Mind Soothe"
       ],
-      "spells": [
-        {
-          "id": 372683,
-          "attributes": [
-            "interruptible"
-          ]
-        }
-      ],
+      "spells": [],
       "spawns": [
         {
           "id": "5-1",
           "idx": 1,
           "group": 8,
           "pos": [
-            -104.31,
-            24.08
+            -100.28,
+            27.33
           ],
           "scale": 1
         },
@@ -498,8 +405,8 @@
           "idx": 2,
           "group": 8,
           "pos": [
-            -108.47,
-            24.06
+            -103.54,
+            25.62
           ],
           "scale": 1
         },
@@ -508,8 +415,8 @@
           "idx": 3,
           "group": 8,
           "pos": [
-            -106.1,
-            27.75
+            -102.96,
+            29.2
           ],
           "scale": 1
         },
@@ -518,8 +425,8 @@
           "idx": 4,
           "group": 10,
           "pos": [
-            -83.04,
-            37.22
+            -83.91,
+            35.78
           ],
           "scale": 1
         },
@@ -528,8 +435,8 @@
           "idx": 5,
           "group": 10,
           "pos": [
-            -80.76,
-            40.37
+            -80.82,
+            38.36
           ],
           "scale": 1
         },
@@ -538,8 +445,8 @@
           "idx": 6,
           "group": 10,
           "pos": [
-            -76.82,
-            42.62
+            -74.45,
+            43.18
           ],
           "scale": 1
         },
@@ -548,8 +455,8 @@
           "idx": 7,
           "group": 10,
           "pos": [
-            -89.67,
-            34.46
+            -89.61,
+            36.59
           ],
           "scale": 1
         },
@@ -558,8 +465,8 @@
           "idx": 8,
           "group": 10,
           "pos": [
-            -86.31,
-            36
+            -87.32,
+            33.06
           ],
           "scale": 1
         },
@@ -568,8 +475,8 @@
           "idx": 9,
           "group": 10,
           "pos": [
-            -77.33,
-            45.97
+            -76.89,
+            46.29
           ],
           "scale": 1
         },
@@ -578,8 +485,8 @@
           "idx": 10,
           "group": 10,
           "pos": [
-            -89.09,
-            38.5
+            -86.09,
+            38.56
           ],
           "scale": 1
         },
@@ -588,8 +495,8 @@
           "idx": 11,
           "group": 10,
           "pos": [
-            -80.95,
-            46.92
+            -83.76,
+            44.92
           ],
           "scale": 1
         },
@@ -598,8 +505,8 @@
           "idx": 12,
           "group": 10,
           "pos": [
-            -83.72,
-            40.36
+            -82.97,
+            40.92
           ],
           "scale": 1
         },
@@ -608,8 +515,8 @@
           "idx": 13,
           "group": 10,
           "pos": [
-            -87.01,
-            42.43
+            -89.33,
+            40.24
           ],
           "scale": 1
         },
@@ -618,8 +525,8 @@
           "idx": 14,
           "group": 10,
           "pos": [
-            -79.49,
-            48.95
+            -80.68,
+            47.32
           ],
           "scale": 1
         },
@@ -628,8 +535,8 @@
           "idx": 15,
           "group": 10,
           "pos": [
-            -80.5,
-            43.49
+            -79.81,
+            43.3
           ],
           "scale": 1
         },
@@ -638,8 +545,8 @@
           "idx": 16,
           "group": 10,
           "pos": [
-            -84.43,
-            44.98
+            -86.3,
+            42.79
           ],
           "scale": 1
         },
@@ -648,8 +555,8 @@
           "idx": 17,
           "group": 11,
           "pos": [
-            -105.3,
-            66.78
+            -105.37,
+            65.27
           ],
           "scale": 1
         },
@@ -659,7 +566,7 @@
           "group": 11,
           "pos": [
             -96.55,
-            67.59
+            70.68
           ],
           "scale": 1
         },
@@ -668,8 +575,8 @@
           "idx": 19,
           "group": 11,
           "pos": [
-            -99.1,
-            66.44
+            -98.75,
+            67.54
           ],
           "scale": 1
         },
@@ -678,8 +585,8 @@
           "idx": 20,
           "group": 11,
           "pos": [
-            -102.32,
-            69.42
+            -103.01,
+            68.32
           ],
           "scale": 1
         },
@@ -688,8 +595,8 @@
           "idx": 21,
           "group": 11,
           "pos": [
-            -98.07,
-            70.76
+            -98.69,
+            73.92
           ],
           "scale": 1
         },
@@ -698,8 +605,8 @@
           "idx": 22,
           "group": 11,
           "pos": [
-            -102.2,
-            63.89
+            -101.24,
+            64.85
           ],
           "scale": 1
         },
@@ -708,8 +615,8 @@
           "idx": 23,
           "group": 11,
           "pos": [
-            -99.81,
-            72.6
+            -101.04,
+            71.09
           ],
           "scale": 1
         },
@@ -718,8 +625,8 @@
           "idx": 24,
           "group": 5,
           "pos": [
-            -133.95,
-            54.36
+            -135.67,
+            53.33
           ],
           "scale": 1
         },
@@ -728,8 +635,8 @@
           "idx": 25,
           "group": 5,
           "pos": [
-            -136.34,
-            59.23
+            -136.55,
+            57.1
           ],
           "scale": 1
         },
@@ -738,8 +645,8 @@
           "idx": 26,
           "group": 5,
           "pos": [
-            -136.99,
-            55.26
+            -139.46,
+            52.59
           ],
           "scale": 1
         },
@@ -748,8 +655,8 @@
           "idx": 27,
           "group": 5,
           "pos": [
-            -139.77,
-            58.28
+            -140.59,
+            56.22
           ],
           "scale": 1
         },
@@ -758,8 +665,8 @@
           "idx": 28,
           "group": 5,
           "pos": [
-            -133.31,
-            59.46
+            -132.62,
+            58.15
           ],
           "scale": 1
         },
@@ -768,8 +675,8 @@
           "idx": 29,
           "group": 5,
           "pos": [
-            -130.98,
-            57.18
+            -131.8,
+            54.5
           ],
           "scale": 1
         },
@@ -778,8 +685,8 @@
           "idx": 30,
           "group": 4,
           "pos": [
-            -152.84,
-            23.16
+            -151.2,
+            25.7
           ],
           "scale": 1
         },
@@ -798,8 +705,8 @@
           "idx": 32,
           "group": 4,
           "pos": [
-            -149.78,
-            19.48
+            -146.76,
+            18.86
           ],
           "scale": 1
         },
@@ -808,8 +715,8 @@
           "idx": 33,
           "group": 4,
           "pos": [
-            -153.23,
-            18.92
+            -151.17,
+            18.85
           ],
           "scale": 1
         },
@@ -818,8 +725,8 @@
           "idx": 34,
           "group": 4,
           "pos": [
-            -145.18,
-            21.99
+            -146.83,
+            22.33
           ],
           "scale": 1
         },
@@ -838,8 +745,8 @@
           "idx": 36,
           "group": 4,
           "pos": [
-            -145.95,
-            26.08
+            -147.32,
+            26.14
           ],
           "scale": 1
         },
@@ -848,8 +755,8 @@
           "idx": 37,
           "group": 4,
           "pos": [
-            -141.73,
-            24.67
+            -143.11,
+            22.82
           ],
           "scale": 1
         },
@@ -858,8 +765,8 @@
           "idx": 38,
           "group": 4,
           "pos": [
-            -137.97,
-            22.76
+            -138.8,
+            23.03
           ],
           "scale": 1
         },
@@ -868,8 +775,8 @@
           "idx": 39,
           "group": 4,
           "pos": [
-            -137.68,
-            17.4
+            -138.51,
+            19.18
           ],
           "scale": 1
         },
@@ -878,8 +785,8 @@
           "idx": 40,
           "group": 4,
           "pos": [
-            -142.14,
-            14.68
+            -142.41,
+            15.23
           ],
           "scale": 1
         },
@@ -888,8 +795,8 @@
           "idx": 41,
           "group": 4,
           "pos": [
-            -145.5,
-            18.51
+            -138.16,
+            15.56
           ],
           "scale": 1
         },
@@ -898,8 +805,8 @@
           "idx": 42,
           "group": 4,
           "pos": [
-            -141.22,
-            19.24
+            -142.52,
+            18.97
           ],
           "scale": 1
         },
@@ -908,8 +815,8 @@
           "idx": 43,
           "group": 4,
           "pos": [
-            -149.1,
-            24.02
+            -150.95,
+            22.3
           ],
           "scale": 1
         },
@@ -918,8 +825,8 @@
           "idx": 44,
           "group": 4,
           "pos": [
-            -150.66,
-            27.69
+            -143.59,
+            26.32
           ],
           "scale": 1
         },
@@ -928,8 +835,8 @@
           "idx": 45,
           "group": 4,
           "pos": [
-            -154.14,
-            26.32
+            -139.39,
+            26.73
           ],
           "scale": 1
         },
@@ -938,8 +845,8 @@
           "idx": 46,
           "group": 4,
           "pos": [
-            -156.2,
-            22.48
+            -145.77,
+            30.1
           ],
           "scale": 1
         },
@@ -948,8 +855,8 @@
           "idx": 47,
           "group": 10,
           "pos": [
-            -79.37,
-            39.16
+            -77.43,
+            40.72
           ],
           "scale": 1
         },
@@ -958,8 +865,8 @@
           "idx": 48,
           "group": 13,
           "pos": [
-            -80.49,
-            97.74
+            -78.25,
+            96.85
           ],
           "scale": 1
         },
@@ -968,8 +875,8 @@
           "idx": 49,
           "group": 13,
           "pos": [
-            -74.61,
-            97.67
+            -74.38,
+            95.32
           ],
           "scale": 1
         },
@@ -978,8 +885,28 @@
           "idx": 50,
           "group": 13,
           "pos": [
-            -77.8,
-            95.13
+            -77.46,
+            93
+          ],
+          "scale": 1
+        },
+        {
+          "id": "5-51",
+          "idx": 51,
+          "group": 8,
+          "pos": [
+            -106.72,
+            24.3
+          ],
+          "scale": 1
+        },
+        {
+          "id": "5-52",
+          "idx": 52,
+          "group": 8,
+          "pos": [
+            -105.82,
+            27.77
           ],
           "scale": 1
         }
@@ -989,7 +916,7 @@
       "id": 187897,
       "enemyIndex": 6,
       "name": "Defier Draghar",
-      "count": 40,
+      "count": 30,
       "health": 20139032,
       "creatureType": "Dragonkin",
       "scale": 1,
@@ -998,38 +925,15 @@
         "Taunt",
         "Mind Soothe"
       ],
-      "spells": [
-        {
-          "id": 372047,
-          "attributes": []
-        },
-        {
-          "id": 372087,
-          "attributes": []
-        },
-        {
-          "id": 372088,
-          "attributes": []
-        },
-        {
-          "id": 372794,
-          "attributes": []
-        },
-        {
-          "id": 372796,
-          "attributes": [
-            "bleed"
-          ]
-        }
-      ],
+      "spells": [],
       "spawns": [
         {
           "id": "6-1",
           "idx": 1,
           "group": null,
           "pos": [
-            -88.57,
-            84.62
+            -87.93,
+            85.9
           ],
           "scale": 2.2
         }
@@ -1049,62 +953,7 @@
         "Taunt",
         "Mind Soothe"
       ],
-      "spells": [
-        {
-          "id": 372808,
-          "attributes": [
-            "interruptible"
-          ]
-        },
-        {
-          "id": 372851,
-          "attributes": []
-        },
-        {
-          "id": 372963,
-          "attributes": []
-        },
-        {
-          "id": 372988,
-          "attributes": []
-        },
-        {
-          "id": 373046,
-          "attributes": []
-        },
-        {
-          "id": 373680,
-          "attributes": []
-        },
-        {
-          "id": 373688,
-          "attributes": []
-        },
-        {
-          "id": 373727,
-          "attributes": []
-        },
-        {
-          "id": 383925,
-          "attributes": []
-        },
-        {
-          "id": 384024,
-          "attributes": []
-        },
-        {
-          "id": 385518,
-          "attributes": []
-        },
-        {
-          "id": 396044,
-          "attributes": []
-        },
-        {
-          "id": 397077,
-          "attributes": []
-        }
-      ],
+      "spells": [],
       "spawns": [
         {
           "id": "7-1",
@@ -1122,7 +971,7 @@
       "id": 190205,
       "enemyIndex": 8,
       "name": "Scorchling",
-      "count": 1,
+      "count": 0,
       "health": 1342602,
       "creatureType": "Elemental",
       "scale": 1,
@@ -1142,27 +991,15 @@
         "Slow",
         "Sleep Walk"
       ],
-      "spells": [
-        {
-          "id": 373869,
-          "attributes": [
-            "magic",
-            "interruptible"
-          ]
-        },
-        {
-          "id": 378968,
-          "attributes": []
-        }
-      ],
+      "spells": [],
       "spawns": [
         {
           "id": "8-1",
           "idx": 1,
           "group": null,
           "pos": [
-            -127.92,
-            216.72
+            -135.23,
+            225.23
           ],
           "scale": 1
         },
@@ -1181,8 +1018,8 @@
           "idx": 3,
           "group": null,
           "pos": [
-            -147.73,
-            229.76
+            -138.16,
+            228.7
           ],
           "scale": 1
         },
@@ -1191,8 +1028,8 @@
           "idx": 4,
           "group": null,
           "pos": [
-            -155.04,
-            210.91
+            -151.85,
+            208.65
           ],
           "scale": 1
         },
@@ -1311,8 +1148,8 @@
           "idx": 16,
           "group": 18,
           "pos": [
-            -104.57,
-            321.46
+            -104.17,
+            327.04
           ],
           "scale": 1
         },
@@ -1321,8 +1158,8 @@
           "idx": 17,
           "group": 18,
           "pos": [
-            -107.41,
-            313.65
+            -108.87,
+            309.53
           ],
           "scale": 1
         },
@@ -1331,8 +1168,8 @@
           "idx": 18,
           "group": 18,
           "pos": [
-            -100.7,
-            317.37
+            -99.77,
+            324.55
           ],
           "scale": 1
         },
@@ -1341,8 +1178,8 @@
           "idx": 19,
           "group": 18,
           "pos": [
-            -102.95,
-            312.15
+            -103.62,
+            305.9
           ],
           "scale": 1
         },
@@ -1402,7 +1239,7 @@
       "id": 197698,
       "enemyIndex": 9,
       "name": "Thunderhead",
-      "count": 40,
+      "count": 30,
       "health": 20139032,
       "creatureType": "Dragonkin",
       "scale": 1,
@@ -1411,38 +1248,7 @@
         "Taunt",
         "Mind Soothe"
       ],
-      "spells": [
-        {
-          "id": 391726,
-          "attributes": []
-        },
-        {
-          "id": 391727,
-          "attributes": []
-        },
-        {
-          "id": 392395,
-          "attributes": []
-        },
-        {
-          "id": 392640,
-          "attributes": []
-        },
-        {
-          "id": 392641,
-          "attributes": [
-            "magic"
-          ]
-        },
-        {
-          "id": 392642,
-          "attributes": []
-        },
-        {
-          "id": 395303,
-          "attributes": []
-        }
-      ],
+      "spells": [],
       "spawns": [
         {
           "id": "9-1",
@@ -1460,7 +1266,7 @@
       "id": 190207,
       "enemyIndex": 10,
       "name": "Primalist Cinderweaver",
-      "count": 10,
+      "count": 7,
       "health": 6713011,
       "creatureType": "Humanoid",
       "scale": 1,
@@ -1484,54 +1290,15 @@
         "Sleep Walk",
         "Mind Soothe"
       ],
-      "spells": [
-        {
-          "id": 384194,
-          "attributes": [
-            "interruptible"
-          ]
-        },
-        {
-          "id": 384197,
-          "attributes": [
-            "interruptible"
-          ]
-        },
-        {
-          "id": 385063,
-          "attributes": [
-            "magic"
-          ]
-        }
-      ],
+      "spells": [],
       "spawns": [
-        {
-          "id": "10-1",
-          "idx": 1,
-          "group": 14,
-          "pos": [
-            -180.78,
-            220.06
-          ],
-          "scale": 1.3
-        },
-        {
-          "id": "10-2",
-          "idx": 2,
-          "group": 14,
-          "pos": [
-            -172.13,
-            218.92
-          ],
-          "scale": 1.3
-        },
         {
           "id": "10-3",
           "idx": 3,
           "group": 15,
           "pos": [
-            -196.95,
-            231.48
+            -193.76,
+            228.02
           ],
           "scale": 1.3
         },
@@ -1540,28 +1307,8 @@
           "idx": 4,
           "group": 16,
           "pos": [
-            -214.94,
-            262.37
-          ],
-          "scale": 1.3
-        },
-        {
-          "id": "10-5",
-          "idx": 5,
-          "group": 17,
-          "pos": [
-            -119.47,
-            331.69
-          ],
-          "scale": 1.3
-        },
-        {
-          "id": "10-6",
-          "idx": 6,
-          "group": 19,
-          "pos": [
-            -87.07,
-            283.74
+            -215.34,
+            264.63
           ],
           "scale": 1.3
         },
@@ -1570,18 +1317,28 @@
           "idx": 7,
           "group": 20,
           "pos": [
-            -105.5,
-            269.85
+            -104.83,
+            260.94
           ],
           "scale": 1.3
         },
         {
-          "id": "10-8",
-          "idx": 8,
-          "group": 20,
+          "id": "10-9",
+          "idx": 9,
+          "group": 25,
           "pos": [
-            -100.27,
-            271.44
+            -39.26,
+            154.46
+          ],
+          "scale": 1.3
+        },
+        {
+          "id": "10-10",
+          "idx": 10,
+          "group": 36,
+          "pos": [
+            -101.42,
+            318.66
           ],
           "scale": 1.3
         }
@@ -1591,7 +1348,7 @@
       "id": 190034,
       "enemyIndex": 11,
       "name": "Blazebound Destroyer",
-      "count": 16,
+      "count": 25,
       "health": 11412119,
       "creatureType": "Elemental",
       "scale": 1,
@@ -1599,24 +1356,7 @@
       "characteristics": [
         "Taunt"
       ],
-      "spells": [
-        {
-          "id": 373614,
-          "attributes": []
-        },
-        {
-          "id": 373692,
-          "attributes": []
-        },
-        {
-          "id": 373693,
-          "attributes": []
-        },
-        {
-          "id": 384139,
-          "attributes": []
-        }
-      ],
+      "spells": [],
       "spawns": [
         {
           "id": "11-1",
@@ -1643,8 +1383,8 @@
           "idx": 3,
           "group": 17,
           "pos": [
-            -125.81,
-            330.09
+            -128.21,
+            328.76
           ],
           "scale": 2
         },
@@ -1664,7 +1404,7 @@
       "id": 190206,
       "enemyIndex": 12,
       "name": "Ashseer Flamelasher",
-      "count": 10,
+      "count": 7,
       "health": 7384312,
       "creatureType": "Humanoid",
       "scale": 1,
@@ -1688,42 +1428,15 @@
         "Sleep Walk",
         "Mind Soothe"
       ],
-      "spells": [
-        {
-          "id": 373972,
-          "attributes": [
-            "magic"
-          ]
-        },
-        {
-          "id": 373973,
-          "attributes": []
-        },
-        {
-          "id": 373977,
-          "attributes": []
-        },
-        {
-          "id": 385536,
-          "attributes": []
-        },
-        {
-          "id": 385567,
-          "attributes": []
-        },
-        {
-          "id": 385568,
-          "attributes": []
-        }
-      ],
+      "spells": [],
       "spawns": [
         {
           "id": "12-1",
           "idx": 1,
           "group": 15,
           "pos": [
-            -202.29,
-            234.01
+            -198.44,
+            229.22
           ],
           "scale": 1.3
         },
@@ -1732,8 +1445,8 @@
           "idx": 2,
           "group": 15,
           "pos": [
-            -197.82,
-            237.42
+            -194.89,
+            233.17
           ],
           "scale": 1.3
         },
@@ -1742,8 +1455,8 @@
           "idx": 3,
           "group": 16,
           "pos": [
-            -211.27,
-            254.27
+            -215.13,
+            256.93
           ],
           "scale": 1.3
         },
@@ -1752,18 +1465,8 @@
           "idx": 4,
           "group": 17,
           "pos": [
-            -129.36,
-            335.61
-          ],
-          "scale": 1.3
-        },
-        {
-          "id": "12-5",
-          "idx": 5,
-          "group": 19,
-          "pos": [
-            -87.14,
-            293.21
+            -128.43,
+            335.48
           ],
           "scale": 1.3
         },
@@ -1772,8 +1475,38 @@
           "idx": 6,
           "group": 20,
           "pos": [
-            -102.34,
-            265.71
+            -99.68,
+            261.19
+          ],
+          "scale": 1.3
+        },
+        {
+          "id": "12-7",
+          "idx": 7,
+          "group": 29,
+          "pos": [
+            -53.37,
+            141.95
+          ],
+          "scale": 1.3
+        },
+        {
+          "id": "12-8",
+          "idx": 8,
+          "group": 17,
+          "pos": [
+            -122.66,
+            333.39
+          ],
+          "scale": 1.3
+        },
+        {
+          "id": "12-9",
+          "idx": 9,
+          "group": 36,
+          "pos": [
+            -104.61,
+            313.61
           ],
           "scale": 1.3
         }
@@ -1783,7 +1516,7 @@
       "id": 195119,
       "enemyIndex": 13,
       "name": "Ruinous Stormbringer",
-      "count": 14,
+      "count": 7,
       "health": 10740817,
       "creatureType": "Humanoid",
       "scale": 1,
@@ -1792,34 +1525,7 @@
         "Taunt",
         "Mind Soothe"
       ],
-      "spells": [
-        {
-          "id": 385310,
-          "attributes": [
-            "interruptible"
-          ]
-        },
-        {
-          "id": 385311,
-          "attributes": []
-        },
-        {
-          "id": 385312,
-          "attributes": []
-        },
-        {
-          "id": 385313,
-          "attributes": []
-        },
-        {
-          "id": 385314,
-          "attributes": []
-        },
-        {
-          "id": 385316,
-          "attributes": []
-        }
-      ],
+      "spells": [],
       "spawns": [
         {
           "id": "13-1",
@@ -1867,7 +1573,7 @@
       "id": 197697,
       "enemyIndex": 14,
       "name": "Flamegullet",
-      "count": 40,
+      "count": 30,
       "health": 20139032,
       "creatureType": "Dragonkin",
       "scale": 1,
@@ -1876,32 +1582,7 @@
         "Taunt",
         "Mind Soothe"
       ],
-      "spells": [
-        {
-          "id": 391723,
-          "attributes": []
-        },
-        {
-          "id": 391724,
-          "attributes": []
-        },
-        {
-          "id": 392394,
-          "attributes": []
-        },
-        {
-          "id": 392569,
-          "attributes": []
-        },
-        {
-          "id": 392570,
-          "attributes": []
-        },
-        {
-          "id": 395292,
-          "attributes": []
-        }
-      ],
+      "spells": [],
       "spawns": [
         {
           "id": "14-1",
@@ -1929,40 +1610,7 @@
         "Taunt",
         "Mind Soothe"
       ],
-      "spells": [
-        {
-          "id": 372107,
-          "attributes": []
-        },
-        {
-          "id": 372811,
-          "attributes": []
-        },
-        {
-          "id": 372819,
-          "attributes": []
-        },
-        {
-          "id": 372820,
-          "attributes": []
-        },
-        {
-          "id": 372858,
-          "attributes": []
-        },
-        {
-          "id": 372859,
-          "attributes": []
-        },
-        {
-          "id": 372860,
-          "attributes": []
-        },
-        {
-          "id": 372863,
-          "attributes": []
-        }
-      ],
+      "spells": [],
       "spawns": [
         {
           "id": "15-1",
@@ -1980,7 +1628,7 @@
       "id": 197982,
       "enemyIndex": 16,
       "name": "Storm Warrior",
-      "count": 10,
+      "count": 5,
       "health": 6713011,
       "creatureType": "Humanoid",
       "scale": 1,
@@ -2004,12 +1652,7 @@
         "Sleep Walk",
         "Mind Soothe"
       ],
-      "spells": [
-        {
-          "id": 392406,
-          "attributes": []
-        }
-      ],
+      "spells": [],
       "spawns": [
         {
           "id": "16-1",
@@ -2057,18 +1700,8 @@
           "idx": 5,
           "group": 25,
           "pos": [
-            -37.13,
-            148.11
-          ],
-          "scale": 1.3
-        },
-        {
-          "id": "16-6",
-          "idx": 6,
-          "group": 25,
-          "pos": [
-            -42.09,
-            146.83
+            -36.26,
+            149.95
           ],
           "scale": 1.3
         },
@@ -2097,8 +1730,18 @@
           "idx": 9,
           "group": 29,
           "pos": [
-            -52.08,
-            144.15
+            -53.58,
+            136.84
+          ],
+          "scale": 1.3
+        },
+        {
+          "id": "16-10",
+          "idx": 10,
+          "group": 29,
+          "pos": [
+            -58.24,
+            140.02
           ],
           "scale": 1.3
         }
@@ -2128,22 +1771,7 @@
         "Slow",
         "Sleep Walk"
       ],
-      "spells": [
-        {
-          "id": 391031,
-          "attributes": [
-            "magic"
-          ]
-        },
-        {
-          "id": 392398,
-          "attributes": []
-        },
-        {
-          "id": 392399,
-          "attributes": []
-        }
-      ],
+      "spells": [],
       "spawns": [
         {
           "id": "17-1",
@@ -2278,20 +1906,20 @@
         {
           "id": "17-14",
           "idx": 14,
-          "group": 28,
+          "group": 35,
           "pos": [
-            -26.43,
-            154.85
+            -29.53,
+            163.65
           ],
           "scale": 0.8
         },
         {
           "id": "17-15",
           "idx": 15,
-          "group": 28,
+          "group": 35,
           "pos": [
-            -26.61,
-            158.46
+            -32.9,
+            162.91
           ],
           "scale": 0.8
         },
@@ -2300,28 +1928,18 @@
           "idx": 16,
           "group": 28,
           "pos": [
-            -23.47,
-            155.98
-          ],
-          "scale": 0.8
-        },
-        {
-          "id": "17-17",
-          "idx": 17,
-          "group": 29,
-          "pos": [
-            -56.39,
-            142.57
+            -22.7,
+            151.24
           ],
           "scale": 0.8
         },
         {
           "id": "17-18",
           "idx": 18,
-          "group": 28,
+          "group": 35,
           "pos": [
-            -29.32,
-            156.22
+            -32.51,
+            159.51
           ],
           "scale": 0.8
         },
@@ -2354,6 +1972,26 @@
             139
           ],
           "scale": 0.8
+        },
+        {
+          "id": "17-22",
+          "idx": 22,
+          "group": 25,
+          "pos": [
+            -38.85,
+            146.86
+          ],
+          "scale": 0.8
+        },
+        {
+          "id": "17-23",
+          "idx": 23,
+          "group": 35,
+          "pos": [
+            -28.99,
+            159.82
+          ],
+          "scale": 0.8
         }
       ]
     },
@@ -2361,35 +1999,16 @@
       "id": 198047,
       "enemyIndex": 18,
       "name": "Tempest Channeler",
-      "count": 16,
+      "count": 25,
       "health": 10740817,
       "creatureType": "Humanoid",
-      "scale": 1,
+      "scale": 0.8,
       "isBoss": false,
       "characteristics": [
         "Taunt",
         "Mind Soothe"
       ],
-      "spells": [
-        {
-          "id": 392486,
-          "attributes": []
-        },
-        {
-          "id": 392488,
-          "attributes": []
-        },
-        {
-          "id": 392574,
-          "attributes": []
-        },
-        {
-          "id": 392576,
-          "attributes": [
-            "interruptible"
-          ]
-        }
-      ],
+      "spells": [],
       "spawns": [
         {
           "id": "18-1",
@@ -2404,74 +2023,20 @@
         {
           "id": "18-2",
           "idx": 2,
-          "group": 29,
-          "pos": [
-            -53.81,
-            138.64
-          ],
-          "scale": 1.3
-        }
-      ]
-    },
-    {
-      "id": 197985,
-      "enemyIndex": 19,
-      "name": "Flame Channeler",
-      "count": 16,
-      "health": 10740817,
-      "creatureType": "Humanoid",
-      "scale": 1,
-      "isBoss": false,
-      "characteristics": [
-        "Taunt",
-        "Mind Soothe"
-      ],
-      "spells": [
-        {
-          "id": 392451,
-          "attributes": [
-            "interruptible"
-          ]
-        },
-        {
-          "id": 392452,
-          "attributes": []
-        },
-        {
-          "id": 392454,
-          "attributes": [
-            "magic"
-          ]
-        }
-      ],
-      "spawns": [
-        {
-          "id": "19-1",
-          "idx": 1,
           "group": 25,
           "pos": [
-            -40.96,
-            151.53
+            -41.96,
+            150.02
           ],
-          "scale": 1.3
-        },
-        {
-          "id": "19-2",
-          "idx": 2,
-          "group": 29,
-          "pos": [
-            -49.42,
-            139.89
-          ],
-          "scale": 1.3
+          "scale": 1.8
         }
       ]
     },
     {
       "id": 197535,
-      "enemyIndex": 20,
+      "enemyIndex": 19,
       "name": "High Channeler Ryvati",
-      "count": 40,
+      "count": 30,
       "health": 20139032,
       "creatureType": "Humanoid",
       "scale": 1,
@@ -2480,38 +2045,10 @@
         "Taunt",
         "Mind Soothe"
       ],
-      "spells": [
-        {
-          "id": 391050,
-          "attributes": []
-        },
-        {
-          "id": 391130,
-          "attributes": []
-        },
-        {
-          "id": 392486,
-          "attributes": []
-        },
-        {
-          "id": 392488,
-          "attributes": []
-        },
-        {
-          "id": 392574,
-          "attributes": []
-        },
-        {
-          "id": 392924,
-          "attributes": [
-            "magic",
-            "interruptible"
-          ]
-        }
-      ],
+      "spells": [],
       "spawns": [
         {
-          "id": "20-1",
+          "id": "19-1",
           "idx": 1,
           "group": 27,
           "pos": [
@@ -2524,7 +2061,7 @@
     },
     {
       "id": 190485,
-      "enemyIndex": 21,
+      "enemyIndex": 20,
       "name": "Erkhart Stormvein",
       "count": 0,
       "health": 30113726,
@@ -2535,45 +2072,10 @@
         "Taunt",
         "Mind Soothe"
       ],
-      "spells": [
-        {
-          "id": 181089,
-          "attributes": []
-        },
-        {
-          "id": 381512,
-          "attributes": []
-        },
-        {
-          "id": 381513,
-          "attributes": []
-        },
-        {
-          "id": 381514,
-          "attributes": []
-        },
-        {
-          "id": 381515,
-          "attributes": [
-            "magic"
-          ]
-        },
-        {
-          "id": 381516,
-          "attributes": []
-        },
-        {
-          "id": 381517,
-          "attributes": []
-        },
-        {
-          "id": 381518,
-          "attributes": []
-        }
-      ],
+      "spells": [],
       "spawns": [
         {
-          "id": "21-1",
+          "id": "20-1",
           "idx": 1,
           "group": 30,
           "pos": [
@@ -2586,7 +2088,7 @@
     },
     {
       "id": 190484,
-      "enemyIndex": 22,
+      "enemyIndex": 21,
       "name": "Kyrakka",
       "count": 0,
       "health": 24090980,
@@ -2597,47 +2099,10 @@
         "Taunt",
         "Mind Soothe"
       ],
-      "spells": [
-        {
-          "id": 381525,
-          "attributes": []
-        },
-        {
-          "id": 381526,
-          "attributes": []
-        },
-        {
-          "id": 381602,
-          "attributes": []
-        },
-        {
-          "id": 381605,
-          "attributes": []
-        },
-        {
-          "id": 381607,
-          "attributes": []
-        },
-        {
-          "id": 381862,
-          "attributes": []
-        },
-        {
-          "id": 381864,
-          "attributes": []
-        },
-        {
-          "id": 384494,
-          "attributes": []
-        },
-        {
-          "id": 384773,
-          "attributes": []
-        }
-      ],
+      "spells": [],
       "spawns": [
         {
-          "id": "22-1",
+          "id": "21-1",
           "idx": 1,
           "group": 30,
           "pos": [
@@ -2645,6 +2110,75 @@
             103.64
           ],
           "scale": 2
+        }
+      ]
+    },
+    {
+      "id": 189886,
+      "enemyIndex": 22,
+      "name": "Blazebound Firestorm",
+      "count": 0,
+      "health": 10000,
+      "creatureType": "Elemental",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [],
+      "spawns": [
+        {
+          "id": "22-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -125.78,
+            171.95
+          ]
+        }
+      ]
+    },
+    {
+      "id": 189893,
+      "enemyIndex": 23,
+      "name": "Infused Whelp",
+      "count": 0,
+      "health": 10000,
+      "creatureType": "Dragonkin",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [],
+      "spawns": [
+        {
+          "id": "23-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -110.89,
+            154.72
+          ]
+        }
+      ]
+    },
+    {
+      "id": 194622,
+      "enemyIndex": 24,
+      "name": "Scorchling",
+      "count": 0,
+      "health": 10000,
+      "creatureType": "Elemental",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [],
+      "spawns": [
+        {
+          "id": "24-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -91.53,
+            109.84
+          ]
         }
       ]
     }

@@ -3,54 +3,106 @@
   "totalCount": 729,
   "enemies": [
     {
-      "id": 245752,
+      "id": 245855,
       "enemyIndex": 1,
-      "name": "Keen-Eyed Screecher",
-      "count": 7,
+      "name": "Spirit of Hunger",
+      "count": 25,
       "health": 10000,
-      "creatureType": "Beast",
-      "scale": 1,
+      "creatureType": "Undead",
+      "scale": 1.6,
       "isBoss": false,
       "characteristics": [],
-      "spells": [],
+      "spells": [
+        {
+          "id": 1238687,
+          "attributes": []
+        },
+        {
+          "id": 1238725,
+          "attributes": []
+        },
+        {
+          "id": 1238760,
+          "attributes": []
+        },
+        {
+          "id": 1221063,
+          "attributes": []
+        },
+        {
+          "id": 1249737,
+          "attributes": []
+        }
+      ],
       "spawns": [
         {
           "id": "1-1",
           "idx": 1,
           "group": null,
           "pos": [
-            -91.53,
-            91.53
+            -200.98,
+            42.12
           ]
-        }
-      ]
-    },
-    {
-      "id": 245855,
-      "enemyIndex": 2,
-      "name": "Spirit of Hunger",
-      "count": 25,
-      "health": 10000,
-      "creatureType": "Undead",
-      "scale": 1,
-      "isBoss": false,
-      "characteristics": [],
-      "spells": [],
-      "spawns": [
+        },
         {
-          "id": "2-1",
-          "idx": 1,
+          "id": "1-2",
+          "idx": 2,
           "group": null,
           "pos": [
-            -91.53,
-            100.69
+            -178.91,
+            60.65
+          ]
+        },
+        {
+          "id": "1-3",
+          "idx": 3,
+          "group": null,
+          "pos": [
+            -155.09,
+            44.49
+          ]
+        },
+        {
+          "id": "1-4",
+          "idx": 4,
+          "group": null,
+          "pos": [
+            -183.82,
+            32.94
+          ]
+        },
+        {
+          "id": "1-5",
+          "idx": 5,
+          "group": null,
+          "pos": [
+            -225.3,
+            75.4
+          ]
+        },
+        {
+          "id": "1-6",
+          "idx": 6,
+          "group": null,
+          "pos": [
+            -208.15,
+            74.2
+          ]
+        },
+        {
+          "id": "1-7",
+          "idx": 7,
+          "group": null,
+          "pos": [
+            -179.16,
+            89.89
           ]
         }
       ]
     },
     {
       "id": 241814,
-      "enemyIndex": 3,
+      "enemyIndex": 2,
       "name": "Earthwhisper Tender",
       "count": 7,
       "health": 10000,
@@ -58,22 +110,112 @@
       "scale": 1,
       "isBoss": false,
       "characteristics": [],
-      "spells": [],
+      "spells": [
+        {
+          "id": 1241214,
+          "attributes": [
+            "interruptible"
+          ]
+        },
+        {
+          "id": 1297696,
+          "attributes": [
+            "interruptible",
+            "magic"
+          ]
+        },
+        {
+          "id": 1221063,
+          "attributes": []
+        }
+      ],
       "spawns": [
         {
-          "id": "3-1",
+          "id": "2-1",
           "idx": 1,
           "group": null,
           "pos": [
-            -91.53,
-            109.84
+            -217.51,
+            58.61
+          ]
+        },
+        {
+          "id": "2-2",
+          "idx": 2,
+          "group": null,
+          "pos": [
+            -213.57,
+            59.58
+          ]
+        },
+        {
+          "id": "2-3",
+          "idx": 3,
+          "group": null,
+          "pos": [
+            -161.05,
+            51.08
+          ]
+        },
+        {
+          "id": "2-4",
+          "idx": 4,
+          "group": null,
+          "pos": [
+            -165.09,
+            53.63
+          ]
+        },
+        {
+          "id": "2-5",
+          "idx": 5,
+          "group": null,
+          "pos": [
+            -144.67,
+            94.03
+          ]
+        },
+        {
+          "id": "2-6",
+          "idx": 6,
+          "group": null,
+          "pos": [
+            -157.43,
+            92.76
+          ]
+        },
+        {
+          "id": "2-7",
+          "idx": 7,
+          "group": null,
+          "pos": [
+            -157.22,
+            96.8
+          ]
+        },
+        {
+          "id": "2-8",
+          "idx": 8,
+          "group": null,
+          "pos": [
+            -196.36,
+            63.3
+          ]
+        },
+        {
+          "id": "2-9",
+          "idx": 9,
+          "group": null,
+          "pos": [
+            -220.11,
+            74.47
           ]
         }
       ]
     },
     {
       "id": 241813,
-      "enemyIndex": 4,
+      "enemyIndex": 3,
       "name": "Thornclaw Gatherer",
       "count": 5,
       "health": 10000,
@@ -81,22 +223,176 @@
       "scale": 1,
       "isBoss": false,
       "characteristics": [],
-      "spells": [],
+      "spells": [
+        {
+          "id": 1241217,
+          "attributes": []
+        },
+        {
+          "id": 1297699,
+          "attributes": [
+            "disease"
+          ]
+        },
+        {
+          "id": 1297701,
+          "attributes": []
+        },
+        {
+          "id": 1221063,
+          "attributes": []
+        }
+      ],
       "spawns": [
         {
-          "id": "4-1",
+          "id": "3-1",
           "idx": 1,
           "group": null,
           "pos": [
-            -91.53,
-            118.99
+            -219.03,
+            62.98
+          ]
+        },
+        {
+          "id": "3-2",
+          "idx": 2,
+          "group": null,
+          "pos": [
+            -215.28,
+            63.63
+          ]
+        },
+        {
+          "id": "3-3",
+          "idx": 3,
+          "group": null,
+          "pos": [
+            -146.8,
+            38.53
+          ]
+        },
+        {
+          "id": "3-4",
+          "idx": 4,
+          "group": null,
+          "pos": [
+            -145.95,
+            42.57
+          ]
+        },
+        {
+          "id": "3-5",
+          "idx": 5,
+          "group": null,
+          "pos": [
+            -161.26,
+            54.91
+          ]
+        },
+        {
+          "id": "3-6",
+          "idx": 6,
+          "group": null,
+          "pos": [
+            -151.27,
+            55.76
+          ]
+        },
+        {
+          "id": "3-7",
+          "idx": 7,
+          "group": null,
+          "pos": [
+            -141.7,
+            91.7
+          ]
+        },
+        {
+          "id": "3-8",
+          "idx": 8,
+          "group": null,
+          "pos": [
+            -141.7,
+            95.1
+          ]
+        },
+        {
+          "id": "3-9",
+          "idx": 9,
+          "group": null,
+          "pos": [
+            -161.26,
+            96.8
+          ]
+        },
+        {
+          "id": "3-10",
+          "idx": 10,
+          "group": null,
+          "pos": [
+            -161.47,
+            92.33
+          ]
+        },
+        {
+          "id": "3-11",
+          "idx": 11,
+          "group": null,
+          "pos": [
+            -172.98,
+            38.04
+          ]
+        },
+        {
+          "id": "3-12",
+          "idx": 12,
+          "group": null,
+          "pos": [
+            -176.38,
+            39.1
+          ]
+        },
+        {
+          "id": "3-13",
+          "idx": 13,
+          "group": null,
+          "pos": [
+            -175.32,
+            20.38
+          ]
+        },
+        {
+          "id": "3-14",
+          "idx": 14,
+          "group": null,
+          "pos": [
+            -180.21,
+            21.02
+          ]
+        },
+        {
+          "id": "3-15",
+          "idx": 15,
+          "group": null,
+          "pos": [
+            -193.17,
+            63.83
+          ]
+        },
+        {
+          "id": "3-16",
+          "idx": 16,
+          "group": null,
+          "pos": [
+            -221.98,
+            78.59
           ]
         }
       ]
     },
     {
       "id": 241808,
-      "enemyIndex": 5,
+      "enemyIndex": 4,
       "name": "Territorial Matriarch",
       "count": 8,
       "health": 10000,
@@ -104,45 +400,136 @@
       "scale": 1,
       "isBoss": false,
       "characteristics": [],
-      "spells": [],
+      "spells": [
+        {
+          "id": 1238053,
+          "attributes": [
+            "enrage"
+          ]
+        },
+        {
+          "id": 1241219,
+          "attributes": []
+        },
+        {
+          "id": 1221063,
+          "attributes": []
+        }
+      ],
       "spawns": [
         {
-          "id": "5-1",
+          "id": "4-1",
           "idx": 1,
           "group": null,
           "pos": [
-            -91.53,
-            128.15
+            -202.98,
+            30.37
+          ]
+        },
+        {
+          "id": "4-2",
+          "idx": 2,
+          "group": null,
+          "pos": [
+            -204.86,
+            33.43
+          ]
+        },
+        {
+          "id": "4-3",
+          "idx": 3,
+          "group": null,
+          "pos": [
+            -207.2,
+            89.14
+          ]
+        },
+        {
+          "id": "4-4",
+          "idx": 4,
+          "group": null,
+          "pos": [
+            -176.15,
+            48.74
+          ]
+        },
+        {
+          "id": "4-5",
+          "idx": 5,
+          "group": null,
+          "pos": [
+            -156.16,
+            74.05
+          ]
+        },
+        {
+          "id": "4-6",
+          "idx": 6,
+          "group": null,
+          "pos": [
+            -191.27,
+            26.98
+          ]
+        },
+        {
+          "id": "4-7",
+          "idx": 7,
+          "group": null,
+          "pos": [
+            -193.48,
+            60.66
+          ]
+        },
+        {
+          "id": "4-8",
+          "idx": 8,
+          "group": null,
+          "pos": [
+            -171.45,
+            86.03
           ]
         }
       ]
     },
     {
       "id": 250478,
-      "enemyIndex": 6,
-      "name": "The Looming Tempest",
+      "enemyIndex": 5,
+      "name": "The Winter Squall",
       "count": 50,
       "health": 10000,
       "creatureType": "Elemental",
       "scale": 1,
       "isBoss": false,
       "characteristics": [],
-      "spells": [],
+      "spells": [
+        {
+          "id": 1309947,
+          "attributes": []
+        },
+        {
+          "id": 1309964,
+          "attributes": []
+        },
+        {
+          "id": 1221063,
+          "attributes": []
+        }
+      ],
       "spawns": [
         {
-          "id": "6-1",
+          "id": "5-1",
           "idx": 1,
           "group": null,
           "pos": [
-            -91.53,
-            137.3
+            -18.74,
+            126.01
           ]
         }
       ]
     },
     {
       "id": 241874,
-      "enemyIndex": 7,
+      "enemyIndex": 6,
       "name": "Frostfang",
       "count": 5,
       "health": 10000,
@@ -150,22 +537,39 @@
       "scale": 1,
       "isBoss": false,
       "characteristics": [],
-      "spells": [],
+      "spells": [
+        {
+          "id": 1241226,
+          "attributes": []
+        },
+        {
+          "id": 1265400,
+          "attributes": []
+        },
+        {
+          "id": 1265402,
+          "attributes": []
+        },
+        {
+          "id": 1221063,
+          "attributes": []
+        }
+      ],
       "spawns": [
         {
-          "id": "7-1",
+          "id": "6-1",
           "idx": 1,
           "group": null,
           "pos": [
-            -91.53,
-            146.45
+            -38.37,
+            127.31
           ]
         }
       ]
     },
     {
       "id": 241911,
-      "enemyIndex": 8,
+      "enemyIndex": 7,
       "name": "Terra Rumbler",
       "count": 7,
       "health": 10000,
@@ -173,22 +577,35 @@
       "scale": 1,
       "isBoss": false,
       "characteristics": [],
-      "spells": [],
+      "spells": [
+        {
+          "id": 1296518,
+          "attributes": []
+        },
+        {
+          "id": 1296519,
+          "attributes": []
+        },
+        {
+          "id": 1221063,
+          "attributes": []
+        }
+      ],
       "spawns": [
         {
-          "id": "8-1",
+          "id": "7-1",
           "idx": 1,
           "group": null,
           "pos": [
-            -91.53,
-            155.61
+            -37.72,
+            75.78
           ]
         }
       ]
     },
     {
       "id": 241872,
-      "enemyIndex": 9,
+      "enemyIndex": 8,
       "name": "Frigid Mauler",
       "count": 9,
       "health": 10000,
@@ -196,22 +613,33 @@
       "scale": 1,
       "isBoss": false,
       "characteristics": [],
-      "spells": [],
+      "spells": [
+        {
+          "id": 1309919,
+          "attributes": [
+            "interruptible"
+          ]
+        },
+        {
+          "id": 1221063,
+          "attributes": []
+        }
+      ],
       "spawns": [
         {
-          "id": "9-1",
+          "id": "8-1",
           "idx": 1,
           "group": null,
           "pos": [
-            -91.53,
-            164.76
+            -32.84,
+            121.17
           ]
         }
       ]
     },
     {
       "id": 241876,
-      "enemyIndex": 10,
+      "enemyIndex": 9,
       "name": "Glacial Revenant",
       "count": 7,
       "health": 10000,
@@ -219,22 +647,41 @@
       "scale": 1,
       "isBoss": false,
       "characteristics": [],
-      "spells": [],
+      "spells": [
+        {
+          "id": 1239860,
+          "attributes": [
+            "magic"
+          ]
+        },
+        {
+          "id": 1239871,
+          "attributes": []
+        },
+        {
+          "id": 1266178,
+          "attributes": []
+        },
+        {
+          "id": 1221063,
+          "attributes": []
+        }
+      ],
       "spawns": [
         {
-          "id": "10-1",
+          "id": "9-1",
           "idx": 1,
           "group": null,
           "pos": [
-            -91.53,
-            173.91
+            -41.77,
+            120.54
           ]
         }
       ]
     },
     {
       "id": 241869,
-      "enemyIndex": 11,
+      "enemyIndex": 10,
       "name": "Avatar of Determination",
       "count": 28,
       "health": 10000,
@@ -242,22 +689,39 @@
       "scale": 1,
       "isBoss": false,
       "characteristics": [],
-      "spells": [],
+      "spells": [
+        {
+          "id": 1240280,
+          "attributes": []
+        },
+        {
+          "id": 1241463,
+          "attributes": []
+        },
+        {
+          "id": 1241464,
+          "attributes": []
+        },
+        {
+          "id": 1221063,
+          "attributes": []
+        }
+      ],
       "spawns": [
         {
-          "id": "11-1",
+          "id": "10-1",
           "idx": 1,
           "group": null,
           "pos": [
-            -91.53,
-            183.07
+            -48.87,
+            145.3
           ]
         }
       ]
     },
     {
       "id": 245143,
-      "enemyIndex": 12,
+      "enemyIndex": 11,
       "name": "Ruthless Totemcaller",
       "count": 5,
       "health": 10000,
@@ -265,22 +729,63 @@
       "scale": 1,
       "isBoss": false,
       "characteristics": [],
-      "spells": [],
+      "spells": [
+        {
+          "id": 1246820,
+          "attributes": []
+        }
+      ],
       "spawns": [
         {
-          "id": "12-1",
+          "id": "11-1",
           "idx": 1,
           "group": null,
           "pos": [
-            -100.69,
-            91.53
+            -115.98,
+            312.71
+          ]
+        },
+        {
+          "id": "11-2",
+          "idx": 2,
+          "group": null,
+          "pos": [
+            -91.72,
+            308.39
+          ]
+        },
+        {
+          "id": "11-3",
+          "idx": 3,
+          "group": null,
+          "pos": [
+            -91.72,
+            311.79
+          ]
+        },
+        {
+          "id": "11-4",
+          "idx": 4,
+          "group": null,
+          "pos": [
+            -70.5,
+            310.4
+          ]
+        },
+        {
+          "id": "11-5",
+          "idx": 5,
+          "group": null,
+          "pos": [
+            -70.55,
+            303.65
           ]
         }
       ]
     },
     {
       "id": 245139,
-      "enemyIndex": 13,
+      "enemyIndex": 12,
       "name": "Stormbound Mystic",
       "count": 7,
       "health": 10000,
@@ -288,49 +793,208 @@
       "scale": 1,
       "isBoss": false,
       "characteristics": [],
-      "spells": [],
+      "spells": [
+        {
+          "id": 1246687,
+          "attributes": [
+            "interruptible"
+          ]
+        },
+        {
+          "id": 1297778,
+          "attributes": [
+            "interruptible"
+          ]
+        },
+        {
+          "id": 1221063,
+          "attributes": []
+        }
+      ],
       "spawns": [
         {
-          "id": "13-1",
+          "id": "12-1",
           "idx": 1,
           "group": null,
           "pos": [
-            -100.69,
-            100.69
+            -114.84,
+            317.07
+          ]
+        },
+        {
+          "id": "12-2",
+          "idx": 2,
+          "group": null,
+          "pos": [
+            -115.33,
+            309.24
+          ]
+        },
+        {
+          "id": "12-3",
+          "idx": 3,
+          "group": null,
+          "pos": [
+            -80.78,
+            314.27
+          ]
+        },
+        {
+          "id": "12-4",
+          "idx": 4,
+          "group": null,
+          "pos": [
+            -70.43,
+            314.01
+          ]
+        },
+        {
+          "id": "12-5",
+          "idx": 5,
+          "group": null,
+          "pos": [
+            -58.86,
+            311.46
           ]
         }
       ]
     },
     {
       "id": 245146,
-      "enemyIndex": 14,
+      "enemyIndex": 13,
       "name": "Grizzled Warbringer",
       "count": 25,
       "health": 10000,
       "creatureType": "Beast",
-      "scale": 1,
+      "scale": 1.5,
       "isBoss": false,
       "characteristics": [],
-      "spells": [],
+      "spells": [
+        {
+          "id": 1246957,
+          "attributes": []
+        },
+        {
+          "id": 1246986,
+          "attributes": []
+        },
+        {
+          "id": 1221063,
+          "attributes": []
+        }
+      ],
       "spawns": [
         {
-          "id": "14-1",
+          "id": "13-1",
           "idx": 1,
           "group": null,
           "pos": [
-            -100.69,
-            109.84
+            -108.29,
+            312.63
+          ]
+        },
+        {
+          "id": "13-2",
+          "idx": 2,
+          "group": null,
+          "pos": [
+            -61.74,
+            302.89
+          ]
+        },
+        {
+          "id": "13-3",
+          "idx": 3,
+          "group": null,
+          "pos": [
+            -61.55,
+            308.14
           ]
         }
       ]
     },
     {
       "id": 245145,
-      "enemyIndex": 15,
+      "enemyIndex": 14,
       "name": "Bonded Beasttamer",
       "count": 6,
       "health": 10000,
       "creatureType": "Humanoid",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [
+        {
+          "id": 1246847,
+          "attributes": [
+            "interruptible"
+          ]
+        },
+        {
+          "id": 1246860,
+          "attributes": []
+        },
+        {
+          "id": 1246865,
+          "attributes": [
+            "enrage"
+          ]
+        },
+        {
+          "id": 1246877,
+          "attributes": []
+        },
+        {
+          "id": 1266207,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "14-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -91.56,
+            303.92
+          ]
+        },
+        {
+          "id": "14-2",
+          "idx": 2,
+          "group": null,
+          "pos": [
+            -81.85,
+            301.81
+          ]
+        },
+        {
+          "id": "14-3",
+          "idx": 3,
+          "group": null,
+          "pos": [
+            -80.35,
+            318.37
+          ]
+        },
+        {
+          "id": "14-4",
+          "idx": 4,
+          "group": null,
+          "pos": [
+            -70.75,
+            300.15
+          ]
+        }
+      ]
+    },
+    {
+      "id": 241805,
+      "enemyIndex": 15,
+      "name": "Avatar of Starvation",
+      "count": 0,
+      "health": 10000,
+      "creatureType": "Undead",
       "scale": 1,
       "isBoss": false,
       "characteristics": [],
@@ -341,31 +1005,1135 @@
           "idx": 1,
           "group": null,
           "pos": [
-            -100.69,
-            118.99
+            -44.54,
+            66.23
           ]
         }
       ]
     },
     {
-      "id": 104970,
+      "id": 241809,
       "enemyIndex": 16,
-      "name": "Xorvasc",
-      "count": 35,
+      "name": "Curious Yearling",
+      "count": 0,
       "health": 10000,
-      "creatureType": "Humanoid",
-      "scale": 1,
+      "creatureType": "Beast",
+      "scale": 0.6,
       "isBoss": false,
       "characteristics": [],
-      "spells": [],
+      "spells": [
+        {
+          "id": 1238053,
+          "attributes": [
+            "enrage"
+          ]
+        }
+      ],
       "spawns": [
         {
           "id": "16-1",
           "idx": 1,
           "group": null,
           "pos": [
-            -100.69,
-            128.15
+            -208.49,
+            32.85
+          ]
+        },
+        {
+          "id": "16-2",
+          "idx": 2,
+          "group": null,
+          "pos": [
+            -205.71,
+            29.39
+          ]
+        },
+        {
+          "id": "16-3",
+          "idx": 3,
+          "group": null,
+          "pos": [
+            -208.05,
+            30.24
+          ]
+        },
+        {
+          "id": "16-4",
+          "idx": 4,
+          "group": null,
+          "pos": [
+            -211.45,
+            47.89
+          ]
+        },
+        {
+          "id": "16-5",
+          "idx": 5,
+          "group": null,
+          "pos": [
+            -210.17,
+            50.44
+          ]
+        },
+        {
+          "id": "16-6",
+          "idx": 6,
+          "group": null,
+          "pos": [
+            -210.17,
+            87.02
+          ]
+        },
+        {
+          "id": "16-7",
+          "idx": 7,
+          "group": null,
+          "pos": [
+            -210.38,
+            88.72
+          ]
+        },
+        {
+          "id": "16-8",
+          "idx": 8,
+          "group": null,
+          "pos": [
+            -209.53,
+            91.27
+          ]
+        },
+        {
+          "id": "16-9",
+          "idx": 9,
+          "group": null,
+          "pos": [
+            -207.2,
+            92.33
+          ]
+        },
+        {
+          "id": "16-10",
+          "idx": 10,
+          "group": null,
+          "pos": [
+            -179.55,
+            49.8
+          ]
+        },
+        {
+          "id": "16-11",
+          "idx": 11,
+          "group": null,
+          "pos": [
+            -174.23,
+            51.93
+          ]
+        },
+        {
+          "id": "16-12",
+          "idx": 12,
+          "group": null,
+          "pos": [
+            -155.73,
+            71.07
+          ]
+        },
+        {
+          "id": "16-13",
+          "idx": 13,
+          "group": null,
+          "pos": [
+            -158.71,
+            72.77
+          ]
+        },
+        {
+          "id": "16-14",
+          "idx": 14,
+          "group": null,
+          "pos": [
+            -197.65,
+            26.13
+          ]
+        },
+        {
+          "id": "16-15",
+          "idx": 15,
+          "group": null,
+          "pos": [
+            -198.08,
+            28.04
+          ]
+        },
+        {
+          "id": "16-16",
+          "idx": 16,
+          "group": null,
+          "pos": [
+            -195.83,
+            59.04
+          ]
+        },
+        {
+          "id": "16-17",
+          "idx": 17,
+          "group": null,
+          "pos": [
+            -197.16,
+            60.37
+          ]
+        },
+        {
+          "id": "16-18",
+          "idx": 18,
+          "group": null,
+          "pos": [
+            -169.46,
+            83.11
+          ]
+        },
+        {
+          "id": "16-19",
+          "idx": 19,
+          "group": null,
+          "pos": [
+            -169.32,
+            88.43
+          ]
+        }
+      ]
+    },
+    {
+      "id": 241812,
+      "enemyIndex": 17,
+      "name": "The Hoardmonger",
+      "count": 0,
+      "health": 10000,
+      "creatureType": "Humanoid",
+      "scale": 1,
+      "isBoss": true,
+      "characteristics": [],
+      "spells": [
+        {
+          "id": 1232012,
+          "attributes": []
+        },
+        {
+          "id": 1234021,
+          "attributes": []
+        },
+        {
+          "id": 1234233,
+          "attributes": []
+        },
+        {
+          "id": 1234681,
+          "attributes": []
+        },
+        {
+          "id": 1234734,
+          "attributes": []
+        },
+        {
+          "id": 1234846,
+          "attributes": [
+            "poison"
+          ]
+        },
+        {
+          "id": 1235072,
+          "attributes": []
+        },
+        {
+          "id": 1235075,
+          "attributes": []
+        },
+        {
+          "id": 1235076,
+          "attributes": []
+        },
+        {
+          "id": 1235079,
+          "attributes": []
+        },
+        {
+          "id": 1235105,
+          "attributes": []
+        },
+        {
+          "id": 1235125,
+          "attributes": []
+        },
+        {
+          "id": 1235129,
+          "attributes": []
+        },
+        {
+          "id": 1235405,
+          "attributes": []
+        },
+        {
+          "id": 1245593,
+          "attributes": []
+        },
+        {
+          "id": 1221063,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "17-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -180.68,
+            121.45
+          ]
+        }
+      ]
+    },
+    {
+      "id": 241816,
+      "enemyIndex": 18,
+      "name": "Keen-Eyed Striker",
+      "count": 7,
+      "health": 10000,
+      "creatureType": "Beast",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [
+        {
+          "id": 1238439,
+          "attributes": [
+            "bleed"
+          ]
+        },
+        {
+          "id": 1238440,
+          "attributes": []
+        },
+        {
+          "id": 1221063,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "18-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -208.58,
+            48.69
+          ]
+        },
+        {
+          "id": "18-2",
+          "idx": 2,
+          "group": null,
+          "pos": [
+            -153.18,
+            57.25
+          ]
+        },
+        {
+          "id": "18-3",
+          "idx": 3,
+          "group": null,
+          "pos": [
+            -166.58,
+            67.03
+          ]
+        },
+        {
+          "id": "18-4",
+          "idx": 4,
+          "group": null,
+          "pos": [
+            -152.54,
+            75.32
+          ]
+        },
+        {
+          "id": "18-5",
+          "idx": 5,
+          "group": null,
+          "pos": [
+            -156.37,
+            77.45
+          ]
+        },
+        {
+          "id": "18-6",
+          "idx": 6,
+          "group": null,
+          "pos": [
+            -166.38,
+            29.53
+          ]
+        },
+        {
+          "id": "18-7",
+          "idx": 7,
+          "group": null,
+          "pos": [
+            -192.97,
+            46.55
+          ]
+        },
+        {
+          "id": "18-8",
+          "idx": 8,
+          "group": null,
+          "pos": [
+            -189.93,
+            81.78
+          ]
+        },
+        {
+          "id": "18-9",
+          "idx": 9,
+          "group": null,
+          "pos": [
+            -189.67,
+            85.63
+          ]
+        },
+        {
+          "id": "18-10",
+          "idx": 10,
+          "group": null,
+          "pos": [
+            -192.86,
+            83.51
+          ]
+        }
+      ]
+    },
+    {
+      "id": 244100,
+      "enemyIndex": 19,
+      "name": "Sentinel of Winter",
+      "count": 0,
+      "health": 10000,
+      "creatureType": "Humanoid",
+      "scale": 1,
+      "isBoss": true,
+      "characteristics": [],
+      "spells": [
+        {
+          "id": 1235548,
+          "attributes": []
+        },
+        {
+          "id": 1235549,
+          "attributes": [
+            "magic"
+          ]
+        },
+        {
+          "id": 1235623,
+          "attributes": []
+        },
+        {
+          "id": 1235635,
+          "attributes": []
+        },
+        {
+          "id": 1235656,
+          "attributes": []
+        },
+        {
+          "id": 1235658,
+          "attributes": []
+        },
+        {
+          "id": 1235783,
+          "attributes": []
+        },
+        {
+          "id": 1235795,
+          "attributes": []
+        },
+        {
+          "id": 1236289,
+          "attributes": []
+        },
+        {
+          "id": 1297749,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "19-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -67.32,
+            109.33
+          ]
+        }
+      ]
+    },
+    {
+      "id": 244696,
+      "enemyIndex": 20,
+      "name": "Raging Squall",
+      "count": 0,
+      "health": 10000,
+      "creatureType": "Not specified",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [
+        {
+          "id": 1235638,
+          "attributes": []
+        },
+        {
+          "id": 1235641,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "20-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -39.35,
+            114.4
+          ]
+        }
+      ]
+    },
+    {
+      "id": 244759,
+      "enemyIndex": 21,
+      "name": "Fractured Shivercore",
+      "count": 0,
+      "health": 10000,
+      "creatureType": "Elemental",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [
+        {
+          "id": 1234314,
+          "attributes": []
+        },
+        {
+          "id": 1235829,
+          "attributes": [
+            "interruptible"
+          ]
+        },
+        {
+          "id": 1263590,
+          "attributes": []
+        },
+        {
+          "id": 1263597,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "21-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -66.44,
+            114.55
+          ]
+        }
+      ]
+    },
+    {
+      "id": 244889,
+      "enemyIndex": 22,
+      "name": "Loa Speaker Nanea",
+      "count": 0,
+      "health": 10000,
+      "creatureType": "Humanoid",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [
+        {
+          "id": 1247366,
+          "attributes": []
+        },
+        {
+          "id": 1247367,
+          "attributes": []
+        },
+        {
+          "id": 1251027,
+          "attributes": []
+        },
+        {
+          "id": 1264753,
+          "attributes": []
+        },
+        {
+          "id": 1290205,
+          "attributes": [
+            "interruptible"
+          ]
+        },
+        {
+          "id": 1296722,
+          "attributes": []
+        },
+        {
+          "id": 1309924,
+          "attributes": []
+        },
+        {
+          "id": 1309925,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "22-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -47.34,
+            305.4
+          ]
+        }
+      ]
+    },
+    {
+      "id": 245148,
+      "enemyIndex": 23,
+      "name": "Grizzled Warbringer",
+      "count": 0,
+      "health": 10000,
+      "creatureType": "Humanoid",
+      "scale": 1.5,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [
+        {
+          "id": 1247030,
+          "attributes": []
+        },
+        {
+          "id": 1311572,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "23-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -104,
+            312.68
+          ]
+        },
+        {
+          "id": "23-2",
+          "idx": 2,
+          "group": null,
+          "pos": [
+            -57.48,
+            301.82
+          ]
+        },
+        {
+          "id": "23-3",
+          "idx": 3,
+          "group": null,
+          "pos": [
+            -57.48,
+            307.2
+          ]
+        }
+      ]
+    },
+    {
+      "id": 245190,
+      "enemyIndex": 24,
+      "name": "Loyal Saberfang",
+      "count": 5,
+      "health": 10000,
+      "creatureType": "Beast",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [
+        {
+          "id": 1246865,
+          "attributes": [
+            "enrage"
+          ]
+        },
+        {
+          "id": 1246882,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "24-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -91.53,
+            315.76
+          ]
+        },
+        {
+          "id": "24-2",
+          "idx": 2,
+          "group": null,
+          "pos": [
+            -81.67,
+            306.95
+          ]
+        },
+        {
+          "id": "24-3",
+          "idx": 3,
+          "group": null,
+          "pos": [
+            -81.32,
+            311.08
+          ]
+        },
+        {
+          "id": "24-4",
+          "idx": 4,
+          "group": null,
+          "pos": [
+            -70.56,
+            306.68
+          ]
+        }
+      ]
+    },
+    {
+      "id": 245567,
+      "enemyIndex": 25,
+      "name": "Starvation Effigy",
+      "count": 0,
+      "health": 10000,
+      "creatureType": "Not specified",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [
+        {
+          "id": 1238801,
+          "attributes": [
+            "curse"
+          ]
+        },
+        {
+          "id": 1221063,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "25-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -31.57,
+            57.72
+          ]
+        }
+      ]
+    },
+    {
+      "id": 246404,
+      "enemyIndex": 26,
+      "name": "Nalorakk",
+      "count": 0,
+      "health": 10000,
+      "creatureType": "Beast",
+      "scale": 1,
+      "isBoss": true,
+      "characteristics": [],
+      "spells": [
+        {
+          "id": 1242860,
+          "attributes": []
+        },
+        {
+          "id": 1242869,
+          "attributes": []
+        },
+        {
+          "id": 1242887,
+          "attributes": []
+        },
+        {
+          "id": 1243002,
+          "attributes": []
+        },
+        {
+          "id": 1243011,
+          "attributes": []
+        },
+        {
+          "id": 1243273,
+          "attributes": []
+        },
+        {
+          "id": 1243408,
+          "attributes": []
+        },
+        {
+          "id": 1243569,
+          "attributes": []
+        },
+        {
+          "id": 1254622,
+          "attributes": []
+        },
+        {
+          "id": 1261976,
+          "attributes": []
+        },
+        {
+          "id": 1297792,
+          "attributes": []
+        },
+        {
+          "id": 1297793,
+          "attributes": []
+        },
+        {
+          "id": 1297796,
+          "attributes": []
+        },
+        {
+          "id": 1297797,
+          "attributes": []
+        },
+        {
+          "id": 1221063,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "26-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -39.51,
+            296
+          ]
+        }
+      ]
+    },
+    {
+      "id": 246409,
+      "enemyIndex": 27,
+      "name": "Zul'jarra",
+      "count": 0,
+      "health": 10000,
+      "creatureType": "Humanoid",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [
+        {
+          "id": 1243018,
+          "attributes": []
+        },
+        {
+          "id": 1243078,
+          "attributes": []
+        },
+        {
+          "id": 1243856,
+          "attributes": []
+        },
+        {
+          "id": 1249186,
+          "attributes": []
+        },
+        {
+          "id": 1261776,
+          "attributes": []
+        },
+        {
+          "id": 1262253,
+          "attributes": []
+        },
+        {
+          "id": 1270826,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "27-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -32.47,
+            298.12
+          ]
+        }
+      ]
+    },
+    {
+      "id": 247301,
+      "enemyIndex": 28,
+      "name": "Echo of Nalorakk",
+      "count": 0,
+      "health": 10000,
+      "creatureType": "Beast",
+      "scale": 1,
+      "isBoss": true,
+      "characteristics": [],
+      "spells": [
+        {
+          "id": 1242976,
+          "attributes": []
+        },
+        {
+          "id": 1255570,
+          "attributes": []
+        },
+        {
+          "id": 1255577,
+          "attributes": []
+        },
+        {
+          "id": 1262577,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "28-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -37.71,
+            304.17
+          ]
+        }
+      ]
+    },
+    {
+      "id": 251189,
+      "enemyIndex": 29,
+      "name": "Snow Orb Stalker",
+      "count": 0,
+      "health": 10000,
+      "creatureType": "Not specified",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [
+        {
+          "id": 1253083,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "29-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -46.54,
+            115.38
+          ]
+        }
+      ]
+    },
+    {
+      "id": 252041,
+      "enemyIndex": 30,
+      "name": "Satiated Avatar of Starvation",
+      "count": 0,
+      "health": 10000,
+      "creatureType": "Undead",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [
+        {
+          "id": 1254815,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "30-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -45.56,
+            121.59
+          ]
+        }
+      ]
+    },
+    {
+      "id": 272074,
+      "enemyIndex": 31,
+      "name": "Volatile Totem",
+      "count": 0,
+      "health": 10000,
+      "creatureType": "Not specified",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [
+        {
+          "id": 1309931,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "31-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -50.79,
+            77.41
+          ]
+        }
+      ]
+    },
+    {
+      "id": 245076,
+      "enemyIndex": 32,
+      "name": "The Pale Eye",
+      "count": 0,
+      "health": 10000,
+      "creatureType": "Not specified",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [
+        {
+          "id": 1250805,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "32-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -91.53,
+            91.53
+          ]
+        }
+      ]
+    },
+    {
+      "id": 245752,
+      "enemyIndex": 33,
+      "name": "Keen-Eyed Striker",
+      "count": 7,
+      "health": 10000,
+      "creatureType": "Beast",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [
+        {
+          "id": 110960,
+          "attributes": []
+        },
+        {
+          "id": 1238439,
+          "attributes": []
+        },
+        {
+          "id": 1238440,
+          "attributes": []
+        },
+        {
+          "id": 1239394,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "33-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -91.53,
+            100.69
+          ]
+        }
+      ]
+    },
+    {
+      "id": 246591,
+      "enemyIndex": 34,
+      "name": "Glacial Tomb",
+      "count": 0,
+      "health": 10000,
+      "creatureType": "Not specified",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [],
+      "spawns": [
+        {
+          "id": "34-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -91.53,
+            109.84
+          ]
+        }
+      ]
+    },
+    {
+      "id": 248666,
+      "enemyIndex": 35,
+      "name": "Magma Totem",
+      "count": 0,
+      "health": 10000,
+      "creatureType": "Not specified",
+      "scale": 1,
+      "isBoss": false,
+      "characteristics": [],
+      "spells": [
+        {
+          "id": 1246821,
+          "attributes": []
+        },
+        {
+          "id": 1246825,
+          "attributes": []
+        }
+      ],
+      "spawns": [
+        {
+          "id": "35-1",
+          "idx": 1,
+          "group": null,
+          "pos": [
+            -91.53,
+            118.99
           ]
         }
       ]
