@@ -2760,7 +2760,7 @@
       "name": "Haunting Grunt",
       "count": 4,
       "health": 131251,
-      "creatureType": "Humanoid",
+      "creatureType": "Undead",
       "scale": 1.2,
       "isBoss": false,
       "characteristics": [],

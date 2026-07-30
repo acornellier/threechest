@@ -310,7 +310,9 @@
       "spells": [
         {
           "id": 1255964,
-          "attributes": []
+          "attributes": [
+            "interruptible"
+          ]
         },
         {
           "id": 1255966,
@@ -1869,7 +1871,9 @@
         },
         {
           "id": 1256059,
-          "attributes": []
+          "attributes": [
+            "bleed"
+          ]
         }
       ],
       "spawns": [
@@ -3746,7 +3750,7 @@
     {
       "id": 253458,
       "enemyIndex": 25,
-      "name": "Zil'jan",
+      "name": "Zaib'yan",
       "count": 7,
       "health": 607538,
       "creatureType": "Humanoid",

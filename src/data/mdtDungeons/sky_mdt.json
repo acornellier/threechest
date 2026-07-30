@@ -289,7 +289,7 @@
     {
       "id": 75976,
       "enemyIndex": 4,
-      "name": "Outcast Servant",
+      "name": "Lowborn Servant",
       "count": 1,
       "health": 911307,
       "creatureType": "Humanoid",
@@ -613,7 +613,7 @@
     {
       "id": 78933,
       "enemyIndex": 8,
-      "name": "Herald of Sunrise",
+      "name": "Solar Elemental",
       "count": 15,
       "health": 2354210,
       "creatureType": "Elemental",
@@ -744,7 +744,7 @@
     {
       "id": 79093,
       "enemyIndex": 10,
-      "name": "Skyreach Sun Talon",
+      "name": "Suntalon",
       "count": 2,
       "health": 607538,
       "creatureType": "Beast",
@@ -875,7 +875,7 @@
     {
       "id": 76154,
       "enemyIndex": 11,
-      "name": "Sun Talon Tamer",
+      "name": "Suntalon Tamer",
       "count": 5,
       "health": 1564410,
       "creatureType": "Humanoid",
@@ -1188,7 +1188,7 @@
     {
       "id": 76205,
       "enemyIndex": 17,
-      "name": "Blooded Bladefeather",
+      "name": "Outcast Warrior",
       "count": 5,
       "health": 1670730,
       "creatureType": "Humanoid",
@@ -1272,7 +1272,7 @@
     {
       "id": 76227,
       "enemyIndex": 18,
-      "name": "Sunwings",
+      "name": "Sunwing",
       "count": 0,
       "health": 1012563,
       "creatureType": "Elemental",

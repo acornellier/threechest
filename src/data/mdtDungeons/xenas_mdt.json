@@ -364,7 +364,9 @@
         },
         {
           "id": 1249818,
-          "attributes": []
+          "attributes": [
+            "interruptible"
+          ]
         },
         {
           "id": 1252218,
@@ -376,7 +378,9 @@
         },
         {
           "id": 1278882,
-          "attributes": []
+          "attributes": [
+            "interruptible"
+          ]
         },
         {
           "id": 1285445,
@@ -697,7 +701,9 @@
         },
         {
           "id": 1269283,
-          "attributes": []
+          "attributes": [
+            "interruptible"
+          ]
         },
         {
           "id": 1282950,
@@ -1198,7 +1204,9 @@
         },
         {
           "id": 1264295,
-          "attributes": []
+          "attributes": [
+            "interruptible"
+          ]
         }
       ],
       "spawns": [
@@ -1287,7 +1295,9 @@
         },
         {
           "id": 1252429,
-          "attributes": []
+          "attributes": [
+            "interruptible"
+          ]
         }
       ],
       "spawns": [
@@ -1726,7 +1736,9 @@
       "spells": [
         {
           "id": 1250553,
-          "attributes": []
+          "attributes": [
+            "interruptible"
+          ]
         },
         {
           "id": 1251626,
@@ -1926,7 +1938,9 @@
       "spells": [
         {
           "id": 1257268,
-          "attributes": []
+          "attributes": [
+            "interruptible"
+          ]
         }
       ],
       "spawns": []
@@ -1952,7 +1966,7 @@
     {
       "id": 251024,
       "enemyIndex": 22,
-      "name": "Null Guardian",
+      "name": "Dreadflail",
       "count": 0,
       "health": 556910,
       "creatureType": "Aberration",
@@ -1986,7 +2000,7 @@
     {
       "id": 251031,
       "enemyIndex": 23,
-      "name": "Wretched Supplicant",
+      "name": "Grand Nullifier",
       "count": 0,
       "health": 326286,
       "creatureType": "Aberration",
