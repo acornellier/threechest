@@ -2,9 +2,13 @@ import type { DropdownOption } from '../../Common/Dropdown.tsx'
 import { Dropdown } from '../../Common/Dropdown.tsx'
 import { useCallback, useMemo, useState } from 'react'
 import type { SampleRoute } from '../../../util/types.ts'
-import { sampleRoutes } from '../../../data/sampleRoutes/sampleRoutes.ts'
+import { useSampleRoutes } from '../../../util/hooks/useSampleRoutes.ts'
 import { setPreviewRouteAsync } from '../../../store/reducers/importReducer.ts'
-import { ArrowTopRightOnSquareIcon, MagnifyingGlassIcon } from '@heroicons/react/24/outline'
+import {
+  ArrowPathIcon,
+  ArrowTopRightOnSquareIcon,
+  MagnifyingGlassIcon,
+} from '@heroicons/react/24/outline'
 import { setRouteFromSample } from '../../../store/routes/routesReducer.ts'
 import { addToast } from '../../../store/reducers/toastReducer.ts'
 import { useDungeon } from '../../../store/routes/routeHooks.ts'
@@ -48,10 +52,9 @@ export function SampleRoutes({ hidden }: Props) {
   const dungeon = useDungeon()
   const [mode, setMode] = useState<FilterMode>('varied')
   const [selectedSpec, setSelectedSpec] = useState<Spec>(tankSpecs[0]!)
+  const { sampleRoutes: routes, loading } = useSampleRoutes(dungeon.key)
 
   const options: SampleRouteOption[] = useMemo(() => {
-    const routes = sampleRoutes[dungeon.key]
-
     function pickRankingsFromFilterMode() {
       const rankings = routes.filter((route) => route.wclRanking).map((route) => route.wclRanking!)
 
@@ -120,7 +123,7 @@ export function SampleRoutes({ hidden }: Props) {
           </div>
         ),
       }))
-  }, [dungeon.key, mode, selectedSpec])
+  }, [routes, mode, selectedSpec])
 
   const onSelect = useCallback(
     (option: SampleRouteOption) => {
@@ -145,6 +148,12 @@ export function SampleRoutes({ hidden }: Props) {
 
   const filterHeader = (
     <div className="flex flex-col gap-1">
+      {loading && (
+        <div className="flex items-center gap-1.5 text-sm text-gray-300">
+          <ArrowPathIcon width={16} height={16} className="animate-spin" />
+          Loading top routes…
+        </div>
+      )}
       <div className="flex items-center gap-1 justify-between">
         {filterModes.map((m) => (
           <button

@@ -1230,7 +1230,7 @@
     {
       "id": 234064,
       "enemyIndex": 7,
-      "name": "Dreaded Voidwalker",
+      "name": "Dreadful Voidwalker",
       "count": 7,
       "health": 1670730,
       "creatureType": "Aberration",
@@ -1520,7 +1520,7 @@
     {
       "id": 249086,
       "enemyIndex": 10,
-      "name": "Void Infuser",
+      "name": "Void Terror",
       "count": 7,
       "health": 1366961,
       "creatureType": "Aberration",
@@ -2679,7 +2679,8 @@
         {
           "id": 1255187,
           "attributes": [
-            "magic"
+            "magic",
+            "interruptible"
           ]
         }
       ],

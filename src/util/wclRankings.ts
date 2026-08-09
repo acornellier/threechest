@@ -51,6 +51,21 @@ export type WclRanking = Omit<WclFightRanking, 'rank'> & {
 
 export type Spec = { class: string; spec: string; icon: string }
 
+const wclRankingToNum = (wclRanking: WclRanking | undefined): number =>
+  wclRanking === undefined ? -Infinity : -wclRanking.score
+
+/** Ranked routes first (by score), then the hand-curated ones alphabetically. */
+export function sortSampleRoutes(
+  route1: { route: { name: string }; wclRanking?: WclRanking },
+  route2: { route: { name: string }; wclRanking?: WclRanking },
+) {
+  if (route1.wclRanking !== route2.wclRanking) {
+    return wclRankingToNum(route1.wclRanking) - wclRankingToNum(route2.wclRanking)
+  }
+
+  return route1.route.name.localeCompare(route2.route.name)
+}
+
 export const tankSpecs: Spec[] = [
   { class: 'DeathKnight', spec: 'Blood', icon: 'spell_deathknight_bloodpresence' },
   { class: 'DemonHunter', spec: 'Vengeance', icon: 'ability_demonhunter_spectank' },

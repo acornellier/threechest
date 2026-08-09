@@ -3,18 +3,13 @@ import fs from 'fs'
 import { getWclRoute } from '../server/wclRoute.ts'
 import { fetchFightTeam } from '../server/wcl.ts'
 import { type WclResult, wclResultToRoute } from '../src/util/wclCalc.ts'
-import { getDirname } from '../server/files.ts'
 import { fetchTopRankings } from '../server/wclRankingsFetcher.ts'
 import type { SampleRoute } from '../src/util/types.ts'
 import * as path from 'path'
 import { shuffle } from '../src/util/nodash.ts'
 import type { WclFightRanking, WclRanking, WclSpecRanking } from '../src/util/wclRankings.ts'
 import { type DungeonKey, dungeonKeys } from '../src/data/dungeonKeys.ts'
-
-const dirname = getDirname(import.meta.url)
-
-const toFileName = (report: { code: string; fightID: number }) =>
-  `${report.code}-${report.fightID}.json`
+import { dungeonFolder as getDungeonFolder, toFileName } from './rankingsFiles.ts'
 
 interface DungeonRankings {
   dungeonKey: DungeonKey
@@ -34,8 +29,10 @@ for (const dungeon of shuffle(dungeons)) {
 
   if (!dungeon.wclEncounterId) continue
 
-  const dungeonFolder = `${dirname}/../src/data/sampleRoutes/${dungeon.key}`
-  if (!fs.existsSync(dungeonFolder)) fs.mkdirSync(dungeonFolder)
+  const dungeonFolder = getDungeonFolder(dungeon.key)
+  if (!fs.existsSync(dungeonFolder)) {
+    fs.mkdirSync(dungeonFolder, { recursive: true })
+  }
 
   console.log(`Querying dungeon ${dungeon.key}`)
   const rankings = await fetchTopRankings(dungeon.wclEncounterId)

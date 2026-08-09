@@ -17,8 +17,11 @@ yarn lint         # ESLint with --max-warnings 0 (zero tolerance)
 
 # Data generation scripts (run occasionally to refresh game data)
 yarn dungeons     # Parse MDT Lua submodule → src/data/mdtDungeons/*.json
-yarn r            # Fetch top WCL routes → src/data/sampleRoutes/
+yarn r            # Fetch top WCL routes → src/data/sampleRoutes/<dungeon>/
 yarn spells       # Extract spell IDs from dungeon data
+
+yarn rankings:download   # Vercel Blob → src/data/sampleRoutes/<dungeon>/ (restores yarn r's cache)
+yarn rankings:upload     # src/data/sampleRoutes/<dungeon>/ → Vercel Blob (publishes to prod)
 ```
 
 Full local dev requires all three servers (`dev`, `server`, `rtc`) running concurrently.
@@ -44,9 +47,22 @@ React + Redux SPA. The Redux store is the single source of truth for all route d
 ```
 MythicDungeonTools/ (git submodule, Lua)
     ↓  yarn dungeons
-src/data/mdtDungeons/*.json   ← static game data bundled into the app
-src/data/sampleRoutes/*.ts    ← top WCL routes (fetched by yarn r)
+src/data/mdtDungeons/*.json          ← static game data bundled into the app
+src/data/sampleRoutes/*.ts           ← hand-curated "easy" routes, compiled into the bundle
+
+Warcraft Logs
+    ↓  yarn r  (.github/workflows/sync-rankings.yml, every 6h)
+src/data/sampleRoutes/<dungeon>/*.json   ← gitignored working dir, not shipped
+    ↓  yarn rankings:upload
+Vercel Blob: rankings/manifest.json + rankings/<version>/<dungeon>.json
+    ↓  fetched at runtime by src/api/rankingsApi.ts on page load
 ```
+
+Ranked routes are **not** in git and **not** in the bundle — the sync job publishes blobs directly,
+so refreshing rankings needs no commit and no redeploy. The manifest is short-cached (60s, the
+Vercel Blob minimum) and points at immutable version-hashed payloads, so all dungeons stay
+consistent with each other. `yarn rankings:download` restores the local working dir; `yarn r` skips
+routes whose file already exists, so skipping the download makes a sync run re-fetch all of WCL.
 
 `SpawnId` strings (e.g. `"12-3"`) identify individual mob spawns: `enemyIndex-spawnIndex`. These are the atomic units stored in `Pull.spawns`.
 
@@ -65,7 +81,9 @@ Standalone WebSocket server. Implements topic-based pub/sub for WebRTC signaling
 
 ### Deployment
 
-Deployed on Vercel. `vite.config.vercelServer.ts` bundles the Express server as Vercel serverless functions. `vercel.json` routes `/api/*` to the server bundle. The RTC server deploys separately.
+Deployed on Vercel. `vite.config.vercelServer.ts` bundles the Express server as Vercel serverless functions. Vercel picks up `api/*.js` by filesystem convention (`vercel.json` only sets cache headers). The RTC server deploys separately.
+
+Requires `VITE_RANKINGS_BASE_URL` in the Vercel project env, or the sample routes dropdown falls back to the compiled-in "easy" routes only.
 
 ## Key conventions
 

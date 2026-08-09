@@ -1,5 +1,9 @@
 server/cache/
 
+# Ranked sample routes live in Vercel Blob, synced by .github/workflows/sync-rankings.yml.
+# Trailing slash matters: the .ts files directly in sampleRoutes/ must stay tracked.
+src/data/sampleRoutes/*/
+
 # Logs
 logs
 *.log
