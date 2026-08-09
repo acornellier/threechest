@@ -25,6 +25,10 @@ import { MarkMarker } from './MarkMarker.tsx'
 import { MarkContextMenu, markerPopupMinHeight, markerPopupMinWidth } from './MarkContextMenu.tsx'
 import { Delayed } from '../../Common/Delayed.tsx'
 import { useContextMenu } from '../../Common/useContextMenu.ts'
+import {
+  mobMatchesSearch,
+  selectMobSearchTermNormalized,
+} from '../../../store/reducers/mobSearchReducer.ts'
 
 interface MobSpawnProps {
   mobSpawn: MobSpawn
@@ -42,6 +46,8 @@ interface MobSpawnMemoProps extends MobSpawnProps {
   mark: WowMark | null
   isCtrlKeyDown: boolean
   isAltKeyDown: boolean
+  isSearchMatch: boolean
+  isSearchDimmed: boolean
 }
 
 function MobSpawnComponent({
@@ -55,6 +61,8 @@ function MobSpawnComponent({
   mark,
   isCtrlKeyDown,
   isAltKeyDown,
+  isSearchMatch,
+  isSearchDimmed,
 }: MobSpawnMemoProps) {
   const { mob, spawn } = mobSpawn
   const dispatch = useAppDispatch()
@@ -113,6 +121,7 @@ function MobSpawnComponent({
         showCount={(isGroupHovered && !disableHover) || isCtrlKeyDown}
         showGroup={isAltKeyDown && mobSpawn.spawn.group !== null && !isBoxHovering}
         isSelected={isSelected}
+        isSearchMatch={isSearchMatch}
         matchingPullIndex={matchingPullIndex}
         faded={faded}
       />
@@ -123,6 +132,7 @@ function MobSpawnComponent({
       iconScaling,
       isGroupHovered,
       isSelected,
+      isSearchMatch,
       matchingPullIndex,
       mobSpawn,
       isCtrlKeyDown,
@@ -145,9 +155,9 @@ function MobSpawnComponent({
     <>
       <Marker
         position={spawn.pos}
-        zIndexOffset={isActuallyHovered ? 1000 : 0}
+        zIndexOffset={isActuallyHovered ? 1000 : isSearchMatch ? 500 : 0}
         eventHandlers={eventHandlers}
-        opacity={hidden ? 0 : faded ? 0.5 : 1}
+        opacity={hidden ? 0 : isSearchDimmed ? 0.25 : faded ? 0.5 : 1}
         icon={icon}
       >
         <Delayed delay={300}>
@@ -203,6 +213,10 @@ export function MobSpawnWrapper({ mobSpawn, isCtrlKeyDown, isAltKeyDown }: MobSp
   const faded = isLive && matchingPullIndex !== null && matchingPullIndex < selectedPull
   const mark = route.assignments?.[mobSpawn.spawn.id] ?? null
 
+  const searchTerm = useRootSelector(selectMobSearchTermNormalized)
+  const isSearchMatch = mobMatchesSearch(mobSpawn.mob, searchTerm)
+  const isSearchDimmed = !!searchTerm && !isSearchMatch
+
   return (
     <MobSpawnMemo
       mobSpawn={mobSpawn}
@@ -215,6 +229,8 @@ export function MobSpawnWrapper({ mobSpawn, isCtrlKeyDown, isAltKeyDown }: MobSp
       mark={mark}
       isCtrlKeyDown={isCtrlKeyDown}
       isAltKeyDown={isAltKeyDown}
+      isSearchMatch={isSearchMatch}
+      isSearchDimmed={isSearchDimmed}
     />
   )
 }

@@ -8,6 +8,7 @@ import { listenerMiddleware } from './listener.ts'
 import { mapReducer } from './reducers/mapReducer.ts'
 import { collabReducer } from './collab/collabReducer.ts'
 import { cloudReducer } from './reducers/cloudReducer.ts'
+import { mobSearchReducer } from './reducers/mobSearchReducer.ts'
 
 export const store = configureStore({
   reducer: {
@@ -18,6 +19,7 @@ export const store = configureStore({
     toast: toastReducer,
     collab: collabReducer,
     cloud: cloudReducer,
+    mobSearch: mobSearchReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({ serializableCheck: false, immutableCheck: { warnAfter: 200 } }).prepend(

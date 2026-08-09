@@ -9,6 +9,7 @@ interface Props {
   showCount: boolean
   showGroup: boolean
   isSelected: boolean
+  isSearchMatch: boolean
   iconScaling: number
   faded: boolean
 }
@@ -20,10 +21,24 @@ export function MobIcon({
   showCount,
   showGroup,
   isSelected,
+  isSearchMatch,
   faded,
 }: Props) {
   return (
     <>
+      {/* mob-border class so that the map zoom handler rescales the border width */}
+      {isSearchMatch && (
+        <div
+          className="mob-search-match mob-border absolute rounded-full pointer-events-none"
+          style={{
+            height: '135%',
+            width: '135%',
+            top: '-17.5%',
+            left: '-17.5%',
+            borderWidth: iconScaling * mobScale(mobSpawn) * 0.05,
+          }}
+        />
+      )}
       {isSelected && <MobBorder mobSpawn={mobSpawn} iconScaling={iconScaling} scale={1.1} />}
       <MobBorder mobSpawn={mobSpawn} iconScaling={iconScaling}>
         <div
