@@ -7,9 +7,9 @@ the newest screenshot(s) in your WoW Screenshots folder, extracts each portrait,
 and writes public/npc_portraits/<npcId>.png (64x64, opaque, creature-on-black --
 identical in format to the existing portraits; the app clips them to a circle).
 
-Robust to +/- a couple pixels of tile jitter: each tile sits on a black backdrop
-with an 8px gap, and we recenter on the portrait's non-black bounding box rather
-than trusting the nominal grid position.
+Tiles are cropped at their nominal grid positions -- the in-game frames are scaled
+so 1 frame unit == 1 physical pixel, so the grid is pixel-exact. Only the grid's
+origin can move (UIParent inset), and that is detected from the screenshot.
 
 Requires Pillow:  pip install Pillow
 
@@ -61,16 +61,34 @@ def find_screenshots_dir(override):
     )
 
 
-def grid_origin(img):
-    """Top-left pixel of the portrait grid.
+def grid_origin(img, span_x, span_y):
+    """Top-left pixel of the portrait grid, given the grid's exact px span.
 
     The screenshot is all black except the grid, so the bounding box of non-black
-    content starts at the grid's top-left. This makes cropping immune to UIParent
-    being inset from the physical screen (which shifts the whole grid).
+    content brackets the grid. This makes cropping immune to UIParent being inset
+    from the physical screen (which shifts the whole grid).
+
+    The bounding box is not the grid itself, though: portraits are round, so the
+    dim pixels along an edge tile's rim can fall below the threshold and pull the
+    box a few px inward. Since we know the grid's exact span, the origin is
+    bracketed by [far_edge - span, near_edge]; we take the middle of that range,
+    which cancels out a symmetric rim inset.
     """
     mask = img.convert("L").point(lambda p: 255 if p > BLACK_THRESHOLD else 0)
     bbox = mask.getbbox()
-    return (bbox[0], bbox[1]) if bbox else (0, 0)
+    if not bbox:
+        return (0, 0)
+
+    def axis_origin(near_edge, far_edge, span):
+        lowest = far_edge - span
+        if lowest >= near_edge:  # content spans more than the grid: trust near edge
+            return max(0, near_edge)
+        return max(0, int(round((lowest + near_edge) / 2.0)))
+
+    return (
+        axis_origin(bbox[0], bbox[2], span_x),
+        axis_origin(bbox[1], bbox[3], span_y),
+    )
 
 
 def newest_screenshots(folder, count):
@@ -89,34 +107,10 @@ def newest_screenshots(folder, count):
     return batch                              # already oldest-first within the batch
 
 
-def extract_portrait(cell, size):
-    """Recenter a fixed size x size window on the portrait inside a tile crop.
-
-    The rendered portrait is always exactly `size` px; only its position drifts
-    (tile jitter). So we find the non-black bounding box, take its geometric
-    center, and crop a `size`-px window around it. We never crop to the bbox
-    extent (that would zoom in on dark creatures whose edges fall below the
-    threshold) -- we only translate.
-    """
-    cw, ch = cell.size
-    mask = cell.convert("L").point(lambda p: 255 if p > BLACK_THRESHOLD else 0)
-    bbox = mask.getbbox()
-    if bbox:
-        cx = (bbox[0] + bbox[2]) / 2.0
-        cy = (bbox[1] + bbox[3]) / 2.0
-    else:
-        # Nothing bright found; fall back to the nominal top-left placement.
-        cx = cy = size / 2.0
-
-    left = int(round(cx - size / 2.0))
-    top = int(round(cy - size / 2.0))
-    left = max(0, min(left, cw - size)) if cw >= size else 0
-    top = max(0, min(top, ch - size)) if ch >= size else 0
-
-    crop = cell.crop((left, top, left + size, top + size)).convert("RGB")
-    if crop.size != (size, size):  # only if the cell was smaller than a portrait
-        crop = crop.resize((size, size), Image.LANCZOS)
-    return crop
+def is_blank(portrait):
+    """True if a tile came out all black -- the model never finished streaming in."""
+    mask = portrait.convert("L").point(lambda p: 255 if p > BLACK_THRESHOLD else 0)
+    return mask.getbbox() is None
 
 
 def main():
@@ -172,6 +166,7 @@ def main():
 
     images = {}
     origins = {}
+    blanks = []
     written = 0
     for index, entry in enumerate(portraits):
         shot_index = index // per_shot
@@ -181,14 +176,23 @@ def main():
 
         path = batch[shot_index]
         if path not in images:
+            # The last screenshot holds the remainder, so its grid is smaller.
+            tiles_in_shot = min(per_shot, len(portraits) - shot_index * per_shot)
+            cols_in_shot = min(tiles_x, tiles_in_shot)
+            rows_in_shot = -(-tiles_in_shot // tiles_x)
             images[path] = Image.open(path).convert("RGB")
-            origins[path] = grid_origin(images[path])
+            origins[path] = grid_origin(
+                images[path],
+                cols_in_shot * cell_size - manifest["gap"],
+                rows_in_shot * cell_size - manifest["gap"],
+            )
         img = images[path]
         ox, oy = origins[path]
 
         left, top = ox + col * cell_size, oy + row * cell_size
-        cell = img.crop((left, top, left + cell_size, top + cell_size))
-        portrait = extract_portrait(cell, size)
+        portrait = img.crop((left, top, left + size, top + size))
+        if is_blank(portrait):
+            blanks.append(f"{entry['npcId']} ({entry['name']})")
 
         out_path = os.path.join(out_dir, f"{entry['npcId']}.png")
         if dry_run:
@@ -198,10 +202,23 @@ def main():
             portrait.save(out_path, "PNG")
             written += 1
 
+    print("Grid origins  :")
+    for path in batch:
+        if path in origins:
+            print(f"  {os.path.basename(path)} -> {origins[path]}")
+
     if dry_run:
         print("\nDry run - nothing written.")
     else:
         print(f"\nWrote {written} portraits to {out_dir}")
+
+    if blanks:
+        print(f"\n! {len(blanks)} tile(s) came out all black - the portrait models "
+              f"had not streamed in yet.\n"
+              f"  Raise SETTLE_SECONDS (or lower MAX_TILES) in generate.py and "
+              f"re-render these:")
+        for name in blanks:
+            print(f"    {name}")
 
 
 if __name__ == "__main__":
