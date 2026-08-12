@@ -19,6 +19,7 @@ yarn lint         # ESLint with --max-warnings 0 (zero tolerance)
 yarn dungeons     # Parse MDT Lua submodule → src/data/mdtDungeons/*.json
 yarn r            # Fetch top WCL routes → src/data/sampleRoutes/<dungeon>/
 yarn spells       # Extract spell IDs from dungeon data
+yarn offsets      # Verify mdtMapOffsets.ts against cached WCL fights (see docs/new-season-setup.md)
 
 yarn rankings:download   # Vercel Blob → src/data/sampleRoutes/<dungeon>/ (restores yarn r's cache)
 yarn rankings:upload     # src/data/sampleRoutes/<dungeon>/ → Vercel Blob (publishes to prod)

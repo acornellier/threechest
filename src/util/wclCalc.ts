@@ -145,7 +145,7 @@ const defaultMapOffsets: MapOffset = {
 // A position farther than this from any spawn of the event's own mob type was reported on the
 // wrong map (seam mislabel) and is discarded. Comfortably above max patrol wander (~30 units);
 // dropping a legit patrol position fails safe — the mob still resolves by composition.
-const MAX_PLAUSIBLE_SPAWN_DISTANCE = 60
+export const MAX_PLAUSIBLE_SPAWN_DISTANCE = 60
 
 // Time window for segmenting a pull into sub-pulls. Wide enough that one linked group's deaths
 // (which can span a couple of seconds) never split, while still peeling off a mob pulled later.
@@ -197,7 +197,7 @@ const mapTransitions: Array<{ mapId: number; newMapId: number; triggerGameId: nu
   { mapId: 2516, newMapId: 25162516, triggerGameId: 231863 },
 ]
 
-function resolveMapOffsetId(wclPoint: WclPoint, deathEvents: DeathEvent[]): number {
+export function resolveMapOffsetId(wclPoint: WclPoint, deathEvents: DeathEvent[]): number {
   const transition = mapTransitions.find((t) => t.mapId === wclPoint.mapID)
   if (!transition) return wclPoint.mapID
   const triggered = deathEvents.some(
@@ -475,7 +475,7 @@ function wclEventsToPulls(
     }))
 }
 
-function nearestSpawnDistance(pos: Point, spawnPositions: Point[] | undefined): number {
+export function nearestSpawnDistance(pos: Point, spawnPositions: Point[] | undefined): number {
   if (!spawnPositions?.length) return Infinity
   let min = Infinity
   for (const spawnPos of spawnPositions) {
@@ -487,7 +487,7 @@ function nearestSpawnDistance(pos: Point, spawnPositions: Point[] | undefined): 
 
 // mobId -> all of that mob's static spawn positions, used to sanity-check WCL event positions.
 const spawnPositionsCache = new WeakMap<Dungeon, Map<number, Point[]>>()
-function spawnPositionsByMob(dungeon: Dungeon): Map<number, Point[]> {
+export function spawnPositionsByMob(dungeon: Dungeon): Map<number, Point[]> {
   const cached = spawnPositionsCache.get(dungeon)
   if (cached) return cached
 

@@ -99,6 +99,23 @@ For each dungeon UiMapID, align the MDT map to the original WoW map (rotation/sc
    (its id is the object key), opacity 50%.
 3. Rotate (if needed), scale, and translate to match; then read W/H/X/Y from layer properties.
 
+Scale is always **uniform** — every entry ever hand-made has `w/h = 3840/2560 = 1.5`. If your
+`w`/`h` ratio comes out different, the alignment is off, not the map.
+
+Returning dungeons may already have values in git history (e.g. `rlp` in `cef9b328`); those are
+still accurate if MDT hasn't re-framed the art, and `yarn offsets` will tell you:
+
+```bash
+yarn offsets           # every dungeon with cached fights
+yarn offsets murd fang # only these keys
+```
+
+This measures, per UiMapID, how far a WCL event lands from the nearest spawn of its own mob —
+which is what `MAX_PLAUSIBLE_SPAWN_DISTANCE` gates on in `wclCalc.ts`, so a bad map means real
+positions are being discarded. Hand-aligned maps measure a median of 2.5-12.5 map units; missing
+offsets measure 57-130. Needs `server/cache/wclRoute` populated, so run it after step 6 (or run
+`yarn r <key>` first and `yarn r --recalc` after fixing offsets).
+
 ## 6. Fetch sample / top routes from Warcraft Logs
 
 Requires the API server env (WCL OAuth) configured. Reads `wclEncounterId` from
@@ -152,5 +169,5 @@ yarn dev   # + yarn server + yarn rtc — click through each dungeon map, mobs, 
 | Mobs/spawns/POIs | `src/data/mdtDungeons/*.json` | `yarn dungeons` |
 | Spells | `src/data/spells/<key>/` | `yarn spells` |
 | Map bounds | `src/data/coordinates/mapBounds*.ts`, `uimapassignment.json` | Grimoire + `buildMapBounds.ts` |
-| Map offsets | `src/data/coordinates/mdtMapOffsets.ts` | Photopea, manual |
+| Map offsets | `src/data/coordinates/mdtMapOffsets.ts` | Photopea, manual — verify with `yarn offsets` |
 | Sample routes | `src/data/sampleRoutes/*` | `yarn r` |
