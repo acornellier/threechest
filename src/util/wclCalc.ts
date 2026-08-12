@@ -290,7 +290,7 @@ export function wclResultToRoute(
 function wclResultToNotes(wclResult: WclResult): Note[] {
   let lastLustTimestamp = -Infinity
   return wclResult.lustEvents
-    .filter((event) => event.x && event.y && event.mapID)
+    .filter((event) => event.x && event.y && event.mapID && mapBounds[event.mapID])
     .reduce<Note[]>((acc, event) => {
       if (event.timestamp - lastLustTimestamp < 10_000) return acc
 

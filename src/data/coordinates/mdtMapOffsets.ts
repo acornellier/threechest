@@ -15,164 +15,127 @@ const mdtHeight = 2560
 // 4. Rotate if needed. Then scale and translate the original map to match the MDT map
 // 5. If rotated, revert the rotation before entering translation and scale values
 // 6. Retrieve W/H/X/Y from layer properties (select layer and click the (i))
+// 7. Check your work with `yarn offsets` — it measures how far WCL events land from the spawn
+//    they belong to. Hand-aligned maps score a median of 2.5-12.5; a missing entry scores 57+.
 // rotation: negative rotation
+// Scale is always uniform: w/h must come out to 3840/2560 = 1.5. If it doesn't, the alignment
+// is off rather than the map being stretched.
+// Returning dungeons may already have values in git history — recover and verify with
+// `yarn offsets` instead of redoing them (rlp's below came from cef9b328, still accurate).
 const rawMdtMapOffsets: Record<
   number,
   { x: number; y: number; w: number; h: number; rotate?: number }
 > = {
-  // aa
-  2097: {
-    w: 4175,
-    h: 2783,
-    x: -59,
-    y: 316,
-  },
-  2098: {
-    w: 1632,
-    h: 1088,
-    x: 1579,
-    y: -161,
-  },
-  // cavns
-  2501: {
-    w: 4768,
-    h: 3180,
-    x: -643,
-    y: -478,
-  },
-  // magi
-  2511: {
-    w: 2740,
-    h: 1828,
-    x: 673,
-    y: -188,
-    rotate: 60,
-  },
-  25112511: {
-    // void version
-    w: 2740,
-    h: 1828,
-    x: 1485,
-    y: 966,
-    rotate: 60,
-  },
-  2515: {
-    w: 1844,
-    h: 1232,
-    x: -270,
-    y: 223,
-    rotate: -120,
-  },
-  2516: {
-    w: 1652,
-    h: 1104,
-    x: 2364,
-    y: 131,
-    rotate: 75,
-  },
-  25162516: {
-    // void version
-    w: 1652,
-    h: 1104,
-    x: 2639,
-    y: 318,
-    rotate: -60,
-  },
-  2517: {
-    w: 1560,
-    h: 1040,
-    x: 505,
-    y: 1783,
-    rotate: 155,
-  },
-  2518: {
-    w: 1002,
-    h: 668,
-    x: 841,
-    y: 1318,
-  },
-  2519: {
-    w: 968,
-    h: 644,
-    x: 167,
-    y: 1196,
-  },
-  // pit
-  184: {
-    w: 4612,
-    h: 3076,
-    x: -648,
-    y: -93,
-  },
-  // seat
-  903: {
-    w: 4328,
-    h: 2888,
-    x: -207,
-    y: -208,
-  },
-  // sky
-  601: {
-    w: 4532,
-    h: 3024,
-    x: -1353,
-    y: -188,
-  },
-  602: {
-    w: 3104,
-    h: 2068,
-    x: 1396,
-    y: 401,
-  },
-  // wind
-  2492: {
-    w: 2012,
-    h: 1340,
-    x: -418,
-    y: 59,
-  },
-  2496: {
-    w: 2032,
-    h: 1356,
-    x: -459,
-    y: 1206,
-  },
-  2494: {
-    w: 1952,
-    h: 1304,
-    x: 1396,
-    y: 18,
-  },
-  2493: {
-    w: 1828,
-    h: 1220,
-    x: 526,
-    y: 142,
-  },
-  2497: {
-    w: 1984,
-    h: 1324,
-    x: 339,
-    y: 1173,
-  },
-  2498: {
-    w: 1408,
-    h: 940,
-    x: 1662,
-    y: 1557,
-  },
-  2499: {
-    w: 1996,
-    h: 1332,
-    x: 2026,
-    y: 688,
-  },
-  // xenas
-  2556: {
-    w: 3816,
-    h: 2544,
-    x: 0,
+  // fang
+  2588: {
+    w: 3669,
+    h: 2446,
+    x: -1191,
     y: 0,
+  },
+  2589: {
+    w: 2840,
+    h: 1896,
+    x: 227,
+    y: 765,
+  },
+  2590: {
+    w: 3420,
+    h: 2280,
+    x: 1346,
+    y: 184,
+  },
+  // kr
+  1004: {
+    w: 4476,
+    h: 2984,
+    x: -331,
+    y: -96,
+  },
+  // murd
+  2433: {
+    w: 2904,
+    h: 1936,
+    x: 1655,
+    y: 649,
+  },
+  2434: {
+    w: 5004,
+    h: 3336,
+    x: -1485,
+    y: -461,
+  },
+  2435: {
+    w: 2848,
+    h: 1900,
+    x: 1079,
+    y: -1,
+  },
+  // nalo
+  2513: {
+    w: 1852,
+    h: 1236,
+    x: 2166,
+    y: 169,
+  },
+  2514: {
+    w: 3824,
+    h: 2548,
+    x: -570,
+    y: 44,
+  },
+  // rlp
+  2094: {
+    w: 4405,
+    h: 2938,
+    x: 402,
+    y: -187,
+  },
+  2095: {
+    w: 3890,
+    h: 2594,
+    x: -1142,
+    y: 262,
+    rotate: -8,
+  },
+  // tos
+  1038: {
+    w: 4056,
+    h: 2704,
+    x: 464,
+    y: -159,
+  },
+  1043: {
+    w: 2644,
+    h: 1764,
+    x: -578,
+    y: 157,
+  },
+  // vale
+  2500: {
+    w: 5124,
+    h: 3416,
+    x: -902,
+    y: -387,
+  },
+  // void
+  2572: {
+    w: 2244,
+    h: 1496,
+    x: -175,
+    y: 39,
+  },
+  2573: {
+    w: 3656,
+    h: 2436,
+    x: 1162,
+    y: 124,
+  },
+  2574: {
+    w: 2196,
+    h: 1464,
+    x: -173,
+    y: 1241,
   },
 }
 
