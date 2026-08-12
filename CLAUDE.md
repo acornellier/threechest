@@ -102,5 +102,4 @@ Requires `VITE_RANKINGS_BASE_URL` in the Vercel project env, or the sample route
 - Clean separation: Separate concerns between UI logic and business logic
 
 ## Linting
-- Never run linters, tests, migrations, or builds unless explicitly asked.
 - In javascript, always use braces with single line if/for/while blocks
