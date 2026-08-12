@@ -1,28 +1,41 @@
 {
   "dungeonIndex": 17,
-  "totalCount": 654,
+  "totalCount": 608,
   "enemies": [
     {
       "id": 133935,
       "enemyIndex": 1,
       "name": "Animated Guardian",
-      "count": 15,
-      "health": 1306442,
+      "count": 22,
+      "health": 5513534,
       "creatureType": "Undead",
       "scale": 2,
       "isBoss": false,
       "characteristics": [
         "Taunt"
       ],
-      "spells": [],
+      "spells": [
+        {
+          "id": 270003,
+          "attributes": []
+        },
+        {
+          "id": 270016,
+          "attributes": []
+        },
+        {
+          "id": 1310755,
+          "attributes": []
+        }
+      ],
       "spawns": [
         {
           "id": "1-1",
           "idx": 1,
           "group": 1,
           "pos": [
-            -127.69,
-            281.52
+            -127.05,
+            269.62
           ]
         },
         {
@@ -30,8 +43,8 @@
           "idx": 2,
           "group": 1,
           "pos": [
-            -136.71,
-            281.32
+            -135.86,
+            269.41
           ]
         },
         {
@@ -59,7 +72,7 @@
       "enemyIndex": 2,
       "name": "Minion of Zul",
       "count": 0,
-      "health": 36,
+      "health": 340110,
       "creatureType": "Aberration",
       "scale": 1,
       "isBoss": false,
@@ -67,7 +80,14 @@
         "Taunt",
         "Slow"
       ],
-      "spells": [],
+      "spells": [
+        {
+          "id": 269935,
+          "attributes": [
+            "magic"
+          ]
+        }
+      ],
       "spawns": [
         {
           "id": "2-1",
@@ -193,14 +213,29 @@
       "enemyIndex": 3,
       "name": "Risen Hexer",
       "count": 20,
-      "health": 1152741,
+      "health": 4864883,
       "creatureType": "Undead",
       "scale": 2,
       "isBoss": false,
       "characteristics": [
         "Taunt"
       ],
-      "spells": [],
+      "spells": [
+        {
+          "id": 269972,
+          "attributes": [
+            "interruptible",
+            "curse"
+          ]
+        },
+        {
+          "id": 1294815,
+          "attributes": [
+            "interruptible",
+            "magic"
+          ]
+        }
+      ],
       "spawns": [
         {
           "id": "3-4",
@@ -218,14 +253,33 @@
       "enemyIndex": 4,
       "name": "Shadow-Borne Champion",
       "count": 25,
-      "health": 1229590,
+      "health": 5189208,
       "creatureType": "Undead",
       "scale": 2,
       "isBoss": false,
       "characteristics": [
         "Taunt"
       ],
-      "spells": [],
+      "spells": [
+        {
+          "id": 269928,
+          "attributes": []
+        },
+        {
+          "id": 269976,
+          "attributes": [
+            "enrage"
+          ]
+        },
+        {
+          "id": 1305945,
+          "attributes": []
+        },
+        {
+          "id": 1310758,
+          "attributes": []
+        }
+      ],
       "spawns": [
         {
           "id": "4-1",
@@ -252,7 +306,7 @@
       "enemyIndex": 5,
       "name": "Umbral Warrior",
       "count": 5,
-      "health": 768494,
+      "health": 3243255,
       "creatureType": "Undead",
       "scale": 1.5,
       "isBoss": false,
@@ -263,7 +317,12 @@
         "Stun",
         "Slow"
       ],
-      "spells": [],
+      "spells": [
+        {
+          "id": 1311942,
+          "attributes": []
+        }
+      ],
       "spawns": [
         {
           "id": "5-1",
@@ -326,14 +385,51 @@
       "enemyIndex": 6,
       "name": "The Golden Serpent",
       "count": 0,
-      "health": 5379459,
+      "health": 21283860,
       "creatureType": "Beast",
       "scale": 2,
       "isBoss": true,
       "characteristics": [
         "Taunt"
       ],
-      "spells": [],
+      "spells": [
+        {
+          "id": 265773,
+          "attributes": []
+        },
+        {
+          "id": 265781,
+          "attributes": []
+        },
+        {
+          "id": 265910,
+          "attributes": []
+        },
+        {
+          "id": 265923,
+          "attributes": []
+        },
+        {
+          "id": 265991,
+          "attributes": []
+        },
+        {
+          "id": 1306736,
+          "attributes": []
+        },
+        {
+          "id": 1311987,
+          "attributes": []
+        },
+        {
+          "id": 1311988,
+          "attributes": []
+        },
+        {
+          "id": 1312104,
+          "attributes": []
+        }
+      ],
       "spawns": [
         {
           "id": "6-1",
@@ -351,14 +447,33 @@
       "enemyIndex": 7,
       "name": "Skeletal Hunting Raptor",
       "count": 10,
-      "health": 768494,
+      "health": 3243255,
       "creatureType": "Undead",
       "scale": 2,
       "isBoss": false,
       "characteristics": [
         "Taunt"
       ],
-      "spells": [],
+      "spells": [
+        {
+          "id": 270500,
+          "attributes": []
+        },
+        {
+          "id": 270502,
+          "attributes": []
+        },
+        {
+          "id": 270503,
+          "attributes": []
+        },
+        {
+          "id": 1297763,
+          "attributes": [
+            "enrage"
+          ]
+        }
+      ],
       "spawns": [
         {
           "id": "7-1",
@@ -376,14 +491,43 @@
       "enemyIndex": 8,
       "name": "Queen Patlaa",
       "count": 25,
-      "health": 1229590,
+      "health": 5189208,
       "creatureType": "Undead",
       "scale": 2,
       "isBoss": false,
       "characteristics": [
         "Taunt"
       ],
-      "spells": [],
+      "spells": [
+        {
+          "id": 270931,
+          "attributes": []
+        },
+        {
+          "id": 1294883,
+          "attributes": []
+        },
+        {
+          "id": 1297763,
+          "attributes": [
+            "enrage"
+          ]
+        },
+        {
+          "id": 1305982,
+          "attributes": []
+        },
+        {
+          "id": 1306761,
+          "attributes": []
+        },
+        {
+          "id": 1306763,
+          "attributes": [
+            "poison"
+          ]
+        }
+      ],
       "spawns": [
         {
           "id": "8-1",
@@ -401,14 +545,25 @@
       "enemyIndex": 9,
       "name": "King A'akul",
       "count": 25,
-      "health": 1998085,
+      "health": 8432462,
       "creatureType": "Undead",
       "scale": 2,
       "isBoss": false,
       "characteristics": [
         "Taunt"
       ],
-      "spells": [],
+      "spells": [
+        {
+          "id": 1297918,
+          "attributes": [
+            "bleed"
+          ]
+        },
+        {
+          "id": 1297970,
+          "attributes": []
+        }
+      ],
       "spawns": [
         {
           "id": "9-1",
@@ -426,7 +581,7 @@
       "enemyIndex": 10,
       "name": "Bloodsworn Assassin",
       "count": 7,
-      "health": 768494,
+      "health": 3243255,
       "creatureType": "Undead",
       "scale": 1.5,
       "isBoss": false,
@@ -436,7 +591,14 @@
         "Stun",
         "Slow"
       ],
-      "spells": [],
+      "spells": [
+        {
+          "id": 1297781,
+          "attributes": [
+            "bleed"
+          ]
+        }
+      ],
       "spawns": [
         {
           "id": "10-1",
@@ -461,8 +623,8 @@
           "idx": 3,
           "group": 9,
           "pos": [
-            -213.89,
-            257.6
+            -212.95,
+            258.45
           ]
         },
         {
@@ -470,8 +632,8 @@
           "idx": 4,
           "group": 9,
           "pos": [
-            -219.91,
-            257.54
+            -219.23,
+            258.05
           ]
         }
       ]
@@ -481,14 +643,28 @@
       "enemyIndex": 11,
       "name": "Seneschal M'bara",
       "count": 10,
-      "health": 768494,
+      "health": 3243255,
       "creatureType": "Undead",
       "scale": 1.5,
       "isBoss": false,
       "characteristics": [
         "Taunt"
       ],
-      "spells": [],
+      "spells": [
+        {
+          "id": 270901,
+          "attributes": [
+            "interruptible",
+            "magic"
+          ]
+        },
+        {
+          "id": 1296671,
+          "attributes": [
+            "magic"
+          ]
+        }
+      ],
       "spawns": [
         {
           "id": "11-1",
@@ -506,7 +682,7 @@
       "enemyIndex": 12,
       "name": "Guard Captain Atu",
       "count": 10,
-      "health": 1248802,
+      "health": 5270289,
       "creatureType": "Undead",
       "scale": 1.5,
       "isBoss": false,
@@ -516,7 +692,14 @@
         "Stun",
         "Slow"
       ],
-      "spells": [],
+      "spells": [
+        {
+          "id": 1296671,
+          "attributes": [
+            "magic"
+          ]
+        }
+      ],
       "spawns": [
         {
           "id": "12-1",
@@ -534,12 +717,31 @@
       "enemyIndex": 13,
       "name": "King Rahu'ai",
       "count": 25,
-      "health": 1229590,
+      "health": 5189208,
       "creatureType": "Undead",
       "scale": 2,
       "isBoss": false,
       "characteristics": [],
-      "spells": [],
+      "spells": [
+        {
+          "id": 270889,
+          "attributes": []
+        },
+        {
+          "id": 270891,
+          "attributes": []
+        },
+        {
+          "id": 1296671,
+          "attributes": [
+            "magic"
+          ]
+        },
+        {
+          "id": 1296719,
+          "attributes": []
+        }
+      ],
       "spawns": [
         {
           "id": "13-1",
@@ -557,22 +759,43 @@
       "enemyIndex": 14,
       "name": "King Timalji",
       "count": 25,
-      "health": 1229590,
+      "health": 7783811,
       "creatureType": "Undead",
       "scale": 2,
       "isBoss": false,
       "characteristics": [
         "Taunt"
       ],
-      "spells": [],
+      "spells": [
+        {
+          "id": 270927,
+          "attributes": []
+        },
+        {
+          "id": 270928,
+          "attributes": []
+        },
+        {
+          "id": 1297326,
+          "attributes": []
+        },
+        {
+          "id": 1306049,
+          "attributes": []
+        },
+        {
+          "id": 1306056,
+          "attributes": []
+        }
+      ],
       "spawns": [
         {
           "id": "14-1",
           "idx": 1,
           "group": 8,
           "pos": [
-            -228.06,
-            269.11
+            -230.36,
+            269.71
           ]
         }
       ]
@@ -582,22 +805,41 @@
       "enemyIndex": 15,
       "name": "Queen Wasi",
       "count": 25,
-      "health": 1229590,
+      "health": 7783811,
       "creatureType": "Undead",
       "scale": 2,
       "isBoss": false,
       "characteristics": [
         "Taunt"
       ],
-      "spells": [],
+      "spells": [
+        {
+          "id": 270920,
+          "attributes": [
+            "interruptible",
+            "magic"
+          ]
+        },
+        {
+          "id": 1294972,
+          "attributes": [
+            "interruptible",
+            "magic"
+          ]
+        },
+        {
+          "id": 1297326,
+          "attributes": []
+        }
+      ],
       "spawns": [
         {
           "id": "15-1",
           "idx": 1,
           "group": 8,
           "pos": [
-            -219.07,
-            269.39
+            -221.63,
+            269.9
           ]
         }
       ]
@@ -607,14 +849,27 @@
       "enemyIndex": 16,
       "name": "Purification Construct",
       "count": 25,
-      "health": 1844388,
+      "health": 7783811,
       "creatureType": "Undead",
       "scale": 2,
       "isBoss": false,
       "characteristics": [
         "Taunt"
       ],
-      "spells": [],
+      "spells": [
+        {
+          "id": 270292,
+          "attributes": []
+        },
+        {
+          "id": 270293,
+          "attributes": []
+        },
+        {
+          "id": 1310755,
+          "attributes": []
+        }
+      ],
       "spawns": [
         {
           "id": "16-1",
@@ -632,22 +887,43 @@
       "enemyIndex": 17,
       "name": "Interment Construct",
       "count": 15,
-      "health": 1536988,
+      "health": 5837859,
       "creatureType": "Undead",
       "scale": 1.9,
       "isBoss": false,
       "characteristics": [
         "Taunt"
       ],
-      "spells": [],
+      "spells": [
+        {
+          "id": 271555,
+          "attributes": []
+        },
+        {
+          "id": 271561,
+          "attributes": []
+        },
+        {
+          "id": 271562,
+          "attributes": []
+        },
+        {
+          "id": 1310755,
+          "attributes": []
+        },
+        {
+          "id": 1312569,
+          "attributes": []
+        }
+      ],
       "spawns": [
         {
           "id": "17-1",
           "idx": 1,
           "group": 13,
           "pos": [
-            -80.99,
-            223.2
+            -80.5,
+            226
           ]
         },
         {
@@ -666,14 +942,43 @@
       "enemyIndex": 18,
       "name": "Mchimba the Embalmer",
       "count": 0,
-      "health": 5379459,
+      "health": 21283860,
       "creatureType": "Mechanical",
       "scale": 1.7,
       "isBoss": true,
       "characteristics": [
         "Taunt"
       ],
-      "spells": [],
+      "spells": [
+        {
+          "id": 267618,
+          "attributes": []
+        },
+        {
+          "id": 267639,
+          "attributes": []
+        },
+        {
+          "id": 267702,
+          "attributes": []
+        },
+        {
+          "id": 267874,
+          "attributes": []
+        },
+        {
+          "id": 271290,
+          "attributes": []
+        },
+        {
+          "id": 1312146,
+          "attributes": []
+        },
+        {
+          "id": 1312848,
+          "attributes": []
+        }
+      ],
       "spawns": [
         {
           "id": "18-1",
@@ -691,7 +996,7 @@
       "enemyIndex": 19,
       "name": "Phantom Hex Priest",
       "count": 7,
-      "health": 691644,
+      "health": 2918930,
       "creatureType": "Undead",
       "scale": 1.5,
       "isBoss": false,
@@ -704,7 +1009,22 @@
         "Stun",
         "Slow"
       ],
-      "spells": [],
+      "spells": [
+        {
+          "id": 270492,
+          "attributes": [
+            "interruptible",
+            "curse"
+          ]
+        },
+        {
+          "id": 1295125,
+          "attributes": [
+            "interruptible",
+            "magic"
+          ]
+        }
+      ],
       "spawns": [
         {
           "id": "19-1",
@@ -729,8 +1049,8 @@
           "idx": 3,
           "group": 24,
           "pos": [
-            -113.71,
-            164.35
+            -102.23,
+            163.71
           ]
         }
       ]
@@ -740,7 +1060,7 @@
       "enemyIndex": 20,
       "name": "Royal Berserker",
       "count": 22,
-      "health": 922193,
+      "health": 3891906,
       "creatureType": "Undead",
       "scale": 1.5,
       "isBoss": false,
@@ -754,33 +1074,48 @@
         "Stun",
         "Slow"
       ],
-      "spells": [],
+      "spells": [
+        {
+          "id": 270482,
+          "attributes": []
+        },
+        {
+          "id": 270485,
+          "attributes": []
+        },
+        {
+          "id": 1301851,
+          "attributes": [
+            "bleed"
+          ]
+        }
+      ],
       "spawns": [
         {
           "id": "20-1",
           "idx": 1,
           "group": 26,
           "pos": [
-            -163.59,
-            162.6
+            -162.12,
+            164.08
           ]
         },
         {
-          "id": "20-3",
-          "idx": 3,
-          "group": 23,
+          "id": "20-2",
+          "idx": 2,
+          "group": 30,
           "pos": [
-            -92.4,
-            164.05
+            -76.14,
+            169.06
           ]
         },
         {
-          "id": "20-6",
-          "idx": 6,
-          "group": 26,
+          "id": "20-4",
+          "idx": 4,
+          "group": 30,
           "pos": [
-            -163.59,
-            167.63
+            -76.14,
+            159.91
           ]
         }
       ]
@@ -790,7 +1125,7 @@
       "enemyIndex": 21,
       "name": "Spectral Shaman",
       "count": 7,
-      "health": 768494,
+      "health": 3243255,
       "creatureType": "Undead",
       "scale": 1.5,
       "isBoss": false,
@@ -801,15 +1136,26 @@
         "Stun",
         "Slow"
       ],
-      "spells": [],
+      "spells": [
+        {
+          "id": 270497,
+          "attributes": []
+        },
+        {
+          "id": 270499,
+          "attributes": [
+            "magic"
+          ]
+        }
+      ],
       "spawns": [
         {
           "id": "21-2",
           "idx": 2,
           "group": 24,
           "pos": [
-            -107.59,
-            158.4
+            -102.27,
+            157.34
           ]
         },
         {
@@ -835,8 +1181,8 @@
           "idx": 6,
           "group": 24,
           "pos": [
-            -107.45,
-            170.52
+            -102.34,
+            170.73
           ]
         }
       ]
@@ -846,14 +1192,23 @@
       "enemyIndex": 22,
       "name": "Ghostly Brute",
       "count": 25,
-      "health": 1536988,
+      "health": 6486509,
       "creatureType": "Undead",
       "scale": 2,
       "isBoss": false,
       "characteristics": [
         "Taunt"
       ],
-      "spells": [],
+      "spells": [
+        {
+          "id": 270514,
+          "attributes": []
+        },
+        {
+          "id": 1302028,
+          "attributes": []
+        }
+      ],
       "spawns": [
         {
           "id": "22-1",
@@ -863,15 +1218,6 @@
             -131.99,
             163.82
           ]
-        },
-        {
-          "id": "22-2",
-          "idx": 2,
-          "group": 23,
-          "pos": [
-            -78.45,
-            164.16
-          ]
         }
       ]
     },
@@ -880,7 +1226,7 @@
       "enemyIndex": 23,
       "name": "Honored Raptor",
       "count": 5,
-      "health": 768494,
+      "health": 3243255,
       "creatureType": "Undead",
       "scale": 1.5,
       "isBoss": false,
@@ -889,24 +1235,37 @@
         "Disorient",
         "Stun"
       ],
-      "spells": [],
+      "spells": [
+        {
+          "id": 270500,
+          "attributes": []
+        },
+        {
+          "id": 270502,
+          "attributes": []
+        },
+        {
+          "id": 270503,
+          "attributes": []
+        }
+      ],
       "spawns": [
         {
           "id": "23-1",
           "idx": 1,
-          "group": 23,
+          "group": 26,
           "pos": [
-            -92.28,
-            157.9
+            -168.55,
+            168.24
           ]
         },
         {
           "id": "23-2",
           "idx": 2,
-          "group": 23,
+          "group": 26,
           "pos": [
-            -92.59,
-            170.12
+            -168.39,
+            160.22
           ]
         },
         {
@@ -914,8 +1273,8 @@
           "idx": 5,
           "group": 24,
           "pos": [
-            -114.06,
-            158.36
+            -107.47,
+            159.64
           ]
         },
         {
@@ -923,8 +1282,8 @@
           "idx": 6,
           "group": 24,
           "pos": [
-            -113.82,
-            170.25
+            -107.44,
+            168.55
           ]
         }
       ]
@@ -933,8 +1292,8 @@
       "id": 138489,
       "enemyIndex": 24,
       "name": "Shadow of Zul",
-      "count": 8,
-      "health": 2612880,
+      "count": 30,
+      "health": 8432462,
       "creatureType": "Humanoid",
       "scale": 2.5,
       "isBoss": false,
@@ -959,14 +1318,75 @@
       "enemyIndex": 25,
       "name": "King Dazar",
       "count": 0,
-      "health": 5994255,
+      "health": 30405514,
       "creatureType": "Undead",
       "scale": 2,
       "isBoss": true,
       "characteristics": [
         "Taunt"
       ],
-      "spells": [],
+      "spells": [
+        {
+          "id": 268586,
+          "attributes": []
+        },
+        {
+          "id": 268587,
+          "attributes": []
+        },
+        {
+          "id": 268589,
+          "attributes": []
+        },
+        {
+          "id": 268590,
+          "attributes": []
+        },
+        {
+          "id": 268591,
+          "attributes": []
+        },
+        {
+          "id": 269503,
+          "attributes": []
+        },
+        {
+          "id": 1302945,
+          "attributes": []
+        },
+        {
+          "id": 1303105,
+          "attributes": []
+        },
+        {
+          "id": 1303111,
+          "attributes": []
+        },
+        {
+          "id": 1303115,
+          "attributes": []
+        },
+        {
+          "id": 1303267,
+          "attributes": []
+        },
+        {
+          "id": 1303372,
+          "attributes": []
+        },
+        {
+          "id": 1303374,
+          "attributes": []
+        },
+        {
+          "id": 1303396,
+          "attributes": []
+        },
+        {
+          "id": 1303399,
+          "attributes": []
+        }
+      ],
       "spawns": [
         {
           "id": "25-1",
@@ -984,7 +1404,7 @@
       "enemyIndex": 26,
       "name": "Embalming Fluid",
       "count": 1,
-      "health": 461096,
+      "health": 1945953,
       "creatureType": "Aberration",
       "scale": 0.7,
       "isBoss": false,
@@ -996,7 +1416,18 @@
         "Stun",
         "Slow"
       ],
-      "spells": [],
+      "spells": [
+        {
+          "id": 271563,
+          "attributes": []
+        },
+        {
+          "id": 1298104,
+          "attributes": [
+            "poison"
+          ]
+        }
+      ],
       "spawns": [
         {
           "id": "26-1",
@@ -1046,7 +1477,7 @@
         {
           "id": "26-6",
           "idx": 6,
-          "group": 14,
+          "group": 16,
           "pos": [
             -80.35,
             210.79
@@ -1055,7 +1486,7 @@
         {
           "id": "26-7",
           "idx": 7,
-          "group": 14,
+          "group": 16,
           "pos": [
             -80.72,
             213.86
@@ -1064,7 +1495,7 @@
         {
           "id": "26-8",
           "idx": 8,
-          "group": 15,
+          "group": 16,
           "pos": [
             -79.83,
             194.71
@@ -1073,7 +1504,7 @@
         {
           "id": "26-9",
           "idx": 9,
-          "group": 15,
+          "group": 16,
           "pos": [
             -82.19,
             197.03
@@ -1082,7 +1513,7 @@
         {
           "id": "26-10",
           "idx": 10,
-          "group": 17,
+          "group": 18,
           "pos": [
             -64.48,
             195.11
@@ -1091,7 +1522,7 @@
         {
           "id": "26-11",
           "idx": 11,
-          "group": 17,
+          "group": 18,
           "pos": [
             -64.57,
             198.06
@@ -1100,7 +1531,7 @@
         {
           "id": "26-12",
           "idx": 12,
-          "group": 17,
+          "group": 18,
           "pos": [
             -66.87,
             196.26
@@ -1109,7 +1540,7 @@
         {
           "id": "26-13",
           "idx": 13,
-          "group": 19,
+          "group": 18,
           "pos": [
             -55.55,
             192.86
@@ -1118,7 +1549,7 @@
         {
           "id": "26-14",
           "idx": 14,
-          "group": 19,
+          "group": 18,
           "pos": [
             -58.61,
             192.93
@@ -1158,12 +1589,21 @@
       "enemyIndex": 27,
       "name": "Disruption Totem",
       "count": 0,
-      "health": 10000,
+      "health": 324326,
       "creatureType": "Totem",
       "scale": 1.5,
       "isBoss": false,
       "characteristics": [],
-      "spells": [],
+      "spells": [
+        {
+          "id": 267257,
+          "attributes": []
+        },
+        {
+          "id": 1309499,
+          "attributes": []
+        }
+      ],
       "spawns": [
         {
           "id": "27-1",
@@ -1181,12 +1621,21 @@
       "enemyIndex": 28,
       "name": "Explosive Totem",
       "count": 0,
-      "health": 10000,
+      "health": 374121,
       "creatureType": "Totem",
       "scale": 1.5,
       "isBoss": false,
       "characteristics": [],
-      "spells": [],
+      "spells": [
+        {
+          "id": 267077,
+          "attributes": []
+        },
+        {
+          "id": 1309499,
+          "attributes": []
+        }
+      ],
       "spawns": [
         {
           "id": "28-1",
@@ -1204,12 +1653,21 @@
       "enemyIndex": 29,
       "name": "Torrent Totem",
       "count": 0,
-      "health": 10000,
+      "health": 324326,
       "creatureType": "Totem",
       "scale": 1.5,
       "isBoss": false,
       "characteristics": [],
-      "spells": [],
+      "spells": [
+        {
+          "id": 267105,
+          "attributes": []
+        },
+        {
+          "id": 1309499,
+          "attributes": []
+        }
+      ],
       "spawns": [
         {
           "id": "29-1",
@@ -1227,7 +1685,7 @@
       "enemyIndex": 30,
       "name": "Coffin",
       "count": 0,
-      "health": 10000,
+      "health": 540543,
       "creatureType": "Not specified",
       "scale": 1,
       "isBoss": false,
@@ -1250,12 +1708,41 @@
       "enemyIndex": 31,
       "name": "T'zala",
       "count": 0,
-      "health": 10000,
+      "health": 27027123,
       "creatureType": "Undead",
       "scale": 2,
       "isBoss": false,
       "characteristics": [],
-      "spells": [],
+      "spells": [
+        {
+          "id": 1303324,
+          "attributes": []
+        },
+        {
+          "id": 1303326,
+          "attributes": []
+        },
+        {
+          "id": 1303327,
+          "attributes": []
+        },
+        {
+          "id": 1303396,
+          "attributes": []
+        },
+        {
+          "id": 1303399,
+          "attributes": []
+        },
+        {
+          "id": 1303488,
+          "attributes": []
+        },
+        {
+          "id": 1303490,
+          "attributes": []
+        }
+      ],
       "spawns": [
         {
           "id": "31-1",
@@ -1273,12 +1760,35 @@
       "enemyIndex": 32,
       "name": "Reban",
       "count": 0,
-      "health": 10000,
+      "health": 3783797,
       "creatureType": "Undead",
       "scale": 2,
       "isBoss": false,
       "characteristics": [],
-      "spells": [],
+      "spells": [
+        {
+          "id": 269230,
+          "attributes": []
+        },
+        {
+          "id": 269231,
+          "attributes": []
+        },
+        {
+          "id": 269232,
+          "attributes": []
+        },
+        {
+          "id": 269369,
+          "attributes": [
+            "interruptible"
+          ]
+        },
+        {
+          "id": 1303039,
+          "attributes": []
+        }
+      ],
       "spawns": [
         {
           "id": "32-1",
@@ -1296,12 +1806,19 @@
       "enemyIndex": 33,
       "name": "Minion of Zul",
       "count": 0,
-      "health": 10000,
+      "health": 243242,
       "creatureType": "Aberration",
       "scale": 1,
       "isBoss": false,
       "characteristics": [],
-      "spells": [],
+      "spells": [
+        {
+          "id": 269935,
+          "attributes": [
+            "magic"
+          ]
+        }
+      ],
       "spawns": [
         {
           "id": "33-1",
@@ -1319,12 +1836,29 @@
       "enemyIndex": 34,
       "name": "Aka'ali the Conqueror",
       "count": 0,
-      "health": 10000,
+      "health": 8108137,
       "creatureType": "Undead",
       "scale": 1.5,
       "isBoss": true,
       "characteristics": [],
-      "spells": [],
+      "spells": [
+        {
+          "id": 266237,
+          "attributes": []
+        },
+        {
+          "id": 266951,
+          "attributes": []
+        },
+        {
+          "id": 267494,
+          "attributes": []
+        },
+        {
+          "id": 1310761,
+          "attributes": []
+        }
+      ],
       "spawns": [
         {
           "id": "34-1",
@@ -1342,12 +1876,28 @@
       "enemyIndex": 35,
       "name": "Zanazal the Wise",
       "count": 0,
-      "health": 10000,
+      "health": 10135171,
       "creatureType": "Undead",
       "scale": 1.5,
       "isBoss": true,
       "characteristics": [],
-      "spells": [],
+      "spells": [
+        {
+          "id": 267060,
+          "attributes": []
+        },
+        {
+          "id": 267273,
+          "attributes": [
+            "interruptible",
+            "poison"
+          ]
+        },
+        {
+          "id": 1305810,
+          "attributes": []
+        }
+      ],
       "spawns": [
         {
           "id": "35-1",
@@ -1365,12 +1915,29 @@
       "enemyIndex": 36,
       "name": "Kula the Butcher",
       "count": 0,
-      "health": 10000,
+      "health": 5405425,
       "creatureType": "Undead",
       "scale": 1.5,
       "isBoss": true,
       "characteristics": [],
-      "spells": [],
+      "spells": [
+        {
+          "id": 266191,
+          "attributes": [
+            "bleed"
+          ]
+        },
+        {
+          "id": 266206,
+          "attributes": []
+        },
+        {
+          "id": 266231,
+          "attributes": [
+            "bleed"
+          ]
+        }
+      ],
       "spawns": [
         {
           "id": "36-1",
@@ -1388,20 +1955,28 @@
       "enemyIndex": 37,
       "name": "Half-Finished Mummy",
       "count": 7,
-      "health": 10000,
+      "health": 3243255,
       "creatureType": "Undead",
       "scale": 1.5,
       "isBoss": false,
       "characteristics": [],
-      "spells": [],
+      "spells": [
+        {
+          "id": 267763,
+          "attributes": [
+            "interruptible",
+            "disease"
+          ]
+        }
+      ],
       "spawns": [
         {
           "id": "37-1",
           "idx": 1,
           "group": 13,
           "pos": [
-            -73.13,
-            229.59
+            -73.52,
+            229.78
           ]
         },
         {
@@ -1409,8 +1984,8 @@
           "idx": 2,
           "group": 13,
           "pos": [
-            -90.55,
-            230.47
+            -85.81,
+            230.18
           ]
         },
         {
@@ -1438,20 +2013,29 @@
       "enemyIndex": 38,
       "name": "Animated Gold",
       "count": 0,
-      "health": 10000,
+      "health": 224807,
       "creatureType": "Aberration",
       "scale": 1,
       "isBoss": false,
       "characteristics": [],
-      "spells": [],
+      "spells": [
+        {
+          "id": 265991,
+          "attributes": []
+        },
+        {
+          "id": 1289063,
+          "attributes": []
+        }
+      ],
       "spawns": [
         {
           "id": "38-1",
           "idx": 1,
           "group": null,
           "pos": [
-            -199.18,
-            344.02
+            -178.76,
+            346.57
           ]
         },
         {
@@ -1497,7 +2081,7 @@
       "enemyIndex": 39,
       "name": "Healing Tide Totem",
       "count": 0,
-      "health": 10000,
+      "health": 374121,
       "creatureType": "Totem",
       "scale": 1,
       "isBoss": false,
@@ -1518,54 +2102,8 @@
           "idx": 2,
           "group": 24,
           "pos": [
-            -108.9,
-            164.25
-          ]
-        }
-      ]
-    },
-    {
-      "id": 138250,
-      "enemyIndex": 40,
-      "name": "Pool of Darkness",
-      "count": 0,
-      "health": 10000,
-      "creatureType": "Not specified",
-      "scale": 1,
-      "isBoss": false,
-      "characteristics": [],
-      "spells": [],
-      "spawns": [
-        {
-          "id": "40-1",
-          "idx": 1,
-          "group": null,
-          "pos": [
-            -91.53,
-            91.53
-          ]
-        }
-      ]
-    },
-    {
-      "id": 273050,
-      "enemyIndex": 41,
-      "name": "Half-Finished Mummy",
-      "count": 0,
-      "health": 10000,
-      "creatureType": "Undead",
-      "scale": 1,
-      "isBoss": false,
-      "characteristics": [],
-      "spells": [],
-      "spawns": [
-        {
-          "id": "41-1",
-          "idx": 1,
-          "group": null,
-          "pos": [
-            -91.53,
-            100.69
+            -106.92,
+            164.36
           ]
         }
       ]

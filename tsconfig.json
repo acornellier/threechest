@@ -22,5 +22,5 @@
     "noUncheckedIndexedAccess": true,
     "verbatimModuleSyntax": true
   },
-  "include": ["src", "scripts", "server"]
+  "include": ["src", "scripts", "server", "vite"]
 }

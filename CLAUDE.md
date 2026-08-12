@@ -65,6 +65,9 @@ Vercel Blob minimum) and points at immutable version-hashed payloads, so all dun
 consistent with each other. `yarn rankings:download` restores the local working dir; `yarn r` skips
 routes whose file already exists, so skipping the download makes a sync run re-fetch all of WCL.
 
+To inspect a local `yarn r` run without publishing, set `VITE_RANKINGS_BASE_URL=http://localhost:5173`
+— `vite/localRankingsPlugin.ts` serves the local `<dungeon>/` folders in the blob layout (dev only).
+
 `SpawnId` strings (e.g. `"12-3"`) identify individual mob spawns: `enemyIndex-spawnIndex`. These are the atomic units stored in `Pull.spawns`.
 
 ### Backend (server/)

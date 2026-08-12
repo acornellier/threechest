@@ -1,5 +1,3 @@
-import fs from 'fs'
-import * as path from 'path'
 import crypto from 'crypto'
 import { del, list, put } from '@vercel/blob'
 import { type DungeonKey, dungeonKeys } from '../src/data/dungeonKeys.ts'
@@ -7,9 +5,9 @@ import type { SampleRoute } from '../src/util/types.ts'
 import {
   blobPrefix,
   dungeonBlobPath,
-  dungeonFolder,
   manifestPath,
   type RankingsManifest,
+  readDungeonRoutes,
   versionFromBlobPath,
 } from './rankingsFiles.ts'
 import { fetchCurrentManifest, fetchDungeonRoutes } from './rankingsBlob.ts'
@@ -26,20 +24,6 @@ const immutableMaxAge = 31536000
 
 /** Vercel Blob rejects anything under 60s, so this is the floor on manifest staleness. */
 const manifestMaxAge = 60
-
-function readDungeonRoutes(dungeonKey: DungeonKey): SampleRoute[] {
-  const folder = dungeonFolder(dungeonKey)
-  if (!fs.existsSync(folder)) {
-    return []
-  }
-
-  // Sorted so the version hash is stable regardless of filesystem ordering.
-  return fs
-    .readdirSync(folder)
-    .filter((file) => file.endsWith('.json'))
-    .sort()
-    .map((file) => JSON.parse(fs.readFileSync(path.join(folder, file)).toString()) as SampleRoute)
-}
 
 const payloads = new Map<DungeonKey, string>()
 const counts = new Map<DungeonKey, number>()

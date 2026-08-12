@@ -7,7 +7,7 @@
       "enemyIndex": 1,
       "name": "Lost Sethrak",
       "count": 4,
-      "health": 10000,
+      "health": 2918930,
       "creatureType": "Humanoid",
       "scale": 1.5,
       "isBoss": false,
@@ -156,7 +156,7 @@
       "enemyIndex": 2,
       "name": "Feral Saberon",
       "count": 4,
-      "health": 10000,
+      "health": 3405418,
       "creatureType": "Humanoid",
       "scale": 1.5,
       "isBoss": false,
@@ -302,7 +302,7 @@
       "enemyIndex": 3,
       "name": "Sycophantic Tarasek",
       "count": 4,
-      "health": 10000,
+      "health": 2918930,
       "creatureType": "Dragonkin",
       "scale": 1.5,
       "isBoss": false,
@@ -401,7 +401,7 @@
       "enemyIndex": 4,
       "name": "Longtooth Tuskarr",
       "count": 5,
-      "health": 10000,
+      "health": 3243255,
       "creatureType": "Humanoid",
       "scale": 1.5,
       "isBoss": false,
@@ -491,7 +491,7 @@
       "enemyIndex": 5,
       "name": "Dominated Brawler",
       "count": 7,
-      "health": 10000,
+      "health": 3891906,
       "creatureType": "Humanoid",
       "scale": 1.5,
       "isBoss": false,
@@ -527,24 +527,6 @@
           "pos": [
             -86.67,
             39.9
-          ]
-        },
-        {
-          "id": "5-9",
-          "idx": 9,
-          "group": 32,
-          "pos": [
-            -53.11,
-            48.1
-          ]
-        },
-        {
-          "id": "5-10",
-          "idx": 10,
-          "group": 32,
-          "pos": [
-            -53.05,
-            54.11
           ]
         },
         {
@@ -608,7 +590,7 @@
       "enemyIndex": 6,
       "name": "Enthralled Shaman",
       "count": 7,
-      "health": 10000,
+      "health": 6227050,
       "creatureType": "Humanoid",
       "scale": 1.5,
       "isBoss": false,
@@ -663,24 +645,6 @@
           ]
         },
         {
-          "id": "6-7",
-          "idx": 7,
-          "group": 32,
-          "pos": [
-            -45.64,
-            48.5
-          ]
-        },
-        {
-          "id": "6-8",
-          "idx": 8,
-          "group": 32,
-          "pos": [
-            -45.83,
-            54.19
-          ]
-        },
-        {
           "id": "6-9",
           "idx": 9,
           "group": 38,
@@ -732,7 +696,7 @@
       "enemyIndex": 7,
       "name": "Voidtouched Magi",
       "count": 25,
-      "health": 10000,
+      "health": 5513534,
       "creatureType": "Humanoid",
       "scale": 2.52,
       "isBoss": false,
@@ -760,15 +724,6 @@
           ]
         },
         {
-          "id": "7-3",
-          "idx": 3,
-          "group": 31,
-          "pos": [
-            -49.43,
-            66.03
-          ]
-        },
-        {
           "id": "7-4",
           "idx": 4,
           "group": 43,
@@ -793,7 +748,7 @@
       "enemyIndex": 8,
       "name": "Brutal Overseer",
       "count": 25,
-      "health": 10000,
+      "health": 5675696,
       "creatureType": "Humanoid",
       "scale": 2.2,
       "isBoss": false,
@@ -805,6 +760,10 @@
         },
         {
           "id": 1228127,
+          "attributes": []
+        },
+        {
+          "id": 1261645,
           "attributes": []
         },
         {
@@ -960,7 +919,7 @@
       "enemyIndex": 10,
       "name": "Raj'kess the Spellstorm",
       "count": 40,
-      "health": 10000,
+      "health": 7459487,
       "creatureType": "Humanoid",
       "scale": 2.5,
       "isBoss": false,
@@ -989,6 +948,18 @@
         {
           "id": 1299273,
           "attributes": []
+        },
+        {
+          "id": 1311712,
+          "attributes": []
+        },
+        {
+          "id": 1311747,
+          "attributes": []
+        },
+        {
+          "id": 1311754,
+          "attributes": []
         }
       ],
       "spawns": [
@@ -1008,7 +979,7 @@
       "enemyIndex": 11,
       "name": "Chitigoth",
       "count": 25,
-      "health": 10000,
+      "health": 5837859,
       "creatureType": "Beast",
       "scale": 2.2,
       "isBoss": false,
@@ -1054,7 +1025,7 @@
       "enemyIndex": 12,
       "name": "Raging Raptor",
       "count": 5,
-      "health": 10000,
+      "health": 3891906,
       "creatureType": "Beast",
       "scale": 1.5,
       "isBoss": false,
@@ -1084,7 +1055,7 @@
       "enemyIndex": 13,
       "name": "Protective Turtle",
       "count": 5,
-      "health": 10000,
+      "health": 1945953,
       "creatureType": "Beast",
       "scale": 1.5,
       "isBoss": false,
@@ -1126,7 +1097,7 @@
       "enemyIndex": 14,
       "name": "Brutok",
       "count": 25,
-      "health": 10000,
+      "health": 7135161,
       "creatureType": "Beast",
       "scale": 2.2,
       "isBoss": false,
@@ -1176,7 +1147,7 @@
       "enemyIndex": 15,
       "name": "Abducted Drakonid",
       "count": 5,
-      "health": 10000,
+      "health": 3243255,
       "creatureType": "Dragonkin",
       "scale": 1.5,
       "isBoss": false,
@@ -1216,7 +1187,7 @@
       "enemyIndex": 16,
       "name": "Angry Krolusk",
       "count": 8,
-      "health": 10000,
+      "health": 3567581,
       "creatureType": "Beast",
       "scale": 1.5,
       "isBoss": false,
@@ -1246,7 +1217,7 @@
       "enemyIndex": 17,
       "name": "Savage Shredclaw",
       "count": 5,
-      "health": 10000,
+      "health": 3405418,
       "creatureType": "Beast",
       "scale": 1.5,
       "isBoss": false,
@@ -1436,7 +1407,7 @@
       "enemyIndex": 18,
       "name": "Kilivore Screamer",
       "count": 7,
-      "health": 10000,
+      "health": 6227050,
       "creatureType": "Beast",
       "scale": 1.5,
       "isBoss": false,
@@ -1592,7 +1563,7 @@
       "enemyIndex": 19,
       "name": "Agitated Voidscythe",
       "count": 25,
-      "health": 10000,
+      "health": 5189208,
       "creatureType": "Beast",
       "scale": 2.2,
       "isBoss": false,
@@ -1614,6 +1585,10 @@
         },
         {
           "id": 1289265,
+          "attributes": []
+        },
+        {
+          "id": 1311778,
           "attributes": []
         }
       ],
@@ -1697,7 +1672,7 @@
       "enemyIndex": 20,
       "name": "Blistercreep",
       "count": 1,
-      "health": 10000,
+      "health": 698699,
       "creatureType": "Beast",
       "scale": 0.9,
       "isBoss": false,
@@ -1824,7 +1799,7 @@
       "enemyIndex": 21,
       "name": "Watchful Harrower",
       "count": 65,
-      "health": 10000,
+      "health": 8756789,
       "creatureType": "Beast",
       "scale": 2.2,
       "isBoss": false,
@@ -1880,6 +1855,15 @@
             -121.14,
             325.04
           ]
+        },
+        {
+          "id": "21-4",
+          "idx": 4,
+          "group": 32,
+          "pos": [
+            -49.77,
+            54.44
+          ]
         }
       ]
     },
@@ -1888,7 +1872,7 @@
       "enemyIndex": 22,
       "name": "Devouring Brutalizer",
       "count": 30,
-      "health": 10000,
+      "health": 6227050,
       "creatureType": "Humanoid",
       "scale": 2.2,
       "isBoss": false,
@@ -1964,7 +1948,7 @@
       "enemyIndex": 23,
       "name": "Scavenging Siphoid",
       "count": 1,
-      "health": 10000,
+      "health": 1297302,
       "creatureType": "Aberration",
       "scale": 0.6,
       "isBoss": false,
@@ -2527,7 +2511,7 @@
       "enemyIndex": 24,
       "name": "Voidminder",
       "count": 7,
-      "health": 10000,
+      "health": 6227050,
       "creatureType": "Aberration",
       "scale": 1.5,
       "isBoss": false,
@@ -2606,7 +2590,7 @@
       "enemyIndex": 25,
       "name": "Taz'Rah",
       "count": 0,
-      "health": 10000,
+      "health": 21283860,
       "creatureType": "Humanoid",
       "scale": 1.7,
       "isBoss": true,
@@ -2654,7 +2638,7 @@
       "enemyIndex": 26,
       "name": "Atroxus",
       "count": 0,
-      "health": 10000,
+      "health": 21283860,
       "creatureType": "Beast",
       "scale": 2.5,
       "isBoss": true,
@@ -2726,7 +2710,7 @@
       "enemyIndex": 27,
       "name": "Charonus",
       "count": 0,
-      "health": 10000,
+      "health": 24324411,
       "creatureType": "Aberration",
       "scale": 2.5,
       "isBoss": true,
@@ -2759,6 +2743,10 @@
         {
           "id": 1310025,
           "attributes": []
+        },
+        {
+          "id": 1311923,
+          "attributes": []
         }
       ],
       "spawns": [
@@ -2778,7 +2766,7 @@
       "enemyIndex": 28,
       "name": "Toxic Creeper",
       "count": 0,
-      "health": 10000,
+      "health": 945949,
       "creatureType": "Beast",
       "scale": 1.7,
       "isBoss": false,
@@ -2844,8 +2832,8 @@
           "idx": 1,
           "group": null,
           "pos": [
-            -31.54,
-            187.39
+            -31.97,
+            191.01
           ]
         }
       ]
@@ -2855,7 +2843,7 @@
       "enemyIndex": 30,
       "name": "Ethereal Shade",
       "count": 0,
-      "health": 10000,
+      "health": 817478,
       "creatureType": "Humanoid",
       "scale": 1,
       "isBoss": false,
@@ -2927,7 +2915,7 @@
       "enemyIndex": 32,
       "name": "Gravitic Orb",
       "count": 0,
-      "health": 10000,
+      "health": 540543,
       "creatureType": "Not specified",
       "scale": 1,
       "isBoss": false,

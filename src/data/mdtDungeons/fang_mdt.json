@@ -1,18 +1,22 @@
 {
   "dungeonIndex": 164,
-  "totalCount": 836,
+  "totalCount": 817,
   "enemies": [
     {
       "id": 270306,
       "enemyIndex": 1,
       "name": "Ritual Chieftain",
       "count": 25,
-      "health": 4664120,
+      "health": 5189208,
       "creatureType": "Humanoid",
       "scale": 1.8,
       "isBoss": false,
       "characteristics": [],
       "spells": [
+        {
+          "id": 1221063,
+          "attributes": []
+        },
         {
           "id": 1306517,
           "attributes": []
@@ -35,10 +39,6 @@
         },
         {
           "id": 1306911,
-          "attributes": []
-        },
-        {
-          "id": 1221063,
           "attributes": []
         }
       ],
@@ -104,18 +104,18 @@
       "enemyIndex": 2,
       "name": "Bloodletter",
       "count": 5,
-      "health": 2915075,
+      "health": 3243255,
       "creatureType": "Beast",
       "scale": 1.2,
       "isBoss": false,
       "characteristics": [],
       "spells": [
         {
-          "id": 1307526,
+          "id": 1221063,
           "attributes": []
         },
         {
-          "id": 1221063,
+          "id": 1307526,
           "attributes": []
         }
       ],
@@ -271,12 +271,16 @@
       "enemyIndex": 3,
       "name": "High Evolutionist",
       "count": 7,
-      "health": 2623568,
+      "health": 2918930,
       "creatureType": "Humanoid",
       "scale": 1.2,
       "isBoss": false,
       "characteristics": [],
       "spells": [
+        {
+          "id": 1221063,
+          "attributes": []
+        },
         {
           "id": 1287544,
           "attributes": []
@@ -310,10 +314,6 @@
         },
         {
           "id": 1307602,
-          "attributes": []
-        },
-        {
-          "id": 1221063,
           "attributes": []
         }
       ],
@@ -433,18 +433,18 @@
       "enemyIndex": 4,
       "name": "Hatchling",
       "count": 0,
-      "health": 874523,
+      "health": 972977,
       "creatureType": "Beast",
       "scale": 1,
       "isBoss": false,
       "characteristics": [],
       "spells": [
         {
-          "id": 1306383,
+          "id": 1221063,
           "attributes": []
         },
         {
-          "id": 1221063,
+          "id": 1306383,
           "attributes": []
         }
       ],
@@ -465,7 +465,7 @@
       "enemyIndex": 5,
       "name": "Living Venom",
       "count": 1,
-      "health": 1166030,
+      "health": 1297302,
       "creatureType": "Elemental",
       "scale": 1,
       "isBoss": false,
@@ -652,12 +652,16 @@
       "enemyIndex": 6,
       "name": "Primal Serpent",
       "count": 7,
-      "health": 2623568,
+      "health": 2918930,
       "creatureType": "Beast",
       "scale": 1.2,
       "isBoss": false,
       "characteristics": [],
       "spells": [
+        {
+          "id": 1221063,
+          "attributes": []
+        },
         {
           "id": 1294557,
           "attributes": [
@@ -666,10 +670,6 @@
         },
         {
           "id": 1306381,
-          "attributes": []
-        },
-        {
-          "id": 1221063,
           "attributes": []
         }
       ],
@@ -729,21 +729,12 @@
           ]
         },
         {
-          "id": "6-7",
-          "idx": 7,
-          "group": 5,
-          "pos": [
-            -90.36,
-            22.23
-          ]
-        },
-        {
           "id": "6-8",
           "idx": 8,
           "group": 5,
           "pos": [
-            -98.06,
-            22.15
+            -94.65,
+            20.45
           ]
         },
         {
@@ -751,17 +742,8 @@
           "idx": 9,
           "group": 7,
           "pos": [
-            -86.74,
-            95.9
-          ]
-        },
-        {
-          "id": "6-10",
-          "idx": 10,
-          "group": 7,
-          "pos": [
-            -100.53,
-            95.69
+            -93.76,
+            102.28
           ]
         },
         {
@@ -825,12 +807,16 @@
       "enemyIndex": 7,
       "name": "Ravenous Descendant",
       "count": 5,
-      "health": 3206583,
+      "health": 3567581,
       "creatureType": "Humanoid",
       "scale": 1.2,
       "isBoss": false,
       "characteristics": [],
       "spells": [
+        {
+          "id": 1221063,
+          "attributes": []
+        },
         {
           "id": 1306308,
           "attributes": [
@@ -843,10 +829,6 @@
         },
         {
           "id": 1306338,
-          "attributes": []
-        },
-        {
-          "id": 1221063,
           "attributes": []
         }
       ],
@@ -933,21 +915,12 @@
           ]
         },
         {
-          "id": "7-10",
-          "idx": 10,
-          "group": 7,
-          "pos": [
-            -90.66,
-            100.74
-          ]
-        },
-        {
           "id": "7-11",
           "idx": 11,
           "group": 7,
           "pos": [
-            -97.28,
-            100.12
+            -86.22,
+            95.44
           ]
         },
         {
@@ -987,15 +960,6 @@
           ]
         },
         {
-          "id": "7-16",
-          "idx": 16,
-          "group": 13,
-          "pos": [
-            -133.1,
-            60.99
-          ]
-        },
-        {
           "id": "7-17",
           "idx": 17,
           "group": 13,
@@ -1030,6 +994,15 @@
             -135.14,
             68.19
           ]
+        },
+        {
+          "id": "7-21",
+          "idx": 21,
+          "group": 7,
+          "pos": [
+            -100.97,
+            95.65
+          ]
         }
       ]
     },
@@ -1038,7 +1011,7 @@
       "enemyIndex": 8,
       "name": "Ula'tek's Chosen",
       "count": 25,
-      "health": 4372613,
+      "health": 4864883,
       "creatureType": "Humanoid",
       "scale": 1.8,
       "isBoss": false,
@@ -1064,6 +1037,10 @@
           "attributes": []
         },
         {
+          "id": 1306856,
+          "attributes": []
+        },
+        {
           "id": 1307567,
           "attributes": [
             "interruptible"
@@ -1074,10 +1051,6 @@
           "attributes": [
             "poison"
           ]
-        },
-        {
-          "id": 1306856,
-          "attributes": []
         }
       ],
       "spawns": [
@@ -1124,12 +1097,16 @@
       "enemyIndex": 9,
       "name": "Ascendant Serpent",
       "count": 30,
-      "health": 9328240,
+      "health": 9081114,
       "creatureType": "Beast",
       "scale": 2,
       "isBoss": false,
       "characteristics": [],
       "spells": [
+        {
+          "id": 1221063,
+          "attributes": []
+        },
         {
           "id": 1293420,
           "attributes": []
@@ -1173,10 +1150,6 @@
         {
           "id": 1309416,
           "attributes": []
-        },
-        {
-          "id": 1221063,
-          "attributes": []
         }
       ],
       "spawns": [
@@ -1196,14 +1169,22 @@
       "enemyIndex": 10,
       "name": "Twinfang Harrower",
       "count": 25,
-      "health": 4955628,
+      "health": 5513534,
       "creatureType": "Beast",
       "scale": 1.8,
       "isBoss": false,
       "characteristics": [],
       "spells": [
         {
+          "id": 1221063,
+          "attributes": []
+        },
+        {
           "id": 1294567,
+          "attributes": []
+        },
+        {
+          "id": 1294568,
           "attributes": []
         },
         {
@@ -1211,6 +1192,10 @@
           "attributes": [
             "magic"
           ]
+        },
+        {
+          "id": 1294570,
+          "attributes": []
         },
         {
           "id": 1294572,
@@ -1226,18 +1211,6 @@
         },
         {
           "id": 1307269,
-          "attributes": []
-        },
-        {
-          "id": 1294568,
-          "attributes": []
-        },
-        {
-          "id": 1294570,
-          "attributes": []
-        },
-        {
-          "id": 1221063,
           "attributes": []
         }
       ],
@@ -1285,7 +1258,7 @@
       "enemyIndex": 11,
       "name": "Venom Leech",
       "count": 1,
-      "health": 1749045,
+      "health": 1945953,
       "creatureType": "Beast",
       "scale": 1,
       "isBoss": false,
@@ -1576,12 +1549,16 @@
       "enemyIndex": 12,
       "name": "Rattling Writhe",
       "count": 25,
-      "health": 4955628,
+      "health": 5513534,
       "creatureType": "Beast",
       "scale": 1.8,
       "isBoss": false,
       "characteristics": [],
       "spells": [
+        {
+          "id": 1221063,
+          "attributes": []
+        },
         {
           "id": 1294845,
           "attributes": [
@@ -1594,10 +1571,6 @@
         },
         {
           "id": 1294859,
-          "attributes": []
-        },
-        {
-          "id": 1221063,
           "attributes": []
         }
       ],
@@ -1636,18 +1609,18 @@
       "enemyIndex": 13,
       "name": "Blade of the Altar",
       "count": 5,
-      "health": 2915075,
+      "health": 3243255,
       "creatureType": "Humanoid",
       "scale": 1.2,
       "isBoss": false,
       "characteristics": [],
       "spells": [
         {
-          "id": 1308518,
+          "id": 1221063,
           "attributes": []
         },
         {
-          "id": 1221063,
+          "id": 1308518,
           "attributes": []
         }
       ],
@@ -1848,12 +1821,16 @@
       "enemyIndex": 14,
       "name": "Rav'i",
       "count": 0,
-      "health": 10000,
+      "health": 21216291,
       "creatureType": "Beast",
       "scale": 1.5,
       "isBoss": true,
       "characteristics": [],
       "spells": [
+        {
+          "id": 1296050,
+          "attributes": []
+        },
         {
           "id": 1296058,
           "attributes": []
@@ -1863,6 +1840,14 @@
           "attributes": [
             "disease"
           ]
+        },
+        {
+          "id": 1296216,
+          "attributes": []
+        },
+        {
+          "id": 1296219,
+          "attributes": []
         },
         {
           "id": 1296220,
@@ -1897,6 +1882,10 @@
           "attributes": []
         },
         {
+          "id": 1307703,
+          "attributes": []
+        },
+        {
           "id": 1307765,
           "attributes": []
         },
@@ -1913,22 +1902,6 @@
           "attributes": []
         },
         {
-          "id": 1296050,
-          "attributes": []
-        },
-        {
-          "id": 1296216,
-          "attributes": []
-        },
-        {
-          "id": 1296219,
-          "attributes": []
-        },
-        {
-          "id": 1307703,
-          "attributes": []
-        },
-        {
           "id": 1307921,
           "attributes": []
         },
@@ -1937,11 +1910,11 @@
           "attributes": []
         },
         {
-          "id": 1310413,
+          "id": 1310378,
           "attributes": []
         },
         {
-          "id": 1310378,
+          "id": 1310413,
           "attributes": []
         }
       ],
@@ -1962,12 +1935,16 @@
       "enemyIndex": 15,
       "name": "The Writhing Coil",
       "count": 0,
-      "health": 10000,
+      "health": 30405514,
       "creatureType": "Beast",
       "scale": 1.3,
       "isBoss": true,
       "characteristics": [],
       "spells": [
+        {
+          "id": 1287798,
+          "attributes": []
+        },
         {
           "id": 1287811,
           "attributes": []
@@ -2017,11 +1994,11 @@
           "attributes": []
         },
         {
-          "id": 1287798,
+          "id": 1300503,
           "attributes": []
         },
         {
-          "id": 1300503,
+          "id": 1300612,
           "attributes": []
         },
         {
@@ -2068,7 +2045,7 @@
       "enemyIndex": 16,
       "name": "Zul'jan",
       "count": 0,
-      "health": 10000,
+      "health": 27027123,
       "creatureType": "Humanoid",
       "scale": 1.5,
       "isBoss": true,
@@ -2107,6 +2084,10 @@
           "attributes": []
         },
         {
+          "id": 1301217,
+          "attributes": []
+        },
+        {
           "id": 1301350,
           "attributes": []
         },
@@ -2120,10 +2101,6 @@
         },
         {
           "id": 1301508,
-          "attributes": []
-        },
-        {
-          "id": 1301217,
           "attributes": []
         }
       ],
@@ -2144,12 +2121,16 @@
       "enemyIndex": 17,
       "name": "Uncoiled Writhe",
       "count": 0,
-      "health": 10000,
+      "health": 361821,
       "creatureType": "Beast",
       "scale": 1,
       "isBoss": false,
       "characteristics": [],
       "spells": [
+        {
+          "id": 1221063,
+          "attributes": []
+        },
         {
           "id": 1300503,
           "attributes": []
@@ -2173,8 +2154,10 @@
           "attributes": []
         },
         {
-          "id": 1221063,
-          "attributes": []
+          "id": 1310666,
+          "attributes": [
+            "interruptible"
+          ]
         }
       ],
       "spawns": [
@@ -2203,7 +2186,7 @@
       "enemyIndex": 18,
       "name": "Infused Eggs",
       "count": 0,
-      "health": 10000,
+      "health": 648651,
       "creatureType": "Not specified",
       "scale": 1,
       "isBoss": false,
@@ -2263,7 +2246,7 @@
       "enemyIndex": 20,
       "name": "Ritual Spirit",
       "count": 0,
-      "health": 10000,
+      "health": 5189208,
       "creatureType": "Humanoid",
       "scale": 1,
       "isBoss": false,
@@ -2291,7 +2274,7 @@
       "enemyIndex": 21,
       "name": "Uncoiled Writhe",
       "count": 0,
-      "health": 10000,
+      "health": 32432550,
       "creatureType": "Beast",
       "scale": 1,
       "isBoss": false,
