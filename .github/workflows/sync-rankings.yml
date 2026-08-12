@@ -1,8 +1,9 @@
 name: Sync Rankings
 
 on:
-  schedule:
-    - cron: '0 */6 * * *'
+  # Scheduled runs disabled; trigger manually via workflow_dispatch when needed.
+  # schedule:
+  #   - cron: '0 */6 * * *'
   workflow_dispatch:
 
 jobs:
