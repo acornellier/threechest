@@ -10,54 +10,56 @@ export const dungeonData = (
   mobSpawnsList: Object.values(mdtMobSpawns[key]),
 })
 
+// wclEncounterId values are the PTR (S2_PTR) encounter ids, for the `ptr` branch.
+// Switch each to its `// live:` id when merging to the live S2 season.
 export const dungeons: Dungeon[] = [
   {
-    key: 'magi' as DungeonKey,
-    name: "Magisters' Terrace",
-    icon: 'inv_achievement_dungeon_magistersterrace',
-    wclEncounterId: 12811,
+    key: 'murd' as DungeonKey,
+    name: 'Murder Row',
+    icon: 'inv_achievement_dungeon_murderrow',
+    wclEncounterId: 62813, // live: 12813
   },
   {
-    key: 'cavns' as DungeonKey,
-    name: 'Maisara Caverns',
-    icon: 'inv_achievement_dungeon_maisarahills',
-    wclEncounterId: 12874,
+    key: 'nalo' as DungeonKey,
+    name: 'Den of Nalorakk',
+    icon: 'inv_achievement_dungeon_proveyourworth',
+    wclEncounterId: 62825, // live: 12825
   },
   {
-    key: 'xenas' as DungeonKey,
-    name: 'Nexus-Point Xenas',
-    icon: 'inv_achievement_dungeon_nexuspointxenas',
-    wclEncounterId: 12915,
+    key: 'vale' as DungeonKey,
+    name: 'The Blinding Vale',
+    icon: 'inv_achievement_dungeon_lightbloom',
+    wclEncounterId: 62859, // live: 12859
   },
   {
-    key: 'wind' as DungeonKey,
-    name: 'Windrunner Spire',
-    icon: 'inv_achievement_dungeon_windrunnerspire',
-    wclEncounterId: 12805,
+    key: 'void' as DungeonKey,
+    name: 'Voidscar Arena',
+    icon: 'inv_achievement_dungeon_voidscararena',
+    wclEncounterId: 62923, // live: 12923
   },
   {
-    key: 'aa' as DungeonKey,
-    name: "Algeth'ar Academy",
-    icon: 'achievement_dungeon_dragonacademy',
-    wclEncounterId: 112526,
+    key: 'fang' as DungeonKey,
+    name: 'Altar of Fangs',
+    icon: 'inv_achievement_dungeon_altaroffangs',
+    wclEncounterId: 62993, // live: 12993
   },
   {
-    key: 'pit' as DungeonKey,
-    name: 'Pit of Saron',
-    icon: 'achievement_dungeon_icecrown_pitofsaron',
-    wclEncounterId: 10658,
+    key: 'rlp' as DungeonKey,
+    name: 'Ruby Life Pools',
+    icon: 'achievement_dungeon_lifepools',
+    wclEncounterId: 162521, // live: 112521
   },
   {
-    key: 'seat' as DungeonKey,
-    name: 'Seat of the Triumvirate',
-    icon: 'achievement_dungeon_argusdungeon',
-    wclEncounterId: 361753,
+    key: 'tos' as DungeonKey,
+    name: 'Temple of Sethraliss',
+    icon: 'achievement_dungeon_templeofsethraliss',
+    wclEncounterId: 111877, // live: 61877
   },
   {
-    key: 'sky' as DungeonKey,
-    name: 'Skyreach',
-    icon: 'achievement_dungeon_arakkoaspires',
-    wclEncounterId: 61209,
+    key: 'kr' as DungeonKey,
+    name: "Kings' Rest",
+    icon: 'achievement_dungeon_kingsrest',
+    wclEncounterId: 111762, // live: 61762
   },
 ]
   .map<Dungeon>((dungeon) => ({

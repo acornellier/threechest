@@ -6,7 +6,7 @@ import {
   type WclResult,
   type WclTrace,
 } from './wclCalc.ts'
-import { dungeons } from '../data/dungeons.ts'
+import { s1Dungeons } from './__fixtures__/s1Dungeons.ts'
 import lvzFixture from './__fixtures__/wclRoute-LvZWMHBf3zrk9nFN-12.json'
 import gqwFixture from './__fixtures__/wclRoute-gqw4y97LcfAFnHBX-9.json'
 import kv3Fixture from './__fixtures__/wclRoute-kv3rTjxn2XLQpwKf-9.json'
@@ -15,6 +15,13 @@ import tfkFixture from './__fixtures__/wclRoute-tfKGMcnvPJVhw1y2-1.json'
 import byxFixture from './__fixtures__/wclRoute-byxFGKhMgkAcPp6V-21.json'
 import rgpFixture from './__fixtures__/wclRoute-rGPCqaDyQmJbBLfX-9.json'
 import sixpmFixture from './__fixtures__/wclRoute-6pMc2dJHBh1Q8rGF-13.json'
+
+// These fixtures are Season 1 fights, whose dungeon data is no longer shipped. Inject the
+// snapshotted S1 dungeon (resolved by encounter id) via wclResultToRoute's `dungeon` param.
+const toRoute = (fixture: unknown, maxPasses?: number, trace?: WclTrace) => {
+  const wclResult = fixture as WclResult
+  return wclResultToRoute(wclResult, maxPasses, trace, s1Dungeons[wclResult.encounterID])
+}
 
 // Regression test: two lone Deathwhisper Necrolytes (raw events 20 and 33) each fell to
 // calculateCompositionPull's exact-cover search, which ranked the several identical necrolyte groups
@@ -27,7 +34,7 @@ import sixpmFixture from './__fixtures__/wclRoute-6pMc2dJHBh1Q8rGF-13.json'
 // its own group.
 describe('wclResultToRoute — identical whole groups ranked by nearest covered event', () => {
   it('claims the necrolyte group the event sits on, not a farther identical one', () => {
-    const { route, errors } = wclResultToRoute(kv3Fixture as unknown as WclResult)
+    const { route, errors } = toRoute(kv3Fixture)
     expect(errors).toEqual([])
 
     const pullOf = (spawn: string) => route.pulls.find((pull) => pull.spawns.includes(spawn))
@@ -50,7 +57,7 @@ describe('wclResultToRoute — identical whole groups ranked by nearest covered 
 // singletons instead.
 describe('wclResultToRoute — exact cover rejected when a larger group is farther than singletons', () => {
   it('claims the two near single-shade groups, not the far two-shade group', () => {
-    const { route, errors } = wclResultToRoute(cftFixture as unknown as WclResult)
+    const { route, errors } = toRoute(cftFixture)
     expect(errors).toEqual([])
 
     const pullOf = (spawn: string) => route.pulls.find((pull) => pull.spawns.includes(spawn))
@@ -71,7 +78,7 @@ describe('wclResultToRoute — exact cover rejected when a larger group is farth
 describe('wclResultToRoute — mob split across actors with overlapping instance numbers', () => {
   it('resolves each (actorId, instanceId) as its own mob instead of collapsing the collision', () => {
     const wclResult = gqwFixture as unknown as WclResult
-    const dungeon = dungeons.find((d) => d.wclEncounterId === wclResult.encounterID)!
+    const dungeon = s1Dungeons[wclResult.encounterID]!
 
     const hatchlings = wclResult.events.filter((event) => event.gameId === 234673)
     // Sanity: the fixture really has the split — both actors, with overlapping instance numbers.
@@ -97,49 +104,49 @@ describe('wclResultToRoute — mob split across actors with overlapping instance
 // by the targeted tests above.
 describe('wclResultToRoute — full route pull snapshots', () => {
   it('LvZWMHBf3zrk9nFN-12 (Magister) pulls', () => {
-    const { route, errors } = wclResultToRoute(lvzFixture as unknown as WclResult)
+    const { route, errors } = toRoute(lvzFixture)
     expect(errors).toEqual([])
     expect(route.pulls).toMatchSnapshot()
   })
 
   it('gqw4y97LcfAFnHBX-9 (Windrunner) pulls', () => {
-    const { route, errors } = wclResultToRoute(gqwFixture as unknown as WclResult)
+    const { route, errors } = toRoute(gqwFixture)
     expect(errors).toEqual([])
     expect(route.pulls).toMatchSnapshot()
   })
 
   it('kv3rTjxn2XLQpwKf-9 (Pit) pulls', () => {
-    const { route, errors } = wclResultToRoute(kv3Fixture as unknown as WclResult)
+    const { route, errors } = toRoute(kv3Fixture)
     expect(errors).toEqual([])
     expect(route.pulls).toMatchSnapshot()
   })
 
   it('CfTcvG8NAj3xY7BD-6 (Maisara Caverns) pulls', () => {
-    const { route, errors } = wclResultToRoute(cftFixture as unknown as WclResult)
+    const { route, errors } = toRoute(cftFixture)
     expect(errors).toEqual([])
     expect(route.pulls).toMatchSnapshot()
   })
 
   it('tfKGMcnvPJVhw1y2-1 (Magister 2) pulls', () => {
-    const { route, errors } = wclResultToRoute(tfkFixture as unknown as WclResult)
+    const { route, errors } = toRoute(tfkFixture)
     expect(errors).toEqual([])
     expect(route.pulls).toMatchSnapshot()
   })
 
   it('byxFGKhMgkAcPp6V-21 (Maisara Caverns 2) pulls', () => {
-    const { route, errors } = wclResultToRoute(byxFixture as unknown as WclResult)
+    const { route, errors } = toRoute(byxFixture)
     expect(errors).toEqual([])
     expect(route.pulls).toMatchSnapshot()
   })
 
   it('rGPCqaDyQmJbBLfX-9 (Magister 3) pulls', () => {
-    const { route, errors } = wclResultToRoute(rgpFixture as unknown as WclResult)
+    const { route, errors } = toRoute(rgpFixture)
     expect(errors).toEqual([])
     expect(route.pulls).toMatchSnapshot()
   })
 
   it('6pMc2dJHBh1Q8rGF-13 (Windrunner 2) pulls', () => {
-    const { route, errors } = wclResultToRoute(sixpmFixture as unknown as WclResult)
+    const { route, errors } = toRoute(sixpmFixture)
     expect(errors).toEqual([])
     expect(route.pulls).toMatchSnapshot()
   })
@@ -157,7 +164,7 @@ describe('wclResultToRoute — Brightscale Wyrm swarm composition', () => {
     const wclResult = lvzFixture as unknown as WclResult
     const trace: WclTrace = new Map()
 
-    const { errors } = wclResultToRoute(wclResult, undefined, trace)
+    const { errors } = toRoute(wclResult, undefined, trace)
     expect(errors).toEqual([])
 
     const swarmEvents = wclResult.events.filter(
@@ -189,7 +196,7 @@ describe('wclResultToRoute — coincidental composition match across scattered k
     const wclResult = lvzFixture as unknown as WclResult
     const trace: WclTrace = new Map()
 
-    const { errors } = wclResultToRoute(wclResult, undefined, trace)
+    const { errors } = toRoute(wclResult, undefined, trace)
     expect(errors).toEqual([])
 
     const scatteredEventIds = [72, 73, 75, 77]
@@ -215,7 +222,7 @@ describe('wclResultToRoute — seam-ambiguous magister claimed by the nearer gro
   it('completes group 25 with the magister, leaving group 27 magister on its own', () => {
     const wclResult = lvzFixture as unknown as WclResult
 
-    const { route, errors } = wclResultToRoute(wclResult)
+    const { route, errors } = toRoute(wclResult)
     expect(errors).toEqual([])
 
     const pullOf = (spawn: string) => route.pulls.find((pull) => pull.spawns.includes(spawn))

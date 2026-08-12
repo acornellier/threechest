@@ -1,6 +1,4 @@
-﻿// top left corners
-
-export interface MapOffset {
+﻿export interface MapOffset {
   x: number
   y: number
   scaleX: number

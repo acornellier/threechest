@@ -257,9 +257,12 @@ export function urlToWclInfo(url: string): WclUrlInfo {
   return { code, fightId: fightId === 'last' ? fightId : Number(fightId) }
 }
 
-export function wclResultToRoute(wclResult: WclResult, maxPasses?: number, trace?: WclTrace) {
-  const dungeon = dungeons.find((dungeon) => dungeon.wclEncounterId === wclResult.encounterID)
-
+export function wclResultToRoute(
+  wclResult: WclResult,
+  maxPasses?: number,
+  trace?: WclTrace,
+  dungeon = dungeons.find((dungeon) => dungeon.wclEncounterId === wclResult.encounterID),
+) {
   if (!dungeon) throw new Error(`This WCL dungeon is not yet supported by Threechest.`)
 
   const errors: string[] = []
