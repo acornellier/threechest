@@ -61,12 +61,10 @@ export const dungeons: Dungeon[] = [
     icon: 'achievement_dungeon_kingsrest',
     wclEncounterId: 111762, // live: 61762
   },
-]
-  .map<Dungeon>((dungeon) => ({
-    ...dungeon,
-    ...dungeonData(dungeon.key),
-  }))
-  .sort((a, b) => (a.displayKey ?? a.key).localeCompare(b.displayKey ?? b.key))
+].map<Dungeon>((dungeon) => ({
+  ...dungeon,
+  ...dungeonData(dungeon.key),
+}))
 
 export const dungeonsByKey = dungeons.reduce(
   (acc, dungeon) => {
