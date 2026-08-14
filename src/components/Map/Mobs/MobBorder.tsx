@@ -1,15 +1,11 @@
-import { mobScale } from '../../../util/mobSpawns.ts'
-import type { MobSpawn } from '../../../data/types.ts'
 import type { ReactNode } from 'react'
 
 interface Props {
-  mobSpawn: MobSpawn
-  iconScaling: number
   scale?: number
   children?: ReactNode
 }
 
-export function MobBorder({ iconScaling, mobSpawn, scale = 1, children }: Props) {
+export function MobBorder({ scale = 1, children }: Props) {
   const percentSize = 100 * scale
   const diff = (percentSize - 100) / 2
 
@@ -22,7 +18,7 @@ export function MobBorder({ iconScaling, mobSpawn, scale = 1, children }: Props)
         top: diff ? `-${diff}%` : undefined,
         left: diff ? `-${diff}%` : undefined,
         background: 'linear-gradient(to bottom, #dfdfe3, #373738) border-box',
-        borderWidth: iconScaling * mobScale(mobSpawn) * 0.04,
+        borderWidth: 'calc(var(--icon-size) * 0.04)',
         boxShadow: 'black 0px 0px 10px 0px',
       }}
     >

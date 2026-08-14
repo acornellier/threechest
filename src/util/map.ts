@@ -13,15 +13,3 @@ export const equalPoints = (point1: Point, point2: Point) =>
   point1[0] === point2[0] && point1[1] === point2[1]
 
 export const latLngToPoint = (latLng: LatLngLiteral): Point => [latLng.lat, latLng.lng]
-
-export const cssPixels = (str: string) => Number(str.substring(0, str.length - 2))
-
-export function updateIconZoom(icon: HTMLDivElement, prevScaling: number, newScaling: number) {
-  const curSize = cssPixels(icon.style.height)
-  const iconScale = curSize / prevScaling
-  const newSize = iconScale * newScaling
-  icon.style.height = `${newSize}px`
-  icon.style.width = `${newSize}px`
-  icon.style.marginLeft = `-${newSize / 2}px`
-  icon.style.marginTop = `-${newSize / 2}px`
-}

@@ -1,5 +1,7 @@
 ﻿import { Marker, useMap } from 'react-leaflet'
-import { divIcon, type LeafletEventHandlerFnMap } from 'leaflet'
+import { type LeafletEventHandlerFnMap } from 'leaflet'
+import { scaledDivIcon } from '../../../util/scaledIcon.ts'
+import { mapIconScaling } from '../../../util/map.ts'
 import { renderToString } from 'react-dom/server'
 import { memo, useMemo } from 'react'
 import { mobScale } from '../../../util/mobSpawns.ts'
@@ -17,7 +19,6 @@ import { useRoute, useSelectedPull } from '../../../store/routes/routeHooks.ts'
 import { useAppDispatch, useRootSelector } from '../../../store/storeUtil.ts'
 import { selectIsLive, useMapObjectsHidden } from '../../../store/reducers/mapReducer.ts'
 import { Patrol } from './Patrol.tsx'
-import { mapIconScaling } from '../../../util/map.ts'
 import { BossMarker } from './BossMarker.tsx'
 import { useIconScaling } from '../../../util/hooks/useIconScaling.ts'
 import type { WowMark } from '../../../util/marks.ts'
@@ -76,14 +77,14 @@ function MobSpawnComponent({
     onClose: onCloseMarking,
   } = useContextMenu({ minHeight: markerPopupMinHeight, minWidth: markerPopupMinWidth })
 
-  // Call useIconScaling() to trigger render when it changes
-  // Ignore returned value, and calculate ourselves instead, because it only changes on zoomend
-  // But we want the latest value from the map's current zoom
-  // in case this component renders during a zoom
+  // Icon sizes come from CSS off --icon-scaling; iconSize below only feeds tooltipAnchor, which
+  // Leaflet needs as a number. Call useIconScaling() to re-render on zoomend but read the map's
+  // live zoom, so the anchor is right even if we render mid-zoom.
   useIconScaling()
   const map = useMap()
-  const iconScaling = mapIconScaling(map)
-  const iconSize = iconScaling * mobScale(mobSpawn) * (isActuallyHovered ? 1.15 : 1)
+  const scale = mobScale(mobSpawn)
+  const boxScale = isActuallyHovered ? 1.15 : 1
+  const iconSize = mapIconScaling(map) * scale * boxScale
 
   const eventHandlers: LeafletEventHandlerFnMap = useMemo(
     () => ({
@@ -117,7 +118,6 @@ function MobSpawnComponent({
     () => (
       <MobIcon
         mobSpawn={mobSpawn}
-        iconScaling={iconScaling}
         showCount={(isGroupHovered && !disableHover) || isCtrlKeyDown}
         showGroup={isAltKeyDown && mobSpawn.spawn.group !== null && !isBoxHovering}
         isSelected={isSelected}
@@ -129,7 +129,6 @@ function MobSpawnComponent({
     [
       disableHover,
       faded,
-      iconScaling,
       isGroupHovered,
       isSelected,
       isSearchMatch,
@@ -142,14 +141,15 @@ function MobSpawnComponent({
   )
 
   const icon = useMemo(() => {
-    return divIcon({
-      className: `mob-spawn-icon fade-in-map-object`,
-      tooltipAnchor: [iconSize / 2, 0],
-      iconUrl: `/npc_portaits/${mob.id}.png`,
-      iconSize: [iconSize, iconSize],
-      html: renderToString(mobIcon),
-    })
-  }, [iconSize, mob.id, mobIcon])
+    return scaledDivIcon(
+      {
+        className: `mob-spawn-icon fade-in-map-object`,
+        tooltipAnchor: [iconSize / 2, 0],
+        html: renderToString(mobIcon),
+      },
+      { scale, boxScale },
+    )
+  }, [iconSize, mobIcon, scale, boxScale])
 
   return (
     <>
@@ -175,11 +175,12 @@ function MobSpawnComponent({
         <BossMarker
           spawn={spawn}
           isHovered={isActuallyHovered}
-          iconSize={iconSize}
+          scale={scale}
+          boxScale={boxScale}
           hidden={hidden}
         />
       )}
-      {mark && <MarkMarker spawn={spawn} iconSize={iconSize} mark={mark} />}
+      {mark && <MarkMarker spawn={spawn} scale={scale} boxScale={boxScale} mark={mark} />}
       <Patrol spawn={spawn} isGroupHovered={isGroupHovered} hidden={hidden} />
     </>
   )

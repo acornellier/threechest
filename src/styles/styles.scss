@@ -493,3 +493,16 @@ textarea.fancy {
     outline: none;
   }
 }
+
+// Icon sizing, driven by --icon-scaling on the map container (see IconScaling.tsx) so that zooming
+// costs one property write instead of a pass over every icon. --icon-size is inherited by the
+// icon's contents, which size themselves as a fraction of it.
+.scaled-icon {
+  --icon-size: calc(var(--icon-scaling, 40) * var(--icon-scale, 1) * 1px);
+  --icon-box-size: calc(var(--icon-size) * var(--icon-box-scale, 1));
+
+  width: var(--icon-box-size);
+  height: var(--icon-box-size);
+  margin-left: calc(var(--icon-box-size) / -2);
+  margin-top: calc(var(--icon-box-size) / -2);
+}

@@ -1,4 +1,3 @@
-import { mobScale } from '../../../util/mobSpawns.ts'
 import { getPullColor } from '../../../util/colors.ts'
 import type { MobSpawn } from '../../../data/types.ts'
 import { MobBorder } from './MobBorder.tsx'
@@ -10,14 +9,12 @@ interface Props {
   showGroup: boolean
   isSelected: boolean
   isSearchMatch: boolean
-  iconScaling: number
   faded: boolean
 }
 
 export function MobIcon({
   mobSpawn,
   matchingPullIndex,
-  iconScaling,
   showCount,
   showGroup,
   isSelected,
@@ -26,7 +23,6 @@ export function MobIcon({
 }: Props) {
   return (
     <>
-      {/* mob-border class so that the map zoom handler rescales the border width */}
       {isSearchMatch && (
         <div
           className="mob-search-match mob-border absolute rounded-full pointer-events-none"
@@ -35,12 +31,12 @@ export function MobIcon({
             width: '135%',
             top: '-17.5%',
             left: '-17.5%',
-            borderWidth: iconScaling * mobScale(mobSpawn) * 0.05,
+            borderWidth: 'calc(var(--icon-size) * 0.05)',
           }}
         />
       )}
-      {isSelected && <MobBorder mobSpawn={mobSpawn} iconScaling={iconScaling} scale={1.1} />}
-      <MobBorder mobSpawn={mobSpawn} iconScaling={iconScaling}>
+      {isSelected && <MobBorder scale={1.1} />}
+      <MobBorder>
         <div
           className="absolute h-full w-full"
           style={{
@@ -58,7 +54,7 @@ export function MobIcon({
             <div
               className="text-outline absolute flex items-center justify-center w-full h-full font-bold"
               style={{
-                fontSize: iconScaling * 0.7 * mobScale(mobSpawn) * (showGroup ? 0.8 : 1),
+                fontSize: `calc(var(--icon-size) * ${showGroup ? 0.56 : 0.7})`,
               }}
             >
               {showGroup ? `G${mobSpawn.spawn.group}` : mobSpawn.mob.count}

@@ -1,8 +1,8 @@
 import { memo, useRef } from 'react'
 import { Marker, Tooltip } from 'react-leaflet'
 import type { Marker as LeafletMarker } from 'leaflet'
-import { divIcon } from 'leaflet'
 import { renderToString } from 'react-dom/server'
+import { scaledDivIcon } from '../../../util/scaledIcon.ts'
 import { useMapObjectsHidden } from '../../../store/reducers/mapReducer.ts'
 import type { PointOfInterest as PointOfInterestType } from '../../../data/types.ts'
 import { getIconLink } from '../../../data/spells/spells.ts'
@@ -47,7 +47,6 @@ function getIconSrc(src: string) {
 }
 
 function PointOfInterestComponent({ poi, iconScaling }: Props) {
-  const iconSize = iconScaling
   const hidden = useMapObjectsHidden()
   const markerRef = useRef<LeafletMarker>(null)
 
@@ -62,7 +61,13 @@ function PointOfInterestComponent({ poi, iconScaling }: Props) {
   const label = (isGenericItem ? poi.info!.description : config!.label) ?? ''
   const iconSrc = isGenericItem ? getIconLink(spellIcon!) : getIconSrc(config!.src)
 
-  const img = <img alt={label} src={iconSrc} style={{ height: iconSize, width: iconSize }} />
+  const img = (
+    <img
+      alt={label}
+      src={iconSrc}
+      style={{ height: 'var(--icon-size)', width: 'var(--icon-size)' }}
+    />
+  )
 
   const divClass = 'poi-icon w-full h-full flex items-center justify-center text-black border-none'
   const content = isGenericItem ? (
@@ -82,10 +87,9 @@ function PointOfInterestComponent({ poi, iconScaling }: Props) {
     <Marker
       ref={markerRef}
       position={poi.pos}
-      icon={divIcon({
+      icon={scaledDivIcon({
         className: `poi-icon fade-in-map-object ${hidden ? 'opacity-0' : 'opacity-1'}`,
-        tooltipAnchor: [20 + (iconSize - 40) / 2, 0],
-        iconSize: [iconSize, iconSize],
+        tooltipAnchor: [20 + (iconScaling - 40) / 2, 0],
         html: renderToString(content),
       })}
     >

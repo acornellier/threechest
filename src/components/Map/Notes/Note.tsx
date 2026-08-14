@@ -2,7 +2,8 @@ import { memo, useEffect, useMemo, useRef, useState } from 'react'
 import type { Note as NoteType } from '../../../util/types.ts'
 import { Marker, Popup, Tooltip } from 'react-leaflet'
 import type { Marker as LeafletMarker } from 'leaflet'
-import { divIcon, type LeafletEventHandlerFnMap } from 'leaflet'
+import { type LeafletEventHandlerFnMap } from 'leaflet'
+import { scaledDivIcon } from '../../../util/scaledIcon.ts'
 import { renderToString } from 'react-dom/server'
 import { useContextMenu } from '../../Common/useContextMenu.ts'
 import { deleteNote, editNote, moveNote } from '../../../store/routes/routesReducer.ts'
@@ -22,7 +23,6 @@ const contextMenuMinWidth = 180
 
 function NoteComponent({ note, index, iconScaling }: Props) {
   const dispatch = useAppDispatch()
-  const iconSize = iconScaling
   const hidden = useMapObjectsHidden()
   const { contextMenuPosition, onRightClick, onClose } = useContextMenu({
     minHeight: contextMenuMinHeight,
@@ -83,17 +83,16 @@ function NoteComponent({ note, index, iconScaling }: Props) {
         draggable
         zIndexOffset={1100}
         eventHandlers={markerEventHandlers}
-        icon={divIcon({
+        icon={scaledDivIcon({
           className: `note-icon fade-in-map-object ${hidden ? 'opacity-0' : 'opacity-1'}`,
           tooltipAnchor: [20 + (iconScaling - 40) / 2, 0],
           popupAnchor: [90 + (iconScaling - 40) / 2, 32],
-          iconSize: [iconSize, iconSize],
           html: renderToString(
             <div
               className="note w-full h-full flex items-center justify-center rounded-full border-black shadow-2xl text-black"
               style={{
-                fontSize: iconSize * 0.6,
-                borderWidth: iconSize * 0.05,
+                fontSize: 'calc(var(--icon-size) * 0.6)',
+                borderWidth: 'calc(var(--icon-size) * 0.05)',
                 background: 'linear-gradient(135deg, #ffd416, #8f7100)',
                 boxShadow: 'black 0px 0px 10px 0px',
                 textShadow: '-2px 2px 3px rgba(0, 0, 0, 0.3)',

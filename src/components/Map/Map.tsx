@@ -22,6 +22,7 @@ import { PullOutlines } from './PullOutlines/PullOutlines.tsx'
 import { isDev } from '../../util/isDev.ts'
 import { PointsOfInterest } from './PointsOfInterest/PointsOfInterest.tsx'
 import { WclCoordinateTest } from './WclCoordinateTest.tsx'
+import { IconScaling } from './IconScaling.tsx'
 
 const renderer = svg({ padding: 100 })
 
@@ -64,6 +65,7 @@ export function Map() {
           url={`/maps/${dungeon.key}/{x}_{y}.jpg`}
         />
         {isDev && <WclCoordinateTest />}
+        <IconScaling />
         <Mobs />
         <PullOutlines />
         <Drawings />

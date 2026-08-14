@@ -1,6 +1,5 @@
-import { useMap, useMapEvents } from 'react-leaflet'
-import { useCallback, useMemo, useRef } from 'react'
-import { cssPixels, mapIconScaling, updateIconZoom } from '../../../util/map.ts'
+import { useMapEvents } from 'react-leaflet'
+import { useMemo } from 'react'
 import { MobSpawnWrapper } from './MobSpawn.tsx'
 import {
   boxSelectEnd,
@@ -13,55 +12,16 @@ import { useDungeon } from '../../../store/routes/routeHooks.ts'
 import { useAppDispatch } from '../../../store/storeUtil.ts'
 import { Delayed } from '../../Common/Delayed.tsx'
 import { useKeyHeld } from '../../../util/hooks/useKeyHeld.ts'
-import { useIconScaling } from '../../../util/hooks/useIconScaling.ts'
 
 export function Mobs() {
   const dungeon = useDungeon()
-  const map = useMap()
   const dispatch = useAppDispatch()
-
-  const lastZoom = useRef(map.getZoom())
-  const { tempIconScaling } = useIconScaling()
 
   const isCtrlKeyDown = useKeyHeld('Control')
   const isAltKeyDown = useKeyHeld('Alt')
 
-  const zoomEvent = useCallback(() => {
-    const curZoom = map.getZoom()
-    const diff = Math.abs(curZoom - lastZoom.current)
-    const minChange = (5.5 - map.getZoom()) / 30
-    if (diff < minChange) return
-
-    lastZoom.current = curZoom
-    const newIconScaling = mapIconScaling(map)
-    const icons = document.querySelectorAll<HTMLDivElement>('.mob-spawn-icon')
-    for (const icon of icons) {
-      updateIconZoom(icon, tempIconScaling.current, newIconScaling)
-
-      const borders = icon.querySelectorAll<HTMLDivElement>('.mob-border')
-      for (const border of borders) {
-        const curWidth = cssPixels(border.style.borderWidth)
-        const borderScale = curWidth / tempIconScaling.current
-        border.style.borderWidth = `${borderScale * newIconScaling}px`
-      }
-    }
-
-    const bossMakers = document.querySelectorAll<HTMLDivElement>('.boss-marker')
-    for (const bossMarker of bossMakers) {
-      updateIconZoom(bossMarker, tempIconScaling.current, newIconScaling)
-    }
-
-    const marks = document.querySelectorAll<HTMLDivElement>('.mark-marker')
-    for (const mark of marks) {
-      updateIconZoom(mark, tempIconScaling.current, newIconScaling)
-    }
-
-    tempIconScaling.current = newIconScaling
-  }, [map, tempIconScaling])
-
   const mapEvents: LeafletEventHandlerFnMap = useMemo(() => {
     return {
-      zoom: zoomEvent,
       boxselectstart: () => {
         dispatch(setBoxHovering(true))
         dispatch(boxSelectStart())
@@ -78,7 +38,7 @@ export function Mobs() {
         dispatch(boxSelectEnd())
       },
     }
-  }, [dispatch, dungeon.mobSpawnsList, zoomEvent])
+  }, [dispatch, dungeon.mobSpawnsList])
 
   useMapEvents(mapEvents)
 
