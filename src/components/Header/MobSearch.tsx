@@ -1,7 +1,7 @@
 import { MagnifyingGlassIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import type { KeyboardEvent } from 'react'
 import { useCallback, useMemo, useRef } from 'react'
-import { shortcuts } from '../../data/shortcuts.ts'
+import { keyText, shortcuts } from '../../data/shortcuts.ts'
 import {
   clearMobSearch,
   mobMatchesSearch,
@@ -14,6 +14,7 @@ import {
 import { useDungeon } from '../../store/routes/routeHooks.ts'
 import { useAppDispatch, useRootSelector } from '../../store/storeUtil.ts'
 import { useShortcut } from '../../util/hooks/useShortcut.ts'
+import { Button } from '../Common/Button.tsx'
 import { Panel } from '../Common/Panel.tsx'
 
 const plural = (count: number, noun: string) => `${count} ${noun}${count === 1 ? '' : 's'}`
@@ -37,6 +38,14 @@ export function MobSearch() {
       dispatch(clearMobSearch())
     }
   }, [dispatch, open])
+
+  const onToggle = useCallback(() => {
+    if (open) {
+      onClear()
+    } else {
+      onOpen()
+    }
+  }, [open, onClear, onOpen])
 
   useShortcut(shortcuts.findMob, onOpen)
   // Only fires when focus is outside the input, e.g. after clicking on the map
@@ -69,32 +78,40 @@ export function MobSearch() {
     [dispatch],
   )
 
-  if (!open) return null
-
   return (
-    <div className="fixed top-4 left-1/2 -translate-x-1/2 z-30">
-      <Panel row className="w-[340px] max-w-[90vw]" innerClass="items-center">
-        <MagnifyingGlassIcon width={20} height={20} className="min-w-5" />
-        <input
-          ref={inputRef}
-          className="bg-transparent outline-none w-full min-w-0"
-          autoFocus
-          placeholder="Find mobs by name"
-          value={term}
-          onChange={(e) => dispatch(setMobSearchTerm(e.target.value))}
-          onKeyDown={onKeyDown}
-        />
-        {!!normalizedTerm && (
-          <div className="text-sm text-gray-400 whitespace-nowrap">
-            {spawnCount === 0
-              ? 'No matches'
-              : `${plural(mobCount, 'mob')}, ${plural(spawnCount, 'spawn')}`}
-          </div>
-        )}
-        <button className="outline-none" onClick={() => dispatch(clearMobSearch())}>
-          <XMarkIcon width={20} height={20} className="min-w-5" />
-        </button>
-      </Panel>
+    <div className="hidden sm:flex items-start gap-2 h-full">
+      <Button
+        twoDimensional={open}
+        color={open ? 'green' : 'red'}
+        Icon={MagnifyingGlassIcon}
+        onClick={onToggle}
+        justifyStart
+        tooltip={`Find mobs (${keyText(shortcuts.findMob[0]!)})`}
+        tooltipId="find-mob-tooltip"
+      />
+      {open && (
+        <Panel row className="w-[340px] max-w-[60vw]" innerClass="items-center">
+          <input
+            ref={inputRef}
+            className="bg-transparent outline-none w-full min-w-0"
+            autoFocus
+            placeholder="Find mobs by name"
+            value={term}
+            onChange={(e) => dispatch(setMobSearchTerm(e.target.value))}
+            onKeyDown={onKeyDown}
+          />
+          {!!normalizedTerm && (
+            <div className="text-sm text-gray-400 whitespace-nowrap select-none">
+              {spawnCount === 0
+                ? 'No matches'
+                : `${plural(mobCount, 'mob')}, ${plural(spawnCount, 'spawn')}`}
+            </div>
+          )}
+          <button className="outline-none" onClick={() => dispatch(clearMobSearch())}>
+            <XMarkIcon width={20} height={20} className="min-w-5" />
+          </button>
+        </Panel>
+      )}
     </div>
   )
 }

@@ -16,7 +16,6 @@ import { BackgroundImage } from './Common/BackgroundImage.tsx'
 import { Footer } from './Header/Footer.tsx'
 import { isDev } from '../util/isDev.ts'
 import { BottomLeft } from './Modals/BottomLeft/BottomLeft.tsx'
-import { MobSearch } from './Modals/MobSearch.tsx'
 
 export function Page() {
   const dispatch = useAppDispatch()
@@ -36,7 +35,6 @@ export function Page() {
       <Sidebar />
       <Footer />
       <BottomLeft />
-      <MobSearch />
       <Toasts />
       <ConfirmImportModal />
       <RouteSaver />

@@ -6,6 +6,7 @@ import { DrawToolbar } from '../Map/Draw/DrawToolbar.tsx'
 import { useRootSelector } from '../../store/storeUtil.ts'
 import { selectIsLive } from '../../store/reducers/mapReducer.ts'
 import { MobileDungeonDropdown } from './MobileDungeonDropdown.tsx'
+import { MobSearch } from './MobSearch.tsx'
 
 export function Header() {
   const isLive = useRootSelector(selectIsLive)
@@ -57,6 +58,7 @@ export function Header() {
             <MobileDungeonDropdown />
           </div>
           <UndoRedo />
+          <MobSearch />
           {!isLive && <DrawToolbar />}
         </div>
       </div>
