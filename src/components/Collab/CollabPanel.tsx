@@ -80,18 +80,18 @@ export function CollabPanel({ collapsed }: Props) {
           />
         </div>
       )}
-      {!collabActive && (
-        <Button
-          Icon={isLive ? StopIcon : PlayIcon}
-          outline
-          short
-          onClick={() => dispatch(setMapMode(isLive ? 'editing' : 'live'))}
-          tooltipId="start-live-route-button"
-          tooltip="Use this during your run to navigate through your pulls one by one and get detailed information on each one. Any changes made while Live is active will be discarded."
-        >
-          {isLive ? 'End live route' : 'Start live route'}
-        </Button>
-      )}
+      {/*{!collabActive && (*/}
+      {/*  <Button*/}
+      {/*    Icon={isLive ? StopIcon : PlayIcon}*/}
+      {/*    outline*/}
+      {/*    short*/}
+      {/*    onClick={() => dispatch(setMapMode(isLive ? 'editing' : 'live'))}*/}
+      {/*    tooltipId="start-live-route-button"*/}
+      {/*    tooltip="Use this during your run to navigate through your pulls one by one and get detailed information on each one. Any changes made while Live is active will be discarded."*/}
+      {/*  >*/}
+      {/*    {isLive ? 'End live route' : 'Start live route'}*/}
+      {/*  </Button>*/}
+      {/*)}*/}
       {collabActive && (
         <>
           <div className="flex gap-1">
