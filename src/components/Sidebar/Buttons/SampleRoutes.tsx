@@ -50,14 +50,14 @@ function sortTeam(member1: WclRankingTeamMember, member2: WclRankingTeamMember) 
 export function SampleRoutes({ hidden }: Props) {
   const dispatch = useAppDispatch()
   const dungeon = useDungeon()
-  const [mode, setMode] = useState<FilterMode>('varied')
+  const [selectedMode, setSelectedMode] = useState<FilterMode | null>(null)
   const [selectedSpec, setSelectedSpec] = useState<Spec>(tankSpecs[0]!)
   const { sampleRoutes: routes, loading } = useSampleRoutes(dungeon.key)
 
-  const options: SampleRouteOption[] = useMemo(() => {
-    function pickRankingsFromFilterMode() {
-      const rankings = routes.filter((route) => route.wclRanking).map((route) => route.wclRanking!)
+  const routesByMode = useMemo(() => {
+    const rankings = routes.filter((route) => route.wclRanking).map((route) => route.wclRanking!)
 
+    function pickRankingsFromFilterMode(mode: FilterMode) {
       if (mode === 'spec') {
         return pickSpecRankings(rankings, selectedSpec, 10)
       } else if (mode === 'top') {
@@ -69,61 +69,73 @@ export function SampleRoutes({ hidden }: Props) {
       return []
     }
 
-    const rankings = pickRankingsFromFilterMode()
+    return Object.fromEntries(
+      filterModes.map((mode) => {
+        const pickedRankings = pickRankingsFromFilterMode(mode)
 
-    return routes
-      .filter(
-        (route) =>
-          (mode === 'easy' && !route.wclRanking) ||
-          (route.wclRanking && rankings.includes(route.wclRanking)),
-      )
-      .map<SampleRouteOption>(({ route, wclRanking }) => ({
-        id: route.uid,
-        route,
-        wclRanking,
-        content: (
-          <div className="flex flex-col gap-0.5 overflow-hidden">
-            <div className="flex justify-between">
-              <div className="flex items-center gap-1">
-                {wclRanking && 'rank' in wclRanking && (
-                  <div className="rounded-sm px-1 bg-cyan-800 text-xs">Rank {wclRanking.rank}</div>
-                )}
-                {route.name}
-              </div>
-              {wclRanking && (
-                <div
-                  className="justify-self-end"
-                  onClick={() => {
-                    window.open(
-                      `https://www.warcraftlogs.com/reports/${wclRanking.report.code}?fight=${wclRanking.report.fightID}`,
-                      '_blank',
-                      'noopener',
-                    )
-                  }}
-                >
-                  <div className="rounded-sm bg-cyan-800 p-0.5">
-                    <ArrowTopRightOnSquareIcon height={16} width={16} />
-                  </div>
-                </div>
+        return [
+          mode,
+          routes.filter(
+            (route) =>
+              (mode === 'easy' && !route.wclRanking) ||
+              (route.wclRanking && pickedRankings.includes(route.wclRanking)),
+          ),
+        ]
+      }),
+    ) as Record<FilterMode, SampleRoute[]>
+  }, [routes, selectedSpec])
+
+  const mode =
+    selectedMode ?? filterModes.find((mode) => routesByMode[mode].length) ?? filterModes[0]
+
+  const options: SampleRouteOption[] = useMemo(() => {
+    return routesByMode[mode].map<SampleRouteOption>(({ route, wclRanking }) => ({
+      id: route.uid,
+      route,
+      wclRanking,
+      content: (
+        <div className="flex flex-col gap-0.5 overflow-hidden">
+          <div className="flex justify-between">
+            <div className="flex items-center gap-1">
+              {wclRanking && 'rank' in wclRanking && (
+                <div className="rounded-sm px-1 bg-cyan-800 text-xs">Rank {wclRanking.rank}</div>
               )}
+              {route.name}
             </div>
-            <div className="flex gap-1 flex-wrap">
-              {wclRanking &&
-                wclRanking.team.toSorted(sortTeam).map((member, idx) => (
-                  <div
-                    key={member.id}
-                    className="text-xs whitespace-nowrap"
-                    style={{ color: classColors[member.class] }}
-                  >
-                    {member.name}
-                    {idx === wclRanking.team.length}
-                  </div>
-                ))}
-            </div>
+            {wclRanking && (
+              <div
+                className="justify-self-end"
+                onClick={() => {
+                  window.open(
+                    `https://www.warcraftlogs.com/reports/${wclRanking.report.code}?fight=${wclRanking.report.fightID}`,
+                    '_blank',
+                    'noopener',
+                  )
+                }}
+              >
+                <div className="rounded-sm bg-cyan-800 p-0.5">
+                  <ArrowTopRightOnSquareIcon height={16} width={16} />
+                </div>
+              </div>
+            )}
           </div>
-        ),
-      }))
-  }, [routes, mode, selectedSpec])
+          <div className="flex gap-1 flex-wrap">
+            {wclRanking &&
+              wclRanking.team.toSorted(sortTeam).map((member, idx) => (
+                <div
+                  key={member.id}
+                  className="text-xs whitespace-nowrap"
+                  style={{ color: classColors[member.class] }}
+                >
+                  {member.name}
+                  {idx === wclRanking.team.length}
+                </div>
+              ))}
+          </div>
+        </div>
+      ),
+    }))
+  }, [routesByMode, mode])
 
   const onSelect = useCallback(
     (option: SampleRouteOption) => {
@@ -142,7 +154,7 @@ export function SampleRoutes({ hidden }: Props) {
   )
 
   const handleModeChange = useCallback((mode: FilterMode) => {
-    setMode(mode)
+    setSelectedMode(mode)
     setSelectedSpec((prev) => prev ?? tankSpecs[0]!)
   }, [])
 
