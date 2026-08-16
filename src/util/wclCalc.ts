@@ -12,7 +12,7 @@
 // Positions are noisy and sometimes lies; group composition (which mob types died together) is the
 // strongest signal. Most passes match by composition, using position as a filter or tiebreaker.
 
-import type { Note, Pull, Route } from './types.ts'
+import type { CcSpawns, Note, Pull, Route } from './types.ts'
 import type { Dungeon, MobSpawn, Point, Spawn, SpawnId } from '../data/types.ts'
 import { dungeons } from '../data/dungeons.ts'
 import { distance } from './numbers.ts'
@@ -49,12 +49,24 @@ export type DeathEvent = {
   instanceId?: number
 }
 
+// One application of a CC spell to an enemy, as a fight-relative window.
+export type CcEvent = {
+  spellId: number
+  gameId: number
+  actorId: number
+  instanceId: number
+  start: number
+  end: number
+}
+
 export type WclResult = WclUrlInfo & {
   encounterID: number
   keystoneLevel: number
   events: WclEventSimplified[]
   lustEvents: WclEventBase[]
   deathEvents: DeathEvent[]
+  // Optional: results cached before CC parsing existed don't have it.
+  ccEvents?: CcEvent[]
 }
 
 export type WclUrlInfo = {
@@ -266,7 +278,7 @@ export function wclResultToRoute(
   if (!dungeon) throw new Error(`This WCL dungeon is not yet supported by Threechest.`)
 
   const errors: string[] = []
-  const pulls = wclEventsToPulls(wclResult, dungeon, errors, maxPasses, trace)
+  const { pulls, ccSpawns } = wclEventsToPulls(wclResult, dungeon, errors, maxPasses, trace)
   const route: Route = {
     uid: `${wclResult.code}-${wclResult.fightId}`,
     name: `WCL ${dungeon.key.toUpperCase()} +${wclResult.keystoneLevel}`,
@@ -275,6 +287,8 @@ export function wclResultToRoute(
     notes: wclResultToNotes(wclResult),
     drawings: [],
     assignments: {},
+    // Omitted when empty so routes without CC keep their existing shape.
+    ...(Object.keys(ccSpawns).length > 0 ? { ccSpawns } : {}),
     wclUrlInfo: {
       code: wclResult.code,
       fightId: wclResult.fightId,
@@ -308,6 +322,8 @@ function wclResultToNotes(wclResult: WclResult): Note[] {
 type MobEvent = {
   timestamp: number
   mobId: number
+  actorId?: number
+  instanceId?: number
   pos?: Point
   altPos?: Point
   mapID?: number
@@ -388,13 +404,13 @@ export const passes: WclPass[] = [
 ]
 
 function wclEventsToPulls(
-  { events, deathEvents }: WclResult,
+  { events, deathEvents, ccEvents }: WclResult,
   dungeon: Dungeon,
   errors: string[],
   maxPasses?: number,
   trace?: WclTrace,
-): Pull[] {
-  if (!events.length) return []
+): { pulls: Pull[]; ccSpawns: CcSpawns } {
+  if (!events.length) return { pulls: [], ccSpawns: {} }
 
   const pullMobEvents = getPullMobEvents(events, deathEvents, dungeon, trace)
 
@@ -452,14 +468,16 @@ function wclEventsToPulls(
     }
   }
 
+  // pullStatuses indices refer to every segmented pull; remap them to the ids of the ones that
+  // ended up with spawns.
+  const finalPullIdx = new Map<number, number>()
+  pullStatuses.forEach((pullStatus, idx) => {
+    if (pullStatus.spawnIds.length > 0) {
+      finalPullIdx.set(idx, finalPullIdx.size)
+    }
+  })
+
   if (trace) {
-    // Traced pull indices refer to pullStatuses; remap them to the final ids of surviving pulls.
-    const finalPullIdx = new Map<number, number>()
-    pullStatuses.forEach((pullStatus, idx) => {
-      if (pullStatus.spawnIds.length > 0) {
-        finalPullIdx.set(idx, finalPullIdx.size)
-      }
-    })
     for (const entry of trace.values()) {
       if (entry.pullIdx !== undefined) {
         entry.pullIdx = finalPullIdx.get(entry.pullIdx) ?? -1
@@ -467,12 +485,97 @@ function wclEventsToPulls(
     }
   }
 
-  return pullStatuses
+  const pulls = pullStatuses
     .filter((pullStatus) => pullStatus.spawnIds.length > 0)
     .map<Pull>(({ spawnIds }, idx) => ({
       id: idx,
       spawns: spawnIds.toSorted(),
     }))
+
+  return {
+    pulls,
+    ccSpawns: assignCcSpawns(ccEvents ?? [], pullMobEvents, finalPullIdx, pulls, dungeon),
+  }
+}
+
+// A CC that broke this fast was a stop, not a hold. The pull check below would normally reject it
+// too, but this keeps a misplaced mob from ever being marked off a half-second Blind.
+const MIN_CC_DURATION = 3_000
+
+// Which CC applications actually held a mob out of its pack, and on which spawn.
+//
+// A mob can't act while CC'd, so the first-event pipeline records it at the moment the CC breaks —
+// which is exactly what pushes it into a later pull. So rather than guess from the CC's duration,
+// ask whether the mob was taken later than the pull it was CC'd out of, and inherit whatever the
+// matching passes already decided.
+function assignCcSpawns(
+  ccEvents: CcEvent[],
+  pullMobEvents: MobEvent[][],
+  finalPullIdx: Map<number, number>,
+  pulls: Pull[],
+  dungeon: Dungeon,
+): CcSpawns {
+  const ccSpawns: CcSpawns = {}
+  if (ccEvents.length === 0) return ccSpawns
+
+  const pullStarts = pullMobEvents.map((mobEvents, idx) => ({
+    start: mobEvents[0]?.timestamp ?? Infinity,
+    finalIdx: finalPullIdx.get(idx),
+  }))
+
+  const mobSpawnsById = new Map(
+    dungeon.mobSpawnsList.map((mobSpawn) => [mobSpawn.spawn.id, mobSpawn]),
+  )
+  const claimedSpawnIds = new Set<SpawnId>()
+
+  for (const cc of ccEvents.toSorted((a, b) => a.start - b.start)) {
+    if (cc.end - cc.start < MIN_CC_DURATION) continue
+
+    // Exactly one event survives per mob instance (resolveInstances picks a single winner), so
+    // finding it also identifies the pull it was killed in.
+    let event: MobEvent | undefined
+    let killPull: number | undefined
+    for (let idx = 0; idx < pullMobEvents.length && event === undefined; idx++) {
+      event = pullMobEvents[idx]!.find(
+        (mobEvent) =>
+          mobEvent.instanceId === cc.instanceId &&
+          (mobEvent.actorId !== undefined
+            ? mobEvent.actorId === cc.actorId
+            : mobEvent.mobId === cc.gameId),
+      )
+      if (event) killPull = finalPullIdx.get(idx)
+    }
+    if (event === undefined || killPull === undefined) continue
+
+    const ccPull = pullStarts.reduce(
+      (last, { start, finalIdx }) =>
+        start <= cc.start && finalIdx !== undefined ? finalIdx : last,
+      -1,
+    )
+    if (killPull <= ccPull) continue
+
+    const candidates = pulls[killPull]!.spawns.filter(
+      (spawnId) =>
+        !claimedSpawnIds.has(spawnId) && mobSpawnsById.get(spawnId)?.mob.id === cc.gameId,
+    )
+    if (candidates.length === 0) continue
+
+    // Claiming keeps two CC'd instances of the same mob in one pull off the same spawn.
+    const pos = event.pos
+    const spawnId = pos
+      ? candidates.reduce((best, spawnId) =>
+          distance(mobSpawnsById.get(spawnId)!.spawn.pos, pos) <
+          distance(mobSpawnsById.get(best)!.spawn.pos, pos)
+            ? spawnId
+            : best,
+        )
+      : candidates[0]!
+
+    claimedSpawnIds.add(spawnId)
+    ccSpawns[spawnId] = cc.spellId
+  }
+
+  return ccSpawns
 }
 
 export function nearestSpawnDistance(pos: Point, spawnPositions: Point[] | undefined): number {
@@ -704,6 +807,8 @@ function getPullMobEvents(
     currentPull.push({
       timestamp: event.timestamp,
       mobId: event.gameId,
+      actorId: event.actorId,
+      instanceId: event.instanceId,
       pos,
       altPos,
       mapID: event.mapID,

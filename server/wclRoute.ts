@@ -1,10 +1,11 @@
-import type { DeathEvent, WclEventSimplified, WclResult } from '../src/util/wclCalc.ts'
+import type { CcEvent, DeathEvent, WclEventSimplified, WclResult } from '../src/util/wclCalc.ts'
 import { uniqBy } from '../src/util/nodash.ts'
 import { dungeons } from '../src/data/dungeons.ts'
 import fs from 'fs'
 import { cacheFolder } from './files.ts'
 import { fetchWcl, getDeathEvents, getFight, type WclFight } from './wcl.ts'
 import * as path from 'path'
+import { ccSpellIds } from '../src/data/spells/ccSpells.ts'
 
 const wclRouteCacheFolder = path.join(cacheFolder, 'wclRoute')
 
@@ -229,19 +230,114 @@ async function getLustEvents(code: string, fight: WclFight) {
   return json.reportData.report.events.data
 }
 
+type WclDebuffEvent = {
+  timestamp: number
+  type: 'applydebuff' | 'refreshdebuff' | 'removedebuff' | 'applydebuffstack'
+  abilityGameID: number
+  targetInstance?: number
+  targetID: number
+  target?: { id: number; type: string | 'NPC'; guid?: number }
+}
+
+// Every application of a CC spell to an enemy, as a [start, end] window. Casting the spell isn't
+// enough — it can miss, or be immune — so this reads the debuff itself. wclCalc decides which of
+// these actually separated a mob from its pack.
+async function getCcEvents(
+  code: string,
+  fight: WclFight,
+  countableGameIds: Set<number>,
+): Promise<CcEvent[]> {
+  const events: WclDebuffEvent[] = []
+  let startTime = fight.startTime
+
+  for (;;) {
+    const query = `query {
+  reportData {
+    report(code:"${code}") {
+      events(
+        fightIDs: ${fight.id}
+        dataType: Debuffs
+        hostilityType: Enemies
+        useActorIDs: false
+        startTime: ${startTime}
+        endTime: 9999999999
+        limit: 10000
+        filterExpression: "ability.id in (${ccSpellIds.join(', ')})"
+      ) {
+        data
+        nextPageTimestamp
+      }
+    }
+  }
+}`
+
+    const json = await fetchWcl<{
+      reportData: { report: { events: { data: WclDebuffEvent[]; nextPageTimestamp?: number } } }
+    }>(query)
+
+    const { data, nextPageTimestamp } = json.reportData.report.events
+    events.push(...data)
+
+    if (!nextPageTimestamp) break
+    startTime = nextPageTimestamp
+  }
+
+  // One open window per (mob instance, spell). refreshdebuff extends the window rather than
+  // starting a new one, so a re-applied CC reads as one continuous hold.
+  const open = new Map<string, CcEvent>()
+  const ccEvents: CcEvent[] = []
+
+  for (const event of events) {
+    const actorId = event.target?.id ?? event.targetID
+    const gameId = event.target?.guid
+    if (gameId === undefined || !countableGameIds.has(gameId)) continue
+
+    const instanceId = event.targetInstance ?? 1
+    const key = `${actorId}_${instanceId}_${event.abilityGameID}`
+    const timestamp = event.timestamp - fight.startTime
+
+    if (event.type === 'removedebuff') {
+      const ccEvent = open.get(key)
+      if (ccEvent) {
+        ccEvent.end = timestamp
+        open.delete(key)
+      }
+      continue
+    }
+
+    if (open.has(key)) continue
+
+    // Provisional end, kept only if no removedebuff follows — i.e. the fight ended mid-CC.
+    const ccEvent: CcEvent = {
+      spellId: event.abilityGameID,
+      gameId,
+      actorId,
+      instanceId,
+      start: timestamp,
+      end: fight.endTime - fight.startTime,
+    }
+    open.set(key, ccEvent)
+    ccEvents.push(ccEvent)
+  }
+
+  return ccEvents
+}
+
 export async function getWclRoute(
   code: string,
   fightId: 'last' | string | number,
   ignoreCache: boolean = false,
 ): Promise<{ result: WclResult; cached: boolean }> {
   const file = `${wclRouteCacheFolder}/${code}-${fightId}.json`
-  const hasCache = !ignoreCache && fs.existsSync(file)
+  const cached =
+    !ignoreCache && fs.existsSync(file)
+      ? (JSON.parse(fs.readFileSync(file, 'utf8')) as WclResult)
+      : null
 
-  console.log(`getWclRoute ${code}-${fightId} hasCache: ${hasCache}`)
+  console.log(`getWclRoute ${code}-${fightId} hasCache: ${!!cached}`)
 
-  if (hasCache) {
-    const result = JSON.parse(fs.readFileSync(file, 'utf8')) as WclResult
-    return { result, cached: true }
+  if (cached && cached.ccEvents !== undefined) {
+    return { result: cached, cached: true }
   }
 
   const fight = await getFight(code, fightId)
@@ -310,6 +406,8 @@ export async function getWclRoute(
 
   const lustEvents = await getLustEvents(code, fight)
 
+  const ccEvents = await getCcEvents(code, fight, countableGameIds)
+
   const wclDeathEvents = await getDeathEvents(code, fight)
   const deathEvents = wclDeathEvents
     .map<DeathEvent | null>((event) => {
@@ -333,6 +431,7 @@ export async function getWclRoute(
     events: firstPositions,
     lustEvents,
     deathEvents,
+    ccEvents,
   }
 
   fs.mkdirSync(path.dirname(file), { recursive: true })

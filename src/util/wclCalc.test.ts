@@ -15,6 +15,7 @@ import tfkFixture from './__fixtures__/wclRoute-tfKGMcnvPJVhw1y2-1.json'
 import byxFixture from './__fixtures__/wclRoute-byxFGKhMgkAcPp6V-21.json'
 import rgpFixture from './__fixtures__/wclRoute-rGPCqaDyQmJbBLfX-9.json'
 import sixpmFixture from './__fixtures__/wclRoute-6pMc2dJHBh1Q8rGF-13.json'
+import bpaFixture from './__fixtures__/wclRoute-bPaQhZ8RnJYcDqFv-1.json'
 
 // These fixtures are Season 1 fights, whose dungeon data is no longer shipped. Inject the
 // snapshotted S1 dungeon (resolved by encounter id) via wclResultToRoute's `dungeon` param.
@@ -204,7 +205,12 @@ describe('wclResultToRoute — coincidental composition match across scattered k
     expect(events).toHaveLength(4)
 
     const passNames = events.map((event) => trace.get(wclEventKey(event))?.passName)
-    expect(passNames).not.toEqual(['byComposition', 'byComposition', 'byComposition', 'byComposition'])
+    expect(passNames).not.toEqual([
+      'byComposition',
+      'byComposition',
+      'byComposition',
+      'byComposition',
+    ])
   })
 })
 
@@ -235,5 +241,54 @@ describe('wclResultToRoute — seam-ambiguous magister claimed by the nearer gro
     // Group 27's magister (1-11) is the later, separate kill — on its own in its pull.
     const g27MagisterPull = pullOf('1-11')
     expect(g27MagisterPull?.spawns).toEqual(['1-11'])
+  })
+})
+
+// This fight is a current-season Temple of Sethraliss run, so it uses the shipped dungeon data
+// rather than the S1 snapshot. It contains eight CC applications, which between them cover every
+// case the detection rule has to separate:
+//
+//   Paralysis  Storm Adept 3        90.2 -> 148.6s   58.4s  pull  1 -> 2   marked
+//   Blind      Brood Tender 3      584.2 -> 584.7s    0.5s  (stop)         rejected
+//   Blind      Brood Tender 3      645.4 -> 646.0s    0.6s  (stop)         rejected
+//   Blind      Venomous Ophidian 4 833.2 -> 833.9s    0.7s  (uncountable)  not even fetched
+//   Paralysis  Imbued Stormcaller 1 889.7 -> 935.1s  45.4s  pull  8 -> 9   marked
+//   Paralysis  Imbued Stormcaller 3 975.8 -> 1018.6s 42.8s  pull  9 -> 11  marked
+//   Paralysis  Temple Disruptor 2  1314.8 -> 1325.6s 10.8s  pull 14 -> 14  rejected
+//   Paralysis  Temple Disruptor 4  1366.7 -> 1426.7s 60.0s  pull 15 -> 17  marked
+//
+// The Temple Disruptor at 1314.8s is the interesting rejection: a real Paralysis, but it broke
+// after 10.8s and the mob stayed in its group's pull, so it never separated anything.
+describe('wclResultToRoute — CC that held a mob out of its pull', () => {
+  it('marks only the CCs whose mob was taken in a later pull', () => {
+    const { route, errors } = wclResultToRoute(bpaFixture as unknown as WclResult)
+    expect(errors).toEqual([])
+
+    expect(route.ccSpawns).toEqual({
+      '3-6': 115078,
+      '15-5': 115078,
+      '15-1': 115078,
+      '45-2': 115078,
+    })
+
+    // Each marked mob was taken in its own later pull — the separation the rule detects. Three of
+    // the four are the only mob in their pull; the Storm Adept was taken with the Adderis/Aspix.
+    const pullIdxOf = (spawnId: string) =>
+      route.pulls.findIndex((pull) => pull.spawns.includes(spawnId))
+    expect(pullIdxOf('3-6')).toBe(2)
+    expect(pullIdxOf('15-5')).toBe(9)
+    expect(pullIdxOf('15-1')).toBe(11)
+    expect(pullIdxOf('45-2')).toBe(17)
+
+    // The 10.8s Temple Disruptor sits in pull 14 alongside its whole group, so neither of that
+    // pull's disruptor spawns may be marked.
+    for (const spawnId of route.pulls[14]!.spawns) {
+      expect(route.ccSpawns![spawnId]).toBeUndefined()
+    }
+  })
+
+  it('omits ccSpawns entirely for a fight with no qualifying CC', () => {
+    const { route } = toRoute(lvzFixture)
+    expect(route.ccSpawns).toBeUndefined()
   })
 })

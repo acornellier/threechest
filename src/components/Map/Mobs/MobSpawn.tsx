@@ -24,6 +24,7 @@ import { BossMarker } from './BossMarker.tsx'
 import { useIconScaling } from '../../../util/hooks/useIconScaling.ts'
 import type { WowMark } from '../../../util/marks.ts'
 import { MarkMarker } from './MarkMarker.tsx'
+import { CcMarker } from './CcMarker.tsx'
 import { MarkContextMenu, markerPopupMinHeight, markerPopupMinWidth } from './MarkContextMenu.tsx'
 import { Delayed } from '../../Common/Delayed.tsx'
 import { useContextMenu } from '../../Common/useContextMenu.ts'
@@ -47,6 +48,7 @@ interface MobSpawnMemoProps extends MobSpawnProps {
   hidden: boolean
   faded: boolean
   mark: WowMark | null
+  ccSpellId: number | null
   isCtrlKeyDown: boolean
   isAltKeyDown: boolean
   isSearchMatch: boolean
@@ -62,6 +64,7 @@ function MobSpawnComponent({
   hidden,
   faded,
   mark,
+  ccSpellId,
   isCtrlKeyDown,
   isAltKeyDown,
   isKKeyDown,
@@ -188,6 +191,9 @@ function MobSpawnComponent({
         />
       )}
       {mark && <MarkMarker spawn={spawn} scale={scale} boxScale={boxScale} mark={mark} />}
+      {ccSpellId !== null && (
+        <CcMarker spawn={spawn} scale={scale} boxScale={boxScale} spellId={ccSpellId} />
+      )}
       <Patrol spawn={spawn} isGroupHovered={isGroupHovered} hidden={hidden} />
     </>
   )
@@ -225,6 +231,7 @@ export function MobSpawnWrapper({
   const isSelected = matchingPullIndex !== null && selectedPull === matchingPullIndex
   const faded = isLive && matchingPullIndex !== null && matchingPullIndex < selectedPull
   const mark = route.assignments?.[mobSpawn.spawn.id] ?? null
+  const ccSpellId = route.ccSpawns?.[mobSpawn.spawn.id] ?? null
 
   const searchTerm = useRootSelector(selectMobSearchTermNormalized)
   const isSearchMatch = mobMatchesSearch(mobSpawn.mob, searchTerm)
@@ -240,6 +247,7 @@ export function MobSpawnWrapper({
       hidden={hidden}
       faded={faded}
       mark={mark}
+      ccSpellId={ccSpellId}
       isCtrlKeyDown={isCtrlKeyDown}
       isAltKeyDown={isAltKeyDown}
       isKKeyDown={isKKeyDown}

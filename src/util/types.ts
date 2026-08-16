@@ -36,6 +36,11 @@ export type Assignments = {
   [spawnId: SpawnId]: WowMark
 }
 
+/** Mobs a WCL run held out of a pull with long CC, mapped to the spell id used. */
+export type CcSpawns = {
+  [spawnId: SpawnId]: number
+}
+
 export type Route = {
   name: string
   uid: string
@@ -44,6 +49,7 @@ export type Route = {
   notes: Note[]
   drawings: Drawing[]
   assignments: Assignments
+  ccSpawns?: CcSpawns
   wclUrlInfo?: WclUrlInfo
 }
 

@@ -48,6 +48,7 @@ type WclPull = {
 export interface WclFight {
   id: number
   startTime: number
+  endTime: number
   encounterID: number
   keystoneLevel: number
   dungeonPulls: WclPull[]
@@ -82,6 +83,7 @@ query {
       fights {
         id
         startTime
+        endTime
         encounterID
         keystoneLevel
         dungeonPulls {
