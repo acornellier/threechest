@@ -9,6 +9,8 @@ import { CurseIcon } from '../Common/Icons/CurseIcon.tsx'
 import { PoisonIcon } from '../Common/Icons/PoisonIcon.tsx'
 import type { FC, SVGProps } from 'react'
 import { dungeonSpells, getIconLink } from '../../data/spells/spells.ts'
+import { MELEE_LOCKOUT } from '../../util/interrupts.ts'
+import { roundTo } from '../../util/numbers.ts'
 
 interface Props {
   spell: Spell
@@ -37,6 +39,7 @@ const attributeIcons: AttributeIcon[] = [
 export function MobSpellInfo({ spell, mob, dungeonKey }: Props) {
   const { icon, aoe, damage, physical, name, id } = spell
   const spellDetailsTooltipId = `spell-details-${id}`
+  const kickTooltipId = `spell-kick-${id}`
 
   const damageText =
     damage && `${damage} ${aoe ? 'AoE' : 'ST'} ${physical ? 'physical' : 'magic'} damage`
@@ -44,6 +47,13 @@ export function MobSpellInfo({ spell, mob, dungeonKey }: Props) {
   const isAlternateCast =
     spell.castTime &&
     dungeonSpells[dungeonKey][mob.id]?.find((s) => s.id !== spell.id && s.name === spell.name)
+
+  // The kick interval is the wait until the mob can cast again, plus the cast time the kicker has
+  // to react in. Whichever of the spell's cooldown and the interrupt lockout is longer sets the
+  // wait, so a value at the lockout means the spell itself has no meaningful cooldown.
+  const castSeconds = (spell.castTime ?? 0) / 1000
+  const waitSeconds = spell.cooldown ? roundTo(spell.cooldown - castSeconds, 1) : 0
+  const waitLabel = waitSeconds <= MELEE_LOCKOUT ? 'kick lockout' : 'spell cd'
 
   return (
     <div className="h-8 flex items-center border border-gray-500 rounded-md">
@@ -91,6 +101,20 @@ export function MobSpellInfo({ spell, mob, dungeonKey }: Props) {
                   data-tooltip-content={label ?? name[0]?.toUpperCase() + name.substring(1)}
                 />
               ),
+          )}
+          {!!spell.cooldown && (
+            <>
+              <span className="text-xs" data-tooltip-id={kickTooltipId}>
+                {spell.cooldown}s
+              </span>
+              <TooltipStyled id={kickTooltipId} place="top">
+                <div>Seconds until this needs kicking again</div>
+                <div>
+                  {waitSeconds}s {waitLabel}
+                  {castSeconds > 0 && ` + ${castSeconds}s cast`}
+                </div>
+              </TooltipStyled>
+            </>
           )}
           <TooltipStyled id={spellDetailsTooltipId} place="top" />
           {damageText && (

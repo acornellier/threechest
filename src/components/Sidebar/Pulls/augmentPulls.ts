@@ -1,5 +1,6 @@
 ﻿import type { Pull, PullDetailed } from '../../../util/types.ts'
 import type { Dungeon } from '../../../data/types.ts'
+import { kicksNeeded, mobKickRate } from '../../../util/interrupts.ts'
 
 export function augmentPulls(pulls: Pull[], dungeon: Dungeon): PullDetailed[] {
   const pullsDetailed: PullDetailed[] = []
@@ -10,6 +11,7 @@ export function augmentPulls(pulls: Pull[], dungeon: Dungeon): PullDetailed[] {
   for (const pull of pulls) {
     let count = 0
     let health = 0
+    let kickRate = 0
 
     const pullGroupsWithBoss = pull.spawns
       .filter((spawnId) => {
@@ -27,6 +29,10 @@ export function augmentPulls(pulls: Pull[], dungeon: Dungeon): PullDetailed[] {
         console.error(`Could not find spawnId ${spawnId} in dungeon ${dungeon.key}`)
         continue
       }
+
+      // Before the skips below, which are about forces accounting — a mob awarding no forces can
+      // still demand kicks. interrupts.ts applies its own trash test.
+      kickRate += mobKickRate(mobSpawn.mob)
 
       if (
         mobSpawn.mob.isBoss ||
@@ -51,6 +57,7 @@ export function augmentPulls(pulls: Pull[], dungeon: Dungeon): PullDetailed[] {
       health,
       countCumulative,
       healthCumulative,
+      kicksNeeded: kicksNeeded(kickRate),
     })
 
     ++pullIndex

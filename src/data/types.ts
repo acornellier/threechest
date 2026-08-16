@@ -77,6 +77,7 @@ export type Spell = {
   aoe?: boolean
   physical?: boolean
   castTime?: number
+  cooldown?: number
   attributes?: SpellAttribute[]
 }
 

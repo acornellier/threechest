@@ -7,6 +7,7 @@ import { hoverPull } from '../../../store/reducers/hoverReducer.ts'
 import { useDungeon, useSelectedPull } from '../../../store/routes/routeHooks.ts'
 import { useAppDispatch } from '../../../store/storeUtil.ts'
 import { countMobs } from '../../../util/mobSpawns.ts'
+import { KickBadge } from './KickBadge.tsx'
 
 interface Props {
   pull: PullDetailed
@@ -27,6 +28,9 @@ export function Pull({ pull, ghost, onRightClick, isShiftHeld }: Props) {
   const isSelectedPull = pull.index === selectedPull
 
   const sortedCounts = useMemo(() => countMobs(pull, dungeon), [pull, dungeon])
+
+  const showKickBadge = pull.kicksNeeded > 0
+  const maxPortraits = showKickBadge ? 6 : 7
 
   useEffect(() => {
     if (isSelectedPull) {
@@ -72,7 +76,7 @@ export function Pull({ pull, ghost, onRightClick, isShiftHeld }: Props) {
               {ghost ? pull.index : pull.index + 1}
             </div>
             <div className="flex h-full items-center">
-              {sortedCounts.slice(0, 7).map(({ mob, count }) => (
+              {sortedCounts.slice(0, maxPortraits).map(({ mob, count }) => (
                 <div
                   key={mob.id}
                   className="relative h-7 w-7 mr-[-3px] rounded-full border border-slate-300"
@@ -90,10 +94,13 @@ export function Pull({ pull, ghost, onRightClick, isShiftHeld }: Props) {
               ))}
             </div>
           </div>
-          <div className="text-outline flex items-center font-bold text-sm">
-            {isShiftHeld
-              ? pull.countCumulative
-              : mobCountPercentStr(pull.countCumulative, dungeon.mdt.totalCount)}
+          <div className="flex items-center gap-1">
+            {showKickBadge && <KickBadge kicksNeeded={pull.kicksNeeded} />}
+            <div className="text-outline flex items-center font-bold text-sm">
+              {isShiftHeld
+                ? pull.countCumulative
+                : mobCountPercentStr(pull.countCumulative, dungeon.mdt.totalCount)}
+            </div>
           </div>
         </div>
       </div>

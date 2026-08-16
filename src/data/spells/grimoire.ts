@@ -2,10 +2,16 @@
 import type { MdtSpell, Spell, Spells } from '../types.ts'
 import type { DungeonKey } from '../dungeonKeys.ts'
 import { mdtDungeons } from '../mdtDungeons.ts'
+import { spellCooldowns } from './spellCooldowns.ts'
 
 function mdtSpellToSpell(mdtSpell: MdtSpell): Spell {
   const spell = getGrimoireSpell(mdtSpell.id)
   const effect = spell.effects?.[0]
+
+  // Display only. The pull interrupt math reads spellCooldowns directly off Mob.spells rather than
+  // through here, so the two can diverge if mergeSpells is given spellsToRemove or getGrimoireSpell
+  // throws for an id (caught below, dropping the spell from display but not from the math).
+  const cooldown = spellCooldowns[mdtSpell.id]?.cooldown
 
   return {
     name: spell.name,
@@ -15,6 +21,7 @@ function mdtSpellToSpell(mdtSpell: MdtSpell): Spell {
     aoe: effect?.aoe,
     physical: spell.schools && spell.schools[0] === 'physical',
     castTime: spell.castTime,
+    ...(cooldown ? { cooldown } : {}),
     attributes: mdtSpell.attributes,
   }
 }

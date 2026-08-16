@@ -53,6 +53,8 @@ export type PullDetailed = Pull & {
   health: number
   countCumulative: number
   healthCumulative: number
+  /** Interrupters this pull demands. See util/interrupts.ts. */
+  kicksNeeded: number
 }
 
 export type MdtPull = {

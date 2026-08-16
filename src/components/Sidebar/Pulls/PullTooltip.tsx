@@ -49,6 +49,12 @@ export function PullTooltip({ pull }: Props) {
           </div>
         ))}
       </div>
+      {pull.kicksNeeded > 0 && (
+        <div className="mt-1">
+          <div>Kicks needed: {pull.kicksNeeded}</div>
+          <div className="max-w-56 text-xs opacity-70">Assumes 15s kick cd, 5s lockout</div>
+        </div>
+      )}
     </>
   )
 }

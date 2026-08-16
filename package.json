@@ -17,6 +17,7 @@
     "dungeons": "tsx scripts/mdtDungeons.ts",
     "offsets": "tsx scripts/checkMapOffsets.ts",
     "spells": "tsx scripts/guessDungeonSpells.ts",
+    "cooldowns": "tsx scripts/guessSpellCooldowns.ts",
     "r": "tsx scripts/queryRankings.ts",
     "rankings:download": "tsx scripts/downloadRankings.ts",
     "rankings:upload": "tsx scripts/uploadRankings.ts"

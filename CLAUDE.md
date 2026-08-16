@@ -1,6 +1,7 @@
-# CLAUDE.md
+# Behavior
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+Only write comments when they clarify somethnig that isn't obvious from the code.
+Avoid writing comments that will be come outdated when other code changes.
 
 ## What this project is
 
@@ -19,6 +20,7 @@ yarn lint         # ESLint with --max-warnings 0 (zero tolerance)
 yarn dungeons     # Parse MDT Lua submodule → src/data/mdtDungeons/*.json
 yarn r            # Fetch top WCL routes → src/data/sampleRoutes/<dungeon>/
 yarn spells       # Extract spell IDs from dungeon data
+yarn cooldowns    # Mine interrupt cooldowns from WCL; prints only, hand-copy into spellCooldowns.ts
 yarn offsets      # Verify mdtMapOffsets.ts against cached WCL fights (see docs/new-season-setup.md)
 
 yarn rankings:download   # Vercel Blob → src/data/sampleRoutes/<dungeon>/ (restores yarn r's cache)
@@ -94,7 +96,10 @@ Requires `VITE_RANKINGS_BASE_URL` in the Vercel project env, or the sample route
 - **`Point` is `[y, x]`** (not `[x, y]`) — this matches Leaflet's coordinate system.
 - Game data types (`Dungeon`, `Mob`, etc.) live in `src/data/types.ts`; route/user-created types (`Route`, `Pull`, etc.) live in `src/util/types.ts`.
 - `MobFake` / `SpawnFake` / `MdtDungeonFake` types exist only to accept raw JSON (where tuples are typed as `number[]`); cast to the real types after loading.
-- No test suite — correctness is verified manually and via TypeScript.
+- Thin test suite (`yarn test`, vitest). `vitest.config.ts` only picks up `src/**/*.test.ts` — note
+  `.ts`, not `.tsx`, so component tests are not collected. It is a **bare config with no plugins**,
+  so `import.meta.compileTime` is never transformed: anything importing `src/data/spells/spells.ts`
+  or `sampleRoutes.ts` is untestable. Most correctness is still verified manually and via TypeScript.
 
 ## Behavior
 - I am a senior dev
