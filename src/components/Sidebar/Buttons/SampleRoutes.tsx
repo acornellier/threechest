@@ -22,6 +22,7 @@ import {
   tankSpecs,
   type WclRankingTeamMember,
 } from '../../../util/wclRankings.ts'
+import { trackEvent } from '../../../util/analytics.ts'
 
 type SampleRouteOption = SampleRoute & DropdownOption
 
@@ -158,6 +159,10 @@ export function SampleRoutes({ hidden }: Props) {
     setSelectedSpec((prev) => prev ?? tankSpecs[0]!)
   }, [])
 
+  const onOpen = useCallback(() => {
+    trackEvent('sample_routes_open', { dungeon: dungeon.key })
+  }, [dungeon.key])
+
   const filterHeader = (
     <div className="flex flex-col gap-1">
       {loading && (
@@ -206,6 +211,7 @@ export function SampleRoutes({ hidden }: Props) {
     <Dropdown
       short
       options={options}
+      onOpen={onOpen}
       onSelect={onSelect}
       onHover={onHover}
       header={filterHeader}

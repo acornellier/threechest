@@ -22,6 +22,7 @@ import {
 import { deleteUserRoute } from '../api/deleteUserRouteApi.ts'
 import {
   endCollab,
+  joinCollab,
   promoteSelfToHost,
   selectLocalAwareness,
   selectLocalAwarenessIsGuest,
@@ -33,6 +34,7 @@ import { setDrawColor } from './reducers/mapReducer.ts'
 import type { UnknownAction } from 'redux'
 import { selectActualRoute } from './routes/routeHooks.ts'
 import { importMdtRoute, importWclRoute } from './reducers/importReducer.ts'
+import { trackEvent } from '../util/analytics.ts'
 
 export const listenerMiddleware = createListenerMiddleware()
 
@@ -185,6 +187,14 @@ listenerMiddleware.startListening({
   },
   effect: (_action, listenerApi) => {
     listenerApi.dispatch(backupCollabRoute())
+  },
+})
+
+// Analytics: collab usage, split by who initiated the session
+listenerMiddleware.startListening({
+  matcher: isAnyOf(startCollab, joinCollab),
+  effect: (action) => {
+    trackEvent(action.type === startCollab.type ? 'collab_start' : 'collab_join')
   },
 })
 
