@@ -1,4 +1,23 @@
-import { describe, expect, it } from 'vitest'
+import { describe, expect, it, vi } from 'vitest'
+import type { MapBoundsByUiMapId } from '../data/coordinates/mapBoundsUncompiled.ts'
+import type { MapOffset } from '../data/coordinates/mdtMapOffsets.ts'
+
+// Most fixtures here are Season 1 fights, and both coordinate tables have since been regenerated
+// for the current season without keeping the S1 map ids. Layer the S1 entries back on so those
+// fixtures still resolve positions — see s1Coordinates.ts. Current-season ids are untouched, and
+// the two id sets don't overlap.
+vi.mock('../data/coordinates/mapBounds.ts', async (importOriginal) => {
+  const actual = (await importOriginal()) as { mapBounds: MapBoundsByUiMapId }
+  const { s1MapBounds } = await import('./__fixtures__/s1Coordinates.ts')
+  return { mapBounds: { ...actual.mapBounds, ...s1MapBounds } }
+})
+
+vi.mock('../data/coordinates/mdtMapOffsets.ts', async (importOriginal) => {
+  const actual = (await importOriginal()) as { mdtMapOffsets: Record<number, MapOffset> }
+  const { s1MdtMapOffsets } = await import('./__fixtures__/s1Coordinates.ts')
+  return { mdtMapOffsets: { ...actual.mdtMapOffsets, ...s1MdtMapOffsets } }
+})
+
 import {
   resolveInstances,
   wclEventKey,
