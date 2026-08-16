@@ -19,6 +19,7 @@ export function Mobs() {
 
   const isCtrlKeyDown = useKeyHeld('Control')
   const isAltKeyDown = useKeyHeld('Alt')
+  const isKKeyDown = useKeyHeld('k')
 
   const mapEvents: LeafletEventHandlerFnMap = useMemo(() => {
     return {
@@ -51,6 +52,7 @@ export function Mobs() {
           mobSpawn={mobSpawn}
           isCtrlKeyDown={isCtrlKeyDown}
           isAltKeyDown={isAltKeyDown}
+          isKKeyDown={isKKeyDown}
         />
       ))}
     </Delayed>

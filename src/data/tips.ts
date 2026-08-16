@@ -38,4 +38,5 @@ export const tips: Tip[] = [
   { id: 'shift-forces-percent', tip: `Hold shift to view total forces instead of percent` },
   { id: 'ctrl-mob-count', tip: `Hold ctrl to show each mob's count` },
   { id: 'alt-mob-group', tip: `Hold alt to show each mob's group` },
+  { id: 'k-mob-group', tip: `Hold K to show kicks needed` },
 ]

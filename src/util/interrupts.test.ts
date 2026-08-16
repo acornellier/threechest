@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import type { Mob, SpellAttribute } from '../data/types.ts'
 import type { SpellCooldowns } from '../data/spells/spellCooldownTypes.ts'
-import { kicksNeeded, mobKickRate } from './interrupts.ts'
+import { mobKickRate, mobKicksNeeded } from './interrupts.ts'
 
 // Synthetic mobs rather than shipped dungeon data, so these stay valid across seasons. Must not
 // import anything reaching data/spells/spells.ts — vitest has no compileTime transform.
@@ -23,16 +23,18 @@ const cooldowns: SpellCooldowns = {
   6: { cooldown: 6 },
   8: { cooldown: 8 },
   9: { cooldown: 9 },
+  10: { cooldown: 10 },
   15: { cooldown: 15 },
   18: { cooldown: 18 },
   30: { cooldown: 30 },
   99: { cooldown: null, note: 'deliberately excluded' },
 }
 
+// Mirrors augmentPulls: each mob rounds up on its own, because a kicker stays on one target.
 const pullKicks = (mobs: Mob[]) =>
-  kicksNeeded(mobs.reduce((rate, m) => rate + mobKickRate(m, cooldowns), 0))
+  mobs.reduce((total, m) => total + mobKicksNeeded(m, cooldowns), 0)
 
-describe('kicksNeeded', () => {
+describe('pull kicks', () => {
   it('needs two kickers for a single 8s bolt', () => {
     // 1.875 rate, but one 15s kick only covers 1.0 of it.
     expect(pullKicks([mob(1, [8])])).toBe(2)
@@ -40,11 +42,6 @@ describe('kicksNeeded', () => {
 
   it('needs one kicker for a single 18s cast', () => {
     expect(pullKicks([mob(1, [18])])).toBe(1)
-  })
-
-  it('needs two kickers for two 18s mobs', () => {
-    // Under two kicks' worth of rate, but they can cast simultaneously.
-    expect(pullKicks([mob(1, [18]), mob(2, [18])])).toBe(2)
   })
 
   it('needs three kickers for three 15s mobs', () => {
@@ -56,12 +53,17 @@ describe('kicksNeeded', () => {
     expect(pullKicks([mob(1, [15, 30])])).toBe(2)
   })
 
-  it('does not overshoot on mixed cooldowns that sum to a whole number', () => {
-    // Regression: exactly 10, but in floating point 10.000000000000002, which ceils to 11.
-    expect(pullKicks([mob(1, [3]), mob(2, [9]), mob(3, [6]), mob(4, [18])])).toBe(10)
+  it('gives each mob its own kicker rather than pooling spare capacity', () => {
+    // Two mobs at 0.5 and 1.5 kicks worth of rate need 1 and 2 dedicated kickers, not ceil(2.0).
+    expect(pullKicks([mob(1, [30]), mob(2, [10])])).toBe(3)
 
-    // A fractional mixed sum (8.5) still rounds up normally.
-    expect(pullKicks([mob(1, [3]), mob(2, [9]), mob(3, [30]), mob(4, [18]), mob(5, [30])])).toBe(9)
+    // Five half-rate mobs still need five bodies, since nobody switches target.
+    expect(pullKicks([30, 30, 30, 30, 30].map((cd, i) => mob(i, [cd])))).toBe(5)
+  })
+
+  it('does not overshoot when one mob’s spells sum to a whole number', () => {
+    // Regression: exactly 10, but in floating point 10.000000000000002, which ceils to 11.
+    expect(pullKicks([mob(1, [3, 9, 6, 18])])).toBe(10)
   })
 })
 

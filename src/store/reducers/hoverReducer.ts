@@ -9,6 +9,7 @@ export interface HoverState {
   selectedSpawn: SpawnId | null
   isBoxHovering: boolean
   boxHoveredSpawns: SpawnId[]
+  hoveredKicks: boolean
 }
 
 const initialState: HoverState = {
@@ -17,6 +18,7 @@ const initialState: HoverState = {
   selectedSpawn: null,
   isBoxHovering: false,
   boxHoveredSpawns: [],
+  hoveredKicks: false,
 }
 
 export const hoverSlice = createAppSlice({
@@ -41,12 +43,16 @@ export const hoverSlice = createAppSlice({
     setBoxHovering(state, { payload }: PayloadAction<boolean>) {
       state.isBoxHovering = payload
     },
+    hoverKicks(state, { payload }: PayloadAction<boolean>) {
+      state.hoveredKicks = payload
+    },
   },
   selectors: {
     selectHoveredPull: (state) => state.hoveredPull,
     selectHoveredSpawn: (state) => state.hoveredSpawn,
     selectSelectedSpawn: (state) => state.selectedSpawn,
     selectIsBoxHovering: (state) => state.isBoxHovering,
+    selectHoveredKicks: (state) => state.hoveredKicks,
   },
 })
 
@@ -64,7 +70,12 @@ export function useHoveredMobSpawn() {
 
 export const hoverReducer = hoverSlice.reducer
 
-export const { hoverPull, hoverSpawn, selectSpawn, setBoxHovering } = hoverSlice.actions
+export const { hoverPull, hoverSpawn, selectSpawn, setBoxHovering, hoverKicks } = hoverSlice.actions
 
-export const { selectHoveredPull, selectHoveredSpawn, selectSelectedSpawn, selectIsBoxHovering } =
-  hoverSlice.selectors
+export const {
+  selectHoveredPull,
+  selectHoveredSpawn,
+  selectSelectedSpawn,
+  selectIsBoxHovering,
+  selectHoveredKicks,
+} = hoverSlice.selectors

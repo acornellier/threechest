@@ -112,6 +112,10 @@ export function HelpModal({ onClose }: Props) {
                 Hold <span className="rounded bg-fancy-red px-1 min-w-6 text-center">Alt</span> to
                 show each mob&apos;s group
               </div>
+              <div>
+                Hold <span className="rounded bg-fancy-red px-1 min-w-6 text-center">K</span> to
+                show kicks needed
+              </div>
               <div className="text-lg font-bold mt-2">Shortcuts</div>
               <div className="flex flex-col gap-1 whitespace-nowrap">
                 {shortcutDescriptions.map(({ desc, texts }) => (

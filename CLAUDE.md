@@ -1,7 +1,7 @@
 # Behavior
 
 Only write comments when they clarify somethnig that isn't obvious from the code.
-Avoid writing comments that will be come outdated when other code changes.
+Never write comments that will be come outdated when other code changes.
 
 ## What this project is
 

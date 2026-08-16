@@ -10,6 +10,7 @@ import { MobIcon } from './MobIcon.tsx'
 import { MobSpawnTooltip } from './MobSpawnTooltip.tsx'
 import {
   hoverSpawn,
+  selectHoveredKicks,
   selectIsBoxHovering,
   selectSpawn,
   useHoveredMobSpawn,
@@ -35,6 +36,7 @@ interface MobSpawnProps {
   mobSpawn: MobSpawn
   isCtrlKeyDown: boolean
   isAltKeyDown: boolean
+  isKKeyDown: boolean
 }
 
 interface MobSpawnMemoProps extends MobSpawnProps {
@@ -62,6 +64,7 @@ function MobSpawnComponent({
   mark,
   isCtrlKeyDown,
   isAltKeyDown,
+  isKKeyDown,
   isSearchMatch,
   isSearchDimmed,
 }: MobSpawnMemoProps) {
@@ -71,6 +74,8 @@ function MobSpawnComponent({
   const isBoxHovering = useRootSelector(selectIsBoxHovering)
   const disableHover = isDrawing || isBoxHovering
   const isActuallyHovered = isHovered && !disableHover
+  const isHoveringKicks = useRootSelector(selectHoveredKicks)
+  const showKicks = isKKeyDown || isHoveringKicks
   const {
     contextMenuPosition: markingMenuPosition,
     onRightClick: onOpenMarking,
@@ -118,6 +123,7 @@ function MobSpawnComponent({
     () => (
       <MobIcon
         mobSpawn={mobSpawn}
+        showKicks={showKicks}
         showCount={(isGroupHovered && !disableHover) || isCtrlKeyDown}
         showGroup={isAltKeyDown && mobSpawn.spawn.group !== null && !isBoxHovering}
         isSelected={isSelected}
@@ -137,6 +143,7 @@ function MobSpawnComponent({
       isCtrlKeyDown,
       isAltKeyDown,
       isBoxHovering,
+      showKicks,
     ],
   )
 
@@ -188,7 +195,12 @@ function MobSpawnComponent({
 
 const MobSpawnMemo = memo(MobSpawnComponent)
 
-export function MobSpawnWrapper({ mobSpawn, isCtrlKeyDown, isAltKeyDown }: MobSpawnProps) {
+export function MobSpawnWrapper({
+  mobSpawn,
+  isCtrlKeyDown,
+  isAltKeyDown,
+  isKKeyDown,
+}: MobSpawnProps) {
   const route = useRoute()
 
   // Delay each individual mob by up to 100ms for performance and because it looks cool
@@ -230,6 +242,7 @@ export function MobSpawnWrapper({ mobSpawn, isCtrlKeyDown, isAltKeyDown }: MobSp
       mark={mark}
       isCtrlKeyDown={isCtrlKeyDown}
       isAltKeyDown={isAltKeyDown}
+      isKKeyDown={isKKeyDown}
       isSearchMatch={isSearchMatch}
       isSearchDimmed={isSearchDimmed}
     />
