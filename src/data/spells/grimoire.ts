@@ -8,10 +8,9 @@ function mdtSpellToSpell(mdtSpell: MdtSpell): Spell {
   const spell = getGrimoireSpell(mdtSpell.id)
   const effect = spell.effects?.[0]
 
-  // Display only. The pull interrupt math reads spellCooldowns directly off Mob.spells rather than
-  // through here, so the two can diverge if mergeSpells is given spellsToRemove or getGrimoireSpell
-  // throws for an id (caught below, dropping the spell from display but not from the math).
-  const cooldown = spellCooldowns[mdtSpell.id]?.cooldown
+  const cooldown = mdtSpell.attributes.includes('interruptible')
+    ? spellCooldowns[mdtSpell.id]?.cooldown
+    : undefined
 
   return {
     name: spell.name,

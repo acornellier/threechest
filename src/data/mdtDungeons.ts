@@ -40,6 +40,22 @@ for (const [key, patches] of Object.entries(mdtPatches)) {
   }
 }
 
+const spellAttributePatches: Record<number, string[]> = {
+  // Instant cast, and not actually interruptible in game.
+  1238158: [], // vale Lightgorged Lasher — Lightbloom Pollination
+}
+
+for (const dungeon of Object.values(mdtDungeonsFake)) {
+  for (const enemy of dungeon.enemies) {
+    for (const spell of enemy.spells) {
+      const attributes = spellAttributePatches[spell.id]
+      if (attributes) {
+        spell.attributes = attributes
+      }
+    }
+  }
+}
+
 export const mdtDungeons = mdtDungeonsFake as Record<DungeonKey, MdtDungeon>
 
 export const mdtMobSpawns: Record<DungeonKey, Record<SpawnId, MobSpawn>> = Object.entries(
