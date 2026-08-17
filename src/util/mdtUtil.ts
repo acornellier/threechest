@@ -10,6 +10,7 @@
 } from './types.ts'
 import type { Dungeon, Point, SpawnId } from '../data/types.ts'
 import { dungeonsByKey, dungeonsByMdtIdx } from '../data/dungeons.ts'
+import { encodeMdtString } from './mdt/mdt2.ts'
 import { getPullColor } from './colors.ts'
 import { equalPoints } from './map.ts'
 import { marks, type WowMark } from './marks.ts'
@@ -223,3 +224,6 @@ export function routeToMdtRoute(route: Route): MdtRoute {
     objects: [...route.notes.map(noteToMdt), ...route.drawings.map(drawingToMdtPolygon)],
   }
 }
+
+export const routeToMdtString = (route: Route): Promise<string> =>
+  encodeMdtString(routeToMdtRoute(route))

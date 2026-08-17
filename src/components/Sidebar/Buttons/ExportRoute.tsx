@@ -6,7 +6,7 @@ import { useCallback } from 'react'
 import { shortcuts } from '../../../data/shortcuts.ts'
 import { useRoute } from '../../../store/routes/routeHooks.ts'
 import { useAppDispatch } from '../../../store/storeUtil.ts'
-import { exportRouteApi } from '../../../api/exportRouteApi.ts'
+import { routeToMdtString } from '../../../util/mdtUtil.ts'
 import { copyText } from '../../../util/dev.ts'
 
 interface Props {
@@ -19,7 +19,7 @@ export function ExportRoute({ hidden }: Props) {
 
   const handleClick = useCallback(async () => {
     try {
-      const str = await exportRouteApi(route)
+      const str = await routeToMdtString(route)
       await copyText(str)
       dispatch(addToast({ message: 'MDT string copied to clipboard!' }))
     } catch (err) {

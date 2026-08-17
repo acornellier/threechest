@@ -11,7 +11,7 @@ Never write comments that will be come outdated when other code changes.
 
 ```bash
 yarn dev          # Vite dev server (frontend only, port 5173)
-yarn server       # Express API server (backend, required for WCL and encode/decode)
+yarn server       # Express API server (backend, required for WCL)
 yarn rtc          # WebSocket signaling server (required for real-time collaboration)
 yarn build        # tsc + vite build (client + Vercel server bundle)
 yarn lint         # ESLint with --max-warnings 0 (zero tolerance)
@@ -42,7 +42,9 @@ React + Redux SPA. The Redux store is the single source of truth for all route d
 - **`src/components/Map/`** — Leaflet-based dungeon map. Renders mob spawns, pull numbers, drawings, and annotations as Leaflet layers.
 - **`src/components/Sidebar/`** — Pull list, mob details, route management.
 - **`src/components/Collab/`** — Real-time collaboration UI (Yjs awareness state, peer presence).
-- **`src/util/mdtUtil.ts`** — Encode/decode routes to/from MDT string format (the shareable string used by the WoW addon).
+- **`src/util/mdtUtil.ts`** — Convert between `Route` and `MdtRoute`, the addon's own route shape.
+- **`src/util/mdt/`** — The `!~MDT2~` string codec (CBOR → raw deflate → base64), matching
+  `MythicDungeonTools/Modules/Transmission.lua`. Runs entirely in the browser.
 - **`src/util/wclCalc.ts`** — Parses raw Warcraft Logs fight events into a `Route`.
 
 ### Data pipeline
@@ -74,10 +76,11 @@ To inspect a local `yarn r` run without publishing, set `VITE_RANKINGS_BASE_URL=
 
 ### Backend (server/)
 
-Express server with three routes:
-- `POST /api/decodeRoute` — decompress MDT string → `MdtRoute` JSON
-- `POST /api/encodeRoute` — `MdtRoute` JSON → MDT string
+Express server with one route:
 - `POST /api/wclRoute` — fetch a specific WCL fight and return a parsed `Route`
+
+MDT string encoding/decoding used to live here because it needed a native module. It is now done
+in the browser (`src/util/mdt/`), so importing and exporting routes works without the server.
 
 WCL OAuth tokens are cached in `server/cache/`. Dungeon rankings cache is also stored there.
 

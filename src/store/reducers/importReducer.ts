@@ -1,5 +1,5 @@
 import type { MdtRoute, Route } from '../../util/types.ts'
-import { importRouteApi } from '../../api/importRouteApi.ts'
+import { decodeMdtString } from '../../util/mdt/mdt2.ts'
 import type { AppDispatch, RootState } from '../store.ts'
 import { loadRouteFromStorage, setRouteFromMdt, setRouteFromWcl } from '../routes/routesReducer.ts'
 import { createAppSlice } from '../storeUtil.ts'
@@ -50,7 +50,7 @@ export const importSlice = createAppSlice({
       async ({ text, mdtRoute }: { text?: string; mdtRoute?: MdtRoute }, thunkApi) => {
         if (!text && !mdtRoute) throw new Error('Must specify either string or route to import')
 
-        mdtRoute = mdtRoute ?? (await importRouteApi(text!))
+        mdtRoute = mdtRoute ?? (await decodeMdtString(text!))
         const state = thunkApi.getState() as RootState
         const savedRoute = state.routes.present.savedRoutes.find(
           (route) => route.uid === mdtRoute.uid,
@@ -64,6 +64,12 @@ export const importSlice = createAppSlice({
     ),
     importFirestoreRoute: create.asyncThunk(async ({ routeId }: { routeId: string }, thunkApi) => {
       const firestoreRoute = await getFirestoreRouteApi(routeId)
+
+      // Links shared before the MDT2 format hold a string we can no longer read.
+      if (!firestoreRoute.mdtString.startsWith('!~MDT2~')) {
+        throw new Error('This share link is too old and is no longer supported.')
+      }
+
       thunkApi.dispatch(importMdtRoute({ text: firestoreRoute.mdtString }))
     }),
     importWclRoute: create.asyncThunk(

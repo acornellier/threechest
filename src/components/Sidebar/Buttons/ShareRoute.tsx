@@ -1,5 +1,5 @@
 import { Button } from '../../Common/Button.tsx'
-import { exportRouteApi } from '../../../api/exportRouteApi.ts'
+import { routeToMdtString } from '../../../util/mdtUtil.ts'
 import { addToast } from '../../../store/reducers/toastReducer.ts'
 import { ShareIcon } from '@heroicons/react/24/outline'
 import { useCallback, useState } from 'react'
@@ -20,7 +20,7 @@ export function ShareRoute({ hidden }: Props) {
   const handleClick = useCallback(async () => {
     try {
       setLoading(true)
-      const str = await exportRouteApi(route)
+      const str = await routeToMdtString(route)
       const routeId = await shareRouteApi(route.uid, str)
       const url = window.location.origin + `?id=${encodeURIComponent(routeId)}`
       await copyText(url)
