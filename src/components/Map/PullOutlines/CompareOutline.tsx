@@ -1,11 +1,12 @@
 import type { Circle as LeafletCircle, Polygon as LeafletPolygon } from 'leaflet'
 import type { CircleProps, PolygonProps } from 'react-leaflet'
 import { Circle, Polygon, Tooltip } from 'react-leaflet'
-import { memo, useEffect, useMemo, useRef } from 'react'
+import { memo, useLayoutEffect, useMemo, useRef } from 'react'
 import { getPullColor } from '../../../util/colors.ts'
 import { createOutline } from './createOutline.ts'
 import type { Pull } from '../../../util/types.ts'
 import { useDungeon } from '../../../store/routes/routeHooks.ts'
+import { useOutlineScaling } from '../../../util/hooks/useOutlineScaling.ts'
 
 interface Props {
   pull: Pull
@@ -15,7 +16,7 @@ interface Props {
 
 // The dark casing under the dashes is what separates a ghost from a real pull of the same color.
 const casingColor = '#000000'
-const dashArray = '7 7'
+const dashLength = 7
 
 function CompareOutlineComponent({ pull, index, isHighlighted }: Props) {
   const dungeon = useDungeon()
@@ -30,21 +31,25 @@ function CompareOutlineComponent({ pull, index, isHighlighted }: Props) {
   const casingPolygonRef = useRef<PolygonProps & LeafletPolygon<any>>(null)
   const casingCircleRef = useRef<CircleProps & LeafletCircle<any>>(null)
 
+  const outlineScaling = useOutlineScaling()
   const ghostColor = getPullColor(index)
   const opacity = isHighlighted ? 1 : 0.85
-  const weight = isHighlighted ? 4 : 2.5
-  const casingWeight = weight + 3
+  const weight = (isHighlighted ? 4 : 2.5) * outlineScaling
+  const casingWeight = weight + 3 * outlineScaling
+  const dashArray = `${dashLength * outlineScaling} ${dashLength * outlineScaling}`
   const tooltipClass = `compare-pull-number-tooltip ${isHighlighted ? 'highlighted' : ''}`
 
   // react-leaflet only restyles on pathOptions, so keep these in sync with the props below.
-  useEffect(() => {
+  // Layout, not passive: Leaflet redraws at zoomend with the old weight, so a passive effect would
+  // let that paint before the restyle lands.
+  useLayoutEffect(() => {
     const ref = polygonRef.current ?? circleRef.current
     const casingRef = casingPolygonRef.current ?? casingCircleRef.current
 
-    casingRef?.setStyle({ weight: casingWeight, opacity: opacity * 0.6 })
+    casingRef?.setStyle({ weight: casingWeight, opacity: opacity * 0.6, dashArray })
     if (!ref) return
 
-    ref.setStyle({ color: ghostColor, opacity, weight })
+    ref.setStyle({ color: ghostColor, opacity, weight, dashArray })
 
     const el = ref.getTooltip()?.getElement()
     if (!el) return
@@ -52,7 +57,7 @@ function CompareOutlineComponent({ pull, index, isHighlighted }: Props) {
     el.classList.toggle('highlighted', isHighlighted)
     el.style.backgroundColor = getPullColor(index, true)
     el.style.borderColor = ghostColor
-  }, [casingWeight, ghostColor, index, isHighlighted, opacity, weight])
+  }, [casingWeight, dashArray, ghostColor, index, isHighlighted, opacity, weight])
 
   const shared = { dashArray, fillOpacity: 0, interactive: false }
   const casing = {

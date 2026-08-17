@@ -1,13 +1,14 @@
 ﻿import type { Circle as LeafletCircle, Polygon as LeafletPolygon } from 'leaflet'
 import type { CircleProps, PolygonProps } from 'react-leaflet'
 import { Circle, Polygon, Tooltip } from 'react-leaflet'
-import { memo, useEffect, useMemo, useRef, useState } from 'react'
+import { memo, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react'
 import { getPullColor } from '../../../util/colors.ts'
 import { createOutline } from './createOutline.ts'
 import { selectPull } from '../../../store/routes/routesReducer.ts'
 import type { Pull } from '../../../util/types.ts'
 import { useMapObjectsHidden } from '../../../store/reducers/mapReducer.ts'
 import { useDungeon } from '../../../store/routes/routeHooks.ts'
+import { useOutlineScaling } from '../../../util/hooks/useOutlineScaling.ts'
 import { useAppDispatch } from '../../../store/storeUtil.ts'
 
 interface Props {
@@ -36,6 +37,7 @@ function PullOutlineComponent({
   )
   const { hull, circle } = useMemo(() => createOutline(mobSpawns), [mobSpawns])
   const hidden = useMapObjectsHidden(100) || !!forceHidden
+  const outlineScaling = useOutlineScaling()
 
   const polygonRef = useRef<PolygonProps & LeafletPolygon<any>>(null)
   const circleRef = useRef<CircleProps & LeafletCircle<any>>(null)
@@ -52,7 +54,7 @@ function PullOutlineComponent({
   const tooltipClass = `pull-number-tooltip ${isHovered ? 'hovered' : ''} ${isSelected ? 'selected' : ''}`
   const color = faded ? '#222222' : getPullColor(index)
   const opacity = hidden ? 0 : isSelected || isHovered ? 1 : 0.6
-  const weight = isSelected ? 6 : isHovered ? 4.5 : 3.5
+  const weight = (isSelected ? 6 : isHovered ? 4.5 : 3.5) * outlineScaling
   const textOpacity = hidden ? 0 : isSelected || isHovered ? 1 : 0.9
 
   const [key, setKey] = useState(0)
@@ -65,7 +67,9 @@ function PullOutlineComponent({
     // }
   }, [hull, circle])
 
-  useEffect(() => {
+  // Layout, not passive: Leaflet redraws at zoomend with the old weight, so a passive effect would
+  // let that paint before the restyle lands.
+  useLayoutEffect(() => {
     const ref = polygonRef.current ?? circleRef.current
     if (!ref) return
 
