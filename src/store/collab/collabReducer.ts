@@ -11,6 +11,7 @@ export interface AwarenessState extends BaseAwarenessState {
   name: string
   clientType?: ClientType
   promotingClientId?: number | null
+  forceHost?: boolean
   joinTime?: number
   color?: string | null
   mousePosition?: LatLng | null
@@ -75,7 +76,18 @@ export const collabSlice = createAppSlice({
     },
     promoteGuestToHost(state, { payload: clientId }: PayloadAction<number>) {
       const localAwareness = getLocalAwareness(state)
-      if (localAwareness) localAwareness.promotingClientId = clientId
+      if (localAwareness) {
+        localAwareness.promotingClientId = clientId
+        localAwareness.forceHost = false
+      }
+    },
+    stealHost(state) {
+      const localAwareness = getLocalAwareness(state)
+      if (localAwareness) {
+        localAwareness.clientType = 'host'
+        localAwareness.promotingClientId = null
+        localAwareness.forceHost = true
+      }
     },
     setMousePosition(
       state,
@@ -118,6 +130,9 @@ export const useSavedCollabName = () => useLocalStorage(savedCollabNameKey, '', 
 export const savedCollabColorKey = 'collab-color'
 export const useSavedCollabColor = () => useLocalStorage(savedCollabColorKey, '', false)
 
+export const stealHostKey = 'collab-steal-host'
+export const canStealHost = () => localStorage.getItem(stealHostKey) === 'true'
+
 export const collabReducer = collabSlice.reducer
 
 export const {
@@ -128,6 +143,7 @@ export const {
   setAwarenessStates,
   promoteSelfToHost,
   promoteGuestToHost,
+  stealHost,
   setMousePosition,
   setCollabName,
   setCollabColor,

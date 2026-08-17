@@ -1,7 +1,9 @@
 import { getTextColor } from '../../util/colors.ts'
 import { TooltipStyled } from '../Common/TooltipStyled.tsx'
 import {
+  canStealHost,
   promoteGuestToHost,
+  stealHost,
   useAwarenessStates,
   useCollabSelector,
 } from '../../store/collab/collabReducer.ts'
@@ -97,6 +99,11 @@ export function CollabRoomDetails() {
                     onClick={() => dispatch(promoteGuestToHost(awareness.clientId))}
                   >
                     Promote
+                  </Button>
+                )}
+                {!isHost && awareness.clientType === 'host' && canStealHost() && (
+                  <Button tiny outline twoDimensional onClick={() => dispatch(stealHost())}>
+                    Steal
                   </Button>
                 )}
               </div>

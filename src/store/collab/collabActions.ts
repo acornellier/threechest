@@ -91,6 +91,13 @@ function shouldDemoteToGuest(state: CollabState, localAwareness: AwarenessState)
   )
     return true
 
+  // A client that stole the role outranks every host except one that stole it earlier
+  const otherForceHosts = otherHosts.filter(({ forceHost }) => forceHost)
+  if (localAwareness.forceHost) {
+    return otherForceHosts.some(({ joinTime }) => joinTime && joinTime < localJoinTime)
+  }
+  if (otherForceHosts.length) return true
+
   // Demote if there is any other host joined earlier but isn't promoting us
   return otherHosts.some(
     ({ joinTime, promotingClientId }) =>
