@@ -1,4 +1,5 @@
-import { getPullColor } from '../../../util/colors.ts'
+import type { CompareDiffKind } from '../../../util/colors.ts'
+import { compareDiffColors, getPullColor } from '../../../util/colors.ts'
 import type { MobSpawn } from '../../../data/types.ts'
 import { MobBorder } from './MobBorder.tsx'
 import { mobKicksNeeded } from '../../../util/interrupts.ts'
@@ -7,6 +8,7 @@ import { BoltIcon } from '@heroicons/react/24/solid'
 interface Props {
   mobSpawn: MobSpawn
   matchingPullIndex: number | null
+  compareDiff: CompareDiffKind | null
   showCount: boolean
   showGroup: boolean
   showKicks: boolean
@@ -18,6 +20,7 @@ interface Props {
 export function MobIcon({
   mobSpawn,
   matchingPullIndex,
+  compareDiff,
   showCount,
   showGroup,
   showKicks,
@@ -51,9 +54,11 @@ export function MobIcon({
             backgroundBlendMode: 'overlay',
             backgroundColor: faded
               ? '#444444'
-              : matchingPullIndex !== null
-                ? getPullColor(matchingPullIndex, true)
-                : undefined,
+              : compareDiff
+                ? compareDiffColors[compareDiff]
+                : matchingPullIndex !== null
+                  ? getPullColor(matchingPullIndex, true)
+                  : undefined,
           }}
         >
           {kicks > 0 ? (

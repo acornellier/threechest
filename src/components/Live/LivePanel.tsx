@@ -24,7 +24,7 @@ export function LivePanel({ pull, prevPull, pullsDetailed }: Props) {
   const dispatch = useAppDispatch()
   const dungeon = useDungeon()
   const route = useRoute()
-  const sortedCounts = useMemo(() => countMobs(pull, dungeon), [pull, dungeon])
+  const sortedCounts = useMemo(() => countMobs(pull.spawns, dungeon), [pull, dungeon])
 
   return (
     <div

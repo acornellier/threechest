@@ -8,7 +8,11 @@ import {
 } from '../../../store/routes/routesReducer.ts'
 import type { LeafletEventHandlerFnMap } from 'leaflet'
 import { setBoxHovering } from '../../../store/reducers/hoverReducer.ts'
-import { useDungeon } from '../../../store/routes/routeHooks.ts'
+import {
+  useCompareMode,
+  useDungeon,
+  useRouteComparison,
+} from '../../../store/routes/routeHooks.ts'
 import { useAppDispatch } from '../../../store/storeUtil.ts'
 import { Delayed } from '../../Common/Delayed.tsx'
 import { useKeyHeld } from '../../../util/hooks/useKeyHeld.ts'
@@ -20,6 +24,10 @@ export function Mobs() {
   const isCtrlKeyDown = useKeyHeld('Control')
   const isAltKeyDown = useKeyHeld('Alt')
   const isKKeyDown = useKeyHeld('k')
+
+  const comparison = useRouteComparison()
+  const compareMode = useCompareMode()
+  const spawnDiff = compareMode === 'diff' ? comparison : null
 
   const mapEvents: LeafletEventHandlerFnMap = useMemo(() => {
     return {
@@ -53,6 +61,7 @@ export function Mobs() {
           isCtrlKeyDown={isCtrlKeyDown}
           isAltKeyDown={isAltKeyDown}
           isKKeyDown={isKKeyDown}
+          spawnDiff={spawnDiff}
         />
       ))}
     </Delayed>

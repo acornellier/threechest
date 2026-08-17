@@ -22,6 +22,7 @@ const importRoute: Shortcut[] = [{ key: 'V', ctrl: true }]
 const help: Shortcut[] = [{ key: '?', allowShift: true }]
 const draw: Shortcut[] = [{ key: 'P' }]
 const findMob: Shortcut[] = [{ key: 'F', ctrl: false }]
+const comparePeek: Shortcut[] = [{ key: 'Q' }]
 
 export function keyText({ key, ctrl, shift }: Shortcut) {
   let text = ''
@@ -64,4 +65,5 @@ export const shortcuts = {
   importRoute,
   draw,
   findMob,
+  comparePeek,
 } as const

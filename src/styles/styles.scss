@@ -126,6 +126,32 @@ $fancy-yellow: #7f6b1d;
   }
 }
 
+.compare-pull-number-tooltip {
+  @include text-outline(1px);
+
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1;
+  padding: 2px 5px;
+  color: white;
+  // Colours come from the compare pull, applied inline in CompareOutline.
+  background-color: rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  border-radius: 4px;
+  box-shadow: none;
+
+  &::before {
+    display: none;
+  }
+
+  &.highlighted {
+    font-size: 16px;
+    background-color: black;
+    border-color: white;
+    z-index: 2;
+  }
+}
+
 .pull {
   cursor: pointer;
 
@@ -453,10 +479,38 @@ textarea.fancy {
     opacity: 0;
     padding-top: 0;
     padding-bottom: 0;
+    overflow: hidden;
   }
 
   &.options-visible {
     max-height: 100px;
+  }
+
+  .dropdown-option-action {
+    align-self: stretch;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    margin: -8px -12px -8px 8px;
+    border-left: 1px solid rgba(255, 255, 255, 0.25);
+    color: rgba(255, 255, 255, 0.65);
+    transition: 150ms all;
+
+    &:hover {
+      background: radial-gradient(#de1313, transparent);
+      color: white;
+    }
+
+    &.active {
+      background-color: rgba(255, 255, 255, 0.2);
+      color: white;
+    }
+
+    &.disabled {
+      opacity: 0.25;
+    }
   }
 
   .dropdown-option-text {

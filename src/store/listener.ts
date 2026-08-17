@@ -34,6 +34,7 @@ import { setDrawColor } from './reducers/mapReducer.ts'
 import type { UnknownAction } from 'redux'
 import { selectActualRoute } from './routes/routeHooks.ts'
 import { importMdtRoute, importWclRoute } from './reducers/importReducer.ts'
+import { exitCompare } from './reducers/compareReducer.ts'
 import { trackEvent } from '../util/analytics.ts'
 
 export const listenerMiddleware = createListenerMiddleware()
@@ -91,6 +92,25 @@ listenerMiddleware.startListening({
     const isGuest = selectLocalAwarenessIsGuest(state)
     if (!isGuest) listenerApi.dispatch(updateSavedRoutes())
     listenerApi.dispatch(ActionCreators.clearHistory())
+  },
+})
+
+// loading a different route is a clean slate
+listenerMiddleware.startListening({
+  matcher: isAnyOf(
+    setDungeon.fulfilled,
+    loadRoute.fulfilled,
+    deleteRoute.fulfilled,
+    duplicateRoute,
+    setRouteFromMdt,
+    setRouteFromWcl,
+    setRouteFromSample,
+    setRouteForCollab,
+    newRoute,
+  ),
+  effect: async (_action, listenerApi) => {
+    const state = listenerApi.getState() as RootState
+    if (state.compare.route) listenerApi.dispatch(exitCompare())
   },
 })
 

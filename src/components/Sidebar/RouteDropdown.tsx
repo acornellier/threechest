@@ -4,9 +4,14 @@ import type { SavedRoute } from '../../util/types.ts'
 import type { DropdownOption } from '../Common/Dropdown.tsx'
 import { Dropdown } from '../Common/Dropdown.tsx'
 import { setPreviewRouteAsync } from '../../store/reducers/importReducer.ts'
-import { useActualRoute, useDungeonRoutes } from '../../store/routes/routeHooks.ts'
+import {
+  useActualCompareRoute,
+  useActualRoute,
+  useDungeonRoutes,
+} from '../../store/routes/routeHooks.ts'
 import { useAppDispatch } from '../../store/storeUtil.ts'
 import { useIsGuestCollab } from '../../store/collab/collabReducer.ts'
+import { useCompareOptionAction } from '../Compare/useCompareOptionAction.ts'
 
 interface RouteOption extends DropdownOption {
   route: SavedRoute
@@ -22,6 +27,7 @@ export function RouteDropdown() {
   const dispatch = useAppDispatch()
   const route = useActualRoute()
   const routes = useDungeonRoutes(route.dungeonKey)
+  const compareRoute = useActualCompareRoute()
   const isGuestCollab = useIsGuestCollab()
 
   const options = useMemo(() => routes.map(routeToOption), [routes])
@@ -52,6 +58,12 @@ export function RouteDropdown() {
     [dispatch],
   )
 
+  const optionAction = useCompareOptionAction<RouteOption>({
+    tooltipId: 'route-dropdown-compare-tooltip',
+    routeUid: route.uid,
+    compareRouteUid: compareRoute?.uid,
+  })
+
   return (
     <Dropdown
       className="route-dropdown"
@@ -60,6 +72,7 @@ export function RouteDropdown() {
       onSelect={onSelect}
       onHover={onHover}
       onReorder={onReorder}
+      optionAction={optionAction}
       buttonContent={isGuestCollab ? route.name : undefined}
       disabled={isGuestCollab}
     />

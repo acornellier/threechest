@@ -11,7 +11,12 @@ import {
 } from '@heroicons/react/24/outline'
 import { setRouteFromSample } from '../../../store/routes/routesReducer.ts'
 import { addToast } from '../../../store/reducers/toastReducer.ts'
-import { useDungeon } from '../../../store/routes/routeHooks.ts'
+import {
+  useActualCompareRoute,
+  useActualRoute,
+  useDungeon,
+} from '../../../store/routes/routeHooks.ts'
+import { useCompareOptionAction } from '../../Compare/useCompareOptionAction.ts'
 import { useAppDispatch } from '../../../store/storeUtil.ts'
 import { classColors } from '../../../util/colors.ts'
 import {
@@ -51,6 +56,8 @@ function sortTeam(member1: WclRankingTeamMember, member2: WclRankingTeamMember) 
 export function SampleRoutes({ hidden }: Props) {
   const dispatch = useAppDispatch()
   const dungeon = useDungeon()
+  const route = useActualRoute()
+  const compareRoute = useActualCompareRoute()
   const [selectedMode, setSelectedMode] = useState<FilterMode | null>(null)
   const [selectedSpec, setSelectedSpec] = useState<Spec>(tankSpecs[0]!)
   const { sampleRoutes: routes, loading } = useSampleRoutes(dungeon.key)
@@ -154,6 +161,15 @@ export function SampleRoutes({ hidden }: Props) {
     [dispatch],
   )
 
+  const getRoute = useCallback((option: SampleRouteOption) => option.route, [])
+
+  const optionAction = useCompareOptionAction<SampleRouteOption>({
+    tooltipId: 'sample-routes-compare-tooltip',
+    routeUid: route.uid,
+    compareRouteUid: compareRoute?.uid,
+    getRoute,
+  })
+
   const handleModeChange = useCallback((mode: FilterMode) => {
     setSelectedMode(mode)
     setSelectedSpec((prev) => prev ?? tankSpecs[0]!)
@@ -214,6 +230,7 @@ export function SampleRoutes({ hidden }: Props) {
       onOpen={onOpen}
       onSelect={onSelect}
       onHover={onHover}
+      optionAction={optionAction}
       header={filterHeader}
       buttonContent="Sample routes"
       MainButtonIcon={MagnifyingGlassIcon}

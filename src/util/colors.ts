@@ -67,6 +67,24 @@ export function getPullColor(pullIndex: number, dark?: boolean): string {
   return colors[pullIndex % colors.length]!
 }
 
+export const compareColors = {
+  /** Mode signalling. Pull colors still identify individual compare pulls. */
+  accent: '#22d3ee',
+  added: '#4ade80',
+  removed: '#f87171',
+  moved: '#facc15',
+  shared: '#9ca3af',
+}
+
+export type CompareDiffKind = 'both' | 'onlyRoute' | 'onlyCompare'
+
+/** Darkened to survive the overlay blend against a mob portrait. */
+export const compareDiffColors: Record<CompareDiffKind, string> = {
+  both: darkenColor(compareColors.shared, 80),
+  onlyRoute: darkenColor(compareColors.added, 90),
+  onlyCompare: darkenColor(compareColors.removed, 90),
+}
+
 export function getTextColor(hex: string) {
   const rgb = hexToRgb(hex)
   if (rgb && rgb[0] * 0.299 + rgb[1] * 0.587 + rgb[2] * 0.114 > 150) {

@@ -9,12 +9,14 @@ import { mapReducer } from './reducers/mapReducer.ts'
 import { collabReducer } from './collab/collabReducer.ts'
 import { cloudReducer } from './reducers/cloudReducer.ts'
 import { mobSearchReducer } from './reducers/mobSearchReducer.ts'
+import { compareReducer } from './reducers/compareReducer.ts'
 
 export const store = configureStore({
   reducer: {
     routes: routesReducer,
     hover: hoverReducer,
     import: importReducer,
+    compare: compareReducer,
     map: mapReducer,
     toast: toastReducer,
     collab: collabReducer,

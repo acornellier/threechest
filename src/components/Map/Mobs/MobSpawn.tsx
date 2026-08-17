@@ -16,7 +16,9 @@ import {
   useHoveredMobSpawn,
 } from '../../../store/reducers/hoverReducer.ts'
 import type { MobSpawn } from '../../../data/types.ts'
-import { useRoute, useSelectedPull } from '../../../store/routes/routeHooks.ts'
+import type { CompareDiffKind } from '../../../util/colors.ts'
+import type { RouteComparison } from '../../../util/compareRoutes.ts'
+import { useIsPeeking, useRoute, useSelectedPull } from '../../../store/routes/routeHooks.ts'
 import { useAppDispatch, useRootSelector } from '../../../store/storeUtil.ts'
 import { selectIsLive, useMapObjectsHidden } from '../../../store/reducers/mapReducer.ts'
 import { Patrol } from './Patrol.tsx'
@@ -38,13 +40,15 @@ interface MobSpawnProps {
   isCtrlKeyDown: boolean
   isAltKeyDown: boolean
   isKKeyDown: boolean
+  spawnDiff: RouteComparison | null
 }
 
-interface MobSpawnMemoProps extends MobSpawnProps {
+interface MobSpawnMemoProps extends Omit<MobSpawnProps, 'spawnDiff'> {
   isSelected: boolean
   isHovered: boolean
   isGroupHovered: boolean
   matchingPullIndex: number | null
+  compareDiff: CompareDiffKind | null
   hidden: boolean
   faded: boolean
   mark: WowMark | null
@@ -61,6 +65,7 @@ function MobSpawnComponent({
   isHovered,
   isGroupHovered,
   matchingPullIndex,
+  compareDiff,
   hidden,
   faded,
   mark,
@@ -77,6 +82,7 @@ function MobSpawnComponent({
   const isBoxHovering = useRootSelector(selectIsBoxHovering)
   const disableHover = isDrawing || isBoxHovering
   const isActuallyHovered = isHovered && !disableHover
+  const isPeeking = useIsPeeking()
   const isHoveringKicks = useRootSelector(selectHoveredKicks)
   const showKicks = isKKeyDown || isHoveringKicks
   const {
@@ -97,6 +103,9 @@ function MobSpawnComponent({
   const eventHandlers: LeafletEventHandlerFnMap = useMemo(
     () => ({
       click: (e) => {
+        // The map is showing the compare route, so an edit here would land on the wrong one.
+        if (isPeeking) return
+
         dispatch(
           toggleSpawn({
             spawn: spawn.id,
@@ -119,7 +128,7 @@ function MobSpawnComponent({
         dispatch(hoverSpawn(null))
       },
     }),
-    [dispatch, onOpenMarking, spawn.id],
+    [dispatch, isPeeking, onOpenMarking, spawn.id],
   )
 
   const mobIcon = useMemo(
@@ -132,10 +141,12 @@ function MobSpawnComponent({
         isSelected={isSelected}
         isSearchMatch={isSearchMatch}
         matchingPullIndex={matchingPullIndex}
+        compareDiff={compareDiff}
         faded={faded}
       />
     ),
     [
+      compareDiff,
       disableHover,
       faded,
       isGroupHovered,
@@ -206,6 +217,7 @@ export function MobSpawnWrapper({
   isCtrlKeyDown,
   isAltKeyDown,
   isKKeyDown,
+  spawnDiff,
 }: MobSpawnProps) {
   const route = useRoute()
 
@@ -228,6 +240,13 @@ export function MobSpawnWrapper({
     return index !== -1 ? index : null
   }, [route.pulls, mobSpawn])
 
+  const compareDiff = useMemo<CompareDiffKind | null>(() => {
+    if (!spawnDiff) return null
+    if (spawnDiff.onlyInRoute.has(mobSpawn.spawn.id)) return 'onlyRoute'
+    if (spawnDiff.onlyInCompare.has(mobSpawn.spawn.id)) return 'onlyCompare'
+    return matchingPullIndex !== null ? 'both' : null
+  }, [matchingPullIndex, mobSpawn.spawn.id, spawnDiff])
+
   const isSelected = matchingPullIndex !== null && selectedPull === matchingPullIndex
   const faded = isLive && matchingPullIndex !== null && matchingPullIndex < selectedPull
   const mark = route.assignments?.[mobSpawn.spawn.id] ?? null
@@ -244,6 +263,7 @@ export function MobSpawnWrapper({
       isHovered={isHovered}
       isGroupHovered={isGroupHovered}
       matchingPullIndex={matchingPullIndex}
+      compareDiff={compareDiff}
       hidden={hidden}
       faded={faded}
       mark={mark}

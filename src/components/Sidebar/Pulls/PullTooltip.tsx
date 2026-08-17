@@ -11,7 +11,7 @@ interface Props {
 export function PullTooltip({ pull }: Props) {
   const dungeon = useDungeon()
 
-  const sortedCounts = useMemo(() => countMobs(pull, dungeon), [pull, dungeon])
+  const sortedCounts = useMemo(() => countMobs(pull.spawns, dungeon), [pull, dungeon])
 
   const { efficiencyScore, efficiencyColor } = mobEfficiency(
     { count: pull.count, health: pull.health },

@@ -8,15 +8,19 @@ import { useDungeon, useSelectedPull } from '../../../store/routes/routeHooks.ts
 import { useAppDispatch } from '../../../store/storeUtil.ts'
 import { countMobs } from '../../../util/mobSpawns.ts'
 import { KickBadge } from './KickBadge.tsx'
+import { PullDiffPortraits } from './PullDiffPortraits.tsx'
+import { PullCompareColumns } from './PullCompareColumns.tsx'
+import type { PullCompareInfo } from './compareRows.ts'
 
 interface Props {
   pull: PullDetailed
   ghost?: boolean | undefined
+  compare?: PullCompareInfo | undefined
   onRightClick: (e: MouseEvent, pullIndex: number) => void
   isShiftHeld?: boolean
 }
 
-export function Pull({ pull, ghost, onRightClick, isShiftHeld }: Props) {
+export function Pull({ pull, ghost, compare, onRightClick, isShiftHeld }: Props) {
   const ref = useRef<HTMLDivElement>(null)
 
   const dispatch = useAppDispatch()
@@ -27,10 +31,10 @@ export function Pull({ pull, ghost, onRightClick, isShiftHeld }: Props) {
   const darkPullColor = getPullColor(pull.index, true)
   const isSelectedPull = pull.index === selectedPull
 
-  const sortedCounts = useMemo(() => countMobs(pull, dungeon), [pull, dungeon])
+  const sortedCounts = useMemo(() => countMobs(pull.spawns, dungeon), [pull, dungeon])
 
-  const showKickBadge = pull.kicksNeeded > 0
-  const maxPortraits = showKickBadge ? 6 : 7
+  const showKickBadge = !compare && pull.kicksNeeded > 0
+  const maxPortraits = compare ? 5 : showKickBadge ? 6 : 7
 
   useEffect(() => {
     if (isSelectedPull) {
@@ -75,24 +79,28 @@ export function Pull({ pull, ghost, onRightClick, isShiftHeld }: Props) {
             <div className="text-outline min-w-4 mr-1 text-yellow-200 text-sm font-bold">
               {ghost ? pull.index : pull.index + 1}
             </div>
-            <div className="flex h-full items-center">
-              {sortedCounts.slice(0, maxPortraits).map(({ mob, count }) => (
-                <div
-                  key={mob.id}
-                  className="relative h-7 w-7 mr-[-3px] rounded-full border border-slate-300"
-                  style={{ borderWidth: 0.05 }}
-                >
-                  <img
-                    className="h-full rounded-full"
-                    src={`/npc_portraits/${mob.id}.png`}
-                    alt={mob.name}
-                  />
-                  <div className="text-outline absolute bottom-[-2px] w-full font-bold text-xs text-center">
-                    x{count}
+            {compare ? (
+              <PullDiffPortraits compare={compare} maxPortraits={maxPortraits} />
+            ) : (
+              <div className="flex h-full items-center">
+                {sortedCounts.slice(0, maxPortraits).map(({ mob, count }) => (
+                  <div
+                    key={mob.id}
+                    className="relative h-7 w-7 mr-[-3px] rounded-full border border-slate-300"
+                    style={{ borderWidth: 0.05 }}
+                  >
+                    <img
+                      className="h-full rounded-full"
+                      src={`/npc_portraits/${mob.id}.png`}
+                      alt={mob.name}
+                    />
+                    <div className="text-outline absolute bottom-[-2px] w-full font-bold text-xs text-center">
+                      x{count}
+                    </div>
                   </div>
-                </div>
-              ))}
-            </div>
+                ))}
+              </div>
+            )}
           </div>
           <div className="flex items-center gap-1">
             {showKickBadge && <KickBadge kicksNeeded={pull.kicksNeeded} />}
@@ -101,6 +109,7 @@ export function Pull({ pull, ghost, onRightClick, isShiftHeld }: Props) {
                 ? pull.countCumulative
                 : mobCountPercentStr(pull.countCumulative, dungeon.mdt.totalCount)}
             </div>
+            {compare && <PullCompareColumns compare={compare} isShiftHeld={isShiftHeld} />}
           </div>
         </div>
       </div>

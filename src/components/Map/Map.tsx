@@ -19,6 +19,7 @@ import { MapInitialZoom } from './MapInitialZoom.tsx'
 import { LiveControllerWrapper } from '../Live/LiveControllerWrapper.tsx'
 import { Mobs } from './Mobs/Mobs.tsx'
 import { PullOutlines } from './PullOutlines/PullOutlines.tsx'
+import { CompareOutlines } from './PullOutlines/CompareOutlines.tsx'
 import { isDev } from '../../util/isDev.ts'
 import { PointsOfInterest } from './PointsOfInterest/PointsOfInterest.tsx'
 import { WclCoordinateTest } from './WclCoordinateTest.tsx'
@@ -68,6 +69,7 @@ export function Map() {
         <IconScaling />
         <Mobs />
         <PullOutlines />
+        <CompareOutlines />
         <Drawings />
         <Notes />
         <PointsOfInterest />

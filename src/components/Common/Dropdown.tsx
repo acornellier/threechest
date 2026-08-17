@@ -6,11 +6,23 @@ import { ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/24/outline'
 import { useOutsideClick } from '../../util/hooks/useOutsideClick.ts'
 import type { IconComponent } from '../../util/types.ts'
 import { ReactSortable } from 'react-sortablejs'
+import { TooltipStyled } from './TooltipStyled.tsx'
 
 export interface DropdownOption {
   id: string
   content: ReactNode
   icon?: ReactNode
+}
+
+/** A second, attached button on each option, for an action other than selecting it. */
+export interface DropdownOptionAction<T extends DropdownOption> {
+  Icon: IconComponent
+  onClick: (option: T) => void
+  onHover?: (option: T | null) => void
+  isActive?: (option: T) => boolean
+  disabled?: (option: T) => boolean
+  tooltip?: ReactNode
+  tooltipId?: string
 }
 
 type Props<T extends DropdownOption> = {
@@ -20,6 +32,7 @@ type Props<T extends DropdownOption> = {
   onSelect: (option: T) => any
   onHover?: (option: T | null) => void
   onReorder?: (options: T[]) => void
+  optionAction?: DropdownOptionAction<T>
   selected?: T
   buttonContent?: ReactNode
   MainButtonIcon?: IconComponent
@@ -40,6 +53,7 @@ export function Dropdown<T extends DropdownOption>({
   onSelect,
   onHover,
   onReorder,
+  optionAction,
   buttonContent,
   MainButtonIcon,
   header,
@@ -182,11 +196,61 @@ export function Dropdown<T extends DropdownOption>({
               >
                 {option.icon && <div className="mr-1">{option.icon}</div>}
                 <div className="dropdown-option-text w-full">{option.content}</div>
+                {optionAction && (
+                  <OptionAction action={optionAction} option={option} fullyOpen={fullyOpen} />
+                )}
               </Button>
             ))}
           </ReactSortable>
         </div>
       </div>
+      {optionAction?.tooltip && optionAction.tooltipId && (
+        <TooltipStyled id={optionAction.tooltipId} place="left">
+          {optionAction.tooltip}
+        </TooltipStyled>
+      )}
+    </div>
+  )
+}
+
+interface OptionActionProps<T extends DropdownOption> {
+  action: DropdownOptionAction<T>
+  option: T
+  fullyOpen: boolean
+}
+
+function OptionAction<T extends DropdownOption>({
+  action,
+  option,
+  fullyOpen,
+}: OptionActionProps<T>) {
+  const { Icon, isActive, disabled, tooltipId } = action
+  const isDisabled = disabled?.(option) ?? false
+
+  return (
+    <div
+      role="button"
+      tabIndex={-1}
+      data-tooltip-id={isDisabled ? undefined : tooltipId}
+      className={`dropdown-option-action
+                  ${isActive?.(option) ? 'active' : ''}
+                  ${isDisabled ? 'disabled' : ''}`}
+      onClick={(e) => {
+        e.stopPropagation()
+        if (!isDisabled) action.onClick(option)
+      }}
+      onTouchEnd={(e) => {
+        e.stopPropagation()
+        if (!isDisabled) action.onClick(option)
+      }}
+      onMouseEnter={() => {
+        if (!isDisabled && fullyOpen) action.onHover?.(option)
+      }}
+      onMouseLeave={() => {
+        if (!isDisabled && fullyOpen) action.onHover?.(null)
+      }}
+    >
+      <Icon width={18} height={18} />
     </div>
   )
 }

@@ -3,10 +3,7 @@ import type { CircleProps, PolygonProps } from 'react-leaflet'
 import { Circle, Polygon, Tooltip } from 'react-leaflet'
 import { memo, useEffect, useMemo, useRef, useState } from 'react'
 import { getPullColor } from '../../../util/colors.ts'
-import type { MobSpawn, Point } from '../../../data/types.ts'
-import type { PolygonVertexScaled } from '../../../util/hull.ts'
-import { expandPolygon, makeConvexHull, mobScaleToRadius } from '../../../util/hull.ts'
-import { mobScale } from '../../../util/mobSpawns.ts'
+import { createOutline } from './createOutline.ts'
 import { selectPull } from '../../../store/routes/routesReducer.ts'
 import type { Pull } from '../../../util/types.ts'
 import { useMapObjectsHidden } from '../../../store/reducers/mapReducer.ts'
@@ -19,40 +16,18 @@ interface Props {
   isHovered: boolean
   isSelected: boolean
   faded: boolean
+  /** Kept mounted rather than unmounted, so re-showing doesn't replay the staggered fade-in. */
+  forceHidden?: boolean
 }
 
-interface Outline {
-  hull?: Array<Point>
-  circle?: { center: Point; radius: number }
-}
-
-function createOutline(mobSpawns: MobSpawn[]): Outline {
-  if (mobSpawns.length <= 0) return {}
-
-  if (mobSpawns.length === 1) {
-    const mobSpawn = mobSpawns[0]!
-    const scale = mobScale(mobSpawn)
-    return {
-      circle: {
-        center: mobSpawn.spawn.pos,
-        radius: mobScaleToRadius(scale),
-      },
-    }
-  }
-
-  const vertices: PolygonVertexScaled[] = mobSpawns.map((mobSpawn) => ({
-    pos: mobSpawn.spawn.pos,
-    scale: mobScale(mobSpawn),
-  }))
-
-  let hull = makeConvexHull(vertices)
-  hull = expandPolygon(hull, 10)
-  hull = makeConvexHull(hull)
-
-  return { hull: hull.map((m) => m.pos) }
-}
-
-function PullOutlineComponent({ pull, index, isSelected, isHovered, faded }: Props) {
+function PullOutlineComponent({
+  pull,
+  index,
+  isSelected,
+  isHovered,
+  faded,
+  forceHidden,
+}: Props) {
   const dispatch = useAppDispatch()
   const dungeon = useDungeon()
   const mobSpawns = useMemo(
@@ -60,7 +35,7 @@ function PullOutlineComponent({ pull, index, isSelected, isHovered, faded }: Pro
     [dungeon, pull.spawns],
   )
   const { hull, circle } = useMemo(() => createOutline(mobSpawns), [mobSpawns])
-  const hidden = useMapObjectsHidden(100)
+  const hidden = useMapObjectsHidden(100) || !!forceHidden
 
   const polygonRef = useRef<PolygonProps & LeafletPolygon<any>>(null)
   const circleRef = useRef<CircleProps & LeafletCircle<any>>(null)
@@ -99,6 +74,9 @@ function PullOutlineComponent({ pull, index, isSelected, isHovered, faded }: Pro
       opacity,
       weight,
     })
+
+    const el = ref.getElement() as SVGElement | undefined
+    if (el) el.style.pointerEvents = opacity === 0 ? 'none' : ''
   }, [color, opacity, weight])
 
   useEffect(() => {

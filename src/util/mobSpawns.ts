@@ -1,5 +1,4 @@
 import type { Dungeon, Mob, MobSpawn, SpawnId } from '../data/types.ts'
-import type { PullDetailed } from './types.ts'
 import { roundTo } from './numbers.ts'
 import { rgbToHex } from './colors.ts'
 
@@ -45,8 +44,8 @@ export function mobCcTypes(mob: Mob): string[] {
 
 type MobCount = Record<number, { mob: Mob; count: number }>
 
-export const countMobs = (pull: PullDetailed, dungeon: Dungeon) => {
-  const mobCounts = pull.spawns.reduce<MobCount>((acc, spawnId) => {
+export const countMobs = (spawns: SpawnId[], dungeon: Dungeon) => {
+  const mobCounts = spawns.reduce<MobCount>((acc, spawnId) => {
     const mobSpawn = dungeon.mobSpawns[spawnId]
     if (!mobSpawn) {
       console.error(`Could not find spawnId ${spawnId} in dungeon ${dungeon.key}`)

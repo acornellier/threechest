@@ -6,7 +6,12 @@ import { augmentPulls } from './augmentPulls.ts'
 import { PlusIcon, TrashIcon } from '@heroicons/react/24/outline'
 import { shortcuts } from '../../../data/shortcuts.ts'
 import { PullList } from './PullList.tsx'
-import { useDungeon, useRoute } from '../../../store/routes/routeHooks.ts'
+import {
+  useCompareRoute,
+  useDungeon,
+  useRoute,
+  useRouteComparison,
+} from '../../../store/routes/routeHooks.ts'
 import { useAppDispatch } from '../../../store/storeUtil.ts'
 import { TotalCount } from './TotalCount.tsx'
 import { usePullShortcuts } from './usePullShortcuts.ts'
@@ -15,14 +20,24 @@ export function Pulls() {
   const dispatch = useAppDispatch()
   const dungeon = useDungeon()
   const route = useRoute()
+  const compareRoute = useCompareRoute()
+  const comparison = useRouteComparison()
   const pullsDetailed = useMemo(() => augmentPulls(route.pulls, dungeon), [route.pulls, dungeon])
+  const comparePullsDetailed = useMemo(
+    () => (compareRoute ? augmentPulls(compareRoute.pulls, dungeon) : undefined),
+    [compareRoute, dungeon],
+  )
 
   usePullShortcuts()
 
   return (
     <Panel noRightBorder className="overflow-auto select-none">
-      <TotalCount pullsDetailed={pullsDetailed} />
-      <PullList pullsDetailed={pullsDetailed} />
+      <TotalCount pullsDetailed={pullsDetailed} comparePullsDetailed={comparePullsDetailed} />
+      <PullList
+        pullsDetailed={pullsDetailed}
+        comparePullsDetailed={comparePullsDetailed}
+        comparison={comparison}
+      />
       <div className="flex gap-1">
         <Button
           className="grow"
