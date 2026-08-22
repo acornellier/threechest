@@ -105,7 +105,7 @@
       "enemyIndex": 2,
       "name": "Earthwhisper Tender",
       "count": 7,
-      "health": 3729743,
+      "health": 2918930,
       "creatureType": "Humanoid",
       "scale": 1,
       "isBoss": false,
@@ -395,24 +395,6 @@
           "pos": [
             -176.38,
             39.1
-          ]
-        },
-        {
-          "id": "3-13",
-          "idx": 13,
-          "group": 8,
-          "pos": [
-            -175.32,
-            20.38
-          ]
-        },
-        {
-          "id": "3-14",
-          "idx": 14,
-          "group": 8,
-          "pos": [
-            -180.21,
-            21.02
           ]
         },
         {
@@ -1013,6 +995,15 @@
           "pos": [
             -180.96,
             263.84
+          ]
+        },
+        {
+          "id": "7-11",
+          "idx": 11,
+          "group": 45,
+          "pos": [
+            -119.73,
+            236.57
           ]
         }
       ]
@@ -1734,7 +1725,7 @@
       "enemyIndex": 16,
       "name": "The Hoardmonger",
       "count": 0,
-      "health": 23648733,
+      "health": 22702784,
       "creatureType": "Humanoid",
       "scale": 1,
       "isBoss": true,
@@ -1892,15 +1883,6 @@
           ]
         },
         {
-          "id": "17-6",
-          "idx": 6,
-          "group": 6,
-          "pos": [
-            -166.38,
-            29.53
-          ]
-        },
-        {
           "id": "17-7",
           "idx": 7,
           "group": 16,
@@ -1989,6 +1971,24 @@
             -190.85,
             244.94
           ]
+        },
+        {
+          "id": "17-17",
+          "idx": 17,
+          "group": 8,
+          "pos": [
+            -175.29,
+            20.37
+          ]
+        },
+        {
+          "id": "17-18",
+          "idx": 18,
+          "group": 8,
+          "pos": [
+            -180.18,
+            21.01
+          ]
         }
       ]
     },
@@ -1997,7 +1997,7 @@
       "enemyIndex": 18,
       "name": "Sentinel of Winter",
       "count": 0,
-      "health": 21283860,
+      "health": 20432506,
       "creatureType": "Humanoid",
       "scale": 1,
       "isBoss": true,
@@ -2095,7 +2095,7 @@
       "enemyIndex": 20,
       "name": "Fractured Shivercore",
       "count": 0,
-      "health": 675678,
+      "health": 810814,
       "creatureType": "Elemental",
       "scale": 1,
       "isBoss": false,
@@ -2306,7 +2306,7 @@
       "enemyIndex": 24,
       "name": "Starvation Effigy",
       "count": 0,
-      "health": 557514,
+      "health": 421623,
       "creatureType": "Not specified",
       "scale": 1,
       "isBoss": false,
@@ -2394,7 +2394,7 @@
       "enemyIndex": 25,
       "name": "Nalorakk",
       "count": 0,
-      "health": 21891970,
+      "health": 21016293,
       "creatureType": "Beast",
       "scale": 1,
       "isBoss": true,
@@ -2478,7 +2478,7 @@
       "enemyIndex": 26,
       "name": "Zul'jarra",
       "count": 0,
-      "health": 21891970,
+      "health": 1621628,
       "creatureType": "Humanoid",
       "scale": 1,
       "isBoss": false,
@@ -2598,7 +2598,7 @@
       "enemyIndex": 29,
       "name": "Volatile Totem",
       "count": 0,
-      "health": 698699,
+      "health": 64865,
       "creatureType": "Not specified",
       "scale": 1,
       "isBoss": false,
@@ -2685,10 +2685,19 @@
         {
           "id": "31-1",
           "idx": 1,
-          "group": 64,
+          "group": null,
           "pos": [
-            -29.44,
-            69.21
+            -166.27,
+            29.43
+          ]
+        },
+        {
+          "id": "31-2",
+          "idx": 2,
+          "group": 75,
+          "pos": [
+            -206.91,
+            23.39
           ]
         }
       ]
@@ -2698,7 +2707,7 @@
       "enemyIndex": 32,
       "name": "Magma Totem",
       "count": 0,
-      "health": 692461,
+      "health": 6487,
       "creatureType": "Not specified",
       "scale": 1,
       "isBoss": false,
@@ -2726,5 +2735,13 @@
       ]
     }
   ],
-  "pois": []
+  "pois": [
+    {
+      "type": "dungeonEntrance",
+      "pos": [
+        -143.52,
+        18.72
+      ]
+    }
+  ]
 }

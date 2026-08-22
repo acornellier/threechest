@@ -385,7 +385,7 @@
       "enemyIndex": 6,
       "name": "The Golden Serpent",
       "count": 0,
-      "health": 21283860,
+      "health": 20432506,
       "creatureType": "Beast",
       "scale": 2,
       "isBoss": true,
@@ -942,7 +942,7 @@
       "enemyIndex": 18,
       "name": "Mchimba the Embalmer",
       "count": 0,
-      "health": 21283860,
+      "health": 20432506,
       "creatureType": "Mechanical",
       "scale": 1.7,
       "isBoss": true,
@@ -1318,7 +1318,7 @@
       "enemyIndex": 25,
       "name": "King Dazar",
       "count": 0,
-      "health": 30405514,
+      "health": 29189294,
       "creatureType": "Undead",
       "scale": 2,
       "isBoss": true,
@@ -1587,7 +1587,7 @@
     {
       "id": 135761,
       "enemyIndex": 27,
-      "name": "Disruption Totem",
+      "name": "Thundering Totem",
       "count": 0,
       "health": 324326,
       "creatureType": "Totem",
@@ -1621,7 +1621,7 @@
       "enemyIndex": 28,
       "name": "Explosive Totem",
       "count": 0,
-      "health": 374121,
+      "health": 324326,
       "creatureType": "Totem",
       "scale": 1.5,
       "isBoss": false,
@@ -1685,7 +1685,7 @@
       "enemyIndex": 30,
       "name": "Coffin",
       "count": 0,
-      "health": 540543,
+      "health": 648651,
       "creatureType": "Not specified",
       "scale": 1,
       "isBoss": false,
@@ -1708,10 +1708,10 @@
       "enemyIndex": 31,
       "name": "T'zala",
       "count": 0,
-      "health": 27027123,
+      "health": 32432549,
       "creatureType": "Undead",
       "scale": 2,
-      "isBoss": false,
+      "isBoss": true,
       "characteristics": [],
       "spells": [
         {
@@ -1760,7 +1760,7 @@
       "enemyIndex": 32,
       "name": "Reban",
       "count": 0,
-      "health": 3783797,
+      "health": 4540557,
       "creatureType": "Undead",
       "scale": 2,
       "isBoss": false,
@@ -1836,7 +1836,7 @@
       "enemyIndex": 34,
       "name": "Aka'ali the Conqueror",
       "count": 0,
-      "health": 8108137,
+      "health": 7783812,
       "creatureType": "Undead",
       "scale": 1.5,
       "isBoss": true,
@@ -1876,7 +1876,7 @@
       "enemyIndex": 35,
       "name": "Zanazal the Wise",
       "count": 0,
-      "health": 10135171,
+      "health": 9729765,
       "creatureType": "Undead",
       "scale": 1.5,
       "isBoss": true,
@@ -1915,7 +1915,7 @@
       "enemyIndex": 36,
       "name": "Kula the Butcher",
       "count": 0,
-      "health": 5405425,
+      "health": 5189208,
       "creatureType": "Undead",
       "scale": 1.5,
       "isBoss": true,
@@ -2013,7 +2013,7 @@
       "enemyIndex": 38,
       "name": "Animated Gold",
       "count": 0,
-      "health": 224807,
+      "health": 291893,
       "creatureType": "Aberration",
       "scale": 1,
       "isBoss": false,
@@ -2081,7 +2081,7 @@
       "enemyIndex": 39,
       "name": "Healing Tide Totem",
       "count": 0,
-      "health": 374121,
+      "health": 6487,
       "creatureType": "Totem",
       "scale": 1,
       "isBoss": false,
@@ -2109,5 +2109,13 @@
       ]
     }
   ],
-  "pois": []
+  "pois": [
+    {
+      "type": "dungeonEntrance",
+      "pos": [
+        -131.95,
+        369.02
+      ]
+    }
+  ]
 }

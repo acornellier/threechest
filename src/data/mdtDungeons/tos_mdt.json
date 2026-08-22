@@ -1,6 +1,6 @@
 {
   "dungeonIndex": 20,
-  "totalCount": 649,
+  "totalCount": 689,
   "enemies": [
     {
       "id": 134600,
@@ -984,7 +984,7 @@
       "enemyIndex": 13,
       "name": "Merektha",
       "count": 0,
-      "health": 15540596,
+      "health": 14918973,
       "creatureType": "Beast",
       "scale": 2,
       "isBoss": true,
@@ -1348,7 +1348,7 @@
       "enemyIndex": 18,
       "name": "Avatar of Sethraliss",
       "count": 0,
-      "health": 21621700,
+      "health": 25946039,
       "creatureType": "Undead",
       "scale": 2,
       "isBoss": true,
@@ -1424,7 +1424,7 @@
       "enemyIndex": 21,
       "name": "Toxic Viper",
       "count": 0,
-      "health": 1405411,
+      "health": 1686493,
       "creatureType": "Beast",
       "scale": 1.2,
       "isBoss": false,
@@ -1464,7 +1464,7 @@
       "enemyIndex": 22,
       "name": "Storm Serpent",
       "count": 0,
-      "health": 2972984,
+      "health": 3567581,
       "creatureType": "Beast",
       "scale": 1.7,
       "isBoss": false,
@@ -1733,7 +1733,7 @@
       "enemyIndex": 30,
       "name": "Adderis",
       "count": 0,
-      "health": 10135172,
+      "health": 9729765,
       "creatureType": "Humanoid",
       "scale": 1.5,
       "isBoss": true,
@@ -1789,7 +1789,7 @@
       "enemyIndex": 31,
       "name": "Aspix",
       "count": 0,
-      "health": 10135172,
+      "health": 9729765,
       "creatureType": "Humanoid",
       "scale": 1.5,
       "isBoss": true,
@@ -1847,7 +1847,7 @@
     {
       "id": 263181,
       "enemyIndex": 32,
-      "name": "Egg Marker",
+      "name": "Egg",
       "count": 0,
       "health": 10000,
       "creatureType": "Humanoid",
@@ -1881,7 +1881,7 @@
       "enemyIndex": 33,
       "name": "Galvazzt",
       "count": 0,
-      "health": 21621699,
+      "health": 20756831,
       "creatureType": "Elemental",
       "scale": 2,
       "isBoss": true,
@@ -2022,7 +2022,7 @@
       "enemyIndex": 36,
       "name": "Corrupted Guardian",
       "count": 0,
-      "health": 1702709,
+      "health": 2043251,
       "creatureType": "Elemental",
       "scale": 1,
       "isBoss": false,
@@ -2106,7 +2106,7 @@
       "enemyIndex": 38,
       "name": "Essence Defiler",
       "count": 0,
-      "health": 4324340,
+      "health": 5189208,
       "creatureType": "Humanoid",
       "scale": 1,
       "isBoss": false,
@@ -2143,7 +2143,7 @@
       "enemyIndex": 39,
       "name": "Twisted Hexxer",
       "count": 0,
-      "health": 2351360,
+      "health": 2821632,
       "creatureType": "Humanoid",
       "scale": 1,
       "isBoss": false,
@@ -2189,7 +2189,7 @@
       "enemyIndex": 40,
       "name": "Faithless Tormentor",
       "count": 0,
-      "health": 486488,
+      "health": 583786,
       "creatureType": "Humanoid",
       "scale": 1,
       "isBoss": false,
@@ -2362,7 +2362,7 @@
       "enemyIndex": 43,
       "name": "Snake",
       "count": 0,
-      "health": 1081085,
+      "health": 1297302,
       "creatureType": "Beast",
       "scale": 1,
       "isBoss": false,
@@ -2454,5 +2454,13 @@
       ]
     }
   ],
-  "pois": []
+  "pois": [
+    {
+      "type": "dungeonEntrance",
+      "pos": [
+        -248.19,
+        322.88
+      ]
+    }
+  ]
 }
