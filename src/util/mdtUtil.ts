@@ -108,9 +108,9 @@ export function mdtRouteToRoute(mdtRoute: MdtRoute): Route {
   if (!dungeon)
     throw new Error(`Could not find dungeon with MDT index ${mdtRoute.value.currentDungeonIdx}`)
 
-  const mdtObjects = Array.isArray(mdtRoute.objects)
-    ? mdtRoute.objects
-    : Object.values(mdtRoute.objects)
+  const mdtObjects = (
+    Array.isArray(mdtRoute.objects) ? mdtRoute.objects : Object.values(mdtRoute.objects)
+  ).filter(Boolean)
 
   return {
     dungeonKey: dungeon.key,
