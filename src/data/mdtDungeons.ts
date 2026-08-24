@@ -1,4 +1,4 @@
-import type { MdtDungeon, MdtDungeonFake, MobSpawn, SpawnFake, SpawnId } from './types.ts'
+import type { MdtDungeon, MdtDungeonFake, MobFake, MobSpawn, SpawnFake, SpawnId } from './types.ts'
 import { mdtEnemiesToMobSpawns } from '../util/mobSpawns.ts'
 import type { DungeonKey } from './dungeonKeys.ts'
 import murd from './mdtDungeons/murd_mdt.json'
@@ -22,12 +22,31 @@ const mdtDungeonsFake: Record<DungeonKey, MdtDungeonFake> = {
   kr,
 }
 
-// Patches for incorrect upstream MDT data
-const mdtPatches: Partial<
+// Patches for incorrect upstream MDT data. Mobs are keyed by npc id, spawns by spawn id.
+const mdtMobPatches: Partial<Record<DungeonKey, Array<{ id: number; patch: Partial<MobFake> }>>> = {
+  rlp: [
+    { id: 187897, patch: { isBoss: false } }, // Defier Draghar
+    { id: 197698, patch: { isBoss: false } }, // Thunderhead
+    { id: 197697, patch: { isBoss: false } }, // Flamegullet
+    { id: 197535, patch: { isBoss: false } }, // High Channeler Ryvati
+  ],
+}
+
+const mdtSpawnPatches: Partial<
   Record<DungeonKey, Array<{ spawnId: SpawnId; patch: Partial<SpawnFake> }>>
 > = {}
 
-for (const [key, patches] of Object.entries(mdtPatches)) {
+for (const [key, patches] of Object.entries(mdtMobPatches)) {
+  const dungeon = mdtDungeonsFake[key as DungeonKey]
+  for (const { id, patch } of patches) {
+    const mob = dungeon.enemies.find((enemy) => enemy.id === id)
+    if (mob) {
+      Object.assign(mob, patch)
+    }
+  }
+}
+
+for (const [key, patches] of Object.entries(mdtSpawnPatches)) {
   const dungeon = mdtDungeonsFake[key as DungeonKey]
   for (const { spawnId, patch } of patches) {
     for (const enemy of dungeon.enemies) {
