@@ -201,7 +201,11 @@ const CONFIDENT_CLAIM_NEARER_MARGIN = 20
 // A gap this large between consecutive events starts a new pull.
 const PULL_TIME_GAP = 20_000
 
-const mobsThatDontDie = [231606, 134691]
+const mobsThatDontDie = [
+  231606,
+  134691, // Static Anomaly
+  138489, // Shadow of Zul
+]
 
 // Change map ID after the death of a specific mob (Magister's Terrace)
 const mapTransitions: Array<{ mapId: number; newMapId: number; triggerGameId: number }> = [
