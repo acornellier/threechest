@@ -25,6 +25,8 @@ yarn offsets      # Verify mdtMapOffsets.ts against cached WCL fights (see docs/
 
 yarn rankings:download   # Vercel Blob → src/data/sampleRoutes/<dungeon>/ (restores yarn r's cache)
 yarn rankings:upload     # src/data/sampleRoutes/<dungeon>/ → Vercel Blob (publishes to prod)
+yarn rankings:upload kr  # publish only kr; every other dungeon is carried over from the
+                         # live manifest, so a stale local folder can't roll prod back
 ```
 
 Full local dev requires all three servers (`dev`, `server`, `rtc`) running concurrently.

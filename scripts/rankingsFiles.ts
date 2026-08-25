@@ -63,6 +63,13 @@ export const versionFromBlobPath = (pathname: string): string | null => {
   return match?.[1] ?? null
 }
 
+/**
+ * The version a published manifest entry points at. A partial upload leaves untouched dungeons on
+ * their old version, so a manifest can span several, and the prune has to keep all of them.
+ */
+export const versionFromBlobUrl = (url: string): string | null =>
+  versionFromBlobPath(new URL(url).pathname.replace(/^\//, ''))
+
 export interface RankingsManifest {
   version: string
   /** Full blob URLs, so the client never has to encode the layout above. */

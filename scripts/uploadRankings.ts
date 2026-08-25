@@ -9,10 +9,29 @@ import {
   type RankingsManifest,
   readDungeonRoutes,
   versionFromBlobPath,
+  versionFromBlobUrl,
 } from './rankingsFiles.ts'
 import { fetchCurrentManifest, fetchDungeonRoutes } from './rankingsBlob.ts'
 
-const force = process.argv.includes('--force')
+const args = process.argv.slice(2)
+const force = args.includes('--force')
+
+/**
+ * Dungeon keys to publish, e.g. `yarn rankings:upload kr`. Everything else is carried over from the
+ * published manifest untouched, so a local folder that is stale for those dungeons can't roll
+ * production back. Defaults to every dungeon.
+ */
+const selectedKeys = args.filter((arg) => !arg.startsWith('--'))
+
+const unknownKeys = selectedKeys.filter((key) => !dungeonKeys.includes(key as DungeonKey))
+if (unknownKeys.length) {
+  throw new Error(
+    `Unknown dungeon key(s): ${unknownKeys.join(', ')}\nValid keys: ${dungeonKeys.join(', ')}`,
+  )
+}
+
+const partial = selectedKeys.length > 0
+const selected: DungeonKey[] = partial ? (selectedKeys as DungeonKey[]) : [...dungeonKeys]
 
 /**
  * queryRankings.ts deletes stale files before re-adding, so a partial WCL failure leaves a hole
@@ -27,9 +46,13 @@ const manifestMaxAge = 60
 
 const payloads = new Map<DungeonKey, string>()
 const counts = new Map<DungeonKey, number>()
-for (const dungeonKey of dungeonKeys) {
+for (const dungeonKey of selected) {
   const routes = readDungeonRoutes(dungeonKey)
   if (!routes.length) {
+    if (partial) {
+      throw new Error(`No local routes for ${dungeonKey}. Run \`yarn r ${dungeonKey}\` first.`)
+    }
+
     console.warn(`No local routes for ${dungeonKey}, skipping`)
     continue
   }
@@ -44,20 +67,27 @@ if (!payloads.size) {
 
 const previousManifest = await fetchCurrentManifest()
 
+if (partial && !previousManifest) {
+  throw new Error('No published manifest to carry the other dungeons over from.')
+}
+
 if (previousManifest && !force) {
   const shrunk: string[] = []
 
   await Promise.all(
-    Object.entries(previousManifest.dungeons).map(async ([key, url]) => {
-      const dungeonKey = key as DungeonKey
-      const publishedRoutes = await fetchDungeonRoutes<SampleRoute[]>(url)
-      const published = publishedRoutes.length
-      const current = counts.get(dungeonKey) ?? 0
+    Object.entries(previousManifest.dungeons)
+      // The others aren't being republished, so their published counts are what stays live.
+      .filter(([key]) => payloads.has(key as DungeonKey))
+      .map(async ([key, url]) => {
+        const dungeonKey = key as DungeonKey
+        const publishedRoutes = await fetchDungeonRoutes<SampleRoute[]>(url)
+        const published = publishedRoutes.length
+        const current = counts.get(dungeonKey) ?? 0
 
-      if (published && current < published * minRetainRatio) {
-        shrunk.push(`${dungeonKey}: ${published} published -> ${current} local`)
-      }
-    }),
+        if (published && current < published * minRetainRatio) {
+          shrunk.push(`${dungeonKey}: ${published} published -> ${current} local`)
+        }
+      }),
   )
 
   if (shrunk.length) {
@@ -69,15 +99,29 @@ if (previousManifest && !force) {
   }
 }
 
+/** Dungeons this run isn't republishing, left pointing at the blobs they already resolve to. */
+const carried: RankingsManifest['dungeons'] = {}
+if (partial && previousManifest) {
+  for (const dungeonKey of dungeonKeys) {
+    const url = previousManifest.dungeons[dungeonKey]
+    if (!payloads.has(dungeonKey) && url) {
+      carried[dungeonKey] = url
+    }
+  }
+}
+
+// Covers the whole published set, not just what's being uploaded, so the version still identifies
+// what clients will see. A carried URL stands in for its payload: it already embeds that content's
+// version, so it changes exactly when that dungeon's content does.
 const hash = crypto.createHash('sha256')
 for (const dungeonKey of dungeonKeys) {
-  const payload = payloads.get(dungeonKey)
-  if (payload === undefined) {
+  const content = payloads.get(dungeonKey) ?? carried[dungeonKey]
+  if (content === undefined) {
     continue
   }
 
   hash.update(`${dungeonKey}:`)
-  hash.update(payload)
+  hash.update(content)
 }
 const version = hash.digest('hex').slice(0, 8)
 
@@ -86,7 +130,7 @@ if (previousManifest?.version === version) {
   process.exit(0)
 }
 
-const dungeons: RankingsManifest['dungeons'] = {}
+const dungeons: RankingsManifest['dungeons'] = { ...carried }
 for (const [dungeonKey, payload] of payloads) {
   const { url } = await put(dungeonBlobPath(version, dungeonKey), payload, {
     access: 'public',
@@ -111,11 +155,21 @@ const { url: manifestUrl } = await put(manifestPath, JSON.stringify(manifest), {
 })
 
 console.log(`Published version ${version} -> ${manifestUrl}`)
+if (Object.keys(carried).length) {
+  console.log(`Carried over unchanged: ${Object.keys(carried).join(', ')}`)
+}
 
-// Keep the previous version around for clients that already resolved it.
+// Keep every version either manifest still points at, not just the two version ids: a partial
+// upload leaves untouched dungeons on older versions, and deleting those breaks the live manifest.
+// The previous manifest is kept whole for clients that already resolved it.
 const keepVersions = new Set([version])
-if (previousManifest) {
-  keepVersions.add(previousManifest.version)
+for (const manifestToKeep of [manifest, previousManifest]) {
+  for (const url of Object.values(manifestToKeep?.dungeons ?? {})) {
+    const blobVersion = versionFromBlobUrl(url)
+    if (blobVersion) {
+      keepVersions.add(blobVersion)
+    }
+  }
 }
 
 const stale: string[] = []
