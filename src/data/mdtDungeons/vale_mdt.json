@@ -1,6 +1,6 @@
 {
   "dungeonIndex": 162,
-  "totalCount": 655,
+  "totalCount": 686,
   "enemies": [
     {
       "id": 245345,
@@ -3283,7 +3283,7 @@
       "id": 249756,
       "enemyIndex": 23,
       "name": "Potatoad Matriarch",
-      "count": 30,
+      "count": 60,
       "health": 9729764,
       "creatureType": "Elemental",
       "scale": 2,
