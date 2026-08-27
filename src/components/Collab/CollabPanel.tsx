@@ -1,7 +1,13 @@
 import { Button } from '../Common/Button.tsx'
 import { joinCollab, useCollabSelector } from '../../store/collab/collabReducer.ts'
 import { useCallback, useEffect, useState } from 'react'
-import { ArrowUturnLeftIcon, Cog8ToothIcon, ShareIcon } from '@heroicons/react/24/outline'
+import {
+  ArrowUturnLeftIcon,
+  Cog8ToothIcon,
+  PlayIcon,
+  ShareIcon,
+  StopIcon,
+} from '@heroicons/react/24/outline'
 import { addToast } from '../../store/reducers/toastReducer.ts'
 import { Panel } from '../Common/Panel.tsx'
 import { CollabRoomDetails } from './CollabRoomDetails.tsx'
@@ -9,7 +15,7 @@ import { CollabSettings } from './CollabSettings.tsx'
 import { CollabButton } from './CollabButton.tsx'
 import { useAppDispatch, useRootSelector } from '../../store/storeUtil.ts'
 import { RestoreBackup } from './RestoreBackup.tsx'
-import { selectIsLive } from '../../store/reducers/mapReducer.ts'
+import { selectIsLive, setMapMode } from '../../store/reducers/mapReducer.ts'
 import { copyText } from '../../util/dev.ts'
 
 interface Props {
@@ -79,18 +85,18 @@ export function CollabPanel({ collapsed }: Props) {
           />
         </div>
       )}
-      {/*{!collabActive && (*/}
-      {/*  <Button*/}
-      {/*    Icon={isLive ? StopIcon : PlayIcon}*/}
-      {/*    outline*/}
-      {/*    short*/}
-      {/*    onClick={() => dispatch(setMapMode(isLive ? 'editing' : 'live'))}*/}
-      {/*    tooltipId="start-live-route-button"*/}
-      {/*    tooltip="Use this during your run to navigate through your pulls one by one and get detailed information on each one. Any changes made while Live is active will be discarded."*/}
-      {/*  >*/}
-      {/*    {isLive ? 'End live route' : 'Start live route'}*/}
-      {/*  </Button>*/}
-      {/*)}*/}
+      {!collabActive && (
+        <Button
+          Icon={isLive ? StopIcon : PlayIcon}
+          outline
+          short
+          onClick={() => dispatch(setMapMode(isLive ? 'editing' : 'live'))}
+          tooltipId="start-live-route-button"
+          tooltip="Use this during your run to navigate through your pulls one by one and get detailed information on each one. Any changes made while Live is active will be discarded."
+        >
+          {isLive ? 'End live route' : 'Start live route'}
+        </Button>
+      )}
       {collabActive && (
         <>
           <div className="flex gap-1">
