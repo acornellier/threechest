@@ -208,6 +208,7 @@ const mobsThatDontDie = [
   134691, // Static Anomaly
   138489, // Shadow of Zul
   190207, // Primalist Cinderweaver
+  245345, // Lightgorged Lasher
 ]
 
 // Change map ID after the death of a specific mob (Magister's Terrace)
