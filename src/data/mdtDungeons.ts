@@ -36,6 +36,14 @@ const mdtSpawnPatches: Partial<
   Record<DungeonKey, Array<{ spawnId: SpawnId; patch: Partial<SpawnFake> }>>
 > = {}
 
+// Spawns MDT files under the wrong npc. Spawn id, enemy index and spawn index are kept so MDT
+// strings still round-trip; only the mob resolved for the spawn changes, count included.
+const mdtSpawnMobPatches: Partial<Record<DungeonKey, Array<{ spawnId: SpawnId; mobId: number }>>> = {
+  tos: [
+    { spawnId: '11-6', mobId: 135846 }, // group 23's Faithless Subjugator 6 is a Lightning Serpent
+  ],
+}
+
 for (const [key, patches] of Object.entries(mdtMobPatches)) {
   const dungeon = mdtDungeonsFake[key as DungeonKey]
   for (const { id, patch } of patches) {
@@ -86,3 +94,22 @@ export const mdtMobSpawns: Record<DungeonKey, Record<SpawnId, MobSpawn>> = Objec
   },
   {} as Record<DungeonKey, Record<SpawnId, MobSpawn>>,
 )
+
+// Applied after mobSpawns is built rather than to `enemies`, so the mob keeps a single entry in the
+// enemy list and its spells aren't collected twice.
+for (const [key, patches] of Object.entries(mdtSpawnMobPatches)) {
+  const dungeonKey = key as DungeonKey
+  for (const { spawnId, mobId } of patches) {
+    const mobSpawn = mdtMobSpawns[dungeonKey][spawnId]
+    const mob = mdtDungeons[dungeonKey].enemies.find((enemy) => enemy.id === mobId)
+    if (!mobSpawn || !mob) {
+      console.error(`Could not apply mob patch ${spawnId} -> ${mobId} in dungeon ${key}`)
+      continue
+    }
+
+    mdtMobSpawns[dungeonKey][spawnId] = {
+      mob: { ...mob, enemyIndex: mobSpawn.mob.enemyIndex, spawns: [mobSpawn.spawn] },
+      spawn: mobSpawn.spawn,
+    }
+  }
+}
