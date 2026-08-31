@@ -26,6 +26,8 @@ import {
   type WclTrace,
 } from './wclCalc.ts'
 import { s1Dungeons } from './__fixtures__/s1Dungeons.ts'
+import { dungeonsByKey } from '../data/dungeons.ts'
+import type { Dungeon } from '../data/types.ts'
 import lvzFixture from './__fixtures__/wclRoute-LvZWMHBf3zrk9nFN-12.json'
 import gqwFixture from './__fixtures__/wclRoute-gqw4y97LcfAFnHBX-9.json'
 import kv3Fixture from './__fixtures__/wclRoute-kv3rTjxn2XLQpwKf-9.json'
@@ -42,6 +44,18 @@ import pd4Fixture from './__fixtures__/wclRoute-PD4Ryr8QGxjbYfq9-12.json'
 const toRoute = (fixture: unknown, maxPasses?: number, trace?: WclTrace) => {
   const wclResult = fixture as WclResult
   return wclResultToRoute(wclResult, maxPasses, trace, s1Dungeons[wclResult.encounterID])
+}
+
+// bPaQhZ8RnJYcDqFv-1 was recorded on the PTR, where group 23 held two Faithless Subjugators. On
+// live the second is a Lightning Serpent, which mdtSpawnMobPatches applies to spawn 11-6 — leaving
+// that fight's third subjugator with nowhere to go. Hand the fixture the composition it ran on.
+const ptrTos = (): Dungeon => {
+  const tos = dungeonsByKey.tos
+  const mobSpawns = {
+    ...tos.mobSpawns,
+    '11-6': { mob: tos.mobSpawns['11-7']!.mob, spawn: tos.mobSpawns['11-6']!.spawn },
+  }
+  return { ...tos, mobSpawns, mobSpawnsList: Object.values(mobSpawns) }
 }
 
 // Regression test: two lone Deathwhisper Necrolytes (raw events 20 and 33) each fell to
@@ -281,13 +295,18 @@ describe('wclResultToRoute — seam-ambiguous magister claimed by the nearer gro
 // after 10.8s and the mob stayed in its group's pull, so it never separated anything.
 describe('wclResultToRoute — CC that held a mob out of its pull', () => {
   it('marks only the CCs whose mob was taken in a later pull', () => {
-    const { route, errors } = wclResultToRoute(bpaFixture as unknown as WclResult)
+    const { route, errors } = wclResultToRoute(
+      bpaFixture as unknown as WclResult,
+      undefined,
+      undefined,
+      ptrTos(),
+    )
     expect(errors).toEqual([])
 
     expect(route.ccSpawns).toEqual({
       '3-6': 115078,
-      '15-5': 115078,
       '15-1': 115078,
+      '15-6': 115078,
       '45-2': 115078,
     })
 
@@ -296,8 +315,8 @@ describe('wclResultToRoute — CC that held a mob out of its pull', () => {
     const pullIdxOf = (spawnId: string) =>
       route.pulls.findIndex((pull) => pull.spawns.includes(spawnId))
     expect(pullIdxOf('3-6')).toBe(2)
-    expect(pullIdxOf('15-5')).toBe(9)
-    expect(pullIdxOf('15-1')).toBe(11)
+    expect(pullIdxOf('15-1')).toBe(9)
+    expect(pullIdxOf('15-6')).toBe(11)
     expect(pullIdxOf('45-2')).toBe(17)
 
     // The 10.8s Temple Disruptor sits in pull 14 alongside its whole group, so neither of that
