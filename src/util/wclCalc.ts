@@ -21,6 +21,7 @@ import { averagePoint, polygonCenter } from './polygon.ts'
 import { mapHeight, mapWidth } from './map.ts'
 import { type MapOffset, mdtMapOffsets } from '../data/coordinates/mdtMapOffsets.ts'
 import { mapBounds } from '../data/coordinates/mapBounds.ts'
+import { canonicalDungeon, canonicalMobId } from '../data/mobIdAliases.ts'
 
 export type WclEventBase = {
   timestamp: number
@@ -409,12 +410,16 @@ export const passes: WclPass[] = [
 
 function wclEventsToPulls(
   { events, deathEvents, ccEvents }: WclResult,
-  dungeon: Dungeon,
+  rawDungeon: Dungeon,
   errors: string[],
   maxPasses?: number,
   trace?: WclTrace,
 ): { pulls: Pull[]; ccSpawns: CcSpawns } {
   if (!events.length) return { pulls: [], ccSpawns: {} }
+
+  // Matching compares WCL mob ids against MDT mob ids, so both sides must be canonical. Only mob
+  // *type* is aliased: gameId stays raw wherever it identifies an instance (death matching).
+  const dungeon = canonicalDungeon(rawDungeon)
 
   const pullMobEvents = getPullMobEvents(events, deathEvents, dungeon, trace)
 
@@ -545,7 +550,7 @@ function assignCcSpawns(
           mobEvent.instanceId === cc.instanceId &&
           (mobEvent.actorId !== undefined
             ? mobEvent.actorId === cc.actorId
-            : mobEvent.mobId === cc.gameId),
+            : mobEvent.mobId === canonicalMobId(cc.gameId)),
       )
       if (event) killPull = finalPullIdx.get(idx)
     }
@@ -560,7 +565,8 @@ function assignCcSpawns(
 
     const candidates = pulls[killPull]!.spawns.filter(
       (spawnId) =>
-        !claimedSpawnIds.has(spawnId) && mobSpawnsById.get(spawnId)?.mob.id === cc.gameId,
+        !claimedSpawnIds.has(spawnId) &&
+        mobSpawnsById.get(spawnId)?.mob.id === canonicalMobId(cc.gameId),
     )
     if (candidates.length === 0) continue
 
@@ -656,11 +662,13 @@ export function resolveInstances(
   dungeon: Dungeon,
   deathEvents: DeathEvent[],
 ): ResolvedInstance[] {
-  const spawnPositions = spawnPositionsByMob(dungeon)
+  const spawnPositions = spawnPositionsByMob(canonicalDungeon(dungeon))
   const posOf = (event: WclEventSimplified) => eventPos(event, deathEvents)
   const spawnDistOf = (event: WclEventSimplified): number => {
     const pos = posOf(event)
-    return pos ? nearestSpawnDistance(pos, spawnPositions.get(event.gameId)) : Infinity
+    return pos
+      ? nearestSpawnDistance(pos, spawnPositions.get(canonicalMobId(event.gameId)))
+      : Infinity
   }
 
   // Group candidates by instance, each with a representative (earliest) timestamp.
@@ -736,7 +744,7 @@ function getPullMobEvents(
   const spawnPositions = spawnPositionsByMob(dungeon)
 
   const trackedEvents = events.filter((event) =>
-    dungeon.mobSpawnsList.some(({ mob }) => mob.id === event.gameId),
+    dungeon.mobSpawnsList.some(({ mob }) => mob.id === canonicalMobId(event.gameId)),
   )
 
   const resolved = resolveInstances(trackedEvents, dungeon, deathEvents)
@@ -796,7 +804,7 @@ function getPullMobEvents(
 
     // Discard seam-mislabeled positions here so they can't fragment sub-pulls in getSubPulls.
     const nearestDist = rawPos
-      ? nearestSpawnDistance(rawPos, spawnPositions.get(event.gameId))
+      ? nearestSpawnDistance(rawPos, spawnPositions.get(canonicalMobId(event.gameId)))
       : Infinity
     const pos = nearestDist <= MAX_PLAUSIBLE_SPAWN_DISTANCE ? rawPos : undefined
     if (rawPos && !pos) {
@@ -810,7 +818,7 @@ function getPullMobEvents(
     currentTimestamp = event.timestamp
     currentPull.push({
       timestamp: event.timestamp,
-      mobId: event.gameId,
+      mobId: canonicalMobId(event.gameId),
       actorId: event.actorId,
       instanceId: event.instanceId,
       pos,
