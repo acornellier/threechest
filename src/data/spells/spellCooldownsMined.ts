@@ -6,6 +6,7 @@
 // Correct or exclude entries in spellCooldowns.ts — patches there win and survive re-running.
 
 export const minedCooldowns: Record<number, number> = {
+  1238158: 19.5, // unknown
   1289416: 7.5, // fang High Evolutionist / Ula'tek's Chosen — Envenom = 5s + 2.5s cast
   1307567: 7.5, // fang High Evolutionist / Ula'tek's Chosen — Mass Envenom = 5s + 2.5s cast
   1294557: 24.5, // fang Primal Serpent — Piercing Hiss = 20.5s + 4s cast
@@ -25,6 +26,14 @@ export const minedCooldowns: Record<number, number> = {
   1223204: 6.5, // murd Unleashed Imp / Wild Imp — Felfire Burst = 5s + 1.5s cast
   1214922: 23, // murd Wrathguard Flayer — Fel Rage = 19.5s + 3.5s cast
   734276: 42, // murd Zaen Bladesorrow — Murder in a Row
+  1246847: 7, // nalo Bonded Beasttamer — Shoot = 5s + 2s cast
+  1241214: 8, // nalo Earthwhisper Tender — Earth Bolt = 5.5s + 2.5s cast
+  1297696: 29.5, // nalo Earthwhisper Tender — Healing Breeze = 26s + 3.5s cast
+  1235829: 9.5, // nalo Fractured Shivercore — Winter's Shroud = 5.5s + 4s cast
+  1309919: 28.5, // nalo Frigid Mauler — Frigid Roar = 25s + 3.5s cast
+  1290205: 8, // nalo Loa Speaker Nanea — Lightning Bolt = 5.5s + 2.5s cast
+  1297778: 28.5, // nalo Stormbound Mystic — Arc Lightning = 24.5s + 4s cast
+  1246687: 8, // nalo Stormbound Mystic — Lightning Bolt = 5.5s + 2.5s cast
   1305955: 17.5, // rlp Blazebound Destroyer — Fiery Blast = 13.5s + 4s cast
   373017: 9, // rlp Blazebound Firestorm — Blaze Volley = 5.5s + 3.5s cast
   371984: 8, // rlp Flashfrost Chillweaver — Frostbolt = 5.5s + 2.5s cast
@@ -42,7 +51,6 @@ export const minedCooldowns: Record<number, number> = {
   1235616: 9, // vale Kezkitt — Light Bolt = 6.5s + 2.5s cast
   1238232: 8.5, // vale Leafy Grovecrawler — Seed Shot = 6s + 2.5s cast
   1238294: 25, // vale Lightfeather Petalwing — Disorienting Screech = 21s + 4s cast
-  1238158: 19.5, // vale Lightgorged Lasher — Lightbloom Pollination
   1247669: 10, // vale Lightspawn Lasher — Lightspore Shot = 7.5s + 2.5s cast
   1239821: 9, // vale Lightwarden Ruia — Warden's Wrath = 7s + 2s cast
   1238063: 8, // vale Radiant Spellsower — Light Bolt = 5.5s + 2.5s cast
