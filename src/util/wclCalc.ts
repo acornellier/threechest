@@ -22,6 +22,7 @@ import { mapHeight, mapWidth } from './map.ts'
 import { type MapOffset, mdtMapOffsets } from '../data/coordinates/mdtMapOffsets.ts'
 import { mapBounds } from '../data/coordinates/mapBounds.ts'
 import { canonicalDungeon, canonicalMobId } from '../data/mobIdAliases.ts'
+import type { DungeonKey } from '../data/dungeonKeys.ts'
 
 export type WclEventBase = {
   timestamp: number
@@ -203,9 +204,10 @@ const CONFIDENT_CLAIM_NEARER_MARGIN = 20
 const PULL_TIME_GAP = 20_000
 
 const mobsThatDontDie = [
-  231606,
+  231606, // Emberdawn
   134691, // Static Anomaly
   138489, // Shadow of Zul
+  190207, // Primalist Cinderweaver
 ]
 
 // Change map ID after the death of a specific mob (Magister's Terrace)
@@ -213,6 +215,47 @@ const mapTransitions: Array<{ mapId: number; newMapId: number; triggerGameId: nu
   { mapId: 2511, newMapId: 25112511, triggerGameId: 231863 },
   { mapId: 2516, newMapId: 25162516, triggerGameId: 231863 },
 ]
+
+// The Blinding Vale stacks two floors on the same map at the same coordinates: the G44-46 ramp sits
+// directly above the G47-57 pocket. MDT gives both the same positions, so no proximity check can
+// tell them apart — gate them on how far into the run the pull happened instead. Counting boss
+// kills rather than naming a trigger boss also covers vale killing Ikuzz and the Meittik trio in
+// either order.
+const groupUnlocks: Partial<
+  Record<DungeonKey, Array<{ groups: number[]; afterBossKills: number }>>
+> = {
+  vale: [
+    { groups: [44, 45, 46], afterBossKills: 1 },
+    { groups: [47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57], afterBossKills: 2 },
+  ],
+}
+
+// When each boss encounter died, ascending. An encounter is a spawn group holding boss mobs — the
+// Meittik trio share one — so it counts as dead when the first of its bosses falls.
+function bossKillTimes(
+  groupMobSpawns: Partial<Record<number | string, MobSpawn[]>>,
+  deathEvents: DeathEvent[],
+): number[] {
+  const deathByMobId = new Map<number, number>()
+  for (const { gameId, timestamp } of deathEvents) {
+    const mobId = canonicalMobId(gameId)
+    const earliest = deathByMobId.get(mobId)
+    if (earliest === undefined || timestamp < earliest) {
+      deathByMobId.set(mobId, timestamp)
+    }
+  }
+
+  return Object.values(groupMobSpawns)
+    .map((mobSpawns) =>
+      mobSpawns!
+        .filter(({ mob }) => mob.isBoss)
+        .map(({ mob }) => deathByMobId.get(mob.id))
+        .filter((timestamp): timestamp is number => timestamp !== undefined),
+    )
+    .filter((deaths) => deaths.length > 0)
+    .map((deaths) => Math.min(...deaths))
+    .sort((a, b) => a - b)
+}
 
 export function resolveMapOffsetId(wclPoint: WclPoint, deathEvents: DeathEvent[]): number {
   const transition = mapTransitions.find((t) => t.mapId === wclPoint.mapID)
@@ -337,6 +380,11 @@ type MobEvent = {
 
 const spawnGroup = (spawn: Spawn) => (spawn.group ? String(spawn.group) : spawn.id)
 
+// One time for the whole pull, so a pull straddling a boss kill can't have half its events reach
+// past a group unlock. Infinity for an empty pull leaves every group unlocked.
+const pullStartTime = (mobEvents: MobEvent[]) =>
+  Math.min(...mobEvents.map(({ timestamp }) => timestamp))
+
 // The shared matching state for one route calculation. claimGroups keeps the core invariant — a
 // group leaves groupsRemaining exactly when its spawns enter spawnIdsTaken — in one place.
 class MatchState {
@@ -344,13 +392,24 @@ class MatchState {
   readonly spawnIdsTaken = new Set<SpawnId>()
   readonly groupMobSpawns: Partial<Record<number | string, MobSpawn[]>>
   readonly anchorMobIds: Set<number>
+  // Group id -> bosses that must be dead before it can be claimed. Only gated groups are listed.
+  private readonly requiredBossKills: Map<string, number>
+  private readonly bossKillTimes: number[]
 
   constructor(
     readonly dungeon: Dungeon,
     readonly errors: string[],
+    deathEvents: DeathEvent[],
   ) {
     this.groupMobSpawns = groupBy(dungeon.mobSpawnsList, ({ spawn }) => spawnGroup(spawn))
     this.anchorMobIds = getAnchorMobIds(dungeon)
+    this.requiredBossKills = new Map(
+      (groupUnlocks[dungeon.key] ?? []).flatMap(({ groups, afterBossKills }) =>
+        groups.map((group) => [String(group), afterBossKills] as const),
+      ),
+    )
+    this.bossKillTimes =
+      this.requiredBossKills.size > 0 ? bossKillTimes(this.groupMobSpawns, deathEvents) : []
     this.groupsRemaining = Object.entries(this.groupMobSpawns).map<Group>(
       ([groupId, mobSpawns]) => {
         const nonZeroCountMobSpawns = mobSpawns!.filter(({ mob }) => mob.count > 0 || mob.isBoss)
@@ -363,13 +422,26 @@ class MatchState {
     )
   }
 
+  // Whether a gated group (see groupUnlocks) had been unlocked by this point in the run.
+  groupUnlocked(groupId: string, timestamp: number): boolean {
+    const required = this.requiredBossKills.get(groupId)
+    if (required === undefined) return true
+    return this.bossKillTimes.filter((killTime) => killTime <= timestamp).length >= required
+  }
+
+  spawnUnlocked(spawn: Spawn, timestamp: number): boolean {
+    return this.groupUnlocked(spawnGroup(spawn), timestamp)
+  }
+
   // Groups still fully available (no spawn taken) that contain a mob present in the pull.
   eligibleGroups(mobEvents: MobEvent[]): Group[] {
+    const pullStart = pullStartTime(mobEvents)
     return this.groupsRemaining
       .filter(
         ({ id }) => !this.groupMobSpawns[id]!.some(({ spawn }) => this.spawnIdsTaken.has(spawn.id)),
       )
       .filter(({ mobCounts }) => mobEvents.some(({ mobId }) => (mobCounts[mobId] ?? 0) > 0))
+      .filter(({ id }) => this.groupUnlocked(id, pullStart))
   }
 
   // Remove the given groups from play, mark their spawns taken, and return the resulting pull.
@@ -423,7 +495,7 @@ function wclEventsToPulls(
 
   const pullMobEvents = getPullMobEvents(events, deathEvents, dungeon, trace)
 
-  const state = new MatchState(dungeon, errors)
+  const state = new MatchState(dungeon, errors, deathEvents)
 
   const pullStatuses = pullMobEvents.map<PullStatus>((mobEvents) => ({
     mobEventsRemaining: mobEvents,
@@ -1456,9 +1528,14 @@ function findExactSpawns({ state, pullStatus, idx }: PassArgs): CalculatedPull |
     return center ? [center] : []
   }
 
+  const pullStart = pullStartTime(mobEvents)
+
   for (const { mobId, pos, altPos } of mobEvents) {
     const matchingMobs = dungeon.mobSpawnsList.filter(({ mob }) => mob.id === mobId)
-    const available = matchingMobs.filter(({ spawn }) => !spawnIdsTaken.has(spawn.id))
+    const unclaimed = matchingMobs.filter(({ spawn }) => !spawnIdsTaken.has(spawn.id))
+    // Keep to groups the run had reached, but never let the gate strand a mob with nowhere to go.
+    const unlocked = unclaimed.filter(({ spawn }) => state.spawnUnlocked(spawn, pullStart))
+    const available = unlocked.length > 0 ? unlocked : unclaimed
 
     if (available.length === 0) {
       // If it doesn't matter for count just ignore it

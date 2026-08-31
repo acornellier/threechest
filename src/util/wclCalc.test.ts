@@ -35,6 +35,7 @@ import byxFixture from './__fixtures__/wclRoute-byxFGKhMgkAcPp6V-21.json'
 import rgpFixture from './__fixtures__/wclRoute-rGPCqaDyQmJbBLfX-9.json'
 import sixpmFixture from './__fixtures__/wclRoute-6pMc2dJHBh1Q8rGF-13.json'
 import bpaFixture from './__fixtures__/wclRoute-bPaQhZ8RnJYcDqFv-1.json'
+import pd4Fixture from './__fixtures__/wclRoute-PD4Ryr8QGxjbYfq9-12.json'
 
 // These fixtures are Season 1 fights, whose dungeon data is no longer shipped. Inject the
 // snapshotted S1 dungeon (resolved by encounter id) via wclResultToRoute's `dungeon` param.
@@ -309,5 +310,39 @@ describe('wclResultToRoute — CC that held a mob out of its pull', () => {
   it('omits ccSpawns entirely for a fight with no qualifying CC', () => {
     const { route } = toRoute(lvzFixture)
     expect(route.ccSpawns).toBeUndefined()
+  })
+})
+
+// Regression test: the Blinding Vale's G44-46 ramp and the G47-57 pocket below it are at the same
+// MDT coordinates, so every proximity check sees them as one place. In this fight the ramp pull
+// (between the first two bosses) was matched to G54/G51/G52 down on the lower floor instead — and
+// that stole G54 from the pull that really fought it, an hour of run time later. groupUnlocks gates
+// each floor on how many bosses are dead, which the ramp pull now satisfies for only the ramp.
+describe('wclResultToRoute — vertically stacked groups separated by boss kills', () => {
+  it('gives the ramp pull G44-46, not the lower floor stacked under it', () => {
+    const { route, errors } = wclResultToRoute(pd4Fixture as unknown as WclResult)
+    expect(errors).toEqual([])
+
+    const pullOf = (spawn: string) => route.pulls.find((pull) => pull.spawns.includes(spawn))
+
+    // The ramp, walked as one pull after the first boss: G44 + G45 + G46 and nothing else.
+    const rampPull = pullOf('1-25')
+    expect(rampPull?.spawns).toEqual(
+      ['1-25', '3-11', '3-12', '5-10'] // G44
+        .concat(['2-90', '2-91', '2-92', '2-93', '2-94']) // G45
+        .concat(['4-5', '7-16', '8-9']) // G46
+        .toSorted(),
+    )
+
+    // The lower floor stays unclaimed here — this route never comes back for it.
+    for (const spawn of ['1-10', '2-15', '3-13', '5-12']) {
+      expect(pullOf(spawn)).toBeUndefined()
+    }
+  })
+
+  it('PD4Ryr8QGxjbYfq9-12 (Blinding Vale) pulls', () => {
+    const { route, errors } = wclResultToRoute(pd4Fixture as unknown as WclResult)
+    expect(errors).toEqual([])
+    expect(route.pulls).toMatchSnapshot()
   })
 })
