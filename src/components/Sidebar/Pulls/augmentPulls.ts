@@ -43,7 +43,7 @@ export function augmentPulls(pulls: Pull[], dungeon: Dungeon): PullDetailed[] {
         continue
       }
 
-      count += mobSpawn.mob.count
+      count += mobSpawn.spawn.count ?? mobSpawn.mob.count
       health += mobSpawn.mob.health
     }
 

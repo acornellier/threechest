@@ -34,7 +34,7 @@ export async function getDungeonPulls(
         )
         if (!died) continue
 
-        count += mobSpawn.mob.count
+        count += mobSpawn.spawn.count ?? mobSpawn.mob.count
       }
     }
 

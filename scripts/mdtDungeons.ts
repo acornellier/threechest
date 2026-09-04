@@ -177,6 +177,9 @@ export function importMdtDungeon(key: DungeonKey, dungeonPath: string) {
       const scale = getFieldValue(cloneFields, 'scale')
       if (scale) spawn.scale = scale
 
+      const count = getFieldValue(cloneFields, 'count')
+      if (count) spawn.count = count
+
       const patrol = getFieldValue(cloneFields, 'patrol') as TableKey[] | null
       if (patrol) {
         spawn.patrol = patrol.map((item) => {

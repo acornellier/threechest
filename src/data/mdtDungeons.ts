@@ -38,11 +38,8 @@ const mdtSpawnPatches: Partial<
 
 // Spawns MDT files under the wrong npc. Spawn id, enemy index and spawn index are kept so MDT
 // strings still round-trip; only the mob resolved for the spawn changes, count included.
-const mdtSpawnMobPatches: Partial<Record<DungeonKey, Array<{ spawnId: SpawnId; mobId: number }>>> = {
-  tos: [
-    { spawnId: '11-6', mobId: 135846 }, // group 23's Faithless Subjugator 6 is a Lightning Serpent
-  ],
-}
+const mdtSpawnMobPatches: Partial<Record<DungeonKey, Array<{ spawnId: SpawnId; mobId: number }>>> =
+  {}
 
 for (const [key, patches] of Object.entries(mdtMobPatches)) {
   const dungeon = mdtDungeonsFake[key as DungeonKey]

@@ -18,7 +18,7 @@ export function MobSpawnTooltip({ mob, spawn, hidden }: Props) {
   if (isMobile) return null
 
   const { efficiencyScore, efficiencyColor } = mobEfficiency(
-    { count: mob.count, health: mob.health },
+    { count: spawn.count ?? mob.count, health: mob.health },
     dungeon,
   )
 
@@ -41,7 +41,8 @@ export function MobSpawnTooltip({ mob, spawn, hidden }: Props) {
           {groupText}
         </div>
         <div>
-          Forces: {mob.count} | {mobCountPercentStr(mob.count, dungeon.mdt.totalCount)}
+          Forces: {spawn.count ?? mob.count} |{' '}
+          {mobCountPercentStr(mob.count, dungeon.mdt.totalCount)}
         </div>
         {efficiencyScore > 0 && (
           <div>

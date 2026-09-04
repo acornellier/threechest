@@ -30,6 +30,7 @@ export type Spawn = {
   pos: Point
   scale?: number | null
   patrol?: Array<Point>
+  count?: number
 }
 
 export type MdtSpell = {
