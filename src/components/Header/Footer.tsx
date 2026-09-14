@@ -16,7 +16,10 @@ import { auth } from '../../store/firestore.ts'
 import { pullChangedRoutes, pushChangedRoutes } from '../../store/routes/routeCloudThunks.ts'
 import { Panel } from '../Common/Panel.tsx'
 import { useKeyHeld } from '../../util/hooks/useKeyHeld.ts'
-import { ArrowPathIcon } from '@heroicons/react/24/outline'
+import { ArrowPathIcon, SparklesIcon } from '@heroicons/react/24/outline'
+import { WhatsNewModal } from './WhatsNewModal.tsx'
+import { latestChangelogId } from '../../data/changelog.ts'
+import { useLocalStorage } from '../../util/hooks/useLocalStorage.ts'
 
 export function Footer() {
   const isLive = useRootSelector(selectIsLive)
@@ -52,9 +55,36 @@ export function Footer() {
           <Button justifyStart onClick={() => setHelpModalOpen(true)}>
             Help
           </Button>
+          <WhatsNew />
         </div>
       </div>
       {helpModalOpen && <HelpModal onClose={() => setHelpModalOpen(false)} />}
+    </>
+  )
+}
+
+function WhatsNew() {
+  const [lastSeenId, setLastSeenId] = useLocalStorage<string | null>('lastSeenChangelog', null)
+  const [open, setOpen] = useState(false)
+  const [lastSeenIdOnOpen, setLastSeenIdOnOpen] = useState(lastSeenId)
+
+  const onOpen = useCallback(() => {
+    setLastSeenIdOnOpen(lastSeenId)
+    setLastSeenId(latestChangelogId)
+    setOpen(true)
+  }, [lastSeenId, setLastSeenId])
+
+  return (
+    <>
+      <div className="relative">
+        <Button Icon={SparklesIcon} iconSize={20} onClick={onOpen}>
+          <span className="hidden sm:inline">What&apos;s New</span>
+        </Button>
+        {lastSeenId !== latestChangelogId && (
+          <div className="absolute -top-1.5 -right-1 w-3 h-3 rounded-full bg-yellow-500 border border-black pointer-events-none" />
+        )}
+      </div>
+      {open && <WhatsNewModal lastSeenId={lastSeenIdOnOpen} onClose={() => setOpen(false)} />}
     </>
   )
 }
