@@ -45,19 +45,23 @@ export const ccSpells: Record<number, CcSpell | undefined> = {
 
   6770: { name: 'Sap', icon: 'ability_sap' },
   3355: { name: 'Freezing Trap', icon: 'spell_frost_chainsofice' },
-  9484: { name: 'Shackle Undead', icon: 'spell_nature_slow' },
   710: { name: 'Banish', icon: 'spell_shadow_cripple' },
   217832: { name: 'Imprison', icon: 'ability_demonhunter_imprison' },
-  20066: { name: 'Repentance', icon: 'spell_holy_prayerofhealing' },
   2094: { name: 'Blind', icon: 'spell_shadow_mindsteal' },
-  2637: { name: 'Hibernate', icon: 'spell_nature_sleep' },
-  19386: { name: 'Wyvern Sting', icon: 'inv_spear_02' },
-  // grimoire-wow reports this icon with a space; the real CDN filename is hyphenated.
-  82691: { name: 'Ring of Frost', icon: 'spell_frost_ring-of-frost' },
   360806: { name: 'Sleep Walk', icon: 'ability_xavius_dreamsimulacrum' },
-  1513: { name: 'Scare Beast', icon: 'ability_druid_cower' },
-  10326: { name: 'Turn Evil', icon: 'ability_paladin_turnevil' },
-  6358: { name: 'Seduction', icon: 'spell_shadow_seduction' },
 }
 
 export const ccSpellIds = Object.keys(ccSpells).map(Number)
+
+/** Offered in the mob context menu, in menu order. One id per ability. */
+export const menuCcSpellIds = [
+  115078, // Paralysis
+  118, // Polymorph
+  51514, // Hex
+  6770, // Sap
+  3355, // Freezing Trap
+  2094, // Blind
+  217832, // Imprison
+  360806, // Sleep Walk
+  710, // Banish
+]

@@ -14,7 +14,8 @@ export interface ContextMenuButton extends Omit<ButtonProps, 'children' | 'toolt
 
 export interface ContextMenuProps {
   position: ContextMenuPosition
-  buttons: ContextMenuButton[]
+  /** A nested array renders one column per entry. */
+  buttons: ContextMenuButton[] | ContextMenuButton[][]
   onClose: () => void
   minHeight: number
   minWidth: number
@@ -29,6 +30,8 @@ export function ContextMenu({
   minWidth,
   gap,
 }: ContextMenuProps) {
+  const columns = (Array.isArray(buttons[0]) ? buttons : [buttons]) as ContextMenuButton[][]
+
   return (
     <div
       className="fixed z-[10000]"
@@ -40,26 +43,25 @@ export function ContextMenu({
       }}
     >
       <Panel blue>
-        <div
-          className="flex flex-col gap-2"
-          style={{
-            gap,
-          }}
-        >
-          {buttons.map(({ contents, onClick, ...rest }, idx) => (
-            <Button
-              key={idx}
-              justifyStart
-              short
-              {...rest}
-              onClick={(e) => {
-                onClick(e)
-                onClose()
-                e.stopPropagation()
-              }}
-            >
-              {contents}
-            </Button>
+        <div className="flex gap-2" style={{ gap }}>
+          {columns.map((column, columnIdx) => (
+            <div key={columnIdx} className="flex flex-col gap-2" style={{ gap }}>
+              {column.map(({ contents, onClick, ...rest }, idx) => (
+                <Button
+                  key={idx}
+                  justifyStart
+                  short
+                  {...rest}
+                  onClick={(e) => {
+                    onClick(e)
+                    onClose()
+                    e.stopPropagation()
+                  }}
+                >
+                  {contents}
+                </Button>
+              ))}
+            </div>
           ))}
         </div>
       </Panel>

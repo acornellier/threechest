@@ -327,6 +327,17 @@ const baseReducer = createAppSlice({
         state.route.assignments[spawnId] = assignment
       }
     },
+    setCcSpawn(
+      state,
+      { payload: { spawnId, spellId } }: PayloadAction<{ spawnId: SpawnId; spellId: number | null }>,
+    ) {
+      state.route.ccSpawns ??= {}
+      if (spellId === null || spellId === state.route.ccSpawns[spawnId]) {
+        delete state.route.ccSpawns[spawnId]
+      } else {
+        state.route.ccSpawns[spawnId] = spellId
+      }
+    },
     updateSavedRoutes(state) {
       const savedRoute = state.savedRoutes.find((route) => route.uid === state.route.uid)
       if (!savedRoute) {
@@ -500,6 +511,7 @@ export const {
   updateDrawing,
   moveNote,
   setAssignment,
+  setCcSpawn,
   updateSavedRoutes,
   deleteSavedRoute,
   setCurDungeonSavedRoutes,

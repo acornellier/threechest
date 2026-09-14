@@ -27,7 +27,7 @@ import { useIconScaling } from '../../../util/hooks/useIconScaling.ts'
 import type { WowMark } from '../../../util/marks.ts'
 import { MarkMarker } from './MarkMarker.tsx'
 import { CcMarker } from './CcMarker.tsx'
-import { MarkContextMenu, markerPopupMinHeight, markerPopupMinWidth } from './MarkContextMenu.tsx'
+import { SpawnContextMenu, spawnMenuMinHeight, spawnMenuMinWidth } from './SpawnContextMenu.tsx'
 import { Delayed } from '../../Common/Delayed.tsx'
 import { useContextMenu } from '../../Common/useContextMenu.ts'
 import {
@@ -89,7 +89,7 @@ function MobSpawnComponent({
     contextMenuPosition: markingMenuPosition,
     onRightClick: onOpenMarking,
     onClose: onCloseMarking,
-  } = useContextMenu({ minHeight: markerPopupMinHeight, minWidth: markerPopupMinWidth })
+  } = useContextMenu({ minHeight: spawnMenuMinHeight, minWidth: spawnMenuMinWidth })
 
   // Icon sizes come from CSS off --icon-scaling; iconSize below only feeds tooltipAnchor, which
   // Leaflet needs as a number. Call useIconScaling() to re-render on zoomend but read the map's
@@ -186,7 +186,7 @@ function MobSpawnComponent({
         </Delayed>
       </Marker>
       {markingMenuPosition && (
-        <MarkContextMenu
+        <SpawnContextMenu
           spawnId={spawn.id}
           contextMenuPosition={markingMenuPosition}
           onClose={onCloseMarking}
