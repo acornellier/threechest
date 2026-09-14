@@ -150,6 +150,7 @@ function setRouteFresh(state: RouteState, route: Route) {
 
 function giveRouteNewNameUid(state: RouteState, route: Route) {
   route.uid = newRouteUid()
+  route.shareId = undefined
   route.name = nextRouteName(route.name, route.dungeonKey, state.savedRoutes)
 }
 
@@ -353,6 +354,12 @@ const baseReducer = createAppSlice({
     deleteSavedRoute(state, { payload: routeId }: PayloadAction<string>) {
       state.savedRoutes = state.savedRoutes.filter((route) => route.uid !== routeId)
     },
+    setShareId(
+      state,
+      { payload: { routeId, shareId } }: PayloadAction<{ routeId: string; shareId: string }>,
+    ) {
+      if (state.route.uid === routeId) state.route.shareId = shareId
+    },
     setCloudSyncedAt(
       state,
       { payload: { routeId, syncedAt } }: PayloadAction<{ routeId: string; syncedAt: string }>,
@@ -516,4 +523,5 @@ export const {
   deleteSavedRoute,
   setCurDungeonSavedRoutes,
   setCloudSyncedAt,
+  setShareId,
 } = baseReducer.actions

@@ -6,6 +6,7 @@ import { useCallback, useState } from 'react'
 import { useRoute } from '../../../store/routes/routeHooks.ts'
 import { useAppDispatch } from '../../../store/storeUtil.ts'
 import { shareRouteApi } from '../../../api/shareRouteApi.ts'
+import { setShareId } from '../../../store/routes/routesReducer.ts'
 import { copyText } from '../../../util/dev.ts'
 
 interface Props {
@@ -21,10 +22,13 @@ export function ShareRoute({ hidden }: Props) {
     try {
       setLoading(true)
       const str = await routeToMdtString(route)
-      const routeId = await shareRouteApi(route.uid, str)
-      const url = window.location.origin + `?id=${encodeURIComponent(routeId)}`
+      const shareId = await shareRouteApi(str, route.shareId)
+      if (shareId !== route.shareId) {
+        dispatch(setShareId({ routeId: route.uid, shareId }))
+      }
+      const url = window.location.origin + `?id=${encodeURIComponent(shareId)}`
       await copyText(url)
-      dispatch(addToast({ message: 'URL copied to clipboard! URL is valid for 6 months.' }))
+      dispatch(addToast({ message: 'URL copied to clipboard!' }))
     } catch (err) {
       dispatch(addToast({ message: `Failed to share route: ${err}`, type: 'error' }))
     }

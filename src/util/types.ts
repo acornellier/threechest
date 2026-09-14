@@ -51,6 +51,7 @@ export type Route = {
   assignments: Assignments
   ccSpawns?: CcSpawns
   wclUrlInfo?: WclUrlInfo
+  shareId?: string
 }
 
 export type PullDetailed = Pull & {
