@@ -15,8 +15,17 @@ import { addToast } from '../../store/reducers/toastReducer.ts'
 import { WebrtcProvider } from './y-webrtc/y-webrtc.js'
 import { NoHostChecker } from './NoHostChecker.tsx'
 import { useAppDispatch } from '../../store/storeUtil.ts'
+import { createSelector } from '@reduxjs/toolkit'
 
-const selectData = (state: RootState) => state.routes.present.route
+// A share link belongs to one person, so shareId must never reach collab peers.
+const selectData = createSelector(
+  [(state: RootState) => state.routes.present.route],
+  (route): Route => {
+    const collabRoute = { ...route }
+    delete collabRoute.shareId
+    return collabRoute
+  },
+)
 
 const signaling = [
   'wss://threechest-rtc-server-fccc158b4d6c.herokuapp.com',

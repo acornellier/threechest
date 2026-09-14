@@ -150,7 +150,7 @@ function setRouteFresh(state: RouteState, route: Route) {
 
 function giveRouteNewNameUid(state: RouteState, route: Route) {
   route.uid = newRouteUid()
-  route.shareId = undefined
+  delete route.shareId
   route.name = nextRouteName(route.name, route.dungeonKey, state.savedRoutes)
 }
 
@@ -159,7 +159,12 @@ const baseReducer = createAppSlice({
   initialState,
   reducers: {
     setRouteForCollab(state, { payload: route }: PayloadAction<Route>) {
-      setRouteFresh(state, route)
+      // Collab peers never send a shareId, so keep ours when this is the same route.
+      const collabRoute = { ...route }
+      delete collabRoute.shareId
+      const ownShareId = state.route.uid === route.uid ? state.route.shareId : undefined
+      if (ownShareId) collabRoute.shareId = ownShareId
+      setRouteFresh(state, collabRoute)
     },
     newRoute(state, { payload: dungeonKey }: PayloadAction<DungeonKey | undefined>) {
       const route = makeEmptyRoute(dungeonKey ?? state.route.dungeonKey, state.savedRoutes)
