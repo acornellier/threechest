@@ -66,25 +66,29 @@ export function Footer() {
 function WhatsNew() {
   const [lastSeenId, setLastSeenId] = useLocalStorage<string | null>('lastSeenChangelog', null)
   const [open, setOpen] = useState(false)
-  const [lastSeenIdOnOpen, setLastSeenIdOnOpen] = useState(lastSeenId)
+  const [lastSeenIdOnLoad] = useState(lastSeenId)
+
+  const markSeen = useCallback(() => setLastSeenId(latestChangelogId), [setLastSeenId])
 
   const onOpen = useCallback(() => {
-    setLastSeenIdOnOpen(lastSeenId)
-    setLastSeenId(latestChangelogId)
+    markSeen()
     setOpen(true)
-  }, [lastSeenId, setLastSeenId])
+  }, [markSeen])
 
   return (
     <>
-      <div className="relative">
+      <div className="relative" onMouseEnter={markSeen}>
         <Button Icon={SparklesIcon} iconSize={20} onClick={onOpen}>
           <span className="hidden sm:inline">What&apos;s New</span>
         </Button>
-        {lastSeenId !== latestChangelogId && (
-          <div className="absolute -top-1.5 -right-1 w-3 h-3 rounded-full bg-yellow-500 border border-black pointer-events-none" />
+        {lastSeenIdOnLoad !== latestChangelogId && (
+          <div
+            className={`absolute -top-1.5 -right-1 w-3 h-3 rounded-full bg-yellow-500 border border-black pointer-events-none transition-opacity
+                        ${lastSeenId === latestChangelogId ? 'opacity-0' : ''}`}
+          />
         )}
       </div>
-      {open && <WhatsNewModal lastSeenId={lastSeenIdOnOpen} onClose={() => setOpen(false)} />}
+      {open && <WhatsNewModal lastSeenId={lastSeenIdOnLoad} onClose={() => setOpen(false)} />}
     </>
   )
 }
