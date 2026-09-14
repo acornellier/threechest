@@ -1,6 +1,7 @@
 import express from 'express'
 import cors from 'cors'
 import { getWclRoute } from './wclRoute.ts'
+import { getSampleRoutes } from './sampleRoutes.ts'
 
 const app = express()
 
@@ -15,6 +16,15 @@ app.post('/api/wclRoute', async (req, res) => {
   } catch (e) {
     console.error(e)
     res.status(422).send(e.message)
+  }
+})
+
+app.get('/api/sampleRoutes', async (req, res) => {
+  try {
+    res.json(await getSampleRoutes())
+  } catch (e) {
+    console.error(e)
+    res.status(502).send(e.message)
   }
 })
 

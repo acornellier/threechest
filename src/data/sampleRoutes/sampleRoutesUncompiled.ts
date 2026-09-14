@@ -76,19 +76,26 @@ export type SampleRoutes = Record<DungeonKey, SampleRoute[]>
  * Only the hand-curated "easy" routes are compiled in. The WCL-ranked routes are published to
  * blob storage by the sync-rankings workflow and fetched at runtime (see src/api/rankingsApi.ts),
  * so refreshing them no longer requires a rebuild.
+ *
+ * Built inside a function rather than at module scope to keep this free of top-level await, which
+ * the server bundle's UMD output cannot represent.
  */
-const easySampleRoutes = dungeonKeys.reduce((acc, key) => {
-  acc[key as DungeonKey] = []
-  return acc
-}, {} as SampleRoutes)
+export async function buildEasySampleRoutes(): Promise<SampleRoutes> {
+  const easySampleRoutes = dungeonKeys.reduce((acc, key) => {
+    acc[key as DungeonKey] = []
+    return acc
+  }, {} as SampleRoutes)
 
-for (const dungeonKey of dungeonKeys) {
-  for (const routeDefinition of sampleRouteDefinitions[dungeonKey]) {
-    const sampleRoute = await convertRouteDefinition(routeDefinition)
-    easySampleRoutes[dungeonKey].push(sampleRoute)
+  for (const dungeonKey of dungeonKeys) {
+    for (const routeDefinition of sampleRouteDefinitions[dungeonKey]) {
+      const sampleRoute = await convertRouteDefinition(routeDefinition)
+      easySampleRoutes[dungeonKey].push(sampleRoute)
+    }
   }
+
+  return easySampleRoutes
 }
 
 export default async () => ({
-  data: easySampleRoutes,
+  data: await buildEasySampleRoutes(),
 })

@@ -5,6 +5,13 @@ import { localRankingsPlugin } from './vite/localRankingsPlugin.ts'
 
 export default defineConfig({
   plugins: [react(), splitVendorChunkPlugin(), compileTime(), localRankingsPlugin()],
+  server: {
+    // Vercel serves the SPA and api/*.js from one origin, so /api is same-origin in prod. Without
+    // this the public endpoints only exist on the express server's own port during dev.
+    proxy: {
+      '/api': 'http://localhost:6173',
+    },
+  },
   build: {
     rollupOptions: {
       output: {

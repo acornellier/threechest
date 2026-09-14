@@ -78,8 +78,12 @@ To inspect a local `yarn r` run without publishing, set `VITE_RANKINGS_BASE_URL=
 
 ### Backend (server/)
 
-Express server with one route:
+Express server with two routes:
 - `POST /api/wclRoute` — fetch a specific WCL fight and return a parsed `Route`
+- `GET /api/sampleRoutes` — public, CORS-open JSON of every sample route, easy and ranked merged
+
+`/api` is same-origin in prod. `vite.config.ts` proxies it to 6173 so dev matches, which means
+hitting it on 5173 needs `yarn server` up too.
 
 MDT string encoding/decoding used to live here because it needed a native module. It is now done
 in the browser (`src/util/mdt/`), so importing and exporting routes works without the server.
