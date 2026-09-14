@@ -93,9 +93,7 @@ function TwitchStreamComponent({ setBlockTwitch }: Props) {
                 open the page.
               </p>
               <p>
-                To close it permanently, please donate any amount and message me in Discord @ortemis
-                and I will tell you how. Or if you are making content using Threechest, I will let
-                you know for free!
+                To close it permanently, message me in Discord @ortemis and I will tell you how!
               </p>
             </>
           }
