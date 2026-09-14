@@ -23,12 +23,19 @@ export function ShareRoute({ hidden }: Props) {
       setLoading(true)
       const str = await routeToMdtString(route)
       const shareId = await shareRouteApi(str, route.shareId)
-      if (shareId !== route.shareId) {
+      const isNewLink = shareId !== route.shareId
+      if (isNewLink) {
         dispatch(setShareId({ routeId: route.uid, shareId }))
       }
       const url = window.location.origin + `?id=${encodeURIComponent(shareId)}`
       await copyText(url)
-      dispatch(addToast({ message: 'URL copied to clipboard!' }))
+      dispatch(
+        addToast({
+          message: isNewLink
+            ? 'Share link created and copied to clipboard!'
+            : 'Existing share link updated and copied to clipboard!',
+        }),
+      )
     } catch (err) {
       dispatch(addToast({ message: `Failed to share route: ${err}`, type: 'error' }))
     }
@@ -43,7 +50,7 @@ export function ShareRoute({ hidden }: Props) {
       onClick={handleClick}
       disabled={loading}
     >
-      Share
+      {route.shareId ? 'Re-share' : 'Share'}
     </Button>
   )
 }
