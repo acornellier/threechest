@@ -27,7 +27,7 @@ export function ShareRoute({ hidden }: Props) {
       if (isNewLink) {
         dispatch(setShareId({ routeId: route.uid, shareId }))
       }
-      const url = window.location.origin + `?id=${encodeURIComponent(shareId)}`
+      const url = window.location.origin + `/?id=${encodeURIComponent(shareId)}`
       await copyText(url)
       dispatch(
         addToast({
