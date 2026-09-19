@@ -3,6 +3,7 @@ import { dungeons } from '../../data/dungeons.ts'
 import { useIsGuestCollab } from '../../store/collab/collabReducer.ts'
 import { useAppDispatch } from '../../store/storeUtil.ts'
 import { Button } from '../Common/Button.tsx'
+import { DungeonTooltip } from './DungeonTooltip.tsx'
 import { setDungeon } from '../../store/routes/routesReducer.ts'
 import { useDungeon } from '../../store/routes/routeHooks.ts'
 import type { DungeonKey } from '../../data/dungeonKeys.ts'
@@ -52,7 +53,7 @@ export function MobileDungeonDropdown() {
               twoDimensional
               onClick={() => handleSelect(dungeon.key)}
               disabled={isGuestCollab}
-              tooltip={dungeon.name}
+              tooltip={<DungeonTooltip dungeon={dungeon} />}
               tooltipId={`dungeon-tooltip-${dungeon.key}`}
               tooltipPlace="bottom"
             >

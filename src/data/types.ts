@@ -15,6 +15,7 @@ export type Dungeon = {
   name: string
   icon: string
   defaultBounds?: [Point, Point]
+  timeLimit: number // seconds
   mdt: MdtDungeon
   mobSpawns: Record<SpawnId, MobSpawn>
   mobSpawnsList: MobSpawn[]

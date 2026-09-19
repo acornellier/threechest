@@ -38,6 +38,7 @@ function buildDungeon({ key, name, icon, wclEncounterId, mdt }: S1DungeonMeta): 
     key: key as DungeonKey, // S1 keys are no longer in DungeonKey; test-only cast
     name,
     icon,
+    timeLimit: 0,
     wclEncounterId,
     mdt: mdtDungeon,
     mobSpawns,

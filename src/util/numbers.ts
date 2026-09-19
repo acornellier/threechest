@@ -19,3 +19,8 @@ export function shortRoundedNumber(number: number) {
   if (absNumber <= 999_999) return `${formatNumber(Math.round(number / 1_000))}K`
   return `${formatNumber(roundTo(number / 1_000_000, 2))}M`
 }
+
+export function formatDuration(seconds: number) {
+  const minutes = Math.floor(seconds / 60)
+  return `${minutes}:${(seconds % 60).toString().padStart(2, '0')}`
+}
