@@ -294,8 +294,8 @@
           "idx": 3,
           "group": 1,
           "pos": [
-            -146.8,
-            38.53
+            -143.8,
+            39.48
           ]
         },
         {
@@ -303,8 +303,8 @@
           "idx": 4,
           "group": 1,
           "pos": [
-            -145.95,
-            42.57
+            -144.53,
+            43.52
           ]
         },
         {
@@ -2850,6 +2850,45 @@
         -143.52,
         18.72
       ]
+    },
+    {
+      "type": "genericItem",
+      "pos": [
+        -149.22,
+        37.93
+      ],
+      "info": {
+        "description": null,
+        "texture": 135265,
+        "spellId": 1271545,
+        "size": 15
+      }
+    },
+    {
+      "type": "genericItem",
+      "pos": [
+        -197.25,
+        91.49
+      ],
+      "info": {
+        "description": null,
+        "texture": 135265,
+        "spellId": 1271545,
+        "size": 15
+      }
+    },
+    {
+      "type": "genericItem",
+      "pos": [
+        -105.91,
+        227.91
+      ],
+      "info": {
+        "description": null,
+        "texture": 237528,
+        "spellId": 1271737,
+        "size": 15
+      }
     }
   ]
 }

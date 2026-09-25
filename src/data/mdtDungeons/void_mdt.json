@@ -2817,17 +2817,7 @@
           "attributes": []
         }
       ],
-      "spawns": [
-        {
-          "id": "29-1",
-          "idx": 1,
-          "group": null,
-          "pos": [
-            -31.53,
-            187.41
-          ]
-        }
-      ]
+      "spawns": []
     },
     {
       "id": 254677,
@@ -2937,6 +2927,32 @@
         -246.96,
         91.4
       ]
+    },
+    {
+      "type": "genericItem",
+      "pos": [
+        -146.58,
+        59.53
+      ],
+      "info": {
+        "description": null,
+        "texture": 7383546,
+        "spellId": 1298903,
+        "size": 15
+      }
+    },
+    {
+      "type": "genericItem",
+      "pos": [
+        -146.92,
+        123.04
+      ],
+      "info": {
+        "description": null,
+        "texture": 6994479,
+        "spellId": 1298902,
+        "size": 15
+      }
     }
   ]
 }
