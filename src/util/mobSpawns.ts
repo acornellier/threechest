@@ -32,7 +32,13 @@ export function mobCcTypes(mob: Mob): string[] {
   if (mob.isBoss) return ['Boss']
 
   const { characteristics } = mob
-  if (characteristics.length <= 2) return ['Immune to all CC']
+  if (characteristics.length === 0) {
+    return []
+  }
+
+  if (characteristics.length <= 2) {
+    return ['Immune to all CC']
+  }
 
   const immunities: string[] = []
   if (!characteristics.includes('Fear')) immunities.push('Fear')
