@@ -76,8 +76,8 @@
           "idx": 5,
           "group": 24,
           "pos": [
-            -225.3,
-            75.4
+            -226.86,
+            72.82
           ]
         },
         {
@@ -94,8 +94,8 @@
           "idx": 7,
           "group": 20,
           "pos": [
-            -179.16,
-            89.89
+            -180.04,
+            87.13
           ]
         }
       ]
@@ -162,8 +162,8 @@
           "idx": 5,
           "group": 66,
           "pos": [
-            -144.67,
-            94.03
+            -145.13,
+            98.22
           ]
         },
         {
@@ -171,8 +171,8 @@
           "idx": 6,
           "group": 7,
           "pos": [
-            -157.43,
-            92.76
+            -156.65,
+            91.65
           ]
         },
         {
@@ -189,8 +189,8 @@
           "idx": 9,
           "group": 24,
           "pos": [
-            -220.11,
-            74.47
+            -218.32,
+            77.87
           ]
         },
         {
@@ -330,8 +330,8 @@
           "idx": 7,
           "group": 66,
           "pos": [
-            -141.7,
-            91.7
+            -141.47,
+            92.57
           ]
         },
         {
@@ -339,8 +339,8 @@
           "idx": 8,
           "group": 66,
           "pos": [
-            -141.7,
-            95.1
+            -141.28,
+            96.34
           ]
         },
         {
@@ -348,8 +348,8 @@
           "idx": 9,
           "group": 7,
           "pos": [
-            -161.26,
-            96.8
+            -162.83,
+            95.37
           ]
         },
         {
@@ -358,7 +358,7 @@
           "group": 7,
           "pos": [
             -161.47,
-            92.33
+            91.37
           ]
         },
         {
@@ -393,8 +393,8 @@
           "idx": 16,
           "group": 24,
           "pos": [
-            -221.98,
-            78.59
+            -220.83,
+            81.72
           ]
         },
         {
@@ -1543,8 +1543,8 @@
           "idx": 2,
           "group": 17,
           "pos": [
-            -205.71,
-            29.39
+            -205.79,
+            30.06
           ]
         },
         {
@@ -2473,8 +2473,8 @@
           "idx": 5,
           "group": 20,
           "pos": [
-            -178.85,
-            93.14
+            -183.55,
+            90.38
           ]
         },
         {
@@ -2491,8 +2491,8 @@
           "idx": 7,
           "group": 24,
           "pos": [
-            -228.19,
-            77.4
+            -229.66,
+            77.13
           ]
         }
       ]
@@ -2795,8 +2795,8 @@
           "idx": 1,
           "group": null,
           "pos": [
-            -166.27,
-            29.43
+            -168.7,
+            30.43
           ]
         },
         {
@@ -2804,8 +2804,8 @@
           "idx": 2,
           "group": 75,
           "pos": [
-            -206.91,
-            23.39
+            -208.58,
+            23.14
           ]
         }
       ]
@@ -2888,6 +2888,110 @@
         "texture": 237528,
         "spellId": 1271737,
         "size": 15
+      }
+    },
+    {
+      "type": "genericItem",
+      "pos": [
+        -145.27,
+        94.06
+      ],
+      "info": {
+        "description": "Acquire 6 Offerings",
+        "texture": null,
+        "spellId": null,
+        "size": 20
+      }
+    },
+    {
+      "type": "genericItem",
+      "pos": [
+        -158.44,
+        95.51
+      ],
+      "info": {
+        "description": "Acquire 6 Offerings",
+        "texture": null,
+        "spellId": null,
+        "size": 20
+      }
+    },
+    {
+      "type": "genericItem",
+      "pos": [
+        -163.48,
+        28.41
+      ],
+      "info": {
+        "description": "Acquire 6 Offerings",
+        "texture": null,
+        "spellId": null,
+        "size": 20
+      }
+    },
+    {
+      "type": "genericItem",
+      "pos": [
+        -179.55,
+        92.63
+      ],
+      "info": {
+        "description": "Acquire 6 Offerings",
+        "texture": null,
+        "spellId": null,
+        "size": 20
+      }
+    },
+    {
+      "type": "genericItem",
+      "pos": [
+        -188.67,
+        64.39
+      ],
+      "info": {
+        "description": "Acquire 6 Offerings",
+        "texture": null,
+        "spellId": null,
+        "size": 20
+      }
+    },
+    {
+      "type": "genericItem",
+      "pos": [
+        -206.99,
+        27.66
+      ],
+      "info": {
+        "description": "Acquire 6 Offerings",
+        "texture": null,
+        "spellId": null,
+        "size": 20
+      }
+    },
+    {
+      "type": "genericItem",
+      "pos": [
+        -221.08,
+        74.96
+      ],
+      "info": {
+        "description": "Acquire 6 Offerings",
+        "texture": null,
+        "spellId": null,
+        "size": 20
+      }
+    },
+    {
+      "type": "genericItem",
+      "pos": [
+        -225.04,
+        79.2
+      ],
+      "info": {
+        "description": "Acquire 6 Offerings",
+        "texture": null,
+        "spellId": null,
+        "size": 20
       }
     }
   ]
