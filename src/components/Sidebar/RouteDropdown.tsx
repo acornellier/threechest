@@ -62,6 +62,7 @@ export function RouteDropdown() {
     tooltipId: 'route-dropdown-compare-tooltip',
     routeUid: route.uid,
     compareRouteUid: compareRoute?.uid,
+    source: 'saved',
   })
 
   return (

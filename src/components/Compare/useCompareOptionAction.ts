@@ -8,11 +8,15 @@ import {
   setCompareRouteAsync,
 } from '../../store/reducers/compareReducer.ts'
 import type { Route } from '../../util/types.ts'
+import { trackEvent } from '../../util/analytics.ts'
+import { useDungeon } from '../../store/routes/routeHooks.ts'
 
 interface Options<T extends DropdownOption> {
   tooltipId: string
   routeUid: string
   compareRouteUid: string | undefined
+  /** Which dropdown the comparison was started from, for analytics. */
+  source: 'saved' | 'sample'
   /** Only for options carrying a full route. Others are loaded from storage by id. */
   getRoute?: (option: T) => Route
 }
@@ -21,9 +25,11 @@ export function useCompareOptionAction<T extends DropdownOption>({
   tooltipId,
   routeUid,
   compareRouteUid,
+  source,
   getRoute,
 }: Options<T>): DropdownOptionAction<T> {
   const dispatch = useAppDispatch()
+  const dungeon = useDungeon()
 
   return useMemo(
     () => ({
@@ -37,6 +43,7 @@ export function useCompareOptionAction<T extends DropdownOption>({
           dispatch(exitCompare())
         } else {
           dispatch(setCompareRouteAsync({ routeId: option.id, route: getRoute?.(option) }))
+          trackEvent('compare_start', { source, dungeon: dungeon.key })
         }
       },
       onHover: (option: T | null) => {
@@ -47,6 +54,6 @@ export function useCompareOptionAction<T extends DropdownOption>({
         )
       },
     }),
-    [compareRouteUid, dispatch, getRoute, routeUid, tooltipId],
+    [compareRouteUid, dispatch, dungeon.key, getRoute, routeUid, source, tooltipId],
   )
 }

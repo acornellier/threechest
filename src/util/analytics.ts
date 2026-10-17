@@ -8,6 +8,9 @@ export type AnalyticsEvent =
   | 'collab_join'
   | 'sample_routes_open'
   | 'sample_route_import'
+  | 'compare_start'
+  | 'compare_mode'
+  | 'compare_swap'
 
 export function trackEvent(event: AnalyticsEvent, props?: EventProps) {
   if (!isProd) {

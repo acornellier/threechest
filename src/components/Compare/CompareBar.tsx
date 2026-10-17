@@ -21,6 +21,7 @@ import type { Route } from '../../util/types.ts'
 import { useShortcut } from '../../util/hooks/useShortcut.ts'
 import { useCallback } from 'react'
 import { selectMobSearchOpen } from '../../store/reducers/mobSearchReducer.ts'
+import { trackEvent } from '../../util/analytics.ts'
 
 const compareBarBottomOffset = 32
 
@@ -51,6 +52,19 @@ function CompareBarPanel({ compareRoute }: { compareRoute: Route }) {
 
   const onExit = useCallback(() => {
     dispatch(exitCompare())
+  }, [dispatch])
+
+  const onSetMode = useCallback(
+    (modeOption: CompareMode) => {
+      dispatch(setCompareMode(modeOption))
+      trackEvent('compare_mode', { mode: modeOption })
+    },
+    [dispatch],
+  )
+
+  const onSwap = useCallback(() => {
+    dispatch(swapCompareRoute())
+    trackEvent('compare_swap')
   }, [dispatch])
 
   // Mob search claims Escape first while it's open.
@@ -87,7 +101,7 @@ function CompareBarPanel({ compareRoute }: { compareRoute: Route }) {
                 short
                 twoDimensional
                 outline={mode !== modeOption}
-                onClick={() => dispatch(setCompareMode(modeOption))}
+                onClick={() => onSetMode(modeOption)}
                 tooltip={tooltip}
                 tooltipId={`compare-mode-${modeOption}`}
               >
@@ -103,7 +117,7 @@ function CompareBarPanel({ compareRoute }: { compareRoute: Route }) {
               outline
               Icon={ArrowsRightLeftIcon}
               disabled={!canSwap}
-              onClick={() => dispatch(swapCompareRoute())}
+              onClick={onSwap}
               tooltip={canSwap ? 'Swap which route is being edited' : 'Only saved routes can swap'}
               tooltipId="compare-swap"
             />

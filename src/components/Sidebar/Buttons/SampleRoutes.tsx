@@ -167,6 +167,7 @@ export function SampleRoutes({ hidden }: Props) {
     tooltipId: 'sample-routes-compare-tooltip',
     routeUid: route.uid,
     compareRouteUid: compareRoute?.uid,
+    source: 'sample',
     getRoute,
   })
 
