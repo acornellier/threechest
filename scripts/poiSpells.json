@@ -1,0 +1,50 @@
+{
+  "1217960": {
+    "name": "Loaded Pistol",
+    "icon": "inv_weapon_rifle_40"
+  },
+  "1223133": {
+    "name": "Overload Golem",
+    "icon": "ui_profession_engineering"
+  },
+  "1223537": {
+    "name": "Felstone",
+    "icon": "inv_infernalbrimstone"
+  },
+  "1223570": {
+    "name": "Felwyrm Egg",
+    "icon": "inv_egg_08"
+  },
+  "1223607": {
+    "name": "Heartstop Poison",
+    "icon": "ability_boss_kilrogg_heartseeker"
+  },
+  "1265942": {
+    "name": "Flourishing Stride",
+    "icon": "spell_lifegivingspeed"
+  },
+  "1270638": {
+    "name": "Fel Contraband",
+    "icon": "inv_enchanting_wod_crystal"
+  },
+  "1271545": {
+    "name": "Warding Incense",
+    "icon": "inv_summerfest_firespirit"
+  },
+  "1271737": {
+    "name": "Rune of Anchoring",
+    "icon": "spell_deathknight_pathoffrost"
+  },
+  "1298902": {
+    "name": "Proof of Mastery",
+    "icon": "inv_sword_1h_domanaar_b_01"
+  },
+  "1298903": {
+    "name": "Proof of Endurance",
+    "icon": "inv_helm_armor_domanaar_d_01"
+  },
+  "1310012": {
+    "name": "Mutating Elixir",
+    "icon": "trade_brewpoison"
+  }
+}

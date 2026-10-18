@@ -67,6 +67,7 @@ export type PointOfInterest = {
     description: string | null
     texture: number | null
     spellId: number | null
+    icon?: string | null
     size: number
   }
 }

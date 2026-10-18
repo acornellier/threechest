@@ -2935,9 +2935,10 @@
         59.53
       ],
       "info": {
-        "description": null,
+        "description": "Proof of Endurance",
         "texture": 7383546,
         "spellId": 1298903,
+        "icon": "inv_helm_armor_domanaar_d_01",
         "size": 15
       }
     },
@@ -2948,9 +2949,10 @@
         123.04
       ],
       "info": {
-        "description": null,
+        "description": "Proof of Mastery",
         "texture": 6994479,
         "spellId": 1298902,
+        "icon": "inv_sword_1h_domanaar_b_01",
         "size": 15
       }
     }

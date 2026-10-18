@@ -32,11 +32,6 @@ const configs: PoiConfig[] = [
   },
 ]
 
-const spellIcons: Record<number, string> = {
-  244300: 'inv_enchant_voidsphere',
-  1269056: 'inv_cooking_10_heartystew',
-}
-
 function getConfig(poi: PointOfInterestType): PoiConfig | null {
   return configs.find((config) => config.type === poi.type) ?? null
 }
@@ -53,7 +48,7 @@ function PointOfInterestComponent({ poi, iconScaling }: Props) {
   const config = getConfig(poi)
   const isGenericItem = poi.type === 'genericItem' && poi.info
   const spellId = poi.info?.spellId
-  const spellIcon = spellId ? spellIcons[spellId] : null
+  const spellIcon = poi.info?.icon
 
   if (isGenericItem && !spellIcon) return null
   if (!isGenericItem && !config) return null

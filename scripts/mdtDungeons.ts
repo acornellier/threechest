@@ -20,6 +20,13 @@ export const dungeonPaths = new Map<DungeonKey, string>([
   ['kr', 'Midnight/KingsRest'],
 ])
 
+type PoiSpell = { name: string; icon: string }
+
+const poiSpellsFile = `${dirname}/poiSpells.json`
+const poiSpells: Record<number, PoiSpell> = fs.existsSync(poiSpellsFile)
+  ? (JSON.parse(fs.readFileSync(poiSpellsFile, 'utf-8')) as Record<number, PoiSpell>)
+  : {}
+
 const filterDungeonKey = process.argv[2]
 
 if (!filterDungeonKey) {
@@ -29,9 +36,11 @@ if (!filterDungeonKey) {
 
 for (const [key, path] of dungeonPaths) {
   if (!filterDungeonKey || key === filterDungeonKey) {
-    importMdtDungeon(key, path)
+    await importMdtDungeon(key, path)
   }
 }
+
+fs.writeFileSync(poiSpellsFile, JSON.stringify(poiSpells, null, 2) + '\n')
 
 function parseExpression(value: Expression): any {
   if (value.type === 'NumericLiteral') {
@@ -61,7 +70,28 @@ function convertCoords(x: number, y: number): Point {
   return [roundTo(y / 2.185, 2), roundTo(x / 2.185, 2)]
 }
 
-export function importMdtDungeon(key: DungeonKey, dungeonPath: string) {
+// Only spells missing from poiSpells.json hit wowhead, so a failed fetch can't drop existing icons
+async function getPoiSpell(spellId: number): Promise<PoiSpell | null> {
+  const cached = poiSpells[spellId]
+  if (cached) return cached
+
+  try {
+    const res = await fetch(`https://nether.wowhead.com/tooltip/spell/${spellId}`)
+    if (!res.ok) throw new Error(`HTTP ${res.status}`)
+
+    const json = (await res.json()) as Partial<PoiSpell>
+    if (!json.name || !json.icon) throw new Error('Missing name or icon')
+
+    const spell = { name: json.name, icon: json.icon }
+    poiSpells[spellId] = spell
+    return spell
+  } catch (err) {
+    console.warn(`Failed to fetch POI spell ${spellId} from wowhead, it will be hidden:`, err)
+    return null
+  }
+}
+
+export async function importMdtDungeon(key: DungeonKey, dungeonPath: string) {
   const data = fs.readFileSync(`${dirname}/../MythicDungeonTools/${dungeonPath}.lua`)
   const body = parser.parse(data.toString()).body
 
@@ -101,10 +131,14 @@ export function importMdtDungeon(key: DungeonKey, dungeonPath: string) {
 
       const infoFields = getFieldValue(fields, 'info') as TableKey[]
       if (infoFields) {
+        const spellId: number | null = getFieldValue(infoFields, 'spellId')
+        const spellInfo = spellId ? await getPoiSpell(spellId) : null
+
         poi.info = {
-          description: getFieldValue(infoFields, 'description'),
+          description: getFieldValue(infoFields, 'description') ?? spellInfo?.name ?? null,
           texture: getFieldValue(infoFields, 'texture'),
-          spellId: getFieldValue(infoFields, 'spellId'),
+          spellId,
+          icon: spellInfo?.icon ?? null,
           size: getFieldValue(infoFields, 'size'),
         }
       }

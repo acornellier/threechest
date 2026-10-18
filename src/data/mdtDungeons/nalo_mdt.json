@@ -2858,9 +2858,10 @@
         37.93
       ],
       "info": {
-        "description": null,
+        "description": "Warding Incense",
         "texture": 135265,
         "spellId": 1271545,
+        "icon": "inv_summerfest_firespirit",
         "size": 15
       }
     },
@@ -2871,9 +2872,10 @@
         91.49
       ],
       "info": {
-        "description": null,
+        "description": "Warding Incense",
         "texture": 135265,
         "spellId": 1271545,
+        "icon": "inv_summerfest_firespirit",
         "size": 15
       }
     },
@@ -2884,9 +2886,10 @@
         227.91
       ],
       "info": {
-        "description": null,
+        "description": "Rune of Anchoring",
         "texture": 237528,
         "spellId": 1271737,
+        "icon": "spell_deathknight_pathoffrost",
         "size": 15
       }
     },
@@ -2900,6 +2903,7 @@
         "description": "Acquire 6 Offerings",
         "texture": null,
         "spellId": null,
+        "icon": null,
         "size": 20
       }
     },
@@ -2913,6 +2917,7 @@
         "description": "Acquire 6 Offerings",
         "texture": null,
         "spellId": null,
+        "icon": null,
         "size": 20
       }
     },
@@ -2926,6 +2931,7 @@
         "description": "Acquire 6 Offerings",
         "texture": null,
         "spellId": null,
+        "icon": null,
         "size": 20
       }
     },
@@ -2939,6 +2945,7 @@
         "description": "Acquire 6 Offerings",
         "texture": null,
         "spellId": null,
+        "icon": null,
         "size": 20
       }
     },
@@ -2952,6 +2959,7 @@
         "description": "Acquire 6 Offerings",
         "texture": null,
         "spellId": null,
+        "icon": null,
         "size": 20
       }
     },
@@ -2965,6 +2973,7 @@
         "description": "Acquire 6 Offerings",
         "texture": null,
         "spellId": null,
+        "icon": null,
         "size": 20
       }
     },
@@ -2978,6 +2987,7 @@
         "description": "Acquire 6 Offerings",
         "texture": null,
         "spellId": null,
+        "icon": null,
         "size": 20
       }
     },
@@ -2991,6 +3001,7 @@
         "description": "Acquire 6 Offerings",
         "texture": null,
         "spellId": null,
+        "icon": null,
         "size": 20
       }
     }

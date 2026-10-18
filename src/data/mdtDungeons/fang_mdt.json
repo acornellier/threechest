@@ -2357,9 +2357,10 @@
         364.44
       ],
       "info": {
-        "description": null,
+        "description": "Mutating Elixir",
         "texture": 136242,
         "spellId": 1310012,
+        "icon": "trade_brewpoison",
         "size": 15
       }
     }

@@ -3434,9 +3434,10 @@
         149.95
       ],
       "info": {
-        "description": null,
+        "description": "Flourishing Stride",
         "texture": 348567,
         "spellId": 1265942,
+        "icon": "spell_lifegivingspeed",
         "size": 15
       }
     }

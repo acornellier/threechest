@@ -3384,9 +3384,10 @@
         310.94
       ],
       "info": {
-        "description": null,
+        "description": "Felwyrm Egg",
         "texture": 236999,
         "spellId": 1223570,
+        "icon": "inv_egg_08",
         "size": 15
       }
     },
@@ -3397,9 +3398,10 @@
         231.4
       ],
       "info": {
-        "description": null,
+        "description": "Fel Contraband",
         "texture": 1003586,
         "spellId": 1270638,
+        "icon": "inv_enchanting_wod_crystal",
         "size": 10
       }
     },
@@ -3410,9 +3412,10 @@
         294.35
       ],
       "info": {
-        "description": null,
+        "description": "Fel Contraband",
         "texture": 1003586,
         "spellId": 1270638,
+        "icon": "inv_enchanting_wod_crystal",
         "size": 10
       }
     },
@@ -3423,9 +3426,10 @@
         320.51
       ],
       "info": {
-        "description": null,
+        "description": "Loaded Pistol",
         "texture": 331438,
         "spellId": 1217960,
+        "icon": "inv_weapon_rifle_40",
         "size": 15
       }
     },
@@ -3436,9 +3440,10 @@
         256.92
       ],
       "info": {
-        "description": null,
+        "description": "Fel Contraband",
         "texture": 1003586,
         "spellId": 1270638,
+        "icon": "inv_enchanting_wod_crystal",
         "size": 10
       }
     },
@@ -3449,9 +3454,10 @@
         320.51
       ],
       "info": {
-        "description": null,
+        "description": "Felstone",
         "texture": 1394959,
         "spellId": 1223537,
+        "icon": "inv_infernalbrimstone",
         "size": 15
       }
     },
@@ -3462,9 +3468,10 @@
         123.35
       ],
       "info": {
-        "description": null,
+        "description": "Overload Golem",
         "texture": 4620673,
         "spellId": 1223133,
+        "icon": "ui_profession_engineering",
         "size": 15
       }
     },
@@ -3475,9 +3482,10 @@
         150.89
       ],
       "info": {
-        "description": null,
+        "description": "Overload Golem",
         "texture": 4620673,
         "spellId": 1223133,
+        "icon": "ui_profession_engineering",
         "size": 15
       }
     },
@@ -3488,9 +3496,10 @@
         135.24
       ],
       "info": {
-        "description": null,
+        "description": "Overload Golem",
         "texture": 4620673,
         "spellId": 1223133,
+        "icon": "ui_profession_engineering",
         "size": 15
       }
     },
@@ -3501,9 +3510,10 @@
         344.75
       ],
       "info": {
-        "description": null,
+        "description": "Heartstop Poison",
         "texture": 1120423,
         "spellId": 1223607,
+        "icon": "ability_boss_kilrogg_heartseeker",
         "size": 15
       }
     }
