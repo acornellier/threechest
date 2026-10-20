@@ -164,7 +164,7 @@ export function Dropdown<T extends DropdownOption>({
             </div>
           )}
           <ReactSortable
-            className="flex flex-col relative overflow-auto h-fit"
+            className="dropdown-options flex flex-col relative overflow-auto h-fit"
             disabled={onReorder === undefined}
             list={options}
             setList={(newOptions) => {

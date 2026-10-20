@@ -466,6 +466,7 @@ textarea.fancy {
 
 .dropdown-option {
   min-height: unset;
+  flex-shrink: 0;
   transition: max-height, padding-top, padding-bottom, opacity;
   transition-duration: 0.2s;
   transition-timing-function: ease-out;
@@ -539,6 +540,10 @@ textarea.fancy {
 .route-dropdown {
   .dropdown-main-text {
     font-size: 16px;
+  }
+
+  .dropdown-options {
+    max-height: 60vh;
   }
 }
 
