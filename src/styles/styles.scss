@@ -464,6 +464,10 @@ textarea.fancy {
   }
 }
 
+.dropdown-options {
+  overscroll-behavior: none;
+}
+
 .dropdown-option {
   min-height: unset;
   flex-shrink: 0;
