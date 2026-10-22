@@ -8,6 +8,8 @@
     "server": "cross-env NODE_ENV=development tsx server/server.js",
     "rtc": "tsx rtc-server/rtc-server.ts",
     "build": "tsc && vite build && vite build -c vite.config.vercelServer.ts",
+    "build:lib": "vite build -c vite.config.lib.ts",
+    "lib:demo": "vite lib-demo --port 4720",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "test": "vitest run",
     "test:watch": "vitest",

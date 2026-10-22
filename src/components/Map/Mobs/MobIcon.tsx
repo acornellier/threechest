@@ -4,6 +4,7 @@ import type { MobSpawn } from '../../../data/types.ts'
 import { MobBorder } from './MobBorder.tsx'
 import { mobKicksNeeded } from '../../../util/interrupts.ts'
 import { BoltIcon } from '@heroicons/react/24/solid'
+import { assetUrl } from '../../../util/assetUrl.ts'
 
 interface Props {
   mobSpawn: MobSpawn
@@ -49,7 +50,7 @@ export function MobIcon({
         <div
           className="absolute h-full w-full"
           style={{
-            backgroundImage: `url(/npc_portraits/${mobSpawn.mob.id}.png)`,
+            backgroundImage: `url(${assetUrl(`/npc_portraits/${mobSpawn.mob.id}.png`)})`,
             backgroundSize: 'contain',
             backgroundBlendMode: 'overlay',
             backgroundColor: faded

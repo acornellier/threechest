@@ -1,0 +1,556 @@
+$fancy-red: #7f1d1d;
+$fancy-orange: #7f3f1d;
+$fancy-blue: #131a34;
+$fancy-green: #1d7f1f;
+$fancy-yellow: #7f6b1d;
+
+.leaflet-container {
+  font-family: unset;
+
+  &.mode-drawing,
+  &.mode-drawing .leaflet-interactive {
+    cursor:
+      url('data:image/svg+xml,<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M 20.599 1.5 C 20.223 1.5 19.856 1.611 19.544 1.82 L 14.663 5.355 C 13.388 6.205 9.107 10.397 8.076 11.531 C 10.29 12.075 11.522 12.514 12.371 15.548 C 13.505 14.517 17.718 10.533 18.568 9.258 L 22.181 4.456 C 22.992 3.237 22.18 1.597 20.719 1.504 C 20.679 1.501 20.639 1.5 20.599 1.5 Z" clip-rule="evenodd" style="stroke: rgb(255, 255, 255);"/><path fill-rule="evenodd" d="M 6.75 13.5 C 4.679 13.5 3 15.179 3 17.25 C 3 18.118 2.265 18.805 1.399 18.747 C 0.8230000000000001 18.708 0.42100000000000004 19.308 0.6749999999999999 19.826 C 0.6829999999999999 19.841 0.691 19.856 0.699 19.87 C 2.715 23.373 7.767 23.379 9.792 19.882 C 10.255 19.082 10.499 18.174 10.499 17.25 C 10.499 15.179 8.82 13.5 6.749 13.5 L 6.75 13.5 Z" clip-rule="evenodd" style="stroke: rgb(255, 255, 255);"/></svg>')
+        0 22,
+      auto !important;
+  }
+
+  &.mode-deleting,
+  &.mode-deleting .leaflet-interactive {
+    cursor:
+      url('data:image/svg+xml,<svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="black" stroke-width="0.4800000000000001"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M6.99486 7.00636C6.60433 7.39689 6.60433 8.03005 6.99486 8.42058L10.58 12.0057L6.99486 15.5909C6.60433 15.9814 6.60433 16.6146 6.99486 17.0051C7.38538 17.3956 8.01855 17.3956 8.40907 17.0051L11.9942 13.4199L15.5794 17.0051C15.9699 17.3956 16.6031 17.3956 16.9936 17.0051C17.3841 16.6146 17.3841 15.9814 16.9936 15.5909L13.4084 12.0057L16.9936 8.42059C17.3841 8.03007 17.3841 7.3969 16.9936 7.00638C16.603 6.61585 15.9699 6.61585 15.5794 7.00638L11.9942 10.5915L8.40907 7.00636C8.01855 6.61584 7.38538 6.61584 6.99486 7.00636Z" fill="black"></path></g></svg>')
+        22 22,
+      auto !important;
+  }
+
+  &.mode-deleting.over-drawing,
+  &.mode-deleting.over-drawing .leaflet-interactive {
+    cursor:
+      url('data:image/svg+xml,<svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="black" stroke-width="0.4800000000000001"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M6.99486 7.00636C6.60433 7.39689 6.60433 8.03005 6.99486 8.42058L10.58 12.0057L6.99486 15.5909C6.60433 15.9814 6.60433 16.6146 6.99486 17.0051C7.38538 17.3956 8.01855 17.3956 8.40907 17.0051L11.9942 13.4199L15.5794 17.0051C15.9699 17.3956 16.6031 17.3956 16.9936 17.0051C17.3841 16.6146 17.3841 15.9814 16.9936 15.5909L13.4084 12.0057L16.9936 8.42059C17.3841 8.03007 17.3841 7.3969 16.9936 7.00638C16.603 6.61585 15.9699 6.61585 15.5794 7.00638L11.9942 10.5915L8.40907 7.00636C8.01855 6.61584 7.38538 6.61584 6.99486 7.00636Z" fill="red"></path></g></svg>')
+        22 22,
+      auto !important;
+  }
+
+  &.mode-erasing,
+  &.mode-erasing .leaflet-interactive {
+    cursor:
+      url('data:image/svg+xml,<svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="%23ffffff" stroke-width="1"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M11.4096 5.50506C13.0796 3.83502 13.9146 3 14.9522 3C15.9899 3 16.8249 3.83502 18.4949 5.50506C20.165 7.1751 21 8.01013 21 9.04776C21 10.0854 20.165 10.9204 18.4949 12.5904L14.3017 16.7837L7.21634 9.69828L11.4096 5.50506Z" fill="%23000000"></path><path d="M6.1557 10.759L13.2411 17.8443L12.5904 18.4949C12.2127 18.8727 11.8777 19.2077 11.5734 19.5H21C21.4142 19.5 21.75 19.8358 21.75 20.25C21.75 20.6642 21.4142 21 21 21H9C7.98423 20.9747 7.1494 20.1393 5.50506 18.4949C3.83502 16.8249 3 15.9899 3 14.9522C3 13.9146 3.83502 13.0796 5.50506 11.4096L6.1557 10.759Z" fill="%23000000"></path></g></svg>')
+        14 28,
+      auto !important;
+  }
+
+  &.mode-erasing.over-drawing,
+  &.mode-erasing.over-drawing .leaflet-interactive {
+    cursor:
+      url('data:image/svg+xml,<svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="red" stroke-width="1"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M11.4096 5.50506C13.0796 3.83502 13.9146 3 14.9522 3C15.9899 3 16.8249 3.83502 18.4949 5.50506C20.165 7.1751 21 8.01013 21 9.04776C21 10.0854 20.165 10.9204 18.4949 12.5904L14.3017 16.7837L7.21634 9.69828L11.4096 5.50506Z" fill="%23000000"></path><path d="M6.1557 10.759L13.2411 17.8443L12.5904 18.4949C12.2127 18.8727 11.8777 19.2077 11.5734 19.5H21C21.4142 19.5 21.75 19.8358 21.75 20.25C21.75 20.6642 21.4142 21 21 21H9C7.98423 20.9747 7.1494 20.1393 5.50506 18.4949C3.83502 16.8249 3 15.9899 3 14.9522C3 13.9146 3.83502 13.0796 5.50506 11.4096L6.1557 10.759Z" fill="%23000000"></path></g></svg>')
+        14 28,
+      auto !important;
+  }
+}
+
+.leaflet-tooltip.no-arrow:before {
+  display: none;
+}
+
+.leaflet-zoom-box {
+  border: 2px solid $fancy-red;
+
+  &.inverse {
+    border-style: dashed;
+  }
+}
+
+.leaflet-popup.plain-popup {
+  transition: none;
+
+  .leaflet-popup-content-wrapper {
+    background: none;
+  }
+
+  .leaflet-popup-content {
+    padding: 0;
+    margin: 0;
+  }
+
+  .leaflet-popup-tip-container {
+    display: none;
+  }
+}
+
+@mixin text-outline($size) {
+  text-shadow:
+    $size $size 0 #000,
+    (-$size) (-$size) 0 #000,
+    $size (-$size) 0 #000,
+    (-$size) $size 0 #000;
+}
+
+.text-outline {
+  @include text-outline(1px);
+}
+
+.pull-number-tooltip {
+  @include text-outline(1px);
+
+  font-size: 28px;
+  background-color: unset;
+  border: unset;
+  box-shadow: unset;
+  font-weight: 700;
+  color: #dddddd;
+
+  &.selected {
+    color: white;
+    z-index: 1;
+  }
+
+  &.hovered {
+    font-size: 36px;
+    color: white;
+    z-index: 2;
+  }
+}
+
+.compare-pull-number-tooltip {
+  @include text-outline(1px);
+
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1;
+  padding: 2px 5px;
+  color: white;
+  // Colours come from the compare pull, applied inline in CompareOutline.
+  background-color: rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  border-radius: 4px;
+  box-shadow: none;
+
+  &::before {
+    display: none;
+  }
+
+  &.highlighted {
+    font-size: 16px;
+    background-color: black;
+    border-color: white;
+    z-index: 2;
+  }
+}
+
+.pull {
+  cursor: pointer;
+
+  &:hover {
+    filter: brightness(1.3);
+  }
+
+  &:not(:first-child) {
+    padding-top: 1.5px;
+  }
+
+  &:not(:last-child) {
+    padding-bottom: 1.5px;
+  }
+}
+
+.sortable-ghost * {
+  display: none;
+}
+
+.sortable-ghost {
+  z-index: 10;
+  min-height: 2px;
+  height: 2px;
+  border: 2px solid orange;
+  padding: 0;
+}
+
+.fade-in-map-object {
+  transition: 500ms opacity;
+}
+
+.mob-search-match {
+  border-style: solid;
+  border-color: #fde047;
+  box-shadow:
+    0 0 8px 2px rgba(253, 224, 71, 0.9),
+    inset 0 0 8px 2px rgba(253, 224, 71, 0.9);
+  animation: mob-search-pulse 900ms ease-in-out infinite alternate;
+}
+
+@keyframes mob-search-pulse {
+  from {
+    opacity: 0.5;
+    transform: scale(0.94);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1.06);
+  }
+}
+
+.gritty {
+  background-image: url(/images/button_noise.png);
+  background-blend-mode: overlay;
+  background-repeat: repeat;
+}
+
+.fancy {
+  @extend .gritty;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $fancy-red;
+  border: 1px solid black;
+  min-height: 42px;
+  padding: 8px 12px;
+  font-size: 15px;
+  font-weight: normal;
+  border-radius: 6px;
+  position: relative;
+  color: white;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.3);
+
+  &.short {
+    min-height: 0;
+    padding-top: 4px;
+    padding-bottom: 4px;
+  }
+
+  &.tiny {
+    min-height: 0;
+    padding: 0 4px;
+    font-size: 12px;
+    border-radius: 3px;
+  }
+
+  &.green {
+    background-color: $fancy-green;
+  }
+
+  &.yellow {
+    background-color: $fancy-yellow;
+  }
+}
+
+.bg-fancy-red {
+  background-color: $fancy-red;
+}
+
+.bg-fancy-orange {
+  background-color: $fancy-orange;
+}
+
+.text-fancy-red {
+  color: $fancy-red;
+}
+
+.bg-fancy-blue {
+  background-color: $fancy-blue;
+}
+
+.bg-fancy-yellow {
+  background-color: $fancy-yellow;
+}
+
+.bg-fancy-green {
+  background-color: $fancy-green;
+}
+
+input.fancy,
+textarea.fancy {
+  background-color: rgb(78 78 87);
+  padding: 8px;
+}
+
+@mixin fancy-shadow($two-d: false, $color: $fancy-red) {
+  $bottom-size: 3px;
+  @if $two-d {
+    $bottom-size: 0;
+  }
+
+  box-shadow:
+    inset 0 30px 30px -15px rgba(255, 255, 255, 0.1),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.3),
+    inset 0 1px 20px rgba(0, 0, 0, 0),
+    0 $bottom-size 0 $color,
+    0 3px 2px rgba(0, 0, 0, 0.2),
+    0 5px 10px rgba(0, 0, 0, 0.1),
+    0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.fancy-toast {
+  @extend .fancy;
+  @include fancy-shadow(true);
+
+  background-color: $fancy-green;
+
+  &.error {
+    background-color: #b61111;
+  }
+
+  &.info {
+    background-color: #1e2e8c;
+  }
+}
+
+.fancy-button {
+  @extend .fancy;
+  @include fancy-shadow();
+
+  cursor: pointer;
+  user-select: none;
+  top: -3px;
+  position: relative;
+  transition: 150ms all;
+  white-space: nowrap;
+
+  &.green {
+    @include fancy-shadow(false, $fancy-green);
+  }
+
+  &.yellow {
+    @include fancy-shadow(false, $fancy-yellow);
+  }
+
+  &-inner {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  .fancy-button-hover {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  &.outline-button {
+    background-color: transparent;
+    border: 1px solid #777777;
+
+    box-shadow:
+      inset 0 30px 30px -15px rgba(127, 29, 29, 0.1),
+      inset 0 0 0 1px rgba(127, 29, 29, 0.3),
+      inset 0 1px 20px rgba(0, 0, 0, 0),
+      0 3px 0 #444444,
+      0 3px 2px rgba(0, 0, 0, 0.2),
+      0 5px 10px rgba(0, 0, 0, 0.1),
+      0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  &.two-d {
+    @include fancy-shadow(true);
+    top: unset;
+  }
+
+  &.two-d.outline-button {
+    top: unset;
+    box-shadow:
+      inset 0 1px 20px rgba(0, 0, 0, 0),
+      0 3px 2px rgba(0, 0, 0, 0.2),
+      0 5px 10px rgba(0, 0, 0, 0.1),
+      0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  &:hover {
+    .fancy-button-hover {
+      background: radial-gradient(#de1313, transparent);
+    }
+
+    &.green .fancy-button-hover {
+      background: radial-gradient(#3bd324, transparent);
+    }
+
+    &.yellow .fancy-button-hover {
+      background: radial-gradient(#d2ae20, transparent);
+    }
+
+    &.outline-button .fancy-button-hover {
+      background: radial-gradient(rgba(217, 150, 150, 0.2), transparent);
+    }
+
+    &.two-d {
+      transform: unset;
+    }
+  }
+
+  &:active {
+    transform: translateY(3px);
+    box-shadow:
+      inset 0 16px 2px -15px rgba(0, 0, 0, 0),
+      inset 0 0 0 1px rgba(255, 255, 255, 0.15),
+      inset 0 1px 20px rgba(0, 0, 0, 0.1),
+      0 0 0 rgba(0, 0, 0, 0);
+
+    &.two-d {
+      transform: unset;
+      box-shadow:
+        inset 0 16px 2px -15px rgba(0, 0, 0, 0),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.15),
+        inset 0 1px 20px rgba(0, 0, 0, 0.1),
+        0 0 0 rgba(0, 0, 0, 0);
+    }
+  }
+
+  &[disabled] {
+    cursor: default;
+    opacity: 0.9;
+    filter: contrast(0.6);
+    transition: none;
+  }
+
+  &:focus-visible {
+    outline: 2px solid yellow;
+  }
+}
+
+.dropdown-main {
+  width: 100%;
+  height: 100%;
+  justify-content: flex-start;
+
+  transition: border, width;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-out;
+
+  &.options-visible {
+    border: 1px solid #c2c2c2;
+  }
+
+  .dropdown-main-text {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+}
+
+.dropdown-header {
+  background-color: $fancy-red;
+  border: 1px solid #c2c2c2;
+  border-top: none;
+  padding: 0.375rem 0.5rem;
+
+  transition: max-height, padding-top, padding-bottom, opacity;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-out;
+
+  &:not(.options-visible) {
+    max-height: 0;
+    opacity: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    overflow: hidden;
+  }
+}
+
+.dropdown-options {
+  overscroll-behavior: none;
+}
+
+.dropdown-option {
+  min-height: unset;
+  flex-shrink: 0;
+  transition: max-height, padding-top, padding-bottom, opacity;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-out;
+
+  .fancy-button-inner {
+    justify-content: flex-start;
+  }
+
+  &:not(.options-visible) {
+    max-height: 0;
+    opacity: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    overflow: hidden;
+  }
+
+  &.options-visible {
+    max-height: 100px;
+  }
+
+  .dropdown-option-action {
+    align-self: stretch;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    margin: -8px -12px -8px 8px;
+    border-left: 1px solid rgba(255, 255, 255, 0.25);
+    color: rgba(255, 255, 255, 0.65);
+    transition: 150ms all;
+
+    &:hover {
+      background: radial-gradient(#de1313, transparent);
+      color: white;
+    }
+
+    &.active {
+      background-color: rgba(255, 255, 255, 0.2);
+      color: white;
+    }
+
+    &.disabled {
+      opacity: 0.25;
+    }
+  }
+
+  .dropdown-option-text {
+    text-overflow: ellipsis;
+    white-space: normal;
+    text-align: left;
+    overflow: auto;
+  }
+
+  border: 1px solid #c2c2c2;
+  border-top: none;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+
+  &:not(:first-child) {
+    border-top: none;
+  }
+
+  &:not(:last-child) {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom: none;
+  }
+}
+
+.route-dropdown {
+  .dropdown-main-text {
+    font-size: 16px;
+  }
+
+  .dropdown-options {
+    max-height: 60vh;
+  }
+}
+
+.mob-spawn-icon {
+  &:focus-visible {
+    outline: none;
+  }
+}
+
+// Icon sizing, driven by --icon-scaling on the map container (see IconScaling.tsx) so that zooming
+// costs one property write instead of a pass over every icon. --icon-size is inherited by the
+// icon's contents, which size themselves as a fraction of it.
+.scaled-icon {
+  --icon-size: calc(var(--icon-scaling, 40) * var(--icon-scale, 1) * 1px);
+  --icon-box-size: calc(var(--icon-size) * var(--icon-box-scale, 1));
+
+  width: var(--icon-box-size);
+  height: var(--icon-box-size);
+  margin-left: calc(var(--icon-box-size) / -2);
+  margin-top: calc(var(--icon-box-size) / -2);
+}

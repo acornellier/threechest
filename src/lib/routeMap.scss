@@ -1,0 +1,19 @@
+// No @tailwind base: its reset is global and would restyle the host page. The lib build scopes
+// utilities under .threechest-route-map instead.
+@tailwind components;
+@tailwind utilities;
+
+@import '../styles/common';
+
+.threechest-route-map {
+  position: relative;
+  overflow: hidden;
+  background-color: #242424;
+  color: white;
+
+  *,
+  ::before,
+  ::after {
+    box-sizing: border-box;
+  }
+}

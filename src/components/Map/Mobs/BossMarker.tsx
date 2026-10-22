@@ -2,6 +2,7 @@ import { renderToStaticMarkup } from 'react-dom/server'
 import type { Spawn } from '../../../data/types.ts'
 import { Marker } from 'react-leaflet'
 import { scaledDivIcon } from '../../../util/scaledIcon.ts'
+import { assetUrl } from '../../../util/assetUrl.ts'
 
 interface Props {
   spawn: Spawn
@@ -25,7 +26,7 @@ export function BossMarker({ spawn, isHovered, scale, boxScale, hidden }: Props)
             <div
               className="absolute"
               style={{
-                backgroundImage: `url(/images/elite.png)`,
+                backgroundImage: `url(${assetUrl('/images/elite.png')})`,
                 backgroundSize: 'contain',
                 zIndex: -1,
                 width: '165%',
