@@ -61,7 +61,7 @@ export function SyncYJson<T extends JsonTemplateContainer>({
   }, [dispatch, setData, yJson])
 
   // Subscribe to local changes
-  const stateCache = useRef<T | undefined>()
+  const stateCache = useRef<T | undefined>(undefined)
   const newState = useRootSelector(selectData)
   useEffect(() => {
     if (stateCache.current !== newState) {

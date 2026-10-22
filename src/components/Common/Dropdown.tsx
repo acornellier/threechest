@@ -69,7 +69,7 @@ export function Dropdown<T extends DropdownOption>({
   const [open, setOpen] = useState(false)
   const [optionsVisible, setOptionsVisible] = useState(false)
   const [fullyOpen, setFullyOpen] = useState(false)
-  const timeoutRef = useRef<NodeJS.Timeout>()
+  const timeoutRef = useRef<NodeJS.Timeout>(undefined)
 
   const handleClose = useCallback(() => {
     if (!open && !optionsVisible) return

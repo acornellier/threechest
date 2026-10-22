@@ -15,7 +15,7 @@ export function LiveController() {
   const dungeon = useDungeon()
   const pullsDetailed = useMemo(() => augmentPulls(route.pulls, dungeon), [route.pulls, dungeon])
   const selectedPull = useSelectedPull()
-  const lastSelectedPull = useRef<number>()
+  const lastSelectedPull = useRef<number>(undefined)
   const { height: windowHeight, width: windowWidth } = useWindowSize()
 
   const prevPull = pullsDetailed[selectedPull - 1]
