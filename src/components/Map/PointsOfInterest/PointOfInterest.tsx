@@ -6,6 +6,7 @@ import { scaledDivIcon } from '../../../util/scaledIcon.ts'
 import { useMapObjectsHidden } from '../../../store/reducers/mapReducer.ts'
 import type { PointOfInterest as PointOfInterestType } from '../../../data/types.ts'
 import { getIconLink } from '../../../data/spells/spells.ts'
+import { assetUrl } from '../../../util/assetUrl.ts'
 
 interface Props {
   poi: PointOfInterestType
@@ -37,7 +38,7 @@ function getConfig(poi: PointOfInterestType): PoiConfig | null {
 }
 
 function getIconSrc(src: string) {
-  if (src.startsWith('/images/')) return src
+  if (src.startsWith('/images/')) return assetUrl(src)
   return getIconLink(src)
 }
 

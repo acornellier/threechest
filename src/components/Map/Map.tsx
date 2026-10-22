@@ -24,6 +24,7 @@ import { isDev } from '../../util/isDev.ts'
 import { PointsOfInterest } from './PointsOfInterest/PointsOfInterest.tsx'
 import { WclCoordinateTest } from './WclCoordinateTest.tsx'
 import { IconScaling } from './IconScaling.tsx'
+import { assetUrl } from '../../util/assetUrl.ts'
 
 const renderer = svg({ padding: 100 })
 
@@ -63,7 +64,7 @@ export function Map() {
           noWrap
           minNativeZoom={2}
           maxNativeZoom={2}
-          url={`/maps/${dungeon.key}/{x}_{y}.jpg`}
+          url={assetUrl(`/maps/${dungeon.key}/{x}_{y}.jpg`)}
         />
         {isDev && <WclCoordinateTest />}
         <IconScaling />

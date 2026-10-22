@@ -3,6 +3,7 @@ import { Marker } from 'react-leaflet'
 import { renderToStaticMarkup } from 'react-dom/server'
 import type { WowMark } from '../../../util/marks.ts'
 import { scaledDivIcon } from '../../../util/scaledIcon.ts'
+import { assetUrl } from '../../../util/assetUrl.ts'
 
 interface Props {
   spawn: Spawn
@@ -24,7 +25,7 @@ export function MarkMarker({ spawn, scale, boxScale, mark }: Props) {
             <div
               className="absolute"
               style={{
-                backgroundImage: `url(/images/markers/${mark}.png)`,
+                backgroundImage: `url(${assetUrl(`/images/markers/${mark}.png`)})`,
                 backgroundSize: 'contain',
                 zIndex: -1,
                 width: '80%',
