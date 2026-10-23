@@ -3428,10 +3428,10 @@
       ]
     },
     {
-      "type": "genericItem",
+      "type": "genericAssignablePOI",
       "pos": [
-        -96.61,
-        149.95
+        -71.01,
+        112.77
       ],
       "info": {
         "description": "Flourishing Stride",

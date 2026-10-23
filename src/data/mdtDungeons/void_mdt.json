@@ -2929,7 +2929,7 @@
       ]
     },
     {
-      "type": "genericItem",
+      "type": "genericAssignablePOI",
       "pos": [
         -146.58,
         59.53
@@ -2943,7 +2943,7 @@
       }
     },
     {
-      "type": "genericItem",
+      "type": "genericAssignablePOI",
       "pos": [
         -146.92,
         123.04

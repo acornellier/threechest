@@ -2351,7 +2351,7 @@
       ]
     },
     {
-      "type": "genericItem",
+      "type": "genericAssignablePOI",
       "pos": [
         -199.45,
         364.44
