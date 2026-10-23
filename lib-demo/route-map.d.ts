@@ -1,3 +1,3 @@
 declare module '../dist-lib/route-map.js' {
-  export * from '../src/lib/RouteMap.tsx'
+  export * from '../src/lib/index.ts'
 }

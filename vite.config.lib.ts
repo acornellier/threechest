@@ -28,7 +28,7 @@ export default defineConfig({
     outDir: 'dist-lib',
     copyPublicDir: false,
     lib: {
-      entry: 'src/lib/RouteMap.tsx',
+      entry: 'src/lib/index.ts',
       formats: ['es'],
       fileName: 'route-map',
     },
