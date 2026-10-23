@@ -4,8 +4,8 @@ import { decodeMdtString } from '../util/mdt/mdt2.ts'
 import { mapHeight, mapWidth } from '../util/map.ts'
 import { wclPointToLeafletPoint } from '../util/wclCalc.ts'
 
-const mdtMapWidth = 3840
-const mdtMapHeight = 2560
+export const mdtMapWidth = 3840
+export const mdtMapHeight = 2560
 
 /** Projects in-game world coordinates onto MDT's map, in MDT pixels. */
 export function projectToMdt(x: number, y: number, mapId: number): [number, number] | null {

@@ -19,7 +19,7 @@ import { cloudReducer } from '../store/reducers/cloudReducer.ts'
 import { mobSearchReducer } from '../store/reducers/mobSearchReducer.ts'
 import { decodeMdtString } from '../util/mdt/mdt2.ts'
 import { assetUrl, setAssetBaseUrl } from '../util/assetUrl.ts'
-import { mapBounds, mapCenter } from '../util/map.ts'
+import { mapBounds, mapCenter, mapHeight, mapWidth } from '../util/map.ts'
 import { useDungeon } from '../store/routes/routeHooks.ts'
 import { useAppDispatch } from '../store/storeUtil.ts'
 import { IconScaling } from '../components/Map/IconScaling.tsx'
@@ -30,6 +30,7 @@ import { PointsOfInterest } from '../components/Map/PointsOfInterest/PointsOfInt
 import { MapInitialZoom } from '../components/Map/MapInitialZoom.tsx'
 import { mapBounds as uiMapBounds } from '../data/coordinates/mapBounds.ts'
 import { wclPointToLeafletPoint } from '../util/wclCalc.ts'
+import { mdtMapHeight, mdtMapWidth } from './mdtProjection.ts'
 
 export interface RouteMapActor {
   id: string
@@ -37,6 +38,8 @@ export interface RouteMapActor {
   x: number
   y: number
   mapId: number
+  /** Position in MDT pixels, used instead of x/y/mapId when set. */
+  mdtPosition?: [number, number]
   color: string
   radius?: number
 }
@@ -131,12 +134,18 @@ function Actors({ actors }: { actors: RouteMapActor[] }) {
   return (
     <Pane name="actors" style={{ zIndex: 650 }}>
       {actors.map((actor) => {
-        if (!uiMapBounds[actor.mapId]) return null
-
-        const center = wclPointToLeafletPoint(
-          { x: actor.x * 100, y: actor.y * 100, mapID: actor.mapId, timestamp: 0 },
-          [],
-        )
+        let center: [number, number]
+        if (actor.mdtPosition) {
+          const [mdtX, mdtY] = actor.mdtPosition
+          center = [(-mdtY / mdtMapHeight) * mapHeight, (mdtX / mdtMapWidth) * mapWidth]
+        } else if (uiMapBounds[actor.mapId]) {
+          center = wclPointToLeafletPoint(
+            { x: actor.x * 100, y: actor.y * 100, mapID: actor.mapId, timestamp: 0 },
+            [],
+          )
+        } else {
+          return null
+        }
 
         return (
           <CircleMarker
