@@ -2,11 +2,11 @@ import 'leaflet/dist/leaflet.css'
 import './routeMap.scss'
 import '../components/Leaflet/SmoothWheelZoom.ts'
 import type { CSSProperties } from 'react'
-import { useEffect, useMemo, useRef, useState } from 'react'
+import { memo, useEffect, useMemo, useRef, useState } from 'react'
 import type { Middleware } from '@reduxjs/toolkit'
 import { configureStore, isAction } from '@reduxjs/toolkit'
 import { Provider } from 'react-redux'
-import { MapContainer, TileLayer } from 'react-leaflet'
+import { CircleMarker, MapContainer, Pane, TileLayer } from 'react-leaflet'
 import { CRS, svg } from 'leaflet'
 import { routesReducer, selectPull, setRouteFromMdt, toggleSpawn } from '../store/routes/routesReducer.ts'
 import { hoverReducer } from '../store/reducers/hoverReducer.ts'
@@ -28,11 +28,24 @@ import { PullOutlines } from '../components/Map/PullOutlines/PullOutlines.tsx'
 import { Notes } from '../components/Map/Notes/Notes.tsx'
 import { PointsOfInterest } from '../components/Map/PointsOfInterest/PointsOfInterest.tsx'
 import { MapInitialZoom } from '../components/Map/MapInitialZoom.tsx'
+import { mapBounds as uiMapBounds } from '../data/coordinates/mapBounds.ts'
+import { wclPointToLeafletPoint } from '../util/wclCalc.ts'
+
+export interface RouteMapActor {
+  id: string
+  /** In-game world coordinates. */
+  x: number
+  y: number
+  mapId: number
+  color: string
+  radius?: number
+}
 
 export interface RouteMapProps {
   mdtString: string
   selectedPull?: number
   onPullSelect?: (pullIndex: number) => void
+  actors?: RouteMapActor[]
   /** Where map tiles and icons are served from. */
   assetBaseUrl?: string
   className?: string
@@ -92,7 +105,54 @@ function createRouteMapStore(onPullSelect: PullSelectRef) {
 
 const renderer = svg({ padding: 100 })
 
-function RouteMapContents() {
+const StaticLayers = memo(function StaticLayers() {
+  const dungeon = useDungeon()
+
+  return (
+    <>
+      <TileLayer
+        bounds={mapBounds}
+        noWrap
+        minNativeZoom={2}
+        maxNativeZoom={2}
+        url={assetUrl(`/maps/${dungeon.key}/{x}_{y}.jpg`)}
+      />
+      <IconScaling />
+      <Mobs />
+      <PullOutlines />
+      <Notes />
+      <PointsOfInterest />
+      <MapInitialZoom />
+    </>
+  )
+})
+
+function Actors({ actors }: { actors: RouteMapActor[] }) {
+  return (
+    <Pane name="actors" style={{ zIndex: 650 }}>
+      {actors.map((actor) => {
+        if (!uiMapBounds[actor.mapId]) return null
+
+        const center = wclPointToLeafletPoint(
+          { x: actor.x * 100, y: actor.y * 100, mapID: actor.mapId, timestamp: 0 },
+          [],
+        )
+
+        return (
+          <CircleMarker
+            key={actor.id}
+            center={center}
+            radius={actor.radius ?? 6}
+            interactive={false}
+            pathOptions={{ color: 'black', weight: 1, fillColor: actor.color, fillOpacity: 1 }}
+          />
+        )
+      })}
+    </Pane>
+  )
+}
+
+function RouteMapContents({ actors }: { actors: RouteMapActor[] | undefined }) {
   const dispatch = useAppDispatch()
   const dungeon = useDungeon()
 
@@ -120,19 +180,8 @@ function RouteMapContents() {
       smoothSensitivity={2}
       boxZoom={false}
     >
-      <TileLayer
-        bounds={mapBounds}
-        noWrap
-        minNativeZoom={2}
-        maxNativeZoom={2}
-        url={assetUrl(`/maps/${dungeon.key}/{x}_{y}.jpg`)}
-      />
-      <IconScaling />
-      <Mobs />
-      <PullOutlines />
-      <Notes />
-      <PointsOfInterest />
-      <MapInitialZoom />
+      <StaticLayers />
+      {actors && <Actors actors={actors} />}
     </MapContainer>
   )
 }
@@ -141,6 +190,7 @@ export function RouteMap({
   mdtString,
   selectedPull,
   onPullSelect,
+  actors,
   assetBaseUrl = 'https://threechest.io',
   className,
   style,
@@ -185,7 +235,7 @@ export function RouteMap({
         <div className="p-4">Failed to load route: {error}</div>
       ) : loadedMdtString !== null ? (
         <Provider store={store}>
-          <RouteMapContents />
+          <RouteMapContents actors={actors} />
         </Provider>
       ) : null}
     </div>
