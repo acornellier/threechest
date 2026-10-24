@@ -22,10 +22,6 @@
           "attributes": [
             "magic"
           ]
-        },
-        {
-          "id": 1221063,
-          "attributes": []
         }
       ],
       "spawns": [
@@ -209,10 +205,6 @@
           "attributes": [
             "bleed"
           ]
-        },
-        {
-          "id": 1221063,
-          "attributes": []
         }
       ],
       "spawns": [
@@ -338,18 +330,10 @@
       "characteristics": [],
       "spells": [
         {
-          "id": 1216570,
-          "attributes": []
-        },
-        {
           "id": 1216571,
           "attributes": [
             "interruptible"
           ]
-        },
-        {
-          "id": 1221063,
-          "attributes": []
         },
         {
           "id": 1229433,
@@ -458,10 +442,6 @@
           "attributes": []
         },
         {
-          "id": 1221063,
-          "attributes": []
-        },
-        {
           "id": 1295035,
           "attributes": []
         }
@@ -500,10 +480,6 @@
       "spells": [
         {
           "id": 1216529,
-          "attributes": []
-        },
-        {
-          "id": 1221063,
           "attributes": []
         },
         {
@@ -650,17 +626,9 @@
         },
         {
           "id": 1216589,
-          "attributes": []
-        },
-        {
-          "id": 1216590,
           "attributes": [
             "poison"
           ]
-        },
-        {
-          "id": 1221063,
-          "attributes": []
         }
       ],
       "spawns": [
@@ -1406,18 +1374,10 @@
       "characteristics": [],
       "spells": [
         {
-          "id": 1217881,
-          "attributes": []
-        },
-        {
           "id": 1217930,
           "attributes": [
             "magic"
           ]
-        },
-        {
-          "id": 1221063,
-          "attributes": []
         },
         {
           "id": 1293101,
@@ -1580,19 +1540,7 @@
           ]
         },
         {
-          "id": 1221063,
-          "attributes": []
-        },
-        {
           "id": 1297693,
-          "attributes": []
-        },
-        {
-          "id": 1297695,
-          "attributes": []
-        },
-        {
-          "id": 1309970,
           "attributes": []
         }
       ],
@@ -1715,14 +1663,6 @@
             "interruptible",
             "enrage"
           ]
-        },
-        {
-          "id": 1221063,
-          "attributes": []
-        },
-        {
-          "id": 1295426,
-          "attributes": []
         },
         {
           "id": 1295427,
@@ -1849,27 +1789,11 @@
           ]
         },
         {
-          "id": 1221063,
-          "attributes": []
-        },
-        {
-          "id": 1294789,
-          "attributes": []
-        },
-        {
           "id": 1297682,
           "attributes": []
         },
         {
-          "id": 1297683,
-          "attributes": []
-        },
-        {
           "id": 1297684,
-          "attributes": []
-        },
-        {
-          "id": 1297686,
           "attributes": []
         }
       ],
@@ -1923,10 +1847,6 @@
       "isBoss": false,
       "characteristics": [],
       "spells": [
-        {
-          "id": 1221063,
-          "attributes": []
-        },
         {
           "id": 1293022,
           "attributes": []
@@ -2131,10 +2051,6 @@
           "attributes": []
         },
         {
-          "id": 1294774,
-          "attributes": []
-        },
-        {
           "id": 1297676,
           "attributes": []
         },
@@ -2225,10 +2141,6 @@
           "attributes": []
         },
         {
-          "id": 1216955,
-          "attributes": []
-        },
-        {
           "id": 1217930,
           "attributes": [
             "magic"
@@ -2240,10 +2152,6 @@
         },
         {
           "id": 1302007,
-          "attributes": []
-        },
-        {
-          "id": 1302010,
           "attributes": []
         }
       ],
@@ -2271,31 +2179,11 @@
       "characteristics": [],
       "spells": [
         {
-          "id": 1215872,
-          "attributes": []
-        },
-        {
           "id": 1215961,
           "attributes": []
         },
         {
-          "id": 1215985,
-          "attributes": []
-        },
-        {
-          "id": 1218187,
-          "attributes": []
-        },
-        {
-          "id": 1221063,
-          "attributes": []
-        },
-        {
           "id": 1294824,
-          "attributes": []
-        },
-        {
-          "id": 1294827,
           "attributes": []
         },
         {
@@ -2393,15 +2281,7 @@
           "attributes": []
         },
         {
-          "id": 474231,
-          "attributes": []
-        },
-        {
           "id": 474234,
-          "attributes": []
-        },
-        {
-          "id": 1214637,
           "attributes": []
         },
         {
@@ -2409,19 +2289,7 @@
           "attributes": []
         },
         {
-          "id": 1214647,
-          "attributes": []
-        },
-        {
-          "id": 1214663,
-          "attributes": []
-        },
-        {
           "id": 1295453,
-          "attributes": []
-        },
-        {
-          "id": 1295455,
           "attributes": []
         }
       ],
@@ -2453,23 +2321,11 @@
           "attributes": []
         },
         {
-          "id": 474240,
-          "attributes": []
-        },
-        {
           "id": 1214959,
           "attributes": []
         },
         {
-          "id": 1217464,
-          "attributes": []
-        },
-        {
           "id": 1217989,
-          "attributes": []
-        },
-        {
-          "id": 1221063,
           "attributes": []
         },
         {
@@ -2513,69 +2369,24 @@
           "attributes": []
         },
         {
-          "id": 474483,
-          "attributes": []
-        },
-        {
           "id": 474515,
           "attributes": [
             "poison"
           ]
         },
         {
-          "id": 474545,
-          "attributes": []
-        },
-        {
-          "id": 474740,
-          "attributes": [
-            "bleed"
-          ]
-        },
-        {
-          "id": 474763,
-          "attributes": []
-        },
-        {
-          "id": 734276,
-          "attributes": [
-            "interruptible"
-          ]
-        },
-        {
-          "id": 1214352,
-          "attributes": []
-        },
-        {
-          "id": 1214355,
-          "attributes": []
-        },
-        {
           "id": 1214357,
           "attributes": []
         },
         {
-          "id": 1217123,
-          "attributes": []
-        },
-        {
           "id": 1218347,
-          "attributes": []
-        },
-        {
-          "id": 1221063,
-          "attributes": []
-        },
-        {
-          "id": 1222598,
-          "attributes": []
+          "attributes": [
+            "bleed",
+            "interruptible"
+          ]
         },
         {
           "id": 1222795,
-          "attributes": []
-        },
-        {
-          "id": 1223939,
           "attributes": [
             "poison"
           ]
@@ -2609,18 +2420,10 @@
           "attributes": []
         },
         {
-          "id": 1221063,
-          "attributes": []
-        },
-        {
           "id": 1228198,
           "attributes": [
             "magic"
           ]
-        },
-        {
-          "id": 1230289,
-          "attributes": []
         },
         {
           "id": 1230304,
@@ -2628,10 +2431,6 @@
         },
         {
           "id": 1253811,
-          "attributes": []
-        },
-        {
-          "id": 1253813,
           "attributes": []
         }
       ],
@@ -2669,10 +2468,6 @@
           "attributes": []
         },
         {
-          "id": 474457,
-          "attributes": []
-        },
-        {
           "id": 474462,
           "attributes": []
         },
@@ -2681,25 +2476,7 @@
           "attributes": []
         },
         {
-          "id": 1214730,
-          "attributes": []
-        },
-        {
-          "id": 1214740,
-          "attributes": []
-        },
-        {
-          "id": 1216945,
-          "attributes": [
-            "interruptible"
-          ]
-        },
-        {
           "id": 1217345,
-          "attributes": []
-        },
-        {
-          "id": 1217384,
           "attributes": []
         },
         {
@@ -2716,7 +2493,9 @@
         },
         {
           "id": 1287627,
-          "attributes": []
+          "attributes": [
+            "interruptible"
+          ]
         }
       ],
       "spawns": [
@@ -2742,10 +2521,6 @@
       "isBoss": false,
       "characteristics": [],
       "spells": [
-        {
-          "id": 1217881,
-          "attributes": []
-        },
         {
           "id": 1293101,
           "attributes": []
@@ -2779,10 +2554,6 @@
           "attributes": [
             "interruptible"
           ]
-        },
-        {
-          "id": 1219631,
-          "attributes": []
         },
         {
           "id": 1222598,
@@ -3040,10 +2811,6 @@
       "characteristics": [],
       "spells": [
         {
-          "id": 1221063,
-          "attributes": []
-        },
-        {
           "id": 1223204,
           "attributes": [
             "interruptible"
@@ -3078,19 +2845,11 @@
       "characteristics": [],
       "spells": [
         {
-          "id": 1221063,
-          "attributes": []
-        },
-        {
           "id": 1231256,
           "attributes": []
         },
         {
           "id": 1231262,
-          "attributes": []
-        },
-        {
-          "id": 1231353,
           "attributes": []
         }
       ],
@@ -3238,12 +2997,6 @@
       "spells": [
         {
           "id": 1264106,
-          "attributes": [
-            "interruptible"
-          ]
-        },
-        {
-          "id": 1264110,
           "attributes": [
             "interruptible"
           ]

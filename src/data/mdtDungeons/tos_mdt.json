@@ -30,15 +30,7 @@
           "attributes": []
         },
         {
-          "id": 1292623,
-          "attributes": []
-        },
-        {
           "id": 1308113,
-          "attributes": []
-        },
-        {
-          "id": 1308116,
           "attributes": []
         }
       ],
@@ -401,10 +393,6 @@
       ],
       "spells": [
         {
-          "id": 1295610,
-          "attributes": []
-        },
-        {
           "id": 1295635,
           "attributes": []
         },
@@ -715,10 +703,6 @@
         {
           "id": 1310396,
           "attributes": []
-        },
-        {
-          "id": 1310402,
-          "attributes": []
         }
       ],
       "spawns": [
@@ -890,13 +874,6 @@
             "interruptible",
             "curse"
           ]
-        },
-        {
-          "id": 1314082,
-          "attributes": [
-            "interruptible",
-            "curse"
-          ]
         }
       ],
       "spawns": [
@@ -1015,15 +992,7 @@
           "attributes": []
         },
         {
-          "id": 1291734,
-          "attributes": []
-        },
-        {
           "id": 1293048,
-          "attributes": []
-        },
-        {
-          "id": 1296738,
           "attributes": []
         },
         {
@@ -1032,14 +1001,6 @@
         },
         {
           "id": 1297034,
-          "attributes": []
-        },
-        {
-          "id": 1298329,
-          "attributes": []
-        },
-        {
-          "id": 1308838,
           "attributes": []
         }
       ],
@@ -1081,16 +1042,6 @@
         {
           "id": 1293650,
           "attributes": []
-        },
-        {
-          "id": 1293652,
-          "attributes": []
-        },
-        {
-          "id": 1310739,
-          "attributes": [
-            "magic"
-          ]
         }
       ],
       "spawns": [
@@ -1154,10 +1105,6 @@
           "attributes": [
             "interruptible"
           ]
-        },
-        {
-          "id": 1296045,
-          "attributes": []
         },
         {
           "id": 1296052,
@@ -1320,15 +1267,7 @@
           "attributes": []
         },
         {
-          "id": 1311964,
-          "attributes": []
-        },
-        {
           "id": 1311980,
-          "attributes": []
-        },
-        {
-          "id": 1311981,
           "attributes": []
         }
       ],
@@ -1537,10 +1476,6 @@
         {
           "id": 1303486,
           "attributes": []
-        },
-        {
-          "id": 1308546,
-          "attributes": []
         }
       ],
       "spawns": [
@@ -1641,10 +1576,6 @@
         },
         {
           "id": 273241,
-          "attributes": []
-        },
-        {
-          "id": 1225638,
           "attributes": []
         }
       ],
@@ -1749,35 +1680,11 @@
           "attributes": []
         },
         {
-          "id": 1288092,
-          "attributes": []
-        },
-        {
-          "id": 1288235,
-          "attributes": []
-        },
-        {
           "id": 1288428,
           "attributes": []
         },
         {
-          "id": 1289229,
-          "attributes": []
-        },
-        {
-          "id": 1308738,
-          "attributes": []
-        },
-        {
-          "id": 1308740,
-          "attributes": []
-        },
-        {
           "id": 1310311,
-          "attributes": []
-        },
-        {
-          "id": 1314051,
           "attributes": []
         }
       ],
@@ -1813,15 +1720,7 @@
           "attributes": []
         },
         {
-          "id": 1288885,
-          "attributes": []
-        },
-        {
           "id": 1289062,
-          "attributes": []
-        },
-        {
-          "id": 1289229,
           "attributes": []
         },
         {
@@ -1830,14 +1729,6 @@
         },
         {
           "id": 1310311,
-          "attributes": []
-        },
-        {
-          "id": 1310712,
-          "attributes": []
-        },
-        {
-          "id": 1311808,
           "attributes": []
         }
       ],
@@ -2046,15 +1937,7 @@
           "attributes": []
         },
         {
-          "id": 1302618,
-          "attributes": []
-        },
-        {
           "id": 1302761,
-          "attributes": []
-        },
-        {
-          "id": 1303446,
           "attributes": []
         }
       ],
@@ -2171,14 +2054,6 @@
           "attributes": [
             "interruptible"
           ]
-        },
-        {
-          "id": 1311964,
-          "attributes": []
-        },
-        {
-          "id": 1311979,
-          "attributes": []
         }
       ],
       "spawns": [

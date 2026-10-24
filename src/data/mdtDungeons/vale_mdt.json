@@ -1213,14 +1213,6 @@
       "spells": [
         {
           "id": 1238066,
-          "attributes": []
-        },
-        {
-          "id": 1238071,
-          "attributes": []
-        },
-        {
-          "id": 1238076,
           "attributes": [
             "bleed"
           ]
@@ -1457,23 +1449,11 @@
       "characteristics": [],
       "spells": [
         {
-          "id": 1242180,
-          "attributes": []
-        },
-        {
           "id": 1242200,
           "attributes": []
         },
         {
-          "id": 1263628,
-          "attributes": []
-        },
-        {
           "id": 1263636,
-          "attributes": []
-        },
-        {
-          "id": 1263642,
           "attributes": []
         },
         {
@@ -1755,10 +1735,6 @@
           ]
         },
         {
-          "id": 1242180,
-          "attributes": []
-        },
-        {
           "id": 1242200,
           "attributes": []
         }
@@ -1922,39 +1898,11 @@
       "characteristics": [],
       "spells": [
         {
-          "id": 269230,
-          "attributes": []
-        },
-        {
-          "id": 269231,
-          "attributes": []
-        },
-        {
-          "id": 269232,
-          "attributes": []
-        },
-        {
-          "id": 1242180,
-          "attributes": []
-        },
-        {
           "id": 1242200,
           "attributes": []
         },
         {
-          "id": 1303039,
-          "attributes": []
-        },
-        {
           "id": 1314883,
-          "attributes": []
-        },
-        {
-          "id": 1314884,
-          "attributes": []
-        },
-        {
-          "id": 1314885,
           "attributes": []
         }
       ],
@@ -2094,14 +2042,6 @@
           "attributes": [
             "magic"
           ]
-        },
-        {
-          "id": 1238588,
-          "attributes": []
-        },
-        {
-          "id": 1242180,
-          "attributes": []
         },
         {
           "id": 1242200,
@@ -2480,10 +2420,6 @@
           ]
         },
         {
-          "id": 1242180,
-          "attributes": []
-        },
-        {
           "id": 1242200,
           "attributes": []
         }
@@ -2597,14 +2533,6 @@
           "attributes": []
         },
         {
-          "id": 1238463,
-          "attributes": []
-        },
-        {
-          "id": 1238638,
-          "attributes": []
-        },
-        {
           "id": 1238642,
           "attributes": []
         }
@@ -2695,10 +2623,6 @@
           "attributes": []
         },
         {
-          "id": 1242180,
-          "attributes": []
-        },
-        {
           "id": 1242200,
           "attributes": []
         }
@@ -2758,10 +2682,6 @@
           "attributes": []
         },
         {
-          "id": 1234773,
-          "attributes": []
-        },
-        {
           "id": 1234802,
           "attributes": []
         },
@@ -2799,10 +2719,6 @@
       "spells": [
         {
           "id": 1235564,
-          "attributes": []
-        },
-        {
-          "id": 1235574,
           "attributes": []
         },
         {
@@ -2848,19 +2764,7 @@
           "attributes": []
         },
         {
-          "id": 1235546,
-          "attributes": []
-        },
-        {
           "id": 1235640,
-          "attributes": []
-        },
-        {
-          "id": 1235642,
-          "attributes": []
-        },
-        {
-          "id": 1235865,
           "attributes": [
             "bleed"
           ]
@@ -2871,10 +2775,6 @@
         },
         {
           "id": 1261011,
-          "attributes": []
-        },
-        {
-          "id": 1261013,
           "attributes": []
         }
       ],
@@ -2912,10 +2812,6 @@
           "attributes": []
         },
         {
-          "id": 1239825,
-          "attributes": []
-        },
-        {
           "id": 1239882,
           "attributes": []
         },
@@ -2936,15 +2832,7 @@
           "attributes": []
         },
         {
-          "id": 1240152,
-          "attributes": []
-        },
-        {
           "id": 1240210,
-          "attributes": []
-        },
-        {
-          "id": 1240257,
           "attributes": []
         },
         {
@@ -3002,15 +2890,7 @@
           "attributes": []
         },
         {
-          "id": 1246527,
-          "attributes": []
-        },
-        {
           "id": 1246607,
-          "attributes": []
-        },
-        {
-          "id": 1246751,
           "attributes": []
         },
         {
@@ -3034,15 +2914,7 @@
           "attributes": []
         },
         {
-          "id": 1247644,
-          "attributes": []
-        },
-        {
           "id": 1247685,
-          "attributes": []
-        },
-        {
-          "id": 1247746,
           "attributes": [
             "bleed"
           ]
@@ -3076,15 +2948,7 @@
           "attributes": []
         },
         {
-          "id": 1236731,
-          "attributes": []
-        },
-        {
           "id": 1236746,
-          "attributes": []
-        },
-        {
-          "id": 1236747,
           "attributes": []
         },
         {
@@ -3097,10 +2961,6 @@
         },
         {
           "id": 1237166,
-          "attributes": []
-        },
-        {
-          "id": 1237267,
           "attributes": [
             "bleed"
           ]
@@ -3111,10 +2971,6 @@
         },
         {
           "id": 1253410,
-          "attributes": []
-        },
-        {
-          "id": 1263420,
           "attributes": []
         },
         {
@@ -3178,10 +3034,6 @@
           "attributes": []
         },
         {
-          "id": 1240257,
-          "attributes": []
-        },
-        {
           "id": 1241058,
           "attributes": [
             "bleed"
@@ -3220,15 +3072,7 @@
           "attributes": []
         },
         {
-          "id": 1239825,
-          "attributes": []
-        },
-        {
           "id": 1240100,
-          "attributes": []
-        },
-        {
-          "id": 1240152,
           "attributes": []
         }
       ],
@@ -3302,10 +3146,6 @@
           "attributes": []
         },
         {
-          "id": 1250200,
-          "attributes": []
-        },
-        {
           "id": 1250813,
           "attributes": []
         },
@@ -3369,10 +3209,6 @@
       "spells": [
         {
           "id": 1250829,
-          "attributes": []
-        },
-        {
-          "id": 1250831,
           "attributes": []
         }
       ],

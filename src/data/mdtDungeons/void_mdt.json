@@ -16,10 +16,6 @@
         {
           "id": 1250640,
           "attributes": []
-        },
-        {
-          "id": 1268707,
-          "attributes": []
         }
       ],
       "spawns": [
@@ -167,10 +163,6 @@
           "attributes": [
             "enrage"
           ]
-        },
-        {
-          "id": 1267754,
-          "attributes": []
         },
         {
           "id": 1267894,
@@ -755,23 +747,7 @@
       "characteristics": [],
       "spells": [
         {
-          "id": 1228126,
-          "attributes": []
-        },
-        {
-          "id": 1228127,
-          "attributes": []
-        },
-        {
-          "id": 1261645,
-          "attributes": []
-        },
-        {
           "id": 1298900,
-          "attributes": []
-        },
-        {
-          "id": 1298901,
           "attributes": []
         },
         {
@@ -874,23 +850,11 @@
           "attributes": []
         },
         {
-          "id": 1298922,
-          "attributes": []
-        },
-        {
           "id": 1298924,
           "attributes": []
         },
         {
-          "id": 1298933,
-          "attributes": []
-        },
-        {
           "id": 1299125,
-          "attributes": []
-        },
-        {
-          "id": 1299133,
           "attributes": []
         },
         {
@@ -934,19 +898,11 @@
           "attributes": []
         },
         {
-          "id": 1299244,
-          "attributes": []
-        },
-        {
           "id": 1299257,
           "attributes": []
         },
         {
           "id": 1299270,
-          "attributes": []
-        },
-        {
-          "id": 1299273,
           "attributes": []
         },
         {
@@ -998,14 +954,6 @@
           "attributes": [
             "enrage"
           ]
-        },
-        {
-          "id": 1250079,
-          "attributes": []
-        },
-        {
-          "id": 1250695,
-          "attributes": []
         }
       ],
       "spawns": [
@@ -1108,10 +1056,6 @@
           "attributes": []
         },
         {
-          "id": 1234917,
-          "attributes": []
-        },
-        {
           "id": 1245186,
           "attributes": []
         },
@@ -1153,10 +1097,6 @@
       "isBoss": false,
       "characteristics": [],
       "spells": [
-        {
-          "id": 1249236,
-          "attributes": []
-        },
         {
           "id": 1249238,
           "attributes": [
@@ -1574,22 +1514,10 @@
           "attributes": []
         },
         {
-          "id": 1233485,
-          "attributes": []
-        },
-        {
-          "id": 1289258,
+          "id": 1289265,
           "attributes": [
             "poison"
           ]
-        },
-        {
-          "id": 1289265,
-          "attributes": []
-        },
-        {
-          "id": 1311778,
-          "attributes": []
         }
       ],
       "spawns": [
@@ -1797,14 +1725,10 @@
       "characteristics": [],
       "spells": [
         {
-          "id": 1239855,
+          "id": 1239856,
           "attributes": [
             "magic"
           ]
-        },
-        {
-          "id": 1239856,
-          "attributes": []
         },
         {
           "id": 1300116,
@@ -1812,10 +1736,6 @@
         },
         {
           "id": 1300138,
-          "attributes": []
-        },
-        {
-          "id": 1300156,
           "attributes": []
         }
       ],
@@ -1882,14 +1802,6 @@
           "attributes": []
         },
         {
-          "id": 1300244,
-          "attributes": []
-        },
-        {
-          "id": 1300248,
-          "attributes": []
-        },
-        {
           "id": 1300249,
           "attributes": []
         },
@@ -1947,10 +1859,6 @@
       "spells": [
         {
           "id": 1269866,
-          "attributes": []
-        },
-        {
-          "id": 1269878,
           "attributes": []
         }
       ],
@@ -2606,10 +2514,6 @@
         {
           "id": 1300259,
           "attributes": []
-        },
-        {
-          "id": 1300262,
-          "attributes": []
         }
       ],
       "spawns": [
@@ -2652,22 +2556,10 @@
           "attributes": []
         },
         {
-          "id": 1222724,
-          "attributes": []
-        },
-        {
-          "id": 1226031,
+          "id": 1226120,
           "attributes": [
             "poison"
           ]
-        },
-        {
-          "id": 1226120,
-          "attributes": []
-        },
-        {
-          "id": 1247395,
-          "attributes": []
         },
         {
           "id": 1262497,
@@ -2678,10 +2570,6 @@
           "attributes": [
             "poison"
           ]
-        },
-        {
-          "id": 1300351,
-          "attributes": []
         }
       ],
       "spawns": [
@@ -2708,10 +2596,6 @@
       "characteristics": [],
       "spells": [
         {
-          "id": 1222755,
-          "attributes": []
-        },
-        {
           "id": 1227197,
           "attributes": []
         },
@@ -2721,14 +2605,6 @@
         },
         {
           "id": 1248112,
-          "attributes": []
-        },
-        {
-          "id": 1248121,
-          "attributes": []
-        },
-        {
-          "id": 1300372,
           "attributes": []
         },
         {
@@ -2765,10 +2641,6 @@
       "spells": [
         {
           "id": 1222692,
-          "attributes": []
-        },
-        {
-          "id": 1222693,
           "attributes": []
         },
         {
@@ -2809,10 +2681,6 @@
       "characteristics": [],
       "spells": [
         {
-          "id": 1246821,
-          "attributes": []
-        },
-        {
           "id": 1246825,
           "attributes": []
         }
@@ -2832,14 +2700,6 @@
       "spells": [
         {
           "id": 1222100,
-          "attributes": []
-        },
-        {
-          "id": 1222103,
-          "attributes": []
-        },
-        {
-          "id": 1222105,
           "attributes": []
         },
         {
@@ -2872,10 +2732,6 @@
       "spells": [
         {
           "id": 1263984,
-          "attributes": []
-        },
-        {
-          "id": 1264188,
           "attributes": []
         }
       ],

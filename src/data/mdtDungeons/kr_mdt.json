@@ -398,10 +398,6 @@
           "attributes": []
         },
         {
-          "id": 265781,
-          "attributes": []
-        },
-        {
           "id": 265910,
           "attributes": []
         },
@@ -414,19 +410,7 @@
           "attributes": []
         },
         {
-          "id": 1306736,
-          "attributes": []
-        },
-        {
           "id": 1311987,
-          "attributes": []
-        },
-        {
-          "id": 1311988,
-          "attributes": []
-        },
-        {
-          "id": 1312104,
           "attributes": []
         }
       ],
@@ -456,15 +440,7 @@
       ],
       "spells": [
         {
-          "id": 270500,
-          "attributes": []
-        },
-        {
           "id": 270502,
-          "attributes": []
-        },
-        {
-          "id": 270503,
           "attributes": []
         },
         {
@@ -500,10 +476,6 @@
       ],
       "spells": [
         {
-          "id": 270931,
-          "attributes": []
-        },
-        {
           "id": 1294883,
           "attributes": []
         },
@@ -515,10 +487,6 @@
         },
         {
           "id": 1305982,
-          "attributes": []
-        },
-        {
-          "id": 1306761,
           "attributes": []
         },
         {
@@ -728,10 +696,6 @@
           "attributes": []
         },
         {
-          "id": 270891,
-          "attributes": []
-        },
-        {
           "id": 1296671,
           "attributes": [
             "magic"
@@ -772,19 +736,11 @@
           "attributes": []
         },
         {
-          "id": 270928,
-          "attributes": []
-        },
-        {
           "id": 1297326,
           "attributes": []
         },
         {
           "id": 1306049,
-          "attributes": []
-        },
-        {
-          "id": 1306056,
           "attributes": []
         }
       ],
@@ -901,10 +857,6 @@
         },
         {
           "id": 271561,
-          "attributes": []
-        },
-        {
-          "id": 271562,
           "attributes": []
         },
         {
@@ -1080,10 +1032,6 @@
           "attributes": []
         },
         {
-          "id": 270485,
-          "attributes": []
-        },
-        {
           "id": 1301851,
           "attributes": [
             "bleed"
@@ -1237,15 +1185,7 @@
       ],
       "spells": [
         {
-          "id": 270500,
-          "attributes": []
-        },
-        {
           "id": 270502,
-          "attributes": []
-        },
-        {
-          "id": 270503,
           "attributes": []
         }
       ],
@@ -1344,39 +1284,11 @@
           "attributes": []
         },
         {
-          "id": 268587,
-          "attributes": []
-        },
-        {
-          "id": 268589,
-          "attributes": []
-        },
-        {
-          "id": 268590,
-          "attributes": []
-        },
-        {
-          "id": 268591,
-          "attributes": []
-        },
-        {
-          "id": 269503,
-          "attributes": []
-        },
-        {
           "id": 1302945,
           "attributes": []
         },
         {
           "id": 1303105,
-          "attributes": []
-        },
-        {
-          "id": 1303111,
-          "attributes": []
-        },
-        {
-          "id": 1303115,
           "attributes": []
         },
         {
@@ -1388,15 +1300,7 @@
           "attributes": []
         },
         {
-          "id": 1303374,
-          "attributes": []
-        },
-        {
           "id": 1303396,
-          "attributes": []
-        },
-        {
-          "id": 1303399,
           "attributes": []
         }
       ],
@@ -1732,27 +1636,11 @@
           "attributes": []
         },
         {
-          "id": 1303326,
-          "attributes": []
-        },
-        {
-          "id": 1303327,
-          "attributes": []
-        },
-        {
           "id": 1303396,
           "attributes": []
         },
         {
-          "id": 1303399,
-          "attributes": []
-        },
-        {
           "id": 1303488,
-          "attributes": []
-        },
-        {
-          "id": 1303490,
           "attributes": []
         }
       ],
@@ -1780,14 +1668,6 @@
       "characteristics": [],
       "spells": [
         {
-          "id": 269230,
-          "attributes": []
-        },
-        {
-          "id": 269231,
-          "attributes": []
-        },
-        {
           "id": 269232,
           "attributes": []
         },
@@ -1796,10 +1676,6 @@
           "attributes": [
             "interruptible"
           ]
-        },
-        {
-          "id": 1303039,
-          "attributes": []
         }
       ],
       "spawns": [
@@ -1861,14 +1737,6 @@
         },
         {
           "id": 266951,
-          "attributes": []
-        },
-        {
-          "id": 267494,
-          "attributes": []
-        },
-        {
-          "id": 1310761,
           "attributes": []
         }
       ],
