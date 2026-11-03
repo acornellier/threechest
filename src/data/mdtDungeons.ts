@@ -34,7 +34,10 @@ const mdtMobPatches: Partial<Record<DungeonKey, Array<{ id: number; patch: Parti
 
 const mdtSpawnPatches: Partial<
   Record<DungeonKey, Array<{ spawnId: SpawnId; patch: Partial<SpawnFake> }>>
-> = {}
+> = {
+  // MDT links this Grovecrawler to the G64 beetles, but they aren't linked in game.
+  vale: [{ spawnId: '10-10', patch: { group: null } }],
+}
 
 // Spawns MDT files under the wrong npc. Spawn id, enemy index and spawn index are kept so MDT
 // strings still round-trip; only the mob resolved for the spawn changes, count included.

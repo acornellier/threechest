@@ -48,13 +48,13 @@ const toRoute = (fixture: unknown, maxPasses?: number, trace?: WclTrace) => {
 }
 
 // bPaQhZ8RnJYcDqFv-1 was recorded on the PTR, where group 23 held two Faithless Subjugators. On
-// live the second is a Lightning Serpent, which mdtSpawnMobPatches applies to spawn 11-6 — leaving
-// that fight's third subjugator with nowhere to go. Hand the fixture the composition it ran on.
+// live the second is the Lightning Serpent at spawn 8-8 — leaving that fight's third subjugator
+// with nowhere to go. Hand the fixture the composition it ran on.
 const ptrTos = (): Dungeon => {
   const tos = dungeonsByKey.tos
   const mobSpawns = {
     ...tos.mobSpawns,
-    '11-6': { mob: tos.mobSpawns['11-7']!.mob, spawn: tos.mobSpawns['11-6']!.spawn },
+    '8-8': { mob: tos.mobSpawns['11-6']!.mob, spawn: tos.mobSpawns['8-8']!.spawn },
   }
   return { ...tos, mobSpawns, mobSpawnsList: Object.values(mobSpawns) }
 }
@@ -157,6 +157,11 @@ describe('wclResultToRoute — pack split across pulls after running to the tank
 
   it('does not let a group without the mob veto G78', () => {
     expect(spawnsOfGroup(78, 10)).toHaveLength(4)
+  })
+
+  it('gives beetles tanked beside G64 to G64, not G69', () => {
+    expect(spawnsOfGroup(64, 7)).toHaveLength(5)
+    expect(route.pulls.flatMap(({ spawns }) => spawns)).not.toContain('9-34')
   })
 
   it('counts a mob whose death WCL dropped but whose killing blow was logged', () => {

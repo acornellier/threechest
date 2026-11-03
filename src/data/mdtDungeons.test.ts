@@ -1,19 +1,21 @@
 import { describe, expect, it } from 'vitest'
 import { mdtMobSpawns } from './mdtDungeons.ts'
 
-describe('mdtSpawnMobPatches', () => {
-  it('resolves tos 11-6 to a Lightning Serpent while keeping its MDT identity', () => {
-    const { mob, spawn } = mdtMobSpawns.tos['11-6']!
+describe('tos group 23', () => {
+  it('holds a Lightning Serpent next to its Faithless Subjugator', () => {
+    const serpent = mdtMobSpawns.tos['8-8']!
+    expect(serpent.mob.name).toBe('Lightning Serpent')
+    expect(serpent.spawn.group).toBe(23)
 
-    expect(mob.id).toBe(135846)
-    expect(mob.name).toBe('Lightning Serpent')
-    expect(mob.enemyIndex).toBe(11)
-    expect(spawn.id).toBe('11-6')
-    expect(spawn.idx).toBe(6)
-    expect(spawn.group).toBe(23)
+    const subjugator = mdtMobSpawns.tos['11-6']!
+    expect(subjugator.mob.name).toBe('Faithless Subjugator')
+    expect(subjugator.spawn.group).toBe(23)
   })
+})
 
-  it('leaves the other group 23 spawn alone', () => {
-    expect(mdtMobSpawns.tos['11-7']!.mob.name).toBe('Faithless Subjugator')
+describe('mdtSpawnPatches', () => {
+  it('detaches the vale Grovecrawler from the G64 beetles', () => {
+    expect(mdtMobSpawns.vale['10-10']!.spawn.group).toBeNull()
+    expect(mdtMobSpawns.vale['9-30']!.spawn.group).toBe(64)
   })
 })

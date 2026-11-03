@@ -2058,12 +2058,12 @@ exports[`wclResultToRoute — vertically stacked groups separated by boss kills 
   {
     "id": 3,
     "spawns": [
-      "2-43",
       "2-57",
+      "2-58",
       "2-59",
+      "2-60",
+      "2-61",
       "2-62",
-      "2-69",
-      "2-70",
     ],
   },
   {
@@ -2153,11 +2153,11 @@ exports[`wclResultToRoute — vertically stacked groups separated by boss kills 
       "12-5",
       "8-11",
       "8-12",
-      "9-34",
-      "9-35",
-      "9-36",
-      "9-37",
-      "9-38",
+      "9-30",
+      "9-31",
+      "9-32",
+      "9-33",
+      "9-39",
     ],
   },
   {
