@@ -3,7 +3,7 @@ import { uniqBy } from '../src/util/nodash.ts'
 import { dungeons } from '../src/data/dungeons.ts'
 import fs from 'fs'
 import { cacheFolder } from './files.ts'
-import { fetchWcl, getDeathEvents, getFight, type WclFight } from './wcl.ts'
+import { fetchWcl, getDeathEvents, getFight, getKillingBlows, type WclFight } from './wcl.ts'
 import * as path from 'path'
 import { ccSpellIds } from '../src/data/spells/ccSpells.ts'
 
@@ -409,7 +409,16 @@ export async function getWclRoute(
   const ccEvents = await getCcEvents(code, fight, countableGameIds)
 
   const wclDeathEvents = await getDeathEvents(code, fight)
-  const deathEvents = wclDeathEvents
+  const loggedDeaths = new Set(
+    wclDeathEvents.map(({ targetID, targetInstance }) => enemyKey(targetID, targetInstance ?? 1)),
+  )
+  const unloggedDeaths = uniqBy(
+    (await getKillingBlows(code, fight)).filter(
+      ({ targetID, targetInstance }) => !loggedDeaths.has(enemyKey(targetID, targetInstance ?? 1)),
+    ),
+    ['targetID', 'targetInstance'],
+  )
+  const deathEvents = [...wclDeathEvents, ...unloggedDeaths]
     .map<DeathEvent | null>((event) => {
       const matchingEnemy = enemies.find((enemy) => enemy.actorId === event.targetID)
 

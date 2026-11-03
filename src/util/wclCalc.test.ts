@@ -38,6 +38,7 @@ import rgpFixture from './__fixtures__/wclRoute-rGPCqaDyQmJbBLfX-9.json'
 import sixpmFixture from './__fixtures__/wclRoute-6pMc2dJHBh1Q8rGF-13.json'
 import bpaFixture from './__fixtures__/wclRoute-bPaQhZ8RnJYcDqFv-1.json'
 import pd4Fixture from './__fixtures__/wclRoute-PD4Ryr8QGxjbYfq9-12.json'
+import cg3Fixture from './__fixtures__/wclRoute-CG3RbAdqgMvt7nP4-1.json'
 
 // These fixtures are Season 1 fights, whose dungeon data is no longer shipped. Inject the
 // snapshotted S1 dungeon (resolved by encounter id) via wclResultToRoute's `dungeon` param.
@@ -130,6 +131,42 @@ describe('wclResultToRoute — mob split across actors with overlapping instance
     // Every distinct hatchling survives resolution — a (gameId, instanceId) key would drop the
     // instance-1..6 collisions between the two actors.
     expect(resolvedMobs).toEqual(distinctMobs)
+  })
+})
+
+// Regression test: G54's lashers ran about 30 units to the tank before their first hit, and one was
+// left behind until the next pull. So pull 10 held G54 minus a lasher, which only G48 could fit, and
+// the leftovers then assembled a false G54 across both pulls. Pull 11's G78 should have absorbed its
+// own lashers, but G76 vetoed it: a lone Thornmaw that sits near those events without holding a lasher.
+describe('wclResultToRoute — pack split across pulls after running to the tank', () => {
+  const { route, errors } = wclResultToRoute(cg3Fixture as unknown as WclResult)
+  const spawnsOfGroup = (group: number, pullIdx: number) =>
+    route.pulls[pullIdx]!.spawns.filter(
+      (id) => dungeonsByKey.vale.mobSpawns[id]!.spawn.group === group,
+    )
+
+  it('has no matching errors', () => {
+    expect(errors).toEqual([])
+  })
+
+  it('splits G54 between the pack and its straggler instead of claiming G48', () => {
+    expect(spawnsOfGroup(54, 9)).toHaveLength(5)
+    expect(spawnsOfGroup(54, 10)).toHaveLength(1)
+    expect(route.pulls.flatMap(({ spawns }) => spawns)).not.toContain('1-28')
+  })
+
+  it('does not let a group without the mob veto G78', () => {
+    expect(spawnsOfGroup(78, 10)).toHaveLength(4)
+  })
+
+  it('counts a mob whose death WCL dropped but whose killing blow was logged', () => {
+    const saptorInstances = (cg3Fixture as unknown as WclResult).deathEvents
+      .filter(({ gameId }) => gameId === 245473)
+      .map(({ instanceId }) => instanceId)
+    expect(saptorInstances).toContain(4)
+    expect(
+      route.pulls.flatMap(({ spawns }) => spawns).filter((id) => id.startsWith('8-')),
+    ).toHaveLength(4)
   })
 })
 

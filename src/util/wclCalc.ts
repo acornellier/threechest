@@ -467,16 +467,17 @@ export const passes: WclPass[] = [
   // Match each sub-pull to the groups sitting on it (tight, then loose radius).
   { name: 'byProximityTight', run: (args) => calculateProximityPullFromSubPulls(args, 10, 10) },
   { name: 'byProximityLoose', run: (args) => calculateProximityPullFromSubPulls(args, 20, 20) },
-  // Cover the leftovers with whole groups by composition (pooled, then per sub-pull).
+  // Cover the leftovers with whole groups by composition.
   {
     name: 'byComposition',
     run: ({ state, pullStatus }) =>
       calculateCompositionPull(state, pullStatus.mobEventsRemaining, pullStatus),
   },
-  { name: 'byCompositionSubPull', run: calculateCompositionPullFromSubPulls },
   // Reunite a group a real run split across two adjacent pulls, so its spawns split cleanly instead
-  // of scattering to nearer neighboring groups in byNearestSpawn.
+  // of scattering to nearer neighboring groups in byNearestSpawn. Runs before the sub-pull pass,
+  // whose partial claims would otherwise let a smaller group take a slice of the split group's mobs.
   { name: 'bySplitGroup', runAll: assignSplitGroups },
+  { name: 'byCompositionSubPull', run: calculateCompositionPullFromSubPulls },
   // Last resort: assign each remaining mob to its nearest individual spawn.
   { name: 'byNearestSpawn', run: findExactSpawns },
 ]
@@ -1001,10 +1002,12 @@ const groupFitsPool = (group: Group, poolCounts: Record<number, number>): boolea
     ([mobId, count]) => (poolCounts[Number(mobId)] ?? 0) >= count,
   )
 
-// True when another formable group (see groupFitsPool) sits markedly nearer this event — the event
-// physically belongs to that group, so `group` claiming it would be a coincidental composition
-// fit. The margin keeps this from misfiring on densely packed same-type groups, where an event
-// legitimately sits nearly equidistant from several. Position-less events never trigger it.
+// True when another formable group (see groupFitsPool) holding this event's mob sits markedly nearer
+// — the event physically belongs to that group, so `group` claiming it would be a coincidental
+// composition fit. A group without the mob can't own the event, however close it sits: mobs run past
+// other packs on their way to the tank. The margin keeps this from misfiring on densely packed
+// same-type groups, where an event legitimately sits nearly equidistant from several.
+// Position-less events never trigger it.
 const hasNearerEligibleGroup = (
   event: MobEvent,
   group: Group,
@@ -1016,6 +1019,7 @@ const hasNearerEligibleGroup = (
   return groups.some(
     (other) =>
       other !== group &&
+      (other.mobCounts[event.mobId] ?? 0) > 0 &&
       (!poolCounts || groupFitsPool(other, poolCounts)) &&
       distanceToGroup(event, other) < distToGroup - CONFIDENT_CLAIM_NEARER_MARGIN,
   )

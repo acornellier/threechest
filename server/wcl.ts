@@ -159,3 +159,40 @@ query {
   )
   return json.reportData.report.events.data
 }
+
+// WCL occasionally drops a killed mob's death event, but the killing blow's overkill is still logged.
+export async function getKillingBlows(code: string, fight: WclFight) {
+  const killingBlows: WclDeathEvent[] = []
+  let startTime = fight.startTime
+
+  for (;;) {
+    const query = `
+query {
+  reportData {
+    report(code: "${code}") {
+      events(
+        fightIDs: [${fight.id}]
+        dataType: DamageDone
+        startTime: ${startTime}
+        endTime: 9999999999
+        limit: 10000
+        filterExpression: "overkill > 0"
+      ) {
+        data
+        nextPageTimestamp
+      }
+    }
+  }
+}`
+
+    const json = await fetchWcl<{
+      reportData: { report: { events: { data: WclDeathEvent[]; nextPageTimestamp?: number } } }
+    }>(query)
+
+    const { data, nextPageTimestamp } = json.reportData.report.events
+    killingBlows.push(...data)
+
+    if (!nextPageTimestamp) return killingBlows
+    startTime = nextPageTimestamp
+  }
+}
