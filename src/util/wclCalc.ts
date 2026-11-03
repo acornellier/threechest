@@ -1118,6 +1118,34 @@ function matchGroupToEvents(
   return matched
 }
 
+// True when the pool holds more of this group's mobs than it needs and all of them fit inside a
+// larger group sitting nearer. That's the larger group missing a straggler, not this group plus
+// spares, so claiming here would tear a slice off the real pack.
+function surplusFitsNearerGroup(
+  group: Group,
+  remaining: Record<number, number>,
+  mobEvents: MobEvent[],
+  competitors: Group[],
+): boolean {
+  const mobIds = Object.keys(group.mobCounts).map(Number)
+  if (!mobIds.some((mobId) => (remaining[mobId] ?? 0) > group.mobCounts[mobId]!)) return false
+
+  const ownEvents = mobEvents.filter(
+    (event) => (group.mobCounts[event.mobId] ?? 0) > 0 && (event.pos || event.altPos),
+  )
+  if (ownEvents.length === 0) return false
+  const totalDistance = (target: Group) =>
+    ownEvents.reduce((total, event) => total + distanceToGroup(event, target), 0)
+
+  return competitors.some(
+    (other) =>
+      other !== group &&
+      groupSize(other) > groupSize(group) &&
+      mobIds.every((mobId) => (remaining[mobId] ?? 0) <= (other.mobCounts[mobId] ?? 0)) &&
+      totalDistance(other) < totalDistance(group),
+  )
+}
+
 // Greedily claim, in the given order, whole groups whose composition fits the remaining mob
 // counts, consuming each group's nearest events. Unlike getPulledGroups this is partial: it claims
 // what it confidently can and leaves the rest for later passes; a vetoed group is skipped.
@@ -1134,12 +1162,16 @@ function claimFittingGroups(
   for (const group of groups) {
     if (!groupFitsPool(group, remaining)) continue
 
-    const matched = matchGroupToEvents(
-      group,
-      mobEvents,
-      (event) => consumedEvents.has(event),
-      options,
-    )
+    const competitors = options.vetoNearerGroups?.filter((other) => !claimedGroups.includes(other))
+    const unclaimedEvents = mobEvents.filter((event) => !consumedEvents.has(event))
+    if (competitors && surplusFitsNearerGroup(group, remaining, unclaimedEvents, competitors)) {
+      continue
+    }
+
+    const matched = matchGroupToEvents(group, mobEvents, (event) => consumedEvents.has(event), {
+      ...options,
+      vetoNearerGroups: competitors,
+    })
     if (matched === null) continue
 
     for (const [mobId, count] of Object.entries(group.mobCounts)) {
@@ -1212,8 +1244,9 @@ function calculateAnchoredGroupPull(
 // Whether an exact-cover combination actually sits on the events it would claim. getPulledGroups
 // takes the first composition-valid cover (largest groups first), so e.g. a far 2-shade group can
 // claim both shades even when they sit right on two nearer single-shade groups. Rejecting such a
-// cover sends it to the partial fallback, which claims the near groups instead. Only used where
-// positions are reliable (singleMap).
+// cover sends it to the partial fallback, which claims the near groups instead. A group already
+// walked has its events, so it can't veto later ones. Only used where positions are reliable
+// (singleMap).
 function exactCoverSitsOnGroups(
   claimedGroupIds: string[],
   groups: Group[],
@@ -1222,15 +1255,18 @@ function exactCoverSitsOnGroups(
   const poolCounts = tally(mobEvents, ({ mobId }) => mobId)
   const groupsById = new Map(groups.map((group) => [group.id, group]))
   const consumed = new Set<MobEvent>()
+  const coveredGroups = new Set<Group>()
   for (const id of claimedGroupIds) {
     const group = groupsById.get(id)
     if (!group) continue
     const matched = matchGroupToEvents(group, mobEvents, (event) => consumed.has(event), {
-      vetoNearerGroups: groups,
+      maxEventDistance: MAX_PLAUSIBLE_SPAWN_DISTANCE,
+      vetoNearerGroups: groups.filter((other) => !coveredGroups.has(other)),
       vetoPoolCounts: poolCounts,
     })
     if (matched === null) return false
     matched.forEach((event) => consumed.add(event))
+    coveredGroups.add(group)
   }
   return true
 }

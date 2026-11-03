@@ -27,6 +27,7 @@ import {
 } from './wclCalc.ts'
 import { s1Dungeons } from './__fixtures__/s1Dungeons.ts'
 import { dungeonsByKey } from '../data/dungeons.ts'
+import { tally } from './nodash.ts'
 import type { Dungeon } from '../data/types.ts'
 import lvzFixture from './__fixtures__/wclRoute-LvZWMHBf3zrk9nFN-12.json'
 import gqwFixture from './__fixtures__/wclRoute-gqw4y97LcfAFnHBX-9.json'
@@ -39,6 +40,9 @@ import sixpmFixture from './__fixtures__/wclRoute-6pMc2dJHBh1Q8rGF-13.json'
 import bpaFixture from './__fixtures__/wclRoute-bPaQhZ8RnJYcDqFv-1.json'
 import pd4Fixture from './__fixtures__/wclRoute-PD4Ryr8QGxjbYfq9-12.json'
 import cg3Fixture from './__fixtures__/wclRoute-CG3RbAdqgMvt7nP4-1.json'
+import qlyFixture from './__fixtures__/wclRoute-8QLYw4HWrPm3nKbZ-17.json'
+import cpjFixture from './__fixtures__/wclRoute-cpJkTM8dPaxvWzbV-21.json'
+import lk7Fixture from './__fixtures__/wclRoute-Lk743QrRXatWvd1F-21.json'
 
 // These fixtures are Season 1 fights, whose dungeon data is no longer shipped. Inject the
 // snapshotted S1 dungeon (resolved by encounter id) via wclResultToRoute's `dungeon` param.
@@ -172,6 +176,33 @@ describe('wclResultToRoute — pack split across pulls after running to the tank
     expect(
       route.pulls.flatMap(({ spawns }) => spawns).filter((id) => id.startsWith('8-')),
     ).toHaveLength(4)
+  })
+})
+
+describe('wclResultToRoute — a claimed group no longer competes for events', () => {
+  const groupCountsInPullOf = (fixture: unknown, spawnId: string) => {
+    const { route } = wclResultToRoute(fixture as WclResult)
+    const pull = route.pulls.find(({ spawns }) => spawns.includes(spawnId))!
+    return tally(pull.spawns, (id) => dungeonsByKey.vale.mobSpawns[id]!.spawn.group ?? id)
+  }
+
+  it('claims G54 whole once G71 is taken, instead of tearing it with G48', () => {
+    const counts = groupCountsInPullOf(qlyFixture, '1-8')
+    expect(counts[54]).toBe(6)
+    expect(counts[48]).toBeUndefined()
+  })
+
+  it('leaves G54 short a straggler rather than giving its mobs to G48', () => {
+    const counts = groupCountsInPullOf(cpjFixture, '1-8')
+    expect(counts[54]).toBe(5)
+    expect(counts[48]).toBeUndefined()
+  })
+
+  it('rejects an exact cover that puts a mob implausibly far from its spawn', () => {
+    const { route } = wclResultToRoute(lk7Fixture as unknown as WclResult)
+    const taken = route.pulls.flatMap(({ spawns }) => spawns)
+    expect(taken).toContain('7-17')
+    expect(taken).not.toContain('7-5')
   })
 })
 
